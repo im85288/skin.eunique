@@ -38,24 +38,6 @@
 					<height>300</height>
 					<left>30</left>
 					<right>30</right>
-				<!--	<control type="image">
-						<top>0</top>
-						<left>100</left>
-						<width>200</width>
-						<height>170</height>
-						<texture background="true" fallback="windows/pvr/defaultchannel.png">$INFO[Container(10).ListItem.Icon]</texture>
-						<aspectratio>keep</aspectratio>
-						<visible>!Player.HasVideo + !Skin.HasSetting(EPGArt.Enabled)</visible>
-					</control>
-					 <control type="image">
-						<top>0</top>
-						<left>100</left>
-						<width>200</width>
-						<height>170</height>
-						<texture background="true" fallback="windows/pvr/defaultchannel.png">$INFO[ListItem.Icon]</texture>
-						<aspectratio>keep</aspectratio>
-						<visible>!Player.HasVideo + Skin.HasSetting(EPGArt.Enabled)</visible>
-					</control> -->
 					<control type="multiimage">
 						<top>10</top>
 						<right>10</right>
@@ -96,7 +78,7 @@
 						<align>center</align>
 						<height>38</height>
 						<font>MediumBold</font>
-						<textcolor>PanelWhite100</textcolor>
+						<textcolor>Dark1</textcolor>
 						<selectedcolor>PanelWhite100</selectedcolor>
 						<label>$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Label]$INFO[ListItem.EpisodeName, (,)]</label>
 					</control>
@@ -108,8 +90,8 @@
 						<align>left</align>
 						<height>38</height>
 						<font>TinyBold</font>
-						<textcolor>PanelWhite70</textcolor>
-						<selectedcolor>PanelWhite70</selectedcolor>
+						<textcolor>Dark2</textcolor>
+						<selectedcolor>Dark2</selectedcolor>
 						<label>$INFO[ListItem.StartTime]</label>
 					</control>
 					<control type="label">
@@ -120,8 +102,8 @@
 						<align>right</align>
 						<height>38</height>
 						<font>TinyBold</font>
-						<textcolor>PanelWhite70</textcolor>
-						<selectedcolor>PanelWhite70</selectedcolor>
+						<textcolor>Dark2</textcolor>
+						<selectedcolor>Dark2</selectedcolor>
 						<label>$INFO[ListItem.EndTime]</label>
 					</control>
 					<control type="progress">
@@ -139,9 +121,9 @@
 						<height>190</height>
 						<align>justify</align>
 						<font>Tiny</font>
-						<textcolor>PanelWhite100</textcolor>
-						<selectedcolor>PanelWhite100</selectedcolor>
-						<label>$INFO[ListItem.Plot]</label>
+						<textcolor>Dark1</textcolor>
+						<selectedcolor>Dark1</selectedcolor>
+						<label>$INFO[ListItem.Plot]$INFO[ListItem.Genre,[CR][COLOR=Dark2],[/COLOR]]</label>
 					</control>
 					<control type="image">
 						<top>100</top>
@@ -189,6 +171,13 @@
 					<channellayout height="70" width="357">
 						<control type="image">
 							<left>57</left>
+							<top>0</top>
+							<width>357</width>
+							<height>1</height>
+							<texture>info/infopanel_line.png</texture>
+						</control>
+						<control type="image">
+							<left>57</left>
 							<bottom>0</bottom>
 							<width>357</width>
 							<height>1</height>
@@ -218,6 +207,13 @@
 						</control>
 					</channellayout>
 					<focusedchannellayout height="70" width="357">
+						<control type="image">
+							<left>57</left>
+							<top>0</top>
+							<width>357</width>
+							<height>1</height>
+							<texture>info/infopanel_line.png</texture>
+						</control>
 						<control type="image">
 							<left>57</left>
 							<bottom>0</bottom>
