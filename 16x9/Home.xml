@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window id="0">
+	<defaultcontrol always="true">300</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<onload>RunScript(script.favourites)</onload>
+	<onload condition="IsEmpty(Skin.String(focuscolor.name))">Skin.SetString(focuscolor.name,FF0fd39e)</onload>
+	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=300&amp;group=mainmenu|movieshub|episodeshub)</onload>
+	<onload condition="System.HasAddon(script.duration)">RunScript(script.duration,backend=True)</onload>
+	<onload condition="!Skin.String(SkinHelper.RandomFanartDelay)">Skin.SetString(SkinHelper.RandomFanartDelay,15)</onload>
+	<onload condition="!Skin.HasSetting(startup.init)">Skin.SetBool(osd.usetheme)</onload>
+	<onload condition="!Skin.HasSetting(startup.init)">Skin.SetBool(global.hidecirles)</onload>
+	<onload condition="!Skin.HasSetting(startup.init)">Skin.SetString(SkinHelper.ShowInfoAtPlaybackStart, 6)</onload>
+	<onload condition="!Skin.HasSetting(startup.init)">Skin.SetBool(SmartShortcuts.playlists)</onload>
+	<onload condition="!Skin.HasSetting(startup.init)">Skin.SetBool(SmartShortcuts.emby)</onload>
+	<onload condition="!Skin.HasSetting(startup.init) + System.HasAddon(plugin.video.plexbmc) ">Skin.SetBool(global.plex)</onload>
+	<onload condition="!Skin.HasSetting(startup.init) + System.HasAddon(plugin.video.netflix)">Skin.SetBool(global.netflix)</onload>
+	<onload condition="!Skin.HasSetting(startup.init)">Skin.SetBool(home.emby)</onload>
+	<onload condition="!Skin.HasSetting(startup.init)">Skin.SetBool(startup.init)</onload>
+	<controls>
+		<include condition="!Skin.HasSetting(home.netflix) + !Skin.HasSetting(lights.out)">GlobalBackground</include>
+		<include condition="Skin.HasSetting(home.netflix) + System.HasAddon(plugin.video.netflixbmc) + !Skin.HasSetting(lights.out)">NetflixBackground</include>
+		<include condition="Skin.HasSetting(home.emby)">GlobalOverlay</include>
+		<control type="group">
+			<animation type="Conditional" condition="System.IdleTime(45) + Skin.HasSetting(home.fade)" reversible="false">
+				<!-- Broken Fade -->
+				<effect type="fade" start="100" end="0" time="3500" tween="quadratic"/>
+				<effect type="zoom" start="100" end="90" time="750" tween="elastic"/>
+				<effect type="rotate" end="-1" time="1900" tween="elastic"/>
+			</animation>
+			<include condition="Skin.HasSetting(home.vertical)">HomeVerticalMenu</include>
+			<include condition="!Skin.HasSetting(home.vertical) + !Skin.HasSetting(home.netflix) + !Skin.HasSetting(home.emby)">HomeHeader</include>
+			<include condition="!Skin.HasSetting(home.vertical) + !Skin.HasSetting(home.netflix) + !Skin.HasSetting(home.emby)">HomeNextRecording</include>
+			<include condition="!Skin.HasSetting(home.vertical) + !Skin.HasSetting(home.netflix) + !Skin.HasSetting(home.emby)">HomeWeatherWidget</include>
+			<include condition="!Skin.HasSetting(home.vertical) + !Skin.HasSetting(home.netflix)">Furniture_NowPlaying</include>
+			<include condition="!Skin.HasSetting(home.vertical) + !Skin.HasSetting(home.netflix) + !Skin.HasSetting(home.emby)">HomeBackgroundPlaylist</include>
+			<include condition="!Skin.HasSetting(home.vertical) + !Skin.HasSetting(home.classicwidgets) + !Skin.HasSetting(home.netflix) + !Skin.HasSetting(home.emby)">HomeRow</include>
+			<include condition="!Skin.HasSetting(home.vertical) + !Skin.HasSetting(home.classicwidgets) + !Skin.HasSetting(home.netflix) + !Skin.HasSetting(home.emby)">HomeWidgetInfo</include>
+			<include condition="!Skin.HasSetting(home.vertical) + Skin.HasSetting(home.classicwidgets) + !Skin.HasSetting(home.netflix) + !Skin.HasSetting(home.emby)">HomeClassicWidgets</include>
+			<include condition="!Skin.HasSetting(home.vertical) + Skin.HasSetting(home.submenu2) + !Skin.HasSetting(home.showicons) + !Skin.HasSetting(home.netflix) + !Skin.HasSetting(home.emby)">HomeSubMenu2</include>
+			<include condition="!Skin.HasSetting(home.vertical) + [!Skin.HasSetting(home.submenu2) | Skin.HasSetting(home.showicons)] + !Skin.HasSetting(home.netflix) + !Skin.HasSetting(home.emby)">HomeSubMenu</include>
+			<include condition="Skin.HasSetting(home.netflix) + !System.HasAddon(plugin.video.netflixbmc)">HomeNetflix</include>
+			<include condition="Skin.HasSetting(home.netflix) + !System.HasAddon(plugin.video.netflixbmc)">NetflixWidgetSelector</include>
+			<include condition="Skin.HasSetting(home.netflix) + System.HasAddon(plugin.video.netflixbmc)">NetflixXbmcBackground</include>
+			<include condition="Skin.HasSetting(home.netflix) + System.HasAddon(plugin.video.netflixbmc)">HomeNetflixXbmc</include>
+			<include condition="Skin.HasSetting(home.emby)">HomeEmbyRow</include>
+			<include condition="Skin.HasSetting(home.emby)">HomeEmbyWidgetInfo</include>
+			<include condition="Skin.HasSetting(home.emby) + [!Skin.HasSetting(home.submenu2) | Skin.HasSetting(home.showicons)]">HomeEmbySubMenu</include>
+			<include condition="Skin.HasSetting(home.emby) + Skin.HasSetting(home.submenu2) + !Skin.HasSetting(home.showicons)">HomeEmbySubMenu2</include>
+		</control>
+	</controls>
+</window>
