@@ -140,9 +140,12 @@
 		<value>$LOCALIZE[31105]</value>
 	</variable>
 	<variable name="EmbyWidget1Label">
+		<value condition="Stringcompare(Skin.String(widget1),RecommendedEpisodes)">$LOCALIZE[31793]</value>
+		<value condition="Stringcompare(Skin.String(widget1),RandomEpisodes)">$LOCALIZE[31126]</value>
+		<value condition="Stringcompare(Skin.String(widget1),RecentEpisodes)">$LOCALIZE[31125]</value>
 		<value condition="Stringcompare(Skin.String(widget1),RandomMovies)">$LOCALIZE[31127]</value>
 		<value condition="Stringcompare(Skin.String(widget1),RecentMovies)">$LOCALIZE[31124]</value>
-		<value condition="Stringcompare(Skin.String(widget1),RecommendedMovies)">Recommended Movies</value>
+		<value condition="Stringcompare(Skin.String(widget1),RecommendedMovies)">$LOCALIZE[31794]</value>
 		<value condition="Stringcompare(Skin.String(widget1),SimilarMovies)">$LOCALIZE[31782]$INFO[Container(6016).ListItem.Property(originaltitle), ","]</value>
 		<value condition="Stringcompare(Skin.String(widget1),TrendingMovies)">$LOCALIZE[31134]</value>
 		<value condition="Stringcompare(Skin.String(widget1),InCinemas)">$LOCALIZE[31208]</value>
@@ -153,6 +156,9 @@
 		<value condition="Stringcompare(Skin.String(widget1),TopRatedTvShows)">$LOCALIZE[31227]</value>
 		<value condition="Stringcompare(Skin.String(widget1),OnAirTvShows)">$LOCALIZE[31228]</value>
 		<value condition="Stringcompare(Skin.String(widget1),AiringTodayTvShows)">$LOCALIZE[31229]</value>
+		<value condition="Stringcompare(Skin.String(widget1),TrendingShows)">$LOCALIZE[31135]</value>
+		<value condition="Stringcompare(Skin.String(widget1),AiringShows)">$LOCALIZE[31136]</value>
+		<value condition="Stringcompare(Skin.String(widget1),PremiereShows)">$LOCALIZE[31137]</value>
 		<value condition="Stringcompare(Skin.String(widget1),RecommendedShows)">$LOCALIZE[31784]</value>
 		<value condition="Stringcompare(Skin.String(widget1),Custom1)">Custom 1</value>
 		<value condition="Stringcompare(Skin.String(widget1),Custom2)">Custom 2</value>
@@ -182,12 +188,15 @@
 		<value condition="Stringcompare(Skin.String(widget1),embynode2inprogress)">$INFO[Window(Home).Property(emby.nodes.2.inprogress.title)]</value>
 		<value condition="Stringcompare(Skin.String(widget1),embynode2inprogressepisodes)">$INFO[Window(Home).Property(emby.nodes.2.inprogressepisodes.title)]</value>
 		<value condition="Stringcompare(Skin.String(widget1),embynode2nextepisodes)">$INFO[Window(Home).Property(emby.nodes.2.nextepisodes.title)]</value>
-		<value>$LOCALIZE[31134]</value>
+		<value>$LOCALIZE[31135]</value>
 	</variable>
 	<variable name="EmbyWidget2Label">
+		<value condition="Stringcompare(Skin.String(widget2),RecommendedEpisodes)">$LOCALIZE[31793]</value>
+		<value condition="Stringcompare(Skin.String(widget2),RandomEpisodes)">$LOCALIZE[31126]</value>
+		<value condition="Stringcompare(Skin.String(widget2),RecentEpisodes)">$LOCALIZE[31125]</value>
 		<value condition="Stringcompare(Skin.String(widget2),RandomMovies)">$LOCALIZE[31127]</value>
 		<value condition="Stringcompare(Skin.String(widget2),RecentMovies)">$LOCALIZE[31124]</value>
-		<value condition="Stringcompare(Skin.String(widget2),RecommendedMovies)">Recommended Movies</value>
+		<value condition="Stringcompare(Skin.String(widget2),RecommendedMovies)">$LOCALIZE[31794]</value>
 		<value condition="Stringcompare(Skin.String(widget2),SimilarMovies)">$LOCALIZE[31782]$INFO[Container(6012).ListItem.Property(originaltitle), ","]</value>
 		<value condition="Stringcompare(Skin.String(widget2),TrendingMovies)">$LOCALIZE[31134]</value>
 		<value condition="Stringcompare(Skin.String(widget2),InCinemas)">$LOCALIZE[31208]</value>
@@ -198,6 +207,9 @@
 		<value condition="Stringcompare(Skin.String(widget2),TopRatedTvShows)">$LOCALIZE[31227]</value>
 		<value condition="Stringcompare(Skin.String(widget2),OnAirTvShows)">$LOCALIZE[31228]</value>
 		<value condition="Stringcompare(Skin.String(widget2),AiringTodayTvShows)">$LOCALIZE[31229]</value>
+		<value condition="Stringcompare(Skin.String(widget2),TrendingShows)">$LOCALIZE[31135]</value>
+		<value condition="Stringcompare(Skin.String(widget2),AiringShows)">$LOCALIZE[31136]</value>
+		<value condition="Stringcompare(Skin.String(widget2),PremiereShows)">$LOCALIZE[31137]</value>
 		<value condition="Stringcompare(Skin.String(widget2),RecommendedShows)">$LOCALIZE[31784]</value>
 		<value condition="Stringcompare(Skin.String(widget2),Custom1)">Custom 1</value>
 		<value condition="Stringcompare(Skin.String(widget2),Custom2)">Custom 2</value>
@@ -230,9 +242,12 @@
 		<value>$LOCALIZE[31134]</value>
 	</variable>
 	<variable name="EmbyWidget3Label">
+		<value condition="Stringcompare(Skin.String(widget3),RecommendedEpisodes)">$LOCALIZE[31793]</value>
+		<value condition="Stringcompare(Skin.String(widget3),RandomEpisodes)">$LOCALIZE[31126]</value>
+		<value condition="Stringcompare(Skin.String(widget3),RecentEpisodes)">$LOCALIZE[31125]</value>
 		<value condition="Stringcompare(Skin.String(widget3),RandomMovies)">$LOCALIZE[31127]</value>
 		<value condition="Stringcompare(Skin.String(widget3),RecentMovies)">$LOCALIZE[31124]</value>
-		<value condition="Stringcompare(Skin.String(widget3),RecommendedMovies)">Recommended Movies</value>
+		<value condition="Stringcompare(Skin.String(widget3),RecommendedMovies)">$LOCALIZE[31794]</value>
 		<value condition="Stringcompare(Skin.String(widget3),SimilarMovies)">$LOCALIZE[31782]$INFO[Container(6017).ListItem.Property(originaltitle), ","]</value>
 		<value condition="Stringcompare(Skin.String(widget3),TrendingMovies)">$LOCALIZE[31134]</value>
 		<value condition="Stringcompare(Skin.String(widget3),InCinemas)">$LOCALIZE[31208]</value>
@@ -243,6 +258,9 @@
 		<value condition="Stringcompare(Skin.String(widget3),TopRatedTvShows)">$LOCALIZE[31227]</value>
 		<value condition="Stringcompare(Skin.String(widget3),OnAirTvShows)">$LOCALIZE[31228]</value>
 		<value condition="Stringcompare(Skin.String(widget3),AiringTodayTvShows)">$LOCALIZE[31229]</value>
+		<value condition="Stringcompare(Skin.String(widget3),TrendingShows)">$LOCALIZE[31135]</value>
+		<value condition="Stringcompare(Skin.String(widget3),AiringShows)">$LOCALIZE[31136]</value>
+		<value condition="Stringcompare(Skin.String(widget3),PremiereShows)">$LOCALIZE[31137]</value>
 		<value condition="Stringcompare(Skin.String(widget3),RecommendedShows)">$LOCALIZE[31784]</value>
 		<value condition="Stringcompare(Skin.String(widget3),Custom1)">Custom 1</value>
 		<value condition="Stringcompare(Skin.String(widget3),Custom2)">Custom 2</value>
@@ -272,7 +290,7 @@
 		<value condition="Stringcompare(Skin.String(widget3),embynode2inprogress)">$INFO[Window(Home).Property(emby.nodes.2.inprogress.title)]</value>
 		<value condition="Stringcompare(Skin.String(widget3),embynode2inprogressepisodes)">$INFO[Window(Home).Property(emby.nodes.2.inprogressepisodes.title)]</value>
 		<value condition="Stringcompare(Skin.String(widget3),embynode2nextepisodes)">$INFO[Window(Home).Property(emby.nodes.2.nextepisodes.title)]</value>
-		<value>$LOCALIZE[31134]</value>
+		<value>$LOCALIZE[31224]</value>
 	</variable>
 	<variable name="EmbyWidget4Label">
 		<value condition="Stringcompare(Skin.String(widget4),Engadget)">Engadget</value>
@@ -298,9 +316,12 @@
 		<value>Channels</value>
 	</variable>
 	<variable name="EmbyWidget6Label">
+		<value condition="Stringcompare(Skin.String(widget6),RecommendedEpisodes)">$LOCALIZE[31793]</value>
+		<value condition="Stringcompare(Skin.String(widget6),RandomEpisodes)">$LOCALIZE[31126]</value>
+		<value condition="Stringcompare(Skin.String(widget6),RecentEpisodes)">$LOCALIZE[31125]</value>
 		<value condition="Stringcompare(Skin.String(widget6),RandomMovies)">$LOCALIZE[31127]</value>
 		<value condition="Stringcompare(Skin.String(widget6),RecentMovies)">$LOCALIZE[31124]</value>
-		<value condition="Stringcompare(Skin.String(widget6),RecommendedMovies)">Recommended Movies</value>
+		<value condition="Stringcompare(Skin.String(widget6),RecommendedMovies)">$LOCALIZE[31794]</value>
 		<value condition="Stringcompare(Skin.String(widget6),SimilarMovies)">$LOCALIZE[31782]$INFO[Container(3012).ListItem.Property(originaltitle), ","]</value>
 		<value condition="Stringcompare(Skin.String(widget6),TrendingMovies)">$LOCALIZE[31134]</value>
 		<value condition="Stringcompare(Skin.String(widget6),InCinemas)">$LOCALIZE[31208]</value>
@@ -311,6 +332,9 @@
 		<value condition="Stringcompare(Skin.String(widget6),TopRatedTvShows)">$LOCALIZE[31227]</value>
 		<value condition="Stringcompare(Skin.String(widget6),OnAirTvShows)">$LOCALIZE[31228]</value>
 		<value condition="Stringcompare(Skin.String(widget6),AiringTodayTvShows)">$LOCALIZE[31229]</value>
+		<value condition="Stringcompare(Skin.String(widget6),TrendingShows)">$LOCALIZE[31135]</value>
+		<value condition="Stringcompare(Skin.String(widget6),AiringShows)">$LOCALIZE[31136]</value>
+		<value condition="Stringcompare(Skin.String(widget6),PremiereShows)">$LOCALIZE[31137]</value>
 		<value condition="Stringcompare(Skin.String(widget6),RecommendedShows)">$LOCALIZE[31784]</value>
 		<value condition="Stringcompare(Skin.String(widget6),Custom1)">Custom 1</value>
 		<value condition="Stringcompare(Skin.String(widget6),Custom2)">Custom 2</value>
@@ -340,12 +364,15 @@
 		<value condition="Stringcompare(Skin.String(widget6),embynode2inprogress)">$INFO[Window(Home).Property(emby.nodes.2.inprogress.title)]</value>
 		<value condition="Stringcompare(Skin.String(widget6),embynode2inprogressepisodes)">$INFO[Window(Home).Property(emby.nodes.2.inprogressepisodes.title)]</value>
 		<value condition="Stringcompare(Skin.String(widget6),embynode2nextepisodes)">$INFO[Window(Home).Property(emby.nodes.2.nextepisodes.title)]</value>
-		<value>$LOCALIZE[31134]</value>
+		<value>$LOCALIZE[31124]</value>
 	</variable>
 	<variable name="EmbyWidget7Label">
+		<value condition="Stringcompare(Skin.String(widget7),RecommendedEpisodes)">$LOCALIZE[31793]</value>
+		<value condition="Stringcompare(Skin.String(widget7),RandomEpisodes)">$LOCALIZE[31126]</value>
+		<value condition="Stringcompare(Skin.String(widget7),RecentEpisodes)">$LOCALIZE[31125]</value>
 		<value condition="Stringcompare(Skin.String(widget7),RandomMovies)">$LOCALIZE[31127]</value>
 		<value condition="Stringcompare(Skin.String(widget7),RecentMovies)">$LOCALIZE[31124]</value>
-		<value condition="Stringcompare(Skin.String(widget7),RecommendedMovies)">Recommended Movies</value>
+		<value condition="Stringcompare(Skin.String(widget7),RecommendedMovies)">$LOCALIZE[31794]</value>
 		<value condition="Stringcompare(Skin.String(widget7),SimilarMovies)">$LOCALIZE[31782]$INFO[Container(3016).ListItem.Property(originaltitle), ","]</value>
 		<value condition="Stringcompare(Skin.String(widget7),TrendingMovies)">$LOCALIZE[31134]</value>
 		<value condition="Stringcompare(Skin.String(widget7),InCinemas)">$LOCALIZE[31208]</value>
@@ -356,6 +383,9 @@
 		<value condition="Stringcompare(Skin.String(widget7),TopRatedTvShows)">$LOCALIZE[31227]</value>
 		<value condition="Stringcompare(Skin.String(widget7),OnAirTvShows)">$LOCALIZE[31228]</value>
 		<value condition="Stringcompare(Skin.String(widget7),AiringTodayTvShows)">$LOCALIZE[31229]</value>
+		<value condition="Stringcompare(Skin.String(widget7),TrendingShows)">$LOCALIZE[31135]</value>
+		<value condition="Stringcompare(Skin.String(widget7),AiringShows)">$LOCALIZE[31136]</value>
+		<value condition="Stringcompare(Skin.String(widget7),PremiereShows)">$LOCALIZE[31137]</value>
 		<value condition="Stringcompare(Skin.String(widget7),RecommendedShows)">$LOCALIZE[31784]</value>
 		<value condition="Stringcompare(Skin.String(widget7),Custom1)">Custom 1</value>
 		<value condition="Stringcompare(Skin.String(widget7),Custom2)">Custom 2</value>
@@ -385,12 +415,15 @@
 		<value condition="Stringcompare(Skin.String(widget7),embynode2inprogress)">$INFO[Window(Home).Property(emby.nodes.2.inprogress.title)]</value>
 		<value condition="Stringcompare(Skin.String(widget7),embynode2inprogressepisodes)">$INFO[Window(Home).Property(emby.nodes.2.inprogressepisodes.title)]</value>
 		<value condition="Stringcompare(Skin.String(widget7),embynode2nextepisodes)">$INFO[Window(Home).Property(emby.nodes.2.nextepisodes.title)]</value>
-		<value>$LOCALIZE[31134]</value>
+		<value>$LOCALIZE[31794]</value>
 	</variable>
 	<variable name="EmbyWidget8Label">
+		<value condition="Stringcompare(Skin.String(widget8),RecommendedEpisodes)">$LOCALIZE[31793]</value>
+		<value condition="Stringcompare(Skin.String(widget8),RandomEpisodes)">$LOCALIZE[31126]</value>
+		<value condition="Stringcompare(Skin.String(widget8),RecentEpisodes)">$LOCALIZE[31125]</value>
 		<value condition="Stringcompare(Skin.String(widget8),RandomMovies)">$LOCALIZE[31127]</value>
 		<value condition="Stringcompare(Skin.String(widget8),RecentMovies)">$LOCALIZE[31124]</value>
-		<value condition="Stringcompare(Skin.String(widget8),RecommendedMovies)">Recommended Movies</value>
+		<value condition="Stringcompare(Skin.String(widget8),RecommendedMovies)">$LOCALIZE[31794]</value>
 		<value condition="Stringcompare(Skin.String(widget8),SimilarMovies)">$LOCALIZE[31782]$INFO[Container(3017).ListItem.Property(originaltitle), ","]</value>
 		<value condition="Stringcompare(Skin.String(widget8),TrendingMovies)">$LOCALIZE[31134]</value>
 		<value condition="Stringcompare(Skin.String(widget8),InCinemas)">$LOCALIZE[31208]</value>
@@ -401,6 +434,9 @@
 		<value condition="Stringcompare(Skin.String(widget8),TopRatedTvShows)">$LOCALIZE[31227]</value>
 		<value condition="Stringcompare(Skin.String(widget8),OnAirTvShows)">$LOCALIZE[31228]</value>
 		<value condition="Stringcompare(Skin.String(widget8),AiringTodayTvShows)">$LOCALIZE[31229]</value>
+		<value condition="Stringcompare(Skin.String(widget8),TrendingShows)">$LOCALIZE[31135]</value>
+		<value condition="Stringcompare(Skin.String(widget8),AiringShows)">$LOCALIZE[31136]</value>
+		<value condition="Stringcompare(Skin.String(widget8),PremiereShows)">$LOCALIZE[31137]</value>
 		<value condition="Stringcompare(Skin.String(widget8),RecommendedShows)">$LOCALIZE[31784]</value>
 		<value condition="Stringcompare(Skin.String(widget8),Custom1)">Custom 1</value>
 		<value condition="Stringcompare(Skin.String(widget8),Custom2)">Custom 2</value>
@@ -430,15 +466,15 @@
 		<value condition="Stringcompare(Skin.String(widget8),embynode2inprogress)">$INFO[Window(Home).Property(emby.nodes.2.inprogress.title)]</value>
 		<value condition="Stringcompare(Skin.String(widget8),embynode2inprogressepisodes)">$INFO[Window(Home).Property(emby.nodes.2.inprogressepisodes.title)]</value>
 		<value condition="Stringcompare(Skin.String(widget8),embynode2nextepisodes)">$INFO[Window(Home).Property(emby.nodes.2.nextepisodes.title)]</value>
-		<value>$LOCALIZE[31134]</value>
+		<value>$LOCALIZE[31127]</value>
 	</variable>
 	<variable name="EmbyWidget9Label">
-		<value condition="Stringcompare(Skin.String(widget9),RecommendedEpisodes)">Next Up</value>
+		<value condition="Stringcompare(Skin.String(widget9),RecommendedEpisodes)">$LOCALIZE[31793]</value>
 		<value condition="Stringcompare(Skin.String(widget9),RandomEpisodes)">$LOCALIZE[31126]</value>
 		<value condition="Stringcompare(Skin.String(widget9),RecentEpisodes)">$LOCALIZE[31125]</value>
 		<value condition="Stringcompare(Skin.String(widget9),RandomMovies)">$LOCALIZE[31127]</value>
 		<value condition="Stringcompare(Skin.String(widget9),RecentMovies)">$LOCALIZE[31124]</value>
-		<value condition="Stringcompare(Skin.String(widget9),RecommendedMovies)">Recommended Movies</value>
+		<value condition="Stringcompare(Skin.String(widget9),RecommendedMovies)">$LOCALIZE[31794]</value>
 		<value condition="Stringcompare(Skin.String(widget9),SimilarMovies)">$LOCALIZE[31782]$INFO[Container(4012).ListItem.Property(originaltitle), ","]</value>
 		<value condition="Stringcompare(Skin.String(widget9),TrendingMovies)">$LOCALIZE[31134]</value>
 		<value condition="Stringcompare(Skin.String(widget9),InCinemas)">$LOCALIZE[31208]</value>
@@ -449,6 +485,9 @@
 		<value condition="Stringcompare(Skin.String(widget9),TopRatedTvShows)">$LOCALIZE[31227]</value>
 		<value condition="Stringcompare(Skin.String(widget9),OnAirTvShows)">$LOCALIZE[31228]</value>
 		<value condition="Stringcompare(Skin.String(widget9),AiringTodayTvShows)">$LOCALIZE[31229]</value>
+		<value condition="Stringcompare(Skin.String(widget9),TrendingShows)">$LOCALIZE[31135]</value>
+		<value condition="Stringcompare(Skin.String(widget9),AiringShows)">$LOCALIZE[31136]</value>
+		<value condition="Stringcompare(Skin.String(widget9),PremiereShows)">$LOCALIZE[31137]</value>
 		<value condition="Stringcompare(Skin.String(widget9),RecommendedShows)">$LOCALIZE[31784]</value>
 		<value condition="Stringcompare(Skin.String(widget9),Custom1)">Custom 1</value>
 		<value condition="Stringcompare(Skin.String(widget9),Custom2)">Custom 2</value>
@@ -478,15 +517,15 @@
 		<value condition="Stringcompare(Skin.String(widget9),embynode2inprogress)">$INFO[Window(Home).Property(emby.nodes.2.inprogress.title)]</value>
 		<value condition="Stringcompare(Skin.String(widget9),embynode2inprogressepisodes)">$INFO[Window(Home).Property(emby.nodes.2.inprogressepisodes.title)]</value>
 		<value condition="Stringcompare(Skin.String(widget9),embynode2nextepisodes)">$INFO[Window(Home).Property(emby.nodes.2.nextepisodes.title)]</value>
-		<value>$LOCALIZE[31134]</value>
+		<value>$LOCALIZE[31125]</value>
 	</variable>
 	<variable name="EmbyWidget10Label">
-		<value condition="Stringcompare(Skin.String(widget10),RecommendedEpisodes)">Next Up</value>
+		<value condition="Stringcompare(Skin.String(widget10),RecommendedEpisodes)">$LOCALIZE[31793]</value>
 		<value condition="Stringcompare(Skin.String(widget10),RandomEpisodes)">$LOCALIZE[31126]</value>
 		<value condition="Stringcompare(Skin.String(widget10),RecentEpisodes)">$LOCALIZE[31125]</value>
 		<value condition="Stringcompare(Skin.String(widget10),RandomMovies)">$LOCALIZE[31127]</value>
 		<value condition="Stringcompare(Skin.String(widget10),RecentMovies)">$LOCALIZE[31124]</value>
-		<value condition="Stringcompare(Skin.String(widget10),RecommendedMovies)">Recommended Movies</value>
+		<value condition="Stringcompare(Skin.String(widget10),RecommendedMovies)">$LOCALIZE[31794]</value>
 		<value condition="Stringcompare(Skin.String(widget10),SimilarMovies)">$LOCALIZE[31782]$INFO[Container(4016).ListItem.Property(originaltitle), ","]</value>
 		<value condition="Stringcompare(Skin.String(widget10),TrendingMovies)">$LOCALIZE[31134]</value>
 		<value condition="Stringcompare(Skin.String(widget10),InCinemas)">$LOCALIZE[31208]</value>
@@ -497,6 +536,9 @@
 		<value condition="Stringcompare(Skin.String(widget10),TopRatedTvShows)">$LOCALIZE[31227]</value>
 		<value condition="Stringcompare(Skin.String(widget10),OnAirTvShows)">$LOCALIZE[31228]</value>
 		<value condition="Stringcompare(Skin.String(widget10),AiringTodayTvShows)">$LOCALIZE[31229]</value>
+		<value condition="Stringcompare(Skin.String(widget10),TrendingShows)">$LOCALIZE[31135]</value>
+		<value condition="Stringcompare(Skin.String(widget10),AiringShows)">$LOCALIZE[31136]</value>
+		<value condition="Stringcompare(Skin.String(widget10),PremiereShows)">$LOCALIZE[31137]</value>
 		<value condition="Stringcompare(Skin.String(widget10),RecommendedShows)">$LOCALIZE[31784]</value>
 		<value condition="Stringcompare(Skin.String(widget10),Custom1)">Custom 1</value>
 		<value condition="Stringcompare(Skin.String(widget10),Custom2)">Custom 2</value>
@@ -526,15 +568,15 @@
 		<value condition="Stringcompare(Skin.String(widget10),embynode2inprogress)">$INFO[Window(Home).Property(emby.nodes.2.inprogress.title)]</value>
 		<value condition="Stringcompare(Skin.String(widget10),embynode2inprogressepisodes)">$INFO[Window(Home).Property(emby.nodes.2.inprogressepisodes.title)]</value>
 		<value condition="Stringcompare(Skin.String(widget10),embynode2nextepisodes)">$INFO[Window(Home).Property(emby.nodes.2.nextepisodes.title)]</value>
-		<value>$LOCALIZE[31134]</value>
+		<value>$LOCALIZE[31793]</value>
 	</variable>
 	<variable name="EmbyWidget11Label">
-		<value condition="Stringcompare(Skin.String(widget11),RecommendedEpisodes)">Next Up</value>
+		<value condition="Stringcompare(Skin.String(widget11),RecommendedEpisodes)">$LOCALIZE[31793]</value>
 		<value condition="Stringcompare(Skin.String(widget11),RandomEpisodes)">$LOCALIZE[31126]</value>
 		<value condition="Stringcompare(Skin.String(widget11),RecentEpisodes)">$LOCALIZE[31125]</value>
 		<value condition="Stringcompare(Skin.String(widget11),RandomMovies)">$LOCALIZE[31127]</value>
 		<value condition="Stringcompare(Skin.String(widget11),RecentMovies)">$LOCALIZE[31124]</value>
-		<value condition="Stringcompare(Skin.String(widget11),RecommendedMovies)">Recommended Movies</value>
+		<value condition="Stringcompare(Skin.String(widget11),RecommendedMovies)">$LOCALIZE[31794]</value>
 		<value condition="Stringcompare(Skin.String(widget11),SimilarMovies)">$LOCALIZE[31782]$INFO[Container(4017).ListItem.Property(originaltitle), ","]</value>
 		<value condition="Stringcompare(Skin.String(widget11),TrendingMovies)">$LOCALIZE[31134]</value>
 		<value condition="Stringcompare(Skin.String(widget11),InCinemas)">$LOCALIZE[31208]</value>
@@ -545,6 +587,9 @@
 		<value condition="Stringcompare(Skin.String(widget11),TopRatedTvShows)">$LOCALIZE[31227]</value>
 		<value condition="Stringcompare(Skin.String(widget11),OnAirTvShows)">$LOCALIZE[31228]</value>
 		<value condition="Stringcompare(Skin.String(widget11),AiringTodayTvShows)">$LOCALIZE[31229]</value>
+		<value condition="Stringcompare(Skin.String(widget11),TrendingShows)">$LOCALIZE[31135]</value>
+		<value condition="Stringcompare(Skin.String(widget11),AiringShows)">$LOCALIZE[31136]</value>
+		<value condition="Stringcompare(Skin.String(widget11),PremiereShows)">$LOCALIZE[31137]</value>
 		<value condition="Stringcompare(Skin.String(widget11),RecommendedShows)">$LOCALIZE[31784]</value>
 		<value condition="Stringcompare(Skin.String(widget11),Custom1)">Custom 1</value>
 		<value condition="Stringcompare(Skin.String(widget11),Custom2)">Custom 2</value>
@@ -574,16 +619,16 @@
 		<value condition="Stringcompare(Skin.String(widget11),embynode2inprogress)">$INFO[Window(Home).Property(emby.nodes.2.inprogress.title)]</value>
 		<value condition="Stringcompare(Skin.String(widget11),embynode2inprogressepisodes)">$INFO[Window(Home).Property(emby.nodes.2.inprogressepisodes.title)]</value>
 		<value condition="Stringcompare(Skin.String(widget11),embynode2nextepisodes)">$INFO[Window(Home).Property(emby.nodes.2.nextepisodes.title)]</value>
-		<value>$LOCALIZE[31134]</value>
+		<value>$LOCALIZE[31126]</value>
 	</variable>
 	<variable name="EmbyWidget12Label">
 		<value condition="Stringcompare(Skin.String(widget12),RandomMusic)">$LOCALIZE[31187]</value>
 		<value condition="Stringcompare(Skin.String(widget12),RecentMusic)">$LOCALIZE[31188]</value>
 		<value condition="Stringcompare(Skin.String(widget12),RecommendedMusic)">$LOCALIZE[31189]</value>
-		<value condition="Stringcompare(Skin.String(widget12),RecentPlayedMusic)">Recently Played Albums</value>
-		<value condition="Stringcompare(Skin.String(widget12),Top100Music)">Top 100 Albums</value>
-		<value condition="Stringcompare(Skin.String(widget12),PopularArtists)">Popular Artists</value>
-		<value condition="Stringcompare(Skin.String(widget12),HypedArtists)">Hyped Artists</value>
+		<value condition="Stringcompare(Skin.String(widget12),RecentPlayedMusic)">$LOCALIZE[31795]</value>
+		<value condition="Stringcompare(Skin.String(widget12),Top100Music)">$LOCALIZE[31796]</value>
+		<value condition="Stringcompare(Skin.String(widget12),PopularArtists)">$LOCALIZE[31797]</value>
+		<value condition="Stringcompare(Skin.String(widget12),HypedArtists)">$LOCALIZE[31798]</value>
 		<value condition="Stringcompare(Skin.String(widget12),Custom1)">Custom 1</value>
 		<value condition="Stringcompare(Skin.String(widget12),Custom2)">Custom 2</value>
 		<value condition="Stringcompare(Skin.String(widget12),Custom3)">Custom 3</value>
@@ -600,10 +645,10 @@
 		<value condition="Stringcompare(Skin.String(widget13),RandomMusic)">$LOCALIZE[31187]</value>
 		<value condition="Stringcompare(Skin.String(widget13),RecentMusic)">$LOCALIZE[31188]</value>
 		<value condition="Stringcompare(Skin.String(widget13),RecommendedMusic)">$LOCALIZE[31189]</value>
-		<value condition="Stringcompare(Skin.String(widget13),RecentPlayedMusic)">Recently Played Albums</value>
-		<value condition="Stringcompare(Skin.String(widget13),Top100Music)">Top 100 Albums</value>
-		<value condition="Stringcompare(Skin.String(widget13),PopularArtists)">Popular Artists</value>
-		<value condition="Stringcompare(Skin.String(widget13),HypedArtists)">Hyped Artists</value>
+		<value condition="Stringcompare(Skin.String(widget13),RecentPlayedMusic)">$LOCALIZE[31795]</value>
+		<value condition="Stringcompare(Skin.String(widget13),Top100Music)">$LOCALIZE[31796]</value>
+		<value condition="Stringcompare(Skin.String(widget13),PopularArtists)">$LOCALIZE[31797]</value>
+		<value condition="Stringcompare(Skin.String(widget13),HypedArtists)">$LOCALIZE[31798]</value>
 		<value condition="Stringcompare(Skin.String(widget13),Custom1)">Custom 1</value>
 		<value condition="Stringcompare(Skin.String(widget13),Custom2)">Custom 2</value>
 		<value condition="Stringcompare(Skin.String(widget13),Custom3)">Custom 3</value>
@@ -614,16 +659,16 @@
 		<value condition="Stringcompare(Skin.String(widget13),Custom8)">Custom 8</value>
 		<value condition="Stringcompare(Skin.String(widget13),Custom9)">Custom 9</value>
 		<value condition="Stringcompare(Skin.String(widget13),Custom10)">Custom 10</value>
-		<value>$LOCALIZE[31187]</value>
+		<value>$LOCALIZE[31795]</value>
 	</variable>
 	<variable name="EmbyWidget14Label">
 		<value condition="Stringcompare(Skin.String(widget14),RandomMusic)">$LOCALIZE[31187]</value>
 		<value condition="Stringcompare(Skin.String(widget14),RecentMusic)">$LOCALIZE[31188]</value>
 		<value condition="Stringcompare(Skin.String(widget14),RecommendedMusic)">$LOCALIZE[31189]</value>
-		<value condition="Stringcompare(Skin.String(widget14),RecentPlayedMusic)">Recently Played Albums</value>
-		<value condition="Stringcompare(Skin.String(widget14),Top100Music)">Top 100 Albums</value>
-		<value condition="Stringcompare(Skin.String(widget14),PopularArtists)">Popular Artists</value>
-		<value condition="Stringcompare(Skin.String(widget14),HypedArtists)">Hyped Artists</value>
+		<value condition="Stringcompare(Skin.String(widget14),RecentPlayedMusic)">$LOCALIZE[31795]</value>
+		<value condition="Stringcompare(Skin.String(widget14),Top100Music)">$LOCALIZE[31796]</value>
+		<value condition="Stringcompare(Skin.String(widget14),PopularArtists)">$LOCALIZE[31797]</value>
+		<value condition="Stringcompare(Skin.String(widget14),HypedArtists)">$LOCALIZE[31798]</value>
 		<value condition="Stringcompare(Skin.String(widget14),Custom1)">Custom 1</value>
 		<value condition="Stringcompare(Skin.String(widget14),Custom2)">Custom 2</value>
 		<value condition="Stringcompare(Skin.String(widget14),Custom3)">Custom 3</value>
@@ -634,12 +679,15 @@
 		<value condition="Stringcompare(Skin.String(widget14),Custom8)">Custom 8</value>
 		<value condition="Stringcompare(Skin.String(widget14),Custom9)">Custom 9</value>
 		<value condition="Stringcompare(Skin.String(widget14),Custom10)">Custom 10</value>
-		<value>$LOCALIZE[31187]</value>
+		<value>$LOCALIZE[31189]</value>
 	</variable>
 	<variable name="EmbyWidget15Label">
+		<value condition="Stringcompare(Skin.String(widget15),RecommendedEpisodes)">$LOCALIZE[31793]</value>
+		<value condition="Stringcompare(Skin.String(widget15),RandomEpisodes)">$LOCALIZE[31126]</value>
+		<value condition="Stringcompare(Skin.String(widget15),RecentEpisodes)">$LOCALIZE[31125]</value>
 		<value condition="Stringcompare(Skin.String(widget15),RandomMovies)">$LOCALIZE[31127]</value>
 		<value condition="Stringcompare(Skin.String(widget15),RecentMovies)">$LOCALIZE[31124]</value>
-		<value condition="Stringcompare(Skin.String(widget15),RecommendedMovies)">Recommended Movies</value>
+		<value condition="Stringcompare(Skin.String(widget15),RecommendedMovies)">$LOCALIZE[31794]</value>
 		<value condition="Stringcompare(Skin.String(widget15),SimilarMovies)">$LOCALIZE[31782]$INFO[Container(9017).ListItem.Property(originaltitle), ","]</value>
 		<value condition="Stringcompare(Skin.String(widget15),TrendingMovies)">$LOCALIZE[31134]</value>
 		<value condition="Stringcompare(Skin.String(widget15),InCinemas)">$LOCALIZE[31208]</value>
@@ -650,6 +698,9 @@
 		<value condition="Stringcompare(Skin.String(widget15),TopRatedTvShows)">$LOCALIZE[31227]</value>
 		<value condition="Stringcompare(Skin.String(widget15),OnAirTvShows)">$LOCALIZE[31228]</value>
 		<value condition="Stringcompare(Skin.String(widget15),AiringTodayTvShows)">$LOCALIZE[31229]</value>
+		<value condition="Stringcompare(Skin.String(widget15),TrendingShows)">$LOCALIZE[31135]</value>
+		<value condition="Stringcompare(Skin.String(widget15),AiringShows)">$LOCALIZE[31136]</value>
+		<value condition="Stringcompare(Skin.String(widget15),PremiereShows)">$LOCALIZE[31137]</value>
 		<value condition="Stringcompare(Skin.String(widget15),RecommendedShows)">$LOCALIZE[31784]</value>
 		<value condition="Stringcompare(Skin.String(widget15),Custom1)">Custom 1</value>
 		<value condition="Stringcompare(Skin.String(widget15),Custom2)">Custom 2</value>
@@ -679,12 +730,15 @@
 		<value condition="Stringcompare(Skin.String(widget15),embynode2inprogress)">$INFO[Window(Home).Property(emby.nodes.2.inprogress.title)]</value>
 		<value condition="Stringcompare(Skin.String(widget15),embynode2inprogressepisodes)">$INFO[Window(Home).Property(emby.nodes.2.inprogressepisodes.title)]</value>
 		<value condition="Stringcompare(Skin.String(widget15),embynode2nextepisodes)">$INFO[Window(Home).Property(emby.nodes.2.nextepisodes.title)]</value>
-		<value>$LOCALIZE[31134]</value>
+		<value>$LOCALIZE[31225]</value>
 	</variable>
 	<variable name="EmbyWidget16Label">
+		<value condition="Stringcompare(Skin.String(widget16),RecommendedEpisodes)">$LOCALIZE[31793]</value>
+		<value condition="Stringcompare(Skin.String(widget16),RandomEpisodes)">$LOCALIZE[31126]</value>
+		<value condition="Stringcompare(Skin.String(widget16),RecentEpisodes)">$LOCALIZE[31125]</value>
 		<value condition="Stringcompare(Skin.String(widget16),RandomMovies)">$LOCALIZE[31127]</value>
 		<value condition="Stringcompare(Skin.String(widget16),RecentMovies)">$LOCALIZE[31124]</value>
-		<value condition="Stringcompare(Skin.String(widget16),RecommendedMovies)">Recommended Movies</value>
+		<value condition="Stringcompare(Skin.String(widget16),RecommendedMovies)">$LOCALIZE[31794]</value>
 		<value condition="Stringcompare(Skin.String(widget16),SimilarMovies)">$LOCALIZE[31782]$INFO[Container(10017).ListItem.Property(originaltitle), ","]</value>
 		<value condition="Stringcompare(Skin.String(widget16),TrendingMovies)">$LOCALIZE[31134]</value>
 		<value condition="Stringcompare(Skin.String(widget16),InCinemas)">$LOCALIZE[31208]</value>
@@ -695,6 +749,9 @@
 		<value condition="Stringcompare(Skin.String(widget16),TopRatedTvShows)">$LOCALIZE[31227]</value>
 		<value condition="Stringcompare(Skin.String(widget16),OnAirTvShows)">$LOCALIZE[31228]</value>
 		<value condition="Stringcompare(Skin.String(widget16),AiringTodayTvShows)">$LOCALIZE[31229]</value>
+		<value condition="Stringcompare(Skin.String(widget16),TrendingShows)">$LOCALIZE[31135]</value>
+		<value condition="Stringcompare(Skin.String(widget16),AiringShows)">$LOCALIZE[31136]</value>
+		<value condition="Stringcompare(Skin.String(widget16),PremiereShows)">$LOCALIZE[31137]</value>
 		<value condition="Stringcompare(Skin.String(widget16),RecommendedShows)">$LOCALIZE[31784]</value>
 		<value condition="Stringcompare(Skin.String(widget16),Custom1)">Custom 1</value>
 		<value condition="Stringcompare(Skin.String(widget16),Custom2)">Custom 2</value>
@@ -724,16 +781,16 @@
 		<value condition="Stringcompare(Skin.String(widget16),embynode2inprogress)">$INFO[Window(Home).Property(emby.nodes.2.inprogress.title)]</value>
 		<value condition="Stringcompare(Skin.String(widget16),embynode2inprogressepisodes)">$INFO[Window(Home).Property(emby.nodes.2.inprogressepisodes.title)]</value>
 		<value condition="Stringcompare(Skin.String(widget16),embynode2nextepisodes)">$INFO[Window(Home).Property(emby.nodes.2.nextepisodes.title)]</value>
-		<value>$LOCALIZE[31134]</value>
+		<value>$LOCALIZE[31782]</value>
 	</variable>
 	<variable name="EmbyWidget17Label">
 		<value condition="Stringcompare(Skin.String(widget17),RandomMusic)">$LOCALIZE[31187]</value>
 		<value condition="Stringcompare(Skin.String(widget17),RecentMusic)">$LOCALIZE[31188]</value>
 		<value condition="Stringcompare(Skin.String(widget17),RecommendedMusic)">$LOCALIZE[31189]</value>
-		<value condition="Stringcompare(Skin.String(widget17),RecentPlayedMusic)">Recently Played Albums</value>
-		<value condition="Stringcompare(Skin.String(widget17),Top100Music)">Top 100 Albums</value>
-		<value condition="Stringcompare(Skin.String(widget17),PopularArtists)">Popular Artists</value>
-		<value condition="Stringcompare(Skin.String(widget17),HypedArtists)">Hyped Artists</value>
+		<value condition="Stringcompare(Skin.String(widget17),RecentPlayedMusic)">$LOCALIZE[31795]</value>
+		<value condition="Stringcompare(Skin.String(widget17),Top100Music)">$LOCALIZE[31796]</value>
+		<value condition="Stringcompare(Skin.String(widget17),PopularArtists)">$LOCALIZE[31797]</value>
+		<value condition="Stringcompare(Skin.String(widget17),HypedArtists)">$LOCALIZE[31798]</value>
 		<value condition="Stringcompare(Skin.String(widget17),Custom1)">Custom 1</value>
 		<value condition="Stringcompare(Skin.String(widget17),Custom2)">Custom 2</value>
 		<value condition="Stringcompare(Skin.String(widget17),Custom3)">Custom 3</value>
@@ -747,12 +804,12 @@
 		<value>$LOCALIZE[31187]</value>
 	</variable>
 	<variable name="EmbyWidget18Label">
-		<value condition="Stringcompare(Skin.String(widget18),RecommendedEpisodes)">Next Up</value>
+		<value condition="Stringcompare(Skin.String(widget18),RecommendedEpisodes)">$LOCALIZE[31793]</value>
 		<value condition="Stringcompare(Skin.String(widget18),RandomEpisodes)">$LOCALIZE[31126]</value>
 		<value condition="Stringcompare(Skin.String(widget18),RecentEpisodes)">$LOCALIZE[31125]</value>
 		<value condition="Stringcompare(Skin.String(widget18),RandomMovies)">$LOCALIZE[31127]</value>
 		<value condition="Stringcompare(Skin.String(widget18),RecentMovies)">$LOCALIZE[31124]</value>
-		<value condition="Stringcompare(Skin.String(widget18),RecommendedMovies)">Recommended Movies</value>
+		<value condition="Stringcompare(Skin.String(widget18),RecommendedMovies)">$LOCALIZE[31794]</value>
 		<value condition="Stringcompare(Skin.String(widget18),SimilarMovies)">$LOCALIZE[31782]$INFO[Container(14017).ListItem.Property(originaltitle), ","]</value>
 		<value condition="Stringcompare(Skin.String(widget18),TrendingMovies)">$LOCALIZE[31134]</value>
 		<value condition="Stringcompare(Skin.String(widget18),InCinemas)">$LOCALIZE[31208]</value>
@@ -763,6 +820,9 @@
 		<value condition="Stringcompare(Skin.String(widget18),TopRatedTvShows)">$LOCALIZE[31227]</value>
 		<value condition="Stringcompare(Skin.String(widget18),OnAirTvShows)">$LOCALIZE[31228]</value>
 		<value condition="Stringcompare(Skin.String(widget18),AiringTodayTvShows)">$LOCALIZE[31229]</value>
+		<value condition="Stringcompare(Skin.String(widget18),TrendingShows)">$LOCALIZE[31135]</value>
+		<value condition="Stringcompare(Skin.String(widget18),AiringShows)">$LOCALIZE[31136]</value>
+		<value condition="Stringcompare(Skin.String(widget18),PremiereShows)">$LOCALIZE[31137]</value>
 		<value condition="Stringcompare(Skin.String(widget18),RecommendedShows)">$LOCALIZE[31784]</value>
 		<value condition="Stringcompare(Skin.String(widget18),Custom1)">Custom 1</value>
 		<value condition="Stringcompare(Skin.String(widget18),Custom2)">Custom 2</value>
@@ -792,7 +852,7 @@
 		<value condition="Stringcompare(Skin.String(widget18),embynode2inprogress)">$INFO[Window(Home).Property(emby.nodes.2.inprogress.title)]</value>
 		<value condition="Stringcompare(Skin.String(widget18),embynode2inprogressepisodes)">$INFO[Window(Home).Property(emby.nodes.2.inprogressepisodes.title)]</value>
 		<value condition="Stringcompare(Skin.String(widget18),embynode2nextepisodes)">$INFO[Window(Home).Property(emby.nodes.2.nextepisodes.title)]</value>
-		<value>$LOCALIZE[31134]</value>
+		<value>$LOCALIZE[31226]</value>
 	</variable>
 	<variable name="WidgetTitleHome">
 		<value condition="StringCompare(Skin.String(widget.helper),videos1)">Videos Hub 1</value>
