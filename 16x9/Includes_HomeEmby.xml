@@ -3718,11 +3718,10 @@
 					</control>
 				</itemlayout>
 				<focusedlayout width="235" height="235">
-					<!-- silent broken in jarvis :/
-					<control type="button" id="50171">
-						<onfocus>CancelAlarm(musicScroll,silent)</onfocus>
+					<control type="button" id="50172">
+						<onfocus>CancelAlarm(musicScroll,true)</onfocus>
 						<onunfocus>AlarmClock(musicScroll,Control.Move(5017,6),00:10,silent,loop)</onunfocus>
-					</control> -->
+					</control>
 					<control type="image">
 						<aspectratio>stretch</aspectratio>
 						<top>0</top>
@@ -4268,7 +4267,6 @@
 				<onright>7016</onright>
 				<preloaditems>2</preloaditems>
 				<orientation>vertical</orientation>
-				<autoscroll time="3000">!Control.HasFocus(7016)</autoscroll>
 				<scrolltime tween="quadratic">100</scrolltime>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
@@ -4288,8 +4286,32 @@
 						<aspectratio scalediffuse="false">scale</aspectratio>
 						<texture diffuse="diffuse/pvrinfo.png" background="true" fallback="DefaultMovies.png">$VAR[LandscapeImage]</texture>
 					</control>
+					<control type="image">
+						<description>Title overlay</description>
+						<left>10</left>
+						<height>30</height>
+						<right>10</right>
+						<bottom>10</bottom>
+						<texture border="15" colordiffuse="af000000">common/white.png</texture>
+					</control>
+					<control type="label">
+						<bottom>10</bottom>
+						<left>12</left>
+						<right>12</right>
+						<aligny>center</aligny>
+						<align>center</align>
+						<height>30</height>
+						<font>MiniBold</font>
+						<textcolor>Dark1</textcolor>
+						<selectedcolor>Dark1</selectedcolor>
+						<label>$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]</label>
+					</control>
 				</itemlayout>
 				<focusedlayout height="235" width="418">
+					<control type="button" id="50171">
+						<onfocus>CancelAlarm(livetvscroll,true)</onfocus>
+						<onunfocus>AlarmClock(livetvscroll,Control.Move(7016,6),00:04,silent,loop)</onunfocus>
+					</control>
 					<control type="image">
 						<left>0</left>
 						<top>0</top>
@@ -4315,14 +4337,14 @@
 						<visible>Control.HasFocus(7016)</visible>
 					</control>
 					<control type="textbox">
-						<left>12</left>
+						<left>14</left>
 						<top>10</top>
 						<right>12</right>
 						<bottom>10</bottom>
 						<align>left</align>
-						<font>Mini</font>
-						<textcolor>PanelWhite70</textcolor>
-						<selectedcolor>PanelWhite70</selectedcolor>
+						<font>NetflixSmall</font>
+						<textcolor>Dark2</textcolor>
+						<selectedcolor>Dark2</selectedcolor>
 						<label>$INFO[ListItem.StartTime]$INFO[ListItem.EndTime, - , ]$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Title,[B],[/B]]$INFO[ListItem.EpisodeName, (,)]$INFO[ListItem.ChannelNumberLabel,[CR],. ]$INFO[ListItem.ChannelName]$INFO[ListItem.Plot,[CR],]</label>
 						<visible>Control.HasFocus(7016)</visible>
 					</control>

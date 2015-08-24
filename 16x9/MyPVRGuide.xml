@@ -44,10 +44,9 @@
 						<bottom>10</bottom>
 						<width>280</width>
 						<height>280</height>
-						<align>right</align>
-						<aligny>center</aligny>
 						<imagepath>plugin://script.skin.helper.service/?action=getthumb&amp;path=$INFO[ListItem.Title] $INFO[ListItem.ChannelName]</imagepath>
 						<aspectratio>keep</aspectratio>
+						<aspectratio align="right" aligny="center" scalediffuse="false">scale</aspectratio>
 						<visible>!Player.HasVideo + !IsEmpty(ListItem.Title)</visible>
 					</control>
 					<control type="image">
