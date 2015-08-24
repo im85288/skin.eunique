@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window type="dialog" id="1112">
+	<defaultcontrol always="false">2612</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<include>GlobalOverlay</include>
+		<control type="group">
+			<centerleft>50%</centerleft>
+			<posy>310</posy>
+			<width>900</width>
+			<include>Animation.FadeIn.Slide</include>
+			<control type="image">
+				<posx>-30</posx>
+				<posy>-30</posy>
+				<width>960</width>
+				<height>544</height>
+				<texture border="16" colordiffuse="White100">common/rounded-shadow8.png</texture>
+			</control>
+			<control type="label">
+				<description>Heading</description>
+				<centerleft>50%</centerleft>
+				<width>885</width>
+				<font>MediumBold</font>
+				<align>center</align>
+				<label>31222</label>
+				<top>-20</top>
+			</control>
+			<control type="list" id="2612">
+				<visible>StringCompare(Skin.String(widget.helper),videos1)</visible>
+				<posy>48</posy>
+				<posx>0</posx>
+				<width>895</width>
+				<height>454</height>
+				<scrolltime tween="cubic" easing="out">500</scrolltime>
+				<onup>2612</onup>
+				<ondown>2612</ondown>
+				<itemlayout width="900" height="50">
+					<control type="label">
+						<width>900</width>
+						<height>70</height>
+						<font>Tiny</font>
+						<align>center</align>
+						<bottom>-10</bottom>
+						<textcolor>Black70</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout width="900" height="50">
+					<control type="image">
+						<texture colordiffuse="Dark1" border="16">common/white.png</texture>
+					</control>
+					<control type="label">
+						<align>center</align>
+						<bottom>-10</bottom>
+						<width>900</width>
+						<height>70</height>
+						<font>Tiny</font>
+						<label>$INFO[ListItem.Label]</label>
+						<textcolor>$VAR[ColourSelected]</textcolor>
+					</control>
+				</focusedlayout>
+				<content>
+					<item id="0">
+						<label>$INFO[Skin.String(widget.helper)] -- $LOCALIZE[31208]</label>
+						<onclick>Skin.SetString(widget2,InCinemas)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="1">
+						<label>$LOCALIZE[31223]</label>
+						<onclick>Skin.SetString(widget2,Upcoming)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="2">
+						<label>$LOCALIZE[31224]</label>
+						<onclick>Skin.SetString(widget2,PopularMovies)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="3">
+						<label>$LOCALIZE[31225]</label>
+						<onclick>Skin.SetString(widget2,TopRatedMovies)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="4">
+						<label>$LOCALIZE[31226]</label>
+						<onclick>Skin.SetString(widget2,PopularTvShows)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="5">
+						<label>$LOCALIZE[31227]</label>
+						<onclick>Skin.SetString(widget2,TopRatedTvShows)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="6">
+						<label>$LOCALIZE[31228]</label>
+						<onclick>Skin.SetString(widget2,OnAirTvShows)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="7">
+						<label>$LOCALIZE[31229]</label>
+						<onclick>Skin.SetString(widget2,AiringTodayTvShows)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="8">
+						<label>$LOCALIZE[31784]</label>
+						<onclick>Skin.SetString(widget2,RecommendedShows)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="9">
+						<label>Custom1)</label>
+						<onclick>Skin.SetString(widget2,Custom1)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="10">
+						<label>Custom2)</label>
+						<onclick>Skin.SetString(widget2,Custom2)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="11">
+						<label>$INFO[Window(Home).Property(emby.nodes.1.title)]</label>
+						<onclick>Skin.SetString(widget2,embynode1)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="12">
+						<label>$INFO[Window(Home).Property(emby.nodes.0.title)]</label>
+						<onclick>Skin.SetString(widget2,embynode0)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="13">
+						<label>$INFO[Window(Home).Property(emby.nodes.0.recent.title)]</label>
+						<onclick>Skin.SetString(widget2,embynode0recent)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="14">
+						<label>$INFO[Window(Home).Property(emby.nodes.1.recentepisodes.title)]</label>
+						<onclick>Skin.SetString(widget2,embynode1recentepisodes)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="15">
+						<label>$INFO[Window(Home).Property(emby.nodes.0.inprogress.title)]</label>
+						<onclick>Skin.SetString(widget2,embynode0inprogress)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="16">
+						<label>$INFO[Window(Home).Property(emby.nodes.1.inprogressepisodes.title)]</label>
+						<onclick>Skin.SetString(widget2,embynode1inprogressepisodes)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="17">
+						<label>$INFO[Window(Home).Property(emby.nodes.1.nextepisodes.title)]</label>
+						<onclick>Skin.SetString(widget2,embynode1nextepisodes)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="18">
+						<label>$LOCALIZE[31134]</label>
+						<onclick>Skin.SetString(widget2,TrendingMovies)</onclick>
+						<onclick>back</onclick>
+					</item>
+				</content>
+			</control>
+			<control type="list" id="2612">
+				<visible>StringCompare(Skin.String(widget.helper),videos2)</visible>
+				<posy>48</posy>
+				<posx>0</posx>
+				<width>895</width>
+				<height>454</height>
+				<scrolltime tween="cubic" easing="out">500</scrolltime>
+				<onup>2612</onup>
+				<ondown>2612</ondown>
+				<itemlayout width="900" height="50">
+					<control type="label">
+						<width>900</width>
+						<height>70</height>
+						<font>Tiny</font>
+						<align>center</align>
+						<bottom>-10</bottom>
+						<textcolor>Black70</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout width="900" height="50">
+					<control type="image">
+						<texture colordiffuse="Dark1" border="16">common/white.png</texture>
+					</control>
+					<control type="label">
+						<align>center</align>
+						<bottom>-10</bottom>
+						<width>900</width>
+						<height>70</height>
+						<font>Tiny</font>
+						<label>$INFO[ListItem.Label]</label>
+						<textcolor>$VAR[ColourSelected]</textcolor>
+					</control>
+				</focusedlayout>
+				<content>
+					<item id="0">
+						<label>$INFO[Skin.String(widget.helper)] -- $LOCALIZE[31208]</label>
+						<onclick>Skin.SetString(widget1,InCinemas)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="1">
+						<label>$LOCALIZE[31223]</label>
+						<onclick>Skin.SetString(widget1,Upcoming)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="2">
+						<label>$LOCALIZE[31224]</label>
+						<onclick>Skin.SetString(widget1,PopularMovies)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="3">
+						<label>$LOCALIZE[31225]</label>
+						<onclick>Skin.SetString(widget1,TopRatedMovies)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="4">
+						<label>$LOCALIZE[31226]</label>
+						<onclick>Skin.SetString(widget1,PopularTvShows)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="5">
+						<label>$LOCALIZE[31227]</label>
+						<onclick>Skin.SetString(widget1,TopRatedTvShows)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="6">
+						<label>$LOCALIZE[31228]</label>
+						<onclick>Skin.SetString(widget1,OnAirTvShows)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="7">
+						<label>$LOCALIZE[31229]</label>
+						<onclick>Skin.SetString(widget1,AiringTodayTvShows)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="8">
+						<label>$LOCALIZE[31784]</label>
+						<onclick>Skin.SetString(widget1,RecommendedShows)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="9">
+						<label>Custom1)</label>
+						<onclick>Skin.SetString(widget1,Custom1)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="10">
+						<label>Custom2)</label>
+						<onclick>Skin.SetString(widget1,Custom2)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="11">
+						<label>$INFO[Window(Home).Property(emby.nodes.1.title)]</label>
+						<onclick>Skin.SetString(widget1,embynode1)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="12">
+						<label>$INFO[Window(Home).Property(emby.nodes.0.title)]</label>
+						<onclick>Skin.SetString(widget1,embynode0)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="13">
+						<label>$INFO[Window(Home).Property(emby.nodes.0.recent.title)]</label>
+						<onclick>Skin.SetString(widget1,embynode0recent)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="14">
+						<label>$INFO[Window(Home).Property(emby.nodes.1.recentepisodes.title)]</label>
+						<onclick>Skin.SetString(widget1,embynode1recentepisodes)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="15">
+						<label>$INFO[Window(Home).Property(emby.nodes.0.inprogress.title)]</label>
+						<onclick>Skin.SetString(widget1,embynode0inprogress)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="16">
+						<label>$INFO[Window(Home).Property(emby.nodes.1.inprogressepisodes.title)]</label>
+						<onclick>Skin.SetString(widget1,embynode1inprogressepisodes)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="17">
+						<label>$INFO[Window(Home).Property(emby.nodes.1.nextepisodes.title)]</label>
+						<onclick>Skin.SetString(widget1,embynode1nextepisodes)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="18">
+						<label>$LOCALIZE[31134]</label>
+						<onclick>Skin.SetString(widget1,TrendingMovies)</onclick>
+						<onclick>back</onclick>
+					</item>
+				</content>
+			</control>
+			<control type="list" id="2612">
+				<visible>StringCompare(Skin.String(widget.helper),videos3)</visible>
+				<posy>48</posy>
+				<posx>0</posx>
+				<width>895</width>
+				<height>454</height>
+				<scrolltime tween="cubic" easing="out">500</scrolltime>
+				<onup>2612</onup>
+				<ondown>2612</ondown>
+				<itemlayout width="900" height="50">
+					<control type="label">
+						<width>900</width>
+						<height>70</height>
+						<font>Tiny</font>
+						<align>center</align>
+						<bottom>-10</bottom>
+						<textcolor>Black70</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout width="900" height="50">
+					<control type="image">
+						<texture colordiffuse="Dark1" border="16">common/white.png</texture>
+					</control>
+					<control type="label">
+						<align>center</align>
+						<bottom>-10</bottom>
+						<width>900</width>
+						<height>70</height>
+						<font>Tiny</font>
+						<label>$INFO[ListItem.Label]</label>
+						<textcolor>$VAR[ColourSelected]</textcolor>
+					</control>
+				</focusedlayout>
+				<content>
+					<item id="0">
+						<label>$INFO[Skin.String(widget.helper)] -- $LOCALIZE[31208]</label>
+						<onclick>Skin.SetString(widget3,InCinemas)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="1">
+						<label>$LOCALIZE[31223]</label>
+						<onclick>Skin.SetString(widget3,Upcoming)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="2">
+						<label>$LOCALIZE[31224]</label>
+						<onclick>Skin.SetString(widget3,PopularMovies)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="3">
+						<label>$LOCALIZE[31225]</label>
+						<onclick>Skin.SetString(widget3,TopRatedMovies)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="4">
+						<label>$LOCALIZE[31226]</label>
+						<onclick>Skin.SetString(widget3,PopularTvShows)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="5">
+						<label>$LOCALIZE[31227]</label>
+						<onclick>Skin.SetString(widget3,TopRatedTvShows)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="6">
+						<label>$LOCALIZE[31228]</label>
+						<onclick>Skin.SetString(widget3,OnAirTvShows)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="7">
+						<label>$LOCALIZE[31229]</label>
+						<onclick>Skin.SetString(widget3,AiringTodayTvShows)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="8">
+						<label>$LOCALIZE[31784]</label>
+						<onclick>Skin.SetString(widget3,RecommendedShows)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="9">
+						<label>Custom1)</label>
+						<onclick>Skin.SetString(widget3,Custom1)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="10">
+						<label>Custom2)</label>
+						<onclick>Skin.SetString(widget3,Custom2)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="11">
+						<label>$INFO[Window(Home).Property(emby.nodes.1.title)]</label>
+						<onclick>Skin.SetString(widget3,embynode1)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="12">
+						<label>$INFO[Window(Home).Property(emby.nodes.0.title)]</label>
+						<onclick>Skin.SetString(widget3,embynode0)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="13">
+						<label>$INFO[Window(Home).Property(emby.nodes.0.recent.title)]</label>
+						<onclick>Skin.SetString(widget3,embynode0recent)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="14">
+						<label>$INFO[Window(Home).Property(emby.nodes.1.recentepisodes.title)]</label>
+						<onclick>Skin.SetString(widget3,embynode1recentepisodes)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="15">
+						<label>$INFO[Window(Home).Property(emby.nodes.0.inprogress.title)]</label>
+						<onclick>Skin.SetString(widget3,embynode0inprogress)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="16">
+						<label>$INFO[Window(Home).Property(emby.nodes.1.inprogressepisodes.title)]</label>
+						<onclick>Skin.SetString(widget3,embynode1inprogressepisodes)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="17">
+						<label>$INFO[Window(Home).Property(emby.nodes.1.nextepisodes.title)]</label>
+						<onclick>Skin.SetString(widget3,embynode1nextepisodes)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="18">
+						<label>$LOCALIZE[31134]</label>
+						<onclick>Skin.SetString(widget3,TrendingMovies)</onclick>
+						<onclick>back</onclick>
+					</item>
+				</content>
+			</control>
+			<control type="list" id="2612">
+				<visible>StringCompare(Skin.String(widget.helper),videos4)</visible>
+				<posy>48</posy>
+				<posx>0</posx>
+				<width>895</width>
+				<height>454</height>
+				<scrolltime tween="cubic" easing="out">500</scrolltime>
+				<onup>2612</onup>
+				<ondown>2612</ondown>
+				<itemlayout width="900" height="50">
+					<control type="label">
+						<width>900</width>
+						<height>70</height>
+						<font>Tiny</font>
+						<align>center</align>
+						<bottom>-10</bottom>
+						<textcolor>Black70</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout width="900" height="50">
+					<control type="image">
+						<texture colordiffuse="Dark1" border="16">common/white.png</texture>
+					</control>
+					<control type="label">
+						<align>center</align>
+						<bottom>-10</bottom>
+						<width>900</width>
+						<height>70</height>
+						<font>Tiny</font>
+						<label>$INFO[ListItem.Label]</label>
+						<textcolor>$VAR[ColourSelected]</textcolor>
+					</control>
+				</focusedlayout>
+				<content>
+					<item id="0">
+						<label>$INFO[Skin.String(widget.helper)] -- $LOCALIZE[31208]</label>
+						<onclick>Skin.SetString(widget15,InCinemas)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="1">
+						<label>$LOCALIZE[31223]</label>
+						<onclick>Skin.SetString(widget15,Upcoming)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="2">
+						<label>$LOCALIZE[31224]</label>
+						<onclick>Skin.SetString(widget15,PopularMovies)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="3">
+						<label>$LOCALIZE[31225]</label>
+						<onclick>Skin.SetString(widget15,TopRatedMovies)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="4">
+						<label>$LOCALIZE[31226]</label>
+						<onclick>Skin.SetString(widget15,PopularTvShows)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="5">
+						<label>$LOCALIZE[31227]</label>
+						<onclick>Skin.SetString(widget15,TopRatedTvShows)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="6">
+						<label>$LOCALIZE[31228]</label>
+						<onclick>Skin.SetString(widget15,OnAirTvShows)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="7">
+						<label>$LOCALIZE[31229]</label>
+						<onclick>Skin.SetString(widget15,AiringTodayTvShows)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="8">
+						<label>$LOCALIZE[31784]</label>
+						<onclick>Skin.SetString(widget15,RecommendedShows)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="9">
+						<label>Custom1)</label>
+						<onclick>Skin.SetString(widget15,Custom1)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="10">
+						<label>Custom2)</label>
+						<onclick>Skin.SetString(widget15,Custom2)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="11">
+						<label>$INFO[Window(Home).Property(emby.nodes.1.title)]</label>
+						<onclick>Skin.SetString(widget15,embynode1)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="12">
+						<label>$INFO[Window(Home).Property(emby.nodes.0.title)]</label>
+						<onclick>Skin.SetString(widget15,embynode0)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="13">
+						<label>$INFO[Window(Home).Property(emby.nodes.0.recent.title)]</label>
+						<onclick>Skin.SetString(widget15,embynode0recent)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="14">
+						<label>$INFO[Window(Home).Property(emby.nodes.1.recentepisodes.title)]</label>
+						<onclick>Skin.SetString(widget15,embynode1recentepisodes)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="15">
+						<label>$INFO[Window(Home).Property(emby.nodes.0.inprogress.title)]</label>
+						<onclick>Skin.SetString(widget15,embynode0inprogress)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="16">
+						<label>$INFO[Window(Home).Property(emby.nodes.1.inprogressepisodes.title)]</label>
+						<onclick>Skin.SetString(widget15,embynode1inprogressepisodes)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="17">
+						<label>$INFO[Window(Home).Property(emby.nodes.1.nextepisodes.title)]</label>
+						<onclick>Skin.SetString(widget15,embynode1nextepisodes)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="18">
+						<label>$LOCALIZE[31134]</label>
+						<onclick>Skin.SetString(widget15,TrendingMovies)</onclick>
+						<onclick>back</onclick>
+					</item>
+				</content>
+			</control>
+		</control>
+	</controls>
+</window>

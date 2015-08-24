@@ -497,46 +497,6 @@
 				<height>460</height>
 				<onup>300</onup>
 				<ondown>6013</ondown>
-				<onback>SetProperty(Dialog.NumItems,20)</onback>
-				<onback>SetProperty(Dialog.1.Label,$LOCALIZE[31134])</onback>
-				<onback>SetProperty(Dialog.1.BuiltIn,Skin.SetString(widget2,TrendingMovies))</onback>
-				<onback>SetProperty(Dialog.2.Label,$LOCALIZE[31208])</onback>
-				<onback>SetProperty(Dialog.2.BuiltIn,Skin.SetString(widget2,InCinemas))</onback>
-				<onback>SetProperty(Dialog.3.Label,$LOCALIZE[31223])</onback>
-				<onback>SetProperty(Dialog.3.BuiltIn,Skin.SetString(widget2,Upcoming))</onback>
-				<onback>SetProperty(Dialog.4.Label,$LOCALIZE[31224])</onback>
-				<onback>SetProperty(Dialog.4.BuiltIn,Skin.SetString(widget2,PopularMovies))</onback>
-				<onback>SetProperty(Dialog.5.Label,$LOCALIZE[31225])</onback>
-				<onback>SetProperty(Dialog.5.BuiltIn,Skin.SetString(widget2,TopRatedMovies))</onback>
-				<onback>SetProperty(Dialog.6.Label,$LOCALIZE[31226])</onback>
-				<onback>SetProperty(Dialog.6.BuiltIn,Skin.SetString(widget2,PopularTvShows))</onback>
-				<onback>SetProperty(Dialog.7.Label,$LOCALIZE[31227])</onback>
-				<onback>SetProperty(Dialog.7.BuiltIn,Skin.SetString(widget2,TopRatedTvShows))</onback>
-				<onback>SetProperty(Dialog.8.Label,$LOCALIZE[31228])</onback>
-				<onback>SetProperty(Dialog.8.BuiltIn,Skin.SetString(widget2,OnAirTvShows))</onback>
-				<onback>SetProperty(Dialog.9.Label,$LOCALIZE[31229])</onback>
-				<onback>SetProperty(Dialog.9.BuiltIn,Skin.SetString(widget2,AiringTodayTvShows))</onback>
-				<onback>SetProperty(Dialog.10.Label,$LOCALIZE[31784])</onback>
-				<onback>SetProperty(Dialog.10.BuiltIn,Skin.SetString(widget2,RecommendedShows))</onback>
-				<onback>SetProperty(Dialog.11.Label,Custom1)</onback>
-				<onback>SetProperty(Dialog.11.BuiltIn,Skin.SetString(widget2,Custom1))</onback>
-				<onback>SetProperty(Dialog.12.Label,Custom2)</onback>
-				<onback>SetProperty(Dialog.12.BuiltIn,Skin.SetString(widget2,Custom2))</onback>
-				<onback>SetProperty(Dialog.13.Label,$INFO[Window(Home).Property(emby.nodes.1.title)])</onback>
-				<onback>SetProperty(Dialog.13.BuiltIn,Skin.SetString(widget2,embynode1))</onback>
-				<onback>SetProperty(Dialog.14.Label,$INFO[Window(Home).Property(emby.nodes.0.title)])</onback>
-				<onback>SetProperty(Dialog.14.BuiltIn,Skin.SetString(widget2,embynode0))</onback>
-				<onback>SetProperty(Dialog.15.Label,$INFO[Window(Home).Property(emby.nodes.0.recent.title)])</onback>
-				<onback>SetProperty(Dialog.15.BuiltIn,Skin.SetString(widget2,embynode0recent))</onback>
-				<onback>SetProperty(Dialog.16.Label,$INFO[Window(Home).Property(emby.nodes.1.recentepisodes.title)])</onback>
-				<onback>SetProperty(Dialog.16.BuiltIn,Skin.SetString(widget2,embynode1recentepisodes))</onback>
-				<onback>SetProperty(Dialog.17.Label,$INFO[Window(Home).Property(emby.nodes.0.inprogress.title)])</onback>
-				<onback>SetProperty(Dialog.17.BuiltIn,Skin.SetString(widget2,embynode0inprogress))</onback>
-				<onback>SetProperty(Dialog.18.Label,$INFO[Window(Home).Property(emby.nodes.1.inprogressepisodes.title)])</onback>
-				<onback>SetProperty(Dialog.18.BuiltIn,Skin.SetString(widget2,embynode1inprogressepisodes))</onback>
-				<onback>SetProperty(Dialog.19.Label,$INFO[Window(Home).Property(emby.nodes.1.nextepisodes.title)])</onback>
-				<onback>SetProperty(Dialog.19.BuiltIn,Skin.SetString(widget2,embynode1nextepisodes))</onback>
-				<onback condition="!Skin.HasSetting(global.kioskmode)">RunScript(script.toolbox,info=selectdialog,header=Select Widget)</onback>
 				<onleft>301</onleft>
 				<onright>301</onright>
 				<preloaditems>2</preloaditems>
@@ -552,6 +512,9 @@
 					</control>
 				</itemlayout>
 				<focusedlayout width="820" height="460">
+					<control type="button">
+						<onfocus>Skin.SetString(widget.helper,videos1)</onfocus>
+					</control>
 					<control type="image">
 						<aspectratio>keep</aspectratio>
 						<texture background="true">$VAR[FanartImage]</texture>
@@ -738,16 +701,6 @@
 				<height>704</height>
 				<onup>300</onup>
 				<ondown>6016</ondown>
-				<onback>SetProperty(Dialog.NumItems,4)</onback>
-				<onback>SetProperty(Dialog.1.Label,$LOCALIZE[31135])</onback>
-				<onback>SetProperty(Dialog.1.BuiltIn,Skin.SetString(widget1,TrendingShows))</onback>
-				<onback>SetProperty(Dialog.2.Label,$LOCALIZE[31136])</onback>
-				<onback>SetProperty(Dialog.2.BuiltIn,Skin.SetString(widget1,AiringShows))</onback>
-				<onback>SetProperty(Dialog.3.Label,$LOCALIZE[31137])</onback>
-				<onback>SetProperty(Dialog.3.BuiltIn,Skin.SetString(widget1,PremiereShows))</onback>
-				<onback>SetProperty(Dialog.4.Label,$LOCALIZE[31784])</onback>
-				<onback>SetProperty(Dialog.4.BuiltIn,Skin.SetString(widget1,RecommendedShows))</onback>
-				<onback condition="!Skin.HasSetting(global.kioskmode)">RunScript(script.toolbox,info=selectdialog,header=Select Widget)</onback>
 				<onleft>6012</onleft>
 				<onright>6017</onright>
 				<preloaditems>2</preloaditems>
@@ -776,6 +729,9 @@
 				</itemlayout>
 				<focusedlayout width="410" height="88">
 					<control type="group">
+						<control type="button">
+							<onfocus>Skin.SetString(widget.helper,videos2)</onfocus>
+						</control>
 						<animation effect="zoom" start="100" end="127" time="100" reversible="false" center="auto">Focus</animation>
 						<control type="image">
 							<height>83</height>
@@ -838,28 +794,6 @@
 				<height>705</height>
 				<onup>300</onup>
 				<ondown>6017</ondown>
-				<onback>SetProperty(Dialog.NumItems,10)</onback>
-				<onback>SetProperty(Dialog.1.Label,$LOCALIZE[31224])</onback>
-				<onback>SetProperty(Dialog.1.BuiltIn,Skin.SetString(widget3,PopularMovies))</onback>
-				<onback>SetProperty(Dialog.2.Label,$LOCALIZE[31208])</onback>
-				<onback>SetProperty(Dialog.2.BuiltIn,Skin.SetString(widget3,InCinemas))</onback>
-				<onback>SetProperty(Dialog.3.Label,$LOCALIZE[31223])</onback>
-				<onback>SetProperty(Dialog.3.BuiltIn,Skin.SetString(widget3,Upcoming))</onback>
-				<onback>SetProperty(Dialog.4.Label,$LOCALIZE[31134])</onback>
-				<onback>SetProperty(Dialog.4.BuiltIn,Skin.SetString(widget3,TrendingMovies))</onback>
-				<onback>SetProperty(Dialog.5.Label,$LOCALIZE[31225])</onback>
-				<onback>SetProperty(Dialog.5.BuiltIn,Skin.SetString(widget3,TopRatedMovies))</onback>
-				<onback>SetProperty(Dialog.6.Label,$LOCALIZE[31226])</onback>
-				<onback>SetProperty(Dialog.6.BuiltIn,Skin.SetString(widget3,PopularTvShows))</onback>
-				<onback>SetProperty(Dialog.7.Label,$LOCALIZE[31227])</onback>
-				<onback>SetProperty(Dialog.7.BuiltIn,Skin.SetString(widget3,TopRatedTvShows))</onback>
-				<onback>SetProperty(Dialog.8.Label,$LOCALIZE[31228])</onback>
-				<onback>SetProperty(Dialog.8.BuiltIn,Skin.SetString(widget3,OnAirTvShows))</onback>
-				<onback>SetProperty(Dialog.9.Label,$LOCALIZE[31229])</onback>
-				<onback>SetProperty(Dialog.9.BuiltIn,Skin.SetString(widget3,AiringTodayTvShows))</onback>
-				<onback>SetProperty(Dialog.10.Label,$LOCALIZE[31784])</onback>
-				<onback>SetProperty(Dialog.10.BuiltIn,Skin.SetString(widget3,RecommendedShows))</onback>
-				<onback condition="!Skin.HasSetting(global.kioskmode)">RunScript(script.toolbox,info=selectdialog,header=Select Widget)</onback>
 				<onright condition="Control.IsVisible(9017)">9017</onright>
 				<onleft condition="Control.IsVisible(6016)">6016</onleft>
 				<onleft condition="!Control.IsVisible(6016)">6012</onleft>
@@ -886,6 +820,9 @@
 					</control>
 				</itemlayout>
 				<focusedlayout width="158" height="235">
+						<control type="button">
+							<onfocus>Skin.SetString(widget.helper,videos3)</onfocus>
+						</control>
 					<control type="image">
 						<aspectratio>keep</aspectratio>
 						<height>230</height>
@@ -949,28 +886,6 @@
 				<height>705</height>
 				<onup>300</onup>
 				<ondown>6017</ondown>
-				<onback>SetProperty(Dialog.NumItems,10)</onback>
-				<onback>SetProperty(Dialog.1.Label,$LOCALIZE[31224])</onback>
-				<onback>SetProperty(Dialog.1.BuiltIn,Skin.SetString(widget15,PopularMovies))</onback>
-				<onback>SetProperty(Dialog.2.Label,$LOCALIZE[31208])</onback>
-				<onback>SetProperty(Dialog.2.BuiltIn,Skin.SetString(widget15,InCinemas))</onback>
-				<onback>SetProperty(Dialog.3.Label,$LOCALIZE[31223])</onback>
-				<onback>SetProperty(Dialog.3.BuiltIn,Skin.SetString(widget15,Upcoming))</onback>
-				<onback>SetProperty(Dialog.4.Label,$LOCALIZE[31134])</onback>
-				<onback>SetProperty(Dialog.4.BuiltIn,Skin.SetString(widget15,TrendingMovies))</onback>
-				<onback>SetProperty(Dialog.5.Label,$LOCALIZE[31225])</onback>
-				<onback>SetProperty(Dialog.5.BuiltIn,Skin.SetString(widget15,TopRatedMovies))</onback>
-				<onback>SetProperty(Dialog.6.Label,$LOCALIZE[31226])</onback>
-				<onback>SetProperty(Dialog.6.BuiltIn,Skin.SetString(widget15,PopularTvShows))</onback>
-				<onback>SetProperty(Dialog.7.Label,$LOCALIZE[31227])</onback>
-				<onback>SetProperty(Dialog.7.BuiltIn,Skin.SetString(widget15,TopRatedTvShows))</onback>
-				<onback>SetProperty(Dialog.8.Label,$LOCALIZE[31228])</onback>
-				<onback>SetProperty(Dialog.8.BuiltIn,Skin.SetString(widget15,OnAirTvShows))</onback>
-				<onback>SetProperty(Dialog.9.Label,$LOCALIZE[31229])</onback>
-				<onback>SetProperty(Dialog.9.BuiltIn,Skin.SetString(widget15,AiringTodayTvShows))</onback>
-				<onback>SetProperty(Dialog.10.Label,$LOCALIZE[31784])</onback>
-				<onback>SetProperty(Dialog.10.BuiltIn,Skin.SetString(widget15,RecommendedShows))</onback>
-				<onback condition="!Skin.HasSetting(global.kioskmode)">RunScript(script.toolbox,info=selectdialog,header=Select Widget)</onback>
 				<onleft condition="Control.IsVisible(6017)">6017</onleft>
 				<onleft condition="!Control.IsVisible(6017)">6012</onleft>
 				<preloaditems>2</preloaditems>
@@ -979,7 +894,11 @@
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 				<itemlayout width="158" height="235"/>
-				<focusedlayout width="158" height="235"/>
+				<focusedlayout width="158" height="235">
+					<control type="button">
+						<onfocus>Skin.SetString(widget.helper,videos4)</onfocus>
+					</control>
+				</focusedlayout>
 				<content target="video">$VAR[DefWidget15Content]</content>
 			</control>
 			<control type="group">

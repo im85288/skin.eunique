@@ -51,11 +51,45 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(widget),Top100Albums)">musicdb://top100/albums/</value>
 	</variable>
 	<variable name="DefWidget1Content">
-		<value condition="Stringcompare(Skin.String(widget1),TrendingShows)">plugin://script.extendedinfo?info=trendingshows</value>
-		<value condition="Stringcompare(Skin.String(widget1),AiringShows)">plugin://script.extendedinfo?info=airingshows</value>
-		<value condition="Stringcompare(Skin.String(widget1),PremiereShows)">plugin://script.extendedinfo?info=premiereshows</value>
+		<value condition="Stringcompare(Skin.String(widget1),TrendingMovies)">plugin://script.extendedinfo?info=trendingmovies</value>
+		<value condition="Stringcompare(Skin.String(widget1),InCinemas)">plugin://script.extendedinfo?info=incinemas</value>
+		<value condition="Stringcompare(Skin.String(widget1),Upcoming)">plugin://script.extendedinfo?info=upcoming</value>
+		<value condition="Stringcompare(Skin.String(widget1),PopularMovies)">plugin://script.extendedinfo?info=popularmovies</value>
+		<value condition="Stringcompare(Skin.String(widget1),TopRatedMovies)">plugin://script.extendedinfo?info=topratedmovies</value>
+		<value condition="Stringcompare(Skin.String(widget1),PopularTvShows)">plugin://script.extendedinfo?info=populartvshows</value>
+		<value condition="Stringcompare(Skin.String(widget1),TopRatedTvShows)">plugin://script.extendedinfo?info=topratedtvshows</value>
+		<value condition="Stringcompare(Skin.String(widget1),OnAirTvShows)">plugin://script.extendedinfo?info=onairtvshows</value>
+		<value condition="Stringcompare(Skin.String(widget1),AiringTodayTvShows)">plugin://script.extendedinfo?info=airingtodaytvshows</value>
 		<value condition="Stringcompare(Skin.String(widget1),RecommendedShows)">plugin://script.skin.helper.service/?action=recommendedmedia&amp;limit=[18]</value>
-		<value>plugin://script.extendedinfo?info=trendingshows</value>
+		<value condition="Stringcompare(Skin.String(widget1),Custom1)">$INFO[Skin.String(CustomWidget1)]</value>
+		<value condition="Stringcompare(Skin.String(widget1),Custom2)">$INFO[Skin.String(Customwidget1)]</value>
+		<value condition="Stringcompare(Skin.String(widget1),Custom3)">$INFO[Skin.String(CustomWidget3)]</value>
+		<value condition="Stringcompare(Skin.String(widget1),Custom4)">$INFO[Skin.String(CustomWidget4)]</value>
+		<value condition="Stringcompare(Skin.String(widget1),Custom5)">$INFO[Skin.String(CustomWidget5)]</value>
+		<value condition="Stringcompare(Skin.String(widget1),Custom6)">$INFO[Skin.String(CustomWidget6)]</value>
+		<value condition="Stringcompare(Skin.String(widget1),Custom7)">$INFO[Skin.String(CustomWidget7)]</value>
+		<value condition="Stringcompare(Skin.String(widget1),Custom8)">$INFO[Skin.String(CustomWidget8)]</value>
+		<value condition="Stringcompare(Skin.String(widget1),Custom9)">$INFO[Skin.String(CustomWidget9)]</value>
+		<value condition="Stringcompare(Skin.String(widget1),Custom10)">$INFO[Skin.String(CustomWidget10)]</value>
+		<value condition="Stringcompare(Skin.String(widget1),embynode0) + !IsEmpty(Window(Home).Property(emby.nodes.0.content))">$INFO[Window(Home).Property(emby.nodes.0.content)]</value>
+		<value condition="Stringcompare(Skin.String(widget1),embynode0recent) + !IsEmpty(Window(Home).Property(emby.nodes.0.recent.content))">$INFO[Window(Home).Property(emby.nodes.0.recent.content)]</value>
+		<value condition="Stringcompare(Skin.String(widget1),embynode0recentepisodes) + !IsEmpty(Window(Home).Property(emby.nodes.0.recentepisodes.content))">$INFO[Window(Home).Property(emby.nodes.0.recentepisodes.content)]</value>
+		<value condition="Stringcompare(Skin.String(widget1),embynode0inprogress) + !IsEmpty(Window(Home).Property(emby.nodes.0.inprogress.content))">$INFO[Window(Home).Property(emby.nodes.0.inprogress.content)]</value>
+		<value condition="Stringcompare(Skin.String(widget1),embynode0inprogressepisodes) + !IsEmpty(Window(Home).Property(emby.nodes.0.inprogressepisodes.content))">$INFO[Window(Home).Property(emby.nodes.0.inprogressepisodes.content)]</value>
+		<value condition="Stringcompare(Skin.String(widget1),embynode0nextepisodes) + !IsEmpty(Window(Home).Property(emby.nodes.0.nextepisodes.content))">$INFO[Window(Home).Property(emby.nodes.0.nextepisodes.content)]</value>
+		<value condition="Stringcompare(Skin.String(widget1),embynode1) + !IsEmpty(Window(Home).Property(emby.nodes.1.content))">$INFO[Window(Home).Property(emby.nodes.1.content)]</value>
+		<value condition="Stringcompare(Skin.String(widget1),embynode1recent) + !IsEmpty(Window(Home).Property(emby.nodes.1.recent.content))">$INFO[Window(Home).Property(emby.nodes.1.recent.content)]</value>
+		<value condition="Stringcompare(Skin.String(widget1),embynode1recentepisodes) + !IsEmpty(Window(Home).Property(emby.nodes.1.recentepisodes.content))">$INFO[Window(Home).Property(emby.nodes.1.recentepisodes.content)]</value>
+		<value condition="Stringcompare(Skin.String(widget1),embynode1inprogress) + !IsEmpty(Window(Home).Property(emby.nodes.1.inprogress.content))">$INFO[Window(Home).Property(emby.nodes.1.inprogress.content)]</value>
+		<value condition="Stringcompare(Skin.String(widget1),embynode1inprogressepisodes) + !IsEmpty(Window(Home).Property(emby.nodes.1.inprogressepisodes.content))">$INFO[Window(Home).Property(emby.nodes.1.inprogressepisodes.content)]</value>
+		<value condition="Stringcompare(Skin.String(widget1),embynode1nextepisodes) + !IsEmpty(Window(Home).Property(emby.nodes.1.nextepisodes.content))">$INFO[Window(Home).Property(emby.nodes.1.nextepisodes.content)]</value>
+		<value condition="Stringcompare(Skin.String(widget1),embynode2) + !IsEmpty(Window(Home).Property(emby.nodes.2.content))">$INFO[Window(Home).Property(emby.nodes.2.content)]</value>
+		<value condition="Stringcompare(Skin.String(widget1),embynode2recent) + !IsEmpty(Window(Home).Property(emby.nodes.2.recent.content))">$INFO[Window(Home).Property(emby.nodes.2.recent.content)]</value>
+		<value condition="Stringcompare(Skin.String(widget1),embynode2recentepisodes) + !IsEmpty(Window(Home).Property(emby.nodes.2.recentepisodes.content))">$INFO[Window(Home).Property(emby.nodes.2.recentepisodes.content)]</value>
+		<value condition="Stringcompare(Skin.String(widget1),embynode2inprogress) + !IsEmpty(Window(Home).Property(emby.nodes.2.inprogress.content))">$INFO[Window(Home).Property(emby.nodes.2.inprogress.content)]</value>
+		<value condition="Stringcompare(Skin.String(widget1),embynode2inprogressepisodes) + !IsEmpty(Window(Home).Property(emby.nodes.2.inprogressepisodes.content))">$INFO[Window(Home).Property(emby.nodes.2.inprogressepisodes.content)]</value>
+		<value condition="Stringcompare(Skin.String(widget1),embynode2nextepisodes) + !IsEmpty(Window(Home).Property(emby.nodes.2.nextepisodes.content))">$INFO[Window(Home).Property(emby.nodes.2.nextepisodes.content)]</value>
+		<value>plugin://script.extendedinfo?info=trendingmovies</value>
 	</variable>
 	<variable name="DefWidget2Content">
 		<value condition="Stringcompare(Skin.String(widget2),TrendingMovies)">plugin://script.extendedinfo?info=trendingmovies</value>
@@ -78,28 +112,24 @@
 		<value condition="Stringcompare(Skin.String(widget2),Custom8)">$INFO[Skin.String(CustomWidget8)]</value>
 		<value condition="Stringcompare(Skin.String(widget2),Custom9)">$INFO[Skin.String(CustomWidget9)]</value>
 		<value condition="Stringcompare(Skin.String(widget2),Custom10)">$INFO[Skin.String(CustomWidget10)]</value>
-
 		<value condition="Stringcompare(Skin.String(widget2),embynode0) + !IsEmpty(Window(Home).Property(emby.nodes.0.content))">$INFO[Window(Home).Property(emby.nodes.0.content)]</value>
 		<value condition="Stringcompare(Skin.String(widget2),embynode0recent) + !IsEmpty(Window(Home).Property(emby.nodes.0.recent.content))">$INFO[Window(Home).Property(emby.nodes.0.recent.content)]</value>
 		<value condition="Stringcompare(Skin.String(widget2),embynode0recentepisodes) + !IsEmpty(Window(Home).Property(emby.nodes.0.recentepisodes.content))">$INFO[Window(Home).Property(emby.nodes.0.recentepisodes.content)]</value>
 		<value condition="Stringcompare(Skin.String(widget2),embynode0inprogress) + !IsEmpty(Window(Home).Property(emby.nodes.0.inprogress.content))">$INFO[Window(Home).Property(emby.nodes.0.inprogress.content)]</value>
 		<value condition="Stringcompare(Skin.String(widget2),embynode0inprogressepisodes) + !IsEmpty(Window(Home).Property(emby.nodes.0.inprogressepisodes.content))">$INFO[Window(Home).Property(emby.nodes.0.inprogressepisodes.content)]</value>
 		<value condition="Stringcompare(Skin.String(widget2),embynode0nextepisodes) + !IsEmpty(Window(Home).Property(emby.nodes.0.nextepisodes.content))">$INFO[Window(Home).Property(emby.nodes.0.nextepisodes.content)]</value>
-
 		<value condition="Stringcompare(Skin.String(widget2),embynode1) + !IsEmpty(Window(Home).Property(emby.nodes.1.content))">$INFO[Window(Home).Property(emby.nodes.1.content)]</value>
 		<value condition="Stringcompare(Skin.String(widget2),embynode1recent) + !IsEmpty(Window(Home).Property(emby.nodes.1.recent.content))">$INFO[Window(Home).Property(emby.nodes.1.recent.content)]</value>
 		<value condition="Stringcompare(Skin.String(widget2),embynode1recentepisodes) + !IsEmpty(Window(Home).Property(emby.nodes.1.recentepisodes.content))">$INFO[Window(Home).Property(emby.nodes.1.recentepisodes.content)]</value>
 		<value condition="Stringcompare(Skin.String(widget2),embynode1inprogress) + !IsEmpty(Window(Home).Property(emby.nodes.1.inprogress.content))">$INFO[Window(Home).Property(emby.nodes.1.inprogress.content)]</value>
 		<value condition="Stringcompare(Skin.String(widget2),embynode1inprogressepisodes) + !IsEmpty(Window(Home).Property(emby.nodes.1.inprogressepisodes.content))">$INFO[Window(Home).Property(emby.nodes.1.inprogressepisodes.content)]</value>
 		<value condition="Stringcompare(Skin.String(widget2),embynode1nextepisodes) + !IsEmpty(Window(Home).Property(emby.nodes.1.nextepisodes.content))">$INFO[Window(Home).Property(emby.nodes.1.nextepisodes.content)]</value>
-
 		<value condition="Stringcompare(Skin.String(widget2),embynode2) + !IsEmpty(Window(Home).Property(emby.nodes.2.content))">$INFO[Window(Home).Property(emby.nodes.2.content)]</value>
 		<value condition="Stringcompare(Skin.String(widget2),embynode2recent) + !IsEmpty(Window(Home).Property(emby.nodes.2.recent.content))">$INFO[Window(Home).Property(emby.nodes.2.recent.content)]</value>
 		<value condition="Stringcompare(Skin.String(widget2),embynode2recentepisodes) + !IsEmpty(Window(Home).Property(emby.nodes.2.recentepisodes.content))">$INFO[Window(Home).Property(emby.nodes.2.recentepisodes.content)]</value>
 		<value condition="Stringcompare(Skin.String(widget2),embynode2inprogress) + !IsEmpty(Window(Home).Property(emby.nodes.2.inprogress.content))">$INFO[Window(Home).Property(emby.nodes.2.inprogress.content)]</value>
 		<value condition="Stringcompare(Skin.String(widget2),embynode2inprogressepisodes) + !IsEmpty(Window(Home).Property(emby.nodes.2.inprogressepisodes.content))">$INFO[Window(Home).Property(emby.nodes.2.inprogressepisodes.content)]</value>
 		<value condition="Stringcompare(Skin.String(widget2),embynode2nextepisodes) + !IsEmpty(Window(Home).Property(emby.nodes.2.nextepisodes.content))">$INFO[Window(Home).Property(emby.nodes.2.nextepisodes.content)]</value>
-
 		<value>plugin://script.extendedinfo?info=trendingmovies</value>
 	</variable>
 	<variable name="DefWidget3Content">
@@ -113,7 +143,35 @@
 		<value condition="Stringcompare(Skin.String(widget3),OnAirTvShows)">plugin://script.extendedinfo?info=onairtvshows</value>
 		<value condition="Stringcompare(Skin.String(widget3),AiringTodayTvShows)">plugin://script.extendedinfo?info=airingtodaytvshows</value>
 		<value condition="Stringcompare(Skin.String(widget3),RecommendedShows)">plugin://script.skin.helper.service/?action=recommendedmedia&amp;limit=[18]</value>
-		<value>plugin://script.extendedinfo?info=popularmovies</value>
+		<value condition="Stringcompare(Skin.String(widget3),Custom1)">$INFO[Skin.String(CustomWidget1)]</value>
+		<value condition="Stringcompare(Skin.String(widget3),Custom2)">$INFO[Skin.String(CustomWidget2)]</value>
+		<value condition="Stringcompare(Skin.String(widget3),Custom3)">$INFO[Skin.String(CustomWidget3)]</value>
+		<value condition="Stringcompare(Skin.String(widget3),Custom4)">$INFO[Skin.String(CustomWidget4)]</value>
+		<value condition="Stringcompare(Skin.String(widget3),Custom5)">$INFO[Skin.String(CustomWidget5)]</value>
+		<value condition="Stringcompare(Skin.String(widget3),Custom6)">$INFO[Skin.String(CustomWidget6)]</value>
+		<value condition="Stringcompare(Skin.String(widget3),Custom7)">$INFO[Skin.String(CustomWidget7)]</value>
+		<value condition="Stringcompare(Skin.String(widget3),Custom8)">$INFO[Skin.String(CustomWidget8)]</value>
+		<value condition="Stringcompare(Skin.String(widget3),Custom9)">$INFO[Skin.String(CustomWidget9)]</value>
+		<value condition="Stringcompare(Skin.String(widget3),Custom10)">$INFO[Skin.String(CustomWidget10)]</value>
+		<value condition="Stringcompare(Skin.String(widget3),embynode0) + !IsEmpty(Window(Home).Property(emby.nodes.0.content))">$INFO[Window(Home).Property(emby.nodes.0.content)]</value>
+		<value condition="Stringcompare(Skin.String(widget3),embynode0recent) + !IsEmpty(Window(Home).Property(emby.nodes.0.recent.content))">$INFO[Window(Home).Property(emby.nodes.0.recent.content)]</value>
+		<value condition="Stringcompare(Skin.String(widget3),embynode0recentepisodes) + !IsEmpty(Window(Home).Property(emby.nodes.0.recentepisodes.content))">$INFO[Window(Home).Property(emby.nodes.0.recentepisodes.content)]</value>
+		<value condition="Stringcompare(Skin.String(widget3),embynode0inprogress) + !IsEmpty(Window(Home).Property(emby.nodes.0.inprogress.content))">$INFO[Window(Home).Property(emby.nodes.0.inprogress.content)]</value>
+		<value condition="Stringcompare(Skin.String(widget3),embynode0inprogressepisodes) + !IsEmpty(Window(Home).Property(emby.nodes.0.inprogressepisodes.content))">$INFO[Window(Home).Property(emby.nodes.0.inprogressepisodes.content)]</value>
+		<value condition="Stringcompare(Skin.String(widget3),embynode0nextepisodes) + !IsEmpty(Window(Home).Property(emby.nodes.0.nextepisodes.content))">$INFO[Window(Home).Property(emby.nodes.0.nextepisodes.content)]</value>
+		<value condition="Stringcompare(Skin.String(widget3),embynode1) + !IsEmpty(Window(Home).Property(emby.nodes.1.content))">$INFO[Window(Home).Property(emby.nodes.1.content)]</value>
+		<value condition="Stringcompare(Skin.String(widget3),embynode1recent) + !IsEmpty(Window(Home).Property(emby.nodes.1.recent.content))">$INFO[Window(Home).Property(emby.nodes.1.recent.content)]</value>
+		<value condition="Stringcompare(Skin.String(widget3),embynode1recentepisodes) + !IsEmpty(Window(Home).Property(emby.nodes.1.recentepisodes.content))">$INFO[Window(Home).Property(emby.nodes.1.recentepisodes.content)]</value>
+		<value condition="Stringcompare(Skin.String(widget3),embynode1inprogress) + !IsEmpty(Window(Home).Property(emby.nodes.1.inprogress.content))">$INFO[Window(Home).Property(emby.nodes.1.inprogress.content)]</value>
+		<value condition="Stringcompare(Skin.String(widget3),embynode1inprogressepisodes) + !IsEmpty(Window(Home).Property(emby.nodes.1.inprogressepisodes.content))">$INFO[Window(Home).Property(emby.nodes.1.inprogressepisodes.content)]</value>
+		<value condition="Stringcompare(Skin.String(widget3),embynode1nextepisodes) + !IsEmpty(Window(Home).Property(emby.nodes.1.nextepisodes.content))">$INFO[Window(Home).Property(emby.nodes.1.nextepisodes.content)]</value>
+		<value condition="Stringcompare(Skin.String(widget3),embynode2) + !IsEmpty(Window(Home).Property(emby.nodes.2.content))">$INFO[Window(Home).Property(emby.nodes.2.content)]</value>
+		<value condition="Stringcompare(Skin.String(widget3),embynode2recent) + !IsEmpty(Window(Home).Property(emby.nodes.2.recent.content))">$INFO[Window(Home).Property(emby.nodes.2.recent.content)]</value>
+		<value condition="Stringcompare(Skin.String(widget3),embynode2recentepisodes) + !IsEmpty(Window(Home).Property(emby.nodes.2.recentepisodes.content))">$INFO[Window(Home).Property(emby.nodes.2.recentepisodes.content)]</value>
+		<value condition="Stringcompare(Skin.String(widget3),embynode2inprogress) + !IsEmpty(Window(Home).Property(emby.nodes.2.inprogress.content))">$INFO[Window(Home).Property(emby.nodes.2.inprogress.content)]</value>
+		<value condition="Stringcompare(Skin.String(widget3),embynode2inprogressepisodes) + !IsEmpty(Window(Home).Property(emby.nodes.2.inprogressepisodes.content))">$INFO[Window(Home).Property(emby.nodes.2.inprogressepisodes.content)]</value>
+		<value condition="Stringcompare(Skin.String(widget3),embynode2nextepisodes) + !IsEmpty(Window(Home).Property(emby.nodes.2.nextepisodes.content))">$INFO[Window(Home).Property(emby.nodes.2.nextepisodes.content)]</value>
+		<value>plugin://script.extendedinfo?info=trendingmovies</value>
 	</variable>
 	<variable name="DefWidget4Content">
 		<value condition="Stringcompare(Skin.String(widget4),Engadget)">plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=Engadget</value>
@@ -248,6 +306,34 @@
 		<value condition="Stringcompare(Skin.String(widget15),OnAirTvShows)">plugin://script.extendedinfo?info=onairtvshows</value>
 		<value condition="Stringcompare(Skin.String(widget15),AiringTodayTvShows)">plugin://script.extendedinfo?info=airingtodaytvshows</value>
 		<value condition="Stringcompare(Skin.String(widget15),RecommendedShows)">plugin://script.skin.helper.service/?action=recommendedmedia&amp;limit=[18]</value>
+		<value condition="Stringcompare(Skin.String(widget15),Custom1)">$INFO[Skin.String(CustomWidget1)]</value>
+		<value condition="Stringcompare(Skin.String(widget15),Custom2)">$INFO[Skin.String(CustomWidget2)]</value>
+		<value condition="Stringcompare(Skin.String(widget15),Custom3)">$INFO[Skin.String(CustomWidget3)]</value>
+		<value condition="Stringcompare(Skin.String(widget15),Custom4)">$INFO[Skin.String(CustomWidget4)]</value>
+		<value condition="Stringcompare(Skin.String(widget15),Custom5)">$INFO[Skin.String(CustomWidget5)]</value>
+		<value condition="Stringcompare(Skin.String(widget15),Custom6)">$INFO[Skin.String(CustomWidget6)]</value>
+		<value condition="Stringcompare(Skin.String(widget15),Custom7)">$INFO[Skin.String(CustomWidget7)]</value>
+		<value condition="Stringcompare(Skin.String(widget15),Custom8)">$INFO[Skin.String(CustomWidget8)]</value>
+		<value condition="Stringcompare(Skin.String(widget15),Custom9)">$INFO[Skin.String(CustomWidget9)]</value>
+		<value condition="Stringcompare(Skin.String(widget15),Custom10)">$INFO[Skin.String(CustomWidget10)]</value>
+		<value condition="Stringcompare(Skin.String(widget15),embynode0) + !IsEmpty(Window(Home).Property(emby.nodes.0.content))">$INFO[Window(Home).Property(emby.nodes.0.content)]</value>
+		<value condition="Stringcompare(Skin.String(widget15),embynode0recent) + !IsEmpty(Window(Home).Property(emby.nodes.0.recent.content))">$INFO[Window(Home).Property(emby.nodes.0.recent.content)]</value>
+		<value condition="Stringcompare(Skin.String(widget15),embynode0recentepisodes) + !IsEmpty(Window(Home).Property(emby.nodes.0.recentepisodes.content))">$INFO[Window(Home).Property(emby.nodes.0.recentepisodes.content)]</value>
+		<value condition="Stringcompare(Skin.String(widget15),embynode0inprogress) + !IsEmpty(Window(Home).Property(emby.nodes.0.inprogress.content))">$INFO[Window(Home).Property(emby.nodes.0.inprogress.content)]</value>
+		<value condition="Stringcompare(Skin.String(widget15),embynode0inprogressepisodes) + !IsEmpty(Window(Home).Property(emby.nodes.0.inprogressepisodes.content))">$INFO[Window(Home).Property(emby.nodes.0.inprogressepisodes.content)]</value>
+		<value condition="Stringcompare(Skin.String(widget15),embynode0nextepisodes) + !IsEmpty(Window(Home).Property(emby.nodes.0.nextepisodes.content))">$INFO[Window(Home).Property(emby.nodes.0.nextepisodes.content)]</value>
+		<value condition="Stringcompare(Skin.String(widget15),embynode1) + !IsEmpty(Window(Home).Property(emby.nodes.1.content))">$INFO[Window(Home).Property(emby.nodes.1.content)]</value>
+		<value condition="Stringcompare(Skin.String(widget15),embynode1recent) + !IsEmpty(Window(Home).Property(emby.nodes.1.recent.content))">$INFO[Window(Home).Property(emby.nodes.1.recent.content)]</value>
+		<value condition="Stringcompare(Skin.String(widget15),embynode1recentepisodes) + !IsEmpty(Window(Home).Property(emby.nodes.1.recentepisodes.content))">$INFO[Window(Home).Property(emby.nodes.1.recentepisodes.content)]</value>
+		<value condition="Stringcompare(Skin.String(widget15),embynode1inprogress) + !IsEmpty(Window(Home).Property(emby.nodes.1.inprogress.content))">$INFO[Window(Home).Property(emby.nodes.1.inprogress.content)]</value>
+		<value condition="Stringcompare(Skin.String(widget15),embynode1inprogressepisodes) + !IsEmpty(Window(Home).Property(emby.nodes.1.inprogressepisodes.content))">$INFO[Window(Home).Property(emby.nodes.1.inprogressepisodes.content)]</value>
+		<value condition="Stringcompare(Skin.String(widget15),embynode1nextepisodes) + !IsEmpty(Window(Home).Property(emby.nodes.1.nextepisodes.content))">$INFO[Window(Home).Property(emby.nodes.1.nextepisodes.content)]</value>
+		<value condition="Stringcompare(Skin.String(widget15),embynode2) + !IsEmpty(Window(Home).Property(emby.nodes.2.content))">$INFO[Window(Home).Property(emby.nodes.2.content)]</value>
+		<value condition="Stringcompare(Skin.String(widget15),embynode2recent) + !IsEmpty(Window(Home).Property(emby.nodes.2.recent.content))">$INFO[Window(Home).Property(emby.nodes.2.recent.content)]</value>
+		<value condition="Stringcompare(Skin.String(widget15),embynode2recentepisodes) + !IsEmpty(Window(Home).Property(emby.nodes.2.recentepisodes.content))">$INFO[Window(Home).Property(emby.nodes.2.recentepisodes.content)]</value>
+		<value condition="Stringcompare(Skin.String(widget15),embynode2inprogress) + !IsEmpty(Window(Home).Property(emby.nodes.2.inprogress.content))">$INFO[Window(Home).Property(emby.nodes.2.inprogress.content)]</value>
+		<value condition="Stringcompare(Skin.String(widget15),embynode2inprogressepisodes) + !IsEmpty(Window(Home).Property(emby.nodes.2.inprogressepisodes.content))">$INFO[Window(Home).Property(emby.nodes.2.inprogressepisodes.content)]</value>
+		<value condition="Stringcompare(Skin.String(widget15),embynode2nextepisodes) + !IsEmpty(Window(Home).Property(emby.nodes.2.nextepisodes.content))">$INFO[Window(Home).Property(emby.nodes.2.nextepisodes.content)]</value>
 		<value>plugin://script.extendedinfo?info=trendingmovies</value>
 	</variable>
 	<variable name="DefWidget16Content">
