@@ -1691,16 +1691,8 @@
 		<value>$INFO[ListItem.VideoCodec]</value>
 	</variable>
 	<variable name="DurationLong">
-        <value condition="!Skin.HasSetting(furniture.alternate.duration)">$INFO[Window(videolibrary).Property(Duration), ,min]</value>
+        <value condition="!Skin.HasSetting(furniture.alternate.duration)">$INFO[Window(Home).Property(SkinHelper.ListItemDuration.Hours), ,h]$INFO[Window(Home).Property(SkinHelper.ListItemDuration.Minutes), ,min]</value>
 		<value>$INFO[ListItem.Duration,,min]</value>
-	</variable>
-	<variable name="DurationLongVideoInfo">
-		<value condition="!Skin.HasSetting(furniture.alternate.duration)">$INFO[Window(movieinformation).Property(Duration), ,min]</value>
-		<value>$INFO[ListItem.Duration,,min]</value>
-	</variable>
-	<variable name="DurationHomeLong">
-		<value condition="!Skin.HasSetting(furniture.alternate.duration)">$INFO[Window(home).Property(Duration), ,min]</value>
-		<value>$INFO[Container(301).ListItem.Duration,,min]</value>
 	</variable>
 	<variable name="MPAA">
 		<value condition="SubString(ListItem.Mpaa,gb-pg)">PG</value>
