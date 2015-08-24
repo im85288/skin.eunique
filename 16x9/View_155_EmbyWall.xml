@@ -29,7 +29,7 @@
 						<right>0</right>
 						<bottom>0</bottom>
 						<aspectratio scalediffuse="false">stretch</aspectratio>
-						<texture diffuse="diffuse/wall.png" background="true">$VAR[PosterImage]</texture>
+						<texture background="true">$VAR[PosterImage]</texture>
 						<animation effect="fade" start="25" end="25" condition="stringcompare(ListItem.Overlay,OverlayWatched.png)">Conditional</animation>
 					</control>
 					<control type="image">
@@ -111,7 +111,7 @@
 						<right>0</right>
 						<bottom>0</bottom>
 						<aspectratio scalediffuse="false">stretch</aspectratio>
-						<texture diffuse="diffuse/wall.png" background="true">$VAR[PosterImage]</texture>
+						<texture background="true">$VAR[PosterImage]</texture>
 					</control>
 					<control type="image">
 						<left>256</left>
@@ -339,7 +339,7 @@
 						<right>128</right>
 						<bottom>0</bottom>
 						<aspectratio scalediffuse="false">stretch</aspectratio>
-						<texture diffuse="diffuse/wall.png" background="true">$VAR[PosterImage]</texture>
+						<texture background="true">$VAR[PosterImage]</texture>
 					</control>
 					<control type="image">
 						<left>88</left>
@@ -505,7 +505,7 @@
 						<right>128</right>
 						<bottom>180</bottom>
 						<aspectratio scalediffuse="false">stretch</aspectratio>
-						<texture diffuse="diffuse/wall.png" background="true">$VAR[PosterImage]</texture>
+						<texture background="true">$VAR[PosterImage]</texture>
 					</control>
 					<control type="image">
 						<left>88</left>
@@ -673,7 +673,7 @@
 						<right>0</right>
 						<bottom>180</bottom>
 						<aspectratio scalediffuse="false">stretch</aspectratio>
-						<texture diffuse="diffuse/wall.png" background="true">$VAR[PosterImage]</texture>
+						<texture background="true">$VAR[PosterImage]</texture>
 					</control>
 					<control type="image">
 						<left>256</left>
@@ -898,7 +898,7 @@
 				</focusedlayout>
 			</control>
 			<include>Furniture_ScrollbarW</include>
-			<!--<control type="group" description="Poster"><visible>!IsEmpty(ListItem.Icon)</visible><left>70</left><width>448</width><top>206</top><height>660</height><control type="image"><width>100%</width><height>100%</height><texture border="10">common/nofocus-shadow10.png</texture></control><control type="image"><left>10</left><top>10</top><right>10</right><bottom>10</bottom><texture border="10" colordiffuse="Panel">common/box.png</texture></control><control type="image"><left>10</left><top>10</top><right>10</right><bottom>10</bottom><fadetime>300</fadetime><aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio><texture diffuse="diffuse/listposter.png" background="true">$VAR[PosterImage]</texture></control></control>--></control>
+			<!--<control type="group" description="Poster"><visible>!IsEmpty(ListItem.Icon)</visible><left>70</left><width>448</width><top>206</top><height>660</height><control type="image"><width>100%</width><height>100%</height><texture border="10">common/nofocus-shadow10.png</texture></control><control type="image"><left>10</left><top>10</top><right>10</right><bottom>10</bottom><texture border="10" colordiffuse="Panel">common/box.png</texture></control><control type="image"><left>10</left><top>10</top><right>10</right><bottom>10</bottom><fadetime>300</fadetime><aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio><texture background="true">$VAR[PosterImage]</texture></control></control>--></control>
 	</include>
 	<include name="View_55_Wall_Fanout"/>
 </includes>
