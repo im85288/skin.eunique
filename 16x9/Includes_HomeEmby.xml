@@ -426,8 +426,8 @@
 		<top>-40</top>
 		<!-- Widget Info -->
 		<control type="group">
-			<animation effect="slide" start="0" end="-356,0" condition="Control.HasFocus(6017) | Control.HasFocus(3017) | Control.HasFocus(5017) | Control.HasFocus(4017)" time="200">Conditional</animation>
-			<animation effect="slide" start="0" end="-657,0" condition="Control.HasFocus(9017) | Control.HasFocus(10017) | Control.HasFocus(15017) | Control.HasFocus(14017)" time="200">Conditional</animation>
+			<animation effect="slide" start="0" end="-356,0" condition="Control.HasFocus(6017) | Control.HasFocus(60171) | Control.HasFocus(3017) | Control.HasFocus(30171)  | Control.HasFocus(5017) | Control.HasFocus(50171) | Control.HasFocus(4017) | Control.HasFocus(40171)" time="200">Conditional</animation>
+			<animation effect="slide" start="0" end="-657,0" condition="Control.HasFocus(9017) | Control.HasFocus(90171)| Control.HasFocus(10017) | Control.HasFocus(100171) | Control.HasFocus(15017) | Control.HasFocus(150171) | Control.HasFocus(14017) | Control.HasFocus(140171)" time="200">Conditional</animation>
 			<animation type="WindowClose">
 				<effect type="fade" start="100" end="0" time="150" />
 			</animation>
@@ -476,17 +476,24 @@
 				</content>
 			</control>
 			<!-- Default Widget -->
-			<control type="label">
+			<control type="group">
 				<left>SidePad</left>
-				<top>290</top>
-				<width>810</width>
-				<align>left</align>
+				<top>285</top>
+				<width>820</width>
 				<height>40</height>
-				<font>Small</font>
-				<textcolor>PanelWhite70</textcolor>
-				<selectedcolor>PanelWhite70</selectedcolor>
-				<label>$VAR[EmbyWidget2Label]</label>
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(widget),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
+				<control type="button" id="60121">
+					<align>left</align>
+					<aligny>top</aligny>
+					<font>Small</font>
+					<onup>300</onup>
+					<ondown>6012</ondown>
+					<textoffsetx>0</textoffsetx>
+					<label>$VAR[EmbyWidget2Label]</label>
+					<focusedcolor>$VAR[ColourHighlight]</focusedcolor>
+					<texturenofocus>-</texturenofocus>
+					<onclick>ActivateWindow(1112)</onclick>
+					<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(widget),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
+				</control>
 			</control>
 			<control type="wraplist" id="6012">
 				<description>Widget</description>
@@ -495,7 +502,8 @@
 				<left>SidePad</left>
 				<width>820</width>
 				<height>460</height>
-				<onup>300</onup>
+				<onup condition="Skin.HasSetting(global.kioskmode)">300</onup>
+				<onup condition="!Skin.HasSetting(global.kioskmode)">60121</onup>
 				<ondown>6013</ondown>
 				<onleft>301</onleft>
 				<onright>301</onright>
@@ -680,17 +688,24 @@
 				<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
 				<visible>Control.HasFocus(6014)</visible>
 			</control>
-			<control type="label">
+			<control type="group">
 				<left>980</left>
-				<top>290</top>
+				<top>285</top>
 				<width>410</width>
-				<align>left</align>
 				<height>40</height>
-				<font>Small</font>
-				<textcolor>PanelWhite70</textcolor>
-				<selectedcolor>PanelWhite70</selectedcolor>
-				<label>$VAR[EmbyWidget1Label]</label>
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(widget),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
+				<control type="button" id="60161">
+					<align>left</align>
+					<aligny>top</aligny>
+					<font>Small</font>
+					<onup>300</onup>
+					<ondown>6016</ondown>
+					<textoffsetx>0</textoffsetx>
+					<label>$VAR[EmbyWidget1Label]</label>
+					<focusedcolor>$VAR[ColourHighlight]</focusedcolor>
+					<texturenofocus>-</texturenofocus>
+					<onclick>ActivateWindow(1112)</onclick>
+					<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(widget),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
+				</control>
 			</control>
 			<control type="list" id="6016">
 				<description>Widget</description>
@@ -699,7 +714,8 @@
 				<left>980</left>
 				<width>410</width>
 				<height>704</height>
-				<onup>300</onup>
+				<onup condition="Skin.HasSetting(global.kioskmode)">300</onup>
+				<onup condition="!Skin.HasSetting(global.kioskmode)">60161</onup>
 				<ondown>6016</ondown>
 				<onleft>6012</onleft>
 				<onright>6017</onright>
@@ -773,17 +789,24 @@
 				<content target="video">$VAR[DefWidget1Content]</content>
 			</control>
 			<!-- Latest Movies -->
-			<control type="label">
+			<control type="group">
 				<left>1470</left>
-				<top>290</top>
+				<top>285</top>
 				<width>410</width>
-				<align>left</align>
 				<height>40</height>
-				<font>Small</font>
-				<textcolor>PanelWhite70</textcolor>
-				<selectedcolor>PanelWhite70</selectedcolor>
-				<label>$VAR[EmbyWidget3Label]</label>
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(widget),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
+				<control type="button" id="60171">
+					<align>left</align>
+					<aligny>top</aligny>
+					<font>Small</font>
+					<onup>300</onup>
+					<ondown>6017</ondown>
+					<textoffsetx>0</textoffsetx>
+					<label>$VAR[EmbyWidget3Label]</label>
+					<focusedcolor>$VAR[ColourHighlight]</focusedcolor>
+					<texturenofocus>-</texturenofocus>
+					<onclick>ActivateWindow(1112)</onclick>
+					<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(widget),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
+				</control>
 			</control>
 			<control type="panel" id="6017">
 				<description>Widget</description>
@@ -792,7 +815,8 @@
 				<left>1470</left>
 				<width>316</width>
 				<height>705</height>
-				<onup>300</onup>
+				<onup condition="Skin.HasSetting(global.kioskmode)">300</onup>
+				<onup condition="!Skin.HasSetting(global.kioskmode)">60171</onup>
 				<ondown>6017</ondown>
 				<onright condition="Control.IsVisible(9017)">9017</onright>
 				<onleft condition="Control.IsVisible(6016)">6016</onleft>
@@ -863,17 +887,24 @@
 				<content target="video">$VAR[DefWidget3Content]</content>
 			</control>
 			<!-- Latest XBMC -->
-			<control type="label">
+			<control type="group">
 				<left>1865</left>
-				<top>290</top>
+				<top>285</top>
 				<width>688</width>
-				<align>left</align>
 				<height>40</height>
-				<font>Small</font>
-				<textcolor>PanelWhite70</textcolor>
-				<selectedcolor>PanelWhite70</selectedcolor>
-				<label>$VAR[EmbyWidget15Label]</label>
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(widget),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
+				<control type="button" id="90171">
+					<align>left</align>
+					<aligny>top</aligny>
+					<font>Small</font>
+					<onup>300</onup>
+					<ondown>9017</ondown>
+					<textoffsetx>0</textoffsetx>
+					<label>$VAR[EmbyWidget15Label]</label>
+					<focusedcolor>$VAR[ColourHighlight]</focusedcolor>
+					<texturenofocus>-</texturenofocus>
+					<onclick>ActivateWindow(1112)</onclick>
+					<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(widget),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
+				</control>
 			</control>
 			<control type="wraplist" id="9017">
 				<focusposition>0</focusposition>
@@ -884,7 +915,8 @@
 				<left>1860</left>
 				<width>491</width>
 				<height>705</height>
-				<onup>300</onup>
+				<onup condition="Skin.HasSetting(global.kioskmode)">300</onup>
+				<onup condition="!Skin.HasSetting(global.kioskmode)">90171</onup>
 				<ondown>6017</ondown>
 				<onleft condition="Control.IsVisible(6017)">6017</onleft>
 				<onleft condition="!Control.IsVisible(6017)">6012</onleft>
@@ -1697,18 +1729,24 @@
 				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(3442)">Conditional</animation>
 			</control>
 			<!-- Movies menu item -->
-			<control type="label">
+			<control type="group">
 				<left>SidePad</left>
-				<top>290</top>
-				<width>810</width>
-				<align>left</align>
+				<top>285</top>
+				<width>820</width>
 				<height>40</height>
-				<font>Small</font>
-				<scroll>true</scroll>
-				<textcolor>PanelWhite70</textcolor>
-				<selectedcolor>PanelWhite70</selectedcolor>
-				<label>$VAR[EmbyWidget6Label]</label>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
+				<control type="button" id="30121">
+					<align>left</align>
+					<aligny>top</aligny>
+					<font>Small</font>
+					<onup>300</onup>
+					<ondown>3012</ondown>
+					<textoffsetx>0</textoffsetx>
+					<label>$VAR[EmbyWidget6Label]</label>
+					<focusedcolor>$VAR[ColourHighlight]</focusedcolor>
+					<texturenofocus>-</texturenofocus>
+					<onclick>ActivateWindow(1112)</onclick>
+					<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
+				</control>
 			</control>
 			<control type="wraplist" id="3012">
 				<description>Widget</description>
@@ -1717,7 +1755,8 @@
 				<left>SidePad</left>
 				<width>820</width>
 				<height>460</height>
-				<onup>300</onup>
+				<onup condition="Skin.HasSetting(global.kioskmode)">300</onup>
+				<onup condition="!Skin.HasSetting(global.kioskmode)">30121</onup>
 				<ondown>3013</ondown>
 				<onleft>301</onleft>
 				<onright>301</onright>
@@ -1922,18 +1961,24 @@
 				<visible>Control.HasFocus(3014)</visible>
 			</control>
 			<!-- In progress thumbs -->
-			<control type="label">
+			<control type="group">
 				<left>980</left>
-				<top>290</top>
+				<top>285</top>
 				<width>410</width>
-				<align>left</align>
 				<height>40</height>
-				<font>Small</font>
-				<scroll>true</scroll>
-				<textcolor>PanelWhite70</textcolor>
-				<selectedcolor>PanelWhite70</selectedcolor>
-				<label>$VAR[EmbyWidget7Label]</label>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
+				<control type="button" id="30161">
+					<align>left</align>
+					<aligny>top</aligny>
+					<font>Small</font>
+					<onup>300</onup>
+					<ondown>3016</ondown>
+					<textoffsetx>0</textoffsetx>
+					<label>$VAR[EmbyWidget7Label]</label>
+					<focusedcolor>$VAR[ColourHighlight]</focusedcolor>
+					<texturenofocus>-</texturenofocus>
+					<onclick>ActivateWindow(1112)</onclick>
+					<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
+				</control>
 			</control>
 			<control type="list" id="3016">
 				<description>Widget</description>
@@ -1942,7 +1987,8 @@
 				<left>980</left>
 				<width>410</width>
 				<height>705</height>
-				<onup>300</onup>
+				<onup condition="Skin.HasSetting(global.kioskmode)">300</onup>
+				<onup condition="!Skin.HasSetting(global.kioskmode)">30161</onup>
 				<ondown>3016</ondown>
 				<onleft>3012</onleft>
 				<onright>3017</onright>
@@ -2022,18 +2068,24 @@
 				<content target="video">$VAR[DefWidget7Content]</content>
 			</control>
 			<!-- Latest Movies -->
-			<control type="label">
+			<control type="group">
 				<left>1470</left>
-				<top>290</top>
+				<top>285</top>
 				<width>316</width>
-				<align>left</align>
 				<height>40</height>
-				<font>Small</font>
-				<scroll>true</scroll>
-				<textcolor>PanelWhite70</textcolor>
-				<selectedcolor>PanelWhite70</selectedcolor>
-				<label>$VAR[EmbyWidget8Label]</label>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
+				<control type="button" id="30171">
+					<align>left</align>
+					<aligny>top</aligny>
+					<font>Small</font>
+					<onup>300</onup>
+					<ondown>3017</ondown>
+					<textoffsetx>0</textoffsetx>
+					<label>$VAR[EmbyWidget8Label]</label>
+					<focusedcolor>$VAR[ColourHighlight]</focusedcolor>
+					<texturenofocus>-</texturenofocus>
+					<onclick>ActivateWindow(1112)</onclick>
+					<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
+				</control>
 			</control>
 			<control type="panel" id="3017">
 				<description>Widget</description>
@@ -2042,7 +2094,8 @@
 				<left>1470</left>
 				<width>316</width>
 				<height>705</height>
-				<onup>300</onup>
+				<onup condition="Skin.HasSetting(global.kioskmode)">300</onup>
+				<onup condition="!Skin.HasSetting(global.kioskmode)">30171</onup>
 				<ondown>3017</ondown>
 				<onright condition="Control.IsVisible(10017)">10017</onright>
 				<onleft condition="Control.IsVisible(3016)">3016</onleft>
@@ -2102,17 +2155,24 @@
 				<content target="video">$VAR[DefWidget8Content]</content>
 			</control>
 			<!-- Latest Similar XBMC -->
-			<control type="label">
+			<control type="group">
 				<left>1865</left>
-				<top>290</top>
+				<top>285</top>
 				<width>688</width>
-				<align>left</align>
 				<height>40</height>
-				<font>Small</font>
-				<textcolor>PanelWhite70</textcolor>
-				<selectedcolor>PanelWhite70</selectedcolor>
-				<label>$VAR[EmbyWidget16Label]</label>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
+				<control type="button" id="100171">
+					<align>left</align>
+					<aligny>top</aligny>
+					<font>Small</font>
+					<onup>300</onup>
+					<ondown>10017</ondown>
+					<textoffsetx>0</textoffsetx>
+					<label>$VAR[EmbyWidget16Label]</label>
+					<focusedcolor>$VAR[ColourHighlight]</focusedcolor>
+					<texturenofocus>-</texturenofocus>
+					<onclick>ActivateWindow(1112)</onclick>
+					<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
+				</control>
 			</control>
 			<control type="wraplist" id="10017">
 				<focusposition>0</focusposition>
@@ -2123,7 +2183,8 @@
 				<left>1860</left>
 				<width>491</width>
 				<height>705</height>
-				<onup>300</onup>
+				<onup condition="Skin.HasSetting(global.kioskmode)">300</onup>
+				<onup condition="!Skin.HasSetting(global.kioskmode)">100171</onup>
 				<ondown>3017</ondown>
 				<onleft condition="Control.IsVisible(3017)">3017</onleft>
 				<onleft condition="!Control.IsVisible(3017)">3012</onleft>
@@ -2263,17 +2324,24 @@
 			</control>
 
 			<!-- TV menu item -->
-			<control type="label">
+			<control type="group">
 				<left>SidePad</left>
-				<top>290</top>
-				<width>810</width>
-				<align>left</align>
+				<top>285</top>
+				<width>820</width>
 				<height>40</height>
-				<font>Small</font>
-				<textcolor>PanelWhite70</textcolor>
-				<selectedcolor>PanelWhite70</selectedcolor>
-				<label>$VAR[EmbyWidget9Label]</label>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+				<control type="button" id="40121">
+					<align>left</align>
+					<aligny>top</aligny>
+					<font>Small</font>
+					<onup>300</onup>
+					<ondown>4012</ondown>
+					<textoffsetx>0</textoffsetx>
+					<label>$VAR[EmbyWidget9Label]</label>
+					<focusedcolor>$VAR[ColourHighlight]</focusedcolor>
+					<texturenofocus>-</texturenofocus>
+					<onclick>ActivateWindow(1112)</onclick>
+					<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+				</control>
 			</control>
 			<control type="wraplist" id="4012">
 				<description>Widget</description>
@@ -2282,7 +2350,8 @@
 				<left>SidePad</left>
 				<width>820</width>
 				<height>460</height>
-				<onup>300</onup>
+				<onup condition="Skin.HasSetting(global.kioskmode)">300</onup>
+				<onup condition="!Skin.HasSetting(global.kioskmode)">40121</onup>
 				<ondown>4013</ondown>
 				<onleft>301</onleft>
 				<onright>301</onright>
@@ -2574,17 +2643,24 @@
 				<visible>Control.HasFocus(4014)</visible>
 			</control>
 			<!-- Next Up/In progress  -->
-			<control type="label">
+			<control type="group">
 				<left>980</left>
-				<top>290</top>
+				<top>285</top>
 				<width>410</width>
-				<align>left</align>
 				<height>40</height>
-				<font>Small</font>
-				<textcolor>PanelWhite70</textcolor>
-				<selectedcolor>PanelWhite70</selectedcolor>
-				<label>$VAR[EmbyWidget10Label]</label>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+				<control type="button" id="40161">
+					<align>left</align>
+					<aligny>top</aligny>
+					<font>Small</font>
+					<onup>300</onup>
+					<ondown>4016</ondown>
+					<textoffsetx>0</textoffsetx>
+					<label>$VAR[EmbyWidget10Label]</label>
+					<focusedcolor>$VAR[ColourHighlight]</focusedcolor>
+					<texturenofocus>-</texturenofocus>
+					<onclick>ActivateWindow(1112)</onclick>
+					<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+				</control>
 			</control>
 			<control type="list" id="4016">
 				<description>Widget</description>
@@ -2593,7 +2669,8 @@
 				<left>980</left>
 				<width>410</width>
 				<height>705</height>
-				<onup>300</onup>
+				<onup condition="Skin.HasSetting(global.kioskmode)">300</onup>
+				<onup condition="!Skin.HasSetting(global.kioskmode)">40161</onup>
 				<ondown>4016</ondown>
 				<onleft>4012</onleft>
 				<onright>4017</onright>
@@ -2697,17 +2774,24 @@
 				<content target="video">$VAR[DefWidget10Content]</content>
 			</control>
 			<!-- Latest Tv -->
-			<control type="label">
+			<control type="group">
 				<left>1470</left>
-				<top>290</top>
+				<top>285</top>
 				<width>316</width>
-				<align>left</align>
 				<height>40</height>
-				<font>Small</font>
-				<textcolor>PanelWhite70</textcolor>
-				<selectedcolor>PanelWhite70</selectedcolor>
-				<label>$VAR[EmbyWidget11Label]</label>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+				<control type="button" id="40171">
+					<align>left</align>
+					<aligny>top</aligny>
+					<font>Small</font>
+					<onup>300</onup>
+					<ondown>4017</ondown>
+					<textoffsetx>0</textoffsetx>
+					<label>$VAR[EmbyWidget11Label]</label>
+					<focusedcolor>$VAR[ColourHighlight]</focusedcolor>
+					<texturenofocus>-</texturenofocus>
+					<onclick>ActivateWindow(1112)</onclick>
+					<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+				</control>
 			</control>
 			<control type="panel" id="4017">
 				<description>Widget</description>
@@ -2716,7 +2800,8 @@
 				<left>1470</left>
 				<width>316</width>
 				<height>705</height>
-				<onup>300</onup>
+				<onup condition="Skin.HasSetting(global.kioskmode)">300</onup>
+				<onup condition="!Skin.HasSetting(global.kioskmode)">40171</onup>
 				<ondown>4017</ondown>
 				<onleft>4016</onleft>
 				<onright>14017</onright>
@@ -2789,17 +2874,24 @@
 				<content target="video">$VAR[DefWidget11Content]</content>
 			</control>
 			<!-- Latest TV XBMC -->
-			<control type="label">
+			<control type="group">
 				<left>1865</left>
-				<top>290</top>
+				<top>285</top>
 				<width>491</width>
-				<align>left</align>
 				<height>40</height>
-				<font>Small</font>
-				<textcolor>PanelWhite70</textcolor>
-				<selectedcolor>PanelWhite70</selectedcolor>
-				<label>$VAR[EmbyWidget18Label]</label>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+				<control type="button" id="140171">
+					<align>left</align>
+					<aligny>top</aligny>
+					<font>Small</font>
+					<onup>300</onup>
+					<ondown>14017</ondown>
+					<textoffsetx>0</textoffsetx>
+					<label>$VAR[EmbyWidget18Label]</label>
+					<focusedcolor>$VAR[ColourHighlight]</focusedcolor>
+					<texturenofocus>-</texturenofocus>
+					<onclick>ActivateWindow(1112)</onclick>
+					<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+				</control>
 			</control>
 			<control type="wraplist" id="14017">
 				<focusposition>0</focusposition>
@@ -2810,7 +2902,8 @@
 				<left>1860</left>
 				<width>491</width>
 				<height>705</height>
-				<onup>300</onup>
+				<onup condition="Skin.HasSetting(global.kioskmode)">300</onup>
+				<onup condition="!Skin.HasSetting(global.kioskmode)">140171</onup>
 				<ondown>4017</ondown>
 				<onleft condition="Control.IsVisible(4017)">4017</onleft>
 				<onleft condition="!Control.IsVisible(4017)">4012</onleft>
@@ -2949,17 +3042,24 @@
 				</control>
 			</control>
 			<!-- Music menu item -->
-			<control type="label">
+			<control type="group">
 				<left>SidePad</left>
-				<top>290</top>
-				<width>810</width>
-				<align>left</align>
+				<top>285</top>
+				<width>820</width>
 				<height>40</height>
-				<font>Small</font>
-				<textcolor>PanelWhite70</textcolor>
-				<selectedcolor>PanelWhite70</selectedcolor>
-				<label>$VAR[EmbyWidget12Label]</label>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+				<control type="button" id="50121">
+					<align>left</align>
+					<aligny>top</aligny>
+					<font>Small</font>
+					<onup>300</onup>
+					<ondown>5012</ondown>
+					<textoffsetx>0</textoffsetx>
+					<label>$VAR[EmbyWidget12Label]</label>
+					<focusedcolor>$VAR[ColourHighlight]</focusedcolor>
+					<texturenofocus>-</texturenofocus>
+					<onclick>ActivateWindow(1112)</onclick>
+					<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+				</control>
 			</control>
 			<control type="wraplist" id="5012">
 				<description>Widget</description>
@@ -2968,7 +3068,8 @@
 				<left>SidePad</left>
 				<width>820</width>
 				<height>460</height>
-				<onup>300</onup>
+				<onup condition="Skin.HasSetting(global.kioskmode)">300</onup>
+				<onup condition="!Skin.HasSetting(global.kioskmode)">50121</onup>
 				<ondown>5013</ondown>
 				<onleft>301</onleft>
 				<onright>301</onright>
@@ -3291,17 +3392,24 @@
 				<visible>Control.HasFocus(5014)</visible>
 			</control>
 			<!-- recommended music -->
-			<control type="label">
+			<control type="group">
 				<left>980</left>
-				<top>290</top>
+				<top>285</top>
 				<width>235</width>
-				<align>left</align>
 				<height>40</height>
-				<font>Small</font>
-				<textcolor>PanelWhite70</textcolor>
-				<selectedcolor>PanelWhite70</selectedcolor>
-				<label>$VAR[EmbyWidget13Label]</label>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+				<control type="button" id="50161">
+					<align>left</align>
+					<aligny>top</aligny>
+					<font>Small</font>
+					<onup>300</onup>
+					<ondown>5016</ondown>
+					<textoffsetx>0</textoffsetx>
+					<label>$VAR[EmbyWidget13Label]</label>
+					<focusedcolor>$VAR[ColourHighlight]</focusedcolor>
+					<texturenofocus>-</texturenofocus>
+					<onclick>ActivateWindow(1112)</onclick>
+					<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+				</control>
 			</control>
 			<control type="list" id="5016">
 				<description>Widget</description>
@@ -3310,7 +3418,8 @@
 				<left>980</left>
 				<width>235</width>
 				<height>705</height>
-				<onup>300</onup>
+				<onup condition="Skin.HasSetting(global.kioskmode)">300</onup>
+				<onup condition="!Skin.HasSetting(global.kioskmode)">50161</onup>
 				<ondown>5016</ondown>
 				<onleft>5012</onleft>
 				<onright>5017</onright>
@@ -3415,17 +3524,24 @@
 				<content target="video">$VAR[DefWidget13Content]</content>
 			</control>
 			<!-- Latest Albums -->
-			<control type="label">
+			<control type="group">
 				<left>1290</left>
-				<top>290</top>
+				<top>285</top>
 				<width>470</width>
-				<align>left</align>
 				<height>40</height>
-				<font>Small</font>
-				<textcolor>PanelWhite70</textcolor>
-				<selectedcolor>PanelWhite70</selectedcolor>
-				<label>$VAR[EmbyWidget14Label]</label>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+				<control type="button" id="50171">
+					<align>left</align>
+					<aligny>top</aligny>
+					<font>Small</font>
+					<onup>300</onup>
+					<ondown>5017</ondown>
+					<textoffsetx>0</textoffsetx>
+					<label>$VAR[EmbyWidget14Label]</label>
+					<focusedcolor>$VAR[ColourHighlight]</focusedcolor>
+					<texturenofocus>-</texturenofocus>
+					<onclick>ActivateWindow(1112)</onclick>
+					<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+				</control>
 			</control>
 			<control type="panel" id="5017">
 				<description>Widget</description>
@@ -3434,7 +3550,8 @@
 				<left>1290</left>
 				<width>470</width>
 				<height>705</height>
-				<onup>300</onup>
+				<onup condition="Skin.HasSetting(global.kioskmode)">300</onup>
+				<onup condition="!Skin.HasSetting(global.kioskmode)">50171</onup>
 				<ondown>5017</ondown>
 				<onleft>5016</onleft>
 				<onright>15017</onright>
@@ -3549,17 +3666,24 @@
 			</control>
 
 			<!-- Latest Music XBMC -->
-			<control type="label">
+			<control type="group">
 				<left>1865</left>
-				<top>290</top>
+				<top>285</top>
 				<width>688</width>
-				<align>left</align>
 				<height>40</height>
-				<font>Small</font>
-				<textcolor>PanelWhite70</textcolor>
-				<selectedcolor>PanelWhite70</selectedcolor>
-				<label>$VAR[EmbyWidget17Label]</label>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+				<control type="button" id="150171">
+					<align>left</align>
+					<aligny>top</aligny>
+					<font>Small</font>
+					<onup>300</onup>
+					<ondown>15017</ondown>
+					<textoffsetx>0</textoffsetx>
+					<label>$VAR[EmbyWidget17Label]</label>
+					<focusedcolor>$VAR[ColourHighlight]</focusedcolor>
+					<texturenofocus>-</texturenofocus>
+					<onclick>ActivateWindow(1112)</onclick>
+					<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+				</control>
 			</control>
 			<control type="wraplist" id="15017">
 				<focusposition>0</focusposition>
@@ -3570,7 +3694,8 @@
 				<left>1860</left>
 				<width>491</width>
 				<height>705</height>
-				<onup>300</onup>
+				<onup condition="Skin.HasSetting(global.kioskmode)">300</onup>
+				<onup condition="!Skin.HasSetting(global.kioskmode)">150171</onup>
 				<ondown>5017</ondown>
 				<onleft condition="Control.IsVisible(5017)">5017</onleft>
 				<onleft condition="!Control.IsVisible(5017)">5012</onleft>
@@ -3710,17 +3835,55 @@
 			</control>
 
 			<!-- Live TV menu item -->
-			<control type="label">
+			<control type="group">
 				<left>SidePad</left>
-				<top>290</top>
+				<top>285</top>
 				<width>810</width>
-				<align>left</align>
 				<height>40</height>
-				<font>Small</font>
-				<textcolor>PanelWhite70</textcolor>
-				<selectedcolor>PanelWhite70</selectedcolor>
-				<label>$VAR[EmbyWidget4Label]</label>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
+				<control type="button" id="70121">
+					<align>left</align>
+					<aligny>top</aligny>
+					<font>Small</font>
+					<onup>300</onup>
+					<ondown>7012</ondown>
+					<textoffsetx>0</textoffsetx>
+					<label>$VAR[EmbyWidget4Label]</label>
+					<focusedcolor>$VAR[ColourHighlight]</focusedcolor>
+					<texturenofocus>-</texturenofocus>
+					<onclick>SetProperty(Dialog.NumItems,15)</onclick>
+					<onclick>SetProperty(Dialog.1.Label,Engadget)</onclick>
+					<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(widget4,Engadget))</onclick>
+					<onclick>SetProperty(Dialog.2.Label,Eurogamer)</onclick>
+					<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(widget4,Eurogamer))</onclick>
+					<onclick>SetProperty(Dialog.3.Label,MobileTech Review)</onclick>
+					<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(widget4,MobileTech))</onclick>
+					<onclick>SetProperty(Dialog.4.Label,Channels)</onclick>
+					<onclick>SetProperty(Dialog.4.BuiltIn,Skin.SetString(widget4,LiveTV))</onclick>
+					<onclick>SetProperty(Dialog.5.Label,Recordings)</onclick>
+					<onclick>SetProperty(Dialog.5.BuiltIn,Skin.SetString(widget4,Recordings))</onclick>
+					<onclick>SetProperty(Dialog.6.Label,Custom1)</onclick>
+					<onclick>SetProperty(Dialog.6.BuiltIn,Skin.SetString(widget4,Custom1))</onclick>
+					<onclick>SetProperty(Dialog.7.Label,Custom2)</onclick>
+					<onclick>SetProperty(Dialog.7.BuiltIn,Skin.SetString(widget4,Custom2))</onclick>
+					<onclick>SetProperty(Dialog.8.Label,Custom3)</onclick>
+					<onclick>SetProperty(Dialog.8.BuiltIn,Skin.SetString(widget4,Custom3))</onclick>
+					<onclick>SetProperty(Dialog.9.Label,Custom4)</onclick>
+					<onclick>SetProperty(Dialog.9.BuiltIn,Skin.SetString(widget4,Custom4))</onclick>
+					<onclick>SetProperty(Dialog.10.Label,Custom5)</onclick>
+					<onclick>SetProperty(Dialog.10.BuiltIn,Skin.SetString(widget4,Custom5))</onclick>
+					<onclick>SetProperty(Dialog.11.Label,Custom6)</onclick>
+					<onclick>SetProperty(Dialog.11.BuiltIn,Skin.SetString(widget4,Custom6))</onclick>
+					<onclick>SetProperty(Dialog.12.Label,Custom7)</onclick>
+					<onclick>SetProperty(Dialog.13.BuiltIn,Skin.SetString(widget4,Custom7))</onclick>
+					<onclick>SetProperty(Dialog.13.Label,Custom8)</onclick>
+					<onclick>SetProperty(Dialog.13.BuiltIn,Skin.SetString(widget4,Custom8))</onclick>
+					<onclick>SetProperty(Dialog.14.Label,Custom9)</onclick>
+					<onclick>SetProperty(Dialog.15.BuiltIn,Skin.SetString(widget4,Custom9))</onclick>
+					<onclick>SetProperty(Dialog.15.Label,Custom10)</onclick>
+					<onclick>SetProperty(Dialog.15.BuiltIn,Skin.SetString(widget4,Custom10))</onclick>
+					<onclick>RunScript(script.toolbox,info=selectdialog,header=Select Widget)</onclick>
+					<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
+				</control>
 			</control>
 			<control type="wraplist" id="7012">
 				<description>Widget</description>
@@ -3729,40 +3892,9 @@
 				<left>SidePad</left>
 				<width>820</width>
 				<height>460</height>
-				<onup>300</onup>
+				<onup condition="Skin.HasSetting(global.kioskmode)">300</onup>
+				<onup condition="!Skin.HasSetting(global.kioskmode)">70121</onup>
 				<ondown>7013</ondown>
-				<onback>SetProperty(Dialog.NumItems,15)</onback>
-				<onback>SetProperty(Dialog.1.Label,Engadget)</onback>
-				<onback>SetProperty(Dialog.1.BuiltIn,Skin.SetString(widget4,Engadget))</onback>
-				<onback>SetProperty(Dialog.2.Label,Eurogamer)</onback>
-				<onback>SetProperty(Dialog.2.BuiltIn,Skin.SetString(widget4,Eurogamer))</onback>
-				<onback>SetProperty(Dialog.3.Label,MobileTech Review)</onback>
-				<onback>SetProperty(Dialog.3.BuiltIn,Skin.SetString(widget4,MobileTech))</onback>
-				<onback>SetProperty(Dialog.4.Label,Channels)</onback>
-				<onback>SetProperty(Dialog.4.BuiltIn,Skin.SetString(widget4,LiveTV))</onback>
-				<onback>SetProperty(Dialog.5.Label,Recordings)</onback>
-				<onback>SetProperty(Dialog.5.BuiltIn,Skin.SetString(widget4,Recordings))</onback>
-				<onback>SetProperty(Dialog.6.Label,Custom1)</onback>
-				<onback>SetProperty(Dialog.6.BuiltIn,Skin.SetString(widget4,Custom1))</onback>
-				<onback>SetProperty(Dialog.7.Label,Custom2)</onback>
-				<onback>SetProperty(Dialog.7.BuiltIn,Skin.SetString(widget4,Custom2))</onback>
-				<onback>SetProperty(Dialog.8.Label,Custom3)</onback>
-				<onback>SetProperty(Dialog.8.BuiltIn,Skin.SetString(widget4,Custom3))</onback>
-				<onback>SetProperty(Dialog.9.Label,Custom4)</onback>
-				<onback>SetProperty(Dialog.9.BuiltIn,Skin.SetString(widget4,Custom4))</onback>
-				<onback>SetProperty(Dialog.10.Label,Custom5)</onback>
-				<onback>SetProperty(Dialog.10.BuiltIn,Skin.SetString(widget4,Custom5))</onback>
-				<onback>SetProperty(Dialog.11.Label,Custom6)</onback>
-				<onback>SetProperty(Dialog.11.BuiltIn,Skin.SetString(widget4,Custom6))</onback>
-				<onback>SetProperty(Dialog.12.Label,Custom7)</onback>
-				<onback>SetProperty(Dialog.13.BuiltIn,Skin.SetString(widget4,Custom7))</onback>
-				<onback>SetProperty(Dialog.13.Label,Custom8)</onback>
-				<onback>SetProperty(Dialog.13.BuiltIn,Skin.SetString(widget4,Custom8))</onback>
-				<onback>SetProperty(Dialog.14.Label,Custom9)</onback>
-				<onback>SetProperty(Dialog.15.BuiltIn,Skin.SetString(widget4,Custom9))</onback>
-				<onback>SetProperty(Dialog.15.Label,Custom10)</onback>
-				<onback>SetProperty(Dialog.15.BuiltIn,Skin.SetString(widget4,Custom10))</onback>
-				<onback condition="!Skin.HasSetting(global.kioskmode)">RunScript(script.toolbox,info=selectdialog,header=Select Widget)</onback>
 				<onleft>301</onleft>
 				<onright>301</onright>
 				<preloaditems>2</preloaditems>
@@ -3997,17 +4129,29 @@
 				<visible>Control.HasFocus(7014)</visible>
 			</control>
 			<!-- Channels/Recordings -->
-			<control type="label">
+			<control type="group">
 				<left>980</left>
-				<top>290</top>
+				<top>285</top>
 				<width>410</width>
-				<align>left</align>
 				<height>40</height>
-				<font>Small</font>
-				<textcolor>PanelWhite70</textcolor>
-				<selectedcolor>PanelWhite70</selectedcolor>
-				<label>$VAR[EmbyWidget5Label]</label>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
+				<control type="button" id="70161">
+					<align>left</align>
+					<aligny>top</aligny>
+					<font>Small</font>
+					<onup>300</onup>
+					<ondown>7016</ondown>
+					<textoffsetx>0</textoffsetx>
+					<label>$VAR[EmbyWidget5Label]</label>
+					<focusedcolor>$VAR[ColourHighlight]</focusedcolor>
+					<texturenofocus>-</texturenofocus>
+					<onclick>SetProperty(Dialog.NumItems,2)</onclick>
+					<onclick>SetProperty(Dialog.1.Label,Channels)</onclick>
+					<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(widget5,LiveTV))</onclick>
+					<onclick>SetProperty(Dialog.2.Label,Recordings)</onclick>
+					<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(widget5,Recordings))</onclick>
+					<onclick>RunScript(script.toolbox,info=selectdialog,header=Select Widget)</onclick>
+					<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
+				</control>
 			</control>
 			<control type="panel" id="7016">
 				<description>Widget</description>
@@ -4016,14 +4160,9 @@
 				<left>980</left>
 				<width>836</width>
 				<height>705</height>
-				<onup>300</onup>
+				<onup condition="Skin.HasSetting(global.kioskmode)">300</onup>
+				<onup condition="!Skin.HasSetting(global.kioskmode)">70161</onup>
 				<ondown>7016</ondown>
-				<onback>SetProperty(Dialog.NumItems,2)</onback>
-				<onback>SetProperty(Dialog.1.Label,Channels)</onback>
-				<onback>SetProperty(Dialog.1.BuiltIn,Skin.SetString(widget5,LiveTV))</onback>
-				<onback>SetProperty(Dialog.2.Label,Recordings)</onback>
-				<onback>SetProperty(Dialog.2.BuiltIn,Skin.SetString(widget5,Recordings))</onback>
-				<onback condition="!Skin.HasSetting(global.kioskmode)">RunScript(script.toolbox,info=selectdialog,header=Select Widget)</onback>
 				<onleft>7012</onleft>
 				<onright>7016</onright>
 				<preloaditems>2</preloaditems>
