@@ -17,8 +17,8 @@
 	<onload condition="!Skin.HasSetting(startup.init) + System.HasAddon(plugin.video.netflix)">Skin.SetBool(global.netflix)</onload>
 	<onload condition="!Skin.HasSetting(startup.init)">Skin.SetBool(home.emby)</onload>
 	<onload condition="!Skin.HasSetting(startup.init)">Skin.SetBool(startup.init)</onload>
-	<onload>AlarmClock(livetvscroll,Control.Move(7016,6),00:10,silent,loop)</onload>
-	<onload>AlarmClock(musicScroll,Control.Move(5017,6),00:10,silent,loop)</onload>
+	<!-- <onload>AlarmClock(livetvscroll,Control.Move(7016,6),00:10,silent,loop)</onload>
+	<onload>AlarmClock(musicScroll,Control.Move(5017,6),00:10,silent,loop)</onload> -->
 	<onunload>CancelAlarm(livetvscroll,true)</onunload>
 	<onunload>CancelAlarm(musicScroll,true)</onunload>
 	<controls>
