@@ -3490,7 +3490,7 @@
 						<onfocus>Skin.SetString(widget.helper,music3)</onfocus>
 					</control>
 					<control type="button" id="50171">
-						<onfocus>CancelAlarm(musicScroll,silent)</onfocus>
+						<onfocus>CancelAlarm(musicScroll,true)</onfocus>
 						<onunfocus>AlarmClock(musicScroll,Control.Move(5017,6),00:10,silent,loop)</onunfocus>
 					</control>
 					<control type="image">
@@ -4050,6 +4050,10 @@
 					</control>
 				</itemlayout>
 				<focusedlayout height="235" width="418">
+					<control type="button" id="70171">
+						<onfocus>CancelAlarm(livetvscroll,true)</onfocus>
+						<onunfocus>AlarmClock(livetvscroll,Control.Move(7016,6),00:10,silent,loop)</onunfocus>
+					</control>
 					<control type="image">
 						<left>0</left>
 						<top>0</top>
