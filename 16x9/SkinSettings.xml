@@ -955,13 +955,12 @@
 						<selected>!Skin.HasSetting(global.hidecirles)</selected>
 						<onclick>Skin.ToggleSetting(global.hidecirles)</onclick>
 					</control>
-					<control type="button" id="9274" description="Busy Loader Image">
+					<control type="button" id="9274">
 						<width>1310</width>
 						<visible>ControlGroup(9100).HasFocus(9107)</visible>
 						<include>DefSettingsButton2</include>
-						<label>31216</label>
-						<label2>[COLOR=$VAR[ColourHighlight2]]$INFO[Skin.String(busyloader)][/COLOR]</label2>
-						<onclick>Skin.SetFile(busyloader,.gif,special://skin/extras/spinners)</onclick>
+						<label>$LOCALIZE[31216]: $INFO[Skin.String(SkinHelper.SpinnerTexture)]</label>
+						<onclick>RunScript(script.skin.helper.service,action=busytexture)</onclick>
 					</control>
 					<control type="radiobutton" id="9277" description="Busy Loader Minimal">
 						<width>1310</width>

@@ -24,14 +24,18 @@
                     <texture border="16" colordiffuse="White100">common/rounded-shadow8.png</texture>
                 </control>
 
-                <control type="image">
+                <control type="multiimage">
                     <description>Busy animation</description>
                     <posx>30</posx>
                     <posy>30</posy>
                     <width>48</width>
                     <height>48</height>
-                    <texture colordiffuse="$VAR[ColourHighlight]" fallback="special://skin/extras/spinners/flower.gif">$INFO[Skin.String(busyloader)]</texture>
                     <aspectratio>keep</aspectratio>
+                    <imagepath>$INFO[Skin.String(SkinHelper.SpinnerTexturePath)]</imagepath>
+                    <timeperimage>100</timeperimage>
+                    <colordiffuse>$VAR[ColourHighlight]</colordiffuse>
+                    <fadetime>0</fadetime>
+                    <visible>!Skin.String(SkinHelper.SpinnerTexturePath,None)</visible>
                 </control>
 
                 <control type="label">

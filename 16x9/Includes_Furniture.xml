@@ -1306,14 +1306,19 @@
 					<visible>!Skin.HasSetting(hide.busydialog) | !Window.IsVisible(DialogBusy.xml)</visible>
 					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
 				</control>
-				<control type="image">
+				<control type="multiimage">
+					<description>Busy animation</description>
 					<centertop>40</centertop>
 					<centerleft>40</centerleft>
 					<width>48</width>
 					<height>48</height>
-					<texture colordiffuse="PanelWhite100" fallback="special://skin/extras/spinners/flower.gif">$INFO[Skin.String(busyloader)]</texture>
+					<aspectratio>keep</aspectratio>
+					<imagepath>$INFO[Skin.String(SkinHelper.SpinnerTexturePath)]</imagepath>
+					<timeperimage>100</timeperimage>
+					<colordiffuse>$VAR[ColourHighlight]</colordiffuse>
+					<fadetime>0</fadetime>
+					<visible>!Skin.String(SkinHelper.SpinnerTexturePath,None)</visible>
 					<visible>Skin.HasSetting(hide.busydialog) + Window.IsVisible(DialogBusy.xml)</visible>
-					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
 				</control>
 			</control>
 			<control type="group">
@@ -1374,14 +1379,19 @@
 					<visible>!Skin.HasSetting(hide.busydialog) | !Window.IsVisible(DialogBusy.xml)</visible>
 					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
 				</control>
-				<control type="image">
+				<control type="multiimage">
+					<description>Busy animation</description>
 					<centertop>40</centertop>
 					<centerleft>40</centerleft>
 					<width>48</width>
 					<height>48</height>
-					<texture colordiffuse="PanelWhite100" fallback="special://skin/extras/spinners/flower.gif">$INFO[Skin.String(busyloader)]</texture>
+					<aspectratio>keep</aspectratio>
+					<imagepath>$INFO[Skin.String(SkinHelper.SpinnerTexturePath)]</imagepath>
+					<timeperimage>100</timeperimage>
+					<colordiffuse>$VAR[ColourHighlight]</colordiffuse>
+					<fadetime>0</fadetime>
+					<visible>!Skin.String(SkinHelper.SpinnerTexturePath,None)</visible>
 					<visible>Skin.HasSetting(hide.busydialog) + Window.IsVisible(DialogBusy.xml)</visible>
-					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
 				</control>
 			</control>
 			<control type="group">
