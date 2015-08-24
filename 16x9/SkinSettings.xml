@@ -452,6 +452,13 @@
 						<selected>Skin.HasSetting(osd.showinfoonpause)</selected>
 						<onclick>Skin.ToggleSetting(osd.showinfoonpause)</onclick>
 					</control>
+					<control type="button" id="92366">
+						<width>1310</width>
+						<visible>ControlGroup(9100).HasFocus(9103)</visible>
+						<include>DefSettingsButton2</include>
+						<label>$LOCALIZE[31799]: $INFO[skin.string(SkinHelper.ShowInfoAtPlaybackStart)] $LOCALIZE[31800]</label>
+						<onclick>Skin.SetNumeric(SkinHelper.ShowInfoAtPlaybackStart)</onclick>
+					</control>
 					<control type="radiobutton" id="9237" description="Show clearart">
 						<width>1310</width>
 						<visible>ControlGroup(9100).HasFocus(9103)</visible>
@@ -987,6 +994,14 @@
 						<label>Import skin settings</label>
 						<onclick>RunScript(script.skin.helper.service,action=restore)</onclick>
 					</control>
+					<!-- Views -->
+					<control type="button" id="9291" description="Enable or Disable views">
+						<width>1310</width>
+						<include>DefSettingsButton2</include>
+						<onclick>RunScript(script.skin.helper.service,action=enableviews)</onclick>
+						<label>31769</label>
+						<visible>ControlGroup(9100).HasFocus(9107)</visible>
+					</control>
 					<!-- Colours -->
 					<control type="radiobutton" id="9281">
 						<width>1310</width>
@@ -1232,14 +1247,6 @@
 						<label2>[COLOR=$INFO[Skin.String(emby.middle.colour.name)]]$INFO[Skin.String(emby.middle.colour.name)][/COLOR]</label2>
 						<visible>Skin.HasSetting(emby.middle.colour) + Skin.HasSetting(home.emby)</visible>
 						<visible>ControlGroup(9100).HasFocus(9108)</visible>
-					</control>
-					<!-- Views -->
-					<control type="button" id="9291" description="Enable or Disable views">
-						<width>1310</width>
-						<include>DefSettingsButton2</include>
-						<onclick>RunScript(script.arctic.zephyr.helper.jarvis,ENABLEVIEWS)</onclick>
-						<label>31769</label>
-						<visible>ControlGroup(9100).HasFocus(9109)</visible>
 					</control>
 				</control>
 				<!-- Lines -->
