@@ -3,6 +3,8 @@
 <includes>
 	<include name="View_155_Wall_Emby">
 		<control type="group">
+						<animation effect="slide" end="-27,0" center="auto" time="200" condition="Container.Column(14)">Conditional</animation>
+						<animation effect="slide" end="27,0" center="auto" time="200" condition="Container.Column(0)">Conditional</animation>
 			<include>Animation.Common</include>
 			<visible>Control.IsVisible(155)</visible>
 			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml)</visible>
@@ -99,6 +101,9 @@
 					</control>
 				</itemlayout>
 				<focusedlayout condition="!Container.Column(14) + !Container.Row(3)" width="256" height="360">
+					<control type="group">
+					<animation effect="zoom" start="100" end="105" center="auto" time="200">Focus</animation>
+
 					<control type="button">
 						<texturefocus>-</texturefocus>
 						<texturenofocus>-</texturenofocus>
@@ -316,6 +321,7 @@
 						<right>0</right>
 						<bottom>0</bottom>
 						<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectcorner.png</texture>
+						<animation effect="slide" end="-7,-8" center="auto" time="200">Focus</animation>
 						<!--<animation type="Focus">
 							<effect type="zoom" start="90" end="100" time="150" tween="sine" easing="inout" center="auto" />
 							<effect type="fade" start="0" end="100" time="150" tween="sine" easing="in" />
@@ -325,8 +331,11 @@
 							<effect type="fade" start="100" end="0" time="150" tween="sine" easing="out" />
 						</animation>-->
 					</control>
+					</control>
 				</focusedlayout>
 				<focusedlayout condition="!Container.Row(3) + Container.Column(14)" width="256" height="360">
+					<control type="group">
+					<animation effect="zoom" start="100" end="105" center="auto" time="200">Focus</animation>
 					<control type="button">
 						<texturefocus>-</texturefocus>
 						<texturenofocus>-</texturenofocus>
@@ -418,6 +427,7 @@
 						<right>128</right>
 						<bottom>0</bottom>
 						<texture colordiffuse="$VAR[ColourHighlight]" border="20" flipy="false" flipx="true">common/selectcorner.png</texture>
+						<animation effect="slide" end="7,-8" center="auto" time="200">Focus</animation>
 						<!--<animation type="Focus">
 							<effect type="zoom" start="90" end="100" time="150" tween="sine" easing="inout" center="auto" />
 							<effect type="fade" start="0" end="100" time="150" tween="sine" easing="in" />
@@ -491,8 +501,11 @@
 							<texture colordiffuse="-" background="true">$VAR[Studio]</texture>
 						</control>
 					</control>
+					</control>
 				</focusedlayout>
 				<focusedlayout condition="Container.Row(3) + Container.Column(14)" width="256" height="360">
+					<control type="group">
+					<animation effect="zoom" start="100" end="105" center="auto" time="200">Focus</animation>
 					<control type="button">
 						<texturefocus>-</texturefocus>
 						<texturenofocus>-</texturenofocus>
@@ -584,6 +597,7 @@
 						<right>128</right>
 						<bottom>180</bottom>
 						<texture colordiffuse="$VAR[ColourHighlight]" border="20" flipy="true" flipx="true">common/selectcorner.png</texture>
+						<animation effect="slide" end="7,8" center="auto" time="200">Focus</animation>
 						<!--<animation type="Focus">
 							<effect type="zoom" start="90" end="100" time="150" tween="sine" easing="inout" center="auto" />
 							<effect type="fade" start="0" end="100" time="150" tween="sine" easing="in" />
@@ -659,8 +673,11 @@
 							<texture colordiffuse="-" background="true">$VAR[Studio]</texture>
 						</control>
 					</control>
+					</control>
 				</focusedlayout>
 				<focusedlayout condition="Container.Row(3) + !Container.Column(14)" width="256" height="360">
+					<control type="group">
+					<animation effect="zoom" start="100" end="105" center="auto" time="200">Focus</animation>
 					<control type="button">
 						<texturefocus>-</texturefocus>
 						<texturenofocus>-</texturenofocus>
@@ -886,6 +903,7 @@
 						<right>0</right>
 						<bottom>180</bottom>
 						<texture colordiffuse="$VAR[ColourHighlight]" border="20" flipy="true" flipx="false">common/selectcorner.png</texture>
+						<animation effect="slide" end="-7,8" center="auto" time="200">Focus</animation>
 						<!--<animation type="Focus">
 							<effect type="zoom" start="90" end="100" time="150" tween="sine" easing="inout" center="auto" />
 							<effect type="fade" start="0" end="100" time="150" tween="sine" easing="in" />
@@ -894,6 +912,7 @@
 							<effect type="zoom" start="100" end="90" time="150" tween="sine" easing="inout" center="auto" />
 							<effect type="fade" start="100" end="0" time="150" tween="sine" easing="out" />
 						</animation>-->
+					</control>
 					</control>
 				</focusedlayout>
 			</control>
