@@ -17,6 +17,7 @@
 	<onload condition="!Skin.HasSetting(startup.init) + System.HasAddon(plugin.video.netflix)">Skin.SetBool(global.netflix)</onload>
 	<onload condition="!Skin.HasSetting(startup.init)">Skin.SetBool(home.emby)</onload>
 	<onload condition="!Skin.HasSetting(startup.init)">Skin.SetBool(startup.init)</onload>
+	<onload>AlarmClock(musicScroll,Control.Move(5017,6),00:10,silent,loop)</onload>
 	<controls>
 		<include condition="!Skin.HasSetting(home.netflix) + !Skin.HasSetting(lights.out)">GlobalBackground</include>
 		<include condition="Skin.HasSetting(home.netflix) + System.HasAddon(plugin.video.netflixbmc) + !Skin.HasSetting(lights.out)">NetflixBackground</include>

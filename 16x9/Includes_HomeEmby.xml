@@ -703,7 +703,7 @@
 				<ondown>6016</ondown>
 				<onleft>6012</onleft>
 				<onright>6017</onright>
-				<preloaditems>2</preloaditems>
+				<preloaditems>9</preloaditems>
 				<orientation>vertical</orientation>
 				<autoscroll time="1000">!Control.HasFocus(6016)</autoscroll>
 				<scrolltime tween="quadratic">100</scrolltime>
@@ -888,7 +888,7 @@
 				<ondown>6017</ondown>
 				<onleft condition="Control.IsVisible(6017)">6017</onleft>
 				<onleft condition="!Control.IsVisible(6017)">6012</onleft>
-				<preloaditems>2</preloaditems>
+				<preloaditems>9</preloaditems>
 				<scrolltime tween="quadratic">100</scrolltime>
 				<autoscroll time="5000">!Control.HasFocus(9017)</autoscroll>
 				<include>Animation.FadeIn</include>
@@ -2127,7 +2127,7 @@
 				<ondown>3017</ondown>
 				<onleft condition="Control.IsVisible(3017)">3017</onleft>
 				<onleft condition="!Control.IsVisible(3017)">3012</onleft>
-				<preloaditems>2</preloaditems>
+				<preloaditems>9</preloaditems>
 				<scrolltime tween="quadratic">100</scrolltime>
 				<autoscroll time="5000">!Control.HasFocus(10017)</autoscroll>
 				<include>Animation.FadeIn</include>
@@ -2814,7 +2814,7 @@
 				<ondown>4017</ondown>
 				<onleft condition="Control.IsVisible(4017)">4017</onleft>
 				<onleft condition="!Control.IsVisible(4017)">4012</onleft>
-				<preloaditems>2</preloaditems>
+				<preloaditems>9</preloaditems>
 				<scrolltime tween="quadratic">100</scrolltime>
 				<autoscroll time="5000">!Control.HasFocus(14017)</autoscroll>
 				<include>Animation.FadeIn</include>
@@ -3294,7 +3294,7 @@
 			<control type="label">
 				<left>980</left>
 				<top>290</top>
-				<width>410</width>
+				<width>235</width>
 				<align>left</align>
 				<height>40</height>
 				<font>Small</font>
@@ -3357,6 +3357,7 @@
 						<animation effect="zoom" start="100" end="109" time="100" reversible="false" center="auto">Focus</animation>
 						<control type="button">
 							<onfocus>Skin.SetString(widget.helper,music2)</onfocus>
+						<!-- <onfocus>AlarmClock(musicScroll,Control.Move(5017,6),00:10,silent,loop)</onfocus> -->
 						</control>
 						<control type="image">
 							<top>0</top>
@@ -3438,7 +3439,7 @@
 				<onleft>5016</onleft>
 				<onright>15017</onright>
 				<preloaditems>2</preloaditems>
-				<scrolltime tween="quadratic">100</scrolltime>
+				<scrolltime tween="quadratic">500</scrolltime>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 				<itemlayout width="235" height="235">
@@ -3488,11 +3489,10 @@
 					<control type="button">
 						<onfocus>Skin.SetString(widget.helper,music3)</onfocus>
 					</control>
-					<!-- silent broken in jarvis :/
 					<control type="button" id="50171">
 						<onfocus>CancelAlarm(musicScroll,silent)</onfocus>
 						<onunfocus>AlarmClock(musicScroll,Control.Move(5017,6),00:10,silent,loop)</onunfocus>
-					</control> -->
+					</control>
 					<control type="image">
 						<aspectratio>stretch</aspectratio>
 						<top>0</top>
@@ -3574,7 +3574,7 @@
 				<ondown>5017</ondown>
 				<onleft condition="Control.IsVisible(5017)">5017</onleft>
 				<onleft condition="!Control.IsVisible(5017)">5012</onleft>
-				<preloaditems>2</preloaditems>
+				<preloaditems>9</preloaditems>
 				<scrolltime tween="quadratic">100</scrolltime>
 				<autoscroll time="5000">!Control.HasFocus(15017)</autoscroll>
 				<include>Animation.FadeIn</include>
