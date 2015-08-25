@@ -1049,7 +1049,6 @@
 		</control>
 		<control type="group">
 			<visible>Skin.HasSetting(furniture.logo)</visible>
-			<visible>!Window.IsVisible(DialogAlbumInfo.xml)</visible>
 			<visible>!Player.HasMedia</visible>
 			<visible>Container.Content(albums) | Container.Content(artists) | Container.Content(songs)</visible>
 			<left>1622</left>
@@ -1063,7 +1062,6 @@
 				<aspectratio align="center" aligny="center">keep</aspectratio>
 				<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
 				<animation effect="rotate" end="10" center="auto" condition="true" time="200">conditional</animation>
-				<visible>Skin.HasSetting(furniture.logo) + !IsEmpty(Skin.String(cdartlocation))</visible>
 			</control>
 			<control type="textbox">
 				<width>258</width>
@@ -1164,7 +1162,7 @@
 		<value condition="Player.HasVideo + VideoPlayer.Content(episodes) + [Window.IsVisible(fullscreenvideo) | Window.IsVisible(visualisation) | Window.IsVisible(home)]">special://skin/extras/icons/tv.png</value>
 		<value condition="Player.HasVideo + [Window.IsVisible(fullscreenvideo) | Window.IsVisible(visualisation) | Window.IsVisible(home)]">special://skin/extras/icons/eye.png</value>
 		<value condition="Window.IsVisible(script-ExtendedInfo Script-YoutubeList.xml)">special://skin/extras/icons/youtube.png</value>
-		<value condition="Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(script-ExtendedInfo Script-VideoList.xml) | Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) | Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)">special://skin/extras/icons/info.png</value>
+		<value condition="Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogAlbumInfo.xml) | Window.IsVisible(script-ExtendedInfo Script-VideoList.xml) | Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) | Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)">special://skin/extras/icons/info.png</value>
 		<value condition="Window.IsVisible(script-NextAired-TVGuide.xml) | Window.IsVisible(script-NextAired-TVGuide2.xml)">special://skin/extras/icons/tvguide.png</value>
 		<value condition="SubString(Container.FolderPath,sources://,Left)">special://skin/extras/icons/files.png</value>
 		<value condition="SubString(Container.FolderPath,special://videoplaylists/,Left)">special://skin/extras/icons/playlist.png</value>
@@ -1206,6 +1204,8 @@
 		<value condition="Window.IsVisible(DialogButtonMenu.xml)">$LOCALIZE[33060]</value>
 		<value condition="Window.IsVisible(DialogFavourites.xml)">$LOCALIZE[1036]</value>
 		<value condition="Window.IsVisible(script-ExtendedInfo Script-YoutubeList.xml)">$LOCALIZE[31141]</value>
+		<value condition="Window.IsVisible(DialogAlbumInfo.xml) + Container.Content(albums)">$INFO[ListItem.Album]$INFO[ListItem.Year, (,)]</value>
+		<value condition="Window.IsVisible(DialogAlbumInfo.xml) + !Container.Content(albums)">$INFO[ListItem.Artist]</value>
 		<value condition="Window.IsVisible(DialogVideoInfo.xml) + !Container.Content(episodes)">$INFO[ListItem.Title]$INFO[ListItem.Year, (,)]</value>
 		<value condition="Window.IsVisible(DialogVideoInfo.xml) + Container.Content(episodes)">$INFO[ListItem.Title]</value>
 		<value condition="Window.IsVisible(DialogVideoInfo.xml) + Container.Content(musicvideos) + !IsEmpty(ListItem.Artist)">$INFO[ListItem.Artist]</value>
@@ -1250,6 +1250,8 @@
 	<variable name="SubHeaderLabel">
 		<value condition="Window.IsVisible(script-ExtendedInfo Script-YoutubeList.xml)">$INFO[Window.Property(Filter_Label),, ]$INFO[Window.Property(TotalItems),, $LOCALIZE[31101]]</value>
 		<value condition="Window.IsVisible(script-ExtendedInfo Script-VideoList.xml) | Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) | Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)">$LOCALIZE[31242]</value>
+		<value condition="Window.IsVisible(DialogAlbumInfo.xml) + Container.Content(albums)">$INFO[ListItem.AlbumArtist]</value>
+		<value condition="Window.IsVisible(DialogAlbumInfo.xml) + !Container.Content(albums)">$INFO[ListItem.Property(Artist_Genre)]</value>
 		<value condition="Window.IsVisible(DialogVideoInfo.xml) + Container.Content(movies)">$INFO[ListItem.TagLine]</value>
 		<value condition="Window.IsVisible(DialogVideoInfo.xml) + Container.Content(episodes)">$VAR[ListItemSeasonVar,S]-$VAR[ListItemEpisodeVar,E] • [COLOR Black300]Premiered:[/COLOR] $INFO[ListItem.Premiered]</value>
 		<value condition="Window.IsVisible(LoginScreen.xml)">$LOCALIZE[10029]</value>
@@ -1269,7 +1271,7 @@
 			<visible>!Skin.HasSetting(furniture.header)</visible>
 			<visible>!ControlGroup(303).HasFocus()</visible>
 			<visible>!Control.HasFocus(515)</visible>
-			<visible>!Window.IsVisible(DialogAlbumInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)</visible>
+			<visible>!Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)</visible>
 			<include condition="!Window.IsVisible(script-ExtendedInfo Script-VideoList.xml)">Animation.FurnitureFadeInOut</include>
 			<include condition="Window.IsVisible(script-ExtendedInfo Script-VideoList.xml)">FurnitureFadeInOutExtended</include>
 			<orientation>horizontal</orientation>
@@ -1293,7 +1295,7 @@
 					<height>108</height>
 					<texture colordiffuse="PanelWhite100" border="8">$VAR[HeaderIcon]</texture>
 					<visible>!Container.Scrolling</visible>
-					<visible>[!Skin.HasSetting(hide.busydialog) | !Window.IsVisible(DialogBusy.xml)] + !Substring(Control.GetLabel(8308),empty.png)</visible>
+					<visible>[!Skin.HasSetting(hide.busydialog) | !Window.IsVisible(DialogBusy.xml)] + [!Substring(Control.GetLabel(8308),empty.png) | Window.IsVisible(DialogAlbumInfo.xml)]</visible>
 					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
 				</control>
 				<control type="image">
@@ -1301,6 +1303,7 @@
 					<height>80</height>
 					<texture border="8">special://skin/extras/icons/emby2.png</texture>
 					<visible>!Container.Scrolling</visible>
+					<visible>!Window.IsVisible(DialogAlbumInfo.xml)</visible>
 					<visible>[!Skin.HasSetting(hide.busydialog) | !Window.IsVisible(DialogBusy.xml)] + Substring(Control.GetLabel(8308),empty.png) + IsEmpty(Window(Home).Property(EmbyUserImage))</visible>
 					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
 				</control>
@@ -1309,6 +1312,7 @@
 					<height>80</height>
 					<texture border="8">$INFO[Window(Home).Property(EmbyUserImage)]</texture>
 					<visible>!Container.Scrolling</visible>
+					<visible>!Window.IsVisible(DialogAlbumInfo.xml)</visible>
 					<visible>[!Skin.HasSetting(hide.busydialog) | !Window.IsVisible(DialogBusy.xml)] + Substring(Control.GetLabel(8308),empty.png) + !IsEmpty(Window(Home).Property(EmbyUserImage))</visible>
 					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
 					<visible>!Control.HasFocus(3634)</visible>

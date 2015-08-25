@@ -185,8 +185,7 @@
 		<value condition="!IsEmpty(Container(515).ListItem.Art(clearlogo))">$INFO[Container(515).ListItem.Art(clearlogo)]</value>
 	</variable>
 	<variable name="MusicClearLogo">
-		<value condition="!IsEmpty(ListItem.AlbumArtist)">$INFO[Skin.String(cdartlocation)]$INFO[ListItem.AlbumArtist]/logo.png</value>
-		<value>$INFO[Skin.String(cdartlocation)]$INFO[ListItem.Artist]/logo.png</value>
+		<value>$INFO[Window(Home).Property(SkinHelper.Music.LogoArt)]</value>
 	</variable>
 	<variable name="ClearArt">
 		<value condition="!IsEmpty(ListItem.Art(tvshow.clearart))">$INFO[ListItem.Art(tvshow.clearart)]</value>
