@@ -10,10 +10,10 @@
             <control type="group">
                 <control type="list" id="57">
                     <visible>Container.Content(musicvideos) | Container.Content(artists) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(actors) | Container.Content(sets) | Container.Content(seasons)</visible>
-                    <top>PosterPad</top>
+                    <top>TopPad</top>
                     <height>PosterH</height>
-                    <right>SidePad</right>
-                    <width>1100</width>
+                    <right>10</right>
+                    <width>1170</width>
                     <onleft condition="!Skin.HasSetting(global.kioskmode)">9000</onleft>
                     <onright>60</onright>
                     <onup>57</onup>
@@ -23,11 +23,11 @@
                     <pagecontrol>60</pagecontrol>
                     <viewtype label="31147">list</viewtype>
                     <scrolltime tween="quadratic">400</scrolltime>
-                    <itemlayout width="1100" height="64">
+                    <itemlayout width="1170" height="64">
                         <include>50itemlayout</include>
                     </itemlayout>
 
-                    <focusedlayout width="1100" height="64">
+                    <focusedlayout width="1170" height="64">
                         <control type="group">
                             <visible>Control.HasFocus(57) + !Window.IsVisible(DialogVideoInfo.xml)</visible>
                             <include>50focuslayout</include>
@@ -41,7 +41,7 @@
                 <include>Furniture_Scrollbar</include>
             </control>
             <include name="Fanart_Info">
-                <param name="posx" value="70" />
+                <param name="posx" value="10" />
             </include>
         </control>
     </include>
@@ -145,8 +145,8 @@
     <include name="Fanart_Info">
         <control type="group">
             <left>$PARAM[posx]</left>
-            <width>645</width>
-            <top>206</top>
+            <width>705</width>
+            <top>TopPad</top>
             <height>660</height>
             <control type="group">
                 <height>370</height>
@@ -158,10 +158,6 @@
                     <texture border="10">common/nofocus-shadow10.png</texture>
                 </control>
                 <control type="image">
-                    <left>10</left>
-                    <top>10</top>
-                    <right>10</right>
-                    <bottom>10</bottom>
                     <fadetime>200</fadetime>
                     <aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
                     <texture diffuse="diffuse/pvrinfo.png" background="true">$VAR[LandscapeImage]</texture>
@@ -192,7 +188,7 @@
                 </control>
                 <control type="textbox">
                     <top>116</top>
-                    <bottom>17</bottom>
+                    <bottom>45</bottom>
                     <align>justify</align>
                     <font>Tiny</font>
                     <textcolor>Dark1</textcolor>
