@@ -1206,7 +1206,7 @@
 		<value condition="Window.IsVisible(DialogButtonMenu.xml)">$LOCALIZE[33060]</value>
 		<value condition="Window.IsVisible(DialogFavourites.xml)">$LOCALIZE[1036]</value>
 		<value condition="Window.IsVisible(script-ExtendedInfo Script-YoutubeList.xml)">$LOCALIZE[31141]</value>
-		<value condition="Window.IsVisible(DialogVideoInfo.xml) + !Container.Content(episodes)">$INFO[ListItem.Title] ($INFO[ListItem.Year])</value>
+		<value condition="Window.IsVisible(DialogVideoInfo.xml) + !Container.Content(episodes)">$INFO[ListItem.Title]$INFO[ListItem.Year, (,)]</value>
 		<value condition="Window.IsVisible(DialogVideoInfo.xml) + Container.Content(episodes)">$INFO[ListItem.Title]</value>
 		<value condition="Window.IsVisible(DialogVideoInfo.xml) + Container.Content(musicvideos) + !IsEmpty(ListItem.Artist)">$INFO[ListItem.Artist]</value>
 		<value condition="Window.IsVisible(DialogVideoInfo.xml) + Container.Content(episodes) + !IsEmpty(ListItem.TvShowTitle)">$INFO[ListItem.TvShowTitle]</value>
@@ -1459,7 +1459,7 @@
 		<control type="group">
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
-			<top>40</top>
+			<top>35</top>
 			<visible>!Skin.HasSetting(furniture.clock)</visible>
 			<include>Animation.FurnitureFadeInOut</include>
 			<height>84</height>

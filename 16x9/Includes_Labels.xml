@@ -956,10 +956,13 @@
 	</variable>
 	<variable name="PlayerBigTitle">
 		<value condition="!Player.HasVideo">$INFO[MusicPlayer.Artist]</value>
-		<value condition="VideoPlayer.Content(movies)">$INFO[VideoPlayer.Title]</value>
+		<value condition="VideoPlayer.Content(movies)">$INFO[VideoPlayer.Title]$INFO[VideoPlayer.Year, (,)]</value>
 		<value condition="VideoPlayer.Content(episodes)">$INFO[VideoPlayer.TvShowTitle]</value>
-		<value condition="VideoPlayer.Content(livetv)">$INFO[VideoPlayer.Season,,x]$INFO[VideoPlayer.Episode,,. ]$INFO[VideoPlayer.Title,[B],[/B]]$INFO[VideoPlayer.EpisodeName, (,)]</value>
+		<value condition="VideoPlayer.Content(livetv)">$INFO[VideoPlayer.StartTime,,  ]$INFO[VideoPlayer.Season,,x]$INFO[VideoPlayer.Episode,,. ]$INFO[VideoPlayer.Title,[B],[/B]]$INFO[VideoPlayer.EpisodeName, (,)]</value>
 		<value>$INFO[VideoPlayer.Title]</value>
+	</variable>
+	<variable name="PlayerLiveTVNextTitle">
+		<value condition="VideoPlayer.Content(livetv)">$INFO[VideoPlayer.NextStartTime,$LOCALIZE[31801], ]$INFO[VideoPlayer.NextTitle,[B],[/B]]</value>
 	</variable>
 	<variable name="PlayerPlotBox">
 		<value condition="!Player.HasVideo">$INFO[MusicPlayer.Album,, ]$INFO[MusicPlayer.Year,(,)]</value>

@@ -52,77 +52,22 @@
 			<width>1000</width>
 			<top>0</top>
 			<height>40</height>
-			<font>TinyBold</font>
-			<textcolor>$VAR[ColourHighlight]</textcolor>
-			<label>$VAR[PlayerTitle]</label>
-			<visible>VideoPlayer.Content(episodes)</visible>
-		</control>
-		<control type="label" description="Title">
-			<width>1000</width>
-			<top>0</top>
-			<height>40</height>
-			<font>TinyBold</font>
+			<font>SmallBold</font>
 			<textcolor>$VAR[OSDPanelWhite70]</textcolor>
 			<label>$VAR[PlayerTitle]</label>
-			<visible>!VideoPlayer.Content(episodes) | !Player.HasVideo</visible>
 		</control>
 		<control type="label" description="Show">
 			<width>100%</width>
 			<top>50</top>
-			<height>40</height>
-			<font>MediumBold</font>
+			<height>50</height>
+			<font>MediumLarge</font>
 			<textcolor>$VAR[OSDPanelWhite70]</textcolor>
 			<label>$VAR[PlayerBigTitle]</label>
-			<visible>VideoPlayer.Content(episodes)</visible>
-		</control>
-		<control type="label" description="Show">
-			<width>100%</width>
-			<top>50</top>
-			<height>40</height>
-			<font>MediumBold</font>
-			<textcolor>$VAR[ColourHighlight]</textcolor>
-			<label>$VAR[PlayerBigTitle]</label>
-			<visible>!VideoPlayer.Content(episodes) | !Player.HasVideo</visible>
-		</control>
-		<control type="textbox" description="Plot">
-			<width>100%</width>
-			<top>105</top>
-			<height>68</height>
-			<font>Tiny</font>
-			<align>justify</align>
-			<textcolor>$VAR[OSDPanelWhite30]</textcolor>
-			<label>$VAR[PlayerPlotBox]</label>
-		</control>
-		<control type="label" description="Elapsed Time">
-			<width>400</width>
-			<bottom>30</bottom>
-			<height>40</height>
-			<font>Tiny</font>
-			<textcolor>$VAR[OSDPanelWhite70]</textcolor>
-			<label>$VAR[PlayerStatus]</label>
-		</control>
-		<control type="label" description="Total Time">
-			<right>0</right>
-			<align>right</align>
-			<width>400</width>
-			<bottom>30</bottom>
-			<height>40</height>
-			<font>Tiny</font>
-			<textcolor>$VAR[OSDPanelWhite70]</textcolor>
-			<label>$INFO[Player.Time] / $INFO[Player.Duration]</label>
-		</control>
-		<control type="image">
-			<description>Progress Back</description>
-			<width>100%</width>
-			<bottom>10</bottom>
-			<height>8</height>
-			<texture colordiffuse="Black12">common/white.png</texture>
-			<visible>Skin.HasSetting(osd.usetheme)</visible>
 		</control>
 		<control type="progress" description="cache">
 			<description>Progress Bar</description>
 			<width>100%</width>
-			<bottom>10</bottom>
+			<top>104</top>
 			<height>8</height>
 			<info>Player.ProgressCache</info>
 			<visible>true</visible>
@@ -134,10 +79,70 @@
 		<control type="progress" id="23">
 			<description>Progress Bar</description>
 			<width>100%</width>
-			<bottom>10</bottom>
+			<top>104</top>
 			<height>8</height>
 			<info>Player.Progress</info>
-			<visible>true</visible>
+		</control>
+		<control type="label" description="Title">
+			<width>1000</width>
+			<top>130</top>
+			<height>40</height>
+			<font>Medium</font>
+			<align>left</align>
+			<textcolor>$VAR[OSDPanelWhite70]</textcolor>
+			<label>$VAR[PlayerLiveTVNextTitle]</label>
+			<visible>VideoPlayer.Content(LiveTV)</visible>
+		</control>
+		<control type="label" description="Duration">
+			<width>300</width>
+			<top>130</top>
+			<height>40</height>
+			<right>0</right>
+			<align>right</align>
+			<font>Medium</font>
+			<textcolor>$VAR[OSDPanelWhite70]</textcolor>
+			<label>$INFO[VideoPlayer.NextDuration,, mins]</label>
+			<visible>VideoPlayer.Content(LiveTV)</visible>
+		</control>
+		<control type="textbox" description="Plot">
+			<width>100%</width>
+			<top>180</top>
+			<height>120</height>
+			<font>Tiny</font>
+			<align>justify</align>
+			<textcolor>$VAR[OSDPanelWhite30]</textcolor>
+			<label>$VAR[PlayerPlotBox]</label>
+			<visible>VideoPlayer.Content(LiveTV)</visible>
+		</control>
+		<control type="textbox" description="Plot">
+			<width>100%</width>
+			<top>150</top>
+			<height>150</height>
+			<font>Tiny</font>
+			<align>justify</align>
+			<textcolor>$VAR[OSDPanelWhite30]</textcolor>
+			<label>$VAR[PlayerPlotBox]</label>
+			<visible>!VideoPlayer.Content(LiveTV)</visible>
+		</control>
+		<control type="label" description="Elapsed Time">
+			<width>400</width>
+			<top>108</top>
+			<height>40</height>
+			<font>Tiny</font>
+			<textcolor>$VAR[OSDPanelWhite70]</textcolor>
+			<label>$VAR[PlayerStatus]</label>
+			<visible>!VideoPlayer.Content(LiveTV)</visible>
+		</control>
+		<control type="label" description="Total Time">
+			<right>0</right>
+			<align>right</align>
+			<width>400</width>
+			<top>108</top>
+			<height>40</height>
+			<font>Tiny</font>
+			<textcolor>$VAR[OSDPanelWhite70]</textcolor>
+			<label>$INFO[Player.Time] / $INFO[Player.Duration]</label>
+			<visible>!VideoPlayer.Content(LiveTV)</visible>
 		</control>
 	</include>
 	<include name="DefOSDButtons">
@@ -491,36 +496,24 @@
 			<include>Animation.FadeIn.Slide</include>
 			<include>Animation.FadeOut</include>
 			<control type="image">
-				<description>background image</description>
 				<posx>0</posx>
 				<posy>0</posy>
 				<width>100%</width>
 				<height>100%</height>
-				<colordiffuse>$VAR[OSDPanel]</colordiffuse>
-				<animation effect="fade" start="100" end="95" condition="Skin.HasSetting(osd.usetheme)">Conditional</animation>
-				<texture border="16">common/rounded-shadow8.png</texture>
-				<visible>!Window.IsVisible(DialogVideoInfo.xml)</visible>
-			</control>
-			<control type="image">
-				<description>background image</description>
-				<posx>0</posx>
-				<posy>0</posy>
-				<width>100%</width>
-				<height>100%</height>
-				<colordiffuse>White70</colordiffuse>
-				<animation effect="fade" start="100" end="95" condition="Skin.HasSetting(osd.usetheme)">Conditional</animation>
-				<texture border="16">common/rounded-shadow8.png</texture>
-				<visible>Window.IsVisible(DialogVideoInfo.xml)</visible>
+				<texture colordiffuse="Panel" border="16">common/rounded-shadow8.png</texture>
+				<bordertexture colordiffuse="PanelWhite100">common/white.png</bordertexture>
+				<bordersize>-6,-6,-6,-6</bordersize>
 			</control>
 			<control type="group">
-				<control type="image">
+				<control type="label">
 					<left>20</left>
 					<centertop>50%</centertop>
 					<width>48</width>
 					<height>48</height>
 					<aspectratio aligny="center">keep</aspectratio>
-					<colordiffuse>$VAR[OSDPanelWhite70]</colordiffuse>
-					<texture>kaitoast/clock.png</texture>
+					<textcolor>$VAR[OSDPanelWhite70]</textcolor>
+					<font>symbol</font>
+					<label></label>
 				</control>
 				<control type="label">
 					<right>185</right>
@@ -532,14 +525,15 @@
 					<textcolor>$VAR[OSDPanelWhite70]</textcolor>
 					<label>$INFO[System.Time(hh:mm)]</label>
 				</control>
-				<control type="image">
+				<control type="label">
 					<left>235</left>
 					<centertop>50%</centertop>
 					<width>48</width>
 					<height>48</height>
 					<aspectratio aligny="center">keep</aspectratio>
-					<colordiffuse>$VAR[OSDPanelWhite70]</colordiffuse>
-					<texture>kaitoast/finishtime.png</texture>
+					<textcolor>$VAR[OSDPanelWhite70]</textcolor>
+					<font>symbol</font>
+					<label></label>
 				</control>
 				<control type="label">
 					<right>-45</right>
@@ -550,18 +544,6 @@
 					<font>Small</font>
 					<textcolor>$VAR[OSDPanelWhite70]</textcolor>
 					<label>$INFO[Player.FinishTime(hh:mm)]</label>
-					<visible>!Window.IsVisible(DialogVideoInfo.xml)</visible>
-				</control>
-				<control type="label">
-					<right>-45</right>
-					<left>220</left>
-					<height>100%</height>
-					<align>center</align>
-					<aligny>center</aligny>
-					<font>Small</font>
-					<textcolor>$VAR[OSDPanelWhite70]</textcolor>
-					<label>$INFO[ListItem.EndTime(hh:mm)]</label>
-					<visible>Window.IsVisible(DialogVideoInfo.xml)</visible>
 				</control>
 			</control>
 		</control>
