@@ -8,9 +8,12 @@
     <controls>
 
         <include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
-        <include>Furniture_Header</include>
+		<control type="group">
+			<top>-40</top>
+			<include>Furniture_EmbyClock</include>
+			<include>Furniture_HeaderEmby</include>
+		</control>
         <include>Furniture_NowPlaying</include>
-        <include>Furniture_Clock</include>
         <control type="group">
             <include>Animation.Common</include>
             <control type="grouplist">
