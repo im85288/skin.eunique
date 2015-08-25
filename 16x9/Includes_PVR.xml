@@ -1391,13 +1391,15 @@
                         <selectedcolor>Dark1</selectedcolor>
                         <label>$VAR[PVRChannelZero]$INFO[ListItem.ChannelNumber]</label>
                     </control> -->
-					<control type="image">
+					<control type="label">
 						<left>30</left>
 						<top>66</top>
 						<width>24</width>
 						<height>24</height>
 						<aspectratio>keep</aspectratio>
-						<texture colordiffuse="Dark1">pvr/clock24.png</texture>
+						<colordiffuse>Dark1</colordiffuse>
+						<font>symbol24</font>
+						<label></label>
 						<visible>!IsEmpty(ListItem.Title)</visible>
 					</control>
 					<control type="label">
@@ -1412,13 +1414,15 @@
 						<selectedcolor>Dark1</selectedcolor>
 						<label>$INFO[ListItem.Season, ,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Title,  ,]$INFO[ListItem.EpisodeName, (,)]</label>
 					</control>
-					<control type="image">
+					<control type="label">
 						<left>30</left>
 						<top>96</top>
 						<width>24</width>
 						<height>24</height>
 						<aspectratio>keep</aspectratio>
-						<texture colordiffuse="Dark1">pvr/nextclock24.png</texture>
+						<colordiffuse>Dark1</colordiffuse>
+						<font>symbol24</font>
+						<label></label>
 						<visible>!IsEmpty(ListItem.NextTitle)</visible>
 					</control>
 					<control type="label">
@@ -1479,13 +1483,15 @@
                         <selectedcolor>Light1</selectedcolor>
                         <label>$VAR[PVRChannelZero]$INFO[ListItem.ChannelNumber]</label>
                     </control> -->
-					<control type="image">
+					<control type="label">
 						<left>30</left>
 						<top>66</top>
 						<width>24</width>
 						<height>24</height>
 						<aspectratio>keep</aspectratio>
-						<texture colordiffuse="Light1">pvr/clock24.png</texture>
+						<colordiffuse>Light1</colordiffuse>
+						<font>symbol24</font>
+						<label></label>
 						<visible>!IsEmpty(ListItem.Title)</visible>
 					</control>
 					<control type="label">
@@ -1500,13 +1506,15 @@
 						<selectedcolor>Light1</selectedcolor>
 						<label>$INFO[ListItem.Season, ,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Title,  ,]$INFO[ListItem.EpisodeName, (,)]</label>
 					</control>
-					<control type="image">
+					<control type="label">
 						<left>30</left>
 						<top>96</top>
 						<width>24</width>
 						<height>24</height>
 						<aspectratio>keep</aspectratio>
-						<texture colordiffuse="Light1">pvr/nextclock24.png</texture>
+						<colordiffuse>Light1</colordiffuse>
+						<font>symbol24</font>
+						<label></label>
 						<visible>!IsEmpty(ListItem.NextTitle)</visible>
 					</control>
 					<control type="label">

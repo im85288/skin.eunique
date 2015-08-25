@@ -29,12 +29,12 @@
                     <animation effect="slide" start="0" end="-70,0" condition="IsEmpty(Player.Art(clearart)) + IsEmpty(Player.Art(tvshow.clearart))">Conditional</animation>
                 </control>
                 <control type="image">
-                    <top>110r</top>
+                    <top>100r</top>
                     <width>100%</width>
                     <height>374</height>
-                    <texture>common/white.png</texture>
-                    <colordiffuse>$VAR[OSDPanel]</colordiffuse>
-                    <animation effect="fade" start="100" end="90" condition="Skin.HasSetting(osd.usetheme)">Conditional</animation>
+                    <texture colordiffuse="Panel" border="16">common/rounded-shadow8.png</texture>
+                    <bordertexture colordiffuse="PanelWhite100">common/white.png</bordertexture>
+                    <bordersize>-6,-6,-6,-6</bordersize>
                     <include>Animation.FadeOut</include>
                 </control>
             </control>
@@ -46,36 +46,35 @@
                 <animation effect="fade" start="0" end="100" delay="150" time="150">Visible</animation>
                 <animation effect="fade" start="0" end="100" delay="150" time="150">WindowOpen</animation>
                 <control type="group">
-                    <left>SidePad</left>
-                    <right>SidePad</right>
+                    <left>10</left>
+                    <right>10</right>
                     <top>20</top>
                     <bottom>20</bottom>
                     <control type="image">
-                       
-                        <left>-70</left>
-						<top>-226</top>
-						<width>334</width>
-						<height>486</height>
+                        <top>-155</top>
+                        <left>-10</left>
+						<width>300</width>
+						<height>437</height>
                         <texture>$VAR[PlayerPoster]</texture>
                         <visible>!IsEmpty(Player.Art(tvshow.poster)) | !IsEmpty(Player.Art(poster))</visible>
                     </control>
                     
                     <control type="image">
-                        <width>260</width>
-                        <height>260</height>
-                        <aspectratio>keep</aspectratio>
+                        <width>280</width>
+                        <height>280</height>
+                        <aspectratio aligny="center">keep</aspectratio>
                         <texture>$INFO[Player.Art(thumb)]</texture>
                         <visible>VideoPlayer.Content(LiveTV) + !IsEmpty(Player.Art(thumb))</visible>
                     </control>
                     
                     <control type="group">
-                        <left>290</left>
+                        <left>300</left>
                         <visible>VideoPlayer.Content(LiveTV) + !IsEmpty(Player.Art(thumb))</visible>
                         <include>OSDInfoContent</include>
                     </control>
                     
                     <control type="group">
-                        <left>290</left>
+                        <left>300</left>
                         <visible>!IsEmpty(Player.Art(tvshow.poster)) | !IsEmpty(Player.Art(poster))</visible>
                         <include>OSDInfoContent</include>
                     </control>
