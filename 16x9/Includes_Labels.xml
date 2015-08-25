@@ -962,7 +962,7 @@
 		<value>$INFO[VideoPlayer.Title]</value>
 	</variable>
 	<variable name="PlayerLiveTVNextTitle">
-		<value condition="VideoPlayer.Content(livetv)">$LOCALIZE[31801]$INFO[VideoPlayer.NextStartTime,, ]$INFO[VideoPlayer.NextTitle,[B],[/B]]</value>
+		<value condition="VideoPlayer.Content(livetv)">$INFO[VideoPlayer.NextStartTime,$LOCALIZE[31801], ]$INFO[VideoPlayer.NextTitle,[B],[/B]]</value>
 	</variable>
 	<variable name="PlayerPlotBox">
 		<value condition="!Player.HasVideo">$INFO[MusicPlayer.Album,, ]$INFO[MusicPlayer.Year,(,)]</value>
