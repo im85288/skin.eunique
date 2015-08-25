@@ -13,10 +13,13 @@
         </control>
 
         <include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
-        <include>Furniture_Header</include>
-        <include>Furniture_Clock</include>
-        <include>Furniture_Flags</include>
+		<control type="group">
+			<top>-40</top>
+			<include>Furniture_EmbyClock</include>
+			<include>Furniture_HeaderEmby</include>
+		</control>
         <include>Furniture_NowPlaying</include>
+        <include>Furniture_Flags</include>
         <include>View_50_List_Square</include>
 
         <control type="group">

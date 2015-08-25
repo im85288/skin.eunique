@@ -376,7 +376,7 @@
 	<include name="lib_Rating_MPAA">
 		<control type="group">
 			<width>130</width>
-			<visible>!IsEmpty(ListItem.Mpaa) + !Skin.HasSetting(furniture.flags.colour)</visible>
+			<visible>!IsEmpty(ListItem.Mpaa)</visible>
 			<control type="image">
 				<centertop>50%</centertop>
 				<width>130</width>
@@ -402,39 +402,6 @@
 				<align>center</align>
 				<top>33</top>
 				<textcolor>Black100</textcolor>
-				<label>N/R</label>
-				<font>MediumBoldAngle</font>
-				<visible>!IsEmpty(ListItem.Mpaa) + [SubString(ListItem.Mpaa,NOT RATED) | SubString(ListItem.Mpaa,APPROVED)]</visible>
-			</control>
-		</control>
-		<control type="group">
-			<width>130</width>
-			<visible>!IsEmpty(ListItem.Mpaa) + Skin.HasSetting(furniture.flags.colour)</visible>
-			<control type="image">
-				<centertop>50%</centertop>
-				<width>130</width>
-				<height>50</height>
-				<colordiffuse>$VAR[ColourHighlight]</colordiffuse>
-				<texture>info/rating/rating_blank.png</texture>
-			</control>
-			<control type="label">
-				<centertop>50%</centertop>
-				<width>130</width>
-				<height>50</height>
-				<align>center</align>
-				<top>33</top>
-				<textcolor>$VAR[ColourHighlight]</textcolor>
-				<label>$VAR[MPAA]</label>
-				<font>MediumBoldAngle</font>
-				<visible>!IsEmpty(ListItem.Mpaa) + ![SubString(ListItem.Mpaa,NOT RATED) | SubString(ListItem.Mpaa,APPROVED)]</visible>
-			</control>
-			<control type="label">
-				<centertop>50%</centertop>
-				<width>130</width>
-				<height>50</height>
-				<align>center</align>
-				<top>33</top>
-				<textcolor>$VAR[ColourHighlight]</textcolor>
 				<label>N/R</label>
 				<font>MediumBoldAngle</font>
 				<visible>!IsEmpty(ListItem.Mpaa) + [SubString(ListItem.Mpaa,NOT RATED) | SubString(ListItem.Mpaa,APPROVED)]</visible>
