@@ -945,16 +945,26 @@
 			<visible>!Window.IsVisible(DialogAlbumInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)</visible>
 			<visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)</visible>
 			<left>1664</left>
-			<top>40</top>
+			<top>930</top>
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
+			<!--
+			<control type="image">
+				<top>-45</top>
+				<left>-690</left>
+				<width>228</width>
+				<height>100</height>
+				<texture colordiffuse="White">$VAR[Studio]</texture>
+				<aspectratio align="left" aligny="top">keep</aspectratio>
+			</control>
+			-->
 			<control type="image">
 				<width>228</width>
 				<height>100</height>
 				<texture>$VAR[ClearLogo]</texture>
-				<aspectratio align="center" aligny="center">keep</aspectratio>
+				<aspectratio align="right" aligny="center">keep</aspectratio>
 				<fadetime>50</fadetime>
-				<animation effect="rotate" end="10" center="auto" condition="true" time="200">conditional</animation>
+				<animation effect="rotate" end="0" center="auto" condition="true" time="200">conditional</animation>
 			</control>
 			<control type="textbox">
 				<width>258</width>
@@ -2162,22 +2172,29 @@
 		<control type="group">
 			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)</visible>
 			<visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)</visible>
-			<top>550</top>
+			<top>700</top>
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
-			<control id="508923" type="fixedlist">
-				<left>-840</left>
+			<control type="image">
+				<left>967</left>
+				<posy>194</posy>
+				<right>10</right>
+				<height>171</height>
+				<texture border="15" colordiffuse="$VAR[EmbyLeftColourHighlight]">common/white.png</texture>
+			</control>
+			<control id="508923" type="wraplist">
+				<left>-95</left>
 				<top>0</top>
-				<width>3150</width>
-				<height>500</height>
+				<width>1168</width>
+				<height>510</height>
 				<onup>9007</onup>
 				<ondown>RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Container(508923).ListItem.Label])</ondown>
 				<onleft>7000</onleft>
 				<onright>noop</onright>
 				<onright condition="!Window.IsVisible(1103)">SetProperty(BounceRight,1,Home)</onright>
 				<onback>9000</onback>
-				<preloaditems>2</preloaditems>
-				<focusposition>2</focusposition>
+				<preloaditems>8</preloaditems>
+				<focusposition>0</focusposition>
 				<viewtype label="">list</viewtype>
 				<orientation>horizontal</orientation>
 				<defaultcontrol always="true">0</defaultcontrol>
@@ -2188,88 +2205,30 @@
 				</animation>
 				<animation effect="fade" end="100" start="0" time="300">Visible</animation>
 				<animation effect="fade" end="0" start="100" time="300">Hidden</animation>
-				<animation center="480,1022" condition="!Control.HasFocus(508923)" easing="inout" effect="zoom" end="79"  start="100" time="300" tween="sine">Conditional</animation>
-				<itemlayout height="500" width="350">
+				<animation center="480,1022" condition="!Control.HasFocus(50)" easing="inout" effect="zoom" end="81"  start="100" time="300" tween="sine">Conditional</animation>
+				<itemlayout height="211" width="168">
 					<control type="group">
-						<animation center="150,288" condition="true" effect="zoom" end="85" start="85">Conditional</animation>
 						<control type="image">
-							<aspectratio align="center">scale</aspectratio>
-							<texture background="true">$INFO[ListItem.Icon]</texture>
-						</control>
-						<control type="image">
-							<top>335</top>
-							<height>116</height>
-							<texture>common/white.png</texture>
-							<colordiffuse>Light1</colordiffuse>
-							<visible>!SubString(ListItem.Icon,Default)</visible>
-						</control>
-						<control type="label">
-							<left>18</left>
-							<top>335</top>
-							<width>290</width>
-							<height>42</height>
-							<font>MediumBold</font>
-							<textcolor>Black700</textcolor>
-							<shadowcolor>80000000</shadowcolor>
-							<label>$INFO[ListItem.Label]</label>
-						</control>
-						<control type="label">
-							<left>18</left>
-							<top>385</top>
-							<width>290</width>
-							<height>28</height>
-							<font>Small</font>
-							<scroll>false</scroll>
-							<textcolor>Black700</textcolor>
-							<shadowcolor>80000000</shadowcolor>
-							<label>$INFO[ListItem.Label2,$LOCALIZE[20347] ,]</label>
+						<left>0</left>
+						<top>0</top>
+						<right>10</right>
+						<bottom>0</bottom>
+						<aspectratio align="center">scale</aspectratio>
+						<texture background="true" fallback="DefaultActor.png">$INFO[ListItem.Icon]</texture>
+						<fadetime>200</fadetime>
 						</control>
 					</control>
 				</itemlayout>
-				<focusedlayout height="500" width="350">
+				<focusedlayout height="211" width="168">
 					<control type="group">
-						<animation center="150,288" condition="Control.HasFocus(508923) + [Container(508923).OnNext | Container(508923).OnPrevious]" easing="inout" effect="zoom" end="100" start="85" time="300" tween="sine">Focus</animation>
-						<animation center="150,288" condition="Control.HasFocus(508923) + [Container(508923).OnNext | Container(508923).OnPrevious]" easing="inout" effect="zoom" end="85" start="100" time="300" tween="sine">UnFocus</animation>
-						<animation center="150,288" condition="!Control.HasFocus(508923)" easing="inout" effect="zoom" end="85" start="100" time="300" tween="sine">Conditional</animation>
 						<control type="image">
-							<aspectratio align="center">scale</aspectratio>
-							<texture background="true">$INFO[ListItem.Icon]</texture>
-						</control>
-
-						<control type="image">
-							<top>335</top>
-							<height>116</height>
-							<texture>common/white.png</texture>
-							<colordiffuse>Light1</colordiffuse>
-							<visible>!SubString(ListItem.Icon,Default)</visible>
-							<animation center="auto" condition="Control.HasFocus(508923)" easing="inout" effect="fade" end="0" start="100" time="300" tween="sine">Focus</animation>
-							<animation center="auto" condition="Control.HasFocus(508923)" easing="inout" effect="fade" end="100" start="0" time="300" tween="sine">UnFocus</animation>
-						</control>
-						<control type="label">
-							<left>18</left>
-							<top>335</top>
-							<width>290</width>
-							<height>42</height>
-							<font>MediumBold</font>
-							<scroll>false</scroll>
-							<textcolor>Black700</textcolor>
-							<shadowcolor>80000000</shadowcolor>
-							<label>$INFO[ListItem.Label]</label>
-							<animation center="auto" condition="Control.HasFocus(508923)" easing="inout" effect="fade" end="0" start="100" time="300" tween="sine">Focus</animation>
-							<animation center="auto" condition="Control.HasFocus(508923)" easing="inout" effect="fade" end="100" start="0" time="300" tween="sine">UnFocus</animation>
-						</control>
-						<control type="label">
-							<left>18</left>
-							<top>385</top>
-							<width>290</width>
-							<height>28</height>
-							<font>Small</font>
-							<scroll>false</scroll>
-							<textcolor>Black700</textcolor>
-							<shadowcolor>80000000</shadowcolor>
-							<label>$INFO[ListItem.Label2,$LOCALIZE[20347] ,]</label>
-							<animation center="auto" condition="Control.HasFocus(508923)" easing="inout" effect="fade" end="0" start="100" time="300" tween="sine">Focus</animation>
-							<animation center="auto" condition="Control.HasFocus(508923)" easing="inout" effect="fade" end="100" start="0" time="300" tween="sine">UnFocus</animation>
+						<left>0</left>
+						<top>0</top>
+						<right>10</right>
+						<bottom>0</bottom>
+						<aspectratio align="center">scale</aspectratio>
+						<texture background="true" fallback="DefaultActor.png">$INFO[ListItem.Icon]</texture>
+						<fadetime>200</fadetime>
 						</control>
 					</control>
 				</focusedlayout>
