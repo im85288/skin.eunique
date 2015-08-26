@@ -842,6 +842,15 @@
 						<selected>Skin.HasSetting(furniture.logo)</selected>
 						<onclick>Skin.ToggleSetting(furniture.logo)</onclick>
 					</control>
+					<control type="radiobutton" id="926811" description="Show clearart">
+						<width>1310</width>
+						<visible>ControlGroup(9100).HasFocus(9106)</visible>
+						<include>DefSettingsButton2</include>
+						<label>31802</label>
+						<visible>Skin.HasSetting(furniture.logo)</visible>
+						<selected>Skin.HasSetting(furniture.logo.clearart)</selected>
+						<onclick>Skin.ToggleSetting(furniture.logo.clearart)</onclick>
+					</control>
 					<control type="radiobutton" id="92681" description="Fake Logo">
 						<width>1310</width>
 						<visible>ControlGroup(9100).HasFocus(9106)</visible>

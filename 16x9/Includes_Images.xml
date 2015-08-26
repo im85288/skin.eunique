@@ -163,11 +163,13 @@
 		<value>$INFO[Skin.String(cdartlocation)]$INFO[MusicPlayer.Artist]/logo.png</value>
 	</variable>
 	<variable name="ClearLogo">
+		<value condition="!IsEmpty(ListItem.Art(tvshow.clearart)) + Skin.HasSetting(furniture.logo.clearart)">$INFO[ListItem.Art(tvshow.clearart)]</value>
+		<value condition="!IsEmpty(ListItem.Art(clearart)) + Skin.HasSetting(furniture.logo.clearart)">$INFO[ListItem.Art(clearart)]</value>
 		<value condition="!IsEmpty(ListItem.Art(tvshow.clearlogo))">$INFO[ListItem.Art(tvshow.clearlogo)]</value>
 		<value condition="!IsEmpty(ListItem.Art(clearlogo))">$INFO[ListItem.Art(clearlogo)]</value>
 	</variable>
 	<variable name="ClearArtOnly">
-		<value condition="!IsEmpty(ListItem.Art(tvshow.clearlogo))">$INFO[ListItem.Art(tvshow.landscape)]</value>
+		<value condition="!IsEmpty(ListItem.Art(tvshow.clearlogo))">$INFO[ListItem.Art(tvshow.clearlogo)]</value>
 		<value condition="!IsEmpty(ListItem.Art(tvshow.clearart))">$INFO[ListItem.Art(tvshow.clearart)]</value>
 		<value condition="!IsEmpty(ListItem.Art(clearart))">$INFO[ListItem.Art(clearart)]</value>
 		<value condition="!IsEmpty(ListItem.Art(landscape))">$INFO[ListItem.Art(landscape)]</value>
