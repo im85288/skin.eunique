@@ -945,7 +945,7 @@
 			<visible>!Window.IsVisible(DialogAlbumInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)</visible>
 			<visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)</visible>
 			<left>1664</left>
-			<top>930</top>
+			<top>913</top>
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
 			<!--
@@ -2176,17 +2176,17 @@
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
 			<control type="image">
-				<left>967</left>
+				<left>970</left>
 				<posy>194</posy>
 				<right>10</right>
-				<height>171</height>
+				<height>137</height>
 				<texture border="15" colordiffuse="$VAR[EmbyLeftColourHighlight]">common/white.png</texture>
 			</control>
 			<control id="508923" type="wraplist">
-				<left>-95</left>
+				<left>-101</left>
 				<top>0</top>
-				<width>1168</width>
-				<height>510</height>
+				<width>1160</width>
+				<height>169</height>
 				<onup>9007</onup>
 				<ondown>RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Container(508923).ListItem.Label])</ondown>
 				<onleft>7000</onleft>
@@ -2206,27 +2206,27 @@
 				<animation effect="fade" end="100" start="0" time="300">Visible</animation>
 				<animation effect="fade" end="0" start="100" time="300">Hidden</animation>
 				<animation center="480,1022" condition="!Control.HasFocus(50)" easing="inout" effect="zoom" end="81"  start="100" time="300" tween="sine">Conditional</animation>
-				<itemlayout height="211" width="168">
+				<itemlayout height="211" width="169">
 					<control type="group">
 						<control type="image">
 						<left>0</left>
 						<top>0</top>
-						<right>10</right>
+						<right>15</right>
 						<bottom>0</bottom>
-						<aspectratio align="center">scale</aspectratio>
+						<aspectratio align="center" aligny="bottom">keep</aspectratio>
 						<texture background="true" fallback="DefaultActor.png">$INFO[ListItem.Icon]</texture>
 						<fadetime>200</fadetime>
 						</control>
 					</control>
 				</itemlayout>
-				<focusedlayout height="211" width="168">
+				<focusedlayout height="211" width="169">
 					<control type="group">
 						<control type="image">
 						<left>0</left>
 						<top>0</top>
-						<right>10</right>
+						<right>15</right>
 						<bottom>0</bottom>
-						<aspectratio align="center">scale</aspectratio>
+						<aspectratio align="center" aligny="bottom">keep</aspectratio>
 						<texture background="true" fallback="DefaultActor.png">$INFO[ListItem.Icon]</texture>
 						<fadetime>200</fadetime>
 						</control>

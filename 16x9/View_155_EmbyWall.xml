@@ -34,7 +34,11 @@
 						<bottom>10</bottom>
 						<aspectratio scalediffuse="false">stretch</aspectratio>
 						<texture background="true">$VAR[PosterImage]</texture>
-						<animation effect="fade" start="25" end="25" condition="stringcompare(ListItem.Overlay,OverlayWatched.png)">Conditional</animation>
+						<animation type="Conditional" reversible="true" condition="stringcompare(ListItem.Overlay,OverlayWatched.png)">
+							<effect type="fade" start="25" end="25" time="200" tween="quadratic" easing="out" />
+							<effect type="zoom" end="95" time="200" center="auto" tween="quadratic" easing="out" />
+							<effect type="rotate" end="-1" time="200" center="auto" tween="quadratic" easing="out" />
+						</animation>
 					</control>
 					<control type="image">
 						<centerright>22</centerright>
