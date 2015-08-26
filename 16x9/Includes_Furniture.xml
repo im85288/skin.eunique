@@ -945,7 +945,7 @@
 			<visible>!Window.IsVisible(DialogAlbumInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)</visible>
 			<visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)</visible>
 			<left>1664</left>
-			<top>913</top>
+			<top>930</top>
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
 			<!--
@@ -2279,7 +2279,7 @@
 			</control>
 			<control type="image">
 				<left>970</left>
-				<posy>194</posy>
+				<top>194</top>
 				<right>10</right>
 				<height>171</height>
 				<texture border="15" colordiffuse="$VAR[EmbyRightColourHighlight]">common/white.png</texture>
@@ -2384,14 +2384,14 @@
 					<centertop>20</centertop>
 					<width>auto</width>
 					<height>auto</height>
-					<texture colordiffuse="$VAR[ColourHighlight]">equaliser.gif</texture>
+					<texture colordiffuse="$VAR[EmbyRightColourHighlight]">equaliser.gif</texture>
 					<visible>!Player.Paused</visible>
 				</control>
 				<control type="image">
 					<centertop>20</centertop>
 					<width>auto</width>
 					<height>auto</height>
-					<texture colordiffuse="$VAR[ColourHighlight]">equaliser_stop.gif</texture>
+					<texture colordiffuse="$VAR[EmbyRightColourHighlight]">equaliser_stop.gif</texture>
 					<visible>Player.Paused</visible>
 				</control>
 			</control>
