@@ -945,7 +945,7 @@
 			<visible>!Window.IsVisible(DialogAlbumInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)</visible>
 			<visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)</visible>
 			<left>1664</left>
-			<top>930</top>
+			<top>913</top>
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
 			<!--
@@ -2179,7 +2179,7 @@
 				<left>-101</left>
 				<top>0</top>
 				<width>1160</width>
-				<height>510</height>
+				<height>169</height>
 				<onup>9007</onup>
 				<ondown>RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Container(508923).ListItem.Label])</ondown>
 				<onleft>7000</onleft>
@@ -2211,7 +2211,7 @@
 							<fadetime>200</fadetime>
 						</control>
 						<control type="image">
-							<bottom>0</bottom>
+							<bottom>42</bottom>
 							<right>15</right>
 							<height>40</height>
 							<texture>common/white.png</texture>
@@ -2219,7 +2219,7 @@
 							<visible>!SubString(ListItem.Icon,Default)</visible>
 						</control>
 						<control type="label">
-							<bottom>20</bottom>
+							<bottom>62</bottom>
 							<right>15</right>
 							<height>20</height>
 							<font>MinuteBold</font>
@@ -2227,7 +2227,7 @@
 							<label>$INFO[ListItem.Label]</label>
 						</control>
 						<control type="label">
-							<bottom>0</bottom>
+							<bottom>42</bottom>
 							<right>15</right>
 							<height>20</height>
 							<font>Minute</font>
@@ -2249,7 +2249,7 @@
 							<fadetime>200</fadetime>
 						</control>
 						<control type="image">
-							<bottom>0</bottom>
+							<bottom>42</bottom>
 							<right>15</right>
 							<height>40</height>
 							<texture>common/white.png</texture>
@@ -2257,7 +2257,7 @@
 							<visible>!SubString(ListItem.Icon,Default)</visible>
 						</control>
 						<control type="label">
-							<bottom>20</bottom>
+							<bottom>62</bottom>
 							<right>15</right>
 							<height>20</height>
 							<font>MinuteBold</font>
@@ -2265,7 +2265,7 @@
 							<label>$INFO[ListItem.Label]</label>
 						</control>
 						<control type="label">
-							<bottom>0</bottom>
+							<bottom>42</bottom>
 							<right>15</right>
 							<height>20</height>
 							<font>Minute</font>
@@ -2281,7 +2281,7 @@
 				<left>970</left>
 				<top>194</top>
 				<right>10</right>
-				<height>171</height>
+				<height>137</height>
 				<texture border="15" colordiffuse="$VAR[EmbyRightColourHighlight]">common/white.png</texture>
 			</control>
 		</control>

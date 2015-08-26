@@ -1095,7 +1095,7 @@
 	</variable>
 	<variable name="EmbyLeftColourHighlight">
 		<value condition="Skin.HasSetting(emby.left.colour)">$INFO[Skin.String(emby.left.colour.name)]</value>
-		<value>dark pastel blue</value>
+		<value>dark powder blue</value>
 	</variable>
 	<variable name="EmbyRightColourHighlight">
 		<value condition="Skin.HasSetting(emby.right.colour)">$INFO[Skin.String(emby.right.colour.name)]</value>
@@ -1103,7 +1103,7 @@
 	</variable>
 	<variable name="EmbyMiddleColourHighlight">
 		<value condition="Skin.HasSetting(emby.middle.colour)">$INFO[Skin.String(emby.middle.colour.name)]</value>
-		<value>dark pastel red</value>
+		<value>debian red</value>
 	</variable>
 	<variable name="EmbyEndTimeSymbol">
 		<value condition="!Skin.HasSetting(furniture.hideendtime) + [[!IsEmpty(Container(3012).ListItem.EndTime) + Control.HasFocus(3012)] | [!IsEmpty(Container(3016).ListItem.EndTime) + Control.HasFocus(3016)] | [!IsEmpty(Container(3017).ListItem.EndTime) + Control.HasFocus(3017)] | [!IsEmpty(Container(4012).ListItem.EndTime) + Control.HasFocus(4012)] | [!IsEmpty(Container(4016).ListItem.EndTime) + Control.HasFocus(4016)] | [!IsEmpty(Container(4017).ListItem.EndTime) + Control.HasFocus(4017)] | [!IsEmpty(Container(9017).ListItem.EndTime) + Control.HasFocus(9017)] | [!IsEmpty(Container(10017).ListItem.EndTime) + Control.HasFocus(10017)] | [!IsEmpty(Container(14017).ListItem.EndTime) + Control.HasFocus(14017)] | [!IsEmpty(Container(15017).ListItem.EndTime) + Control.HasFocus(15017)]] | !IsEmpty(ListItem.EndTime) + [Container.Content(movies) | Container.Content(episodes)]"></value>
