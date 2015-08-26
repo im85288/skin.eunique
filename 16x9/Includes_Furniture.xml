@@ -2175,18 +2175,11 @@
 			<top>700</top>
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
-			<control type="image">
-				<left>970</left>
-				<posy>194</posy>
-				<right>10</right>
-				<height>137</height>
-				<texture border="15" colordiffuse="$VAR[EmbyLeftColourHighlight]">common/white.png</texture>
-			</control>
 			<control id="508923" type="wraplist">
 				<left>-101</left>
 				<top>0</top>
 				<width>1160</width>
-				<height>169</height>
+				<height>510</height>
 				<onup>9007</onup>
 				<ondown>RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Container(508923).ListItem.Label])</ondown>
 				<onleft>7000</onleft>
@@ -2209,30 +2202,198 @@
 				<itemlayout height="211" width="169">
 					<control type="group">
 						<control type="image">
-						<left>0</left>
-						<top>0</top>
-						<right>15</right>
-						<bottom>0</bottom>
-						<aspectratio align="center" aligny="bottom">keep</aspectratio>
-						<texture background="true" fallback="DefaultActor.png">$INFO[ListItem.Icon]</texture>
-						<fadetime>200</fadetime>
+							<left>0</left>
+							<top>0</top>
+							<right>15</right>
+							<bottom>0</bottom>
+							<aspectratio align="center" aligny="bottom">stretch</aspectratio>
+							<texture background="true" fallback="DefaultActor.png">$INFO[ListItem.Icon]</texture>
+							<fadetime>200</fadetime>
+						</control>
+						<control type="image">
+							<bottom>0</bottom>
+							<right>15</right>
+							<height>40</height>
+							<texture>common/white.png</texture>
+							<colordiffuse>$VAR[EmbyLeftColourHighlight]</colordiffuse>
+							<visible>!SubString(ListItem.Icon,Default)</visible>
+						</control>
+						<control type="label">
+							<bottom>20</bottom>
+							<right>15</right>
+							<height>20</height>
+							<font>MinuteBold</font>
+							<textcolor>$VAR[ColourSelected]</textcolor>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+						<control type="label">
+							<bottom>0</bottom>
+							<right>15</right>
+							<height>20</height>
+							<font>Minute</font>
+							<scroll>false</scroll>
+							<textcolor>$VAR[ColourSelected]</textcolor>
+							<label>$INFO[ListItem.Label2,$LOCALIZE[20347] ,]</label>
 						</control>
 					</control>
 				</itemlayout>
 				<focusedlayout height="211" width="169">
 					<control type="group">
 						<control type="image">
-						<left>0</left>
-						<top>0</top>
-						<right>15</right>
-						<bottom>0</bottom>
-						<aspectratio align="center" aligny="bottom">keep</aspectratio>
-						<texture background="true" fallback="DefaultActor.png">$INFO[ListItem.Icon]</texture>
-						<fadetime>200</fadetime>
+							<left>0</left>
+							<top>0</top>
+							<right>15</right>
+							<bottom>0</bottom>
+							<aspectratio align="center" aligny="bottom">stretch</aspectratio>
+							<texture background="true" fallback="DefaultActor.png">$INFO[ListItem.Icon]</texture>
+							<fadetime>200</fadetime>
+						</control>
+						<control type="image">
+							<bottom>0</bottom>
+							<right>15</right>
+							<height>40</height>
+							<texture>common/white.png</texture>
+							<colordiffuse>$VAR[EmbyLeftColourHighlight]</colordiffuse>
+							<visible>!SubString(ListItem.Icon,Default)</visible>
+						</control>
+						<control type="label">
+							<bottom>20</bottom>
+							<right>15</right>
+							<height>20</height>
+							<font>MinuteBold</font>
+							<textcolor>$VAR[ColourSelected]</textcolor>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+						<control type="label">
+							<bottom>0</bottom>
+							<right>15</right>
+							<height>20</height>
+							<font>Minute</font>
+							<scroll>false</scroll>
+							<textcolor>$VAR[ColourSelected]</textcolor>
+							<label>$INFO[ListItem.Label2,$LOCALIZE[20347] ,]</label>
 						</control>
 					</control>
 				</focusedlayout>
 				<content target="video">$VAR[DefWidgetCast]</content>
+			</control>
+			<control type="image">
+				<left>970</left>
+				<posy>194</posy>
+				<right>10</right>
+				<height>171</height>
+				<texture border="15" colordiffuse="$VAR[EmbyRightColourHighlight]">common/white.png</texture>
+			</control>
+		</control>
+	</include>
+	<include name="Furniture_NowPlaying">
+		<!-- Next Recording -->
+		<control type="group">
+			<top>40</top>
+			<left>680</left>
+			<width>660</width>
+			<height>100</height>
+			<include>Animation.FadeIn.Slide</include>
+			<include>Animation.FadeOut</include>
+			<visible>Player.HasMedia</visible>
+			<visible>!Skin.HasSetting(furniture.nowplaying)</visible>
+			<visible>!SubString(Window(10025).Property(PlayingBackgroundMedia),True)</visible>
+			<animation effect="zoom" start="100" end="85" condition="true">Conditional</animation>
+			<control type="image">
+				<description>background image</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>660</width>
+				<height>100</height>
+				<texture border="16" colordiffuse="$VAR[EmbyLeftColourHighlight]">common/rounded-shadow8.png</texture>
+				<animation effect="fade" start="100" end="90" condition="true">Conditional</animation>
+			</control>
+			<control type="group">
+				<centertop>50%</centertop>
+				<centerleft>52</centerleft>
+				<height>100</height>
+				<width>100</width>
+				<control type="image" description="Back">
+					<left>0</left>
+					<centertop>50%</centertop>
+					<width>100</width>
+					<height>100</height>
+					<aspectratio align="center" aligny="center">keep</aspectratio>
+					<texture>progress/back.png</texture>
+					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
+				</control>
+				<control type="image" description="Play">
+					<left>0</left>
+					<centertop>50%</centertop>
+					<width>100</width>
+					<height>100</height>
+					<aspectratio align="center" aligny="center">keep</aspectratio>
+					<texture colordiffuse="Dark1">progress/play.png</texture>
+					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
+					<visible>!Player.Paused</visible>
+				</control>
+				<control type="image" description="Pause">
+					<left>0</left>
+					<centertop>50%</centertop>
+					<width>100</width>
+					<height>100</height>
+					<aspectratio align="center" aligny="center">keep</aspectratio>
+					<texture colordiffuse="Dark1">progress/pause.png</texture>
+					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
+					<visible>Player.Paused</visible>
+				</control>
+				<control type="progress" id="9666">
+					<texturebg>-</texturebg>
+					<lefttexture>-</lefttexture>
+					<midtexture>-</midtexture>
+					<righttexture>-</righttexture>
+					<info>Player.Progress</info>
+					<visible>false</visible>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<centertop>50%</centertop>
+					<width>100</width>
+					<height>100</height>
+					<texture colordiffuse="$VAR[ColourHighlight]">$INFO[Control.GetLabel(9666),progress/circle/p,.png]</texture>
+					<aspectratio align="center">keep</aspectratio>
+					<visible>!IsEmpty(Player.Duration)</visible>
+				</control>
+			</control>
+			<control type="group">
+				<left>104</left>
+				<width>550</width>
+				<posy>10</posy>
+				<control type="label">
+					<centertop>24</centertop>
+					<width>auto</width>
+					<font>SmallBold</font>
+					<align>left</align>
+					<textcolor>Dark1</textcolor>
+					<label>$INFO[Player.Title]</label>
+				</control>
+				<control type="label">
+					<centertop>58</centertop>
+					<align>left</align>
+					<font>Flag</font>
+					<width>auto</width>
+					<textcolor>Dark2</textcolor>
+					<label>$INFO[VideoPlayer.TvShowTitle,, ]$INFO[MusicPlayer.Artist,, ]$INFO[Player.Time]$INFO[Player.Duration, / ,]</label>
+				</control>
+				<control type="image">
+					<centertop>20</centertop>
+					<width>auto</width>
+					<height>auto</height>
+					<texture colordiffuse="$VAR[ColourHighlight]">equaliser.gif</texture>
+					<visible>!Player.Paused</visible>
+				</control>
+				<control type="image">
+					<centertop>20</centertop>
+					<width>auto</width>
+					<height>auto</height>
+					<texture colordiffuse="$VAR[ColourHighlight]">equaliser_stop.gif</texture>
+					<visible>Player.Paused</visible>
+				</control>
 			</control>
 		</control>
 	</include>
