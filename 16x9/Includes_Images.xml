@@ -209,6 +209,9 @@
 		<value condition="!IsEmpty(ListItem.Studio) + !Skin.HasSetting(furniture.flags.colour)">resource://resource.images.studios.white/$INFO[Window(home).Property(ListItemStudioLabel),,.png]</value>
 		<value condition="!IsEmpty(ListItem.Studio) + Skin.HasSetting(furniture.flags.colour)">resource://resource.images.studios.coloured/$INFO[Window(home).Property(ListItemStudioLabel),,.png]</value>
 	</variable>
+	<variable name="ColourStudio">
+		<value>resource://resource.images.studios.coloured/$INFO[Window(home).Property(ListItemStudioLabel),,.png]</value>
+	</variable>
 	<variable name="StarRating">
 		<value condition="IntegerGreaterThan(ListItem.Rating,9)">rating/rating10.png</value>
 		<value condition="IntegerGreaterThan(ListItem.Rating,8)">rating/rating9.png</value>
