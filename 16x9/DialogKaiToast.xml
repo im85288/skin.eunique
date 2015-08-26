@@ -9,7 +9,7 @@
 			<visible>!StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
             <visible>!Window.IsVisible(DialogVolumeBar.xml)</visible>
             <right>630</right>
-            <top>40</top>
+            <top>80</top>
             <width>660</width>
             <height>100</height>
             <include>Animation.FadeIn.Slide</include>
@@ -19,11 +19,11 @@
                 <description>background image</description>
                 <width>660</width>
                 <height>100</height>
-                <colordiffuse>$VAR[OSDPanel]</colordiffuse>
+                <colordiffuse>$VAR[EmbyRightColourHighlight]</colordiffuse>
                 <animation effect="fade" start="100" end="90" condition="Skin.HasSetting(osd.usetheme) | [!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)]">Conditional</animation>
                 <texture border="16">common/rounded-shadow8.png</texture>
-                <bordertexture colordiffuse="Dark1">common/white.png</bordertexture>
-                <bordersize>-6,-6,-6,-6</bordersize>
+                <bordertexture colordiffuse="$VAR[EmbyLeftColourHighlight]">common/white.png</bordertexture>
+                <bordersize>6,6,6,6</bordersize>
             </control>
 
             <control type="group">

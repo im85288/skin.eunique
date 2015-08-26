@@ -944,21 +944,21 @@
 			<visible>!Control.HasFocus(515)</visible>
 			<visible>!Window.IsVisible(DialogAlbumInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)</visible>
 			<visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)</visible>
-			<left>1585</left>
-			<top>881</top>
+			<left>1664</left>
+			<top>40</top>
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
 			<control type="image">
-				<width>299</width>
-				<height>151</height>
+				<width>228</width>
+				<height>100</height>
 				<texture>$VAR[ClearLogo]</texture>
 				<aspectratio align="center" aligny="center">keep</aspectratio>
 				<fadetime>50</fadetime>
 				<animation effect="rotate" end="10" center="auto" condition="true" time="200">conditional</animation>
 			</control>
 			<control type="textbox">
-				<width>299</width>
-				<height>151</height>
+				<width>258</width>
+				<height>130</height>
 				<align>center</align>
 				<aligny>center</aligny>
 				<textcolor>$VAR[ColourHighlight]</textcolor>
@@ -972,8 +972,8 @@
 				<fadetime>100</fadetime>
 			</control>
 			<control type="textbox">
-				<width>299</width>
-				<height>151</height>
+				<width>258</width>
+				<height>130</height>
 				<align>center</align>
 				<aligny>center</aligny>
 				<textcolor>$VAR[ColourHighlight]</textcolor>
@@ -987,8 +987,8 @@
 				<fadetime>100</fadetime>
 			</control>
 			<control type="textbox">
-				<width>299</width>
-				<height>151</height>
+				<width>258</width>
+				<height>130</height>
 				<align>center</align>
 				<aligny>center</aligny>
 				<textcolor>$VAR[ColourHighlight]</textcolor>
@@ -1002,8 +1002,8 @@
 				<fadetime>100</fadetime>
 			</control>
 			<control type="textbox">
-				<width>299</width>
-				<height>151</height>
+				<width>258</width>
+				<height>130</height>
 				<align>center</align>
 				<aligny>center</aligny>
 				<textcolor>$VAR[ColourHighlight]</textcolor>
@@ -1017,8 +1017,8 @@
 				<fadetime>100</fadetime>
 			</control>
 			<control type="textbox">
-				<width>299</width>
-				<height>151</height>
+				<width>258</width>
+				<height>130</height>
 				<align>center</align>
 				<aligny>center</aligny>
 				<textcolor>$VAR[ColourHighlight]</textcolor>
@@ -1032,8 +1032,8 @@
 				<fadetime>100</fadetime>
 			</control>
 			<control type="textbox">
-				<width>299</width>
-				<height>151</height>
+				<width>258</width>
+				<height>130</height>
 				<align>center</align>
 				<aligny>center</aligny>
 				<textcolor>$VAR[ColourHighlight]</textcolor>
@@ -2166,9 +2166,9 @@
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
 			<control id="508923" type="fixedlist">
-				<left>-800</left>
+				<left>-780</left>
 				<top>0</top>
-				<width>2650</width>
+				<width>2740</width>
 				<height>500</height>
 				<onup>9007</onup>
 				<ondown>RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Container(508923).ListItem.Label])</ondown>
@@ -2188,8 +2188,8 @@
 				</animation>
 				<animation effect="fade" end="100" start="0" time="300">Visible</animation>
 				<animation effect="fade" end="0" start="100" time="300">Hidden</animation>
-				<animation center="480,1022" condition="!Control.HasFocus(508923)" easing="inout" effect="zoom" end="79"  start="100" time="300" tween="sine">Conditional</animation>
-				<itemlayout height="500" width="333">
+				<animation center="480,1022" condition="!Control.HasFocus(50)" easing="inout" effect="zoom" end="81"  start="100" time="300" tween="sine">Conditional</animation>
+				<itemlayout height="500" width="343">
 					<control type="group">
 						<animation center="150,288" condition="true" effect="zoom" end="85" start="85">Conditional</animation>
 						<control type="image">
@@ -2197,7 +2197,7 @@
 							<texture background="true">$INFO[ListItem.Icon]</texture>
 						</control>
 						<control type="image">
-							<top>335</top>
+							<top>350</top>
 							<height>116</height>
 							<texture>common/white.png</texture>
 							<colordiffuse>Light1</colordiffuse>
@@ -2205,7 +2205,7 @@
 						</control>
 						<control type="label">
 							<left>18</left>
-							<top>335</top>
+							<top>350</top>
 							<width>290</width>
 							<height>42</height>
 							<font>MediumBold</font>
@@ -2215,7 +2215,7 @@
 						</control>
 						<control type="label">
 							<left>18</left>
-							<top>385</top>
+							<top>400</top>
 							<width>290</width>
 							<height>28</height>
 							<font>Small</font>
@@ -2226,7 +2226,7 @@
 						</control>
 					</control>
 				</itemlayout>
-				<focusedlayout height="500" width="333">
+				<focusedlayout height="500" width="343">
 					<control type="group">
 						<animation center="150,288" condition="Control.HasFocus(508923) + [Container(508923).OnNext | Container(508923).OnPrevious]" easing="inout" effect="zoom" end="100" start="85" time="300" tween="sine">Focus</animation>
 						<animation center="150,288" condition="Control.HasFocus(508923) + [Container(508923).OnNext | Container(508923).OnPrevious]" easing="inout" effect="zoom" end="85" start="100" time="300" tween="sine">UnFocus</animation>
@@ -2237,7 +2237,7 @@
 						</control>
 
 						<control type="image">
-							<top>335</top>
+							<top>350</top>
 							<height>116</height>
 							<texture>common/white.png</texture>
 							<colordiffuse>Light1</colordiffuse>
@@ -2247,7 +2247,7 @@
 						</control>
 						<control type="label">
 							<left>18</left>
-							<top>335</top>
+							<top>350</top>
 							<width>290</width>
 							<height>42</height>
 							<font>MediumBold</font>
@@ -2260,7 +2260,7 @@
 						</control>
 						<control type="label">
 							<left>18</left>
-							<top>385</top>
+							<top>400</top>
 							<width>290</width>
 							<height>28</height>
 							<font>Small</font>
