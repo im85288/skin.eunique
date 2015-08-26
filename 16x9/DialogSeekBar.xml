@@ -32,10 +32,11 @@
                     <top>100r</top>
                     <width>100%</width>
                     <height>374</height>
-                    <texture colordiffuse="Panel" border="16">common/rounded-shadow8.png</texture>
-                    <bordertexture colordiffuse="PanelWhite100">common/white.png</bordertexture>
-                    <bordersize>-6,-6,-6,-6</bordersize>
-                    <include>Animation.FadeOut</include>
+                    <colordiffuse>$VAR[EmbyLeftColourHighlight]</colordiffuse>
+                    <animation effect="fade" start="100" end="90" condition="Skin.HasSetting(osd.usetheme) | [!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)]">Conditional</animation>
+                    <texture border="16">common/rounded-shadow8.png</texture>
+                    <bordertexture colordiffuse="$VAR[EmbyRightColourHighlight]">common/white.png</bordertexture>
+                    <bordersize>6,6,6,6</bordersize>
                 </control>
             </control>
             <control type="group">
@@ -107,7 +108,7 @@
                         <bottom>30</bottom>
                         <height>40</height>
                         <font>Tiny</font>
-                        <textcolor>$VAR[OSDPanelWhite70]</textcolor>
+                        <textcolor>Light1</textcolor>
                         <label>$VAR[PlayerStatus]</label>
                     </control>
                     <control type="label" description="Duration Total Time">
@@ -117,7 +118,7 @@
                         <bottom>30</bottom>
                         <height>40</height>
                         <font>Tiny</font>
-                        <textcolor>$VAR[OSDPanelWhite70]</textcolor>
+                        <textcolor>Light1</textcolor>
                         <label>$INFO[Player.Time]$INFO[Player.Duration,  /  ,]</label>
                     </control>
 
@@ -182,7 +183,7 @@
                         <bottom>30</bottom>
                         <height>40</height>
                         <font>Tiny</font>
-                        <textcolor>$VAR[OSDPanelWhite70]</textcolor>
+                        <textcolor>Light1</textcolor>
                         <label>$INFO[PVR.TimeshiftEnd]</label>
                     </control>
                     <control type="label" description="Duration Total Time">
@@ -192,7 +193,7 @@
                         <bottom>30</bottom>
                         <height>40</height>
                         <font>Tiny</font>
-                        <textcolor>$VAR[OSDPanelWhite70]</textcolor>
+                        <textcolor>Light1</textcolor>
                         <label>$INFO[PVR.TimeshiftStart]</label>
                     </control>
 

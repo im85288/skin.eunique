@@ -7,13 +7,14 @@
 		<defaultcontrol always="true">14</defaultcontrol>
 	</include>
 	<include name="OSDInfoContent">
-		<right>0</right>
+		<right>10</right>
+		<top>10</top>
 		<control type="image">
 			<right>0</right>
 			<align>right</align>
 			<width>91</width>
 			<height>35</height>
-			<texture colordiffuse="$VAR[OSDPanelWhite70]">$INFO[VideoPlayer.AudioChannels,flags/channels/,.png]</texture>
+			<texture colordiffuse="Light1">$INFO[VideoPlayer.AudioChannels,flags/channels/,.png]</texture>
 			<visible>!IsEmpty(VideoPlayer.AudioChannels)</visible>
 		</control>
 		<control type="image">
@@ -21,7 +22,7 @@
 			<align>right</align>
 			<width>91</width>
 			<height>35</height>
-			<texture colordiffuse="$VAR[OSDPanelWhite70]">$INFO[VideoPlayer.AudioCodec,flags/audio/,.png]</texture>
+			<texture colordiffuse="Light1">$INFO[VideoPlayer.AudioCodec,flags/audio/,.png]</texture>
 			<visible>!IsEmpty(VideoPlayer.VideoCodec)</visible>
 		</control>
 		<control type="image">
@@ -29,7 +30,7 @@
 			<align>right</align>
 			<width>91</width>
 			<height>35</height>
-			<texture colordiffuse="$VAR[OSDPanelWhite70]">$INFO[VideoPlayer.VideoCodec,flags/video/,.png]</texture>
+			<texture colordiffuse="Light1">$INFO[VideoPlayer.VideoCodec,flags/video/,.png]</texture>
 			<visible>!IsEmpty(VideoPlayer.VideoCodec)</visible>
 		</control>
 		<control type="image">
@@ -37,7 +38,7 @@
 			<align>right</align>
 			<width>91</width>
 			<height>35</height>
-			<texture colordiffuse="$VAR[OSDPanelWhite70]">$INFO[VideoPlayer.VideoResolution,flags/resolution/,.png]</texture>
+			<texture colordiffuse="Light1">$INFO[VideoPlayer.VideoResolution,flags/resolution/,.png]</texture>
 			<visible>!IsEmpty(VideoPlayer.VideoResolution)</visible>
 		</control>
 		<control type="image">
@@ -45,7 +46,7 @@
 			<align>right</align>
 			<width>91</width>
 			<height>35</height>
-			<texture colordiffuse="$VAR[OSDPanelWhite70]">$INFO[VideoPlayer.VideoAspect,flags/aspectratio/,.png]</texture>
+			<texture colordiffuse="Light1">$INFO[VideoPlayer.VideoAspect,flags/aspectratio/,.png]</texture>
 			<visible>!IsEmpty(VideoPlayer.VideoAspect)</visible>
 		</control>
 		<control type="label" description="Title">
@@ -53,7 +54,7 @@
 			<top>0</top>
 			<height>40</height>
 			<font>SmallBold</font>
-			<textcolor>$VAR[OSDPanelWhite70]</textcolor>
+			<textcolor>Light1</textcolor>
 			<label>$VAR[PlayerTitle]</label>
 		</control>
 		<control type="label" description="Show">
@@ -61,7 +62,7 @@
 			<top>50</top>
 			<height>50</height>
 			<font>MediumLarge</font>
-			<textcolor>$VAR[OSDPanelWhite70]</textcolor>
+			<textcolor>Light1</textcolor>
 			<label>$VAR[PlayerBigTitle]</label>
 		</control>
 		<control type="progress" description="cache">
@@ -89,7 +90,7 @@
 			<height>40</height>
 			<font>Medium</font>
 			<align>left</align>
-			<textcolor>$VAR[OSDPanelWhite70]</textcolor>
+			<textcolor>Light1</textcolor>
 			<label>$VAR[PlayerLiveTVNextTitle]</label>
 			<visible>VideoPlayer.Content(LiveTV)</visible>
 		</control>
@@ -100,7 +101,7 @@
 			<right>0</right>
 			<align>right</align>
 			<font>Medium</font>
-			<textcolor>$VAR[OSDPanelWhite70]</textcolor>
+			<textcolor>Light1</textcolor>
 			<label>$INFO[VideoPlayer.NextDuration,, mins]</label>
 			<visible>VideoPlayer.Content(LiveTV)</visible>
 		</control>
@@ -110,7 +111,7 @@
 			<height>120</height>
 			<font>Tiny</font>
 			<align>justify</align>
-			<textcolor>$VAR[OSDPanelWhite30]</textcolor>
+			<textcolor>Light2</textcolor>
 			<label>$VAR[PlayerPlotBox]</label>
 			<visible>VideoPlayer.Content(LiveTV)</visible>
 		</control>
@@ -120,7 +121,7 @@
 			<height>150</height>
 			<font>Tiny</font>
 			<align>justify</align>
-			<textcolor>$VAR[OSDPanelWhite30]</textcolor>
+			<textcolor>Light2</textcolor>
 			<label>$VAR[PlayerPlotBox]</label>
 			<visible>!VideoPlayer.Content(LiveTV)</visible>
 		</control>
@@ -129,7 +130,7 @@
 			<top>108</top>
 			<height>40</height>
 			<font>Tiny</font>
-			<textcolor>$VAR[OSDPanelWhite70]</textcolor>
+			<textcolor>Light1</textcolor>
 			<label>$VAR[PlayerStatus]</label>
 			<visible>!VideoPlayer.Content(LiveTV)</visible>
 		</control>
@@ -140,7 +141,7 @@
 			<top>108</top>
 			<height>40</height>
 			<font>Tiny</font>
-			<textcolor>$VAR[OSDPanelWhite70]</textcolor>
+			<textcolor>Light1</textcolor>
 			<label>$INFO[Player.Time] / $INFO[Player.Duration]</label>
 			<visible>!VideoPlayer.Content(LiveTV)</visible>
 		</control>
@@ -150,8 +151,8 @@
 		<align>center</align>
 		<height>48</height>
 		<font>Tiny</font>
-		<disabledcolor>$VAR[OSDPanelWhite12]</disabledcolor>
-		<textcolor>$VAR[OSDPanelWhite30]</textcolor>
+		<disabledcolor>Light3</disabledcolor>
+		<textcolor>Light1</textcolor>
 		<focusedcolor>$VAR[ColourHighlight]</focusedcolor>
 		<texturefocus>noop</texturefocus>
 		<width>226</width>
@@ -500,9 +501,11 @@
 				<posy>0</posy>
 				<width>100%</width>
 				<height>100%</height>
-				<texture colordiffuse="Panel" border="16">common/rounded-shadow8.png</texture>
-				<bordertexture colordiffuse="PanelWhite100">common/white.png</bordertexture>
-				<bordersize>-6,-6,-6,-6</bordersize>
+				<colordiffuse>$VAR[EmbyLeftColourHighlight]</colordiffuse>
+				<animation effect="fade" start="100" end="90" condition="Skin.HasSetting(osd.usetheme) | [!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)]">Conditional</animation>
+				<texture border="16">common/rounded-shadow8.png</texture>
+				<bordertexture colordiffuse="$VAR[EmbyRightColourHighlight]">common/white.png</bordertexture>
+				<bordersize>6,6,6,6</bordersize>
 			</control>
 			<control type="group">
 				<control type="label">
@@ -511,7 +514,7 @@
 					<width>48</width>
 					<height>48</height>
 					<aspectratio aligny="center">keep</aspectratio>
-					<textcolor>$VAR[OSDPanelWhite70]</textcolor>
+					<textcolor>Light1</textcolor>
 					<font>symbol</font>
 					<label></label>
 				</control>
@@ -522,7 +525,7 @@
 					<align>center</align>
 					<aligny>center</aligny>
 					<font>Small</font>
-					<textcolor>$VAR[OSDPanelWhite70]</textcolor>
+					<textcolor>Light1</textcolor>
 					<label>$INFO[System.Time(hh:mm)]</label>
 				</control>
 				<control type="label">
@@ -531,7 +534,7 @@
 					<width>48</width>
 					<height>48</height>
 					<aspectratio aligny="center">keep</aspectratio>
-					<textcolor>$VAR[OSDPanelWhite70]</textcolor>
+					<textcolor>Light1</textcolor>
 					<font>symbol</font>
 					<label></label>
 				</control>
@@ -542,7 +545,7 @@
 					<align>center</align>
 					<aligny>center</aligny>
 					<font>Small</font>
-					<textcolor>$VAR[OSDPanelWhite70]</textcolor>
+					<textcolor>Light1</textcolor>
 					<label>$INFO[Player.FinishTime(hh:mm)]</label>
 				</control>
 			</control>

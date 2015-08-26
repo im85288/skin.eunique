@@ -19,10 +19,10 @@
                 <description>background image</description>
                 <width>660</width>
                 <height>100</height>
-                <colordiffuse>$VAR[EmbyRightColourHighlight]</colordiffuse>
+                <colordiffuse>$VAR[EmbyLeftColourHighlight]</colordiffuse>
                 <animation effect="fade" start="100" end="90" condition="Skin.HasSetting(osd.usetheme) | [!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)]">Conditional</animation>
                 <texture border="16">common/rounded-shadow8.png</texture>
-                <bordertexture colordiffuse="$VAR[EmbyLeftColourHighlight]">common/white.png</bordertexture>
+                <bordertexture colordiffuse="$VAR[EmbyRightColourHighlight]">common/white.png</bordertexture>
                 <bordersize>6,6,6,6</bordersize>
             </control>
 
