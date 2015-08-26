@@ -34,45 +34,6 @@
 	<onload condition="Container.Content(albums)">RunScript(script.extendedinfo,info=artistdetails,info=albuminfo,artistname='$ESCINFO[ListItem.Artist]',albumname='$ESCINFO[ListItem.Album]',silent=False)</onload>
 	<animation effect="fade" end="100" start="100" time="200">WindowClose</animation>
 	<controls>
-		<!-- Fanart -->
-		<control type="group">
-			<control type="image">
-				<include>Dimensions_Fullscreen</include>
-				<colordiffuse>DialogFanartFade</colordiffuse>
-				<texture background="true">genrethumb/headphones.jpg</texture>
-				<visible>IsEmpty(Container.Art(artist.fanart)) + IsEmpty(ListItem.Art(fanart))</visible>
-				<visible>Skin.HasSetting(furniture.info.fanart)</visible>
-			</control>
-			<control type="image">
-				<include>Dimensions_Fullscreen</include>
-				<colordiffuse>DialogFanartFade</colordiffuse>
-				<texture background="true">$VAR[MusicFanart]</texture>
-				<visible>Skin.HasSetting(furniture.info.fanart)</visible>
-			</control>
-
-			<control type="image">
-				<include>Dimensions_Fullscreen</include>
-				<aspectratio align="center">scale</aspectratio>
-				<texture fallback="common/black.png" background="true">$INFO[Window(home).Property(MusicInfo.ImageFilter)]</texture>
-				<visible>!Skin.HasSetting(furniture.info.fanart)</visible>
-			</control>
-			<control type="image">
-				<include>Dimensions_Fullscreen</include>
-				<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
-				<aspectratio align="center">scale</aspectratio>
-				<texture colordiffuse="$INFO[Window(home).Property(MusicInfo.ImageColor)]">diffuseoverlay.png</texture>
-				<visible>!Skin.HasSetting(furniture.info.fanart)</visible>
-			</control>
-
-			<control type="image">
-				<include>Dimensions_Fullscreen</include>
-				<colordiffuse>DialogFanartFade</colordiffuse>
-				<texture background="true">$INFO[Container(5013).ListItem.Property(GoogleMap)]</texture>
-				<visible>!IsEmpty(Window(home).Property(Concerts)) + Control.HasFocus(5013)</visible>
-			</control>
-		</control>
-		<include>Furniture_Clock</include>
-		<include>Furniture_Header</include>
 		<control id="8308" type="image">
 			<left>1622</left>
 			<top>931</top>

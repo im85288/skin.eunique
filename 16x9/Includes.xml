@@ -205,6 +205,28 @@
 			<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
 			<visible>Window.IsVisible(DialogVideoInfo.xml) + !Skin.HasSetting(furniture.info.fanart)</visible>
 		</control>
+		<control type="image">
+			<include>Dimensions_Fullscreen</include>
+			<aspectratio align="center">scale</aspectratio>
+			<texture fallback="common/black.png" background="true">$INFO[Window(home).Property(MusicInfo.ImageFilter)]</texture>
+			<visible>Window.IsVisible(DialogAlbumInfo.xml) + !Skin.HasSetting(furniture.info.fanart)</visible>
+			<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
+			<fadetime>600</fadetime>
+		</control>
+		<control type="image">
+			<include>Dimensions_Fullscreen</include>
+			<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
+			<aspectratio align="center">scale</aspectratio>
+			<texture colordiffuse="$INFO[Window(home).Property(MusicInfo.ImageColor)]">diffuseoverlay.png</texture>
+			<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
+			<visible>Window.IsVisible(DialogAlbumInfo.xml) + !Skin.HasSetting(furniture.info.fanart)</visible>
+		</control>
+		<control type="image">
+			<include>Dimensions_Fullscreen</include>
+			<colordiffuse>DialogFanartFade</colordiffuse>
+			<texture background="true">$INFO[Container(5013).ListItem.Property(GoogleMap)]</texture>
+			<visible>!IsEmpty(Window(home).Property(Concerts)) + Control.HasFocus(5013) + Window.IsVisible(DialogAlbumInfo.xml)</visible>
+		</control>
 		<control type="multiimage" description="Fanart">
 			<include condition="!Window.IsVisible(home) | Skin.HasSetting(home.vertical)">GlobalBackgroundFade</include>
 			<visible>!Player.HasMedia | [!Skin.HasSetting(global.showvideo) + Player.HasVideo] | [!Skin.HasSetting(global.showvisualisation) + Player.HasAudio]</visible>

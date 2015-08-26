@@ -6,7 +6,6 @@
 	<onload>RunScript(script.favourites)</onload>
 	<onload condition="IsEmpty(Skin.String(focuscolor.name))">Skin.SetString(focuscolor.name,FF0fd39e)</onload>
 	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=300&amp;group=mainmenu|movieshub|episodeshub)</onload>
-	<onload condition="System.HasAddon(script.duration)">RunScript(script.duration,backend=True)</onload>
 	<onload condition="!Skin.String(SkinHelper.RandomFanartDelay)">Skin.SetString(SkinHelper.RandomFanartDelay,15)</onload>
 	<onload condition="!Skin.HasSetting(startup.init)">Skin.SetBool(osd.usetheme)</onload>
 	<onload condition="!Skin.HasSetting(startup.init)">Skin.SetBool(global.hidecirles)</onload>

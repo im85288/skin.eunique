@@ -7,11 +7,6 @@
     <views>50,505,506,507,500,503,54,57,51</views>
     <controls>
         <include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
-		<control type="group">
-			<top>-40</top>
-			<include>Furniture_EmbyClock</include>
-			<include>Furniture_HeaderEmby</include>
-		</control>
         <include>Furniture_NowPlaying</include>
         <include>Furniture_Logo</include>
         <include>View_50_List_Square</include>
@@ -23,6 +18,11 @@
         <include>View_54_Banner</include>
         <include condition="!Skin.HasSetting(57list.low)">View_57_ExtraInfo</include>
         <include condition="Skin.HasSetting(57list.low)">View_57_ExtraInfo_LowList</include>
+        <control type="group">
+            <top>-40</top>
+            <include>Furniture_EmbyClock</include>
+            <include>Furniture_HeaderEmby</include>
+        </control>
         <control type="group">
             <include>Animation.FadeIn</include>
             <include>Animation.FadeOut</include>
