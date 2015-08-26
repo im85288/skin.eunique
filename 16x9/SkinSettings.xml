@@ -4,15 +4,15 @@
 	<defaultcontrol always="true">9101</defaultcontrol>
 	<controls>
 		<include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
-		<include>Furniture_Header</include>
+		<include>Furniture_EmbyHeader</include>
 		<include>Furniture_NowPlaying</include>
-		<include>Furniture_Clock</include>
+		<include>Furniture_EmbyClock</include>
 		<control type="group">
 			<include>Animation.Common</include>
-			<left>72</left>
-			<right>72</right>
-			<top>208</top>
-			<height>656</height>
+			<left>NewSidePad</left>
+			<right>NewSidePad</right>
+			<top>TopPad</top>
+			<height>720</height>
 			<control type="image">
 				<width>100%</width>
 				<height>100%</height>
@@ -1016,7 +1016,6 @@
 						<include>DefSettingsButton2</include>
 						<selected>Skin.HasSetting(ColourHighlight)</selected>
 						<onclick>Skin.ToggleSetting(ColourHighlight)</onclick>
-						<onclick>ReloadSkin()</onclick>
 						<label>Change main highlight colour</label>
 						<visible>ControlGroup(9100).HasFocus(9108)</visible>
 					</control>
@@ -1042,7 +1041,6 @@
 						<include>DefSettingsButton2</include>
 						<selected>Skin.HasSetting(ColourHighlight2)</selected>
 						<onclick>Skin.ToggleSetting(ColourHighlight2)</onclick>
-						<onclick>ReloadSkin()</onclick>
 						<label>Change second highlight colour</label>
 						<visible>ControlGroup(9100).HasFocus(9108)</visible>
 					</control>
@@ -1068,7 +1066,6 @@
 						<include>DefSettingsButton2</include>
 						<selected>Skin.HasSetting(ColourSelected)</selected>
 						<onclick>Skin.ToggleSetting(ColourSelected)</onclick>
-						<onclick>ReloadSkin()</onclick>
 						<label>Change the selected colour</label>
 						<visible>ControlGroup(9100).HasFocus(9108)</visible>
 					</control>
@@ -1254,6 +1251,24 @@
 						<label> - Set middle colour</label>
 						<label2>[COLOR=$INFO[Skin.String(emby.middle.colour.name)]]$INFO[Skin.String(emby.middle.colour.name)][/COLOR]</label2>
 						<visible>Skin.HasSetting(emby.middle.colour) + Skin.HasSetting(home.emby)</visible>
+						<visible>ControlGroup(9100).HasFocus(9108)</visible>
+					</control>
+					<control type="radiobutton" id="92875">
+						<width>1310</width>
+						<include>DefSettingsButton2</include>
+						<selected>Skin.HasSetting(emby.menu.colour)</selected>
+						<onclick>Skin.ToggleSetting(emby.menu.colour)</onclick>
+						<label>Change home menu colour</label>
+						<visible>ControlGroup(9100).HasFocus(9108)</visible>
+						<visible>Skin.HasSetting(home.emby)</visible>
+					</control>
+					<control type="button" id="92876">
+						<width>1310</width>
+						<include>DefSettingsButton2</include>
+						<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=emby.menu.colour.name)</onclick>
+						<label> - Set menu colour</label>
+						<label2>[COLOR=$INFO[Skin.String(emby.menu.colour.name)]]$INFO[Skin.String(emby.menu.colour.name)][/COLOR]</label2>
+						<visible>Skin.HasSetting(emby.menu.colour) + Skin.HasSetting(home.emby)</visible>
 						<visible>ControlGroup(9100).HasFocus(9108)</visible>
 					</control>
 				</control>
