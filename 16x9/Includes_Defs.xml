@@ -23,8 +23,8 @@
 		<value condition="Window.IsVisible(SkinSettings)">ReplaceWindow(PvrSettings)</value>
 	</variable>
 	<variable name="DefWidgetCast">
+		<value condition="substring(ListItem.Path,videodb://movies/sets,left)">plugin://script.skin.helper.service/?action=getcast&amp;movieset=$INFO[ListItem.DBID]</value>
 		<value condition="Container.Content(movies)">plugin://script.skin.helper.service/?action=getcast&amp;movie=$INFO[ListItem.DBID]</value>
-		<value condition="Container.Content(sets)">plugin://script.skin.helper.service/?action=getcast&amp;movieset=$INFO[ListItem.DBID]</value>
 		<value condition="[Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + !IsEmpty(Window(home).Property(TVShowID))">plugin://script.skin.helper.service/?action=getcast&amp;tvshow=$INFO[Window(home).Property(TVShowID)]</value>
 	</variable>
 	<variable name="DefWidgetContent">
