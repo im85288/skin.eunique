@@ -461,7 +461,7 @@
 	<include name="HomeEmbyRow">
 		<!-- Home Row -->
 		<control type="group">
-			<control type="image">
+			<!--<control type="image">
 				<include>Animation.FadeIn.Delay</include>
 				<include>Animation.FadeOut</include>
 				<animation effect="fade" start="100" end="00" condition="control.hasfocus(302)" time="200">Conditional</animation>
@@ -482,18 +482,19 @@
 				<width>16</width>
 				<height>16</height>
 				<texture colordiffuse="Dark2" flipx="false">common/arrow-small-right.png</texture>
-			</control>
+			</control>-->
 			<control type="list" id="300">
 				<animation effect="slide" end="0,24" condition="control.hasfocus(302)" time="200">Conditional</animation>
 				<include>Animation.FadeIn.Delay</include>
 				<include>Animation.FadeOut</include>
 				<description>Home Wraplist</description>
-				<left>SidePad</left>
-				<right>SidePad</right>
+				<left>NewSidePad</left>
+				<right>NewSidePad</right>
 				<ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">3016</ondown>
 				<ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">4016</ondown>
 				<ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),music)">5016</ondown>
-				<ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv)">7016</ondown>
+				<ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv) + IntegerGreaterThan(Container(7016).NumItems,0)">7016</ondown>
+				<ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv) + !IntegerGreaterThan(Container(7016).NumItems,0)">70161</ondown>
 				<ondown condition="StringCompare(Container(300).ListItem.Property(widget),Weather)">3439</ondown>
 				<ondown condition="!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv) + !StringCompare(Container(300).ListItem.Property(widget),Weather)">6016</ondown>
 				<onup condition="IntegerGreaterThan(Container(302).NumItems,0)">SetFocus(302,0)</onup>
@@ -644,47 +645,45 @@
 		</control>
 	</include>
 	<include name="HomeEmbyContentNoIcon">
-		<top>177</top>
+		<top>TopPad</top>
 		<animation effect="fade" start="100" end="0" time="150" reversible="false" condition="Control.HasFocus(302) + Skin.HasSetting(home.submenu2)">Conditional</animation>
 		<animation type="Conditional" condition="!Control.HasFocus(302) + Skin.HasSetting(home.submenu2)" reversible="false">
 			<effect type="slide" start="0,-24" end="0" time="100" delay="200" />
 			<effect type="fade" start="0" end="100" time="200" delay="200" />
 		</animation>
-		<itemlayout width="220" height="74">
+		<itemlayout width="211.11" height="74">
+			<control type="image">
+				<left>5</left>
+				<right>5</right>
+				<texture border="5" colordiffuse="White70">common/box.png</texture>
+			</control>
 			<control type="label">
+				<left>5</left>
+				<right>5</right>
 				<align>center</align>
-				<aligny>top</aligny>
-				<width>185</width>
-				<top>10</top>
-				<centerleft>50%</centerleft>
+				<aligny>center</aligny>
 				<textcolor>Dark3</textcolor>
 				<font>HomeEmby</font>
 				<label>$INFO[ListItem.Label]</label>
 				<animation effect="fade" start="100" end="25" condition="control.hasfocus(302)" time="200">Conditional</animation>
 			</control>
 		</itemlayout>
-		<focusedlayout width="220" height="74">
+		<focusedlayout width="211.11" height="74">
+			<control type="image">
+				<left>5</left>
+				<right>5</right>
+				<texture border="5" colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
+			</control>
 			<control type="label">
+				<left>5</left>
+				<right>5</right>
 				<align>center</align>
-				<aligny>top</aligny>
-				<width>90%</width>
-				<top>10</top>
-				<centerleft>50%</centerleft>
-				<textcolor>Dark1</textcolor>
+				<aligny>center</aligny>
+				<textcolor>$VAR[ColourSelected]</textcolor>
 				<font>HomeEmby</font>
 				<label>$INFO[ListItem.Label]</label>
 			</control>
-			<control type="image">
-				<top>65</top>
-				<centerleft>50%</centerleft>
-				<width>90%</width>
-				<height>4</height>
-				<texture colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
-				<visible>Control.HasFocus(300)</visible>
-				<include>Animation.FadeIn</include>
-				<include>Animation.FadeOut</include>
-			</control>
-			<control type="image">
+			<!--<control type="image">
 				<top>-2</top>
 				<centerleft>50%</centerleft>
 				<width>16</width>
@@ -693,7 +692,7 @@
 				<visible>Control.HasFocus(300)</visible>
 				<visible>IntegerGreaterThan(Container(302).NumItems,0)</visible>
 				<animation effect="fade" end="100" start="0" delay="300" time="400" reversible="false">Focus</animation>
-			</control>
+			</control> -->
 		</focusedlayout>
 		<content>
 			<include>skinshortcuts-mainmenu</include>
@@ -4123,6 +4122,8 @@
 					<font>Small</font>
 					<onup>300</onup>
 					<ondown>7012</ondown>
+					<onright condition="IntegerGreaterThan(Container(7016).NumItems,0)">7016</onright>
+					<onright condition="!IntegerGreaterThan(Container(7016).NumItems,0)">70161</onright>
 					<textoffsetx>0</textoffsetx>
 					<label>$VAR[EmbyWidget4Label]</label>
 					<focusedcolor>$VAR[ColourHighlight]</focusedcolor>
@@ -4172,8 +4173,6 @@
 				<onup condition="Skin.HasSetting(global.kioskmode)">300</onup>
 				<onup condition="!Skin.HasSetting(global.kioskmode)">70121</onup>
 				<ondown>7013</ondown>
-				<onleft>301</onleft>
-				<onright>301</onright>
 				<preloaditems>2</preloaditems>
 				<orientation>horizontal</orientation>
 				<autoscroll time="10000">!Control.HasFocus(7012)</autoscroll>
@@ -4226,7 +4225,8 @@
 				<visible>Control.HasFocus(7012)</visible>
 			</control>
 			<control type="button" id="7013">
-				<onup>7012</onup>
+				<onup condition="IntegerGreaterThan(Container(7016).NumItems,0)">7012</onup>
+				<onup condition="!IntegerGreaterThan(Container(7016).NumItems,0)">70121</onup>
 				<onright>7015</onright>
 				<onclick>ActivateWindow(tvguide)</onclick>
 			</control>
@@ -4281,7 +4281,8 @@
 				<visible>Control.HasFocus(7013)</visible>
 			</control>
 			<control type="button" id="7015">
-				<onup>7012</onup>
+				<onup condition="IntegerGreaterThan(Container(7016).NumItems,0)">7012</onup>
+				<onup condition="!IntegerGreaterThan(Container(7016).NumItems,0)">70121</onup>
 				<onleft>7013</onleft>
 				<onright>7014</onright>
 				<onclick>ActivateWindow(tvchannels)</onclick>
@@ -4349,9 +4350,11 @@
 				<visible>Control.HasFocus(7015)</visible>
 			</control>
 			<control type="button" id="7014">
-				<onup>7012</onup>
+				<onup condition="IntegerGreaterThan(Container(7016).NumItems,0)">7012</onup>
+				<onup condition="!IntegerGreaterThan(Container(7016).NumItems,0)">70121</onup>
 				<onleft>7015</onleft>
-				<onright>7016</onright>
+				<onright condition="IntegerGreaterThan(Container(7016).NumItems,0)">7016</onright>
+				<onright condition="!IntegerGreaterThan(Container(7016).NumItems,0)">70161</onright>
 				<onclick>ActivateWindow(tvrecordings)</onclick>
 			</control>
 			<control type="image">
@@ -4415,6 +4418,8 @@
 					<align>left</align>
 					<aligny>top</aligny>
 					<font>Small</font>
+					<onleft condition="IntegerGreaterThan(Container(7016).NumItems,0)">7012</onleft>
+					<onleft condition="!IntegerGreaterThan(Container(7016).NumItems,0)">70121</onleft>
 					<onup>300</onup>
 					<ondown>7016</ondown>
 					<textoffsetx>0</textoffsetx>
@@ -4440,7 +4445,8 @@
 				<onup condition="Skin.HasSetting(global.kioskmode)">300</onup>
 				<onup condition="!Skin.HasSetting(global.kioskmode)">70161</onup>
 				<ondown>7016</ondown>
-				<onleft>7012</onleft>
+				<onleft condition="IntegerGreaterThan(Container(7016).NumItems,0)">7012</onleft>
+				<onleft condition="!IntegerGreaterThan(Container(7016).NumItems,0)">70121</onleft>
 				<onright>7016</onright>
 				<preloaditems>2</preloaditems>
 				<orientation>vertical</orientation>
