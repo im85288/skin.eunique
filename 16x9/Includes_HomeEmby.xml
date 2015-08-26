@@ -493,7 +493,8 @@
 				<ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">3016</ondown>
 				<ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">4016</ondown>
 				<ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),music)">5016</ondown>
-				<ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv)">7016</ondown>
+				<ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv) + IntegerGreaterThan(Container(7016).NumItems,0)">7016</ondown>
+				<ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv) + !IntegerGreaterThan(Container(7016).NumItems,0)">70161</ondown>
 				<ondown condition="StringCompare(Container(300).ListItem.Property(widget),Weather)">3439</ondown>
 				<ondown condition="!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv) + !StringCompare(Container(300).ListItem.Property(widget),Weather)">6016</ondown>
 				<onup condition="IntegerGreaterThan(Container(302).NumItems,0)">SetFocus(302,0)</onup>
@@ -4123,6 +4124,8 @@
 					<font>Small</font>
 					<onup>300</onup>
 					<ondown>7012</ondown>
+					<onright condition="IntegerGreaterThan(Container(7016).NumItems,0)">7016</onright>
+					<onright condition="!IntegerGreaterThan(Container(7016).NumItems,0)">70161</onright>
 					<textoffsetx>0</textoffsetx>
 					<label>$VAR[EmbyWidget4Label]</label>
 					<focusedcolor>$VAR[ColourHighlight]</focusedcolor>
@@ -4172,8 +4175,6 @@
 				<onup condition="Skin.HasSetting(global.kioskmode)">300</onup>
 				<onup condition="!Skin.HasSetting(global.kioskmode)">70121</onup>
 				<ondown>7013</ondown>
-				<onleft>301</onleft>
-				<onright>301</onright>
 				<preloaditems>2</preloaditems>
 				<orientation>horizontal</orientation>
 				<autoscroll time="10000">!Control.HasFocus(7012)</autoscroll>
@@ -4226,7 +4227,8 @@
 				<visible>Control.HasFocus(7012)</visible>
 			</control>
 			<control type="button" id="7013">
-				<onup>7012</onup>
+				<onup condition="IntegerGreaterThan(Container(7016).NumItems,0)">7012</onup>
+				<onup condition="!IntegerGreaterThan(Container(7016).NumItems,0)">70121</onup>
 				<onright>7015</onright>
 				<onclick>ActivateWindow(tvguide)</onclick>
 			</control>
@@ -4281,7 +4283,8 @@
 				<visible>Control.HasFocus(7013)</visible>
 			</control>
 			<control type="button" id="7015">
-				<onup>7012</onup>
+				<onup condition="IntegerGreaterThan(Container(7016).NumItems,0)">7012</onup>
+				<onup condition="!IntegerGreaterThan(Container(7016).NumItems,0)">70121</onup>
 				<onleft>7013</onleft>
 				<onright>7014</onright>
 				<onclick>ActivateWindow(tvchannels)</onclick>
@@ -4349,9 +4352,11 @@
 				<visible>Control.HasFocus(7015)</visible>
 			</control>
 			<control type="button" id="7014">
-				<onup>7012</onup>
+				<onup condition="IntegerGreaterThan(Container(7016).NumItems,0)">7012</onup>
+				<onup condition="!IntegerGreaterThan(Container(7016).NumItems,0)">70121</onup>
 				<onleft>7015</onleft>
-				<onright>7016</onright>
+				<onright condition="IntegerGreaterThan(Container(7016).NumItems,0)">7016</onright>
+				<onright condition="!IntegerGreaterThan(Container(7016).NumItems,0)">70161</onright>
 				<onclick>ActivateWindow(tvrecordings)</onclick>
 			</control>
 			<control type="image">
@@ -4415,6 +4420,8 @@
 					<align>left</align>
 					<aligny>top</aligny>
 					<font>Small</font>
+					<onleft condition="IntegerGreaterThan(Container(7016).NumItems,0)">7012</onleft>
+					<onleft condition="!IntegerGreaterThan(Container(7016).NumItems,0)">70121</onleft>
 					<onup>300</onup>
 					<ondown>7016</ondown>
 					<textoffsetx>0</textoffsetx>
@@ -4440,7 +4447,8 @@
 				<onup condition="Skin.HasSetting(global.kioskmode)">300</onup>
 				<onup condition="!Skin.HasSetting(global.kioskmode)">70161</onup>
 				<ondown>7016</ondown>
-				<onleft>7012</onleft>
+				<onleft condition="IntegerGreaterThan(Container(7016).NumItems,0)">7012</onleft>
+				<onleft condition="!IntegerGreaterThan(Container(7016).NumItems,0)">70121</onleft>
 				<onright>7016</onright>
 				<preloaditems>2</preloaditems>
 				<orientation>vertical</orientation>
