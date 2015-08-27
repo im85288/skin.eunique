@@ -194,7 +194,7 @@
 					<aligny>center</aligny>
 					<label></label>
 					<font>symbolbig</font>
-					<textcolor>black</textcolor>
+					<textcolor>$VAR[ColourIconFlags]</textcolor>
 					<visible>![Container.Content(tvshows) | Container.Content(seasons)]</visible>
 				</control>
 				<control type="label">
@@ -204,7 +204,7 @@
 					<aligny>center</aligny>
 					<label></label>
 					<font>symbolbig</font>
-					<textcolor>black</textcolor>
+					<textcolor>$VAR[ColourIconFlags]</textcolor>
 					<visible>Container.Content(tvshows) | Container.Content(seasons)</visible>
 				</control>
 				<control type="label">
@@ -215,7 +215,7 @@
 					<aligny>center</aligny>
 					<label>$VAR[HDSD]</label>
 					<font>DurationFont</font>
-					<textcolor>$VAR[ColourHighlight]</textcolor>
+					<textcolor>$VAR[ColourTextFlags]</textcolor>
 					<visible>!substring(ListItem.Path,videodb://movies/sets,left)</visible>
 				</control>
 				<control type="image">
@@ -239,7 +239,7 @@
 					<aligny>center</aligny>
 					<label></label>
 					<font>symbolbig</font>
-					<textcolor>black</textcolor>
+					<textcolor>$VAR[ColourIconFlags]</textcolor>
 				</control>
 				<control type="label">
 					<centertop>50%</centertop>
@@ -248,7 +248,7 @@
 					<aligny>center</aligny>
 					<label fallback="N/A">$INFO[ListItem.Rating]</label>
 					<font>DurationFont</font>
-					<textcolor>$VAR[ColourHighlight]</textcolor>
+					<textcolor>$VAR[ColourTextFlags]</textcolor>
 				</control>
 			</control>
 			<control type="group">
@@ -265,7 +265,7 @@
 					<aligny>center</aligny>
 					<label></label>
 					<font>symbolbig</font>
-					<textcolor>black</textcolor>
+					<textcolor>$VAR[ColourIconFlags]</textcolor>
 				</control>
 				<control type="label">
 					<centertop>50%</centertop>
@@ -276,7 +276,7 @@
 					<scroll>true</scroll>
 					<label fallback="N/A">$VAR[LabelNextAiredDetails]</label>
 					<font>DurationFontSmall</font>
-					<textcolor>$VAR[ColourHighlight]</textcolor>
+					<textcolor>$VAR[ColourTextFlags]</textcolor>
 				</control>
 			</control>
 			<control type="group">
@@ -293,7 +293,7 @@
 					<aligny>center</aligny>
 					<label></label>
 					<font>symbolbig</font>
-					<textcolor>black</textcolor>
+					<textcolor>$VAR[ColourIconFlags]</textcolor>
 				</control>
 				<control type="label">
 					<centertop>50%</centertop>
@@ -304,7 +304,7 @@
 					<scroll>true</scroll>
 					<label fallback="N/A">$VAR[LabelNextAiredDetails]</label>
 					<font>DurationFontSmall</font>
-					<textcolor>$VAR[ColourHighlight]</textcolor>
+					<textcolor>$VAR[ColourTextFlags]</textcolor>
 				</control>
 			</control>
 			<!-- sets -->
@@ -323,14 +323,14 @@
 					<aligny>center</aligny>
 					<label></label>
 					<font>symbolbig</font>
-					<textcolor>black</textcolor>
+					<textcolor>$VAR[ColourIconFlags]</textcolor>
 				</control>
 			<control type="label">
 					<centertop>50%</centertop>
 				<width>140</width>
 				<height>50</height>
 				<align>center</align>
-				<textcolor>$VAR[ColourHighlight]</textcolor>
+				<textcolor>$VAR[ColourTextFlags]</textcolor>
 				<label>$VAR[MPAA]</label>
 				<font>DurationFontTVRating</font>
 				<visible>!IsEmpty(ListItem.Mpaa) + ![SubString(ListItem.Mpaa,NOT RATED) | SubString(ListItem.Mpaa,APPROVED)]</visible>
@@ -340,7 +340,7 @@
 				<width>140</width>
 				<height>50</height>
 				<align>center</align>
-				<textcolor>$VAR[ColourHighlight]</textcolor>
+				<textcolor>$VAR[ColourTextFlags]</textcolor>
 				<label>N/R</label>
 				<font>DurationFont</font>
 				<visible>!IsEmpty(ListItem.Mpaa) + [SubString(ListItem.Mpaa,NOT RATED) | SubString(ListItem.Mpaa,APPROVED)]</visible>
@@ -360,7 +360,7 @@
 					<aligny>center</aligny>
 					<label></label>
 					<font>symbolbig</font>
-					<textcolor>black</textcolor>
+					<textcolor>$VAR[ColourIconFlags]</textcolor>
 				</control>
 				<control type="label">
 					<centertop>50%</centertop>
@@ -369,7 +369,7 @@
 					<aligny>center</aligny>
 					<label fallback="N/A">$INFO[ListItem.VideoAspect]</label>
 					<font>DurationFont</font>
-					<textcolor>$VAR[ColourHighlight]</textcolor>
+					<textcolor>$VAR[ColourTextFlags]</textcolor>
 				</control>
 			</control>
 			<control type="group">
@@ -386,7 +386,7 @@
 					<aligny>center</aligny>
 					<label></label>
 					<font>symbolbig</font>
-					<textcolor>black</textcolor>
+					<textcolor>$VAR[ColourIconFlags]</textcolor>
 				</control>
 				<control type="label">
 					<centertop>50%</centertop>
@@ -395,7 +395,7 @@
 					<aligny>center</aligny>
 					<label fallback="N/A">$INFO[ListItem.VideoCodec]</label>
 					<font>DurationFont</font>
-					<textcolor>$VAR[ColourHighlight]</textcolor>
+					<textcolor>$VAR[ColourTextFlags]</textcolor>
 				</control>
 			</control>
 			<control type="group">
@@ -412,7 +412,7 @@
 					<aligny>center</aligny>
 					<label></label>
 					<font>symbolbig</font>
-					<textcolor>black</textcolor>
+					<textcolor>$VAR[ColourIconFlags]</textcolor>
 				</control>
 				<control type="label">
 					<centertop>50%</centertop>
@@ -421,7 +421,7 @@
 					<aligny>center</aligny>
 					<label fallback="N/A">$INFO[ListItem.AudioCodec]</label>
 					<font>DurationFont</font>
-					<textcolor>$VAR[ColourHighlight]</textcolor>
+					<textcolor>$VAR[ColourTextFlags]</textcolor>
 				</control>
 			</control>
 			<control type="group">
@@ -438,7 +438,7 @@
 					<aligny>center</aligny>
 					<label></label>
 					<font>symbolbig</font>
-					<textcolor>black</textcolor>
+					<textcolor>$VAR[ColourIconFlags]</textcolor>
 				</control>
 				<control type="label">
 					<centertop>50%</centertop>
@@ -447,7 +447,7 @@
 					<aligny>center</aligny>
 					<label fallback="N/A">$VAR[FlagAudioChannels]</label>
 					<font>DurationFont</font>
-					<textcolor>$VAR[ColourHighlight]</textcolor>
+					<textcolor>$VAR[ColourTextFlags]</textcolor>
 				</control>
 			</control>
 			<control type="group">
@@ -465,7 +465,7 @@
 					<aligny>center</aligny>
 					<label></label>
 					<font>symbolbig</font>
-					<textcolor>black</textcolor>
+					<textcolor>$VAR[ColourIconFlags]</textcolor>
 				</control>
 				<control type="label">
 					<centertop>50%</centertop>
@@ -474,7 +474,7 @@
 					<aligny>center</aligny>
 					<label fallback="N/A">$VAR[DurationLong]</label>
 					<font>DurationFont</font>
-					<textcolor>$VAR[ColourHighlight]</textcolor>
+					<textcolor>$VAR[ColourTextFlags]</textcolor>
 				</control>
 			</control>
 			<control type="group">
@@ -492,7 +492,7 @@
 					<aligny>center</aligny>
 					<label></label>
 					<font>symbolbig</font>
-					<textcolor>black</textcolor>
+					<textcolor>$VAR[ColourIconFlags]</textcolor>
 				</control>
 				<control type="label">
 					<centertop>50%</centertop>
@@ -501,7 +501,7 @@
 					<aligny>center</aligny>
 					<label fallback="N/A">$VAR[DurationLong]</label>
 					<font>DurationFont</font>
-					<textcolor>$VAR[ColourHighlight]</textcolor>
+					<textcolor>$VAR[ColourTextFlags]</textcolor>
 				</control>
 			</control>
 			<!-- <control type="image">

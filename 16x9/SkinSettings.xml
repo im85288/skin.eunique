@@ -1289,6 +1289,42 @@
 						<visible>Skin.HasSetting(emby.flags.colour) + Skin.HasSetting(home.emby)</visible>
 						<visible>ControlGroup(9100).HasFocus(9108)</visible>
 					</control>
+					<control type="radiobutton" id="92879">
+						<width>1310</width>
+						<include>DefSettingsButton2</include>
+						<selected>Skin.HasSetting(emby.flags.text colour)</selected>
+						<onclick>Skin.ToggleSetting(emby.flags.text.colour)</onclick>
+						<label>Change flags text colour</label>
+						<visible>ControlGroup(9100).HasFocus(9108)</visible>
+						<visible>Skin.HasSetting(home.emby)</visible>
+					</control>
+					<control type="button" id="92880">
+						<width>1310</width>
+						<include>DefSettingsButton2</include>
+						<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=emby.flags.text.colour.name)</onclick>
+						<label> - Set flags text colour</label>
+						<label2>[COLOR=$INFO[Skin.String(emby.flags.text.colour.name)]]$INFO[Skin.String(emby.flags.text.colour.name)][/COLOR]</label2>
+						<visible>Skin.HasSetting(emby.flags.text.colour) + Skin.HasSetting(home.emby)</visible>
+						<visible>ControlGroup(9100).HasFocus(9108)</visible>
+					</control>
+					<control type="radiobutton" id="92881">
+						<width>1310</width>
+						<include>DefSettingsButton2</include>
+						<selected>Skin.HasSetting(emby.flags.icon colour)</selected>
+						<onclick>Skin.ToggleSetting(emby.flags.icon.colour)</onclick>
+						<label>Change flags icon colour</label>
+						<visible>ControlGroup(9100).HasFocus(9108)</visible>
+						<visible>Skin.HasSetting(home.emby)</visible>
+					</control>
+					<control type="button" id="92882">
+						<width>1310</width>
+						<include>DefSettingsButton2</include>
+						<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=emby.flags.icon.colour.name)</onclick>
+						<label> - Set flags icon colour</label>
+						<label2>[COLOR=$INFO[Skin.String(emby.flags.icon.colour.name)]]$INFO[Skin.String(emby.flags.icon.colour.name)][/COLOR]</label2>
+						<visible>Skin.HasSetting(emby.flags.icon.colour) + Skin.HasSetting(home.emby)</visible>
+						<visible>ControlGroup(9100).HasFocus(9108)</visible>
+					</control>
 				</control>
 				<!-- Lines -->
 				<control type="image">
