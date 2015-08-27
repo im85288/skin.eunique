@@ -91,10 +91,6 @@
 			<control type="group" description="iconbox">
 				<width>50</width>
 				<height>50</height>
-				<control type="image">
-					<texture diffuse="common/circle.png" colordiffuse="Panel">common/box.png</texture>
-					<visible>Control.HasFocus(3635)</visible>
-				</control>
 				<control type="label">
 					<top>-23</top>
 					<left>0</left>
@@ -115,14 +111,16 @@
 					<visible>!Control.HasFocus(3635)</visible>
 				</control>
 				-->
-				<control type="image">
-					<top>-14</top>
-					<left>-14</left>
+				<control type="label">
+					<top>-23</top>
+					<left>0</left>
 					<width>78</width>
-					<height>78</height>
-					<texture colordiffuse="$VAR[ColourHighlight]" border="8">$VAR[HeaderIcon]</texture>
+					<height>88</height>
+				<font>symbolbig</font>
+				<textcolor>$VAR[ColourHighlight]</textcolor>
+				<label>$VAR[HeaderIcon]</label>
 					<visible>Control.HasFocus(3635)</visible>
-				</control>
+			</control>
 				<control type="button" id="3635">
 					<onleft>3634</onleft>
 					<onright>3634</onright>
