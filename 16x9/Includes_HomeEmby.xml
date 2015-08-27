@@ -327,18 +327,18 @@
 				</control>
 			<control type="label">
 					<centertop>50%</centertop>
-				<width>140</width>
-				<height>50</height>
+				<width>148</width>
+				<height>54</height>
 				<align>center</align>
 				<textcolor>$VAR[ColourTextFlags]</textcolor>
 				<label>$VAR[MPAA]</label>
-				<font>DurationFontTVRating</font>
+				<font>DurationFont</font>
 				<visible>!IsEmpty(ListItem.Mpaa) + ![SubString(ListItem.Mpaa,NOT RATED) | SubString(ListItem.Mpaa,APPROVED)]</visible>
 			</control>
 			<control type="label">
 					<centertop>50%</centertop>
-				<width>140</width>
-				<height>50</height>
+				<width>148</width>
+				<height>54</height>
 				<align>center</align>
 				<textcolor>$VAR[ColourTextFlags]</textcolor>
 				<label>N/R</label>
