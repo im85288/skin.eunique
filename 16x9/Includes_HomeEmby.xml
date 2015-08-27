@@ -13,15 +13,15 @@
 			<control type="label">
 				<bottom>-5</bottom>
 				<font>HomeEmbySemi</font>
-				<textcolor>white2</textcolor>
+				<textcolor>white3</textcolor>
 				<label>$INFO[System.Date(DDD)]$COMMA $INFO[System.Date(d MMM yyyy)]</label>
 			</control>
 			<control type="label">
 				<left>32</left>
 				<bottom>-30</bottom>
 				<font>HomeEmbySemi</font>
-				<textcolor>white2</textcolor>
-				<label>[COLOR=$VAR[ColourHighlight]]$INFO[Weather.Temperature][/COLOR] $INFO[Weather.Conditions]</label>
+				<textcolor>white3</textcolor>
+				<label>$INFO[Weather.Temperature,[COLOR=white],[/COLOR]]$INFO[Weather.Conditions, ,]</label>
 			</control>
 			<control type="image">
 				<left>-5</left>
