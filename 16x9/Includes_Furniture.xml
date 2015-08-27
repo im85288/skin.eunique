@@ -962,7 +962,7 @@
 				<width>228</width>
 				<height>100</height>
 				<texture>$VAR[ClearLogo]</texture>
-				<aspectratio align="right" aligny="center">keep</aspectratio>
+				<aspectratio align="center" aligny="center">keep</aspectratio>
 				<fadetime>50</fadetime>
 				<animation effect="rotate" end="0" center="auto" condition="true" time="200">conditional</animation>
 			</control>
@@ -2199,79 +2199,29 @@
 				<animation effect="fade" end="100" start="0" time="300">Visible</animation>
 				<animation effect="fade" end="0" start="100" time="300">Hidden</animation>
 				<animation center="480,1022" condition="!Control.HasFocus(50)" easing="inout" effect="zoom" end="81"  start="100" time="300" tween="sine">Conditional</animation>
-				<itemlayout height="384" width="170">
+				<itemlayout height="234" width="170">
 					<control type="group">
 						<control type="image">
 							<left>0</left>
-							<top>-5</top>
+							<top>0</top>
 							<right>0</right>
-							<bottom>30</bottom>
-							<aspectratio align="center" aligny="top">keep</aspectratio>
+							<bottom>0</bottom>
+							<aspectratio align="center" aligny="top">stretch</aspectratio>
 							<texture background="true" fallback="DefaultActor.png">$INFO[ListItem.Icon]</texture>
 							<fadetime>200</fadetime>
-						</control>
-						<control type="image">
-							<bottom>0</bottom>
-							<right>0</right>
-							<height>51</height>
-							<texture>common/white.png</texture>
-							<colordiffuse>$VAR[EmbyLeftColourHighlight]</colordiffuse>
-							<visible>!SubString(ListItem.Icon,Default)</visible>
-						</control>
-						<control type="label">
-							<bottom>62</bottom>
-							<right>15</right>
-							<height>20</height>
-							<font>MinuteBold</font>
-							<textcolor>$VAR[ColourSelected]</textcolor>
-							<label>$INFO[ListItem.Label]</label>
-						</control>
-						<control type="label">
-							<bottom>42</bottom>
-							<right>15</right>
-							<height>20</height>
-							<font>Minute</font>
-							<scroll>false</scroll>
-							<textcolor>$VAR[ColourSelected]</textcolor>
-							<label>$INFO[ListItem.Label2,$LOCALIZE[20347] ,]</label>
 						</control>
 					</control>
 				</itemlayout>
-				<focusedlayout height="384" width="170">
+				<focusedlayout height="234" width="170">
 					<control type="group">
 						<control type="image">
 							<left>0</left>
-							<top>-5</top>
+							<top>0</top>
 							<right>0</right>
-							<bottom>30</bottom>
-							<aspectratio align="center" aligny="top">keep</aspectratio>
+							<bottom>0</bottom>
+							<aspectratio align="center" aligny="top">stretch</aspectratio>
 							<texture background="true" fallback="DefaultActor.png">$INFO[ListItem.Icon]</texture>
 							<fadetime>200</fadetime>
-						</control>
-						<control type="image">
-							<bottom>0</bottom>
-							<right>0</right>
-							<height>51</height>
-							<texture>common/white.png</texture>
-							<colordiffuse>$VAR[EmbyLeftColourHighlight]</colordiffuse>
-							<visible>!SubString(ListItem.Icon,Default)</visible>
-						</control>
-						<control type="label">
-							<bottom>62</bottom>
-							<right>15</right>
-							<height>20</height>
-							<font>MinuteBold</font>
-							<textcolor>$VAR[ColourSelected]</textcolor>
-							<label>$INFO[ListItem.Label]</label>
-						</control>
-						<control type="label">
-							<bottom>42</bottom>
-							<right>15</right>
-							<height>20</height>
-							<font>Minute</font>
-							<scroll>false</scroll>
-							<textcolor>$VAR[ColourSelected]</textcolor>
-							<label>$INFO[ListItem.Label2,$LOCALIZE[20347] ,]</label>
 						</control>
 					</control>
 				</focusedlayout>
@@ -2284,6 +2234,17 @@
 				<height>139</height>
 				<texture border="15" colordiffuse="$VAR[EmbyLeftColourHighlight]">common/white.png</texture>
 			</control>
+			<control type="textbox">
+				<description>textarea</description>
+				<left>975</left>
+				<top>194</top>
+				<right>273</right>
+				<height>130</height>
+				<align>justify</align>
+				<font>MediumSmallBold</font>
+				<textcolor>PanelWhite70</textcolor>
+				<label>$VAR[LabelOverlayPlot]</label>
+			</control>
 			<control type="image">
 				<left>970</left>
 				<top>333</top>
@@ -2291,20 +2252,22 @@
 				<height>51</height>
 				<texture border="15" colordiffuse="$VAR[EmbyRightColourHighlight]">common/white.png</texture>
 			</control>
-						<control type="label">
+			<control type="label">
 				<left>975</left>
 				<top>330</top>
 				<right>10</right>
 				<height>51</height>
-							<font>MediumBold</font>
-							<textcolor>$VAR[ColourSelected]</textcolor>
-							<label>$INFO[Container(508923).ListItem(6).Label]$INFO[Container(508923).ListItem(6).Label2, $LOCALIZE[20347] ]</label>
-						</control>
+				<font>MediumBold</font>
+				<textcolor>$VAR[ColourSelected]</textcolor>
+				<label>$INFO[Container(508923).ListItem(6).Label]$INFO[Container(508923).ListItem(6).Label2, $LOCALIZE[20347] ]</label>
+			</control>
 			<control type="image">
-				<top>194</top>
-				<left>1520</left>
-				<width>104</width>
-				<height>137</height>
+			<right>85</right>
+				<top>303</top>
+				<width>96</width>
+				<height>113</height>
+					<align>center</align>
+					<aligny>center</aligny>
 				<texture colordiffuse="White">$VAR[ColourStudio]</texture>
 				<aspectratio aligny="center" align="right">keep</aspectratio>
 			</control>

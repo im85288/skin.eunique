@@ -7,7 +7,7 @@
 			<visible>Control.IsVisible(155)</visible>
 			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml)</visible>
 						<animation effect="slide" end="-20,0" center="auto" time="200" condition="Container.Column(7)">Conditional</animation>
-						<animation effect="slide" end="23,0" center="auto" time="200" condition="Container.Column(0)">Conditional</animation>
+						<animation effect="slide" end="20,0" center="auto" time="200" condition="Container.Column(0)">Conditional</animation>
 						<animation effect="slide" end="0,-10" center="auto" time="200" condition="Container.Row(1)">Conditional</animation>
 						<animation effect="slide" end="0,10" center="auto" time="200" condition="Container.Row(0)">Conditional</animation>
 			<control type="panel" id="155">
@@ -111,6 +111,8 @@
 							<!-- serious problem with alarmclock on reloadskin 
 							<onfocus>AlarmClock(castScroll,Control.Move(508923,1),00:02,silent,loop)</onfocus>
 							-->
+							<onfocus condition="Container.Content(movies)">ClearProperty(TVShowID,home)</onfocus>
+							<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
 					</control>
 					<control type="image">
 						<left>0</left>

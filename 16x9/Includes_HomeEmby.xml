@@ -143,6 +143,7 @@
 			</control>
 			</control>
 			<control type="group" description="timebox">
+				<animation effect="slide" end="0,1" condition="Window.IsVisible(Home) | [container.Content(movies) | Container.Content(episodes)]" time="200">Conditional</animation>
 				<width>44</width>
 				<control type="label">
 				<left>-24</left>
@@ -154,7 +155,7 @@
 			</control>
 			<control type="group" description="timebox">
 				<width min="0" max="1500">auto</width>
-				<animation effect="slide" end="0,-4" condition="Window.IsVisible(Home) | [container.Content(movies) | Container.Content(episodes]" time="200">Conditional</animation>
+				<animation effect="slide" end="0,-3" condition="Window.IsVisible(Home) | [container.Content(movies) | Container.Content(episodes)]" time="200">Conditional</animation>
 				<control type="label">
 				<left>-56</left>
 					<height>52</height>
@@ -169,7 +170,7 @@
 			<visible>!Window.IsVisible(DialogAlbumInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-VideoList.xml) + !Window.IsVisible(script-ExtendedInfo Script-YoutubeList.xml)</visible>
 			<visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)</visible>
 			<visible>!stringcompare(ListItem.Label,..)</visible>
-			<animation effect="slide" end="124" condition="!Window.IsVisible(Home) + [container.Content(movies) | Container.Content(episodes]" time="200">Conditional</animation>
+			<animation effect="slide" end="124" condition="!Window.IsVisible(Home) + [container.Content(movies) | Container.Content(episodes)]" time="200">Conditional</animation>
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
 			<left>284</left>
@@ -178,7 +179,7 @@
 			<height>64</height>
 			<orientation>horizontal</orientation>
 			<align>left</align>
-			<itemgap>10</itemgap>
+			<itemgap>0</itemgap>
 			<usecontrolcoords>true</usecontrolcoords>
 			<control type="group">
 				<width>140</width>
@@ -253,8 +254,37 @@
 				</control>
 			</control>
 			<control type="group">
-				<visible>Container.Content(tvshows) | Container.Content(seasons)</visible>
+				<visible>[Container.Content(tvshows) | Container.Content(seasons)] + [!IsEmpty(Window(Home).Property(NextAired.NextDate)) | !IsEmpty(Window(Home).Property(NextAired.LatestTitle))]</visible>
 				<width>512</width>
+				<height>64</height>
+				<control type="image">
+					<top>-20</top>
+					<texture border="5" colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
+				</control>
+				<control type="label">
+					<centertop>50%</centertop>
+					<height>54</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label></label>
+					<font>symbolbig</font>
+					<textcolor>black</textcolor>
+				</control>
+				<control type="label">
+					<centertop>50%</centertop>
+					<width>auto</width>
+					<height>54</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<scroll>true</scroll>
+					<label fallback="N/A">$VAR[LabelNextAiredDetails]</label>
+					<font>DurationFontSmall</font>
+					<textcolor>White</textcolor>
+				</control>
+			</control>
+			<control type="group">
+				<visible>[Container.Content(tvshows) | Container.Content(seasons)] + [IsEmpty(Window(Home).Property(NextAired.NextDate)) + IsEmpty(Window(Home).Property(NextAired.LatestTitle))]</visible>
+				<width>128</width>
 				<height>64</height>
 				<control type="image">
 					<top>-20</top>
@@ -788,8 +818,8 @@
 		</animation>
 		<itemlayout width="211.11" height="74">
 			<control type="image">
-				<left>5</left>
-				<right>5</right>
+				<left>0</left>
+				<right>0</right>
 				<texture border="5" colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
 			</control>
 			<control type="label">
@@ -805,8 +835,8 @@
 		</itemlayout>
 		<focusedlayout width="211.11" height="74">
 			<control type="image">
-				<left>5</left>
-				<right>5</right>
+				<left>0</left>
+				<right>0</right>
 				<texture border="5" colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
 			</control>
 			<control type="label">
