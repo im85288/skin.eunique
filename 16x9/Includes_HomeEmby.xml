@@ -95,6 +95,17 @@
 					<texture diffuse="common/circle.png" colordiffuse="Panel">common/box.png</texture>
 					<visible>Control.HasFocus(3635)</visible>
 				</control>
+				<control type="label">
+					<top>-23</top>
+					<left>0</left>
+					<width>78</width>
+					<height>88</height>
+				<font>symbolbig</font>
+				<textcolor>$VAR[EmbyLeftColourHighlight]</textcolor>
+				<label>$VAR[HeaderIcon]</label>
+					<visible>!Control.HasFocus(3635)</visible>
+			</control>
+				<!--
 				<control type="image">
 					<top>-14</top>
 					<left>-14</left>
@@ -103,6 +114,7 @@
 					<texture colordiffuse="$VAR[EmbyLeftColourHighlight]" border="8">$VAR[HeaderIcon]</texture>
 					<visible>!Control.HasFocus(3635)</visible>
 				</control>
+				-->
 				<control type="image">
 					<top>-14</top>
 					<left>-14</left>
@@ -159,220 +171,320 @@
 			<visible>!Window.IsVisible(DialogAlbumInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-VideoList.xml) + !Window.IsVisible(script-ExtendedInfo Script-YoutubeList.xml)</visible>
 			<visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)</visible>
 			<visible>!stringcompare(ListItem.Label,..)</visible>
-			<!-- <animation effect="slide" end="124" condition="!Window.IsVisible(Home) + [container.Content(movies) | Container.Content(episodes]" time="200">Conditional</animation> -->
+			<animation effect="slide" end="124" condition="!Window.IsVisible(Home) + [container.Content(movies) | Container.Content(episodes]" time="200">Conditional</animation>
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
-			<left>NewSidePad</left>
-			<right>NewSidePad</right>
-			<bottom>1</bottom>
-			<height>45</height>
+			<left>284</left>
+			<top>45</top>
+			<width>1626</width>
+			<height>64</height>
 			<orientation>horizontal</orientation>
 			<align>left</align>
-			<aligny>center</aligny>
 			<itemgap>10</itemgap>
 			<usecontrolcoords>true</usecontrolcoords>
 			<control type="group">
-				<width>120</width>
+				<width>140</width>
+				<height>64</height>
 				<control type="image">
 					<top>-20</top>
 					<texture border="5" colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
 				</control>
 				<control type="label">
-					<top>-15</top>
+					<centertop>50%</centertop>
+					<height>54</height>
 					<align>center</align>
 					<aligny>center</aligny>
-					<label>[B]$VAR[HDSD][/B]</label>
-					<font>FlagHD</font>
-					<textcolor>Light1</textcolor>
+					<label></label>
+					<font>symbolbig</font>
+					<textcolor>black</textcolor>
+					<visible>![Container.Content(tvshows) | Container.Content(seasons)]</visible>
+				</control>
+				<control type="label">
+					<centertop>50%</centertop>
+					<height>54</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label></label>
+					<font>symbolbig</font>
+					<textcolor>black</textcolor>
+					<visible>Container.Content(tvshows) | Container.Content(seasons)</visible>
+				</control>
+				<control type="label">
+					<centertop>50%</centertop>
+					<width>auto</width>
+					<height>54</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label>$VAR[HDSD]</label>
+					<font>DurationFont</font>
+					<textcolor>White</textcolor>
 					<visible>!substring(ListItem.Path,videodb://movies/sets,left)</visible>
 				</control>
 				<control type="image">
-					<aspectratio aligny="center" align="center">keep</aspectratio>
-					<texture colordiffuse="Light1">flags/sets.png</texture>
+					<width>73</width>
+					<height>50</height>
+					<centertop>50%</centertop>
+					<texture colordiffuse="White">flags/sets.png</texture>
 					<visible>substring(ListItem.Path,videodb://movies/sets,left)</visible>
 				</control>
 			</control>
 			<control type="group">
-				<width>120</width>
-				<control type="image">
-					<top>-20</top>
-					<texture border="5" colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
-				</control>
-				<control type="image">
-					<aspectratio aligny="center" align="center">keep</aspectratio>
-					<texture colordiffuse="Light1">flags/$VAR[Flagstar1].png</texture>
-				</control>
-			</control>
-			<control type="group">
-				<width>120</width>
+				<width>140</width>
+				<height>64</height>
 				<control type="image">
 					<top>-20</top>
 					<texture border="5" colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
 				</control>
 				<control type="label">
-					<top>-9</top>
+					<centertop>50%</centertop>
+					<height>54</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label></label>
+					<font>symbolbig</font>
+					<textcolor>black</textcolor>
+				</control>
+				<control type="label">
+					<centertop>50%</centertop>
+					<height>54</height>
 					<align>center</align>
 					<aligny>center</aligny>
 					<label fallback="N/A">$INFO[ListItem.Rating]</label>
-					<font>DurationFontSmall</font>
-					<textcolor>Light1</textcolor>
+					<font>DurationFont</font>
+					<textcolor>White</textcolor>
 				</control>
 			</control>
 			<control type="group">
 				<visible>Container.Content(tvshows) | Container.Content(seasons)</visible>
-				<width>120</width>
-				<control type="image">
-					<top>-20</top>
-					<texture border="5" colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
-				</control>
-				<control type="image">
-					<texture colordiffuse="Light1">flags/airing.png</texture>
-					<aspectratio aligny="center" align="center">keep</aspectratio>
-				</control>
-			</control>
-			<control type="group">
-				<width>120</width>
-				<visible>Container.Content(tvshows) | Container.Content(seasons)</visible>
+				<width>512</width>
+				<height>64</height>
 				<control type="image">
 					<top>-20</top>
 					<texture border="5" colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
 				</control>
 				<control type="label">
-					<top>-9</top>
+					<centertop>50%</centertop>
+					<height>54</height>
 					<align>center</align>
 					<aligny>center</aligny>
+					<label></label>
+					<font>symbolbig</font>
+					<textcolor>black</textcolor>
+				</control>
+				<control type="label">
+					<centertop>50%</centertop>
+					<width>auto</width>
+					<height>54</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<scroll>true</scroll>
 					<label fallback="N/A">$VAR[LabelNextAiredDetails]</label>
-					<font>Flag</font>
-					<textcolor>Light1</textcolor>
+					<font>DurationFontSmall</font>
+					<textcolor>White</textcolor>
 				</control>
 			</control>
 			<!-- sets -->
 
 		<control type="group">
-			<width>116</width>
 			<visible>!IsEmpty(ListItem.Mpaa)</visible>
-			<control type="image">
-				<top>-20</top>
-				<texture border="5" colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
-			</control>
-			<control type="image">
-				<colordiffuse>Light1</colordiffuse>
-				<texture>info/rating/rating_blank.png</texture>
-				<aspectratio aligny="center" align="center">keep</aspectratio>
-			</control>
+				<width>140</width>
+				<height>64</height>
+				<control type="image">
+					<top>-20</top>
+					<texture border="5" colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
+				</control>
+				<control type="label">
+					<centertop>50%</centertop>
+					<height>54</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label></label>
+					<font>symbolbig</font>
+					<textcolor>black</textcolor>
+				</control>
 			<control type="label">
-				<top>-10</top>
-				<aligny>center</aligny>
+					<centertop>50%</centertop>
+				<width>140</width>
+				<height>50</height>
 				<align>center</align>
-				<textcolor>Light1</textcolor>
+				<textcolor>White</textcolor>
 				<label>$VAR[MPAA]</label>
-				<font>MediumBoldAngle</font>
+				<font>DurationFontTVRating</font>
 				<visible>!IsEmpty(ListItem.Mpaa) + ![SubString(ListItem.Mpaa,NOT RATED) | SubString(ListItem.Mpaa,APPROVED)]</visible>
 			</control>
 			<control type="label">
-				<top>-10</top>
-				<aligny>center</aligny>
+					<centertop>50%</centertop>
+				<width>140</width>
+				<height>50</height>
 				<align>center</align>
-				<textcolor>Light1</textcolor>
+				<textcolor>White</textcolor>
 				<label>N/R</label>
-				<font>MediumBoldAngle</font>
+				<font>DurationFont</font>
 				<visible>!IsEmpty(ListItem.Mpaa) + [SubString(ListItem.Mpaa,NOT RATED) | SubString(ListItem.Mpaa,APPROVED)]</visible>
 			</control>
 		</control>
 			<control type="group">
-				<width>120</width>
 				<visible>!IsEmpty(ListItem.VideoAspect)</visible>
+				<width>140</width>
+				<height>64</height>
 				<control type="image">
 					<top>-20</top>
 					<texture border="5" colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
 				</control>
-				<control type="image">
-					<texture colordiffuse="Light1">$INFO[ListItem.VideoAspect,flags/aspectratio/,.png]</texture>
-					<aspectratio align="left">keep</aspectratio>
+				<control type="label">
+					<centertop>50%</centertop>
+					<height>54</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label></label>
+					<font>symbolbig</font>
+					<textcolor>black</textcolor>
+				</control>
+				<control type="label">
+					<centertop>50%</centertop>
+					<height>54</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label fallback="N/A">$INFO[ListItem.VideoAspect]</label>
+					<font>DurationFont</font>
+					<textcolor>White</textcolor>
 				</control>
 			</control>
 			<control type="group">
-				<width>116</width>
 				<visible>!IsEmpty(ListItem.VideoCodec)</visible>
+				<width>140</width>
+				<height>64</height>
 				<control type="image">
 					<top>-20</top>
 					<texture border="5" colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
 				</control>
-				<control type="image">
-					<texture colordiffuse="Light1">$INFO[ListItem.VideoCodec,flags/video/,.png]</texture>
-					<aspectratio align="left">keep</aspectratio>
+				<control type="label">
+					<centertop>50%</centertop>
+					<height>54</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label></label>
+					<font>symbolbig</font>
+					<textcolor>black</textcolor>
+				</control>
+				<control type="label">
+					<centertop>50%</centertop>
+					<height>54</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label fallback="N/A">$INFO[ListItem.VideoCodec]</label>
+					<font>DurationFont</font>
+					<textcolor>White</textcolor>
 				</control>
 			</control>
 			<control type="group">
 				<visible>!IsEmpty(ListItem.AudioCodec)</visible>
-				<width>114</width>
+				<width>140</width>
+				<height>64</height>
 				<control type="image">
 					<top>-20</top>
 					<texture border="5" colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
 				</control>
-				<control type="image">
-					<texture colordiffuse="Light1">$INFO[ListItem.AudioCodec,flags/audio/,.png]</texture>
-					<aspectratio align="left">keep</aspectratio>
+				<control type="label">
+					<centertop>50%</centertop>
+					<height>54</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label></label>
+					<font>symbolbig</font>
+					<textcolor>black</textcolor>
+				</control>
+				<control type="label">
+					<centertop>50%</centertop>
+					<height>54</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label fallback="N/A">$INFO[ListItem.AudioCodec]</label>
+					<font>DurationFont</font>
+					<textcolor>White</textcolor>
 				</control>
 			</control>
 			<control type="group">
 				<visible>!IsEmpty(ListItem.AudioChannels)</visible>
-				<width>114</width>
+				<width>140</width>
+				<height>64</height>
 				<control type="image">
 					<top>-20</top>
 					<texture border="5" colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
 				</control>
-				<control type="image">
-					<texture colordiffuse="Light1">$INFO[ListItem.AudioChannels,flags/channels/,.png]</texture>
-					<aspectratio align="left">keep</aspectratio>
+				<control type="label">
+					<centertop>50%</centertop>
+					<height>54</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label></label>
+					<font>symbolbig</font>
+					<textcolor>black</textcolor>
+				</control>
+				<control type="label">
+					<centertop>50%</centertop>
+					<height>54</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label fallback="N/A">$VAR[FlagAudioChannels]</label>
+					<font>DurationFont</font>
+					<textcolor>White</textcolor>
 				</control>
 			</control>
 			<control type="group">
-				<width>195</width>
 				<visible>!IsEmpty(ListItem.Duration)</visible>
+					<visible>!IsEmpty(ListItem.Duration) + [Control.IsVisible(500) | Control.IsVisible(503) | Control.IsVisible(505) | Control.IsVisible(50) | Control.IsVisible(51) | Control.IsVisible(54) | Control.IsVisible(57) | Control.IsVisible(58) | Control.IsVisible(53) | Control.IsVisible(52) | Control.IsVisible(56) | Control.IsVisible(55) | Control.IsVisible(513) | Control.IsVisible(514) | Control.IsVisible(59) | Control.IsVisible(515) | Control.IsVisible(155) | Control.IsVisible(156) | Control.IsVisible(157) | [Control.IsVisible(56) + Skin.HasSetting(56media.showinfo) + !Skin.HasSetting(56media.low)]]</visible>
+				<width>256</width>
+				<height>64</height>
 				<control type="image">
 					<top>-20</top>
 					<texture border="5" colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
 				</control>
-				<control type="image">
-					<texture colordiffuse="Light1">flags/time.png</texture>
-					<aspectratio aligny="center" align="left">keep</aspectratio>
-					<visible>!IsEmpty(ListItem.Duration) + [Control.IsVisible(500) | Control.IsVisible(503) | Control.IsVisible(505) | Control.IsVisible(50) | Control.IsVisible(51) | Control.IsVisible(54) | Control.IsVisible(57) | Control.IsVisible(58) | Control.IsVisible(53) | Control.IsVisible(52) | Control.IsVisible(56) | Control.IsVisible(55) | Control.IsVisible(513) | Control.IsVisible(514) | Control.IsVisible(59) | Control.IsVisible(515) | Control.IsVisible(155) | Control.IsVisible(156) | Control.IsVisible(157) | [Control.IsVisible(56) + Skin.HasSetting(56media.showinfo) + !Skin.HasSetting(56media.low)]]</visible>
+				<control type="label">
+					<centertop>50%</centertop>
+					<height>54</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label></label>
+					<font>symbolbig</font>
+					<textcolor>black</textcolor>
 				</control>
 				<control type="label">
-					<top>-8</top>
-					<left>57</left>
-					<width>170</width>
-					<align>left</align>
+					<centertop>50%</centertop>
+					<height>54</height>
+					<align>center</align>
 					<aligny>center</aligny>
-					<label>$VAR[DurationLong]</label>
-					<font>DurationFontSmall</font>
-					<textcolor>Light1</textcolor>
-					<visible>!IsEmpty(ListItem.Duration) + [Control.IsVisible(500) | Control.IsVisible(503) | Control.IsVisible(505) | Control.IsVisible(50) | Control.IsVisible(51) | Control.IsVisible(54) | Control.IsVisible(57) | Control.IsVisible(58) | Control.IsVisible(53) | Control.IsVisible(52) | Control.IsVisible(56) | Control.IsVisible(55) | Control.IsVisible(513) | Control.IsVisible(514) | Control.IsVisible(59) | Control.IsVisible(515) | Control.IsVisible(155) | Control.IsVisible(156) | Control.IsVisible(157) | [Control.IsVisible(56) + Skin.HasSetting(56media.showinfo) + !Skin.HasSetting(56media.low)]]</visible>
+					<label fallback="N/A">$VAR[DurationLong]</label>
+					<font>DurationFont</font>
+					<textcolor>White</textcolor>
 				</control>
 			</control>
 			<control type="group">
-				<width>195</width>
 				<visible>!IsEmpty(Window(home).Property(SkinHelper.MovieSet.Duration.Hours))</visible>
+					<visible>[Control.IsVisible(500) | Control.IsVisible(503) | Control.IsVisible(505) | Control.IsVisible(50) | Control.IsVisible(51) | Control.IsVisible(54) | Control.IsVisible(57) | Control.IsVisible(58) | Control.IsVisible(53) | Control.IsVisible(52) | Control.IsVisible(56) | Control.IsVisible(55) | Control.IsVisible(513) | Control.IsVisible(514) | Control.IsVisible(59) | Control.IsVisible(515) | Control.IsVisible(155) | Control.IsVisible(156) | Control.IsVisible(157) | [Control.IsVisible(56) + Skin.HasSetting(56media.showinfo) + !Skin.HasSetting(56media.low)]]</visible>
+				<width>256</width>
+				<height>64</height>
 				<control type="image">
 					<top>-20</top>
 					<texture border="5" colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
 				</control>
-				<control type="image">
-					<texture colordiffuse="Light1">flags/time.png</texture>
-					<aspectratio aligny="center" align="left">keep</aspectratio>
-					<visible>[Control.IsVisible(500) | Control.IsVisible(503) | Control.IsVisible(505) | Control.IsVisible(50) | Control.IsVisible(51) | Control.IsVisible(54) | Control.IsVisible(57) | Control.IsVisible(58) | Control.IsVisible(53) | Control.IsVisible(52) | Control.IsVisible(56) | Control.IsVisible(55) | Control.IsVisible(513) | Control.IsVisible(514) | Control.IsVisible(59) | Control.IsVisible(515) | Control.IsVisible(155) | Control.IsVisible(156) | Control.IsVisible(157) | [Control.IsVisible(56) + Skin.HasSetting(56media.showinfo) + !Skin.HasSetting(56media.low)]]</visible>
+				<control type="label">
+					<centertop>50%</centertop>
+					<height>54</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label></label>
+					<font>symbolbig</font>
+					<textcolor>black</textcolor>
 				</control>
 				<control type="label">
-					<top>-8</top>
-					<left>57</left>
-					<width>170</width>
-					<align>left</align>
+					<centertop>50%</centertop>
+					<height>54</height>
+					<align>center</align>
 					<aligny>center</aligny>
-					<label>$VAR[DurationLong]</label>
-					<font>DurationFontSmall</font>
-					<textcolor>Light1</textcolor>
-					<visible>[Control.IsVisible(500) | Control.IsVisible(503) | Control.IsVisible(505) | Control.IsVisible(50) | Control.IsVisible(51) | Control.IsVisible(54) | Control.IsVisible(57) | Control.IsVisible(58) | Control.IsVisible(53) | Control.IsVisible(52) | Control.IsVisible(56) | Control.IsVisible(55) | Control.IsVisible(513) | Control.IsVisible(514) | Control.IsVisible(59) | Control.IsVisible(515) | Control.IsVisible(155) | Control.IsVisible(156) | Control.IsVisible(157) | [Control.IsVisible(56) + Skin.HasSetting(56media.showinfo) + !Skin.HasSetting(56media.low)]]</visible>
+					<label fallback="N/A">$VAR[DurationLong]</label>
+					<font>DurationFont</font>
+					<textcolor>White</textcolor>
 				</control>
 			</control>
 			<!-- <control type="image">

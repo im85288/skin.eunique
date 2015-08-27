@@ -945,7 +945,7 @@
 			<visible>!Window.IsVisible(DialogAlbumInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)</visible>
 			<visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)</visible>
 			<left>1664</left>
-			<top>913</top>
+			<top>909</top>
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
 			<!--
@@ -1161,15 +1161,15 @@
 	</include>
 	<variable name="HeaderIcon">
 		<value condition="Window.IsVisible(DialogMuteBug.xml)">special://skin/extras/icons/mute.png</value>
-		<value condition="Window.IsVisible(DialogButtonMenu.xml)">special://skin/extras/icons/power.png</value>
-		<value condition="Window.IsVisible(DialogFavourites.xml)">special://skin/extras/icons/favourites.png</value>
-		<value condition="Window.IsVisible(1101)">special://skin/extras/icons/film.png</value>
-		<value condition="Window.IsVisible(1102)">special://skin/extras/icons/tv.png</value>
-		<value condition="Window.IsVisible(1103) | Window.IsVisible(1104) | Window.IsVisible(1105)">special://skin/extras/icons/director.png</value>
-		<value condition="Player.HasAudio + [Window.IsVisible(fullscreenvideo) | Window.IsVisible(visualisation) | Window.IsVisible(home)]">special://skin/extras/icons/songs.png</value>
-		<value condition="Player.HasVideo + VideoPlayer.Content(livetv) + [Window.IsVisible(fullscreenvideo) | Window.IsVisible(visualisation) | Window.IsVisible(home)]">special://skin/extras/icons/livetv.png</value>
-		<value condition="Player.HasVideo + VideoPlayer.Content(movies) + [Window.IsVisible(fullscreenvideo) | Window.IsVisible(visualisation) | Window.IsVisible(home)]">special://skin/extras/icons/film.png</value>
-		<value condition="Player.HasVideo + VideoPlayer.Content(episodes) + [Window.IsVisible(fullscreenvideo) | Window.IsVisible(visualisation) | Window.IsVisible(home)]">special://skin/extras/icons/tv.png</value>
+		<value condition="Window.IsVisible(DialogButtonMenu.xml)"></value>
+		<value condition="Window.IsVisible(DialogFavourites.xml)"></value>
+		<value condition="Window.IsVisible(1101)"></value>
+		<value condition="Window.IsVisible(1102)"></value>
+		<value condition="Window.IsVisible(1103) | Window.IsVisible(1104) | Window.IsVisible(1105)"></value>
+		<value condition="Player.HasAudio + [Window.IsVisible(fullscreenvideo) | Window.IsVisible(visualisation) | Window.IsVisible(home)]"></value>
+		<value condition="Player.HasVideo + VideoPlayer.Content(livetv) + [Window.IsVisible(fullscreenvideo) | Window.IsVisible(visualisation) | Window.IsVisible(home)]"></value>
+		<value condition="Player.HasVideo + VideoPlayer.Content(movies) + [Window.IsVisible(fullscreenvideo) | Window.IsVisible(visualisation) | Window.IsVisible(home)]"></value>
+		<value condition="Player.HasVideo + VideoPlayer.Content(episodes) + [Window.IsVisible(fullscreenvideo) | Window.IsVisible(visualisation) | Window.IsVisible(home)]"></value>
 		<value condition="Player.HasVideo + [Window.IsVisible(fullscreenvideo) | Window.IsVisible(visualisation) | Window.IsVisible(home)]">special://skin/extras/icons/eye.png</value>
 		<value condition="Window.IsVisible(script-ExtendedInfo Script-YoutubeList.xml)">special://skin/extras/icons/youtube.png</value>
 		<value condition="Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogAlbumInfo.xml) | Window.IsVisible(script-ExtendedInfo Script-VideoList.xml) | Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) | Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)">special://skin/extras/icons/info.png</value>
@@ -1180,30 +1180,30 @@
 		<value condition="StringCompare(Container.FolderPath,special://profile/playlists/video/)">special://skin/extras/icons/playlist.png</value>
 		<value condition="StringCompare(Container.FolderPath,special://profile/playlists/music/)">special://skin/extras/icons/playlist.png</value>
 		<value condition="StringCompare(Container.FolderPath,special://profile/playlists/mixed/)">special://skin/extras/icons/playlist.png</value>
-		<value condition="Window.IsVisible(MyMusicPlaylistEditor.xml) | Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(MyMusicSongs.xml)">special://skin/extras/icons/songs.png</value>
-		<value condition="SubString(Container.FolderPath,library://video/movies/,Left)">special://skin/extras/icons/film.png</value>
-		<value condition="SubString(Container.FolderPath,library://video/tvshows/,Left)">special://skin/extras/icons/tv.png</value>
-		<value condition="SubString(Container.FolderPath,videodb://movies/,Left)">special://skin/extras/icons/film.png</value>
-		<value condition="SubString(Container.FolderPath,videodb://tvshows/,Left)">special://skin/extras/icons/tv.png</value>
+		<value condition="Window.IsVisible(MyMusicPlaylistEditor.xml) | Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(MyMusicSongs.xml)"></value>
+		<value condition="SubString(Container.FolderPath,library://video/movies/,Left)"></value>
+		<value condition="SubString(Container.FolderPath,library://video/tvshows/,Left)"></value>
+		<value condition="SubString(Container.FolderPath,videodb://movies/,Left)"></value>
+		<value condition="SubString(Container.FolderPath,videodb://tvshows/,Left)"></value>
 		<value condition="SubString(Container.FolderPath,plugin://,Left)">special://skin/extras/icons/video-addons.png</value>
-		<value condition="Container.Content(movies)">special://skin/extras/icons/film.png</value>
-		<value condition="Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)">special://skin/extras/icons/tv.png</value>
-		<value condition="Container.Content(songs)">special://skin/extras/icons/songs.png</value>
-		<value condition="Container.Content(livetv)">special://skin/extras/icons/livetv.png</value>
+		<value condition="Container.Content(movies)"></value>
+		<value condition="Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)"></value>
+		<value condition="Container.Content(songs)"></value>
+		<value condition="Container.Content(livetv)"></value>
 		<value condition="Container.Content(files)">special://skin/extras/icons/files.png</value>
 		<value condition="Container.Content(plugins)">special://skin/extras/icons/video-addons.png</value>
 		<value condition="Container.Content(addons)">special://skin/extras/icons/addons.png</value>
 		<value condition="SubString(Container.FolderPath,videodb://musicvideos/,Left)">special://skin/extras/icons/musicvideo.png</value>
 		<value condition="Window.IsVisible(ColorPicker.xml)">special://skin/extras/icons/wand.png</value>
-		<value condition="Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRSearch.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRRecordings.xml)">special://skin/extras/icons/livetv.png</value>
-		<value condition="Window.IsVisible(MyMusicPlaylistEditor.xml) | Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(MyMusicSongs.xml)">special://skin/extras/icons/songs.png</value>
+		<value condition="Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRSearch.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRRecordings.xml)"></value>
+		<value condition="Window.IsVisible(MyMusicPlaylistEditor.xml) | Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(MyMusicSongs.xml)"></value>
 		<value condition="Window.IsVisible(MyPics.xml)">special://skin/extras/icons/pictures.png</value>
 		<value condition="Window.IsVisible(MyPrograms.xml) | Window.IsVisible(AddonBrowser.xml)">special://skin/extras/icons/addons.png</value>
-		<value condition="Window.IsVisible(weather)">special://skin/extras/icons/sun.png</value>
+		<value condition="Window.IsVisible(weather)"></value>
 		<value condition="Window.IsVisible(SettingsSystemInfo.xml) | Window.IsVisible(SettingsCategory.xml) | Window.IsVisible(settings) | Window.IsVisible(SkinSettings.xml)">special://skin/extras/icons/settings.png</value>
 		<value condition="Window.IsVisible(MyMusicPlaylist.xml)">special://skin/extras/icons/playlist.png</value>
 		<value condition="Window.IsVisible(FileManager.xml)">special://skin/extras/icons/database.png</value>
-		<value condition="Window.IsVisible(Home.xml)">special://skin/extras/icons/search.png</value>
+		<value condition="Window.IsVisible(Home.xml)"></value>
 		<value condition="Window.IsVisible(MyVideoNav.xml)">special://skin/extras/icons/video-addons.png</value>
 		<value>special://skin/extras/icons/artist.png</value>
 	</variable>
@@ -2172,14 +2172,14 @@
 		<control type="group">
 			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)</visible>
 			<visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)</visible>
-			<top>700</top>
+			<top>696</top>
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
 			<control id="508923" type="wraplist">
-				<left>-101</left>
+				<left>-100</left>
 				<top>0</top>
-				<width>1160</width>
-				<height>169</height>
+				<width>1185</width>
+				<height>384</height>
 				<onup>9007</onup>
 				<ondown>RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Container(508923).ListItem.Label])</ondown>
 				<onleft>7000</onleft>
@@ -2199,21 +2199,21 @@
 				<animation effect="fade" end="100" start="0" time="300">Visible</animation>
 				<animation effect="fade" end="0" start="100" time="300">Hidden</animation>
 				<animation center="480,1022" condition="!Control.HasFocus(50)" easing="inout" effect="zoom" end="81"  start="100" time="300" tween="sine">Conditional</animation>
-				<itemlayout height="211" width="169">
+				<itemlayout height="384" width="170">
 					<control type="group">
 						<control type="image">
 							<left>0</left>
-							<top>0</top>
-							<right>15</right>
-							<bottom>0</bottom>
-							<aspectratio align="center" aligny="bottom">stretch</aspectratio>
+							<top>-5</top>
+							<right>0</right>
+							<bottom>30</bottom>
+							<aspectratio align="center" aligny="top">keep</aspectratio>
 							<texture background="true" fallback="DefaultActor.png">$INFO[ListItem.Icon]</texture>
 							<fadetime>200</fadetime>
 						</control>
 						<control type="image">
-							<bottom>42</bottom>
-							<right>15</right>
-							<height>40</height>
+							<bottom>0</bottom>
+							<right>0</right>
+							<height>51</height>
 							<texture>common/white.png</texture>
 							<colordiffuse>$VAR[EmbyLeftColourHighlight]</colordiffuse>
 							<visible>!SubString(ListItem.Icon,Default)</visible>
@@ -2237,21 +2237,21 @@
 						</control>
 					</control>
 				</itemlayout>
-				<focusedlayout height="211" width="169">
+				<focusedlayout height="384" width="170">
 					<control type="group">
 						<control type="image">
 							<left>0</left>
-							<top>0</top>
-							<right>15</right>
-							<bottom>0</bottom>
-							<aspectratio align="center" aligny="bottom">stretch</aspectratio>
+							<top>-5</top>
+							<right>0</right>
+							<bottom>30</bottom>
+							<aspectratio align="center" aligny="top">keep</aspectratio>
 							<texture background="true" fallback="DefaultActor.png">$INFO[ListItem.Icon]</texture>
 							<fadetime>200</fadetime>
 						</control>
 						<control type="image">
-							<bottom>42</bottom>
-							<right>15</right>
-							<height>40</height>
+							<bottom>0</bottom>
+							<right>0</right>
+							<height>51</height>
 							<texture>common/white.png</texture>
 							<colordiffuse>$VAR[EmbyLeftColourHighlight]</colordiffuse>
 							<visible>!SubString(ListItem.Icon,Default)</visible>
@@ -2281,9 +2281,25 @@
 				<left>970</left>
 				<top>194</top>
 				<right>10</right>
-				<height>137</height>
+				<height>139</height>
+				<texture border="15" colordiffuse="$VAR[EmbyLeftColourHighlight]">common/white.png</texture>
+			</control>
+			<control type="image">
+				<left>970</left>
+				<top>333</top>
+				<right>10</right>
+				<height>51</height>
 				<texture border="15" colordiffuse="$VAR[EmbyRightColourHighlight]">common/white.png</texture>
 			</control>
+						<control type="label">
+				<left>975</left>
+				<top>330</top>
+				<right>10</right>
+				<height>51</height>
+							<font>MediumBold</font>
+							<textcolor>$VAR[ColourSelected]</textcolor>
+							<label>$INFO[Container(508923).ListItem(6).Label]$INFO[Container(508923).ListItem(6).Label2, $LOCALIZE[20347] ]</label>
+						</control>
 			<control type="image">
 				<top>194</top>
 				<left>1520</left>
