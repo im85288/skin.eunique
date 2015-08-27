@@ -16,8 +16,9 @@
                 <animation effect="slide" start="0" end="0,110" time="150" condition="!Window.IsVisible(fullscreeninfo) + !Player.Seeking + !Player.DisplayAfterSeek + !Player.Paused + !Player.Forwarding + !Player.Rewinding + !Player.ShowInfo + IsEmpty(Window(home).Property(osdshowinfo))">Conditional</animation>
                 <animation effect="slide" start="0,110" end="0" time="150">Visible</animation>
                 <animation effect="slide" start="0,110" end="0" time="150">WindowOpen</animation>
+                <right>NewSidePad</right>
+                <left>NewSidePad</left>
                 <control type="image">
-                    <right>0</right>
                     <bottom>110</bottom>
                     <width>500</width>
                     <height>281</height>
@@ -34,12 +35,38 @@
                     <height>374</height>
                     <colordiffuse>$VAR[EmbyLeftColourHighlight]</colordiffuse>
                     <animation effect="fade" start="100" end="90" condition="Skin.HasSetting(osd.usetheme) | [!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)]">Conditional</animation>
-                    <texture border="16">common/rounded-shadow8.png</texture>
-                    <bordertexture colordiffuse="$VAR[EmbyRightColourHighlight]">common/white.png</bordertexture>
-                    <bordersize>6,6,6,6</bordersize>
+                    <texture border="5">common/box.png</texture>
+                </control>
+                <control type="image">
+                    <top>-100r</top>
+                    <width>100%</width>
+                    <height>100</height>
+                    <colordiffuse>$VAR[EmbyRightColourHighlight]</colordiffuse>
+                    <animation effect="fade" start="100" end="90" condition="Skin.HasSetting(osd.usetheme) | [!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)]">Conditional</animation>
+                    <texture border="15">common/white.png</texture>
+                    <visible>Window.IsVisible(fullscreeninfo) | Player.ShowInfo | !IsEmpty(Window(home).Property(osdshowinfo)) | [Player.Paused + Skin.HasSetting(osd.showinfoonpause)]</visible>
+                </control>
+                <control type="image">
+                    <top>55r</top>
+                    <width>100%</width>
+                    <height>22</height>
+                    <colordiffuse>$VAR[EmbyRightColourHighlight]</colordiffuse>
+                    <animation effect="fade" start="100" end="90" condition="Skin.HasSetting(osd.usetheme) | [!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)]">Conditional</animation>
+                    <texture border="15">common/white.png</texture>
+                    <visible>!Window.IsVisible(fullscreeninfo) + !Player.Seeking + !Player.DisplayAfterSeek + !Player.Paused + !Player.Forwarding + !Player.Rewinding + !Player.ShowInfo + IsEmpty(Window(home).Property(osdshowinfo))</visible>
                 </control>
             </control>
             <control type="group">
+                <control type="multiimage">
+                    <top>-100</top>
+                    <left>-100</left>
+                    <width>1</width>
+                    <height>1</height>
+                    <imagepath>plugin://script.skin.helper.service/?action=getthumb&amp;path=$INFO[VideoPlayer.Title] $INFO[VideoPlayer.ChannelName]</imagepath>
+                    <aspectratio>keep</aspectratio>
+                    <aspectratio align="right" aligny="center" scalediffuse="false">scale</aspectratio>
+                    <visible>VideoPlayer.Content(LiveTV) + !IsEmpty(VideoPlayer.Title)</visible>
+                </control>
                 <top>300r</top>
                 <bottom>0</bottom>
                 <width>100%</width>
@@ -47,8 +74,8 @@
                 <animation effect="fade" start="0" end="100" delay="150" time="150">Visible</animation>
                 <animation effect="fade" start="0" end="100" delay="150" time="150">WindowOpen</animation>
                 <control type="group">
-                    <left>10</left>
-                    <right>10</right>
+                    <left>NewSidePad</left>
+                    <right>NewSidePad</right>
                     <top>20</top>
                     <bottom>20</bottom>
                     <control type="image">
@@ -59,33 +86,37 @@
                         <texture>$VAR[PlayerPoster]</texture>
                         <visible>!IsEmpty(Player.Art(tvshow.poster)) | !IsEmpty(Player.Art(poster))</visible>
                     </control>
-                    
                     <control type="image">
+                        <left>NewSidePad</left>
                         <width>280</width>
                         <height>280</height>
-                        <aspectratio aligny="center">keep</aspectratio>
+                        <aspectratio align="center" aligny="center">keep</aspectratio>
                         <texture>$INFO[Player.Art(thumb)]</texture>
-                        <visible>VideoPlayer.Content(LiveTV) + !IsEmpty(Player.Art(thumb))</visible>
+                        <visible>VideoPlayer.Content(LiveTV) + !IsEmpty(Player.Art(thumb)) + IsEmpty(Window(Home).Property(SkinHelper.ListItemThumb))</visible>
                     </control>
-                    
+                    <control type="image">
+                        <left>NewSidePad</left>
+                        <width>280</width>
+                        <height>280</height>
+                        <aspectratio align="center" aligny="center">keep</aspectratio>
+                        <texture>$INFO[Window(Home).Property(SkinHelper.ListItemThumb)]</texture>
+                        <visible>VideoPlayer.Content(LiveTV) + !IsEmpty(Player.Art(thumb)) + !IsEmpty(Window(Home).Property(SkinHelper.ListItemThumb))</visible>
+                    </control>
                     <control type="group">
                         <left>300</left>
                         <visible>VideoPlayer.Content(LiveTV) + !IsEmpty(Player.Art(thumb))</visible>
                         <include>OSDInfoContent</include>
                     </control>
-                    
                     <control type="group">
                         <left>300</left>
                         <visible>!IsEmpty(Player.Art(tvshow.poster)) | !IsEmpty(Player.Art(poster))</visible>
                         <include>OSDInfoContent</include>
                     </control>
-                    
                     <control type="group">
                         <left>0</left>
                         <visible>IsEmpty(Player.Art(tvshow.poster)) + IsEmpty(Player.Art(poster)) + [!VideoPlayer.Content(LiveTV) | IsEmpty(Player.Art(thumb))]</visible>
                         <include>OSDInfoContent</include>
                     </control>
-                
                 </control>
             </control>
             <control type="group">
@@ -108,7 +139,7 @@
                         <bottom>30</bottom>
                         <height>40</height>
                         <font>Tiny</font>
-                        <textcolor>Light1</textcolor>
+                        <textcolor>black</textcolor>
                         <label>$VAR[PlayerStatus]</label>
                     </control>
                     <control type="label" description="Duration Total Time">
@@ -118,7 +149,7 @@
                         <bottom>30</bottom>
                         <height>40</height>
                         <font>Tiny</font>
-                        <textcolor>Light1</textcolor>
+                        <textcolor>black</textcolor>
                         <label>$INFO[Player.Time]$INFO[Player.Duration,  /  ,]</label>
                     </control>
 
@@ -183,7 +214,7 @@
                         <bottom>30</bottom>
                         <height>40</height>
                         <font>Tiny</font>
-                        <textcolor>Light1</textcolor>
+                        <textcolor>black</textcolor>
                         <label>$INFO[PVR.TimeshiftEnd]</label>
                     </control>
                     <control type="label" description="Duration Total Time">
@@ -193,7 +224,7 @@
                         <bottom>30</bottom>
                         <height>40</height>
                         <font>Tiny</font>
-                        <textcolor>Light1</textcolor>
+                        <textcolor>black</textcolor>
                         <label>$INFO[PVR.TimeshiftStart]</label>
                     </control>
 

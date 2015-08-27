@@ -247,7 +247,7 @@
 							<align>left</align>
 							<aligny>center</aligny>
 							<label>$INFO[ListItem.ChannelName]</label>
-							<textcolor>Light1</textcolor>
+							<textcolor>black</textcolor>
 							<font>MediumSmallBold</font>
 							<scroll>false</scroll>
 							<animation effect="fade" start="100" end="64" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(10) + ![ListItem.IsSelected | ListItem.IsPlaying]">Conditional</animation>
@@ -256,7 +256,7 @@
 					<itemlayout height="70" width="100">
 						<control type="image" id="2">
 							<texture border="5">common/white.png</texture>
-							<colordiffuse>Light1</colordiffuse>
+							<colordiffuse>black</colordiffuse>
 							<visible>!Skin.HasSetting(EPGGenreColors.Enabled)</visible>
 							<bordertexture colordiffuse="Dark1">common/white.png</bordertexture>
 							<bordersize>1</bordersize>
@@ -308,7 +308,7 @@
 					<focusedlayout height="70" width="100">
 						<control type="image" id="2">
 							<texture border="1" colordiffuse="Dark1">common/white.png</texture>
-							<bordertexture colordiffuse="Light1">common/white.png</bordertexture>
+							<bordertexture colordiffuse="black">common/white.png</bordertexture>
 							<bordersize>1</bordersize>
 							<visible>!Skin.HasSetting(EPGGenreColors.Enabled)</visible>
 						</control>
@@ -326,7 +326,7 @@
 							<width>56</width>
 							<height>68</height>
 							<aligny>center</aligny>
-							<textcolor>Light1</textcolor>
+							<textcolor>black</textcolor>
 							<align>left</align>
 							<label>$INFO[ListItem.Label]</label>
 							<scroll>false</scroll>
@@ -339,7 +339,7 @@
 							<height>68</height>
 							<aligny>center</aligny>
 							<textoffsetx>11</textoffsetx>
-							<textcolor>Light1</textcolor>
+							<textcolor>black</textcolor>
 							<align>left</align>
 							<label>$INFO[ListItem.Label]</label>
 							<scroll>false</scroll>
@@ -499,8 +499,8 @@
 										<width>70</width>
 										<align>right</align>
 										<font>SmallBold</font>
-										<textcolor>Light1</textcolor>
-										<selectedcolor>Light1</selectedcolor>
+										<textcolor>black</textcolor>
+										<selectedcolor>black</selectedcolor>
 										<label>$INFO[ListItem.ChannelNumber]</label>
 									</control>
 									<control type="progress">
@@ -514,7 +514,7 @@
 										<midtexture>pvr/progress-mid.png</midtexture>
 										<righttexture>pvr/progress-leftright.png</righttexture>
 										<info>ListItem.Progress</info>
-										<colordiffuse>Light1</colordiffuse>
+										<colordiffuse>black</colordiffuse>
 									</control>
 									<control type="label">
 										<posx>220</posx>
@@ -523,8 +523,8 @@
 										<aligny>center</aligny>
 										<height>64</height>
 										<font>SmallBold</font>
-										<textcolor>Light1</textcolor>
-										<selectedcolor>Light1</selectedcolor>
+										<textcolor>black</textcolor>
+										<selectedcolor>black</selectedcolor>
 										<label>$INFO[ListItem.ChannelName]</label>
 									</control>
 									<control type="label">
@@ -534,8 +534,8 @@
 										<aligny>center</aligny>
 										<height>64</height>
 										<font>Small</font>
-										<textcolor>Light1</textcolor>
-										<selectedcolor>Light1</selectedcolor>
+										<textcolor>black</textcolor>
+										<selectedcolor>black</selectedcolor>
 										<label>$INFO[ListItem.Title]</label>
 									</control>
 									<control type="label">
@@ -546,8 +546,8 @@
 										<height>64</height>
 										<align>right</align>
 										<font>Tiny</font>
-										<textcolor>Light1</textcolor>
-										<selectedcolor>Light1</selectedcolor>
+										<textcolor>black</textcolor>
+										<selectedcolor>black</selectedcolor>
 										<label>$INFO[ListItem.EndTime,$LOCALIZE[31106] ,]</label>
 										<visible>!IsEmpty(ListItem.NextTitle)</visible>
 									</control>
@@ -558,8 +558,8 @@
 										<height>100%</height>
 										<align>right</align>
 										<font>Tiny</font>
-										<textcolor>Light1</textcolor>
-										<selectedcolor>Light1</selectedcolor>
+										<textcolor>black</textcolor>
+										<selectedcolor>black</selectedcolor>
 										<label>$INFO[ListItem.EndTime,$LOCALIZE[31106] ,]</label>
 										<visible>IsEmpty(ListItem.NextTitle)</visible>
 									</control>
@@ -571,8 +571,8 @@
 										<height>64</height>
 										<align>right</align>
 										<font>Tiny</font>
-										<textcolor>Light1</textcolor>
-										<selectedcolor>Light1</selectedcolor>
+										<textcolor>black</textcolor>
+										<selectedcolor>black</selectedcolor>
 										<label>$INFO[ListItem.NextTitle,[B],[/B] $LOCALIZE[19031]]</label>
 									</control>
 								</control>
@@ -821,8 +821,8 @@
 										<width>70</width>
 										<align>right</align>
 										<font>SmallBold</font>
-										<textcolor>Light1</textcolor>
-										<selectedcolor>Light1</selectedcolor>
+										<textcolor>black</textcolor>
+										<selectedcolor>black</selectedcolor>
 										<label>$INFO[ListItem.ChannelNumber]</label>
 									</control>
 									<control type="progress">
@@ -836,7 +836,7 @@
 										<midtexture>pvr/progress-mid.png</midtexture>
 										<righttexture>pvr/progress-leftright.png</righttexture>
 										<info>ListItem.Progress</info>
-										<colordiffuse>Light1</colordiffuse>
+										<colordiffuse>black</colordiffuse>
 									</control>
 									<control type="label">
 										<posx>220</posx>
@@ -845,8 +845,8 @@
 										<aligny>center</aligny>
 										<height>64</height>
 										<font>SmallBold</font>
-										<textcolor>Light1</textcolor>
-										<selectedcolor>Light1</selectedcolor>
+										<textcolor>black</textcolor>
+										<selectedcolor>black</selectedcolor>
 										<label>$INFO[ListItem.ChannelName]</label>
 									</control>
 									<control type="label">
@@ -856,8 +856,8 @@
 										<aligny>center</aligny>
 										<height>64</height>
 										<font>Small</font>
-										<textcolor>Light1</textcolor>
-										<selectedcolor>Light1</selectedcolor>
+										<textcolor>black</textcolor>
+										<selectedcolor>black</selectedcolor>
 										<label>$INFO[ListItem.Title]</label>
 									</control>
 									<control type="label">
@@ -868,8 +868,8 @@
 										<height>64</height>
 										<align>right</align>
 										<font>Tiny</font>
-										<textcolor>Light1</textcolor>
-										<selectedcolor>Light1</selectedcolor>
+										<textcolor>black</textcolor>
+										<selectedcolor>black</selectedcolor>
 										<label>$INFO[ListItem.EndTime,$LOCALIZE[31106] ,]</label>
 										<visible>!IsEmpty(ListItem.NextTitle)</visible>
 									</control>
@@ -880,8 +880,8 @@
 										<height>100%</height>
 										<align>right</align>
 										<font>Tiny</font>
-										<textcolor>Light1</textcolor>
-										<selectedcolor>Light1</selectedcolor>
+										<textcolor>black</textcolor>
+										<selectedcolor>black</selectedcolor>
 										<label>$INFO[ListItem.EndTime,$LOCALIZE[31106] ,]</label>
 										<visible>IsEmpty(ListItem.NextTitle)</visible>
 									</control>
@@ -893,8 +893,8 @@
 										<height>64</height>
 										<align>right</align>
 										<font>Tiny</font>
-										<textcolor>Light1</textcolor>
-										<selectedcolor>Light1</selectedcolor>
+										<textcolor>black</textcolor>
+										<selectedcolor>black</selectedcolor>
 										<label>$INFO[ListItem.NextTitle,[B],[/B] $LOCALIZE[19031]]</label>
 									</control>
 								</control>
@@ -1144,8 +1144,8 @@
 										<width>70</width>
 										<align>right</align>
 										<font>SmallBold</font>
-										<textcolor>Light1</textcolor>
-										<selectedcolor>Light1</selectedcolor>
+										<textcolor>black</textcolor>
+										<selectedcolor>black</selectedcolor>
 										<label>$INFO[ListItem.ChannelNumber]</label>
 									</control>
 									<control type="progress">
@@ -1159,7 +1159,7 @@
 										<midtexture>pvr/progress-mid.png</midtexture>
 										<righttexture>pvr/progress-leftright.png</righttexture>
 										<info>ListItem.Progress</info>
-										<colordiffuse>Light1</colordiffuse>
+										<colordiffuse>black</colordiffuse>
 									</control>
 									<control type="label">
 										<posx>220</posx>
@@ -1168,8 +1168,8 @@
 										<aligny>center</aligny>
 										<height>64</height>
 										<font>SmallBold</font>
-										<textcolor>Light1</textcolor>
-										<selectedcolor>Light1</selectedcolor>
+										<textcolor>black</textcolor>
+										<selectedcolor>black</selectedcolor>
 										<label>$INFO[ListItem.ChannelName]</label>
 									</control>
 									<control type="label">
@@ -1179,8 +1179,8 @@
 										<aligny>center</aligny>
 										<height>64</height>
 										<font>Small</font>
-										<textcolor>Light1</textcolor>
-										<selectedcolor>Light1</selectedcolor>
+										<textcolor>black</textcolor>
+										<selectedcolor>black</selectedcolor>
 										<label>$INFO[ListItem.Title]</label>
 									</control>
 									<control type="label">
@@ -1191,8 +1191,8 @@
 										<height>64</height>
 										<align>right</align>
 										<font>Tiny</font>
-										<textcolor>Light1</textcolor>
-										<selectedcolor>Light1</selectedcolor>
+										<textcolor>black</textcolor>
+										<selectedcolor>black</selectedcolor>
 										<label>$INFO[ListItem.EndTime,$LOCALIZE[31106] ,]</label>
 										<visible>!IsEmpty(ListItem.NextTitle)</visible>
 									</control>
@@ -1203,8 +1203,8 @@
 										<height>100%</height>
 										<align>right</align>
 										<font>Tiny</font>
-										<textcolor>Light1</textcolor>
-										<selectedcolor>Light1</selectedcolor>
+										<textcolor>black</textcolor>
+										<selectedcolor>black</selectedcolor>
 										<label>$INFO[ListItem.EndTime,$LOCALIZE[31106] ,]</label>
 										<visible>IsEmpty(ListItem.NextTitle)</visible>
 									</control>
@@ -1216,8 +1216,8 @@
 										<height>64</height>
 										<align>right</align>
 										<font>Tiny</font>
-										<textcolor>Light1</textcolor>
-										<selectedcolor>Light1</selectedcolor>
+										<textcolor>black</textcolor>
+										<selectedcolor>black</selectedcolor>
 										<label>$INFO[ListItem.NextTitle,[B],[/B] $LOCALIZE[19031]]</label>
 									</control>
 								</control>

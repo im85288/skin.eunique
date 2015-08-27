@@ -7,54 +7,139 @@
 		<defaultcontrol always="true">14</defaultcontrol>
 	</include>
 	<include name="OSDInfoContent">
-		<right>10</right>
-		<top>10</top>
-		<control type="image">
-			<right>0</right>
-			<align>right</align>
-			<width>91</width>
-			<height>35</height>
-			<texture colordiffuse="Light1">$INFO[VideoPlayer.AudioChannels,flags/channels/,.png]</texture>
+		<right>NewSidePad</right>
+		<top>NewSidePad</top>
+		<control type="group">
 			<visible>!IsEmpty(VideoPlayer.AudioChannels)</visible>
+			<width>120</width>
+			<height>48</height>
+			<right>0</right>
+			<control type="image">
+				<texture border="5" colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
+			</control>
+			<control type="label">
+				<top>-9</top>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label></label>
+				<font>symbol</font>
+				<textcolor>black</textcolor>
+			</control>
+			<control type="label">
+				<top>-9</top>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label fallback="N/A">$VAR[FlagAudioChannels]</label>
+				<font>FlagFontSmall</font>
+				<textcolor>$VAR[ColourHighlight]</textcolor>
+			</control>
 		</control>
-		<control type="image">
-			<right>96</right>
-			<align>right</align>
-			<width>91</width>
-			<height>35</height>
-			<texture colordiffuse="Light1">$INFO[VideoPlayer.AudioCodec,flags/audio/,.png]</texture>
+		<control type="group">
+			<visible>!IsEmpty(VideoPlayer.AudioCodec)</visible>
+			<width>120</width>
+			<height>48</height>
+			<right>120</right>
+			<control type="image">
+				<texture border="5" colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
+			</control>
+			<control type="label">
+				<top>-9</top>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label></label>
+				<font>symbol</font>
+				<textcolor>black</textcolor>
+			</control>
+			<control type="label">
+				<top>-9</top>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label fallback="N/A">$INFO[VideoPlayer.AudioCodec]</label>
+				<font>FlagFontSmall</font>
+				<textcolor>$VAR[ColourHighlight]</textcolor>
+			</control>
+		</control>
+		<control type="group">
 			<visible>!IsEmpty(VideoPlayer.VideoCodec)</visible>
+			<width>120</width>
+			<height>48</height>
+			<right>240</right>
+			<control type="image">
+				<texture border="5" colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
+			</control>
+			<control type="label">
+				<top>-9</top>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label></label>
+				<font>symbol</font>
+				<textcolor>black</textcolor>
+			</control>
+			<control type="label">
+				<top>-9</top>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label fallback="N/A">$INFO[VideoPlayer.VideoCodec]</label>
+				<font>FlagFontSmall</font>
+				<textcolor>$VAR[ColourHighlight]</textcolor>
+			</control>
 		</control>
-		<control type="image">
-			<right>192</right>
-			<align>right</align>
-			<width>91</width>
-			<height>35</height>
-			<texture colordiffuse="Light1">$INFO[VideoPlayer.VideoCodec,flags/video/,.png]</texture>
-			<visible>!IsEmpty(VideoPlayer.VideoCodec)</visible>
-		</control>
-		<control type="image">
-			<right>288</right>
-			<align>right</align>
-			<width>91</width>
-			<height>35</height>
-			<texture colordiffuse="Light1">$INFO[VideoPlayer.VideoResolution,flags/resolution/,.png]</texture>
-			<visible>!IsEmpty(VideoPlayer.VideoResolution)</visible>
-		</control>
-		<control type="image">
-			<right>384</right>
-			<align>right</align>
-			<width>91</width>
-			<height>35</height>
-			<texture colordiffuse="Light1">$INFO[VideoPlayer.VideoAspect,flags/aspectratio/,.png]</texture>
+		<control type="group">
 			<visible>!IsEmpty(VideoPlayer.VideoAspect)</visible>
+			<width>120</width>
+			<height>48</height>
+			<right>360</right>
+			<control type="image">
+				<texture border="5" colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
+			</control>
+			<control type="label">
+				<top>-9</top>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label></label>
+				<font>symbol</font>
+				<textcolor>black</textcolor>
+			</control>
+			<control type="label">
+				<top>-9</top>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label fallback="N/A">$INFO[VideoPlayer.VideoAspect]</label>
+				<font>FlagFontSmall</font>
+				<textcolor>$VAR[ColourHighlight]</textcolor>
+			</control>
+		</control>
+		<control type="group">
+			<visible>!IsEmpty(VideoPlayer.VideoResolution)</visible>
+			<width>120</width>
+			<height>48</height>
+			<right>480</right>
+			<control type="image">
+				<texture border="5" colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
+			</control>
+			<control type="label">
+				<top>-9</top>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label></label>
+				<font>symbol</font>
+				<textcolor>black</textcolor>
+			</control>
+			<control type="label">
+				<top>-9</top>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>$VAR[HDSD]</label>
+				<font>FlagFontSmall</font>
+				<textcolor>$VAR[ColourHighlight]</textcolor>
+			</control>
 		</control>
 		<control type="label" description="Title">
 			<width>1000</width>
 			<top>0</top>
 			<height>40</height>
 			<font>SmallBold</font>
-			<textcolor>Light1</textcolor>
+			<textcolor>white</textcolor>
 			<label>$VAR[PlayerTitle]</label>
 		</control>
 		<control type="label" description="Show">
@@ -62,7 +147,7 @@
 			<top>50</top>
 			<height>50</height>
 			<font>MediumLarge</font>
-			<textcolor>Light1</textcolor>
+			<textcolor>white</textcolor>
 			<label>$VAR[PlayerBigTitle]</label>
 		</control>
 		<control type="progress" description="cache">
@@ -84,53 +169,12 @@
 			<height>8</height>
 			<info>Player.Progress</info>
 		</control>
-		<control type="label" description="Title">
-			<width>1000</width>
-			<top>130</top>
-			<height>40</height>
-			<font>Medium</font>
-			<align>left</align>
-			<textcolor>Light1</textcolor>
-			<label>$VAR[PlayerLiveTVNextTitle]</label>
-			<visible>VideoPlayer.Content(LiveTV)</visible>
-		</control>
-		<control type="label" description="Duration">
-			<width>300</width>
-			<top>130</top>
-			<height>40</height>
-			<right>0</right>
-			<align>right</align>
-			<font>Medium</font>
-			<textcolor>Light1</textcolor>
-			<label>$INFO[VideoPlayer.NextDuration,, mins]</label>
-			<visible>VideoPlayer.Content(LiveTV)</visible>
-		</control>
-		<control type="textbox" description="Plot">
-			<width>100%</width>
-			<top>180</top>
-			<height>120</height>
-			<font>Tiny</font>
-			<align>justify</align>
-			<textcolor>Light2</textcolor>
-			<label>$VAR[PlayerPlotBox]</label>
-			<visible>VideoPlayer.Content(LiveTV)</visible>
-		</control>
-		<control type="textbox" description="Plot">
-			<width>100%</width>
-			<top>150</top>
-			<height>150</height>
-			<font>Tiny</font>
-			<align>justify</align>
-			<textcolor>Light2</textcolor>
-			<label>$VAR[PlayerPlotBox]</label>
-			<visible>!VideoPlayer.Content(LiveTV)</visible>
-		</control>
 		<control type="label" description="Elapsed Time">
 			<width>400</width>
 			<top>108</top>
 			<height>40</height>
 			<font>Tiny</font>
-			<textcolor>Light1</textcolor>
+			<textcolor>white2</textcolor>
 			<label>$VAR[PlayerStatus]</label>
 			<visible>!VideoPlayer.Content(LiveTV)</visible>
 		</control>
@@ -141,9 +185,50 @@
 			<top>108</top>
 			<height>40</height>
 			<font>Tiny</font>
-			<textcolor>Light1</textcolor>
+			<textcolor>white2</textcolor>
 			<label>$INFO[Player.Time] / $INFO[Player.Duration]</label>
 			<visible>!VideoPlayer.Content(LiveTV)</visible>
+		</control>
+		<control type="label" description="Next Title">
+			<width>1000</width>
+			<top>130</top>
+			<height>40</height>
+			<font>Medium</font>
+			<align>left</align>
+			<textcolor>white2</textcolor>
+			<label>$VAR[PlayerLiveTVNextTitle]</label>
+			<visible>VideoPlayer.Content(LiveTV)</visible>
+		</control>
+		<control type="label" description="Duration">
+			<width>300</width>
+			<top>130</top>
+			<height>40</height>
+			<right>0</right>
+			<align>right</align>
+			<font>Medium</font>
+			<textcolor>white2</textcolor>
+			<label>$INFO[VideoPlayer.NextDuration,, mins]</label>
+			<visible>VideoPlayer.Content(LiveTV)</visible>
+		</control>
+		<control type="label" description="Genre">
+			<width>1000</width>
+			<top>143</top>
+			<height>30</height>
+			<font>Small</font>
+			<align>left</align>
+			<aligny>center</aligny>
+			<textcolor>white</textcolor>
+			<label>$VAR[PlayerAdditionalInfo]</label>
+			<visible>!VideoPlayer.Content(LiveTV)</visible>
+		</control>
+		<control type="textbox" description="Plot">
+			<width>100%</width>
+			<top>180</top>
+			<height>120</height>
+			<font>Tiny</font>
+			<align>justify</align>
+			<textcolor>black</textcolor>
+			<label>$VAR[PlayerPlotBox]</label>
 		</control>
 	</include>
 	<include name="DefOSDButtons">
@@ -151,8 +236,8 @@
 		<align>center</align>
 		<height>48</height>
 		<font>Tiny</font>
-		<disabledcolor>Light3</disabledcolor>
-		<textcolor>Light1</textcolor>
+		<disabledcolor>black3</disabledcolor>
+		<textcolor>black</textcolor>
 		<focusedcolor>$VAR[ColourHighlight]</focusedcolor>
 		<texturefocus>noop</texturefocus>
 		<width>226</width>
@@ -490,63 +575,85 @@
 			<visible>![Window.IsVisible(DialogKaiToast.xml) + !Window.IsVisible(DialogVideoInfo.xml)]</visible>
 			<visible>!Window.IsVisible(DialogExtendedInfo.xml)</visible>
 			<visible>![Window.IsVisible(DialogVolumeBar.xml) + !Window.IsVisible(DialogVideoInfo.xml)]</visible>
-			<right>1</right>
-			<posy>1</posy>
-			<width>380</width>
-			<height>100</height>
+			<right>NewSidePad</right>
+			<top>NewSidePad</top>
+			<width>360</width>
+			<height>80</height>
 			<include>Animation.FadeIn.Slide</include>
 			<include>Animation.FadeOut</include>
 			<control type="image">
-				<posx>0</posx>
-				<posy>0</posy>
-				<width>100%</width>
-				<height>100%</height>
+				<colordiffuse>$VAR[EmbyRightColourHighlight]</colordiffuse>
+				<animation effect="fade" start="100" end="90" condition="Skin.HasSetting(osd.usetheme) | [!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)]">Conditional</animation>
+				<texture border="5">common/box.png</texture>
+			</control>
+			<control type="image">
+				<bottom>30</bottom>
 				<colordiffuse>$VAR[EmbyLeftColourHighlight]</colordiffuse>
 				<animation effect="fade" start="100" end="90" condition="Skin.HasSetting(osd.usetheme) | [!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)]">Conditional</animation>
-				<texture border="16">common/rounded-shadow8.png</texture>
-				<bordertexture colordiffuse="$VAR[EmbyRightColourHighlight]">common/white.png</bordertexture>
-				<bordersize>6,6,6,6</bordersize>
+				<texture border="15">common/white.png</texture>
 			</control>
 			<control type="group">
 				<control type="label">
 					<left>20</left>
-					<centertop>50%</centertop>
+					<centertop>30%</centertop>
 					<width>48</width>
 					<height>48</height>
 					<aspectratio aligny="center">keep</aspectratio>
-					<textcolor>Light1</textcolor>
+					<textcolor>white</textcolor>
 					<font>symbol</font>
 					<label></label>
 				</control>
 				<control type="label">
+					<top>-15</top>
 					<right>185</right>
 					<left>20</left>
 					<height>100%</height>
 					<align>center</align>
 					<aligny>center</aligny>
 					<font>Small</font>
-					<textcolor>Light1</textcolor>
+					<textcolor>white</textcolor>
 					<label>$INFO[System.Time(hh:mm)]</label>
 				</control>
 				<control type="label">
 					<left>235</left>
-					<centertop>50%</centertop>
+					<centertop>30%</centertop>
 					<width>48</width>
 					<height>48</height>
 					<aspectratio aligny="center">keep</aspectratio>
-					<textcolor>Light1</textcolor>
+					<textcolor>white</textcolor>
 					<font>symbol</font>
 					<label></label>
 				</control>
 				<control type="label">
+					<top>-15</top>
 					<right>-45</right>
 					<left>220</left>
 					<height>100%</height>
 					<align>center</align>
 					<aligny>center</aligny>
 					<font>Small</font>
-					<textcolor>Light1</textcolor>
+					<textcolor>white</textcolor>
 					<label>$INFO[Player.FinishTime(hh:mm)]</label>
+				</control>
+				<control type="label">
+					<left>60</left>
+					<right>2</right>
+					<height>20</height>
+					<bottom>9</bottom>
+					<align>left</align>
+					<aligny>bottom</aligny>
+					<font>Minute</font>
+					<textcolor>black</textcolor>
+					<label>[COLOR=$VAR[ColourHighlight]]$INFO[Weather.Temperature][/COLOR] $INFO[Weather.Conditions]</label>
+				</control>
+				<control type="image">
+					<left>16</left>
+					<bottom>-10</bottom>
+					<width>48</width>
+					<height>48</height>
+					<fadetime>350</fadetime>
+					<aspectratio aligny="bottom" align="left">keep</aspectratio>
+					<texture colordiffuse="black">$INFO[Weather.FanartCode,weather/small/,.png]</texture>
 				</control>
 			</control>
 		</control>

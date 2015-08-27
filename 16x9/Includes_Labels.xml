@@ -944,6 +944,7 @@
 		<value condition="IntegerGreaterThan(Container(9500).ListItem.VideoResolution,719)">HD</value>
 		<value condition="IntegerGreaterThan(Container(301).ListItem.VideoResolution,719)">HD</value>
 		<value condition="IntegerGreaterThan(ListItem.VideoResolution,719)">HD</value>
+		<value condition="IntegerGreaterThan(VideoPlayer.VideoResolution,719)">HD</value>
 		<value>SD</value>
 	</variable>
 	<variable name="PlayerTitle">
@@ -960,6 +961,10 @@
 		<value condition="VideoPlayer.Content(episodes)">$INFO[VideoPlayer.TvShowTitle]</value>
 		<value condition="VideoPlayer.Content(livetv)">$INFO[VideoPlayer.StartTime,,  ]$INFO[VideoPlayer.Season,,x]$INFO[VideoPlayer.Episode,,. ]$INFO[VideoPlayer.Title,[B],[/B]]$INFO[VideoPlayer.EpisodeName, (,)]</value>
 		<value>$INFO[VideoPlayer.Title]</value>
+	</variable>
+	<variable name="PlayerAdditionalInfo">
+		<value condition="!IsEmpty(VideoPlayer.Genre)">$INFO[VideoPlayer.Genre]</value>
+		<value condition="!IsEmpty(MusicPlayer.Property(Artist_Genre))">$INFO[MusicPlayer.Property(Artist_Genre)]</value>
 	</variable>
 	<variable name="PlayerLiveTVNextTitle">
 		<value condition="VideoPlayer.Content(livetv)">$INFO[VideoPlayer.NextStartTime,$LOCALIZE[31801], ]$INFO[VideoPlayer.NextTitle,[B],[/B]]</value>
@@ -1413,14 +1418,14 @@
 		<value>$INFO[ListItem.Duration,,min]</value>
 	</variable>
 	<variable name="FlagAudioChannels">
-		<value condition="StringCompare(ListItem.AudioChannels,0)">X</value>
-		<value condition="StringCompare(ListItem.AudioChannels,1)">1.0</value>
-		<value condition="StringCompare(ListItem.AudioChannels,2)">2.0</value>
-		<value condition="StringCompare(ListItem.AudioChannels,3)">2.1</value>
-		<value condition="StringCompare(ListItem.AudioChannels,5)">4.1</value>
-		<value condition="StringCompare(ListItem.AudioChannels,6)">5.1</value>
-		<value condition="StringCompare(ListItem.AudioChannels,7)">6.1</value>
-		<value condition="StringCompare(ListItem.AudioChannels,8)">7.1</value>
+		<value condition="StringCompare(ListItem.AudioChannels,0) | StringCompare(VideoPlayer.AudioChannels,0)">X</value>
+		<value condition="StringCompare(ListItem.AudioChannels,1) | StringCompare(VideoPlayer.AudioChannels,1)">1.0</value>
+		<value condition="StringCompare(ListItem.AudioChannels,2) | StringCompare(VideoPlayer.AudioChannels,2)">2.0</value>
+		<value condition="StringCompare(ListItem.AudioChannels,3) | StringCompare(VideoPlayer.AudioChannels,3)">2.1</value>
+		<value condition="StringCompare(ListItem.AudioChannels,5) | StringCompare(VideoPlayer.AudioChannels,5)">4.1</value>
+		<value condition="StringCompare(ListItem.AudioChannels,6) | StringCompare(VideoPlayer.AudioChannels,6)">5.1</value>
+		<value condition="StringCompare(ListItem.AudioChannels,7) | StringCompare(VideoPlayer.AudioChannels,7)">6.1</value>
+		<value condition="StringCompare(ListItem.AudioChannels,8) | StringCompare(VideoPlayer.AudioChannels,8)">7.1</value>
 		<value>9.1</value>
 	</variable>
 	<variable name="MPAA">
