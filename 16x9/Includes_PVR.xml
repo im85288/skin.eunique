@@ -176,27 +176,28 @@
 	</include>
 	<include name="PVRInfoPanel">
 		<control type="group">
+			<control type="multiimage">
+				<left>-100</left>
+				<top>-100</top>
+				<height>1</height>
+				<width>1</width>
+				<imagepath>plugin://script.skin.helper.service/?action=getthumb&amp;path=$INFO[ListItem.Title] $INFO[ListItem.ChannelName]</imagepath>
+				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+				<visible>!Player.HasVideo + !IsEmpty(ListItem.Title)</visible>
+			</control>
 			<right>20</right>
 			<width>900</width>
 			<top>TopPad</top>
-			<height>900</height>
+			<height>920</height>
 			<control type="image">
 				<left>-8</left>
 				<right>-8</right>
 				<top>-2</top>
 				<bottom>-8</bottom>
-				<texture colordiffuse="Panel" border="16">common/rounded-shadow8.png</texture>
-				<bordertexture colordiffuse="PanelWhite100">common/white.png</bordertexture>
-				<bordersize>-6,-6,-6,-6</bordersize>
+				<texture colordiffuse="$VAR[EmbyRightColourHighlight]" border="5">common/box.png</texture>
 			</control>
 			<control type="group">
 				<height>370</height>
-				<control type="image">
-					<width>100%</width>
-					<height>100%</height>
-					<texture border="10">common/nofocus-shadow10.png</texture>
-					<visible>Player.HasVideo</visible>
-				</control>
 				<control type="image">
 					<left>10</left>
 					<top>10</top>
@@ -221,32 +222,32 @@
 					<fadetime>200</fadetime>
 					<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 					<texture diffuse="diffuse/pvrinfo.png" background="true" fallback="pvr/background.jpg">$INFO[ListItem.Thumb]</texture>
-					<visible>!Player.HasVideo + IsEmpty(ListItem.Title)</visible>
+					<visible>!Player.HasVideo + IsEmpty(Window(Home).Property(SkinHelper.ListItemThumb))</visible>
 				</control>
-				<control type="multiimage">
+				<control type="image">
 					<left>10</left>
 					<top>10</top>
 					<right>10</right>
 					<bottom>10</bottom>
 					<fadetime>200</fadetime>
-					<imagepath>plugin://script.skin.helper.service/?action=getthumb&amp;path=$INFO[ListItem.Title] $INFO[ListItem.ChannelName]</imagepath>
 					<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-					<visible>!Player.HasVideo + !IsEmpty(ListItem.Title)</visible>
+					<texture diffuse="diffuse/pvrinfo.png" background="true" fallback="pvr/background.jpg">$INFO[Window(Home).Property(SkinHelper.ListItemThumb)]</texture>
+					<visible>!Player.HasVideo + !IsEmpty(Window(Home).Property(SkinHelper.ListItemThumb))</visible>
 				</control>
 			</control>
 			<control type="group">
 				<left>20</left>
 				<right>20</right>
 				<posy>370</posy>
-				<height>500</height>
+				<height>510</height>
 				<control type="label">
 					<top>40</top>
 					<aligny>center</aligny>
 					<align>center</align>
 					<height>38</height>
 					<font>SmallBold</font>
-					<textcolor>Dark1</textcolor>
-					<selectedcolor>Dark1</selectedcolor>
+					<textcolor>black</textcolor>
+					<selectedcolor>black</selectedcolor>
 					<label>$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]</label>
 				</control>
 				<control type="label">
@@ -257,8 +258,8 @@
 					<align>left</align>
 					<height>38</height>
 					<font>TinyBold</font>
-					<textcolor>Dark2</textcolor>
-					<selectedcolor>Dark2</selectedcolor>
+					<textcolor>black2</textcolor>
+					<selectedcolor>black2</selectedcolor>
 					<label>$INFO[ListItem.StartTime]</label>
 				</control>
 				<control type="label">
@@ -269,8 +270,8 @@
 					<align>right</align>
 					<height>38</height>
 					<font>TinyBold</font>
-					<textcolor>Dark2</textcolor>
-					<selectedcolor>Dark2</selectedcolor>
+					<textcolor>black2</textcolor>
+					<selectedcolor>black2</selectedcolor>
 					<label>$INFO[ListItem.EndTime]</label>
 				</control>
 				<control type="progress">
@@ -286,21 +287,21 @@
 					<height>40</height>
 					<aligny>center</aligny>
 					<font>Tiny</font>
-					<textcolor>Dark1</textcolor>
-					<selectedcolor>Dark1</selectedcolor>
+					<textcolor>black</textcolor>
+					<selectedcolor>black</selectedcolor>
 					<label fallback="19055">$INFO[ListItem.Genre]</label>
 				</control>
 				<control type="textbox">
 					<top>135</top>
-					<height>125</height>
+					<height>140</height>
 					<align>justify</align>
 					<font>Tiny</font>
-					<textcolor>Dark1</textcolor>
-					<selectedcolor>Dark1</selectedcolor>
+					<textcolor>black</textcolor>
+					<selectedcolor>black</selectedcolor>
 					<label fallback="19055">$INFO[ListItem.Plot]</label>
 				</control>
 				<control type="label">
-					<top>265</top>
+					<top>280</top>
 					<aligny>center</aligny>
 					<align>left</align>
 					<height>40</height>
@@ -310,7 +311,7 @@
 					<label>$INFO[ListItem.NextTitle,$LOCALIZE[31792] ,]</label>
 				</control>
 				<control type="label">
-					<top>265</top>
+					<top>280</top>
 					<aligny>center</aligny>
 					<align>right</align>
 					<height>40</height>
@@ -320,21 +321,21 @@
 					<label>$INFO[ListItem.NextStartTime]$INFO[ListItem.NextEndTime, - ,]</label>
 				</control>
 				<control type="label">
-					<top>305</top>
+					<top>320</top>
 					<height>40</height>
 					<aligny>center</aligny>
 					<font>Tiny</font>
-					<textcolor>Dark1</textcolor>
-					<selectedcolor>Dark1</selectedcolor>
+					<textcolor>black</textcolor>
+					<selectedcolor>black</selectedcolor>
 					<label fallback="19055">$INFO[ListItem.NextGenre]</label>
 				</control>
 				<control type="textbox">
-					<top>350</top>
+					<top>365</top>
 					<height>140</height>
 					<align>justify</align>
 					<font>Tiny</font>
-					<textcolor>Dark1</textcolor>
-					<selectedcolor>Dark1</selectedcolor>
+					<textcolor>black</textcolor>
+					<selectedcolor>black</selectedcolor>
 					<label fallback="19055">$INFO[ListItem.NextPlot]</label>
 				</control>
 			</control>
@@ -450,15 +451,13 @@
 				<left>20</left>
 				<width>900</width>
 				<top>TopPad</top>
-				<height>900</height>
+				<height>920</height>
 				<control type="image">
 					<left>-8</left>
 					<right>8</right>
 					<top>-8</top>
 					<bottom>-8</bottom>
-					<texture colordiffuse="Panel" border="16">common/rounded-shadow8.png</texture>
-					<bordertexture colordiffuse="Dark1">common/white.png</bordertexture>
-					<bordersize>-6,-6,-6,-6</bordersize>
+					<texture colordiffuse="$VAR[EmbyLeftColourHighlight]" border="5">common/box.png</texture>
 				</control>
 				<control type="label">
 					<left>10</left>
@@ -466,8 +465,8 @@
 					<aligny>center</aligny>
 					<align>left</align>
 					<font>LargeBoldReg</font>
-					<textcolor>Dark2</textcolor>
-					<selectedcolor>Dark2</selectedcolor>
+					<textcolor>white2</textcolor>
+					<selectedcolor>white2</selectedcolor>
 					<label>$INFO[Control.GetLabel(28)]</label>
 				</control>
 				<control type="image">
@@ -483,7 +482,7 @@
 				<control type="list" id="50" description="TV CHANNELS">
 					<left>10</left>
 					<width>870</width>
-					<top>100</top>
+					<top>109</top>
 					<bottom>0</bottom>
 					<onup>50</onup>
 					<ondown>50</ondown>
@@ -510,8 +509,8 @@
 								<aligny>center</aligny>
 								<height>50</height>
 								<font>SmallBold</font>
-								<textcolor>Dark1</textcolor>
-								<selectedcolor>Dark1</selectedcolor>
+								<textcolor>white</textcolor>
+								<selectedcolor>white</selectedcolor>
 								<label>$INFO[ListItem.ChannelNumberLabel,,  ]$INFO[ListItem.ChannelName]$INFO[ListItem.Title,  [I],[/I]]</label>
 							</control>
 						</control>
@@ -524,8 +523,8 @@
 								<aligny>center</aligny>
 								<height>50</height>
 								<font>SmallBold</font>
-								<textcolor>Dark1</textcolor>
-								<selectedcolor>Dark1</selectedcolor>
+								<textcolor>white</textcolor>
+								<selectedcolor>white</selectedcolor>
 								<label>$INFO[ListItem.Label]</label>
 							</control>
 							<control type="label">
@@ -535,8 +534,8 @@
 								<aligny>center</aligny>
 								<height>64</height>
 								<font>Small</font>
-								<textcolor>Dark2</textcolor>
-								<selectedcolor>Dark2</selectedcolor>
+								<textcolor>white2</textcolor>
+								<selectedcolor>white2</selectedcolor>
 								<label>$INFO[ListItem.StartDate]$INFO[ListItem.StartTime,$COMMA ,]</label>
 							</control>
 							<control type="label">
@@ -546,8 +545,8 @@
 								<height>100%</height>
 								<align>right</align>
 								<font>Small</font>
-								<textcolor>Dark1</textcolor>
-								<selectedcolor>Dark1</selectedcolor>
+								<textcolor>white</textcolor>
+								<selectedcolor>white</selectedcolor>
 								<label>$INFO[ListItem.ChannelName]</label>
 							</control>
 							<control type="image">
@@ -617,7 +616,7 @@
 							<control type="image">
 								<width>100%</width>
 								<height>100%</height>
-								<texture colordiffuse="Dark1" border="5">common/box.png</texture>
+								<texture colordiffuse="white" border="5">common/box.png</texture>
 							</control>
 							<control type="group">
 								<visible>Window.IsVisible(MyPVRChannels.xml)</visible>
@@ -763,8 +762,8 @@
 									<aligny>center</aligny>
 									<height>64</height>
 									<font>SmallBold</font>
-									<textcolor>Dark1</textcolor>
-									<selectedcolor>Dark1</selectedcolor>
+									<textcolor>black</textcolor>
+									<selectedcolor>black</selectedcolor>
 									<label>$INFO[ListItem.ChannelNumberLabel,,  ]$INFO[ListItem.ChannelName]</label>
 								</control>
 								<control type="label">
@@ -774,8 +773,8 @@
 									<aligny>center</aligny>
 									<height>64</height>
 									<font>Small</font>
-									<textcolor>Dark2</textcolor>
-									<selectedcolor>Dark2</selectedcolor>
+									<textcolor>black2</textcolor>
+									<selectedcolor>black2</selectedcolor>
 									<label>$INFO[ListItem.Title]</label>
 								</control>
 								<control type="label">
@@ -786,8 +785,8 @@
 									<height>64</height>
 									<align>right</align>
 									<font>Tiny</font>
-									<textcolor>Dark1</textcolor>
-									<selectedcolor>Dark1</selectedcolor>
+									<textcolor>black</textcolor>
+									<selectedcolor>black</selectedcolor>
 									<label>$INFO[ListItem.EndTime,$LOCALIZE[31106] ,]</label>
 									<visible>!IsEmpty(ListItem.NextTitle)</visible>
 								</control>
@@ -798,8 +797,8 @@
 									<height>100%</height>
 									<align>right</align>
 									<font>Tiny</font>
-									<textcolor>Dark1</textcolor>
-									<selectedcolor>Dark1</selectedcolor>
+									<textcolor>black</textcolor>
+									<selectedcolor>black</selectedcolor>
 									<label>$INFO[ListItem.EndTime,$LOCALIZE[31106] ,]</label>
 									<visible>IsEmpty(ListItem.NextTitle)</visible>
 								</control>
@@ -811,8 +810,8 @@
 									<height>64</height>
 									<align>right</align>
 									<font>Tiny</font>
-									<textcolor>Dark1</textcolor>
-									<selectedcolor>Dark1</selectedcolor>
+									<textcolor>black</textcolor>
+									<selectedcolor>black</selectedcolor>
 									<label>$INFO[ListItem.NextTitle,[B],[/B] $LOCALIZE[19031]]</label>
 								</control>
 							</control>
@@ -825,8 +824,8 @@
 									<aligny>center</aligny>
 									<height>64</height>
 									<font>SmallBold</font>
-									<textcolor>Dark1</textcolor>
-									<selectedcolor>Dark1</selectedcolor>
+									<textcolor>black</textcolor>
+									<selectedcolor>black</selectedcolor>
 									<label>$INFO[ListItem.Label]</label>
 								</control>
 								<control type="label">
@@ -836,8 +835,8 @@
 									<aligny>center</aligny>
 									<height>64</height>
 									<font>Small</font>
-									<textcolor>Dark2</textcolor>
-									<selectedcolor>Dark2</selectedcolor>
+									<textcolor>black2</textcolor>
+									<selectedcolor>black2</selectedcolor>
 									<label>$INFO[ListItem.StartDate]$INFO[ListItem.StartTime,$COMMA ,]</label>
 								</control>
 								<control type="label">
@@ -847,8 +846,8 @@
 									<height>100%</height>
 									<align>right</align>
 									<font>Small</font>
-									<textcolor>Dark1</textcolor>
-									<selectedcolor>Dark1</selectedcolor>
+									<textcolor>black</textcolor>
+									<selectedcolor>black</selectedcolor>
 									<label>$INFO[ListItem.ChannelName]</label>
 								</control>
 							</control>
