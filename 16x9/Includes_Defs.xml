@@ -1145,16 +1145,18 @@
 		<texturefocus colordiffuse="Dark1" border="16">common/white.png</texturefocus>
 	</include>
 	<include name="DefContextButton2">
+		<textoffsetx>5</textoffsetx>
 		<radioposx>400</radioposx>
-		<width>430</width>
+		<width>433</width>
 		<height>55</height>
 		<font>Mini</font>
-		<textcolor>Black70</textcolor>
+		<textcolor>black</textcolor>
 		<textureradiofocus colordiffuse="$VAR[ColourHighlight2]">buttons/radio-on.png</textureradiofocus>
 		<textureradionofocus colordiffuse="Black30">buttons/radio-off.png</textureradionofocus>
 		<focusedcolor>$VAR[ColourSelected]</focusedcolor>
-		<alttexturefocus colordiffuse="Dark1" border="16">common/white.png</alttexturefocus>
-		<texturefocus colordiffuse="Dark1" border="16">common/white.png</texturefocus>
+		<alttexturefocus colordiffuse="white" border="16">common/white.png</alttexturefocus>
+		<texturenofocus colordiffuse="$VAR[EmbyMenuColourHighlight]" border="5">common/box.png</texturenofocus>
+		<texturefocus colordiffuse="$VAR[ColourHighlight]" border="16">common/white.png</texturefocus>
 	</include>
 	<include name="DefSettingsButton">
 		<align>left</align>
@@ -1363,24 +1365,154 @@
 	<include name="Def9000SideBladeLeft">
 		<visible allowhiddenfocus="true">ControlGroup(9000).HasFocus()</visible>
 		<include>Animation.SideSlide</include>
-		<control type="button">
+		<control type="image">
 			<left>-12</left>
 			<top>-12</top>
 			<width>455</width>
 			<height>1104</height>
-			<texturefocus border="12">common/rounded-shadow8.png</texturefocus>
-			<texturenofocus border="12">common/rounded-shadow8.png</texturenofocus>
-			<colordiffuse>White100</colordiffuse>
+			<texture colordiffuse="$VAR[EmbyMiddleColourHighlight]" border="5">common/box.png</texture>
 		</control>
-		<control type="image">
-			<description>LOGO</description>
-			<left>0</left>
+		<left>-10</left>
+		<control type="group">
 			<top>25</top>
-			<width>400</width>
-			<height>70</height>
-			<aspectratio>keep</aspectratio>
-			<texture>logo.png</texture>
-			<colordiffuse>$VAR[ColourHighlight]</colordiffuse>
+			<left>50</left>
+			<control type="image">
+				<width>50</width>
+				<height>50</height>
+				<texture border="5" colordiffuse="$VAR[EmbyLeftColourHighlight]">common/box.png</texture>
+			</control>
+			<control type="label">
+				<description>Loading</description>
+				<width>50</width>
+				<height>50</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>E</label>
+				<font>LargeBoldReg</font>
+				<textcolor>black</textcolor>
+				<animation effect="fade" start="100" end="0" time="500" tween="quadratic">WindowClose</animation>
+			</control>
+		</control>
+		<control type="group">
+			<top>25</top>
+			<left>100</left>
+			<control type="image">
+				<width>50</width>
+				<height>50</height>
+				<texture border="5" colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
+			</control>
+			<control type="label">
+				<description>Loading</description>
+				<width>50</width>
+				<height>50</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>u</label>
+				<font>LargeBoldReg</font>
+				<textcolor>black</textcolor>
+				<animation effect="fade" start="100" end="0" time="500" tween="quadratic">WindowClose</animation>
+			</control>
+		</control>
+		<control type="group">
+			<top>25</top>
+			<left>150</left>
+			<control type="image">
+				<width>50</width>
+				<height>50</height>
+				<texture border="5" colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</texture>
+			</control>
+			<control type="label">
+				<description>Loading</description>
+				<width>50</width>
+				<height>50</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>n</label>
+				<font>LargeBoldReg</font>
+				<textcolor>black</textcolor>
+				<animation effect="fade" start="100" end="0" time="500" tween="quadratic">WindowClose</animation>
+			</control>
+		</control>
+		<control type="group">
+			<top>25</top>
+			<left>200</left>
+			<control type="image">
+				<width>50</width>
+				<height>50</height>
+				<texture border="5" colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
+			</control>
+			<control type="label">
+				<description>Loading</description>
+				<width>50</width>
+				<height>50</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>i</label>
+				<font>LargeBoldReg</font>
+				<textcolor>black</textcolor>
+				<animation effect="fade" start="100" end="0" time="500" tween="quadratic">WindowClose</animation>
+			</control>
+		</control>
+		<control type="group">
+			<top>35</top>
+			<left>250</left>
+			<control type="image">
+				<width>50</width>
+				<height>50</height>
+				<texture border="5" colordiffuse="$VAR[EmbyLeftColourHighlight]">common/box.png</texture>
+			</control>
+			<control type="label">
+				<top>-3</top>
+				<description>Loading</description>
+				<width>50</width>
+				<height>50</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>q</label>
+				<font>LargeBoldReg</font>
+				<textcolor>black</textcolor>
+				<animation effect="fade" start="100" end="0" time="500" tween="quadratic">WindowClose</animation>
+			</control>
+		</control>
+		<control type="group">
+			<top>25</top>
+			<left>300</left>
+			<control type="image">
+				<width>50</width>
+				<height>50</height>
+				<texture border="5" colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
+			</control>
+			<control type="label">
+				<description>Loading</description>
+				<width>50</width>
+				<height>50</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>u</label>
+				<font>LargeBoldReg</font>
+				<textcolor>black</textcolor>
+				<animation effect="fade" start="100" end="0" time="500" tween="quadratic">WindowClose</animation>
+			</control>
+		</control>
+		<control type="group">
+			<top>25</top>
+			<left>350</left>
+			<control type="image">
+				<width>50</width>
+				<height>50</height>
+				<texture border="5" colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</texture>
+			</control>
+			<control type="label">
+				<description>Loading</description>
+				<width>50</width>
+				<height>50</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>e</label>
+				<font>LargeBoldReg</font>
+				<textcolor>black</textcolor>
+				<animation effect="fade" start="100" end="0" time="500" tween="quadratic">WindowClose</animation>
+			</control>
 		</control>
 	</include>
 	<include name="Def9000MediaMenuTop">
