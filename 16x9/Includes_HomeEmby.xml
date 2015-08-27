@@ -1,19 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 	<include name="Furniture_EmbyClock">
-		<control type="grouplist">
-			<top>50</top>
-			<posx>1620</posx>
+		<control type="group">
+			<top>-10</top>
+			<left>NewSidePad</left>
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
 			<animation effect="fade" start="100" end="25" condition="control.hasfocus(302)" time="200">Conditional</animation>
 			<visible>!Skin.HasSetting(furniture.clock)</visible>
 			<include>Animation.FurnitureFadeInOut</include>
-			<height>84</height>
+			<height>48</height>
 			<control type="label">
-				<font>Flag</font>
-				<textcolor>Dark2</textcolor>
-				<label>$INFO[System.Date(DDD)]$COMMA $INFO[System.Date(d MMM yyyy)][CR][COLOR=$VAR[ColourHighlight]]$INFO[Weather.Temperature][/COLOR] $INFO[Weather.Conditions]</label>
+				<bottom>-5</bottom>
+				<font>HomeEmbySemi</font>
+				<textcolor>white2</textcolor>
+				<label>$INFO[System.Date(DDD)]$COMMA $INFO[System.Date(d MMM yyyy)]</label>
+			</control>
+			<control type="label">
+				<left>32</left>
+				<bottom>-30</bottom>
+				<font>HomeEmbySemi</font>
+				<textcolor>white2</textcolor>
+				<label>[COLOR=$VAR[ColourHighlight]]$INFO[Weather.Temperature][/COLOR] $INFO[Weather.Conditions]</label>
+			</control>
+			<control type="image">
+				<left>-5</left>
+				<bottom>-17</bottom>
+				<width>40</width>
+				<height>40</height>
+				<fadetime>350</fadetime>
+				<aspectratio aligny="bottom" align="left">keep</aspectratio>
+				<texture colordiffuse="$VAR[EmbyRightColourHighlight]">$INFO[Weather.FanartCode,weather/small/,.png]</texture>
 			</control>
 		</control>
 	</include>
@@ -137,10 +154,10 @@
 				<width>120</width>
 				<control type="label">
 					<height>46</height>
-				<font>LargeBold</font>
-				<textcolor>Dark1</textcolor>
-				<label>$INFO[System.Time(hh:mm)]</label>
-			</control>
+					<font>LargeBold</font>
+					<textcolor>Dark1</textcolor>
+					<label>$INFO[System.Time(hh:mm)]</label>
+				</control>
 			</control>
 			<control type="group" description="timebox">
 				<animation effect="slide" end="0,1" condition="Window.IsVisible(Home) | [container.Content(movies) | Container.Content(episodes)]" time="200">Conditional</animation>
