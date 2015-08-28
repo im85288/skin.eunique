@@ -34,8 +34,8 @@
 					<description>background image</description>
 					<width>100%</width>
 					<height>100%</height>
-					<colordiffuse>$VAR[OSDPanel]</colordiffuse>
-					<texture border="16">common/rounded-shadow8.png</texture>
+					<colordiffuse>black</colordiffuse>
+					<texture border="5">common/box.png</texture>
 				</control>
 				<control type="grouplist" id="9300">
 					<include>Animation.FadeIn.Delay</include>
@@ -54,7 +54,7 @@
 					<control type="button" id="9301" description="Download">
 						<width>100%</width>
 						<height>60</height>
-						<textcolor>$VAR[OSDPanelWhite70]</textcolor>
+						<textcolor>white</textcolor>
 						<include>DefContextButton</include>
 						<label>33003</label>
 						<onclick>ActivateWindow(SubtitleSearch)</onclick>
@@ -62,7 +62,7 @@
 					<control type="togglebutton" id="9302" description="Enable Subs">
 						<width>100%</width>
 						<height>60</height>
-						<textcolor>$VAR[OSDPanelWhite70]</textcolor>
+						<textcolor>white</textcolor>
 						<include>DefContextButton</include>
 						<label>$LOCALIZE[305] $INFO[VideoPlayer.SubtitlesLanguage,[UPPERCASE],[/UPPERCASE]]</label>
 						<altlabel>13106</altlabel>

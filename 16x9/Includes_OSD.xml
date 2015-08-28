@@ -111,8 +111,8 @@
 		<align>center</align>
 		<height>48</height>
 		<font>Tiny</font>
-		<disabledcolor>black3</disabledcolor>
-		<textcolor>black</textcolor>
+		<disabledcolor>white3</disabledcolor>
+		<textcolor>white</textcolor>
 		<focusedcolor>$VAR[ColourHighlight]</focusedcolor>
 		<texturefocus>noop</texturefocus>
 		<width>226</width>
@@ -133,7 +133,7 @@
 			<onclick>StereoMode</onclick>
 			<include>DefOSDButtons</include>
 			<enable>VideoPlayer.IsStereoscopic</enable>
-			<disabledcolor>PanelWhite12</disabledcolor>
+			<disabledcolor>white3</disabledcolor>
 		</control>
 		<control type="button" id="6">
 			<description>BookMarks</description>
@@ -174,7 +174,7 @@
 			<include>DefOSDButtons</include>
 			<onclick>PlayerControl(ShowVideoMenu)</onclick>
 			<enable>VideoPlayer.HasMenu</enable>
-			<disabledcolor>White12</disabledcolor>
+			<disabledcolor>white3</disabledcolor>
 		</control>
 	</include>
 	<include name="OSDExtraInfoTV">
@@ -185,7 +185,7 @@
 			<include>DefOSDButtons</include>
 			<onclick>Close</onclick>
 			<onclick>RunScript(script.extendedinfo,info=extendedtvinfo,name=$INFO[VideoPlayer.TvShowTitle])</onclick>
-			<disabledcolor>White12</disabledcolor>
+			<disabledcolor>white3</disabledcolor>
 		</control>
 	</include>
 	<include name="OSDExtraInfoMOVIES">
@@ -196,7 +196,7 @@
 			<include>DefOSDButtons</include>
 			<onclick>Close</onclick>
 			<onclick>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[VideoPlayer.Title])</onclick>
-			<disabledcolor>White12</disabledcolor>
+			<disabledcolor>white3</disabledcolor>
 		</control>
 	</include>
 	<variable name="OSDPanel">
@@ -243,10 +243,10 @@
 			<font>noop</font>
 			<include>DefOSDUpDown</include>
 			<texturefocus colordiffuse="$VAR[ColourHighlight]" flipx="true">osd/record.png</texturefocus>
-			<texturenofocus colordiffuse="PanelWhite70" flipx="true">osd/record.png</texturenofocus>
+			<texturenofocus colordiffuse="white2" flipx="true">osd/record.png</texturenofocus>
 			<usealttexture>Player.Recording</usealttexture>
 			<alttexturefocus colordiffuse="$VAR[ColourHighlight]" flipx="true">osd/record-on.png</alttexturefocus>
-			<alttexturenofocus colordiffuse="PanelWhite70" flipx="true">osd/record-on.png</alttexturenofocus>
+			<alttexturenofocus colordiffuse="white2" flipx="true">osd/record-on.png</alttexturenofocus>
 			<onclick>PlayerControl(Record)</onclick>
 			<enable>Player.CanRecord</enable>
 			<visible>VideoPlayer.Content(LiveTV)</visible>
@@ -260,7 +260,7 @@
 			<font>noop</font>
 			<include>DefOSDUpDown</include>
 			<texturefocus colordiffuse="$VAR[ColourHighlight]" flipx="true">osd/next.png</texturefocus>
-			<texturenofocus colordiffuse="PanelWhite70" flipx="true">osd/next.png</texturenofocus>
+			<texturenofocus colordiffuse="white2" flipx="true">osd/next.png</texturenofocus>
 			<onclick>PlayerControl(Previous)</onclick>
 		</control>
 		<control type="button" id="13">
@@ -271,7 +271,7 @@
 			<font>noop</font>
 			<include>DefOSDUpDown</include>
 			<texturefocus colordiffuse="$VAR[ColourHighlight]" flipx="true">osd/ff.png</texturefocus>
-			<texturenofocus colordiffuse="PanelWhite70" flipx="true">osd/ff.png</texturenofocus>
+			<texturenofocus colordiffuse="white2" flipx="true">osd/ff.png</texturenofocus>
 			<onclick>PlayerControl(Rewind)</onclick>
 			<enable>Player.SeekEnabled</enable>
 			<animation effect="fade" start="100" end="33" time="100" condition="!Player.SeekEnabled">Conditional</animation>
@@ -285,10 +285,10 @@
 			<font>noop</font>
 			<include>DefOSDUpDown</include>
 			<texturefocus colordiffuse="$VAR[ColourHighlight]">osd/pause.png</texturefocus>
-			<texturenofocus colordiffuse="PanelWhite70">osd/pause.png</texturenofocus>
+			<texturenofocus colordiffuse="white2">osd/pause.png</texturenofocus>
 			<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
 			<alttexturefocus colordiffuse="$VAR[ColourHighlight]">osd/play.png</alttexturefocus>
-			<alttexturenofocus colordiffuse="PanelWhite70">osd/play.png</alttexturenofocus>
+			<alttexturenofocus colordiffuse="white2">osd/play.png</alttexturenofocus>
 			<onclick>PlayerControl(Play)</onclick>
 			<enable>Player.PauseEnabled</enable>
 			<animation effect="fade" start="100" end="33" time="100" condition="!Player.PauseEnabled">Conditional</animation>
@@ -301,7 +301,7 @@
 			<font>noop</font>
 			<include>DefOSDUpDown</include>
 			<texturefocus colordiffuse="$VAR[ColourHighlight]">osd/stop.png</texturefocus>
-			<texturenofocus colordiffuse="PanelWhite70">osd/stop.png</texturenofocus>
+			<texturenofocus colordiffuse="white2">osd/stop.png</texturenofocus>
 			<onclick>PlayerControl(Stop)</onclick>
 		</control>
 		<control type="button" id="16">
@@ -312,7 +312,7 @@
 			<font>noop</font>
 			<include>DefOSDUpDown</include>
 			<texturefocus colordiffuse="$VAR[ColourHighlight]">osd/ff.png</texturefocus>
-			<texturenofocus colordiffuse="PanelWhite70">osd/ff.png</texturenofocus>
+			<texturenofocus colordiffuse="white2">osd/ff.png</texturenofocus>
 			<onclick>PlayerControl(Forward)</onclick>
 			<enable>Player.SeekEnabled</enable>
 			<animation effect="fade" start="100" end="33" time="100" condition="!Player.SeekEnabled">Conditional</animation>
@@ -325,7 +325,7 @@
 			<font>noop</font>
 			<include>DefOSDUpDown</include>
 			<texturefocus colordiffuse="$VAR[ColourHighlight]">osd/next.png</texturefocus>
-			<texturenofocus colordiffuse="PanelWhite70">osd/next.png</texturenofocus>
+			<texturenofocus colordiffuse="white2">osd/next.png</texturenofocus>
 			<onclick>PlayerControl(Next)</onclick>
 		</control>
 		<control type="button" id="9002">
@@ -334,7 +334,7 @@
 			<font>noop</font>
 			<include>DefOSDUpDown</include>
 			<texturefocus colordiffuse="$VAR[ColourHighlight]">osd/eject.png</texturefocus>
-			<texturenofocus colordiffuse="PanelWhite70">osd/eject.png</texturenofocus>
+			<texturenofocus colordiffuse="white2">osd/eject.png</texturenofocus>
 			<onclick>EjectTray()</onclick>
 			<visible>System.HasMediadvd</visible>
 		</control>

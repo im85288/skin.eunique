@@ -46,15 +46,6 @@
                     <texture border="15">common/white.png</texture>
                     <visible>Window.IsVisible(fullscreeninfo) | Player.ShowInfo | !IsEmpty(Window(home).Property(osdshowinfo)) | [Player.Paused + Skin.HasSetting(osd.showinfoonpause)]</visible>
                 </control>
-                <control type="image">
-                    <top>55r</top>
-                    <width>100%</width>
-                    <height>22</height>
-                    <colordiffuse>$VAR[EmbyRightColourHighlight]</colordiffuse>
-                    <animation effect="fade" start="100" end="90" condition="Skin.HasSetting(osd.usetheme) | [!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)]">Conditional</animation>
-                    <texture border="15">common/white.png</texture>
-                    <visible>!Window.IsVisible(fullscreeninfo) + !Player.Seeking + !Player.DisplayAfterSeek + !Player.Paused + !Player.Forwarding + !Player.Rewinding + !Player.ShowInfo + IsEmpty(Window(home).Property(osdshowinfo))</visible>
-                </control>
             </control>
             <control type="group">
                 <control type="multiimage">
@@ -137,7 +128,6 @@
                 <top>110r</top>
                 <bottom>0</bottom>
                 <width>100%</width>
-                
                 <control type="group">
                     <left>SidePad</left>
                     <right>SidePad</right>
@@ -148,7 +138,7 @@
                         <bottom>30</bottom>
                         <height>40</height>
                         <font>Tiny</font>
-                        <textcolor>black</textcolor>
+                        <textcolor>white</textcolor>
                         <label>$VAR[PlayerStatus]</label>
                     </control>
                     <control type="label" description="Duration Total Time">
@@ -158,7 +148,7 @@
                         <bottom>30</bottom>
                         <height>40</height>
                         <font>Tiny</font>
-                        <textcolor>black</textcolor>
+                        <textcolor>white</textcolor>
                         <label>$INFO[Player.Time]$INFO[Player.Duration,  /  ,]</label>
                     </control>
 
@@ -223,7 +213,7 @@
                         <bottom>30</bottom>
                         <height>40</height>
                         <font>Tiny</font>
-                        <textcolor>black</textcolor>
+                        <textcolor>white</textcolor>
                         <label>$INFO[PVR.TimeshiftEnd]</label>
                     </control>
                     <control type="label" description="Duration Total Time">
@@ -233,7 +223,7 @@
                         <bottom>30</bottom>
                         <height>40</height>
                         <font>Tiny</font>
-                        <textcolor>black</textcolor>
+                        <textcolor>whitw</textcolor>
                         <label>$INFO[PVR.TimeshiftStart]</label>
                     </control>
 
