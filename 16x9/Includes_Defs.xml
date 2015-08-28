@@ -1158,6 +1158,20 @@
 		<texturenofocus colordiffuse="$VAR[EmbyMenuColourHighlight]" border="5">common/box.png</texturenofocus>
 		<texturefocus colordiffuse="$VAR[ColourHighlight]" border="16">common/white.png</texturefocus>
 	</include>
+	<include name="DefContextButtonBlade">
+		<textoffsetx>5</textoffsetx>
+		<radioposx>400</radioposx>
+		<width>433</width>
+		<height>55</height>
+		<font>MiniSystem</font>
+		<textcolor>white</textcolor>
+		<textureradiofocus colordiffuse="$VAR[ColourHighlight2]">buttons/radio-on.png</textureradiofocus>
+		<textureradionofocus colordiffuse="Black30">buttons/radio-off.png</textureradionofocus>
+		<focusedcolor>$VAR[ColourSelected]</focusedcolor>
+		<alttexturefocus colordiffuse="white" border="16">common/white.png</alttexturefocus>
+		<texturenofocus colordiffuse="$VAR[EmbyMenuColourHighlight]" border="5">common/box.png</texturenofocus>
+		<texturefocus colordiffuse="$VAR[ColourHighlight]" border="16">common/white.png</texturefocus>
+	</include>
 	<include name="DefSettingsButton">
 		<align>left</align>
 		<font>Small</font>
@@ -1370,7 +1384,7 @@
 			<top>-12</top>
 			<width>455</width>
 			<height>1104</height>
-			<texture colordiffuse="$VAR[EmbyMiddleColourHighlight]" border="5">common/box.png</texture>
+			<texture colordiffuse="black" border="5">common/box.png</texture>
 		</control>
 		<left>-10</left>
 		<control type="group">
@@ -1516,15 +1530,15 @@
 		</control>
 	</include>
 	<include name="DefSideBladeLeft">
-		<include>Animation.SideSlide</include>
+		<include>Animation.SideSlideRight</include>
 		<control type="image">
-			<left>-12</left>
+			<left>12</left>
 			<top>-12</top>
 			<width>455</width>
 			<height>1104</height>
-			<texture colordiffuse="$VAR[EmbyMiddleColourHighlight]" border="5">common/box.png</texture>
+			<texture colordiffuse="black" border="5">common/box.png</texture>
 		</control>
-		<left>-10</left>
+		<left>1920</left>
 		<control type="group">
 			<top>25</top>
 			<left>50</left>
@@ -1693,32 +1707,32 @@
 		</control>
 		<control type="button" id="9326">
 			<description>View</description>
-			<include>DefContextButton2</include>
+			<include>DefContextButtonBlade</include>
 			<align>left</align>
 			<label>View: $INFO[Container.Viewmode]</label>
 			<onclick>XBMC.RunScript(script.skin.helper.service,action=setview)</onclick>
 		</control>
 		<control type="button" id="3">
 			<description>Sort</description>
-			<include>DefContextButton2</include>
+			<include>DefContextButtonBlade</include>
 			<align>left</align>
 		</control>
 		<control type="togglebutton" id="4">
 			<description>Ascending</description>
-			<include>DefContextButton2</include>
+			<include>DefContextButtonBlade</include>
 			<align>left</align>
 			<label>584</label>
 			<altlabel>585</altlabel>
 		</control>
 		<control type="radiobutton" id="9030" description="Plot Overlay">
-			<include>DefContextButton2</include>
+			<include>DefContextButtonBlade</include>
 			<align>left</align>
 			<label>31255</label>
 			<selected>Skin.HasSetting(furniture.overlayinfo)</selected>
 			<onclick>Skin.ToggleSetting(furniture.overlayinfo)</onclick>
 		</control>
 		<control type="radiobutton" id="9001" description="Low List (50)">
-			<include>DefContextButton2</include>
+			<include>DefContextButtonBlade</include>
 			<align>left</align>
 			<label>31142</label>
 			<selected>Skin.HasSetting(50list.low)</selected>
@@ -1727,7 +1741,7 @@
 			<visible>Control.IsVisible(50)</visible>
 		</control>
 		<control type="radiobutton" id="9009" description="Low List (50)">
-			<include>DefContextButton2</include>
+			<include>DefContextButtonBlade</include>
 			<align>left</align>
 			<label>31214</label>
 			<selected>Skin.HasSetting(50list.showplot)</selected>
@@ -1735,7 +1749,7 @@
 			<visible>Control.IsVisible(50) + !Skin.HasSetting(50list.low)</visible>
 		</control>
 		<control type="radiobutton" id="9002" description="No Wrap (53)">
-			<include>DefContextButton2</include>
+			<include>DefContextButtonBlade</include>
 			<align>left</align>
 			<label>31148</label>
 			<selected>!Skin.HasSetting(53poster.nowrap)</selected>
@@ -1744,7 +1758,7 @@
 			<visible>Control.IsVisible(53)</visible>
 		</control>
 		<control type="radiobutton" id="9003" description="Info Wall (55)">
-			<include>DefContextButton2</include>
+			<include>DefContextButtonBlade</include>
 			<align>left</align>
 			<label>31147</label>
 			<selected>Skin.HasSetting(55wall.showinfo)</selected>
@@ -1754,7 +1768,7 @@
 			<visible>Control.IsVisible(55)</visible>
 		</control>
 		<control type="radiobutton" id="9004" description="Poster Wall (55)">
-			<include>DefContextButton2</include>
+			<include>DefContextButtonBlade</include>
 			<align>left</align>
 			<label>31185</label>
 			<selected>Skin.HasSetting(55wall.showposter)</selected>
@@ -1764,7 +1778,7 @@
 			<visible>Control.IsVisible(55)</visible>
 		</control>
 		<control type="radiobutton" id="9005" description="Info Media (56)">
-			<include>DefContextButton2</include>
+			<include>DefContextButtonBlade</include>
 			<align>left</align>
 			<label>31147</label>
 			<selected>Skin.HasSetting(56media.showinfo)</selected>
@@ -1774,7 +1788,7 @@
 			<visible>Control.IsVisible(56)</visible>
 		</control>
 		<control type="radiobutton" id="9006" description="Low List Media (56)">
-			<include>DefContextButton2</include>
+			<include>DefContextButtonBlade</include>
 			<align>left</align>
 			<label>31142</label>
 			<selected>Skin.HasSetting(56media.low)</selected>
@@ -1784,7 +1798,7 @@
 			<visible>Control.IsVisible(56)</visible>
 		</control>
 		<control type="radiobutton" id="9007" description="Low List (57)">
-			<include>DefContextButton2</include>
+			<include>DefContextButtonBlade</include>
 			<align>left</align>
 			<label>31142</label>
 			<selected>Skin.HasSetting(57list.low)</selected>
@@ -1793,7 +1807,7 @@
 			<visible>Control.IsVisible(57)</visible>
 		</control>
 		<control type="radiobutton" id="9008" description="Big Wide Info (51)">
-			<include>DefContextButton2</include>
+			<include>DefContextButtonBlade</include>
 			<align>left</align>
 			<label>31147</label>
 			<selected>Skin.HasSetting(51bigwide.showinfo)</selected>
@@ -1803,7 +1817,7 @@
 			<visible>Control.IsVisible(51)</visible>
 		</control>
 		<control type="radiobutton" id="9014" description="Big Wide Classic (51)">
-			<include>DefContextButton2</include>
+			<include>DefContextButtonBlade</include>
 			<align>left</align>
 			<label>31245</label>
 			<selected>Skin.HasSetting(51bigwide.showclassic)</selected>
@@ -1813,7 +1827,7 @@
 			<visible>Control.IsVisible(51)</visible>
 		</control>
 		<control type="radiobutton" id="9011" description="Banner show poster (54)">
-			<include>DefContextButton2</include>
+			<include>DefContextButtonBlade</include>
 			<align>left</align>
 			<label>31147</label>
 			<selected>Skin.HasSetting(54banner.showinfo)</selected>
@@ -1821,7 +1835,7 @@
 			<visible>Control.IsVisible(54) + !Container.Content(seasons)</visible>
 		</control>
 		<control type="radiobutton" id="9012" description="Big List Double Pane (52)">
-			<include>DefContextButton2</include>
+			<include>DefContextButtonBlade</include>
 			<align>left</align>
 			<label>31235</label>
 			<selected>!Skin.HasSetting(52biglist.singlepane)</selected>
@@ -1830,7 +1844,7 @@
 			<visible>Control.IsVisible(52)</visible>
 		</control>
 		<control type="radiobutton" id="9016" description="Discart (513,514)">
-			<include>DefContextButton2</include>
+			<include>DefContextButtonBlade</include>
 			<align>left</align>
 			<label>Show DiscArt</label>
 			<selected>Skin.HasSetting(views.discart)</selected>
@@ -1838,7 +1852,7 @@
 			<visible>Control.IsVisible(513) | Control.IsVisible(514)</visible>
 		</control>
 		<control type="radiobutton" id="9017" description="Animate Discart (513,514)">
-			<include>DefContextButton2</include>
+			<include>DefContextButtonBlade</include>
 			<align>left</align>
 			<label> - Rotate DiscArt</label>
 			<selected>Skin.HasSetting(AnimateDiscArt)</selected>
@@ -1847,7 +1861,7 @@
 			<visible>Skin.HasSetting(views.discart)</visible>
 		</control>
 		<control type="radiobutton" id="9018" description="Cases (513,514,50,53,56)">
-			<include>DefContextButton2</include>
+			<include>DefContextButtonBlade</include>
 			<align>left</align>
 			<label>Use Cases</label>
 			<selected>Skin.HasSetting(views.cases)</selected>
@@ -1855,7 +1869,7 @@
 			<visible>Control.IsVisible(513) | Control.IsVisible(514) | Control.IsVisible(50) | Control.IsVisible(53) | Control.IsVisible(56)</visible>
 		</control>
 		<control type="radiobutton" id="9019" description="Clear Cases (513,514,50,53,56)">
-			<include>DefContextButton2</include>
+			<include>DefContextButtonBlade</include>
 			<align>left</align>
 			<label> - Clear Cases</label>
 			<selected>Skin.HasSetting(views.clearcases)</selected>
@@ -1866,7 +1880,7 @@
 			<visible>Skin.HasSetting(views.cases)</visible>
 		</control>
 		<control type="radiobutton" id="9020" description="Colour Cases (513,514,50,53,56)">
-			<include>DefContextButton2</include>
+			<include>DefContextButtonBlade</include>
 			<align>left</align>
 			<label> - Colour Cases</label>
 			<selected>Skin.HasSetting(views.colourcases)</selected>
@@ -1877,7 +1891,7 @@
 			<visible>Skin.HasSetting(views.cases)</visible>
 		</control>
 		<control type="radiobutton" id="9021" description="BD/DVD Cases (513,514,50,53,56)">
-			<include>DefContextButton2</include>
+			<include>DefContextButtonBlade</include>
 			<align>left</align>
 			<label> - BD/DVD Cases</label>
 			<selected>Skin.HasSetting(views.bddvdcases)</selected>
@@ -1888,7 +1902,7 @@
 			<visible>Skin.HasSetting(views.cases)</visible>
 		</control>
 		<control type="radiobutton" id="9022" description="Title Overlay (515)">
-			<include>DefContextButton2</include>
+			<include>DefContextButtonBlade</include>
 			<align>left</align>
 			<label>Show title overlay</label>
 			<selected>Skin.HasSetting(views.titleoverlay)</selected>
@@ -1896,7 +1910,7 @@
 			<visible>Control.IsVisible(515)</visible>
 		</control>
 		<control type="radiobutton" id="9023" description="Prefer Fanart (500)">
-			<include>DefContextButton2</include>
+			<include>DefContextButtonBlade</include>
 			<align>left</align>
 			<label>Show Fanart Image</label>
 			<selected>Skin.HasSetting(views.500.showfanart)</selected>
@@ -1904,7 +1918,7 @@
 			<visible>Control.IsVisible(500)</visible>
 		</control>
 		<control type="radiobutton" id="9024" description="Prefer Fanart (51)">
-			<include>DefContextButton2</include>
+			<include>DefContextButtonBlade</include>
 			<align>left</align>
 			<label>Show Fanart Image</label>
 			<selected>Skin.HasSetting(views.51.showfanart)</selected>
@@ -1912,7 +1926,7 @@
 			<visible>Control.IsVisible(51)</visible>
 		</control>
 		<control type="radiobutton" id="9028" description="Show Tick (155)">
-			<include>DefContextButton2</include>
+			<include>DefContextButtonBlade</include>
 			<align>left</align>
 			<label>Hide Watched/Unwatched Indicator</label>
 			<selected>Skin.HasSetting(views.155.showtick)</selected>
@@ -1920,7 +1934,7 @@
 			<visible>Control.IsVisible(155)</visible>
 		</control>
 		<control type="radiobutton" id="9029" description="Show Tick (156)">
-			<include>DefContextButton2</include>
+			<include>DefContextButtonBlade</include>
 			<align>left</align>
 			<label>Hide Watched/Unwatched Indicator</label>
 			<selected>Skin.HasSetting(views.156.showtick)</selected>
@@ -1928,7 +1942,7 @@
 			<visible>Control.IsVisible(156)</visible>
 		</control>
 		<control type="radiobutton" id="9031" description="Show Tick (157)">
-			<include>DefContextButton2</include>
+			<include>DefContextButtonBlade</include>
 			<align>left</align>
 			<label>Hide Watched/Unwatched Indicator</label>
 			<selected>Skin.HasSetting(views.157.showtick)</selected>
@@ -1936,7 +1950,7 @@
 			<visible>Control.IsVisible(157)</visible>
 		</control>
 		<control type="radiobutton" id="9032" description="Show Nuts (157)">
-			<include>DefContextButton2</include>
+			<include>DefContextButtonBlade</include>
 			<align>left</align>
 			<label>Disable wall nuts</label>
 			<selected>Skin.HasSetting(views.157.wallnuts)</selected>
@@ -1970,24 +1984,24 @@
 		</control>
 		<control type="button" id="2">
 			<description>View</description>
-			<include>DefContextButton2</include>
+			<include>DefContextButtonBlade</include>
 			<align>left</align>
 		</control>
 		<control type="button" id="3">
 			<description>Sort</description>
-			<include>DefContextButton2</include>
+			<include>DefContextButtonBlade</include>
 			<align>left</align>
 		</control>
 		<control type="togglebutton" id="4">
 			<description>Ascending</description>
-			<include>DefContextButton2</include>
+			<include>DefContextButtonBlade</include>
 			<align>left</align>
 			<label>584</label>
 			<altlabel>585</altlabel>
 		</control>
 		<control type="button" id="5">
 			<description>Files</description>
-			<include>DefContextButton2</include>
+			<include>DefContextButtonBlade</include>
 			<align>left</align>
 			<label>744</label>
 			<onclick>SetFocus(50)</onclick>
@@ -1995,7 +2009,7 @@
 		</control>
 		<control type="button" id="7">
 			<description>Playlist</description>
-			<include>DefContextButton2</include>
+			<include>DefContextButtonBlade</include>
 			<align>left</align>
 			<label>136</label>
 			<onclick>SetFocus(50)</onclick>
@@ -2004,14 +2018,14 @@
 		</control>
 		<control type="button" id="9098">
 			<description>Now Playing</description>
-			<include>DefContextButton2</include>
+			<include>DefContextButtonBlade</include>
 			<label>13350</label>
 			<align>left</align>
 			<onclick>ActivateWindow(MusicPlaylist)</onclick>
 			<visible>IntegerGreaterThan(Playlist.Length(music),1)</visible>
 		</control>
 		<control type="radiobutton" id="9007" description="Low List (57)">
-			<include>DefContextButton2</include>
+			<include>DefContextButtonBlade</include>
 			<align>left</align>
 			<label>31142</label>
 			<selected>Skin.HasSetting(57list.low)</selected>
@@ -2020,7 +2034,7 @@
 			<visible>Control.IsVisible(57)</visible>
 		</control>
 		<control type="radiobutton" id="9008" description="Big Wide Info (51)">
-			<include>DefContextButton2</include>
+			<include>DefContextButtonBlade</include>
 			<align>left</align>
 			<label>31147</label>
 			<selected>Skin.HasSetting(51bigwide.showinfo)</selected>

@@ -19,10 +19,13 @@
 	<onload condition="!Skin.HasSetting(startup.init)">Skin.SetBool(furniture.logo)</onload>
 	<onload condition="!Skin.HasSetting(startup.init)">Skin.SetBool(startup.init)</onload>
 	<onload condition="!Skin.String(SkinHelper.SpinnerTexturePath)">Skin.SetString(SkinHelper.SpinnerTexturePath,special://skin/extras/busy_spinners/flower.gif)</onload>
-	<!-- <onload>AlarmClock(livetvscroll,Control.Move(7016,6),00:10,silent,loop)</onload>
-	<onload>AlarmClock(musicScroll,Control.Move(5017,6),00:10,silent,loop)</onload> -->
+	<!-- 
+	<onload>AlarmClock(livetvscroll,Control.Move(7016,6),00:10,silent,loop)</onload>
+	<onload>AlarmClock(musicScroll,Control.Move(5017,6),00:10,silent,loop)</onload>
+	-->
 	<onunload>CancelAlarm(livetvscroll,true)</onunload>
 	<onunload>CancelAlarm(musicScroll,true)</onunload>
+	<menucontrol>9000</menucontrol>
 	<controls>
 		<include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
 		<include condition="Skin.HasSetting(home.emby)">GlobalOverlay</include>
@@ -41,6 +44,9 @@
 			<include condition="Skin.HasSetting(home.emby) + Skin.HasSetting(home.submenu2) + !Skin.HasSetting(home.showicons)">HomeEmbySubMenu2</include>
 			<include>Furniture_EmbyClock</include>
 			<include>Furniture_HeaderEmby</include>
+			<control type="button">
+				<onfocus>ActivateWindow(1112)</onfocus>
+			</control>
 		</control>
 	</controls>
 </window>
