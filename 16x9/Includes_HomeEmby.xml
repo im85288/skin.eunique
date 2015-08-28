@@ -777,12 +777,12 @@
 			<visible>!Skin.HasSetting(furniture.flags)</visible>
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
-			<left>408</left>
+			<right>0</right>
 			<top>45</top>
-			<width>1626</width>
+			<width>1512</width>
 			<height>64</height>
 			<orientation>horizontal</orientation>
-			<align>left</align>
+			<align>right</align>
 			<itemgap>0</itemgap>
 			<usecontrolcoords>true</usecontrolcoords>
 			<control type="group">
@@ -831,6 +831,7 @@
 				</control>
 			</control>
 			<control type="group">
+				<visible>!IsEmpty(VideoPlayer.Rating)</visible>
 				<width>140</width>
 				<height>64</height>
 				<control type="image">
@@ -914,7 +915,7 @@
 			<!-- sets -->
 
 			<control type="group">
-				<visible>!IsEmpty(ListItem.Mpaa)</visible>
+				<visible>!IsEmpty(VideoPlayer.Mpaa)</visible>
 				<width>140</width>
 				<height>64</height>
 				<control type="image">
