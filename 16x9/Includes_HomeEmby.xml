@@ -139,7 +139,8 @@
 					<onright>3634</onright>
 					<onup>303</onup>
 					<ondown>300</ondown>
-					<onclick condition="![Player.HasAudio | Player.HasVideo]">RunScript(script.skin.helper.service,action=videosearch)</onclick>
+					<onclick condition="![Player.HasAudio | Player.HasVideo] + !StringCompare(Container(300).ListItem.Property(defaultID),music)">RunScript(script.skin.helper.service,action=videosearch)</onclick>
+					<onclick condition="![Player.HasAudio | Player.HasVideo] + StringCompare(Container(300).ListItem.Property(defaultID),music)">RunScript(script.skin.helper.service,action=musicsearch)</onclick>
 					<onclick condition="[Player.HasAudio | Player.HasVideo]">Action(FullScreen)</onclick>
 					<font>Button</font>
 					<texturefocus>-</texturefocus>
@@ -5244,11 +5245,13 @@
 						<label>$VAR[EmbyWidget5Label]</label>
 						<focusedcolor>$VAR[ColourHighlight]</focusedcolor>
 						<texturenofocus>-</texturenofocus>
-						<onclick>SetProperty(Dialog.NumItems,2)</onclick>
+						<onclick>SetProperty(Dialog.NumItems,3)</onclick>
 						<onclick>SetProperty(Dialog.1.Label,Channels)</onclick>
 						<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(widget5,LiveTV))</onclick>
 						<onclick>SetProperty(Dialog.2.Label,Recordings)</onclick>
 						<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(widget5,Recordings))</onclick>
+						<onclick>SetProperty(Dialog.3.Label,Smartish Channels)</onclick>
+						<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(widget5,SmartLiveTV))</onclick>
 						<onclick>RunScript(script.toolbox,info=selectdialog,header=Select Widget)</onclick>
 						<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 					</control>
@@ -5270,7 +5273,7 @@
 					<onright>7016</onright>
 					<preloaditems>2</preloaditems>
 					<orientation>vertical</orientation>
-					<autoscroll time="15000">!Control.HasFocus(7016)</autoscroll>
+					<autoscroll time="7000">!Control.HasFocus(7016)</autoscroll>
 					<scrolltime tween="quadratic">100</scrolltime>
 					<include>Animation.FadeIn</include>
 					<include>Animation.FadeOut</include>
@@ -5399,6 +5402,7 @@
 							</control>
 						</control>
 						<control type="group">
+							<visible>Control.HasFocus(7016)</visible>
 							<left>2</left>
 							<right>2</right>
 							<top>317</top>
@@ -5458,6 +5462,70 @@
 								<textcolor>white</textcolor>
 								<selectedcolor>white</selectedcolor>
 								<label fallback="19055">$INFO[Container(7016).ListItem.Plot]$INFO[Container(7016).ListItem.NextStartTime,[CR][CR]$LOCALIZE[31801], ]$INFO[Container(7016).ListItem.NextTitle]</label>
+							</control>
+						</control>
+						<control type="group">
+							<visible>!Control.HasFocus(7016)</visible>
+							<left>2</left>
+							<right>2</right>
+							<top>317</top>
+							<height>143</height>
+							<control type="label">
+								<top>2</top>
+								<aligny>center</aligny>
+								<align>center</align>
+								<height>38</height>
+								<font>TinyBold</font>
+								<textcolor>white</textcolor>
+								<selectedcolor>white</selectedcolor>
+								<label>$INFO[Container(7016).ListItem.Season,,x]$INFO[Container(7016).ListItem.Episode,,. ]$INFO[Container(7016).ListItem.Title]$INFO[Container(7016).ListItem.EpisodeName, (,)]</label>
+							</control>
+							<control type="label">
+								<top>2</top>
+								<aligny>center</aligny>
+								<align>left</align>
+								<height>38</height>
+								<font>TinyBold</font>
+								<textcolor>white2</textcolor>
+								<selectedcolor>white2</selectedcolor>
+								<label>$INFO[Container(7016).ListItem.StartTime]</label>
+							</control>
+							<control type="label">
+								<top>2</top>
+								<aligny>center</aligny>
+								<align>right</align>
+								<height>38</height>
+								<font>TinyBold</font>
+								<textcolor>white2</textcolor>
+								<selectedcolor>white2</selectedcolor>
+								<label>$INFO[Container(7016).ListItem.EndTime]</label>
+							</control>
+							<control type="progress">
+								<top>42</top>
+								<left>10</left>
+								<right>10</right>
+								<height>6</height>
+								<reveal>true</reveal>
+								<info>Container(7016).ListItem.Progress</info>
+							</control>
+							<control type="label">
+								<top>65</top>
+								<aligny>center</aligny>
+								<align>left</align>
+								<height>38</height>
+								<font>TinyBold</font>
+								<textcolor>white2</textcolor>
+								<selectedcolor>white2</selectedcolor>
+								<label>$INFO[Container(7016).ListItem.NextStartTime,$LOCALIZE[31801], ]$INFO[Container(7016).ListItem.NextTitle]</label>
+							</control>
+							<control type="label">
+								<top>104</top>
+								<height>30</height>
+								<aligny>center</aligny>
+								<font>Tiny</font>
+								<textcolor>white2</textcolor>
+								<selectedcolor>white2</selectedcolor>
+								<label>$INFO[Container(7016).ListItem.NextGenre]</label>
 							</control>
 						</control>
 					</control>
