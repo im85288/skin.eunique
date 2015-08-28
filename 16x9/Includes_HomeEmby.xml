@@ -2704,7 +2704,8 @@
 					<height>460</height>
 					<onup condition="Skin.HasSetting(global.kioskmode)">300</onup>
 					<onup condition="!Skin.HasSetting(global.kioskmode)">30121</onup>
-					<ondown>3013</ondown>
+					<ondown condition="!IntegerGreaterThan(Container(30133).NumItems,0)">3013</ondown>
+					<ondown condition="IntegerGreaterThan(Container(30133).NumItems,0)">30133</ondown>
 					<onleft>301</onleft>
 					<onright>301</onright>
 					<preloaditems>2</preloaditems>
@@ -2784,7 +2785,9 @@
 				</control>
 				<control type="button" id="3013">
 					<onup>3012</onup>
-					<onright>3014</onright>
+					<onright condition="!IntegerGreaterThan(Container(30143).NumItems,0)">3014</onright>
+					<onright condition="IntegerGreaterThan(Container(30143).NumItems,0)">30143</onright>
+					<ondown>Control.Move(30133,1)</ondown>
 					<onclick>ActivateWindow(Videos,MovieTitles,return)</onclick>
 				</control>
 				<control type="image">
@@ -2795,6 +2798,7 @@
 					<width>400</width>
 					<height>230</height>
 					<texture border="15" colordiffuse="$VAR[EmbyLeftColourHighlight]">common/white.png</texture>
+					<visible>!Control.HasFocus(30133)</visible>
 				</control>
 				<control type="label">
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
@@ -2807,6 +2811,7 @@
 					<font>symbolbiggest</font>
 					<align>center</align>
 					<aligny>center</aligny>
+					<visible>!Control.HasFocus(30133)</visible>
 				</control>
 				<control type="image">
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
@@ -2816,6 +2821,7 @@
 					<width>400</width>
 					<height>40</height>
 					<texture border="15" colordiffuse="af000000">common/white.png</texture>
+					<visible>!Control.HasFocus(30133)</visible>
 				</control>
 				<control type="label">
 					<left>SidePad</left>
@@ -2828,6 +2834,7 @@
 					<selectedcolor>PanelWhite70</selectedcolor>
 					<label>20342</label>
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
+					<visible>!Control.HasFocus(30133)</visible>
 				</control>
 				<control type="label">
 					<left>SidePad</left>
@@ -2840,6 +2847,55 @@
 					<selectedcolor>PanelWhite70</selectedcolor>
 					<label>$INFO[Window.Property(Movies.Count)]</label>
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
+					<visible>!Control.HasFocus(30133)</visible>
+				</control>
+				<control type="list" id="30133">
+					<description>Widget</description>
+					<visible>Control.HasFocus(30133)</visible>
+					<visible allowhiddenfocus="true">IntegerGreaterThan(Container(30133).NumItems,0)</visible>
+					<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
+					<onup>3012</onup>
+					<onright condition="!IntegerGreaterThan(Container(30143).NumItems,0)">3014</onright>
+					<onright condition="IntegerGreaterThan(Container(30143).NumItems,0)">30143</onright>
+					<left>SidePad</left>
+					<posy>800</posy>
+					<width>400</width>
+					<height>230</height>
+					<preloaditems>2</preloaditems>
+					<orientation>vertical</orientation>
+					<scrolltime tween="quadratic">100</scrolltime>
+					<include>Animation.FadeIn</include>
+					<include>Animation.FadeOut</include>
+					<itemlayout width="400" height="230">
+						<control type="image">
+							<aspectratio>keep</aspectratio>
+							<texture background="true">$VAR[LandscapeImage]</texture>
+						</control>
+					</itemlayout>
+					<focusedlayout width="400" height="230">
+						<control type="image">
+							<aspectratio>keep</aspectratio>
+							<texture background="true">$VAR[LandscapeImage]</texture>
+						</control>
+						<control type="image">
+							<description>Title overlay</description>
+							<bottom>0</bottom>
+							<height>40</height>
+							<texture border="15" colordiffuse="af000000">common/white.png</texture>
+						</control>
+						<control type="label">
+							<bottom>10</bottom>
+							<left>15</left>
+							<right>15</right>
+							<align>left</align>
+							<height>30</height>
+							<font>Small</font>
+							<textcolor>PanelWhite70</textcolor>
+							<selectedcolor>PanelWhite70</selectedcolor>
+							<label>$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Title]</label>
+						</control>
+					</focusedlayout>
+					<content target="video">videodb://movies/titles</content>
 				</control>
 				<control type="image">
 					<left>76</left>
@@ -2847,13 +2903,15 @@
 					<posy>796</posy>
 					<height>238</height>
 					<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
-					<visible>Control.HasFocus(3013)</visible>
+					<visible>Control.HasFocus(3013) | Control.HasFocus(30133)</visible>
 				</control>
 				<control type="button" id="3014">
 					<onup>3012</onup>
-					<onleft>3013</onleft>
+					<onleft condition="!IntegerGreaterThan(Container(30133).NumItems,0)">3013</onleft>
+					<onleft condition="IntegerGreaterThan(Container(30133).NumItems,0)">30133</onleft>
 					<onright condition="Control.IsVisible(3016)">3016</onright>
 					<onright condition="!Control.IsVisible(3016)">3017</onright>
+					<ondown>Control.Move(30143,1)</ondown>
 					<onclick>ActivateWindow(VideoLibrary,MovieGenres,return)</onclick>
 				</control>
 				<control type="image">
@@ -2864,6 +2922,7 @@
 					<width>400</width>
 					<height>230</height>
 					<texture border="15" colordiffuse="$VAR[EmbyRightColourHighlight]">common/white.png</texture>
+					<visible>!Control.HasFocus(30143)</visible>
 				</control>
 				<control type="label">
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
@@ -2876,6 +2935,7 @@
 					<font>symbolbiggest</font>
 					<align>center</align>
 					<aligny>center</aligny>
+					<visible>!Control.HasFocus(30143)</visible>
 				</control>
 				<control type="image">
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
@@ -2885,6 +2945,7 @@
 					<width>400</width>
 					<height>40</height>
 					<texture border="15" colordiffuse="af000000">common/white.png</texture>
+					<visible>!Control.HasFocus(30143)</visible>
 				</control>
 				<control type="label">
 					<left>500</left>
@@ -2898,6 +2959,57 @@
 					<selectedcolor>PanelWhite70</selectedcolor>
 					<label>135</label>
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
+					<visible>!Control.HasFocus(30143)</visible>
+				</control>
+				<control type="list" id="30143">
+					<description>Widget</description>
+					<visible>Control.HasFocus(30143)</visible>
+					<visible allowhiddenfocus="true">IntegerGreaterThan(Container(30143).NumItems,0)</visible>
+					<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
+					<onup>3012</onup>
+					<onleft condition="!IntegerGreaterThan(Container(30133).NumItems,0)">3013</onleft>
+					<onleft condition="IntegerGreaterThan(Container(30133).NumItems,0)">30133</onleft>
+					<onright condition="Control.IsVisible(3016)">3016</onright>
+					<onright condition="!Control.IsVisible(3016)">3017</onright>
+					<left>500</left>
+					<posy>800</posy>
+					<width>400</width>
+					<height>230</height>
+					<preloaditems>2</preloaditems>
+					<orientation>vertical</orientation>
+					<scrolltime tween="quadratic">100</scrolltime>
+					<include>Animation.FadeIn</include>
+					<include>Animation.FadeOut</include>
+					<itemlayout width="400" height="230">
+						<control type="image">
+							<aspectratio>scale</aspectratio>
+							<texture background="true">resource://resource.images.moviegenreicons.coloured/$INFO[Listitem.Label,,.jpg]</texture>
+						</control>
+					</itemlayout>
+					<focusedlayout width="400" height="230">
+						<control type="image">
+							<aspectratio>scale</aspectratio>
+							<texture background="true">resource://resource.images.moviegenreicons.coloured/$INFO[Listitem.Label,,.jpg]</texture>
+						</control>
+						<control type="image">
+							<description>Title overlay</description>
+							<bottom>0</bottom>
+							<height>40</height>
+							<texture border="15" colordiffuse="af000000">common/white.png</texture>
+						</control>
+						<control type="label">
+							<bottom>10</bottom>
+							<left>15</left>
+							<right>15</right>
+							<align>center</align>
+							<height>30</height>
+							<font>Small</font>
+							<textcolor>PanelWhite70</textcolor>
+							<selectedcolor>PanelWhite70</selectedcolor>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+					</focusedlayout>
+					<content target="video">videodb://movies/genres/</content>
 				</control>
 				<control type="image">
 					<left>496</left>
@@ -2905,7 +3017,7 @@
 					<posy>796</posy>
 					<height>238</height>
 					<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
-					<visible>Control.HasFocus(3014)</visible>
+					<visible>Control.HasFocus(3014) | Control.HasFocus(30143)</visible>
 				</control>
 				<!-- In progress thumbs -->
 				<control type="group">
@@ -3299,7 +3411,8 @@
 					<height>460</height>
 					<onup condition="Skin.HasSetting(global.kioskmode)">300</onup>
 					<onup condition="!Skin.HasSetting(global.kioskmode)">40121</onup>
-					<ondown>4013</ondown>
+					<ondown condition="!IntegerGreaterThan(Container(40133).NumItems,0)">4013</ondown>
+					<ondown condition="IntegerGreaterThan(Container(40133).NumItems,0)">40133</ondown>
 					<onleft>301</onleft>
 					<onright>301</onright>
 					<preloaditems>2</preloaditems>
@@ -3399,7 +3512,9 @@
 				</control>
 				<control type="button" id="4013">
 					<onup>4012</onup>
-					<onright>4015</onright>
+					<onright condition="!IntegerGreaterThan(Container(40155).NumItems,0)">4015</onright>
+					<onright condition="IntegerGreaterThan(Container(40155).NumItems,0)">40155</onright>
+					<ondown>Control.Move(40133,1)</ondown>
 					<onclick>ActivateWindow(Videos,TVShowTitles,return)</onclick>
 				</control>
 				<control type="image">
@@ -3407,35 +3522,38 @@
 					<description>All music</description>
 					<left>SidePad</left>
 					<posy>800</posy>
-					<width>255</width>
+					<width>400</width>
 					<height>230</height>
 					<texture border="15" colordiffuse="$VAR[EmbyLeftColourHighlight]">common/white.png</texture>
+					<visible>!Control.HasFocus(40133)</visible>
 				</control>
 				<control type="label">
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
 					<description>All music</description>
 					<left>SidePad</left>
 					<posy>800</posy>
-					<width>255</width>
+					<width>400</width>
 					<height>230</height>
 					<label></label>
 					<font>symbolbiggest</font>
 					<align>center</align>
 					<aligny>center</aligny>
+					<visible>!Control.HasFocus(40133)</visible>
 				</control>
 				<control type="image">
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
 					<description>Title overlay</description>
 					<left>SidePad</left>
 					<posy>990</posy>
-					<width>255</width>
+					<width>400</width>
 					<height>40</height>
 					<texture border="15" colordiffuse="af000000">common/white.png</texture>
+					<visible>!Control.HasFocus(40133)</visible>
 				</control>
 				<control type="label">
 					<left>SidePad</left>
 					<posy>990</posy>
-					<width>255</width>
+					<width>400</width>
 					<align>center</align>
 					<height>40</height>
 					<font>Small</font>
@@ -3443,11 +3561,12 @@
 					<selectedcolor>PanelWhite70</selectedcolor>
 					<label>20343</label>
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+					<visible>!Control.HasFocus(40133)</visible>
 				</control>
 				<control type="label">
 					<left>SidePad</left>
 					<posy>805</posy>
-					<width>245</width>
+					<width>390</width>
 					<align>right</align>
 					<height>40</height>
 					<font>Small</font>
@@ -3455,55 +3574,113 @@
 					<selectedcolor>PanelWhite70</selectedcolor>
 					<label>$INFO[Window(Home).Property(TVShows.Count)]</label>
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+					<visible>!Control.HasFocus(40133)</visible>
+				</control>
+				<control type="list" id="40133">
+					<description>Widget</description>
+					<visible>Control.HasFocus(40133)</visible>
+					<visible allowhiddenfocus="true">IntegerGreaterThan(Container(40133).NumItems,0)</visible>
+					<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+					<onup>4012</onup>
+					<onright condition="!IntegerGreaterThan(Container(40155).NumItems,0)">4015</onright>
+					<onright condition="IntegerGreaterThan(Container(40155).NumItems,0)">40155</onright>
+					<left>SidePad</left>
+					<posy>800</posy>
+					<width>400</width>
+					<height>230</height>
+					<preloaditems>2</preloaditems>
+					<orientation>vertical</orientation>
+					<scrolltime tween="quadratic">100</scrolltime>
+					<include>Animation.FadeIn</include>
+					<include>Animation.FadeOut</include>
+					<itemlayout width="400" height="230">
+						<control type="image">
+							<aspectratio>keep</aspectratio>
+							<texture background="true">$VAR[LandscapeImage]</texture>
+						</control>
+					</itemlayout>
+					<focusedlayout width="400" height="230">
+						<control type="image">
+							<aspectratio>keep</aspectratio>
+							<texture background="true">$VAR[LandscapeImage]</texture>
+						</control>
+						<control type="group">
+							<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+							<control type="image">
+								<right>9</right>
+								<top>9</top>
+								<height>40</height>
+								<width>40</width>
+								<texture colordiffuse="Dark1">common/circle.png</texture>
+								<aspectratio align="center" aligny="center">keep</aspectratio>
+							</control>
+							<control type="label">
+								<right>9</right>
+								<top>9</top>
+								<height>40</height>
+								<width>40</width>
+								<align>center</align>
+								<aligny>center</aligny>
+								<label>$INFO[ListItem.Property(UnwatchedEpisodes)]</label>
+								<font>Flag</font>
+								<textcolor>black</textcolor>
+							</control>
+						</control>
+					</focusedlayout>
+					<content target="video">videodb://tvshows/titles</content>
 				</control>
 				<control type="image">
 					<left>76</left>
-					<width>263</width>
+					<width>408</width>
 					<posy>796</posy>
 					<height>238</height>
 					<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
-					<visible>Control.HasFocus(4013)</visible>
+					<visible>Control.HasFocus(4013) | Control.HasFocus(40133)</visible>
 				</control>
 				<control type="button" id="4015">
 					<onup>4012</onup>
-					<onleft>4013</onleft>
-					<onright>4014</onright>
+					<onleft condition="!IntegerGreaterThan(Container(40133).NumItems,0)">4013</onleft>
+					<onleft condition="IntegerGreaterThan(Container(40133).NumItems,0)">40133</onleft>
+					<onright>4016</onright>
 					<onclick>RunAddon(script.tv.show.next.aired)</onclick>
 				</control>
 				<control type="image">
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
 					<description>music artists</description>
-					<left>362</left>
+					<left>500</left>
 					<posy>800</posy>
-					<width>256</width>
+					<width>400</width>
 					<height>230</height>
-					<texture border="15" colordiffuse="$VAR[EmbyMiddleColourHighlight]">common/white.png</texture>
+					<texture border="15" colordiffuse="$VAR[EmbyRightColourHighlight]">common/white.png</texture>
+					<visible>!Control.HasFocus(40155)</visible>
 				</control>
 				<control type="label">
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
 					<description>All music</description>
-					<left>362</left>
+					<left>500</left>
 					<posy>810</posy>
-					<width>256</width>
+					<width>400</width>
 					<height>230</height>
 					<label></label>
 					<font>symbolbiggest</font>
 					<align>center</align>
 					<aligny>center</aligny>
+					<visible>!Control.HasFocus(40155)</visible>
 				</control>
 				<control type="image">
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
 					<description>Title overlay</description>
-					<left>362</left>
+					<left>500</left>
 					<posy>990</posy>
-					<width>256</width>
+					<width>400</width>
 					<height>40</height>
 					<texture border="15" colordiffuse="af000000">common/white.png</texture>
+					<visible>!Control.HasFocus(40155)</visible>
 				</control>
 				<control type="label">
-					<left>362</left>
+					<left>500</left>
 					<posy>990</posy>
-					<width>256</width>
+					<width>400</width>
 					<align>center</align>
 					<height>40</height>
 					<font>Small</font>
@@ -3511,11 +3688,12 @@
 					<selectedcolor>PanelWhite70</selectedcolor>
 					<label>31220</label>
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+					<visible>!Control.HasFocus(40155)</visible>
 				</control>
 				<control type="label">
-					<left>362</left>
+					<left>500</left>
 					<posy>805</posy>
-					<width>246</width>
+					<width>390</width>
 					<align>right</align>
 					<height>40</height>
 					<font>Small</font>
@@ -3523,16 +3701,68 @@
 					<selectedcolor>PanelWhite70</selectedcolor>
 					<label>$INFO[Window.Property(NextAired.TodayTotal)]</label>
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+					<visible>!Control.HasFocus(40155)</visible>
 				</control>
+
+				<control type="list" id="40155">
+					<description>Widget</description>
+					<visible>Control.HasFocus(40155)</visible>
+					<visible allowhiddenfocus="true">IntegerGreaterThan(Container(40155).NumItems,0)</visible>
+					<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+					<onleft condition="!IntegerGreaterThan(Container(40133).NumItems,0)">4013</onleft>
+					<onleft condition="IntegerGreaterThan(Container(40133).NumItems,0)">40133</onleft>
+					<onup>4012</onup>
+					<onright>4016</onright>
+					<left>500</left>
+					<posy>800</posy>
+					<width>400</width>
+					<height>230</height>
+					<preloaditems>2</preloaditems>
+					<orientation>vertical</orientation>
+					<scrolltime tween="quadratic">100</scrolltime>
+					<include>Animation.FadeIn</include>
+					<include>Animation.FadeOut</include>
+					<itemlayout width="400" height="230">
+						<control type="image">
+							<aspectratio>keep</aspectratio>
+							<texture background="true">$VAR[LandscapeImage]</texture>
+						</control>
+					</itemlayout>
+					<focusedlayout width="400" height="230">
+						<control type="image">
+							<aspectratio>keep</aspectratio>
+							<texture background="true">$VAR[LandscapeImage]</texture>
+						</control>
+						<control type="image">
+							<description>Title overlay</description>
+							<bottom>0</bottom>
+							<height>40</height>
+							<texture border="15" colordiffuse="af000000">common/white.png</texture>
+						</control>
+						<control type="label">
+							<bottom>10</bottom>
+							<left>15</left>
+							<right>15</right>
+							<align>left</align>
+							<height>30</height>
+							<font>Small</font>
+							<textcolor>PanelWhite70</textcolor>
+							<selectedcolor>PanelWhite70</selectedcolor>
+							<label>$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Title]</label>
+						</control>
+					</focusedlayout>
+					<content target="video">plugin://script.skin.helper.service/?action=nextairedtvshows</content>
+				</control>
+
 				<control type="image">
-					<left>358</left>
-					<width>264</width>
+					<left>496</left>
+					<width>408</width>
 					<posy>796</posy>
 					<height>238</height>
 					<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
-					<visible>Control.HasFocus(4015)</visible>
+					<visible>Control.HasFocus(4015) | Control.HasFocus(40155)</visible>
 				</control>
-				<control type="button" id="4014">
+				<!-- <control type="button" id="4014">
 					<onup>4012</onup>
 					<onleft>4015</onleft>
 					<onright>4016</onright>
@@ -3588,7 +3818,7 @@
 					<height>238</height>
 					<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
 					<visible>Control.HasFocus(4014)</visible>
-				</control>
+				</control> -->
 				<!-- Next Up/In progress  -->
 				<control type="group">
 					<left>980</left>
