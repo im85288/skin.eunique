@@ -1271,6 +1271,24 @@
 						<visible>Skin.HasSetting(emby.menu.colour) + Skin.HasSetting(home.emby)</visible>
 						<visible>ControlGroup(9100).HasFocus(9108)</visible>
 					</control>
+					<control type="radiobutton" id="92883">
+						<width>1310</width>
+						<include>DefSettingsButton2</include>
+						<selected>Skin.HasSetting(emby.menu.text.colour)</selected>
+						<onclick>Skin.ToggleSetting(emby.menu.text.colour)</onclick>
+						<label>Change menu text colour</label>
+						<visible>ControlGroup(9100).HasFocus(9108)</visible>
+						<visible>Skin.HasSetting(home.emby)</visible>
+					</control>
+					<control type="button" id="92884">
+						<width>1310</width>
+						<include>DefSettingsButton2</include>
+						<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=emby.menu.text.colour.name)</onclick>
+						<label> - Set menu text colour</label>
+						<label2>[COLOR=$INFO[Skin.String(emby.menu.text.colour.name)]]$INFO[Skin.String(emby.menu.text.colour.name)][/COLOR]</label2>
+						<visible>Skin.HasSetting(emby.menu.text.colour) + Skin.HasSetting(home.emby)</visible>
+						<visible>ControlGroup(9100).HasFocus(9108)</visible>
+					</control>
 					<control type="radiobutton" id="92877">
 						<width>1310</width>
 						<include>DefSettingsButton2</include>
