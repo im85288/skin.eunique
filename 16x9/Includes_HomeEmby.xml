@@ -3,7 +3,8 @@
 	<include name="Furniture_EmbyClock">
 		<control type="group">
 			<top>-10</top>
-			<left>NewSidePad</left>
+			<left>-18</left>
+				<width>1920</width>
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
 			<animation effect="fade" start="100" end="25" condition="control.hasfocus(302)" time="200">Conditional</animation>
@@ -11,21 +12,17 @@
 			<include>Animation.FurnitureFadeInOut</include>
 			<height>48</height>
 			<control type="label">
+				<right>15</right>
+				<align>right</align>
 				<bottom>-5</bottom>
 				<font>HomeEmbySemi</font>
 				<textcolor>white3</textcolor>
-				<label>$INFO[System.Date(DDD)]$COMMA $INFO[System.Date(d MMM yyyy)]</label>
-			</control>
-			<control type="label">
-				<left>32</left>
-				<bottom>-30</bottom>
-				<font>HomeEmbySemi</font>
-				<textcolor>white3</textcolor>
-				<label>$INFO[Weather.Temperature,[COLOR=white],[/COLOR]]$INFO[Weather.Conditions, ,]</label>
+				<label>$INFO[System.Date(DDD)]$COMMA $INFO[System.Date(d MMM yyyy)] $INFO[Weather.Temperature,[COLOR=white],[/COLOR]]$INFO[Weather.Conditions, ,]</label>
 			</control>
 			<control type="image">
-				<left>-5</left>
-				<bottom>-17</bottom>
+				<align>right</align>
+				<right>-20</right>
+				<bottom>5</bottom>
 				<width>40</width>
 				<height>40</height>
 				<fadetime>350</fadetime>
