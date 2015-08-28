@@ -2,9 +2,7 @@
 <!-- Foundation -->
 <window id="107">
     <allowoverlay>no</allowoverlay>
-
     <controls>
-
         <control type="group">
 			<visible>!StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
             <visible>!Window.IsVisible(DialogVolumeBar.xml)</visible>
@@ -14,31 +12,22 @@
             <height>100</height>
             <include>Animation.FadeIn.Slide</include>
             <include>Animation.FadeOut</include>
-    
             <control type="image">
                 <description>background image</description>
                 <width>660</width>
                 <height>100</height>
-                <colordiffuse>$VAR[EmbyLeftColourHighlight]</colordiffuse>
                 <animation effect="fade" start="100" end="90" condition="Skin.HasSetting(osd.usetheme) | [!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)]">Conditional</animation>
-                <texture>common/white.png</texture>
-                <!--
-                <bordertexture colordiffuse="$VAR[EmbyRightColourHighlight]">common/white.png</bordertexture>
-				<bordersize>6,6,6,6</bordersize>
-				-->
+                <texture border="16" colordiffuse="black">common/box.png</texture>
             </control>
-
             <control type="group">
-                
                 <control type="image" id="400">
                     <left>20</left>
                     <centertop>50%</centertop>
                     <width>64</width>
                     <height>64</height>
                     <aspectratio>keep</aspectratio>
-                    <colordiffuse>black</colordiffuse>
+                    <colordiffuse>white</colordiffuse>
                 </control>
-                
                 <control type="label" id="401">
                     <left>104</left>
                     <width>536</width>
@@ -46,7 +35,7 @@
                     <height>24</height>
                     <aligny>center</aligny>
                     <font>TinyBold</font>
-                    <textcolor>black</textcolor>
+                    <textcolor>white</textcolor>
                 </control>
                 <control type="label" id="402">
                     <left>104</left>
@@ -55,12 +44,9 @@
                     <height>24</height>
                     <aligny>center</aligny>
                     <font>Tiny</font>
-                    <textcolor>black</textcolor>
+                    <textcolor>white2</textcolor>
                 </control>
-
             </control>
         </control>
-        
     </controls>
-
 </window>
