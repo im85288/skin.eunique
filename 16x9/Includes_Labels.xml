@@ -950,10 +950,10 @@
 		<value condition="[substring(VideoPlayer.FilenameAndPath,bdmv) | substring(VideoPlayer.FilenameAndPath,blu-ray) | substring(VideoPlayer.FilenameAndPath,bluray) | substring(VideoPlayer.FilenameAndPath,bdrip) | substring(VideoPlayer.FilenameAndPath,bd25) | substring(VideoPlayer.FilenameAndPath,bd50)]">BD</value>
 		<value condition="SubString(ListItem.Filenameandpath,dvd) | SubString(ListItem.Filenameandpath,.ifo,Right) | SubString(ListItem.Filenameandpath,.iso,Right)">DVD</value>
 		<value condition="SubString(VideoPlayer.Filenameandpath,dvd) | SubString(VideoPlayer.Filenameandpath,.ifo,Right) | SubString(VideoPlayer.Filenameandpath,.iso,Right)">DVD</value>
-		<value condition="SubString(ListItem.Filenameandpath,WEBDL) | SubString(ListItem.Filenameandpath,WEB-DL)">WEB-DL</value>
-		<value condition="SubString(VideoPlayer.Filenameandpath,WEBDL) | SubString(VideoPlayer.Filenameandpath,WEB-DL)">WEB-DL</value>
-		<value condition="SubString(ListItem.Filenameandpath,WEBRIP) | SubString(ListItem.Filenameandpath,WEB-RIP)">WEBRIP</value>
-		<value condition="SubString(VideoPlayer.Filenameandpath,WEBRIP) | SubString(VideoPlayer.Filenameandpath,WEB-RIP)">WEBRIP</value>
+		<value condition="SubString(ListItem.Filenameandpath,WEBDL) | SubString(ListItem.Filenameandpath,WEB-DL)">3WDL</value>
+		<value condition="SubString(VideoPlayer.Filenameandpath,WEBDL) | SubString(VideoPlayer.Filenameandpath,WEB-DL)">3WDL</value>
+		<value condition="SubString(ListItem.Filenameandpath,WEBRIP) | SubString(ListItem.Filenameandpath,WEB-RIP)">WRIP</value>
+		<value condition="SubString(VideoPlayer.Filenameandpath,WEBRIP) | SubString(VideoPlayer.Filenameandpath,WEB-RIP)">3WRIP</value>
 		<value condition="IntegerGreaterThan(ListItem.VideoResolution,719) + !IsEmpty(ListItem.VideoResolution)">HD</value>
 		<value condition="IntegerGreaterThan(VideoPlayer.VideoResolution,719) + !IsEmpty(VideoPlayer.VideoResolution)">HD</value>
 		<value condition="!IntegerGreaterThan(ListItem.VideoResolution,719) + !IsEmpty(ListItem.VideoResolution)">SD</value>
@@ -1010,6 +1010,7 @@
 		<value condition="!Skin.HasSetting(ColourSelected)">Selected</value>
 	</variable>
 	<variable name="Plot">
+		<value condition="Container.Content(movies)">$INFO[ListItem.Tagline,[B],[/B][CR],]$INFO[ListItem.Plot]</value>
 		<value condition="[!IsEmpty(ListItem.PlotOutline) | !IsEmpty(ListItem.Plot)] + Skin.HasSetting(osd.hidespoilers) + Container.Content(episodes) + [stringcompare(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]">* Hidden to prevent spoilers *</value>
 		<value condition="!IsEmpty(ListItem.PlotOutline)">$INFO[ListItem.PlotOutline]</value>
 		<value condition="!IsEmpty(ListItem.Plot)">$INFO[ListItem.Plot]</value>
