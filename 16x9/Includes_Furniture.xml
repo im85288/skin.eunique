@@ -1164,7 +1164,7 @@
 		</control>
 	</include>
 	<variable name="HeaderIcon">
-		<value condition="Window.IsVisible(DialogMuteBug.xml)">special://skin/extras/icons/mute.png</value>
+		<value condition="Window.IsVisible(DialogMuteBug.xml)"></value>
 		<value condition="Window.IsVisible(DialogButtonMenu.xml)"></value>
 		<value condition="Window.IsVisible(DialogFavourites.xml)"></value>
 		<value condition="Window.IsVisible(1101)"></value>
@@ -1174,42 +1174,42 @@
 		<value condition="Player.HasVideo + VideoPlayer.Content(livetv) + [Window.IsVisible(fullscreenvideo) | Window.IsVisible(visualisation) | Window.IsVisible(home)]"></value>
 		<value condition="Player.HasVideo + VideoPlayer.Content(movies) + [Window.IsVisible(fullscreenvideo) | Window.IsVisible(visualisation) | Window.IsVisible(home)]"></value>
 		<value condition="Player.HasVideo + VideoPlayer.Content(episodes) + [Window.IsVisible(fullscreenvideo) | Window.IsVisible(visualisation) | Window.IsVisible(home)]"></value>
-		<value condition="Player.HasVideo + [Window.IsVisible(fullscreenvideo) | Window.IsVisible(visualisation) | Window.IsVisible(home)]">special://skin/extras/icons/eye.png</value>
-		<value condition="Window.IsVisible(script-ExtendedInfo Script-YoutubeList.xml)">special://skin/extras/icons/youtube.png</value>
-		<value condition="Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogAlbumInfo.xml) | Window.IsVisible(script-ExtendedInfo Script-VideoList.xml) | Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) | Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)">special://skin/extras/icons/info.png</value>
-		<value condition="Window.IsVisible(script-NextAired-TVGuide.xml) | Window.IsVisible(script-NextAired-TVGuide2.xml)">special://skin/extras/icons/tvguide.png</value>
-		<value condition="SubString(Container.FolderPath,sources://,Left)">special://skin/extras/icons/files.png</value>
-		<value condition="SubString(Container.FolderPath,special://videoplaylists/,Left)">special://skin/extras/icons/playlist.png</value>
-		<value condition="StringCompare(Container.FolderPath,special://profile/playlists/)">special://skin/extras/icons/playlist.png</value>
-		<value condition="StringCompare(Container.FolderPath,special://profile/playlists/video/)">special://skin/extras/icons/playlist.png</value>
-		<value condition="StringCompare(Container.FolderPath,special://profile/playlists/music/)">special://skin/extras/icons/playlist.png</value>
-		<value condition="StringCompare(Container.FolderPath,special://profile/playlists/mixed/)">special://skin/extras/icons/playlist.png</value>
+		<value condition="Player.HasVideo + [Window.IsVisible(fullscreenvideo) | Window.IsVisible(visualisation) | Window.IsVisible(home)]"></value>
+		<value condition="Window.IsVisible(script-ExtendedInfo Script-YoutubeList.xml)"></value>
+		<value condition="Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogAlbumInfo.xml) | Window.IsVisible(script-ExtendedInfo Script-VideoList.xml) | Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) | Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)"></value>
+		<value condition="Window.IsVisible(script-NextAired-TVGuide.xml) | Window.IsVisible(script-NextAired-TVGuide2.xml)"></value>
+		<value condition="SubString(Container.FolderPath,sources://,Left)"></value>
+		<value condition="SubString(Container.FolderPath,special://videoplaylists/,Left)"></value>
+		<value condition="StringCompare(Container.FolderPath,special://profile/playlists/)"></value>
+		<value condition="StringCompare(Container.FolderPath,special://profile/playlists/video/)"></value>
+		<value condition="StringCompare(Container.FolderPath,special://profile/playlists/music/)"></value>
+		<value condition="StringCompare(Container.FolderPath,special://profile/playlists/mixed/)"></value>
 		<value condition="Window.IsVisible(MyMusicPlaylistEditor.xml) | Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(MyMusicSongs.xml)"></value>
 		<value condition="SubString(Container.FolderPath,library://video/movies/,Left)"></value>
 		<value condition="SubString(Container.FolderPath,library://video/tvshows/,Left)"></value>
 		<value condition="SubString(Container.FolderPath,videodb://movies/,Left)"></value>
 		<value condition="SubString(Container.FolderPath,videodb://tvshows/,Left)"></value>
-		<value condition="SubString(Container.FolderPath,plugin://,Left)">special://skin/extras/icons/video-addons.png</value>
+		<value condition="SubString(Container.FolderPath,plugin://,Left)"></value>
 		<value condition="Container.Content(movies)"></value>
 		<value condition="Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)"></value>
 		<value condition="Container.Content(songs)"></value>
 		<value condition="Container.Content(livetv)"></value>
-		<value condition="Container.Content(files)">special://skin/extras/icons/files.png</value>
-		<value condition="Container.Content(plugins)">special://skin/extras/icons/video-addons.png</value>
-		<value condition="Container.Content(addons)">special://skin/extras/icons/addons.png</value>
-		<value condition="SubString(Container.FolderPath,videodb://musicvideos/,Left)">special://skin/extras/icons/musicvideo.png</value>
-		<value condition="Window.IsVisible(ColorPicker.xml)">special://skin/extras/icons/wand.png</value>
+		<value condition="Container.Content(files)"></value>
+		<value condition="Container.Content(plugins)"></value>
+		<value condition="Container.Content(addons)"></value>
+		<value condition="SubString(Container.FolderPath,videodb://musicvideos/,Left)"></value>
+		<value condition="Window.IsVisible(ColorPicker.xml)"></value>
 		<value condition="Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRSearch.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRRecordings.xml)"></value>
 		<value condition="Window.IsVisible(MyMusicPlaylistEditor.xml) | Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(MyMusicSongs.xml)"></value>
-		<value condition="Window.IsVisible(MyPics.xml)">special://skin/extras/icons/pictures.png</value>
-		<value condition="Window.IsVisible(MyPrograms.xml) | Window.IsVisible(AddonBrowser.xml)">special://skin/extras/icons/addons.png</value>
+		<value condition="Window.IsVisible(MyPics.xml)"></value>
+		<value condition="Window.IsVisible(MyPrograms.xml) | Window.IsVisible(AddonBrowser.xml)"></value>
 		<value condition="Window.IsVisible(weather)"></value>
-		<value condition="Window.IsVisible(SettingsSystemInfo.xml) | Window.IsVisible(SettingsCategory.xml) | Window.IsVisible(settings) | Window.IsVisible(SkinSettings.xml)">special://skin/extras/icons/settings.png</value>
-		<value condition="Window.IsVisible(MyMusicPlaylist.xml)">special://skin/extras/icons/playlist.png</value>
-		<value condition="Window.IsVisible(FileManager.xml)">special://skin/extras/icons/database.png</value>
+		<value condition="Window.IsVisible(SettingsSystemInfo.xml) | Window.IsVisible(SettingsCategory.xml) | Window.IsVisible(settings) | Window.IsVisible(SkinSettings.xml)"></value>
+		<value condition="Window.IsVisible(MyMusicPlaylist.xml)"></value>
+		<value condition="Window.IsVisible(FileManager.xml)"></value>
 		<value condition="Window.IsVisible(Home.xml)"></value>
-		<value condition="Window.IsVisible(MyVideoNav.xml)">special://skin/extras/icons/video-addons.png</value>
-		<value>special://skin/extras/icons/artist.png</value>
+		<value condition="Window.IsVisible(MyVideoNav.xml)"></value>
+		<value></value>
 	</variable>
 	<variable name="MainHeaderLabel">
 		<value condition="Skin.HasSetting(hide.busydialog) + Window.IsVisible(DialogBusy.xml)">$LOCALIZE[20186]...</value>
