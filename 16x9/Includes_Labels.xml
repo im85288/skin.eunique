@@ -1591,4 +1591,20 @@
 		<value condition="!IsEmpty(Container(301).ListItem..VideoCodec)">$INFO[Container(301).ListItem..VideoCodec]</value>
 		<value>$INFO[ListItem.VideoCodec]</value>
 	</variable>
+
+	<variable name="AudioCodec">
+		<value condition="StringCompare(ListItem.AudioCodec,ac3)">DOLBY D</value>
+		<value condition="StringCompare(ListItem.AudioCodec,dca)">DTS</value>
+		<value condition="SubString(ListItem.AudioCodec,dts-hd)">DTS HD</value>
+		<value condition="SubString(ListItem.AudioCodec,dtshd)">DTS HD</value>
+		<value condition="SubString(ListItem.AudioCodec,pcm)">PCM</value>
+		<value condition="!IsEmpty(MusicPlayer.Codec)">$INFO[MusicPlayer.Codec]</value>
+		<value condition="StringCompare(VideoPlayer.AudioCodec,ac3)">DOLBY D</value>
+		<value condition="StringCompare(VideoPlayer.AudioCodec,dca)">DTS</value>
+		<value condition="SubString(VideoPlayer.AudioCodec,dts-hd)">DTS HD</value>
+		<value condition="SubString(VideoPlayer.AudioCodec,dtshd)">DTS HD</value>
+		<value condition="SubString(VideoPlayer.AudioCodec,pcm)">PCM</value>
+		<value condition="!IsEmpty(VideoPlayer.AudioCodec)">$INFO[VideoPlayer.AudioCodec]</value>
+		<value>$INFO[ListItem.AudioCodec]</value>
+	</variable>
 </includes>

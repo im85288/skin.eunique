@@ -413,7 +413,7 @@
 			</control>
 			<control type="group">
 				<visible>!IsEmpty(ListItem.AudioCodec)</visible>
-				<width>140</width>
+				<width>200</width>
 				<height>64</height>
 				<control type="image">
 					<texture border="5" colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
@@ -432,7 +432,7 @@
 					<height>54</height>
 					<align>center</align>
 					<aligny>center</aligny>
-					<label fallback="N/A">$INFO[ListItem.AudioCodec]</label>
+					<label fallback="N/A">$VAR[AudioCodec]</label>
 					<font>DurationFont</font>
 					<textcolor>$VAR[ColourTextFlags]</textcolor>
 				</control>
@@ -1005,7 +1005,7 @@
 			</control>
 			<control type="group">
 				<visible>!IsEmpty(VideoPlayer.AudioCodec)</visible>
-				<width>140</width>
+				<width>200</width>
 				<height>64</height>
 				<control type="image">
 					<texture border="5" colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
@@ -1024,7 +1024,7 @@
 					<height>54</height>
 					<align>center</align>
 					<aligny>center</aligny>
-					<label fallback="N/A">$INFO[VideoPlayer.AudioCodec]</label>
+					<label fallback="N/A">$VAR[AudioCodec]</label>
 					<font>DurationFont</font>
 					<textcolor>$VAR[ColourTextFlags]</textcolor>
 				</control>
