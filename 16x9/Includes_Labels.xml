@@ -1479,4 +1479,38 @@
 		<value condition="Substring(ListItem.Icon,Default,left) | [IsEmpty(ListItem.Title) + IsEmpty(ListItem.Icon)]"></value>
 		<value></value>
 	</variable>
+	<variable name="VideoAspect">
+		<value condition="StringCompare(ListItem.VideoAspect,1.33)">4:3</value>
+		<value condition="StringCompare(ListItem.VideoAspect,1.37)">4:3</value>
+		<value condition="StringCompare(ListItem.VideoAspect,1.78)">16:9</value>
+		<value condition="StringCompare(ListItem.VideoAspect,1.85)">16:9</value>
+		<value condition="StringCompare(VideoPlayer.VideoAspect,1.33)">4:3</value>
+		<value condition="StringCompare(VideoPlayer.VideoAspect,1.37)">4:3</value>
+		<value condition="StringCompare(VideoPlayer.VideoAspect,1.78)">16:9</value>
+		<value condition="StringCompare(VideoPlayer.VideoAspect,1.85)">16:9</value>
+		<value condition="!IsEmpty(VideoPlayer.VideoAspect)">$INFO[VideoPlayer.VideoAspect]</value>
+		<value condition="StringCompare(Container(301).ListItem..VideoAspect,1.33)">4:3</value>
+		<value condition="StringCompare(Container(301).ListItem..VideoAspect,1.37)">4:3</value>
+		<value condition="StringCompare(Container(301).ListItem..VideoAspect,1.78)">16:9</value>
+		<value condition="StringCompare(Container(301).ListItem..VideoAspect,1.85)">16:9</value>
+		<value condition="!IsEmpty(Container(301).ListItem..VideoAspect)">$INFO[Container(301).ListItem..VideoAspect]</value>
+		<value>$INFO[ListItem.VideoAspect]</value>
+	</variable>
+
+	<variable name="VideoCodec">
+		<value condition="SubString(ListItem.VideoCodec,H264)">H.264</value>
+		<value condition="SubString(ListItem.VideoCodec,H265)">H.265</value>
+		<value condition="SubString(ListItem.VideoCodec,MPEG2)">MPEG2</value>
+		<value condition="SubString(ListItem.VideoCodec,MPEG4)">MPEG4</value>
+		<value condition="SubString(VideoPlayer.VideoCodec,H264)">H.264</value>
+		<value condition="SubString(VideoPlayer.VideoCodec,H265)">H.265</value>
+		<value condition="SubString(VideoPlayer.VideoCodec,MPEG2)">MPEG2</value>
+		<value condition="SubString(VideoPlayer.VideoCodec,MPEG4)">MPEG4</value>
+		<value condition="!IsEmpty(VideoPlayer.VideoCodec)">$INFO[VideoPlayer.VideoCodec]</value>
+		<value condition="SubString(Container(301).ListItem..VideoCodec,H264)">H.264</value>
+		<value condition="SubString(Container(301).ListItem..VideoCodec,H265)">H.265</value>
+		<value condition="SubString(Container(301).ListItem..VideoCodec,MPEG2)">MPEG2</value>
+		<value condition="!IsEmpty(Container(301).ListItem..VideoCodec)">$INFO[Container(301).ListItem..VideoCodec]</value>
+		<value>$INFO[ListItem.VideoCodec]</value>
+	</variable>
 </includes>
