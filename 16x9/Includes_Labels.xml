@@ -1010,6 +1010,7 @@
 		<value condition="!Skin.HasSetting(ColourSelected)">Selected</value>
 	</variable>
 	<variable name="Plot">
+		<value condition="Container.Content(movies)">$INFO[ListItem.Tagline,[B],[/B][CR],]$INFO[ListItem.Plot]</value>
 		<value condition="[!IsEmpty(ListItem.PlotOutline) | !IsEmpty(ListItem.Plot)] + Skin.HasSetting(osd.hidespoilers) + Container.Content(episodes) + [stringcompare(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]">* Hidden to prevent spoilers *</value>
 		<value condition="!IsEmpty(ListItem.PlotOutline)">$INFO[ListItem.PlotOutline]</value>
 		<value condition="!IsEmpty(ListItem.Plot)">$INFO[ListItem.Plot]</value>
