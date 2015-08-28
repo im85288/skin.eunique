@@ -1446,6 +1446,16 @@
 		<value condition="SubString(ListItem.Mpaa,gb-r18)">R18</value>
 		<value>$INFO[ListItem.Mpaa]</value>
 	</variable>
+	<variable name="VideoPlayerMPAA">
+		<value condition="SubString(VideoPlayer.mpaa,gb-pg)">PG</value>
+		<value condition="SubString(VideoPlayer.mpaa,gb-12A)">12A</value>
+		<value condition="SubString(VideoPlayer.mpaa,gb-12)">12</value>
+		<value condition="SubString(VideoPlayer.mpaa,gb-15)">15</value>
+		<value condition="SubString(VideoPlayer.mpaa,gb-18)">18</value>
+		<value condition="SubString(VideoPlayer.mpaa,gb-u)">U</value>
+		<value condition="SubString(VideoPlayer.mpaa,gb-r18)">R18</value>
+		<value>$INFO[VideoPlayer.mpaa]</value>
+	</variable>
 	<variable name="MPAA_Home">
 		<value condition="SubString(Container(301).ListItem.Mpaa,gb-pgpg)">PG</value>
 		<value condition="SubString(Container(301).ListItem.Mpaa,gb-12A12A)">12A</value>

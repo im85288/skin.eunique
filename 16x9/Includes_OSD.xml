@@ -9,131 +9,6 @@
 	<include name="OSDInfoContent">
 		<right>NewSidePad</right>
 		<top>NewSidePad</top>
-		<control type="group">
-			<visible>!IsEmpty(VideoPlayer.AudioChannels)</visible>
-			<width>120</width>
-			<height>48</height>
-			<right>0</right>
-			<control type="image">
-				<texture border="5" colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
-			</control>
-			<control type="label">
-				<top>-9</top>
-				<align>center</align>
-				<aligny>center</aligny>
-				<label></label>
-				<font>symbol</font>
-				<textcolor>black</textcolor>
-			</control>
-			<control type="label">
-				<top>-9</top>
-				<align>center</align>
-				<aligny>center</aligny>
-				<label fallback="N/A">$VAR[FlagAudioChannels]</label>
-				<font>FlagFontSmall</font>
-				<textcolor>$VAR[ColourHighlight]</textcolor>
-			</control>
-		</control>
-		<control type="group">
-			<visible>!IsEmpty(VideoPlayer.AudioCodec)</visible>
-			<width>120</width>
-			<height>48</height>
-			<right>120</right>
-			<control type="image">
-				<texture border="5" colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
-			</control>
-			<control type="label">
-				<top>-9</top>
-				<align>center</align>
-				<aligny>center</aligny>
-				<label></label>
-				<font>symbol</font>
-				<textcolor>black</textcolor>
-			</control>
-			<control type="label">
-				<top>-9</top>
-				<align>center</align>
-				<aligny>center</aligny>
-				<label fallback="N/A">$INFO[VideoPlayer.AudioCodec]</label>
-				<font>FlagFontSmall</font>
-				<textcolor>$VAR[ColourHighlight]</textcolor>
-			</control>
-		</control>
-		<control type="group">
-			<visible>!IsEmpty(VideoPlayer.VideoCodec)</visible>
-			<width>120</width>
-			<height>48</height>
-			<right>240</right>
-			<control type="image">
-				<texture border="5" colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
-			</control>
-			<control type="label">
-				<top>-9</top>
-				<align>center</align>
-				<aligny>center</aligny>
-				<label></label>
-				<font>symbol</font>
-				<textcolor>black</textcolor>
-			</control>
-			<control type="label">
-				<top>-9</top>
-				<align>center</align>
-				<aligny>center</aligny>
-				<label fallback="N/A">$INFO[VideoPlayer.VideoCodec]</label>
-				<font>FlagFontSmall</font>
-				<textcolor>$VAR[ColourHighlight]</textcolor>
-			</control>
-		</control>
-		<control type="group">
-			<visible>!IsEmpty(VideoPlayer.VideoAspect)</visible>
-			<width>120</width>
-			<height>48</height>
-			<right>360</right>
-			<control type="image">
-				<texture border="5" colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
-			</control>
-			<control type="label">
-				<top>-9</top>
-				<align>center</align>
-				<aligny>center</aligny>
-				<label></label>
-				<font>symbol</font>
-				<textcolor>black</textcolor>
-			</control>
-			<control type="label">
-				<top>-9</top>
-				<align>center</align>
-				<aligny>center</aligny>
-				<label fallback="N/A">$INFO[VideoPlayer.VideoAspect]</label>
-				<font>FlagFontSmall</font>
-				<textcolor>$VAR[ColourHighlight]</textcolor>
-			</control>
-		</control>
-		<control type="group">
-			<visible>!IsEmpty(VideoPlayer.VideoResolution)</visible>
-			<width>120</width>
-			<height>48</height>
-			<right>480</right>
-			<control type="image">
-				<texture border="5" colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
-			</control>
-			<control type="label">
-				<top>-9</top>
-				<align>center</align>
-				<aligny>center</aligny>
-				<label></label>
-				<font>symbol</font>
-				<textcolor>black</textcolor>
-			</control>
-			<control type="label">
-				<top>-9</top>
-				<align>center</align>
-				<aligny>center</aligny>
-				<label>$VAR[HDSD]</label>
-				<font>FlagFontSmall</font>
-				<textcolor>$VAR[ColourHighlight]</textcolor>
-			</control>
-		</control>
 		<control type="label" description="Title">
 			<width>1000</width>
 			<top>0</top>
@@ -144,7 +19,7 @@
 		</control>
 		<control type="label" description="Show">
 			<width>100%</width>
-			<top>50</top>
+			<top>110</top>
 			<height>50</height>
 			<font>MediumLarge</font>
 			<textcolor>white</textcolor>
@@ -153,7 +28,7 @@
 		<control type="progress" description="cache">
 			<description>Progress Bar</description>
 			<width>100%</width>
-			<top>104</top>
+			<top>164</top>
 			<height>8</height>
 			<info>Player.ProgressCache</info>
 			<visible>true</visible>
@@ -165,13 +40,13 @@
 		<control type="progress" id="23">
 			<description>Progress Bar</description>
 			<width>100%</width>
-			<top>104</top>
+			<top>164</top>
 			<height>8</height>
 			<info>Player.Progress</info>
 		</control>
 		<control type="label" description="Elapsed Time">
 			<width>400</width>
-			<top>108</top>
+			<top>168</top>
 			<height>40</height>
 			<font>Tiny</font>
 			<textcolor>white2</textcolor>
@@ -182,7 +57,7 @@
 			<right>0</right>
 			<align>right</align>
 			<width>400</width>
-			<top>108</top>
+			<top>168</top>
 			<height>40</height>
 			<font>Tiny</font>
 			<textcolor>white2</textcolor>
@@ -191,7 +66,7 @@
 		</control>
 		<control type="label" description="Next Title">
 			<width>1000</width>
-			<top>130</top>
+			<top>190</top>
 			<height>40</height>
 			<font>Medium</font>
 			<align>left</align>
@@ -201,7 +76,7 @@
 		</control>
 		<control type="label" description="Duration">
 			<width>300</width>
-			<top>130</top>
+			<top>190</top>
 			<height>40</height>
 			<right>0</right>
 			<align>right</align>
@@ -212,7 +87,7 @@
 		</control>
 		<control type="label" description="Genre">
 			<width>1000</width>
-			<top>143</top>
+			<top>203</top>
 			<height>30</height>
 			<font>Small</font>
 			<align>left</align>
@@ -223,11 +98,11 @@
 		</control>
 		<control type="textbox" description="Plot">
 			<width>100%</width>
-			<top>180</top>
-			<height>120</height>
-			<font>Tiny</font>
+			<top>240</top>
+			<height>40</height>
+			<font>SmallBold</font>
 			<align>justify</align>
-			<textcolor>black</textcolor>
+			<textcolor>white</textcolor>
 			<label>$VAR[PlayerPlotBox]</label>
 		</control>
 	</include>
