@@ -34,7 +34,7 @@
 					<left>-8</left>
 					<right>-8</right>
 					<height>310</height>
-					<texture colordiffuse="$VAR[EmbyLeftColourHighlight]" border="5">common/box.png</texture>
+					<texture colordiffuse="black" border="5">common/box.png</texture>
 				</control>
 				<control type="group">
 					<top>10</top>
@@ -142,7 +142,7 @@
 					<right>-8</right>
 					<top>310</top>
 					<height>620</height>
-					<texture colordiffuse="$VAR[EmbyRightColourHighlight]" border="5">common/box.png</texture>
+					<texture colordiffuse="black" border="5">common/box.png</texture>
 				</control>
 
 				<control type="epggrid" id="10">
@@ -163,7 +163,7 @@
 							<height>30</height>
 							<font>Flag</font>
 							<label>$INFO[ListItem.Label]</label>
-							<textcolor>black2</textcolor>
+							<textcolor>white2</textcolor>
 							<align>left</align>
 							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label]</label>
@@ -175,14 +175,14 @@
 							<top>0</top>
 							<width>357</width>
 							<height>1</height>
-							<texture colordiffuse="$VAR[EmbyMiddleColourHighlight]">common/white.png</texture>
+							<texture colordiffuse="white2">common/white.png</texture>
 						</control>
 						<control type="image">
 							<left>57</left>
 							<bottom>0</bottom>
 							<width>357</width>
 							<height>1</height>
-							<texture colordiffuse="$VAR[EmbyMiddleColourHighlight]">common/white.png</texture>
+							<texture colordiffuse="white2">common/white.png</texture>
 						</control>
 						<control type="image">
 							<left>50</left>
@@ -201,7 +201,7 @@
 							<align>left</align>
 							<aligny>center</aligny>
 							<label>$INFO[ListItem.ChannelName]</label>
-							<textcolor>black</textcolor>
+							<textcolor>white</textcolor>
 							<font>MediumSmall</font>
 							<scroll>false</scroll>
 							<animation effect="fade" start="100" end="64" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(10) + ![ListItem.IsSelected | ListItem.IsPlaying]">Conditional</animation>
@@ -213,14 +213,14 @@
 							<top>0</top>
 							<width>357</width>
 							<height>1</height>
-							<texture colordiffuse="$VAR[EmbyMiddleColourHighlight]">common/white.png</texture>
+							<texture colordiffuse="white2">common/white.png</texture>
 						</control>
 						<control type="image">
 							<left>57</left>
 							<bottom>0</bottom>
 							<width>357</width>
 							<height>1</height>
-							<texture colordiffuse="$VAR[EmbyMiddleColourHighlight]">common/white.png</texture>
+							<texture colordiffuse="white2">common/white.png</texture>
 						</control>
 						<control type="image">
 							<left>5</left>
@@ -256,9 +256,9 @@
 					<itemlayout height="70" width="100">
 						<control type="image" id="2">
 							<texture border="5">common/white.png</texture>
-							<colordiffuse>$VAR[EmbyRightColourHighlight]</colordiffuse>
+							<colordiffuse>black</colordiffuse>
 							<visible>!Skin.HasSetting(EPGGenreColors.Enabled)</visible>
-							<bordertexture colordiffuse="$VAR[EmbyMiddleColourHighlight]">common/white.png</bordertexture>
+							<bordertexture colordiffuse="white2">common/white.png</bordertexture>
 							<bordersize>1</bordersize>
 						</control>
 						<control type="image" id="2">
@@ -277,7 +277,7 @@
 							<width>56</width>
 							<height>68</height>
 							<aligny>center</aligny>
-							<textcolor>black</textcolor>
+							<textcolor>white</textcolor>
 							<align>left</align>
 							<label>$INFO[ListItem.Label]</label>
 							<scroll>false</scroll>
@@ -289,7 +289,7 @@
 							<width>0</width>
 							<height>68</height>
 							<aligny>center</aligny>
-							<textcolor>black</textcolor>
+							<textcolor>white</textcolor>
 							<align>left</align>
 							<label>$INFO[ListItem.Label]</label>
 							<scroll>false</scroll>
@@ -301,7 +301,7 @@
 							<width>66</width>
 							<height>70</height>
 							<texture>special://skin/extras/icons/timer.png</texture>
-							<colordiffuse>black2</colordiffuse>
+							<colordiffuse>white2</colordiffuse>
 							<visible>ListItem.HasTimer | ListItem.IsRecording</visible>
 						</control>
 					</itemlayout>
@@ -326,7 +326,7 @@
 							<width>56</width>
 							<height>68</height>
 							<aligny>center</aligny>
-							<textcolor>black</textcolor>
+							<textcolor>$VAR[ColourSelected]</textcolor>
 							<align>left</align>
 							<label>$INFO[ListItem.Label]</label>
 							<scroll>false</scroll>
@@ -339,7 +339,7 @@
 							<height>68</height>
 							<aligny>center</aligny>
 							<textoffsetx>11</textoffsetx>
-							<textcolor>black</textcolor>
+							<textcolor>$VAR[ColourSelected]</textcolor>
 							<align>left</align>
 							<label>$INFO[ListItem.Label]</label>
 							<scroll>false</scroll>
@@ -351,7 +351,7 @@
 							<width>66</width>
 							<height>70</height>
 							<texture>special://skin/extras/icons/timer.png</texture>
-							<colordiffuse>black2</colordiffuse>
+							<colordiffuse>$VAR[ColourSelected]</colordiffuse>
 							<visible>ListItem.HasTimer | ListItem.IsRecording</visible>
 						</control>
 					</focusedlayout>
