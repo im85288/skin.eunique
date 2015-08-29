@@ -3417,8 +3417,7 @@
 					<height>460</height>
 					<onup condition="Skin.HasSetting(global.kioskmode)">300</onup>
 					<onup condition="!Skin.HasSetting(global.kioskmode)">40121</onup>
-					<ondown condition="!IntegerGreaterThan(Container(40133).NumItems,0)">4013</ondown>
-					<ondown condition="IntegerGreaterThan(Container(40133).NumItems,0)">40133</ondown>
+					<ondown>4013</ondown>
 					<onleft>301</onleft>
 					<onright>301</onright>
 					<preloaditems>2</preloaditems>
@@ -3518,9 +3517,8 @@
 				</control>
 				<control type="button" id="4013">
 					<onup>4012</onup>
-					<onright condition="!IntegerGreaterThan(Container(40155).NumItems,0)">4015</onright>
-					<onright condition="IntegerGreaterThan(Container(40155).NumItems,0)">40155</onright>
-					<ondown>Control.Move(40133,1)</ondown>
+					<onright>4015</onright>
+					<ondown>40133</ondown>
 					<onclick>ActivateWindow(Videos,TVShowTitles,return)</onclick>
 				</control>
 				<control type="image">
@@ -3588,8 +3586,7 @@
 					<visible allowhiddenfocus="true">IntegerGreaterThan(Container(40133).NumItems,0)</visible>
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
 					<onup>4012</onup>
-					<onright condition="!IntegerGreaterThan(Container(40155).NumItems,0)">4015</onright>
-					<onright condition="IntegerGreaterThan(Container(40155).NumItems,0)">40155</onright>
+					<onright>4015</onright>
 					<left>SidePad</left>
 					<posy>800</posy>
 					<width>400</width>
@@ -3645,9 +3642,9 @@
 				</control>
 				<control type="button" id="4015">
 					<onup>4012</onup>
-					<onleft condition="!IntegerGreaterThan(Container(40133).NumItems,0)">4013</onleft>
-					<onleft condition="IntegerGreaterThan(Container(40133).NumItems,0)">40133</onleft>
+					<onleft>4013</onleft>
 					<onright>4016</onright>
+					<ondown>40155</ondown>
 					<onclick>RunAddon(script.tv.show.next.aired)</onclick>
 				</control>
 				<control type="image">
@@ -3715,8 +3712,7 @@
 					<visible>Control.HasFocus(40155)</visible>
 					<visible allowhiddenfocus="true">IntegerGreaterThan(Container(40155).NumItems,0)</visible>
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
-					<onleft condition="!IntegerGreaterThan(Container(40133).NumItems,0)">4013</onleft>
-					<onleft condition="IntegerGreaterThan(Container(40133).NumItems,0)">40133</onleft>
+					<onleft>4013</onleft>
 					<onup>4012</onup>
 					<onright>4016</onright>
 					<left>500</left>
