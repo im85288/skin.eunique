@@ -2656,6 +2656,7 @@
 					<disabledcolor>Black30</disabledcolor>
 					<selectedcolor>$VAR[ColourHighlight2]</selectedcolor>
 					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>
 					<label>Maps</label>
 					<visible>StringCompare(Container(300).ListItem.Property(widget),Weather)</visible>
 					<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(3439)">Conditional</animation>
@@ -2674,6 +2675,7 @@
 					<disabledcolor>Black30</disabledcolor>
 					<selectedcolor>$VAR[ColourHighlight2]</selectedcolor>
 					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>
 					<label>33050</label>
 					<visible>StringCompare(Container(300).ListItem.Property(widget),Weather)</visible>
 					<visible>!IsEmpty(Window(weather).Property(Alerts.IsFetched))</visible>
