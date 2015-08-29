@@ -4282,7 +4282,6 @@
 								<left>0</left>
 								<width>500</width>
 								<height>230</height>
-
 								<aspectratio>center</aspectratio>
 								<texture background="true">$INFO[Listitem.Thumb]</texture>
 							</control>
@@ -4291,7 +4290,6 @@
 								<top>130</top>
 								<width>295</width>
 								<height>330</height>
-
 								<aspectratio>center</aspectratio>
 								<texture background="true" flipx="true">$INFO[Listitem.Thumb]</texture>
 							</control>
@@ -4318,7 +4316,6 @@
 							<height>460</height>
 							<control type="image">
 								<width>1000</width>
-
 								<align>bottom</align>
 								<aspectratio>scale</aspectratio>
 								<texture background="true">$INFO[Listitem.Thumb]</texture>
@@ -4327,7 +4324,6 @@
 								<left>0</left>
 								<width>500</width>
 								<height>230</height>
-
 								<aspectratio>center</aspectratio>
 								<texture background="true">$INFO[Listitem.Thumb]</texture>
 							</control>
@@ -4336,7 +4332,6 @@
 								<top>130</top>
 								<width>295</width>
 								<height>330</height>
-
 								<aspectratio>center</aspectratio>
 								<texture background="true" flipx="true">$INFO[Listitem.Thumb]</texture>
 							</control>
@@ -4385,6 +4380,7 @@
 				<control type="button" id="5013">
 					<onup>5012</onup>
 					<onright>5015</onright>
+					<ondown>50133</ondown>
 					<onclick>ActivateWindow(Music)</onclick>
 				</control>
 				<control type="image">
@@ -4395,6 +4391,7 @@
 					<width>255</width>
 					<height>230</height>
 					<texture border="15" colordiffuse="$VAR[EmbyLeftColourHighlight]">common/white.png</texture>
+					<visible>!Control.HasFocus(50133)</visible>
 				</control>
 				<control type="label">
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
@@ -4407,6 +4404,7 @@
 					<font>symbolbiggest</font>
 					<align>center</align>
 					<aligny>center</aligny>
+					<visible>!Control.HasFocus(50133)</visible>
 				</control>
 				<control type="image">
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
@@ -4416,6 +4414,7 @@
 					<width>255</width>
 					<height>40</height>
 					<texture border="15" colordiffuse="af000000">common/white.png</texture>
+					<visible>!Control.HasFocus(50133)</visible>
 				</control>
 				<control type="label">
 					<left>SidePad</left>
@@ -4428,6 +4427,7 @@
 					<selectedcolor>PanelWhite70</selectedcolor>
 					<label>132</label>
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+					<visible>!Control.HasFocus(50133)</visible>
 				</control>
 				<control type="label">
 					<left>SidePad</left>
@@ -4440,6 +4440,54 @@
 					<selectedcolor>PanelWhite70</selectedcolor>
 					<label>$INFO[Window(Home).Property(Music.AlbumsCount)]</label>
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+					<visible>!Control.HasFocus(50133)</visible>
+				</control>
+				<control type="list" id="50133">
+					<description>Widget</description>
+					<visible>Control.HasFocus(50133)</visible>
+					<visible allowhiddenfocus="true">IntegerGreaterThan(Container(50133).NumItems,0)</visible>
+					<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+					<onup>5012</onup>
+					<onright>5015</onright>
+					<left>SidePad</left>
+					<posy>800</posy>
+					<width>255</width>
+					<height>230</height>
+					<preloaditems>2</preloaditems>
+					<orientation>vertical</orientation>
+					<scrolltime tween="quadratic">100</scrolltime>
+					<include>Animation.FadeIn</include>
+					<include>Animation.FadeOut</include>
+					<itemlayout width="255" height="230">
+						<control type="image">
+							<aspectratio>keep</aspectratio>
+							<texture background="true">$VAR[PosterImage]</texture>
+						</control>
+					</itemlayout>
+					<focusedlayout width="255" height="230">
+						<control type="image">
+							<aspectratio>keep</aspectratio>
+							<texture background="true">$VAR[PosterImage]</texture>
+						</control>
+						<control type="image">
+							<description>Title overlay</description>
+							<bottom>0</bottom>
+							<height>40</height>
+							<texture border="15" colordiffuse="af000000">common/white.png</texture>
+						</control>
+						<control type="label">
+							<bottom>10</bottom>
+							<left>15</left>
+							<right>15</right>
+							<align>center</align>
+							<height>30</height>
+							<font>Tiny</font>
+							<textcolor>PanelWhite70</textcolor>
+							<selectedcolor>PanelWhite70</selectedcolor>
+							<label>$INFO[ListItem.Title]</label>
+						</control>
+					</focusedlayout>
+					<content target="music">musicdb://albums/</content>
 				</control>
 				<control type="image">
 					<left>76</left>
@@ -4447,12 +4495,13 @@
 					<posy>796</posy>
 					<height>238</height>
 					<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
-					<visible>Control.HasFocus(5013)</visible>
+					<visible>Control.HasFocus(5013) | Control.HasFocus(50133)</visible>
 				</control>
 				<control type="button" id="5015">
 					<onup>5012</onup>
 					<onleft>5013</onleft>
 					<onright>5014</onright>
+					<ondown>50155</ondown>
 					<onclick>ActivateWindow(music,artists,return)</onclick>
 				</control>
 				<control type="image">
@@ -4463,6 +4512,7 @@
 					<width>256</width>
 					<height>230</height>
 					<texture border="15" colordiffuse="$VAR[EmbyMiddleColourHighlight]">common/white.png</texture>
+					<visible>!Control.HasFocus(50155)</visible>
 				</control>
 				<control type="label">
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
@@ -4475,6 +4525,7 @@
 					<font>symbolbiggest</font>
 					<align>center</align>
 					<aligny>center</aligny>
+					<visible>!Control.HasFocus(50155)</visible>
 				</control>
 				<control type="image">
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
@@ -4484,6 +4535,7 @@
 					<width>256</width>
 					<height>40</height>
 					<texture border="15" colordiffuse="af000000">common/white.png</texture>
+					<visible>!Control.HasFocus(50155)</visible>
 				</control>
 				<control type="label">
 					<left>362</left>
@@ -4496,6 +4548,7 @@
 					<selectedcolor>PanelWhite70</selectedcolor>
 					<label>133</label>
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+					<visible>!Control.HasFocus(50155)</visible>
 				</control>
 				<control type="label">
 					<left>362</left>
@@ -4508,6 +4561,55 @@
 					<selectedcolor>PanelWhite70</selectedcolor>
 					<label>$INFO[Window(Home).Property(Music.ArtistsCount)]</label>
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+					<visible>!Control.HasFocus(50155)</visible>
+				</control>
+				<control type="list" id="50155">
+					<description>Widget</description>
+					<visible>Control.HasFocus(50155)</visible>
+					<visible allowhiddenfocus="true">IntegerGreaterThan(Container(50155).NumItems,0)</visible>
+					<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+					<onup>5012</onup>
+					<onleft>5013</onleft>
+					<onright>5014</onright>
+					<left>358</left>
+					<width>256</width>
+					<posy>800</posy>
+					<height>230</height>
+					<preloaditems>2</preloaditems>
+					<orientation>vertical</orientation>
+					<scrolltime tween="quadratic">100</scrolltime>
+					<include>Animation.FadeIn</include>
+					<include>Animation.FadeOut</include>
+					<itemlayout width="256" height="230">
+						<control type="image">
+							<aspectratio>keep</aspectratio>
+							<texture background="true">$VAR[PosterImage]</texture>
+						</control>
+					</itemlayout>
+					<focusedlayout width="256" height="230">
+						<control type="image">
+							<aspectratio>keep</aspectratio>
+							<texture background="true">$VAR[PosterImage]</texture>
+						</control>
+						<control type="image">
+							<description>Title overlay</description>
+							<bottom>0</bottom>
+							<height>40</height>
+							<texture border="15" colordiffuse="af000000">common/white.png</texture>
+						</control>
+						<control type="label">
+							<bottom>10</bottom>
+							<left>15</left>
+							<right>15</right>
+							<align>center</align>
+							<height>30</height>
+							<font>Tiny</font>
+							<textcolor>PanelWhite70</textcolor>
+							<selectedcolor>PanelWhite70</selectedcolor>
+							<label>$INFO[ListItem.Artist]</label>
+						</control>
+					</focusedlayout>
+					<content target="music">musicdb://artists/</content>
 				</control>
 				<control type="image">
 					<left>358</left>
@@ -4515,12 +4617,13 @@
 					<posy>796</posy>
 					<height>238</height>
 					<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
-					<visible>Control.HasFocus(5015)</visible>
+					<visible>Control.HasFocus(5015) | Control.HasFocus(50155)</visible>
 				</control>
 				<control type="button" id="5014">
 					<onup>5012</onup>
 					<onleft>5015</onleft>
 					<onright>5016</onright>
+					<ondown>50144</ondown>
 					<onclick>ActivateWindow(music,genres,return)</onclick>
 				</control>
 				<control type="image">
@@ -4531,6 +4634,7 @@
 					<width>255</width>
 					<height>230</height>
 					<texture border="15" colordiffuse="$VAR[EmbyRightColourHighlight]">common/white.png</texture>
+					<visible>!Control.HasFocus(50144)</visible>
 				</control>
 				<control type="label">
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
@@ -4543,6 +4647,7 @@
 					<font>symbolbiggest</font>
 					<align>center</align>
 					<aligny>center</aligny>
+					<visible>!Control.HasFocus(50144)</visible>
 				</control>
 				<control type="image">
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
@@ -4552,6 +4657,7 @@
 					<width>255</width>
 					<height>40</height>
 					<texture border="15" colordiffuse="af000000">common/white.png</texture>
+					<visible>!Control.HasFocus(50144)</visible>
 				</control>
 				<control type="label">
 					<left>645</left>
@@ -4565,6 +4671,55 @@
 					<selectedcolor>PanelWhite70</selectedcolor>
 					<label>135</label>
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+					<visible>!Control.HasFocus(50144)</visible>
+				</control>
+				<control type="list" id="50144">
+					<description>Widget</description>
+					<visible>Control.HasFocus(50144)</visible>
+					<visible allowhiddenfocus="true">IntegerGreaterThan(Container(50144).NumItems,0)</visible>
+					<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+					<onup>5012</onup>
+					<onleft>5015</onleft>
+					<onright>5016</onright>
+					<left>645</left>
+					<width>255</width>
+					<posy>800</posy>
+					<height>230</height>
+					<preloaditems>2</preloaditems>
+					<orientation>vertical</orientation>
+					<scrolltime tween="quadratic">100</scrolltime>
+					<include>Animation.FadeIn</include>
+					<include>Animation.FadeOut</include>
+					<itemlayout width="255" height="230">
+						<control type="image">
+							<aspectratio>keep</aspectratio>
+							<texture background="true">$VAR[MusicGenres]</texture>
+						</control>
+					</itemlayout>
+					<focusedlayout width="255" height="230">
+						<control type="image">
+							<aspectratio>keep</aspectratio>
+							<texture background="true">$VAR[MusicGenres]</texture>
+						</control>
+						<control type="image">
+							<description>Title overlay</description>
+							<bottom>0</bottom>
+							<height>40</height>
+							<texture border="15" colordiffuse="af000000">common/white.png</texture>
+						</control>
+						<control type="label">
+							<bottom>10</bottom>
+							<left>15</left>
+							<right>15</right>
+							<align>center</align>
+							<height>30</height>
+							<font>Tiny</font>
+							<textcolor>PanelWhite70</textcolor>
+							<selectedcolor>PanelWhite70</selectedcolor>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+					</focusedlayout>
+					<content target="music">musicdb://genres/</content>
 				</control>
 				<control type="image">
 					<left>641</left>
@@ -4572,7 +4727,7 @@
 					<posy>796</posy>
 					<height>238</height>
 					<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
-					<visible>Control.HasFocus(5014)</visible>
+					<visible>Control.HasFocus(5014) | Control.HasFocus(50144)</visible>
 				</control>
 				<!-- recommended music -->
 				<control type="group">

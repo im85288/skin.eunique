@@ -88,6 +88,9 @@
 	<variable name="MovieGenres">
 		<value>resource://resource.images.moviegenreicons.coloured/$INFO[Listitem.Label,,.jpg]</value>
 	</variable>
+	<variable name="MusicGenres">
+		<value>resource://resource.images.musicgenreicons.text/$INFO[Listitem.Label,,.jpg]</value>
+	</variable>
 	<variable name="PosterImage">
 		<value condition="!IsEmpty(ListItem.Art(season.poster))">$INFO[ListItem.Art(season.poster)]</value>
 		<value condition="Container.Content(seasons)">$INFO[ListItem.Icon]</value>
