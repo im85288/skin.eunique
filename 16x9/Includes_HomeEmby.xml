@@ -2711,8 +2711,7 @@
 					<height>460</height>
 					<onup condition="Skin.HasSetting(global.kioskmode)">300</onup>
 					<onup condition="!Skin.HasSetting(global.kioskmode)">30121</onup>
-					<ondown condition="!IntegerGreaterThan(Container(30133).NumItems,0)">3013</ondown>
-					<ondown condition="IntegerGreaterThan(Container(30133).NumItems,0)">30133</ondown>
+					<ondown>3013</ondown>
 					<onleft>301</onleft>
 					<onright>301</onright>
 					<preloaditems>2</preloaditems>
@@ -2792,9 +2791,8 @@
 				</control>
 				<control type="button" id="3013">
 					<onup>3012</onup>
-					<onright condition="!IntegerGreaterThan(Container(30143).NumItems,0)">3014</onright>
-					<onright condition="IntegerGreaterThan(Container(30143).NumItems,0)">30143</onright>
-					<ondown>Control.Move(30133,1)</ondown>
+					<onright>3014</onright>
+					<ondown>30133</ondown>
 					<onclick>ActivateWindow(Videos,MovieTitles,return)</onclick>
 				</control>
 				<control type="image">
@@ -2862,8 +2860,7 @@
 					<visible allowhiddenfocus="true">IntegerGreaterThan(Container(30133).NumItems,0)</visible>
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
 					<onup>3012</onup>
-					<onright condition="!IntegerGreaterThan(Container(30143).NumItems,0)">3014</onright>
-					<onright condition="IntegerGreaterThan(Container(30143).NumItems,0)">30143</onright>
+					<onright>3014</onright>
 					<left>SidePad</left>
 					<posy>800</posy>
 					<width>400</width>
@@ -2914,11 +2911,10 @@
 				</control>
 				<control type="button" id="3014">
 					<onup>3012</onup>
-					<onleft condition="!IntegerGreaterThan(Container(30133).NumItems,0)">3013</onleft>
-					<onleft condition="IntegerGreaterThan(Container(30133).NumItems,0)">30133</onleft>
+					<onleft>3013</onleft>
 					<onright condition="Control.IsVisible(3016)">3016</onright>
 					<onright condition="!Control.IsVisible(3016)">3017</onright>
-					<ondown>Control.Move(30143,1)</ondown>
+					<ondown>30143</ondown>
 					<onclick>ActivateWindow(VideoLibrary,MovieGenres,return)</onclick>
 				</control>
 				<control type="image">
@@ -2974,8 +2970,7 @@
 					<visible allowhiddenfocus="true">IntegerGreaterThan(Container(30143).NumItems,0)</visible>
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
 					<onup>3012</onup>
-					<onleft condition="!IntegerGreaterThan(Container(30133).NumItems,0)">3013</onleft>
-					<onleft condition="IntegerGreaterThan(Container(30133).NumItems,0)">30133</onleft>
+					<onleft>3013</onleft>
 					<onright condition="Control.IsVisible(3016)">3016</onright>
 					<onright condition="!Control.IsVisible(3016)">3017</onright>
 					<left>500</left>
@@ -2990,13 +2985,13 @@
 					<itemlayout width="400" height="230">
 						<control type="image">
 							<aspectratio>scale</aspectratio>
-							<texture background="true">resource://resource.images.moviegenreicons.coloured/$INFO[Listitem.Label,,.jpg]</texture>
+							<texture background="true">$VAR[MovieGenres]</texture>
 						</control>
 					</itemlayout>
 					<focusedlayout width="400" height="230">
 						<control type="image">
 							<aspectratio>scale</aspectratio>
-							<texture background="true">resource://resource.images.moviegenreicons.coloured/$INFO[Listitem.Label,,.jpg]</texture>
+							<texture background="true">$VAR[MovieGenres]</texture>
 						</control>
 						<control type="image">
 							<description>Title overlay</description>
