@@ -80,6 +80,7 @@
 					<onup>303</onup>
 					<ondown>300</ondown>
 					<onclick>RunPlugin("plugin://plugin.video.emby?mode=userprefs")</onclick>
+			<onback>300</onback>
 					<font>Button</font>
 					<texturefocus>-</texturefocus>
 					<texturenofocus>-</texturenofocus>
@@ -139,6 +140,7 @@
 					<onright>3634</onright>
 					<onup>303</onup>
 					<ondown>300</ondown>
+			<onback>300</onback>
 					<onclick condition="![Player.HasAudio | Player.HasVideo] + !StringCompare(Container(300).ListItem.Property(defaultID),music)">RunScript(script.skin.helper.service,action=videosearch)</onclick>
 					<onclick condition="![Player.HasAudio | Player.HasVideo] + StringCompare(Container(300).ListItem.Property(defaultID),music)">RunScript(script.skin.helper.service,action=musicsearch)</onclick>
 					<onclick condition="[Player.HasAudio | Player.HasVideo]">Action(FullScreen)</onclick>
