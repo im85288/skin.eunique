@@ -11,7 +11,7 @@
 			<include>Animation.FurnitureFadeInOut</include>
 			<height>48</height>
 			<control type="label">
-				<right>15</right>
+				<right>12</right>
 				<align>right</align>
 				<bottom>-5</bottom>
 				<font>HomeEmbySemi</font>
@@ -20,7 +20,7 @@
 			</control>
 			<control type="image">
 				<align>right</align>
-				<right>-20</right>
+				<right>-23</right>
 				<bottom>5</bottom>
 				<width>40</width>
 				<height>40</height>
@@ -1217,7 +1217,7 @@
 				<texture colordiffuse="Dark2" flipx="false">common/arrow-small-right.png</texture>
 			</control>-->
 			<control type="list" id="300">
-				<animation effect="slide" end="0,54" condition="control.hasfocus(302)" time="200">Conditional</animation>
+				<animation effect="slide" end="0,58" condition="control.hasfocus(302)" time="200">Conditional</animation>
 				<include>Animation.FadeIn.Delay</include>
 				<include>Animation.FadeOut</include>
 				<description>Home Wraplist</description>
@@ -1253,7 +1253,7 @@
 			<ondown>300</ondown>
 			<onleft>302</onleft>
 			<onright>302</onright>
-			<onback>302</onback>
+			<onback>300</onback>
 			<orientation>horizontal</orientation>
 			<scrolltime>200</scrolltime>
 			<visible allowhiddenfocus="true">Control.HasFocus(302)</visible>
@@ -1331,6 +1331,10 @@
 				<left>0</left>
 				<right>0</right>
 				<texture border="5" colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
+							<animation effect="slide" start="0,0" end="0,-20" time="0" reversible="true" center="auto">Focus</animation>
+							<animation effect="slide" start="0,0" end="0,20" time="0" reversible="true" center="auto" condition="!ControlGroup.HasFocus(300) + !control.hasfocus(302)">Conditional</animation>
+							<animation effect="slide" start="0,0" end="0,-20" time="0" reversible="true" center="auto" condition="control.hasfocus(302)">Conditional</animation>
+							<animation effect="slide" start="0,0" end="0,-40" time="0" reversible="true" center="auto" condition="control.hasfocus(8308) | control.hasfocus(3634) | control.hasfocus(3635)">Conditional</animation>
 			</control>
 			<control type="label">
 				<left>5</left>
