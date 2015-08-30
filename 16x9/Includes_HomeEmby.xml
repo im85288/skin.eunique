@@ -1595,13 +1595,13 @@
 					<itemlayout width="400" height="230">
 						<control type="image">
 							<aspectratio>stretch</aspectratio>
-							<texture background="true">$VAR[LandscapeImage]</texture>
+							<texture background="true" colordiffuse="$VAR[EmbyLeftColourHighlight]">$VAR[LandscapeImage]</texture>
 						</control>
 					</itemlayout>
 					<focusedlayout width="400" height="230">
 						<control type="image">
 							<aspectratio>stretch</aspectratio>
-							<texture background="true">$VAR[LandscapeImage]</texture>
+							<texture background="true" colordiffuse="$VAR[EmbyLeftColourHighlight]">$VAR[LandscapeImage]</texture>
 						</control>
 						<control type="image">
 							<description>Title overlay</description>
@@ -1707,13 +1707,13 @@
 					<itemlayout width="400" height="230">
 						<control type="image">
 							<aspectratio>stretch</aspectratio>
-							<texture background="true">$VAR[LandscapeImage]</texture>
+							<texture background="true" colordiffuse="$VAR[EmbyRightColourHighlight]">$VAR[LandscapeImage]</texture>
 						</control>
 					</itemlayout>
 					<focusedlayout width="400" height="230">
 						<control type="image">
 							<aspectratio>stretch</aspectratio>
-							<texture background="true">$VAR[LandscapeImage]</texture>
+							<texture background="true" colordiffuse="$VAR[EmbyRightColourHighlight]">$VAR[LandscapeImage]</texture>
 						</control>
 						<control type="image">
 							<description>Title overlay</description>
@@ -2948,26 +2948,16 @@
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
 					<visible>!Control.HasFocus(30133)</visible>
 				</control>
-				<control type="image">
-					<left>435</left>
-					<top>805</top>
-					<height>40</height>
-					<width>40</width>
-					<texture colordiffuse="Dark1">common/circle.png</texture>
-					<aspectratio align="center" aligny="center">keep</aspectratio>
-					<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
-					<visible>!Control.HasFocus(30133)</visible>
-				</control>
 				<control type="label">
-					<left>435</left>
-					<top>805</top>
+					<left>SidePad</left>
+					<posy>805</posy>
+					<width>390</width>
+					<align>right</align>
 					<height>40</height>
-					<width>40</width>
-					<align>center</align>
-					<aligny>center</aligny>
-					<label>$INFO[Window(Home).Property(Movies.Count)]</label>
-					<font>Flag</font>
-					<textcolor>black</textcolor>
+					<font>Small</font>
+					<textcolor>FF222222</textcolor>
+					<selectedcolor>PanelWhite70</selectedcolor>
+					<label>$INFO[Window.Property(Movies.Count)]</label>
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
 					<visible>!Control.HasFocus(30133)</visible>
 				</control>
@@ -2990,13 +2980,13 @@
 					<itemlayout width="400" height="230">
 						<control type="image">
 							<aspectratio>keep</aspectratio>
-							<texture background="true">$VAR[LandscapeImage]</texture>
+							<texture background="true" colordiffuse="$VAR[EmbyLeftColourHighlight]">$VAR[LandscapeImage]</texture>
 						</control>
 					</itemlayout>
 					<focusedlayout width="400" height="230">
 						<control type="image">
 							<aspectratio>keep</aspectratio>
-							<texture background="true">$VAR[LandscapeImage]</texture>
+							<texture background="true" colordiffuse="$VAR[EmbyLeftColourHighlight]">$VAR[LandscapeImage]</texture>
 						</control>
 						<control type="image">
 							<description>Title overlay</description>
@@ -3008,15 +2998,15 @@
 							<bottom>10</bottom>
 							<left>15</left>
 							<right>15</right>
-							<align>center</align>
+							<align>left</align>
 							<height>30</height>
 							<font>Small</font>
 							<textcolor>PanelWhite70</textcolor>
 							<selectedcolor>PanelWhite70</selectedcolor>
-							<label>$INFO[ListItem.Title]</label>
+							<label>$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Title]</label>
 						</control>
 					</focusedlayout>
-					<content target="video">special://skin/extras/playlists/AllMovies.xsp</content>
+					<content target="video">videodb://movies/titles</content>
 				</control>
 				<control type="image">
 					<left>76</left>
@@ -3102,13 +3092,13 @@
 					<itemlayout width="400" height="230">
 						<control type="image">
 							<aspectratio>scale</aspectratio>
-							<texture background="true">$VAR[MovieGenres]</texture>
+							<texture background="true" colordiffuse="$VAR[EmbyRightColourHighlight]">$VAR[MovieGenres]</texture>
 						</control>
 					</itemlayout>
 					<focusedlayout width="400" height="230">
 						<control type="image">
 							<aspectratio>scale</aspectratio>
-							<texture background="true">$VAR[MovieGenres]</texture>
+							<texture background="true" colordiffuse="$VAR[EmbyRightColourHighlight]">$VAR[MovieGenres]</texture>
 						</control>
 						<control type="image">
 							<description>Title overlay</description>
@@ -3684,26 +3674,16 @@
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
 					<visible>!Control.HasFocus(40133)</visible>
 				</control>
-				<control type="image">
-					<left>435</left>
-					<top>805</top>
-					<height>40</height>
-					<width>40</width>
-					<texture colordiffuse="Dark1">common/circle.png</texture>
-					<aspectratio align="center" aligny="center">keep</aspectratio>
-					<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
-					<visible>!Control.HasFocus(40133)</visible>
-				</control>
 				<control type="label">
-					<left>435</left>
-					<top>805</top>
+					<left>SidePad</left>
+					<posy>805</posy>
+					<width>390</width>
+					<align>right</align>
 					<height>40</height>
-					<width>40</width>
-					<align>center</align>
-					<aligny>center</aligny>
+					<font>Small</font>
+					<textcolor>FF222222</textcolor>
+					<selectedcolor>PanelWhite70</selectedcolor>
 					<label>$INFO[Window(Home).Property(TVShows.Count)]</label>
-					<font>Flag</font>
-					<textcolor>black</textcolor>
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
 					<visible>!Control.HasFocus(40133)</visible>
 				</control>
@@ -3726,13 +3706,13 @@
 					<itemlayout width="400" height="230">
 						<control type="image">
 							<aspectratio>keep</aspectratio>
-							<texture background="true">$VAR[LandscapeImage]</texture>
+							<texture background="true" colordiffuse="$VAR[EmbyLeftColourHighlight]">$VAR[LandscapeImage]</texture>
 						</control>
 					</itemlayout>
 					<focusedlayout width="400" height="230">
 						<control type="image">
 							<aspectratio>keep</aspectratio>
-							<texture background="true">$VAR[LandscapeImage]</texture>
+							<texture background="true" colordiffuse="$VAR[EmbyLeftColourHighlight]">$VAR[LandscapeImage]</texture>
 						</control>
 						<control type="group">
 							<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
@@ -3757,7 +3737,7 @@
 							</control>
 						</control>
 					</focusedlayout>
-					<content target="video">special://skin/extras/playlists/AllShows.xsp</content>
+					<content target="video">videodb://tvshows/titles</content>
 				</control>
 				<control type="image">
 					<left>76</left>
@@ -3820,29 +3800,20 @@
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
 					<visible>!Control.HasFocus(40155)</visible>
 				</control>
-				<control type="image">
-					<left>855</left>
-					<top>805</top>
-					<height>40</height>
-					<width>40</width>
-					<texture colordiffuse="Dark1">common/circle.png</texture>
-					<aspectratio align="center" aligny="center">keep</aspectratio>
-					<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
-					<visible>!Control.HasFocus(40155)</visible>
-				</control>
 				<control type="label">
-					<left>855</left>
-					<top>805</top>
+					<left>500</left>
+					<posy>805</posy>
+					<width>390</width>
+					<align>right</align>
 					<height>40</height>
-					<width>40</width>
-					<align>center</align>
-					<aligny>center</aligny>
+					<font>Small</font>
+					<textcolor>FF222222</textcolor>
+					<selectedcolor>PanelWhite70</selectedcolor>
 					<label>$INFO[Window.Property(NextAired.TodayTotal)]</label>
-					<font>Flag</font>
-					<textcolor>black</textcolor>
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
 					<visible>!Control.HasFocus(40155)</visible>
 				</control>
+
 				<control type="list" id="40155">
 					<description>Widget</description>
 					<visible>Control.HasFocus(40155)</visible>
@@ -3863,13 +3834,13 @@
 					<itemlayout width="400" height="230">
 						<control type="image">
 							<aspectratio>keep</aspectratio>
-							<texture background="true">$VAR[LandscapeImage]</texture>
+							<texture background="true" colordiffuse="$VAR[EmbyRightColourHighlight]">$VAR[LandscapeImage]</texture>
 						</control>
 					</itemlayout>
 					<focusedlayout width="400" height="230">
 						<control type="image">
 							<aspectratio>keep</aspectratio>
-							<texture background="true">$VAR[LandscapeImage]</texture>
+							<texture background="true" colordiffuse="$VAR[EmbyRightColourHighlight]">$VAR[LandscapeImage]</texture>
 						</control>
 						<control type="image">
 							<description>Title overlay</description>
@@ -4565,26 +4536,16 @@
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
 					<visible>!Control.HasFocus(50133)</visible>
 				</control>
-				<control type="image">
-					<left>290</left>
-					<top>805</top>
-					<height>40</height>
-					<width>40</width>
-					<texture colordiffuse="Dark1">common/circle.png</texture>
-					<aspectratio align="center" aligny="center">keep</aspectratio>
-					<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
-					<visible>!Control.HasFocus(50133)</visible>
-				</control>
 				<control type="label">
-					<left>290</left>
-					<top>805</top>
+					<left>SidePad</left>
+					<posy>805</posy>
+					<width>245</width>
+					<align>right</align>
 					<height>40</height>
-					<width>40</width>
-					<align>center</align>
-					<aligny>center</aligny>
+					<font>Small</font>
+					<textcolor>FF222222</textcolor>
+					<selectedcolor>PanelWhite70</selectedcolor>
 					<label>$INFO[Window(Home).Property(Music.AlbumsCount)]</label>
-					<font>Flag</font>
-					<textcolor>black</textcolor>
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
 					<visible>!Control.HasFocus(50133)</visible>
 				</control>
@@ -4606,14 +4567,14 @@
 					<include>Animation.FadeOut</include>
 					<itemlayout width="255" height="230">
 						<control type="image">
-							<aspectratio>keep</aspectratio>
-							<texture background="true">$VAR[PosterImage]</texture>
+							<aspectratio>scale</aspectratio>
+							<texture background="true" colordiffuse="$VAR[EmbyLeftColourHighlight]">$VAR[PosterImage]</texture>
 						</control>
 					</itemlayout>
 					<focusedlayout width="255" height="230">
 						<control type="image">
-							<aspectratio>keep</aspectratio>
-							<texture background="true">$VAR[PosterImage]</texture>
+							<aspectratio>scale</aspectratio>
+							<texture background="true" colordiffuse="$VAR[EmbyLeftColourHighlight]">$VAR[PosterImage]</texture>
 						</control>
 						<control type="image">
 							<description>Title overlay</description>
@@ -4696,26 +4657,16 @@
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
 					<visible>!Control.HasFocus(50155)</visible>
 				</control>
-				<control type="image">
-					<left>573</left>
-					<top>805</top>
-					<height>40</height>
-					<width>40</width>
-					<texture colordiffuse="Dark1">common/circle.png</texture>
-					<aspectratio align="center" aligny="center">keep</aspectratio>
-					<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
-					<visible>!Control.HasFocus(50155)</visible>
-				</control>
 				<control type="label">
-					<left>573</left>
-					<top>805</top>
+					<left>362</left>
+					<posy>805</posy>
+					<width>246</width>
+					<align>right</align>
 					<height>40</height>
-					<width>40</width>
-					<align>center</align>
-					<aligny>center</aligny>
+					<font>Small</font>
+					<textcolor>FF222222</textcolor>
+					<selectedcolor>PanelWhite70</selectedcolor>
 					<label>$INFO[Window(Home).Property(Music.ArtistsCount)]</label>
-					<font>Flag</font>
-					<textcolor>black</textcolor>
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
 					<visible>!Control.HasFocus(50155)</visible>
 				</control>
@@ -4738,14 +4689,14 @@
 					<include>Animation.FadeOut</include>
 					<itemlayout width="256" height="230">
 						<control type="image">
-							<aspectratio>keep</aspectratio>
-							<texture background="true">$VAR[PosterImage]</texture>
+							<aspectratio>scale</aspectratio>
+							<texture background="true" colordiffuse="$VAR[EmbyMiddleColourHighlight]">$VAR[PosterImage]</texture>
 						</control>
 					</itemlayout>
 					<focusedlayout width="256" height="230">
 						<control type="image">
-							<aspectratio>keep</aspectratio>
-							<texture background="true">$VAR[PosterImage]</texture>
+							<aspectratio>scale</aspectratio>
+							<texture background="true" colordiffuse="$VAR[EmbyMiddleColourHighlight]">$VAR[PosterImage]</texture>
 						</control>
 						<control type="image">
 							<description>Title overlay</description>
@@ -4849,13 +4800,13 @@
 					<itemlayout width="255" height="230">
 						<control type="image">
 							<aspectratio>keep</aspectratio>
-							<texture background="true">$VAR[MusicGenres]</texture>
+							<texture background="true" colordiffuse="$VAR[EmbyRightColourHighlight]">$VAR[MusicGenres]</texture>
 						</control>
 					</itemlayout>
 					<focusedlayout width="255" height="230">
 						<control type="image">
 							<aspectratio>keep</aspectratio>
-							<texture background="true">$VAR[MusicGenres]</texture>
+							<texture background="true" colordiffuse="$VAR[EmbyRightColourHighlight]">$VAR[MusicGenres]</texture>
 						</control>
 						<control type="image">
 							<description>Title overlay</description>
@@ -5503,25 +5454,16 @@
 					<label>19040</label>
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 				</control>
-				<control type="image">
-					<left>290</left>
-					<top>805</top>
-					<height>40</height>
-					<width>40</width>
-					<texture colordiffuse="Dark1">common/circle.png</texture>
-					<aspectratio align="center" aligny="center">keep</aspectratio>
-					<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
-				</control>
 				<control type="label">
-					<left>290</left>
-					<top>805</top>
+					<left>SidePad</left>
+					<posy>805</posy>
+					<width>245</width>
+					<align>right</align>
 					<height>40</height>
-					<width>40</width>
-					<align>center</align>
-					<aligny>center</aligny>
+					<font>Small</font>
+					<textcolor>FF222222</textcolor>
+					<selectedcolor>PanelWhite70</selectedcolor>
 					<label>$INFO[Pvr.BackendTimers]</label>
-					<font>Flag</font>
-					<textcolor>black</textcolor>
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 				</control>
 				<control type="image">
@@ -5639,30 +5581,21 @@
 					<label>19163</label>
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 				</control>
-				<control type="image">
-					<left>855</left>
-					<top>805</top>
-					<height>40</height>
-					<width>40</width>
-					<texture colordiffuse="Dark1">common/circle.png</texture>
-					<aspectratio align="center" aligny="center">keep</aspectratio>
-					<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
-				</control>
 				<control type="label">
-					<left>855</left>
-					<top>805</top>
+					<left>641</left>
+					<posy>805</posy>
+					<width>245</width>
+					<align>right</align>
 					<height>40</height>
-					<width>40</width>
-					<align>center</align>
-					<aligny>center</aligny>
+					<font>Small</font>
+					<textcolor>FF222222</textcolor>
+					<selectedcolor>PanelWhite70</selectedcolor>
 					<label>$INFO[Pvr.BackendRecordings]</label>
-					<font>Flag</font>
-					<textcolor>black</textcolor>
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 				</control>
 				<control type="image">
-					<left>636</left>
-					<width>264</width>
+					<left>641</left>
+					<width>263</width>
 					<posy>796</posy>
 					<height>238</height>
 					<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
@@ -5775,30 +5708,21 @@
 					<label>19023</label>
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 				</control>
-				<control type="image">
-					<left>1905</left>
-					<top>805</top>
-					<height>40</height>
-					<width>40</width>
-					<texture colordiffuse="Dark1">common/circle.png</texture>
-					<aspectratio align="center" aligny="center">keep</aspectratio>
-					<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
-				</control>
 				<control type="label">
-					<left>1905</left>
-					<top>805</top>
+					<left>1390</left>
+					<posy>805</posy>
+					<width>560</width>
+					<align>right</align>
 					<height>40</height>
-					<width>40</width>
-					<align>center</align>
-					<aligny>center</aligny>
+					<font>Small</font>
+					<textcolor>FF222222</textcolor>
+					<selectedcolor>PanelWhite70</selectedcolor>
 					<label>$INFO[Pvr.BackendChannels]</label>
-					<font>Flag</font>
-					<textcolor>black</textcolor>
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 				</control>
 				<control type="image">
 					<left>1386</left>
-					<width>488</width>
+					<width>568</width>
 					<posy>796</posy>
 					<height>238</height>
 					<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
