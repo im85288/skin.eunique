@@ -1,142 +1,147 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Foundation -->
-<window id="12">
-    <defaultcontrol always="true">3</defaultcontrol>
-    <allowoverlay>yes</allowoverlay>
-    <controls>
-
-        <include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
-        <include>Furniture_Clock</include>
-        <include>Furniture_Header</include>
-        <include>Furniture_NowPlaying</include>
-        <control type="group">
-            <include>Animation.Common</include>
-            <left>72</left>
-            <right>72</right>
-            <top>208</top>
-            <height>656</height>
-            
-            <control type="image">
-                <width>100%</width>
-                <height>100%</height>
-                <texture border="16" colordiffuse="Panel">common/rounded-shadow8.png</texture>
+<window>
+<defaultcontrol always="true">3</defaultcontrol>
+<allowoverlay>yes</allowoverlay>
+<controls>
+    <!--background-->
+    <include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
+    <include>Furniture_EmbyClock</include>
+    <include>Furniture_EmbyHeader</include>
+    <include>Furniture_NowPlaying</include>
+    <!--placeholder label for current setting group title-->
+    <control type="label" id="2">
+        <visible>false</visible>
+        <posx>0</posx>
+        <posy>0</posy>
+        <width>8-col</width>
+        <font>regular</font>
+        <label>-</label>
+        <textcolor>white</textcolor>
+    </control>
+    <!--Settings category-->
+    <control type="group" id="9001">
+        <posx>col-4-begin</posx>
+        <posy>row-5-begin</posy>
+        <!--animations-->
+        <include>Animation.Common</include>
+        <control type="image">
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>18-col</width>
+            <height>2-row</height>
+            <texture>common/white.png</texture>
+            <colordiffuse>$VAR[EmbyLeftColourHighlight]</colordiffuse>
+            <aspectratio>stretch</aspectratio>
+        </control>
+        <control type="image">
+            <posx>0</posx>
+            <posy>2-row</posy>
+            <width>18-col</width>
+            <height>18-row</height>
+            <texture colordiffuse="black" border="16">common/box.png</texture>
+            <aspectratio>stretch</aspectratio>
+        </control>
+        <control type="label">
+            <posx>24</posx>
+            <posy>0</posy>
+            <width>16-col</width>
+            <height>2-row</height>
+            <aligny>center</aligny>
+            <font>MediumBold</font>
+            <label>$INFO[control.getlabel(2)]</label>
+            <textcolor>$VAR[ColourSelected]</textcolor>
+            <shadowcolor>-</shadowcolor>
+        </control>
+        <!--settings level button-->
+        <control type="grouplist">
+            <posx>13-col</posx>
+            <posy>0</posy>
+            <orientation>horizontal</orientation>
+            <control type="label">
+                <width>auto</width>
+                <height>2-row</height>
+                <font>small</font>
+                <aligny>center</aligny>
+                <label>$LOCALIZE[31803]:</label>
+                <textcolor>$VAR[ColourSelected]</textcolor>
+                <shadowcolor>-</shadowcolor>
             </control>
-            
-            <control type="group">
-                <left>8</left>
-                <right>8</right>
-                <top>8</top>
-                <bottom>8</bottom>
-                <!-- Right Group -->
-                <control type="grouplist" id="5">
-                    <description>Control Area</description>
-                    <left>450</left>
-                    <right>0</right>
-                    <top>140</top>
-                    <bottom>10</bottom>
-                    <itemgap>0</itemgap>
-                    <onleft>3</onleft>
-                    <onright>9000</onright>
-                    <onup>5</onup>
-                    <ondown>5</ondown>
-                    <orientation>vertical</orientation>
-                </control>
-
-                <!-- Left Group -->
-                <control type="grouplist" id="3">
-                    <description>Button Area</description>
-                    <width>450</width>
-                    <top>140</top>
-                    <bottom>0</bottom>
-                    <itemgap>0</itemgap>
-                    <onleft>9000</onleft>
-                    <onright>5</onright>
-                    <onup>20</onup>
-                    <ondown>3</ondown>
-                    <orientation>vertical</orientation>
-                </control>
-
-                <!-- Lines -->
-                <control type="image">
-                    <top>10</top>
-                    <left>450</left>
-                    <width>1</width>
-                    <bottom>10</bottom>
-                    <colordiffuse>Black12</colordiffuse>
-                    <texture>common/white.png</texture>
-                </control>
-         
-                
-                <!-- Header -->
-                <control type="label">
-                    <left>30</left>
-                    <width>390</width>
-                    <posy>18</posy>
-                    <font>MediumBold</font>
-                    <label>5</label>
-                    <textcolor>PanelWhite100</textcolor>
-                </control>
-                <control type="button" id="20">
-                    <left>30</left>
-                    <right>30</right>
-                    <posy>77</posy>
-                    <height>30</height>
-                    <font>Tiny</font>
-                    <textcolor>PanelWhite70</textcolor>
-                    <scroll>true</scroll>
-                    <align>left</align>
-                    <textoffsetx>0</textoffsetx>
-                    <texturenofocus>noop</texturenofocus>
-                    <texturefocus>noop</texturefocus>
-                    <focusedcolor>$VAR[ColourHighlight2]</focusedcolor>
-                    <ondown>3</ondown>
-                    <onleft>9000</onleft>
-                    <onright>5</onright>
-                    <onup>3</onup>
-                    <onclick>SettingsLevelChange</onclick>
-                </control>
-                <control type="label">
-                    <left>480</left>
-                    <width>390</width>
-                    <posy>18</posy>
-                    <font>MediumBold</font>
-                    <label>$VAR[Label_SettingsHeader]</label>
-                    <textcolor>PanelWhite100</textcolor>
-                </control>
-                <control type="label" id="6">
-                    <left>480</left>
-                    <right>30</right>
-                    <posy>77</posy>
-                    <height>30</height>
-                    <font>Tiny</font>
-                    <textcolor>PanelWhite70</textcolor>
-                    <scroll>true</scroll>
-                </control>
+            <control type="button" id="20">
+                <align>left</align>
+                <height>2-row</height>
+                <width>2-col</width>
+                <font>small</font>
+                <label>$LOCALIZE[10037]</label>
+                <textcolor>$VAR[ColourSelected]</textcolor>
+                <focusedcolor>black</focusedcolor>
+                <texturefocus colordiffuse="$VAR[ColourHighlight]">common/white.png</texturefocus>
+                <texturenofocus colordiffuse="$VAR[EmbyLeftColourHighlight]">common/white.png</texturenofocus>
+                <textoffsetx>12</textoffsetx>
+                <textoffsety>0</textoffsety>
+                <onclick>SettingsLevelChange</onclick>
+                <ondown>5</ondown>
             </control>
         </control>
-        
-        <include>Def9000SettingsMenu</include>
-        
+        <!--Category submenu-->
+        <control type="grouplist" id="3">
+            <posx>0</posx>
+            <posy>2-row</posy>
+            <width>4-col</width>
+            <itemgap>0</itemgap>
+            <height>18-row</height>
+            <onleft>9000</onleft>
+            <onright>5</onright>
+            <onup>20</onup>
+            <orientation>vertical</orientation>
+        </control>
+        <!--options-->
+        <control type="image">
+            <posx>4-col</posx>
+            <posy>2-row</posy>
+            <width>14-col</width>
+            <height>18-row</height>
+            <texture colordiffuse="black" border="16">common/box.png</texture>
+            <aspectratio>stretch</aspectratio>
+        </control>
+        <control type="grouplist" id="5">
+            <posx>4-col</posx>
+            <posy>2-row</posy>
+            <width>14-col</width>
+            <height>18-row</height>
+            <onleft>3</onleft>
+            <onright>3</onright>
+            <onup>20</onup>
+            <ondown>5</ondown>
+            <orientation>vertical</orientation>
+            <itemgap>0</itemgap>
+        </control>
         <control type="button" id="7">
             <description>Default Button</description>
             <include>DefSettingsButton2</include>
+            <texturenofocus>-</texturenofocus>
         </control>
-
         <control type="radiobutton" id="8">
             <description>Default Radio Button</description>
             <include>DefSettingsButton2</include>
+            <texturenofocus>-</texturenofocus>
         </control>
-
         <control type="spincontrolex" id="9">
             <description>Default Spin Control</description>
             <include>DefSettingsButton2</include>
+            <texturenofocus>-</texturenofocus>
         </control>
-
-        <control type="togglebutton" id="10">
+        <control type="sliderex" id="13">
+            <description>Default Slider</description>
+            <include>DefSettingsButton2</include>
+            <texturenofocus>-</texturenofocus>
+        </control>
+        <!--subcat menu buttons-->
+        <control type="button" id="10">
             <description>Default Category Button</description>
             <include>DefSettingsButton2</include>
+            <font>Small</font>
+            <texturenofocus>-</texturenofocus>
         </control>
-
-    </controls>
-
+    </control>
+</controls>
 </window>
