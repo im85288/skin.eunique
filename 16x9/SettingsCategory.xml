@@ -30,15 +30,7 @@
             <width>18-col</width>
             <height>2-row</height>
             <texture>common/white.png</texture>
-            <colordiffuse>$VAR[EmbyLeftColourHighlight]</colordiffuse>
-            <aspectratio>stretch</aspectratio>
-        </control>
-        <control type="image">
-            <width>18-col</width>
-            <top>52</top>
-            <height>20</height>
-            <texture>common/white.png</texture>
-            <colordiffuse>$VAR[EmbyRightColourHighlight]</colordiffuse>
+            <colordiffuse>$VAR[ColourSelected]</colordiffuse>
             <aspectratio>stretch</aspectratio>
         </control>
         <control type="image">
@@ -46,7 +38,7 @@
             <posy>2-row</posy>
             <width>18-col</width>
             <height>18-row</height>
-            <texture colordiffuse="black" border="16">common/box.png</texture>
+            <texture colordiffuse="$VAR[EmbyMenuColourHighlight]" border="16">common/box.png</texture>
             <aspectratio>stretch</aspectratio>
         </control>
         <control type="label">
@@ -57,7 +49,7 @@
             <aligny>center</aligny>
             <font>MediumBold</font>
             <label>$INFO[control.getlabel(2)]</label>
-            <textcolor>$VAR[ColourSelected]</textcolor>
+            <textcolor>$VAR[EmbyMenuColourHighlight]</textcolor>
             <shadowcolor>-</shadowcolor>
         </control>
         <!--settings level button-->
@@ -71,7 +63,7 @@
                 <font>small</font>
                 <aligny>center</aligny>
                 <label>$LOCALIZE[31803]:</label>
-                <textcolor>$VAR[ColourSelected]</textcolor>
+                <textcolor>$VAR[EmbyMenuColourHighlight]</textcolor>
                 <shadowcolor>-</shadowcolor>
             </control>
             <control type="button" id="20">
@@ -81,7 +73,7 @@
                 <width>2-col</width>
                 <font>small</font>
                 <label>$LOCALIZE[10037]</label>
-                <textcolor>$VAR[ColourSelected]</textcolor>
+                <textcolor>$VAR[EmbyMenuColourHighlight]</textcolor>
                 <focusedcolor>$VAR[ColourHighlight]</focusedcolor>
                 <texturefocus>-</texturefocus>
                 <texturenofocus>-</texturenofocus>
@@ -109,7 +101,7 @@
             <posy>2-row</posy>
             <width>14-col</width>
             <height>18-row</height>
-            <texture colordiffuse="black" border="16">common/box.png</texture>
+            <texture colordiffuse="$VAR[EmbyMenuColourHighlight]" border="16">common/box.png</texture>
             <aspectratio>stretch</aspectratio>
         </control>
         <control type="grouplist" id="5">

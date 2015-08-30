@@ -19,15 +19,7 @@
 			<width>22-col</width>
 			<height>2-row</height>
 			<texture>common/white.png</texture>
-			<colordiffuse>$VAR[EmbyLeftColourHighlight]</colordiffuse>
-			<aspectratio>stretch</aspectratio>
-		</control>
-		<control type="image">
-			<width>22-col</width>
-			<top>52</top>
-			<height>20</height>
-			<texture>common/white.png</texture>
-			<colordiffuse>$VAR[EmbyRightColourHighlight]</colordiffuse>
+			<colordiffuse>$VAR[ColourSelected]</colordiffuse>
 			<aspectratio>stretch</aspectratio>
 		</control>
 		<!--title-->
@@ -38,15 +30,15 @@
 			<height>2-row</height>
 			<font>MediumBold</font>
 			<label>$LOCALIZE[20077]</label>
-			<textcolor>black</textcolor>
+			<textcolor>$VAR[EmbyMenuColourHighlight]</textcolor>
 			<shadowcolor>-</shadowcolor>
 		</control>
 		<control type="image">
 			<posx>0</posx>
 			<posy>2-row</posy>
-			<width>18-col</width>
+			<width>22-col</width>
 			<height>22-row</height>
-			<texture colordiffuse="black" border="16">common/box.png</texture>
+			<texture colordiffuse="$VAR[EmbyMenuColourHighlight]" border="16">common/box.png</texture>
 			<aspectratio>stretch</aspectratio>
 		</control>
 		<!--sub menu-->
@@ -69,7 +61,7 @@
 						<height>2-row</height>
 						<aligny>center</aligny>
 						<font>Medium</font>
-						<textcolor>white</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<label>$INFO[ListItem.label]</label>
 						<shadowcolor>-</shadowcolor>
 					</control>
@@ -143,9 +135,9 @@
 		<control type="image">
 			<posx>4-col</posx>
 			<posy>2-row</posy>
-			<width>18-col</width>
+			<width>22-col</width>
 			<height>22-row</height>
-			<texture colordiffuse="black" border="16">common/box.png</texture>
+			<texture colordiffuse="EmbyMenuColourHighlight" border="16">common/box.png</texture>
 			<aspectratio>stretch</aspectratio>
 		</control>
 		<control type="grouplist" id="200">

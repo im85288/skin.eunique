@@ -20,15 +20,7 @@
             <width>18-col</width>
             <height>2-row</height>
             <texture>common/white.png</texture>
-            <colordiffuse>$VAR[EmbyLeftColourHighlight]</colordiffuse>
-            <aspectratio>stretch</aspectratio>
-        </control>
-        <control type="image">
-            <width>18-col</width>
-            <top>52</top>
-            <height>20</height>
-            <texture>common/white.png</texture>
-            <colordiffuse>$VAR[EmbyRightColourHighlight]</colordiffuse>
+            <colordiffuse>$VAR[ColourSelected]</colordiffuse>
             <aspectratio>stretch</aspectratio>
         </control>
         <control type="image">
@@ -36,7 +28,7 @@
             <posy>2-row</posy>
             <width>18-col</width>
             <height>12-row</height>
-            <texture colordiffuse="black" border="16">common/box.png</texture>
+            <texture colordiffuse="$VAR[EmbyMenuColourHighlight]" border="16">common/box.png</texture>
             <aspectratio>stretch</aspectratio>
         </control>
         <control type="label">
@@ -47,7 +39,7 @@
             <aligny>center</aligny>
             <font>MediumBold</font>
             <label>$LOCALIZE[5]</label>
-            <textcolor>black</textcolor>
+            <textcolor>$VAR[EmbyMenuColourHighlight]</textcolor>
             <shadowcolor>-</shadowcolor>
         </control>
         <!--menu-->
@@ -66,7 +58,7 @@
                     <height>1-col</height>
                     <aspectratio scalediffuse="false">scale</aspectratio>
                     <texture>common/white.png</texture>
-                    <colordiffuse>black</colordiffuse>
+                    <colordiffuse>$VAR[EmbyMenuColourHighlight]</colordiffuse>
                 </control>
                 <control type="label">
                     <posx>0</posx>
@@ -76,7 +68,7 @@
                     <align>center</align>
                     <aligny>center</aligny>
                     <font>symbolbig</font>
-                    <textcolor>white</textcolor>
+                    <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
                     <label>$INFO[ListItem.label2]</label>
                 </control>
                 <control type="label">
@@ -86,7 +78,7 @@
                     <height>2-row</height>
                     <aligny>center</aligny>
                     <font>TinyBold</font>
-                    <textcolor>white</textcolor>
+                    <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
                     <label>$INFO[ListItem.label]</label>
                 </control>
                 <control type="label">
@@ -96,7 +88,7 @@
                     <height>2-row</height>
                     <aligny>center</aligny>
                     <font>Tiny</font>
-                    <textcolor>white</textcolor>
+                    <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
                     <label>$INFO[listitem.property(label3)]</label>
                 </control>
             </itemlayout>
@@ -129,7 +121,7 @@
                     <height>2-row</height>
                     <aligny>center</aligny>
                     <font>TinyBold</font>
-                    <textcolor>white</textcolor>
+                    <textcolor>$VAR[ColourSelected]</textcolor>
                     <label>$INFO[ListItem.label]</label>
                 </control>
                 <control type="label">
@@ -139,7 +131,7 @@
                     <height>2-row</height>
                     <aligny>center</aligny>
                     <font>Tiny</font>
-                    <textcolor>white</textcolor>
+                    <textcolor>$VAR[ColourSelected]</textcolor>
                     <label>$INFO[listitem.property(label3)]</label>
                 </control>
             </focusedlayout>
