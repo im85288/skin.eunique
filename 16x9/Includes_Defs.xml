@@ -1036,7 +1036,25 @@
 			<right>-8</right>
 			<top>-8</top>
 			<bottom>-8</bottom>
-			<texture border="16" colordiffuse="White100">common/rounded-shadow8.png</texture>
+			<texture border="16" colordiffuse="black">common/box.png</texture>
+		</control>
+		<control type="image">
+			<left>-8</left>
+			<right>-8</right>
+			<top>-8</top>
+			<height>100</height>
+			<texture>common/white.png</texture>
+			<colordiffuse>$VAR[EmbyLeftColourHighlight]</colordiffuse>
+			<aspectratio>stretch</aspectratio>
+		</control>
+		<control type="image">
+			<left>-8</left>
+			<right>-8</right>
+			<top>62</top>
+			<height>30</height>
+			<texture>common/white.png</texture>
+			<colordiffuse>$VAR[EmbyRightColourHighlight]</colordiffuse>
+			<aspectratio>stretch</aspectratio>
 		</control>
 	</include>
 	<include name="DefDialogInfoPanelFanart">
@@ -1088,9 +1106,17 @@
 		</control>
 		<control type="image">
 			<width>1080</width>
-			<height>100</height>
+			<height>70</height>
 			<texture>common/white.png</texture>
 			<colordiffuse>$VAR[EmbyLeftColourHighlight]</colordiffuse>
+			<aspectratio>stretch</aspectratio>
+		</control>
+		<control type="image">
+			<width>1080</width>
+			<top>70</top>
+			<height>30</height>
+			<texture>common/white.png</texture>
+			<colordiffuse>$VAR[EmbyRightColourHighlight]</colordiffuse>
 			<aspectratio>stretch</aspectratio>
 		</control>
 	</include>
