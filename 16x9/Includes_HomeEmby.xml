@@ -2974,16 +2974,26 @@
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
 					<visible>!Control.HasFocus(30133)</visible>
 				</control>
-				<control type="label">
-					<left>SidePad</left>
-					<posy>805</posy>
-					<width>390</width>
-					<align>right</align>
+				<control type="image">
+					<left>435</left>
+					<top>805</top>
 					<height>40</height>
-					<font>Small</font>
-					<textcolor>FF222222</textcolor>
-					<selectedcolor>PanelWhite70</selectedcolor>
-					<label>$INFO[Window.Property(Movies.Count)]</label>
+					<width>40</width>
+					<texture colordiffuse="Dark1">common/circle.png</texture>
+					<aspectratio align="center" aligny="center">keep</aspectratio>
+					<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
+					<visible>!Control.HasFocus(30133)</visible>
+				</control>
+				<control type="label">
+					<left>435</left>
+					<top>805</top>
+					<height>40</height>
+					<width>40</width>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label>$INFO[Window(Home).Property(Movies.Count)]</label>
+					<font>Flag</font>
+					<textcolor>black</textcolor>
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
 					<visible>!Control.HasFocus(30133)</visible>
 				</control>
@@ -2994,8 +3004,8 @@
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
 					<onup>3012</onup>
 					<onright>3014</onright>
-						<onback>300</onback>
-				<left>SidePad</left>
+					<onback>300</onback>
+				    <left>SidePad</left>
 					<posy>800</posy>
 					<width>400</width>
 					<height>230</height>
@@ -3030,10 +3040,10 @@
 							<font>Small</font>
 							<textcolor>PanelWhite70</textcolor>
 							<selectedcolor>PanelWhite70</selectedcolor>
-							<label>$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Title]</label>
+							<label>$INFO[ListItem.Title]</label>
 						</control>
 					</focusedlayout>
-					<content target="video">videodb://movies/titles</content>
+					<content target="video">special://skin/extras/playlists/AllMovies.xsp</content>
 				</control>
 				<control type="image">
 					<left>76</left>
@@ -3712,16 +3722,26 @@
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
 					<visible>!Control.HasFocus(40133)</visible>
 				</control>
-				<control type="label">
-					<left>SidePad</left>
-					<posy>805</posy>
-					<width>390</width>
-					<align>right</align>
+				<control type="image">
+					<left>435</left>
+					<top>805</top>
 					<height>40</height>
-					<font>Small</font>
-					<textcolor>FF222222</textcolor>
-					<selectedcolor>PanelWhite70</selectedcolor>
+					<width>40</width>
+					<texture colordiffuse="Dark1">common/circle.png</texture>
+					<aspectratio align="center" aligny="center">keep</aspectratio>
+					<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+					<visible>!Control.HasFocus(40133)</visible>
+				</control>
+				<control type="label">
+					<left>435</left>
+					<top>805</top>
+					<height>40</height>
+					<width>40</width>
+					<align>center</align>
+					<aligny>center</aligny>
 					<label>$INFO[Window(Home).Property(TVShows.Count)]</label>
+					<font>Flag</font>
+					<textcolor>black</textcolor>
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
 					<visible>!Control.HasFocus(40133)</visible>
 				</control>
@@ -3776,7 +3796,7 @@
 							</control>
 						</control>
 					</focusedlayout>
-					<content target="video">videodb://tvshows/titles</content>
+					<content target="video">special://skin/extras/playlists/AllShows.xsp</content>
 				</control>
 				<control type="image">
 					<left>76</left>
@@ -3840,20 +3860,29 @@
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
 					<visible>!Control.HasFocus(40155)</visible>
 				</control>
-				<control type="label">
-					<left>500</left>
-					<posy>805</posy>
-					<width>390</width>
-					<align>right</align>
+				<control type="image">
+					<left>855</left>
+					<top>805</top>
 					<height>40</height>
-					<font>Small</font>
-					<textcolor>FF222222</textcolor>
-					<selectedcolor>PanelWhite70</selectedcolor>
-					<label>$INFO[Window.Property(NextAired.TodayTotal)]</label>
+					<width>40</width>
+					<texture colordiffuse="Dark1">common/circle.png</texture>
+					<aspectratio align="center" aligny="center">keep</aspectratio>
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
 					<visible>!Control.HasFocus(40155)</visible>
 				</control>
-
+				<control type="label">
+					<left>855</left>
+					<top>805</top>
+					<height>40</height>
+					<width>40</width>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label>$INFO[Window.Property(NextAired.TodayTotal)]</label>
+					<font>Flag</font>
+					<textcolor>black</textcolor>
+					<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+					<visible>!Control.HasFocus(40155)</visible>
+				</control>
 				<control type="list" id="40155">
 					<description>Widget</description>
 					<visible>Control.HasFocus(40155)</visible>
@@ -4587,16 +4616,26 @@
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
 					<visible>!Control.HasFocus(50133)</visible>
 				</control>
-				<control type="label">
-					<left>SidePad</left>
-					<posy>805</posy>
-					<width>245</width>
-					<align>right</align>
+				<control type="image">
+					<left>290</left>
+					<top>805</top>
 					<height>40</height>
-					<font>Small</font>
-					<textcolor>FF222222</textcolor>
-					<selectedcolor>PanelWhite70</selectedcolor>
+					<width>40</width>
+					<texture colordiffuse="Dark1">common/circle.png</texture>
+					<aspectratio align="center" aligny="center">keep</aspectratio>
+					<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+					<visible>!Control.HasFocus(50133)</visible>
+				</control>
+				<control type="label">
+					<left>290</left>
+					<top>805</top>
+					<height>40</height>
+					<width>40</width>
+					<align>center</align>
+					<aligny>center</aligny>
 					<label>$INFO[Window(Home).Property(Music.AlbumsCount)]</label>
+					<font>Flag</font>
+					<textcolor>black</textcolor>
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
 					<visible>!Control.HasFocus(50133)</visible>
 				</control>
@@ -4710,16 +4749,26 @@
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
 					<visible>!Control.HasFocus(50155)</visible>
 				</control>
-				<control type="label">
-					<left>362</left>
-					<posy>805</posy>
-					<width>246</width>
-					<align>right</align>
+				<control type="image">
+					<left>573</left>
+					<top>805</top>
 					<height>40</height>
-					<font>Small</font>
-					<textcolor>FF222222</textcolor>
-					<selectedcolor>PanelWhite70</selectedcolor>
+					<width>40</width>
+					<texture colordiffuse="Dark1">common/circle.png</texture>
+					<aspectratio align="center" aligny="center">keep</aspectratio>
+					<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+					<visible>!Control.HasFocus(50155)</visible>
+				</control>
+				<control type="label">
+					<left>573</left>
+					<top>805</top>
+					<height>40</height>
+					<width>40</width>
+					<align>center</align>
+					<aligny>center</aligny>
 					<label>$INFO[Window(Home).Property(Music.ArtistsCount)]</label>
+					<font>Flag</font>
+					<textcolor>black</textcolor>
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
 					<visible>!Control.HasFocus(50155)</visible>
 				</control>
@@ -5519,16 +5568,25 @@
 					<label>19040</label>
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 				</control>
-				<control type="label">
-					<left>SidePad</left>
-					<posy>805</posy>
-					<width>245</width>
-					<align>right</align>
+				<control type="image">
+					<left>290</left>
+					<top>805</top>
 					<height>40</height>
-					<font>Small</font>
-					<textcolor>FF222222</textcolor>
-					<selectedcolor>PanelWhite70</selectedcolor>
+					<width>40</width>
+					<texture colordiffuse="Dark1">common/circle.png</texture>
+					<aspectratio align="center" aligny="center">keep</aspectratio>
+					<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
+				</control>
+				<control type="label">
+					<left>290</left>
+					<top>805</top>
+					<height>40</height>
+					<width>40</width>
+					<align>center</align>
+					<aligny>center</aligny>
 					<label>$INFO[Pvr.BackendTimers]</label>
+					<font>Flag</font>
+					<textcolor>black</textcolor>
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 				</control>
 				<control type="image">
@@ -5648,16 +5706,25 @@
 					<label>19163</label>
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 				</control>
-				<control type="label">
-					<left>641</left>
-					<posy>805</posy>
-					<width>245</width>
-					<align>right</align>
+				<control type="image">
+					<left>855</left>
+					<top>805</top>
 					<height>40</height>
-					<font>Small</font>
-					<textcolor>FF222222</textcolor>
-					<selectedcolor>PanelWhite70</selectedcolor>
+					<width>40</width>
+					<texture colordiffuse="Dark1">common/circle.png</texture>
+					<aspectratio align="center" aligny="center">keep</aspectratio>
+					<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
+				</control>
+				<control type="label">
+					<left>855</left>
+					<top>805</top>
+					<height>40</height>
+					<width>40</width>
+					<align>center</align>
+					<aligny>center</aligny>
 					<label>$INFO[Pvr.BackendRecordings]</label>
+					<font>Flag</font>
+					<textcolor>black</textcolor>
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 				</control>
 				<control type="image">
@@ -5777,16 +5844,25 @@
 					<label>19023</label>
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 				</control>
-				<control type="label">
-					<left>1390</left>
-					<posy>805</posy>
-					<width>560</width>
-					<align>right</align>
+				<control type="image">
+					<left>1905</left>
+					<top>805</top>
 					<height>40</height>
-					<font>Small</font>
-					<textcolor>FF222222</textcolor>
-					<selectedcolor>PanelWhite70</selectedcolor>
+					<width>40</width>
+					<texture colordiffuse="Dark1">common/circle.png</texture>
+					<aspectratio align="center" aligny="center">keep</aspectratio>
+					<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
+				</control>
+				<control type="label">
+					<left>1905</left>
+					<top>805</top>
+					<height>40</height>
+					<width>40</width>
+					<align>center</align>
+					<aligny>center</aligny>
 					<label>$INFO[Pvr.BackendChannels]</label>
+					<font>Flag</font>
+					<textcolor>black</textcolor>
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 				</control>
 				<control type="image">
