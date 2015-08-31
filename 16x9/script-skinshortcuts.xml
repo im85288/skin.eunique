@@ -13,10 +13,18 @@
             <control type="image">
                 <description>background image</description>
                 <top>-8</top>
+                <height>100</height>
+                <left>-8</left>
+                <right>-8</right>
+                <texture border="16" colordiffuse="$VAR[EmbyMenuTextColourHighlight]">common/box.png</texture>
+            </control>
+            <control type="image">
+                <description>background image</description>
+                <top>92</top>
                 <bottom>-8</bottom>
                 <left>-8</left>
                 <right>-8</right>
-                <texture border="16" colordiffuse="White100">common/rounded-shadow8.png</texture>
+                <texture border="16" colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
             </control>
 
             <control type="label" id="500">
@@ -24,9 +32,9 @@
                 <posy>10</posy>
                 <left>22</left>
                 <right>22</right>
-                <font>SmallBold</font>
+                <font>SmallHeaderFont</font>
                 <align>left</align>
-                <textcolor>Black70</textcolor>
+                <textcolor>$VAR[EmbyMenuColourHighlight]</textcolor>
             </control>
 
             <!-- Left List: Current Shortcuts -->
@@ -53,13 +61,14 @@
                         <left>30</left>
                         <right>30</right>
                         <info>ListItem.Label</info>
+                        <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
                     </control>
                     <control type="image">
                         <right>0</right>
                         <top>0</top>
                         <width>66</width>
                         <height>66</height>
-                        <texture colordiffuse="Black30">$INFO[ListItem.Icon]</texture>
+                        <texture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">$INFO[ListItem.Icon]</texture>
                         <visible>substring(ListItem.Icon,special://skin/extras/icons)</visible>
                         <visible>Skin.HasSetting(home.showicons) | stringcompare(Window.Property(groupname),movieshub) | stringcompare(Window.Property(groupname),episodeshub)</visible>
                     </control>
@@ -73,27 +82,18 @@
                         <texture border="5" colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
                         <!-- <visible>Control.HasFocus(211)</visible> -->
                     </control>
-                    <control type="image">
-                        <posx>0</posx>
-                        <posy>0</posy>
-                        <width>100%</width>
-                        <height>66</height>
-                        <texture border="5" colordiffuse="PanelBlack30">common/box.png</texture>
-                        <!-- <visible>!Control.HasFocus(211)</visible> -->
-                        <visible>false</visible>
-                    </control>
                     <control type="label">
                         <left>30</left>
                         <right>30</right>
                         <info>ListItem.Label</info>
-                        <textcolor>Selected</textcolor>
+                        <textcolor>$VAR[ColourSelected]</textcolor>
                     </control>
                     <control type="image">
                         <right>0</right>
                         <top>0</top>
                         <width>66</width>
                         <height>66</height>
-                        <texture colordiffuse="Black30">$INFO[ListItem.Icon]</texture>
+                        <texture colordiffuse="$VAR[ColourSelected]">$INFO[ListItem.Icon]</texture>
                         <visible>substring(ListItem.Icon,special://skin/extras/icons)</visible>
                         <visible>Skin.HasSetting(home.showicons) | stringcompare(Window.Property(groupname),movieshub) | stringcompare(Window.Property(groupname),episodeshub)</visible>
                     </control>
@@ -127,8 +127,8 @@
                     <width>64</width>
                     <height>64</height>
                     <font>-</font>
-                    <texturenofocus colordiffuse="Black30">buttons/delete.png</texturenofocus>
-                    <texturefocus colordiffuse="Selected">buttons/delete.png</texturefocus>
+                    <texturenofocus colordiffuse="$VAR[EmbyMenuTextColourHighlight]">buttons/delete.png</texturenofocus>
+                    <texturefocus colordiffuse="$VAR[ColourSelected]">buttons/delete.png</texturefocus>
                 </control>
                 <!-- <control type="button" id="301" description="Add">
                     <width>64</width>
@@ -141,15 +141,15 @@
                     <width>64</width>
                     <height>64</height>
                     <font>-</font>
-                    <texturenofocus colordiffuse="Black30">buttons/moveup.png</texturenofocus>
-                    <texturefocus colordiffuse="Selected">buttons/moveup.png</texturefocus>
+                    <texturenofocus colordiffuse="$VAR[EmbyMenuTextColourHighlight]">buttons/moveup.png</texturenofocus>
+                    <texturefocus colordiffuse="$VAR[ColourSelected]">buttons/moveup.png</texturefocus>
                 </control>
                 <control type="button" id="304" description="Down">
                     <width>64</width>
                     <height>64</height>
                     <font>-</font>
-                    <texturenofocus colordiffuse="Black30" flipy="true">buttons/moveup.png</texturenofocus>
-                    <texturefocus colordiffuse="Selected" flipy="true">buttons/moveup.png</texturefocus>
+                    <texturenofocus colordiffuse="$VAR[EmbyMenuTextColourHighlight]" flipy="true">buttons/moveup.png</texturenofocus>
+                    <texturefocus colordiffuse="$VAR[ColourSelected]" flipy="true">buttons/moveup.png</texturefocus>
                 </control>
             </control>
 
