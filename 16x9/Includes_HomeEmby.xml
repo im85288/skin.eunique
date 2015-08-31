@@ -2139,10 +2139,9 @@
 					<include>Animation.FadeOut</include>
 					<control type="grouplist">
 						<top>330</top>
-						<left>SidePad</left>
-						<right>70</right>
+						<left>50</left>
+						<right>NewSidePad</right>
 						<height>570</height>
-						<width>1690</width>
 						<orientation>horizontal</orientation>
 						<itemgap>10</itemgap>
 						<control type="group">
@@ -2631,6 +2630,87 @@
 								<label>$INFO[Window(Weather).Property(Day5.HighTemp),High ,°][CR][CR]$INFO[Window(Weather).Property(Day5.LowTemp),Low ,°]</label>
 							</control>
 						</control>
+						<control type="group">
+							<height>100%</height>
+							<width>270</width>
+							<control type="image">
+								<left>0</left>
+								<top>0</top>
+								<right>0</right>
+								<bottom>0</bottom>
+								<texture border="10">common/nofocus-shadow10.png</texture>
+							</control>
+							<control type="image">
+								<left>10</left>
+								<top>10</top>
+								<right>10</right>
+								<bottom>10</bottom>
+								<texture border="5" colordiffuse="Panel">common/box.png</texture>
+							</control>
+							<control type="multiimage" description="Fanart">
+								<visible>!Skin.HasSetting(weather.hidefanart)</visible>
+								<left>10</left>
+								<top>10</top>
+								<right>10</right>
+								<bottom>10</bottom>
+								<fadetime>600</fadetime>
+								<timeperimage>12000</timeperimage>
+								<randomize>true</randomize>
+								<aspectratio>scale</aspectratio>
+								<animation effect="fade" start="100" end="10" condition="true">Conditional</animation>
+								<imagepath background="true">$INFO[Skin.String(weather.fanart)]$INFO[Window(Weather).Property(Day6.FanartCode)]/</imagepath>
+							</control>
+							<control type="image">
+								<top>225</top>
+								<left>30</left>
+								<height>172</height>
+								<width>172</width>
+								<aspectratio align="center" aligny="center">keep</aspectratio>
+								<texture>$INFO[Window(Weather).Property(Day6.FanartCode),weather/,.png]</texture>
+								<visible>Skin.HasSetting(weather.useflaticons)</visible>
+							</control>
+							<control type="image">
+								<top>225</top>
+								<left>50</left>
+								<height>172</height>
+								<width>172</width>
+								<aspectratio align="center" aligny="center">keep</aspectratio>
+								<texture>$INFO[Window(Weather).Property(Day6.OutlookIcon)]</texture>
+								<visible>!Skin.HasSetting(weather.useflaticons)</visible>
+							</control>
+							<control type="label">
+								<left>0</left>
+								<top>162</top>
+								<height>40</height>
+								<font>MediumBold</font>
+								<align>center</align>
+								<aligny>center</aligny>
+								<textcolor>PanelWhite100</textcolor>
+								<label fallback="161">$INFO[Window(Weather).Property(Day6.Title)]</label>
+							</control>
+							<control type="label">
+								<left>0</left>
+								<top>207</top>
+								<height>30</height>
+								<font>Tiny</font>
+								<align>center</align>
+								<aligny>center</aligny>
+								<textcolor>PanelWhite100</textcolor>
+								<label>$INFO[Window(Weather).Property(Day6.Outlook)]</label>
+							</control>
+							<control type="label">
+								<left>0</left>
+								<height>240</height>
+								<width>270</width>
+								<top>376</top>
+								<aligny>center</aligny>
+								<autoscroll>false</autoscroll>
+								<align>center</align>
+								<font>TinyBold</font>
+								<textcolor>PanelWhite100</textcolor>
+								<label>$INFO[Window(Weather).Property(Day6.HighTemp),High ,°][CR][CR]$INFO[Window(Weather).Property(Day6.LowTemp),Low ,°]</label>
+							</control>
+						</control>
 					</control>
 				</control>
 				<!-- <control type="button" id="3440"> <onup>3439</onup> <onleft>Control.Move(3441,-1)</onleft> <onright>Control.Move(3441,1)</onright> <onclick>ShowPicture($INFO[Container(3441).ListItem.Icon])</onclick> </control> -->
@@ -2774,14 +2854,13 @@
 					<ondown>3440</ondown>
 					<onright condition="Control.IsVisible(3442)">3442</onright>
 					<onup>300</onup>
-					<font>TinyBold</font>
+					<font>HomeWidgetLabelFont</font>
 					<onback>300</onback>
 					<left>SidePad</left>
 					<top>285</top>
 					<width>210</width>
 					<align>left</align>
-					<textcolor>Dark2</textcolor>
-					<focusedcolor>Dark1</focusedcolor>
+					<focusedcolor>$VAR[ColourHighlight]</focusedcolor>
 					<disabledcolor>Black30</disabledcolor>
 					<selectedcolor>$VAR[ColourHighlight2]</selectedcolor>
 					<texturefocus>-</texturefocus>
@@ -2795,7 +2874,7 @@
 					<ondown>3443</ondown>
 					<onup>300</onup>
 					<onback>300</onback>
-					<font>TinyBold</font>
+					<font>HomeWidgetLabelFont</font>
 					<left>300</left>
 					<top>285</top>
 					<width>210</width>
