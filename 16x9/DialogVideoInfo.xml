@@ -36,7 +36,7 @@
 			<visible>!Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)</visible>
 			<control type="image">
 				<top>178</top>
-				<right>80</right>
+				<right>100</right>
 				<width>222</width>
 				<height>116</height>
 				<texture fallback="movies-logo.png" diffuse="diffuse/dvinfo.png" background="true">$VAR[ClearArtOnly]</texture>
@@ -46,28 +46,28 @@
 				<animation condition="!Control.HasFocus(50) + !Control.HasFocus(5000)" delay="200" effect="fade" end="100" start="0" time="80">Conditional</animation>
 				<animation condition="Container.Content(episodes)" effect="slide" end="-243,000"  time="0">Conditional</animation>
 			</control>
-			<left>SidePad</left>
-			<top>180</top>
+			<left>NewSidePad</left>
+			<top>TopPad</top>
 			<include>DialogVideoInfoAnimation</include>
 			<animation effect="fade" end="100" start="0" time="200">WindowOpen</animation>
 			<control type="image">
 				<left>-24</left>
 				<top>-24</top>
-				<width>528</width>
-				<height>768</height>
+				<width>648</width>
+				<height>948</height>
 				<texture border="32">common/shadow-24.png</texture>
 			</control>
 			<control type="image">
-				<centertop>720</centertop>
-				<width>480</width>
+				<centertop>920</centertop>
+				<width>600</width>
 				<height>48</height>
 				<aspectratio>stretch</aspectratio>
 				<texture>diffuse/shadowspot.png</texture>
 			</control>
 			<!-- Icon -->
 			<control type="image">
-				<width>480</width>
-				<height>720</height>
+				<width>600</width>
+				<height>900</height>
 				<fadetime>200</fadetime>
 				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 				<texture diffuse="diffuse/listposter.png" background="true">$VAR[PosterImage]</texture>
@@ -75,7 +75,7 @@
 			<!--<control type="group"><left>1070</left><top>660</top><include>Furniture_OSDClock</include><animation effect="zoom" end="80" time="00" condition="true">Conditional</animation><include>DialogVideoInfoAnimation</include></control>-->
 			<control type="image">
 				<top>8</top>
-				<left>444</left>
+				<left>564</left>
 				<width>32</width>
 				<height>32</height>
 				<aspectratio aligny="top">keep</aspectratio>
@@ -84,7 +84,7 @@
 			</control>
 			<control type="image">
 				<top>8</top>
-				<left>444</left>
+				<left>564</left>
 				<width>32</width>
 				<height>32</height>
 				<aspectratio aligny="top">keep</aspectratio>
@@ -92,7 +92,7 @@
 			</control>
 			<control type="label">
 				<top>8</top>
-				<left>444</left>
+				<left>564</left>
 				<width>32</width>
 				<height>32</height>
 				<font>symbolview</font>
@@ -102,7 +102,7 @@
 			</control>
 			<control type="label">
 				<top>8</top>
-				<left>444</left>
+				<left>564</left>
 				<width>32</width>
 				<height>32</height>
 				<font>symbolview</font>
@@ -112,7 +112,7 @@
 			</control>
 			<control type="label">
 				<top>8</top>
-				<left>444</left>
+				<left>564</left>
 				<width>32</width>
 				<height>32</height>
 				<font>symbolview</font>
@@ -122,7 +122,7 @@
 			</control>
 			<control type="label">
 				<top>8</top>
-				<left>444</left>
+				<left>564</left>
 				<width>32</width>
 				<height>32</height>
 				<font>symbolview</font>
@@ -132,7 +132,7 @@
 			</control>
 			<control type="label">
 				<top>8</top>
-				<left>444</left>
+				<left>564</left>
 				<width>32</width>
 				<height>32</height>
 				<font>symbolview</font>
@@ -142,7 +142,7 @@
 			</control>
 			<control type="progress">
 				<top>0</top>
-				<width>480</width>
+				<width>600</width>
 				<height>8</height>
 				<info>ListItem.PercentPlayed</info>
 				<overlaytexture>-</overlaytexture>
@@ -155,7 +155,7 @@
 			<control type="group">
 				<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
 				<control type="image">
-					<left>400</left>
+					<left>540</left>
 					<top>5</top>
 					<height>40</height>
 					<width>40</width>
@@ -163,7 +163,7 @@
 					<aspectratio align="center" aligny="center">keep</aspectratio>
 				</control>
 				<control type="label">
-					<left>400</left>
+					<left>540</left>
 					<top>5</top>
 					<height>40</height>
 					<width>40</width>
@@ -176,7 +176,7 @@
 			</control>
 			<control type="image">
 				<texture border="5" colordiffuse="White70">common/box.png</texture>
-				<left>566</left>
+				<left>616</left>
 				<top>0</top>
 				<width>1194</width>
 				<height>50</height>
@@ -188,7 +188,7 @@
 			<control type="group" id="3444">
 				<visible>!IsEmpty(ListItem.Plot) | !IsEmpty(ListItem.PlotOutline)</visible>
 				<visible>!Control.HasFocus(50) + !Control.HasFocus(5000)</visible>
-				<left>566</left>
+				<left>616</left>
 				<top>62</top>
 				<width>1194</width>
 				<height>119</height>
@@ -244,7 +244,7 @@
 			</control>
 			<!-- Director -->
 			<control type="grouplist">
-				<left>566</left>
+				<left>616</left>
 				<top>0</top>
 				<width>1194</width>
 				<height>50</height>
@@ -333,12 +333,12 @@
 				<visible>!stringcompare(ListItem.Label,..)</visible>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
-				<left>1956</left>
-				<top>120</top>
+				<left>2050</left>
+				<top>TopPad</top>
 				<width>1920</width>
 				<height>120</height>
 				<align>left</align>
-				<animation condition="true" easing="inout" effect="rotate" end="-90" center="1956,0" time="300">conditional</animation>
+				<animation condition="true" easing="inout" effect="rotate" end="-90" center="2050,0" time="300">conditional</animation>
 				<control type="grouplist">
 					<orientation>vertical</orientation>
 					<usecontrolcoords>true</usecontrolcoords>
@@ -407,7 +407,7 @@
 			</control>
 			<!-- Button grouplist -->
 			<control id="9000" type="grouplist">
-				<left>566</left>
+				<left>616</left>
 				<top>178</top>
 				<width>1220</width>
 				<height>116</height>
@@ -517,7 +517,7 @@
 			</control>
 			<!-- Button grouplist Focus  -->
 			<control id="9002" type="grouplist">
-				<left>560</left>
+				<left>610</left>
 				<top>213</top>
 				<width>1222</width>
 				<height>116</height>
@@ -605,7 +605,7 @@
 			<!--Similar Overview-->
 			<!-- Button grouplist -->
 			<control id="9007" type="grouplist">
-				<left>566</left>
+				<left>616</left>
 				<top>299</top>
 				<width>1220</width>
 				<height>116</height>
