@@ -25,7 +25,7 @@
 						<left>30</left>
 						<right>30</right>
 						<font>SmallBold</font>
-						<textcolor>Black70</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<height>66</height>
 						<aligny>center</aligny>
 						<info>ListItem.Label</info>
@@ -33,7 +33,7 @@
 					<control type="label">
 						<left>30</left>
 						<right>30</right>
-						<textcolor>Black70</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<align>right</align>
 						<height>66</height>
 						<aligny>center</aligny>
@@ -109,8 +109,8 @@
 						<width>496</width>
 						<height>135</height>
 						<font>SmallBold</font>
-						<textcolor>Black70</textcolor>
-						<selectedcolor>Black70</selectedcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+						<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 						<info>ListItem.Label</info>
 						<animation effect="slide" end="0,18" condition="IsEmpty(ListItem.Property(Addon.Summary))">Conditional</animation>
 					</control>
@@ -120,8 +120,8 @@
 						<width>496</width>
 						<height>135</height>
 						<font>Mini</font>
-						<textcolor>Black70</textcolor>
-						<selectedcolor>Black70</selectedcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+						<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 						<label>$INFO[ListItem.Property(Addon.Summary)]</label>
 					</control>
 				</itemlayout>
@@ -152,8 +152,8 @@
 							<width>496</width>
 							<height>135</height>
 							<font>SmallBold</font>
-							<textcolor>Black70</textcolor>
-							<selectedcolor>Black70</selectedcolor>
+							<textcolor>$VAR[ColourSelected]</textcolor>
+							<selectedcolor>$VAR[ColourSelected]</selectedcolor>
 							<info>ListItem.Label</info>
 							<animation effect="slide" end="0,18" condition="IsEmpty(ListItem.Property(Addon.Summary))">Conditional</animation>
 						</control>
@@ -163,8 +163,8 @@
 							<width>496</width>
 							<height>135</height>
 							<font>Mini</font>
-							<textcolor>Black70</textcolor>
-							<selectedcolor>Black70</selectedcolor>
+							<textcolor>$VAR[ColourSelected]</textcolor>
+							<selectedcolor>$VAR[ColourSelected]</selectedcolor>
 							<label>$INFO[ListItem.Property(Addon.Summary)]</label>
 						</control>
 					</control>

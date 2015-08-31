@@ -1034,9 +1034,9 @@
 		<control type="image">
 			<left>-8</left>
 			<right>-8</right>
-			<top>-8</top>
+			<top>92</top>
 			<bottom>-8</bottom>
-			<texture border="16" colordiffuse="black">common/box.png</texture>
+			<texture border="16" colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
 		</control>
 		<control type="image">
 			<left>-8</left>
@@ -1044,16 +1044,7 @@
 			<top>-8</top>
 			<height>100</height>
 			<texture>common/white.png</texture>
-			<colordiffuse>$VAR[EmbyLeftColourHighlight]</colordiffuse>
-			<aspectratio>stretch</aspectratio>
-		</control>
-		<control type="image">
-			<left>-8</left>
-			<right>-8</right>
-			<top>62</top>
-			<height>30</height>
-			<texture>common/white.png</texture>
-			<colordiffuse>$VAR[EmbyRightColourHighlight]</colordiffuse>
+			<colordiffuse>$VAR[EmbyMenuTextColourHighlight]</colordiffuse>
 			<aspectratio>stretch</aspectratio>
 		</control>
 	</include>
@@ -1080,7 +1071,7 @@
 		<posy>18</posy>
 		<font>MediumBold</font>
 		<align>left</align>
-		<textcolor>Black70</textcolor>
+		<textcolor>$VAR[EmbyMenuColourHighlight]</textcolor>
 		<textureradiofocus colordiffuse="Black70">buttons/radio-on.png</textureradiofocus>
 		<textureradionofocus colordiffuse="Black30">buttons/radio-off.png</textureradionofocus>
 	</include>
@@ -1091,7 +1082,7 @@
 		<width>990</width>
 		<align>center</align>
 		<font>MediumBold</font>
-		<textcolor>black</textcolor>
+		<textcolor>$VAR[EmbyMenuColourHighlight]</textcolor>
 	</include>
 	<include name="DefDialogBackground">
 		<include>Animation.ZoomIn</include>
@@ -1101,22 +1092,15 @@
 		<width>1080</width>
 		<control type="image">
 			<width>1080</width>
-			<height>900</height>
-			<texture border="16" colordiffuse="black">common/box.png</texture>
+			<top>100</top>
+			<height>800</height>
+			<texture border="16" colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
 		</control>
 		<control type="image">
 			<width>1080</width>
-			<height>70</height>
+			<height>100</height>
 			<texture>common/white.png</texture>
-			<colordiffuse>$VAR[EmbyLeftColourHighlight]</colordiffuse>
-			<aspectratio>stretch</aspectratio>
-		</control>
-		<control type="image">
-			<width>1080</width>
-			<top>70</top>
-			<height>30</height>
-			<texture>common/white.png</texture>
-			<colordiffuse>$VAR[EmbyRightColourHighlight]</colordiffuse>
+			<colordiffuse>$VAR[EmbyMenuTextColourHighlight]</colordiffuse>
 			<aspectratio>stretch</aspectratio>
 		</control>
 	</include>
