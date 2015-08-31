@@ -16,8 +16,14 @@
             <width>1080</width>
             <control type="image">
                 <width>1080</width>
-                <height>900</height>
-                <texture border="16" colordiffuse="White100">common/rounded-shadow8.png</texture>
+                <height>100</height>
+                <texture border="16" colordiffuse="$VAR[EmbyMenuTextColourHighlight]">common/box.png</texture>
+            </control>
+            <control type="image">
+                <width>1080</width>
+                <top>100</top>
+                <height>800</height>
+                <texture border="16" colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
             </control>
 
             <control type="label" id="411">
@@ -26,8 +32,8 @@
                 <posy>15</posy>
                 <width>990</width>
                 <align>center</align>
-                <font>MediumBold</font>
-                <textcolor>Black70</textcolor>
+                <font>HeaderFont</font>
+                <textcolor>$VAR[EmbyMenuColourHighlight]</textcolor>
                 <label>1023</label>
             </control>
 
@@ -40,7 +46,7 @@
                 <width>750</width>
                 <haspath>true</haspath>
                 <font>Tiny</font>
-                <textcolor>Black70</textcolor>
+                <textcolor>$VAR[EmbyMenuColourHighlight]</textcolor>
             </control>
 
             <control type="list" id="450">
@@ -89,8 +95,8 @@
                         <width>496</width>
                         <height>135</height>
                         <font>SmallBold</font>
-                        <textcolor>Black70</textcolor>
-                        <selectedcolor>Black70</selectedcolor>
+                        <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+                        <selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
                         <info>ListItem.Label</info>
                         <animation effect="slide" end="0,18" condition="IsEmpty(ListItem.Property(Addon.Summary))">Conditional</animation>
                     </control>
@@ -100,8 +106,8 @@
                         <width>496</width>
                         <height>135</height>
                         <font>Mini</font>
-                        <textcolor>Black70</textcolor>
-                        <selectedcolor>Black70</selectedcolor>
+                        <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+                        <selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
                         <label>$INFO[ListItem.Property(Addon.Summary)]</label>
                     </control>
 
@@ -143,8 +149,8 @@
                             <width>496</width>
                             <height>135</height>
                             <font>SmallBold</font>
-                            <textcolor>Black70</textcolor>
-                            <selectedcolor>Black70</selectedcolor>
+                            <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+                            <selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
                             <info>ListItem.Label</info>
                             <animation effect="slide" end="0,18" condition="IsEmpty(ListItem.Label2)">Conditional</animation>
                         </control>
@@ -154,8 +160,8 @@
                             <width>496</width>
                             <height>135</height>
                             <font>Mini</font>
-                            <textcolor>Black70</textcolor>
-                            <selectedcolor>Black70</selectedcolor>
+                            <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+                            <selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
                             <label>$INFO[ListItem.Label2]</label>
                         </control>
                     </control>
