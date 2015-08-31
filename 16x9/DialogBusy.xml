@@ -2,55 +2,32 @@
 <!-- Foundation -->
 <window id="136">
     <allowoverlay>no</allowoverlay>
-
     <controls>
-
         <control type="group">
             <visible>!Window.IsVisible(DialogProgress.xml)</visible>
             <include>Animation.FadeIn</include>
             <include>Animation.FadeOut</include>
             <include>GlobalOverlay</include>
             <control type="group">
-                <posx>735</posx>
-                <posy>486</posy>
-
-                <control type="image">
-                    <description>background image</description>
-                    <posx>0</posx>
-                    <posy>0</posy>
-                    <width>450</width>
-                    <height>108</height>
-                    <texture border="16" colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
-                </control>
-
+                <posx>960</posx>
+                <!--Center-->
+                <posy>540</posy>
+                <!--Center-->
                 <control type="multiimage">
-                    <description>Busy animation</description>
-                    <posx>30</posx>
-                    <posy>30</posy>
-                    <width>48</width>
-                    <height>48</height>
+                    <animation effect="fade" start="0" end="100" time="0">WindowOpen</animation>
+                    <animation effect="fade" start="100" end="0" time="500" delay="500">WindowClose</animation>
+                    <posx>-75</posx>
+                    <posy>-75</posy>
+                    <width>150</width>
+                    <height>150</height>
                     <aspectratio>keep</aspectratio>
                     <imagepath>$INFO[Skin.String(SkinHelper.SpinnerTexturePath)]</imagepath>
                     <timeperimage>100</timeperimage>
-                    <colordiffuse>$VAR[EmbyLeftColourHighlight]</colordiffuse>
+                    <colordiffuse>$VAR[ColourHighlight]</colordiffuse>
                     <fadetime>0</fadetime>
                     <visible>!Skin.String(SkinHelper.SpinnerTexturePath,None)</visible>
                 </control>
-
-                <control type="label">
-                    <description>Busy label</description>
-                    <posx>105</posx>
-                    <width>720</width>
-                    <height>108</height>
-                    <aligny>center</aligny>
-                    <align>left</align>
-                    <label>$LOCALIZE[20186]...</label>
-                    <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
-                </control>
-
             </control>
         </control>
-
     </controls>
-
 </window>
