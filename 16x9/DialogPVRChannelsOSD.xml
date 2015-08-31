@@ -14,24 +14,24 @@
 				<posy>-1</posy>
 				<width>668</width>
 				<height>1082</height>
-				<colordiffuse>$VAR[OSDPanel]</colordiffuse>
-				<texture border="5">common/white.png</texture>
-				<animation effect="fade" start="100" end="95" condition="Skin.HasSetting(osd.usetheme)">Conditional</animation>
+				<colordiffuse>black</colordiffuse>
+				<texture border="5">common/box.png</texture>
 			</control>
-			<control type="image">
-				<posx>530</posx>
-				<posy>-4</posy>
-				<width>128</width>
-				<height>128</height>
-				<texture>special://skin/extras/icons/livetv.png</texture>
-				<colordiffuse>$VAR[OSDPanelWhite100]</colordiffuse>
+			<control type="label">
+				<posx>580</posx>
+				<posy>10</posy>
+				<width>54</width>
+				<height>54</height>
+				<label></label>
+				<font>symbolbig</font>
+				<textcolor>$VAR[EmbyLeftColourHighlight]</textcolor>
 			</control>
 			<control type="label">
 				<posx>33</posx>
 				<posy>10</posy>
 				<width>400</width>
 				<align>left</align>
-				<textcolor>$VAR[OSDPanelWhite100]</textcolor>
+				<textcolor>white</textcolor>
 				<font>MediumBold</font>
 				<label>$INFO[VideoPlayer.ChannelGroup]</label>
 			</control>
@@ -40,7 +40,7 @@
 				<posy>43</posy>
 				<width>400</width>
 				<align>left</align>
-				<textcolor>$VAR[OSDPanelWhite70]</textcolor>
+				<textcolor>white2</textcolor>
 				<font>TinyBold</font>
 				<label>$INFO[Container(11).NumItems,, $LOCALIZE[19019]]</label>
 			</control>
@@ -62,15 +62,6 @@
 				<onright>NextChannelGroup</onright>
 				<orientation>vertical</orientation>
 				<itemlayout height="120">
-					<control type="image">
-						<width>667</width>
-						<height>109</height>
-						<texture>common/selected.png</texture>
-						<aspectratio aligny="top">center</aspectratio>
-						<animation effect="fade" start="100" end="15" condition="true">Conditional</animation>
-						<visible>ListItem.IsPlaying</visible>
-						<colordiffuse>$VAR[OSDPanelWhite100]</colordiffuse>
-					</control>
 					<control type="image">
 						<left>10</left>
 						<top>10</top>
@@ -94,8 +85,8 @@
 						<aligny>center</aligny>
 						<height>64</height>
 						<font>SmallBold</font>
-						<textcolor>$VAR[OSDPanelWhite70]</textcolor>
-						<selectedcolor>$VAR[OSDPanelWhite70]</selectedcolor>
+						<textcolor>white2</textcolor>
+						<selectedcolor>white2</selectedcolor>
 						<label>$INFO[ListItem.ChannelNumberLabel,,  ]$INFO[ListItem.ChannelName]</label>
 					</control>
 					<control type="label">
@@ -106,8 +97,8 @@
 						<aligny>center</aligny>
 						<height>64</height>
 						<font>Small</font>
-						<textcolor>$VAR[OSDPanelWhite70]</textcolor>
-						<selectedcolor>$VAR[OSDPanelWhite70]</selectedcolor>
+						<textcolor>white2</textcolor>
+						<selectedcolor>white2</selectedcolor>
 						<label>$INFO[ListItem.Title]</label>
 					</control>
 					<control type="label">
@@ -118,8 +109,8 @@
 						<height>64</height>
 						<align>right</align>
 						<font>Tiny</font>
-						<textcolor>$VAR[OSDPanelWhite70]</textcolor>
-						<selectedcolor>$VAR[OSDPanelWhite70]</selectedcolor>
+						<textcolor>white2</textcolor>
+						<selectedcolor>white2</selectedcolor>
 						<label>$INFO[ListItem.EndTime(hh:mm),$LOCALIZE[31106] ,]</label>
 					</control>
 				</itemlayout>
