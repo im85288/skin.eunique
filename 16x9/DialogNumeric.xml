@@ -13,22 +13,14 @@
         <control type="group">
             <include>Animation.FadeIn</include>
             <include>Animation.FadeOut</include>
-            <control type="image">
-                <posx>-750</posx>
-                <posy>-270</posy>
-                <width>1920</width>
-                <height>1080</height>
-                <texture>common/white.png</texture>
-                <colordiffuse>Black</colordiffuse>
-                <animation effect="fade" end="75" condition="true">Conditional</animation>
-            </control>
+            <include>GlobalOverlay</include>
 
             <control type="image">
                 <posx>-18</posx>
                 <posy>58</posy>
                 <width>456</width>
                 <height>524</height>
-                <texture border="16" colordiffuse="White100">common/rounded-shadow8.png</texture>
+                <texture border="16" colordiffuse="$VAR[EmbyMenuTextColourHighlight]">common/box.png</texture>
             </control>
 
             <control type="label" id="1">
@@ -38,8 +30,8 @@
                 <height>57</height>
                 <aligny>center</aligny>
                 <align>center</align>
-                <font>SmallBold</font>
-                <textcolor>PanelWhite100</textcolor>
+                <font>SmallHeaderFont</font>
+                <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
             </control>
 
             <control type="image">
@@ -58,7 +50,7 @@
                 <width>375</width>
                 <height>75</height>
                 <align>center</align>
-                <textcolor>Black70</textcolor>
+                <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
             </control>
 
             <control type="group">

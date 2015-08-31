@@ -21,7 +21,7 @@
                 <width>660</width>
                 <height>100</height>
                 <animation effect="fade" start="100" end="90" condition="true">Conditional</animation>
-                <texture border="16" colordiffuse="Background">common/rounded-shadow8.png</texture>
+                <texture border="16" colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
             </control>
 
             <control type="group">
@@ -33,7 +33,7 @@
                     <width>64</width>
                     <height>64</height>
                     <aspectratio>keep</aspectratio>
-                    <texture colordiffuse="Dark1">buttons/volume.png</texture>
+                    <texture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">buttons/volume.png</texture>
                     <visible>!Window.IsVisible(DialogMuteBug.xml)</visible>
                 </control>
                 
@@ -43,7 +43,7 @@
                     <width>64</width>
                     <height>64</height>
                     <aspectratio>keep</aspectratio>
-                    <texture colordiffuse="Dark1">buttons/mute.png</texture>
+                    <texture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">buttons/mute.png</texture>
                     <visible>Window.IsVisible(DialogMuteBug.xml)</visible>
                 </control>
                 
@@ -54,7 +54,7 @@
                     <aligny>center</aligny>
                     <font>Tiny</font>
                     <label>$LOCALIZE[13376]$INFO[Player.Volume,  ,]</label>
-                    <textcolor>Dark1</textcolor>
+                    <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
                 </control>
                 
                 <control type="label">
@@ -65,7 +65,7 @@
                     <aligny>center</aligny>
                     <font>Tiny</font>
                     <label>$INFO[Control.GetLabel(1),, %]</label>
-                    <textcolor>Dark1</textcolor>
+                    <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
                 </control>
 
                 <control type="progress">
@@ -88,7 +88,7 @@
                     <centertop>50%</centertop>
                     <height>24</height>
                     <aligny>center</aligny>
-                    <textcolor>Dark1</textcolor>
+                    <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
                     <font>Tiny</font>
                     <label>29802</label>
                 </control>
@@ -110,7 +110,7 @@
                 <posy>0</posy>
                 <width>660</width>
                 <height>100</height>
-                <texture border="16" colordiffuse="OSDBack">common/rounded-shadow8.png</texture>
+                <texture border="16" colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
             </control>
 
             <control type="group">
@@ -122,7 +122,7 @@
                     <width>64</width>
                     <height>64</height>
                     <aspectratio>keep</aspectratio>
-                    <texture colordiffuse="PanelWhite70">buttons/volume.png</texture>
+                    <texture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">buttons/volume.png</texture>
                     <visible>!Window.IsVisible(DialogMuteBug.xml)</visible>
                 </control>
                 
@@ -132,7 +132,7 @@
                     <width>64</width>
                     <height>64</height>
                     <aspectratio>keep</aspectratio>
-                    <texture colordiffuse="PanelWhite70">buttons/mute.png</texture>
+                    <texture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">buttons/mute.png</texture>
                     <visible>Window.IsVisible(DialogMuteBug.xml)</visible>
                 </control>
                 
@@ -143,7 +143,7 @@
                     <aligny>center</aligny>
                     <font>Tiny</font>
                     <label>$LOCALIZE[13376]$INFO[Player.Volume,  ,]</label>
-                    <textcolor>PanelWhite70</textcolor>
+                    <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
                 </control>
                 
                 <control type="label">
@@ -154,7 +154,7 @@
                     <aligny>center</aligny>
                     <font>Tiny</font>
                     <label>$INFO[Control.GetLabel(1),, %]</label>
-                    <textcolor>PanelWhite70</textcolor>
+                    <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
                 </control>
 
                 <control type="progress">
@@ -177,7 +177,7 @@
                     <centertop>50%</centertop>
                     <height>24</height>
                     <aligny>center</aligny>
-                    <textcolor>PanelWhite70</textcolor>
+                    <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
                     <font>Tiny</font>
                     <label>29802</label>
                 </control>
