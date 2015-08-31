@@ -784,7 +784,7 @@
 		<value condition="Stringcompare(Skin.String(widget16),embynode2inprogress)">$INFO[Window(Home).Property(emby.nodes.2.inprogress.title)]</value>
 		<value condition="Stringcompare(Skin.String(widget16),embynode2inprogressepisodes)">$INFO[Window(Home).Property(emby.nodes.2.inprogressepisodes.title)]</value>
 		<value condition="Stringcompare(Skin.String(widget16),embynode2nextepisodes)">$INFO[Window(Home).Property(emby.nodes.2.nextepisodes.title)]</value>
-		<value>$LOCALIZE[31782]</value>
+		<value>$LOCALIZE[31782]$INFO[Container(10017).ListItem.Property(originaltitle), ","]</value>
 	</variable>
 	<variable name="EmbyWidget17Label">
 		<value condition="Stringcompare(Skin.String(widget17),RandomMusic)">$LOCALIZE[31187]</value>
