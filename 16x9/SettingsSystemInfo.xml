@@ -5,9 +5,9 @@
 	<allowoverlay>yes</allowoverlay>
 	<controls>
 		<include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
-		<include>Furniture_Clock</include>
 		<include>Furniture_NowPlaying</include>
-		<include>Furniture_Header</include>
+		<include>Furniture_EmbyHeader</include>
+		<include>Furniture_EmbyClock</include>
 		<control type="group">
 			<include>Animation.Common</include>
 			<left>72</left>
@@ -15,15 +15,16 @@
 			<top>208</top>
 			<height>656</height>
 			<control type="image">
+				<top>100</top>
 				<width>100%</width>
-				<height>100%</height>
+				<height>556</height>
 				<texture border="16" colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
 			</control>
 			<control type="image">
 				<width>100%</width>
 				<height>100</height>
 				<texture>common/white.png</texture>
-				<colordiffuse>$VAR[ColourSelected]</colordiffuse>
+				<colordiffuse>$VAR[EmbyMenuTextColourHighlight]</colordiffuse>
 				<aspectratio>stretch</aspectratio>
 			</control>
 			<control type="group">
@@ -36,7 +37,7 @@
 					<left>30</left>
 					<width>390</width>
 					<posy>-2</posy>
-					<font>MediumBold</font>
+					<font>HeaderFont</font>
 					<label>5</label>
 					<textcolor>$VAR[EmbyMenuColourHighlight]</textcolor>
 				</control>
@@ -54,7 +55,7 @@
 					<left>480</left>
 					<width>390</width>
 					<posy>-2</posy>
-					<font>MediumBold</font>
+					<font>HeaderFont</font>
 					<label>130</label>
 					<textcolor>$VAR[EmbyMenuColourHighlight]</textcolor>
 				</control>

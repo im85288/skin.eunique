@@ -7,8 +7,8 @@
     <controls>
 
         <include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
-        <include>Furniture_Header</include>
-        <include>Furniture_Clock</include>
+        <include>Furniture_EmbyHeader</include>
+        <include>Furniture_EmbyClock</include>
         <include>Furniture_NowPlaying</include>
         
         <control type="group">
@@ -21,8 +21,14 @@
                 <width>870</width>
                 <control type="image">
                     <width>100%</width>
-                    <height>100%</height>
-                    <texture border="5" colordiffuse="Panel">common/box.png</texture>
+                    <height>73</height>
+                    <texture border="16" colordiffuse="$VAR[EmbyMenuTextColourHighlight]">common/box.png</texture>
+                </control>
+                <control type="image">
+                    <top>73</top>
+                    <width>100%</width>
+                    <height>567</height>
+                    <texture border="5" colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
                 </control>
 
                 <control type="label" id="101">
@@ -31,8 +37,8 @@
                     <left>30</left>
                     <right>30</right>
                     <align>left</align>
-                    <font>TinyBold</font>
-                    <textcolor>PanelWhite70</textcolor>
+                    <font>SmallHeaderFont</font>
+                    <textcolor>$VAR[EmbyMenuColourHighlight]</textcolor>
                 </control>
 
                 <control type="list" id="20">
@@ -48,13 +54,11 @@
 
                     <itemlayout height="69" width="840">
 
-                        
-
                         <control type="label">
                             <posx>30</posx>
                             <width>720</width>
                             <align>left</align>
-                            <textcolor>PanelWhite70</textcolor>
+                            <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
                             <info>ListItem.Label</info>
                         </control>
 
@@ -63,7 +67,7 @@
                             <width>150</width>
                             <align>right</align>
                             <font>Tiny</font>
-                            <textcolor>PanelWhite70</textcolor>
+                            <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
                             <info>ListItem.Label2</info>
                         </control>
 
@@ -116,21 +120,26 @@
                 <top>PosterPad</top>
                 <height>640</height>
                 <width>870</width>
-            
+
                 <control type="image">
                     <width>100%</width>
-                    <height>100%</height>
-                    <texture border="5" colordiffuse="Panel">common/box.png</texture>
+                    <height>73</height>
+                    <texture border="16" colordiffuse="$VAR[EmbyMenuTextColourHighlight]">common/box.png</texture>
                 </control>
-
+                <control type="image">
+                    <top>73</top>
+                    <width>100%</width>
+                    <height>567</height>
+                    <texture border="5" colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
+                </control>
                 <control type="label" id="102">
                     <description>Header Label</description>
                     <top>5</top>
                     <left>30</left>
                     <right>30</right>
                     <align>left</align>
-                    <font>TinyBold</font>
-                    <textcolor>PanelWhite70</textcolor>
+                    <font>SmallHeaderFont</font>
+                    <textcolor>$VAR[EmbyMenuColourHighlight]</textcolor>
                 </control>
 
                 <control type="list" id="21">
@@ -152,7 +161,7 @@
                             <posx>30</posx>
                             <width>720</width>
                             <align>left</align>
-                            <textcolor>PanelWhite70</textcolor>
+                            <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
                             <info>ListItem.Label</info>
                         </control>
 
@@ -161,7 +170,7 @@
                             <width>150</width>
                             <align>right</align>
                             <font>Tiny</font>
-                            <textcolor>PanelWhite70</textcolor>
+                            <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
                             <info>ListItem.Label2</info>
                         </control>
 

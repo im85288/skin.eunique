@@ -14,14 +14,21 @@
 				<posx>-30</posx>
 				<posy>-30</posy>
 				<width>960</width>
-				<height>544</height>
-				<texture border="16" colordiffuse="$VAR[EmbyLeftColourHighlight]">common/rounded-shadow8.png</texture>
+				<height>73</height>
+				<texture border="16" colordiffuse="$VAR[EmbyMenuTextColourHighlight]">common/box.png</texture>
+			</control>
+			<control type="image">
+				<posx>-30</posx>
+				<posy>41</posy>
+				<width>960</width>
+				<height>471</height>
+				<texture border="16" colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
 			</control>
 			<control type="label">
 				<description>Heading</description>
 				<centerleft>50%</centerleft>
 				<width>885</width>
-				<font>MediumBold</font>
+				<font>HeaderFont</font>
 				<align>center</align>
 				<label>$LOCALIZE[31791] $VAR[WidgetTitleHome]</label>
 				<top>-20</top>
@@ -46,13 +53,13 @@
 						<font>Tiny</font>
 						<align>center</align>
 						<bottom>-10</bottom>
-						<textcolor>Black70</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 				</itemlayout>
 				<focusedlayout width="900" height="50">
 					<control type="image">
-						<texture colordiffuse="Dark1" border="16">common/white.png</texture>
+						<texture colordiffuse="$VAR[ColourHighlight]" border="16">common/white.png</texture>
 					</control>
 					<control type="label">
 						<align>center</align>
@@ -230,13 +237,13 @@
 						<font>Tiny</font>
 						<align>center</align>
 						<bottom>-10</bottom>
-						<textcolor>Black70</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 				</itemlayout>
 				<focusedlayout width="900" height="50">
 					<control type="image">
-						<texture colordiffuse="Dark1" border="16">common/white.png</texture>
+						<texture colordiffuse="$VAR[ColourHighlight]" border="16">common/white.png</texture>
 					</control>
 					<control type="label">
 						<align>center</align>
@@ -414,13 +421,13 @@
 						<font>Tiny</font>
 						<align>center</align>
 						<bottom>-10</bottom>
-						<textcolor>Black70</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 				</itemlayout>
 				<focusedlayout width="900" height="50">
 					<control type="image">
-						<texture colordiffuse="Dark1" border="16">common/white.png</texture>
+						<texture colordiffuse="$VAR[ColourHighlight]" border="16">common/white.png</texture>
 					</control>
 					<control type="label">
 						<align>center</align>
@@ -598,13 +605,13 @@
 						<font>Tiny</font>
 						<align>center</align>
 						<bottom>-10</bottom>
-						<textcolor>Black70</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 				</itemlayout>
 				<focusedlayout width="900" height="50">
 					<control type="image">
-						<texture colordiffuse="Dark1" border="16">common/white.png</texture>
+						<texture colordiffuse="$VAR[ColourHighlight]" border="16">common/white.png</texture>
 					</control>
 					<control type="label">
 						<align>center</align>
@@ -782,13 +789,13 @@
 						<font>Tiny</font>
 						<align>center</align>
 						<bottom>-10</bottom>
-						<textcolor>Black70</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 				</itemlayout>
 				<focusedlayout width="900" height="50">
 					<control type="image">
-						<texture colordiffuse="Dark1" border="16">common/white.png</texture>
+						<texture colordiffuse="$VAR[ColourHighlight]" border="16">common/white.png</texture>
 					</control>
 					<control type="label">
 						<align>center</align>
@@ -966,13 +973,13 @@
 						<font>Tiny</font>
 						<align>center</align>
 						<bottom>-10</bottom>
-						<textcolor>Black70</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 				</itemlayout>
 				<focusedlayout width="900" height="50">
 					<control type="image">
-						<texture colordiffuse="Dark1" border="16">common/white.png</texture>
+						<texture colordiffuse="$VAR[ColourHighlight]" border="16">common/white.png</texture>
 					</control>
 					<control type="label">
 						<align>center</align>
@@ -1150,13 +1157,13 @@
 						<font>Tiny</font>
 						<align>center</align>
 						<bottom>-10</bottom>
-						<textcolor>Black70</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 				</itemlayout>
 				<focusedlayout width="900" height="50">
 					<control type="image">
-						<texture colordiffuse="Dark1" border="16">common/white.png</texture>
+						<texture colordiffuse="$VAR[ColourHighlight]" border="16">common/white.png</texture>
 					</control>
 					<control type="label">
 						<align>center</align>
@@ -1334,13 +1341,13 @@
 						<font>Tiny</font>
 						<align>center</align>
 						<bottom>-10</bottom>
-						<textcolor>Black70</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 				</itemlayout>
 				<focusedlayout width="900" height="50">
 					<control type="image">
-						<texture colordiffuse="Dark1" border="16">common/white.png</texture>
+						<texture colordiffuse="$VAR[ColourHighlight]" border="16">common/white.png</texture>
 					</control>
 					<control type="label">
 						<align>center</align>
@@ -1518,13 +1525,13 @@
 						<font>Tiny</font>
 						<align>center</align>
 						<bottom>-10</bottom>
-						<textcolor>Black70</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 				</itemlayout>
 				<focusedlayout width="900" height="50">
 					<control type="image">
-						<texture colordiffuse="Dark1" border="16">common/white.png</texture>
+						<texture colordiffuse="$VAR[ColourHighlight]" border="16">common/white.png</texture>
 					</control>
 					<control type="label">
 						<align>center</align>
@@ -1702,13 +1709,13 @@
 						<font>Tiny</font>
 						<align>center</align>
 						<bottom>-10</bottom>
-						<textcolor>Black70</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 				</itemlayout>
 				<focusedlayout width="900" height="50">
 					<control type="image">
-						<texture colordiffuse="Dark1" border="16">common/white.png</texture>
+						<texture colordiffuse="$VAR[ColourHighlight]" border="16">common/white.png</texture>
 					</control>
 					<control type="label">
 						<align>center</align>
@@ -1886,13 +1893,13 @@
 						<font>Tiny</font>
 						<align>center</align>
 						<bottom>-10</bottom>
-						<textcolor>Black70</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 				</itemlayout>
 				<focusedlayout width="900" height="50">
 					<control type="image">
-						<texture colordiffuse="Dark1" border="16">common/white.png</texture>
+						<texture colordiffuse="$VAR[ColourHighlight]" border="16">common/white.png</texture>
 					</control>
 					<control type="label">
 						<align>center</align>
@@ -2070,13 +2077,13 @@
 						<font>Tiny</font>
 						<align>center</align>
 						<bottom>-10</bottom>
-						<textcolor>Black70</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 				</itemlayout>
 				<focusedlayout width="900" height="50">
 					<control type="image">
-						<texture colordiffuse="Dark1" border="16">common/white.png</texture>
+						<texture colordiffuse="$VAR[ColourHighlight]" border="16">common/white.png</texture>
 					</control>
 					<control type="label">
 						<align>center</align>
@@ -2254,13 +2261,13 @@
 						<font>Tiny</font>
 						<align>center</align>
 						<bottom>-10</bottom>
-						<textcolor>Black70</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 				</itemlayout>
 				<focusedlayout width="900" height="50">
 					<control type="image">
-						<texture colordiffuse="Dark1" border="16">common/white.png</texture>
+						<texture colordiffuse="$VAR[ColourHighlight]" border="16">common/white.png</texture>
 					</control>
 					<control type="label">
 						<align>center</align>
@@ -2378,13 +2385,13 @@
 						<font>Tiny</font>
 						<align>center</align>
 						<bottom>-10</bottom>
-						<textcolor>Black70</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 				</itemlayout>
 				<focusedlayout width="900" height="50">
 					<control type="image">
-						<texture colordiffuse="Dark1" border="16">common/white.png</texture>
+						<texture colordiffuse="$VAR[ColourHighlight]" border="16">common/white.png</texture>
 					</control>
 					<control type="label">
 						<align>center</align>
@@ -2502,13 +2509,13 @@
 						<font>Tiny</font>
 						<align>center</align>
 						<bottom>-10</bottom>
-						<textcolor>Black70</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 				</itemlayout>
 				<focusedlayout width="900" height="50">
 					<control type="image">
-						<texture colordiffuse="Dark1" border="16">common/white.png</texture>
+						<texture colordiffuse="$VAR[ColourHighlight]" border="16">common/white.png</texture>
 					</control>
 					<control type="label">
 						<align>center</align>
@@ -2626,13 +2633,13 @@
 						<font>Tiny</font>
 						<align>center</align>
 						<bottom>-10</bottom>
-						<textcolor>Black70</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 				</itemlayout>
 				<focusedlayout width="900" height="50">
 					<control type="image">
-						<texture colordiffuse="Dark1" border="16">common/white.png</texture>
+						<texture colordiffuse="$VAR[ColourHighlight]" border="16">common/white.png</texture>
 					</control>
 					<control type="label">
 						<align>center</align>
