@@ -196,6 +196,7 @@
 				<top>-2</top>
 				<bottom>-8</bottom>
 				<texture colordiffuse="black" border="5">common/box.png</texture>
+				<animation effect="fade" start="100" end="90" condition="true">Conditional</animation>
 			</control>
 			<control type="group">
 				<height>370</height>
@@ -357,13 +358,14 @@
 					<top>-8</top>
 					<bottom>-8</bottom>
 					<texture colordiffuse="black" border="5">common/box.png</texture>
+					<animation effect="fade" start="100" end="90" condition="true">Conditional</animation>
 				</control>
 				<control type="label">
 					<left>10</left>
 					<height>95</height>
 					<aligny>center</aligny>
 					<align>left</align>
-					<font>LargeBoldReg</font>
+					<font>LargeHeaderFont</font>
 					<textcolor>white2</textcolor>
 					<selectedcolor>white2</selectedcolor>
 					<label>$INFO[Control.GetLabel(28)]</label>
@@ -394,6 +396,12 @@
 					<itemlayout height="50" width="870">
 						<control type="group">
 							<visible>Window.IsVisible(MyPVRChannels.xml)</visible>
+							<control type="image">
+								<width>100%</width>
+								<height>100%</height>
+								<texture colordiffuse="selective yellow" border="5">common/box.png</texture>
+								<visible>ListItem.IsPlaying</visible>
+							</control>
 							<control type="progress">
 								<right>0</right>
 								<bottom>20</bottom>
@@ -401,6 +409,18 @@
 								<height>10</height>
 								<reveal>true</reveal>
 								<info>ListItem.Progress</info>
+								<visible>!ListItem.IsPlaying</visible>
+							</control>
+							<control type="progress">
+								<right>0</right>
+								<bottom>20</bottom>
+								<width>100</width>
+								<height>10</height>
+								<reveal>true</reveal>
+								<info>ListItem.Progress</info>
+								<lefttexture colordiffuse="$VAR[ColourSelected]">osd/progress-end.png</lefttexture>
+								<midtexture colordiffuse="$VAR[ColourSelected]">osd/progress-end.png</midtexture>
+								<visible>ListItem.IsPlaying</visible>
 							</control>
 							<control type="label">
 								<right>100</right>
@@ -411,6 +431,18 @@
 								<textcolor>white</textcolor>
 								<selectedcolor>white</selectedcolor>
 								<label>$INFO[ListItem.ChannelNumberLabel,,  ]$INFO[ListItem.ChannelName]$INFO[ListItem.Title,  [I],[/I]]</label>
+								<visible>!ListItem.IsPlaying</visible>
+							</control>
+							<control type="label">
+								<right>100</right>
+								<align>left</align>
+								<aligny>center</aligny>
+								<height>50</height>
+								<font>SmallBold</font>
+								<textcolor>black</textcolor>
+								<selectedcolor>black</selectedcolor>
+								<label>$INFO[ListItem.ChannelNumberLabel,,  ]$INFO[ListItem.ChannelName]$INFO[ListItem.Title,  [I],[/I]]</label>
+								<visible>ListItem.IsPlaying</visible>
 							</control>
 						</control>
 						<control type="group">
@@ -516,6 +548,13 @@
 								<width>100%</width>
 								<height>100%</height>
 								<texture colordiffuse="$VAR[ColourHighlight]" border="5">common/box.png</texture>
+								<visible>!ListItem.IsPlaying</visible>
+							</control>
+							<control type="image">
+								<width>100%</width>
+								<height>100%</height>
+								<texture colordiffuse="selective yellow" border="5">common/box.png</texture>
+								<visible>ListItem.IsPlaying</visible>
 							</control>
 							<control type="group">
 								<visible>Window.IsVisible(MyPVRChannels.xml)</visible>

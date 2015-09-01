@@ -136,6 +136,20 @@
 						<texture background="true" fallback="windows/pvr/defaultchannel.png">$INFO[Container(10).ListItem.Icon]</texture>
 						<aspectratio>keep</aspectratio>
 					</control>
+					<control type="button" id="85">
+						<top>205</top>
+						<left>10</left>
+						<width>200</width>
+						<height>75</height>
+						<align>center</align>
+						<label>$INFO[Control.GetLabel(30)]</label>
+						<onclick>NextChannelGroup</onclick>
+						<ondown>10</ondown>
+						<onup>10</onup>
+						<onleft>10</onleft>
+						<onright>10</onright>
+						<textcolor>white</textcolor>
+					</control>
 				</control>
 				<control type="image">
 					<left>-8</left>
@@ -150,6 +164,8 @@
 					<right>10</right>
 					<top>322</top>
 					<height>600</height>
+					<onup>85</onup>
+					<ondown>10</ondown>
 					<onback>28</onback>
 					<viewtype label="19069">list</viewtype>
 					<progresstexture colordiffuse="Highlight" border="0,62,18,14">pvr/progressindicator.png</progresstexture>
@@ -184,6 +200,14 @@
 							<height>1</height>
 							<texture colordiffuse="white2">common/white.png</texture>
 						</control>
+						<control type="image">
+							<top>1</top>
+							<left>57</left>
+							<width>357</width>
+							<height>67</height>
+							<texture border="12" colordiffuse="selective yellow">common/white.png</texture>
+							<visible>ListItem.IsPlaying</visible>
+						</control>
 						<control type="label">
 							<description>Label</description>
 							<left>57</left>
@@ -195,6 +219,22 @@
 							<textcolor>white</textcolor>
 							<font>MediumSmall</font>
 							<scroll>false</scroll>
+							<visible>!ListItem.IsPlaying</visible>
+							<animation effect="fade" start="100" end="64" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(10) + ![ListItem.IsSelected | ListItem.IsPlaying]">Conditional</animation>
+						</control>
+						<control type="label">
+							<description>Label</description>
+							<left>57</left>
+							<width>347</width>
+							<height>70</height>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.ChannelName]</label>
+							<textcolor>black</textcolor>
+							<selectedcolor>black</selectedcolor>
+							<font>MediumSmall</font>
+							<scroll>false</scroll>
+							<visible>ListItem.IsPlaying</visible>
 							<animation effect="fade" start="100" end="64" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(10) + ![ListItem.IsSelected | ListItem.IsPlaying]">Conditional</animation>
 						</control>
 					</channellayout>
@@ -219,7 +259,15 @@
 							<width>357</width>
 							<height>67</height>
 							<texture border="12" colordiffuse="white">common/white.png</texture>
-							<visible>Control.HasFocus(10)</visible>
+							<visible>Control.HasFocus(10) + !ListItem.IsPlaying</visible>
+						</control>
+						<control type="image">
+							<top>1</top>
+							<left>57</left>
+							<width>357</width>
+							<height>67</height>
+							<texture border="12" colordiffuse="selective yellow">common/white.png</texture>
+							<visible>Control.HasFocus(10) + ListItem.IsPlaying</visible>
 						</control>
 						<control type="label">
 							<description>Label</description>
@@ -230,6 +278,7 @@
 							<aligny>center</aligny>
 							<label>$INFO[ListItem.ChannelName]</label>
 							<textcolor>black</textcolor>
+							<selectedcolor>black</selectedcolor>
 							<font>MediumSmallBold</font>
 							<scroll>false</scroll>
 							<animation effect="fade" start="100" end="64" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(10) + ![ListItem.IsSelected | ListItem.IsPlaying]">Conditional</animation>
@@ -343,13 +392,12 @@
 				<visible>Control.IsVisible(11)</visible>
 				<include>Animation.Common</include>
 				<control type="group">
-					<right>SidePad</right>
-					<width>1100</width>
+					<left>NewSidePad</left>
+					<width>900</width>
 					<top>PosterPad</top>
 					<height>640</height>
 					<control type="list" id="11" description="Now">
-						<right>0</right>
-						<width>1100</width>
+						<left>NewSidePad</left>
 						<top>0</top>
 						<bottom>0</bottom>
 						<onup>11</onup>
@@ -665,13 +713,13 @@
 				<visible>Control.IsVisible(12)</visible>
 				<include>Animation.Common</include>
 				<control type="group">
-					<right>SidePad</right>
-					<width>1100</width>
+					<left>NewSidePad</left>
+					<width>900</width>
 					<top>PosterPad</top>
 					<height>640</height>
 					<control type="list" id="12" description="Next">
+						<left>NewSidePad</left>
 						<right>0</right>
-						<width>1100</width>
 						<top>0</top>
 						<bottom>0</bottom>
 						<onup>12</onup>
@@ -987,8 +1035,8 @@
 				<visible>Control.IsVisible(13)</visible>
 				<include>Animation.Common</include>
 				<control type="group">
-					<right>SidePad</right>
-					<width>1100</width>
+					<left>NewSidePad</left>
+					<width>900</width>
 					<top>PosterPad</top>
 					<height>640</height>
 					<control type="list" id="13" description="Channel">
