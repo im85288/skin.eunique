@@ -941,7 +941,8 @@
 		<value condition="Pvr.IsRecording">[COLOR=$VAR[ColourHighlight]]$INFO[Pvr.NowRecordingTitle][/COLOR]$INFO[Pvr.NowRecordingChannel, ,]</value>
 	</variable>
 	<variable name="HDSD">
-		<value condition="Container.Content(tvshows) | Container.Content(seasons)">$INFO[ListItem.Property(UnWatchedEpisodes)]</value>
+		<value condition="Container.Content(tvshows)">$INFO[ListItem.Property(UnWatchedEpisodes)]$INFO[ListItem.Season,/,,]</value>
+		<value condition="Container.Content(seasons)">$INFO[ListItem.Property(UnWatchedEpisodes)]</value>
 		<value condition="ListItem.IsStereoScopic | !IsEmpty(ListItem.Property(Video3DFormat)) | substring(ListItem.FileName,.3d.)">3D</value>
 		<value condition="VideoPlayer.IsStereoScopic | !IsEmpty(VideoPlayer.Property(Video3DFormat)) | substring(VideoPlayer.FileName,.3d.)">3D</value>
 		<value condition="IntegerGreaterThan(ListItem.VideoResolution,1080) | SubString(ListItem.Filenameandpath,4k)">4K</value>
@@ -950,10 +951,10 @@
 		<value condition="[substring(VideoPlayer.FilenameAndPath,bdmv) | substring(VideoPlayer.FilenameAndPath,blu-ray) | substring(VideoPlayer.FilenameAndPath,bluray) | substring(VideoPlayer.FilenameAndPath,bdrip) | substring(VideoPlayer.FilenameAndPath,bd25) | substring(VideoPlayer.FilenameAndPath,bd50)]">BD</value>
 		<value condition="SubString(ListItem.Filenameandpath,dvd) | SubString(ListItem.Filenameandpath,.ifo,Right) | SubString(ListItem.Filenameandpath,.iso,Right)">DVD</value>
 		<value condition="SubString(VideoPlayer.Filenameandpath,dvd) | SubString(VideoPlayer.Filenameandpath,.ifo,Right) | SubString(VideoPlayer.Filenameandpath,.iso,Right)">DVD</value>
-		<value condition="SubString(ListItem.Filenameandpath,WEBDL) | SubString(ListItem.Filenameandpath,WEB-DL)">3WDL</value>
-		<value condition="SubString(VideoPlayer.Filenameandpath,WEBDL) | SubString(VideoPlayer.Filenameandpath,WEB-DL)">3WDL</value>
+		<value condition="SubString(ListItem.Filenameandpath,WEBDL) | SubString(ListItem.Filenameandpath,WEB-DL)">WDL</value>
+		<value condition="SubString(VideoPlayer.Filenameandpath,WEBDL) | SubString(VideoPlayer.Filenameandpath,WEB-DL)">WDL</value>
 		<value condition="SubString(ListItem.Filenameandpath,WEBRIP) | SubString(ListItem.Filenameandpath,WEB-RIP)">WRIP</value>
-		<value condition="SubString(VideoPlayer.Filenameandpath,WEBRIP) | SubString(VideoPlayer.Filenameandpath,WEB-RIP)">3WRIP</value>
+		<value condition="SubString(VideoPlayer.Filenameandpath,WEBRIP) | SubString(VideoPlayer.Filenameandpath,WEB-RIP)">WRIP</value>
 		<value condition="IntegerGreaterThan(ListItem.VideoResolution,719) + !IsEmpty(ListItem.VideoResolution)">HD</value>
 		<value condition="IntegerGreaterThan(VideoPlayer.VideoResolution,719) + !IsEmpty(VideoPlayer.VideoResolution)">HD</value>
 		<value condition="!IntegerGreaterThan(ListItem.VideoResolution,719) + !IsEmpty(ListItem.VideoResolution)">SD</value>

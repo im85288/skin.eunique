@@ -48,6 +48,38 @@
 			<visible>!Container.Column(0)</visible>
 		</control>
 	</include>
+	<include name="Furniture_ScrollbarM">
+		<control type="scrollbar" id="60">
+			<onback>50</onback>
+			<posx>-250</posx>
+			<posy>TopPad</posy>
+			<height>720</height>
+			<width>10</width>
+			<onleft condition="!Skin.HasSetting(global.kioskmode)">9000</onleft>
+			<onright>50</onright>
+			<texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
+			<texturesliderbar border="4" colordiffuse="$VAR[ColourHighlight]">scrollbar/scrollv.png</texturesliderbar>
+			<texturesliderbarfocus border="4" colordiffuse="$VAR[ColourHighlight]">scrollbar/scrollv.png</texturesliderbarfocus>
+			<animation effect="fade" start="100" end="33" time="200" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
+			<animation effect="slide" end="-100,0" time="200" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
+			<visible>Container.Column(0)</visible>
+		</control>
+		<control type="scrollbar" id="60">
+			<onback>50</onback>
+			<posx>3360</posx>
+			<posy>TopPad</posy>
+			<height>720</height>
+			<width>10</width>
+			<onleft>50</onleft>
+			<onright condition="!Skin.HasSetting(global.kioskmode)">9000</onright>
+			<texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
+			<texturesliderbar border="4" colordiffuse="$VAR[ColourHighlight]">scrollbar/scrollv.png</texturesliderbar>
+			<texturesliderbarfocus border="4" colordiffuse="$VAR[ColourHighlight]">scrollbar/scrollv.png</texturesliderbarfocus>
+			<animation effect="fade" start="100" end="33" time="200" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
+			<animation effect="slide" end="100,0" time="200" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
+			<visible>!Container.Column(0)</visible>
+		</control>
+	</include>
 	<include name="Furniture_Scrollbar_Horizontal">
 		<control type="scrollbar" id="60">
 			<onback>50</onback>
@@ -2192,7 +2224,7 @@
 				<onright condition="!Window.IsVisible(1103)">SetProperty(BounceRight,1,Home)</onright>
 				<onback>9000</onback>
 				<preloaditems>8</preloaditems>
-				<focusposition>0</focusposition>
+				<focusposition>6</focusposition>
 				<viewtype label="">list</viewtype>
 				<orientation>horizontal</orientation>
 				<defaultcontrol always="true">0</defaultcontrol>
@@ -2204,7 +2236,7 @@
 				<animation effect="fade" end="100" start="0" time="300">Visible</animation>
 				<animation effect="fade" end="0" start="100" time="300">Hidden</animation>
 				<animation center="480,1022" condition="!Control.HasFocus(50)" easing="inout" effect="zoom" end="81"  start="100" time="300" tween="sine">Conditional</animation>
-				<itemlayout height="234" width="170">
+				<itemlayout height="234" width="169">
 					<control type="group">
 						<control type="image">
 							<left>0</left>
@@ -2217,7 +2249,7 @@
 						</control>
 					</control>
 				</itemlayout>
-				<focusedlayout height="234" width="170">
+				<focusedlayout height="234" width="169">
 					<control type="group">
 						<control type="image">
 							<left>0</left>
@@ -2228,6 +2260,13 @@
 							<texture background="true" fallback="DefaultActor.png">$INFO[ListItem.Icon]</texture>
 							<fadetime>200</fadetime>
 						</control>
+				<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<right>-2</right>
+							<bottom>0</bottom>
+					<texture colordiffuse="$VAR[EmbyRightColourHighlight]" border="5">common/selectbox.png</texture>
+				</control>
 					</control>
 				</focusedlayout>
 				<content target="video">$VAR[DefWidgetCast]</content>
@@ -2264,7 +2303,7 @@
 				<height>51</height>
 				<font>MediumBold</font>
 				<textcolor>$VAR[ColourSelected]</textcolor>
-				<label>$INFO[Container(508923).ListItem(6).Label]$INFO[Container(508923).ListItem(6).Label2, $LOCALIZE[20347] ]</label>
+				<label>$INFO[Container(508923).ListItem(0).Label]$INFO[Container(508923).ListItem(0).Label2, $LOCALIZE[20347] ]</label>
 			</control>
 			<control type="image">
 			<right>93</right>
