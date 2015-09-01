@@ -282,6 +282,8 @@
 					<right>10</right>
 					<height>6</height>
 					<reveal>true</reveal>
+					<lefttexture colordiffuse="$VAR[EmbyRightColourHighlight]">osd/progress-end.png</lefttexture>
+					<midtexture colordiffuse="$VAR[EmbyRightColourHighlight]">osd/progress-end.png</midtexture>
 					<info>ListItem.Progress</info>
 				</control>
 				<control type="label">
@@ -308,8 +310,8 @@
 					<align>left</align>
 					<height>40</height>
 					<font>SmallBold</font>
-					<textcolor>$VAR[ColourHighlight]</textcolor>
-					<selectedcolor>$VAR[ColourHighlight]</selectedcolor>
+					<textcolor>$VAR[EmbyRightColourHighlight]</textcolor>
+					<selectedcolor>$VAR[EmbyRightColourHighlight]</selectedcolor>
 					<label>$INFO[ListItem.NextTitle,$LOCALIZE[31792] ,]</label>
 				</control>
 				<control type="label">
@@ -318,8 +320,8 @@
 					<align>right</align>
 					<height>40</height>
 					<font>SmallBold</font>
-					<textcolor>$VAR[ColourHighlight]</textcolor>
-					<selectedcolor>$VAR[ColourHighlight]</selectedcolor>
+					<textcolor>$VAR[EmbyRightColourHighlight]</textcolor>
+					<selectedcolor>$VAR[EmbyRightColourHighlight]</selectedcolor>
 					<label>$INFO[ListItem.NextStartTime]$INFO[ListItem.NextEndTime, - ,]</label>
 				</control>
 				<control type="label">
@@ -409,6 +411,8 @@
 								<height>10</height>
 								<reveal>true</reveal>
 								<info>ListItem.Progress</info>
+								<lefttexture colordiffuse="$VAR[EmbyLeftColourHighlight]">osd/progress-end.png</lefttexture>
+								<midtexture colordiffuse="$VAR[EmbyLeftColourHighlight]">osd/progress-end.png</midtexture>
 								<visible>!ListItem.IsPlaying</visible>
 							</control>
 							<control type="progress">
