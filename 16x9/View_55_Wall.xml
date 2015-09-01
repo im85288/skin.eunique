@@ -202,7 +202,6 @@
 				<focusedlayout width="240" height="360">
 					<control type="group">
 						<animation effect="zoom" start="100" end="145" time="100" reversible="false" center="auto">Focus</animation>
-						<animation effect="zoom" start="145" end="100" time="100" reversible="false" center="auto">UnFocus</animation>
 						<top>180</top>
 						<bottom>-180</bottom>
 						<control type="button">
@@ -228,7 +227,7 @@
 							<aspectratio scalediffuse="false">stretch</aspectratio>
 							<texture background="true">$VAR[PosterImage]</texture>
 							<animation type="Focus" reversible="false">
-								<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
+								<effect type="rotate" end="1" start="0" time="200" center="auto" tween="quadratic" easing="out" />
 							</animation>
 						</control>
 						<control type="image">
@@ -302,7 +301,6 @@
 					</control>
 					<control type="group">
 						<animation effect="zoom" start="100" end="145" time="100" reversible="false" center="auto">Focus</animation>
-						<animation effect="zoom" start="145" end="100" time="100" reversible="false" center="auto">UnFocus</animation>
 						<top>-180</top>
 						<bottom>180</bottom>
 						<control type="button">
@@ -328,7 +326,7 @@
 							<aspectratio scalediffuse="false">stretch</aspectratio>
 							<texture background="true">$VAR[PosterImage]</texture>
 							<animation type="Focus" reversible="false">
-								<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
+								<effect type="rotate" end="1" start="0" time="200" center="auto" tween="quadratic" easing="out" />
 							</animation>
 						</control>
 						<control type="image">
