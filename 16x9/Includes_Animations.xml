@@ -5,22 +5,22 @@
 		<animation type="WindowOpen" reversible="false">
 			<effect type="fade" start="0" end="100" time="300" tween="sine" easing="in" />
 			<effect type="zoom" start="50" end="100" time="300" center="auto" tween="quadratic" easing="out" />
-			<effect type="rotate" start="-2" end="0" time="300" delay="300" center="auto" tween="quadratic" easing="out" />
+			<effect type="rotate" start="-1" end="0" time="300" delay="300" center="auto" tween="quadratic" easing="out" />
 		</animation>
 		<animation type="WindowClose" reversible="false">
 			<effect type="fade" end="0" start="100" time="200" tween="sine" easing="out" />
 			<effect type="zoom" end="75" start="100" time="200" center="auto" tween="quadratic" easing="in" />
-			<effect type="rotate" start="0" end="2" time="300" delay="300" center="auto" tween="quadratic" easing="out" />
+			<effect type="rotate" start="0" end="1" time="300" delay="300" center="auto" tween="quadratic" easing="out" />
 		</animation>
 		<animation type="Visible" reversible="false">
 			<effect type="fade" start="0" end="100" time="300" delay="300" tween="sine" easing="in" />
 			<effect type="zoom" start="115" end="100" time="300" delay="300" center="auto" tween="sine" easing="out" />
-			<effect type="rotate" start="-2" end="0" time="300" delay="300" center="auto" tween="quadratic" easing="out" />
+			<effect type="rotate" start="-1" end="0" time="300" delay="300" center="auto" tween="quadratic" easing="out" />
 		</animation>
 		<animation type="Hidden" reversible="false">
 			<effect type="zoom" start="100" end="115" center="auto" tween="sine" delay="0" easing="out" time="300" />
 			<effect type="fade" start="100" end="0" tween="cubic" easing="out" delay="0" time="300" />
-			<effect type="rotate" start="0" end="2" time="300" delay="300" center="auto" tween="quadratic" easing="out" />
+			<effect type="rotate" start="0" end="1" time="300" delay="300" center="auto" tween="quadratic" easing="out" />
 		</animation>
 		<animation type="Conditional" reversible="true" condition="Window.IsVisible(DialogPVRRecordingInfo.xml) | Window.IsVisible(DialogPVRGuideInfo.xml) | Window.IsVisible(DialogPictureInfo.xml) | Window.IsVisible(FileBrowser.xml) | Window.IsVisible(DialogProgress.xml) | Window.IsVisible(DialogYesNo.xml) | Window.IsVisible(DialogOK.xml) | Window.IsVisible(DialogSelect.xml) | Window.IsVisible(DialogButtonMenu.xml) | ControlGroup(9000).HasFocus()">
 			<effect type="zoom" end="165" start="100" time="200" center="auto" tween="quadratic" easing="in" />
