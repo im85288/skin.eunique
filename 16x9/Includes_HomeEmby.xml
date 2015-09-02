@@ -1359,7 +1359,7 @@
 					<font>HomeEmbySemi</font>
 					<label>$INFO[ListItem.Label]</label>
 				</control>
-				<control type="label">
+			<!--	<control type="label">
 					<description>down arrow</description>
 					<top>48</top>
 					<centerleft>50%</centerleft>
@@ -1370,7 +1370,7 @@
 					<label></label>
 					<visible>Control.HasFocus(302)</visible>
 					<animation effect="fade" end="100" start="0" delay="300" time="400" reversible="false">Focus</animation>
-				</control>
+				</control> -->
 			</focusedlayout>
 			<content>
 				<include>skinshortcuts-submenu</include>
@@ -1420,17 +1420,18 @@
 				<font>HomeEmby</font>
 				<label>$INFO[ListItem.Label]</label>
 			</control>
-			<!--<control type="image">
-				<top>-2</top>
+			<control type="image">
+				<top>0</top>
 				<centerleft>50%</centerleft>
 				<width>16</width>
 				<height>16</height>
-				<texture flipy="true" colordiffuse="Dark3">common/arrow-small.png</texture>
+				<texture flipy="true" colordiffuse="$VAR[ColourHighlight]">common/arrow-small.png</texture>
 				<visible>Control.HasFocus(300)</visible>
 				<visible>IntegerGreaterThan(Container(302).NumItems,0)</visible>
-				<animation effect="fade" end="100" start="0" delay="300" time="400" reversible="false">Focus</animation>
-			</control> -->
-			<control type="label">
+				<animation effect="slide" start="0,0" end="0,-20" time="0" reversible="true" center="auto" condition="control.hasfocus(300)">Conditional</animation>
+
+			</control>
+			<!-- <control type="label">
 				<description>up arrow</description>
 				<top>0</top>
 				<centerleft>50%</centerleft>
@@ -1442,7 +1443,7 @@
 				<visible>Control.HasFocus(300)</visible>
 				<visible>IntegerGreaterThan(Container(302).NumItems,0)</visible>
 				<animation effect="fade" end="100" start="0" delay="300" time="400" reversible="false" condition="true">conditional</animation>
-			</control>
+			</control> -->
 		</focusedlayout>
 		<content>
 			<include>skinshortcuts-mainmenu</include>
