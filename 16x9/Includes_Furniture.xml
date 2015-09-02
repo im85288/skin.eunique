@@ -2264,6 +2264,13 @@
 							<texture background="true" fallback="DefaultActor.png">$INFO[ListItem.Icon]</texture>
 							<fadetime>200</fadetime>
 						</control>
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<right>0</right>
+							<bottom>0</bottom>
+							<texture border="15" colordiffuse="99000000">common/white.png</texture>
+						</control>
 					</control>
 				</itemlayout>
 				<focusedlayout height="234" width="169">
@@ -2276,13 +2283,6 @@
 							<aspectratio align="center" aligny="top">stretch</aspectratio>
 							<texture background="true" fallback="DefaultActor.png">$INFO[ListItem.Icon]</texture>
 							<fadetime>200</fadetime>
-						</control>
-						<control type="image">
-							<left>0</left>
-							<top>0</top>
-							<right>-2</right>
-							<bottom>0</bottom>
-							<texture colordiffuse="$VAR[EmbyRightColourHighlight]" border="5">common/selectbox.png</texture>
 						</control>
 					</control>
 				</focusedlayout>

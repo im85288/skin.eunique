@@ -350,7 +350,7 @@
 						<animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
 						<itemgap>2</itemgap>
 						<orientation>horizontal</orientation>
-						<visible>!IsEmpty(Window(movieinformation).Property(AudioLanguage.1))</visible>
+						<visible>!IsEmpty(ListItem.Property(AudioLanguage.1))</visible>
 						<control type="label">
 							<width>auto</width>
 							<height>24</height>
@@ -367,7 +367,7 @@
 							<label>N/A</label>
 							<textcolor>Black300</textcolor>
 							<font>Button</font>
-							<visible>IsEmpty(Window(movieinformation).Property(AudioLanguage.1))</visible>
+							<visible>IsEmpty(ListItem.Property(AudioLanguage.1))</visible>
 						</control>
 					   <include>LanguageFlags</include>
 					</control>
@@ -399,7 +399,7 @@
 							<label>N/A</label>
 							<textcolor>Black300</textcolor>
 							<font>EPGTimeline</font>
-							<visible>IsEmpty(Window(movieinformation).Property(SubtitleLanguage.1)) + IsEmpty(Window(movieinformation).Property(SubtitleLanguage.2))</visible>
+							<visible>IsEmpty(ListItem.Property(SubtitleLanguage.1)) + IsEmpty(ListItem.Property(SubtitleLanguage.2))</visible>
 						</control>
 						<include>SubtitleFlags</include>
 					</control>
