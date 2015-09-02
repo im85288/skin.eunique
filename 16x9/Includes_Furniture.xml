@@ -1609,113 +1609,6 @@
 			</control>
 		</control>
 	</include>
-	<include name="xx">
-		<control type="grouplist">
-			<visible>!Skin.HasSetting(furniture.nowplaying)</visible>
-			<visible>!Window.IsVisible(DialogVolumeBar.xml)</visible>
-			<visible>!Window.IsVisible(DialogKaiToast.xml)</visible>
-			<visible>!Window.IsVisible(DialogExtendedProgressBar.xml)</visible>
-			<include>Animation.FadeIn</include>
-			<include>Animation.FadeOut</include>
-			<visible>IsEmpty(Window(10025).Property(PlayingBackgroundMedia))</visible>
-			<visible>!Window.IsActive(DialogKaiToast.xml)</visible>
-			<visible>Player.HasMedia</visible>
-			<visible>!IsEmpty(Player.Duration) | Player.HasAudio</visible>
-			<visible>!ControlGroup(303).HasFocus()</visible>
-			<animation effect="slide" start="0" end="0,-250" time="150" condition="Control.HasFocus(301) + !Skin.HasSetting(home.vertical)">Conditional</animation>
-			<top>980</top>
-			<right>5</right>
-			<orientation>horizontal</orientation>
-			<usecontrolcoords>true</usecontrolcoords>
-			<itemgap>24</itemgap>
-			<align>right</align>
-			<control type="group">
-				<width>700</width>
-				<posy>10</posy>
-				<control type="image">
-					<centertop>24</centertop>
-					<width>auto</width>
-					<height>auto</height>
-					<texture colordiffuse="$VAR[ColourHighlight]">equaliser.gif</texture>
-					<visible>!Player.Paused</visible>
-				</control>
-				<control type="image">
-					<centertop>24</centertop>
-					<width>auto</width>
-					<height>auto</height>
-					<texture colordiffuse="$VAR[ColourHighlight]">equaliser_stop.gif</texture>
-					<visible>Player.Paused</visible>
-				</control>
-				<control type="label">
-					<centertop>24</centertop>
-					<width>auto</width>
-					<font>MediumBold</font>
-					<align>left</align>
-					<textcolor>Dark1</textcolor>
-					<label>$INFO[Player.Title]</label>
-				</control>
-				<control type="label">
-					<centertop>58</centertop>
-					<align>right</align>
-					<font>Flag</font>
-					<width>auto</width>
-					<textcolor>Dark2</textcolor>
-					<label>$INFO[VideoPlayer.TvShowTitle,, ]$INFO[MusicPlayer.Artist,, ]$INFO[Player.Time]$INFO[Player.Duration, / ,]</label>
-				</control>
-			</control>
-			<control type="group">
-				<posx>-20</posx>
-				<height>100</height>
-				<width>100</width>
-				<control type="image" description="Back">
-					<left>0</left>
-					<centertop>50%</centertop>
-					<width>100</width>
-					<height>100</height>
-					<aspectratio align="center" aligny="center">keep</aspectratio>
-					<texture>progress/back.png</texture>
-					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
-				</control>
-				<control type="image" description="Play">
-					<left>0</left>
-					<centertop>50%</centertop>
-					<width>100</width>
-					<height>100</height>
-					<aspectratio align="center" aligny="center">keep</aspectratio>
-					<texture colordiffuse="Dark1">progress/play.png</texture>
-					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
-					<visible>!Player.Paused</visible>
-				</control>
-				<control type="image" description="Pause">
-					<left>0</left>
-					<centertop>50%</centertop>
-					<width>100</width>
-					<height>100</height>
-					<aspectratio align="center" aligny="center">keep</aspectratio>
-					<texture colordiffuse="Dark1">progress/pause.png</texture>
-					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
-					<visible>Player.Paused</visible>
-				</control>
-				<control type="progress" id="933">
-					<texturebg>-</texturebg>
-					<lefttexture>-</lefttexture>
-					<midtexture>-</midtexture>
-					<righttexture>-</righttexture>
-					<info>Player.Progress</info>
-					<visible>false</visible>
-				</control>
-				<control type="image">
-					<left>0</left>
-					<centertop>50%</centertop>
-					<width>100</width>
-					<height>100</height>
-					<texture colordiffuse="$VAR[ColourHighlight]">$INFO[Control.GetLabel(933),progress/circle/p,.png]</texture>
-					<aspectratio align="center">keep</aspectratio>
-					<visible>!IsEmpty(Player.Duration)</visible>
-				</control>
-			</control>
-		</control>
-	</include>
 
 	<include name="Furniture_Home_Flags">
 		<control type="group">
@@ -2354,7 +2247,7 @@
 				<width>660</width>
 				<height>100</height>
 				<texture border="16" colordiffuse="black">common/box.png</texture>
-				<animation effect="fade" start="100" end="90" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="85" condition="true">Conditional</animation>
 			</control>
 			<control type="group">
 				<centertop>50%</centertop>
@@ -2403,7 +2296,7 @@
 					<centertop>50%</centertop>
 					<width>100</width>
 					<height>100</height>
-					<texture colordiffuse="$VAR[ColourHighlight]">$INFO[Control.GetLabel(9666),progress/circle/p,.png]</texture>
+					<texture colordiffuse="$VAR[EmbyLeftColourHighlight]">$VAR[ProgressPercent]</texture>
 					<aspectratio align="center">keep</aspectratio>
 					<visible>!IsEmpty(Player.Duration)</visible>
 				</control>
@@ -2432,14 +2325,14 @@
 					<centertop>20</centertop>
 					<width>auto</width>
 					<height>auto</height>
-					<texture colordiffuse="$VAR[ColourHighlight]">equaliser.gif</texture>
+					<texture colordiffuse="$VAR[EmbyRightColourHighlight]">equaliser.gif</texture>
 					<visible>!Player.Paused</visible>
 				</control>
 				<control type="image">
 					<centertop>20</centertop>
 					<width>auto</width>
 					<height>auto</height>
-					<texture colordiffuse="$VAR[ColourHighlight]">equaliser_stop.gif</texture>
+					<texture colordiffuse="$VAR[EmbyRightColourHighlight]">equaliser_stop.gif</texture>
 					<visible>Player.Paused</visible>
 				</control>
 			</control>
