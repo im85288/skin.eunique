@@ -346,51 +346,48 @@
 			<include>GlobalOverlay</include>
 		</control>
 		<control type="group">
-			<height>732</height>
-			<include>Def9000Background</include>
-			<control type="group">
-				<control type="image">
-					<description>arrow image</description>
-					<centerleft>50%</centerleft>
-					<posy>-16</posy>
-					<width>16</width>
-					<height>16</height>
-					<texture colordiffuse="White70" flipy="true">common/arrow-small.png</texture>
-				</control>
-				<control type="image">
-					<description>arrow image</description>
-					<centerleft>50%</centerleft>
-					<posy>732</posy>
-					<width>16</width>
-					<height>16</height>
-					<texture colordiffuse="White70" flipy="false">common/arrow-small.png</texture>
-				</control>
-			</control>
+			<include>Def9000SideBladeLeft</include>
 			<control type="grouplist" id="9000">
-				<height>700</height>
-				<usecontrolcoords>true</usecontrolcoords>
+				<onback condition="Window.IsVisible(MyPVRGuide.xml) + Control.IsVisible(10)">ActivateWindow(home)</onback>
+				<left>10</left>
+				<top>115</top>
+				<width>435</width>
+				<height>1080</height>
 				<onleft>500</onleft>
 				<onright>500</onright>
 				<onback>500</onback>
-				<include>Def9000GroupList</include>
+				<onup>9000</onup>
+				<ondown>9000</ondown>
+				<onback>ClearProperty(MediaMenu,Home)</onback>
+				<onback>50</onback>
+				<itemgap>0</itemgap>
+				<animation effect="slide" start="-440,0" end="0,0" time="400" tween="quadratic" easing="out">Visible</animation>
+				<control type="label" id="200">
+					<height>42</height>
+					<textoffsetx>5</textoffsetx>
+					<font>Home</font>
+					<label>ExtendedInfo Settings</label>
+					<textcolor>white</textcolor>
+					<aligny>center</aligny>
+				</control>
 				<control type="button" id="6000">
-					<include>DefContextButton</include>
+					<include>DefContextButtonBlade</include>
 					<align>left</align>
 					<label>19140</label>
 				</control>
 				<control type="button" id="7000">
-					<include>DefContextButton</include>
+					<include>DefContextButtonBlade</include>
 					<align>left</align>
 					<label>$ADDON[script.extendedinfo 32024]</label>
 				</control>
 				<control type="button" id="5007">
-					<include>DefContextButton</include>
+					<include>DefContextButtonBlade</include>
 					<align>left</align>
 					<label>$LOCALIZE[467]:</label>
 					<label2>$INFO[Window.Property(Type)]</label2>
 				</control>
 				<control type="button" id="5001">
-					<include>DefContextButton</include>
+					<include>DefContextButtonBlade</include>
 					<align>left</align>
 					<label>$ADDON[script.extendedinfo 32104]</label>
 					<label2>$INFO[Window.Property(Sort_Label)]</label2>
@@ -398,42 +395,42 @@
 				<control type="label" id="5333">
 					<textoffsetx>30</textoffsetx>
 					<font>TinyBold</font>
-					<include>DefContextButton</include>
+					<include>DefContextButtonBlade</include>
 					<align>left</align>
 					<label>$ADDON[script.extendedinfo 32023]</label>
 				</control>
 				<control type="button" id="5002">
-					<include>DefContextButton</include>
+					<include>DefContextButtonBlade</include>
 					<align>left</align>
 					<label>$LOCALIZE[172]</label>
 				</control>
 				<control type="button" id="5003">
-					<include>DefContextButton</include>
+					<include>DefContextButtonBlade</include>
 					<align>left</align>
 					<label>$LOCALIZE[248]</label>
 				</control>
 				<control type="button" id="5006">
-					<include>DefContextButton</include>
+					<include>DefContextButtonBlade</include>
 					<align>left</align>
 					<label>$ADDON[script.extendedinfo 32066]</label>
 				</control>
 				<control type="button" id="5008">
-					<include>DefContextButton</include>
+					<include>DefContextButtonBlade</include>
 					<align>left</align>
 					<label>$LOCALIZE[180]</label>
 				</control>
 				<control type="button" id="5009">
-					<include>DefContextButton</include>
+					<include>DefContextButtonBlade</include>
 					<align>left</align>
 					<label>$LOCALIZE[287]</label>
 				</control>
 				<control type="button" id="5012">
-					<include>DefContextButton</include>
+					<include>DefContextButtonBlade</include>
 					<align>left</align>
 					<label>$LOCALIZE[169]</label>
 				</control>
 				<control type="button" id="5005">
-					<include>DefContextButton</include>
+					<include>DefContextButtonBlade</include>
 					<align>left</align>
 					<label>$ADDON[script.extendedinfo 32022]</label>
 				</control>

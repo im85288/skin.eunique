@@ -26,37 +26,59 @@
             <include>GlobalOverlay</include>
         </control>
         <control type="group">
-            <include>Def9000Background</include>
-            <include>Def9000Arrows</include>
+            <include>Def9000SideBladeLeft</include>
             <control type="grouplist" id="9000">
-                <include>Def9000GroupList</include>
+                <onback condition="Window.IsVisible(MyPVRGuide.xml) + Control.IsVisible(10)">ActivateWindow(home)</onback>
+                <left>10</left>
+                <top>115</top>
+                <width>435</width>
+                <height>1080</height>
+                <onleft>9000</onleft>
+                <onright>ClearProperty(MediaMenu,Home)</onright>
+                <onright condition="![Window.IsVisible(tvguide) | Window.IsActive(SettingsCategory.xml)]">50</onright>
+                <onright condition="Window.IsVisible(tvguide)">10</onright>
+                <onright condition="Window.IsActive(SettingsCategory.xml)">3</onright>
+                <onup>9000</onup>
+                <ondown>9000</ondown>
+                <onback>ClearProperty(MediaMenu,Home)</onback>
+                <onback>50</onback>
+                <itemgap>0</itemgap>
+                <animation effect="slide" start="-440,0" end="0,0" time="400" tween="quadratic" easing="out">Visible</animation>
+                <control type="label" id="200">
+                    <height>42</height>
+                    <textoffsetx>5</textoffsetx>
+                    <font>Home</font>
+                    <label>Music Playlist Settings</label>
+                    <textcolor>white</textcolor>
+                    <aligny>center</aligny>
+                </control>
                 <control type="radiobutton" id="20">
                     <description>Shuffle</description>
-                    <include>DefContextButton</include>
+                    <include>DefContextButtonBlade</include>
                     <align>left</align>
                     <label>191</label>
                 </control>
                 <control type="button" id="26">
                     <description>Repeat</description>
-                    <include>DefContextButton</include>
+                    <include>DefContextButtonBlade</include>
                     <align>left</align>
                     <label>486</label>
                 </control>
                 <control type="button" id="21">
                     <description>Save</description>
-                    <include>DefContextButton</include>
+                    <include>DefContextButtonBlade</include>
                     <align>left</align>
                     <label>190</label>
                 </control>
                 <control type="button" id="22">
                     <description>Clear</description>
-                    <include>DefContextButton</include>
+                    <include>DefContextButtonBlade</include>
                     <align>left</align>
                     <label>192</label>
                 </control>
                 <control type="button" id="23">
                     <description>Play</description>
-                    <include>DefContextButton</include>
+                    <include>DefContextButtonBlade</include>
                     <align>left</align>
                     <label>208</label>
                 </control>
