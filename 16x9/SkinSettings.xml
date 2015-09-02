@@ -257,6 +257,15 @@
 				<label>$LOCALIZE[20343] [LOWERCASE]$LOCALIZE[31178][/LOWERCASE]</label>
 				<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=episodeshub)</onclick>
 			</control>
+			<!-- fade widget -->
+			<control type="radiobutton" id="9199" description="Fade widgets">
+				<width>1310</width>
+				<visible>Container(8000).Hasfocus(3)</visible>
+				<include>DefSettingsButton2</include>
+				<label>Dim widgets on menu focus</label>
+				<selected>Skin.HasSetting(widgets.dim)</selected>
+				<onclick>Skin.ToggleSetting(widgets.dim)</onclick>
+			</control>
 			<!-- Fanart -->
 			<control type="radiobutton" id="9201" description="Lights Out">
 				<width>1310</width>

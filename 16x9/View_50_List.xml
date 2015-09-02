@@ -13,15 +13,15 @@
                     <top>TopPad</top>
                     <height>720</height>
 					<left>10</left>
-					<right>ListX</right>
-					<onleft condition="!Skin.HasSetting(global.kioskmode)">9000</onleft>
-					<onright>60</onright>
+					<width>ListW</width>
+					<onright condition="!Skin.HasSetting(global.kioskmode)">9000</onright>
+					<onleft>60</onleft>
 					<onup>50</onup>
 					<ondown>50</ondown>
 					<pagecontrol>60</pagecontrol>
 					<viewtype label="535">list</viewtype>
 					<scrolltime tween="quadratic">400</scrolltime>
-					<itemlayout width="ListW" height="64">
+					<itemlayout width="ListW" height="66">
 						<include>50itemlayout</include>
 					</itemlayout>
 					<focusedlayout width="ListW" height="128" condition="Skin.HasSetting(50list.showplot)">
@@ -54,7 +54,7 @@
 							</control>
 						</control>
 					</focusedlayout>
-					<focusedlayout width="ListW" height="64" condition="!Skin.HasSetting(50list.showplot)">
+					<focusedlayout width="ListW" height="66" condition="!Skin.HasSetting(50list.showplot)">
 						<control type="group">
 							<visible>Control.HasFocus(50) + !Window.IsVisible(DialogVideoInfo.xml)</visible>
 							<include>50focuslayout</include>
@@ -65,61 +65,7 @@
 						</control>
 					</focusedlayout>
 				</control>
-				<include>Furniture_Scrollbar</include>
-			</control>
-			<include>View_50_SidePoster</include>
-		</control>
-	</include>
-	<include name="View_50_LowList">
-		<description>List View (id=50)</description>
-		<control type="group">
-			<include>Animation.Common</include>
-			<visible>Control.IsVisible(50)</visible>
-			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml)</visible>
-			<control type="group">
-				<posy>320</posy>
-				<control type="fixedlist" id="50">
-					<visible>Container.Content(musicvideos) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(actors) | Container.Content(sets) | Container.Content(seasons) | [Container.Content(files) + !substring(Container.FolderPath,plugin://,left) + !stringcompare(Container.FolderPath,library://video/movies/) + !stringcompare(Container.FolderPath,library://video/tvshows/) + !stringcompare(Container.FolderPath,special://videoplaylists/)] | [Container.Content(episodes) + !substring(Container.FolderPath,plugin://,left)]</visible>
-					<top>PosterPad</top>
-					<height>320</height>
-					<left>ListX</left>
-					<right>SidePad</right>
-					<onleft condition="!Skin.HasSetting(global.kioskmode)">9000</onleft>
-					<onright>60</onright>
-					<onup>50</onup>
-					<ondown>50</ondown>
-					<focusposition>2</focusposition>
-					<movement>2</movement>
-					<pagecontrol>60</pagecontrol>
-					<viewtype label="535">list</viewtype>
-					<scrolltime tween="quadratic">400</scrolltime>
-					<itemlayout width="ListW" height="64">
-						<include>50itemlayout</include>
-					</itemlayout>
-					<focusedlayout width="ListW" height="64">
-						<control type="group">
-							<visible>Control.HasFocus(50) + !Window.IsVisible(DialogVideoInfo.xml)</visible>
-							<include>50focuslayout</include>
-						</control>
-						<control type="group">
-							<visible>!Control.HasFocus(50) | Window.IsVisible(DialogVideoInfo.xml)</visible>
-							<include>50itemlayout</include>
-						</control>
-					</focusedlayout>
-				</control>
-				<control type="scrollbar" id="60">
-					<onback>50</onback>
-					<centerright>60</centerright>
-					<posy>PosterPad</posy>
-					<height>320</height>
-					<width>8</width>
-					<onleft>50</onleft>
-					<onright condition="!Skin.HasSetting(global.kioskmode)">9000</onright>
-					<texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
-					<texturesliderbar border="4" colordiffuse="Dark3">scrollbar/scrollv.png</texturesliderbar>
-					<texturesliderbarfocus border="4" colordiffuse="Dark2">scrollbar/scrollv.png</texturesliderbarfocus>
-					<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
-				</control>
+				<include>Furniture_ScrollbarL</include>
 			</control>
 			<include>View_50_SidePoster</include>
 		</control>
@@ -127,39 +73,24 @@
 	<include name="View_50_SidePoster">
 		<control type="group" description="Poster">
 			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml)</visible>
-			<left>1462</left>
-                    <top>TopPad</top>
+			<left>970</left>
+			<top>TopPad</top>
 			<visible>!IsEmpty(ListItem.Icon)</visible>
 			<control type="image">
-				<top>PosterH</top>
-				<width>PosterW</width>
-				<height>PosterH</height>
-				<fadetime>100</fadetime>
-				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-				<texture flipy="true" diffuse="diffuse/listposter-ref.png" background="true">$VAR[PosterImage]</texture>
-				<visible>Skin.HasSetting(show.reflections)</visible>
-			</control>
-			<control type="image">
-				<centertop>PosterH</centertop>
-				<width>PosterW</width>
-				<height>48</height>
-				<aspectratio>stretch</aspectratio>
-				<texture>diffuse/shadowspot.png</texture>
-				<visible>!Skin.Hassetting(views.cases)</visible>
-			</control>
-			<control type="image">
-				<width>PosterW</width>
-				<height>PosterH</height>
-				<texture border="5" colordiffuse="FF181818">common/box.png</texture>
-				<visible>!Skin.Hassetting(views.cases)</visible>
-			</control>
-			<control type="image">
-				<width>PosterW</width>
-				<height>PosterH</height>
+				<width>602</width>
+				<height>879</height>
 				<fadetime>100</fadetime>
 				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 				<texture background="true">$VAR[PosterImage]</texture>
 				<visible>!Skin.Hassetting(views.cases)</visible>
+			</control>
+			<control type="image">
+				<left>602</left>
+				<right>10</right>
+				<height>879</height>
+				<fadetime>100</fadetime>
+				<aspectratio align="left" aligny="center" scalediffuse="false">scale</aspectratio>
+				<texture flipx="true" background="true" diffuse="diffuse/listposter-ref.png">$VAR[PosterImage]</texture>
 			</control>
 			<control type="image">
 				<left>11</left>
@@ -171,8 +102,8 @@
 				<visible>Skin.Hassetting(views.cases) + !Skin.Hassetting(views.clearcases)</visible>
 			</control>
 			<control type="image">
-				<width>PosterW</width>
-				<height>PosterH</height>
+				<width>495</width>
+				<height>740</height>
 				<fadetime>100</fadetime>
 				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 				<texture background="true">$VAR[PosterImage]</texture>
@@ -200,171 +131,64 @@
 				<bordersize>2</bordersize>
 				<visible>Skin.Hassetting(views.cases) + !Skin.Hassetting(views.clearcases)</visible>
 			</control>
-			<control type="image">
-				<left>-24</left>
-				<top>-24</top>
-				<width>PosterShadowW</width>
-				<height>PosterShadowH</height>
-				<texture border="32">common/shadow-24.png</texture>
-				<visible>!Skin.Hassetting(views.cases)</visible>
+
+                <control type="label">
+					<left>612</left>
+					<top>0</top>
+					<right>10</right>
+                    <aligny>top</aligny>
+                    <align>left</align>
+                   <font>MediumBold</font>
+                    <textcolor>white</textcolor>
+                    <label>$VAR[LabelDirector]</label>
+                </control>
+                <control type="label">
+					<left>612</left>
+					<top>50</top>
+					<right>10</right>
+                    <aligny>center</aligny>
+                    <align>left</align>
+                   <font>MediumSmallBold</font>
+                    <textcolor>white</textcolor>
+                    <label>$VAR[LabelDuration]</label>
+                </control>
+                <control type="label">
+					<left>612</left>
+					<top>110</top>
+					<right>10</right>
+                    <aligny>center</aligny>
+                    <align>left</align>
+                   <font>TinyBold</font>
+                    <textcolor>white</textcolor>
+                    <label>$VAR[LabelGenreList]</label>
+                </control>
+                <control type="label">
+					<left>612</left>
+					<top>170</top>
+					<right>10</right>
+                    <aligny>center</aligny>
+                    <align>left</align>
+                   <font>MediumSmallBold</font>
+                    <textcolor>white</textcolor>
+                    <label>$INFO[ListItem.Studio]</label>
+                </control>
+			
+			
+			<control type="textbox">
+				<description>textarea</description>
+				<left>612</left>
+				<top>245</top>
+				<right>10</right>
+				<bottom>57</bottom>
+				<align>right</align>
+				<font>MediumLargeBold</font>
+				<textcolor>white</textcolor>
+				<label>$VAR[PlotList]</label>
 			</control>
-		</control>
-	</include>
-	<include name="View_50_SidePoster_Square">
-		<control type="group" description="Poster">
-			<left>SidePad</left>
-			<top>PosterPad</top>
-			<visible>!IsEmpty(ListItem.Icon)</visible>
-			<control type="image">
-				<top>PosterH</top>
-				<width>PosterH</width>
-				<height>PosterH</height>
-				<fadetime>100</fadetime>
-				<aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
-				<texture flipy="true" diffuse="diffuse/listposter-ref.png" background="true">$VAR[PosterImage]</texture>
-				<visible>Skin.HasSetting(show.reflections)</visible>
-			</control>
-			<control type="image">
-				<centertop>PosterH</centertop>
-				<width>PosterH</width>
-				<height>48</height>
-				<aspectratio>stretch</aspectratio>
-				<texture>diffuse/shadowspot.png</texture>
-			</control>
-			<control type="image">
-				<width>PosterH</width>
-				<height>PosterH</height>
-				<texture border="5" colordiffuse="FF181818">common/box.png</texture>
-			</control>
-			<control type="image">
-				<width>PosterH</width>
-				<height>PosterH</height>
-				<fadetime>100</fadetime>
-				<aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
-				<texture background="true">$VAR[PosterImage]</texture>
-			</control>
-			<control type="image">
-				<left>-24</left>
-				<top>-24</top>
-				<width>PosterShadowH</width>
-				<height>PosterShadowH</height>
-				<texture border="32">common/shadow-24.png</texture>
-			</control>
-		</control>
-	</include>
-	<include name="View_50_List_Square">
-		<description>List View (id=50)</description>
-		<control type="group">
-			<include>Animation.Common</include>
-			<visible>Control.IsVisible(50)</visible>
-			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml)</visible>
-			<control type="group">
-				<control type="list" id="50">
-					<top>PosterPad</top>
-					<height>PosterH</height>
-					<left>ListSquareX</left>
-					<right>SidePad</right>
-					<onleft condition="!Skin.HasSetting(global.kioskmode)">9000</onleft>
-					<onright>60</onright>
-					<onup>50</onup>
-					<ondown>50</ondown>
-					<pagecontrol>60</pagecontrol>
-					<viewtype label="535">list</viewtype>
-					<scrolltime>200</scrolltime>
-					<itemlayout width="ListSquareW" height="64">
-						<include>50itemlayout_square</include>
-					</itemlayout>
-					<focusedlayout width="ListSquareW" height="64">
-						<control type="group">
-							<visible>Control.HasFocus(50)</visible>
-							<include>50focuslayout_square</include>
-						</control>
-						<control type="group">
-							<visible>!Control.HasFocus(50)</visible>
-							<include>50itemlayout_square</include>
-						</control>
-					</focusedlayout>
-				</control>
-				<include>Furniture_Scrollbar</include>
-			</control>
-			<include>View_50_SidePoster_Square</include>
-		</control>
-	</include>
-	<include name="View_550_List">
-		<description>List View (id=550)</description>
-		<control type="group">
-			<include>Animation.Common</include>
-			<visible>Control.IsVisible(550)</visible>
-			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml)</visible>
-			<control type="group">
-				<control type="list" id="550">
-					<visible>![Container.Content(musicvideos) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(actors) | Container.Content(sets) | Container.Content(seasons) | [Container.Content(files) + !substring(Container.FolderPath,plugin://,left) + !stringcompare(Container.FolderPath,library://video/movies/) + !stringcompare(Container.FolderPath,library://video/tvshows/) + !stringcompare(Container.FolderPath,special://videoplaylists/)] | [Container.Content(episodes) + !substring(Container.FolderPath,plugin://,left)]]</visible>
-					<top>PosterPad</top>
-					<height>PosterH</height>
-					<left>ListSquareX</left>
-					<right>SidePad</right>
-					<onleft condition="!Skin.HasSetting(global.kioskmode)">9000</onleft>
-					<onright>60</onright>
-					<onup>550</onup>
-					<ondown>550</ondown>
-					<pagecontrol>60</pagecontrol>
-					<viewtype label="535">list</viewtype>
-					<scrolltime>200</scrolltime>
-					<itemlayout width="ListSquareW" height="64">
-						<include>50itemlayout_square</include>
-					</itemlayout>
-					<focusedlayout width="ListSquareW" height="64">
-						<control type="group">
-							<visible>Control.HasFocus(550)</visible>
-							<include>50focuslayout_square</include>
-						</control>
-						<control type="group">
-							<visible>!Control.HasFocus(550)</visible>
-							<include>50itemlayout_square</include>
-						</control>
-					</focusedlayout>
-				</control>
-				<include>Furniture_Scrollbar</include>
-			</control>
-			<control type="group" description="Poster">
-				<left>SidePad</left>
-				<top>PosterPad</top>
-				<control type="image">
-					<top>PosterH</top>
-					<width>PosterH</width>
-					<height>PosterH</height>
-					<fadetime>100</fadetime>
-					<aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
-					<texture flipy="true" diffuse="diffuse/listposter-ref.png" background="true">$VAR[PosterImage]</texture>
-					<visible>Skin.HasSetting(show.reflections)</visible>
-				</control>
-				<control type="image">
-					<centertop>PosterH</centertop>
-					<width>PosterH</width>
-					<height>48</height>
-					<aspectratio>stretch</aspectratio>
-					<texture>diffuse/shadowspot.png</texture>
-				</control>
-				<control type="image">
-					<width>PosterH</width>
-					<height>PosterH</height>
-					<texture border="5" colordiffuse="FF181818">common/box.png</texture>
-				</control>
-				<control type="image">
-					<width>PosterH</width>
-					<height>PosterH</height>
-					<fadetime>100</fadetime>
-					<aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
-					<texture background="true">$VAR[PosterImage]</texture>
-				</control>
-				<control type="image">
-					<left>-24</left>
-					<top>-24</top>
-					<width>PosterShadowH</width>
-					<height>PosterShadowH</height>
-					<texture border="32">common/shadow-24.png</texture>
-				</control>
-			</control>
+
+
+
+
 		</control>
 	</include>
 	<include name="50focuslayout">

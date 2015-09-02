@@ -16,6 +16,22 @@
 			<animation effect="slide" end="100,0" time="200" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
 		</control>
 	</include>
+	<include name="Furniture_ScrollbarL">
+		<control type="scrollbar" id="60">
+			<onback>50</onback>
+			<centerleft>18</centerleft>
+			<posy>TopPad</posy>
+			<height>720</height>
+			<width>10</width>
+			<onright>50</onright>
+			<onleft condition="!Skin.HasSetting(global.kioskmode)">9000</onleft>
+			<texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
+			<texturesliderbar border="4" colordiffuse="$VAR[ColourHighlight]">scrollbar/scrollv.png</texturesliderbar>
+			<texturesliderbarfocus border="4" colordiffuse="$VAR[ColourHighlight]">scrollbar/scrollv.png</texturesliderbarfocus>
+			<animation effect="fade" start="100" end="33" time="200" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
+			<animation effect="slide" end="-100,0" time="200" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
+		</control>
+	</include>
 	<include name="Furniture_ScrollbarW">
 		<control type="scrollbar" id="60">
 			<onback>50</onback>
@@ -980,6 +996,7 @@
 			<top>909</top>
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
+			<animation effect="fade" end="0" start="100" time="0" center="auto" condition="Control.IsVisible(50) + !Window.IsVisible(DialogContextMenu.xml">Conditional</animation>
 			<animation type="Conditional" reversible="true" condition="ControlGroup(9000).HasFocus() | Window.IsVisible(DialogContextMenu.xml)">
 				<effect type="slide" start="0" end="-65" time="200" center="auto" tween="quadratic" easing="out" />
 				<effect type="zoom" end="135" start="100" time="200" center="auto" tween="quadratic" easing="in" />
@@ -2260,13 +2277,13 @@
 							<texture background="true" fallback="DefaultActor.png">$INFO[ListItem.Icon]</texture>
 							<fadetime>200</fadetime>
 						</control>
-				<control type="image">
+						<control type="image">
 							<left>0</left>
 							<top>0</top>
 							<right>-2</right>
 							<bottom>0</bottom>
-					<texture colordiffuse="$VAR[EmbyRightColourHighlight]" border="5">common/selectbox.png</texture>
-				</control>
+							<texture colordiffuse="$VAR[EmbyRightColourHighlight]" border="5">common/selectbox.png</texture>
+						</control>
 					</control>
 				</focusedlayout>
 				<content target="video">$VAR[DefWidgetCast]</content>
@@ -2277,6 +2294,7 @@
 				<right>10</right>
 				<height>139</height>
 				<texture border="15" colordiffuse="$VAR[EmbyLeftColourHighlight]">common/white.png</texture>
+				<visible>!Control.IsVisible(50)</visible>
 			</control>
 			<control type="textbox">
 				<description>textarea</description>
@@ -2288,6 +2306,7 @@
 				<font>MediumSmallBold</font>
 				<textcolor>white</textcolor>
 				<label>$VAR[Plot]</label>
+				<visible>!Control.IsVisible(50)</visible>
 			</control>
 			<control type="image">
 				<left>970</left>
