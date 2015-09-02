@@ -5,7 +5,7 @@
     <allowoverlay>no</allowoverlay>
 
     <controls>
-        <include>GlobalBackground</include>
+        <include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
         <control type="image">
             <include>Dimensions_Fullscreen</include>
             <aspectratio>stretch</aspectratio>

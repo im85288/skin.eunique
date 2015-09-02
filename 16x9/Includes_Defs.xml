@@ -1270,97 +1270,94 @@
 			<include>GlobalOverlay</include>
 		</control>
 		<control type="group">
-			<height>732</height>
-			<include>Def9000Background</include>
-			<control type="image">
-				<description>arrow image</description>
-				<centerleft>50%</centerleft>
-				<posy>-16</posy>
-				<width>16</width>
-				<height>16</height>
-				<texture colordiffuse="White70" flipy="true">common/arrow-small.png</texture>
-			</control>
-			<control type="image">
-				<description>arrow image</description>
-				<centerleft>50%</centerleft>
-				<posy>732</posy>
-				<width>16</width>
-				<height>16</height>
-				<texture colordiffuse="White70" flipy="false">common/arrow-small.png</texture>
-			</control>
+			<include>Def9000SideBladeLeft</include>
 			<control type="grouplist" id="9000">
-				<onleft condition="Window.IsVisible(SettingsCategory.xml)">3</onleft>
-				<onleft condition="!Window.IsVisible(SettingsCategory.xml)">9101</onleft>
-				<onright condition="Window.IsVisible(SettingsCategory.xml)">5</onright>
+				<left>10</left>
+				<top>115</top>
+				<width>435</width>
+				<height>1080</height>
+				<onright condition="Window.IsVisible(SettingsCategory.xml)">3</onright>
 				<onright condition="!Window.IsVisible(SettingsCategory.xml)">9101</onright>
 				<onback condition="Window.IsVisible(SettingsCategory.xml)">3</onback>
 				<onback condition="!Window.IsVisible(SettingsCategory.xml)">9101</onback>
-				<height>700</height>
-				<include>Def9000GroupList</include>
+				<onup>9000</onup>
+				<ondown>9000</ondown>
+				<onback>ClearProperty(MediaMenu,Home)</onback>
+				<onback>50</onback>
+				<itemgap>0</itemgap>
+				<animation effect="slide" start="-440,0" end="0,0" time="400" tween="quadratic" easing="out">Visible</animation>
+				<control type="label" id="200">
+					<height>42</height>
+					<textoffsetx>5</textoffsetx>
+					<font>Home</font>
+					<label>System Settings</label>
+					<textcolor>white</textcolor>
+					<aligny>center</aligny>
+				</control>
 				<control type="button" id="9001">
 					<onclick>ReplaceWindow(AppearanceSettings)</onclick>
 					<onclick>SetFocus(3)</onclick>
-					<include>DefContextButton</include>
+					<include>DefContextButtonBlade</include>
 					<label>480</label>
 				</control>
 				<control type="button" id="9002">
 					<onclick>ReplaceWindow(VideosSettings)</onclick>
 					<onclick>SetFocus(3)</onclick>
-					<include>DefContextButton</include>
+					<include>DefContextButtonBlade</include>
 					<label>3</label>
 				</control>
 				<control type="button" id="9003">
 					<onclick>ReplaceWindow(MusicSettings)</onclick>
 					<onclick>SetFocus(3)</onclick>
-					<include>DefContextButton</include>
+					<include>DefContextButtonBlade</include>
 					<label>2</label>
 				</control>
 				<control type="button" id="9004">
 					<onclick>ReplaceWindow(AddonBrowser)</onclick>
 					<onclick>SetFocus(3)</onclick>
-					<include>DefContextButton</include>
+					<include>DefContextButtonBlade</include>
 					<label>24001</label>
 				</control>
 				<control type="button" id="9005">
 					<onclick>ReplaceWindow(PicturesSettings)</onclick>
 					<onclick>SetFocus(3)</onclick>
-					<include>DefContextButton</include>
+					<include>DefContextButtonBlade</include>
 					<label>1</label>
 				</control>
 				<control type="button" id="9006">
 					<onclick>ReplaceWindow(WeatherSettings)</onclick>
 					<onclick>SetFocus(3)</onclick>
-					<include>DefContextButton</include>
+					<include>DefContextButtonBlade</include>
 					<label>8</label>
 				</control>
 				<control type="button" id="9007">
 					<onclick>ReplaceWindow(NetworkSettings)</onclick>
 					<onclick>SetFocus(3)</onclick>
-					<include>DefContextButton</include>
+					<include>DefContextButtonBlade</include>
 					<label>705</label>
 				</control>
 				<control type="button" id="9008">
 					<onclick>ReplaceWindow(SystemSettings)</onclick>
 					<onclick>SetFocus(3)</onclick>
-					<include>DefContextButton</include>
+					<include>DefContextButtonBlade</include>
 					<label>13000</label>
 				</control>
-				<!--<control type="button" id="9009"> <onclick>ReplaceWindow(Profiles)</onclick> <onclick>SetFocus(3)</onclick> <include>DefContextButton</include> <label>13200</label> </control> -->
+				<!--<control type="button" id="9009"> <onclick>ReplaceWindow(Profiles)</onclick> <onclick>SetFocus(3)</onclick> <include>DefContextButtonBlade</include> <label>13200</label> </control> -->
 				<control type="button" id="9010">
 					<onclick>ReplaceWindow(PVRSettings)</onclick>
 					<onclick>SetFocus(3)</onclick>
-					<include>DefContextButton</include>
+					<include>DefContextButtonBlade</include>
 					<label>19191</label>
 				</control>
 				<control type="button" id="9011">
 					<onclick>ReplaceWindow(7)</onclick>
 					<onclick>SetFocus(3)</onclick>
-					<include>DefContextButton</include>
+					<include>DefContextButtonBlade</include>
 					<label>130</label>
 				</control>
 				<control type="button" id="9012">
 					<onclick>ReplaceWindow(SkinSettings)</onclick>
-					<include>DefContextButton</include>
+					<include>DefContextButtonBlade</include>
 					<label>20077</label>
 				</control>
 			</control>
