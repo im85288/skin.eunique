@@ -5,173 +5,96 @@
     <allowoverlay>no</allowoverlay>
 
     <controls>
-
-        <include>GlobalOverlay</include>
-
+        <include>GlobalBackground</include>
+        <control type="image">
+            <include>Dimensions_Fullscreen</include>
+            <aspectratio>stretch</aspectratio>
+            <texture colordiffuse="black" border="16">common/box.png</texture>
+            <animation effect="fade" reversible="false" end="75" time="0" condition="true">Conditional</animation>
+        </control>
         <control type="group">
-            <include>Animation.ZoomIn</include>
-            <centerleft>50%</centerleft>
-            <centertop>50%</centertop>
-            <height>900</height>
-            <width>1080</width>
-            <control type="image">
-                <width>1080</width>
-                <height>900</height>
-                <texture border="16" colordiffuse="White100">common/rounded-shadow8.png</texture>
+            <include>Furniture_EmbyClock</include>
+            <include>Furniture_HeaderEmby</include>
+        </control>
+        <control type="group">
+            <control type="group">
+                <visible>IntegerGreaterThan(Container(450).NumItems,0)</visible>
+                <animation effect="fade" time="320" delay="300">Visible</animation>
+                <control type="image">
+                    <visible>Control.HasFocus(450)</visible>
+                    <left>6</left>
+                    <top>144</top>
+                    <width>392</width>
+                    <height>392</height>
+                    <animation effect="fade" time="320" delay="200">Visible</animation>
+                    <animation effect="fade" time="200">Hidden</animation>
+                    <texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
+                    <animation effect="slide" end="0,380" time="300" tween="cubic" easing="inout" condition="Container(450).Row(1)">Conditional</animation>
+                    <animation effect="slide" end="380,0" time="300" tween="cubic" easing="inout" condition="Container(450).Column(3)">Conditional</animation>
+                    <animation effect="slide" end="380,0" time="300" tween="cubic" easing="inout" condition="Container(450).Column(3) | Container(450).Column(2)">Conditional</animation>
+                    <animation effect="slide" end="380,0" time="300" tween="cubic" easing="inout" condition="Container(450).Column(3) | Container(450).Column(2) | Container(450).Column(1)">Conditional</animation>
+                </control>
             </control>
-            
-            <control type="label" id="1">
-                <description>header label</description>
-                <centerleft>50%</centerleft>
-                <posy>15</posy>
-                <width>990</width>
-                <align>center</align>
-                <font>MediumBold</font>
-                <textcolor>Black70</textcolor>
-                <label>1036</label>
-            </control>
-
-            <control type="list" id="450">
-                <posx>8</posx>
-                <posy>120</posy>
-                <width>700</width>
-                <height>690</height>
+            <control type="panel" id="450">
+                <left>NewSidePad</left>
+                <top>TopPad</top>
+                <width>1900</width>
+                <height>760</height>
+                <onleft>450</onleft>
+                <onright condition="Control.IsVisible(60)">60</onright>
+                <onright>450</onright>
                 <onup>450</onup>
                 <ondown>450</ondown>
-
-                <itemlayout height="138">
-
+                <pagecontrol>60</pagecontrol>
+                <preloaditems>2</preloaditems>
+                <scrolltime tween="quadratic" easing="out">300</scrolltime>
+                <itemlayout height="380" width="380">
                     <control type="image">
-                        <posx>32</posx>
-                        <posy>12</posy>
-                        <width>111</width>
-                        <height>111</height>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
-                        <texture diffuse="diffuse/dialogselect.png" fallback="DefaultAddonNone.png">$INFO[Listitem.Icon]</texture>
+                        <top>6</top>
+                        <left>6</left>
+                        <width>368</width>
+                        <height>368</height>
+                        <aspectratio aligny="top">scale</aspectratio>
+                        <texture fallback="DefaultFallbackFavourite.png" background="true">$INFO[ListItem.Icon]</texture>
                     </control>
-
-                    <control type="label">
-                        <posy>-18</posy>
-                        <posx>170</posx>
-                        <width>496</width>
-                        <height>135</height>
-                        <font>SmallBold</font>
-                        <textcolor>Black70</textcolor>
-                        <selectedcolor>Black70</selectedcolor>
-                        <info>ListItem.Label</info>
-                        <animation effect="slide" end="0,18" condition="IsEmpty(ListItem.Property(Addon.Summary))">Conditional</animation>
-                    </control>
-                    <control type="label">
-                        <posx>170</posx>
-                        <posy>18</posy>
-                        <width>496</width>
-                        <height>135</height>
-                        <font>Mini</font>
-                        <textcolor>Black70</textcolor>
-                        <selectedcolor>Black70</selectedcolor>
-                        <label>$INFO[ListItem.Property(Addon.Summary)]</label>
-                    </control>
-
                 </itemlayout>
-
-                <focusedlayout height="138">
+                <focusedlayout height="380" width="380">
                     <control type="group">
-                        <visible>!Control.HasFocus(450)</visible>
+                        <include>PanelFocusedItemZoom</include>
                         <control type="image">
-                            <posx>32</posx>
-                            <posy>12</posy>
-                            <width>111</width>
-                            <height>111</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
-                            <texture diffuse="diffuse/dialogselect.png" fallback="DefaultAddonNone.png">$INFO[Listitem.Icon]</texture>
+                            <top>6</top>
+                            <left>6</left>
+                            <width>368</width>
+                            <height>368</height>
+                            <aspectratio aligny="top">scale</aspectratio>
+                            <texture fallback="DefaultFallbackFavourite.png" background="true">$INFO[ListItem.Icon]</texture>
                         </control>
-
-                        <control type="label">
-                            <posy>-18</posy>
-                            <posx>170</posx>
-                            <width>496</width>
-                            <height>135</height>
-                            <font>SmallBold</font>
-                            <textcolor>Black70</textcolor>
-                            <selectedcolor>Black70</selectedcolor>
-                            <info>ListItem.Label</info>
-                            <animation effect="slide" end="0,18" condition="IsEmpty(ListItem.Label2)">Conditional</animation>
+                        <control type="image">
+                            <description>Title overlay</description>
+                            <top>6</top>
+                            <left>6</left>
+                            <width>368</width>
+                            <height>368</height>
+                            <texture border="15" colordiffuse="af000000">common/white.png</texture>
                         </control>
-                        <control type="label">
-                            <posx>170</posx>
-                            <posy>18</posy>
-                            <width>496</width>
-                            <height>135</height>
-                            <font>Mini</font>
-                            <textcolor>Black70</textcolor>
-                            <selectedcolor>Black70</selectedcolor>
-                            <label>$INFO[ListItem.Label2]</label>
+                        <control type="textbox">
+                            <width>368</width>
+                            <left>6</left>
+                            <top>36</top>
+                            <bottom>30</bottom>
+                            <align>center</align>
+                            <aligny>center</aligny>
+                            <font>Tiny</font>
+                            <textcolor>white2</textcolor>
+                            <selectedcolor>white2</selectedcolor>
+                            <label>$INFO[ListItem.Label]$INFO[ListItem.Label2,[CR],]</label>
                         </control>
                     </control>
-                    <control type="group">
-                        <visible>Control.HasFocus(450)</visible>
-                        <control type="image">
-                            <width>696</width>
-                            <height>135</height>
-                            <texture border="5" colordiffuse="$VAR[ColourHighlight]">common/white.png</texture>
-                        </control>
-
-                        <control type="image">
-                            <posx>32</posx>
-                            <posy>12</posy>
-                            <width>111</width>
-                            <height>111</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
-                            <texture diffuse="diffuse/dialogselect.png" fallback="DefaultAddonNone.png">$INFO[Listitem.Icon]</texture>
-                        </control>
-
-                        <control type="label">
-                            <posy>-18</posy>
-                            <posx>170</posx>
-                            <width>496</width>
-                            <height>135</height>
-                            <font>SmallBold</font>
-                            <textcolor>$VAR[ColourSelected]</textcolor>
-                            <selectedcolor>$VAR[ColourSelected]</selectedcolor>
-                            <info>ListItem.Label</info>
-                            <animation effect="slide" end="0,18" condition="IsEmpty(ListItem.Label2)">Conditional</animation>
-                        </control>
-                        <control type="label">
-                            <left>170</left>
-                            <posy>18</posy>
-                            <width>496</width>
-                            <height>135</height>
-                            <font>Mini</font>
-                            <textcolor>$VAR[ColourSelected]</textcolor>
-                            <selectedcolor>$VAR[ColourSelected]</selectedcolor>
-                            <label>$INFO[ListItem.Label2]</label>
-                        </control>
-                    </control>
-
-
                 </focusedlayout>
-
-            </control>
-
-            <control type="image">
-                <description>Large Icon Image</description>
-                <posx>738</posx>
-                <posy>357</posy>
-                <width>300</width>
-                <height>450</height>
-                <texture fallback="DefaultAddonNone.png">$INFO[Container(450).ListItem.Icon]</texture>
-                <aspectratio align="center" aligny="bottom">keep</aspectratio>
-            </control>
-            
-            <control type="image">
-                <posx>705</posx>
-                <top>120</top>
-                <height>687</height>
-                <width>1</width>
-                <texture colordiffuse="Black12">common/white.png</texture>
             </control>
         </control>
 
     </controls>
 
 </window>
+
