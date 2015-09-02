@@ -82,6 +82,7 @@
 		</control>
 	</include>
 	<variable name="GlobalFanart">
+		<value condition="Window.IsVisible(script-ExtendedInfo Script-VideoList.xml) + Control.HasFocus(500) + !IsEmpty(Container(500).ListItem.Art(fanart))">$INFO[Container(500).ListItem.Art(fanart)]</value>
 		<value condition="Window.IsVisible(home) + Skin.HasSetting(home.emby) + Control.HasFocus(3016)">$INFO[Container(3016).ListItem.Art(fanart)]</value>
 		<value condition="Window.IsVisible(home) + Skin.HasSetting(home.emby) + Control.HasFocus(3017)">$INFO[Container(3017).ListItem.Art(fanart)]</value>
 		<value condition="Window.IsVisible(home) + Skin.HasSetting(home.emby) + Control.HasFocus(3012)">$INFO[Container(3012).ListItem.Art(fanart)]</value>
@@ -120,7 +121,6 @@
 		<value condition="[Window.IsActive(videolibrary) | Window.IsActive(movieinformation)] + Skin.HasSetting(SkinHelper.EnableExtraFanart) + !IsEmpty(Window(Home).Property(SkinHelper.ExtraFanArtPath))">$INFO[Window(Home).Property(SkinHelper.ExtraFanArtPath)]</value>
 		<value condition="!IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
 		<value condition="!IsEmpty(Container(9500).ListItem.Art(fanart))">$INFO[Container(9500).ListItem.Art(fanart)]</value>
-		<value condition="!IsEmpty(Container(500).ListItem.Art(fanart))">$INFO[Container(500).ListItem.Art(fanart)]</value>
 		<value condition="!IsEmpty(ListItem.Property(Fanart_Image))">$INFO[ListItem.Property(Fanart_Image)]</value>
 		<value condition="!IsEmpty(Skin.String(fanart.fallback))">$INFO[Skin.String(fanart.fallback)]</value>
 		<value>common/null.png</value>
