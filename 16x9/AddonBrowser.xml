@@ -21,11 +21,14 @@
 				<top>115</top>
 				<width>435</width>
 				<height>1080</height>
-				<onleft>9000</onleft>
 				<onright>ClearProperty(MediaMenu,Home)</onright>
 				<onright condition="![Window.IsVisible(tvguide) | Window.IsActive(SettingsCategory.xml)]">50</onright>
 				<onright condition="Window.IsVisible(tvguide)">10</onright>
 				<onright condition="Window.IsActive(SettingsCategory.xml)">3</onright>
+				<onleft>ClearProperty(MediaMenu,Home)</onleft>
+				<onleft condition="![Window.IsVisible(tvguide) | Window.IsActive(SettingsCategory.xml)]">50</onleft>
+				<onleft condition="Window.IsVisible(tvguide)">10</onleft>
+				<onleft condition="Window.IsActive(SettingsCategory.xml)">3</onleft>
 				<onup>9000</onup>
 				<ondown>9000</ondown>
 				<onback>ClearProperty(MediaMenu,Home)</onback>
@@ -42,17 +45,17 @@
 				</control>
 				<control type="button" id="2">
 					<description>View</description>
-					<include>DefContextButton2</include>
+					<include>DefContextButtonBlade</include>
 					<align>left</align>
 				</control>
 				<control type="button" id="3">
 					<description>Sort</description>
-					<include>DefContextButton2</include>
+					<include>DefContextButtonBlade</include>
 					<align>left</align>
 				</control>
 				<control type="togglebutton" id="4">
 					<description>Ascending/Descending</description>
-					<include>DefContextButton2</include>
+					<include>DefContextButtonBlade</include>
 					<label>584</label>
 					<align>left</align>
 					<altlabel>585</altlabel>
@@ -67,7 +70,7 @@
 				</control>
 				<control type="button" id="9">
 					<description>Check for updates</description>
-					<include>DefContextButton2</include>
+					<include>DefContextButtonBlade</include>
 					<align>left</align>
 					<label>24034</label>
 				</control>
@@ -75,13 +78,13 @@
 					<description>Enable auto-updates</description>
 					<label>24063</label>
 					<align>left</align>
-					<include>DefContextButton2</include>
+					<include>DefContextButtonBlade</include>
 				</control>
 				<control type="radiobutton" id="6">
 					<description>No notifications</description>
 					<label>25000</label>
 					<align>left</align>
-					<include>DefContextButton2</include>
+					<include>DefContextButtonBlade</include>
 				</control>
 				<control type="label" id="202">
 					<height>42</height>
@@ -92,7 +95,7 @@
 					<aligny>center</aligny>
 				</control>
 				<control type="label" id="203">
-					<include>DefContextButton2</include>
+					<include>DefContextButtonBlade</include>
 					<textoffsetx>15</textoffsetx>
 					<font>Home</font>
 					<label>$INFO[Window(AddonBrowser).Property(Updated)]</label>
