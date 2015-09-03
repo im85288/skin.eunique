@@ -7,6 +7,8 @@
 	<onload condition="System.HasAddon(script.tv.show.next.aired)">RunScript(script.tv.show.next.aired,backend=True)</onload>
 	<onload>AlarmClock(castScroll,Control.Move(508923,-1),00:03,silent,loop)</onload> 
 	<onunload>CancelAlarm(castScroll,true)</onunload>
+	<onunload>ClearProperty(SkinHelper.ListItemGenres,home)</onunload>
+	<onunload>ClearProperty(SkinHelper.ListItemStudios,home)</onunload>
 	<menucontrol>508923</menucontrol>
 	<controls>
 		<include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
