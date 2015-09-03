@@ -25,6 +25,13 @@
 						<include>50itemlayout</include>
 					</itemlayout>
 					<focusedlayout width="ListW" height="128" condition="Skin.HasSetting(50list.showplot)">
+						<control type="button">
+							<texturefocus>-</texturefocus>
+							<texturenofocus>-</texturenofocus>
+							<onfocus condition="Container.Content(movies)">ClearProperty(TVShowID,home)</onfocus>
+							<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
+							<onfocus>RunScript(script.toolbox,info=blur,id='"$VAR[PosterImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfo)</onfocus>
+						</control>
 						<control type="group">
 							<visible>Control.HasFocus(50) + !Window.IsVisible(DialogVideoInfo.xml)</visible>
 							<include>50focuslayout</include>
@@ -55,6 +62,13 @@
 						</control>
 					</focusedlayout>
 					<focusedlayout width="ListW" height="66" condition="!Skin.HasSetting(50list.showplot)">
+						<control type="button">
+							<texturefocus>-</texturefocus>
+							<texturenofocus>-</texturenofocus>
+							<onfocus condition="Container.Content(movies)">ClearProperty(TVShowID,home)</onfocus>
+							<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
+							<onfocus>RunScript(script.toolbox,info=blur,id='"$VAR[PosterImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfo)</onfocus>
+						</control>
 						<control type="group">
 							<visible>Control.HasFocus(50) + !Window.IsVisible(DialogVideoInfo.xml)</visible>
 							<include>50focuslayout</include>
@@ -203,13 +217,6 @@
 	</include>
 
 	<include name="50focuslayout">
-		<control type="button">
-			<texturefocus>-</texturefocus>
-			<texturenofocus>-</texturenofocus>
-			<onfocus condition="Container.Content(movies)">ClearProperty(TVShowID,home)</onfocus>
-			<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
-			<onfocus condition="!Container.Scrolling | !Container.OnScrollNext | !Container.OnScrollPrevious">RunScript(script.toolbox,info=blur,id='"$VAR[PosterImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfo)</onfocus>
-		</control>
 		<control type="image">
 			<width>100%</width>
 			<height>100%</height>
