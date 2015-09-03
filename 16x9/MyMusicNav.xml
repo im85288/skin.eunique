@@ -4,11 +4,12 @@
     <defaultcontrol always="true">501</defaultcontrol>
     <menucontrol>9000</menucontrol>
     <allowoverlay>yes</allowoverlay>
-    <views>501,54,57</views>
+    <views>50,501,54,57</views>
     <controls>
         <include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
         <include>Furniture_NowPlaying</include>
         <include>Furniture_Logo</include>
+		<include >View_50_List</include>
         <include>View_501_Thumbnails</include>
         <include>View_54_Banner</include>
         <include>View_57_ExtraInfo</include>
@@ -28,7 +29,7 @@
                 <include>Def9000MusicSide</include>
                 <control type="label" id="201">
                     <height>42</height>
-                    <textoffsetx>15</textoffsetx>
+                    <textoffsetx>5</textoffsetx>
                     <font>Home</font>
                     <label>Misc Options</label>
                     <textcolor>white</textcolor>
@@ -36,21 +37,21 @@
                 </control>
                 <control type="button" id="9091">
                     <description>Global Search</description>
-                    <include>DefContextButton2</include>
+                    <include>DefContextButtonBlade</include>
                     <align>left</align>
                     <label>137</label>
                     <onclick>RunScript(script.globalsearch,artists=true&amp;albums=true&amp;songs=true)</onclick>
                 </control>
                 <control type="radiobutton" id="16">
                     <description>PartyMode</description>
-                    <include>DefContextButton2</include>
+                    <include>DefContextButtonBlade</include>
                     <align>left</align>
                     <label>589</label>
                 </control>
                 <control type="radiobutton" id="98">
                     <visible>Container.CanFilterAdvanced</visible>
                     <description>Filter</description>
-                    <include>DefContextButton2</include>
+                    <include>DefContextButtonBlade</include>
                     <label>587</label>
                     <align>left</align>
                     <onclick>SetFocus(50)</onclick>
@@ -59,7 +60,7 @@
                 </control>
                 <control type="label" id="203">
                     <height>42</height>
-                    <textoffsetx>15</textoffsetx>
+                    <textoffsetx>5</textoffsetx>
                     <font>Home</font>
                     <label>Actions</label>
                     <textcolor>white</textcolor>
@@ -69,7 +70,7 @@
                     <description>Update</description>
                     <align>left</align>
                     <label>653</label>
-                    <include>DefContextButton2</include>
+                    <include>DefContextButtonBlade</include>
                 </control>
             </control>
         </control>

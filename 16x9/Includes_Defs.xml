@@ -1240,7 +1240,7 @@
 		<texturedown colordiffuse="$VAR[EmbyMenuTextColourHighlight]">buttons/spin-down.png</texturedown>
 		<textureupfocus flipy="true" colordiffuse="$VAR[ColourSelected]">buttons/spin-down.png</textureupfocus>
 		<texturedownfocus colordiffuse="$VAR[EmbyMenuTextColourHighlight]">buttons/spin-down.png</texturedownfocus>
-		<textureradiofocus colordiffuse="$VAR[ColourHighlight]">buttons/radio-on.png</textureradiofocus>
+		<textureradiofocus colordiffuse="$VAR[ColourHighlight2]">buttons/radio-on.png</textureradiofocus>
 		<textureradionofocus colordiffuse="$VAR[EmbyMenuTextColourHighlight]">buttons/radio-off.png</textureradionofocus>
 		<texturefocus colordiffuse="$VAR[ColourHighlight]">common/white.png</texturefocus>
 		<alttexturefocus colordiffuse="$VAR[EmbyMenuTextColourHighlight]">common/white.png</alttexturefocus>
@@ -1726,11 +1726,14 @@
 		<top>115</top>
 		<width>435</width>
 		<height>1080</height>
-		<onleft>50</onleft>
 		<onright>ClearProperty(MediaMenu,Home)</onright>
 		<onright condition="![Window.IsVisible(tvguide) | Window.IsActive(SettingsCategory.xml)]">50</onright>
 		<onright condition="Window.IsVisible(tvguide)">10</onright>
 		<onright condition="Window.IsActive(SettingsCategory.xml)">3</onright>
+		<onleft>ClearProperty(MediaMenu,Home)</onleft>
+		<onleft condition="![Window.IsVisible(tvguide) | Window.IsActive(SettingsCategory.xml)]">50</onleft>
+		<onleft condition="Window.IsVisible(tvguide)">10</onleft>
+		<onleft condition="Window.IsActive(SettingsCategory.xml)">3</onleft>
 		<onup>9000</onup>
 		<ondown>9000</ondown>
 		<onback>ClearProperty(MediaMenu,Home)</onback>
@@ -2005,11 +2008,14 @@
 		<top>115</top>
 		<width>435</width>
 		<height>1080</height>
-		<onleft>9000</onleft>
 		<onright>ClearProperty(MediaMenu,Home)</onright>
 		<onright condition="![Window.IsVisible(tvguide) | Window.IsActive(SettingsCategory.xml)]">50</onright>
 		<onright condition="Window.IsVisible(tvguide)">10</onright>
 		<onright condition="Window.IsActive(SettingsCategory.xml)">3</onright>
+		<onleft>ClearProperty(MediaMenu,Home)</onleft>
+		<onleft condition="![Window.IsVisible(tvguide) | Window.IsActive(SettingsCategory.xml)]">50</onleft>
+		<onleft condition="Window.IsVisible(tvguide)">10</onleft>
+		<onleft condition="Window.IsActive(SettingsCategory.xml)">3</onleft>
 		<onup>9000</onup>
 		<ondown>9000</ondown>
 		<onback>ClearProperty(MediaMenu,Home)</onback>

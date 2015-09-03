@@ -92,88 +92,47 @@
 				<aspectratio align="left" aligny="center" scalediffuse="false">scale</aspectratio>
 				<texture flipx="true" background="true" diffuse="diffuse/listposter-ref.png">$INFO[Window(home).Property(VideoInfo.ImageFilter)]</texture>
 			</control>
-			<control type="image">
-				<left>11</left>
-				<top>11</top>
-				<width>411</width>
-				<height>627</height>
-				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-				<texture background="true">$VAR[PosterImage]</texture>
-				<visible>Skin.Hassetting(views.cases) + !Skin.Hassetting(views.clearcases)</visible>
+			<control type="label">
+				<left>607</left>
+				<top>-5</top>
+				<right>15</right>
+				<align>left</align>
+				<height>46</height>
+				<font>MediumBold</font>
+				<scroll>true</scroll>
+				<textcolor>white</textcolor>
+				<label>$VAR[LabelDirector]</label>
 			</control>
-			<control type="image">
-				<width>495</width>
-				<height>740</height>
-				<fadetime>100</fadetime>
-				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-				<texture background="true">$VAR[PosterImage]</texture>
-				<visible>Skin.Hassetting(views.cases) + Skin.Hassetting(views.clearcases)</visible>
+			<control type="label">
+				<left>607</left>
+				<top>50</top>
+				<right>10</right>
+				<aligny>center</aligny>
+				<align>left</align>
+			   <font>MediumSmallBold</font>
+				<textcolor>white</textcolor>
+				<label>$VAR[LabelDuration]</label>
 			</control>
-			<control type="image">
-				<posx>-75</posx>
-				<posy>-50</posy>
-				<width>527</width>
-				<height>730</height>
-				<fadetime>100</fadetime>
-				<texture background="true">boxes/$VAR[ShowcaseCasePathVar]/$VAR[GlobalCaseVar]</texture>
-				<aspectratio align="center" aligny="top">stretch</aspectratio>
-				<bordersize>2</bordersize>
-				<visible>Skin.Hassetting(views.cases) + Skin.Hassetting(views.clearcases)</visible>
+			<control type="textbox">
+				<left>607</left>
+				<top>110</top>
+				<right>10</right>
+				<height>32</height>
+				<align>left</align>
+				<font>TinyBold</font>
+				<textcolor>white</textcolor>
+				<label>$VAR[LabelGenreList]</label>
 			</control>
-			<control type="image">
-				<posx>-70</posx>
-				<posy>-50</posy>
-				<width>527</width>
-				<height>730</height>
-				<fadetime>100</fadetime>
-				<texture background="true">boxes/$VAR[ShowcaseCasePathVar]/$VAR[GlobalCaseVar]</texture>
-				<aspectratio align="center" aligny="top">stretch</aspectratio>
-				<bordersize>2</bordersize>
-				<visible>Skin.Hassetting(views.cases) + !Skin.Hassetting(views.clearcases)</visible>
+			<control type="textbox">
+				<left>607</left>
+				<top>170</top>
+				<right>10</right>
+				<height>42</height>
+				<align>left</align>
+				<font>MediumSmallBold</font>
+				<textcolor>white</textcolor>
+				<label>$INFO[Window(Home).Property(SkinHelper.ListItemStudios)]</label>
 			</control>
-
-                <control type="label">
-					<left>607</left>
-					<top>0</top>
-					<right>10</right>
-                    <aligny>top</aligny>
-                    <align>left</align>
-                   <font>MediumBold</font>
-                    <textcolor>white</textcolor>
-                    <label>$VAR[LabelDirector]</label>
-                </control>
-                <control type="label">
-					<left>607</left>
-					<top>50</top>
-					<right>10</right>
-                    <aligny>center</aligny>
-                    <align>left</align>
-                   <font>MediumSmallBold</font>
-                    <textcolor>white</textcolor>
-                    <label>$VAR[LabelDuration]</label>
-                </control>
-                <control type="label">
-					<left>607</left>
-					<top>110</top>
-					<right>10</right>
-                    <aligny>center</aligny>
-                    <align>left</align>
-                   <font>TinyBold</font>
-                    <textcolor>white</textcolor>
-                    <label>$VAR[LabelGenreList]</label>
-                </control>
-                <control type="label">
-					<left>607</left>
-					<top>170</top>
-					<right>10</right>
-                    <aligny>center</aligny>
-                    <align>left</align>
-                   <font>MediumSmallBold</font>
-                    <textcolor>white</textcolor>
-                    <label>$INFO[ListItem.Studio]</label>
-                </control>
-			
-			
 			<control type="textbox">
 				<description>textarea</description>
 				<left>607</left>
@@ -185,20 +144,6 @@
 				<textcolor>white</textcolor>
 				<label>$VAR[PlotList]</label>
 			</control>
-
-			<!-- REMOVE ME! Demo only -->
-			<control type="textbox">
-				<description>textarea</description>
-				<width>602</width>
-				<top>50</top>
-				<bottom>5</bottom>
-				<align>center</align>
-				<font>SmallBold</font>
-				<textcolor>brink pink</textcolor>
-				<label>$INFO[Window(Home).Property(SkinHelper.ListItemGenres)][CR]$INFO[Window(Home).Property(SkinHelper.ListItemStudios)][CR]$INFO[Window(Home).Property(SkinHelper.ListItemCast)]</label>
-			</control>
-
-
 		</control>
 	</include>
 	<include name="50focuslayout">
@@ -207,7 +152,7 @@
 			<texturenofocus>-</texturenofocus>
 			<onfocus condition="Container.Content(movies)">ClearProperty(TVShowID,home)</onfocus>
 			<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
-			<onfocus>RunScript(script.toolbox,info=blur,id='"$VAR[PosterImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfo)</onfocus>
+			<onfocus condition="!Container.Scrolling | !Container.OnScrollNext | !Container.OnScrollPrevious">RunScript(script.toolbox,info=blur,id='"$VAR[PosterImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfo)</onfocus>
 		</control>
 		<control type="image">
 			<width>100%</width>

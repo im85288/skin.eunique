@@ -55,12 +55,11 @@
                     <itemlayout width="930" height="66">
                         <include>50itemlayout</include>
                     </itemlayout>
-
                     <focusedlayout width="930" height="66">
 						<control type="button">
 							<texturefocus>-</texturefocus>
 							<texturenofocus>-</texturenofocus>
-							<onfocus>RunScript(script.toolbox,info=blur,id='"$VAR[LandscapeImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfoExtra)</onfocus>
+							<onfocus condition="!Container.Scrolling">RunScript(script.toolbox,info=blur,id='"$VAR[LandscapeImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfoExtra)</onfocus>
 						</control>
                         <control type="group">
                             <visible>Control.HasFocus(57) + !Window.IsVisible(DialogVideoInfo.xml)</visible>
