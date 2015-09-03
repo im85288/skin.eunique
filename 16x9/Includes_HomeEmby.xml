@@ -633,7 +633,7 @@
 			<visible>!Window.IsVisible(DialogAlbumInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-VideoList.xml) + !Window.IsVisible(script-ExtendedInfo Script-YoutubeList.xml)</visible>
 			<visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)</visible>
 			<visible>!stringcompare(ListItem.Label,..)</visible>
-			<animation effect="slide" end="104" condition="!Window.IsVisible(Home) + [container.Content(movies) | Container.Content(episodes)]" time="200">Conditional</animation>
+			<animation effect="slide" end="114" condition="!Window.IsVisible(Home) + [container.Content(movies) | Container.Content(episodes)]" time="200">Conditional</animation>
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
 			<left>284</left>
