@@ -21,7 +21,12 @@
             
             <control type="label">
                 <description>Header Label</description>
-                <include>DefDialogInfoHeader</include>
+		<left>5</left>
+		<right>5</right>
+		<posy>10</posy>
+		<font>HeaderFont</font>
+		<align>center</align>
+		<textcolor>$VAR[EmbyMenuColourHighlight]</textcolor>
                 <label>$INFO[ListItem.Label]</label>
             </control>
             

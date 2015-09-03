@@ -146,6 +146,62 @@
 			</control>
 		</control>
 	</include>
+
+	<include name="View_50_SidePoster_Square">
+		<control type="group" description="Poster">
+			<left>SidePad</left>
+			<top>PosterPad</top>
+			<visible>!IsEmpty(ListItem.Icon)</visible>
+			<control type="image">
+				<width>PosterH</width>
+				<height>PosterH</height>
+				<fadetime>100</fadetime>
+				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+				<texture background="true">$VAR[PosterImage]</texture>
+			</control>
+		</control>
+	</include>
+	<include name="View_50_List_Square">
+		<description>List View (id=50)</description>
+		<control type="group">
+			<include>Animation.Common</include>
+			<visible>Control.IsVisible(50)</visible>
+			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml)</visible>
+			<control type="group">
+				<control type="list" id="50">
+                    <top>TopPad</top>
+                    <height>896</height>
+					<left>10</left>
+					<right>10</right>
+					<onleft condition="!Skin.HasSetting(global.kioskmode)">9000</onleft>
+					<onright>60</onright>
+					<onup>50</onup>
+					<ondown>50</ondown>
+					<pagecontrol>60</pagecontrol>
+					<viewtype label="535">list</viewtype>
+					<scrolltime>200</scrolltime>
+					<itemlayout width="1900" height="64">
+						<include>50itemlayout_square</include>
+					</itemlayout>
+					<focusedlayout width="1900" height="64">
+						<control type="group">
+							<visible>Control.HasFocus(50)</visible>
+							<include>50focuslayout_square</include>
+						</control>
+						<control type="group">
+							<visible>!Control.HasFocus(50)</visible>
+							<include>50itemlayout_square</include>
+						</control>
+					</focusedlayout>
+				</control>
+				<include>Furniture_Scrollbar</include>
+			</control>
+			<!--
+			<include>View_50_SidePoster_Square</include>
+			-->
+		</control>
+	</include>
+
 	<include name="50focuslayout">
 		<control type="button">
 			<texturefocus>-</texturefocus>
@@ -413,34 +469,40 @@
 	</include>
 	<include name="50itemlayout_square">
 		<control type="image">
+			<left>7</left>
+			<width>64</width>
+			<height>64</height>
+			<texture>$INFO[ListItem.Icon]</texture>
+		</control>
+		<control type="image">
 			<left>25</left>
 			<centertop>32</centertop>
 			<width>32</width>
 			<height>32</height>
 			<aspectratio aligny="top">keep</aspectratio>
-			<texture colordiffuse="Dark1">indicator/playlist.png</texture>
+			<texture colordiffuse="white">indicator/playlist.png</texture>
 			<visible>ListItem.IsPlaying</visible>
 		</control>
 		<control type="label">
-			<posx>30</posx>
+			<posx>77</posx>
 			<width>auto</width>
 			<aligny>center</aligny>
 			<height>64</height>
 			<font>SmallBold</font>
 			<label>$INFO[ListItem.Label]</label>
-			<textcolor>Dark1</textcolor>
-			<selectedcolor>Dark1</selectedcolor>
+			<textcolor>white</textcolor>
+			<selectedcolor>white</selectedcolor>
 			<visible>!ListItem.IsPlaying</visible>
 		</control>
 		<control type="label">
-			<posx>78</posx>
+			<posx>125</posx>
 			<width>auto</width>
 			<aligny>center</aligny>
 			<height>64</height>
 			<font>SmallBold</font>
 			<label>$INFO[ListItem.Label]</label>
-			<textcolor>Dark1</textcolor>
-			<selectedcolor>Dark1</selectedcolor>
+			<textcolor>white</textcolor>
+			<selectedcolor>white</selectedcolor>
 			<visible>ListItem.IsPlaying</visible>
 		</control>
 		<control type="label">
@@ -450,8 +512,8 @@
 			<height>64</height>
 			<align>right</align>
 			<font>Small</font>
-			<textcolor>Dark1</textcolor>
-			<selectedcolor>Dark1</selectedcolor>
+			<textcolor>white</textcolor>
+			<selectedcolor>white</selectedcolor>
 			<label>$INFO[ListItem.Label2]</label>
 		</control>
 	</include>
@@ -469,6 +531,12 @@
 			<texture colordiffuse="black">common/white.png</texture>
 		</control>
 		<control type="image">
+			<left>7</left>
+			<width>64</width>
+			<height>64</height>
+			<texture>$INFO[ListItem.Icon]</texture>
+		</control>
+		<control type="image">
 			<left>25</left>
 			<centertop>32</centertop>
 			<width>32</width>
@@ -478,7 +546,7 @@
 			<visible>ListItem.IsPlaying</visible>
 		</control>
 		<control type="label">
-			<posx>30</posx>
+			<posx>77</posx>
 			<width>auto</width>
 			<aligny>center</aligny>
 			<height>64</height>
@@ -489,7 +557,7 @@
 			<visible>!ListItem.IsPlaying</visible>
 		</control>
 		<control type="label">
-			<posx>78</posx>
+			<posx>125</posx>
 			<width>auto</width>
 			<aligny>center</aligny>
 			<height>64</height>
