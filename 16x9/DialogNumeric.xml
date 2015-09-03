@@ -4,25 +4,20 @@
     <defaultcontrol always="true">21</defaultcontrol>
     <allowoverlay>no</allowoverlay>
     <zorder>10</zorder>
-
     <coordinates>
         <origin x="750" y="270" />
     </coordinates>
-
     <controls>
         <control type="group">
             <include>Animation.FadeIn</include>
             <include>Animation.FadeOut</include>
-            <include>GlobalOverlay</include>
-
             <control type="image">
                 <posx>-18</posx>
                 <posy>58</posy>
                 <width>456</width>
                 <height>524</height>
-                <texture border="16" colordiffuse="$VAR[EmbyMenuTextColourHighlight]">common/box.png</texture>
+                <texture border="16" colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
             </control>
-
             <control type="label" id="1">
                 <description>dialog Heading</description>
                 <posx>15</posx>
@@ -31,7 +26,7 @@
                 <aligny>center</aligny>
                 <align>center</align>
                 <font>SmallHeaderFont</font>
-                <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+                <textcolor>$VAR[EmbyMenuColourHighlight]</textcolor>
             </control>
 
             <control type="image">
@@ -40,7 +35,7 @@
                 <width>396</width>
                 <height>75</height>
                 <aspectratio>stretch</aspectratio>
-                <texture border="20" colordiffuse="Black12">common/box.png</texture>
+                <texture border="20" colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
             </control>
 
             <control type="label" id="4">
