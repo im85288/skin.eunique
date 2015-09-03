@@ -655,7 +655,7 @@
 				<font>MediumSmallBold</font>
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
-				<label>[UPPERCASE]$VAR[HDSD]$INFO[ListItem.Rating, / ]$VAR[MPAA, / ]$VAR[VideoCodec, / ]$VAR[AudioCodec, / ]$INFO[ListItem.VideoResolution, / ,P][/UPPERCASE]</label>
+				<label>[UPPERCASE]$VAR[HDSD]$INFO[ListItem.VideoResolution, ,P]$INFO[ListItem.Rating, / ]$VAR[MPAA, / ]$VAR[VideoCodec, / ]$VAR[AudioCodec, / ][/UPPERCASE]</label>
 				<visible>Container.Content(movies) | Container.Content(episodes)</visible>
 			</control>
 			<!--
