@@ -80,6 +80,38 @@
 			<visible>!Container.Column(0)</visible>
 		</control>
 	</include>
+	<include name="Furniture_ScrollbarT">
+		<control type="scrollbar" id="60">
+			<onback>50</onback>
+			<posx>-10</posx>
+			<posy>TopPad</posy>
+			<height>920</height>
+			<width>10</width>
+			<onleft condition="!Skin.HasSetting(global.kioskmode)">9000</onleft>
+			<onright>50</onright>
+			<texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
+			<texturesliderbar border="4" colordiffuse="$VAR[ColourHighlight]">scrollbar/scrollv.png</texturesliderbar>
+			<texturesliderbarfocus border="4" colordiffuse="$VAR[ColourHighlight]">scrollbar/scrollv.png</texturesliderbarfocus>
+			<animation effect="fade" start="100" end="33" time="200" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
+			<animation effect="slide" end="-100,0" time="200" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
+			<visible>Container.Column(0)</visible>
+		</control>
+		<control type="scrollbar" id="60">
+			<onback>50</onback>
+			<posx>1920</posx>
+			<posy>TopPad</posy>
+			<height>920</height>
+			<width>10</width>
+			<onleft>50</onleft>
+			<onright condition="!Skin.HasSetting(global.kioskmode)">9000</onright>
+			<texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
+			<texturesliderbar border="4" colordiffuse="$VAR[ColourHighlight]">scrollbar/scrollv.png</texturesliderbar>
+			<texturesliderbarfocus border="4" colordiffuse="$VAR[ColourHighlight]">scrollbar/scrollv.png</texturesliderbarfocus>
+			<animation effect="fade" start="100" end="33" time="200" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
+			<animation effect="slide" end="100,0" time="200" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
+			<visible>!Container.Column(0)</visible>
+		</control>
+	</include>
 	<include name="Furniture_ScrollbarM">
 		<control type="scrollbar" id="60">
 			<onback>50</onback>
@@ -257,7 +289,7 @@
 		<control type="group">
 			<visible>Skin.HasSetting(furniture.logo)</visible>
 			<visible>!Control.HasFocus(515)</visible>
-			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)</visible>
+			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml) + !Control.IsVisible(500) + !Control.IsVisible(54)</visible>
 			<visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)</visible>
 			<left>1664</left>
 			<top>909</top>
@@ -1383,7 +1415,7 @@
 	</include>
 	<include name="Furniture_Cast">
 		<control type="group">
-			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)</visible>
+			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml) + !Control.IsVisible(500) + !Control.IsVisible(54)</visible>
 			<visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)</visible>
 			<top>696</top>
 			<include>Animation.FadeIn</include>
