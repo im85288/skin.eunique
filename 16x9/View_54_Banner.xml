@@ -10,8 +10,8 @@
 			<control type="group">
 				<control type="fixedlist" id="54">
 					<visible>Container.Content(songs) | Container.Content(albums) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(seasons) | Container.Content(sets)</visible>
-					<top>TopPad</top>
-					<height>930</height>
+					<top>146</top>
+					<height>924</height>
 					<left>10</left>
 					<right>10</right>
 					<width>1900</width>
@@ -395,7 +395,7 @@
 							<top>0</top>
 							<right>0</right>
 							<bottom>0</bottom>
-							<texture diffuse="diffuse/extraposter-ref-blur.png" background="true">$VAR[BannerImage]</texture>
+							<texture diffuse="diffuse/extraposter-ref-blur-rev.png" background="true">$VAR[BannerImage]</texture>
 							<aspectratio scalediffuse="false">stretch</aspectratio>
 						</control>
 						<control type="image">
@@ -479,8 +479,7 @@
 							<height>50</height>
 							<align>left</align>
 							<font>LargeBold</font>
-							<textcolor>black</textcolor>
-							<selectedcolor>black</selectedcolor>
+							<textcolor>white</textcolor>
 							<label>$VAR[VideoInfoLabel]</label>
 						</control>
 						<control type="textbox">
@@ -490,8 +489,7 @@
 							<bottom>11</bottom>
 							<align>justify</align>
 							<font>Tiny</font>
-							<textcolor>black</textcolor>
-							<selectedcolor>black</selectedcolor>
+							<textcolor>white</textcolor>
 							<label>$VAR[LabelPlotBox]</label>
 						</control>
 						<control type="label">
@@ -502,8 +500,7 @@
 							<height>26</height>
 							<align>right</align>
 							<font>Tiny</font>
-							<textcolor>black</textcolor>
-							<selectedcolor>black</selectedcolor>
+							<textcolor>white</textcolor>
 							<visible>!Container.Content(seasons)</visible>
 							<label fallback="19055">$VAR[LabelYear,, • ]$VAR[LabelDuration,, • ]$INFO[ListItem.Rating]</label>
 						</control>
@@ -515,8 +512,7 @@
 							<height>38</height>
 							<align>right</align>
 							<font>Tiny</font>
-							<textcolor>black</textcolor>
-							<selectedcolor>black</selectedcolor>
+							<textcolor>white</textcolor>
 							<visible>Container.Content(seasons)</visible>
 							<label fallback="19055">$INFO[ListItem.Property(UnWatchedEpisodes),, $LOCALIZE[31215]]</label>
 						</control>
@@ -870,7 +866,7 @@
 							<height>248</height>
 							<align>left</align>
 							<font>TinyBold</font>
-							<textcolor>black</textcolor>
+							<textcolor>white</textcolor>
 							<label>$INFO[Window(Home).Property(SkinHelper.ListItemStudios)]</label>
 							<autoscroll delay="500" time="1000" repeat="500"/>
 						</control>
@@ -881,7 +877,7 @@
 							<height>248</height>
 							<align>left</align>
 							<font>TinyBold</font>
-							<textcolor>black</textcolor>
+							<textcolor>white</textcolor>
 							<label>$VAR[LabelGenreList]</label>
 							<autoscroll delay="500" time="1000" repeat="500"/>
 						</control>
@@ -892,7 +888,7 @@
 							<height>248</height>
 							<align>left</align>
 							<font>TinyBold</font>
-							<textcolor>black</textcolor>
+							<textcolor>white</textcolor>
 							<label>$INFO[Window(Home).Property(SkinHelper.ListItemCast)]</label>
 							<autoscroll delay="500" time="1000" repeat="500"/>
 						</control>
@@ -903,7 +899,7 @@
 							<height>248</height>
 							<align>left</align>
 							<font>TinyBold</font>
-							<textcolor>black</textcolor>
+							<textcolor>white</textcolor>
 							<label>$VAR[LabelDirector]</label>
 						</control>
 					</control>
