@@ -57,6 +57,7 @@
 							<font>SmallBold</font>
 							<textcolor>white</textcolor>
 						</control>
+						<!--
 						<control type="label">
 							<left>245</left>
 							<height>66</height>
@@ -67,6 +68,7 @@
 							<textcolor>white</textcolor>
 							<visible>Container.Content(seasons)</visible>
 						</control>
+						-->
 						<control type="label">
 							<left>865</left>
 							<width>246</width>
@@ -74,7 +76,7 @@
 							<align>left</align>
 							<font>TinyBold</font>
 							<textcolor>white</textcolor>
-							<label>$INFO[ListItem.Studio]</label>
+							<label>$VAR[LabelDirector]</label>
 						</control>
 						<control type="label">
 							<left>1121</left>
@@ -101,7 +103,7 @@
 							<height>66</height>
 							<font>TinyBold</font>
 							<textcolor>white</textcolor>
-							<label>$VAR[LabelDirector]</label>
+							<label>$INFO[ListItem.Studio]</label>
 						</control>
 						<control type="image">
 							<right>10</right>
@@ -171,117 +173,128 @@
 						</control>
 					</itemlayout>
 					<itemlayout width="1900" height="66" condition="Container.Content(episodes)">
-						<control type="group">
-							<posy>-35</posy>
-							<control type="label">
-								<font>EpisodeNumber</font>
-								<top>15</top>
-								<left>525</left>
-								<width>180</width>
-								<height>40</height>
-								<align>left</align>
-								<aligny>top</aligny>
-								<label>$VAR[LabelEpisodeZero]$INFO[ListItem.Episode]</label>
-								<textcolor>Dark1</textcolor>
-								<selectedcolor>Dark1</selectedcolor>
-							</control>
-							<control type="label">
-								<top>47</top>
-								<left>650</left>
-								<right>54</right>
-								<height>40</height>
-								<align>left</align>
-								<aligny>top</aligny>
-								<label>$VAR[LabelTitle]</label>
-								<font>SmallBold</font>
-								<textcolor>Dark1</textcolor>
-								<selectedcolor>Dark1</selectedcolor>
-								<animation effect="slide" start="0" end="50" condition="IntegerGreaterThan(ListItem.Episode,99)">Conditional</animation>
-							</control>
-							<control type="image">
-								<left>647</left>
-								<centertop>105</centertop>
-								<width>32</width>
-								<height>32</height>
-								<aspectratio aligny="top">keep</aspectratio>
-								<texture colordiffuse="$VAR[PercentColourHighlight]">$VAR[PosterPercentWatchedBacking]</texture>
-								<visible>!Skin.HasSetting(furniture.alternateindicators)</visible>
-							</control>
-							<control type="image">
-								<left>647</left>
-								<centertop>105</centertop>
-								<width>32</width>
-								<height>32</height>
-								<aspectratio aligny="top">keep</aspectratio>
-								<texture>$VAR[PosterPercentWatched]</texture>
-							</control>
-							<control type="label">
-								<left>647</left>
-								<centertop>105</centertop>
-								<width>32</width>
-								<height>32</height>
-								<font>symbolview</font>
-								<label>$VAR[PercentWatchedLabel]</label>
-								<textcolor>$VAR[UnwatchedColourHighlight]</textcolor>
-								<animation effect="slide" start="0" end="50" condition="IntegerGreaterThan(ListItem.Episode,99)">Conditional</animation>
-								<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched)</visible>
-							</control>
-							<control type="label">
-								<left>647</left>
-								<centertop>105</centertop>
-								<width>32</width>
-								<height>32</height>
-								<font>symbolview</font>
-								<label>$VAR[PercentWatchedLabel]</label>
-								<textcolor>$VAR[PlayingColourHighlight]</textcolor>
-								<animation effect="slide" start="0" end="50" condition="IntegerGreaterThan(ListItem.Episode,99)">Conditional</animation>
-								<visible>!stringcompare(ListItem.Label,..) + ListItem.IsPlaying</visible>
-							</control>
-							<control type="label">
-								<left>647</left>
-								<centertop>105</centertop>
-								<width>32</width>
-								<height>32</height>
-								<font>symbolview</font>
-								<label>$VAR[PercentWatchedLabel]</label>
-								<textcolor>$VAR[WatchedColourHighlight]</textcolor>
-								<animation effect="slide" start="0" end="50" condition="IntegerGreaterThan(ListItem.Episode,99)">Conditional</animation>
-								<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(furniture.unwatched)</visible>
-							</control>
-							<control type="label">
-								<left>647</left>
-								<centertop>105</centertop>
-								<width>32</width>
-								<height>32</height>
-								<font>symbolview</font>
-								<label>$VAR[PercentWatchedLabel]</label>
-								<textcolor>$VAR[ResumeColourHighlight]</textcolor>
-								<animation effect="slide" start="0" end="50" condition="IntegerGreaterThan(ListItem.Episode,99)">Conditional</animation>
-								<visible>!stringcompare(ListItem.Label,..) + ListItem.IsResumable</visible>
-							</control>
-							<control type="label">
-								<left>647</left>
-								<centertop>105</centertop>
-								<width>32</width>
-								<height>32</height>
-								<font>symbolview</font>
-								<label>$VAR[PercentWatchedLabel]</label>
-								<textcolor>$VAR[NewColourHighlight]</textcolor>
-								<animation effect="slide" start="0" end="50" condition="IntegerGreaterThan(ListItem.Episode,99)">Conditional</animation>
-							</control>
-							<control type="label">
-								<top>85</top>
-								<left>685</left>
-								<right>50</right>
-								<height>40</height>
-								<align>left</align>
-								<aligny>top</aligny>
-								<label fallback="19055">$VAR[LabelYear,, • ]$VAR[LabelDuration,, • ]$INFO[ListItem.Rating]</label>
-								<font>Tiny</font>
-								<textcolor>Dark2</textcolor>
-								<selectedcolor>Dark2</selectedcolor>
-								<animation effect="slide" start="0" end="50" condition="IntegerGreaterThan(ListItem.Episode,99)">Conditional</animation>
-							</control>
+						<control type="label">
+							<left>485</left>
+							<height>66</height>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label]</label>
+							<font>SmallBold</font>
+							<textcolor>white</textcolor>
+						</control>
+						<!--
+						<control type="label">
+							<left>245</left>
+							<height>66</height>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Property(UnWatchedEpisodes),, $LOCALIZE[31215]]</label>
+							<font>Flag</font>
+							<textcolor>white</textcolor>
+							<visible>Container.Content(seasons)</visible>
+						</control>
+						-->
+						<control type="label">
+							<left>865</left>
+							<width>246</width>
+							<height>66</height>
+							<align>left</align>
+							<font>TinyBold</font>
+							<textcolor>white</textcolor>
+							<label>$VAR[LabelDirector]</label>
+						</control>
+						<control type="label">
+							<left>1121</left>
+							<width>246</width>
+							<height>66</height>
+							<align>left</align>
+							<font>TinyBold</font>
+							<textcolor>white</textcolor>
+							<label>$INFO[ListItem.Genre]</label>
+						</control>
+						<control type="label">
+							<left>1377</left>
+							<width>246</width>
+							<height>66</height>
+							<align>left</align>
+							<font>TinyBold</font>
+							<textcolor>white</textcolor>
+							<label>$INFO[ListItem.Cast]</label>
+						</control>
+						<control type="label">
+							<left>1633</left>
+							<right>52</right>
+							<align>left</align>
+							<height>66</height>
+							<font>TinyBold</font>
+							<textcolor>white</textcolor>
+							<label>$INFO[ListItem.Studio]</label>
+						</control>
+						<control type="image">
+							<right>10</right>
+							<top>10</top>
+							<width>32</width>
+							<height>32</height>
+							<aspectratio aligny="top">keep</aspectratio>
+							<texture colordiffuse="$VAR[PercentColourHighlight]">$VAR[PosterPercentWatchedBacking]</texture>
+							<visible>!Skin.HasSetting(furniture.alternateindicators)</visible>
+						</control>
+						<control type="image">
+							<right>10</right>
+							<top>10</top>
+							<width>32</width>
+							<height>32</height>
+							<aspectratio aligny="top">keep</aspectratio>
+							<texture>$VAR[PosterPercentWatched]</texture>
+						</control>
+						<control type="label">
+							<right>10</right>
+							<top>10</top>
+							<width>32</width>
+							<height>32</height>
+							<font>symbolview</font>
+							<label>$VAR[PercentWatchedLabel]</label>
+							<textcolor>$VAR[UnwatchedColourHighlight]</textcolor>
+							<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched)</visible>
+						</control>
+						<control type="label">
+							<right>10</right>
+							<top>10</top>
+							<width>32</width>
+							<height>32</height>
+							<font>symbolview</font>
+							<label>$VAR[PercentWatchedLabel]</label>
+							<textcolor>$VAR[PlayingColourHighlight]</textcolor>
+							<visible>!stringcompare(ListItem.Label,..) + ListItem.IsPlaying</visible>
+						</control>
+						<control type="label">
+							<right>10</right>
+							<top>10</top>
+							<width>32</width>
+							<height>32</height>
+							<font>symbolview</font>
+							<label>$VAR[PercentWatchedLabel]</label>
+							<textcolor>$VAR[WatchedColourHighlight]</textcolor>
+							<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(furniture.unwatched)</visible>
+						</control>
+						<control type="label">
+							<right>10</right>
+							<top>10</top>
+							<width>32</width>
+							<height>32</height>
+							<font>symbolview</font>
+							<label>$VAR[PercentWatchedLabel]</label>
+							<textcolor>$VAR[ResumeColourHighlight]</textcolor>
+							<visible>!stringcompare(ListItem.Label,..) + ListItem.IsResumable</visible>
+						</control>
+						<control type="label">
+							<right>10</right>
+							<top>10</top>
+							<width>32</width>
+							<height>32</height>
+							<font>symbolview</font>
+							<label>$VAR[PercentWatchedLabel]</label>
+							<textcolor>$VAR[NewColourHighlight]</textcolor>
 						</control>
 					</itemlayout>
 					<itemlayout width="1140" height="66" condition="Container.Content(albums)">
@@ -510,7 +523,7 @@
 							<align>justify</align>
 							<font>Tiny</font>
 							<textcolor>white</textcolor>
-							<label>$VAR[LabelPlotBox]</label>
+														<label>[B]$VAR[LabelPlotBoxLong][/B]</label>
 						</control>
 						<control type="label">
 							<left>337</left>
@@ -539,142 +552,141 @@
 					</focusedlayout>
 					<focusedlayout width="1900" height="330" condition="Container.Content(episodes)">
 						<control type="group">
-							<control type="image">
-								<left>24</left>
-								<top>24</top>
-								<right>24</right>
-								<height>270</height>
-								<texture border="8" colordiffuse="Dark1">common/box.png</texture>
-							</control>
-							<control type="image">
-								<left>24</left>
-								<top>24</top>
+						<control type="image">
+							<left>480</left>
+							<top>0</top>
+							<right>0</right>
+							<bottom>0</bottom>
+							<texture colordiffuse="$VAR[EmbyRightColourHighlight]" border="5">common/box.png</texture>
+							<fadetime>200</fadetime>
+						</control>
+						<control type="image">
+							<left>480</left>
+							<top>0</top>
+							<right>0</right>
+							<bottom>0</bottom>
+							<texture diffuse="diffuse/extraposter-ref-blur-rev.png" background="true">$VAR[BannerImage]</texture>
+							<aspectratio scalediffuse="false">stretch</aspectratio>
+							<fadetime>200</fadetime>
+						</control>
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
 								<width>480</width>
-								<height>270</height>
-								<texture align="left" diffuse="diffuse/banner.png" background="true">$VAR[FanartImage]</texture>
-								<aspectratio scalediffuse="false">keep</aspectratio>
-							</control>
-							<control type="label">
-								<font>EpisodeNumber</font>
-								<top>15</top>
-								<left>525</left>
-								<width>180</width>
-								<height>40</height>
-								<align>left</align>
-								<aligny>top</aligny>
-								<label>$VAR[LabelEpisodeZero]$INFO[ListItem.Episode]</label>
-								<textcolor>black</textcolor>
-								<selectedcolor>black</selectedcolor>
-							</control>
-							<control type="label">
-								<top>47</top>
-								<left>650</left>
-								<right>54</right>
-								<height>40</height>
-								<align>left</align>
-								<aligny>top</aligny>
-								<label>$VAR[LabelTitle]</label>
-								<font>SmallBold</font>
-								<textcolor>black</textcolor>
-								<selectedcolor>black</selectedcolor>
-								<animation effect="slide" start="0" end="50" condition="IntegerGreaterThan(ListItem.Episode,99)">Conditional</animation>
-							</control>
+								<height>330</height>
+						<aspectratio scalediffuse="false">stretch</aspectratio>
+						<texture colordiffuse="$VAR[ColourHighlight]" background="true">common/white.png</texture>
+					</control>
 							<control type="image">
-								<left>647</left>
-								<centertop>105</centertop>
-								<width>32</width>
-								<height>32</height>
-								<aspectratio aligny="top">keep</aspectratio>
-								<texture colordiffuse="$VAR[PercentColourHighlight]">$VAR[PosterPercentWatchedBacking]</texture>
-								<visible>!Skin.HasSetting(furniture.alternateindicators)</visible>
+								<left>0</left>
+								<top>0</top>
+								<width>480</width>
+								<height>330</height>
+								<texture align="left" background="true">$VAR[FanartImage]</texture>
+								<aspectratio scalediffuse="false">scale</aspectratio>
+							<animation type="Focus" reversible="false">
+								<effect type="zoom" end="92" start="100" time="0" center="auto" tween="quadratic" easing="out" />
+								<effect type="rotate" end="1" start="0" time="0" center="auto" tween="quadratic" easing="out" />
+							</animation>
 							</control>
-							<control type="image">
-								<left>647</left>
-								<centertop>105</centertop>
-								<width>32</width>
-								<height>32</height>
-								<aspectratio aligny="top">keep</aspectratio>
-								<texture>$VAR[PosterPercentWatched]</texture>
-							</control>
-							<control type="label">
-								<left>647</left>
-								<centertop>105</centertop>
-								<width>32</width>
-								<height>32</height>
-								<font>symbolview</font>
-								<label>$VAR[PercentWatchedLabel]</label>
-								<textcolor>$VAR[UnwatchedColourHighlight]</textcolor>
-								<animation effect="slide" start="0" end="50" condition="IntegerGreaterThan(ListItem.Episode,99)">Conditional</animation>
-								<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched)</visible>
-							</control>
-							<control type="label">
-								<left>647</left>
-								<centertop>105</centertop>
-								<width>32</width>
-								<height>32</height>
-								<font>symbolview</font>
-								<label>$VAR[PercentWatchedLabel]</label>
-								<textcolor>$VAR[PlayingColourHighlight]</textcolor>
-								<animation effect="slide" start="0" end="50" condition="IntegerGreaterThan(ListItem.Episode,99)">Conditional</animation>
-								<visible>!stringcompare(ListItem.Label,..) + ListItem.IsPlaying</visible>
-							</control>
-							<control type="label">
-								<left>647</left>
-								<centertop>105</centertop>
-								<width>32</width>
-								<height>32</height>
-								<font>symbolview</font>
-								<label>$VAR[PercentWatchedLabel]</label>
-								<textcolor>$VAR[WatchedColourHighlight]</textcolor>
-								<animation effect="slide" start="0" end="50" condition="IntegerGreaterThan(ListItem.Episode,99)">Conditional</animation>
-								<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(furniture.unwatched)</visible>
-							</control>
-							<control type="label">
-								<left>647</left>
-								<centertop>105</centertop>
-								<width>32</width>
-								<height>32</height>
-								<font>symbolview</font>
-								<label>$VAR[PercentWatchedLabel]</label>
-								<textcolor>$VAR[ResumeColourHighlight]</textcolor>
-								<animation effect="slide" start="0" end="50" condition="IntegerGreaterThan(ListItem.Episode,99)">Conditional</animation>
-								<visible>!stringcompare(ListItem.Label,..) + ListItem.IsResumable</visible>
-							</control>
-							<control type="label">
-								<left>647</left>
-								<centertop>105</centertop>
-								<width>32</width>
-								<height>32</height>
-								<font>symbolview</font>
-								<label>$VAR[PercentWatchedLabel]</label>
-								<textcolor>$VAR[NewColourHighlight]</textcolor>
-								<animation effect="slide" start="0" end="50" condition="IntegerGreaterThan(ListItem.Episode,99)">Conditional</animation>
-							</control>
-							<control type="label">
-								<top>85</top>
-								<left>685</left>
-								<right>50</right>
-								<height>40</height>
-								<align>left</align>
-								<aligny>top</aligny>
-								<label fallback="19055">$VAR[LabelYear,, • ]$VAR[LabelDuration,, • ]$INFO[ListItem.Rating]</label>
-								<font>Tiny</font>
-								<textcolor>black</textcolor>
-								<selectedcolor>black</selectedcolor>
-								<animation effect="slide" start="0" end="50" condition="IntegerGreaterThan(ListItem.Episode,99)">Conditional</animation>
-							</control>
-							<control type="textbox">
-								<top>140</top>
-								<left>525</left>
-								<right>50</right>
-								<bottom>54</bottom>
-								<align>justify</align>
-								<aligny>top</aligny>
-								<label>$VAR[LabelPlotBoxLong]</label>
-								<font>Tiny</font>
-								<textcolor>black</textcolor>
-								<selectedcolor>black</selectedcolor>
-							</control>
+						<control type="image">
+							<right>10</right>
+							<top>10</top>
+							<width>32</width>
+							<height>32</height>
+							<aspectratio aligny="top">keep</aspectratio>
+							<texture colordiffuse="$VAR[PercentColourHighlight]">$VAR[PosterPercentWatchedBacking]</texture>
+							<visible>!Skin.HasSetting(furniture.alternateindicators)</visible>
+						</control>
+						<control type="image">
+							<right>10</right>
+							<top>10</top>
+							<width>32</width>
+							<height>32</height>
+							<aspectratio aligny="top">keep</aspectratio>
+							<texture>$VAR[PosterPercentWatched]</texture>
+						</control>
+						<control type="label">
+							<right>10</right>
+							<top>10</top>
+							<width>32</width>
+							<height>32</height>
+							<font>symbolview</font>
+							<label>$VAR[PercentWatchedLabel]</label>
+							<textcolor>$VAR[UnwatchedColourHighlight]</textcolor>
+							<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched)</visible>
+						</control>
+						<control type="label">
+							<right>10</right>
+							<top>10</top>
+							<width>32</width>
+							<height>32</height>
+							<font>symbolview</font>
+							<label>$VAR[PercentWatchedLabel]</label>
+							<textcolor>$VAR[PlayingColourHighlight]</textcolor>
+							<visible>!stringcompare(ListItem.Label,..) + ListItem.IsPlaying</visible>
+						</control>
+						<control type="label">
+							<right>10</right>
+							<top>10</top>
+							<width>32</width>
+							<height>32</height>
+							<font>symbolview</font>
+							<label>$VAR[PercentWatchedLabel]</label>
+							<textcolor>$VAR[WatchedColourHighlight]</textcolor>
+							<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(furniture.unwatched)</visible>
+						</control>
+						<control type="label">
+							<right>10</right>
+							<top>10</top>
+							<width>32</width>
+							<height>32</height>
+							<font>symbolview</font>
+							<label>$VAR[PercentWatchedLabel]</label>
+							<textcolor>$VAR[ResumeColourHighlight]</textcolor>
+							<visible>!stringcompare(ListItem.Label,..) + ListItem.IsResumable</visible>
+						</control>
+						<control type="label">
+							<right>10</right>
+							<top>10</top>
+							<width>32</width>
+							<height>32</height>
+							<font>symbolview</font>
+							<label>$VAR[PercentWatchedLabel]</label>
+							<textcolor>$VAR[NewColourHighlight]</textcolor>
+						</control>
+						<control type="label">
+							<left>485</left>
+							<right>52</right>
+							<top>10</top>
+							<height>50</height>
+							<align>left</align>
+							<font>LargeBold</font>
+							<textcolor>white</textcolor>
+							<label>$VAR[VideoInfoLabel]</label>
+						</control>
+						<control type="textbox">
+							<left>485</left>
+							<right>759</right>
+							<top>70</top>
+							<bottom>11</bottom>
+							<align>justify</align>
+							<font>Tiny</font>
+							<textcolor>white</textcolor>
+							<label>[B]$VAR[LabelPlotBoxLong][/B]</label>
+						</control>
+						<control type="label">
+							<left>337</left>
+							<right>10</right>
+							<bottom>10</bottom>
+							<aligny>center</aligny>
+							<height>26</height>
+							<align>right</align>
+							<font>Tiny</font>
+							<textcolor>white</textcolor>
+							<visible>!Container.Content(seasons)</visible>
+							<label fallback="19055">$VAR[LabelYear]$VAR[LabelDuration, • ]$INFO[ListItem.Rating, • ]</label>
+						</control>
 						</control>
 					</focusedlayout>
 					<focusedlayout width="1140" height="322" condition="Container.Content(albums)">
@@ -698,7 +710,7 @@
 								<top>24</top>
 								<width>270</width>
 								<height>270</height>
-								<texture diffuse="diffuse/banner.png" background="true">$VAR[MusicImage]</texture>
+								<texture background="true">$VAR[MusicImage]</texture>
 								<aspectratio scalediffuse="false">scale</aspectratio>
 							</control>
 							<control type="label">
@@ -760,7 +772,7 @@
 								<top>24</top>
 								<width>270</width>
 								<height>270</height>
-								<texture diffuse="diffuse/banner.png" background="true">$VAR[MusicImage]</texture>
+								<texture background="true">$VAR[MusicImage]</texture>
 								<aspectratio scalediffuse="false">scale</aspectratio>
 							</control>
 							<control type="label">
@@ -898,7 +910,7 @@
 					<align>left</align>
 					<font>TinyBold</font>
 					<textcolor>white</textcolor>
-					<label>$INFO[Window(Home).Property(SkinHelper.ListItemStudios)]</label>
+					<label>$VAR[LabelDirector]</label>
 					<autoscroll delay="500" time="1000" repeat="500"/>
 							<fadetime>500</fadetime>
 				</control>
@@ -934,7 +946,7 @@
 					<align>left</align>
 					<font>TinyBold</font>
 					<textcolor>white</textcolor>
-					<label>$VAR[LabelDirector]</label>
+					<label>$INFO[Window(Home).Property(SkinHelper.ListItemStudios)]</label>
 							<fadetime>500</fadetime>
 				</control>
 			</control>
