@@ -26,6 +26,7 @@
 		<value condition="substring(ListItem.Path,videodb://movies/sets,left)">plugin://script.skin.helper.service/?action=getcast&amp;movieset=$INFO[ListItem.DBID]</value>
 		<value condition="Container.Content(movies)">plugin://script.skin.helper.service/?action=getcast&amp;movie=$INFO[ListItem.DBID]</value>
 		<value condition="[Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + !IsEmpty(Window(home).Property(TVShowID))">plugin://script.skin.helper.service/?action=getcast&amp;tvshow=$INFO[Window(home).Property(TVShowID)]</value>
+		<value>plugin://service.library.data.provider?type=randommovies&amp;reload=$INFO[Window.Property(randommovies)]</value>
 	</variable>
 	<variable name="DefWidgetContent">
 		<!-- Individual Widget Paths -->
@@ -1774,6 +1775,7 @@
 			<selected>Skin.HasSetting(furniture.overlayinfo)</selected>
 			<onclick>Skin.ToggleSetting(furniture.overlayinfo)</onclick>
 		</control>
+		<!--
 		<control type="radiobutton" id="9001" description="Low List (50)">
 			<include>DefContextButtonBlade</include>
 			<align>left</align>
@@ -1783,6 +1785,7 @@
 			<onclick>ReloadSkin()</onclick>
 			<visible>Control.IsVisible(50)</visible>
 		</control>
+		-->
 		<control type="radiobutton" id="9009" description="Low List (50)">
 			<include>DefContextButtonBlade</include>
 			<align>left</align>
@@ -1790,55 +1793,6 @@
 			<selected>Skin.HasSetting(50list.showplot)</selected>
 			<onclick>Skin.ToggleSetting(50list.showplot)</onclick>
 			<visible>Control.IsVisible(50) + !Skin.HasSetting(50list.low)</visible>
-		</control>
-		<control type="radiobutton" id="9002" description="No Wrap (53)">
-			<include>DefContextButtonBlade</include>
-			<align>left</align>
-			<label>31148</label>
-			<selected>!Skin.HasSetting(53poster.nowrap)</selected>
-			<onclick>Skin.ToggleSetting(53poster.nowrap)</onclick>
-			<onclick>ReloadSkin()</onclick>
-			<visible>Control.IsVisible(53)</visible>
-		</control>
-		<control type="radiobutton" id="9003" description="Info Wall (55)">
-			<include>DefContextButtonBlade</include>
-			<align>left</align>
-			<label>31147</label>
-			<selected>Skin.HasSetting(55wall.showinfo)</selected>
-			<onclick>Skin.Reset(55wall.showposter)</onclick>
-			<onclick>Skin.ToggleSetting(55wall.showinfo)</onclick>
-			<onclick>ReloadSkin()</onclick>
-			<visible>Control.IsVisible(55)</visible>
-		</control>
-		<control type="radiobutton" id="9004" description="Poster Wall (55)">
-			<include>DefContextButtonBlade</include>
-			<align>left</align>
-			<label>31185</label>
-			<selected>Skin.HasSetting(55wall.showposter)</selected>
-			<onclick>Skin.Reset(55wall.showinfo)</onclick>
-			<onclick>Skin.ToggleSetting(55wall.showposter)</onclick>
-			<onclick>ReloadSkin()</onclick>
-			<visible>Control.IsVisible(55)</visible>
-		</control>
-		<control type="radiobutton" id="9005" description="Info Media (56)">
-			<include>DefContextButtonBlade</include>
-			<align>left</align>
-			<label>31147</label>
-			<selected>Skin.HasSetting(56media.showinfo)</selected>
-			<onclick>Skin.ToggleSetting(56media.showinfo)</onclick>
-			<onclick>Skin.Reset(56media.low)</onclick>
-			<onclick>ReloadSkin()</onclick>
-			<visible>Control.IsVisible(56)</visible>
-		</control>
-		<control type="radiobutton" id="9006" description="Low List Media (56)">
-			<include>DefContextButtonBlade</include>
-			<align>left</align>
-			<label>31142</label>
-			<selected>Skin.HasSetting(56media.low)</selected>
-			<onclick>Skin.ToggleSetting(56media.low)</onclick>
-			<onclick>Skin.Reset(56media.showinfo)</onclick>
-			<onclick>ReloadSkin()</onclick>
-			<visible>Control.IsVisible(56)</visible>
 		</control>
 		<!--
 		<control type="radiobutton" id="9007" description="Low List (57)">
@@ -1851,26 +1805,6 @@
 			<visible>Control.IsVisible(57)</visible>
 		</control>
 		-->
-		<control type="radiobutton" id="9008" description="Big Wide Info (51)">
-			<include>DefContextButtonBlade</include>
-			<align>left</align>
-			<label>31147</label>
-			<selected>Skin.HasSetting(51bigwide.showinfo)</selected>
-			<onclick>Skin.ToggleSetting(51bigwide.showinfo)</onclick>
-			<onclick>Skin.Reset(51bigwide.showclassic)</onclick>
-			<onclick>ReloadSkin()</onclick>
-			<visible>Control.IsVisible(51)</visible>
-		</control>
-		<control type="radiobutton" id="9014" description="Big Wide Classic (51)">
-			<include>DefContextButtonBlade</include>
-			<align>left</align>
-			<label>31245</label>
-			<selected>Skin.HasSetting(51bigwide.showclassic)</selected>
-			<onclick>Skin.ToggleSetting(51bigwide.showclassic)</onclick>
-			<onclick>Skin.Reset(51bigwide.showinfo)</onclick>
-			<onclick>ReloadSkin()</onclick>
-			<visible>Control.IsVisible(51)</visible>
-		</control>
 		<control type="radiobutton" id="9011" description="Banner show poster (54)">
 			<include>DefContextButtonBlade</include>
 			<align>left</align>
@@ -1879,23 +1813,7 @@
 			<onclick>Skin.ToggleSetting(54banner.showinfo)</onclick>
 			<visible>Control.IsVisible(54) + !Container.Content(seasons)</visible>
 		</control>
-		<control type="radiobutton" id="9012" description="Big List Double Pane (52)">
-			<include>DefContextButtonBlade</include>
-			<align>left</align>
-			<label>31235</label>
-			<selected>!Skin.HasSetting(52biglist.singlepane)</selected>
-			<onclick>Skin.ToggleSetting(52biglist.singlepane)</onclick>
-			<onclick>ReloadSkin()</onclick>
-			<visible>Control.IsVisible(52)</visible>
-		</control>
-		<control type="radiobutton" id="9016" description="Discart (513,514)">
-			<include>DefContextButtonBlade</include>
-			<align>left</align>
-			<label>Show DiscArt</label>
-			<selected>Skin.HasSetting(views.discart)</selected>
-			<onclick>Skin.ToggleSetting(views.discart)</onclick>
-			<visible>Control.IsVisible(513) | Control.IsVisible(514)</visible>
-		</control>
+		<!--
 		<control type="radiobutton" id="9017" description="Animate Discart (513,514)">
 			<include>DefContextButtonBlade</include>
 			<align>left</align>
@@ -1946,6 +1864,7 @@
 			<visible>Control.IsVisible(513) | Control.IsVisible(514) | Control.IsVisible(50) | Control.IsVisible(53) | Control.IsVisible(56)</visible>
 			<visible>Skin.HasSetting(views.cases)</visible>
 		</control>
+		-->
 		<control type="radiobutton" id="9022" description="Title Overlay (515)">
 			<include>DefContextButtonBlade</include>
 			<align>left</align>
@@ -1977,30 +1896,6 @@
 			<selected>Skin.HasSetting(views.155.showtick)</selected>
 			<onclick>Skin.ToggleSetting(views.155.showtick)</onclick>
 			<visible>Control.IsVisible(155)</visible>
-		</control>
-		<control type="radiobutton" id="9029" description="Show Tick (156)">
-			<include>DefContextButtonBlade</include>
-			<align>left</align>
-			<label>Hide Watched/Unwatched Indicator</label>
-			<selected>Skin.HasSetting(views.156.showtick)</selected>
-			<onclick>Skin.ToggleSetting(views.156.showtick)</onclick>
-			<visible>Control.IsVisible(156)</visible>
-		</control>
-		<control type="radiobutton" id="9031" description="Show Tick (157)">
-			<include>DefContextButtonBlade</include>
-			<align>left</align>
-			<label>Hide Watched/Unwatched Indicator</label>
-			<selected>Skin.HasSetting(views.157.showtick)</selected>
-			<onclick>Skin.ToggleSetting(views.157.showtick)</onclick>
-			<visible>Control.IsVisible(157)</visible>
-		</control>
-		<control type="radiobutton" id="9032" description="Show Nuts (157)">
-			<include>DefContextButtonBlade</include>
-			<align>left</align>
-			<label>Disable wall nuts</label>
-			<selected>Skin.HasSetting(views.157.wallnuts)</selected>
-			<onclick>Skin.ToggleSetting(views.157.wallnuts)</onclick>
-			<visible>Control.IsVisible(157)</visible>
 		</control>
 	</include>
 	<include name="Def9000MusicSide">
