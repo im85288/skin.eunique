@@ -33,7 +33,7 @@
 	<menucontrol>9000</menucontrol>
 	<controls>
 		<include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
-		<include condition="Skin.HasSetting(home.emby)">GlobalOverlay</include>
+		<include condition="!Skin.HasSetting(lights.out)">GlobalOverlay</include>
 		<control type="group">
 			<animation type="Conditional" condition="System.IdleTime(45) + Skin.HasSetting(home.fade)" reversible="false">
 				<!-- Broken Fade -->
