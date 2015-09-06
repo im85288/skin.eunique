@@ -525,18 +525,7 @@
 							<textcolor>white</textcolor>
 														<label>[B]$VAR[LabelPlotBoxLong][/B]</label>
 						</control>
-						<control type="label">
-							<left>337</left>
-							<right>10</right>
-							<bottom>10</bottom>
-							<aligny>center</aligny>
-							<height>26</height>
-							<align>right</align>
-							<font>Tiny</font>
-							<textcolor>white</textcolor>
-							<visible>!Container.Content(seasons)</visible>
-							<label fallback="19055">$VAR[LabelYear,, • ]$VAR[LabelDuration,, • ]$INFO[ListItem.Rating]</label>
-						</control>
+
 						<control type="label">
 							<left>337</left>
 							<right>130</right>
@@ -901,8 +890,8 @@
 			</control>
 			<control type="group">
 				<top>344</top>
-<animation effect="slide" start="0,0" end="-0,20" center="auto" time="200" condition="Container(54).OnScrollNext">Conditional</animation>
-<animation effect="slide" start="0,0" end="0,20" center="auto" time="200" condition="Container(54).OnScrollPrevious">Conditional</animation>
+				<animation effect="slide" start="0,0" end="-0,20" center="auto" time="200" condition="Container(54).OnScrollNext">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,20" center="auto" time="200" condition="Container(54).OnScrollPrevious">Conditional</animation>
 				<control type="textbox">
 					<left>875</left>
 					<width>246</width>
@@ -943,12 +932,25 @@
 					<left>1643</left>
 					<width>246</width>
 					<top>70</top>
-					<height>248</height>
+					<height>220</height>
 					<align>left</align>
 					<font>TinyBold</font>
 					<textcolor>white</textcolor>
 					<label>$INFO[Window(Home).Property(SkinHelper.ListItemStudios)]</label>
 							<fadetime>500</fadetime>
+				</control>
+
+				<control type="label">
+					<left>337</left>
+					<right>10</right>
+					<top>303</top>
+					<aligny>center</aligny>
+					<height>26</height>
+					<align>right</align>
+					<font>Tiny</font>
+					<textcolor>white</textcolor>
+					<visible>!Container.Content(seasons)</visible>
+					<label fallback="19055">$VAR[LabelYear,, • ]$VAR[LabelDuration,, • ]$INFO[ListItem.Rating]</label>
 				</control>
 			</control>
 			<include>Furniture_ScrollbarT</include>
