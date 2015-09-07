@@ -57,6 +57,18 @@
 							<font>SmallBold</font>
 							<textcolor>white</textcolor>
 						</control>
+						<control type="label" id="13370">
+							<left>15</left>
+							<right>15</right>
+							<top>10</top>
+							<bottom>20</bottom>
+							<height>256</height>
+							<aligny>center</aligny>
+							<align>center</align>
+							<font>symbolbiggest</font>
+							<label>$VAR[SwapDefaultImage]</label>
+							<textcolor>white</textcolor>
+						</control>
 						<!--
 						<control type="label">
 							<left>245</left>
@@ -297,12 +309,11 @@
 							<textcolor>$VAR[NewColourHighlight]</textcolor>
 						</control>
 					</itemlayout>
-					<itemlayout width="1140" height="66" condition="Container.Content(albums)">
+					<itemlayout width="1900" height="66" condition="Container.Content(albums)">
 						<control type="group">
-							<posy>-35</posy>
 							<control type="label">
-								<top>47</top>
-								<left>320</left>
+								<top>0</top>
+								<left>340</left>
 								<right>54</right>
 								<height>40</height>
 								<align>left</align>
@@ -313,8 +324,8 @@
 								<selectedcolor>Dark1</selectedcolor>
 							</control>
 							<control type="label">
-								<top>85</top>
-								<left>320</left>
+								<top>32</top>
+								<left>340</left>
 								<right>50</right>
 								<height>40</height>
 								<align>left</align>
@@ -326,73 +337,31 @@
 							</control>
 						</control>
 					</itemlayout>
-					<itemlayout width="1140" height="66" condition="Container.Content(songs)">
-						<control type="group">
-							<posy>-35</posy>
+					<itemlayout width="1900" height="66" condition="Container.Content(songs)">
 							<control type="label">
-								<font>EpisodeNumber</font>
-								<top>15</top>
-								<right>420r</right>
-								<width>150</width>
-								<height>40</height>
-								<align>right</align>
-								<aligny>top</aligny>
-								<label>$NUMBER[0]$NUMBER[0]</label>
-								<textcolor>Dark1</textcolor>
-								<selectedcolor>Dark1</selectedcolor>
-								<visible>!IntegerGreaterThan(ListItem.TrackNumber,0)</visible>
-							</control>
-							<control type="label">
-								<font>EpisodeNumber</font>
-								<top>15</top>
-								<right>420r</right>
-								<width>150</width>
-								<height>40</height>
-								<align>right</align>
-								<aligny>top</aligny>
-								<label>0$INFO[ListItem.TrackNumber]</label>
-								<textcolor>Dark1</textcolor>
-								<selectedcolor>Dark1</selectedcolor>
-								<visible>!IntegerGreaterThan(ListItem.TrackNumber,9) + IntegerGreaterThan(ListItem.TrackNumber,0)</visible>
-							</control>
-							<control type="label">
-								<font>EpisodeNumber</font>
-								<top>15</top>
-								<right>420r</right>
-								<width>150</width>
-								<height>40</height>
-								<align>right</align>
-								<aligny>top</aligny>
-								<label>$INFO[ListItem.TrackNumber]</label>
-								<textcolor>Dark1</textcolor>
-								<selectedcolor>Dark1</selectedcolor>
-								<visible>IntegerGreaterThan(ListItem.TrackNumber,9)</visible>
-							</control>
-							<control type="label">
-								<top>47</top>
-								<left>440</left>
+								<top>0</top>
+								<left>340</left>
 								<right>54</right>
-								<height>40</height>
+								<height>66</height>
 								<align>left</align>
-								<aligny>top</aligny>
-								<label>$INFO[ListItem.Title]</label>
+								<aligny>center</aligny>
+								<label>$INFO[ListItem.TrackNumber]. $INFO[ListItem.Artist]$INFO[ListItem.Title, • ,]</label>
 								<font>SmallBold</font>
-								<textcolor>Dark1</textcolor>
-								<selectedcolor>Dark1</selectedcolor>
+								<textcolor>white</textcolor>
 							</control>
+							<!--
 							<control type="label">
-								<top>85</top>
-								<left>440</left>
+								<top>32</top>
+								<left>340</left>
 								<right>50</right>
 								<height>40</height>
 								<align>left</align>
 								<aligny>top</aligny>
-								<label fallback="19055">$INFO[ListItem.Artist]$INFO[ListItem.Album, • ,]</label>
+								<label fallback="19055">$INFO[ListItem.TrackNumber]. $INFO[ListItem.Artist]$INFO[ListItem.Title, • ,]</label>
 								<font>Tiny</font>
-								<textcolor>Dark2</textcolor>
-								<selectedcolor>Dark2</selectedcolor>
+								<textcolor>white</textcolor>
 							</control>
-						</control>
+							-->
 					</itemlayout>
 					<focusedlayout width="1900" height="330" condition="!Container.Content(episodes) + !Container.Content(albums) + !Container.Content(songs)">
 						<control type="button">
@@ -435,8 +404,23 @@
 							<texture background="true">$VAR[PosterImage]</texture>
 							<fadetime>200</fadetime>
 							<animation type="Focus" reversible="false">
-								<effect type="zoom" end="92" start="100" time="0" center="auto" tween="quadratic" easing="out" />
-								<effect type="rotate" end="1" start="0" time="0" center="auto" tween="quadratic" easing="out" />
+								<effect type="zoom" end="93" start="0" time="0" center="auto" tween="quadratic" easing="out" />
+								<effect type="rotate" end="1" start="200" time="0" center="auto" tween="quadratic" easing="out" />
+							</animation>
+						</control>
+						<control type="label" id="13370">
+							<left>0</left>
+							<top>0</top>
+							<width>235</width>
+							<height>330</height>
+							<aligny>center</aligny>
+							<align>center</align>
+							<font>symbolbiggest</font>
+							<label>$VAR[SwapDefaultImage]</label>
+							<textcolor>white</textcolor>
+							<animation type="Focus" reversible="false">
+								<effect type="zoom" end="145" time="200" center="auto" tween="quadratic" easing="out" />
+								<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
 							</animation>
 						</control>
 						<control type="image">
@@ -574,10 +558,25 @@
 								<texture align="left" background="true">$VAR[FanartImage]</texture>
 								<aspectratio scalediffuse="false">scale</aspectratio>
 							<animation type="Focus" reversible="false">
-								<effect type="zoom" end="92" start="100" time="0" center="auto" tween="quadratic" easing="out" />
-								<effect type="rotate" end="1" start="0" time="0" center="auto" tween="quadratic" easing="out" />
+								<effect type="zoom" end="93" start="0" time="0" center="auto" tween="quadratic" easing="out" />
+								<effect type="rotate" end="1" start="200" time="0" center="auto" tween="quadratic" easing="out" />
 							</animation>
 							</control>
+						<control type="label" id="13370">
+							<left>0</left>
+							<top>0</top>
+								<width>480</width>
+								<height>330</height>
+							<aligny>center</aligny>
+							<align>center</align>
+							<font>symbolbiggest</font>
+							<label>$VAR[SwapDefaultImage]</label>
+							<textcolor>white</textcolor>
+							<animation type="Focus" reversible="false">
+								<effect type="zoom" end="145" time="200" center="auto" tween="quadratic" easing="out" />
+								<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
+							</animation>
+						</control>
 						<control type="image">
 							<right>10</right>
 							<top>10</top>
@@ -678,166 +677,162 @@
 						</control>
 						</control>
 					</focusedlayout>
-					<focusedlayout width="1140" height="322" condition="Container.Content(albums)">
+					<focusedlayout width="1900" height="330" condition="Container.Content(albums)">
 						<control type="group">
 							<control type="image">
 								<left>0</left>
 								<top>0</top>
+								<width>330</width>
+								<height>330</height>
+								<texture border="8" colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
+							</control>
+						<control type="label" id="13370">
+							<left>0</left>
+							<top>0</top>
+								<width>330</width>
+								<height>330</height>
+							<aligny>center</aligny>
+							<align>center</align>
+							<font>symbolbiggest</font>
+							<label>$VAR[SwapDefaultImage]</label>
+							<textcolor>white</textcolor>
+							<animation type="Focus" reversible="false">
+								<effect type="zoom" end="145" time="200" center="auto" tween="quadratic" easing="out" />
+								<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
+							</animation>
+						</control>
+							<control type="image">
+								<left>330</left>
+								<top>0</top>
 								<right>0</right>
-								<height>318</height>
-								<texture border="32">common/shadow-24.png</texture>
+								<height>330</height>
+								<texture border="8" colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</texture>
 							</control>
 							<control type="image">
-								<left>24</left>
-								<top>24</top>
-								<right>24</right>
-								<height>270</height>
-								<texture border="8" colordiffuse="Dark1">common/box.png</texture>
-							</control>
-							<control type="image">
-								<left>24</left>
-								<top>24</top>
-								<width>270</width>
-								<height>270</height>
+								<left>0</left>
+								<top>0</top>
+								<width>330</width>
+								<height>330</height>
 								<texture background="true">$VAR[MusicImage]</texture>
 								<aspectratio scalediffuse="false">scale</aspectratio>
+							<animation type="Focus" reversible="false">
+								<effect type="zoom" end="93" start="0" time="0" center="auto" tween="quadratic" easing="out" />
+								<effect type="rotate" end="1" start="200" time="0" center="auto" tween="quadratic" easing="out" />
+							</animation>
 							</control>
 							<control type="label">
-								<top>47</top>
-								<left>320</left>
+								<top>0</top>
+								<left>340</left>
 								<right>54</right>
-								<height>40</height>
+								<height>48</height>
 								<align>left</align>
 								<aligny>top</aligny>
 								<label>$VAR[LabelTitle]</label>
-								<font>SmallBold</font>
-								<textcolor>black</textcolor>
-								<selectedcolor>black</selectedcolor>
+							<font>LargeBold</font>
+								<textcolor>white</textcolor>
 							</control>
 							<control type="label">
-								<top>85</top>
-								<left>320</left>
+								<top>58</top>
+								<left>340</left>
 								<right>50</right>
 								<height>40</height>
 								<align>left</align>
 								<aligny>top</aligny>
 								<label fallback="19055">$INFO[ListItem.Artist]$INFO[ListItem.Year, • ,]</label>
-								<font>Tiny</font>
-								<textcolor>black</textcolor>
-								<selectedcolor>black</selectedcolor>
+								<font>SmallBold</font>
+								<textcolor>white</textcolor>
+							<visible>!stringcompare(ListItem.Label,..)</visible>
 							</control>
 							<control type="textbox">
 								<top>140</top>
-								<left>320</left>
+								<left>340</left>
 								<right>50</right>
-								<bottom>54</bottom>
+								<bottom>10</bottom>
 								<align>justify</align>
 								<aligny>top</aligny>
-								<label>$INFO[ListItem.Property(Album_Description)]</label>
-								<font>Tiny</font>
-								<textcolor>black</textcolor>
-								<selectedcolor>black</selectedcolor>
+								<label>[B]$INFO[ListItem.Property(Album_Description)][/B]</label>
+								<font>Small</font>
+								<textcolor>white</textcolor>
 							</control>
 						</control>
 					</focusedlayout>
-					<focusedlayout width="1140" height="322" condition="Container.Content(songs)">
+					<focusedlayout width="1900" height="330" condition="Container.Content(songs)">
 						<control type="group">
 							<control type="image">
 								<left>0</left>
 								<top>0</top>
+								<width>330</width>
+								<height>330</height>
+								<texture border="8" colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
+							</control>
+						<control type="label" id="13370">
+							<left>0</left>
+							<top>0</top>
+								<width>330</width>
+								<height>330</height>
+							<aligny>center</aligny>
+							<align>center</align>
+							<font>symbolbiggest</font>
+							<label>$VAR[SwapDefaultImage]</label>
+							<textcolor>white</textcolor>
+							<animation type="Focus" reversible="false">
+								<effect type="zoom" end="145" time="200" center="auto" tween="quadratic" easing="out" />
+								<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
+							</animation>
+						</control>
+							<control type="image">
+								<left>330</left>
+								<top>0</top>
 								<right>0</right>
-								<height>318</height>
-								<texture border="32">common/shadow-24.png</texture>
+								<height>330</height>
+								<texture border="8" colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</texture>
 							</control>
 							<control type="image">
-								<left>24</left>
-								<top>24</top>
-								<right>24</right>
-								<height>270</height>
-								<texture border="8" colordiffuse="Dark1">common/box.png</texture>
-							</control>
-							<control type="image">
-								<left>24</left>
-								<top>24</top>
-								<width>270</width>
-								<height>270</height>
+								<left>0</left>
+								<top>0</top>
+								<width>330</width>
+								<height>330</height>
 								<texture background="true">$VAR[MusicImage]</texture>
 								<aspectratio scalediffuse="false">scale</aspectratio>
+							<animation type="Focus" reversible="false">
+								<effect type="zoom" end="93" start="0" time="0" center="auto" tween="quadratic" easing="out" />
+								<effect type="rotate" end="1" start="200" time="0" center="auto" tween="quadratic" easing="out" />
+							</animation>
 							</control>
 							<control type="label">
-								<font>EpisodeNumber</font>
-								<top>15</top>
-								<right>420r</right>
-								<width>150</width>
-								<height>40</height>
-								<align>right</align>
-								<aligny>top</aligny>
-								<label>$NUMBER[0]$NUMBER[0]</label>
-								<textcolor>black</textcolor>
-								<selectedcolor>black</selectedcolor>
-								<visible>!IntegerGreaterThan(ListItem.TrackNumber,0)</visible>
-							</control>
-							<control type="label">
-								<font>EpisodeNumber</font>
-								<top>15</top>
-								<right>420r</right>
-								<width>150</width>
-								<height>40</height>
-								<align>right</align>
-								<aligny>top</aligny>
-								<label>0$INFO[ListItem.TrackNumber]</label>
-								<textcolor>black</textcolor>
-								<selectedcolor>black</selectedcolor>
-								<visible>!IntegerGreaterThan(ListItem.TrackNumber,9) + IntegerGreaterThan(ListItem.TrackNumber,0)</visible>
-							</control>
-							<control type="label">
-								<font>EpisodeNumber</font>
-								<top>15</top>
-								<right>420r</right>
-								<width>150</width>
-								<height>40</height>
-								<align>right</align>
-								<aligny>top</aligny>
-								<label>$INFO[ListItem.TrackNumber]</label>
-								<textcolor>black</textcolor>
-								<selectedcolor>black</selectedcolor>
-								<visible>IntegerGreaterThan(ListItem.TrackNumber,9)</visible>
-							</control>
-							<control type="label">
-								<top>47</top>
-								<left>440</left>
+								<top>0</top>
+								<left>340</left>
 								<right>254</right>
 								<height>40</height>
 								<align>left</align>
 								<aligny>top</aligny>
 								<label>$INFO[ListItem.Title]</label>
-								<font>SmallBold</font>
-								<textcolor>black</textcolor>
+								<font>LargeBold</font>
+								<textcolor>white</textcolor>
 								<selectedcolor>black</selectedcolor>
 							</control>
 							<control type="label">
-								<top>85</top>
-								<left>440</left>
+								<top>58</top>
+								<left>340</left>
 								<right>50</right>
 								<height>40</height>
 								<align>left</align>
 								<aligny>top</aligny>
-								<label fallback="19055">$INFO[ListItem.Artist]$INFO[ListItem.Album, • ,]</label>
-								<font>Tiny</font>
-								<textcolor>black</textcolor>
+								<label fallback="19055">$INFO[ListItem.TrackNumber]. $INFO[ListItem.Artist]$INFO[ListItem.Album, • ,]</label>
+								<font>SmallBold</font>
+								<textcolor>white</textcolor>
 								<selectedcolor>black</selectedcolor>
+							<visible>!stringcompare(ListItem.Label,..)</visible>
 							</control>
-							<control type="textbox">
-								<top>170</top>
-								<left>320</left>
-								<right>50</right>
-								<bottom>54</bottom>
-								<align>justify</align>
-								<aligny>top</aligny>
+							<control type="label">
+								<right>20</right>
+								<bottom>10</bottom>
+								<height>32</height>
+								<width>1900</width>
+								<align>right</align>
 								<label>$INFO[ListItem.Genre,[B]$LOCALIZE[515] [/B],[CR]]$INFO[ListItem.Duration,[B]$LOCALIZE[180] [/B],[CR]]</label>
-								<font>Tiny</font>
-								<textcolor>black</textcolor>
-								<selectedcolor>black</selectedcolor>
+								<font>Small</font>
+								<textcolor>white</textcolor>
 							</control>
 							<control type="group">
 								<right>24</right>
@@ -953,6 +948,7 @@
 					<label fallback="19055">$VAR[LabelYear,, • ]$VAR[LabelDuration,, • ]$INFO[ListItem.Rating]</label>
 				</control>
 				-->
+							<visible>!stringcompare(ListItem.Label,..) + !Container.Content(albums) + !Container.Content(songs)</visible>
 			</control>
 			<include>Furniture_ScrollbarT</include>
 		</control>
