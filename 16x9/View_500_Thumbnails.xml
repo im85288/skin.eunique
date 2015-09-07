@@ -63,10 +63,12 @@
 						<control type="label" id="13370">
 							<left>15</left>
 							<right>15</right>
-							<height>50</height>
+							<top>10</top>
+							<bottom>20</bottom>
+							<height>256</height>
 							<aligny>center</aligny>
 							<align>center</align>
-							<font>symbolbig</font>
+							<font>symbolbiggest</font>
 							<label>$VAR[SwapDefaultImage]</label>
 							<textcolor>white</textcolor>
 						</control>
@@ -235,12 +237,18 @@
 						<control type="label" id="13370">
 							<left>15</left>
 							<right>15</right>
-							<height>50</height>
+							<top>10</top>
+							<bottom>20</bottom>
+							<height>256</height>
 							<aligny>center</aligny>
 							<align>center</align>
-							<font>symbolbig</font>
+							<font>symbolbiggest</font>
 							<label>$VAR[SwapDefaultImage]</label>
 							<textcolor>white</textcolor>
+							<animation type="Focus" reversible="false">
+								<effect type="zoom" end="145" time="200" center="auto" tween="quadratic" easing="out" />
+								<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
+							</animation>
 						</control>
 						<control type="image">
 							<centerright>32</centerright>
@@ -360,6 +368,7 @@
 							<aspectratio scalediffuse="false" align="center" aligny="center">keep</aspectratio>
 							<texture background="true">$VAR[LandscapeImage]</texture>
 							<visible>!Container.Content(albums) + !Container.Content(artists) + !Container.Content(songs) + !Skin.HasSetting(views.501.showfanart)</visible>
+							<visible>IsEmpty(Control.GetLabel(13370))</visible>
 							<animation type="Conditional" reversible="true" condition="stringcompare(ListItem.Overlay,OverlayWatched.png)">
 								<effect type="fade" start="25" end="25" time="200" tween="quadratic" easing="out" />
 								<effect type="zoom" end="95" time="200" center="auto" tween="quadratic" easing="out" />
@@ -397,10 +406,12 @@
 						<control type="label" id="13370">
 							<left>15</left>
 							<right>15</right>
-							<height>50</height>
+							<top>10</top>
+							<bottom>20</bottom>
+							<height>256</height>
 							<aligny>center</aligny>
 							<align>center</align>
-							<font>symbolbig</font>
+							<font>symbolbiggest</font>
 							<label>$VAR[SwapDefaultImage]</label>
 							<textcolor>white</textcolor>
 						</control>
@@ -543,12 +554,18 @@
 						<control type="label" id="13370">
 							<left>15</left>
 							<right>15</right>
-							<height>50</height>
+							<top>10</top>
+							<bottom>20</bottom>
+							<height>256</height>
 							<aligny>center</aligny>
 							<align>center</align>
-							<font>symbolbig</font>
+							<font>symbolbiggest</font>
 							<label>$VAR[SwapDefaultImage]</label>
 							<textcolor>white</textcolor>
+							<animation type="Focus" reversible="false">
+								<effect type="zoom" end="145" time="200" center="auto" tween="quadratic" easing="out" />
+								<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
+							</animation>
 						</control>
 						<control type="image">
 							<centerright>32</centerright>
