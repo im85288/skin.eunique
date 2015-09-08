@@ -8,7 +8,7 @@
 			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml)</visible>
 			<animation effect="slide" end="-20,0" center="auto" time="200" condition="Container.Column(5)">Conditional</animation>
 			<animation effect="slide" end="20,0" center="auto" time="200" condition="Container.Column(0)">Conditional</animation>
-			<animation effect="slide" end="0,-10" center="auto" time="200" condition="Container.Row(2)">Conditional</animation>
+			<animation effect="slide" end="0,-20" center="auto" time="200" condition="Container.Row(2)">Conditional</animation>
 			<animation effect="slide" end="0,10" center="auto" time="200" condition="Container.Row(0)">Conditional</animation>
 			<control type="group">
 				<control type="panel" id="500">
@@ -148,15 +148,6 @@
 							<label>$VAR[PercentWatchedLabel]</label>
 							<textcolor>$VAR[ResumeColourHighlight]</textcolor>
 							<visible>!stringcompare(ListItem.Label,..) + ListItem.IsResumable</visible>
-						</control>
-						<control type="label">
-							<centerright>32</centerright>
-							<centertop>32</centertop>
-							<width>32</width>
-							<height>32</height>
-							<font>symbolview</font>
-							<label>$VAR[PercentWatchedLabel]</label>
-							<textcolor>$VAR[NewColourHighlight]</textcolor>
 						</control>
 					</itemlayout>
 					<focusedlayout height="310" width="320">
@@ -298,15 +289,6 @@
 							<label>$VAR[PercentWatchedLabel]</label>
 							<textcolor>$VAR[ResumeColourHighlight]</textcolor>
 							<visible>!stringcompare(ListItem.Label,..) + ListItem.IsResumable</visible>
-						</control>
-						<control type="label">
-							<centerright>32</centerright>
-							<centertop>32</centertop>
-							<width>32</width>
-							<height>32</height>
-							<font>symbolview</font>
-							<label>$VAR[PercentWatchedLabel]</label>
-							<textcolor>$VAR[NewColourHighlight]</textcolor>
 						</control>
 					</focusedlayout>
 				</control>
@@ -464,15 +446,6 @@
 							<textcolor>$VAR[ResumeColourHighlight]</textcolor>
 							<visible>!stringcompare(ListItem.Label,..) + ListItem.IsResumable</visible>
 						</control>
-						<control type="label">
-							<centerright>32</centerright>
-							<centertop>32</centertop>
-							<width>32</width>
-							<height>32</height>
-							<font>symbolview</font>
-							<label>$VAR[PercentWatchedLabel]</label>
-							<textcolor>$VAR[NewColourHighlight]</textcolor>
-						</control>
 						</control>
 					</itemlayout>
 					<focusedlayout height="310" width="320">
@@ -615,15 +588,6 @@
 							<label>$VAR[PercentWatchedLabel]</label>
 							<textcolor>$VAR[ResumeColourHighlight]</textcolor>
 							<visible>!stringcompare(ListItem.Label,..) + ListItem.IsResumable</visible>
-						</control>
-						<control type="label">
-							<centerright>32</centerright>
-							<centertop>32</centertop>
-							<width>32</width>
-							<height>32</height>
-							<font>symbolview</font>
-							<label>$VAR[PercentWatchedLabel]</label>
-							<textcolor>$VAR[NewColourHighlight]</textcolor>
 						</control>
 						</control>
 					</focusedlayout>

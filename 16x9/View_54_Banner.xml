@@ -174,15 +174,6 @@
 							<textcolor>$VAR[ResumeColourHighlight]</textcolor>
 							<visible>!stringcompare(ListItem.Label,..) + ListItem.IsResumable</visible>
 						</control>
-						<control type="label">
-							<right>10</right>
-							<top>10</top>
-							<width>32</width>
-							<height>32</height>
-							<font>symbolview</font>
-							<label>$VAR[PercentWatchedLabel]</label>
-							<textcolor>$VAR[NewColourHighlight]</textcolor>
-						</control>
 					</itemlayout>
 					<itemlayout width="1900" height="66" condition="Container.Content(episodes)">
 						<control type="label">
@@ -298,15 +289,6 @@
 							<label>$VAR[PercentWatchedLabel]</label>
 							<textcolor>$VAR[ResumeColourHighlight]</textcolor>
 							<visible>!stringcompare(ListItem.Label,..) + ListItem.IsResumable</visible>
-						</control>
-						<control type="label">
-							<right>10</right>
-							<top>10</top>
-							<width>32</width>
-							<height>32</height>
-							<font>symbolview</font>
-							<label>$VAR[PercentWatchedLabel]</label>
-							<textcolor>$VAR[NewColourHighlight]</textcolor>
 						</control>
 					</itemlayout>
 					<itemlayout width="1900" height="66" condition="Container.Content(albums)">
@@ -481,15 +463,6 @@
 							<visible>!stringcompare(ListItem.Label,..) + ListItem.IsResumable</visible>
 						</control>
 						<control type="label">
-							<right>10</right>
-							<top>10</top>
-							<width>32</width>
-							<height>32</height>
-							<font>symbolview</font>
-							<label>$VAR[PercentWatchedLabel]</label>
-							<textcolor>$VAR[NewColourHighlight]</textcolor>
-						</control>
-						<control type="label">
 							<left>245</left>
 							<right>52</right>
 							<top>10</top>
@@ -512,10 +485,10 @@
 
 						<control type="label">
 							<left>337</left>
-							<right>130</right>
-							<bottom>20</bottom>
+							<right>10</right>
+							<bottom>10</bottom>
 							<aligny>center</aligny>
-							<height>38</height>
+							<height>26</height>
 							<align>right</align>
 							<font>Tiny</font>
 							<textcolor>white</textcolor>
@@ -633,15 +606,6 @@
 							<label>$VAR[PercentWatchedLabel]</label>
 							<textcolor>$VAR[ResumeColourHighlight]</textcolor>
 							<visible>!stringcompare(ListItem.Label,..) + ListItem.IsResumable</visible>
-						</control>
-						<control type="label">
-							<right>10</right>
-							<top>10</top>
-							<width>32</width>
-							<height>32</height>
-							<font>symbolview</font>
-							<label>$VAR[PercentWatchedLabel]</label>
-							<textcolor>$VAR[NewColourHighlight]</textcolor>
 						</control>
 						<control type="label">
 							<left>485</left>
