@@ -386,7 +386,7 @@
 							<texture background="true">$VAR[PosterImage]</texture>
 							<fadetime>200</fadetime>
 							<animation type="Focus" reversible="false">
-								<effect type="zoom" end="93" start="0" time="0" center="auto" tween="quadratic" easing="out" />
+								<effect type="zoom" end="93" start="100" time="0" center="auto" tween="quadratic" easing="out" />
 								<effect type="rotate" end="1" start="200" time="0" center="auto" tween="quadratic" easing="out" />
 							</animation>
 						</control>
@@ -495,6 +495,18 @@
 							<visible>Container.Content(seasons)</visible>
 							<label fallback="19055">$INFO[ListItem.Property(UnWatchedEpisodes),, $LOCALIZE[31215]]</label>
 						</control>
+						<control type="label">
+							<left>337</left>
+							<right>10</right>
+							<bottom>10</bottom>
+							<aligny>center</aligny>
+							<height>26</height>
+							<align>right</align>
+							<font>Tiny</font>
+							<textcolor>white</textcolor>
+							<visible>!Container.Content(seasons)</visible>
+							<label fallback="19055">$VAR[LabelYear]$VAR[LabelDuration, • ]$INFO[ListItem.Rating, • ]</label>
+						</control>
 					</focusedlayout>
 					<focusedlayout width="1900" height="330" condition="Container.Content(episodes)">
 						<control type="group">
@@ -531,7 +543,7 @@
 								<texture align="left" background="true">$VAR[FanartImage]</texture>
 								<aspectratio scalediffuse="false">scale</aspectratio>
 							<animation type="Focus" reversible="false">
-								<effect type="zoom" end="93" start="0" time="0" center="auto" tween="quadratic" easing="out" />
+								<effect type="zoom" end="93" start="100" time="0" center="auto" tween="quadratic" easing="out" />
 								<effect type="rotate" end="1" start="200" time="0" center="auto" tween="quadratic" easing="out" />
 							</animation>
 							</control>
@@ -680,7 +692,7 @@
 								<texture background="true">$VAR[MusicImage]</texture>
 								<aspectratio scalediffuse="false">scale</aspectratio>
 							<animation type="Focus" reversible="false">
-								<effect type="zoom" end="93" start="0" time="0" center="auto" tween="quadratic" easing="out" />
+								<effect type="zoom" end="93" start="100" time="0" center="auto" tween="quadratic" easing="out" />
 								<effect type="rotate" end="1" start="200" time="0" center="auto" tween="quadratic" easing="out" />
 							</animation>
 							</control>
@@ -759,7 +771,7 @@
 								<texture background="true">$VAR[MusicImage]</texture>
 								<aspectratio scalediffuse="false">scale</aspectratio>
 							<animation type="Focus" reversible="false">
-								<effect type="zoom" end="93" start="0" time="0" center="auto" tween="quadratic" easing="out" />
+								<effect type="zoom" end="93" start="100" time="0" center="auto" tween="quadratic" easing="out" />
 								<effect type="rotate" end="1" start="200" time="0" center="auto" tween="quadratic" easing="out" />
 							</animation>
 							</control>
@@ -891,7 +903,7 @@
 					<left>1643</left>
 					<width>246</width>
 					<top>70</top>
-					<height>248</height>
+					<height>216</height>
 					<align>left</align>
 					<font>TinyBold</font>
 					<textcolor>white</textcolor>
