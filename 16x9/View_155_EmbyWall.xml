@@ -27,72 +27,79 @@
 				<viewtype label="31779">panel</viewtype>
 				<scrolltime tween="quadratic">400</scrolltime>
 				<itemlayout width="240" height="360">
-					<control type="image">
-						<left>10</left>
-						<top>10</top>
-						<right>10</right>
-						<bottom>10</bottom>
-						<aspectratio scalediffuse="false">stretch</aspectratio>
-						<texture background="true">$VAR[PosterImage]</texture>
-						<animation type="Conditional" reversible="true" condition="stringcompare(ListItem.Overlay,OverlayWatched.png)">
-							<effect type="fade" start="25" end="25" time="200" tween="quadratic" easing="out" />
+					<control type="group">
+						<animation type="Conditional" reversible="true" condition="!System.IdleTime(20) + System.IdleTime(3) + Skin.HasSetting(furniture.overlayinfo)">
+							<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out" />
 							<effect type="zoom" end="95" time="200" center="auto" tween="quadratic" easing="out" />
 							<effect type="rotate" end="-1" time="200" center="auto" tween="quadratic" easing="out" />
 						</animation>
-					</control>
-					<control type="image">
-						<centerright>26</centerright>
-						<centertop>26</centertop>
-						<width>32</width>
-						<height>32</height>
-						<aspectratio aligny="top">keep</aspectratio>
-						<texture>$VAR[PercentWatched]</texture>
-						<visible>!stringcompare(ListItem.Label,..)</visible>
-						<visible>!Skin.HasSetting(views.155.showtick)</visible>
-					</control>
-					<control type="label">
-						<centerright>26</centerright>
-						<centertop>26</centertop>
-						<width>32</width>
-						<height>32</height>
-						<font>symbolview</font>
-						<label>$VAR[PercentWatchedLabel]</label>
-						<textcolor>$VAR[UnwatchedColourHighlight]</textcolor>
-						<visible>!Skin.HasSetting(views.155.showtick)</visible>
-						<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched)</visible>
-					</control>
-					<control type="label">
-						<centerright>26</centerright>
-						<centertop>26</centertop>
-						<width>32</width>
-						<height>32</height>
-						<font>symbolview</font>
-						<label>$VAR[PercentWatchedLabel]</label>
-						<textcolor>$VAR[PlayingColourHighlight]</textcolor>
-						<visible>!Skin.HasSetting(views.155.showtick)</visible>
-						<visible>!stringcompare(ListItem.Label,..) + ListItem.IsPlaying</visible>
-					</control>
-					<control type="label">
-						<centerright>26</centerright>
-						<centertop>26</centertop>
-						<width>32</width>
-						<height>32</height>
-						<font>symbolview</font>
-						<label>$VAR[PercentWatchedLabel]</label>
-						<textcolor>$VAR[WatchedColourHighlight]</textcolor>
-						<visible>!Skin.HasSetting(views.155.showtick)</visible>
-						<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(furniture.unwatched)</visible>
-					</control>
-					<control type="label">
-						<centerright>26</centerright>
-						<centertop>26</centertop>
-						<width>32</width>
-						<height>32</height>
-						<font>symbolview</font>
-						<label>$VAR[PercentWatchedLabel]</label>
-						<textcolor>$VAR[ResumeColourHighlight]</textcolor>
-						<visible>!Skin.HasSetting(views.155.showtick)</visible>
-						<visible>!stringcompare(ListItem.Label,..) + ListItem.IsResumable</visible>
+						<control type="image">
+							<left>10</left>
+							<top>10</top>
+							<right>10</right>
+							<bottom>10</bottom>
+							<aspectratio scalediffuse="false">stretch</aspectratio>
+							<texture background="true">$VAR[PosterImage]</texture>
+							<animation type="Conditional" reversible="true" condition="stringcompare(ListItem.Overlay,OverlayWatched.png)">
+								<effect type="fade" start="25" end="25" time="200" tween="quadratic" easing="out" />
+								<effect type="zoom" end="95" time="200" center="auto" tween="quadratic" easing="out" />
+								<effect type="rotate" end="-1" time="200" center="auto" tween="quadratic" easing="out" />
+							</animation>
+						</control>
+						<control type="image">
+							<centerright>26</centerright>
+							<centertop>26</centertop>
+							<width>32</width>
+							<height>32</height>
+							<aspectratio aligny="top">keep</aspectratio>
+							<texture>$VAR[PercentWatched]</texture>
+							<visible>!stringcompare(ListItem.Label,..)</visible>
+							<visible>!Skin.HasSetting(views.155.showtick)</visible>
+						</control>
+						<control type="label">
+							<centerright>26</centerright>
+							<centertop>26</centertop>
+							<width>32</width>
+							<height>32</height>
+							<font>symbolview</font>
+							<label>$VAR[PercentWatchedLabel]</label>
+							<textcolor>$VAR[UnwatchedColourHighlight]</textcolor>
+							<visible>!Skin.HasSetting(views.155.showtick)</visible>
+							<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched)</visible>
+						</control>
+						<control type="label">
+							<centerright>26</centerright>
+							<centertop>26</centertop>
+							<width>32</width>
+							<height>32</height>
+							<font>symbolview</font>
+							<label>$VAR[PercentWatchedLabel]</label>
+							<textcolor>$VAR[PlayingColourHighlight]</textcolor>
+							<visible>!Skin.HasSetting(views.155.showtick)</visible>
+							<visible>!stringcompare(ListItem.Label,..) + ListItem.IsPlaying</visible>
+						</control>
+						<control type="label">
+							<centerright>26</centerright>
+							<centertop>26</centertop>
+							<width>32</width>
+							<height>32</height>
+							<font>symbolview</font>
+							<label>$VAR[PercentWatchedLabel]</label>
+							<textcolor>$VAR[WatchedColourHighlight]</textcolor>
+							<visible>!Skin.HasSetting(views.155.showtick)</visible>
+							<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(furniture.unwatched)</visible>
+						</control>
+						<control type="label">
+							<centerright>26</centerright>
+							<centertop>26</centertop>
+							<width>32</width>
+							<height>32</height>
+							<font>symbolview</font>
+							<label>$VAR[PercentWatchedLabel]</label>
+							<textcolor>$VAR[ResumeColourHighlight]</textcolor>
+							<visible>!Skin.HasSetting(views.155.showtick)</visible>
+							<visible>!stringcompare(ListItem.Label,..) + ListItem.IsResumable</visible>
+						</control>
 					</control>
 				</itemlayout>
 				<focusedlayout width="240" height="360">
@@ -103,80 +110,87 @@
 							<onfocus condition="Container.Content(movies)">ClearProperty(TVShowID,home)</onfocus>
 							<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
 					</control>
-					<control type="image">
-						<left>0</left>
-						<top>4</top>
-						<right>0</right>
-						<bottom>4</bottom>
-						<aspectratio scalediffuse="false">stretch</aspectratio>
-						<texture colordiffuse="$VAR[ColourHighlight]" background="true">common/white.png</texture>
-						<animation effect="zoom" end="108" time="0" center="auto">Focus</animation>
-					</control>
-					<control type="image">
-						<left>10</left>
-						<top>10</top>
-						<right>10</right>
-						<bottom>10</bottom>
-						<aspectratio scalediffuse="false">stretch</aspectratio>
-						<texture background="true">$VAR[PosterImage]</texture>
-						<animation type="Focus" reversible="false">
-							<effect type="zoom" start="100" end="105" time="200" center="auto" tween="quadratic" easing="out" />
-							<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
+					<control type="group">
+						<animation type="Conditional" reversible="true" condition="!System.IdleTime(20) + System.IdleTime(3) + Skin.HasSetting(furniture.overlayinfo)">
+							<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out" />
+							<effect type="zoom" end="95" time="200" center="auto" tween="quadratic" easing="out" />
+							<effect type="rotate" end="-1" time="200" center="auto" tween="quadratic" easing="out" />
 						</animation>
-					</control>
-					<control type="image">
-						<centerright>26</centerright>
-						<centertop>26</centertop>
-						<width>32</width>
-						<height>32</height>
-						<aspectratio aligny="top">keep</aspectratio>
-						<texture>$VAR[PercentWatched]</texture>
-						<visible>!stringcompare(ListItem.Label,..)</visible>
-						<visible>!Skin.HasSetting(views.155.showtick)</visible>
-					</control>
-					<control type="label">
-						<centerright>26</centerright>
-						<centertop>26</centertop>
-						<width>32</width>
-						<height>32</height>
-						<font>symbolview</font>
-						<label>$VAR[PercentWatchedLabel]</label>
-						<textcolor>$VAR[UnwatchedColourHighlight]</textcolor>
-						<visible>!Skin.HasSetting(views.155.showtick)</visible>
-						<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched)</visible>
-					</control>
-					<control type="label">
-						<centerright>26</centerright>
-						<centertop>26</centertop>
-						<width>32</width>
-						<height>32</height>
-						<font>symbolview</font>
-						<label>$VAR[PercentWatchedLabel]</label>
-						<textcolor>$VAR[PlayingColourHighlight]</textcolor>
-						<visible>!Skin.HasSetting(views.155.showtick)</visible>
-						<visible>!stringcompare(ListItem.Label,..) + ListItem.IsPlaying</visible>
-					</control>
-					<control type="label">
-						<centerright>26</centerright>
-						<centertop>26</centertop>
-						<width>32</width>
-						<height>32</height>
-						<font>symbolview</font>
-						<label>$VAR[PercentWatchedLabel]</label>
-						<textcolor>$VAR[WatchedColourHighlight]</textcolor>
-						<visible>!Skin.HasSetting(views.155.showtick)</visible>
-						<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(furniture.unwatched)</visible>
-					</control>
-					<control type="label">
-						<centerright>26</centerright>
-						<centertop>26</centertop>
-						<width>32</width>
-						<height>32</height>
-						<font>symbolview</font>
-						<label>$VAR[PercentWatchedLabel]</label>
-						<textcolor>$VAR[ResumeColourHighlight]</textcolor>
-						<visible>!Skin.HasSetting(views.155.showtick)</visible>
-						<visible>!stringcompare(ListItem.Label,..) + ListItem.IsResumable</visible>
+						<control type="image">
+							<left>0</left>
+							<top>4</top>
+							<right>0</right>
+							<bottom>4</bottom>
+							<aspectratio scalediffuse="false">stretch</aspectratio>
+							<texture colordiffuse="$VAR[ColourHighlight]" background="true">common/white.png</texture>
+							<animation effect="zoom" end="108" time="0" center="auto">Focus</animation>
+						</control>
+						<control type="image">
+							<left>10</left>
+							<top>10</top>
+							<right>10</right>
+							<bottom>10</bottom>
+							<aspectratio scalediffuse="false">stretch</aspectratio>
+							<texture background="true">$VAR[PosterImage]</texture>
+							<animation type="Focus" reversible="false">
+								<effect type="zoom" start="100" end="105" time="200" center="auto" tween="quadratic" easing="out" />
+								<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
+							</animation>
+						</control>
+						<control type="image">
+							<centerright>26</centerright>
+							<centertop>26</centertop>
+							<width>32</width>
+							<height>32</height>
+							<aspectratio aligny="top">keep</aspectratio>
+							<texture>$VAR[PercentWatched]</texture>
+							<visible>!stringcompare(ListItem.Label,..)</visible>
+							<visible>!Skin.HasSetting(views.155.showtick)</visible>
+						</control>
+						<control type="label">
+							<centerright>26</centerright>
+							<centertop>26</centertop>
+							<width>32</width>
+							<height>32</height>
+							<font>symbolview</font>
+							<label>$VAR[PercentWatchedLabel]</label>
+							<textcolor>$VAR[UnwatchedColourHighlight]</textcolor>
+							<visible>!Skin.HasSetting(views.155.showtick)</visible>
+							<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched)</visible>
+						</control>
+						<control type="label">
+							<centerright>26</centerright>
+							<centertop>26</centertop>
+							<width>32</width>
+							<height>32</height>
+							<font>symbolview</font>
+							<label>$VAR[PercentWatchedLabel]</label>
+							<textcolor>$VAR[PlayingColourHighlight]</textcolor>
+							<visible>!Skin.HasSetting(views.155.showtick)</visible>
+							<visible>!stringcompare(ListItem.Label,..) + ListItem.IsPlaying</visible>
+						</control>
+						<control type="label">
+							<centerright>26</centerright>
+							<centertop>26</centertop>
+							<width>32</width>
+							<height>32</height>
+							<font>symbolview</font>
+							<label>$VAR[PercentWatchedLabel]</label>
+							<textcolor>$VAR[WatchedColourHighlight]</textcolor>
+							<visible>!Skin.HasSetting(views.155.showtick)</visible>
+							<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(furniture.unwatched)</visible>
+						</control>
+						<control type="label">
+							<centerright>26</centerright>
+							<centertop>26</centertop>
+							<width>32</width>
+							<height>32</height>
+							<font>symbolview</font>
+							<label>$VAR[PercentWatchedLabel]</label>
+							<textcolor>$VAR[ResumeColourHighlight]</textcolor>
+							<visible>!Skin.HasSetting(views.155.showtick)</visible>
+							<visible>!stringcompare(ListItem.Label,..) + ListItem.IsResumable</visible>
+						</control>
 					</control>
 				</focusedlayout>
 			</control>

@@ -332,6 +332,11 @@
 				<effect type="slide" start="0" end="-65" time="200" center="auto" tween="quadratic" easing="out" />
 				<effect type="zoom" end="135" start="100" time="200" center="auto" tween="quadratic" easing="in" />
 			</animation>
+			<animation type="Conditional" reversible="true" condition="!System.IdleTime(20) + System.IdleTime(3) + Skin.HasSetting(furniture.overlayinfo)">
+				<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out" />
+				<effect type="zoom" end="95" time="200" center="auto" tween="quadratic" easing="out" />
+				<effect type="rotate" end="-1" time="200" center="auto" tween="quadratic" easing="out" />
+			</animation>
 			<!--
 			<control type="image">
 				<top>-45</top>
@@ -1453,6 +1458,11 @@
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
 			<include>Animation.Common.Killer</include>
+			<animation type="Conditional" reversible="true" condition="!System.IdleTime(20) + System.IdleTime(3) + Skin.HasSetting(furniture.overlayinfo)">
+				<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out" />
+				<effect type="zoom" end="95" time="200" center="auto" tween="quadratic" easing="out" />
+				<effect type="rotate" end="-1" time="200" center="auto" tween="quadratic" easing="out" />
+			</animation>
 			<control id="508923" type="wraplist">
 				<left>-100</left>
 				<top>0</top>
