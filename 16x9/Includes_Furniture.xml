@@ -321,7 +321,7 @@
 		<control type="group">
 			<visible>Skin.HasSetting(furniture.logo)</visible>
 			<visible>!Control.HasFocus(515)</visible>
-			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml) + !Control.IsVisible(500) + !Control.IsVisible(54) + !Control.IsVisible(52)</visible>
+			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml) + !Control.IsVisible(500) + !Control.IsVisible(54) + !Control.IsVisible(52) + !ControlGroup(9000).HasFocus()</visible>
 			<visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)</visible>
 			<left>1664</left>
 			<top>909</top>
@@ -332,11 +332,13 @@
 				<effect type="slide" start="0" end="-65" time="200" center="auto" tween="quadratic" easing="out" />
 				<effect type="zoom" end="135" start="100" time="200" center="auto" tween="quadratic" easing="in" />
 			</animation>
-			<animation type="Conditional" reversible="true" condition="!System.IdleTime(20) + System.IdleTime(3) + Skin.HasSetting(furniture.overlayinfo)">
+			<!--
+			<animation type="Conditional" reversible="true" condition="!System.IdleTime(20) + System.IdleTime(3) + Skin.HasSetting(furniture.overlayinfo) + ![ControlGroup(9000).HasFocus() | Window.IsVisible(DialogContextMenu.xml)]">
 				<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out" />
 				<effect type="zoom" end="95" time="200" center="auto" tween="quadratic" easing="out" />
 				<effect type="rotate" end="-1" time="200" center="auto" tween="quadratic" easing="out" />
 			</animation>
+			-->
 			<!--
 			<control type="image">
 				<top>-45</top>
