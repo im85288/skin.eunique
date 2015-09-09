@@ -104,11 +104,13 @@
 				</itemlayout>
 				<focusedlayout width="240" height="360">
 					<control type="button">
-							<!-- serious problem with alarmclock on reloadskin 
-							<onfocus>AlarmClock(castScroll,Control.Move(508923,1),00:02,silent,loop)</onfocus>
-							-->
-							<onfocus condition="Container.Content(movies)">ClearProperty(TVShowID,home)</onfocus>
-							<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
+						<texturefocus>-</texturefocus>
+						<texturenofocus>-</texturenofocus>
+						<!-- serious problem with alarmclock on reloadskin 
+						<onfocus>AlarmClock(castScroll,Control.Move(508923,1),00:02,silent,loop)</onfocus>
+						-->
+						<onfocus condition="Container.Content(movies)">ClearProperty(TVShowID,home)</onfocus>
+						<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
 					</control>
 					<control type="group">
 						<animation type="Conditional" reversible="true" condition="!System.IdleTime(20) + System.IdleTime(3) + Skin.HasSetting(furniture.overlayinfo) + ![ControlGroup(9000).HasFocus() | Window.IsVisible(DialogContextMenu.xml)]">
