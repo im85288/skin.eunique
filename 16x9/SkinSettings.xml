@@ -335,15 +335,6 @@
 				<onclick condition="!IsEmpty(Skin.String(fanart.fallback))">Skin.Reset(fanart.fallback)</onclick>
 				<visible>!Skin.HasSetting(lights.out)</visible>
 			</control>
-			<control type="button" id="9229" description="Set Weather Fanart">
-				<width>1310</width>
-				<visible>Container(8000).Hasfocus(3)</visible>
-				<include>DefSettingsButton2</include>
-				<label>31143</label>
-				<label2>[COLOR=$VAR[ColourHighlight2]]$INFO[Skin.String(weather.fanart)][/COLOR]</label2>
-				<onclick condition="IsEmpty(Skin.String(weather.fanart))">Skin.SetPath(weather.fanart)</onclick>
-				<onclick condition="!IsEmpty(Skin.String(weather.fanart))">Skin.Reset(weather.fanart)</onclick>
-			</control>
 			<control type="button" id="9227" description="Set Music Dir">
 				<width>1310</width>
 				<visible>Container(8000).Hasfocus(3)</visible>

@@ -46,17 +46,7 @@
                         <width>285</width>
                         <height>285</height>
                         <aspectratio align="center" aligny="center">keep</aspectratio>
-                        <texture>$INFO[Window(weather).Property(Current.FanartCode),weather/,.png]</texture>
-                        <visible>Skin.HasSetting(weather.useflaticons)</visible>
-                    </control>
-                    <control type="image">
-                        <centertop>35%</centertop>
-                        <centerleft>50%</centerleft>
-                        <width>240</width>
-                        <height>240</height>
-                        <aspectratio align="center" aligny="center">keep</aspectratio>
-                        <texture>$INFO[Window(weather).Property(Current.ConditionIcon)]</texture>
-                        <visible>!Skin.HasSetting(weather.useflaticons)</visible>
+                        <texture>$VAR[WeatherIconVar]$INFO[Window.Property(Current.FanartCode),,.png]</texture>
                     </control>
                     <control type="label">
                         <top>20</top>
@@ -111,17 +101,7 @@
                         <width>285</width>
                         <height>285</height>
                         <aspectratio align="center" aligny="center">keep</aspectratio>
-                        <texture>$INFO[Window(weather).Property(Day0.FanartCode),weather/,.png]</texture>
-                        <visible>Skin.HasSetting(weather.useflaticons)</visible>
-                    </control>
-                    <control type="image">
-                        <centertop>35%</centertop>
-                        <centerleft>50%</centerleft>
-                        <width>240</width>
-                        <height>240</height>
-                        <aspectratio align="center" aligny="center">keep</aspectratio>
-                        <texture>$INFO[Window(weather).Property(Day0.OutlookIcon)]</texture>
-                        <visible>!Skin.HasSetting(weather.useflaticons)</visible>
+                        <texture>$VAR[WeatherIconVar]$INFO[Window(weather).Property(Day0.FanartCode),,.png]</texture>
                     </control>
                     <control type="label">
                         <top>20</top>
@@ -176,17 +156,7 @@
                         <width>285</width>
                         <height>285</height>
                         <aspectratio align="center" aligny="center">keep</aspectratio>
-                        <texture>$INFO[Window(weather).Property(Day1.FanartCode),weather/,.png]</texture>
-                        <visible>Skin.HasSetting(weather.useflaticons)</visible>
-                    </control>
-                    <control type="image">
-                        <centertop>35%</centertop>
-                        <centerleft>50%</centerleft>
-                        <width>240</width>
-                        <height>240</height>
-                        <aspectratio align="center" aligny="center">keep</aspectratio>
-                        <texture>$INFO[Window(weather).Property(Day1.OutlookIcon)]</texture>
-                        <visible>!Skin.HasSetting(weather.useflaticons)</visible>
+                        <texture>$VAR[WeatherIconVar]$INFO[Window(weather).Property(Day1.FanartCode),,.png]</texture>
                     </control>
                     <control type="label">
                         <top>20</top>
@@ -241,17 +211,7 @@
                         <width>285</width>
                         <height>285</height>
                         <aspectratio align="center" aligny="center">keep</aspectratio>
-                        <texture>$INFO[Window(weather).Property(Day2.FanartCode),weather/,.png]</texture>
-                        <visible>Skin.HasSetting(weather.useflaticons)</visible>
-                    </control>
-                    <control type="image">
-                        <centertop>35%</centertop>
-                        <centerleft>50%</centerleft>
-                        <width>240</width>
-                        <height>240</height>
-                        <aspectratio align="center" aligny="center">keep</aspectratio>
-                        <texture>$INFO[Window(weather).Property(Day2.OutlookIcon)]</texture>
-                        <visible>!Skin.HasSetting(weather.useflaticons)</visible>
+                        <texture>$VAR[WeatherIconVar]$INFO[Window(weather).Property(Day2.FanartCode),,.png]</texture>
                     </control>
                     <control type="label">
                         <top>20</top>
@@ -306,17 +266,7 @@
                         <width>285</width>
                         <height>285</height>
                         <aspectratio align="center" aligny="center">keep</aspectratio>
-                        <texture>$INFO[Window(weather).Property(Day3.FanartCode),weather/,.png]</texture>
-                        <visible>Skin.HasSetting(weather.useflaticons)</visible>
-                    </control>
-                    <control type="image">
-                        <centertop>35%</centertop>
-                        <centerleft>50%</centerleft>
-                        <width>240</width>
-                        <height>240</height>
-                        <aspectratio align="center" aligny="center">keep</aspectratio>
-                        <texture>$INFO[Window(weather).Property(Day3.OutlookIcon)]</texture>
-                        <visible>!Skin.HasSetting(weather.useflaticons)</visible>
+                        <texture>$VAR[WeatherIconVar]$INFO[Window(weather).Property(Day3.FanartCode),,.png]</texture>
                     </control>
                     <control type="label">
                         <top>20</top>
@@ -371,17 +321,7 @@
                         <width>285</width>
                         <height>285</height>
                         <aspectratio align="center" aligny="center">keep</aspectratio>
-                        <texture>$INFO[Window(weather).Property(Day4.FanartCode),weather/,.png]</texture>
-                        <visible>Skin.HasSetting(weather.useflaticons)</visible>
-                    </control>
-                    <control type="image">
-                        <centertop>35%</centertop>
-                        <centerleft>50%</centerleft>
-                        <width>240</width>
-                        <height>240</height>
-                        <aspectratio align="center" aligny="center">keep</aspectratio>
-                        <texture>$INFO[Window(weather).Property(Day4.OutlookIcon)]</texture>
-                        <visible>!Skin.HasSetting(weather.useflaticons)</visible>
+                        <texture>$VAR[WeatherIconVar]$INFO[Window(weather).Property(Day4.FanartCode),,.png]</texture>
                     </control>
                     <control type="label">
                         <top>20</top>
@@ -438,19 +378,16 @@
         <control type="group">
             <include>Def9000SideBladeLeft</include>
             <control type="grouplist" id="9000">
+                <visible>!Window.IsVisible(1134)</visible>
                 <onback condition="Window.IsVisible(MyPVRGuide.xml) + Control.IsVisible(10)">ActivateWindow(home)</onback>
                 <left>10</left>
                 <top>115</top>
                 <width>435</width>
                 <height>1080</height>
                 <onleft>9000</onleft>
-                <onright>ClearProperty(MediaMenu,Home)</onright>
-                <onright condition="![Window.IsVisible(tvguide) | Window.IsActive(SettingsCategory.xml)]">50</onright>
-                <onright condition="Window.IsVisible(tvguide)">10</onright>
-                <onright condition="Window.IsActive(SettingsCategory.xml)">3</onright>
+                <onright>9100</onright>
                 <onup>9000</onup>
                 <ondown>9000</ondown>
-                <onback>ClearProperty(MediaMenu,Home)</onback>
                 <onback>50</onback>
                 <itemgap>0</itemgap>
                 <animation effect="slide" start="-440,0" end="0,0" time="400" tween="quadratic" easing="out">Visible</animation>
@@ -470,12 +407,13 @@
                     <label2>$INFO[Weather.Location]</label2>
                     <onclick>Weather.LocationNext</onclick>
                 </control>
-                <control type="radiobutton" id="9001" description="Use flat icons">
+                <control type="button" id="9001">
+                    <description>Select weather icons</description>
                     <include>DefContextButtonBlade</include>
                     <align>left</align>
-                    <label>31233</label>
-                    <selected>Skin.HasSetting(weather.useflaticons)</selected>
-                    <onclick>Skin.ToggleSetting(weather.useflaticons)</onclick>
+                    <label>536</label>
+                    <label2>$VAR[WeatherIconLabelVar]</label2>
+                    <onclick>ActivateWindow(1134)</onclick>
                 </control>
                 <control type="radiobutton" id="9002" description="Show weather overlay">
                     <include>DefContextButtonBlade</include>
@@ -489,16 +427,14 @@
                     <include>DefContextButtonBlade</include>
                     <align>left</align>
                     <label>31143</label>
-                    <onclick>Skin.SetPath(weather.fanart)</onclick>
+                    <onclick>Skin.SetPath(weather.fanart,,special://home)</onclick>
                 </control>
-                <!-- <control type="button" id="9005" description="Set Weather Fanart">
-                    <include>DefContextButton</include>
+                <control type="button" id="9009" description="Use Default Weather Fanart">
+                    <include>DefContextButtonBlade</include>
                     <align>left</align>
-                    <label>31232</label>
-                    <onclick>Skin.Reset(weather.fanart)</onclick>
-                    <onclick>SetFocus(9004)</onclick>
-                    <enable>!IsEmpty(Skin.String(weather.fanart))</enable>
-                </control> -->
+                    <label>31812</label>
+                    <onclick>Skin.SetPath(weather.fanart,http://aeon-nox-background-packs.googlecode.com/svn/trunk/weather-fanart/default/)</onclick>
+                </control>
                 <control type="button" id="9003" description="Weather Settings">
                     <include>DefContextButtonBlade</include>
                     <align>left</align>

@@ -1440,4 +1440,17 @@
 		<value condition="!IsEmpty(VideoPlayer.AudioCodec)">$INFO[VideoPlayer.AudioCodec]</value>
 		<value>$INFO[ListItem.AudioCodec]</value>
 	</variable>
+
+	<variable name="WeatherIconLabelVar">
+		<value condition="Skin.HasSetting(Enable.Weather.3d-coloured)">$LOCALIZE[31805]</value>
+		<value condition="Skin.HasSetting(Enable.Weather.3d-white)">$LOCALIZE[31806]</value>
+		<value condition="Skin.HasSetting(Enable.Weather.coloured)">$LOCALIZE[31807]</value>
+		<value condition="Skin.HasSetting(Enable.Weather.flat)">$LOCALIZE[31808]</value>
+		<value condition="Skin.HasSetting(Enable.Weather.grey)">$LOCALIZE[767]</value>
+		<value condition="Skin.HasSetting(Enable.Weather.outline)">$LOCALIZE[31809]</value>
+		<value condition="Skin.HasSetting(Enable.Weather.outline-hd)">$LOCALIZE[31811]</value>
+		<value condition="Skin.HasSetting(Enable.Weather.transparent)">$LOCALIZE[31810]</value>
+		<value condition="Skin.HasSetting(Enable.Weather.white)">$LOCALIZE[742]</value>
+		<value>$LOCALIZE[571]</value>
+	</variable>
 </includes>
