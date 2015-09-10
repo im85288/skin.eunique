@@ -10,6 +10,11 @@
 			<visible>!Skin.HasSetting(furniture.clock)</visible>
 			<include>Animation.FurnitureFadeInOut</include>
 			<height>48</height>
+			<animation type="Conditional" reversible="true" condition="!Window.IsVisible(DialogVideoInfo.xml) + !System.IdleTime(20) + System.IdleTime(3) + Skin.HasSetting(furniture.overlayinfo) + Control.IsVisible(155)">
+				<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out" />
+				<effect type="zoom" end="95" time="200" center="auto" tween="quadratic" easing="out" />
+				<effect type="rotate" end="-1" time="200" center="auto" tween="quadratic" easing="out" />
+			</animation>
 			<control type="label">
 				<right>15</right>
 				<align>right</align>
@@ -1419,7 +1424,7 @@
 			<effect type="slide" start="0,-24" end="0" time="100" delay="200" />
 			<effect type="fade" start="0" end="100" time="200" delay="200" />
 		</animation>
-		<itemlayout width="213.1" height="74">
+		<itemlayout width="211.1" height="74">
 			<control type="image">
 				<left>0</left>
 				<right>0</right>
@@ -1436,7 +1441,7 @@
 				<animation effect="fade" start="100" end="25" condition="control.hasfocus(302)" time="200">Conditional</animation>
 			</control>
 		</itemlayout>
-		<focusedlayout width="213.1" height="74">
+		<focusedlayout width="211.1" height="74">
 			<control type="image">
 				<left>0</left>
 				<right>0</right>
