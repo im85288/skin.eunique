@@ -25,6 +25,12 @@
 					<viewtype label="539">list</viewtype>
 					<scrolltime tween="quadratic">400</scrolltime>
 					<itemlayout width="1900" height="66" condition="!Container.Content(episodes) + !Container.Content(albums) + !Container.Content(songs)">
+					<control type="group">
+						<animation type="Conditional" reversible="true" condition="!System.IdleTime(20) + System.IdleTime(3) + Skin.HasSetting(furniture.overlayinfo) + ![ControlGroup(9000).HasFocus() | Window.IsVisible(DialogContextMenu.xml)]">
+							<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out" />
+							<effect type="zoom" end="95" time="200" center="auto" tween="quadratic" easing="out" />
+							<effect type="rotate" end="-1" time="200" center="auto" tween="quadratic" easing="out" />
+						</animation>
 					<!--
 						<control type="label">
 							<right>10</right>
@@ -174,8 +180,15 @@
 							<textcolor>$VAR[ResumeColourHighlight]</textcolor>
 							<visible>!stringcompare(ListItem.Label,..) + ListItem.IsResumable</visible>
 						</control>
+						</control>
 					</itemlayout>
 					<itemlayout width="1900" height="66" condition="Container.Content(episodes)">
+					<control type="group">
+						<animation type="Conditional" reversible="true" condition="!System.IdleTime(20) + System.IdleTime(3) + Skin.HasSetting(furniture.overlayinfo) + ![ControlGroup(9000).HasFocus() | Window.IsVisible(DialogContextMenu.xml)]">
+							<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out" />
+							<effect type="zoom" end="95" time="200" center="auto" tween="quadratic" easing="out" />
+							<effect type="rotate" end="-1" time="200" center="auto" tween="quadratic" easing="out" />
+						</animation>
 						<control type="label">
 							<left>485</left>
 							<height>66</height>
@@ -290,9 +303,15 @@
 							<textcolor>$VAR[ResumeColourHighlight]</textcolor>
 							<visible>!stringcompare(ListItem.Label,..) + ListItem.IsResumable</visible>
 						</control>
+						</control>
 					</itemlayout>
 					<itemlayout width="1900" height="66" condition="Container.Content(albums)">
-						<control type="group">
+					<control type="group">
+						<animation type="Conditional" reversible="true" condition="!System.IdleTime(20) + System.IdleTime(3) + Skin.HasSetting(furniture.overlayinfo) + ![ControlGroup(9000).HasFocus() | Window.IsVisible(DialogContextMenu.xml)]">
+							<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out" />
+							<effect type="zoom" end="95" time="200" center="auto" tween="quadratic" easing="out" />
+							<effect type="rotate" end="-1" time="200" center="auto" tween="quadratic" easing="out" />
+						</animation>
 							<control type="label">
 								<top>0</top>
 								<left>340</left>
@@ -320,6 +339,12 @@
 						</control>
 					</itemlayout>
 					<itemlayout width="1900" height="66" condition="Container.Content(songs)">
+					<control type="group">
+						<animation type="Conditional" reversible="true" condition="!System.IdleTime(20) + System.IdleTime(3) + Skin.HasSetting(furniture.overlayinfo) + ![ControlGroup(9000).HasFocus() | Window.IsVisible(DialogContextMenu.xml)]">
+							<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out" />
+							<effect type="zoom" end="95" time="200" center="auto" tween="quadratic" easing="out" />
+							<effect type="rotate" end="-1" time="200" center="auto" tween="quadratic" easing="out" />
+						</animation>
 							<control type="label">
 								<top>0</top>
 								<left>340</left>
@@ -344,6 +369,7 @@
 								<textcolor>white</textcolor>
 							</control>
 							-->
+							</control>
 					</itemlayout>
 					<focusedlayout width="1900" height="330" condition="!Container.Content(episodes) + !Container.Content(albums) + !Container.Content(songs)">
 						<control type="button">
@@ -352,6 +378,12 @@
 							<onfocus condition="Container.Content(movies)">ClearProperty(TVShowID,home)</onfocus>
 							<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
 						</control>
+					<control type="group">
+						<animation type="Conditional" reversible="true" condition="!System.IdleTime(20) + System.IdleTime(3) + Skin.HasSetting(furniture.overlayinfo) + ![ControlGroup(9000).HasFocus() | Window.IsVisible(DialogContextMenu.xml)]">
+							<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out" />
+							<effect type="zoom" end="95" time="200" center="auto" tween="quadratic" easing="out" />
+							<effect type="rotate" end="-1" time="200" center="auto" tween="quadratic" easing="out" />
+						</animation>
 						<control type="image">
 							<left>235</left>
 							<top>0</top>
@@ -507,9 +539,15 @@
 							<visible>!Container.Content(seasons)</visible>
 							<label fallback="19055">$VAR[LabelYear]$VAR[LabelDuration, • ]$INFO[ListItem.Rating, • ]</label>
 						</control>
+						</control>
 					</focusedlayout>
 					<focusedlayout width="1900" height="330" condition="Container.Content(episodes)">
-						<control type="group">
+					<control type="group">
+						<animation type="Conditional" reversible="true" condition="!System.IdleTime(20) + System.IdleTime(3) + Skin.HasSetting(furniture.overlayinfo) + ![ControlGroup(9000).HasFocus() | Window.IsVisible(DialogContextMenu.xml)]">
+							<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out" />
+							<effect type="zoom" end="95" time="200" center="auto" tween="quadratic" easing="out" />
+							<effect type="rotate" end="-1" time="200" center="auto" tween="quadratic" easing="out" />
+						</animation>
 						<control type="image">
 							<left>480</left>
 							<top>0</top>
@@ -654,7 +692,12 @@
 						</control>
 					</focusedlayout>
 					<focusedlayout width="1900" height="330" condition="Container.Content(albums)">
-						<control type="group">
+					<control type="group">
+						<animation type="Conditional" reversible="true" condition="!System.IdleTime(20) + System.IdleTime(3) + Skin.HasSetting(furniture.overlayinfo) + ![ControlGroup(9000).HasFocus() | Window.IsVisible(DialogContextMenu.xml)]">
+							<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out" />
+							<effect type="zoom" end="95" time="200" center="auto" tween="quadratic" easing="out" />
+							<effect type="rotate" end="-1" time="200" center="auto" tween="quadratic" easing="out" />
+						</animation>
 							<control type="image">
 								<left>0</left>
 								<top>0</top>
@@ -733,7 +776,12 @@
 						</control>
 					</focusedlayout>
 					<focusedlayout width="1900" height="330" condition="Container.Content(songs)">
-						<control type="group">
+					<control type="group">
+						<animation type="Conditional" reversible="true" condition="!System.IdleTime(20) + System.IdleTime(3) + Skin.HasSetting(furniture.overlayinfo) + ![ControlGroup(9000).HasFocus() | Window.IsVisible(DialogContextMenu.xml)]">
+							<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out" />
+							<effect type="zoom" end="95" time="200" center="auto" tween="quadratic" easing="out" />
+							<effect type="rotate" end="-1" time="200" center="auto" tween="quadratic" easing="out" />
+						</animation>
 							<control type="image">
 								<left>0</left>
 								<top>0</top>
@@ -859,7 +907,12 @@
 				<focusedlayout height="1" width="1" />
 				<content target="video">$VAR[DefWidgetCast]</content>
 			</control>
-			<control type="group">
+					<control type="group">
+						<animation type="Conditional" reversible="true" condition="!System.IdleTime(20) + System.IdleTime(3) + Skin.HasSetting(furniture.overlayinfo) + ![ControlGroup(9000).HasFocus() | Window.IsVisible(DialogContextMenu.xml)]">
+							<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out" />
+							<effect type="zoom" end="95" time="200" center="auto" tween="quadratic" easing="out" />
+							<effect type="rotate" end="-1" time="200" center="auto" tween="quadratic" easing="out" />
+						</animation>
 				<top>344</top>
 				<animation effect="slide" start="0,0" end="-0,20" center="auto" time="200" condition="Container(54).OnScrollNext">Conditional</animation>
 				<animation effect="slide" start="0,0" end="0,20" center="auto" time="200" condition="Container(54).OnScrollPrevious">Conditional</animation>
