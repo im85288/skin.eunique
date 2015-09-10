@@ -417,4 +417,17 @@
 		<value condition="IntegerGreaterThan(Control.GetLabel(9666),1)">nextup/01.png</value>
 		<value condition="IntegerGreaterThan(Control.GetLabel(9666),0)">nextup/00.png</value>
 	</variable>
+
+	<variable name="WeatherIconVar">
+		<value condition="Skin.HasSetting(Enable.Weather.3d-coloured)">resource://resource.images.weathericons.3d-coloured/</value>
+		<value condition="Skin.HasSetting(Enable.Weather.3d-white)">resource://resource.images.weathericons.3d-white/</value>
+		<value condition="Skin.HasSetting(Enable.Weather.coloured)">resource://resource.images.weathericons.coloured/</value>
+		<value condition="Skin.HasSetting(Enable.Weather.flat)">resource://resource.images.weathericons.flat/</value>
+		<value condition="Skin.HasSetting(Enable.Weather.grey)">resource://resource.images.weathericons.grey/</value>
+		<value condition="Skin.HasSetting(Enable.Weather.outline)">resource://resource.images.weathericons.outline/</value>
+		<value condition="Skin.HasSetting(Enable.Weather.outline-hd)">resource://resource.images.weathericons.outline-hd/</value>
+		<value condition="Skin.HasSetting(Enable.Weather.transparent)">resource://resource.images.weathericons.transparent/</value>
+		<value condition="Skin.HasSetting(Enable.Weather.white)">resource://resource.images.weathericons.white/</value>
+		<value>resource://resource.images.weathericons.default/</value>
+	</variable>
 </includes>
