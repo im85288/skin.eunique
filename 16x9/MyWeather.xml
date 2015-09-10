@@ -427,7 +427,13 @@
                     <include>DefContextButtonBlade</include>
                     <align>left</align>
                     <label>31143</label>
-                    <onclick>Skin.SetPath(weather.fanart)</onclick>
+                    <onclick>Skin.SetPath(weather.fanart,,special://home)</onclick>
+                </control>
+                <control type="button" id="9009" description="Use Default Weather Fanart">
+                    <include>DefContextButtonBlade</include>
+                    <align>left</align>
+                    <label>31812</label>
+                    <onclick>Skin.SetPath(weather.fanart,http://aeon-nox-background-packs.googlecode.com/svn/trunk/weather-fanart/default/)</onclick>
                 </control>
                 <control type="button" id="9003" description="Weather Settings">
                     <include>DefContextButtonBlade</include>
