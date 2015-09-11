@@ -1255,6 +1255,27 @@
 							</control>
 							<visible>Container.Content(episodes)</visible>
 						</control>
+						<control type="image">
+							<centerright>54</centerright>
+							<centertop>40</centertop>
+							<width>54</width>
+							<height>54</height>
+							<aspectratio aligny="top">keep</aspectratio>
+							<texture>$VAR[PercentWatched]</texture>
+							<visible>!stringcompare(ListItem.Label,..)</visible>
+							<visible>!Skin.HasSetting(views.155.showtick)</visible>
+						</control>
+						<control type="label">
+							<centerright>54</centerright>
+							<centertop>40</centertop>
+							<width>54</width>
+							<height>54</height>
+							<font>symbolbig</font>
+							<label>$VAR[PercentWatchedLabel]</label>
+							<textcolor>$VAR[IndicatorColourHighlight]</textcolor>
+							<visible>!Skin.HasSetting(views.155.showtick)</visible>
+							<visible>!stringcompare(ListItem.Label,..)</visible>
+						</control>
 							<animation type="conditional" condition="true" reversible="false">
 								<effect type="zoom" start="100" end="94" time="200" center="auto" tween="quadratic" easing="out" />
 								<effect type="rotate" end="-1" time="200" center="auto" tween="quadratic" easing="out" />
