@@ -7,7 +7,7 @@
 	<onunload>ClearProperty(VideoInfo.ImageColor,home)</onunload>
 	<onunload>ClearProperty(VideoInfo.ImageFilter,home)</onunload>
 	<controls>
-			<include>GlobalOverlay</include>
+		<include>GlobalOverlay</include>
 		<control type="group">
 			<visible>!Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml)</visible>
 			<visible>!Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)</visible>
@@ -15,6 +15,18 @@
 			<right>NewSidePad</right>
 			<top>TopPad</top>
 			<include>Animation.FadeIn.Slide</include>
+			<include>Animation.DVInfo</include>
+			<control type="group">
+				<left>1654</left>
+				<top>759</top>
+				<control type="image">
+					<width>228</width>
+					<height>100</height>
+					<texture>$VAR[ClearLogo]</texture>
+					<aspectratio align="center" aligny="center">keep</aspectratio>
+					<fadetime>50</fadetime>
+				</control>
+			</control>
 			<control type="group">
 				<left>10</left>
 				<top>-10</top>
@@ -22,7 +34,7 @@
 				<height>920</height>
 				<control type="image">
 					<aspectratio scalediffuse="false">stretch</aspectratio>
-					<texture colordiffuse="$VAR[ColourHighlight]" background="true">common/white.png</texture>
+					<texture colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" background="true">common/white.png</texture>
 					<animation type="conditional" condition="true" reversible="false">
 						<effect type="zoom" start="100" end="108" time="200" center="auto" tween="quadratic" easing="out" />
 					</animation>
@@ -60,7 +72,7 @@
 				<label>$VAR[LabelOverlayPlot]</label>
 			</control>
 			<control type="group">
-				<top>330</top>
+				<top>340</top>
 				<animation effect="slide" start="0,0" end="-0,20" center="auto" time="200" condition="Container(54).OnScrollNext">Conditional</animation>
 				<animation effect="slide" start="0,0" end="0,20" center="auto" time="200" condition="Container(54).OnScrollPrevious">Conditional</animation>
 				<control type="label">
