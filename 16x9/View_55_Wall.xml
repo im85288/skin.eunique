@@ -18,6 +18,10 @@
 			<animation effect="slide" end="-960,0" center="auto" time="200" condition="Container.Column(5)">Conditional</animation>
 			<animation effect="slide" end="-1200,0" center="auto" time="200" condition="Container.Column(6)">Conditional</animation>
 			<animation effect="slide" end="-1440,0" center="auto" time="200" condition="Container.Column(7)">Conditional</animation>
+			<animation type="Conditional" reversible="true" condition="!System.IdleTime(20) + System.IdleTime(3) + Skin.HasSetting(furniture.overlayinfo) + ![ControlGroup(9000).HasFocus() | Window.IsVisible(DialogContextMenu.xml)]">
+				<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out" />
+				<effect type="zoom" end="1000,7" time="200" center="auto" tween="quadratic" easing="out" />
+			</animation>
 			
 			<control type="panel" id="55">
 				<visible>Container.Content(musicvideos) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets)</visible>
@@ -37,11 +41,6 @@
 				<scrolltime tween="quadratic">400</scrolltime>
 				<itemlayout width="240" height="360">
 					<control type="group">
-						<animation type="Conditional" reversible="true" condition="!System.IdleTime(20) + System.IdleTime(3) + Skin.HasSetting(furniture.overlayinfo) + ![ControlGroup(9000).HasFocus() | Window.IsVisible(DialogContextMenu.xml)]">
-							<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out" />
-							<effect type="zoom" end="95" time="200" center="auto" tween="quadratic" easing="out" />
-							<effect type="rotate" end="-1" time="200" center="auto" tween="quadratic" easing="out" />
-						</animation>
 					<top>180</top>
 					<bottom>-180</bottom>
 					<control type="image">
@@ -113,11 +112,6 @@
 						<visible>Container.Row(0)</visible>
 					</control>
 					<control type="group">
-						<animation type="Conditional" reversible="true" condition="!System.IdleTime(20) + System.IdleTime(3) + Skin.HasSetting(furniture.overlayinfo) + ![ControlGroup(9000).HasFocus() | Window.IsVisible(DialogContextMenu.xml)]">
-							<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out" />
-							<effect type="zoom" end="95" time="200" center="auto" tween="quadratic" easing="out" />
-							<effect type="rotate" end="-1" time="200" center="auto" tween="quadratic" easing="out" />
-						</animation>
 					<top>-180</top>
 					<bottom>180</bottom>
 					<control type="image">
@@ -191,11 +185,6 @@
 				</itemlayout>
 				<focusedlayout width="240" height="360">
 					<control type="group">
-						<animation type="Conditional" reversible="true" condition="!System.IdleTime(20) + System.IdleTime(3) + Skin.HasSetting(furniture.overlayinfo) + ![ControlGroup(9000).HasFocus() | Window.IsVisible(DialogContextMenu.xml)]">
-							<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out" />
-							<effect type="zoom" end="95" time="200" center="auto" tween="quadratic" easing="out" />
-							<effect type="rotate" end="-1" time="200" center="auto" tween="quadratic" easing="out" />
-						</animation>
 						<animation effect="zoom" start="100" end="145" time="100" reversible="false" center="auto">Focus</animation>
 						<top>180</top>
 						<bottom>-180</bottom>
@@ -204,6 +193,7 @@
 							<texturenofocus>-</texturenofocus>
 							<onfocus condition="Container.Content(movies)">ClearProperty(TVShowID,home)</onfocus>
 							<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
+							<onfocus>RunScript(script.toolbox,info=blur,id='"$VAR[PosterImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfo)</onfocus>
 						</control>
 					<control type="image">
 						<left>0</left>
@@ -285,11 +275,6 @@
 						<visible>Container.Row(0)</visible>
 					</control>
 					<control type="group">
-						<animation type="Conditional" reversible="true" condition="!System.IdleTime(20) + System.IdleTime(3) + Skin.HasSetting(furniture.overlayinfo) + ![ControlGroup(9000).HasFocus() | Window.IsVisible(DialogContextMenu.xml)]">
-							<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out" />
-							<effect type="zoom" end="95" time="200" center="auto" tween="quadratic" easing="out" />
-							<effect type="rotate" end="-1" time="200" center="auto" tween="quadratic" easing="out" />
-						</animation>
 						<animation effect="zoom" start="100" end="145" time="100" reversible="false" center="auto">Focus</animation>
 						<top>-180</top>
 						<bottom>180</bottom>
@@ -298,6 +283,7 @@
 							<texturenofocus>-</texturenofocus>
 							<onfocus condition="Container.Content(movies)">ClearProperty(TVShowID,home)</onfocus>
 							<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
+							<onfocus>RunScript(script.toolbox,info=blur,id='"$VAR[PosterImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfo)</onfocus>
 						</control>
 					<control type="image">
 						<left>0</left>

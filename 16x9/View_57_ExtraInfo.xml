@@ -7,12 +7,11 @@
             <include>Animation.Common</include>
             <visible>Control.IsVisible(57)</visible>
             <visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml)</visible>
-					<control type="group">
-						<animation type="Conditional" reversible="true" condition="!System.IdleTime(20) + System.IdleTime(3) + Skin.HasSetting(furniture.overlayinfo) + ![ControlGroup(9000).HasFocus() | Window.IsVisible(DialogContextMenu.xml)]">
-							<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out" />
-							<effect type="zoom" end="95" time="200" center="auto" tween="quadratic" easing="out" />
-							<effect type="rotate" end="-1" time="200" center="auto" tween="quadratic" easing="out" />
-						</animation>
+			<animation type="Conditional" reversible="true" condition="!System.IdleTime(20) + System.IdleTime(3) + Skin.HasSetting(furniture.overlayinfo) + ![ControlGroup(9000).HasFocus() | Window.IsVisible(DialogContextMenu.xml)]">
+				<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out" />
+				<effect type="zoom" end="1000,7" time="200" center="auto" tween="quadratic" easing="out" />
+			</animation>
+            <control type="group">
 				<!--
                 <control type="image">
 					<height>740</height>
@@ -58,14 +57,7 @@
                     <viewtype label="31147">list</viewtype>
                     <scrolltime tween="quadratic">400</scrolltime>
                     <itemlayout width="930" height="66">
-					<control type="group">
-						<animation type="Conditional" reversible="true" condition="!System.IdleTime(20) + System.IdleTime(3) + Skin.HasSetting(furniture.overlayinfo) + ![ControlGroup(9000).HasFocus() | Window.IsVisible(DialogContextMenu.xml)]">
-							<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out" />
-							<effect type="zoom" end="95" time="200" center="auto" tween="quadratic" easing="out" />
-							<effect type="rotate" end="-1" time="200" center="auto" tween="quadratic" easing="out" />
-						</animation>
                         <include>50itemlayout</include>
-						</control>
                     </itemlayout>
                     <focusedlayout width="930" height="66">
 						<control type="button">
@@ -75,21 +67,11 @@
 							<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
 							<onfocus condition="!Container.Scrolling">RunScript(script.toolbox,info=blur,id='"$VAR[LandscapeImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfoExtra)</onfocus>
 						</control>
-					<control type="group">
-						<animation type="Conditional" reversible="true" condition="!System.IdleTime(20) + System.IdleTime(3) + Skin.HasSetting(furniture.overlayinfo) + ![ControlGroup(9000).HasFocus() | Window.IsVisible(DialogContextMenu.xml)]">
-							<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out" />
-							<effect type="zoom" end="95" time="200" center="auto" tween="quadratic" easing="out" />
-							<effect type="rotate" end="-1" time="200" center="auto" tween="quadratic" easing="out" />
-						</animation>
+                        <control type="group">
                             <visible>Control.HasFocus(57) + !Window.IsVisible(DialogVideoInfo.xml)</visible>
                             <include>50focuslayout</include>
                         </control>
-					<control type="group">
-						<animation type="Conditional" reversible="true" condition="!System.IdleTime(20) + System.IdleTime(3) + Skin.HasSetting(furniture.overlayinfo) + ![ControlGroup(9000).HasFocus() | Window.IsVisible(DialogContextMenu.xml)]">
-							<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out" />
-							<effect type="zoom" end="95" time="200" center="auto" tween="quadratic" easing="out" />
-							<effect type="rotate" end="-1" time="200" center="auto" tween="quadratic" easing="out" />
-						</animation>
+                        <control type="group">
                             <visible>!Control.HasFocus(57) | Window.IsVisible(DialogVideoInfo.xml)</visible>
                             <include>50itemlayout</include>
                         </control>
@@ -103,12 +85,7 @@
         </control>
     </include>
     <include name="Fanart_Info">
-					<control type="group">
-						<animation type="Conditional" reversible="true" condition="!System.IdleTime(20) + System.IdleTime(3) + Skin.HasSetting(furniture.overlayinfo) + ![ControlGroup(9000).HasFocus() | Window.IsVisible(DialogContextMenu.xml)]">
-							<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out" />
-							<effect type="zoom" end="95" time="200" center="auto" tween="quadratic" easing="out" />
-							<effect type="rotate" end="-1" time="200" center="auto" tween="quadratic" easing="out" />
-						</animation>
+        <control type="group">
             <left>$PARAM[posx]</left>
             <width>960</width>
             <top>TopPad</top>
