@@ -26,30 +26,53 @@
 					<fadetime>50</fadetime>
 				</control>
 			</control>
-			<control type="group">
-				<left>10</left>
-				<top>-10</top>
-				<width>613</width>
-				<height>920</height>
-				<control type="image">
-					<aspectratio scalediffuse="false">stretch</aspectratio>
-					<texture colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" background="true">common/white.png</texture>
-					<animation type="conditional" condition="true" reversible="false">
-						<effect type="zoom" start="100" end="108" time="200" center="auto" tween="quadratic" easing="out" />
-					</animation>
-				</control>
-				<control type="image">
-					<aspectratio scalediffuse="false">stretch</aspectratio>
-					<texture background="true">$VAR[PosterImage]</texture>
-					<animation type="conditional" condition="true" reversible="false">
-						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
-					</animation>
-				</control>
-				<animation type="conditional" condition="true" reversible="false">
-					<effect type="zoom" start="100" end="94" time="200" center="auto" tween="quadratic" easing="out" />
-					<effect type="rotate" end="-1" time="200" center="auto" tween="quadratic" easing="out" />
-				</animation>
-			</control>
+						<control type="group">
+						<left>10</left>
+						<top>-10</top>
+							<width>613</width>
+							<height>920</height>
+						<control type="image">
+							<aspectratio scalediffuse="false">stretch</aspectratio>
+							<texture colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" background="true">common/white.png</texture>
+							<animation type="conditional" condition="true" reversible="false">
+								<effect type="zoom" start="100" end="108" time="200" center="auto" tween="quadratic" easing="out" />
+							</animation>
+						</control>
+						<control type="image">
+							<aspectratio scalediffuse="false">stretch</aspectratio>
+							<texture background="true">$VAR[PosterImage]</texture>
+							<animation type="conditional" condition="true" reversible="false">
+								<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
+							</animation>
+							<visible>[Skin.HasSetting(osd.hidespoilers) + Container.Content(episodes) + [stringcompare(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]]</visible>
+						</control>
+						<control type="group">
+							<control type="image">
+								<width>613</width>
+								<height>450</height>
+								<aspectratio scalediffuse="false">scale</aspectratio>
+								<texture background="true">$INFO[ListItem.Icon]</texture>
+								<animation type="conditional" condition="true" reversible="false">
+									<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
+								</animation>
+							</control>
+							<control type="image">
+								<top>470</top>
+								<width>613</width>
+								<height>450</height>
+								<aspectratio scalediffuse="false">stretch</aspectratio>
+								<texture background="true">$INFO[ListItem.Art(tvshow.landscape)]</texture>
+								<animation type="conditional" condition="true" reversible="false">
+									<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
+								</animation>
+							</control>
+							<visible>![Skin.HasSetting(osd.hidespoilers) + Container.Content(episodes) + [stringcompare(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]]</visible>
+						</control>
+							<animation type="conditional" condition="true" reversible="false">
+								<effect type="zoom" start="100" end="94" time="200" center="auto" tween="quadratic" easing="out" />
+								<effect type="rotate" end="-1" time="200" center="auto" tween="quadratic" easing="out" />
+							</animation>
+						</control>
 			<control type="label">
 				<description>header label</description>
 				<left>643</left>
