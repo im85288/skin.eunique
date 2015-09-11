@@ -986,8 +986,8 @@
 		<value condition="Pvr.IsRecording">[COLOR=$VAR[ColourHighlight]]$INFO[Pvr.NowRecordingTitle][/COLOR]$INFO[Pvr.NowRecordingChannel, ,]</value>
 	</variable>
 	<variable name="HDSD">
-		<value condition="Container.Content(tvshows)">$INFO[ListItem.Property(UnWatchedEpisodes)]$INFO[ListItem.Season,/,,]</value>
-		<value condition="Container.Content(seasons)">$INFO[ListItem.Property(UnWatchedEpisodes)]</value>
+		<value condition="Container.Content(tvshows)">$INFO[ListItem.Property(UnWatchedEpisodes),,[B]U[/B]]$INFO[ListItem.Season,/,[B]S[/B]]</value>
+		<value condition="Container.Content(seasons)">$INFO[ListItem.Property(UnWatchedEpisodes),,[B]U[/B]]</value>
 		<value condition="ListItem.IsStereoScopic | !IsEmpty(ListItem.Property(Video3DFormat)) | substring(ListItem.FileName,.3d.)">3D</value>
 		<value condition="VideoPlayer.IsStereoScopic | !IsEmpty(VideoPlayer.Property(Video3DFormat)) | substring(VideoPlayer.FileName,.3d.)">3D</value>
 		<value condition="IntegerGreaterThan(ListItem.VideoResolution,1080) | SubString(ListItem.Filenameandpath,4k)">4K</value>
@@ -1138,6 +1138,14 @@
 		<value condition="Skin.HasSetting(home.classicwidgets) + !Skin.HasSetting(home.netflix) + !Skin.HasSetting(home.emby)">$LOCALIZE[31249]</value>
 		<value condition="Skin.HasSetting(home.netflix)">$LOCALIZE[31751]</value>
 		<value condition="Skin.HasSetting(home.emby)">Emby</value>
+	</variable>
+	<variable name="IndicatorColourHighlight">
+		<value condition="ListItem.IsResumable + Skin.HasSetting(ResumeColour)">$INFO[Skin.String(resume.colour.name)]</value>
+		<value condition="stringcompare(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(furniture.unwatched) + Skin.HasSetting(WatchedColour)">$INFO[Skin.String(watched.colour.name)]</value>
+		<value condition="ListItem.IsPlaying + Skin.HasSetting(PlayingColour)">$INFO[Skin.String(playing.colour.name)]</value>
+		<value condition="stringcompare(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched) + Skin.HasSetting(UnwatchedColour)">$INFO[Skin.String(unwatched.colour.name)]</value>
+		<value condition="!ListItem.IsResumable + !stringcompare(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsPlaying + !stringcompare(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(NewColour)">$INFO[Skin.String(new.colour.name)]</value>
+		<value>white</value>
 	</variable>
 	<variable name="ResumeColourHighlight">
 		<value condition="Skin.HasSetting(ResumeColour)">$INFO[Skin.String(resume.colour.name)]</value>
