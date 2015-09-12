@@ -378,7 +378,6 @@
         <control type="group">
             <include>Def9000SideBladeLeft</include>
             <control type="grouplist" id="9000">
-                <visible>!Window.IsVisible(1134)</visible>
                 <onback condition="Window.IsVisible(MyPVRGuide.xml) + Control.IsVisible(10)">ActivateWindow(home)</onback>
                 <left>10</left>
                 <top>115</top>
@@ -411,9 +410,9 @@
                     <description>Select weather icons</description>
                     <include>DefContextButtonBlade</include>
                     <align>left</align>
-                    <label>536</label>
-                    <label2>$VAR[WeatherIconLabelVar]</label2>
-                    <onclick>ActivateWindow(1134)</onclick>
+                    <label>31804</label>
+                    <onclick>RunScript(script.image.resource.select,property=weathericons&amp;type=resource.images.weathericons)</onclick>
+                    <visible>System.HasAddon(script.image.resource.select)</visible>
                 </control>
                 <control type="radiobutton" id="9002" description="Show weather overlay">
                     <include>DefContextButtonBlade</include>
