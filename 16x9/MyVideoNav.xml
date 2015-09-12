@@ -8,10 +8,11 @@
 	<onload>AlarmClock(castScroll,Control.Move(508923,-1),00:03,silent,loop)</onload> 
 	<onload>AlarmClock(castScroll2,Control.Move(508922,-1),00:03,silent,loop)</onload> 
 	<onunload>CancelAlarm(castScroll,true)</onunload>
+	<onunload>CancelAlarm(castScroll2,true)</onunload>
 	<onunload>ClearProperty(SkinHelper.ListItemGenres,home)</onunload>
 	<onunload>ClearProperty(SkinHelper.ListItemStudios,home)</onunload>
 	<onunload>ClearProperty(SkinHelper.ListItemCast,home)</onunload>
-	<menucontrol>508923</menucontrol>
+	<menucontrol>-</menucontrol>
 	<controls>
 		<include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
 		<include >View_50_List</include>
