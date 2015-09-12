@@ -105,7 +105,7 @@
 						<onclick>noop</onclick>
 					</item>
 					<item id="2">
-						<label>$LOCALIZE[10000]</label>
+						<label>$LOCALIZE[31144]</label>
 						<onclick>noop</onclick>
 					</item>
 					<item id="3">
@@ -126,6 +126,10 @@
 					</item>
 					<item id="7">
 						<label>$LOCALIZE[31745]</label>
+						<onclick>noop</onclick>
+					</item>
+					<item id="8">
+						<label>$LOCALIZE[31813]</label>
 						<onclick>noop</onclick>
 					</item>
 				</content>
@@ -1294,6 +1298,33 @@
 				<label2>[COLOR=$INFO[Skin.String(emby.flags.icon.colour.name)]]$INFO[Skin.String(emby.flags.icon.colour.name)][/COLOR]</label2>
 				<visible>Skin.HasSetting(emby.flags.icon.colour) + Skin.HasSetting(home.emby)</visible>
 				<visible>Container(8000).Hasfocus(7)</visible>
+			</control>
+			<control type="button" id="9291">
+				<width>1310</width>
+				<include>DefSettingsButton2</include>
+				<label>31814</label>
+				<label2>$INFO[Skin.String(moviegenreicons.name)]</label2>
+				<onclick>RunScript(script.image.resource.select,property=moviegenreicons&amp;type=resource.images.moviegenreicons)</onclick>
+				<visible>System.HasAddon(script.image.resource.select)</visible>
+				<visible>Container(8000).Hasfocus(8)</visible>
+			</control>
+			<control type="button" id="9292">
+				<width>1310</width>
+				<include>DefSettingsButton2</include>
+				<label>31815</label>
+				<label2>$INFO[Skin.String(musicgenreicons.name)]</label2>
+				<onclick>RunScript(script.image.resource.select,property=musicgenreicons&amp;type=resource.images.musicgenreicons)</onclick>
+				<visible>System.HasAddon(script.image.resource.select)</visible>
+				<visible>Container(8000).Hasfocus(8)</visible>
+			</control>
+			<control type="button" id="9293">
+				<width>1310</width>
+				<include>DefSettingsButton2</include>
+				<label>31816</label>
+				<label2>$INFO[Skin.String(weatherfanart.name)]</label2>
+				<onclick>RunScript(script.image.resource.select,property=weatherfanart&amp;type=resource.images.weatherfanart)</onclick>
+				<visible>System.HasAddon(script.image.resource.select)</visible>
+				<visible>Container(8000).Hasfocus(8)</visible>
 			</control>
 		</control>
 	</control>
