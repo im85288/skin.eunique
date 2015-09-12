@@ -1191,6 +1191,12 @@
 	</variable>
 	<include name="Furniture_OverlayInfo">
 		<control type="group">
+			<control type="group">
+				<top>-150</top>
+				<include>Animation.FadeIn</include>
+				<include>Animation.FadeOut</include>
+				<include>GlobalOverlay</include>
+			</control>
 			<left>NewSidePad</left>
 			<right>NewSidePad</right>
 			<top>TopPad</top>
@@ -1286,7 +1292,7 @@
 				<left>643</left>
 				<right>10</right>
 				<font>EpisodeNumber</font>
-				<textcolor>PanelWhite70</textcolor>
+				<textcolor>white</textcolor>
 				<height>45</height>
 				<label>$VAR[LabelOverlayTitle]</label>
 			</control>
@@ -1298,7 +1304,7 @@
 				<bottom>650</bottom>
 				<align>justify</align>
 				<font>Medium</font>
-				<textcolor>PanelWhite70</textcolor>
+				<textcolor>white2</textcolor>
 				<label>$VAR[LabelOverlayPlot]</label>
 			</control>
 			<control type="group">
@@ -1311,7 +1317,7 @@
 					<top>-56</top>
 					<align>left</align>
 					<font>SmallBold</font>
-					<textcolor>white</textcolor>
+					<textcolor>white2</textcolor>
 					<label>Director</label>
 							<animation type="conditional" condition="true" reversible="false">
 								<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
@@ -1324,7 +1330,7 @@
 					<top>-56</top>
 					<align>left</align>
 					<font>SmallBold</font>
-					<textcolor>white</textcolor>
+					<textcolor>white2</textcolor>
 					<label>Seasons</label>
 							<animation type="conditional" condition="true" reversible="false">
 								<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
@@ -1337,7 +1343,7 @@
 					<top>-56</top>
 					<align>left</align>
 					<font>SmallBold</font>
-					<textcolor>white</textcolor>
+					<textcolor>white2</textcolor>
 					<label>$INFO[ListItem.Label]</label>
 							<animation type="conditional" condition="true" reversible="false">
 								<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
@@ -1350,7 +1356,7 @@
 					<top>-56</top>
 					<align>left</align>
 					<font>SmallBold</font>
-					<textcolor>white</textcolor>
+					<textcolor>white2</textcolor>
 					<label>Air Date</label>
 							<animation type="conditional" condition="true" reversible="false">
 								<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
@@ -1363,7 +1369,7 @@
 					<top>-56</top>
 					<align>left</align>
 					<font>SmallBold</font>
-					<textcolor>white</textcolor>
+					<textcolor>white2</textcolor>
 					<label>Genre</label>
 							<animation type="conditional" condition="true" reversible="false">
 								<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
@@ -1375,7 +1381,7 @@
 					<top>-56</top>
 					<align>left</align>
 					<font>SmallBold</font>
-					<textcolor>white</textcolor>
+					<textcolor>white2</textcolor>
 					<label>Cast</label>
 							<animation type="conditional" condition="true" reversible="false">
 								<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
@@ -1387,7 +1393,7 @@
 					<top>-56</top>
 					<align>left</align>
 					<font>SmallBold</font>
-					<textcolor>white</textcolor>
+					<textcolor>white2</textcolor>
 					<label>Studio</label>
 							<fadetime>500</fadetime>
 							<animation type="conditional" condition="true" reversible="false">
@@ -1416,7 +1422,19 @@
 					<label fallback="19055">$VAR[LabelDirector]</label>
 					<autoscroll delay="500" time="1000" repeat="500"/>
 							<fadetime>500</fadetime>
-							<visible>!Container.Content(tvshows) + !Container.Content(episodes)</visible>
+							<visible>!Container.Content(seasons) + !Container.Content(tvshows) + !Container.Content(episodes)</visible>
+				</control>
+				<control type="textbox">
+					<left>643</left>
+					<width>246</width>
+					<height>178</height>
+					<align>left</align>
+					<font>TinyBold</font>
+					<textcolor>white</textcolor>
+					<label fallback="19055">$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20360]]</label>
+					<autoscroll delay="500" time="1000" repeat="500"/>
+							<fadetime>500</fadetime>
+							<visible>Container.Content(seasons)</visible>
 				</control>
 				<control type="textbox">
 					<left>643</left>
@@ -1482,7 +1500,7 @@
 	</include>
 	<include name="Furniture_Cast">
 		<control type="group">
-			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml) + !Control.IsVisible(500) + !Control.IsVisible(54) + !Control.IsVisible(52)</visible>
+			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml) + !Control.IsVisible(500) + !Control.IsVisible(54) + !Control.IsVisible(52) + !Control.IsVisible(53)</visible>
 			<visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)</visible>
 			<top>696</top>
 			<include>Animation.FadeIn</include>
@@ -1510,10 +1528,6 @@
 				<orientation>horizontal</orientation>
 				<defaultcontrol always="true">0</defaultcontrol>
 				<scrolltime easing="inout" tween="sine">300</scrolltime>
-				<animation condition="Window.IsVisible(1103)" reversible="false" type="Conditional">
-					<effect easing="out" end="-20,0" start="0,0" time="60" tween="sine" type="slide"/>
-					<effect delay="80" easing="out" end="20,0" start="0,0" time="120" tween="sine" type="slide"/>
-				</animation>
 				<animation effect="fade" end="100" start="0" time="300">Visible</animation>
 				<animation effect="fade" end="0" start="100" time="300">Hidden</animation>
 				<animation center="480,1022" condition="true" easing="inout" effect="zoom" end="81"  start="100" time="300" tween="sine">Conditional</animation>

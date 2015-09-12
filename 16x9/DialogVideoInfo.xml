@@ -7,7 +7,9 @@
 	<onunload>ClearProperty(VideoInfo.ImageColor,home)</onunload>
 	<onunload>ClearProperty(VideoInfo.ImageFilter,home)</onunload>
 	<controls>
+		<!--
 		<include>GlobalOverlay</include>
+		-->
 		<control type="group">
 			<visible>!Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml)</visible>
 			<visible>!Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)</visible>
@@ -69,6 +71,16 @@
 							<visible>Container.Content(episodes) + ![Skin.HasSetting(osd.hidespoilers) + Container.Content(episodes) + [stringcompare(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]]</visible>
 						</control>
 						<control type="image">
+							<right>23</right>
+							<top>11</top>
+							<width>62</width>
+							<height>62</height>
+							<texture colordiffuse="white2">common/circle.png</texture>
+							<aspectratio align="center" aligny="top">keep</aspectratio>
+							<visible>!stringcompare(ListItem.Label,..)</visible>
+							<visible>!Skin.HasSetting(views.155.showtick)</visible>
+						</control>
+						<control type="image">
 							<centerright>54</centerright>
 							<centertop>40</centertop>
 							<width>54</width>
@@ -76,7 +88,6 @@
 							<aspectratio aligny="top">keep</aspectratio>
 							<texture>$VAR[PercentWatched]</texture>
 							<visible>!stringcompare(ListItem.Label,..)</visible>
-							<visible>!Skin.HasSetting(views.155.showtick)</visible>
 						</control>
 						<control type="label">
 							<centerright>54</centerright>
@@ -86,7 +97,6 @@
 							<font>symbolbig</font>
 							<label>$VAR[PercentWatchedLabel]</label>
 							<textcolor>$VAR[IndicatorColourHighlight]</textcolor>
-							<visible>!Skin.HasSetting(views.155.showtick)</visible>
 							<visible>!stringcompare(ListItem.Label,..)</visible>
 						</control>
 							<animation type="conditional" condition="true" reversible="false">
@@ -99,7 +109,7 @@
 				<left>643</left>
 				<right>10</right>
 				<font>EpisodeNumber</font>
-				<textcolor>PanelWhite70</textcolor>
+				<textcolor>white</textcolor>
 				<height>45</height>
 				<label>$VAR[LabelOverlayTitle]</label>
 			</control>
@@ -111,8 +121,8 @@
 				<bottom>650</bottom>
 				<align>justify</align>
 				<font>Medium</font>
-				<textcolor>PanelWhite70</textcolor>
-				<label>$VAR[LabelOverlayPlot]</label>
+				<textcolor>white2</textcolor>
+				<label>$VAR[Plot]</label>
 			</control>
 			<control type="group">
 				<top>340</top>
@@ -124,7 +134,7 @@
 					<top>-56</top>
 					<align>left</align>
 					<font>SmallBold</font>
-					<textcolor>white</textcolor>
+					<textcolor>white2</textcolor>
 					<label>Director</label>
 							<animation type="conditional" condition="true" reversible="false">
 								<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
@@ -137,7 +147,7 @@
 					<top>-56</top>
 					<align>left</align>
 					<font>SmallBold</font>
-					<textcolor>white</textcolor>
+					<textcolor>white2</textcolor>
 					<label>Seasons</label>
 							<animation type="conditional" condition="true" reversible="false">
 								<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
@@ -150,7 +160,7 @@
 					<top>-56</top>
 					<align>left</align>
 					<font>SmallBold</font>
-					<textcolor>white</textcolor>
+					<textcolor>white2</textcolor>
 					<label>$INFO[ListItem.Label]</label>
 							<animation type="conditional" condition="true" reversible="false">
 								<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
@@ -163,7 +173,7 @@
 					<top>-56</top>
 					<align>left</align>
 					<font>SmallBold</font>
-					<textcolor>white</textcolor>
+					<textcolor>white2</textcolor>
 					<label>Air Date</label>
 							<animation type="conditional" condition="true" reversible="false">
 								<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
@@ -176,7 +186,7 @@
 					<top>-56</top>
 					<align>left</align>
 					<font>SmallBold</font>
-					<textcolor>white</textcolor>
+					<textcolor>white2</textcolor>
 					<label>Genre</label>
 							<animation type="conditional" condition="true" reversible="false">
 								<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
@@ -188,7 +198,7 @@
 					<top>-56</top>
 					<align>left</align>
 					<font>SmallBold</font>
-					<textcolor>white</textcolor>
+					<textcolor>white2</textcolor>
 					<label>Cast</label>
 							<animation type="conditional" condition="true" reversible="false">
 								<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
@@ -200,7 +210,7 @@
 					<top>-56</top>
 					<align>left</align>
 					<font>SmallBold</font>
-					<textcolor>white</textcolor>
+					<textcolor>white2</textcolor>
 					<label>Studio</label>
 							<fadetime>500</fadetime>
 							<animation type="conditional" condition="true" reversible="false">
@@ -229,7 +239,19 @@
 					<label fallback="19055">$VAR[LabelDirector]</label>
 					<autoscroll delay="500" time="1000" repeat="500"/>
 							<fadetime>500</fadetime>
-							<visible>!Container.Content(tvshows) + !Container.Content(episodes)</visible>
+							<visible>!Container.Content(seasons) + !Container.Content(tvshows) + !Container.Content(episodes)</visible>
+				</control>
+				<control type="textbox">
+					<left>643</left>
+					<width>246</width>
+					<height>178</height>
+					<align>left</align>
+					<font>TinyBold</font>
+					<textcolor>white</textcolor>
+					<label fallback="19055">$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20360]]</label>
+					<autoscroll delay="500" time="1000" repeat="500"/>
+							<fadetime>500</fadetime>
+							<visible>Container.Content(seasons)</visible>
 				</control>
 				<control type="textbox">
 					<left>643</left>
