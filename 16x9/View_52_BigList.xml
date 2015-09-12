@@ -167,13 +167,13 @@
 				<aspectratio align="left" aligny="top" scalediffuse="false" flipy="true">scale</aspectratio>
 				<texture colordiffuse="$INFO[Window(home).Property(BigListInfoExtra.ImageColor)]" background="true" flipy="true" fallback="common/white.png">$INFO[Window(home).Property(BigListInfoExtra.ImageFilter)]</texture>
 			</control>
-			<control id="508923" type="wraplist">
+			<control id="508922" type="wraplist">
 				<left>965</left>
 				<bottom>0</bottom>
 				<width>170</width>
 				<height>231</height>
 				<onup>50</onup>
-				<ondown>RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Container(508923).ListItem.Label])</ondown>
+				<ondown>RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Container(508922).ListItem.Label])</ondown>
 				<onleft>7000</onleft>
 				<onright>noop</onright>
 				<onright condition="!Window.IsVisible(1103)">SetProperty(BounceRight,1,Home)</onright>
@@ -325,7 +325,7 @@
 				<height>51</height>
 				<font>MediumBold</font>
 				<textcolor>$VAR[ColourSelected]</textcolor>
-				<label>$INFO[Container(508923).ListItem(0).Label]$INFO[Container(508923).ListItem(0).Label2, $LOCALIZE[20347] ]</label>
+				<label>$INFO[Container(508922).ListItem(0).Label]$INFO[Container(508922).ListItem(0).Label2, $LOCALIZE[20347] ]</label>
 			</control>
 			<control type="image">
 				<right>93</right>
