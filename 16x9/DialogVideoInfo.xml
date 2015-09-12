@@ -28,82 +28,72 @@
 					<fadetime>50</fadetime>
 				</control>
 			</control>
-						<control type="group">
-						<left>10</left>
-						<top>-10</top>
-							<width>613</width>
-							<height>920</height>
-						<control type="image">
-							<aspectratio scalediffuse="false">stretch</aspectratio>
-							<texture colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" background="true">common/white.png</texture>
-							<animation type="conditional" condition="true" reversible="false">
-								<effect type="zoom" start="100" end="108" time="200" center="auto" tween="quadratic" easing="out" />
-							</animation>
-						</control>
-						<control type="image">
-							<aspectratio scalediffuse="false">stretch</aspectratio>
-							<texture background="true">$VAR[PosterImage]</texture>
-							<animation type="conditional" condition="true" reversible="false">
-								<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
-							</animation>
-							<visible>!Container.Content(episodes) | [Skin.HasSetting(osd.hidespoilers) + Container.Content(episodes) + [stringcompare(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]]</visible>
-						</control>
-						<control type="group">
-							<control type="image">
-								<width>613</width>
-								<height>450</height>
-								<aspectratio scalediffuse="false">scale</aspectratio>
-								<texture background="true">$INFO[ListItem.Icon]</texture>
-								<animation type="conditional" condition="true" reversible="false">
-									<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
-								</animation>
-							</control>
-							<control type="image">
-								<top>470</top>
-								<width>613</width>
-								<height>450</height>
-								<aspectratio scalediffuse="false">stretch</aspectratio>
-								<texture background="true">$INFO[ListItem.Art(tvshow.landscape)]</texture>
-								<animation type="conditional" condition="true" reversible="false">
-									<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
-								</animation>
-							</control>
-							<visible>Container.Content(episodes) + ![Skin.HasSetting(osd.hidespoilers) + Container.Content(episodes) + [stringcompare(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]]</visible>
-						</control>
-						<control type="image">
-							<right>23</right>
-							<top>11</top>
-							<width>62</width>
-							<height>62</height>
-							<texture colordiffuse="white2">common/circle.png</texture>
-							<aspectratio align="center" aligny="top">keep</aspectratio>
-							<visible>!stringcompare(ListItem.Label,..)</visible>
-							<visible>!Skin.HasSetting(views.155.showtick)</visible>
-						</control>
-						<control type="image">
-							<centerright>54</centerright>
-							<centertop>40</centertop>
-							<width>54</width>
-							<height>54</height>
-							<aspectratio aligny="top">keep</aspectratio>
-							<texture>$VAR[PercentWatched]</texture>
-							<visible>!stringcompare(ListItem.Label,..)</visible>
-						</control>
-						<control type="label">
-							<centerright>54</centerright>
-							<centertop>40</centertop>
-							<width>54</width>
-							<height>54</height>
-							<font>symbolbig</font>
-							<label>$VAR[PercentWatchedLabel]</label>
-							<textcolor>$VAR[IndicatorColourHighlight]</textcolor>
-							<visible>!stringcompare(ListItem.Label,..)</visible>
-						</control>
-							<animation type="conditional" condition="true" reversible="false">
-								<effect type="zoom" start="100" end="94" time="200" center="auto" tween="quadratic" easing="out" />
-								<effect type="rotate" end="-1" time="200" center="auto" tween="quadratic" easing="out" />
-							</animation>
-						</control>
+			<control type="group">
+				<left>10</left>
+				<top>-10</top>
+				<width>613</width>
+				<height>920</height>
+				<control type="image">
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<texture colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" background="true">common/white.png</texture>
+					<animation type="conditional" condition="true" reversible="false">
+						<effect type="zoom" start="100" end="108" time="200" center="auto" tween="quadratic" easing="out" />
+					</animation>
+				</control>
+				<control type="image">
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<texture background="true">$VAR[PosterImage]</texture>
+					<animation type="conditional" condition="true" reversible="false">
+						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
+					</animation>
+					<visible>!Container.Content(episodes) | [Skin.HasSetting(osd.hidespoilers) + Container.Content(episodes) + [stringcompare(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]]</visible>
+				</control>
+				<control type="group">
+					<control type="image">
+						<width>613</width>
+						<height>450</height>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<texture background="true">$INFO[ListItem.Icon]</texture>
+						<animation type="conditional" condition="true" reversible="false">
+							<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
+						</animation>
+					</control>
+					<control type="image">
+						<top>470</top>
+						<width>613</width>
+						<height>450</height>
+						<aspectratio scalediffuse="false">stretch</aspectratio>
+						<texture background="true">$INFO[ListItem.Art(tvshow.landscape)]</texture>
+						<animation type="conditional" condition="true" reversible="false">
+							<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
+						</animation>
+					</control>
+					<visible>Container.Content(episodes) + ![Skin.HasSetting(osd.hidespoilers) + Container.Content(episodes) + [stringcompare(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]]</visible>
+				</control>
+				<control type="label">
+					<right>16</right>
+					<top>1</top>
+					<width>76</width>
+					<height>76</height>
+					<font>symbolbackbig</font>
+					<label></label>
+					<textcolor>white2</textcolor>
+				</control>
+				<control type="label">
+					<centerright>54</centerright>
+					<centertop>40</centertop>
+					<width>54</width>
+					<height>54</height>
+					<font>symbolbig</font>
+					<label>$VAR[PercentWatchedLabel]</label>
+					<textcolor>$VAR[IndicatorColourHighlight]</textcolor>
+					<visible>!stringcompare(ListItem.Label,..)</visible>
+				</control>
+				<animation type="conditional" condition="true" reversible="false">
+					<effect type="zoom" start="100" end="94" time="200" center="auto" tween="quadratic" easing="out" />
+					<effect type="rotate" end="-1" time="200" center="auto" tween="quadratic" easing="out" />
+				</animation>
+			</control>
 			<control type="label">
 				<description>header label</description>
 				<left>643</left>
@@ -136,10 +126,10 @@
 					<font>SmallBold</font>
 					<textcolor>white2</textcolor>
 					<label>Director</label>
-							<animation type="conditional" condition="true" reversible="false">
-								<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
-							</animation>
-							<visible>!Container.Content(tvshows) + !Container.Content(episodes) + !Container.Content(seasons)</visible>
+					<animation type="conditional" condition="true" reversible="false">
+						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
+					</animation>
+					<visible>!Container.Content(tvshows) + !Container.Content(episodes) + !Container.Content(seasons)</visible>
 				</control>
 				<control type="label">
 					<left>643</left>
@@ -149,10 +139,10 @@
 					<font>SmallBold</font>
 					<textcolor>white2</textcolor>
 					<label>Seasons</label>
-							<animation type="conditional" condition="true" reversible="false">
-								<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
-							</animation>
-							<visible>Container.Content(tvshows)</visible>
+					<animation type="conditional" condition="true" reversible="false">
+						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
+					</animation>
+					<visible>Container.Content(tvshows)</visible>
 				</control>
 				<control type="label">
 					<left>643</left>
@@ -162,10 +152,10 @@
 					<font>SmallBold</font>
 					<textcolor>white2</textcolor>
 					<label>$INFO[ListItem.Label]</label>
-							<animation type="conditional" condition="true" reversible="false">
-								<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
-							</animation>
-							<visible>Container.Content(seasons)</visible>
+					<animation type="conditional" condition="true" reversible="false">
+						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
+					</animation>
+					<visible>Container.Content(seasons)</visible>
 				</control>
 				<control type="label">
 					<left>643</left>
@@ -175,10 +165,10 @@
 					<font>SmallBold</font>
 					<textcolor>white2</textcolor>
 					<label>Air Date</label>
-							<animation type="conditional" condition="true" reversible="false">
-								<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
-							</animation>
-							<visible>Container.Content(episodes)</visible>
+					<animation type="conditional" condition="true" reversible="false">
+						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
+					</animation>
+					<visible>Container.Content(episodes)</visible>
 				</control>
 				<control type="label">
 					<left>957</left>
@@ -188,9 +178,9 @@
 					<font>SmallBold</font>
 					<textcolor>white2</textcolor>
 					<label>Genre</label>
-							<animation type="conditional" condition="true" reversible="false">
-								<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
-							</animation>
+					<animation type="conditional" condition="true" reversible="false">
+						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
+					</animation>
 				</control>
 				<control type="label">
 					<left>1271</left>
@@ -200,9 +190,9 @@
 					<font>SmallBold</font>
 					<textcolor>white2</textcolor>
 					<label>Cast</label>
-							<animation type="conditional" condition="true" reversible="false">
-								<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
-							</animation>
+					<animation type="conditional" condition="true" reversible="false">
+						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
+					</animation>
 				</control>
 				<control type="label">
 					<left>1585</left>
@@ -212,10 +202,10 @@
 					<font>SmallBold</font>
 					<textcolor>white2</textcolor>
 					<label>Studio</label>
-							<fadetime>500</fadetime>
-							<animation type="conditional" condition="true" reversible="false">
-								<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
-							</animation>
+					<fadetime>500</fadetime>
+					<animation type="conditional" condition="true" reversible="false">
+						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
+					</animation>
 				</control>
 				<control type="textbox">
 					<left>643</left>
@@ -226,8 +216,8 @@
 					<textcolor>white</textcolor>
 					<label fallback="19055">$INFO[ListItem.Season]</label>
 					<autoscroll delay="500" time="1000" repeat="500"/>
-							<fadetime>500</fadetime>
-							<visible>Container.Content(tvshows)</visible>
+					<fadetime>500</fadetime>
+					<visible>Container.Content(tvshows)</visible>
 				</control>
 				<control type="textbox">
 					<left>643</left>
@@ -238,8 +228,8 @@
 					<textcolor>white</textcolor>
 					<label fallback="19055">$VAR[LabelDirector]</label>
 					<autoscroll delay="500" time="1000" repeat="500"/>
-							<fadetime>500</fadetime>
-							<visible>!Container.Content(seasons) + !Container.Content(tvshows) + !Container.Content(episodes)</visible>
+					<fadetime>500</fadetime>
+					<visible>!Container.Content(seasons) + !Container.Content(tvshows) + !Container.Content(episodes)</visible>
 				</control>
 				<control type="textbox">
 					<left>643</left>
@@ -250,8 +240,8 @@
 					<textcolor>white</textcolor>
 					<label fallback="19055">$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20360]]</label>
 					<autoscroll delay="500" time="1000" repeat="500"/>
-							<fadetime>500</fadetime>
-							<visible>Container.Content(seasons)</visible>
+					<fadetime>500</fadetime>
+					<visible>Container.Content(seasons)</visible>
 				</control>
 				<control type="textbox">
 					<left>643</left>
@@ -262,8 +252,8 @@
 					<textcolor>white</textcolor>
 					<label fallback="19055">$INFO[ListItem.Premiered]</label>
 					<autoscroll delay="500" time="1000" repeat="500"/>
-							<fadetime>500</fadetime>
-							<visible>Container.Content(episodes)</visible>
+					<fadetime>500</fadetime>
+					<visible>Container.Content(episodes)</visible>
 				</control>
 				<control type="textbox">
 					<left>957</left>
@@ -274,7 +264,7 @@
 					<textcolor>white</textcolor>
 					<label fallback="19055">$VAR[LabelGenreList]</label>
 					<autoscroll delay="500" time="1000" repeat="500"/>
-							<fadetime>500</fadetime>
+					<fadetime>500</fadetime>
 				</control>
 				<control type="textbox">
 					<left>1271</left>
@@ -285,7 +275,7 @@
 					<textcolor>white</textcolor>
 					<label fallback="19055">$INFO[Window(Home).Property(SkinHelper.ListItemCast)]</label>
 					<autoscroll delay="500" time="1000" repeat="500"/>
-							<fadetime>500</fadetime>
+					<fadetime>500</fadetime>
 				</control>
 				<control type="textbox">
 					<left>1585</left>
@@ -295,23 +285,23 @@
 					<font>TinyBold</font>
 					<textcolor>white</textcolor>
 					<label fallback="19055">$INFO[Window(Home).Property(SkinHelper.ListItemStudios)]</label>
-							<fadetime>500</fadetime>
+					<fadetime>500</fadetime>
 				</control>
-<!--
-				<control type="label">
-					<left>337</left>
-					<right>10</right>
-					<top>303</top>
-					<aligny>center</aligny>
-					<height>26</height>
-					<align>right</align>
-					<font>Tiny</font>
-					<textcolor>white</textcolor>
-					<visible>!Container.Content(seasons)</visible>
-					<label fallback="19055">$VAR[LabelYear,, • ]$VAR[LabelDuration,, • ]$INFO[ListItem.Rating]</label>
-				</control>
-				-->
-							<visible>!stringcompare(ListItem.Label,..) + !Container.Content(albums) + !Container.Content(songs)</visible>
+				<!--
+<control type="label">
+<left>337</left>
+<right>10</right>
+<top>303</top>
+<aligny>center</aligny>
+<height>26</height>
+<align>right</align>
+<font>Tiny</font>
+<textcolor>white</textcolor>
+<visible>!Container.Content(seasons)</visible>
+<label fallback="19055">$VAR[LabelYear,, • ]$VAR[LabelDuration,, • ]$INFO[ListItem.Rating]</label>
+</control>
+-->
+				<visible>!stringcompare(ListItem.Label,..) + !Container.Content(albums) + !Container.Content(songs)</visible>
 			</control>
 			<!-- Button grouplist -->
 			<control id="9000" type="grouplist">
@@ -429,8 +419,6 @@
 					<animation condition="Control.HasFocus(19)" effect="zoom" end="200"  time="100" center="auto">Conditional</animation>
 				</control>
 			</control>
-		
-		
 		</control>
 	</controls>
 </window>
