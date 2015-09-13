@@ -188,6 +188,26 @@
 			<visible>Window.IsVisible(DialogVideoInfo.xml) + !Skin.HasSetting(furniture.info.fanart)</visible>
 		</control>
 		<control type="image">
+			<bottom>0</bottom>
+			<width>1920</width>
+			<height>270</height>
+			<aspectratio align="center">scale</aspectratio>
+			<texture fallback="common/black.png" background="true">$INFO[Window(home).Property(VideoInfoBottom.ImageFilter)]</texture>
+			<visible>Window.IsVisible(DialogVideoInfo.xml) + !Skin.HasSetting(furniture.info.fanart)</visible>
+			<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
+			<fadetime>600</fadetime>
+		</control>
+		<control type="image">
+			<bottom>0</bottom>
+			<width>1920</width>
+			<height>270</height>
+			<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
+			<aspectratio align="center">scale</aspectratio>
+			<texture colordiffuse="$INFO[Window(home).Property(VideoInfoBottom.ImageColor)]">common/floor.png</texture>
+			<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
+			<visible>Window.IsVisible(DialogVideoInfo.xml) + !Skin.HasSetting(furniture.info.fanart)</visible>
+		</control>
+		<control type="image">
 			<include>Dimensions_Fullscreen</include>
 			<aspectratio align="center">scale</aspectratio>
 			<texture fallback="common/black.png" background="true">$INFO[Window(home).Property(MusicInfo.ImageFilter)]</texture>
