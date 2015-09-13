@@ -62,12 +62,25 @@
 				<height>920</height>
 				<animation effect="slide" start="0,0" end="-0,20" center="auto" time="200" condition="Container(54).OnScrollNext">Conditional</animation>
 				<animation effect="slide" start="0,0" end="0,20" center="auto" time="200" condition="Container(54).OnScrollPrevious">Conditional</animation>
-				<control type="label">
+
+				<control type="button" id="90901">
 					<left>10</left>
 					<align>right</align>
-					<font>MediumBold</font>
+					<font>symbol</font>
+					<label></label>
+					<onup>9000</onup>
+					<ondown>90902</ondown>
+					<onback>9000</onback>
+					<textoffsetx>0</textoffsetx>
 					<textcolor>white2</textcolor>
-					<label>DIRECTOR</label>
+					<focusedcolor>$INFO[Window(home).Property(VideoInfo.ImageColor)]</focusedcolor>
+					<texturenofocus>-</texturenofocus>
+					<texturefocus>-</texturefocus>
+					<onclick>SetProperty(Dialog.1.Label,Extra Info)</onclick>
+					<onclick>SetProperty(Dialog.1.BuiltIn,RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[ListItem.Director]))</onclick>
+					<onclick>SetProperty(Dialog.2.Label,Search on Youtube)</onclick>
+					<onclick>SetProperty(Dialog.2.BuiltIn,SetProperty(listcontent,$INFO[ListItem.Director],home)||ActivateWindow(1168))</onclick>
+					<onclick>RunScript(script.toolbox,info=selectdialog,header=$INFO[ListItem.Director])</onclick>
 					<visible>!Container.Content(tvshows) + !Container.Content(episodes) + !Container.Content(seasons)</visible>
 				</control>
 				<control type="label">
@@ -94,13 +107,23 @@
 					<label>AIR DATE</label>
 					<visible>Container.Content(episodes)</visible>
 				</control>
-				<control type="label">
+				<control type="button" id="90902">
 					<left>10</left>
 					<top>156</top>
 					<align>right</align>
-					<font>MediumBold</font>
+					<onup>90901</onup>
+					<ondown>Control.Move(90903,1)</ondown>
+					<onback>9000</onback>
+					<onleft>9000</onleft>
+					<onright>9000</onright>
+					<onclick>RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Container(90903).ListItem.Label])</onclick>
+					<textoffsetx>0</textoffsetx>
+					<font>symbol</font>
+					<label></label>
 					<textcolor>white2</textcolor>
-					<label>STARRING</label>
+					<focusedcolor>$INFO[Window(home).Property(VideoInfo.ImageColor)]</focusedcolor>
+					<texturenofocus>-</texturenofocus>
+					<texturefocus>-</texturefocus>
 				</control>
 
 				<control type="textbox">
@@ -161,6 +184,127 @@
 					<label fallback="19055">$INFO[Window(Home).Property(SkinHelper.ListItemCast)]</label>
 					<autoscroll delay="8000" time="1200" repeat="1000"/>
 					<fadetime>500</fadetime>
+					<visible>!Control.HasFocus(90902)</visible>
+				</control>
+				<control id="90903" type="list">
+					<visible>Control.HasFocus(90902)</visible>
+					<left>260</left>
+					<bottom>500</bottom>
+					<top>220</top>
+					<onup>90901</onup>
+					<onright>9000</onright>
+					<onright condition="!Window.IsVisible(1103)">SetProperty(BounceRight,1,Home)</onright>
+					<onback>9000</onback>
+					<preloaditems>8</preloaditems>
+					<focusposition>1</focusposition>
+					<viewtype label="">list</viewtype>
+					<orientation>vertical</orientation>
+					<defaultcontrol always="true">0</defaultcontrol>
+					<scrolltime easing="inout" tween="sine">300</scrolltime>
+					<animation effect="fade" end="100" start="0" time="300">Visible</animation>
+					<animation effect="fade" end="0" start="100" time="300">Hidden</animation>
+					<itemlayout height="210" width="140">
+						<control type="group">
+							<control type="label">
+								<left>0</left>
+								<top>0</top>
+								<right>0</right>
+								<bottom>0</bottom>
+								<height>210</height>
+								<aligny>center</aligny>
+								<align>center</align>
+								<font>symbolbiggest</font>
+								<label></label>
+								<textcolor>white</textcolor>
+								<fadetime>300</fadetime>
+							</control>
+							<control type="image">
+								<left>0</left>
+								<top>0</top>
+								<right>0</right>
+								<bottom>0</bottom>
+								<aspectratio align="center" aligny="top">stretch</aspectratio>
+								<texture background="true">$INFO[ListItem.Icon]</texture>
+								<fadetime>200</fadetime>
+							</control>
+							<control type="image">
+								<left>0</left>
+								<top>0</top>
+								<right>0</right>
+								<bottom>0</bottom>
+								<texture border="15" colordiffuse="99000000">common/white.png</texture>
+							</control>
+						</control>
+					</itemlayout>
+					<focusedlayout height="210" width="140">
+						<control type="group">
+							<control type="label">
+								<left>0</left>
+								<top>0</top>
+								<right>0</right>
+								<bottom>0</bottom>
+								<height>210</height>
+								<aligny>center</aligny>
+								<align>center</align>
+								<font>symbolbiggest</font>
+								<label></label>
+								<textcolor>white</textcolor>
+								<fadetime>300</fadetime>
+							</control>
+							<control type="image">
+								<left>0</left>
+								<top>0</top>
+								<right>0</right>
+								<bottom>0</bottom>
+								<aspectratio align="center" aligny="top">stretch</aspectratio>
+								<texture background="true" fallback="DefaultActor.png">$INFO[ListItem.Icon]</texture>
+								<fadetime>00</fadetime>
+							</control>
+							<control type="label">
+								<left>0</left>
+								<top>0</top>
+								<right>0</right>
+								<bottom>0</bottom>
+								<aligny>center</aligny>
+								<align>center</align>
+								<width>36</width>
+								<height>36</height>
+								<font>symbolview</font>
+								<label></label>
+								<textcolor>$VAR[EmbyLeftColourHighlight]</textcolor>
+							</control>
+							<control type="image">
+								<left>0</left>
+								<bottom>0</bottom>
+								<right>0</right>
+								<bottom>0</bottom>
+								<height>40</height>
+								<texture border="15" colordiffuse="$VAR[EmbyRightColourHighlight]">common/white.png</texture>
+							</control>
+							<control type="label">
+								<left>0</left>
+								<bottom>22</bottom>
+								<right>0</right>
+								<bottom>0</bottom>
+								<height>20</height>
+								<font>MinuteBold</font>
+								<textcolor>$VAR[ColourSelected]</textcolor>
+								<label>$INFO[ListItem.Label]</label>
+							</control>
+							<control type="label">
+								<left>0</left>
+								<bottom>7</bottom>
+								<right>0</right>
+								<bottom>0</bottom>
+								<height>20</height>
+								<font>MinisculeBold</font>
+								<autoscroll>true</autoscroll>
+								<textcolor>$VAR[ColourSelected]</textcolor>
+								<label>$INFO[ListItem.Label2,$LOCALIZE[20347] ]</label>
+							</control>
+						</control>
+					</focusedlayout>
+					<content target="video">$VAR[DefWidgetCast]</content>
 				</control>
 				<!--
 <control type="label">
@@ -196,7 +340,7 @@
 				<control id="8" type="togglebutton">
 					<width>116</width>
 					<height>116</height>
-					<onup condition="Control.IsVisible(3444)">3444</onup>
+					<onup condition="Control.IsVisible(90901)">90901</onup>
 					<ondown>9500</ondown>
 					<onclick>dialog.close(all,true)</onclick>
 					<font>symbol</font>
@@ -211,11 +355,11 @@
 					<alttexturefocus colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" border="5">common/box.png</alttexturefocus>
 					<alttexturenofocus colordiffuse="$VAR[EmbyMiddleColourHighlight]" border="5">common/box.png</alttexturenofocus>
 				</control>
-				<!-- Cinema Experience Button <control id="21" type="button"><width>200</width><height>116</height><onup condition="Control.IsVisible(3444)">3444</onup><ondown>9500</ondown><onclick>Dialog.Close(MovieInformation)</onclick><onclick>RunScript(script.cinema.experience,movieid=$INFO[ListItem.DBID])</onclick><font>symbol</font><label></label><textcolor>Black700</textcolor><texturefocus colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" border="5">common/box.png</texturefocus><texturenofocus colordiffuse="White70" border="5">common/box.png</texturenofocus><visible>System.HasAddon(script.cinema.experience) + Container.Content(movies)</visible><visible>false</visible></control> -->
+				<!-- Cinema Experience Button <control id="21" type="button"><width>200</width><height>116</height><onup condition="Control.IsVisible(90901)">90901</onup><ondown>9500</ondown><onclick>Dialog.Close(MovieInformation)</onclick><onclick>RunScript(script.cinema.experience,movieid=$INFO[ListItem.DBID])</onclick><font>symbol</font><label></label><textcolor>Black700</textcolor><texturefocus colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" border="5">common/box.png</texturefocus><texturenofocus colordiffuse="White70" border="5">common/box.png</texturenofocus><visible>System.HasAddon(script.cinema.experience) + Container.Content(movies)</visible><visible>false</visible></control> -->
 				<control id="1003" type="button">
 					<width>116</width>
 					<height>116</height>
-					<onup condition="Control.IsVisible(3444)">3444</onup>
+					<onup condition="Control.IsVisible(90901)">90901</onup>
 					<ondown>9500</ondown>
 					<onclick condition="Player.HasMedia">PlayerControl(stop)</onclick>
 					<onclick>dialog.close(all,true)</onclick>
@@ -231,7 +375,7 @@
 				<control id="1006" type="button">
 					<width>116</width>
 					<height>116</height>
-					<onup condition="Control.IsVisible(3444)">3444</onup>
+					<onup condition="Control.IsVisible(90901)">90901</onup>
 					<ondown>9500</ondown>
 					<onclick condition="Player.HasMedia">PlayerControl(stop)</onclick>
 					<onclick>back</onclick>
@@ -245,11 +389,11 @@
 					<texturefocus colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" border="5">common/box.png</texturefocus>
 					<texturenofocus colordiffuse="$VAR[EmbyRightColourHighlight]" border="5">common/box.png</texturenofocus>
 				</control>
-				<!-- Refresh button <control id="6" type="button"><width>200</width><height>116</height><onup condition="Control.IsVisible(3444)">3444</onup><ondown>9500</ondown><font>symbol</font><label></label><textcolor>Black700</textcolor><visible>Control.IsEnabled(6)</visible><visible>Container.Content(episodes)</visible><texturefocus colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" border="5">common/box.png</texturefocus><texturenofocus colordiffuse="White70" border="5">common/box.png</texturenofocus></control> --><!-- Get Thumb Button -->
+				<!-- Refresh button <control id="6" type="button"><width>200</width><height>116</height><onup condition="Control.IsVisible(90901)">90901</onup><ondown>9500</ondown><font>symbol</font><label></label><textcolor>Black700</textcolor><visible>Control.IsEnabled(6)</visible><visible>Container.Content(episodes)</visible><texturefocus colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" border="5">common/box.png</texturefocus><texturenofocus colordiffuse="White70" border="5">common/box.png</texturenofocus></control> --><!-- Get Thumb Button -->
 				<control id="10" type="button">
 					<width>116</width>
 					<height>116</height>
-					<onup condition="Control.IsVisible(3444)">3444</onup>
+					<onup condition="Control.IsVisible(90901)">90901</onup>
 					<ondown>9500</ondown>
 					<font>symbol</font>
 					<label></label>
@@ -263,7 +407,7 @@
 				<control id="20" type="button">
 					<width>116</width>
 					<height>116</height>
-					<onup condition="Control.IsVisible(3444)">3444</onup>
+					<onup condition="Control.IsVisible(90901)">90901</onup>
 					<ondown>9500</ondown>
 					<onclick condition="Container.Content(tvshows)">RunScript(script.artwork.downloader, mode=gui,mediatype=tvshow, dbid=$INFO[ListItem.DBID])</onclick>
 					<onclick condition="Container.Content(movies)">RunScript(script.artwork.downloader, mode=gui,mediatype=movie, dbid=$INFO[ListItem.DBID])</onclick>
@@ -280,7 +424,7 @@
 				<control type="button" id="18">
 					<width>116</width>
 					<height>116</height>
-					<onup condition="Control.IsVisible(3444)">3444</onup>
+					<onup condition="Control.IsVisible(90901)">90901</onup>
 					<ondown>9500</ondown>
 					<font>symbol</font>
 					<label></label>
@@ -296,7 +440,7 @@
 				<control type="button" id="19">
 					<width>116</width>
 					<height>110</height>
-					<onup condition="Control.IsVisible(3444)">3444</onup>
+					<onup condition="Control.IsVisible(90901)">90901</onup>
 					<ondown>9500</ondown>
 					<font>symbolbig</font>
 					<label></label>
