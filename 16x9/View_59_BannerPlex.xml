@@ -6,6 +6,8 @@
 			<include>Animation.Common</include>
 			<visible>Control.IsVisible(59)</visible>
 			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml)</visible>
+			<animation effect="slide" end="-159,0" center="auto" time="200" condition="Container.Column(2) + !Control.HasFocus(60)">Conditional</animation>
+			<animation effect="slide" end="159,0" center="auto" time="200" condition="Container.Column(0) + !Control.HasFocus(60)">Conditional</animation>
 			<animation type="Conditional" reversible="true" condition="![Skin.HasSetting(osd.hidespoilers) + Container.Content(episodes) + [stringcompare(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]] + [Container.Content(musicvideos) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets) | Container.Content(episodes)] + !System.IdleTime(20) + System.IdleTime(3) + Skin.HasSetting(furniture.overlayinfo) + ![ControlGroup(9000).HasFocus() | Window.IsVisible(DialogContextMenu.xml)]">
 				<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out" />
 				<effect type="zoom" end="1000,7" time="200" center="auto" tween="quadratic" easing="out" />
@@ -24,25 +26,14 @@
 				<pagecontrol>60</pagecontrol>
 				<viewtype label="31741">list</viewtype>
 				<scrolltime tween="quadratic">400</scrolltime>
-				<itemlayout height="144" width="633">
+				<itemlayout height="144" width="633.33">
 					<control type="image">
-						<left>0</left>
-						<top>6</top>
-						<right>0</right>
-						<bottom>0</bottom>
-						<texture border="10">common/nofocus-shadow10.png</texture>
-					</control>
-					<control type="image">
-						<left>10</left>
-						<top>16</top>
-						<right>10</right>
-						<bottom>10</bottom>
-						<aspectratio scalediffuse="false">scale</aspectratio>
-						<texture diffuse="diffuse/extraposter-ref-blur-rev.png" background="true">$VAR[BannerImage]</texture>
+						<aspectratio scalediffuse="false">stretch</aspectratio>
+						<texture diffuse="-" background="true">$VAR[BannerImage]</texture>
 					</control>
 					<include>View_59_ItemLayout</include>
 				</itemlayout>
-				<focusedlayout height="144" width="633">
+				<focusedlayout height="144" width="633.33">
 					<control type="button">
 						<texturefocus>-</texturefocus>
 						<texturenofocus>-</texturenofocus>
@@ -50,49 +41,26 @@
 						<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
 						<onfocus>RunScript(script.toolbox,info=blur,id='"$VAR[PosterImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfo)</onfocus>
 					</control>
-					<control type="image">
-						<left>0</left>
-						<top>6</top>
-						<right>0</right>
-						<bottom>0</bottom>
-						<texture border="10">common/nofocus-shadow10.png</texture>
-					</control>
-					<control type="image">
-						<left>10</left>
-						<top>16</top>
-						<right>10</right>
-						<bottom>10</bottom>
-						<aspectratio scalediffuse="false">scale</aspectratio>
-						<texture background="true">$VAR[BannerImage]</texture>
-					</control>
-					<control type="image">
-						<description>Title overlay</description>
-						<left>10</left>
-						<top>16</top>
-						<right>10</right>
-						<bottom>10</bottom>
-						<texture border="15" colordiffuse="77000000">common/white.png</texture>
-						<visible>Control.HasFocus(59)</visible>
-					</control>
-					<include>View_59_FocusLayout</include>
-					<control type="image">
-						<left>3</left>
-						<top>9</top>
-						<right>3</right>
-						<bottom>3</bottom>
-						<texture colordiffuse="$VAR[3ColumnHighlight]" border="20">common/selectbox.png</texture>
+					<control type="group">
+						<control type="image">
+							<aspectratio scalediffuse="false">stretch</aspectratio>
+							<texture background="true">$VAR[BannerImage]</texture>
+						</control>
+						<control type="image">
+							<description>Title overlay</description>
+							<texture border="15" colordiffuse="77000000">common/white.png</texture>
+							<visible>Control.HasFocus(59)</visible>
+						</control>
+						<include>View_59_FocusLayout</include>
 						<animation type="Focus">
-							<effect type="zoom" start="90" end="100" time="150" tween="sine" easing="inout" center="auto" />
-							<effect type="fade" start="0" end="100" time="150" tween="sine" easing="in" />
+							<effect type="zoom" start="100" end="150" time="150" tween="sine" easing="inout" center="auto" />
 						</animation>
-						<animation type="Unfocus">
-							<effect type="zoom" start="100" end="90" time="150" tween="sine" easing="inout" center="auto" />
-							<effect type="fade" start="100" end="0" time="150" tween="sine" easing="out" />
-						</animation>
+			<animation effect="slide" start="0,0" end="0,24" center="auto" time="0" condition="Container.Row(0)">Conditional</animation>
+			<animation effect="slide" start="0,0" end="0,-24" center="auto" time="0" condition="Container.Row(4)">Conditional</animation>
 					</control>
 				</focusedlayout>
 			</control>
-			<include>Furniture_ScrollbarW</include>
+			<include>Furniture_ScrollbarBannerPlex</include>
 		</control>
 	</include>
 	<include name="View_59_ItemLayout">
@@ -109,12 +77,10 @@
 		</control>
 		<control type="label">
 			<left>130</left>
-			<right>20</right>
-			<bottom>20</bottom>
-			<aligny>center</aligny>
-			<height>38</height>
+			<right>10</right>
+			<bottom>10</bottom>
+			<height>26</height>
 			<align>right</align>
-			<height>100</height>
 			<aligny>center</aligny>
 			<font>Tiny</font>
 			<textcolor>white</textcolor>
@@ -122,38 +88,38 @@
 		</control>
 		<control type="group">
 			<control type="label">
-				<right>18</right>
-				<top>17</top>
-				<width>28</width>
-				<height>28</height>
-				<font>symbolview</font>
+				<right>8</right>
+				<top>6</top>
+				<width>40</width>
+				<height>40</height>
+				<font>symbolback</font>
 				<label></label>
 				<textcolor>white2</textcolor>
 			</control>
 			<control type="label">
-				<right>20</right>
-				<top>10</top>
+							<right>10</right>
+							<top>10</top>
 				<width>32</width>
 				<height>32</height>
 				<font>symbolview</font>
 				<label>$VAR[PercentWatchedLabel]</label>
 				<textcolor>$VAR[UnwatchedColourHighlight]</textcolor>
 			</control>
-			<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched)</visible>
+			<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched) + !ListItem.IsResumable</visible>
 		</control>
 		<control type="group">
 			<control type="label">
-				<right>18</right>
-				<top>17</top>
-				<width>28</width>
-				<height>28</height>
-				<font>symbolview</font>
+				<right>8</right>
+				<top>6</top>
+				<width>40</width>
+				<height>40</height>
+				<font>symbolback</font>
 				<label></label>
 				<textcolor>white2</textcolor>
 			</control>
 			<control type="label">
-				<right>20</right>
-				<top>10</top>
+							<right>10</right>
+							<top>10</top>
 				<top>10</top>
 				<width>32</width>
 				<height>32</height>
@@ -165,17 +131,17 @@
 		</control>
 		<control type="group">
 			<control type="label">
-				<right>18</right>
-				<top>17</top>
-				<width>28</width>
-				<height>28</height>
-				<font>symbolview</font>
+				<right>8</right>
+				<top>6</top>
+				<width>40</width>
+				<height>40</height>
+				<font>symbolback</font>
 				<label></label>
 				<textcolor>white2</textcolor>
 			</control>
 			<control type="label">
-				<right>20</right>
-				<top>10</top>
+							<right>10</right>
+							<top>10</top>
 				<width>32</width>
 				<height>32</height>
 				<font>symbolview</font>
@@ -186,17 +152,17 @@
 		</control>
 		<control type="group">
 			<control type="label">
-				<right>18</right>
-				<top>17</top>
-				<width>28</width>
-				<height>28</height>
-				<font>symbolview</font>
+				<right>8</right>
+				<top>6</top>
+				<width>40</width>
+				<height>40</height>
+				<font>symbolback</font>
 				<label></label>
 				<textcolor>white2</textcolor>
 			</control>
 			<control type="label">
-				<right>20</right>
-				<top>10</top>
+							<right>10</right>
+							<top>10</top>
 				<width>32</width>
 				<height>32</height>
 				<font>symbolview</font>
@@ -227,12 +193,10 @@
 		</control>
 		<control type="label">
 			<left>130</left>
-			<right>20</right>
-			<bottom>20</bottom>
-			<aligny>center</aligny>
-			<height>38</height>
+			<right>10</right>
+			<bottom>10</bottom>
+			<height>26</height>
 			<align>right</align>
-			<height>100</height>
 			<aligny>center</aligny>
 			<font>Tiny</font>
 			<textcolor>white</textcolor>
@@ -240,38 +204,38 @@
 		</control>
 		<control type="group">
 			<control type="label">
-				<right>18</right>
-				<top>17</top>
-				<width>28</width>
-				<height>28</height>
-				<font>symbolview</font>
+				<right>8</right>
+				<top>6</top>
+				<width>40</width>
+				<height>40</height>
+				<font>symbolback</font>
 				<label></label>
 				<textcolor>white2</textcolor>
 			</control>
 			<control type="label">
-				<right>20</right>
-				<top>10</top>
+							<right>10</right>
+							<top>10</top>
 				<width>32</width>
 				<height>32</height>
 				<font>symbolview</font>
 				<label>$VAR[PercentWatchedLabel]</label>
 				<textcolor>$VAR[UnwatchedColourHighlight]</textcolor>
 			</control>
-			<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched)</visible>
+			<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched) + !ListItem.IsResumable</visible>
 		</control>
 		<control type="group">
 			<control type="label">
-				<right>18</right>
-				<top>17</top>
-				<width>28</width>
-				<height>28</height>
-				<font>symbolview</font>
+				<right>8</right>
+				<top>6</top>
+				<width>40</width>
+				<height>40</height>
+				<font>symbolback</font>
 				<label></label>
 				<textcolor>white2</textcolor>
 			</control>
 			<control type="label">
-				<right>20</right>
-				<top>10</top>
+							<right>10</right>
+							<top>10</top>
 				<top>10</top>
 				<width>32</width>
 				<height>32</height>
@@ -283,17 +247,17 @@
 		</control>
 		<control type="group">
 			<control type="label">
-				<right>18</right>
-				<top>17</top>
-				<width>28</width>
-				<height>28</height>
-				<font>symbolview</font>
+				<right>8</right>
+				<top>6</top>
+				<width>40</width>
+				<height>40</height>
+				<font>symbolback</font>
 				<label></label>
 				<textcolor>white2</textcolor>
 			</control>
 			<control type="label">
-				<right>20</right>
-				<top>10</top>
+							<right>10</right>
+							<top>10</top>
 				<width>32</width>
 				<height>32</height>
 				<font>symbolview</font>
@@ -304,17 +268,17 @@
 		</control>
 		<control type="group">
 			<control type="label">
-				<right>18</right>
-				<top>17</top>
-				<width>28</width>
-				<height>28</height>
-				<font>symbolview</font>
+				<right>8</right>
+				<top>6</top>
+				<width>40</width>
+				<height>40</height>
+				<font>symbolback</font>
 				<label></label>
 				<textcolor>white2</textcolor>
 			</control>
 			<control type="label">
-				<right>20</right>
-				<top>10</top>
+							<right>10</right>
+							<top>10</top>
 				<width>32</width>
 				<height>32</height>
 				<font>symbolview</font>

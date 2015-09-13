@@ -65,7 +65,7 @@
 								<textcolor>$VAR[UnwatchedColourHighlight]</textcolor>
 							</control>
 							<visible>!Skin.HasSetting(views.155.showtick)</visible>
-							<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched)</visible>
+							<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched) + !ListItem.IsResumable</visible>
 						</control>
 						<control type="group">
 							<control type="label">
@@ -188,7 +188,7 @@
 								<textcolor>$VAR[UnwatchedColourHighlight]</textcolor>
 							</control>
 							<visible>!Skin.HasSetting(views.155.showtick)</visible>
-							<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched)</visible>
+							<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched) + !ListItem.IsResumable</visible>
 						</control>
 						<control type="group">
 							<control type="label">

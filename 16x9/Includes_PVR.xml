@@ -511,7 +511,7 @@
 								<font>symbolview</font>
 								<label>$VAR[PercentWatchedLabel]</label>
 								<textcolor>$VAR[UnwatchedColourHighlight]</textcolor>
-								<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched)</visible>
+								<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched) + !ListItem.IsResumable</visible>
 							</control>
 							<control type="label">
 								<centerright>30</centerright>
@@ -645,7 +645,7 @@
 									<font>symbolview</font>
 									<label>$VAR[PercentWatchedLabel]</label>
 									<textcolor>$VAR[UnwatchedColourHighlight]</textcolor>
-									<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched)</visible>
+									<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched) + !ListItem.IsResumable</visible>
 								</control>
 								<control type="label">
 									<centerright>30</centerright>
@@ -1544,7 +1544,7 @@
 								<font>symbolview</font>
 								<label>$VAR[PercentWatchedLabel]</label>
 								<textcolor>$VAR[UnwatchedColourHighlight]</textcolor>
-								<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched)</visible>
+								<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched) + !ListItem.IsResumable</visible>
 							</control>
 							<control type="label">
 								<centerright>30</centerright>
@@ -1667,7 +1667,7 @@
 									<font>symbolview</font>
 									<label>$VAR[PercentWatchedLabel]</label>
 									<textcolor>$VAR[UnwatchedColourHighlight]</textcolor>
-									<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched)</visible>
+									<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched) + !ListItem.IsResumable</visible>
 								</control>
 								<control type="label">
 									<centerright>30</centerright>
