@@ -223,8 +223,8 @@
 					<bottom>10</bottom>
 					<fadetime>200</fadetime>
 					<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-					<texture diffuse="diffuse/pvrinfo.png" background="true" fallback="pvr/background.jpg">$INFO[ListItem.Thumb]</texture>
-					<visible>!Player.HasVideo + IsEmpty(Window(Home).Property(SkinHelper.ListItemThumb))</visible>
+					<texture diffuse="diffuse/pvrinfo.png" background="true" fallback="pvr/background.jpg">$VAR[ListItem.Thumb]</texture>
+					<visible>!Player.HasVideo + IsEmpty(Window(Home).Property(SkinHelper.PVR.Thumb)) + IsEmpty(Window(Home).Property(SkinHelper.PVR.FanArt))</visible>
 				</control>
 				<control type="image">
 					<left>10</left>
@@ -233,8 +233,18 @@
 					<bottom>10</bottom>
 					<fadetime>200</fadetime>
 					<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-					<texture diffuse="diffuse/pvrinfo.png" background="true" fallback="pvr/background.jpg">$INFO[Window(Home).Property(SkinHelper.ListItemThumb)]</texture>
-					<visible>!Player.HasVideo + !IsEmpty(Window(Home).Property(SkinHelper.ListItemThumb))</visible>
+					<texture diffuse="diffuse/pvrinfo.png" background="true" fallback="pvr/background.jpg">$INFO[Window(Home).Property(SkinHelper.PVR.Thumb)]</texture>
+					<visible>!Player.HasVideo + !IsEmpty(Window(Home).Property(SkinHelper.PVR.Thumb))</visible>
+				</control>
+				<control type="image">
+					<left>10</left>
+					<top>10</top>
+					<right>10</right>
+					<bottom>10</bottom>
+					<fadetime>200</fadetime>
+					<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+					<texture diffuse="diffuse/pvrinfo.png" background="true" fallback="pvr/background.jpg">$INFO[Window(Home).Property(SkinHelper.PVR.FanArt)]</texture>
+					<visible>!Player.HasVideo + IsEmpty(Window(Home).Property(SkinHelper.PVR.Thumb))</visible>
 				</control>
 			</control>
 			<control type="group">
@@ -1411,4 +1421,450 @@
 			<include>Furniture_Scrollbar</include>
 		</control>
 	</include>
+	<include name="PVRView_53">
+		<control type="group">
+			<visible>Control.IsVisible(53)</visible>
+			<include>Animation.Common</include>
+			<control type="group">
+				<left>20</left>
+				<width>500</width>
+				<top>TopPad</top>
+				<height>920</height>
+				<control type="image">
+					<left>-8</left>
+					<right>8</right>
+					<top>-8</top>
+					<bottom>-8</bottom>
+					<texture colordiffuse="black" border="5">common/box.png</texture>
+					<animation effect="fade" start="100" end="90" condition="true">Conditional</animation>
+				</control>
+				<control type="label">
+					<left>10</left>
+					<height>95</height>
+					<aligny>center</aligny>
+					<align>left</align>
+					<font>HeaderFont</font>
+					<textcolor>white2</textcolor>
+					<selectedcolor>white2</selectedcolor>
+					<label>$INFO[Control.GetLabel(28)]</label>
+				</control>
+				<control type="list" id="53" description="TV CHANNELS">
+					<left>10</left>
+					<width>870</width>
+					<top>109</top>
+					<bottom>0</bottom>
+					<onup>53</onup>
+					<ondown>53</ondown>
+					<onleft condition="!Skin.HasSetting(global.kioskmode)">28</onleft>
+					<onright>60</onright>
+					<pagecontrol>60</pagecontrol>
+					<viewtype label="31817">list</viewtype>
+					<scrolltime>200</scrolltime>
+					<orientation>vertical</orientation>
+					<itemlayout height="50" width="470">
+						<control type="group">
+							<visible>Window.IsVisible(MyPVRChannels.xml)</visible>
+							<control type="image">
+								<width>100%</width>
+								<height>100%</height>
+								<texture colordiffuse="selective yellow" border="5">common/box.png</texture>
+								<visible>ListItem.IsPlaying</visible>
+							</control>
+							<control type="label">
+								<align>left</align>
+								<aligny>center</aligny>
+								<height>50</height>
+								<font>TinyBold</font>
+								<textcolor>white</textcolor>
+								<selectedcolor>white</selectedcolor>
+								<label>$INFO[ListItem.ChannelNumberLabel,,  ]$INFO[ListItem.ChannelName]$INFO[ListItem.Title,  [I],[/I]]</label>
+								<visible>!ListItem.IsPlaying</visible>
+							</control>
+							<control type="label">
+								<right>100</right>
+								<align>left</align>
+								<aligny>center</aligny>
+								<height>50</height>
+								<font>TinyBold</font>
+								<textcolor>black</textcolor>
+								<selectedcolor>black</selectedcolor>
+								<label>$INFO[ListItem.ChannelNumberLabel,,  ]$INFO[ListItem.ChannelName]$INFO[ListItem.Title,  [I],[/I]]</label>
+								<visible>ListItem.IsPlaying</visible>
+							</control>
+						</control>
+						<control type="group">
+							<visible>Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRSearch.xml)</visible>
+							<control type="label">
+								<posx>140</posx>
+								<right>100</right>
+								<top>12</top>
+								<aligny>center</aligny>
+								<height>50</height>
+								<font>TinyBold</font>
+								<textcolor>white</textcolor>
+								<selectedcolor>white</selectedcolor>
+								<label>$INFO[ListItem.Label]</label>
+							</control>
+							<control type="label">
+								<posx>140</posx>
+								<bottom>8</bottom>
+								<right>100</right>
+								<aligny>center</aligny>
+								<height>64</height>
+								<font>Tiny</font>
+								<textcolor>white2</textcolor>
+								<selectedcolor>white2</selectedcolor>
+								<label>$INFO[ListItem.StartDate]$INFO[ListItem.StartTime,$COMMA ,]</label>
+							</control>
+							<control type="label">
+								<right>60</right>
+								<width>500</width>
+								<aligny>center</aligny>
+								<height>100%</height>
+								<align>right</align>
+								<font>Tiny</font>
+								<textcolor>white</textcolor>
+								<selectedcolor>white</selectedcolor>
+								<label>$INFO[ListItem.ChannelName]</label>
+							</control>
+							<control type="image">
+								<centerright>30</centerright>
+								<centertop>68</centertop>
+								<width>32</width>
+								<height>32</height>
+								<aspectratio aligny="top">keep</aspectratio>
+								<texture>$VAR[PercentWatched]</texture>
+								<visible>!stringcompare(ListItem.Label,..)</visible>
+							</control>
+							<control type="label">
+								<centerright>30</centerright>
+								<centertop>68</centertop>
+								<width>32</width>
+								<height>32</height>
+								<font>symbolview</font>
+								<label>$VAR[PercentWatchedLabel]</label>
+								<textcolor>$VAR[UnwatchedColourHighlight]</textcolor>
+								<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched)</visible>
+							</control>
+							<control type="label">
+								<centerright>30</centerright>
+								<centertop>68</centertop>
+								<width>32</width>
+								<height>32</height>
+								<font>symbolview</font>
+								<label>$VAR[PercentWatchedLabel]</label>
+								<textcolor>$VAR[PlayingColourHighlight]</textcolor>
+								<visible>!stringcompare(ListItem.Label,..) + ListItem.IsPlaying</visible>
+							</control>
+							<control type="label">
+								<centerright>30</centerright>
+								<centertop>68</centertop>
+								<width>32</width>
+								<height>32</height>
+								<font>symbolview</font>
+								<label>$VAR[PercentWatchedLabel]</label>
+								<textcolor>$VAR[WatchedColourHighlight]</textcolor>
+								<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(furniture.unwatched)</visible>
+							</control>
+							<control type="label">
+								<centerright>30</centerright>
+								<centertop>68</centertop>
+								<width>32</width>
+								<height>32</height>
+								<font>symbolview</font>
+								<label>$VAR[PercentWatchedLabel]</label>
+								<textcolor>$VAR[ResumeColourHighlight]</textcolor>
+								<visible>!stringcompare(ListItem.Label,..) + ListItem.IsResumable</visible>
+							</control>
+							<control type="label">
+								<centerright>30</centerright>
+								<centertop>68</centertop>
+								<width>32</width>
+								<height>32</height>
+								<font>symbolview</font>
+								<label>$VAR[PercentWatchedLabel]</label>
+								<textcolor>$VAR[NewColourHighlight]</textcolor>
+								<visible>!stringcompare(ListItem.Label,..) + [SubString(ListItem.Overlay,OverlayUnwatched.png) + [[Container.Content(movies) + [StringCompare(Window(Home).Property(LatestMovie.1.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.2.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.3.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.4.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.5.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.6.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.7.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.8.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.9.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.10.Title),ListItem.Label)]] | [[Container.Content(tvshows)] + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem.TvShowTitle)]] | [Container.Content(episodes) + [StringCompare(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem.Title)]]]]</visible>
+							</control>
+						</control>
+					</itemlayout>
+					<focusedlayout height="50" width="470">
+						<control type="group">
+							<visible>Control.HasFocus(53)</visible>
+							<control type="image">
+								<width>100%</width>
+								<height>100%</height>
+								<texture colordiffuse="$VAR[ColourHighlight]" border="5">common/box.png</texture>
+								<visible>!ListItem.IsPlaying</visible>
+							</control>
+							<control type="image">
+								<width>100%</width>
+								<height>100%</height>
+								<texture colordiffuse="selective yellow" border="5">common/box.png</texture>
+								<visible>ListItem.IsPlaying</visible>
+							</control>
+							<control type="group">
+								<visible>Window.IsVisible(MyPVRChannels.xml)</visible>
+								<control type="label">
+									<align>left</align>
+									<aligny>center</aligny>
+									<height>50</height>
+									<font>TinyBold</font>
+									<textcolor>$VAR[ColourSelected]</textcolor>
+									<selectedcolor>$VAR[ColourSelected]</selectedcolor>
+									<label>$INFO[ListItem.ChannelNumberLabel,,  ]$INFO[ListItem.ChannelName]$INFO[ListItem.Title,  [I],[/I]]</label>
+								</control>
+							</control>
+							<control type="group">
+								<visible>Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRSearch.xml)</visible>
+								<control type="label">
+									<posx>140</posx>
+									<right>100</right>
+									<top>12</top>
+									<aligny>center</aligny>
+									<height>64</height>
+									<font>TinyBold</font>
+									<textcolor>$VAR[ColourSelected]</textcolor>
+									<selectedcolor>$VAR[ColourSelected]</selectedcolor>
+									<label>$INFO[ListItem.Label]</label>
+								</control>
+								<control type="label">
+									<posx>140</posx>
+									<bottom>8</bottom>
+									<right>100</right>
+									<aligny>center</aligny>
+									<height>64</height>
+									<font>Tiny</font>
+									<textcolor>$VAR[ColourSelected]</textcolor>
+									<selectedcolor>$VAR[ColourSelected]</selectedcolor>
+									<label>$INFO[ListItem.StartDate]$INFO[ListItem.StartTime,$COMMA ,]</label>
+								</control>
+								<control type="label">
+									<right>60</right>
+									<width>500</width>
+									<aligny>center</aligny>
+									<height>100%</height>
+									<align>right</align>
+									<font>Tiny</font>
+									<textcolor>$VAR[ColourSelected]</textcolor>
+									<selectedcolor>$VAR[ColourSelected]</selectedcolor>
+									<label>$INFO[ListItem.ChannelName]</label>
+								</control>
+								<control type="image">
+									<centerright>30</centerright>
+									<centertop>68</centertop>
+									<width>32</width>
+									<height>32</height>
+									<aspectratio aligny="top">keep</aspectratio>
+									<texture>$VAR[PercentWatched]</texture>
+									<visible>!stringcompare(ListItem.Label,..)</visible>
+								</control>
+								<control type="label">
+									<centerright>30</centerright>
+									<centertop>68</centertop>
+									<width>32</width>
+									<height>32</height>
+									<font>symbolview</font>
+									<label>$VAR[PercentWatchedLabel]</label>
+									<textcolor>$VAR[UnwatchedColourHighlight]</textcolor>
+									<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched)</visible>
+								</control>
+								<control type="label">
+									<centerright>30</centerright>
+									<centertop>68</centertop>
+									<width>32</width>
+									<height>32</height>
+									<font>symbolview</font>
+									<label>$VAR[PercentWatchedLabel]</label>
+									<textcolor>$VAR[PlayingColourHighlight]</textcolor>
+									<visible>!stringcompare(ListItem.Label,..) + ListItem.IsPlaying</visible>
+								</control>
+								<control type="label">
+									<centerright>30</centerright>
+									<centertop>68</centertop>
+									<width>32</width>
+									<height>32</height>
+									<font>symbolview</font>
+									<label>$VAR[PercentWatchedLabel]</label>
+									<textcolor>$VAR[WatchedColourHighlight]</textcolor>
+									<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(furniture.unwatched)</visible>
+								</control>
+								<control type="label">
+									<centerright>30</centerright>
+									<centertop>68</centertop>
+									<width>32</width>
+									<height>32</height>
+									<font>symbolview</font>
+									<label>$VAR[PercentWatchedLabel]</label>
+									<textcolor>$VAR[ResumeColourHighlight]</textcolor>
+									<visible>!stringcompare(ListItem.Label,..) + ListItem.IsResumable</visible>
+								</control>
+								<control type="label">
+									<centerright>30</centerright>
+									<centertop>68</centertop>
+									<width>32</width>
+									<height>32</height>
+									<font>symbolview</font>
+									<label>$VAR[PercentWatchedLabel]</label>
+									<textcolor>$VAR[NewColourHighlight]</textcolor>
+									<visible>!stringcompare(ListItem.Label,..) + [SubString(ListItem.Overlay,OverlayUnwatched.png) + [[Container.Content(movies) + [StringCompare(Window(Home).Property(LatestMovie.1.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.2.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.3.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.4.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.5.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.6.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.7.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.8.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.9.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.10.Title),ListItem.Label)]] | [[Container.Content(tvshows)] + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem.TvShowTitle)]] | [Container.Content(episodes) + [StringCompare(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem.Title)]]]]</visible>
+								</control>
+							</control>
+						</control>
+					</focusedlayout>
+				</control>
+			</control>
+			<include>Furniture_Scrollbar</include>
+			<include>PVRBottomInfoPanel</include>
+		</control>
+	</include>
+	<include name="PVRBottomInfoPanel">
+		<control type="group">
+			<right>0</right>
+			<width>1400</width>
+			<bottom>0</bottom>
+			<height>500</height>
+			<control type="image">
+				<left>-8</left>
+				<right>-8</right>
+				<top>-2</top>
+				<bottom>-8</bottom>
+				<texture colordiffuse="black" border="5">common/box.png</texture>
+				<animation effect="fade" start="100" end="90" condition="true">Conditional</animation>
+			</control>
+			<control type="group">
+				<height>170</height>
+				<control type="image">
+					<right>287</right>
+					<width>100</width>
+					<top>10</top>
+					<bottom>10</bottom>
+					<fadetime>200</fadetime>
+					<aspectratio align="right" aligny="center" scalediffuse="false">keep</aspectratio>
+					<texture diffuse="diffuse/pvrinfo.png" background="true">$INFO[Window(Home).Property(SkinHelper.PVR.Poster)]</texture>
+				</control>
+				<control type="image">
+					<top>10</top>
+					<right>10</right>
+					<bottom>10</bottom>
+					<width>267</width>
+					<fadetime>200</fadetime>
+					<aspectratio align="right" aligny="center" scalediffuse="false">stretch</aspectratio>
+					<texture diffuse="diffuse/pvrinfo.png" background="true" fallback="pvr/background.jpg">$INFO[Window(Home).Property(SkinHelper.PVR.Thumb)]</texture>
+				</control>
+				<control type="label">
+					<left>10</left>
+					<align>left</align>
+					<aligny>center</aligny>
+					<height>50</height>
+					<font>TinyBold</font>
+					<textcolor>$VAR[EmbyLeftColourHighlight]</textcolor>
+					<selectedcolor>$VAR[EmbyLeftColourHighlight]</selectedcolor>
+					<label>$INFO[ListItem.ChannelNumberLabel,,  ]$INFO[ListItem.ChannelName]$INFO[ListItem.Title,  [I],[/I]]</label>
+				</control>
+				<control type="image" id="89121">
+					<top>40</top>
+					<left>10</left>
+					<bottom>0</bottom>
+					<width>267</width>
+					<fadetime>200</fadetime>
+					<aspectratio align="left" aligny="center" scalediffuse="false">keep</aspectratio>
+					<texture diffuse="diffuse/pvrinfo.png" background="true" fallback="pvr/background.jpg">$VAR[ChannelImage]</texture>
+				</control>
+			</control>
+			<control type="group">
+				<left>20</left>
+				<right>20</right>
+				<posy>170</posy>
+				<height>330</height>
+				<control type="label">
+					<top>20</top>
+					<aligny>center</aligny>
+					<align>center</align>
+					<height>38</height>
+					<font>SmallBold</font>
+					<textcolor>white</textcolor>
+					<selectedcolor>white</selectedcolor>
+					<label>$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]</label>
+				</control>
+				<control type="label">
+					<top>20</top>
+					<left>10</left>
+					<right>10</right>
+					<aligny>center</aligny>
+					<align>left</align>
+					<height>38</height>
+					<font>TinyBold</font>
+					<textcolor>white2</textcolor>
+					<selectedcolor>white2</selectedcolor>
+					<label>$INFO[ListItem.StartTime]</label>
+				</control>
+				<control type="label">
+					<top>20</top>
+					<left>10</left>
+					<right>10</right>
+					<aligny>center</aligny>
+					<align>right</align>
+					<height>38</height>
+					<font>TinyBold</font>
+					<textcolor>white2</textcolor>
+					<selectedcolor>white2</selectedcolor>
+					<label>$INFO[ListItem.EndTime]</label>
+				</control>
+				<control type="progress">
+					<top>60</top>
+					<left>10</left>
+					<right>10</right>
+					<height>6</height>
+					<reveal>true</reveal>
+					<lefttexture colordiffuse="$VAR[EmbyRightColourHighlight]">osd/progress-end.png</lefttexture>
+					<midtexture colordiffuse="$VAR[EmbyRightColourHighlight]">osd/progress-end.png</midtexture>
+					<info>ListItem.Progress</info>
+				</control>
+				<control type="label">
+					<top>70</top>
+					<height>40</height>
+					<aligny>center</aligny>
+					<font>Tiny</font>
+					<textcolor>white</textcolor>
+					<selectedcolor>white</selectedcolor>
+					<label fallback="19055">$INFO[ListItem.Genre]</label>
+				</control>
+				<control type="textbox">
+					<top>115</top>
+					<height>160</height>
+					<align>justify</align>
+					<font>MediumSmallBold</font>
+					<textcolor>white</textcolor>
+					<selectedcolor>white</selectedcolor>
+					<label fallback="19055">$INFO[ListItem.Plot]</label>
+				</control>
+				<control type="label">
+					<top>290</top>
+					<aligny>center</aligny>
+					<align>left</align>
+					<height>40</height>
+					<font>SmallBold</font>
+					<textcolor>$VAR[EmbyRightColourHighlight]</textcolor>
+					<selectedcolor>$VAR[EmbyRightColourHighlight]</selectedcolor>
+					<label>$INFO[ListItem.NextTitle,$LOCALIZE[31792] ,]</label>
+				</control>
+				<control type="label">
+					<top>290</top>
+					<aligny>center</aligny>
+					<align>right</align>
+					<height>40</height>
+					<font>SmallBold</font>
+					<textcolor>$VAR[EmbyRightColourHighlight]</textcolor>
+					<selectedcolor>$VAR[EmbyRightColourHighlight]</selectedcolor>
+					<label>$INFO[ListItem.NextStartTime]$INFO[ListItem.NextEndTime, - ,]</label>
+				</control>
+			</control>
+		</control>
+	</include>
+	<variable name="ChannelImage">
+		<value condition="!IsEmpty(Window(Home).Property(SkinHelper.PVR.ChannelLogo))">$INFO[Window(Home).Property(SkinHelper.PVR.ChannelLogo)]</value>
+		<value condition="!IsEmpty(ListItem.Icon)">$INFO[ListItem.Icon]</value>
+		<value>$INFO[ListItem.Thumb]</value>
+	</variable>
 </includes>
