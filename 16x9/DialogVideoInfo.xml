@@ -4,6 +4,7 @@
 	<onload condition="System.HasAddon(script.videoextras)">RunScript(script.videoextras,check,"$INFO[ListItem.FilenameAndPath]")</onload>
 	<onload>RunScript(script.toolbox,info=blur,id='"$INFO[ListItem.Art(fanart)]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfo)</onload>
 	<onload>RunScript(script.toolbox,info=blur,id='"$VAR[ListItem.Art(fanart)]"',radius=10,prefix=VideoInfoBottom)</onload>
+	<onload>Skin.SetString(widget.helper,videoinfo)</onload>
 	<onunload>ClearProperty(Similar,home)</onunload>
 	<onunload>ClearProperty(VideoInfo.ImageColor,home)</onunload>
 	<onunload>ClearProperty(VideoInfo.ImageFilter,home)</onunload>
@@ -569,11 +570,20 @@
 				<bottom>0</bottom>
 				<height>260</height>
 				<left>NewSidePad</left>
-				<control type="label">
-					<height>34</height>
-					<font>MediumSmallBold</font>
+				<control type="button" id="9499">
+					<align>left</align>
+					<aligny>top</aligny>
 					<textcolor>white</textcolor>
-					<label>31818</label>
+					<font>HomeWidgetLabelFont</font>
+					<onup>9000</onup>
+					<ondown>9500</ondown>
+					<onback>9000</onback>
+					<textoffsetx>0</textoffsetx>
+					<label>$VAR[VideoInfoWidgetLabel]</label>
+					<focusedcolor>$VAR[ColourHighlight]</focusedcolor>
+					<texturenofocus>-</texturenofocus>
+					<texturefocus>-</texturefocus>
+					<onclick>ActivateWindow(1112)</onclick>
 					<visible>IntegerGreaterThan(Container(9500).NumItems,0)</visible>
 				</control>
 				<control type="list" id="9500">
@@ -582,7 +592,8 @@
 					<include>Animation.FadeOut</include>
 					<top>40</top>
 					<bottom>10</bottom>
-					<onup>9000</onup>
+					<onup>9499</onup>
+					<onback>9000</onback>
 					<preloaditems>2</preloaditems>
 					<orientation>horizontal</orientation>
 					<pagecontrol>60</pagecontrol>
@@ -643,7 +654,7 @@
 						</control>
 
 					</focusedlayout>
-					<content>$VAR[SimilarVideos]</content>
+					<content>$VAR[DefWidgetContentVideoInfo]</content>
 				</control>
 			</control>
 		</control>
