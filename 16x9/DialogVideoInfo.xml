@@ -276,6 +276,22 @@
 					<texturenofocus colordiffuse="$VAR[EmbyLeftColourHighlight]" border="5">common/box.png</texturenofocus>
 					<visible>System.HasAddon(script.artwork.downloader) + [Container.Content(movies) | Container.Content(tvshows)]</visible>
 				</control>
+				<!-- Search YouTube-->
+				<control type="button" id="18">
+					<width>116</width>
+					<height>116</height>
+					<onup condition="Control.IsVisible(3444)">3444</onup>
+					<ondown>9500</ondown>
+					<font>symbol</font>
+					<label></label>
+					<textcolor>white</textcolor>
+					<focusedcolor>$VAR[EmbyMiddleColourHighlight]</focusedcolor>
+					<texturefocus colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" border="5">common/box.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[EmbyMiddleColourHighlight]" border="5">common/box.png</texturenofocus>
+					<onclick condition="!IsEmpty(ListItem.TVShowTitle)">SetProperty(listcontent,$INFO[ListItem.TVShowTitle],home)</onclick>
+					<onclick condition="IsEmpty(ListItem.TVShowTitle)">SetProperty(listcontent,$INFO[ListItem.Title],home)</onclick>
+					<onclick>ActivateWindow(1168)</onclick>
+				</control>
 				<!--Extended Info Button -->
 				<control type="button" id="19">
 					<width>116</width>
@@ -295,6 +311,91 @@
 					<animation condition="Control.HasFocus(19)" effect="zoom" end="200"  time="100" center="auto">Conditional</animation>
 				</control>
 			</control>
+			<control id="9002" type="grouplist">
+				<left>450</left>
+				<top>565</top>
+				<right>10</right>
+				<height>116</height>
+				<itemgap>0</itemgap>
+				<onleft>9002</onleft>
+				<onright>9002</onright>
+				<ondown>9500</ondown>
+				<orientation>horizontal</orientation>
+				<include>DialogVideoInfoAnimation</include>
+				<defaultcontrol always="true">8</defaultcontrol>
+				<animation condition="Control.HasFocus(50) | Control.HasFocus(5000)" effect="slide" end="0,-192" start="0,0" time="200">Conditional</animation>
+				<!-- Play/Browse Button -->
+				<control id="8" type="togglebutton">
+					<width>116</width>
+					<height>116</height>
+					<usealttexture>Container.Content(TVShows)</usealttexture>
+					<textcolor>White70</textcolor>
+					<textoffsetx>0</textoffsetx>
+					<font>StudioFont</font>
+					<label>$VAR[VideoInfoButton8T]</label>
+					<altlabel>Browse Show</altlabel>
+					<animation condition="Control.HasFocus(8)" effect="fade" end="100" start="0" time="10">Conditional</animation>
+					<animation condition="!Control.HasFocus(8)" effect="fade" end="0" start="100" time="10">Conditional</animation>
+				</control>
+				<!-- Cinema Experience Button <control id="21" type="button"><width>222</width><height>116</height><visible>System.HasAddon(script.cinema.experience) + Container.Content(movies)</visible><visible>false</visible><font>StudioFont</font><label>Cine Exp</label><textcolor>White70</textcolor><textoffsetx>0</textoffsetx><animation condition="Control.HasFocus(21)" effect="fade" end="100" start="0" time="10">Conditional</animation><animation condition="!Control.HasFocus(21)" effect="fade" end="0" start="100" time="10">Conditional</animation></control> -->
+				<control id="1003" type="button">
+					<width>116</width>
+					<height>116</height>
+					<textcolor>White70</textcolor>
+					<textoffsetx>0</textoffsetx>
+					<visible>!IsEmpty(ListItem.Trailer)</visible>
+					<label>Watch Trailer</label>
+					<font>StudioFont</font>
+					<animation condition="Control.HasFocus(1003)" effect="fade" end="100" start="0" time="10">Conditional</animation>
+					<animation condition="!Control.HasFocus(1003)" effect="fade" end="0" start="100" time="10">Conditional</animation>
+				</control>
+				<control id="1006" type="button">
+					<width>116</width>
+					<height>116</height>
+					<textcolor>White70</textcolor>
+					<textoffsetx>0</textoffsetx>
+					<visible>IsEmpty(ListItem.Trailer)</visible>
+					<visible>true</visible>
+					<font>StudioFont</font>
+					<label>Search YouTube</label>
+					<animation condition="Control.HasFocus(1006)" effect="fade" end="100" start="0" time="10">Conditional</animation>
+					<animation condition="!Control.HasFocus(1006)" effect="fade" end="0" start="100" time="10">Conditional</animation>
+				</control>
+				<!-- Refresh Button <control id="6" type="button"><width>222</width><height>116</height><textcolor>White70</textcolor><textoffsetx>0</textoffsetx><visible>Control.IsEnabled(6)</visible><visible>Container.Content(episodes)</visible><font>StudioFont</font><label>184</label><animation condition="Control.HasFocus(6)" effect="fade" end="100" start="0" time="10">Conditional</animation><animation condition="!Control.HasFocus(6)" effect="fade" end="0" start="100" time="10">Conditional</animation></control> --><!-- Get Thumb Button -->
+				<control id="10" type="button">
+					<width>116</width>
+					<height>116</height>
+					<textoffsetx>0</textoffsetx>
+					<textcolor>White70</textcolor>
+					<visible>Control.IsEnabled(10)</visible>
+					<font>StudioFont</font>
+					<label>13405</label>
+					<animation condition="Control.HasFocus(10)" effect="fade" end="100" start="0" time="10">Conditional</animation>
+					<animation condition="!Control.HasFocus(10)" effect="fade" end="0" start="100" time="10">Conditional</animation>
+				</control>
+				<!-- Artwork Downloader Button -->
+				<control id="20" type="button">
+					<width>116</width>
+					<height>116</height>
+					<textoffsetx>0</textoffsetx>
+					<textcolor>White70</textcolor>
+					<visible>System.HasAddon(script.artwork.downloader) + [Container.Content(movies) | Container.Content(tvshows)]</visible>
+					<font>StudioFont</font>
+					<label>13511</label>
+					<animation condition="Control.HasFocus(20)" effect="fade" end="100" start="0" time="10">Conditional</animation>
+					<animation condition="!Control.HasFocus(20)" effect="fade" end="0" start="100" time="10">Conditional</animation>
+				</control>
+				<control id="18" type="button">
+					<width>116</width>
+					<height>116</height>
+					<textoffsetx>0</textoffsetx>
+					<textcolor>White70</textcolor>
+					<font>StudioFont</font>
+					<label>31141</label>
+					<animation condition="Control.HasFocus(18)" effect="fade" end="100" start="0" time="10">Conditional</animation>
+					<animation condition="!Control.HasFocus(18)" effect="fade" end="0" start="100" time="10">Conditional</animation>
+				</control>
+			</control>
 			<!-- Bottom Section -->
 			<control type="group">
 				<bottom>0</bottom>
@@ -305,7 +406,7 @@
 					<font>MediumSmallBold</font>
 					<textcolor>white</textcolor>
 					<label>31818</label>
-					<visible>!IntegerGreaterThan(Container(9500).NumItems,0)</visible>
+					<visible>IntegerGreaterThan(Container(9500).NumItems,0)</visible>
 				</control>
 				<control type="list" id="9500">
 					<visible allowhiddenfocus="true">!Container(9500).IsUpdating</visible>
