@@ -49,6 +49,16 @@
 					<textcolor>white</textcolor>
 					<font>MediumSmallBold</font>
 					<label>$VAR[DurationLong] $VAR[LabelGenre] $VAR[LabelYear]</label>
+					<visible>Container.Content(movies)</visible>
+				</control>
+
+				<control type="label">
+					<align>left</align>
+					<font>Medium</font>
+					<textcolor>white</textcolor>
+					<font>MediumSmallBold</font>
+					<label>$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Title] $VAR[LabelDuration]</label>
+					<visible>!Container.Content(movies)</visible>
 				</control>
 			</control>
 			<control type="textbox">
