@@ -93,6 +93,17 @@
 							<font>TinyBold</font>
 							<textcolor>white</textcolor>
 							<label>$VAR[LabelDirector]</label>
+							<visible>!Container.Content(movies)</visible>
+						</control>
+						<control type="label">
+							<left>865</left>
+							<width>246</width>
+							<height>66</height>
+							<align>left</align>
+							<font>TinyBold</font>
+							<textcolor>white</textcolor>
+							<label>$INFO[ListItem.Director]</label>
+							<visible>Container.Content(movies)</visible>
 						</control>
 						<control type="label">
 							<left>1121</left>

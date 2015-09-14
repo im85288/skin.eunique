@@ -175,7 +175,7 @@
 			<include>Dimensions_Fullscreen</include>
 			<aspectratio align="center">scale</aspectratio>
 			<texture fallback="common/black.png" background="true">$INFO[Window(home).Property(VideoInfo.ImageFilter)]</texture>
-			<visible>Window.IsVisible(DialogVideoInfo.xml) + !Skin.HasSetting(furniture.info.fanart)</visible>
+			<visible>Window.IsVisible(DialogVideoInfo.xml) + !Skin.HasSetting(furniture.info.fanart) + !Skin.HasSetting(toggled.dv.info)</visible>
 			<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
 			<fadetime>600</fadetime>
 		</control>
@@ -183,29 +183,9 @@
 			<include>Dimensions_Fullscreen</include>
 			<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
 			<aspectratio align="center">scale</aspectratio>
-			<texture colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]">common/floor.png</texture>
+			<texture colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]">common/screen-overlay-shard.png</texture>
 			<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
-			<visible>Window.IsVisible(DialogVideoInfo.xml) + !Skin.HasSetting(furniture.info.fanart)</visible>
-		</control>
-		<control type="image">
-			<bottom>0</bottom>
-			<width>1920</width>
-			<height>270</height>
-			<aspectratio align="center">scale</aspectratio>
-			<texture fallback="common/black.png" background="true">$INFO[Window(home).Property(VideoInfoBottom.ImageFilter)]</texture>
-			<visible>Window.IsVisible(DialogVideoInfo.xml) + !Skin.HasSetting(furniture.info.fanart)</visible>
-			<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
-			<fadetime>600</fadetime>
-		</control>
-		<control type="image">
-			<bottom>0</bottom>
-			<width>1920</width>
-			<height>270</height>
-			<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
-			<aspectratio align="center">scale</aspectratio>
-			<texture colordiffuse="$INFO[Window(home).Property(VideoInfoBottom.ImageColor)]">common/floor.png</texture>
-			<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
-			<visible>Window.IsVisible(DialogVideoInfo.xml) + !Skin.HasSetting(furniture.info.fanart)</visible>
+			<visible>Window.IsVisible(DialogVideoInfo.xml) + !Skin.HasSetting(furniture.info.fanart) + !Skin.HasSetting(toggled.dv.info)</visible>
 		</control>
 		<control type="image">
 			<include>Dimensions_Fullscreen</include>
@@ -230,11 +210,11 @@
 			<visible>!IsEmpty(Window(home).Property(Concerts)) + Control.HasFocus(5013) + Window.IsVisible(DialogAlbumInfo.xml)</visible>
 		</control>
 		<control type="multiimage" description="Fanart">
-			<include condition="!Window.IsVisible(home) | Skin.HasSetting(home.vertical)">GlobalBackgroundFade</include>
+			<include condition="!Window.IsVisible(home)">GlobalBackgroundFade</include>
 			<visible>!Player.HasMedia | [!Skin.HasSetting(global.showvideo) + Player.HasVideo] | [!Skin.HasSetting(global.showvisualisation) + Player.HasAudio]</visible>
 			<visible>!Skin.HasSetting(global.hidefanart) | Window.IsVisible(home)</visible>
 			<visible>!Window.IsVisible(DialogAlbumInfo.xml)</visible>
-			<visible>![Window.IsVisible(DialogVideoInfo.xml) + !Skin.HasSetting(furniture.info.fanart)]</visible>
+			<visible>!Window.IsVisible(DialogVideoInfo.xml)</visible>
 			<include>Dimensions_Fullscreen</include>
 			<include>Animation.FadeFromHome</include>
 			<animation effect="fade" end="0" start="100" time="350" tween="cubic" easing="inout" condition="Window.IsVisible(home)">WindowClose</animation>
@@ -247,6 +227,12 @@
 			<animation effect="slide" start="-10,-10" end="20,20" time="14000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(Fanart.Animate)">Conditional</animation>
 			<animation effect="rotate" center="360,640" start="-2" end="3" time="27000" tween="back" easing="inout" pulse="true"  condition="Skin.HasSetting(Fanart.Animate)">Conditional</animation>
 		</control>
+            <control type="image">
+				<visible>Window.IsVisible(DialogVideoInfo.xml) + Skin.HasSetting(toggled.dv.info)</visible>
+                <include>Dimensions_Fullscreen</include>
+				<aspectratio align="center">scale</aspectratio>
+                <texture colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" fallback="empty.png" background="true">$INFO[ListItem.Art(fanart)]</texture>
+            </control>
             <control id="8328" type="image">
                 <include>Dimensions_Fullscreen</include>
                 <colordiffuse>DialogFanartFade</colordiffuse>
