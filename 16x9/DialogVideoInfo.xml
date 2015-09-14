@@ -3,6 +3,7 @@
 	<defaultcontrol always="true">9000</defaultcontrol>
 	<onload condition="System.HasAddon(script.videoextras)">RunScript(script.videoextras,check,"$INFO[ListItem.FilenameAndPath]")</onload>
 	<onload>RunScript(script.toolbox,info=blur,id='"$INFO[ListItem.Art(fanart)]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfo)</onload>
+	<onload>RunScript(script.toolbox,info=blur,id='"$VAR[PosterImage]"',radius=1,prefix=VideoInfoPoster)</onload>
 	<onload>Skin.SetString(widget.helper,videoinfo)</onload>
 	<onunload>ClearProperty(Similar,home)</onunload>
 	<onunload>ClearProperty(VideoInfo.ImageColor,home)</onunload>
@@ -22,6 +23,32 @@
 			<right>NewSidePad</right>
 			<top>TopPad</top>
 			<include>Animation.DVInfo</include>
+
+			<control type="group">
+				<top>-10</top>
+				<left>-20</left>
+				<width>613</width>
+				<height>920</height>
+				<control type="image">
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<texture background="true" diffuse="diffuse/listposter-ref.png">$INFO[Window(home).Property(VideoInfoPoster.ImageFilter)]</texture>
+					<animation type="conditional" condition="true" reversible="false">
+						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
+					</animation>
+				</control>
+				<control type="image">
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<texture background="true" colordiffuse="$INFO[Window(home).Property(VideoInfoPoster.ImageColor)]">>$VAR[PosterImage]</texture>
+					<animation type="conditional" condition="true" reversible="false">
+						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
+					</animation>
+				</control>
+				<animation type="conditional" condition="true" reversible="false">
+					<effect type="zoom" start="100" end="94" time="200" center="auto" tween="quadratic" easing="out" />
+					<effect type="rotate" end="-1" time="200" center="auto" tween="quadratic" easing="out" />
+				</animation>
+			</control>
+
 			<control type="group">
 				<left>450</left>
 				<control type="image">
@@ -33,6 +60,7 @@
 					<fadetime>50</fadetime>
 				</control>
 			</control>
+
 			<!--
 			<control type="image">
 				<right>10</right>
@@ -63,7 +91,6 @@
 						<textcolor>selective yellow</textcolor>
 						<width>auto</width>
 						<label></label>
-						<visible>Container.Content(movies)</visible>
 						<visible>!IsEmpty(ListItem.Rating)</visible>
 					</control>
 					<control type="label">
@@ -74,7 +101,6 @@
 						<height>38</height>
 						<width>auto</width>
 						<label fallback="">$INFO[ListItem.Rating,,  ]</label>
-						<visible>Container.Content(movies)</visible>
 					</control>
 				<!--	<control type="label">
 						<aligny>center</aligny>
@@ -503,24 +529,6 @@
 					<texturefocus colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" border="5">common/box.png</texturefocus>
 					<texturenofocus colordiffuse="$VAR[EmbyRightColourHighlight]" border="5">common/box.png</texturenofocus>
 				</control>
-				<control id="1006" type="button">
-					<width>116</width>
-					<height>116</height>
-					<onup condition="Control.IsVisible(90901)">90901</onup>
-					<onup condition="Control.IsVisible(90902)">90902</onup>
-					<ondown>9500</ondown>
-					<onclick condition="Player.HasMedia">PlayerControl(stop)</onclick>
-					<onclick>back</onclick>
-					<onclick>ActivateWindow(videos,$INFO[ListItem.Title,plugin://plugin.video.youtube/kodion/search/query/?q=,trailer],return)</onclick>
-					<font>symbol</font>
-					<label></label>
-					<textcolor>white</textcolor>
-					<visible>IsEmpty(ListItem.Trailer) + !Container.Content(TVShows)</visible>
-					<visible>true</visible>
-					<focusedcolor>$VAR[EmbyRightColourHighlight]</focusedcolor>
-					<texturefocus colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" border="5">common/box.png</texturefocus>
-					<texturenofocus colordiffuse="$VAR[EmbyRightColourHighlight]" border="5">common/box.png</texturenofocus>
-				</control>
 				<!-- Refresh button <control id="6" type="button"><width>200</width><height>116</height><onup condition="Control.IsVisible(90901)">90901</onup><ondown>9500</ondown><font>symbol</font><label></label><textcolor>Black700</textcolor><visible>Control.IsEnabled(6)</visible><visible>Container.Content(episodes)</visible><texturefocus colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" border="5">common/box.png</texturefocus><texturenofocus colordiffuse="White70" border="5">common/box.png</texturenofocus></control> --><!-- Get Thumb Button -->
 				<control id="10" type="button">
 					<width>116</width>
@@ -645,18 +653,6 @@
 					<font>StudioFont</font>
 					<animation condition="Control.HasFocus(1003)" effect="fade" end="100" start="0" time="10">Conditional</animation>
 					<animation condition="!Control.HasFocus(1003)" effect="fade" end="0" start="100" time="10">Conditional</animation>
-				</control>
-				<control id="1006" type="button">
-					<width>116</width>
-					<height>116</height>
-					<textcolor>White70</textcolor>
-					<textoffsetx>0</textoffsetx>
-					<visible>IsEmpty(ListItem.Trailer) + !Container.Content(TVShows)</visible>
-					<visible>true</visible>
-					<font>StudioFont</font>
-					<label>Search YouTube</label>
-					<animation condition="Control.HasFocus(1006)" effect="fade" end="100" start="0" time="10">Conditional</animation>
-					<animation condition="!Control.HasFocus(1006)" effect="fade" end="0" start="100" time="10">Conditional</animation>
 				</control>
 				<!-- Refresh Button <control id="6" type="button"><width>222</width><height>116</height><textcolor>White70</textcolor><textoffsetx>0</textoffsetx><visible>Control.IsEnabled(6)</visible><visible>Container.Content(episodes)</visible><font>StudioFont</font><label>184</label><animation condition="Control.HasFocus(6)" effect="fade" end="100" start="0" time="10">Conditional</animation><animation condition="!Control.HasFocus(6)" effect="fade" end="0" start="100" time="10">Conditional</animation></control> --><!-- Get Thumb Button -->
 				<control id="10" type="button">
@@ -1100,22 +1096,6 @@
 					<texturefocus colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" border="5">common/box.png</texturefocus>
 					<texturenofocus colordiffuse="$VAR[EmbyRightColourHighlight]" border="5">common/box.png</texturenofocus>
 				</control>
-				<control id="1006" type="button">
-					<width>116</width>
-					<height>116</height>
-					<ondown>9007</ondown>
-					<onclick condition="Player.HasMedia">PlayerControl(stop)</onclick>
-					<onclick>back</onclick>
-					<onclick>ActivateWindow(videos,$INFO[ListItem.Title,plugin://plugin.video.youtube/kodion/search/query/?q=,trailer],return)</onclick>
-					<font>symbol</font>
-					<label></label>
-					<textcolor>white</textcolor>
-					<visible>IsEmpty(ListItem.Trailer) + !Container.Content(TVShows)</visible>
-					<visible>true</visible>
-					<focusedcolor>$VAR[EmbyRightColourHighlight]</focusedcolor>
-					<texturefocus colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" border="5">common/box.png</texturefocus>
-					<texturenofocus colordiffuse="$VAR[EmbyRightColourHighlight]" border="5">common/box.png</texturenofocus>
-				</control>
 				<!-- Refresh button <control id="6" type="button"><width>200</width><height>116</height><onup condition="Control.IsVisible(3636)">3636</onup><ondown>9007</ondown><font>symbol</font><label></label><textcolor>Black700</textcolor><visible>Control.IsEnabled(6)</visible><visible>Container.Content(episodes)</visible><texturefocus colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" border="5">common/box.png</texturefocus><texturenofocus colordiffuse="White70" border="5">common/box.png</texturenofocus></control> --><!-- Get Thumb Button -->
 				<control id="10" type="button">
 					<width>116</width>
@@ -1230,18 +1210,6 @@
 					<font>StudioFont</font>
 					<animation condition="Control.HasFocus(1003)" effect="fade" end="100" start="0" time="10">Conditional</animation>
 					<animation condition="!Control.HasFocus(1003)" effect="fade" end="0" start="100" time="10">Conditional</animation>
-				</control>
-				<control id="1006" type="button">
-					<width>116</width>
-					<height>116</height>
-					<textcolor>White70</textcolor>
-					<textoffsetx>0</textoffsetx>
-					<visible>IsEmpty(ListItem.Trailer) + !Container.Content(TVShows)</visible>
-					<visible>true</visible>
-					<font>StudioFont</font>
-					<label>Search YouTube</label>
-					<animation condition="Control.HasFocus(1006)" effect="fade" end="100" start="0" time="10">Conditional</animation>
-					<animation condition="!Control.HasFocus(1006)" effect="fade" end="0" start="100" time="10">Conditional</animation>
 				</control>
 				<!-- Refresh Button <control id="6" type="button"><width>222</width><height>116</height><textcolor>White70</textcolor><textoffsetx>0</textoffsetx><visible>Control.IsEnabled(6)</visible><visible>Container.Content(episodes)</visible><font>StudioFont</font><label>184</label><animation condition="Control.HasFocus(6)" effect="fade" end="100" start="0" time="10">Conditional</animation><animation condition="!Control.HasFocus(6)" effect="fade" end="0" start="100" time="10">Conditional</animation></control> --><!-- Get Thumb Button -->
 				<control id="10" type="button">
