@@ -199,13 +199,13 @@
 			<include>Dimensions_Fullscreen</include>
 			<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
 			<aspectratio align="center">scale</aspectratio>
-			<texture colordiffuse="$INFO[Window(home).Property(MusicInfo.ImageColor)]">diffuseoverlay.png</texture>
+			<texture colordiffuse="$INFO[Window(home).Property(MusicInfo.ImageColor)]">diffuse/diffuseoverlay.png</texture>
 			<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
 			<visible>Window.IsVisible(DialogAlbumInfo.xml) + !Skin.HasSetting(furniture.info.fanart)</visible>
 		</control>
 		<control type="image">
 			<include>Dimensions_Fullscreen</include>
-			<colordiffuse>6Fffffff</colordiffuse>
+			<colordiffuse>DialogFanartFade</colordiffuse>
 			<texture background="true">$INFO[Container(5013).ListItem.Property(GoogleMap)]</texture>
 			<visible>!IsEmpty(Window(home).Property(Concerts)) + Control.HasFocus(5013) + Window.IsVisible(DialogAlbumInfo.xml)</visible>
 		</control>
@@ -235,14 +235,14 @@
             </control>
             <control id="8328" type="image">
                 <include>Dimensions_Fullscreen</include>
-                <colordiffuse>6Fffffff</colordiffuse>
+                <colordiffuse>DialogFanartFade</colordiffuse>
                 <texture fallback="empty.png" background="true">$INFO[ListItem.Art(fanart)]</texture>
                 <visible>Skin.HasSetting(furniture.info.fanart)</visible>
                 <visible>Control.HasFocus(4000)</visible>
             </control>
             <control type="image">
                 <include>Dimensions_Fullscreen</include>
-                <colordiffuse>6Fffffff</colordiffuse>
+                <colordiffuse>DialogFanartFade</colordiffuse>
                 <texture background="true">genrethumb/Kodi.jpg</texture>
                 <visible>Substring(Control.GetLabel(8328),empty.png)</visible>
                 <visible>Skin.HasSetting(furniture.info.fanart)</visible>
@@ -259,7 +259,7 @@
                 <include>Dimensions_Fullscreen</include>
                 <animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
                 <aspectratio align="center">scale</aspectratio>
-                <texture colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]">diffuseoverlay.png</texture>
+                <texture colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]">diffuse/diffuseoverlay.png</texture>
                 <visible>!Skin.HasSetting(furniture.info.fanart)</visible>
                 <visible>Control.HasFocus(4000)</visible>
             </control>
