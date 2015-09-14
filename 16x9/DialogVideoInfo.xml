@@ -59,6 +59,27 @@
 						<aligny>center</aligny>
 						<align>left</align>
 						<font>symbol</font>
+						<height>38</height>
+						<textcolor>selective yellow</textcolor>
+						<width>auto</width>
+						<label></label>
+						<visible>Container.Content(movies)</visible>
+						<visible>!IsEmpty(ListItem.Rating)</visible>
+					</control>
+					<control type="label">
+						<aligny>center</aligny>
+						<align>left</align>
+						<font>Medium</font>
+						<textcolor>white</textcolor>
+						<height>38</height>
+						<width>auto</width>
+						<label fallback="">$INFO[ListItem.Rating,,  ]</label>
+						<visible>Container.Content(movies)</visible>
+					</control>
+				<!--	<control type="label">
+						<aligny>center</aligny>
+						<align>left</align>
+						<font>symbol</font>
 						<textcolor>red</textcolor>
 						<height>38</height>
 						<width>auto</width>
@@ -74,15 +95,15 @@
 						<width>auto</width>
 						<label fallback="N/A  ">$INFO[ListItem.Rating,,  ]</label>
 						<visible>Container.Content(movies)</visible>
-					</control>
+					</control> -->
 					<control type="label">
 						<aligny>center</aligny>
 						<align>left</align>
-						<font>symbol</font>
-						<height>38</height>
+						<font>Medium</font>
 						<textcolor>white</textcolor>
+						<height>38</height>
 						<width>auto</width>
-						<label></label>
+						<label fallback="">$VAR[DurationLong,,  ]</label>
 						<visible>Container.Content(movies)</visible>
 					</control>
 					<control type="label">
@@ -92,7 +113,7 @@
 						<textcolor>white</textcolor>
 						<height>38</height>
 						<width>auto</width>
-						<label fallback="N/A  ">$INFO[ListItem.PlayCount,,  ]</label>
+						<label fallback="">$INFO[Window(Home).Property(SkinHelper.ListItemGenres)]</label>
 						<visible>Container.Content(movies)</visible>
 					</control>
 					<control type="label">
@@ -102,7 +123,7 @@
 						<textcolor>white</textcolor>
 						<height>38</height>
 						<width>auto</width>
-						<label fallback="N/A  ">$VAR[DurationLong,,  ]</label>
+						<label fallback="">$INFO[ListItem.Year,  ,  ]</label>
 						<visible>Container.Content(movies)</visible>
 					</control>
 					<control type="label">
@@ -112,27 +133,7 @@
 						<textcolor>white</textcolor>
 						<height>38</height>
 						<width>auto</width>
-						<label fallback="N/A">$INFO[Window(Home).Property(SkinHelper.ListItemGenres)]</label>
-						<visible>Container.Content(movies)</visible>
-					</control>
-					<control type="label">
-						<aligny>center</aligny>
-						<align>left</align>
-						<font>Medium</font>
-						<textcolor>white</textcolor>
-						<height>38</height>
-						<width>auto</width>
-						<label fallback="  N/A  ">$INFO[ListItem.Year,  ,  ]</label>
-						<visible>Container.Content(movies)</visible>
-					</control>
-					<control type="label">
-						<aligny>center</aligny>
-						<align>left</align>
-						<font>Medium</font>
-						<textcolor>white</textcolor>
-						<height>38</height>
-						<width>auto</width>
-						<label fallback="N/A  ">$VAR[MPAA,,  ]</label>
+						<label fallback="">$VAR[MPAA,,  ]</label>
 						<visible>Container.Content(movies)</visible>
 					</control>
 
@@ -592,7 +593,7 @@
 					<onup condition="Control.IsVisible(90902)">90902</onup>
 					<ondown>9500</ondown>
 					<font>symbolbig</font>
-					<label></label>
+					<label></label>
 					<textcolor>$VAR[EmbyLeftColourHighlight]</textcolor>
 					<focusedcolor>$VAR[ColourHighlight]</focusedcolor>
 					<texturefocus colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" border="5">-</texturefocus>
@@ -1177,7 +1178,7 @@
 					<height>110</height>
 					<ondown>9007</ondown>
 					<font>symbolbig</font>
-					<label></label>
+					<label></label>
 					<textcolor>$VAR[EmbyLeftColourHighlight]</textcolor>
 					<focusedcolor>$VAR[ColourHighlight]</focusedcolor>
 					<texturefocus colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" border="5">-</texturefocus>
