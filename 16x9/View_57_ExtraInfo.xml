@@ -56,10 +56,10 @@
                     <pagecontrol>60</pagecontrol>
                     <viewtype label="31147">list</viewtype>
                     <scrolltime tween="quadratic">400</scrolltime>
-                    <itemlayout width="930" height="66">
+                    <itemlayout width="920" height="66">
                         <include>50itemlayout</include>
                     </itemlayout>
-                    <focusedlayout width="930" height="66">
+                    <focusedlayout width="920" height="66">
 						<control type="button">
 							<texturefocus>-</texturefocus>
 							<texturenofocus>-</texturenofocus>
@@ -90,6 +90,39 @@
             <width>960</width>
             <top>TopPad</top>
             <height>1200</height>
+            <control type="group">
+            <top>-51</top>
+				<left>960</left>
+            <width>950</width>
+				<height>51</height>
+			<control type="image">
+				<right>10</right>
+				<height>51</height>
+				<texture border="15" colordiffuse="$VAR[EmbyMiddleColourHighlight]">common/white.png</texture>
+			</control>
+			<control type="label">
+				<right>10</right>
+				<height>51</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<scroll>true</scroll>
+				<label fallback="19055">$VAR[LabelNextAiredDetails]</label>
+				<font>DurationFontSmall</font>
+				<textcolor>$VAR[ColourTextFlags]</textcolor>
+				<visible>Container.Content(seasons) | Container.Content(tvshows) | Container.Content(episodes)</visible>
+			</control>
+			<control type="label">
+				<right>10</right>
+				<height>51</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<scroll>true</scroll>
+				<label fallback="19055">$INFO[ListItem.Year,, | ]$INFO[ListItem.RatingAndVotes]$INFO[ListItem.Country, | ]</label>
+				<font>DurationFontSmall</font>
+				<textcolor>$VAR[ColourTextFlags]</textcolor>
+				<visible>!Container.Content(seasons) + !Container.Content(tvshows) + !Container.Content(episodes)</visible>
+			</control>
+			</control>
             <control type="group">
                 <height>740</height>
                 <visible>[!Skin.HasSetting(57list.low) + Control.IsVisible(57)] | !Control.IsVisible(57)</visible>
