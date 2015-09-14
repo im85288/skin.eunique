@@ -3,6 +3,7 @@
 	<defaultcontrol always="true">9000</defaultcontrol>
 	<onload condition="System.HasAddon(script.videoextras)">RunScript(script.videoextras,check,"$INFO[ListItem.FilenameAndPath]")</onload>
 	<onload>RunScript(script.toolbox,info=blur,id='"$INFO[ListItem.Art(fanart)]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfo)</onload>
+	<onload>RunScript(script.toolbox,info=blur,id='"$VAR[PosterImage]"',radius=1,prefix=VideoInfoPoster)</onload>
 	<onload>Skin.SetString(widget.helper,videoinfo)</onload>
 	<onunload>ClearProperty(Similar,home)</onunload>
 	<onunload>ClearProperty(VideoInfo.ImageColor,home)</onunload>
@@ -22,6 +23,32 @@
 			<right>NewSidePad</right>
 			<top>TopPad</top>
 			<include>Animation.DVInfo</include>
+
+			<control type="group">
+				<top>-10</top>
+				<left>-20</left>
+				<width>613</width>
+				<height>920</height>
+				<control type="image">
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<texture background="true" diffuse="diffuse/listposter-ref.png">$INFO[Window(home).Property(VideoInfoPoster.ImageFilter)]</texture>
+					<animation type="conditional" condition="true" reversible="false">
+						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
+					</animation>
+				</control>
+				<control type="image">
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<texture background="true" colordiffuse="$INFO[Window(home).Property(VideoInfoPoster.ImageColor)]">>$VAR[PosterImage]</texture>
+					<animation type="conditional" condition="true" reversible="false">
+						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
+					</animation>
+				</control>
+				<animation type="conditional" condition="true" reversible="false">
+					<effect type="zoom" start="100" end="94" time="200" center="auto" tween="quadratic" easing="out" />
+					<effect type="rotate" end="-1" time="200" center="auto" tween="quadratic" easing="out" />
+				</animation>
+			</control>
+
 			<control type="group">
 				<left>450</left>
 				<control type="image">
@@ -33,6 +60,7 @@
 					<fadetime>50</fadetime>
 				</control>
 			</control>
+
 			<!--
 			<control type="image">
 				<right>10</right>
