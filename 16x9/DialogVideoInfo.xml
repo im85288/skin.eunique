@@ -326,9 +326,8 @@
 				</control>
 				<control id="90903" type="list">
 					<visible>Control.HasFocus(90902)</visible>
-					<left>260</left>
+					<left>120</left>
 					<bottom>500</bottom>
-					<top>220</top>
 					<onup>90901</onup>
 					<onright>9000</onright>
 					<onright condition="!Window.IsVisible(1103)">SetProperty(BounceRight,1,Home)</onright>
@@ -341,19 +340,19 @@
 					<scrolltime easing="inout" tween="sine">300</scrolltime>
 					<animation effect="fade" end="100" start="0" time="300">Visible</animation>
 					<animation effect="fade" end="0" start="100" time="300">Hidden</animation>
-					<itemlayout height="210" width="140">
+					<itemlayout height="420" width="280">
 						<control type="group">
 							<control type="label">
 								<left>0</left>
 								<top>0</top>
 								<right>0</right>
 								<bottom>0</bottom>
-								<height>210</height>
+								<height>380</height>
 								<aligny>center</aligny>
 								<align>center</align>
-								<font>symbolbiggest</font>
+								<font>symboldvinfo</font>
 								<label></label>
-								<textcolor>white</textcolor>
+								<textcolor>$INFO[Window(home).Property(VideoInfo.ImageColor)]</textcolor>
 								<fadetime>300</fadetime>
 							</control>
 							<control type="image">
@@ -374,19 +373,26 @@
 							</control>
 						</control>
 					</itemlayout>
-					<focusedlayout height="210" width="140">
+					<focusedlayout height="420" width="280">
 						<control type="group">
+							<control type="image">
+								<left>0</left>
+								<bottom>0</bottom>
+								<right>0</right>
+								<bottom>40</bottom>
+								<texture border="15" colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]">common/white.png</texture>
+							</control>
 							<control type="label">
 								<left>0</left>
 								<top>0</top>
 								<right>0</right>
-								<bottom>0</bottom>
-								<height>210</height>
+								<bottom>40</bottom>
+								<height>380</height>
 								<aligny>center</aligny>
 								<align>center</align>
-								<font>symbolbiggest</font>
+								<font>symboldvinfo</font>
 								<label></label>
-								<textcolor>white</textcolor>
+								<textcolor>white2</textcolor>
 								<fadetime>300</fadetime>
 							</control>
 							<control type="image">
@@ -421,21 +427,21 @@
 							</control>
 							<control type="label">
 								<left>0</left>
-								<bottom>22</bottom>
+								<bottom>20</bottom>
 								<right>0</right>
 								<bottom>0</bottom>
 								<height>20</height>
-								<font>MinuteBold</font>
+								<font>TinyBold</font>
 								<textcolor>$VAR[ColourSelected]</textcolor>
 								<label>$INFO[ListItem.Label]</label>
 							</control>
 							<control type="label">
 								<left>0</left>
-								<bottom>7</bottom>
+								<bottom>0</bottom>
 								<right>0</right>
 								<bottom>0</bottom>
 								<height>20</height>
-								<font>MinisculeBold</font>
+								<font>MinuteBold</font>
 								<autoscroll>true</autoscroll>
 								<textcolor>$VAR[ColourSelected]</textcolor>
 								<label>$INFO[ListItem.Label2,$LOCALIZE[20347] ]</label>
