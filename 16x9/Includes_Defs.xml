@@ -2269,16 +2269,15 @@
 
 	<include name="YoutubeItemLayout">
 		<control type="group">
-			<posx>75</posx>
 			<control type="image">
 				<posx>15</posx>
-				<width>410</width>
+				<width>445</width>
 				<height>240</height>
 				<texture border="10">common/nofocus-shadow10.png</texture>
 			</control>
 			<control type="image">
 				<posx>25</posx>
-				<width>390</width>
+				<width>425</width>
 				<height>220</height>
 				<fadetime>200</fadetime>
 				<aspectratio aligny="center">scale</aspectratio>
@@ -2287,13 +2286,13 @@
 			<control type="label">
 				<posx>35</posx>
 				<posy>215</posy>
-				<width>440</width>
+				<width>475</width>
 				<label>$INFO[ListItem.Label2]</label>
 				<font>Small</font>
 				<textcolor>Dark1</textcolor>
 			</control>
 			<control type="image">
-				<posx>280</posx>
+				<posx>315</posx>
 				<posy>218</posy>
 				<width>130</width>
 				<height>30</height>
@@ -2303,7 +2302,7 @@
 				<posx>20</posx>
 				<posy>242</posy>
 				<height>104</height>
-				<width>400</width>
+				<width>435</width>
 				<label>$INFO[ListItem.Label]</label>
 				<align>center</align>
 				<font>Small</font>
@@ -2312,7 +2311,7 @@
 			<control type="label">
 				<posx>30</posx>
 				<posy>-15</posy>
-				<width>380</width>
+				<width>415</width>
 				<height>5</height>
 				<align>center</align>
 				<label>$INFO[ListItem.Date]</label>
@@ -2323,20 +2322,19 @@
 	</include>
 	<include name="YoutubeFocusedLayout">
 		<control type="group">
-			<posx>75</posx>
 			<animation type="Focus">
 				<effect type="zoom" time="150" start="95" end="100" center="245,260" />
 				<effect type="zoom" time="150" start="105" end="100" delay="150" center="245,260" />
 			</animation>
 			<control type="image">
 				<posx>15</posx>
-				<width>410</width>
+				<width>445</width>
 				<height>240</height>
 				<texture border="10">common/nofocus-shadow10.png</texture>
 			</control>
 			<control type="image">
 				<posx>25</posx>
-				<width>390</width>
+				<width>425</width>
 				<height>220</height>
 				<aspectratio aligny="center">scale</aspectratio>
 				<texture diffuse="diffuse/wall.png" background="true">$INFO[ListItem.Icon]</texture>
@@ -2344,13 +2342,13 @@
 			<control type="label">
 				<posx>35</posx>
 				<posy>215</posy>
-				<width>440</width>
+				<width>475</width>
 				<label>$INFO[ListItem.Label2]</label>
 				<font>Small</font>
 				<textcolor>$VAR[ColourSelected]</textcolor>
 			</control>
 			<control type="image">
-				<posx>280</posx>
+				<posx>315</posx>
 				<posy>218</posy>
 				<width>130</width>
 				<height>30</height>
@@ -2360,7 +2358,7 @@
 				<posx>20</posx>
 				<posy>242</posy>
 				<height>104</height>
-				<width>400</width>
+				<width>435</width>
 				<align>center</align>
 				<label>$INFO[ListItem.Label]</label>
 				<animation effect="fade" time="300" start="70" end="100" delay="100" reversible="false">Focus</animation>
@@ -2371,7 +2369,7 @@
 			<control type="label">
 				<posx>30</posx>
 				<posy>-15</posy>
-				<width>380</width>
+				<width>435</width>
 				<height>5</height>
 				<align>center</align>
 				<label>$INFO[ListItem.Date]</label>

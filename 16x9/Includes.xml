@@ -231,7 +231,7 @@
 				<visible>Window.IsVisible(DialogVideoInfo.xml) + Skin.HasSetting(toggled.dv.info)</visible>
                 <include>Dimensions_Fullscreen</include>
 				<aspectratio align="center">scale</aspectratio>
-                <texture colordiffuse="6Fffffff" fallback="empty.png" background="true">$INFO[ListItem.Art(fanart)]</texture>
+                <texture colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" fallback="empty.png" background="true">$INFO[ListItem.Art(fanart)]</texture>
             </control>
             <control id="8328" type="image">
                 <include>Dimensions_Fullscreen</include>
