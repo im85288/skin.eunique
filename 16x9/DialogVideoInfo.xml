@@ -3,13 +3,11 @@
 	<defaultcontrol always="true">9000</defaultcontrol>
 	<onload condition="System.HasAddon(script.videoextras)">RunScript(script.videoextras,check,"$INFO[ListItem.FilenameAndPath]")</onload>
 	<onload>RunScript(script.toolbox,info=blur,id='"$INFO[ListItem.Art(fanart)]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfo)</onload>
+	<onload>Skin.SetString(widget.helper,videoinfo)</onload>
 	<onunload>ClearProperty(Similar,home)</onunload>
 	<onunload>ClearProperty(VideoInfo.ImageColor,home)</onunload>
 	<onunload>ClearProperty(VideoInfo.ImageFilter,home)</onunload>
 	<controls>
-		<!--
-		<include>GlobalOverlay</include>
-		-->
 		<control type="image">
 			<include>Dimensions_Fullscreen</include>
 			<aspectratio align="center">scale</aspectratio>
@@ -58,106 +56,107 @@
 				<orientation>horizontal</orientation>
 				<itemgap>10</itemgap>
 					<control type="label">
-<aligny>center</aligny>
+						<aligny>center</aligny>
+						<align>left</align>
+						<font>symbol</font>
+						<height>38</height>
+						<textcolor>selective yellow</textcolor>
+						<width>auto</width>
+						<label></label>
+						<visible>Container.Content(movies)</visible>
+						<visible>!IsEmpty(ListItem.Rating)</visible>
+					</control>
+					<control type="label">
+						<aligny>center</aligny>
+						<align>left</align>
+						<font>Medium</font>
+						<textcolor>white</textcolor>
+						<height>38</height>
+						<width>auto</width>
+						<label fallback="">$INFO[ListItem.Rating,,  ]</label>
+						<visible>Container.Content(movies)</visible>
+					</control>
+				<!--	<control type="label">
+						<aligny>center</aligny>
 						<align>left</align>
 						<font>symbol</font>
 						<textcolor>red</textcolor>
-				<height>38</height>
+						<height>38</height>
 						<width>auto</width>
 						<label></label>
 						<visible>Container.Content(movies)</visible>
 					</control>
 					<control type="label">
-<aligny>center</aligny>
+						<aligny>center</aligny>
 						<align>left</align>
 						<font>Medium</font>
 						<textcolor>white</textcolor>
-				<height>38</height>
+						<height>38</height>
 						<width>auto</width>
 						<label fallback="N/A  ">$INFO[ListItem.Rating,,  ]</label>
 						<visible>Container.Content(movies)</visible>
-					</control>
+					</control> -->
 					<control type="label">
-<aligny>center</aligny>
-						<align>left</align>
-						<font>symbol</font>
-				<height>38</height>
-						<textcolor>white</textcolor>
-						<width>auto</width>
-						<label></label>
-						<visible>Container.Content(movies)</visible>
-					</control>
-					<control type="label">
-<aligny>center</aligny>
+						<aligny>center</aligny>
 						<align>left</align>
 						<font>Medium</font>
 						<textcolor>white</textcolor>
-				<height>38</height>
+						<height>38</height>
 						<width>auto</width>
-						<label fallback="N/A  ">$INFO[ListItem.PlayCount,,  ]</label>
+						<label fallback="">$VAR[DurationLong,,  ]</label>
 						<visible>Container.Content(movies)</visible>
 					</control>
 					<control type="label">
-<aligny>center</aligny>
+						<aligny>center</aligny>
 						<align>left</align>
 						<font>Medium</font>
 						<textcolor>white</textcolor>
-				<height>38</height>
+						<height>38</height>
 						<width>auto</width>
-						<label fallback="N/A  ">$VAR[DurationLong,,  ]</label>
+						<label fallback="">$INFO[Window(Home).Property(SkinHelper.ListItemGenres)]</label>
 						<visible>Container.Content(movies)</visible>
 					</control>
 					<control type="label">
-<aligny>center</aligny>
+						<aligny>center</aligny>
 						<align>left</align>
 						<font>Medium</font>
 						<textcolor>white</textcolor>
-				<height>38</height>
+						<height>38</height>
 						<width>auto</width>
-						<label fallback="N/A">$INFO[Window(Home).Property(SkinHelper.ListItemGenres)]</label>
+						<label fallback="">$INFO[ListItem.Year,  ,  ]</label>
 						<visible>Container.Content(movies)</visible>
 					</control>
 					<control type="label">
-<aligny>center</aligny>
+						<aligny>center</aligny>
 						<align>left</align>
 						<font>Medium</font>
 						<textcolor>white</textcolor>
-				<height>38</height>
+						<height>38</height>
 						<width>auto</width>
-						<label fallback="  N/A  ">$INFO[ListItem.Year,  ,  ]</label>
-						<visible>Container.Content(movies)</visible>
-					</control>
-					<control type="label">
-<aligny>center</aligny>
-						<align>left</align>
-						<font>Medium</font>
-						<textcolor>white</textcolor>
-				<height>38</height>
-						<width>auto</width>
-						<label fallback="N/A  ">$VAR[MPAA,,  ]</label>
+						<label fallback="">$VAR[MPAA,,  ]</label>
 						<visible>Container.Content(movies)</visible>
 					</control>
 
 
 
 					<control type="label">
-<aligny>center</aligny>
+						<aligny>center</aligny>
 						<align>left</align>
 						<font>Medium</font>
 						<textcolor>white</textcolor>
-				<height>38</height>
+						<height>38</height>
 						<width>auto</width>
-					<label>$INFO[ListItem.Season,,]$INFO[ListItem.Episode,x,  ]$INFO[ListItem.Title,,  ]$VAR[LabelDuration,,  ]</label>
-					<visible>!Container.Content(movies) + !Container.Content(TVShows)</visible>
-				</control>
+						<label>$INFO[ListItem.Season,,]$INFO[ListItem.Episode,x,  ]$INFO[ListItem.Title,,  ]$VAR[LabelDuration,,  ]</label>
+						<visible>!Container.Content(movies) + !Container.Content(TVShows)</visible>
+					</control>
 					<control type="label">
-<aligny>center</aligny>
+						<aligny>center</aligny>
 						<align>left</align>
 						<font>Medium</font>
 						<textcolor>white</textcolor>
-				<height>38</height>
+						<height>38</height>
 						<width>auto</width>
-					<label>$INFO[ListItem.Season,,]$INFO[ListItem.Episode,x,  ]$INFO[ListItem.Studio,,  ]$VAR[LabelDuration,,  ]</label>
+						<label>$INFO[ListItem.Season,,]$INFO[ListItem.Episode,x,  ]$INFO[ListItem.Studio,,  ]$VAR[LabelDuration,,  ]</label>
 					<visible>Container.Content(TVShows)</visible>
 				</control>
 			</control>
@@ -178,19 +177,27 @@
 				<width>400</width>
 				<height>920</height>
 
-				<control type="label">
-					<right>0</right>
+				<control type="button" id="90901">
 					<left>0</left>
-					<aligny>center</aligny>
+					<top>-5</top>
 					<align>right</align>
 					<font>SmallBold</font>
-					<textcolor>white2</textcolor>
-					<height>38</height>
-					<animation type="conditional" condition="true" reversible="false">
-						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
-					</animation>
 					<label>Director</label>
-				<visible>!Container.Content(tvshows) + !Container.Content(episodes) + !Container.Content(seasons)</visible>
+					<onup>9000</onup>
+					<onright>9000</onright>
+					<ondown>90902</ondown>
+					<onback>9000</onback>
+					<textoffsetx>0</textoffsetx>
+					<textcolor>white2</textcolor>
+					<focusedcolor>$INFO[Window(home).Property(VideoInfo.ImageColor)]</focusedcolor>
+					<texturenofocus>-</texturenofocus>
+					<texturefocus>-</texturefocus>
+					<onclick>SetProperty(Dialog.1.Label,Extra Info)</onclick>
+					<onclick>SetProperty(Dialog.1.BuiltIn,RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[ListItem.Director]))</onclick>
+					<onclick>SetProperty(Dialog.2.Label,Search on Youtube)</onclick>
+					<onclick>SetProperty(Dialog.2.BuiltIn,SetProperty(listcontent,$INFO[ListItem.Director],home)||ActivateWindow(1168))</onclick>
+					<onclick>RunScript(script.toolbox,info=selectdialog,header=$INFO[ListItem.Director])</onclick>
+					<visible>!Container.Content(tvshows) + !Container.Content(episodes) + !Container.Content(seasons)</visible>
 				</control>
 				<control type="label">
 					<right>0</right>
@@ -287,16 +294,23 @@
 					<label fallback="19055">$INFO[ListItem.Premiered]</label>
 					<visible>Container.Content(episodes)</visible>
 				</control>
-				<control type="label">
-					<right>0</right>
-					<left>0</left>
-					<top>143</top>
-					<aligny>center</aligny>
+				<control type="button" id="90902">
+					<left>10</left>
+					<top>138</top>
 					<align>right</align>
+					<onup>90901</onup>
+					<ondown>Control.Move(90903,1)</ondown>
+					<onback>9000</onback>
+					<onleft>9000</onleft>
+					<onright>9000</onright>
+					<onclick>RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Container(90903).ListItem.Label])</onclick>
+					<textoffsetx>0</textoffsetx>
 					<font>SmallBold</font>
+					<label>Starring</label>
 					<textcolor>white2</textcolor>
-					<height>38</height>
-					<label>Cast</label>
+					<focusedcolor>$INFO[Window(home).Property(VideoInfo.ImageColor)]</focusedcolor>
+					<texturenofocus>-</texturenofocus>
+					<texturefocus>-</texturefocus>
 				</control>
 				<control type="textbox">
 					<left>10</left>
@@ -310,6 +324,126 @@
 					<fadetime>500</fadetime>
 					<visible>!Control.HasFocus(90902)</visible>
 				</control>
+				<control id="90903" type="list">
+					<visible>Control.HasFocus(90902)</visible>
+					<left>260</left>
+					<bottom>500</bottom>
+					<top>220</top>
+					<onup>90901</onup>
+					<onright>9000</onright>
+					<onright condition="!Window.IsVisible(1103)">SetProperty(BounceRight,1,Home)</onright>
+					<onback>9000</onback>
+					<preloaditems>8</preloaditems>
+					<focusposition>1</focusposition>
+					<viewtype label="">list</viewtype>
+					<orientation>vertical</orientation>
+					<defaultcontrol always="true">0</defaultcontrol>
+					<scrolltime easing="inout" tween="sine">300</scrolltime>
+					<animation effect="fade" end="100" start="0" time="300">Visible</animation>
+					<animation effect="fade" end="0" start="100" time="300">Hidden</animation>
+					<itemlayout height="210" width="140">
+						<control type="group">
+							<control type="label">
+								<left>0</left>
+								<top>0</top>
+								<right>0</right>
+								<bottom>0</bottom>
+								<height>210</height>
+								<aligny>center</aligny>
+								<align>center</align>
+								<font>symbolbiggest</font>
+								<label></label>
+								<textcolor>white</textcolor>
+								<fadetime>300</fadetime>
+							</control>
+							<control type="image">
+								<left>0</left>
+								<top>0</top>
+								<right>0</right>
+								<bottom>0</bottom>
+								<aspectratio align="center" aligny="top">stretch</aspectratio>
+								<texture background="true">$INFO[ListItem.Icon]</texture>
+								<fadetime>200</fadetime>
+							</control>
+							<control type="image">
+								<left>0</left>
+								<top>0</top>
+								<right>0</right>
+								<bottom>0</bottom>
+								<texture border="15" colordiffuse="99000000">common/white.png</texture>
+							</control>
+						</control>
+					</itemlayout>
+					<focusedlayout height="210" width="140">
+						<control type="group">
+							<control type="label">
+								<left>0</left>
+								<top>0</top>
+								<right>0</right>
+								<bottom>0</bottom>
+								<height>210</height>
+								<aligny>center</aligny>
+								<align>center</align>
+								<font>symbolbiggest</font>
+								<label></label>
+								<textcolor>white</textcolor>
+								<fadetime>300</fadetime>
+							</control>
+							<control type="image">
+								<left>0</left>
+								<top>0</top>
+								<right>0</right>
+								<bottom>0</bottom>
+								<aspectratio align="center" aligny="top">stretch</aspectratio>
+								<texture background="true" fallback="DefaultActor.png">$INFO[ListItem.Icon]</texture>
+								<fadetime>00</fadetime>
+							</control>
+							<control type="label">
+								<left>0</left>
+								<top>0</top>
+								<right>0</right>
+								<bottom>0</bottom>
+								<aligny>center</aligny>
+								<align>center</align>
+								<width>36</width>
+								<height>36</height>
+								<font>symbolview</font>
+								<label></label>
+								<textcolor>$VAR[EmbyLeftColourHighlight]</textcolor>
+							</control>
+							<control type="image">
+								<left>0</left>
+								<bottom>0</bottom>
+								<right>0</right>
+								<bottom>0</bottom>
+								<height>40</height>
+								<texture border="15" colordiffuse="$VAR[EmbyRightColourHighlight]">common/white.png</texture>
+							</control>
+							<control type="label">
+								<left>0</left>
+								<bottom>22</bottom>
+								<right>0</right>
+								<bottom>0</bottom>
+								<height>20</height>
+								<font>MinuteBold</font>
+								<textcolor>$VAR[ColourSelected]</textcolor>
+								<label>$INFO[ListItem.Label]</label>
+							</control>
+							<control type="label">
+								<left>0</left>
+								<bottom>7</bottom>
+								<right>0</right>
+								<bottom>0</bottom>
+								<height>20</height>
+								<font>MinisculeBold</font>
+								<autoscroll>true</autoscroll>
+								<textcolor>$VAR[ColourSelected]</textcolor>
+								<label>$INFO[ListItem.Label2,$LOCALIZE[20347] ]</label>
+							</control>
+						</control>
+					</focusedlayout>
+					<content target="video">$VAR[DefWidgetCast]</content>
+				</control>
 			</control>
 			<!-- Button grouplist -->
 			<control id="9000" type="grouplist">
@@ -320,8 +454,7 @@
 				<itemgap>0</itemgap>
 				<onleft>9000</onleft>
 				<onright>9000</onright>
-				<onup>Skin.ToggleSetting(toggled.dv.info)</onup>
-				<ondown>9499</ondown>
+				<ondown>9500</ondown>
 				<orientation>horizontal</orientation>
 				<include>DialogVideoInfoAnimation</include>
 				<defaultcontrol always="true">8</defaultcontrol>
@@ -330,6 +463,9 @@
 				<control id="8" type="togglebutton">
 					<width>116</width>
 					<height>116</height>
+					<onup condition="Control.IsVisible(90901)">90901</onup>
+					<onup condition="Control.IsVisible(90902)">90902</onup>
+					<ondown>9500</ondown>
 					<onclick>dialog.close(all,true)</onclick>
 					<font>symbol</font>
 					<label>$VAR[VideoInfoButton8]</label>
@@ -347,6 +483,9 @@
 				<control id="1003" type="button">
 					<width>116</width>
 					<height>116</height>
+					<onup condition="Control.IsVisible(90901)">90901</onup>
+					<onup condition="Control.IsVisible(90902)">90902</onup>
+					<ondown>9500</ondown>
 					<onclick condition="Player.HasMedia">PlayerControl(stop)</onclick>
 					<onclick>dialog.close(all,true)</onclick>
 					<onclick>PlayMedia($INFO[ListItem.Trailer])</onclick>
@@ -361,6 +500,9 @@
 				<control id="1006" type="button">
 					<width>116</width>
 					<height>116</height>
+					<onup condition="Control.IsVisible(90901)">90901</onup>
+					<onup condition="Control.IsVisible(90902)">90902</onup>
+					<ondown>9500</ondown>
 					<onclick condition="Player.HasMedia">PlayerControl(stop)</onclick>
 					<onclick>back</onclick>
 					<onclick>ActivateWindow(videos,$INFO[ListItem.Title,plugin://plugin.video.youtube/kodion/search/query/?q=,trailer],return)</onclick>
@@ -377,6 +519,9 @@
 				<control id="10" type="button">
 					<width>116</width>
 					<height>116</height>
+					<onup condition="Control.IsVisible(90901)">90901</onup>
+					<onup condition="Control.IsVisible(90902)">90902</onup>
+					<ondown>9500</ondown>
 					<font>symbol</font>
 					<label></label>
 					<textcolor>white</textcolor>
@@ -389,6 +534,9 @@
 				<control id="20" type="button">
 					<width>116</width>
 					<height>116</height>
+					<onup condition="Control.IsVisible(90901)">90901</onup>
+					<onup condition="Control.IsVisible(90902)">90902</onup>
+					<ondown>9500</ondown>
 					<onclick condition="Container.Content(tvshows)">RunScript(script.artwork.downloader, mode=gui,mediatype=tvshow, dbid=$INFO[ListItem.DBID])</onclick>
 					<onclick condition="Container.Content(movies)">RunScript(script.artwork.downloader, mode=gui,mediatype=movie, dbid=$INFO[ListItem.DBID])</onclick>
 					<font>symbol</font>
@@ -404,6 +552,9 @@
 				<control type="button" id="18">
 					<width>116</width>
 					<height>116</height>
+					<onup condition="Control.IsVisible(90901)">90901</onup>
+					<onup condition="Control.IsVisible(90902)">90902</onup>
+					<ondown>9500</ondown>
 					<font>symbol</font>
 					<label></label>
 					<textcolor>white</textcolor>
@@ -418,6 +569,9 @@
 				<control type="button" id="19">
 					<width>116</width>
 					<height>110</height>
+					<onup condition="Control.IsVisible(90901)">90901</onup>
+					<onup condition="Control.IsVisible(90902)">90902</onup>
+					<ondown>9500</ondown>
 					<font>symbolbig</font>
 					<label></label>
 					<textcolor>$VAR[EmbyLeftColourHighlight]</textcolor>
@@ -430,6 +584,23 @@
 					<onclick condition="!IsEmpty(Window(home).Property(TVShowID))">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[(Window(home).Property(TVShowID)],name=$INFO[ListItem.TvShowTitle])</onclick>
 					<animation condition="Control.HasFocus(19)" effect="zoom" end="200"  time="100" center="auto">Conditional</animation>
 				</control>
+
+				<!--Change DV Info Button -->
+				<control type="togglebutton" id="23">
+					<width>116</width>
+					<height>110</height>
+					<onup condition="Control.IsVisible(90901)">90901</onup>
+					<onup condition="Control.IsVisible(90902)">90902</onup>
+					<ondown>9500</ondown>
+					<font>symbolbig</font>
+					<label></label>
+					<textcolor>$VAR[EmbyLeftColourHighlight]</textcolor>
+					<focusedcolor>$VAR[ColourHighlight]</focusedcolor>
+					<texturefocus colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" border="5">-</texturefocus>
+					<texturenofocus colordiffuse="$VAR[EmbyLeftColourHighlight]" border="5">-</texturenofocus>
+					<onclick>Skin.ToggleSetting(toggled.dv.info)</onclick>
+					<animation condition="Control.HasFocus(23)" effect="zoom" end="200"  time="100" center="auto">Conditional</animation>
+				</control>
 			</control>
 			<control id="9002" type="grouplist">
 				<left>450</left>
@@ -439,7 +610,7 @@
 				<itemgap>0</itemgap>
 				<onleft>9002</onleft>
 				<onright>9002</onright>
-				<ondown>9499</ondown>
+				<ondown>9500</ondown>
 				<orientation>horizontal</orientation>
 				<include>DialogVideoInfoAnimation</include>
 				<defaultcontrol always="true">8</defaultcontrol>
@@ -520,224 +691,36 @@
 			<control type="group">
 				<bottom>0</bottom>
 				<height>260</height>
-			<control type="list" id="9499">
-					<top>0</top>
-					<width>300</width>
-					<height>34</height>
+				<control type="button" id="9499">
+					<align>left</align>
+					<aligny>top</aligny>
+					<textcolor>white</textcolor>
+					<font>HomeWidgetLabelFont</font>
 					<onup>9000</onup>
 					<ondown>9500</ondown>
 					<onback>9000</onback>
-					<orientation>horizontal</orientation>
-				<scrolltime tween="cubic" easing="out">500</scrolltime>
-				<itemlayout width="300" height="34">
-					<control type="label">
-						<aligny>center</aligny>
-						<align>left</align>
-						<height>34</height>
-						<font>Small</font>
-						<textcolor>white2</textcolor>
-						<label>$INFO[ListItem.Label]</label>
-						<visible>!Control.HasFocus(9499)</visible>
-					</control>
-					<control type="label">
-						<aligny>center</aligny>
-						<align>left</align>
-						<height>34</height>
-						<font>Small</font>
-						<textcolor>$VAR[ColourHighlight]</textcolor>
-						<label>$INFO[ListItem.Label]</label>
-						<visible>Control.HasFocus(9499)</visible>
-					</control>
-				</itemlayout>
-				<focusedlayout width="300" height="34">
-					<control type="label">
-						<aligny>center</aligny>
-						<align>left</align>
-						<height>34</height>
-						<font>Small</font>
-						<textcolor>white2</textcolor>
-						<label>$INFO[ListItem.Label]</label>
-						<visible>!Control.HasFocus(9499)</visible>
-					</control>
-					<control type="label">
-						<aligny>center</aligny>
-						<align>left</align>
-						<height>34</height>
-						<font>Small</font>
-						<textcolor>$VAR[ColourHighlight]</textcolor>
-						<label>$INFO[ListItem.Label]</label>
-						<visible>Control.HasFocus(9499)</visible>
-					</control>
-				</focusedlayout>
-				<content>
-					<item id="0">
-						<label>$LOCALIZE[31818]</label>
-						<onclick>Skin.SetString(widgetvideoinfo,SimilarVideos)</onclick>
-						
-					</item>
-					<item id="1">
-						<label>$LOCALIZE[31793]</label>
-						<onclick>Skin.SetString(widgetvideoinfo,RecommendedEpisodes)</onclick>
-						
-					</item>
-					<item id="2">
-						<label>$LOCALIZE[31126]</label>
-						<onclick>Skin.SetString(widgetvideoinfo,RandomEpisodes)</onclick>
-						
-					</item>
-					<item id="3">
-						<label>$LOCALIZE[31125]</label>
-						<onclick>Skin.SetString(widgetvideoinfo,RecentEpisodes)</onclick>
-						
-					</item>
-					<item id="4">
-						<label>$LOCALIZE[31784]</label>
-						<onclick>Skin.SetString(widgetvideoinfo,RecommendedShows)</onclick>
-						
-					</item>
-					<item id="5">
-						<label>$LOCALIZE[31127]</label>
-						<onclick>Skin.SetString(widgetvideoinfo,RandomMovies)</onclick>
-						
-					</item>
-					<item id="6">
-						<label>$LOCALIZE[31124]</label>
-						<onclick>Skin.SetString(widgetvideoinfo,RecentMovies)</onclick>
-						
-					</item>
-					<item id="7">
-						<label>$LOCALIZE[31794]</label>
-						<onclick>Skin.SetString(widgetvideoinfo,RecommendedMovies)</onclick>
-						
-					</item>
-					<item id="8">
-						<label>$LOCALIZE[31782]</label>
-						<onclick>Skin.SetString(widgetvideoinfo,SimilarMovies)</onclick>
-						
-					</item>
-					<item id="9">
-						<label>$LOCALIZE[31208]</label>
-						<onclick>Skin.SetString(widgetvideoinfo,InCinemas)</onclick>
-						
-					</item>
-					<item id="10">
-						<label>$LOCALIZE[31223]</label>
-						<onclick>Skin.SetString(widgetvideoinfo,Upcoming)</onclick>
-						
-					</item>
-					<item id="11">
-						<label>$LOCALIZE[31224]</label>
-						<onclick>Skin.SetString(widgetvideoinfo,PopularMovies)</onclick>
-						
-					</item>
-					<item id="12">
-						<label>$LOCALIZE[31225]</label>
-						<onclick>Skin.SetString(widgetvideoinfo,TopRatedMovies)</onclick>
-						
-					</item>
-					<item id="13">
-						<label>$LOCALIZE[31134]</label>
-						<onclick>Skin.SetString(widgetvideoinfo,TrendingMovies)</onclick>
-						
-					</item>
-					<item id="14">
-						<label>$LOCALIZE[31226]</label>
-						<onclick>Skin.SetString(widgetvideoinfo,PopularTvShows)</onclick>
-						
-					</item>
-					<item id="15">
-						<label>$LOCALIZE[31227]</label>
-						<onclick>Skin.SetString(widgetvideoinfo,TopRatedTvShows)</onclick>
-						
-					</item>
-					<item id="16">
-						<label>$LOCALIZE[31228]</label>
-						<onclick>Skin.SetString(widgetvideoinfo,OnAirTvShows)</onclick>
-						
-					</item>
-					<item id="17">
-						<label>$LOCALIZE[31229]</label>
-						<onclick>Skin.SetString(widgetvideoinfo,AiringTodayTvShows)</onclick>
-						
-					</item>
-					<item id="18">
-						<label>$LOCALIZE[31135]</label>
-						<onclick>Skin.SetString(widgetvideoinfo,TrendingShows)</onclick>
-						
-					</item>
-					<item id="19">
-						<label>$LOCALIZE[31136]</label>
-						<onclick>Skin.SetString(widgetvideoinfo,AiringShows)</onclick>
-						
-					</item>
-					<item id="20">
-						<label>$LOCALIZE[31137]</label>
-						<onclick>Skin.SetString(widgetvideoinfo,PremiereShows)</onclick>
-						
-					</item>
-					<item id="21">
-						<label>Custom1</label>
-						<onclick>Skin.SetString(widgetvideoinfo,Custom1)</onclick>
-						
-					</item>
-					<item id="22">
-						<label>Custom2</label>
-						<onclick>Skin.SetString(widgetvideoinfo,Custom2)</onclick>
-						
-					</item>
-					<item id="23">
-						<label>$INFO[Window(Home).Property(emby.nodes.1.title)]</label>
-						<onclick>Skin.SetString(widgetvideoinfo,embynode1)</onclick>
-						
-					</item>
-					<item id="24">
-						<label>$INFO[Window(Home).Property(emby.nodes.0.title)]</label>
-						<onclick>Skin.SetString(widgetvideoinfo,embynode0)</onclick>
-						
-					</item>
-					<item id="25">
-						<label>$INFO[Window(Home).Property(emby.nodes.0.recent.title)]</label>
-						<onclick>Skin.SetString(widgetvideoinfo,embynode0recent)</onclick>
-						
-					</item>
-					<item id="26">
-						<label>$INFO[Window(Home).Property(emby.nodes.1.recentepisodes.title)]</label>
-						<onclick>Skin.SetString(widgetvideoinfo,embynode1recentepisodes)</onclick>
-						
-					</item>
-					<item id="27">
-						<label>$INFO[Window(Home).Property(emby.nodes.0.inprogress.title)]</label>
-						<onclick>Skin.SetString(widgetvideoinfo,embynode0inprogress)</onclick>
-						
-					</item>
-					<item id="28">
-						<label>$INFO[Window(Home).Property(emby.nodes.1.inprogressepisodes.title)]</label>
-						<onclick>Skin.SetString(widgetvideoinfo,embynode1inprogressepisodes)</onclick>
-						
-					</item>
-					<item id="29">
-						<label>$INFO[Window(Home).Property(emby.nodes.1.nextepisodes.title)]</label>
-						<onclick>Skin.SetString(widgetvideoinfo,embynode1nextepisodes)</onclick>
-						
-					</item>
-				</content>
-			</control>
-				<control type="wraplist" id="9500">
+					<textoffsetx>0</textoffsetx>
+					<label>$VAR[VideoInfoWidgetLabel]</label>
+					<focusedcolor>$VAR[ColourHighlight]</focusedcolor>
+					<texturenofocus>-</texturenofocus>
+					<texturefocus>-</texturefocus>
+					<onclick>ActivateWindow(1112)</onclick>
+					<visible>IntegerGreaterThan(Container(9500).NumItems,0)</visible>
+				</control>
+				<control type="list" id="9500">
 					<visible allowhiddenfocus="true">!Container(9500).IsUpdating</visible>
 					<include>Animation.FadeIn</include>
 					<include>Animation.FadeOut</include>
 					<top>40</top>
 					<bottom>10</bottom>
 					<width>1920</width>
-					<onup>9000</onup>
+					<onup>9499</onup>
 					<onback>9000</onback>
 					<preloaditems>2</preloaditems>
 					<orientation>horizontal</orientation>
 					<pagecontrol>60</pagecontrol>
 					<viewtype label="536">list</viewtype>
 					<scrolltime tween="quadratic">400</scrolltime>
-					<autoscroll time="3000">!Control.HasFocus(9500)</autoscroll>
-					<focusposition>0</focusposition>
 					<itemlayout height="210" width="140">
 						<control type="image">
 							<aspectratio scalediffuse="false">stretch</aspectratio>
@@ -1073,7 +1056,6 @@
 				<itemgap>0</itemgap>
 				<onleft>9000</onleft>
 				<onright>9000</onright>
-				<ondown>Skin.ToggleSetting(toggled.dv.info)</ondown>
 				<orientation>horizontal</orientation>
 				<include>DialogVideoInfoAnimation</include>
 				<defaultcontrol always="true">8</defaultcontrol>
@@ -1082,6 +1064,7 @@
 				<control id="8" type="togglebutton">
 					<width>116</width>
 					<height>116</height>
+					<ondown>9007</ondown>
 					<onclick>dialog.close(all,true)</onclick>
 					<font>symbol</font>
 					<label>$VAR[VideoInfoButton8]</label>
@@ -1099,7 +1082,7 @@
 				<control id="1003" type="button">
 					<width>116</width>
 					<height>116</height>
-					<onup condition="Control.IsVisible(3444)">3444</onup>
+					<ondown>9007</ondown>
 					<onclick condition="Player.HasMedia">PlayerControl(stop)</onclick>
 					<onclick>dialog.close(all,true)</onclick>
 					<onclick>PlayMedia($INFO[ListItem.Trailer])</onclick>
@@ -1114,7 +1097,7 @@
 				<control id="1006" type="button">
 					<width>116</width>
 					<height>116</height>
-					<onup condition="Control.IsVisible(3444)">3444</onup>
+					<ondown>9007</ondown>
 					<onclick condition="Player.HasMedia">PlayerControl(stop)</onclick>
 					<onclick>back</onclick>
 					<onclick>ActivateWindow(videos,$INFO[ListItem.Title,plugin://plugin.video.youtube/kodion/search/query/?q=,trailer],return)</onclick>
@@ -1127,11 +1110,11 @@
 					<texturefocus colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" border="5">common/box.png</texturefocus>
 					<texturenofocus colordiffuse="$VAR[EmbyRightColourHighlight]" border="5">common/box.png</texturenofocus>
 				</control>
-				<!-- Refresh button <control id="6" type="button"><width>200</width><height>116</height><onup condition="Control.IsVisible(3444)">3444</onup><ondown>9007</ondown><font>symbol</font><label></label><textcolor>Black700</textcolor><visible>Control.IsEnabled(6)</visible><visible>Container.Content(episodes)</visible><texturefocus colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" border="5">common/box.png</texturefocus><texturenofocus colordiffuse="White70" border="5">common/box.png</texturenofocus></control> --><!-- Get Thumb Button -->
+				<!-- Refresh button <control id="6" type="button"><width>200</width><height>116</height><onup condition="Control.IsVisible(3636)">3636</onup><ondown>9007</ondown><font>symbol</font><label></label><textcolor>Black700</textcolor><visible>Control.IsEnabled(6)</visible><visible>Container.Content(episodes)</visible><texturefocus colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" border="5">common/box.png</texturefocus><texturenofocus colordiffuse="White70" border="5">common/box.png</texturenofocus></control> --><!-- Get Thumb Button -->
 				<control id="10" type="button">
 					<width>116</width>
 					<height>116</height>
-					<onup condition="Control.IsVisible(3444)">3444</onup>
+					<ondown>9007</ondown>
 					<font>symbol</font>
 					<label></label>
 					<textcolor>white</textcolor>
@@ -1144,7 +1127,7 @@
 				<control id="20" type="button">
 					<width>116</width>
 					<height>116</height>
-					<onup condition="Control.IsVisible(3444)">3444</onup>
+					<ondown>9007</ondown>
 					<onclick condition="Container.Content(tvshows)">RunScript(script.artwork.downloader, mode=gui,mediatype=tvshow, dbid=$INFO[ListItem.DBID])</onclick>
 					<onclick condition="Container.Content(movies)">RunScript(script.artwork.downloader, mode=gui,mediatype=movie, dbid=$INFO[ListItem.DBID])</onclick>
 					<font>symbol</font>
@@ -1160,6 +1143,7 @@
 				<control type="button" id="18">
 					<width>116</width>
 					<height>116</height>
+					<ondown>9007</ondown>
 					<font>symbol</font>
 					<label></label>
 					<textcolor>white</textcolor>
@@ -1174,11 +1158,11 @@
 				<control type="button" id="19">
 					<width>116</width>
 					<height>110</height>
-					<onup condition="Control.IsVisible(3444)">3444</onup>
+					<ondown>9007</ondown>
 					<font>symbolbig</font>
 					<label></label>
 					<textcolor>$VAR[EmbyLeftColourHighlight]</textcolor>
-					<focusedcolor>$VAR[ColourHighlight]</focusedcolor>
+					<focusedcolor>$VAR[EmbyLeftColourHighlight]</focusedcolor>
 					<texturefocus colordiffuse="$VAR[EmbyLeftColourHighlight]" border="5">-</texturefocus>
 					<texturenofocus colordiffuse="$VAR[EmbyLeftColourHighlight]" border="5">-</texturenofocus>
 					<onclick condition="!System.HasAddon(script.extendedinfo)">ActivateWindow(Videos,plugin://script.extendedinfo)</onclick>
@@ -1186,6 +1170,21 @@
 					<onclick condition="Container.Content(tvshows) + IsEmpty(Window(home).Property(TVShowID))">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[ListItem.DBID],name=$INFO[ListItem.TvShowTitle])</onclick>
 					<onclick condition="!IsEmpty(Window(home).Property(TVShowID))">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[(Window(home).Property(TVShowID)],name=$INFO[ListItem.TvShowTitle])</onclick>
 					<animation condition="Control.HasFocus(19)" effect="zoom" end="200"  time="100" center="auto">Conditional</animation>
+				</control>
+
+				<!--Change DV Info Button -->
+				<control type="togglebutton" id="23">
+					<width>116</width>
+					<height>110</height>
+					<ondown>9007</ondown>
+					<font>symbolbig</font>
+					<label></label>
+					<textcolor>$VAR[EmbyLeftColourHighlight]</textcolor>
+					<focusedcolor>$VAR[ColourHighlight]</focusedcolor>
+					<texturefocus colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" border="5">-</texturefocus>
+					<texturenofocus colordiffuse="$VAR[EmbyLeftColourHighlight]" border="5">-</texturenofocus>
+					<onclick>Skin.ToggleSetting(toggled.dv.info)</onclick>
+					<animation condition="Control.HasFocus(23)" effect="zoom" end="200"  time="100" center="auto">Conditional</animation>
 				</control>
 			</control>
 			<control id="9002" type="grouplist">
@@ -1196,6 +1195,7 @@
 				<itemgap>0</itemgap>
 				<onleft>9002</onleft>
 				<onright>9002</onright>
+				<ondown>9500</ondown>
 				<orientation>horizontal</orientation>
 				<include>DialogVideoInfoAnimation</include>
 				<defaultcontrol always="true">8</defaultcontrol>

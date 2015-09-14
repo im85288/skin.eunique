@@ -205,7 +205,7 @@
 		</control>
 		<control type="image">
 			<include>Dimensions_Fullscreen</include>
-			<colordiffuse>DialogFanartFade</colordiffuse>
+			<colordiffuse>6Fffffff</colordiffuse>
 			<texture background="true">$INFO[Container(5013).ListItem.Property(GoogleMap)]</texture>
 			<visible>!IsEmpty(Window(home).Property(Concerts)) + Control.HasFocus(5013) + Window.IsVisible(DialogAlbumInfo.xml)</visible>
 		</control>
@@ -231,18 +231,18 @@
 				<visible>Window.IsVisible(DialogVideoInfo.xml) + Skin.HasSetting(toggled.dv.info)</visible>
                 <include>Dimensions_Fullscreen</include>
 				<aspectratio align="center">scale</aspectratio>
-                <texture colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" fallback="empty.png" background="true">$INFO[ListItem.Art(fanart)]</texture>
+                <texture colordiffuse="6Fffffff" fallback="empty.png" background="true">$INFO[ListItem.Art(fanart)]</texture>
             </control>
             <control id="8328" type="image">
                 <include>Dimensions_Fullscreen</include>
-                <colordiffuse>DialogFanartFade</colordiffuse>
+                <colordiffuse>6Fffffff</colordiffuse>
                 <texture fallback="empty.png" background="true">$INFO[ListItem.Art(fanart)]</texture>
                 <visible>Skin.HasSetting(furniture.info.fanart)</visible>
                 <visible>Control.HasFocus(4000)</visible>
             </control>
             <control type="image">
                 <include>Dimensions_Fullscreen</include>
-                <colordiffuse>DialogFanartFade</colordiffuse>
+                <colordiffuse>6Fffffff</colordiffuse>
                 <texture background="true">genrethumb/Kodi.jpg</texture>
                 <visible>Substring(Control.GetLabel(8328),empty.png)</visible>
                 <visible>Skin.HasSetting(furniture.info.fanart)</visible>
