@@ -167,6 +167,39 @@
 				<aspectratio align="left" aligny="top" scalediffuse="false" flipy="true">scale</aspectratio>
 				<texture colordiffuse="$INFO[Window(home).Property(BigListInfoExtra.ImageColor)]" background="true" flipy="true" fallback="common/white.png">$INFO[Window(home).Property(BigListInfoExtra.ImageFilter)]</texture>
 			</control>
+            <control type="group">
+            <top>99</top>
+				<left>965</left>
+            <width>955</width>
+				<height>51</height>
+			<control type="image">
+				<right>10</right>
+				<height>51</height>
+				<texture border="15" colordiffuse="$VAR[EmbyMiddleColourHighlight]">common/white.png</texture>
+			</control>
+			<control type="label">
+				<right>10</right>
+				<height>51</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<scroll>true</scroll>
+				<label fallback="19055">$VAR[LabelNextAiredDetails]</label>
+				<font>DurationFontSmall</font>
+				<textcolor>$VAR[ColourTextFlags]</textcolor>
+				<visible>Container.Content(seasons) | Container.Content(tvshows) | Container.Content(episodes)</visible>
+			</control>
+			<control type="label">
+				<right>10</right>
+				<height>51</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<scroll>true</scroll>
+				<label fallback="19055">$INFO[ListItem.Year,, | ]$INFO[ListItem.RatingAndVotes]$INFO[ListItem.Country, | ]</label>
+				<font>DurationFontSmall</font>
+				<textcolor>$VAR[ColourTextFlags]</textcolor>
+				<visible>!Container.Content(seasons) + !Container.Content(tvshows) + !Container.Content(episodes)</visible>
+			</control>
+			</control>
 			<control id="508922" type="wraplist">
 				<left>965</left>
 				<bottom>0</bottom>
@@ -300,7 +333,7 @@
 				<align>center</align>
 				<aligny>center</aligny>
 				<scroll>true</scroll>
-				<label fallback="19055">$VAR[LabelNextAiredDetails]</label>
+				<label fallback="19055">$INFO[ListItem.Director,, | ]$INFO[ListItem.Genre]$INFO[ListItem.Studio, | ]</label>
 				<font>DurationFontSmall</font>
 				<textcolor>$VAR[ColourTextFlags]</textcolor>
 				<visible>Container.Content(seasons) | Container.Content(tvshows) | Container.Content(episodes)</visible>
@@ -313,7 +346,7 @@
 				<align>center</align>
 				<aligny>center</aligny>
 				<scroll>true</scroll>
-				<label fallback="19055">$INFO[ListItem.Year,, | ]$INFO[ListItem.RatingAndVotes]$INFO[ListItem.Country, | ]</label>
+				<label fallback="19055">$INFO[ListItem.Director,, | ]$INFO[ListItem.Genre]$INFO[ListItem.Studio, | ]</label>
 				<font>DurationFontSmall</font>
 				<textcolor>$VAR[ColourTextFlags]</textcolor>
 				<visible>!Container.Content(seasons) + !Container.Content(tvshows) + !Container.Content(episodes)</visible>
