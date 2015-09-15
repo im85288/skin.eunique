@@ -3,6 +3,9 @@
 <includes>
 	<include name="View_55_Wall">
 		<control type="group">
+							<animation type="conditional" condition="System.IdleTime(8) + Skin.HasSetting(furniture.overlayinfo)" reversible="false">
+								<effect type="fade" end="0" start="100" time="5000" center="auto" tween="quadratic" easing="out" />
+							</animation>
 			<include>Animation.Common</include>
 			<visible>Control.IsVisible(55)</visible>
 			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml)</visible>
