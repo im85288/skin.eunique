@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-	<defaultcontrol always="false" condition="!Skin.HasSetting(toggled.dv.info)">9010</defaultcontrol>
-	<defaultcontrol always="false" condition="Skin.HasSetting(toggled.dv.info)">9000</defaultcontrol>
 	<onload condition="System.HasAddon(script.videoextras)">RunScript(script.videoextras,check,"$INFO[ListItem.FilenameAndPath]")</onload>
 	<onload>RunScript(script.toolbox,info=blur,id='"$INFO[ListItem.Art(fanart)]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfo)</onload>
+	<onload condition="Skin.HasSetting(toggled.dv.info)">SetFocus(9000)</onload>
+	<onload condition="!Skin.HasSetting(toggled.dv.info)">SetFocus(9010)</onload>
 	<onload>Skin.SetString(widget.helper,videoinfo)</onload>
 	<onunload>ClearProperty(Similar,home)</onunload>
 	<onunload>ClearProperty(VideoInfo.ImageColor,home)</onunload>
@@ -47,6 +47,18 @@
 				<aspectratio aligny="bottom" align="right">keep</aspectratio>
 			</control>
 			-->
+		<control type="group">
+			<visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)</visible>
+			<left>1654</left>
+			<top>530</top>
+			<control type="image">
+				<width>228</width>
+				<height>116</height>
+				<texture>Showtime.png</texture>
+				<aspectratio align="center" aligny="center">keep</aspectratio>
+				<fadetime>50</fadetime>
+			</control>
+		</control>
 
 
 
@@ -320,8 +332,11 @@
 				<right>10</right>
 				<height>116</height>
 				<itemgap>0</itemgap>
-				<onleft>9000</onleft>
-				<onright>9000</onright>
+				<onleft>back</onleft>
+					<onright condition="!System.HasAddon(script.extendedinfo)">ActivateWindow(Videos,plugin://script.extendedinfo)</onright>
+					<onright condition="IsEmpty(ListItem.TvShowTitle) + !Container.Content(tvshows)">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[ListItem.DBID],name=$INFO[ListItem.Title])</onright>
+					<onright condition="Container.Content(tvshows) + IsEmpty(Window(home).Property(TVShowID))">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[ListItem.DBID],name=$INFO[ListItem.TvShowTitle])</onright>
+					<onright condition="!IsEmpty(Window(home).Property(TVShowID))">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[(Window(home).Property(TVShowID)],name=$INFO[ListItem.TvShowTitle])</onright>
 				<onup>Skin.ToggleSetting(toggled.dv.info)</onup>
 				<onup>setfocus(9010)</onup>
 				<ondown>9499</ondown>
@@ -850,6 +865,14 @@
 					</control>
 					<visible>Container.Content(episodes) + ![Skin.HasSetting(osd.hidespoilers) + Container.Content(episodes) + [stringcompare(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]]</visible>
 				</control>
+				<control type="image">
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<texture background="true">$VAR[PosterImage9501]</texture>
+					<animation type="conditional" condition="true" reversible="false">
+						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
+					</animation>
+					<visible>!ControlGroup(9010).HasFocus</visible>
+				</control>
 				<control type="label">
 					<right>16</right>
 					<top>1</top>
@@ -858,6 +881,7 @@
 					<font>symbolbackbig</font>
 					<label></label>
 					<textcolor>white2</textcolor>
+					<visible>ControlGroup(9010).HasFocus</visible>
 				</control>
 				<control type="label">
 					<centerright>54</centerright>
@@ -868,6 +892,7 @@
 					<label>$VAR[PercentWatchedLabelInfo]</label>
 					<textcolor>$VAR[IndicatorColourHighlight]</textcolor>
 					<visible>!stringcompare(ListItem.Label,..)</visible>
+					<visible>ControlGroup(9010).HasFocus</visible>
 				</control>
 				<animation type="conditional" condition="true" reversible="false">
 					<effect type="zoom" start="100" end="94" time="200" center="auto" tween="quadratic" easing="out" />
@@ -1077,8 +1102,11 @@
 				<width>1267</width>
 				<height>116</height>
 				<itemgap>0</itemgap>
-				<onleft>9010</onleft>
-				<onright>9010</onright>
+				<onleft>back</onleft>
+					<onright condition="!System.HasAddon(script.extendedinfo)">ActivateWindow(Videos,plugin://script.extendedinfo)</onright>
+					<onright condition="IsEmpty(ListItem.TvShowTitle) + !Container.Content(tvshows)">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[ListItem.DBID],name=$INFO[ListItem.Title])</onright>
+					<onright condition="Container.Content(tvshows) + IsEmpty(Window(home).Property(TVShowID))">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[ListItem.DBID],name=$INFO[ListItem.TvShowTitle])</onright>
+					<onright condition="!IsEmpty(Window(home).Property(TVShowID))">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[(Window(home).Property(TVShowID)],name=$INFO[ListItem.TvShowTitle])</onright>
 				<onup>9501</onup>
 				<ondown>Skin.ToggleSetting(toggled.dv.info)</ondown>
 				<ondown>setfocus(9000)</ondown>
@@ -1569,7 +1597,7 @@
 							<top>0</top>
 							<right>0</right>
 							<bottom>0</bottom>
-							<height>140</height>
+							<height>210</height>
 							<aligny>center</aligny>
 							<align>center</align>
 							<font>symbolbiggest</font>
@@ -1589,7 +1617,7 @@
 							<top>0</top>
 							<right>0</right>
 							<bottom>0</bottom>
-							<height>140</height>
+							<height>210</height>
 							<aligny>center</aligny>
 							<align>center</align>
 							<font>symbolbiggest</font>
