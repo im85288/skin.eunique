@@ -29,31 +29,122 @@
 
 	
 	<include name="ButtonControlWidget">
-                <control type="grouplist">
-				<left>1455</left>
-				<top>785</top>
-				<right>10</right>
-				<height>116</height>
-				<itemgap>10</itemgap>
-                    <orientation>horizontal</orientation>
-                    <control type="group">
-                         <width>54</width>
+				<!--left-->
+                <control type="group">
+				<top>550</top>
+				<left>-24</left>
+					<visible>ControlGroup(9000).HasFocus | ControlGroup(9010).HasFocus</visible>
+				<animation condition="!Control.HasFocus(8)" effect="slide" end="-54" start="0,0" time="200">Conditional</animation>
+				<animation condition="ControlGroup(9010).HasFocus()" effect="slide" end="197,221" start="0,0" time="0">Conditional</animation>
+				<animation condition="Container.Content(episodes)" effect="slide" end="-348" start="0,0" time="0">Conditional</animation>
+				<animation condition="Container.Content(tvshows) | Container.Content(seasons)" effect="slide" end="-232" start="0,0" time="0">Conditional</animation>
+                <control type="group">
+					<visible>Control.HasFocus(8)</visible>
+				<left>1262</left>
+                         <width>116</width>
                         <height>116</height>
                    <control type="label">
  					<aligny>center</aligny>
 					<align>center</align>
 					<textcolor>$VAR[SelectionColourHighlight]</textcolor>
-                       <font>symbolbig</font>
+                       <font>symbolbackbig</font>
                         <label></label>
                     </control>
                     <control type="label">
+				<top>2</top>
+					<left>8</left>
  					<aligny>center</aligny>
 					<align>center</align>
 					<textcolor>white2</textcolor>
                         <font>symbol</font>
                         <label></label>
                     </control>
+                </control>
+				<!--up-->
+                <control type="group">
+				<left>1316</left>
+                         <width>116</width>
+                        <height>116</height>
+                   <control type="label">
+ 					<aligny>center</aligny>
+					<align>center</align>
+					<textcolor>$VAR[SelectionColourHighlight]</textcolor>
+                       <font>symbolbackbig</font>
+                        <label></label>
                     </control>
+                    <control type="label">
+					<visible>ControlGroup(9000).HasFocus()</visible>
+					<top>8</top>
+ 					<aligny>center</aligny>
+					<align>center</align>
+					<textcolor>white2</textcolor>
+                        <font>symbol</font>
+                        <label></label>
+                    </control>
+                    <control type="label">
+					<visible>ControlGroup(9010).HasFocus()</visible>
+					<top>8</top>
+ 					<aligny>center</aligny>
+					<align>center</align>
+					<textcolor>white2</textcolor>
+                        <font>symbol</font>
+                        <label></label>
+                    </control>
+                </control>
+				<!--down-->
+                <control type="group">
+				<left>1370</left>
+                         <width>116</width>
+                        <height>116</height>
+                   <control type="label">
+ 					<aligny>center</aligny>
+					<align>center</align>
+					<textcolor>$VAR[SelectionColourHighlight]</textcolor>
+                       <font>symbolbackbig</font>
+                        <label></label>
+                    </control>
+                    <control type="label">
+					<visible>ControlGroup(9000).HasFocus()</visible>
+					<top>-8</top>
+ 					<aligny>center</aligny>
+					<align>center</align>
+					<textcolor>white2</textcolor>
+                        <font>symbol</font>
+                        <label></label>
+                    </control>
+                    <control type="label">
+					<visible>ControlGroup(9010).HasFocus()</visible>
+					<top>-8</top>
+ 					<aligny>center</aligny>
+					<align>center</align>
+					<textcolor>white2</textcolor>
+                        <font>symbol</font>
+                        <label></label>
+                    </control>
+                </control>
+				<!--right-->
+                <control type="group">
+					<visible>Control.HasFocus(19)</visible>
+				<left>1424</left>
+                         <width>116</width>
+                        <height>116</height>
+                   <control type="label">
+ 					<aligny>center</aligny>
+					<align>center</align>
+					<textcolor>$VAR[SelectionColourHighlight]</textcolor>
+                       <font>symbolbackbig</font>
+                        <label></label>
+                    </control>
+                    <control type="label">
+				<top>2</top>
+				<left>-8</left>
+ 					<aligny>center</aligny>
+					<align>center</align>
+					<textcolor>white2</textcolor>
+                        <font>symbol</font>
+                        <label></label>
+                    </control>
+                </control>
                 </control>
 	</include>
 	
