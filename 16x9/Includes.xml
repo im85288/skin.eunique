@@ -139,8 +139,8 @@
 		<value condition="Window.IsVisible(home) + Skin.HasSetting(home.emby) + IsEmpty(Container(300).ListItem.Property(Background))">$INFO[Window(Home).Property(SkinHelper.GlobalFanartBackground)]</value>
 		<value condition="Window.IsVisible(home) + System.IdleTime(10) + Skin.HasSetting(home.fade)">$INFO[Window(Home).Property(SkinHelper.GlobalFanartBackground)]</value>
 		<value condition="Window.IsActive(script-globalsearch-infodialog.xml) | Window.IsActive(script-globalsearch-main.xml)">$VAR[GlobalSearchArtInfo]</value>
-		<value condition="[Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRSearch.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRRecordings.xml)] + !IsEmpty(Window(Home).Property(SkinHelper.PVR.FanArt))">$INFO[Window(Home).Property(SkinHelper.PVR.FanArt)]</value>
-		<value condition="[Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRSearch.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRRecordings.xml)] + IsEmpty(Window(Home).Property(SkinHelper.PVR.FanArt))">special://skin/extras/backgrounds/Channels.jpg</value>
+		<value condition="[Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRSearch.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(DialogPVRInfo.xml)] + !IsEmpty(Window(Home).Property(SkinHelper.PVR.FanArt))">$INFO[Window(Home).Property(SkinHelper.PVR.FanArt)]</value>
+		<value condition="[Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRSearch.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(DialogPVRInfo.xml)] + IsEmpty(Window(Home).Property(SkinHelper.PVR.FanArt))">special://skin/extras/backgrounds/Channels.jpg</value>
 		<value condition="Window.IsVisible(weather) + !IsEmpty(Skin.String(weather.fanart))">$INFO[Skin.String(weather.fanart)]$INFO[Window(Weather).Property(Current.FanartCode)]/</value>
 		<value condition="Window.IsVisible(home) + !IsEmpty(Container(301).ListItem.Art(fanart)) + [!Skin.HasSetting(home.dontshowfanart) | Control.HasFocus(301)]">$INFO[Container(301).ListItem.Art(fanart)]</value>
 		<value condition="Window.IsVisible(home) + !IsEmpty(Container(301).ListItem.Property(fanart)) + [!Skin.HasSetting(home.dontshowfanart) | Control.HasFocus(301)]">$INFO[Container(301).ListItem.Property(fanart)]</value>
@@ -264,6 +264,12 @@
 				<aspectratio align="center">scale</aspectratio>
                 <texture colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" fallback="empty.png" background="true">$INFO[ListItem.Art(fanart)]</texture>
             </control>
+			<control type="image">
+				<visible>Window.IsVisible(DialogPVRInfo.xml)</visible>
+				<include>Dimensions_Fullscreen</include>
+				<aspectratio align="center">scale</aspectratio>
+				<texture colordiffuse="$INFO[Window(home).Property(PVRInfo.ImageColor)]" fallback="empty.png" background="true">$INFO[Window(home).Property(SkinHelper.PVR.FanArt)]</texture>
+			</control>
             <control id="8328" type="image">
                 <include>Dimensions_Fullscreen</include>
                 <colordiffuse>DialogFanartFade</colordiffuse>

@@ -1122,6 +1122,14 @@
 		<value condition="!IsEmpty(ListItem.PlotOutline)">$INFO[ListItem.PlotOutline]</value>
 		<value condition="!IsEmpty(ListItem.Plot)">$INFO[ListItem.Plot]</value>
 	</variable>
+	<variable name="PlotCritic">
+		<value condition="!IsEmpty(Window(Home).Property(EmbySkinHelper.ListItemRottenTomatoesSummary))">$INFO[Window(Home).Property(EmbySkinHelper.ListItemRottenTomatoesSummary)]</value>
+		<value condition="!IsEmpty(Window(home).Property(SkinHelper.MovieSet.ExtendedPlot)) + [Container.Content(Sets) | substring(ListItem.Path,videodb://movies/sets,left)]">$INFO[Window(home).Property(SkinHelper.MovieSet.ExtendedPlot)]</value>
+		<value condition="Container.Content(movies)">$INFO[ListItem.Tagline,[B],[/B][CR],]$INFO[ListItem.Plot]</value>
+		<value condition="[!IsEmpty(ListItem.PlotOutline) | !IsEmpty(ListItem.Plot)] + Skin.HasSetting(osd.hidespoilers) + Container.Content(episodes) + [stringcompare(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]">* Hidden to prevent spoilers *</value>
+		<value condition="!IsEmpty(ListItem.PlotOutline)">$INFO[ListItem.PlotOutline]</value>
+		<value condition="!IsEmpty(ListItem.Plot)">$INFO[ListItem.Plot]</value>
+	</variable>
 
 	<variable name="VideoInfoLabel">
 		<value condition="Container.Content(episodes)">$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Title]</value>
@@ -1150,6 +1158,21 @@
 	<variable name="MovieMPAALangLabel">
 		<value condition="!IsEmpty(Skin.String(RatingCountry))">$INFO[Skin.String(RatingCountry)]</value>
 		<value>UK</value>
+	</variable>
+	<variable name="RottenTomatoesIcon">
+		<value condition="IntegerGreaterThan(Window(Home).Property(EmbySkinHelper.ListItemRottenTomatoes),59)"></value>
+		<value condition="!IntegerGreaterThan(Window(Home).Property(EmbySkinHelper.ListItemRottenTomatoes),59)"></value>
+	</variable>
+
+	<variable name="RottenTomatoesIconColour">
+		<value condition="IntegerGreaterThan(Window(Home).Property(EmbySkinHelper.ListItemRottenTomatoes),59)">Red</value>
+		<value condition="!IntegerGreaterThan(Window(Home).Property(EmbySkinHelper.ListItemRottenTomatoes),59)">Green</value>
+	</variable>
+
+	<variable name="CommunityRatingColour">
+		<value condition="IntegerGreaterThan(Window(Home).Property(EmbySkinHelper.ListItemMetaScore),59)">Green</value>
+		<value condition="[IntegerGreaterThan(Window(Home).Property(EmbySkinHelper.ListItemMetaScore),39) + !IntegerGreaterThan(Window(Home).Property(EmbySkinHelper.ListItemMetaScore),59)]">SelectedOrange</value>
+		<value condition="!IntegerGreaterThan(Window(Home).Property(EmbySkinHelper.ListItemMetaScore),39)">SelectedRed</value>
 	</variable>
 
 	<variable name="FanartFadeLabel">

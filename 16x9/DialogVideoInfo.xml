@@ -59,42 +59,73 @@
 				<right>10</right>
 				<orientation>horizontal</orientation>
 				<itemgap>10</itemgap>
+				<control type="label">
+					<aligny>center</aligny>
+					<align>left</align>
+					<font>symbol</font>
+					<textcolor>selective yellow</textcolor>
+					<height>38</height>
+					<width>auto</width>
+					<label></label>
+					<visible>!IsEmpty(ListItem.Rating)</visible>
+				</control>
+				<control type="label">
+					<aligny>center</aligny>
+					<align>left</align>
+					<font>Medium</font>
+					<textcolor>white</textcolor>
+					<height>38</height>
+					<width>auto</width>
+					<label fallback="-  ">$INFO[ListItem.Rating,,  ]</label>
+					<visible>!IsEmpty(ListItem.Rating)</visible>
+				</control>
 					<control type="label">
-<aligny>center</aligny>
+						<aligny>center</aligny>
 						<align>left</align>
 						<font>symbol</font>
-						<textcolor>red</textcolor>
-				<height>38</height>
+						<textcolor>$VAR[RottenTomatoesIconColour]</textcolor>
+						<height>38</height>
 						<width>auto</width>
-						<label></label>
-						<visible>Container.Content(movies)</visible>
+						<label>$VAR[RottenTomatoesIcon]</label>
+						<visible>!IsEmpty(Window(Home).Property(EmbySkinHelper.ListItemRottenTomatoes))</visible>
 					</control>
 					<control type="label">
-<aligny>center</aligny>
+						<aligny>center</aligny>
 						<align>left</align>
 						<font>Medium</font>
 						<textcolor>white</textcolor>
-				<height>38</height>
+						<height>38</height>
 						<width>auto</width>
-						<label fallback="-  ">$INFO[ListItem.Rating,,  ]</label>
-						<visible>Container.Content(movies)</visible>
+						<label fallback="-  ">$INFO[Window(Home).Property(EmbySkinHelper.ListItemRottenTomatoes),,%  ]</label>
+						<visible>!IsEmpty(Window(Home).Property(EmbySkinHelper.ListItemRottenTomatoes))</visible>
 					</control>
+				<control type="button">
+					<width>38</width>
+					<height>38</height>
+					<textcolor>white</textcolor>
+					<textoffsetx>0</textoffsetx>
+					<label>$INFO[Window(Home).Property(EmbySkinHelper.ListItemMetaScore)]</label>
+					<font>MediumSmall</font>
+					<texturefocus colordiffuse="$VAR[CommunityRatingColour]" border="5">common/white.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[CommunityRatingColour]" border="5">common/white.png</texturenofocus>
+					<visible>!IsEmpty(Window(Home).Property(EmbySkinHelper.ListItemMetaScore))</visible>
+				</control>
 					<control type="label">
-<aligny>center</aligny>
+						<aligny>center</aligny>
 						<align>left</align>
 						<font>symbol</font>
-				<height>38</height>
+						<height>38</height>
 						<textcolor>white</textcolor>
 						<width>auto</width>
 						<label></label>
 						<visible>Container.Content(movies)</visible>
 					</control>
 					<control type="label">
-<aligny>center</aligny>
+						<aligny>center</aligny>
 						<align>left</align>
 						<font>Medium</font>
 						<textcolor>white</textcolor>
-				<height>38</height>
+						<height>38</height>
 						<width>auto</width>
 						<label fallback="-  ">$INFO[ListItem.PlayCount,,  ]</label>
 						<visible>Container.Content(movies)</visible>
@@ -171,8 +202,8 @@
 				<height>228</height>
 				<align>justify</align>
 				<font>Medium</font>
-				<textcolor>white2</textcolor>
-				<label>$VAR[Plot]</label>
+				<textcolor>white</textcolor>
+				<label>$VAR[PlotCritic]</label>
 			</control>
 			<control type="group">
 				<top>220</top>
