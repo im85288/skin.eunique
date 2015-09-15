@@ -26,6 +26,37 @@
 	<include file="Includes_Home_NetflixXbmcUI.xml" />
 	<!-- Skin Shortcuts -->
 	<include file="script-skinshortcuts-includes.xml" />
+
+	
+	<include name="ButtonControlWidget">
+                <control type="grouplist">
+				<left>1455</left>
+				<top>785</top>
+				<right>10</right>
+				<height>116</height>
+				<itemgap>10</itemgap>
+                    <orientation>horizontal</orientation>
+                    <control type="group">
+                         <width>54</width>
+                        <height>116</height>
+                   <control type="label">
+ 					<aligny>center</aligny>
+					<align>center</align>
+					<textcolor>$VAR[SelectionColourHighlight]</textcolor>
+                       <font>symbolbig</font>
+                        <label></label>
+                    </control>
+                    <control type="label">
+ 					<aligny>center</aligny>
+					<align>center</align>
+					<textcolor>white2</textcolor>
+                        <font>symbol</font>
+                        <label></label>
+                    </control>
+                    </control>
+                </control>
+	</include>
+	
 	<include name="HiddenButton">
 		<posx>-20</posx>
 		<posy>-20</posy>

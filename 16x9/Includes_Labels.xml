@@ -72,7 +72,7 @@
 		<value condition="Container.Content(albums)">$INFO[ListItem.Album]</value>
 		<value condition="Container.Content(seasons)">$INFO[Window(Home).Property(SkinHelper.ListItemGenres)]</value>
 		<value condition="Container.Content(tvshows)">$INFO[Window(Home).Property(SkinHelper.ListItemGenres)]</value>
-		<value condition="Container.Content(episodes) + [Window.IsVisible(DialogVideoInfo.xml | Control.IsVisible(54)]">$INFO[Window(Home).Property(SkinHelper.ListItemGenres)]</value>
+		<value condition="Container.Content(episodes) + [Window.IsVisible(DialogVideoInfo.xml) | Control.IsVisible(54)]">$INFO[Window(Home).Property(SkinHelper.ListItemGenres)]</value>
 		<value condition="Container.Content(episodes)">$INFO[ListItem.Premiered]</value>
 		<value condition="!IsEmpty(Window(Home).Property(SkinHelper.ListItemGenres))">$INFO[Window(Home).Property(SkinHelper.ListItemGenres)]</value>
 		<value condition="!IsEmpty(Window(home).Property(SkinHelper.MovieSet.Genre))">$INFO[Window(home).Property(SkinHelper.MovieSet.Genre)]</value>
@@ -1240,6 +1240,17 @@
 	</variable>
 	<variable name="EmbyMiddleColourHighlight">
 		<value condition="Skin.HasSetting(emby.middle.colour)">$INFO[Skin.String(emby.middle.colour.name)]</value>
+		<value>dark pastel red</value>
+	</variable>
+	<variable name="SelectionColourHighlight">
+		<value condition="Control.HasFocus(8)">$INFO[Skin.String(emby.middle.colour.name)]</value>
+		<value condition="Control.HasFocus(1003)">$INFO[Skin.String(emby.right.colour.name)]</value>
+		<value condition="Control.HasFocus(1006)">$INFO[Skin.String(emby.right.colour.name)]</value>
+		<value condition="Control.HasFocus(10)">$INFO[Skin.String(emby.left.colour.name)]</value>
+		<value condition="Control.HasFocus(20)">$INFO[Skin.String(emby.left.colour.name)]</value>
+		<value condition="Control.HasFocus(18)">$INFO[Skin.String(emby.right.colour.name)]</value>
+		<value condition="Control.HasFocus(3443)">$INFO[Skin.String(emby.left.colour.name)]</value>
+		<value condition="Control.HasFocus(19)">$INFO[Skin.String(emby.left.colour.name)]</value>
 		<value>dark pastel red</value>
 	</variable>
 	<variable name="EmbyMenuColourHighlight">

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-	<defaultcontrol always="true">9000</defaultcontrol>
+	<defaultcontrol always="false" condition="!Skin.HasSetting(toggled.dv.info)">9010</defaultcontrol>
+	<defaultcontrol always="false" condition="Skin.HasSetting(toggled.dv.info)">9000</defaultcontrol>
 	<onload condition="System.HasAddon(script.videoextras)">RunScript(script.videoextras,check,"$INFO[ListItem.FilenameAndPath]")</onload>
 	<onload>RunScript(script.toolbox,info=blur,id='"$INFO[ListItem.Art(fanart)]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfo)</onload>
 	<onload>Skin.SetString(widget.helper,videoinfo)</onload>
@@ -322,7 +323,7 @@
 				<onleft>9000</onleft>
 				<onright>9000</onright>
 				<onup>Skin.ToggleSetting(toggled.dv.info)</onup>
-				<onup>setfocus(9000)</onup>
+				<onup>setfocus(9010)</onup>
 				<ondown>9499</ondown>
 				<orientation>horizontal</orientation>
 				<include>DialogVideoInfoAnimation</include>
@@ -785,6 +786,7 @@
 					<content>$VAR[DefWidgetContentVideoInfo]</content>
 				</control>
 			</control>
+			<include>ButtonControlWidget</include>
 		</control>
 
 		<control type="group">
@@ -1069,14 +1071,14 @@
 				<visible>!stringcompare(ListItem.Label,..) + !Container.Content(albums) + !Container.Content(songs)</visible>
 			</control>
 			<!-- Button grouplist -->
-			<control id="9000" type="grouplist">
+			<control id="9010" type="grouplist">
 				<left>643</left>
 				<top>751</top>
 				<width>1267</width>
 				<height>116</height>
 				<itemgap>0</itemgap>
-				<onleft>9000</onleft>
-				<onright>9000</onright>
+				<onleft>9010</onleft>
+				<onright>9010</onright>
 				<onup>9501</onup>
 				<ondown>Skin.ToggleSetting(toggled.dv.info)</ondown>
 				<ondown>setfocus(9000)</ondown>
@@ -1281,9 +1283,9 @@
 					<top>460</top>
 					<width>400</width>
 					<height>34</height>
-					<onup>9000</onup>
+					<onup>9010</onup>
 					<ondown>9501</ondown>
-					<onback>9000</onback>
+					<onback>9010</onback>
 					<orientation>horizontal</orientation>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
 						<visible>Control.HasFocus(94988) | Control.HasFocus(9498)</visible>
@@ -1552,8 +1554,8 @@
 					<bottom>10</bottom>
 					<width>1920</width>
 					<onup>94988</onup>
-				<ondown>9000</ondown>
-					<onback>9000</onback>
+				<ondown>9010</ondown>
+					<onback>9010</onback>
 					<preloaditems>2</preloaditems>
 					<orientation>horizontal</orientation>
 					<pagecontrol>60</pagecontrol>
@@ -1631,6 +1633,7 @@
 			</control>
 
 
+			<include>ButtonControlWidget</include>
 
 		</control>
 	
