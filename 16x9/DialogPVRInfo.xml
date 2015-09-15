@@ -2,12 +2,19 @@
 <!-- Foundation -->
 <window id="2003">
 	<defaultcontrol always="true">9000</defaultcontrol>
-	<allowoverlay>no</allowoverlay>
-	<onload condition="!IsEmpty(Window(home).Property(SkinHelper.PVR.FanArt))">RunScript(script.toolbox,info=blur,id='"$INFO[Window(home).Property(SkinHelper.PVR.FanArt)]"',radius=$VAR[VideoInfoBlurLevel],prefix=PVRInfo)</onload>
-	<onload condition="IsEmpty(Window(home).Property(SkinHelper.PVR.FanArt))">RunScript(script.toolbox,info=blur,id='"$INFO[Window(home).Property(SkinHelper.PVR.Thumb)]"',radius=$VAR[VideoInfoBlurLevel],prefix=PVRInfo)</onload>
-	<onload condition="IsEmpty(Window(home).Property(SkinHelper.PVR.Poster))">RunScript(script.toolbox,info=blur,id='"$INFO[Window(home).Property(SkinHelper.PVR.Poster)]"',radius=1,prefix=PVRInfoPoster)</onload>
+	<onload>RunScript(script.toolbox,info=blur,id='"$VAR[PVRFanart]"',radius=$VAR[VideoInfoBlurLevel],prefix=PVRInfo)</onload>
+	<onload>RunScript(script.toolbox,info=blur,id='"$INFO[Window(home).Property(SkinHelper.PVR.Thumb)]"',radius=$VAR[VideoInfoBlurLevel],prefix=PVRThumbInfo)</onload>
 	<controls>
 		<include>GlobalBackground</include>
+		<include>Animation.Common.Killer</include>
+		<include>Furniture_EmbyClock</include>
+		<include>Furniture_HeaderEmby</include>
+		<control type="image">
+			<include>Dimensions_Fullscreen</include>
+			<aspectratio align="center">scale</aspectratio>
+			<texture colordiffuse="$INFO[Window(home).Property(PVRInfo.ImageColor)]" fallback="common/black.png" background="true" diffuse="diffuse/dv-mask.png">$INFO[Window(home).Property(PVRInfo.ImageFilter)]</texture>
+			<visible>!Skin.HasSetting(lights.out) + Window.IsVisible(DialogPVRInfo.xml) + !Skin.HasSetting(furniture.info.fanart)</visible>
+		</control>
 		<control type="group">
 			<animation type="Conditional" reversible="true" condition="Window.IsVisible(FileBrowser.xml) | Window.IsVisible(DialogProgress.xml) | Window.IsVisible(DialogYesNo.xml) | Window.IsVisible(DialogOK.xml) | Window.IsVisible(DialogSelect.xml) | Window.IsVisible(DialogContextMenu.xml) | Window.IsVisible(DialogButtonMenu.xml)">
 				<effect type="zoom" end="95" start="100" time="200" center="auto" tween="quadratic" easing="in" />
@@ -21,16 +28,24 @@
 					<right>NewSidePad</right>
 					<top>TopPad</top>
 					<control type="group">
-						<top>100</top>
-						<left>-20</left>
-						<width>613</width>
-						<height>345</height>
+						<left>1654</left>
+						<top>759</top>
 						<control type="image">
-							<aspectratio scalediffuse="false">stretch</aspectratio>
-							<texture background="true" colordiffuse="$INFO[Window(home).Property(PVRInfoPoster.ImageColor)]">$INFO[Window(home).Property(SkinHelper.PVR.Thumb)]</texture>
-							<animation type="conditional" condition="true" reversible="false">
-								<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
-							</animation>
+							<width>207</width>
+							<height>116</height>
+							<texture>$INFO[Window(home).Property(SkinHelper.PVR.ChannelLogo)]</texture>
+							<aspectratio align="center" aligny="center">scale</aspectratio>
+							<fadetime>50</fadetime>
+							<visible>!IsEmpty(Window(home).Property(SkinHelper.PVR.Poster))</visible>
+						</control>
+						<control type="image">
+							<left>-217</left>
+							<width>207</width>
+							<height>116</height>
+							<texture>$INFO[Window(home).Property(SkinHelper.PVR.Thumb)]</texture>
+							<aspectratio align="center" aligny="center">scale</aspectratio>
+							<fadetime>50</fadetime>
+							<visible>!IsEmpty(Window(home).Property(SkinHelper.PVR.Poster))</visible>
 						</control>
 					</control>
 					<control type="group">
@@ -40,17 +55,40 @@
 						<height>920</height>
 						<control type="image">
 							<aspectratio scalediffuse="false">stretch</aspectratio>
-							<texture background="true" diffuse="diffuse/listposter-ref.png">$INFO[Window(home).Property(PVRInfoPoster.ImageFilter)]</texture>
+							<texture colordiffuse="$INFO[Window(home).Property(PVRInfo.ImageColor)]" background="true">common/white.png</texture>
 							<animation type="conditional" condition="true" reversible="false">
-								<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
+								<effect type="zoom" start="100" end="108" time="200" center="auto" tween="quadratic" easing="out" />
 							</animation>
 						</control>
 						<control type="image">
+							<texture>$INFO[Window(home).Property(SkinHelper.PVR.Poster)]</texture>
 							<aspectratio scalediffuse="false">stretch</aspectratio>
-							<texture background="true" colordiffuse="$INFO[Window(home).Property(PVRInfoPoster.ImageColor)]">>$INFO[Window(home).Property(SkinHelper.PVR.Poster)]</texture>
 							<animation type="conditional" condition="true" reversible="false">
 								<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
 							</animation>
+							<visible>!IsEmpty(Window(home).Property(SkinHelper.PVR.Poster))</visible>
+						</control>
+						<control type="group">
+							<visible>IsEmpty(Window(home).Property(SkinHelper.PVR.Poster))</visible>
+							<control type="image">
+								<width>613</width>
+								<height>450</height>
+								<aspectratio scalediffuse="false">scale</aspectratio>
+								<texture background="true">$INFO[Window(home).Property(SkinHelper.PVR.Thumb)]</texture>
+								<animation type="conditional" condition="true" reversible="false">
+									<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
+								</animation>
+							</control>
+							<control type="image">
+								<top>470</top>
+								<width>613</width>
+								<height>450</height>
+								<aspectratio scalediffuse="false">stretch</aspectratio>
+								<texture fallback="pvr/background.jpg" background="true">$INFO[Window(home).Property(SkinHelper.PVR.ChannelLogo)]</texture>
+								<animation type="conditional" condition="true" reversible="false">
+									<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
+								</animation>
+							</control>
 						</control>
 						<animation type="conditional" condition="true" reversible="false">
 							<effect type="zoom" start="100" end="94" time="200" center="auto" tween="quadratic" easing="out" />
@@ -65,9 +103,9 @@
 				<visible>!Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)</visible>
 				<!-- Control Buttons -->
 				<control id="9000" type="grouplist">
-					<left>790</left>
-					<top>630</top>
-					<right>10</right>
+					<left>643</left>
+					<top>901</top>
+					<width>1267</width>
 					<height>116</height>
 					<itemgap>0</itemgap>
 					<onleft>9000</onleft>
@@ -145,9 +183,9 @@
 
 				</control>
 				<control id="9002" type="grouplist">
-					<left>790</left>
-					<top>665</top>
-					<right>10</right>
+					<left>643</left>
+					<top>936</top>
+					<width>1267</width>
 					<height>116</height>
 					<itemgap>0</itemgap>
 					<onleft>9002</onleft>
@@ -190,30 +228,27 @@
 				</control>
 				<!-- Info -->
 				<control type="group">
-					<left>ListSquareX</left>
-					<right>SidePad</right>
+					<left>643</left>
+					<right>10</right>
 					<bottom>224</bottom>
-					<top>PosterPad</top>
+					<top>TopPad</top>
 					<control type="grouplist">
-						<left>30</left>
-						<right>30</right>
-						<itemgap>0</itemgap>
+						<itemgap>10</itemgap>
 						<control type="label">
 							<description>Header Label</description>
-							<textcolor>Dark1</textcolor>
-							<include>DefDialogInfoHeader</include>
+							<font>ReallyLarge</font>
+							<textcolor>white</textcolor>
+							<height>60</height>
 							<label>$INFO[ListItem.Title]</label>
 						</control>
 						<control type="group">
-							<height>50</height>
+							<top>30</top>
+							<height>36</height>
 							<control type="label">
-								<posy>-10</posy>
-								<width>100%</width>
 								<height>36</height>
-								<font>Tiny</font>
-								<textcolor>Dark2</textcolor>
+								<font>SmallBold</font>
+								<textcolor>white2</textcolor>
 								<label fallback="19055">$INFO[ListItem.ChannelName]$INFO[ListItem.ChannelNumber, (,)]$VAR[PVRInfoStatus, ,]</label>
-								<aligny>center</aligny>
 							</control>
 						</control>
 						<control type="group">
@@ -222,8 +257,8 @@
 							<control type="label">
 								<width>150</width>
 								<height>36</height>
-								<font>Tiny</font>
-								<textcolor>Dark1</textcolor>
+								<font>SmallBold</font>
+								<textcolor>white</textcolor>
 								<label>[B]$LOCALIZE[21442][/B]</label>
 								<aligny>center</aligny>
 							</control>
@@ -231,8 +266,8 @@
 								<left>150</left>
 								<width>100%</width>
 								<height>36</height>
-								<font>Tiny</font>
-								<textcolor>Dark2</textcolor>
+								<font>SmallBold</font>
+								<textcolor>white2</textcolor>
 								<label fallback="19055">$INFO[ListItem.EpisodeName]</label>
 								<aligny>center</aligny>
 							</control>
@@ -243,8 +278,8 @@
 							<control type="label">
 								<width>150</width>
 								<height>36</height>
-								<font>Tiny</font>
-								<textcolor>Dark1</textcolor>
+								<font>SmallBold</font>
+								<textcolor>white</textcolor>
 								<label>[B]$LOCALIZE[20373][/B]</label>
 								<aligny>center</aligny>
 							</control>
@@ -252,8 +287,8 @@
 								<left>150</left>
 								<width>100%</width>
 								<height>36</height>
-								<font>Tiny</font>
-								<textcolor>Dark2</textcolor>
+								<font>SmallBold</font>
+								<textcolor>white2</textcolor>
 								<label fallback="19055">$INFO[ListItem.Season]</label>
 								<aligny>center</aligny>
 							</control>
@@ -264,8 +299,8 @@
 							<control type="label">
 								<width>150</width>
 								<height>36</height>
-								<font>Tiny</font>
-								<textcolor>Dark1</textcolor>
+								<font>SmallBold</font>
+								<textcolor>white</textcolor>
 								<label>[B]$LOCALIZE[20359][/B]</label>
 								<aligny>center</aligny>
 							</control>
@@ -273,8 +308,8 @@
 								<left>150</left>
 								<width>100%</width>
 								<height>36</height>
-								<font>Tiny</font>
-								<textcolor>Dark2</textcolor>
+								<font>SmallBold</font>
+								<textcolor>white2</textcolor>
 								<label fallback="19055">$INFO[ListItem.Episode]</label>
 								<aligny>center</aligny>
 							</control>
@@ -284,8 +319,8 @@
 							<control type="label">
 								<width>150</width>
 								<height>36</height>
-								<font>Tiny</font>
-								<textcolor>Dark1</textcolor>
+								<font>SmallBold</font>
+								<textcolor>white</textcolor>
 								<label>[B]$LOCALIZE[2050][/B]</label>
 								<aligny>center</aligny>
 							</control>
@@ -293,8 +328,8 @@
 								<left>150</left>
 								<width>100%</width>
 								<height>36</height>
-								<font>Tiny</font>
-								<textcolor>Dark2</textcolor>
+								<font>SmallBold</font>
+								<textcolor>white2</textcolor>
 								<label fallback="19055">$INFO[ListItem.Duration,, $LOCALIZE[12391]]</label>
 								<aligny>center</aligny>
 							</control>
@@ -304,8 +339,8 @@
 							<control type="label">
 								<width>150</width>
 								<height>36</height>
-								<font>Tiny</font>
-								<textcolor>Dark1</textcolor>
+								<font>SmallBold</font>
+								<textcolor>white</textcolor>
 								<label>[B]$LOCALIZE[19126][/B]</label>
 								<aligny>center</aligny>
 							</control>
@@ -313,8 +348,8 @@
 								<left>150</left>
 								<width>100%</width>
 								<height>36</height>
-								<font>Tiny</font>
-								<textcolor>Dark2</textcolor>
+								<font>SmallBold</font>
+								<textcolor>white2</textcolor>
 								<label fallback="19055">$INFO[ListItem.StartDate] - $INFO[ListItem.StartTime]</label>
 								<aligny>center</aligny>
 							</control>
@@ -324,8 +359,8 @@
 							<control type="label">
 								<width>150</width>
 								<height>36</height>
-								<font>Tiny</font>
-								<textcolor>Dark1</textcolor>
+								<font>SmallBold</font>
+								<textcolor>white</textcolor>
 								<label>[B]$LOCALIZE[19127][/B]</label>
 								<aligny>center</aligny>
 							</control>
@@ -333,8 +368,8 @@
 								<left>150</left>
 								<width>100%</width>
 								<height>36</height>
-								<font>Tiny</font>
-								<textcolor>Dark2</textcolor>
+								<font>SmallBold</font>
+								<textcolor>white2</textcolor>
 								<label fallback="19055">$INFO[ListItem.EndDate] - $INFO[ListItem.EndTime]</label>
 								<aligny>center</aligny>
 							</control>
@@ -344,8 +379,8 @@
 							<control type="label">
 								<width>150</width>
 								<height>36</height>
-								<font>Tiny</font>
-								<textcolor>Dark1</textcolor>
+								<font>SmallBold</font>
+								<textcolor>white</textcolor>
 								<label>[B]$LOCALIZE[515][/B]</label>
 								<aligny>center</aligny>
 							</control>
@@ -353,8 +388,8 @@
 								<left>150</left>
 								<width>100%</width>
 								<height>36</height>
-								<font>Tiny</font>
-								<textcolor>Dark2</textcolor>
+								<font>SmallBold</font>
+								<textcolor>white2</textcolor>
 								<label fallback="19055">$INFO[ListItem.Genre]</label>
 								<aligny>center</aligny>
 							</control>
@@ -368,9 +403,9 @@
 							<control type="textbox">
 								<left>0</left>
 								<right>0</right>
-								<height>240</height>
-								<font>Tiny</font>
-								<textcolor>Dark2</textcolor>
+								<height>440</height>
+								<font>Medium</font>
+								<textcolor>white2</textcolor>
 								<scroll>false</scroll>
 								<align>justify</align>
 								<info>ListItem.Plot</info>
@@ -380,11 +415,6 @@
 					</control>
 				</control>
 			</control>
-		</control>
-		<control type="group">
-			<include>Animation.Common.Killer</include>
-			<include>Furniture_EmbyClock</include>
-			<include>Furniture_HeaderEmby</include>
 		</control>
 	</controls>
 </window>
