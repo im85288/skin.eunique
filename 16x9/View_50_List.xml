@@ -131,7 +131,15 @@
 				<fadetime>100</fadetime>
 				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 				<texture background="true">$VAR[PosterImage]</texture>
-				<visible>!Skin.Hassetting(views.cases)</visible>
+				<visible>!Container.Content(albums)</visible>
+			</control>
+			<control type="image">
+				<width>879</width>
+				<height>879</height>
+				<fadetime>100</fadetime>
+				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+				<texture background="true">$VAR[PosterImage]</texture>
+				<visible>Container.Content(albums)</visible>
 			</control>
 			<control type="image">
 				<left>602</left>
@@ -140,6 +148,16 @@
 				<fadetime>1000</fadetime>
 				<aspectratio align="left" aligny="center" scalediffuse="false">scale</aspectratio>
 				<texture flipx="true" background="true" diffuse="diffuse/listposter-ref.png">$INFO[Window(home).Property(VideoInfo.ImageFilter)]</texture>
+				<visible>!Container.Content(albums)</visible>
+			</control>
+			<control type="image">
+				<left>602</left>
+				<right>10</right>
+				<height>879</height>
+				<fadetime>1000</fadetime>
+				<aspectratio align="left" aligny="center" scalediffuse="false">scale</aspectratio>
+				<texture flipx="true" background="true" diffuse="diffuse/listposter-ref.png">$INFO[Window(home).Property(VideoInfo.ImageFilter)]</texture>
+				<visible>Container.Content(albums)</visible>
 			</control>
 			<control type="label">
 				<left>607</left>
@@ -151,6 +169,7 @@
 				<scroll>true</scroll>
 				<textcolor>white</textcolor>
 				<label>$VAR[LabelDirector]</label>
+				<visible>!Container.Content(albums)</visible>
 			</control>
 			<control type="label">
 				<left>607</left>
@@ -161,6 +180,7 @@
 			   <font>MediumSmallBold</font>
 				<textcolor>white</textcolor>
 				<label>$VAR[LabelDuration]</label>
+				<visible>!Container.Content(albums)</visible>
 			</control>
 			<control type="textbox">
 				<left>607</left>
@@ -172,6 +192,7 @@
 				<textcolor>white</textcolor>
 				<label>$VAR[LabelGenreList]</label>
 				<autoscroll delay="500" time="1000" repeat="500"/>
+				<visible>!Container.Content(albums)</visible>
 			</control>
 			<control type="textbox">
 				<left>607</left>
@@ -183,6 +204,7 @@
 				<textcolor>white</textcolor>
 				<label>$INFO[Window(Home).Property(SkinHelper.ListItemStudios)]</label>
 				<autoscroll delay="500" time="3000" repeat="500"/>
+				<visible>!Container.Content(albums)</visible>
 			</control>
 			<control type="textbox">
 				<description>textarea</description>
@@ -194,6 +216,19 @@
 				<font>MediumLargeBold</font>
 				<textcolor>white</textcolor>
 				<label>$VAR[PlotList]</label>
+				<visible>!Container.Content(albums)</visible>
+			</control>
+			<control type="textbox">
+				<description>textarea</description>
+				<left>607</left>
+				<top>10</top>
+				<right>15</right>
+				<bottom>57</bottom>
+				<align>right</align>
+				<font>MediumLargeBold</font>
+				<textcolor>white</textcolor>
+				<label>$INFO[Window(Home).Property(SkinHelper.Music.Info)]</label>
+				<visible>Container.Content(albums)</visible>
 			</control>
 		</control>
 	</include>
