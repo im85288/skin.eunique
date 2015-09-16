@@ -9,9 +9,6 @@
 	<onunload>ClearProperty(VideoInfo.ImageColor,home)</onunload>
 	<onunload>ClearProperty(VideoInfo.ImageFilter,home)</onunload>
 	<controls>
-		<!--
-		<include>GlobalOverlay</include>
-		-->
 		<control type="image">
 			<include>Dimensions_Fullscreen</include>
 			<aspectratio align="center">scale</aspectratio>
@@ -37,32 +34,50 @@
 					<fadetime>50</fadetime>
 				</control>
 			</control>
-			<!--
-			<control type="image">
-				<right>10</right>
-				<bottom>250</bottom>
-				<width>192</width>
-				<height>226</height>
-				<texture>$VAR[ColourStudio]</texture>
-				<aspectratio aligny="bottom" align="right">keep</aspectratio>
+			<control type="group">
+				<left>1654</left>
+				<top>530</top>
+				<control type="image">
+					<width>206</width>
+					<height>116</height>
+					<texture>$VAR[ClearArtOnly]</texture>
+					<aspectratio align="center" aligny="center">keep</aspectratio>
+					<fadetime>50</fadetime>
+				</control>
 			</control>
-			-->
-		<control type="group">
-			<visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)</visible>
-			<left>1654</left>
-			<top>530</top>
-			<control type="image">
-				<width>228</width>
-				<height>116</height>
-				<texture>$VAR[StudioLogo]</texture>
-				<aspectratio align="center" aligny="center">keep</aspectratio>
-				<fadetime>50</fadetime>
+
+			<control type="group">
+				<left>10</left>
+				<top>7</top>
+				<width>420</width>
+				<height>631</height>
+				<visible>Control.HasFocus(9500)</visible>
+				<control type="image">
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<texture colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" background="true">common/white.png</texture>
+					<animation type="conditional" condition="true" reversible="false">
+						<effect type="zoom" start="100" end="108" time="200" center="auto" tween="quadratic" easing="out" />
+					</animation>
+				</control>
+				<control type="image">
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<texture background="true">$VAR[PosterImage]</texture>
+					<animation type="conditional" condition="true" reversible="false">
+						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
+					</animation>
+				</control>
+				<control type="image">
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<texture background="true">$VAR[PosterImage9500]</texture>
+					<animation type="conditional" condition="true" reversible="false">
+						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
+					</animation>
+				</control>
+				<animation type="conditional" condition="true" reversible="false">
+					<effect type="zoom" start="100" end="94" time="200" center="auto" tween="quadratic" easing="out" />
+					<effect type="rotate" end="-1" time="200" center="auto" tween="quadratic" easing="out" />
+				</animation>
 			</control>
-		</control>
-
-
-
-
 
 			<control type="grouplist">
 				<top>218</top>
@@ -218,6 +233,7 @@
 				<label>$VAR[PlotCritic]</label>
 			</control>
 			<control type="group">
+				<visible>!Control.HasFocus(9500)</visible>
 				<top>220</top>
 				<left>10</left>
 				<width>400</width>
@@ -570,7 +586,7 @@
 			<!-- Bottom Section -->
 			<control type="group">
 				<bottom>0</bottom>
-				<height>260</height>
+				<height>265</height>
 				<control type="list" id="9499">
 					<top>0</top>
 					<width>300</width>
@@ -764,7 +780,7 @@
 					<height>34</height>
 					<font>Small</font>
 					<textcolor>white2</textcolor>
-					<label>$INFO[Container(9499).ListItem.Label,,: ]$INFO[Container(9500).ListItem(0).Label]$INFO[Container(9500).ListItem(0).Label2, $LOCALIZE[20347] ]</label>
+					<label>$VAR[VideoInfoWidgetLabel]$INFO[Container(9500).ListItem(0).Label,: ]$INFO[Container(9500).ListItem(0).Label2, $LOCALIZE[20347] ]</label>
 					<visible>!Control.HasFocus(9499)</visible>
 				</control>
 
@@ -772,7 +788,7 @@
 					<visible allowhiddenfocus="true">!Container(9500).IsUpdating</visible>
 					<include>Animation.FadeIn</include>
 					<include>Animation.FadeOut</include>
-					<top>40</top>
+					<top>45</top>
 					<bottom>10</bottom>
 					<width>1920</width>
 					<onup>9000</onup>
@@ -785,6 +801,19 @@
 					<autoscroll time="3000">!Control.HasFocus(9500)</autoscroll>
 					<focusposition>0</focusposition>
 					<itemlayout height="210" width="140">
+						<control type="label">
+							<left>0</left>
+							<top>0</top>
+							<right>0</right>
+							<bottom>0</bottom>
+							<height>210</height>
+							<aligny>center</aligny>
+							<align>center</align>
+							<font>symbolbiggest</font>
+							<label></label>
+							<textcolor>white</textcolor>
+							<fadetime>300</fadetime>
+						</control>
 						<control type="image">
 							<aspectratio scalediffuse="false">stretch</aspectratio>
 							<texture background="true">$VAR[PosterImage]</texture>
@@ -792,32 +821,45 @@
 					</itemlayout>
 					<focusedlayout height="210" width="140">
 						<control type="group">
-						<control type="image">
-							<aspectratio scalediffuse="false">stretch</aspectratio>
-							<texture background="true">$VAR[PosterImage]</texture>
-						</control>
-						<control type="image">
-							<description>Title overlay</description>
-							<left>0</left>
-							<top>0</top>
-							<right>0</right>
-							<bottom>0</bottom>
-							<texture border="15" colordiffuse="af000000">common/white.png</texture>
-							<visible>Control.HasFocus(9500)</visible>
-						</control>
-						<control type="textbox">
-							<left>5</left>
-							<right>5</right>
-							<top>30</top>
-							<bottom>30</bottom>
-							<align>center</align>
-							<aligny>center</aligny>
-							<font>Tiny</font>
-							<textcolor>white2</textcolor>
-							<selectedcolor>white2</selectedcolor>
-							<label>$INFO[ListItem.Rating]$INFO[ListItem.Votes,[CR](, $LOCALIZE[20350])]</label>
-							<visible>Control.HasFocus(9500)</visible>
-						</control>
+							<control type="label">
+								<left>0</left>
+								<top>0</top>
+								<right>0</right>
+								<bottom>0</bottom>
+								<height>210</height>
+								<aligny>center</aligny>
+								<align>center</align>
+								<font>symbolbiggest</font>
+								<label></label>
+								<textcolor>white</textcolor>
+								<fadetime>300</fadetime>
+							</control>
+							<control type="image">
+								<aspectratio scalediffuse="false">stretch</aspectratio>
+								<texture background="true">$VAR[PosterImage]</texture>
+							</control>
+							<control type="image">
+								<description>Title overlay</description>
+								<left>0</left>
+								<top>0</top>
+								<right>0</right>
+								<bottom>0</bottom>
+								<texture border="15" colordiffuse="af000000">common/white.png</texture>
+								<visible>Control.HasFocus(9500)</visible>
+							</control>
+							<control type="textbox">
+								<left>5</left>
+								<right>5</right>
+								<top>30</top>
+								<bottom>30</bottom>
+								<align>center</align>
+								<aligny>center</aligny>
+								<font>Tiny</font>
+								<textcolor>white2</textcolor>
+								<selectedcolor>white2</selectedcolor>
+								<label>$INFO[ListItem.Rating]$INFO[ListItem.Votes,[CR](, $LOCALIZE[20350])]</label>
+								<visible>Control.HasFocus(9500)</visible>
+							</control>
 							<animation type="Focus" reversible="false">
 								<effect type="zoom" start="100" end="110" time="200" center="auto" tween="quadratic" easing="out" />
 							</animation>
@@ -1590,7 +1632,7 @@
 						<height>34</height>
 						<font>Small</font>
 						<textcolor>white2</textcolor>
-						<label>$INFO[Container(9498).ListItem.Label2,,: ]$INFO[Container(9501).ListItem(0).Label]$INFO[Container(9501).ListItem(0).Label2, $LOCALIZE[20347] ]</label>
+						<label>$VAR[VideoInfoCastWidgetLabel]$INFO[Container(9501).ListItem(0).Label,: ,]$INFO[Container(9501).ListItem(0).Label2, $LOCALIZE[20347] ]</label>
 						<visible>!Control.HasFocus(9498) + !Control.HasFocus(94988)</visible>
 					</control>
 						<control type="button" id="94988">
