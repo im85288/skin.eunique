@@ -586,12 +586,12 @@
 
 					</item>
 					<item id="11">
-						<label>$INFO[Skin.String(CustomWidget1)]</label>
+						<label>31827</label>
 						<onclick>Skin.SetString(widgetmusicinfo,Custom1)</onclick>
 
 					</item>
 					<item id="12">
-						<label>$INFO[Skin.String(CustomWidget2)]</label>
+						<label>31828</label>
 						<onclick>Skin.SetString(widgetmusicinfo,Custom2)</onclick>
 
 					</item>
@@ -651,6 +651,12 @@
 					<control type="image">
 						<aspectratio scalediffuse="false">stretch</aspectratio>
 						<texture background="true">$VAR[PosterImage]</texture>
+						<visible>!Skin.String(widgetmusicinfo,Events)</visible>
+					</control>
+					<control type="image">
+						<aspectratio scalediffuse="false">stretch</aspectratio>
+						<texture background="true">$INFO[ListItem.Property(GoogleMap)]</texture>
+						<visible>Skin.String(widgetmusicinfo,Events)</visible>
 					</control>
 				</itemlayout>
 				<focusedlayout height="210" width="210">
@@ -671,6 +677,12 @@
 						<control type="image">
 							<aspectratio scalediffuse="false">stretch</aspectratio>
 							<texture background="true">$VAR[PosterImage]</texture>
+							<visible>!Skin.String(widgetmusicinfo,Events)</visible>
+						</control>
+						<control type="image">
+							<aspectratio scalediffuse="false">stretch</aspectratio>
+							<texture background="true">$INFO[ListItem.Property(GoogleMap)]</texture>
+							<visible>Skin.String(widgetmusicinfo,Events)</visible>
 						</control>
 						<control type="image">
 							<description>Title overlay</description>
@@ -691,8 +703,23 @@
 							<font>Tiny</font>
 							<textcolor>white2</textcolor>
 							<selectedcolor>white2</selectedcolor>
-							<label>$INFO[ListItem.Year]</label>
+							<label>$INFO[ListItem.Album]$INFO[ListItem.Year,[CR](,)]</label>
 							<visible>Control.HasFocus(9500)</visible>
+							<visible>!Skin.String(widgetmusicinfo,Events)</visible>
+						</control>
+						<control type="textbox">
+							<left>5</left>
+							<right>5</right>
+							<top>30</top>
+							<bottom>30</bottom>
+							<align>center</align>
+							<aligny>center</aligny>
+							<font>Tiny</font>
+							<textcolor>white2</textcolor>
+							<selectedcolor>white2</selectedcolor>
+							<label>$INFO[ListItem.Property(EventName)]$INFO[ListItem.Property(Country),[CR],]</label>
+							<visible>Control.HasFocus(9500)</visible>
+							<visible>Skin.String(widgetmusicinfo,Events)</visible>
 						</control>
 						<animation type="Focus" reversible="false">
 							<effect type="zoom" start="100" end="110" time="200" center="auto" tween="quadratic" easing="out" />
@@ -709,15 +736,15 @@
 
 		<!-- Twitter -->
 		<control type="group">
+			<visible>!Player.HasAudio</visible>
 			<bottom>5</bottom>
 			<height>36</height>
-			<visible>Container.Content(Artists)</visible>
 			<width>100%</width>
 			<control type="label">
 				<width>150</width>
 				<height>36</height>
 				<font>Tiny</font>
-				<textcolor>Dark1</textcolor>
+				<textcolor>white</textcolor>
 				<label>[B]Twitter[/B]</label>
 				<aligny>center</aligny>
 			</control>
@@ -727,7 +754,7 @@
 				<width>100%</width>
 				<height>24</height>
 				<font>Tiny</font>
-				<textcolor>Dark2</textcolor>
+				<textcolor>white2</textcolor>
 				<scroll>true</scroll>
 				<wrapmultiline>false</wrapmultiline>
 				<scrollspeed>40</scrollspeed>
@@ -744,6 +771,351 @@
 			<itemlayout width="1" height="1"></itemlayout>
 			<focusedlayout width="1" height="1"></focusedlayout>
 			<content>plugin://script.extendedinfo?info=artistshouts&amp;&amp;artistname=$INFO[ListItem.Artist]</content>
+		</control>
+
+		<!-- Currently Playing List -->
+		<control type="wraplist" id="9302">
+			<visible>Player.HasAudio</visible>
+			<bottom>5</bottom>
+			<left>NewSidePad</left>
+			<height>50</height>
+			<onup>noop</onup>
+			<ondown>14</ondown>
+			<autoscroll time="10000">true</autoscroll>
+			<scrolltime tween="quadratic">100</scrolltime>
+			<orientation>horizontal</orientation>
+			<itemlayout height="50" width="450">
+				<control type="label">
+					<aligny>center</aligny>
+					<align>left</align>
+					<font>Small</font>
+					<textcolor>$VAR[ColourHighlight]</textcolor>
+					<label>$INFO[ListItem.Label]$INFO[ListItem.Label2, ,]</label>
+					<selectedcolor>$VAR[ColourHighlight]</selectedcolor>
+					<visible>!IsEmpty(ListItem.Property(IsPlaying))</visible>
+				</control>
+				<control type="label">
+					<aligny>center</aligny>
+					<align>left</align>
+					<font>Small</font>
+					<textcolor>white</textcolor>
+					<label>$INFO[ListItem.Label]$INFO[ListItem.Label2, ,]</label>
+					<selectedcolor>white</selectedcolor>
+					<visible>IsEmpty(ListItem.Property(IsPlaying))</visible>
+				</control>
+			</itemlayout>
+			<focusedlayout height="50" width="450">
+				<control type="group">
+					<control type="label">
+						<aligny>center</aligny>
+						<align>left</align>
+						<font>Small</font>
+						<textcolor>$VAR[ColourHighlight]</textcolor>
+						<label>$INFO[ListItem.Label]$INFO[ListItem.Label2, ,]</label>
+						<selectedcolor>$VAR[ColourHighlight]</selectedcolor>
+						<visible>!IsEmpty(ListItem.Property(IsPlaying))</visible>
+					</control>
+					<control type="label">
+						<aligny>center</aligny>
+						<align>left</align>
+						<font>Small</font>
+						<textcolor>white</textcolor>
+						<label>$INFO[ListItem.Label]$INFO[ListItem.Label2, ,]</label>
+						<selectedcolor>white</selectedcolor>
+						<visible>IsEmpty(ListItem.Property(IsPlaying))</visible>
+					</control>
+				</control>
+			</focusedlayout>
+			<content>
+				<item id="1">
+					<label>$INFO[MusicPlayer.offset(-20).PlaylistPosition,,. ]$INFO[MusicPlayer.offset(-20).Title]</label>
+					<label2>$INFO[MusicPlayer.offset(-20).Duration]</label2>
+					<property name="TrackNumber">$INFO[MusicPlayer.offset(-20).PlaylistPosition]</property>
+					<onclick>Playlist.PlayOffset(-20)</onclick>
+					<visible>MusicPlayer.offset(-20).Exists</visible>
+				</item>
+				<item id="2">
+					<label>$INFO[MusicPlayer.offset(-19).PlaylistPosition,,. ]$INFO[MusicPlayer.offset(-19).Title]</label>
+					<label2>$INFO[MusicPlayer.offset(-19).Duration]</label2>
+					<property name="TrackNumber">$INFO[MusicPlayer.offset(-19).PlaylistPosition]</property>
+					<onclick>Playlist.PlayOffset(-19)</onclick>
+					<visible>MusicPlayer.offset(-19).Exists</visible>
+				</item>
+				<item id="3">
+					<label>$INFO[MusicPlayer.offset(18).PlaylistPosition,,. ]$INFO[MusicPlayer.offset(-18).Title]</label>
+					<label2>$INFO[MusicPlayer.offset(-18).Duration]</label2>
+					<property name="TrackNumber">$INFO[MusicPlayer.offset(-18).PlaylistPosition]</property>
+					<onclick>Playlist.PlayOffset(-18)</onclick>
+					<visible>MusicPlayer.offset(-18).Exists</visible>
+				</item>
+				<item id="4">
+					<label>$INFO[MusicPlayer.offset(17).PlaylistPosition,,. ]$INFO[MusicPlayer.offset(-17).Title]</label>
+					<label2>$INFO[MusicPlayer.offset(-17).Duration]</label2>
+					<property name="TrackNumber">$INFO[MusicPlayer.offset(-17).PlaylistPosition]</property>
+					<onclick>Playlist.PlayOffset(-17)</onclick>
+					<visible>MusicPlayer.offset(-17).Exists</visible>
+				</item>
+				<item id="5">
+					<label>$INFO[MusicPlayer.offset(-16).PlaylistPosition,,. ]$INFO[MusicPlayer.offset(-16).Title]</label>
+					<label2>$INFO[MusicPlayer.offset(-16).Duration]</label2>
+					<property name="TrackNumber">$INFO[MusicPlayer.offset(-16).PlaylistPosition]</property>
+					<onclick>Playlist.PlayOffset(-16)</onclick>
+					<visible>MusicPlayer.offset(-16).Exists</visible>
+				</item>
+				<item id="6">
+					<label>$INFO[MusicPlayer.offset(-15).PlaylistPosition,,. ]$INFO[MusicPlayer.offset(-15).Title]</label>
+					<label2>$INFO[MusicPlayer.offset(-15).Duration]</label2>
+					<property name="TrackNumber">$INFO[MusicPlayer.offset(-15).PlaylistPosition]</property>
+					<onclick>Playlist.PlayOffset(-15)</onclick>
+					<visible>MusicPlayer.offset(-15).Exists</visible>
+				</item>
+				<item id="7">
+					<label>$INFO[MusicPlayer.offset(-14).PlaylistPosition,,. ]$INFO[MusicPlayer.offset(-14).Title]</label>
+					<label2>$INFO[MusicPlayer.offset(-14).Duration]</label2>
+					<property name="TrackNumber">$INFO[MusicPlayer.offset(-14).PlaylistPosition]</property>
+					<onclick>Playlist.PlayOffset(-14)</onclick>
+					<visible>MusicPlayer.offset(-14).Exists</visible>
+				</item>
+				<item id="8">
+					<label>$INFO[MusicPlayer.offset(-13).PlaylistPosition,,. ]$INFO[MusicPlayer.offset(-13).Title]</label>
+					<label2>$INFO[MusicPlayer.offset(-13).Duration]</label2>
+					<property name="TrackNumber">$INFO[MusicPlayer.offset(-13).PlaylistPosition]</property>
+					<onclick>Playlist.PlayOffset(-13)</onclick>
+					<visible>MusicPlayer.offset(-13).Exists</visible>
+				</item>
+				<item id="9">
+					<label>$INFO[MusicPlayer.offset(-12).PlaylistPosition,,. ]$INFO[MusicPlayer.offset(-12).Title]</label>
+					<label2>$INFO[MusicPlayer.offset(-12).Duration]</label2>
+					<property name="TrackNumber">$INFO[MusicPlayer.offset(-12).PlaylistPosition]</property>
+					<onclick>Playlist.PlayOffset(-12)</onclick>
+					<visible>MusicPlayer.offset(-12).Exists</visible>
+				</item>
+				<item id="10">
+					<label>$INFO[MusicPlayer.offset(-11).PlaylistPosition,,. ]$INFO[MusicPlayer.offset(-11).Title]</label>
+					<label2>$INFO[MusicPlayer.offset(-11).Duration]</label2>
+					<property name="TrackNumber">$INFO[MusicPlayer.offset(-11).PlaylistPosition]</property>
+					<onclick>Playlist.PlayOffset(-11)</onclick>
+					<visible>MusicPlayer.offset(-11).Exists</visible>
+				</item>
+				<item id="11">
+					<label>$INFO[MusicPlayer.offset(-10).PlaylistPosition,,. ]$INFO[MusicPlayer.offset(-10).Title]</label>
+					<label2>$INFO[MusicPlayer.offset(-10).Duration]</label2>
+					<property name="TrackNumber">$INFO[MusicPlayer.offset(-10).PlaylistPosition]</property>
+					<onclick>Playlist.PlayOffset(-10)</onclick>
+					<visible>MusicPlayer.offset(-10).Exists</visible>
+				</item>
+				<item id="12">
+					<label>$INFO[MusicPlayer.offset(-9).PlaylistPosition,,. ]$INFO[MusicPlayer.offset(-9).Title]</label>
+					<label2>$INFO[MusicPlayer.offset(-9).Duration]</label2>
+					<property name="TrackNumber">$INFO[MusicPlayer.offset(-9).PlaylistPosition]</property>
+					<onclick>Playlist.PlayOffset(-9)</onclick>
+					<visible>MusicPlayer.offset(-9).Exists</visible>
+				</item>
+				<item id="13">
+					<label>$INFO[MusicPlayer.offset(-8).PlaylistPosition,,. ]$INFO[MusicPlayer.offset(-8).Title]</label>
+					<label2>$INFO[MusicPlayer.offset(-8).Duration]</label2>
+					<property name="TrackNumber">$INFO[MusicPlayer.offset(-8).PlaylistPosition]</property>
+					<onclick>Playlist.PlayOffset(-8)</onclick>
+					<visible>MusicPlayer.offset(-8).Exists</visible>
+				</item>
+				<item id="14">
+					<label>$INFO[MusicPlayer.offset(-7).PlaylistPosition,,. ]$INFO[MusicPlayer.offset(-7).Title]</label>
+					<label2>$INFO[MusicPlayer.offset(-7).Duration]</label2>
+					<property name="TrackNumber">$INFO[MusicPlayer.offset(-7).PlaylistPosition]</property>
+					<onclick>Playlist.PlayOffset(-7)</onclick>
+					<visible>MusicPlayer.offset(-7).Exists</visible>
+				</item>
+				<item id="15">
+					<label>$INFO[MusicPlayer.offset(-6).PlaylistPosition,,. ]$INFO[MusicPlayer.offset(-6).Title]</label>
+					<label2>$INFO[MusicPlayer.offset(-6).Duration]</label2>
+					<property name="TrackNumber">$INFO[MusicPlayer.offset(-6).PlaylistPosition]</property>
+					<onclick>Playlist.PlayOffset(-6)</onclick>
+					<visible>MusicPlayer.offset(-6).Exists</visible>
+				</item>
+				<item id="16">
+					<label>$INFO[MusicPlayer.offset(-5).PlaylistPosition,,. ]$INFO[MusicPlayer.offset(-5).Title]</label>
+					<label2>$INFO[MusicPlayer.offset(-5).Duration]</label2>
+					<property name="TrackNumber">$INFO[MusicPlayer.offset(-5).PlaylistPosition]</property>
+					<onclick>Playlist.PlayOffset(-5)</onclick>
+					<visible>MusicPlayer.offset(-5).Exists</visible>
+				</item>
+				<item id="17">
+					<label>$INFO[MusicPlayer.offset(-4).PlaylistPosition,,. ]$INFO[MusicPlayer.offset(-4).Title]</label>
+					<label2>$INFO[MusicPlayer.offset(-4).Duration]</label2>
+					<property name="TrackNumber">$INFO[MusicPlayer.offset(-4).PlaylistPosition]</property>
+					<onclick>Playlist.PlayOffset(-4)</onclick>
+					<visible>MusicPlayer.offset(-4).Exists</visible>
+				</item>
+				<item id="18">
+					<label>$INFO[MusicPlayer.offset(-3).PlaylistPosition,,. ]$INFO[MusicPlayer.offset(-3).Title]</label>
+					<label2>$INFO[MusicPlayer.offset(-3).Duration]</label2>
+					<property name="TrackNumber">$INFO[MusicPlayer.offset(-3).PlaylistPosition]</property>
+					<onclick>Playlist.PlayOffset(-3)</onclick>
+					<visible>MusicPlayer.offset(-3).Exists</visible>
+				</item>
+				<item id="19">
+					<label>$INFO[MusicPlayer.offset(-2).PlaylistPosition,,. ]$INFO[MusicPlayer.offset(-2).Title]</label>
+					<label2>$INFO[MusicPlayer.offset(-2).Duration]</label2>
+					<property name="TrackNumber">$INFO[MusicPlayer.offset(-2).PlaylistPosition]</property>
+					<onclick>Playlist.PlayOffset(-2)</onclick>
+					<visible>MusicPlayer.offset(-2).Exists</visible>
+				</item>
+				<item id="20">
+					<label>$INFO[MusicPlayer.offset(-1).PlaylistPosition,,. ]$INFO[MusicPlayer.offset(-1).Title]</label>
+					<label2>$INFO[MusicPlayer.offset(-1).Duration]</label2>
+					<property name="TrackNumber">$INFO[MusicPlayer.offset(-1).PlaylistPosition]</property>
+					<onclick>Playlist.PlayOffset(-1)</onclick>
+					<visible>MusicPlayer.offset(-1).Exists</visible>
+				</item>
+				<item id="21">
+					<label>$INFO[MusicPlayer.offset(0).PlaylistPosition,,. ]$INFO[MusicPlayer.offset(0).Title]</label>
+					<label2>$INFO[MusicPlayer.offset(0).Duration]</label2>
+					<property name="TrackNumber">$INFO[MusicPlayer.offset(0).PlaylistPosition]</property>
+					<property name="IsPlaying">1</property>
+					<onclick>Playlist.PlayOffset(0)</onclick>
+					<visible>MusicPlayer.offset(0).Exists</visible>
+				</item>
+				<item id="22">
+					<label>$INFO[MusicPlayer.offset(1).PlaylistPosition,,. ]$INFO[MusicPlayer.offset(1).Title]</label>
+					<label2>$INFO[MusicPlayer.offset(1).Duration]</label2>
+					<property name="TrackNumber">$INFO[MusicPlayer.offset(1).PlaylistPosition]</property>
+					<onclick>Playlist.PlayOffset(1)</onclick>
+					<visible>MusicPlayer.offset(1).Exists</visible>
+				</item>
+				<item id="23">
+					<label>$INFO[MusicPlayer.offset(2).PlaylistPosition,,. ]$INFO[MusicPlayer.offset(2).Title]</label>
+					<label2>$INFO[MusicPlayer.offset(2).Duration]</label2>
+					<property name="TrackNumber">$INFO[MusicPlayer.offset(2).PlaylistPosition]</property>
+					<onclick>Playlist.PlayOffset(2)</onclick>
+					<visible>MusicPlayer.offset(2).Exists</visible>
+				</item>
+				<item id="24">
+					<label>$INFO[MusicPlayer.offset(3).PlaylistPosition,,. ]$INFO[MusicPlayer.offset(3).Title]</label>
+					<label2>$INFO[MusicPlayer.offset(3).Duration]</label2>
+					<property name="TrackNumber">$INFO[MusicPlayer.offset(3).PlaylistPosition]</property>
+					<onclick>Playlist.PlayOffset(3)</onclick>
+					<visible>MusicPlayer.offset(3).Exists</visible>
+				</item>
+				<item id="25">
+					<label>$INFO[MusicPlayer.offset(4).PlaylistPosition,,. ]$INFO[MusicPlayer.offset(4).Title]</label>
+					<label2>$INFO[MusicPlayer.offset(4).Duration]</label2>
+					<property name="TrackNumber">$INFO[MusicPlayer.offset(4).PlaylistPosition]</property>
+					<onclick>Playlist.PlayOffset(4)</onclick>
+					<visible>MusicPlayer.offset(4).Exists</visible>
+				</item>
+				<item id="26">
+					<label>$INFO[MusicPlayer.offset(5).PlaylistPosition,,. ]$INFO[MusicPlayer.offset(5).Title]</label>
+					<label2>$INFO[MusicPlayer.offset(5).Duration]</label2>
+					<property name="TrackNumber">$INFO[MusicPlayer.offset(5).PlaylistPosition]</property>
+					<onclick>Playlist.PlayOffset(5)</onclick>
+					<visible>MusicPlayer.offset(5).Exists</visible>
+				</item>
+				<item id="27">
+					<label>$INFO[MusicPlayer.offset(6).PlaylistPosition,,. ]$INFO[MusicPlayer.offset(6).Title]</label>
+					<label2>$INFO[MusicPlayer.offset(6).Duration]</label2>
+					<property name="TrackNumber">$INFO[MusicPlayer.offset(6).PlaylistPosition]</property>
+					<onclick>Playlist.PlayOffset(6)</onclick>
+					<visible>MusicPlayer.offset(6).Exists</visible>
+				</item>
+				<item id="28">
+					<label>$INFO[MusicPlayer.offset(7).PlaylistPosition,,. ]$INFO[MusicPlayer.offset(7).Title]</label>
+					<label2>$INFO[MusicPlayer.offset(7).Duration]</label2>
+					<property name="TrackNumber">$INFO[MusicPlayer.offset(7).PlaylistPosition]</property>
+					<onclick>Playlist.PlayOffset(7)</onclick>
+					<visible>MusicPlayer.offset(7).Exists</visible>
+				</item>
+				<item id="29">
+					<label>$INFO[MusicPlayer.offset(8).PlaylistPosition,,. ]$INFO[MusicPlayer.offset(8).Title]</label>
+					<label2>$INFO[MusicPlayer.offset(8).Duration]</label2>
+					<property name="TrackNumber">$INFO[MusicPlayer.offset(8).PlaylistPosition]</property>
+					<onclick>Playlist.PlayOffset(8)</onclick>
+					<visible>MusicPlayer.offset(8).Exists</visible>
+				</item>
+				<item id="30">
+					<label>$INFO[MusicPlayer.offset(9).PlaylistPosition,,. ]$INFO[MusicPlayer.offset(9).Title]</label>
+					<label2>$INFO[MusicPlayer.offset(9).Duration]</label2>
+					<property name="TrackNumber">$INFO[MusicPlayer.offset(9).PlaylistPosition]</property>
+					<onclick>Playlist.PlayOffset(9)</onclick>
+					<visible>MusicPlayer.offset(9).Exists</visible>
+				</item>
+				<item id="31">
+					<label>$INFO[MusicPlayer.offset(10).PlaylistPosition,,. ]$INFO[MusicPlayer.offset(10).Title]</label>
+					<label2>$INFO[MusicPlayer.offset(10).Duration]</label2>
+					<property name="TrackNumber">$INFO[MusicPlayer.offset(10).PlaylistPosition]</property>
+					<onclick>Playlist.PlayOffset(10)</onclick>
+					<visible>MusicPlayer.offset(10).Exists</visible>
+				</item>
+				<item id="32">
+					<label>$INFO[MusicPlayer.offset(11).PlaylistPosition,,. ]$INFO[MusicPlayer.offset(11).Title]</label>
+					<label2>$INFO[MusicPlayer.offset(11).Duration]</label2>
+					<property name="TrackNumber">$INFO[MusicPlayer.offset(11).PlaylistPosition]</property>
+					<onclick>Playlist.PlayOffset(11)</onclick>
+					<visible>MusicPlayer.offset(11).Exists</visible>
+				</item>
+				<item id="33">
+					<label>$INFO[MusicPlayer.offset(12).PlaylistPosition,,. ]$INFO[MusicPlayer.offset(12).Title]</label>
+					<label2>$INFO[MusicPlayer.offset(12).Duration]</label2>
+					<property name="TrackNumber">$INFO[MusicPlayer.offset(12).PlaylistPosition]</property>
+					<onclick>Playlist.PlayOffset(12)</onclick>
+					<visible>MusicPlayer.offset(12).Exists</visible>
+				</item>
+				<item id="34">
+					<label>$INFO[MusicPlayer.offset(13).PlaylistPosition,,. ]$INFO[MusicPlayer.offset(13).Title]</label>
+					<label2>$INFO[MusicPlayer.offset(13).Duration]</label2>
+					<property name="TrackNumber">$INFO[MusicPlayer.offset(13).PlaylistPosition]</property>
+					<onclick>Playlist.PlayOffset(13)</onclick>
+					<visible>MusicPlayer.offset(13).Exists</visible>
+				</item>
+				<item id="35">
+					<label>$INFO[MusicPlayer.offset(14).PlaylistPosition,,. ]$INFO[MusicPlayer.offset(14).Title]</label>
+					<label2>$INFO[MusicPlayer.offset(14).Duration]</label2>
+					<property name="TrackNumber">$INFO[MusicPlayer.offset(14).PlaylistPosition]</property>
+					<onclick>Playlist.PlayOffset(14)</onclick>
+					<visible>MusicPlayer.offset(14).Exists</visible>
+				</item>
+				<item id="36">
+					<label>$INFO[MusicPlayer.offset(15).PlaylistPosition,,. ]$INFO[MusicPlayer.offset(15).Title]</label>
+					<label2>$INFO[MusicPlayer.offset(15).Duration]</label2>
+					<property name="TrackNumber">$INFO[MusicPlayer.offset(15).PlaylistPosition]</property>
+					<onclick>Playlist.PlayOffset(15)</onclick>
+					<visible>MusicPlayer.offset(15).Exists</visible>
+				</item>
+				<item id="37">
+					<label>$INFO[MusicPlayer.offset(16).PlaylistPosition,,. ]$INFO[MusicPlayer.offset(16).Title]</label>
+					<label2>$INFO[MusicPlayer.offset(16).Duration]</label2>
+					<property name="TrackNumber">$INFO[MusicPlayer.offset(16).PlaylistPosition]</property>
+					<onclick>Playlist.PlayOffset(16)</onclick>
+					<visible>MusicPlayer.offset(16).Exists</visible>
+				</item>
+				<item id="38">
+					<label>$INFO[MusicPlayer.offset(17).PlaylistPosition,,. ]$INFO[MusicPlayer.offset(17).Title]</label>
+					<label2>$INFO[MusicPlayer.offset(17).Duration]</label2>
+					<property name="TrackNumber">$INFO[MusicPlayer.offset(17).PlaylistPosition]</property>
+					<onclick>Playlist.PlayOffset(17)</onclick>
+					<visible>MusicPlayer.offset(17).Exists</visible>
+				</item>
+				<item id="39">
+					<label>$INFO[MusicPlayer.offset(18).PlaylistPosition,,. ]$INFO[MusicPlayer.offset(18).Title]</label>
+					<label2>$INFO[MusicPlayer.offset(18).Duration]</label2>
+					<property name="TrackNumber">$INFO[MusicPlayer.offset(18).PlaylistPosition]</property>
+					<onclick>Playlist.PlayOffset(18)</onclick>
+					<visible>MusicPlayer.offset(18).Exists</visible>
+				</item>
+				<item id="40">
+					<label>$INFO[MusicPlayer.offset(19).PlaylistPosition,,. ]$INFO[MusicPlayer.offset(19).Title]</label>
+					<label2>$INFO[MusicPlayer.offset(19).Duration]</label2>
+					<property name="TrackNumber">$INFO[MusicPlayer.offset(19).PlaylistPosition]</property>
+					<onclick>Playlist.PlayOffset(19)</onclick>
+					<visible>MusicPlayer.offset(19).Exists</visible>
+				</item>
+				<item id="41">
+					<label>$INFO[MusicPlayer.offset(20).PlaylistPosition,,. ]$INFO[MusicPlayer.offset(20).Title]</label>
+					<label2>$INFO[MusicPlayer.offset(20).Duration]</label2>
+					<property name="TrackNumber">$INFO[MusicPlayer.offset(20).PlaylistPosition]</property>
+					<onclick>Playlist.PlayOffset(20)</onclick>
+					<visible>MusicPlayer.offset(20).Exists</visible>
+				</item>
+			</content>
 		</control>
 	</controls>
 </window>
