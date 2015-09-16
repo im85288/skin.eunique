@@ -356,7 +356,7 @@
 			<visible>Skin.HasSetting(furniture.logo)</visible>
 			<visible>!Control.HasFocus(515)</visible>
 			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml) + !Control.IsVisible(500) + !Control.IsVisible(54) + !Control.IsVisible(52) + !ControlGroup(9000).HasFocus()</visible>
-			<visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)</visible>
+			<visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(albums) | Container.Content(songs)</visible>
 			<left>1664</left>
 			<top>909</top>
 			<include>Animation.FadeIn</include>
@@ -1669,6 +1669,145 @@
 				<width>96</width>
 				<height>113</height>
 				<texture colordiffuse="White">$VAR[ColourStudio]</texture>
+				<aspectratio aligny="center" align="right">keep</aspectratio>
+			</control>
+		</control>
+	</include>
+	<include name="Furniture_Discography">
+		<control type="group">
+			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml) + !Control.IsVisible(500) + !Control.IsVisible(54) + !Control.IsVisible(52) + !Control.IsVisible(53)</visible>
+			<visible>Container.Content(albums) | Container.Content(songs) | Container.Content(artists)</visible>
+			<top>696</top>
+			<include>Animation.FadeIn</include>
+			<include>Animation.FadeOut</include>
+			<include>Animation.Common.Killer</include>
+			<animation type="Conditional" reversible="true" condition="![Skin.HasSetting(osd.hidespoilers) + Container.Content(episodes) + [stringcompare(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]] + [Container.Content(musicvideos) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets) | Container.Content(episodes)] + !System.IdleTime(20) + System.IdleTime(3) + Skin.HasSetting(furniture.overlayinfo) + ![ControlGroup(9000).HasFocus() | Window.IsVisible(DialogContextMenu.xml)]">
+				<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out" />
+				<effect type="zoom" end="95" time="200" center="auto" tween="quadratic" easing="out" />
+				<effect type="rotate" end="-1" time="200" center="auto" tween="quadratic" easing="out" />
+			</animation>
+			<control id="508923" type="wraplist">
+				<left>-100</left>
+				<top>0</top>
+				<width>1185</width>
+				<height>384</height>
+				<onup>50</onup>
+				<onleft>7000</onleft>
+				<onright>noop</onright>
+				<onright condition="!Window.IsVisible(1103)">SetProperty(BounceRight,1,Home)</onright>
+				<onback>9000</onback>
+				<preloaditems>6</preloaditems>
+				<focusposition>4</focusposition>
+				<viewtype label="">list</viewtype>
+				<orientation>horizontal</orientation>
+				<defaultcontrol always="true">0</defaultcontrol>
+				<scrolltime easing="inout" tween="sine">300</scrolltime>
+				<animation effect="fade" end="100" start="0" time="300">Visible</animation>
+				<animation effect="fade" end="0" start="100" time="300">Hidden</animation>
+				<animation center="480,1022" condition="true" easing="inout" effect="zoom" end="81"  start="100" time="300" tween="sine">Conditional</animation>
+				<itemlayout height="234" width="234">
+					<control type="group">
+						<control type="label">
+							<left>0</left>
+							<top>0</top>
+							<right>0</right>
+							<bottom>0</bottom>
+							<height>234</height>
+							<aligny>center</aligny>
+							<align>center</align>
+							<font>symbolbiggest</font>
+							<label></label>
+							<textcolor>white</textcolor>
+							<fadetime>300</fadetime>
+						</control>
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<right>0</right>
+							<bottom>0</bottom>
+							<aspectratio align="center" aligny="top">stretch</aspectratio>
+							<texture background="true">$INFO[ListItem.Icon]</texture>
+							<fadetime>200</fadetime>
+						</control>
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<right>0</right>
+							<bottom>0</bottom>
+							<texture border="15" colordiffuse="99000000">common/white.png</texture>
+						</control>
+					</control>
+				</itemlayout>
+				<focusedlayout height="234" width="234">
+					<control type="group">
+						<control type="label">
+							<left>0</left>
+							<top>0</top>
+							<right>0</right>
+							<bottom>0</bottom>
+							<height>234</height>
+							<aligny>center</aligny>
+							<align>center</align>
+							<font>symbolbiggest</font>
+							<label></label>
+							<textcolor>white</textcolor>
+							<fadetime>300</fadetime>
+						</control>
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<right>0</right>
+							<bottom>0</bottom>
+							<aspectratio align="center" aligny="top">stretch</aspectratio>
+							<texture background="true" fallback="DefaultAlbum.png">$INFO[ListItem.Icon]</texture>
+							<fadetime>00</fadetime>
+						</control>
+					</control>
+				</focusedlayout>
+				<content target="video">plugin://script.extendedinfo?info=discography&amp;&amp;artistname=$INFO[ListItem.Artist]</content>
+			</control>
+			<control type="image">
+				<left>970</left>
+				<top>194</top>
+				<right>10</right>
+				<height>139</height>
+				<texture border="15" colordiffuse="$VAR[EmbyLeftColourHighlight]">common/white.png</texture>
+				<visible>!Control.IsVisible(50)</visible>
+			</control>
+			<control type="textbox">
+				<description>textarea</description>
+				<left>975</left>
+				<top>194</top>
+				<right>273</right>
+				<height>129</height>
+				<align>justify</align>
+				<font>MediumSmallBold</font>
+				<textcolor>white</textcolor>
+				<label>$INFO[Window(Home).Property(SkinHelper.Music.Info)]</label>
+				<visible>!Control.IsVisible(50)</visible>
+			</control>
+			<control type="image">
+				<left>970</left>
+				<top>333</top>
+				<right>10</right>
+				<height>51</height>
+				<texture border="15" colordiffuse="$VAR[EmbyRightColourHighlight]">common/white.png</texture>
+			</control>
+			<control type="label">
+				<left>975</left>
+				<top>330</top>
+				<right>10</right>
+				<height>51</height>
+				<font>MediumBold</font>
+				<textcolor>$VAR[ColourSelected]</textcolor>
+				<label>$INFO[Container(508923).ListItem(0).Label]$INFO[Container(508923).ListItem(0).Property(year), (,)]</label>
+			</control>
+			<control type="image">
+				<right>93</right>
+				<top>303</top>
+				<width>96</width>
+				<height>113</height>
+				<texture>resource://resource.images.recordlabels.white/$INFO[ListItem.Property(Album_Label),,.png]</texture>
 				<aspectratio aligny="center" align="right">keep</aspectratio>
 			</control>
 		</control>

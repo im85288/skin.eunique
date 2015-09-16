@@ -5,6 +5,8 @@
     <menucontrol>9000</menucontrol>
     <allowoverlay>yes</allowoverlay>
     <views>50,501,54,57</views>
+    <onload>AlarmClock(castScroll,Control.Move(508923,-1),00:03,silent,loop)</onload>
+    <onunload>CancelAlarm(castScroll,true)</onunload>
     <controls>
         <include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
         <include>Furniture_NowPlaying</include>
@@ -17,6 +19,8 @@
             <include>Furniture_EmbyClock</include>
             <include>Furniture_HeaderEmby</include>
         </control>
+        <include>Furniture_Discography</include>
+        <include>Furniture_Logo</include>
         <control type="group">
             <include>Animation.FadeIn</include>
             <include>Animation.FadeOut</include>
