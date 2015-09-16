@@ -94,36 +94,47 @@
 			<top>TopPad</top>
 			<visible>!IsEmpty(ListItem.Icon)</visible>
             <control type="group">
-            <top>-51</top>
-            <width>950</width>
+				<top>-51</top>
+				<width>950</width>
 				<height>51</height>
-			<control type="image">
-				<right>10</right>
-				<height>51</height>
-				<texture border="15" colordiffuse="$VAR[EmbyMiddleColourHighlight]">common/white.png</texture>
-			</control>
-			<control type="label">
-				<right>10</right>
-				<height>51</height>
-				<align>center</align>
-				<aligny>center</aligny>
-				<scroll>true</scroll>
-				<label fallback="19055">$VAR[LabelNextAiredDetails]</label>
-				<font>DurationFontSmall</font>
-				<textcolor>$VAR[ColourTextFlags]</textcolor>
-				<visible>Container.Content(seasons) | Container.Content(tvshows) | Container.Content(episodes)</visible>
-			</control>
-			<control type="label">
-				<right>10</right>
-				<height>51</height>
-				<align>center</align>
-				<aligny>center</aligny>
-				<scroll>true</scroll>
-				<label fallback="19055">$INFO[ListItem.Year,, | ]$INFO[ListItem.RatingAndVotes]$INFO[ListItem.Country, | ]</label>
-				<font>DurationFontSmall</font>
-				<textcolor>$VAR[ColourTextFlags]</textcolor>
-				<visible>!Container.Content(seasons) + !Container.Content(tvshows) + !Container.Content(episodes)</visible>
-			</control>
+				<control type="image">
+					<right>10</right>
+					<height>51</height>
+					<texture border="15" colordiffuse="$VAR[EmbyMiddleColourHighlight]">common/white.png</texture>
+				</control>
+				<control type="label">
+					<right>10</right>
+					<height>51</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<scroll>true</scroll>
+					<label fallback="19055">$VAR[LabelNextAiredDetails]</label>
+					<font>DurationFontSmall</font>
+					<textcolor>$VAR[ColourTextFlags]</textcolor>
+					<visible>Container.Content(seasons) | Container.Content(tvshows) | Container.Content(episodes)</visible>
+				</control>
+				<control type="label">
+					<right>10</right>
+					<height>51</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<scroll>true</scroll>
+					<label fallback="19055">$INFO[ListItem.Year,, | ]$INFO[ListItem.RatingAndVotes]$INFO[ListItem.Country, | ]</label>
+					<font>DurationFontSmall</font>
+					<textcolor>$VAR[ColourTextFlags]</textcolor>
+					<visible>!Container.Content(seasons) + !Container.Content(tvshows) + !Container.Content(episodes) + !Container.Content(albums) + !Container.Content(songs)</visible>
+				</control>
+				<control type="textbox">
+					<right>10</right>
+					<height>40</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<autoscroll delay="800" time="1200" repeat="800"/>
+					<label fallback="19055">$INFO[Window(Home).Property(SkinHelper.Music.TrackList)]</label>
+					<font>DurationFontSmall</font>
+					<textcolor>$VAR[ColourTextFlags]</textcolor>
+					<visible>Container.Content(albums) | Container.Content(songs)</visible>
+				</control>
 			</control>
 			<control type="image">
 				<width>602</width>
@@ -131,7 +142,15 @@
 				<fadetime>100</fadetime>
 				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 				<texture background="true">$VAR[PosterImage]</texture>
-				<visible>!Skin.Hassetting(views.cases)</visible>
+				<visible>!Container.Content(albums)</visible>
+			</control>
+			<control type="image">
+				<width>879</width>
+				<height>879</height>
+				<fadetime>100</fadetime>
+				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+				<texture background="true">$VAR[PosterImage]</texture>
+				<visible>Container.Content(albums)</visible>
 			</control>
 			<control type="image">
 				<left>602</left>
@@ -140,6 +159,16 @@
 				<fadetime>1000</fadetime>
 				<aspectratio align="left" aligny="center" scalediffuse="false">scale</aspectratio>
 				<texture flipx="true" background="true" diffuse="diffuse/listposter-ref.png">$INFO[Window(home).Property(VideoInfo.ImageFilter)]</texture>
+				<visible>!Container.Content(albums)</visible>
+			</control>
+			<control type="image">
+				<left>602</left>
+				<right>10</right>
+				<height>879</height>
+				<fadetime>1000</fadetime>
+				<aspectratio align="left" aligny="center" scalediffuse="false">scale</aspectratio>
+				<texture flipx="true" background="true" diffuse="diffuse/listposter-ref.png">$INFO[Window(home).Property(VideoInfo.ImageFilter)]</texture>
+				<visible>Container.Content(albums)</visible>
 			</control>
 			<control type="label">
 				<left>607</left>
@@ -151,6 +180,7 @@
 				<scroll>true</scroll>
 				<textcolor>white</textcolor>
 				<label>$VAR[LabelDirector]</label>
+				<visible>!Container.Content(albums)</visible>
 			</control>
 			<control type="label">
 				<left>607</left>
@@ -161,6 +191,7 @@
 			   <font>MediumSmallBold</font>
 				<textcolor>white</textcolor>
 				<label>$VAR[LabelDuration]</label>
+				<visible>!Container.Content(albums)</visible>
 			</control>
 			<control type="textbox">
 				<left>607</left>
@@ -172,6 +203,7 @@
 				<textcolor>white</textcolor>
 				<label>$VAR[LabelGenreList]</label>
 				<autoscroll delay="500" time="1000" repeat="500"/>
+				<visible>!Container.Content(albums)</visible>
 			</control>
 			<control type="textbox">
 				<left>607</left>
@@ -183,6 +215,7 @@
 				<textcolor>white</textcolor>
 				<label>$INFO[Window(Home).Property(SkinHelper.ListItemStudios)]</label>
 				<autoscroll delay="500" time="3000" repeat="500"/>
+				<visible>!Container.Content(albums)</visible>
 			</control>
 			<control type="textbox">
 				<description>textarea</description>
@@ -194,6 +227,19 @@
 				<font>MediumLargeBold</font>
 				<textcolor>white</textcolor>
 				<label>$VAR[PlotList]</label>
+				<visible>!Container.Content(albums)</visible>
+			</control>
+			<control type="textbox">
+				<description>textarea</description>
+				<left>607</left>
+				<top>10</top>
+				<right>15</right>
+				<bottom>40</bottom>
+				<align>right</align>
+				<font>MediumLargeBold</font>
+				<textcolor>white</textcolor>
+				<label>$INFO[Window(Home).Property(SkinHelper.Music.Info)]</label>
+				<visible>Container.Content(albums)</visible>
 			</control>
 		</control>
 	</include>
@@ -401,6 +447,7 @@
 			</control>
 			<visible>!stringcompare(ListItem.Label,..) + ListItem.IsResumable</visible>
 		</control>
+
 		<control type="label">
 			<right>30</right>
 			<width>500</width>
@@ -412,7 +459,20 @@
 			<selectedcolor>black</selectedcolor>
 			<label fallback="0.0">$INFO[ListItem.Rating]</label>
 			<visible>!stringcompare(ListItem.Label,..)</visible>
-			<visible>!Container.Content(seasons)</visible>
+			<visible>!Container.Content(seasons) + !Container.Content(albums) + !Container.Content(songs)</visible>
+		</control>
+
+		<control type="label">
+			<right>30</right>
+			<width>500</width>
+			<aligny>center</aligny>
+			<height>64</height>
+			<align>right</align>
+			<font>Small</font>
+			<textcolor>black</textcolor>
+			<selectedcolor>black</selectedcolor>
+			<label>$INFO[ListItem.Year]</label>
+			<visible>Container.Content(albums) | Container.Content(songs)</visible>
 		</control>
 	</include>
 	<include name="50itemlayout">
@@ -558,8 +618,22 @@
 			<selectedcolor>Dark1</selectedcolor>
 			<label fallback="0.0">$INFO[ListItem.Rating]</label>
 			<visible>!stringcompare(ListItem.Label,..)</visible>
-			<visible>!Container.Content(seasons)</visible>
+			<visible>!Container.Content(seasons) + !Container.Content(albums) + !Container.Content(songs)</visible>
 		</control>
+
+		<control type="label">
+			<right>30</right>
+			<width>500</width>
+			<aligny>center</aligny>
+			<height>64</height>
+			<align>right</align>
+			<font>Small</font>
+			<textcolor>Dark1</textcolor>
+			<selectedcolor>Dark1</selectedcolor>
+			<label>$INFO[ListItem.Year]</label>
+			<visible>Container.Content(albums) | Container.Content(songs)</visible>
+		</control>
+
 	</include>
 	<include name="50itemlayout_square">
 		<control type="image">

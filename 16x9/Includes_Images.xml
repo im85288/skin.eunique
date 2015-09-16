@@ -51,7 +51,7 @@
 		<value condition="!IsEmpty(Container(9500).ListItem.Art(poster))">$INFO[Container(9500).ListItem.Art(poster)]</value>
 		<value condition="Container.Content(genres) + Window.IsVisible(MyVideoNav.xml)">$VAR[MovieGenres]</value>
 		<value condition="Container.Content(genres) + Window.IsVisible(MyMusicNav.xml)">$VAR[MusicGenres]</value>
-		<value condition="!IsEmpty(ListItem.Art(thumb))">$INFO[Container(9500).ListItem.Art(thumb)]</value>
+		<value condition="!IsEmpty(Container(9500).ListItem.Art(thumb))">$INFO[Container(9500).ListItem.Art(thumb)]</value>
 		<value condition="Substring(Container(9500).ListItem.Icon,Default,left) | [IsEmpty(Container(9500).ListItem.Title) + IsEmpty(Container(9500).ListItem.Icon)]">buttons/add.png</value>
 		<value>$INFO[Container(9500).ListItem.Icon]</value>
 	</variable>
@@ -83,6 +83,7 @@
 		<value>$INFO[Player.Art(thumb)]</value>
 	</variable>
 	<variable name="BannerImage">
+		<value condition="!IsEmpty(Window(Home).Property(SkinHelper.Music.BannerArt))">$INFO[Window(Home).Property(SkinHelper.Music.BannerArt)]</value>
 		<value condition="!IsEmpty(ListItem.Art(tvshow.banner))">$INFO[ListItem.Art(tvshow.banner)]</value>
 		<value condition="!IsEmpty(ListItem.Art(banner))">$INFO[ListItem.Art(banner)]</value>
 		<value condition="!IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
@@ -133,13 +134,10 @@
 		<value>$INFO[Skin.String(cdartlocation)]$INFO[MusicPlayer.Artist]/logo.png</value>
 	</variable>
 	<variable name="ClearLogo">
-		<value condition="!IsEmpty(ListItem.Art(tvshow.clearart)) + Skin.HasSetting(furniture.logo.clearart)">$INFO[ListItem.Art(tvshow.clearart)]</value>
-		<value condition="!IsEmpty(ListItem.Art(clearart)) + Skin.HasSetting(furniture.logo.clearart)">$INFO[ListItem.Art(clearart)]</value>
 		<value condition="!IsEmpty(ListItem.Art(tvshow.clearlogo))">$INFO[ListItem.Art(tvshow.clearlogo)]</value>
 		<value condition="!IsEmpty(ListItem.Art(clearlogo))">$INFO[ListItem.Art(clearlogo)]</value>
 	</variable>
 	<variable name="ClearArtOnly">
-		<value condition="!IsEmpty(ListItem.Art(tvshow.clearlogo))">$INFO[ListItem.Art(tvshow.clearlogo)]</value>
 		<value condition="!IsEmpty(ListItem.Art(tvshow.clearart))">$INFO[ListItem.Art(tvshow.clearart)]</value>
 		<value condition="!IsEmpty(ListItem.Art(clearart))">$INFO[ListItem.Art(clearart)]</value>
 		<value condition="!IsEmpty(ListItem.Art(landscape))">$INFO[ListItem.Art(landscape)]</value>
@@ -440,5 +438,11 @@
 	<variable name="WeatherIconVar">
 		<value condition="System.HasAddon(script.image.resource.select) + !IsEmpty(Skin.String(weathericons.path))">$INFO[Skin.String(weathericons.path)]</value>
 		<value>resource://resource.images.weathericons.default/</value>
+	</variable>
+
+	<variable name="PVRFanart">
+		<value condition="!IsEmpty(Window(home).Property(SkinHelper.PVR.FanArt))">$INFO[Window(home).Property(SkinHelper.PVR.FanArt)]</value>
+		<value condition="!IsEmpty(Window(home).Property(SkinHelper.PVR.Thumb))">$INFO[Window(home).Property(SkinHelper.PVR.Thumb)]</value>
+		<value>pvr/background.jpg</value>
 	</variable>
 </includes>

@@ -9,9 +9,6 @@
 	<onunload>ClearProperty(VideoInfo.ImageColor,home)</onunload>
 	<onunload>ClearProperty(VideoInfo.ImageFilter,home)</onunload>
 	<controls>
-		<!--
-		<include>GlobalOverlay</include>
-		-->
 		<control type="image">
 			<include>Dimensions_Fullscreen</include>
 			<aspectratio align="center">scale</aspectratio>
@@ -37,32 +34,50 @@
 					<fadetime>50</fadetime>
 				</control>
 			</control>
-			<!--
-			<control type="image">
-				<right>10</right>
-				<bottom>250</bottom>
-				<width>192</width>
-				<height>226</height>
-				<texture>$VAR[ColourStudio]</texture>
-				<aspectratio aligny="bottom" align="right">keep</aspectratio>
+			<control type="group">
+				<left>1654</left>
+				<top>530</top>
+				<control type="image">
+					<width>206</width>
+					<height>116</height>
+					<texture>$VAR[ClearArtOnly]</texture>
+					<aspectratio align="center" aligny="center">keep</aspectratio>
+					<fadetime>50</fadetime>
+				</control>
 			</control>
-			-->
-		<control type="group">
-			<visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)</visible>
-			<left>1654</left>
-			<top>530</top>
-			<control type="image">
-				<width>228</width>
-				<height>116</height>
-				<texture>$VAR[StudioLogo]</texture>
-				<aspectratio align="center" aligny="center">keep</aspectratio>
-				<fadetime>50</fadetime>
+
+			<control type="group">
+				<left>10</left>
+				<top>7</top>
+				<width>420</width>
+				<height>631</height>
+				<visible>Control.HasFocus(9500)</visible>
+				<control type="image">
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<texture colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" background="true">common/white.png</texture>
+					<animation type="conditional" condition="true" reversible="false">
+						<effect type="zoom" start="100" end="108" time="200" center="auto" tween="quadratic" easing="out" />
+					</animation>
+				</control>
+				<control type="image">
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<texture background="true">$VAR[PosterImage]</texture>
+					<animation type="conditional" condition="true" reversible="false">
+						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
+					</animation>
+				</control>
+				<control type="image">
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<texture background="true">$VAR[PosterImage9500]</texture>
+					<animation type="conditional" condition="true" reversible="false">
+						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
+					</animation>
+				</control>
+				<animation type="conditional" condition="true" reversible="false">
+					<effect type="zoom" start="100" end="94" time="200" center="auto" tween="quadratic" easing="out" />
+					<effect type="rotate" end="-1" time="200" center="auto" tween="quadratic" easing="out" />
+				</animation>
 			</control>
-		</control>
-
-
-
-
 
 			<control type="grouplist">
 				<top>218</top>
@@ -71,42 +86,73 @@
 				<right>10</right>
 				<orientation>horizontal</orientation>
 				<itemgap>10</itemgap>
+				<control type="label">
+					<aligny>center</aligny>
+					<align>left</align>
+					<font>symbol</font>
+					<textcolor>selective yellow</textcolor>
+					<height>38</height>
+					<width>auto</width>
+					<label></label>
+					<visible>!IsEmpty(ListItem.Rating)</visible>
+				</control>
+				<control type="label">
+					<aligny>center</aligny>
+					<align>left</align>
+					<font>Medium</font>
+					<textcolor>white</textcolor>
+					<height>38</height>
+					<width>auto</width>
+					<label fallback="-  ">$INFO[ListItem.Rating,,  ]</label>
+					<visible>!IsEmpty(ListItem.Rating)</visible>
+				</control>
 					<control type="label">
-<aligny>center</aligny>
+						<aligny>center</aligny>
 						<align>left</align>
 						<font>symbol</font>
-						<textcolor>red</textcolor>
-				<height>38</height>
+						<textcolor>$VAR[RottenTomatoesIconColour]</textcolor>
+						<height>38</height>
 						<width>auto</width>
-						<label></label>
-						<visible>Container.Content(movies)</visible>
+						<label>$VAR[RottenTomatoesIcon]</label>
+						<visible>!IsEmpty(Window(Home).Property(EmbySkinHelper.ListItemRottenTomatoes))</visible>
 					</control>
 					<control type="label">
-<aligny>center</aligny>
+						<aligny>center</aligny>
 						<align>left</align>
 						<font>Medium</font>
 						<textcolor>white</textcolor>
-				<height>38</height>
+						<height>38</height>
 						<width>auto</width>
-						<label fallback="-  ">$INFO[ListItem.Rating,,  ]</label>
-						<visible>Container.Content(movies)</visible>
+						<label fallback="-  ">$INFO[Window(Home).Property(EmbySkinHelper.ListItemRottenTomatoes),,%  ]</label>
+						<visible>!IsEmpty(Window(Home).Property(EmbySkinHelper.ListItemRottenTomatoes))</visible>
 					</control>
+				<control type="button">
+					<width>38</width>
+					<height>38</height>
+					<textcolor>white</textcolor>
+					<textoffsetx>0</textoffsetx>
+					<label>$INFO[Window(Home).Property(EmbySkinHelper.ListItemMetaScore)]</label>
+					<font>MediumSmall</font>
+					<texturefocus colordiffuse="$VAR[CommunityRatingColour]" border="5">common/white.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[CommunityRatingColour]" border="5">common/white.png</texturenofocus>
+					<visible>!IsEmpty(Window(Home).Property(EmbySkinHelper.ListItemMetaScore))</visible>
+				</control>
 					<control type="label">
-<aligny>center</aligny>
+						<aligny>center</aligny>
 						<align>left</align>
 						<font>symbol</font>
-				<height>38</height>
+						<height>38</height>
 						<textcolor>white</textcolor>
 						<width>auto</width>
 						<label></label>
 						<visible>Container.Content(movies)</visible>
 					</control>
 					<control type="label">
-<aligny>center</aligny>
+						<aligny>center</aligny>
 						<align>left</align>
 						<font>Medium</font>
 						<textcolor>white</textcolor>
-				<height>38</height>
+						<height>38</height>
 						<width>auto</width>
 						<label fallback="-  ">$INFO[ListItem.PlayCount,,  ]</label>
 						<visible>Container.Content(movies)</visible>
@@ -183,10 +229,11 @@
 				<height>228</height>
 				<align>justify</align>
 				<font>Medium</font>
-				<textcolor>white2</textcolor>
-				<label>$VAR[Plot]</label>
+				<textcolor>white</textcolor>
+				<label>$VAR[PlotCritic]</label>
 			</control>
 			<control type="group">
+				<visible>!Control.HasFocus(9500)</visible>
 				<top>220</top>
 				<left>10</left>
 				<width>400</width>
@@ -310,7 +357,7 @@
 					<font>SmallBold</font>
 					<textcolor>white2</textcolor>
 					<height>38</height>
-					<label>Cast</label>
+					<label>31819</label>
 				</control>
 				<control type="textbox">
 					<left>10</left>
@@ -539,8 +586,8 @@
 			<!-- Bottom Section -->
 			<control type="group">
 				<bottom>0</bottom>
-				<height>260</height>
-			<control type="list" id="9499">
+				<height>265</height>
+				<control type="list" id="9499">
 					<top>0</top>
 					<width>300</width>
 					<height>34</height>
@@ -548,17 +595,8 @@
 					<ondown>9500</ondown>
 					<onback>9000</onback>
 					<orientation>horizontal</orientation>
-				<scrolltime tween="cubic" easing="out">500</scrolltime>
-				<itemlayout width="300" height="34">
-					<control type="label">
-						<aligny>center</aligny>
-						<align>left</align>
-						<height>34</height>
-						<font>Small</font>
-						<textcolor>white2</textcolor>
-						<label>$INFO[ListItem.Label]</label>
-						<visible>!Control.HasFocus(9499)</visible>
-					</control>
+					<scrolltime tween="cubic" easing="out">500</scrolltime>
+					<itemlayout width="300" height="34">
 					<control type="label">
 						<aligny>center</aligny>
 						<align>left</align>
@@ -575,15 +613,6 @@
 						<align>left</align>
 						<height>34</height>
 						<font>Small</font>
-						<textcolor>white2</textcolor>
-						<label>$INFO[ListItem.Label]</label>
-						<visible>!Control.HasFocus(9499)</visible>
-					</control>
-					<control type="label">
-						<aligny>center</aligny>
-						<align>left</align>
-						<height>34</height>
-						<font>Small</font>
 						<textcolor>$VAR[ColourHighlight]</textcolor>
 						<label>$INFO[ListItem.Label]</label>
 						<visible>Control.HasFocus(9499)</visible>
@@ -593,160 +622,173 @@
 					<item id="0">
 						<label>$LOCALIZE[31818]</label>
 						<onclick>Skin.SetString(widgetvideoinfo,SimilarVideos)</onclick>
-						
 					</item>
 					<item id="1">
-						<label>$LOCALIZE[31793]</label>
-						<onclick>Skin.SetString(widgetvideoinfo,RecommendedEpisodes)</onclick>
-						
+						<label>31819</label>
+						<onclick>Skin.SetString(widgetvideoinfo,ShowCast)</onclick>
 					</item>
 					<item id="2">
-						<label>$LOCALIZE[31126]</label>
-						<onclick>Skin.SetString(widgetvideoinfo,RandomEpisodes)</onclick>
-						
+						<label>$LOCALIZE[31793]</label>
+						<onclick>Skin.SetString(widgetvideoinfo,RecommendedEpisodes)</onclick>
 					</item>
 					<item id="3">
+						<label>$LOCALIZE[31126]</label>
+						<onclick>Skin.SetString(widgetvideoinfo,RandomEpisodes)</onclick>
+					</item>
+					<item id="4">
 						<label>$LOCALIZE[31125]</label>
 						<onclick>Skin.SetString(widgetvideoinfo,RecentEpisodes)</onclick>
 						
 					</item>
-					<item id="4">
+					<item id="5">
 						<label>$LOCALIZE[31784]</label>
 						<onclick>Skin.SetString(widgetvideoinfo,RecommendedShows)</onclick>
 						
 					</item>
-					<item id="5">
+					<item id="6">
 						<label>$LOCALIZE[31127]</label>
 						<onclick>Skin.SetString(widgetvideoinfo,RandomMovies)</onclick>
 						
 					</item>
-					<item id="6">
+					<item id="7">
 						<label>$LOCALIZE[31124]</label>
 						<onclick>Skin.SetString(widgetvideoinfo,RecentMovies)</onclick>
 						
 					</item>
-					<item id="7">
+					<item id="8">
 						<label>$LOCALIZE[31794]</label>
 						<onclick>Skin.SetString(widgetvideoinfo,RecommendedMovies)</onclick>
 						
 					</item>
-					<item id="8">
+					<item id="9">
 						<label>$LOCALIZE[31782]</label>
 						<onclick>Skin.SetString(widgetvideoinfo,SimilarMovies)</onclick>
 						
 					</item>
-					<item id="9">
+					<item id="10">
 						<label>$LOCALIZE[31208]</label>
 						<onclick>Skin.SetString(widgetvideoinfo,InCinemas)</onclick>
 						
 					</item>
-					<item id="10">
+					<item id="11">
 						<label>$LOCALIZE[31223]</label>
 						<onclick>Skin.SetString(widgetvideoinfo,Upcoming)</onclick>
 						
 					</item>
-					<item id="11">
+					<item id="12">
 						<label>$LOCALIZE[31224]</label>
 						<onclick>Skin.SetString(widgetvideoinfo,PopularMovies)</onclick>
 						
 					</item>
-					<item id="12">
+					<item id="13">
 						<label>$LOCALIZE[31225]</label>
 						<onclick>Skin.SetString(widgetvideoinfo,TopRatedMovies)</onclick>
 						
 					</item>
-					<item id="13">
+					<item id="14">
 						<label>$LOCALIZE[31134]</label>
 						<onclick>Skin.SetString(widgetvideoinfo,TrendingMovies)</onclick>
 						
 					</item>
-					<item id="14">
+					<item id="15">
 						<label>$LOCALIZE[31226]</label>
 						<onclick>Skin.SetString(widgetvideoinfo,PopularTvShows)</onclick>
 						
 					</item>
-					<item id="15">
+					<item id="16">
 						<label>$LOCALIZE[31227]</label>
 						<onclick>Skin.SetString(widgetvideoinfo,TopRatedTvShows)</onclick>
 						
 					</item>
-					<item id="16">
+					<item id="17">
 						<label>$LOCALIZE[31228]</label>
 						<onclick>Skin.SetString(widgetvideoinfo,OnAirTvShows)</onclick>
 						
 					</item>
-					<item id="17">
+					<item id="18">
 						<label>$LOCALIZE[31229]</label>
 						<onclick>Skin.SetString(widgetvideoinfo,AiringTodayTvShows)</onclick>
 						
 					</item>
-					<item id="18">
+					<item id="19">
 						<label>$LOCALIZE[31135]</label>
 						<onclick>Skin.SetString(widgetvideoinfo,TrendingShows)</onclick>
 						
 					</item>
-					<item id="19">
+					<item id="20">
 						<label>$LOCALIZE[31136]</label>
 						<onclick>Skin.SetString(widgetvideoinfo,AiringShows)</onclick>
 						
 					</item>
-					<item id="20">
+					<item id="21">
 						<label>$LOCALIZE[31137]</label>
 						<onclick>Skin.SetString(widgetvideoinfo,PremiereShows)</onclick>
 						
 					</item>
-					<item id="21">
+					<item id="22">
 						<label>Custom1</label>
 						<onclick>Skin.SetString(widgetvideoinfo,Custom1)</onclick>
 						
 					</item>
-					<item id="22">
+					<item id="23">
 						<label>Custom2</label>
 						<onclick>Skin.SetString(widgetvideoinfo,Custom2)</onclick>
 						
 					</item>
-					<item id="23">
+					<item id="24">
 						<label>$INFO[Window(Home).Property(emby.nodes.1.title)]</label>
 						<onclick>Skin.SetString(widgetvideoinfo,embynode1)</onclick>
 						
 					</item>
-					<item id="24">
+					<item id="25">
 						<label>$INFO[Window(Home).Property(emby.nodes.0.title)]</label>
 						<onclick>Skin.SetString(widgetvideoinfo,embynode0)</onclick>
 						
 					</item>
-					<item id="25">
+					<item id="26">
 						<label>$INFO[Window(Home).Property(emby.nodes.0.recent.title)]</label>
 						<onclick>Skin.SetString(widgetvideoinfo,embynode0recent)</onclick>
 						
 					</item>
-					<item id="26">
+					<item id="27">
 						<label>$INFO[Window(Home).Property(emby.nodes.1.recentepisodes.title)]</label>
 						<onclick>Skin.SetString(widgetvideoinfo,embynode1recentepisodes)</onclick>
 						
 					</item>
-					<item id="27">
+					<item id="28">
 						<label>$INFO[Window(Home).Property(emby.nodes.0.inprogress.title)]</label>
 						<onclick>Skin.SetString(widgetvideoinfo,embynode0inprogress)</onclick>
 						
 					</item>
-					<item id="28">
+					<item id="29">
 						<label>$INFO[Window(Home).Property(emby.nodes.1.inprogressepisodes.title)]</label>
 						<onclick>Skin.SetString(widgetvideoinfo,embynode1inprogressepisodes)</onclick>
 						
 					</item>
-					<item id="29">
+					<item id="30">
 						<label>$INFO[Window(Home).Property(emby.nodes.1.nextepisodes.title)]</label>
 						<onclick>Skin.SetString(widgetvideoinfo,embynode1nextepisodes)</onclick>
 						
 					</item>
 				</content>
 			</control>
+				<control type="label">
+					<width>1200</width>
+					<height>34</height>
+					<aligny>center</aligny>
+					<align>left</align>
+					<height>34</height>
+					<font>Small</font>
+					<textcolor>white2</textcolor>
+					<label>$VAR[VideoInfoWidgetLabel]$INFO[Container(9500).ListItem(0).Label,: ]$INFO[Container(9500).ListItem(0).Label2, $LOCALIZE[20347] ]</label>
+					<visible>!Control.HasFocus(9499)</visible>
+				</control>
+
 				<control type="wraplist" id="9500">
 					<visible allowhiddenfocus="true">!Container(9500).IsUpdating</visible>
 					<include>Animation.FadeIn</include>
 					<include>Animation.FadeOut</include>
-					<top>40</top>
+					<top>45</top>
 					<bottom>10</bottom>
 					<width>1920</width>
 					<onup>9000</onup>
@@ -759,6 +801,19 @@
 					<autoscroll time="3000">!Control.HasFocus(9500)</autoscroll>
 					<focusposition>0</focusposition>
 					<itemlayout height="210" width="140">
+						<control type="label">
+							<left>0</left>
+							<top>0</top>
+							<right>0</right>
+							<bottom>0</bottom>
+							<height>210</height>
+							<aligny>center</aligny>
+							<align>center</align>
+							<font>symbolbiggest</font>
+							<label></label>
+							<textcolor>white</textcolor>
+							<fadetime>300</fadetime>
+						</control>
 						<control type="image">
 							<aspectratio scalediffuse="false">stretch</aspectratio>
 							<texture background="true">$VAR[PosterImage]</texture>
@@ -766,32 +821,45 @@
 					</itemlayout>
 					<focusedlayout height="210" width="140">
 						<control type="group">
-						<control type="image">
-							<aspectratio scalediffuse="false">stretch</aspectratio>
-							<texture background="true">$VAR[PosterImage]</texture>
-						</control>
-						<control type="image">
-							<description>Title overlay</description>
-							<left>0</left>
-							<top>0</top>
-							<right>0</right>
-							<bottom>0</bottom>
-							<texture border="15" colordiffuse="af000000">common/white.png</texture>
-							<visible>Control.HasFocus(9500)</visible>
-						</control>
-						<control type="textbox">
-							<left>5</left>
-							<right>5</right>
-							<top>30</top>
-							<bottom>30</bottom>
-							<align>center</align>
-							<aligny>center</aligny>
-							<font>Tiny</font>
-							<textcolor>white2</textcolor>
-							<selectedcolor>white2</selectedcolor>
-							<label>$INFO[ListItem.Rating]$INFO[ListItem.Votes,[CR](, $LOCALIZE[20350])]</label>
-							<visible>Control.HasFocus(9500)</visible>
-						</control>
+							<control type="label">
+								<left>0</left>
+								<top>0</top>
+								<right>0</right>
+								<bottom>0</bottom>
+								<height>210</height>
+								<aligny>center</aligny>
+								<align>center</align>
+								<font>symbolbiggest</font>
+								<label></label>
+								<textcolor>white</textcolor>
+								<fadetime>300</fadetime>
+							</control>
+							<control type="image">
+								<aspectratio scalediffuse="false">stretch</aspectratio>
+								<texture background="true">$VAR[PosterImage]</texture>
+							</control>
+							<control type="image">
+								<description>Title overlay</description>
+								<left>0</left>
+								<top>0</top>
+								<right>0</right>
+								<bottom>0</bottom>
+								<texture border="15" colordiffuse="af000000">common/white.png</texture>
+								<visible>Control.HasFocus(9500)</visible>
+							</control>
+							<control type="textbox">
+								<left>5</left>
+								<right>5</right>
+								<top>30</top>
+								<bottom>30</bottom>
+								<align>center</align>
+								<aligny>center</aligny>
+								<font>Tiny</font>
+								<textcolor>white2</textcolor>
+								<selectedcolor>white2</selectedcolor>
+								<label>$INFO[ListItem.Rating]$INFO[ListItem.Votes,[CR](, $LOCALIZE[20350])]</label>
+								<visible>Control.HasFocus(9500)</visible>
+							</control>
 							<animation type="Focus" reversible="false">
 								<effect type="zoom" start="100" end="110" time="200" center="auto" tween="quadratic" easing="out" />
 							</animation>
@@ -995,7 +1063,7 @@
 					<align>left</align>
 					<font>SmallBold</font>
 					<textcolor>white2</textcolor>
-					<label>Cast</label>
+					<label>31819</label>
 					<animation type="conditional" condition="true" reversible="false">
 						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
 					</animation>
@@ -1368,9 +1436,9 @@
 				</focusedlayout>
 				<content>
 					<item id="0">
-						<label>Cast</label>
+						<label>31819</label>
 						<onclick>Skin.SetString(widgetvideoinfocast,ShowCast)</onclick>
-						<label2>Cast</label2>
+						<label2>31819</label2>
 					</item>
 					<item id="1">
 						<label>$LOCALIZE[31793]</label>
@@ -1555,16 +1623,16 @@
 				</content>
 			</control>
 					<control type="label">
-				<left>643</left>
-					<top>460</top>
-					<width>1200</width>
-					<height>34</height>
+						<left>643</left>
+						<top>460</top>
+						<width>1200</width>
+						<height>34</height>
 						<aligny>center</aligny>
 						<align>left</align>
 						<height>34</height>
 						<font>Small</font>
 						<textcolor>white2</textcolor>
-						<label>$INFO[Container(9498).ListItem.Label2,,: ]$INFO[Container(9501).ListItem(0).Label]$INFO[Container(9501).ListItem(0).Label2, $LOCALIZE[20347] ]</label>
+						<label>$VAR[VideoInfoCastWidgetLabel]$INFO[Container(9501).ListItem(0).Label,: ,]$INFO[Container(9501).ListItem(0).Label2, $LOCALIZE[20347] ]</label>
 						<visible>!Control.HasFocus(9498) + !Control.HasFocus(94988)</visible>
 					</control>
 						<control type="button" id="94988">
