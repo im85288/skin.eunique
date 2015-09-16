@@ -136,6 +136,7 @@
 	</variable>
 	<variable name="ClearLogo">
 		<value condition="!IsEmpty(Window(Home).Property(SkinHelper.Music.LogoArt))">$INFO[Window(Home).Property(SkinHelper.Music.LogoArt)]</value>
+		<value condition="!IsEmpty(Window(Home).Property(logo))">$INFO[Window(Home).Property(logo)]</value>
 		<value condition="!IsEmpty(ListItem.Art(tvshow.clearlogo))">$INFO[ListItem.Art(tvshow.clearlogo)]</value>
 		<value condition="!IsEmpty(ListItem.Art(clearlogo))">$INFO[ListItem.Art(clearlogo)]</value>
 	</variable>

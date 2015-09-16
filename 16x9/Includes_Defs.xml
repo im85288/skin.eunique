@@ -1008,6 +1008,23 @@
 		<value condition="Stringcompare(Skin.String(widgetvideoinfocast),embynode2nextepisodes) + !IsEmpty(Window(Home).Property(emby.nodes.2.nextepisodes.content))">$INFO[Window(Home).Property(emby.nodes.2.nextepisodes.content)]</value>
 		<value>$VAR[DefWidgetCast]</value>
 	</variable>
+
+	<variable name="DefWidgetContentMusicInfo">
+		<value condition="Stringcompare(Skin.String(widgetmusicinfo),Discography)">plugin://script.extendedinfo?info=discography&amp;&amp;artistname=$INFO[ListItem.Artist]</value>
+		<value condition="Stringcompare(Skin.String(widgetmusicinfo),SimilarArtists)">plugin://script.extendedinfo?info=similarartistsinlibrary&amp;&amp;artistname=$INFO[ListItem.Artist]</value>
+		<value condition="Stringcompare(Skin.String(widgetmusicinfo),Events)">plugin://script.extendedinfo?info=artistevents&amp;&amp;artistname=$INFO[ListItem.Artist]</value>
+		<value condition="Stringcompare(Skin.String(widgetmusicinfo),MostLoved)">plugin://script.extendedinfo?info=mostlovedtracks&amp;&amp;artistname=$INFO[ListItem.Artist]</value>
+		<value condition="Stringcompare(Skin.String(widgetmusicinfo),RandomMusic)">plugin://service.library.data.provider?type=randomalbums&amp;reload=$INFO[Window.Property(randomalbums)]</value>
+		<value condition="Stringcompare(Skin.String(widgetmusicinfo),RecentMusic)">plugin://service.library.data.provider?type=recentalbums&amp;reload=$INFO[Window.Property(recentalbums)]</value>
+		<value condition="Stringcompare(Skin.String(widgetmusicinfo),RecommendedMusic)">plugin://service.library.data.provider?type=recommendedalbums&amp;reload=$INFO[Window.Property(recommendedalbums)]</value>
+		<value condition="Stringcompare(Skin.String(widgetmusicinfo),RecentPlayedMusic)">musicdb://recentlyplayedalbums/</value>
+		<value condition="Stringcompare(Skin.String(widgetmusicinfo),Top100Music)">musicdb://top100/albums/</value>
+		<value condition="Stringcompare(Skin.String(widgetmusicinfo),PopularArtists)">plugin://script.extendedinfo?info=topartists</value>
+		<value condition="Stringcompare(Skin.String(widgetmusicinfo),HypedArtists)">plugin://script.extendedinfo?info=topartists</value>
+		<value condition="Stringcompare(Skin.String(widgetmusicinfo),Custom1)">$INFO[Skin.String(CustomWidget2)]</value>
+		<value condition="Stringcompare(Skin.String(widgetmusicinfo),Custom2)">$INFO[Skin.String(CustomWidget2)]</value>
+		<value>plugin://script.extendedinfo?info=discography&amp;&amp;artistname=$INFO[ListItem.Artist]</value>
+	</variable>
 	<include name="DefSideBrowserButton">
 		<radioposx>400</radioposx>
 		<width>100%</width>

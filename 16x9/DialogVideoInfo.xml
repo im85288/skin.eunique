@@ -171,41 +171,41 @@
 						<visible>Container.Content(movies)</visible>
 					</control>
 					<control type="label">
-<aligny>center</aligny>
+						<aligny>center</aligny>
 						<align>left</align>
 						<font>Medium</font>
 						<textcolor>white</textcolor>
-				<height>38</height>
+						<height>38</height>
 						<width>auto</width>
 						<label fallback="-  ">$VAR[DurationLong,,  ]</label>
 						<visible>Container.Content(movies)</visible>
 					</control>
 					<control type="label">
-<aligny>center</aligny>
+						<aligny>center</aligny>
 						<align>left</align>
 						<font>Medium</font>
 						<textcolor>white</textcolor>
-				<height>38</height>
+						<height>38</height>
 						<width>auto</width>
 						<label fallback="-">$INFO[Window(Home).Property(SkinHelper.ListItemGenres)]</label>
 						<visible>Container.Content(movies)</visible>
 					</control>
 					<control type="label">
-<aligny>center</aligny>
+						<aligny>center</aligny>
 						<align>left</align>
 						<font>Medium</font>
 						<textcolor>white</textcolor>
-				<height>38</height>
+						<height>38</height>
 						<width>auto</width>
 						<label fallback="  -  ">$INFO[ListItem.Year,  ,  ]</label>
 						<visible>Container.Content(movies)</visible>
 					</control>
 					<control type="label">
-<aligny>center</aligny>
+						<aligny>center</aligny>
 						<align>left</align>
 						<font>Medium</font>
 						<textcolor>white</textcolor>
-				<height>38</height>
+						<height>38</height>
 						<width>auto</width>
 						<label fallback="-  ">$VAR[MPAA,,  ]</label>
 						<visible>Container.Content(movies)</visible>
@@ -214,23 +214,23 @@
 
 
 					<control type="label">
-<aligny>center</aligny>
+						<aligny>center</aligny>
 						<align>left</align>
 						<font>Medium</font>
 						<textcolor>white</textcolor>
-				<height>38</height>
+						<height>38</height>
 						<width>auto</width>
-					<label>$INFO[ListItem.Season,,]$INFO[ListItem.Episode,x,  ]$INFO[ListItem.Title,,  ]$VAR[LabelDuration,,  ]</label>
-					<visible>!Container.Content(movies) + !Container.Content(TVShows)</visible>
-				</control>
+						<label>$INFO[ListItem.Season,,]$INFO[ListItem.Episode,x,  ]$INFO[ListItem.Title,,  ]$VAR[LabelDuration,,  ]</label>
+						<visible>!Container.Content(movies) + !Container.Content(TVShows)</visible>
+					</control>
 					<control type="label">
-<aligny>center</aligny>
+						<aligny>center</aligny>
 						<align>left</align>
 						<font>Medium</font>
 						<textcolor>white</textcolor>
-				<height>38</height>
+						<height>38</height>
 						<width>auto</width>
-					<label>$INFO[ListItem.Season,,]$INFO[ListItem.Episode,x,  ]$INFO[ListItem.Studio,,  ]$VAR[LabelDuration,,  ]</label>
+						<label>$INFO[ListItem.Season,,]$INFO[ListItem.Episode,x,  ]$INFO[ListItem.Studio,,  ]$VAR[LabelDuration,,  ]</label>
 					<visible>Container.Content(TVShows)</visible>
 				</control>
 			</control>
@@ -263,7 +263,7 @@
 					<animation type="conditional" condition="true" reversible="false">
 						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
 					</animation>
-					<label>Director</label>
+					<label>31823</label>
 				<visible>!Container.Content(tvshows) + !Container.Content(episodes) + !Container.Content(seasons)</visible>
 				</control>
 				<control type="label">
@@ -277,7 +277,7 @@
 					<animation type="conditional" condition="true" reversible="false">
 						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
 					</animation>
-					<label>Seasons</label>
+					<label>33054</label>
 					<visible>Container.Content(tvshows)</visible>
 				</control>
 				<control type="label">
@@ -305,7 +305,7 @@
 					<animation type="conditional" condition="true" reversible="false">
 						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
 					</animation>
-					<label>Air Date</label>
+					<label>31824</label>
 					<visible>Container.Content(episodes)</visible>
 				</control>
 
@@ -545,7 +545,7 @@
 					<textcolor>white</textcolor>
 					<textoffsetx>0</textoffsetx>
 					<visible>!IsEmpty(ListItem.Trailer)</visible>
-					<label>Watch Trailer</label>
+					<label>31822</label>
 					<font>StudioFont</font>
 					<animation condition="Control.HasFocus(1003)" effect="fade" end="100" start="0" time="10">Conditional</animation>
 					<animation condition="!Control.HasFocus(1003)" effect="fade" end="0" start="100" time="10">Conditional</animation>
@@ -590,7 +590,7 @@
 					<textoffsetx>0</textoffsetx>
 					<textcolor>white</textcolor>
 					<font>StudioFont</font>
-					<label>Director</label>
+					<label>31823</label>
 					<animation condition="Control.HasFocus(3443)" effect="fade" end="100" start="0" time="10">Conditional</animation>
 					<animation condition="!Control.HasFocus(3443)" effect="fade" end="0" start="100" time="10">Conditional</animation>
 						<visible>Container.Content(movies)</visible>
@@ -739,12 +739,12 @@
 						
 					</item>
 					<item id="22">
-						<label>Custom1</label>
+						<label>31827</label>
 						<onclick>Skin.SetString(widgetvideoinfo,Custom1)</onclick>
 						
 					</item>
 					<item id="23">
-						<label>Custom2</label>
+						<label>31828</label>
 						<onclick>Skin.SetString(widgetvideoinfo,Custom2)</onclick>
 						
 					</item>
@@ -1012,7 +1012,7 @@
 					<align>left</align>
 					<font>SmallBold</font>
 					<textcolor>white2</textcolor>
-					<label>Director</label>
+					<label>31823</label>
 					<animation type="conditional" condition="true" reversible="false">
 						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
 					</animation>
@@ -1025,7 +1025,7 @@
 					<align>left</align>
 					<font>SmallBold</font>
 					<textcolor>white2</textcolor>
-					<label>Seasons</label>
+					<label>33054</label>
 					<animation type="conditional" condition="true" reversible="false">
 						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
 					</animation>
@@ -1051,7 +1051,7 @@
 					<align>left</align>
 					<font>SmallBold</font>
 					<textcolor>white2</textcolor>
-					<label>Air Date</label>
+					<label>31824</label>
 					<animation type="conditional" condition="true" reversible="false">
 						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
 					</animation>
@@ -1064,7 +1064,7 @@
 					<align>left</align>
 					<font>SmallBold</font>
 					<textcolor>white2</textcolor>
-					<label>Genre</label>
+					<label>135</label>
 					<animation type="conditional" condition="true" reversible="false">
 						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
 					</animation>
@@ -1336,7 +1336,7 @@
 					<textcolor>white</textcolor>
 					<textoffsetx>0</textoffsetx>
 					<visible>!IsEmpty(ListItem.Trailer)</visible>
-					<label>Watch Trailer</label>
+					<label>31822</label>
 					<font>StudioFont</font>
 					<animation condition="Control.HasFocus(1003)" effect="fade" end="100" start="0" time="10">Conditional</animation>
 					<animation condition="!Control.HasFocus(1003)" effect="fade" end="0" start="100" time="10">Conditional</animation>
@@ -1381,7 +1381,7 @@
 					<textoffsetx>0</textoffsetx>
 					<textcolor>white</textcolor>
 					<font>StudioFont</font>
-					<label>Director</label>
+					<label>31823</label>
 					<animation condition="Control.HasFocus(3443)" effect="fade" end="100" start="0" time="10">Conditional</animation>
 					<animation condition="!Control.HasFocus(3443)" effect="fade" end="0" start="100" time="10">Conditional</animation>
 					<visible>Container.Content(movies)</visible>
@@ -1574,14 +1574,14 @@
 						
 					</item>
 					<item id="21">
-						<label>Custom1</label>
-						<label2>Custom1</label2>
+						<label>31827</label>
+						<label2>31827</label2>
 						<onclick>Skin.SetString(widgetvideoinfocast,Custom1)</onclick>
 						
 					</item>
 					<item id="22">
-						<label>Custom2</label>
-						<label2>Custom2</label2>
+						<label>31828</label>
+						<label2>31828</label2>
 						<onclick>Skin.SetString(widgetvideoinfocast,Custom2)</onclick>
 						
 					</item>
