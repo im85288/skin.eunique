@@ -175,7 +175,7 @@
 						<label></label>
 					<textcolor>$VAR[EmbyLeftColourHighlight]</textcolor>
 					<focusedcolor>$VAR[ColourHighlight]</focusedcolor>
-					<texturefocus colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" border="5">-</texturefocus>
+					<texturefocus colordiffuse="$INFO[Window(home).Property(PVRInfo.ImageColor)]" border="5">-</texturefocus>
 					<texturenofocus colordiffuse="$VAR[EmbyLeftColourHighlight]" border="5">-</texturenofocus>
 						<onclick>RunScript(script.extendedinfo,info=extendedtvinfo,name=$INFO[ListItem.Label])</onclick>
 						<animation condition="Control.HasFocus(19)" effect="zoom" end="200"  time="100" center="auto">Conditional</animation>
