@@ -145,7 +145,7 @@
 					<onright>3634</onright>
 					<onup>303</onup>
 					<ondown>300</ondown>
-					<onback>300</onback>
+			<onback>300</onback>
 					<onclick condition="![Player.HasAudio | Player.HasVideo] + !StringCompare(Container(300).ListItem.Property(defaultID),music)">RunScript(script.skin.helper.service,action=videosearch)</onclick>
 					<onclick condition="![Player.HasAudio | Player.HasVideo] + StringCompare(Container(300).ListItem.Property(defaultID),music)">RunScript(script.skin.helper.service,action=musicsearch)</onclick>
 					<onclick condition="[Player.HasAudio | Player.HasVideo]">Action(FullScreen)</onclick>
@@ -273,7 +273,7 @@
 				</control>
 			</control>
 			<control type="group">
-				<visible>[Container.Content(tvshows) | Container.Content(seasons)] + [!IsEmpty(Window(Home).Property(NextAired.NextDate)) | !IsEmpty(Window(Home).Property(NextAired.LatestTitle))] + !Control.IsVisible(53)</visible>
+				<visible>[Container.Content(tvshows) | Container.Content(seasons)] + [!IsEmpty(Window(Home).Property(NextAired.NextDate)) | !IsEmpty(Window(Home).Property(NextAired.LatestTitle))] + !Control.IsVisible(50) + !Control.IsVisible(53) + !Control.IsVisible(57)</visible>
 				<width>512</width>
 				<height>64</height>
 				<control type="image">
@@ -301,7 +301,7 @@
 				</control>
 			</control>
 			<control type="group">
-				<visible>[Container.Content(tvshows) | Container.Content(seasons)] + [IsEmpty(Window(Home).Property(NextAired.NextDate)) + IsEmpty(Window(Home).Property(NextAired.LatestTitle))] + !Control.IsVisible(53)</visible>
+				<visible>[Container.Content(tvshows) | Container.Content(seasons)] + [IsEmpty(Window(Home).Property(NextAired.NextDate)) + IsEmpty(Window(Home).Property(NextAired.LatestTitle))] + !Control.IsVisible(50) + !Control.IsVisible(53) + !Control.IsVisible(57)</visible>
 				<width>128</width>
 				<height>64</height>
 				<control type="image">
