@@ -142,7 +142,7 @@
 	<variable name="ClearArtOnly">
 		<value condition="!IsEmpty(ListItem.Art(tvshow.clearart))">$INFO[ListItem.Art(tvshow.clearart)]</value>
 		<value condition="!IsEmpty(ListItem.Art(clearart))">$INFO[ListItem.Art(clearart)]</value>
-		<value condition="!IsEmpty(ListItem.Art(landscape))">$INFO[ListItem.Art(landscape)]</value>
+		<value>resource://resource.images.studios.coloured/$INFO[Window(home).Property(ListItemStudioLabel),,.png]</value>
 	</variable>
 	<variable name="WidgetLogo">
 		<value condition="!IsEmpty(Container(301).ListItem.Art(tvshow.clearlogo))">$INFO[Container(301).ListItem.Art(tvshow.clearlogo)]</value>
