@@ -67,14 +67,18 @@
 							<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
 							<onfocus condition="!Container.Scrolling">RunScript(script.toolbox,info=blur,id='"$VAR[LandscapeImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfoExtra)</onfocus>
 						</control>
-                        <control type="group">
-                            <visible>Control.HasFocus(57) + !Window.IsVisible(DialogVideoInfo.xml)</visible>
-                            <include>50focuslayout</include>
-                        </control>
-                        <control type="group">
-                            <visible>!Control.HasFocus(57) | Window.IsVisible(DialogVideoInfo.xml)</visible>
-                            <include>50itemlayout</include>
-                        </control>
+						<control type="group">
+							<!--
+							<visible>Control.HasFocus(50) + !Window.IsVisible(DialogVideoInfo.xml)</visible>
+							-->
+							<include>50focuslayout</include>
+						</control>
+						<!--
+						<control type="group">
+							<visible>!Control.HasFocus(50) | Window.IsVisible(DialogVideoInfo.xml)</visible>
+							<include>50itemlayout</include>
+						</control>
+						-->
                     </focusedlayout>
                 </control>
                 <include>Furniture_Scrollbar</include>

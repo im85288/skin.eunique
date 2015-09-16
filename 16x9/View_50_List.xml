@@ -73,13 +73,17 @@
 							<onfocus>RunScript(script.toolbox,info=blur,id='"$VAR[PosterImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfo)</onfocus>
 						</control>
 						<control type="group">
+							<!--
 							<visible>Control.HasFocus(50) + !Window.IsVisible(DialogVideoInfo.xml)</visible>
+							-->
 							<include>50focuslayout</include>
 						</control>
+						<!--
 						<control type="group">
 							<visible>!Control.HasFocus(50) | Window.IsVisible(DialogVideoInfo.xml)</visible>
 							<include>50itemlayout</include>
 						</control>
+						-->
 					</focusedlayout>
 				</control>
 				<include>Furniture_ScrollbarL</include>
@@ -363,7 +367,7 @@
 		</control>
 		<control type="group">
 			<control type="label">
-			<centerright>110</centerright>
+			<centerright>112</centerright>
 			<centertop>32</centertop>
 				<width>40</width>
 				<height>40</height>
@@ -428,7 +432,7 @@
 		</control>
 		<control type="group">
 			<control type="label">
-			<centerright>110</centerright>
+			<centerright>112</centerright>
 			<centertop>32</centertop>
 				<width>40</width>
 				<height>40</height>
