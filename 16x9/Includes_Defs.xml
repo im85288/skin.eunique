@@ -904,6 +904,7 @@
 	</variable>
 	<variable name="DefWidgetContentVideoInfo">
 		<value condition="Stringcompare(Skin.String(widgetvideoinfo),SimilarVideos)">$VAR[SimilarVideos]</value>
+		<value condition="Stringcompare(Skin.String(widgetvideoinfo),ShowCast)">$VAR[DefWidgetCast]</value>
 		<value condition="Stringcompare(Skin.String(widgetvideoinfo),RandomEpisodes)">plugin://service.library.data.provider?type=randomepisodes&amp;reload=$INFO[Window.Property(randomepisodes)]</value>
 		<value condition="Stringcompare(Skin.String(widgetvideoinfo),RecentEpisodes)">plugin://service.library.data.provider?type=recentepisodes&amp;reload=$INFO[Window.Property(recentepisodes)]</value>
 		<value condition="Stringcompare(Skin.String(widgetvideoinfo),RecommendedEpisodes)">plugin://service.library.data.provider?type=recommendedepisodes&amp;reload=$INFO[Window.Property(recommendedepisodes)]</value>
@@ -1005,7 +1006,7 @@
 		<value condition="Stringcompare(Skin.String(widgetvideoinfocast),embynode2inprogress) + !IsEmpty(Window(Home).Property(emby.nodes.2.inprogress.content))">$INFO[Window(Home).Property(emby.nodes.2.inprogress.content)]</value>
 		<value condition="Stringcompare(Skin.String(widgetvideoinfocast),embynode2inprogressepisodes) + !IsEmpty(Window(Home).Property(emby.nodes.2.inprogressepisodes.content))">$INFO[Window(Home).Property(emby.nodes.2.inprogressepisodes.content)]</value>
 		<value condition="Stringcompare(Skin.String(widgetvideoinfocast),embynode2nextepisodes) + !IsEmpty(Window(Home).Property(emby.nodes.2.nextepisodes.content))">$INFO[Window(Home).Property(emby.nodes.2.nextepisodes.content)]</value>
-		<value>$VAR[SimilarVideos]</value>
+		<value>$VAR[DefWidgetCast]</value>
 	</variable>
 	<include name="DefSideBrowserButton">
 		<radioposx>400</radioposx>
