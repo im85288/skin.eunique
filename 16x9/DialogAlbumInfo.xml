@@ -730,7 +730,7 @@
 								<font>Tiny</font>
 								<textcolor>white2</textcolor>
 								<selectedcolor>white2</selectedcolor>
-								<label>$INFO[ListItem.Rating]$INFO[ListItem.Votes,[CR](, $LOCALIZE[20350])]</label>
+								<label>$INFO[ListItem.Year]</label>
 								<visible>Control.HasFocus(9500)</visible>
 							</control>
 							<animation type="Focus" reversible="false">
@@ -798,14 +798,15 @@
 					</animation>
 				</control>
 				<control type="image">
-					<aspectratio scalediffuse="false">scale</aspectratio>
+					<height>613</height>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
 					<texture background="true">$VAR[PosterImage9501]</texture>
 					<animation type="conditional" condition="true" reversible="false">
 						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
 					</animation>
 					<visible>!ControlGroup(9010).HasFocus</visible>
 				</control>
-				<control type="label">
+				<!-- <control type="label">
 					<right>16</right>
 					<top>1</top>
 					<width>76</width>
@@ -825,7 +826,7 @@
 					<textcolor>$VAR[IndicatorColourHighlight]</textcolor>
 					<visible>!stringcompare(ListItem.Label,..)</visible>
 					<visible>ControlGroup(9010).HasFocus</visible>
-				</control>
+				</control> -->
 				<animation type="conditional" condition="true" reversible="false">
 					<effect type="zoom" start="100" end="94" time="200" center="auto" tween="quadratic" easing="out" />
 					<effect type="rotate" end="-1" time="200" center="auto" tween="quadratic" easing="out" />
@@ -1326,7 +1327,7 @@
 					<scrolltime tween="quadratic">400</scrolltime>
 					<autoscroll time="3000">!Control.HasFocus(9501)</autoscroll>
 					<focusposition>0</focusposition>
-					<itemlayout height="210" width="140">
+					<itemlayout height="210" width="210">
 						<control type="label">
 							<left>0</left>
 							<top>0</top>
@@ -1345,7 +1346,7 @@
 							<texture background="true">$VAR[PosterImage]</texture>
 						</control>
 					</itemlayout>
-					<focusedlayout height="210" width="140">
+					<focusedlayout height="210" width="210">
 						<control type="group">
 						<control type="label">
 							<left>0</left>
@@ -1383,7 +1384,7 @@
 							<font>Tiny</font>
 							<textcolor>white2</textcolor>
 							<selectedcolor>white2</selectedcolor>
-							<label>$INFO[ListItem.Rating]$INFO[ListItem.Votes,[CR](, $LOCALIZE[20350])]</label>
+							<label>$INFO[ListItem.Year]</label>
 							<visible>Control.HasFocus(9500)</visible>
 						</control>
 							<animation type="Focus" reversible="false">
