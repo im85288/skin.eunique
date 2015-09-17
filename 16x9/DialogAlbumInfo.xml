@@ -360,7 +360,7 @@
 					<font>SmallBold</font>
 					<textcolor>white2</textcolor>
 					<height>38</height>
-					<label>31832</label>
+					<label>21891</label>
 					<visible>!Container.Content(albums)</visible>
 				</control>
 				<control type="textbox">
@@ -370,7 +370,7 @@
 					<align>right</align>
 					<font>TinyBold</font>
 					<textcolor>white</textcolor>
-					<label fallback="19055">$INFO[Window(Home).Property(SkinHelper.Music.TrackList)]</label>
+					<label fallback="19055">$INFO[ListItem.Property(Artist_Description)]</label>
 					<autoscroll delay="8000" time="1200" repeat="1000"/>
 					<fadetime>500</fadetime>
 					<visible>!Control.HasFocus(90902)</visible>
