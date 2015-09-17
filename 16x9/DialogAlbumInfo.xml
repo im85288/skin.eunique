@@ -75,16 +75,17 @@
 				</control>
 			</control>
 			-->
-			<control type="group">
+			<control type="multiimage">
 				<left>1654</left>
 				<top>530</top>
-				<control type="image">
-					<width>206</width>
-					<height>116</height>
-					<texture>$VAR[ColourStudio]</texture>
-					<aspectratio align="center" aligny="center">keep</aspectratio>
-					<fadetime>50</fadetime>
-				</control>
+				<width>206</width>
+				<height>116</height>
+				<fadetime>600</fadetime>
+				<timeperimage>20000</timeperimage>
+				<randomize>true</randomize>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<imagepath background="true">$INFO[Window(Home).Property(SkinHelper.ExtraFanArtPath)]</imagepath>
+				<visible>!IsEmpty(Window(Home).Property(SkinHelper.ExtraFanArtPath))</visible>
 			</control>
 
 			<control type="group">
@@ -131,11 +132,11 @@
 					<aligny>center</aligny>
 					<align>left</align>
 					<font>symbol</font>
-					<textcolor>selective yellow</textcolor>
+					<textcolor>$VAR[EmbyLeftColourHighlight]</textcolor>
 					<height>38</height>
 					<width>auto</width>
-					<label></label>
-					<visible>!IsEmpty(ListItem.Rating)</visible>
+					<label></label>
+					<visible>Container.Content(Artists) + !IsEmpty(Window(Home).Property(Artist_Formed))</visible>
 				</control>
 				<control type="label">
 					<aligny>center</aligny>
@@ -144,122 +145,127 @@
 					<textcolor>white</textcolor>
 					<height>38</height>
 					<width>auto</width>
-					<label fallback="-  ">$INFO[ListItem.Rating,,  ]</label>
-					<visible>!IsEmpty(ListItem.Rating)</visible>
+					<label>$INFO[Window(Home).Property(Artist_Formed)]</label>
+					<visible>Container.Content(Artists) + !IsEmpty(Window(Home).Property(Artist_Formed))</visible>
 				</control>
-					<control type="label">
-						<aligny>center</aligny>
-						<align>left</align>
-						<font>symbol</font>
-						<textcolor>$VAR[RottenTomatoesIconColour]</textcolor>
-						<height>38</height>
-						<width>auto</width>
-						<label>$VAR[RottenTomatoesIcon]</label>
-						<visible>!IsEmpty(Window(Home).Property(EmbySkinHelper.ListItemRottenTomatoes))</visible>
-					</control>
-					<control type="label">
-						<aligny>center</aligny>
-						<align>left</align>
-						<font>Medium</font>
-						<textcolor>white</textcolor>
-						<height>38</height>
-						<width>auto</width>
-						<label fallback="-  ">$INFO[Window(Home).Property(EmbySkinHelper.ListItemRottenTomatoes),,%  ]</label>
-						<visible>!IsEmpty(Window(Home).Property(EmbySkinHelper.ListItemRottenTomatoes))</visible>
-					</control>
-				<control type="button">
-					<width>38</width>
+				<control type="label">
+					<aligny>center</aligny>
+					<align>left</align>
+					<font>symbol</font>
+					<textcolor>$VAR[EmbyLeftColourHighlight]</textcolor>
 					<height>38</height>
-					<textcolor>white</textcolor>
-					<textoffsetx>0</textoffsetx>
-					<label>$INFO[Window(Home).Property(EmbySkinHelper.ListItemMetaScore)]</label>
-					<font>MediumSmall</font>
-					<texturefocus colordiffuse="$VAR[CommunityRatingColour]" border="5">common/white.png</texturefocus>
-					<texturenofocus colordiffuse="$VAR[CommunityRatingColour]" border="5">common/white.png</texturenofocus>
-					<visible>!IsEmpty(Window(Home).Property(EmbySkinHelper.ListItemMetaScore))</visible>
+					<width>auto</width>
+					<label></label>
+					<visible>Container.Content(Albums)</visible>
 				</control>
-					<control type="label">
-						<aligny>center</aligny>
-						<align>left</align>
-						<font>symbol</font>
-						<height>38</height>
-						<textcolor>white</textcolor>
-						<width>auto</width>
-						<label>  </label>
-						<visible>Container.Content(movies)</visible>
-					</control>
-					<control type="label">
-						<aligny>center</aligny>
-						<align>left</align>
-						<font>Medium</font>
-						<textcolor>white</textcolor>
-						<height>38</height>
-						<width>auto</width>
-						<label fallback="-  ">$INFO[ListItem.PlayCount,  ,  ]</label>
-						<visible>Container.Content(movies)</visible>
-					</control>
-					<control type="label">
-						<aligny>center</aligny>
-						<align>left</align>
-						<font>Medium</font>
-						<textcolor>white</textcolor>
-						<height>38</height>
-						<width>auto</width>
-						<label fallback="-  ">$VAR[DurationLong,,  ]</label>
-						<visible>Container.Content(movies)</visible>
-					</control>
-					<control type="label">
-						<aligny>center</aligny>
-						<align>left</align>
-						<font>Medium</font>
-						<textcolor>white</textcolor>
-						<height>38</height>
-						<width>auto</width>
-						<label fallback="-">$INFO[Window(Home).Property(SkinHelper.ListItemGenres)]</label>
-						<visible>Container.Content(movies)</visible>
-					</control>
-					<control type="label">
-						<aligny>center</aligny>
-						<align>left</align>
-						<font>Medium</font>
-						<textcolor>white</textcolor>
-						<height>38</height>
-						<width>auto</width>
-						<label fallback="  -  ">$INFO[ListItem.Year,  ,  ]</label>
-						<visible>Container.Content(movies)</visible>
-					</control>
-					<control type="label">
-						<aligny>center</aligny>
-						<align>left</align>
-						<font>Medium</font>
-						<textcolor>white</textcolor>
-						<height>38</height>
-						<width>auto</width>
-						<label fallback="-  ">$VAR[MPAA,,  ]</label>
-						<visible>Container.Content(movies)</visible>
-					</control>
-
-
-
-					<control type="label">
-						<aligny>center</aligny>
-						<align>left</align>
-						<font>Medium</font>
-						<textcolor>white</textcolor>
-						<height>38</height>
-						<width>auto</width>
-						<label>$INFO[ListItem.Season,,]$INFO[ListItem.Episode,x,  ]$INFO[ListItem.Title,,  ]$VAR[LabelDuration,,  ]</label>
-						<visible>!Container.Content(movies) + !Container.Content(TVShows)</visible>
-					</control>
-					<control type="label">
-						<aligny>center</aligny>
-						<align>left</align>
-						<font>Medium</font>
-						<textcolor>white</textcolor>
-						<height>38</height>
-						<width>auto</width>
-						<label>$INFO[ListItem.Season,,]$INFO[ListItem.Episode,x,  ]$INFO[ListItem.Studio,,  ]$VAR[LabelDuration,,  ]</label>
-					<visible>Container.Content(TVShows)</visible>
+				<control type="label">
+					<aligny>center</aligny>
+					<align>left</align>
+					<font>Medium</font>
+					<textcolor>white</textcolor>
+					<height>38</height>
+					<width>auto</width>
+					<label>$INFO[ListItem.Year]</label>
+					<visible>Container.Content(Albums)</visible>
+				</control>
+				<control type="label">
+					<aligny>center</aligny>
+					<align>left</align>
+					<font>symbol</font>
+					<textcolor>$VAR[EmbyMiddleColourHighlight]</textcolor>
+					<height>38</height>
+					<width>auto</width>
+					<label></label>
+					<visible>!IsEmpty(ListItem.Genre)</visible>
+				</control>
+				<control type="label">
+					<aligny>center</aligny>
+					<align>left</align>
+					<font>Medium</font>
+					<textcolor>white</textcolor>
+					<height>38</height>
+					<width>auto</width>
+					<label>$INFO[ListItem.Genre]</label>
+				</control>
+				<control type="label">
+					<aligny>center</aligny>
+					<align>left</align>
+					<font>symbol</font>
+					<textcolor>$VAR[EmbyRightColourHighlight]</textcolor>
+					<height>38</height>
+					<width>auto</width>
+					<label></label>
+					<visible>Container.Content(Artists) + !IsEmpty(Window(Home).Property(Born))</visible>
+				</control>
+				<control type="label">
+					<aligny>center</aligny>
+					<align>left</align>
+					<font>Medium</font>
+					<textcolor>white</textcolor>
+					<height>38</height>
+					<width>auto</width>
+					<label fallback="N/A">$INFO[Window(Home).Property(Born)]</label>
+					<visible>Container.Content(Artists) + !IsEmpty(Window(Home).Property(Born))</visible>
+				</control>
+				<control type="label">
+					<aligny>center</aligny>
+					<align>left</align>
+					<font>symbol</font>
+					<textcolor>$VAR[EmbyRightColourHighlight]</textcolor>
+					<height>38</height>
+					<width>auto</width>
+					<label></label>
+					<visible>Container.Content(Albums) + !IsEmpty(ListItem.Artist)</visible>
+				</control>
+				<control type="label">
+					<aligny>center</aligny>
+					<align>left</align>
+					<font>Medium</font>
+					<textcolor>white</textcolor>
+					<height>38</height>
+					<width>auto</width>
+					<label>$INFO[ListItem.Artist]</label>
+					<visible>Container.Content(Albums) + !IsEmpty(ListItem.Artist)</visible>
+				</control>
+				<control type="label">
+					<aligny>center</aligny>
+					<align>left</align>
+					<font>symbol</font>
+					<textcolor>$VAR[EmbyLeftColourHighlight]</textcolor>
+					<height>38</height>
+					<width>auto</width>
+					<label></label>
+					<visible>Container.Content(Albums) + !IsEmpty(ListItem.Property(Album_Style))</visible>
+				</control>
+				<control type="label">
+					<aligny>center</aligny>
+					<align>left</align>
+					<font>Medium</font>
+					<textcolor>white</textcolor>
+					<height>38</height>
+					<width>auto</width>
+					<label>$INFO[ListItem.Property(Album_Style)]</label>
+					<visible>Container.Content(Albums) + !IsEmpty(ListItem.Property(Album_Style))</visible>
+				</control>
+				<control type="label">
+					<aligny>center</aligny>
+					<align>left</align>
+					<font>symbol</font>
+					<textcolor>$VAR[EmbyLeftColourHighlight]</textcolor>
+					<height>38</height>
+					<width>auto</width>
+					<label></label>
+					<visible>!Container.Content(Albums)  + !IsEmpty(Window(Home).Property(Died))</visible>
+				</control>
+				<control type="label">
+					<aligny>center</aligny>
+					<align>left</align>
+					<font>Medium</font>
+					<textcolor>white</textcolor>
+					<height>38</height>
+					<width>auto</width>
+					<label fallback="N/A">$INFO[Window(Home).Property(Artist_Disbanded),, ]$INFO[Window(Home).Property(Died)]</label>
+					<visible>!Container.Content(Albums)  + !IsEmpty(Window(Home).Property(Died))</visible>
 				</control>
 			</control>
 			<control type="textbox">
@@ -272,6 +278,15 @@
 				<font>Medium</font>
 				<textcolor>white</textcolor>
 				<label>$INFO[Window(Home).Property(SkinHelper.Music.Info)]</label>
+			</control>
+
+			<control type="image">
+				<top>-49</top>
+				<left>140</left>
+				<width>280</width>
+				<height>280</height>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<texture background="true">$VAR[PosterImage]</texture>
 			</control>
 			<control type="group">
 				<visible>!Control.HasFocus(9500)</visible>
@@ -291,66 +306,8 @@
 					<animation type="conditional" condition="true" reversible="false">
 						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
 					</animation>
-					<label>31823</label>
-				<visible>!Container.Content(tvshows) + !Container.Content(episodes) + !Container.Content(seasons)</visible>
-				</control>
-				<control type="label">
-					<right>0</right>
-					<left>0</left>
-					<aligny>center</aligny>
-					<align>right</align>
-					<font>SmallBold</font>
-					<textcolor>white2</textcolor>
-					<height>38</height>
-					<animation type="conditional" condition="true" reversible="false">
-						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
-					</animation>
-					<label>33054</label>
-					<visible>Container.Content(tvshows)</visible>
-				</control>
-				<control type="label">
-					<right>0</right>
-					<left>0</left>
-					<aligny>center</aligny>
-					<align>right</align>
-					<font>SmallBold</font>
-					<textcolor>white2</textcolor>
-					<height>38</height>
-					<animation type="conditional" condition="true" reversible="false">
-						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
-					</animation>
-					<label>$INFO[ListItem.Label]</label>
-					<visible>Container.Content(seasons)</visible>
-				</control>
-				<control type="label">
-					<right>0</right>
-					<left>0</left>
-					<aligny>center</aligny>
-					<align>right</align>
-					<font>SmallBold</font>
-					<textcolor>white2</textcolor>
-					<height>38</height>
-					<animation type="conditional" condition="true" reversible="false">
-						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
-					</animation>
-					<label>31824</label>
-					<visible>Container.Content(episodes)</visible>
-				</control>
-
-				<control type="label">
-					<right>0</right>
-					<left>0</left>
-					<top>38</top>
-					<aligny>center</aligny>
-					<align>right</align>
-					<font>SmallBold</font>
-					<textcolor>white2</textcolor>
-					<height>38</height>
-					<animation type="conditional" condition="true" reversible="false">
-						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
-					</animation>
-					<label fallback="19055">$INFO[ListItem.Season]</label>
-					<visible>Container.Content(tvshows)</visible>
+					<label>557</label>
+					<visible>!Container.Content(albums)</visible>
 				</control>
 				<control type="textbox">
 					<right>0</right>
@@ -363,31 +320,35 @@
 					<label fallback="19055">$VAR[LabelDirector]</label>
 					<autoscroll delay="500" time="1000" repeat="500"/>
 					<fadetime>500</fadetime>
-					<visible>!Container.Content(seasons) + !Container.Content(tvshows) + !Container.Content(episodes)</visible>
+					<visible>!Container.Content(albums)</visible>
 				</control>
+
 				<control type="label">
 					<right>0</right>
 					<left>0</left>
-					<height>38</height>
-					<top>38</top>
 					<aligny>center</aligny>
 					<align>right</align>
-					<font>TinyBold</font>
-					<textcolor>white</textcolor>
-					<label fallback="19055">$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20360]]</label>
-					<visible>Container.Content(seasons)</visible>
+					<font>SmallBold</font>
+					<textcolor>white2</textcolor>
+					<height>38</height>
+					<animation type="conditional" condition="true" reversible="false">
+						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
+					</animation>
+					<label>31832</label>
+					<visible>Container.Content(albums)</visible>
 				</control>
-				<control type="label">
-					<right>0</right>
-					<left>0</left>
-					<height>38</height>
-					<top>38</top>
-					<aligny>center</aligny>
+				<control type="textbox">
+					<left>10</left>
+					<bottom>494</bottom>
+					<top>34</top>
 					<align>right</align>
-					<font>TinyBold</font>
+					<font>MiniBold</font>
 					<textcolor>white</textcolor>
-					<label fallback="19055">$INFO[ListItem.Premiered]</label>
-					<visible>Container.Content(episodes)</visible>
+					<label fallback="19055">$INFO[Window(Home).Property(SkinHelper.Music.TrackList)]</label>
+					<autoscroll delay="8000" time="1200" repeat="1000"/>
+					<fadetime>500</fadetime>
+					<visible>!Control.HasFocus(90902)</visible>
+					<visible>Container.Content(albums)</visible>
 				</control>
 				<control type="label">
 					<right>0</right>
@@ -398,7 +359,8 @@
 					<font>SmallBold</font>
 					<textcolor>white2</textcolor>
 					<height>38</height>
-					<label>31819</label>
+					<label>31832</label>
+					<visible>!Container.Content(albums)</visible>
 				</control>
 				<control type="textbox">
 					<left>10</left>
@@ -407,10 +369,11 @@
 					<align>right</align>
 					<font>TinyBold</font>
 					<textcolor>white</textcolor>
-					<label fallback="19055">$INFO[Window(Home).Property(SkinHelper.ListItemCast)]</label>
+					<label fallback="19055">$INFO[Window(Home).Property(SkinHelper.Music.TrackList)]</label>
 					<autoscroll delay="8000" time="1200" repeat="1000"/>
 					<fadetime>500</fadetime>
 					<visible>!Control.HasFocus(90902)</visible>
+					<visible>!Container.Content(albums)</visible>
 				</control>
 			</control>
 			<!-- Button grouplist -->
