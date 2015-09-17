@@ -930,7 +930,7 @@
 				<left>10</left>
 				<top>-10</top>
 				<width>613</width>
-				<height>613</height>
+				<height>920</height>
 				<control type="image">
 					<aspectratio scalediffuse="false">stretch</aspectratio>
 					<texture colordiffuse="$INFO[Window(home).Property(MusicInfo.ImageColor)]" background="true">common/white.png</texture>
@@ -939,34 +939,25 @@
 					</animation>
 				</control>
 				<control type="image">
+					<height>613</height>
 					<aspectratio scalediffuse="false">stretch</aspectratio>
 					<texture background="true">$VAR[PosterImage]</texture>
 					<animation type="conditional" condition="true" reversible="false">
 						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
 					</animation>
-					<visible>!Container.Content(episodes) | [Skin.HasSetting(osd.hidespoilers) + Container.Content(episodes) + [stringcompare(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]]</visible>
 				</control>
-				<control type="group">
-					<control type="image">
-						<width>613</width>
-						<height>450</height>
-						<aspectratio scalediffuse="false">scale</aspectratio>
-						<texture background="true">$INFO[ListItem.Icon]</texture>
-						<animation type="conditional" condition="true" reversible="false">
-							<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
-						</animation>
-					</control>
-					<control type="image">
-						<top>470</top>
-						<width>613</width>
-						<height>450</height>
-						<aspectratio scalediffuse="false">stretch</aspectratio>
-						<texture background="true">$INFO[ListItem.Art(tvshow.landscape)]</texture>
-						<animation type="conditional" condition="true" reversible="false">
-							<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
-						</animation>
-					</control>
-					<visible>Container.Content(episodes) + ![Skin.HasSetting(osd.hidespoilers) + Container.Content(episodes) + [stringcompare(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]]</visible>
+				<control type="multiimage">
+					<top>633</top>
+					<width>613</width>
+					<height>287</height>
+					<fadetime>600</fadetime>
+					<timeperimage>20000</timeperimage>
+					<randomize>true</randomize>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<imagepath background="true">$INFO[Window(Home).Property(SkinHelper.ExtraFanArtPath)]</imagepath>
+					<animation type="conditional" condition="true" reversible="false">
+						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
+					</animation>
 				</control>
 				<control type="image">
 					<aspectratio scalediffuse="false">scale</aspectratio>
