@@ -66,6 +66,26 @@
 		<value condition="Substring(Container(9501).ListItem.Icon,Default,left) | [IsEmpty(Container(9501).ListItem.Title) + IsEmpty(Container(9501).ListItem.Icon)]">buttons/add.png</value>
 		<value>$INFO[Container(9501).ListItem.Icon]</value>
 	</variable>
+	<variable name="MusicPosterImage9500">
+		<value condition="!IsEmpty(Container(9500).ListItem.Art(season.poster))">$INFO[Container(9500).ListItem.Art(season.poster)]</value>
+		<value condition="Container.Content(seasons)">$INFO[Container(9500).ListItem.Icon]</value>
+		<value condition="!IsEmpty(Container(9500).ListItem.Art(tvshow.poster))">$INFO[Container(9500).ListItem.Art(tvshow.poster)]</value>
+		<value condition="!IsEmpty(Container(9500).ListItem.Art(poster))">$INFO[Container(9500).ListItem.Art(poster)]</value>
+		<value condition="Container.Content(genres) + Window.IsVisible(MyVideoNav.xml)">$VAR[MovieGenres]</value>
+		<value condition="Container.Content(genres) + Window.IsVisible(MyMusicNav.xml)">$VAR[MusicGenres]</value>
+		<value condition="!IsEmpty(Container(9500).ListItem.Art(thumb))">$INFO[Container(9500).ListItem.Art(thumb)]</value>
+		<value>$INFO[Container(9500).ListItem.Icon]</value>
+	</variable>
+	<variable name="MusicPosterImage9501">
+		<value condition="!IsEmpty(Container(9501).ListItem.Art(season.poster))">$INFO[Container(9501).ListItem.Art(season.poster)]</value>
+		<value condition="Container.Content(seasons)">$INFO[Container(9501).ListItem.Icon]</value>
+		<value condition="!IsEmpty(Container(9501).ListItem.Art(tvshow.poster))">$INFO[Container(9501).ListItem.Art(tvshow.poster)]</value>
+		<value condition="!IsEmpty(Container(9501).ListItem.Art(poster))">$INFO[Container(9501).ListItem.Art(poster)]</value>
+		<value condition="Container.Content(genres) + Window.IsVisible(MyVideoNav.xml)">$VAR[MovieGenres]</value>
+		<value condition="Container.Content(genres) + Window.IsVisible(MyMusicNav.xml)">$VAR[MusicGenres]</value>
+		<value condition="!IsEmpty(Container(9501).ListItem.Art(thumb))">$INFO[Container(9501).ListItem.Art(thumb)]</value>
+		<value>$INFO[Container(9501).ListItem.Icon]</value>
+	</variable>
 	<variable name="WidgetImage">
 		<value condition="!IsEmpty(Container(301).ListItem.Art(tvshow.poster))">$INFO[Container(301).ListItem.Art(tvshow.poster)]</value>
 		<value condition="!IsEmpty(Container(301).ListItem.Art(poster))">$INFO[Container(301).ListItem.Art(poster)]</value>
