@@ -3,7 +3,7 @@
 <window id="6">
 	<defaultcontrol always="true">50</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
-	<views>50,52,53,550,54,55,57,155,59,52,500,501</views>
+	<views>50,52,53,550,54,55,57,155,59,52,500,501,515</views>
 	<onload condition="System.HasAddon(script.tv.show.next.aired)">RunScript(script.tv.show.next.aired,backend=True)</onload>
 	<onload>AlarmClock(castScroll,Control.Move(508923,-1),00:03,silent,loop)</onload> 
 	<onload>AlarmClock(castScroll2,Control.Move(508922,-1),00:03,silent,loop)</onload> 
@@ -24,6 +24,7 @@
 		<include>View_59_BannerPlex</include>
 		<include>View_155_Wall_Emby</include>
 		<include>View_500_Thumbnails</include>
+		<include>View_515_Landscape</include>
 		<!--<include>Furniture_NowPlaying</include>-->
 		<control type="group">
 			<include>Animation.Common.Killer</include>
