@@ -19,6 +19,7 @@
 			<visible>Skin.HasSetting(toggled.dv.info)</visible>
 			<visible>!Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml)</visible>
 			<visible>!Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)</visible>
+			<animation effect="slide" end="195,0" center="auto" time="200" condition="Control.HasFocus(9500)">Conditional</animation>
 			<left>NewSidePad</left>
 			<right>NewSidePad</right>
 			<top>TopPad</top>
@@ -53,30 +54,24 @@
 				<control type="image">
 					<width>206</width>
 					<height>116</height>
-					<texture>$VAR[ClearArtOnly]</texture>
+					<texture>$VAR[ColourStudio]</texture>
 					<aspectratio align="center" aligny="center">keep</aspectratio>
 					<fadetime>50</fadetime>
 				</control>
 			</control>
 
 			<control type="group">
-				<left>10</left>
-				<top>7</top>
-				<width>420</width>
-				<height>631</height>
-				<visible>Control.HasFocus(9500)</visible>
+			<animation effect="slide" end="448,0" center="auto" time="200" condition="Control.HasFocus(9500)">Conditional</animation>
+			<animation effect="fade" end="0" start="100" time="200" condition="!Control.HasFocus(9500)">Conditional</animation>
+				<left>-633</left>
+				<top>-10</top>
+				<width>613</width>
+				<height>920</height>
 				<control type="image">
 					<aspectratio scalediffuse="false">stretch</aspectratio>
 					<texture colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" background="true">common/white.png</texture>
 					<animation type="conditional" condition="true" reversible="false">
 						<effect type="zoom" start="100" end="108" time="200" center="auto" tween="quadratic" easing="out" />
-					</animation>
-				</control>
-				<control type="image">
-					<aspectratio scalediffuse="false">scale</aspectratio>
-					<texture background="true">$VAR[PosterImage]</texture>
-					<animation type="conditional" condition="true" reversible="false">
-						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
 					</animation>
 				</control>
 				<control type="image">
@@ -91,7 +86,6 @@
 					<effect type="rotate" end="-1" time="200" center="auto" tween="quadratic" easing="out" />
 				</animation>
 			</control>
-
 			<control type="grouplist">
 				<top>218</top>
 				<height>42</height>
@@ -598,6 +592,7 @@
 			</control>
 			<!-- Bottom Section -->
 			<control type="group">
+			<animation effect="slide" end="450,0" center="auto" time="200" condition="Control.HasFocus(9500)">Conditional</animation>
 				<bottom>0</bottom>
 				<height>265</height>
 				<control type="list" id="9499">
