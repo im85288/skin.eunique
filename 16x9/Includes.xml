@@ -313,7 +313,7 @@
 			<include>Dimensions_Fullscreen</include>
 			<aspectratio align="center">scale</aspectratio>
 			<texture fallback="common/black.png" background="true">$INFO[Window(home).Property(MusicInfo.ImageFilter)]</texture>
-			<visible>Window.IsVisible(DialogAlbumInfo.xml) + !Skin.HasSetting(furniture.info.fanart)</visible>
+			<visible>Window.IsVisible(DialogAlbumInfo.xml) + !Skin.HasSetting(furniture.info.fanart) + !Skin.HasSetting(toggled.ai.info)</visible>
 			<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
 			<fadetime>600</fadetime>
 		</control>
@@ -321,9 +321,9 @@
 			<include>Dimensions_Fullscreen</include>
 			<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
 			<aspectratio align="center">scale</aspectratio>
-			<texture colordiffuse="$INFO[Window(home).Property(MusicInfo.ImageColor)]">diffuse/diffuseoverlay.png</texture>
+			<texture colordiffuse="$INFO[Window(home).Property(MusicInfo.ImageColor)]">common/screen-overlay-shard.png</texture>
 			<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
-			<visible>Window.IsVisible(DialogAlbumInfo.xml) + !Skin.HasSetting(furniture.info.fanart)</visible>
+			<visible>Window.IsVisible(DialogAlbumInfo.xml) + !Skin.HasSetting(furniture.info.fanart) + !Skin.HasSetting(toggled.ai.info)</visible>
 		</control>
 		<control type="image">
 			<include>Dimensions_Fullscreen</include>
@@ -355,6 +355,12 @@
                 <include>Dimensions_Fullscreen</include>
 				<aspectratio align="center">scale</aspectratio>
                 <texture colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" fallback="empty.png" background="true">$INFO[ListItem.Art(fanart)]</texture>
+            </control>
+            <control type="image">
+				<visible>Window.IsVisible(DialogAlbumInfo.xml) + Skin.HasSetting(toggled.ai.info)</visible>
+                <include>Dimensions_Fullscreen</include>
+				<aspectratio align="center">scale</aspectratio>
+                <texture colordiffuse="$INFO[Window(home).Property(MusicInfo.ImageColor)]" fallback="empty.png" background="true">$INFO[ListItem.Art(fanart)]</texture>
             </control>
 			<control type="image">
 				<visible>Window.IsVisible(DialogPVRInfo.xml)</visible>
