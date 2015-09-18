@@ -1423,10 +1423,10 @@
                 <timeperimage>20000</timeperimage>
                 <randomize>true</randomize>
                 <aspectratio scalediffuse="false">stretch</aspectratio>
-                <animation effect="zoom" start="110" end="150" center="auto" time="10000" condition="Player.HasAudio" reversible="true" loop="true">Conditional</animation>
-                <animation effect="slide" start="0" end="-90,177" center="auto" time="15000" delay="5000" condition="Player.HasAudio" reversible="true" loop="true">Conditional</animation>
-                <animation effect="slide" start="110,00" end="00,-200" center="auto" time="25000" delay="10000" condition="Player.HasAudio" reversible="true" loop="true">Conditional</animation>
-                <animation effect="zoom" start="130" end="110" center="auto" time="15000" delay="15000" condition="Player.HasAudio" reversible="true" loop="true">Conditional</animation>
+                <animation effect="zoom" start="110" end="150" center="auto" time="10000" condition="Skin.HasSetting(ArtistSlideshow.Animate)" reversible="true" loop="true">Conditional</animation>
+                <animation effect="slide" start="0" end="-90,177" center="auto" time="15000" delay="5000" condition="Skin.HasSetting(ArtistSlideshow.Animate)" reversible="true" loop="true">Conditional</animation>
+                <animation effect="slide" start="110,00" end="00,-200" center="auto" time="25000" delay="10000" condition="Skin.HasSetting(ArtistSlideshow.Animate)" reversible="true" loop="true">Conditional</animation>
+                <animation effect="zoom" start="130" end="110" center="auto" time="15000" delay="15000" condition="Skin.HasSetting(ArtistSlideshow.Animate)" reversible="true" loop="true">Conditional</animation>
                 <imagepath colordiffuse="$INFO[Window(home).Property(MusicPosterInfo.ImageColor)]" background="true">$INFO[Window(Visualisation).Property(ArtistSlideshow)]</imagepath>
                 <visible>System.HasAddon(script.artistslideshow) + !Skin.HasSetting(ArtistSlideShow.Disabled)</visible>
             </control>
@@ -1437,10 +1437,10 @@
                 <randomize>true</randomize>
                 <aspectratio scalediffuse="false">stretch</aspectratio>
                 <imagepath colordiffuse="$INFO[Window(home).Property(MusicPosterInfo.ImageColor)]" background="true">$INFO[Window(Home).Property(SkinHelper.ExtraFanArtPath)]</imagepath>
-                <animation effect="zoom" start="110" end="150" center="auto" time="10000" condition="Player.HasAudio" reversible="true" loop="true">Conditional</animation>
-                <animation effect="slide" start="0" end="-90,177" center="auto" time="15000" delay="5000" condition="Player.HasAudio" reversible="true" loop="true">Conditional</animation>
-                <animation effect="slide" start="110,00" end="00,-200" center="auto" time="25000" delay="10000" condition="Player.HasAudio" reversible="true" loop="true">Conditional</animation>
-                <animation effect="zoom" start="130" end="110" center="auto" time="15000" delay="15000" condition="Player.HasAudio" reversible="true" loop="true">Conditional</animation>
+                <animation effect="zoom" start="110" end="150" center="auto" time="10000" condition="Skin.HasSetting(ArtistSlideshow.Animate)" reversible="true" loop="true">Conditional</animation>
+                <animation effect="slide" start="0" end="-90,177" center="auto" time="15000" delay="5000" condition="Skin.HasSetting(ArtistSlideshow.Animate)" reversible="true" loop="true">Conditional</animation>
+                <animation effect="slide" start="110,00" end="00,-200" center="auto" time="25000" delay="10000" condition="Skin.HasSetting(ArtistSlideshow.Animate)" reversible="true" loop="true">Conditional</animation>
+                <animation effect="zoom" start="130" end="110" center="auto" time="15000" delay="15000" condition="Skin.HasSetting(ArtistSlideshow.Animate)" reversible="true" loop="true">Conditional</animation>
                 <visible>!IsEmpty(Window(Home).Property(SkinHelper.ExtraFanArtPath))</visible>
                 <visible>!System.HasAddon(script.artistslideshow) | Skin.HasSetting(ArtistSlideShow.Disabled)</visible>
             </control>
@@ -1449,14 +1449,20 @@
                 <include>Dimensions_Fullscreen</include>
                 <aspectratio scalediffuse="false">stretch</aspectratio>
                 <texture colordiffuse="$INFO[Window(home).Property(MusicPosterInfo.ImageColor)]" background="true">$VAR[MusicFanart]</texture>
-                <animation effect="zoom" start="110" end="150" center="auto" time="10000" condition="Player.HasAudio" reversible="true" loop="true">Conditional</animation>
-                <animation effect="slide" start="0" end="-90,177" center="auto" time="15000" delay="5000" condition="Player.HasAudio" reversible="true" loop="true">Conditional</animation>
-                <animation effect="slide" start="110,00" end="00,-200" center="auto" time="25000" delay="10000" condition="Player.HasAudio" reversible="true" loop="true">Conditional</animation>
-                <animation effect="zoom" start="130" end="110" center="auto" time="15000" delay="15000" condition="Player.HasAudio" reversible="true" loop="true">Conditional</animation>
+                <animation effect="zoom" start="110" end="150" center="auto" time="10000" condition="Skin.HasSetting(ArtistSlideshow.Animate)" reversible="true" loop="true">Conditional</animation>
+                <animation effect="slide" start="0" end="-90,177" center="auto" time="15000" delay="5000" condition="Skin.HasSetting(ArtistSlideshow.Animate)" reversible="true" loop="true">Conditional</animation>
+                <animation effect="slide" start="110,00" end="00,-200" center="auto" time="25000" delay="10000" condition="Skin.HasSetting(ArtistSlideshow.Animate)" reversible="true" loop="true">Conditional</animation>
+                <animation effect="zoom" start="130" end="110" center="auto" time="15000" delay="15000" condition="Skin.HasSetting(ArtistSlideshow.Animate)" reversible="true" loop="true">Conditional</animation>
                 <visible>IsEmpty(Window(Home).Property(SkinHelper.ExtraFanArtPath))</visible>
                 <visible>!System.HasAddon(script.artistslideshow) | Skin.HasSetting(ArtistSlideShow.Disabled)</visible>
             </control>
-
+            <control type="visualisation" id="2">
+                <description>visualisation</description>
+                <include>Dimensions_Fullscreen</include>
+                <visible>Skin.HasSetting(global.showvisualisation)</visible>
+            </control>
+            <include>Furniture_HeaderEmby</include>
+            <include>Furniture_EmbyClock</include>
             <control type="group">
                 <left>1622</left>
                 <top>10</top>

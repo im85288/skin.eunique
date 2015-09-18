@@ -3,18 +3,21 @@
 <window id="2006">
     <defaultcontrol always="true">-</defaultcontrol>
     <allowoverlay>no</allowoverlay>
+    <onload>RunScript(script.toolbox,info=blur,id='"$VAR[PlayerFanart]"',radius=$VAR[VideoInfoBlurLevel],prefix=MusicVisInfo)</onload>
     <controls>
-        <control type="visualisation" id="2">
-            <visible>Skin.HasSetting(OSDVisualisation.ShowFanart) | [!Skin.HasSetting(musicvis.fanartfallback) + [!System.HasAddon(script.artistslideshow) | Skin.HasSetting(ArtistSlideShow.Disabled)]]</visible>
-            <description>visualisation</description>
+
+        <control type="image">
+            <aspectratio>scale</aspectratio>
             <include>Dimensions_Fullscreen</include>
+            <texture colordiffuse="$INFO[Window(home).Property(MusicVisInfo.ImageColor)]" background="true">genrethumb/headphones.jpg</texture>
+            <animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
+            <animation effect="slide" start="-30,-30" end="30,30" time="6000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
         </control>
         <control type="image">
             <aspectratio>scale</aspectratio>
             <include>Dimensions_Fullscreen</include>
-            <texture background="true">$INFO[Player.Art(fanart)]</texture>
+            <texture colordiffuse="$INFO[Window(home).Property(MusicVisInfo.ImageColor)]" background="true">$VAR[PlayerFanart]</texture>
             <visible>!System.HasAddon(script.artistslideshow) | Skin.HasSetting(ArtistSlideShow.Disabled)</visible>
-            <animation effect="fade" start="100" end="65" time="0" condition="Skin.HasSetting(OSDVisualisation.ShowFanart)">Conditional</animation>
             <animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
             <animation effect="slide" start="-30,-30" end="30,30" time="6000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
         </control>
@@ -25,13 +28,18 @@
             <randomize>true</randomize>
             <fadetime>600</fadetime>
             <loop>yes</loop>
-            <imagepath background="true">$INFO[Window(Visualisation).Property(ArtistSlideshow)]</imagepath>
+            <imagepath colordiffuse="$INFO[Window(home).Property(MusicVisInfo.ImageColor)]" background="true">$INFO[Window(Visualisation).Property(ArtistSlideshow)]</imagepath>
             <visible>System.HasAddon(script.artistslideshow) + !Skin.HasSetting(ArtistSlideShow.Disabled)</visible>
-            <animation effect="fade" start="100" end="65" time="0" condition="Skin.HasSetting(OSDVisualisation.ShowFanart)">Conditional</animation>
             <animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
             <animation effect="slide" start="-30,-30" end="30,30" time="6000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
         </control>
-
+        <control type="visualisation" id="2">
+            <description>visualisation</description>
+            <include>Dimensions_Fullscreen</include>
+            <visible>Skin.HasSetting(global.showvisualisation)</visible>
+        </control>
+        <include>Furniture_HeaderEmby</include>
+        <include>Furniture_EmbyClock</include>
         <control type="group">
             <visible>Skin.HasSetting(furniture.logo)</visible>
             <left>1622</left>
@@ -71,7 +79,7 @@
                         <left>-30</left>
                         <width>520</width>
                         <height>520</height>
-                        <texture colordiffuse="$VAR[ColourHighlight]" border="20">thumbs/cd_shadow_glow.png</texture>
+                        <texture colordiffuse="$INFO[Window(home).Property(MusicVisInfo.ImageColor)]" border="20">thumbs/cd_shadow_glow.png</texture>
                     </control>
                     <control type="image">
                         <left>280</left>
@@ -184,33 +192,21 @@
                                     <centertop>14</centertop>
                                     <width>120</width>
                                     <height>64</height>
-                                    <texture colordiffuse="$VAR[ColourHighlight]">equaliser.gif</texture>
+                                    <texture colordiffuse="$INFO[Window(home).Property(MusicVisInfo.ImageColor)]">equaliser.gif</texture>
                                     <visible>!Player.Paused</visible>
                                 </control>
                                 <control type="image">
                                     <centertop>14</centertop>
                                     <width>120</width>
                                     <height>64</height>
-                                    <texture colordiffuse="$VAR[ColourHighlight]">equaliser_stop.gif</texture>
+                                    <texture colordiffuse="$INFO[Window(home).Property(MusicVisInfo.ImageColor)]">equaliser_stop.gif</texture>
                                     <visible>Player.Paused</visible>
                                 </control>
                                 <control type="image">
                                     <width>95</width>
                                     <height>64</height>
-                                    <texture colordiffuse="$VAR[OSDPanelWhite70]">$INFO[MusicPlayer.Codec,flags/audio/,.png]</texture>
                                     <aspectratio>keep</aspectratio>
-                                </control>
-                                <control type="image">
-                                    <width>95</width>
-                                    <height>64</height>
-                                    <texture colordiffuse="$VAR[OSDPanelWhite70]">$INFO[MusicPlayer.Channels,flags/channels/,.png]</texture>
-                                    <aspectratio>keep</aspectratio>
-                                </control>
-                                <control type="image">
-                                    <width>95</width>
-                                    <height>64</height>
-                                    <aspectratio>keep</aspectratio>
-                                    <texture colordiffuse="$VAR[OSDPanelWhite70]">resource://resource.images.recordlabels.white/$INFO[MusicPlayer.Property(Album_Label),,.png]</texture>
+                                    <texture colordiffuse="$INFO[Window(home).Property(MusicVisInfo.ImageColor)]">resource://resource.images.recordlabels.white/$INFO[MusicPlayer.Property(Album_Label),,.png]</texture>
                                 </control>
                             </control>
 
@@ -277,37 +273,13 @@
                             <bottom>10</bottom>
                             <height>8</height>
                             <info>Player.Progress</info>
-                            <visible>true</visible>
+                            <texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
+                            <lefttexture colordiffuse="$INFO[Window(home).Property(MusicVisInfo.ImageColor)]">osd/progress-end.png</lefttexture>
+                            <midtexture colordiffuse="$INFO[Window(home).Property(MusicVisInfo.ImageColor)]">osd/progress-end.png</midtexture>
+                            <righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
                         </control>
                     </control>
                 </control>
-            </control>
-        </control>
-        <control type="group">
-            <visible>Player.ShowCodec</visible>
-            <left>70</left>
-            <posy>70</posy>
-            <width>1420</width>
-            <height>100</height>
-            <include>Animation.FadeIn.Slide</include>
-            <include>Animation.FadeOut</include>
-            <control type="image">
-                <description>background image</description>
-                <posx>0</posx>
-                <posy>0</posy>
-                <width>100%</width>
-                <height>100%</height>
-                <texture border="16" colordiffuse="$VAR[OSDPanel]">common/rounded-shadow8.png</texture>
-            </control>
-            <control type="label">
-                <description>row 1 label</description>
-                <left>30</left>
-                <right>30</right>
-                <height>100%</height>
-                <align>left</align>
-                <aligny>center</aligny>
-                <label>$INFO[musicplayer.Codec,$LOCALIZE[21446]: ,]$INFO[musicplayer.Bitrate, · $LOCALIZE[623]: ,kbps]$INFO[musicplayer.bitspersample, · $LOCALIZE[612]: ,]$INFO[musicplayer.Samplerate, · $LOCALIZE[613]: ,kHz]$INFO[musicplayer.Channels, · $LOCALIZE[21444]: ]</label>
-                <textcolor>$VAR[OSDPanelWhite100]</textcolor>
             </control>
         </control>
 

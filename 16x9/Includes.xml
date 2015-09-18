@@ -292,11 +292,6 @@
 	<include name="GlobalVisualisation">
 		<control type="group">
 			<visible>Player.HasAudio + Skin.HasSetting(global.showvisualisation)</visible>
-			<control type="visualisation">
-				<visible>Skin.HasSetting(ArtistSlideShow.Disabled) | !System.HasAddon(script.artistslideshow) | Skin.HasSetting(OSDVisualisation.ShowFanart)</visible>
-				<description>visualisation</description>
-				<include>Dimensions_Fullscreen</include>
-			</control>
 			<control type="multiimage">
 				<aspectratio>scale</aspectratio>
 				<include>Dimensions_Fullscreen</include>
@@ -310,6 +305,10 @@
 				<animation effect="zoom" start="115" end="135" center="auto" time="19000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
 				<animation effect="slide" start="-10,-10" end="20,20" time="14000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
 				<animation effect="rotate" center="360,640" start="-2" end="3" time="27000" tween="back" easing="inout" pulse="true"  condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
+			</control>
+			<control type="visualisation">
+				<description>visualisation</description>
+				<include>Dimensions_Fullscreen</include>
 			</control>
 		</control>
 	</include>

@@ -364,16 +364,7 @@
 				<onclick>Skin.ToggleSetting(global.showvisualisation)</onclick>
 			</control>
 			<!-- OSD -->
-			<control type="radiobutton" id="9235" description="Show Fanart">
-				<width>1310</width>
-				<visible>Container(8000).Hasfocus(5)</visible>
-				<include>DefSettingsButton2</include>
-				<label>31121</label>
-				<selected>Skin.HasSetting(musicvis.fanartfallback)</selected>
-				<enable>!System.HasAddon(script.artistslideshow) | Skin.HasSetting(ArtistSlideShow.Disabled)</enable>
-				<onclick>Skin.ToggleSetting(musicvis.fanartfallback)</onclick>
-			</control>
-			<control type="radiobutton" id="9231" description="Show slideshow in background">
+			<control type="radiobutton" id="9231" description="Show artist slideshow">
 				<width>1310</width>
 				<visible>Container(8000).Hasfocus(5)</visible>
 				<include>DefSettingsButton2</include>
@@ -382,15 +373,6 @@
 				<selected>!Skin.HasSetting(ArtistSlideShow.Disabled)</selected>
 				<onclick>Skin.ToggleSetting(ArtistSlideShow.Disabled)</onclick>
 			</control>
-			<control type="radiobutton" id="9232" description="Show slideshow in background">
-				<width>1310</width>
-				<visible>Container(8000).Hasfocus(5)</visible>
-				<include>DefSettingsButton2</include>
-				<label>31119</label>
-				<selected>Skin.HasSetting(OSDVisualisation.ShowFanart)</selected>
-				<onclick>Skin.ToggleSetting(OSDVisualisation.ShowFanart)</onclick>
-				<enable>Skin.HasSetting(musicvis.fanartfallback) | [!Skin.HasSetting(ArtistSlideShow.Disabled) + System.HasAddon(script.artistslideshow)]</enable>
-			</control>
 			<control type="radiobutton" id="9233" description="Animate Artist slideshow">
 				<width>1310</width>
 				<visible>Container(8000).Hasfocus(5)</visible>
@@ -398,7 +380,7 @@
 				<label>31120</label>
 				<selected>Skin.HasSetting(ArtistSlideshow.Animate)</selected>
 				<onclick>Skin.ToggleSetting(ArtistSlideshow.Animate)</onclick>
-				<enable>Skin.HasSetting(musicvis.fanartfallback) | [!Skin.HasSetting(ArtistSlideShow.Disabled) + System.HasAddon(script.artistslideshow)]</enable>
+				<enable>!Skin.HasSetting(ArtistSlideShow.Disabled) + System.HasAddon(script.artistslideshow)</enable>
 			</control>
 			<control type="radiobutton" id="9236" description="Show detailed info on pause">
 				<width>1310</width>
