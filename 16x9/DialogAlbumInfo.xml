@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-	<onload condition="Skin.HasSetting(toggled.ai.info)">SetFocus(9000)</onload>
-	<onload condition="!Skin.HasSetting(toggled.ai.info)">SetFocus(9010)</onload>
 	<onload>Skin.SetString(widget.helper,musicinfo)</onload>
 	<!-- musicinformation -->
-	<defaultcontrol always="true">1</defaultcontrol>
-	<onload>Control.Move(5012,$INFO[Container(5012).CurrentItem,-])</onload>
-	<onload>Control.Move(5012,1)</onload>
-	<onload>Control.Move(5013,$INFO[Container(5013).CurrentItem,-])</onload>
-	<onload>Control.Move(5013,1)</onload>
-	<onload>Control.Move(5014,$INFO[Container(5014).CurrentItem,-])</onload>
-	<onload>Control.Move(5014,1)</onload>
-	<onload>Control.Move(5015,$INFO[Container(5015).CurrentItem,-])</onload>
-	<onload>Control.Move(5015,1)</onload>
 	<onload>ClearProperty(logo,home)</onload>
 	<onload>ClearProperty(Banner,home)</onload>
 	<onload>ClearProperty(Fanart,home)</onload>
@@ -23,6 +12,8 @@
 	<onload>ClearProperty(Died,home)</onload>
 	<onload>ClearProperty(Description,home)</onload>
 	<onload>RunScript(script.toolbox,info=blur,id='"$VAR[MusicFanart]"',radius=$VAR[VideoInfoBlurLevel],prefix=MusicInfo)</onload>
+	<onload condition="Skin.HasSetting(toggled.ai.info)">SetFocus(9000)</onload>
+	<onload condition="!Skin.HasSetting(toggled.ai.info)">SetFocus(9010)</onload>
 	<onunload>ClearProperty(AlbumDetails,home)</onunload>
 	<onunload>ClearProperty(MostLoved,home)</onunload>
 	<onunload>ClearProperty(Concerts,home)</onunload>
@@ -44,8 +35,6 @@
 		</control>
 		<control type="group">
 			<visible>Skin.HasSetting(toggled.ai.info)</visible>
-			<visible>!Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml)</visible>
-			<visible>!Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)</visible>
 			<animation effect="slide" end="195,0" center="auto" time="200" condition="Control.HasFocus(9500)">Conditional</animation>
 			<left>NewSidePad</left>
 			<right>NewSidePad</right>
@@ -57,7 +46,7 @@
 					<top>-5</top>
 					<width>800</width>
 					<height>210</height>
-					<texture>$VAR[ClearLogo]</texture>
+					<texture>$VAR[BannerImage]</texture>
 					<aspectratio align="left" aligny="bottom">keep</aspectratio>
 					<fadetime>50</fadetime>
 				</control>
@@ -75,17 +64,16 @@
 				</control>
 			</control>
 			-->
-			<control type="multiimage">
+			<control type="group">
 				<left>1654</left>
 				<top>530</top>
-				<width>206</width>
-				<height>116</height>
-				<fadetime>600</fadetime>
-				<timeperimage>20000</timeperimage>
-				<randomize>true</randomize>
-				<aspectratio scalediffuse="false">stretch</aspectratio>
-				<imagepath background="true">$INFO[Window(Home).Property(SkinHelper.ExtraFanArtPath)]</imagepath>
-				<visible>!IsEmpty(Window(Home).Property(SkinHelper.ExtraFanArtPath))</visible>
+				<control type="image">
+					<width>206</width>
+					<height>116</height>
+					<texture>$VAR[ClearLogo]</texture>
+					<aspectratio align="center" aligny="center">keep</aspectratio>
+					<fadetime>50</fadetime>
+				</control>
 			</control>
 
 			<control type="group">
@@ -145,7 +133,7 @@
 					<textcolor>white</textcolor>
 					<height>38</height>
 					<width>auto</width>
-					<label>$INFO[Window(Home).Property(Artist_Formed)]</label>
+					<label>$INFO[Window(Home).Property(Artist_Formed),,  ]</label>
 					<visible>Container.Content(Artists) + !IsEmpty(Window(Home).Property(Artist_Formed))</visible>
 				</control>
 				<control type="label">
@@ -165,7 +153,7 @@
 					<textcolor>white</textcolor>
 					<height>38</height>
 					<width>auto</width>
-					<label>$INFO[ListItem.Year]</label>
+					<label>$INFO[ListItem.Year,,  ]</label>
 					<visible>Container.Content(Albums)</visible>
 				</control>
 				<control type="label">
@@ -185,7 +173,7 @@
 					<textcolor>white</textcolor>
 					<height>38</height>
 					<width>auto</width>
-					<label>$INFO[ListItem.Genre]</label>
+					<label>$INFO[ListItem.Genre,,  ]</label>
 				</control>
 				<control type="label">
 					<aligny>center</aligny>
@@ -204,7 +192,7 @@
 					<textcolor>white</textcolor>
 					<height>38</height>
 					<width>auto</width>
-					<label fallback="N/A">$INFO[Window(Home).Property(Born)]</label>
+					<label fallback="-  ">$INFO[Window(Home).Property(Born),,  ]</label>
 					<visible>Container.Content(Artists) + !IsEmpty(Window(Home).Property(Born))</visible>
 				</control>
 				<control type="label">
@@ -224,7 +212,7 @@
 					<textcolor>white</textcolor>
 					<height>38</height>
 					<width>auto</width>
-					<label>$INFO[ListItem.Artist]</label>
+					<label>$INFO[ListItem.Artist,,  ]</label>
 					<visible>Container.Content(Albums) + !IsEmpty(ListItem.Artist)</visible>
 				</control>
 				<control type="label">
@@ -244,7 +232,7 @@
 					<textcolor>white</textcolor>
 					<height>38</height>
 					<width>auto</width>
-					<label>$INFO[ListItem.Property(Album_Style)]</label>
+					<label>$INFO[ListItem.Property(Album_Style),,  ]</label>
 					<visible>Container.Content(Albums) + !IsEmpty(ListItem.Property(Album_Style))</visible>
 				</control>
 				<control type="label">
@@ -264,7 +252,7 @@
 					<textcolor>white</textcolor>
 					<height>38</height>
 					<width>auto</width>
-					<label fallback="N/A">$INFO[Window(Home).Property(Artist_Disbanded),, ]$INFO[Window(Home).Property(Died)]</label>
+					<label fallback="-  ">$INFO[Window(Home).Property(Artist_Disbanded),, ]$INFO[Window(Home).Property(Died),,  ]</label>
 					<visible>!Container.Content(Albums)  + !IsEmpty(Window(Home).Property(Died))</visible>
 				</control>
 			</control>
@@ -280,15 +268,6 @@
 				<label>$INFO[Window(Home).Property(SkinHelper.Music.Info)]</label>
 			</control>
 
-			<control type="image">
-				<top>-49</top>
-				<left>140</left>
-				<width>280</width>
-				<height>280</height>
-				<aspectratio scalediffuse="false">stretch</aspectratio>
-				<texture background="true">$VAR[PosterImage]</texture>
-				<visible>!Control.HasFocus(9500)</visible>
-			</control>
 			<control type="group">
 				<visible>!Control.HasFocus(9500)</visible>
 				<top>220</top>
@@ -307,8 +286,7 @@
 					<animation type="conditional" condition="true" reversible="false">
 						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
 					</animation>
-					<label>557</label>
-					<visible>!Container.Content(albums)</visible>
+					<label>135</label>
 				</control>
 				<control type="textbox">
 					<right>0</right>
@@ -318,12 +296,11 @@
 					<align>right</align>
 					<font>TinyBold</font>
 					<textcolor>white</textcolor>
-					<label fallback="19055">$VAR[LabelDirector]</label>
+						<label fallback="19055">$INFO[Window(Home).Property(SkinHelper.ListItemGenres)]</label>
 					<autoscroll delay="500" time="1000" repeat="500"/>
 					<fadetime>500</fadetime>
-					<visible>!Container.Content(albums)</visible>
 				</control>
-
+				<!--
 				<control type="label">
 					<right>0</right>
 					<left>0</left>
@@ -351,6 +328,7 @@
 					<visible>!Control.HasFocus(90902)</visible>
 					<visible>Container.Content(albums)</visible>
 				</control>
+				-->
 				<control type="label">
 					<right>0</right>
 					<left>0</left>
@@ -360,8 +338,9 @@
 					<font>SmallBold</font>
 					<textcolor>white2</textcolor>
 					<height>38</height>
-					<label>21891</label>
-					<visible>!Container.Content(albums)</visible>
+					<label>31832</label>
+					<visible>!Control.HasFocus(90902)</visible>
+					<visible>Container.Content(albums)</visible>
 				</control>
 				<control type="textbox">
 					<left>10</left>
@@ -370,11 +349,11 @@
 					<align>right</align>
 					<font>TinyBold</font>
 					<textcolor>white</textcolor>
-					<label fallback="19055">$INFO[ListItem.Property(Artist_Description)]</label>
+					<label fallback="19055">$INFO[Window(Home).Property(SkinHelper.Music.TrackList)]</label>
 					<autoscroll delay="8000" time="1200" repeat="1000"/>
 					<fadetime>500</fadetime>
 					<visible>!Control.HasFocus(90902)</visible>
-					<visible>!Container.Content(albums)</visible>
+					<visible>Container.Content(albums)</visible>
 				</control>
 			</control>
 			<!-- Button grouplist -->
@@ -385,13 +364,15 @@
 				<height>116</height>
 				<itemgap>0</itemgap>
 				<onleft>back</onleft>
-					<onright condition="!System.HasAddon(script.extendedinfo)">ActivateWindow(Videos,plugin://script.extendedinfo)</onright>
-					<onright condition="IsEmpty(ListItem.TvShowTitle) + !Container.Content(tvshows)">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[ListItem.DBID],name=$INFO[ListItem.Title])</onright>
-					<onright condition="Container.Content(tvshows) + IsEmpty(Window(home).Property(TVShowID))">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[ListItem.DBID],name=$INFO[ListItem.TvShowTitle])</onright>
-					<onright condition="!IsEmpty(Window(home).Property(TVShowID))">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[(Window(home).Property(TVShowID)],name=$INFO[ListItem.TvShowTitle])</onright>
-				<onup>Skin.ToggleSetting(toggled.ai.info)</onup>
-				<onup>setfocus(9010)</onup>
-				<ondown>9499</ondown>
+				<onback condition="Control.HasFocus(101)">10</onback>
+				<onright condition="Control.HasFocus(101)">10</onright>
+				<onright condition="!Control.HasFocus(101)">SetFocus(1)</onright>
+				<onup condition="!Control.HasFocus(101)">Skin.ToggleSetting(toggled.ai.info)</onup>
+				<onup condition="!Control.HasFocus(101)">setfocus(9010)</onup>
+				<ondown condition="!Control.HasFocus(101)">9499</ondown>
+				<onup condition="Control.HasFocus(101)">setfocus(10)</onup>
+				<onup condition="Control.HasFocus(101)">setfocus(10)</onup>
+				<ondown condition="Control.HasFocus(101)">setfocus(10)</ondown>
 				<orientation>horizontal</orientation>
 				<include>DialogVideoInfoAnimation</include>
 				<defaultcontrol always="true">8</defaultcontrol>
@@ -415,7 +396,6 @@
 					<font>symbol</font>
 					<label></label>
 					<textcolor>white</textcolor>
-					<onup condition="Control.IsVisible(3444)">3444</onup>
 					<onclick condition="Container.Content(artists)">SetProperty(listcontent,$INFO[ListItem.Artist],home)</onclick>
 					<onclick condition="Container.Content(albums)">SetProperty(listcontent,$INFO[ListItem.Artist] $INFO[ListItem.Album],home)</onclick>
 					<onclick>ActivateWindow(1168)</onclick>
@@ -431,7 +411,6 @@
 					<font>symbol</font>
 					<label></label>
 					<textcolor>white</textcolor>
-					<onup condition="Control.IsVisible(3444)">3444</onup>
 					<focusedcolor>$VAR[EmbyLeftColourHighlight]</focusedcolor>
 					<texturefocus colordiffuse="$INFO[Window(home).Property(MusicInfo.ImageColor)]" border="5">common/box.png</texturefocus>
 					<texturenofocus colordiffuse="$VAR[EmbyLeftColourHighlight]" border="5">common/box.png</texturenofocus>
@@ -444,11 +423,22 @@
 					<font>symbol</font>
 					<label></label>
 					<textcolor>white</textcolor>
-					<onup condition="Control.IsVisible(3444)">3444</onup>
 					<focusedcolor>$VAR[EmbyLeftColourHighlight]</focusedcolor>
 					<texturefocus colordiffuse="$INFO[Window(home).Property(MusicInfo.ImageColor)]" border="5">common/box.png</texturefocus>
 					<texturenofocus colordiffuse="$VAR[EmbyLeftColourHighlight]" border="5">common/box.png</texturenofocus>
 					<visible>Control.IsEnabled(10)</visible>
+				</control>
+				<!-- Get x Button -->
+				<control type="button" id="101">
+					<width>116</width>
+					<height>116</height>
+					<label>-</label>
+					<onclick>SetFocus(10)</onclick>
+					<focusedcolor>-</focusedcolor>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<alttexturefocus>-</alttexturefocus>
+					<alttexturenofocus>-</alttexturenofocus>
 				</control>
 			</control>
 			<control id="9002" type="grouplist">
@@ -911,7 +901,7 @@
 					<align>left</align>
 					<font>SmallBold</font>
 					<textcolor>white2</textcolor>
-					<label>31819</label>
+					<label>3-31819</label>
 					<animation type="conditional" condition="true" reversible="false">
 						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
 					</animation>
@@ -1019,13 +1009,14 @@
 				<height>116</height>
 				<itemgap>0</itemgap>
 				<onleft>back</onleft>
-					<onright condition="!System.HasAddon(script.extendedinfo)">ActivateWindow(Videos,plugin://script.extendedinfo)</onright>
-					<onright condition="IsEmpty(ListItem.TvShowTitle) + !Container.Content(tvshows)">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[ListItem.DBID],name=$INFO[ListItem.Title])</onright>
-					<onright condition="Container.Content(tvshows) + IsEmpty(Window(home).Property(TVShowID))">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[ListItem.DBID],name=$INFO[ListItem.TvShowTitle])</onright>
-					<onright condition="!IsEmpty(Window(home).Property(TVShowID))">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[(Window(home).Property(TVShowID)],name=$INFO[ListItem.TvShowTitle])</onright>
-				<onup>9501</onup>
-				<ondown>Skin.ToggleSetting(toggled.ai.info)</ondown>
-				<ondown>setfocus(9000)</ondown>
+				<onback condition="Control.HasFocus(101)">10</onback>
+				<onright condition="Control.HasFocus(101)">10</onright>
+				<onright condition="!Control.HasFocus(101)">SetFocus(1)</onright>
+				<onup condition="!Control.HasFocus(101)">9501</onup>
+				<ondown condition="!Control.HasFocus(101)">Skin.ToggleSetting(toggled.ai.info)</ondown>
+				<ondown condition="!Control.HasFocus(101)">setfocus(9000)</ondown>
+				<onup condition="Control.HasFocus(101)">setfocus(10)</onup>
+				<ondown condition="Control.HasFocus(101)">setfocus(10)</ondown>
 				<orientation>horizontal</orientation>
 				<include>DialogVideoInfoAnimation</include>
 				<defaultcontrol always="true">8</defaultcontrol>
@@ -1049,7 +1040,6 @@
 					<font>symbol</font>
 					<label></label>
 					<textcolor>white</textcolor>
-					<onup condition="Control.IsVisible(3444)">3444</onup>
 					<onclick condition="Container.Content(artists)">SetProperty(listcontent,$INFO[ListItem.Artist],home)</onclick>
 					<onclick condition="Container.Content(albums)">SetProperty(listcontent,$INFO[ListItem.Artist] $INFO[ListItem.Album],home)</onclick>
 					<onclick>ActivateWindow(1168)</onclick>
@@ -1065,7 +1055,6 @@
 					<font>symbol</font>
 					<label></label>
 					<textcolor>white</textcolor>
-					<onup condition="Control.IsVisible(3444)">3444</onup>
 					<focusedcolor>$VAR[EmbyLeftColourHighlight]</focusedcolor>
 					<texturefocus colordiffuse="$INFO[Window(home).Property(MusicInfo.ImageColor)]" border="5">common/box.png</texturefocus>
 					<texturenofocus colordiffuse="$VAR[EmbyLeftColourHighlight]" border="5">common/box.png</texturenofocus>
@@ -1078,11 +1067,22 @@
 					<font>symbol</font>
 					<label></label>
 					<textcolor>white</textcolor>
-					<onup condition="Control.IsVisible(3444)">3444</onup>
 					<focusedcolor>$VAR[EmbyLeftColourHighlight]</focusedcolor>
 					<texturefocus colordiffuse="$INFO[Window(home).Property(MusicInfo.ImageColor)]" border="5">common/box.png</texturefocus>
 					<texturenofocus colordiffuse="$VAR[EmbyLeftColourHighlight]" border="5">common/box.png</texturenofocus>
 					<visible>Control.IsEnabled(10)</visible>
+				</control>
+				<!-- Get x Button -->
+				<control type="button" id="101">
+					<width>116</width>
+					<height>116</height>
+					<label>-</label>
+					<onclick>SetFocus(10)</onclick>
+					<focusedcolor>-</focusedcolor>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<alttexturefocus>-</alttexturefocus>
+					<alttexturenofocus>-</alttexturenofocus>
 				</control>
 			</control>
 			<control id="9002" type="grouplist">
@@ -1383,6 +1383,30 @@
 			<include>ButtonControlWidget</include>
 
 		</control>
+				<control type="multiimage">
+			<include>Dimensions_Fullscreen</include>
+					<fadetime>600</fadetime>
+					<timeperimage>20000</timeperimage>
+					<randomize>true</randomize>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<imagepath background="true">$INFO[Window(Home).Property(SkinHelper.ExtraFanArtPath)]</imagepath>
+				<animation effect="zoom" start="110" end="150" center="auto" time="10000" condition="Control.HasFocus(101)" reversible="true" loop="true">Conditional</animation>
+				<animation effect="slide" start="0" end="-90,177" center="auto" time="15000" delay="5000" condition="Control.HasFocus(101)" reversible="true" loop="true">Conditional</animation>
+				<animation effect="slide" start="110,00" end="00,-200" center="auto" time="25000" delay="10000" condition="Control.HasFocus(101)" reversible="true" loop="true">Conditional</animation>
+				<animation effect="zoom" start="130" end="110" center="auto" time="15000" delay="15000" condition="Control.HasFocus(101)" reversible="true" loop="true">Conditional</animation>
+					<visible>!IsEmpty(Window(Home).Property(SkinHelper.ExtraFanArtPath)) + Control.HasFocus(101)</visible>
+				</control>
+				<control type="image">
+					<fadetime>600</fadetime>
+			<include>Dimensions_Fullscreen</include>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<texture background="true">$VAR[MusicFanart]</texture>
+				<animation effect="zoom" start="110" end="150" center="auto" time="10000" condition="Control.HasFocus(101)" reversible="true" loop="true">Conditional</animation>
+				<animation effect="slide" start="0" end="-90,177" center="auto" time="15000" delay="5000" condition="Control.HasFocus(101)" reversible="true" loop="true">Conditional</animation>
+				<animation effect="slide" start="110,00" end="00,-200" center="auto" time="25000" delay="10000" condition="Control.HasFocus(101)" reversible="true" loop="true">Conditional</animation>
+				<animation effect="zoom" start="130" end="110" center="auto" time="15000" delay="15000" condition="Control.HasFocus(101)" reversible="true" loop="true">Conditional</animation>
+					<visible>IsEmpty(Window(Home).Property(SkinHelper.ExtraFanArtPath)) + Control.HasFocus(101)</visible>
+				</control>
 	
 	
 	</controls>

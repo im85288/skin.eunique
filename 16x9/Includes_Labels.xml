@@ -1356,10 +1356,10 @@
 		<value>dark pastel red</value>
 	</variable>
 	<variable name="SelectionColourHighlight">
-		<value condition="Control.HasFocus(8)">$INFO[Skin.String(emby.middle.colour.name)]</value>
+		<value condition="Control.HasFocus(8) | Control.HasFocus(1)">$INFO[Skin.String(emby.middle.colour.name)]</value>
 		<value condition="Control.HasFocus(1003)">$INFO[Skin.String(emby.right.colour.name)]</value>
 		<value condition="Control.HasFocus(1006)">$INFO[Skin.String(emby.right.colour.name)]</value>
-		<value condition="Control.HasFocus(10)">$INFO[Skin.String(emby.left.colour.name)]</value>
+		<value condition="Control.HasFocus(10) | Control.HasFocus(6)">$INFO[Skin.String(emby.left.colour.name)]</value>
 		<value condition="Control.HasFocus(20)">$INFO[Skin.String(emby.left.colour.name)]</value>
 		<value condition="Control.HasFocus(18)">$INFO[Skin.String(emby.right.colour.name)]</value>
 		<value condition="Control.HasFocus(3443)">$INFO[Skin.String(emby.left.colour.name)]</value>

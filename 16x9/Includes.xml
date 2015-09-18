@@ -35,12 +35,14 @@
 				<top>550</top>
 				<left>-24</left>
 					<visible>ControlGroup(9000).HasFocus | ControlGroup(9010).HasFocus</visible>
-				<animation condition="!Control.HasFocus(8)" effect="slide" end="-54" start="0,0" time="200">Conditional</animation>
-				<animation condition="ControlGroup(9010).HasFocus()" effect="slide" end="197,221" start="0,0" time="0">Conditional</animation>
+				<animation condition="!Control.HasFocus(8) + !Control.HasFocus(1)" effect="slide" end="-58" start="0,0" time="200">Conditional</animation>
+				<animation condition="ControlGroup(9010).HasFocus()" effect="slide" end="193,221" start="0,0" time="0">Conditional</animation>
+				<animation condition="Container.Content(albums)" effect="slide" end="-338" start="0,0" time="0">Conditional</animation>
+				<animation condition="Container.Content(artists)" effect="slide" end="-338" start="0,0" time="0">Conditional</animation>
 				<animation condition="Container.Content(episodes)" effect="slide" end="-348" start="0,0" time="0">Conditional</animation>
 				<animation condition="Container.Content(tvshows) | Container.Content(seasons)" effect="slide" end="-232" start="0,0" time="0">Conditional</animation>
                 <control type="group">
-					<visible>Control.HasFocus(8)</visible>
+					<visible>Control.HasFocus(8) | Control.HasFocus(1)</visible>
 				<left>1262</left>
                          <width>116</width>
                         <height>116</height>
@@ -126,24 +128,47 @@
 				<!--right-->
                 <control type="group">
 					<visible>Control.HasFocus(19)</visible>
-				<left>1424</left>
-                         <width>116</width>
-                        <height>116</height>
+					<left>1424</left>
+					<width>116</width>
+					<height>116</height>
                    <control type="label">
- 					<aligny>center</aligny>
-					<align>center</align>
-					<textcolor>$VAR[SelectionColourHighlight]</textcolor>
+						<aligny>center</aligny>
+						<align>center</align>
+						<textcolor>$VAR[SelectionColourHighlight]</textcolor>
                        <font>symbolbackbig</font>
                         <label></label>
                     </control>
                     <control type="label">
-				<top>2</top>
-				<left>-8</left>
- 					<aligny>center</aligny>
-					<align>center</align>
-					<textcolor>white2</textcolor>
+						<top>2</top>
+						<left>-8</left>
+						<aligny>center</aligny>
+						<align>center</align>
+						<textcolor>white2</textcolor>
                         <font>symbol</font>
                         <label></label>
+                    </control>
+                </control>
+				<!--right-->
+                <control type="group">
+					<visible>Control.HasFocus(10)</visible>
+					<left>1424</left>
+					<width>116</width>
+					<height>116</height>
+                   <control type="label">
+						<aligny>center</aligny>
+						<align>center</align>
+						<textcolor>$VAR[SelectionColourHighlight]</textcolor>
+                       <font>symbolbackbig</font>
+                        <label></label>
+                    </control>
+                    <control type="label">
+						<top>2</top>
+						<left>-8</left>
+						<aligny>center</aligny>
+						<align>center</align>
+						<textcolor>white2</textcolor>
+                        <font>symbol</font>
+                        <label></label>
                     </control>
                 </control>
                 </control>
