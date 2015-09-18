@@ -20,32 +20,15 @@
 				<focusposition>1</focusposition>
 				<viewtype label="31833">list</viewtype>
 				<scrolltime tween="quadratic">400</scrolltime>
-				<itemlayout width="320" height="184">
+				<itemlayout width="384" height="216">
 					<control type="image">
 						<description>Landscape</description>
 						<posx>5</posx>
 						<posy>5</posy>
-						<width>310</width>
-						<height>174</height>
+						<width>374</width>
+						<height>206</height>
 						<texture background="true">$VAR[LandscapeImage]</texture>
 						<aspectratio scalediffuse="false">stretch</aspectratio>
-					</control>
-					<control type="image">
-						<centerright>32</centerright>
-						<centertop>32</centertop>
-						<width>32</width>
-						<height>32</height>
-						<aspectratio aligny="top">keep</aspectratio>
-						<texture colordiffuse="$VAR[PercentColourHighlight]">$VAR[PosterPercentWatchedBacking]</texture>
-						<visible>!Skin.HasSetting(furniture.alternateindicators)</visible>
-					</control>
-					<control type="image">
-						<centerright>32</centerright>
-						<centertop>32</centertop>
-						<width>32</width>
-						<height>32</height>
-						<aspectratio aligny="top">keep</aspectratio>
-						<texture>$VAR[PosterPercentWatched]</texture>
 					</control>
 					<control type="label">
 						<centerright>32</centerright>
@@ -97,29 +80,8 @@
 						<textcolor>$VAR[NewColourHighlight]</textcolor>
 						<visible>!stringcompare(ListItem.Label,..) + [SubString(ListItem.Overlay,OverlayUnwatched.png) + [[Container.Content(movies) + [StringCompare(Window(Home).Property(LatestMovie.1.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.2.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.3.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.4.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.5.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.6.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.7.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.8.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.9.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.10.Title),ListItem.Label)]] | [[Container.Content(tvshows)] + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem.TvShowTitle)]] | [Container.Content(episodes) + [StringCompare(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem.Title)]]]]</visible>
 					</control>
-					<control type="image">
-						<posx>5</posx>
-						<posy>150</posy>
-						<width>330</width>
-						<height>40</height>
-						<texture border="15" colordiffuse="bf000000">common/white.png</texture>
-						<visible>Skin.HasSetting(views.titleoverlay)</visible>
-					</control>
-					<control type="label">
-						<posx>5</posx>
-						<posy>150</posy>
-						<width>330</width>
-						<width>auto</width>
-						<align>center</align>
-						<height>34</height>
-						<font>NetflixSmall</font>
-						<textcolor>PanelWhite70</textcolor>
-						<selectedcolor>PanelWhite70</selectedcolor>
-						<label>$INFO[ListItem.Label]</label>
-						<visible>Skin.HasSetting(views.titleoverlay)</visible>
-					</control>
 				</itemlayout>
-				<focusedlayout width="320" height="184">
+				<focusedlayout width="384" height="216">
 					<control type="group">
 						<control type="button">
 							<texturefocus>-</texturefocus>
@@ -130,27 +92,10 @@
 						<control type="image">
 							<posx>5</posx>
 							<posy>5</posy>
-							<width>310</width>
-							<height>174</height>
+							<width>374</width>
+							<height>206</height>
 							<aspectratio scalediffuse="false">stretch</aspectratio>
 							<texture background="true">$VAR[LandscapeImage]</texture>
-						</control>
-						<control type="image">
-							<centerright>32</centerright>
-							<centertop>32</centertop>
-							<width>32</width>
-							<height>32</height>
-							<aspectratio aligny="top">keep</aspectratio>
-							<texture colordiffuse="$VAR[PercentColourHighlight]">$VAR[PosterPercentWatchedBacking]</texture>
-							<visible>!Skin.HasSetting(furniture.alternateindicators)</visible>
-						</control>
-						<control type="image">
-							<centerright>32</centerright>
-							<centertop>32</centertop>
-							<width>32</width>
-							<height>32</height>
-							<aspectratio aligny="top">keep</aspectratio>
-							<texture>$VAR[PosterPercentWatched]</texture>
 						</control>
 						<control type="label">
 							<centerright>32</centerright>
@@ -203,51 +148,74 @@
 							<visible>!stringcompare(ListItem.Label,..) + [SubString(ListItem.Overlay,OverlayUnwatched.png) + [[Container.Content(movies) + [StringCompare(Window(Home).Property(LatestMovie.1.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.2.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.3.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.4.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.5.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.6.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.7.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.8.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.9.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.10.Title),ListItem.Label)]] | [[Container.Content(tvshows)] + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem.TvShowTitle)]] | [Container.Content(episodes) + [StringCompare(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem.Title)]]]]</visible>
 						</control>
 						<control type="image">
-							<posx>5</posx>
-							<posy>150</posy>
-							<width>310</width>
-							<height>40</height>
+							<left>5</left>
+							<right>5</right>
+							<top>5</top>
+							<bottom>5</bottom>
 							<texture border="15" colordiffuse="bf000000">common/white.png</texture>
-							<visible>!Container.Content(movies) + !Container.Content(episodes) + !Container.Content(tvshows) + !Container.Content(seasons) + !Container.Content(albums)</visible>
 						</control>
-						<control type="label">
-							<posx>5</posx>
-							<posy>150</posy>
-							<width>310</width>
+						<control type="textbox">
+							<left>5</left>
+							<right>5</right>
+							<top>10</top>
+							<width>374</width>
+							<align>center</align>
+							<font>NetflixSmall</font>
+							<textcolor>PanelWhite70</textcolor>
+							<selectedcolor>PanelWhite70</selectedcolor>
+							<label>$VAR[VideoInfoLabel][CR]$VAR[LabelYear]$VAR[LabelDuration, • ]$INFO[ListItem.Rating, • ][CR]$VAR[LabelDirector][CR]$INFO[ListItem.Genre,,[CR]]$INFO[ListItem.Cast,,[CR]]$INFO[ListItem.Studio]</label>
+							<visible>!Container.Content(episodes) + !Container.Content(albums) + !Container.Content(songs)</visible>
+						</control>
+						<control type="textbox">
+							<left>5</left>
+							<right>5</right>
+							<top>10</top>
+							<width>374</width>
 							<width>auto</width>
 							<align>center</align>
 							<height>34</height>
 							<font>NetflixSmall</font>
 							<textcolor>PanelWhite70</textcolor>
 							<selectedcolor>PanelWhite70</selectedcolor>
-							<label>$INFO[ListItem.Label]</label>
-							<visible>!Container.Content(movies) + !Container.Content(episodes) + !Container.Content(tvshows) + !Container.Content(seasons) + !Container.Content(albums)</visible>
+							<label>$VAR[LabelTitle][CR][CR]$INFO[ListItem.Artist]$INFO[ListItem.Year, • ,]</label>
+							<visible>Container.Content(albums)</visible>
+						</control>
+						<control type="textbox">
+							<left>5</left>
+							<right>5</right>
+							<top>10</top>
+							<width>374</width>
+							<width>auto</width>
+							<align>center</align>
+							<height>34</height>
+							<font>NetflixSmall</font>
+							<textcolor>PanelWhite70</textcolor>
+							<selectedcolor>PanelWhite70</selectedcolor>
+							<label>$VAR[LabelTitle][CR]$INFO[ListItem.TrackNumber]. $INFO[ListItem.Artist]$INFO[ListItem.Album, • ,][CR]$INFO[ListItem.Genre,[B]$LOCALIZE[515] [/B],[CR]]$INFO[ListItem.Duration,[B]$LOCALIZE[180] [/B],[CR]]</label>
+							<visible>Container.Content(songs)</visible>
+						</control>
+						<control type="textbox">
+							<left>5</left>
+							<right>5</right>
+							<top>10</top>
+							<width>374</width>
+							<width>auto</width>
+							<align>center</align>
+							<height>34</height>
+							<font>NetflixSmall</font>
+							<textcolor>PanelWhite70</textcolor>
+							<selectedcolor>PanelWhite70</selectedcolor>
+							<label>$INFO[ListItem.Label,,[CR]]$VAR[LabelDirector][CR]$INFO[ListItem.Genre,,[CR]]$INFO[ListItem.Cast,,[CR]]$INFO[ListItem.Studio]</label>
+							<visible>Container.Content(episodes)</visible>
 						</control>
 						<control type="image">
 							<posx>0</posx>
 							<posy>0</posy>
-							<width>320</width>
-							<height>184</height>
+							<width>384</width>
+							<height>216</height>
 							<texture border="20">common/selectbox.png</texture>
 							<visible>Control.HasFocus(515)</visible>
 							<colordiffuse>$VAR[ColourHighlight]</colordiffuse>
-						</control>
-						<control type="image">
-							<centerleft>50%</centerleft>
-							<centertop>100</centertop>
-							<width>100</width>
-							<height>100</height>
-							<aspectratio>keep</aspectratio>
-							<texture colordiffuse="$VAR[ColourHighlight2]">common/playring.png</texture>
-							<animation type="Focus">
-								<effect type="zoom" start="90" end="100" time="150" tween="sine" easing="inout" center="auto" />
-								<effect type="fade" start="0" end="100" time="150" tween="sine" easing="in" />
-							</animation>
-							<animation type="Unfocus">
-								<effect type="zoom" start="100" end="90" time="150" tween="sine" easing="inout" center="auto" />
-								<effect type="fade" start="100" end="0" time="150" tween="sine" easing="out" />
-							</animation>
-							<visible>Container.Content(movies) | Container.Content(episodes)</visible>
 						</control>
 					</control>
 				</focusedlayout>
