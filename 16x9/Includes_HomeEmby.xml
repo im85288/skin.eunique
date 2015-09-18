@@ -632,7 +632,7 @@
 			</control> -->
 		</control>
 
-		<control type="group">
+		<control type="grouplist">
 			<visible>!Skin.HasSetting(furniture.flags)</visible>
 			<visible>!Window.IsVisible(DialogAlbumInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-VideoList.xml) + !Window.IsVisible(script-ExtendedInfo Script-YoutubeList.xml)</visible>
 			<visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)</visible>
@@ -641,14 +641,18 @@
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
 			<left>284</left>
-			<top>41</top>
+			<top>56</top>
 			<width>1626</width>
-			<height>64</height>
+			<height>34</height>
+			<orientation>horizontal</orientation>
+			<itemgap>6</itemgap>
 			<control type="label">
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>MediumSmallBold</font>
 				<textcolor>Dark1</textcolor>
+				<width>auto</width>
+				<height>34</height>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>[UPPERCASE]$VAR[listTitle]$VAR[listSubTitle, / , items]$VAR[LabelNextAiredDetails, / ][/UPPERCASE]</label>
 				<visible>[Container.Content(tvshows) | Container.Content(seasons)] + !Control.IsVisible(50) + !Control.IsVisible(53) + !Control.IsVisible(57)</visible>
@@ -658,6 +662,8 @@
 				<aligny>center</aligny>
 				<font>MediumSmallBold</font>
 				<textcolor>Dark1</textcolor>
+				<width>auto</width>
+				<height>34</height>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>[UPPERCASE]$VAR[listTitle]$VAR[listSubTitle, / , items][/UPPERCASE]</label>
 				<visible>[Container.Content(tvshows) | Container.Content(seasons)] + [Control.IsVisible(50) | Control.IsVisible(53) | Control.IsVisible(57)]</visible>
@@ -667,62 +673,65 @@
 				<aligny>center</aligny>
 				<font>MediumSmallBold</font>
 				<textcolor>Dark1</textcolor>
+				<width>auto</width>
+				<height>34</height>
 				<selectedcolor>Dark1</selectedcolor>
-				<label>[UPPERCASE]$VAR[HDSD]$INFO[ListItem.VideoResolution, ,P]$INFO[ListItem.Rating, / ]$VAR[MPAA, / ]$VAR[VideoCodec, / ]$VAR[AudioCodec, / ][/UPPERCASE]</label>
+				<label>[UPPERCASE]$VAR[HDSD]$INFO[ListItem.VideoResolution, ,P]$VAR[MPAA, / ]$VAR[VideoCodec, / ]$VAR[AudioCodec, / ,  ][/UPPERCASE]</label>
 				<visible>Container.Content(movies) | Container.Content(episodes)</visible>
 			</control>
-			<!--
 			<control type="label">
-				<left>0</left>
-				<top>50</top>
-				<width>1920</width>
-				<height>34</height>
-				<align>center</align>
 				<aligny>center</aligny>
-				<font>MediumSmallBold</font>
-				<textcolor>Dark1</textcolor>
-				<selectedcolor>Dark1</selectedcolor>
-				<label>$VAR[LabelTitle]$INFO[ListItem.Year, (,)]</label>
+				<align>left</align>
+				<font>symbolview</font>
+				<textcolor>selective yellow</textcolor>
+				<height>34</height>
+				<width>auto</width>
+				<label></label>
+				<visible>!IsEmpty(ListItem.Rating)</visible>
 			</control>
 			<control type="label">
-				<left>0</left>
-				<top>87</top>
-				<width>1920</width>
-				<height>34</height>
-				<align>center</align>
 				<aligny>center</aligny>
-				<font>SmallBold</font>
-				<textcolor>Dark1</textcolor>
-				<selectedcolor>Dark1</selectedcolor>
-				<label>$VAR[MPAA]$INFO[ListItem.Rating, • ,]</label>
-				<visible>!IsEmpty(ListItem.Mpaa)</visible>
+				<align>left</align>
+				<font>Medium</font>
+				<textcolor>white</textcolor>
+				<height>34</height>
+				<width>auto</width>
+				<label fallback="-  ">$INFO[ListItem.Rating,,  ]</label>
+				<visible>!IsEmpty(ListItem.Rating)</visible>
 			</control>
 			<control type="label">
-				<left>0</left>
-				<top>87</top>
-				<width>1920</width>
-				<height>34</height>
-				<align>center</align>
 				<aligny>center</aligny>
-				<font>SmallBold</font>
-				<textcolor>Dark1</textcolor>
-				<selectedcolor>Dark1</selectedcolor>
-				<label>$INFO[ListItem.Rating]</label>
-				<visible>IsEmpty(ListItem.Mpaa)</visible>
+				<align>left</align>
+				<font>symbolview</font>
+				<textcolor>$VAR[RottenTomatoesIconColour]</textcolor>
+				<height>34</height>
+				<width>auto</width>
+				<label>$VAR[RottenTomatoesIcon]</label>
+				<visible>!IsEmpty(Window(Home).Property(EmbySkinHelper.ListItemRottenTomatoes))</visible>
 			</control>
 			<control type="label">
-				<left>0</left>
-				<top>115</top>
-				<right>0</right>
-				<height>34</height>
-				<align>center</align>
 				<aligny>center</aligny>
-				<font>Minute</font>
-				<textcolor>Dark2</textcolor>
-				<selectedcolor>Dark2</selectedcolor>
-				<label>$VAR[LabelNextAiredDetails]</label>
+				<align>left</align>
+				<font>Medium</font>
+				<textcolor>white</textcolor>
+				<height>34</height>
+				<width>auto</width>
+				<label fallback="-  ">$INFO[Window(Home).Property(EmbySkinHelper.ListItemRottenTomatoes),,%  ]</label>
+				<visible>!IsEmpty(Window(Home).Property(EmbySkinHelper.ListItemRottenTomatoes))</visible>
 			</control>
-			-->
+			<control type="button">
+				<width>34</width>
+				<height>34</height>
+				<textcolor>black2</textcolor>
+				<textoffsetx>0</textoffsetx>
+				<label>$INFO[Window(Home).Property(EmbySkinHelper.ListItemMetaScore)]</label>
+				<font>Small</font>
+				<aligny>center</aligny>
+				<align>center</align>
+				<texturefocus colordiffuse="$VAR[CommunityRatingColour]" border="5">common/white.png</texturefocus>
+				<texturenofocus colordiffuse="$VAR[CommunityRatingColour]" border="5">common/white.png</texturenofocus>
+				<visible>!IsEmpty(Window(Home).Property(EmbySkinHelper.ListItemMetaScore))</visible>
+			</control>
 		</control>
 
 	</include>
