@@ -70,7 +70,7 @@
                         <height>66</height>
                         <texture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">$INFO[ListItem.Icon]</texture>
                         <visible>substring(ListItem.Icon,special://skin/extras/icons)</visible>
-                        <visible>Skin.HasSetting(home.showicons) | stringcompare(Window.Property(groupname),movieshub) | stringcompare(Window.Property(groupname),episodeshub)</visible>
+                        <visible>Skin.HasSetting(home.showicons)</visible>
                     </control>
                 </itemlayout>
                 <focusedlayout width="600" height="69">
@@ -95,7 +95,7 @@
                         <height>66</height>
                         <texture colordiffuse="$VAR[ColourSelected]">$INFO[ListItem.Icon]</texture>
                         <visible>substring(ListItem.Icon,special://skin/extras/icons)</visible>
-                        <visible>Skin.HasSetting(home.showicons) | stringcompare(Window.Property(groupname),movieshub) | stringcompare(Window.Property(groupname),episodeshub)</visible>
+                        <visible>Skin.HasSetting(home.showicons)</visible>
                     </control>
                 </focusedlayout>
             </control>
@@ -110,7 +110,7 @@
                 <onup>Control.Move(211,-1)</onup>
                 <ondown>Control.Move(211,1)</ondown>
                 <orientation>horizontal</orientation>
-                <animation effect="slide" end="-48" condition="Skin.HasSetting(home.showicons) | stringcompare(Window.Property(groupname),movieshub) | stringcompare(Window.Property(groupname),episodeshub)">Conditional</animation>
+                <animation effect="slide" end="-48" condition="Skin.HasSetting(home.showicons)">Conditional</animation>
                 <animation effect="slide" end="0,69" condition="IntegerGreaterThan(Container(211).Position,0)">Conditional</animation>
                 <animation effect="slide" end="0,69" condition="IntegerGreaterThan(Container(211).Position,1)">Conditional</animation>
                 <animation effect="slide" end="0,69" condition="IntegerGreaterThan(Container(211).Position,2)">Conditional</animation>
@@ -207,7 +207,7 @@
                     <label>31181</label>
                     <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
                     <include>DefDialogButtons</include>
-                    <visible>stringcompare(Window.Property(groupname),movieshub) | stringcompare(Window.Property(groupname),episodeshub) | Skin.HasSetting(home.showicons)</visible>
+                    <visible>Skin.HasSetting(home.showicons)</visible>
                 </control>
                 <control type="button" id="405" description="Set Submenu">
                     <width>100%</width>
@@ -216,27 +216,6 @@
                     <visible>stringcompare(Window.Property(groupname),mainmenu)</visible>
                     <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
                     <include>DefDialogButtons</include>
-                    <visible>!stringcompare(Container(211).ListItem.Label2,MovieHub) + !stringcompare(Container(211).ListItem.Label2,TVHub)</visible>
-                </control>
-                <control type="button" id="9301" description="Set MovieHub">
-                    <width>100%</width>
-                    <height>66</height>
-                    <label>31178</label>
-                    <visible>stringcompare(Window.Property(groupname),mainmenu)</visible>
-                    <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
-                    <include>DefDialogButtons</include>
-                    <visible>stringcompare(Container(211).ListItem.Label2,MovieHub)</visible>
-                    <onclick>RunScript(script.skinshortcuts,type=manage&amp;group=movieshub)</onclick>
-                </control>
-                <control type="button" id="9302" description="Set TVHub">
-                    <width>100%</width>
-                    <height>66</height>
-                    <label>31178</label>
-                    <visible>stringcompare(Window.Property(groupname),mainmenu)</visible>
-                    <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
-                    <include>DefDialogButtons</include>
-                    <visible>stringcompare(Container(211).ListItem.Label2,TVHub)</visible>
-                    <onclick>RunScript(script.skinshortcuts,type=manage&amp;group=episodeshub)</onclick>
                 </control>
                 <control type="button" id="301" description="Add"> <!--new shortcut workaround-->
                    <visible>false</visible>

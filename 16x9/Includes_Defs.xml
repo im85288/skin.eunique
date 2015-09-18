@@ -2304,14 +2304,6 @@
 	<include name="DefHomeRightSidePad">
 		<right>SidePad</right>
 	</include>
-	<variable name="DefTVHubWidget">
-		<value condition="!IsEmpty(SKin.String(TVHubWidget))">$INFO[Skin.String(TVHubWidget)]</value>
-		<value>special://skin/extras/playlists/RandomEpisodes.xsp</value>
-	</variable>
-	<variable name="DefMovieHubWidget">
-		<value condition="!IsEmpty(Skin.String(MovieHubWidget))">$INFO[Skin.String(MovieHubWidget)]</value>
-		<value>special://skin/extras/playlists/RandomMovies.xsp</value>
-	</variable>
 	<variable name="DefDirectorWindowContent">
 		<value condition="stringcompare(Window(1103).Property(content),1)">plugin://script.extendedinfo?info=studio&amp;&amp;studio=$INFO[Window(home).Property(ExtStudio)]</value>
 		<value condition="stringcompare(Window(1103).Property(content),2)">plugin://script.extendedinfo?info=similarmovies&amp;&amp;dbid=$INFO[Window(home).Property(ExtDBID)]</value>
