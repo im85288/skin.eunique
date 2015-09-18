@@ -233,16 +233,6 @@
 		<value condition="!IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
 		<value>genrethumb/headphones.jpg</value>
 	</variable>
-	<variable name="ShowcaseCasePathVar">
-		<value condition="Skin.HasSetting(views.bddvdcases)">tvshows</value>
-		<value condition="Skin.HasSetting(views.colourcases)">colorcases</value>
-		<value>movies</value>
-	</variable>
-	<variable name="WidgetsCasePathVar">
-		<value condition="Skin.HasSetting(widgets.bddvdcases)">tvshows</value>
-		<value condition="Skin.HasSetting(widgets.colourcases)">colorcases</value>
-		<value>movies</value>
-	</variable>
 	<variable name="GlobalCaseVar">
 		<value condition="SubString(ListItem.Filename,.3D.)">3d.png</value>
 		<value condition="SubString(ListItem.Filename,hdtv)">hdtv.png</value>
