@@ -187,7 +187,7 @@
 							<textcolor>white2</textcolor>
 							<selectedcolor>white</selectedcolor>
 							<label>$INFO[ListItem.Rating]$VAR[LabelYear,  ]$VAR[LabelDuration,  ]$VAR[MPAA,  ]$VAR[HDSD,  ]</label>
-							<visible>!Container.Content(episodes) + !Container.Content(albums) + !Container.Content(songs)</visible>
+							<visible>Container.Content(episodes) | Container.Content(movies)</visible>
 						</control>
 						<control type="textbox">
 							<left>10</left>
@@ -197,8 +197,32 @@
 							<font>TinyBold</font>
 							<textcolor>white</textcolor>
 							<selectedcolor>white</selectedcolor>
-							<label>$INFO[ListItem.Genre]</label>
-							<visible>!Container.Content(episodes) + !Container.Content(albums) + !Container.Content(songs)</visible>
+							<label>$INFO[ListItem.Season,$LOCALIZE[20373] ,]$INFO[ListItem.Episode, • $LOCALIZE[20359] ,]$INFO[ListItem.Director,[CR],]$INFO[ListItem.Genre,[CR],[CR]]$INFO[ListItem.Premiered]$INFO[ListItem.Cast,[CR],[CR]]$INFO[ListItem.Studio,[CR],]</label>
+							<visible>Container.Content(episodes) | Container.Content(movies)</visible>
+						</control>
+						<control type="textbox">
+							<left>10</left>
+							<right>10</right>
+							<top>10</top>
+							<align>center</align>
+							<aligny>center</aligny>
+							<font>TinyBold</font>
+							<textcolor>white</textcolor>
+							<selectedcolor>white</selectedcolor>
+							<label>$INFO[ListItem.Label]$INFO[ListItem.Genre,[CR][CR]]</label>
+							<visible>!Container.Content(episodes) + !Container.Content(albums) + !Container.Content(songs) + !Container.Content(movies) + !Container.Content(tvshows)</visible>
+						</control>
+						<control type="textbox">
+							<left>10</left>
+							<right>10</right>
+							<top>10</top>
+							<align>center</align>
+							<aligny>center</aligny>
+							<font>TinyBold</font>
+							<textcolor>white</textcolor>
+							<selectedcolor>white</selectedcolor>
+							<label>$INFO[ListItem.Director]$VAR[LabelGenre,[CR][CR]]</label>
+							<visible>Container.Content(tvshows)</visible>
 						</control>
 						<control type="textbox">
 							<left>10</left>
@@ -209,7 +233,7 @@
 							<font>SmallBold</font>
 							<textcolor>white2</textcolor>
 							<selectedcolor>white</selectedcolor>
-							<label>$VAR[LabelTitle][CR][CR]$INFO[ListItem.Artist]$INFO[ListItem.Year, • ,]</label>
+							<label>$VAR[LabelTitle,,[CR][CR]]$INFO[ListItem.Artist]$INFO[ListItem.Year, • ,]</label>
 							<visible>Container.Content(albums)</visible>
 						</control>
 						<control type="textbox">
@@ -221,20 +245,8 @@
 							<font>SmallBold</font>
 							<textcolor>white2</textcolor>
 							<selectedcolor>white</selectedcolor>
-							<label>$VAR[LabelTitle][CR]$INFO[ListItem.TrackNumber]. $INFO[ListItem.Artist]$INFO[ListItem.Album, • ,][CR]$INFO[ListItem.Genre,[B]$LOCALIZE[515] [/B],[CR]]$INFO[ListItem.Duration,[B]$LOCALIZE[180] [/B],[CR]]</label>
+							<label>$VAR[LabelTitle,,[CR]]$INFO[ListItem.TrackNumber]. $INFO[ListItem.Artist]$INFO[ListItem.Album, • ,][CR]$INFO[ListItem.Genre,[B]$LOCALIZE[515] [/B],[CR]]$INFO[ListItem.Duration,[B]$LOCALIZE[180] [/B],[CR]]</label>
 							<visible>Container.Content(songs)</visible>
-						</control>
-						<control type="textbox">
-							<left>10</left>
-							<right>10</right>
-							<top>87</top>
-							<align>center</align>
-							<height>34</height>
-							<font>SmallBold</font>
-							<textcolor>white2</textcolor>
-							<selectedcolor>white</selectedcolor>
-							<label>$INFO[ListItem.Label,,[CR]]$VAR[LabelDirector][CR]$INFO[ListItem.Genre,,[CR]]$INFO[ListItem.Cast,,[CR]]$INFO[ListItem.Studio]</label>
-							<visible>Container.Content(episodes)</visible>
 						</control>
 						<control type="image">
 							<posx>0</posx>
@@ -248,7 +260,7 @@
 					</control>
 				</focusedlayout>
 			</control>
-
+			<include>Furniture_ScrollbarT</include>
 		</control>
 	</include>
 </includes>
