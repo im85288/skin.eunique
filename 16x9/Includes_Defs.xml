@@ -2195,10 +2195,12 @@
 			<textcolor>white</textcolor>
 			<aligny>center</aligny>
 		</control>
-		<control type="button" id="2">
+		<control type="button" id="9326">
 			<description>View</description>
 			<include>DefContextButtonBlade</include>
 			<align>left</align>
+			<label>View: $INFO[Container.Viewmode]</label>
+			<onclick>XBMC.RunScript(script.skin.helper.service,action=setview)</onclick>
 		</control>
 		<control type="button" id="3">
 			<description>Sort</description>
