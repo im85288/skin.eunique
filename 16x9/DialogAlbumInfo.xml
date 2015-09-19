@@ -47,10 +47,10 @@
                 <left>450</left>
                 <control type="image">
                     <top>-5</top>
-                    <width>800</width>
-                    <height>210</height>
-                    <texture>$VAR[BannerImage]</texture>
-                    <aspectratio align="left" aligny="bottom">keep</aspectratio>
+                    <width>1000</width>
+                    <height>185</height>
+                    <texture diffuse="diffuse/extraposter-ref.png" fallback="music-banner.jpg">$INFO[ListItem.Art(banner)]</texture>
+                    <aspectratio align="left" aligny="bottom">stretch</aspectratio>
                     <fadetime>50</fadetime>
                 </control>
             </control>
@@ -123,11 +123,11 @@
                     <aligny>center</aligny>
                     <align>left</align>
                     <font>symbol</font>
-                    <textcolor>$VAR[EmbyLeftColourHighlight]</textcolor>
+                    <textcolor>selective yellow</textcolor>
                     <height>38</height>
                     <width>auto</width>
-                    <label></label>
-                    <visible>Container.Content(Artists) + !IsEmpty(Window(Home).Property(Artist_Formed))</visible>
+                    <label></label>
+                    <visible>Container.Content(Artists) + [!IsEmpty(Window(Home).Property(Artist_Formed)) | !StringCompare(Window(Home).Property(Artist_Formed),0)]</visible>
                 </control>
                 <control type="label">
                     <aligny>center</aligny>
@@ -136,18 +136,18 @@
                     <textcolor>white</textcolor>
                     <height>38</height>
                     <width>auto</width>
-                    <label>$INFO[Window(Home).Property(Artist_Formed),, ]</label>
-                    <visible>Container.Content(Artists) + !IsEmpty(Window(Home).Property(Artist_Formed))</visible>
+                    <label>$INFO[Window(Home).Property(Artist_Formed),,  ]</label>
+                    <visible>Container.Content(Artists) + [!IsEmpty(Window(Home).Property(Artist_Formed)) | !StringCompare(Window(Home).Property(Artist_Formed),0)]</visible>
                 </control>
                 <control type="label">
                     <aligny>center</aligny>
                     <align>left</align>
                     <font>symbol</font>
-                    <textcolor>$VAR[EmbyLeftColourHighlight]</textcolor>
+                    <textcolor>selective yellow</textcolor>
                     <height>38</height>
                     <width>auto</width>
                     <label></label>
-                    <visible>Container.Content(Albums)</visible>
+                    <visible>Container.Content(Albums) + !IsEmpty(ListItem.Year)</visible>
                 </control>
                 <control type="label">
                     <aligny>center</aligny>
@@ -156,9 +156,10 @@
                     <textcolor>white</textcolor>
                     <height>38</height>
                     <width>auto</width>
-                    <label>$INFO[ListItem.Year,, ]</label>
-                    <visible>Container.Content(Albums)</visible>
+                    <label>$INFO[ListItem.Year,,  ]</label>
+                    <visible>Container.Content(Albums) + !IsEmpty(ListItem.Year)</visible>
                 </control>
+				<!--
                 <control type="label">
                     <aligny>center</aligny>
                     <align>left</align>
@@ -176,16 +177,17 @@
                     <textcolor>white</textcolor>
                     <height>38</height>
                     <width>auto</width>
-                    <label>$INFO[ListItem.Genre,, ]</label>
+                    <label fallback="-  ">$INFO[ListItem.Genre,,  ]</label>
                 </control>
+				-->
                 <control type="label">
                     <aligny>center</aligny>
                     <align>left</align>
                     <font>symbol</font>
-                    <textcolor>$VAR[EmbyRightColourHighlight]</textcolor>
+                    <textcolor>selective yellow</textcolor>
                     <height>38</height>
                     <width>auto</width>
-                    <label></label>
+                    <label></label>
                     <visible>Container.Content(Artists) + !IsEmpty(Window(Home).Property(Born))</visible>
                 </control>
                 <control type="label">
@@ -195,14 +197,14 @@
                     <textcolor>white</textcolor>
                     <height>38</height>
                     <width>auto</width>
-                    <label fallback="-  ">$INFO[Window(Home).Property(Born),, ]</label>
+                    <label fallback="-  ">$INFO[Window(Home).Property(Born),,  ]</label>
                     <visible>Container.Content(Artists) + !IsEmpty(Window(Home).Property(Born))</visible>
                 </control>
                 <control type="label">
                     <aligny>center</aligny>
                     <align>left</align>
                     <font>symbol</font>
-                    <textcolor>$VAR[EmbyRightColourHighlight]</textcolor>
+                    <textcolor>selective yellow</textcolor>
                     <height>38</height>
                     <width>auto</width>
                     <label></label>
@@ -215,14 +217,14 @@
                     <textcolor>white</textcolor>
                     <height>38</height>
                     <width>auto</width>
-                    <label>$INFO[ListItem.Artist,, ]</label>
+                    <label>$INFO[ListItem.Artist,,  ]</label>
                     <visible>Container.Content(Albums) + !IsEmpty(ListItem.Artist)</visible>
                 </control>
                 <control type="label">
                     <aligny>center</aligny>
                     <align>left</align>
                     <font>symbol</font>
-                    <textcolor>$VAR[EmbyLeftColourHighlight]</textcolor>
+                    <textcolor>selective yellow</textcolor>
                     <height>38</height>
                     <width>auto</width>
                     <label></label>
@@ -235,14 +237,14 @@
                     <textcolor>white</textcolor>
                     <height>38</height>
                     <width>auto</width>
-                    <label>$INFO[ListItem.Property(Album_Style),, ]</label>
+                    <label>$INFO[ListItem.Property(Album_Style),,  ]</label>
                     <visible>Container.Content(Albums) + !IsEmpty(ListItem.Property(Album_Style))</visible>
                 </control>
                 <control type="label">
                     <aligny>center</aligny>
                     <align>left</align>
                     <font>symbol</font>
-                    <textcolor>$VAR[EmbyLeftColourHighlight]</textcolor>
+                    <textcolor>selective yellow</textcolor>
                     <height>38</height>
                     <width>auto</width>
                     <label></label>
@@ -255,7 +257,7 @@
                     <textcolor>white</textcolor>
                     <height>38</height>
                     <width>auto</width>
-                    <label fallback="-  ">$INFO[Window(Home).Property(Artist_Disbanded),, ]$INFO[Window(Home).Property(Died),, ]</label>
+                    <label fallback="-  ">$INFO[Window(Home).Property(Artist_Disbanded),, ]$INFO[Window(Home).Property(Died),,  ]</label>
                     <visible>!Container.Content(Albums) + !IsEmpty(Window(Home).Property(Died))</visible>
                 </control>
             </control>
@@ -756,7 +758,7 @@
                     <fadetime>600</fadetime>
                     <timeperimage>20000</timeperimage>
                     <randomize>true</randomize>
-                    <aspectratio scalediffuse="false">stretch</aspectratio>
+                    <aspectratio scalediffuse="false">scale</aspectratio>
                     <imagepath background="true">$INFO[Window(Home).Property(SkinHelper.ExtraFanArtPath)]</imagepath>
                     <animation type="conditional" condition="true" reversible="false">
                         <effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
@@ -767,7 +769,7 @@
                     <top>633</top>
                     <width>613</width>
                     <height>287</height>
-                    <aspectratio scalediffuse="false">stretch</aspectratio>
+                    <aspectratio scalediffuse="false">scale</aspectratio>
                     <texture background="true">$VAR[MusicFanart]</texture>
                     <animation type="conditional" condition="true" reversible="false">
                         <effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
@@ -1414,7 +1416,7 @@
             <visible>!Player.HasAudio</visible>
         </control>
 
-        <!-- Music Playing Section -->
+        <!-- Music Playing Section 
         <control type="group">
             <visible>Player.HasAudio</visible>
             <control type="multiimage">
@@ -1746,6 +1748,6 @@
             </control>
 
         </control>
-
+-->
     </controls>
 </window>

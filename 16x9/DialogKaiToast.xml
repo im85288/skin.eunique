@@ -6,6 +6,8 @@
         <control type="group">
 			<visible>!StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
             <visible>!Window.IsVisible(DialogVolumeBar.xml)</visible>
+			<visible>!SubString(Control.GetLabel(401),toolbox)</visible>
+			<visible>!SubString(Control.GetLabel(401),extended)</visible>
             <right>630</right>
             <top>40</top>
             <width>660</width>
@@ -28,8 +30,33 @@
 					<aligny>center</aligny>
 					<align>center</align>
 					<font>symbol</font>
-					<label>$VAR[KaiSwapDefaultImage]</label>
+					<label></label>
 					<textcolor>white</textcolor>
+			<visible>SubString(Control.GetLabel(401),error)</visible>
+				</control>
+				<control type="label">
+                    <left>20</left>
+                    <centertop>50%</centertop>
+                    <width>64</width>
+                    <height>64</height>
+					<aligny>center</aligny>
+					<align>center</align>
+					<font>symbol</font>
+					<label></label>
+					<textcolor>white</textcolor>
+			<visible>SubString(Control.GetLabel(400),info.png)</visible>
+				</control>
+				<control type="label">
+                    <left>20</left>
+                    <centertop>50%</centertop>
+                    <width>64</width>
+                    <height>64</height>
+					<aligny>center</aligny>
+					<align>center</align>
+					<font>symbol</font>
+					<label></label>
+					<textcolor>white</textcolor>
+			<visible>SubString(Control.GetLabel(400),warnning.png)</visible>
 				</control>
                 <control type="image" id="400">
                     <left>20</left>
