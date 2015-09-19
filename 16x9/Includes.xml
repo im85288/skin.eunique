@@ -39,7 +39,7 @@
 				<animation condition="ControlGroup(9010).HasFocus()" effect="slide" end="193,221" start="0,0" time="0">Conditional</animation>
 				<animation condition="Container.Content(albums)" effect="slide" end="-345" start="0,0" time="0">Conditional</animation>
 				<animation condition="Container.Content(artists)" effect="slide" end="-345" start="0,0" time="0">Conditional</animation>
-				<animation condition="Container.Content(episodes)" effect="slide" end="-348" start="0,0" time="0">Conditional</animation>
+				<animation condition="Container.Content(episodes)" effect="slide" end="-352" start="0,0" time="0">Conditional</animation>
 				<animation condition="Container.Content(tvshows) | Container.Content(seasons)" effect="slide" end="-232" start="0,0" time="0">Conditional</animation>
                 <control type="group">
 					<visible>Control.HasFocus(8) | Control.HasFocus(1)</visible>
@@ -275,7 +275,9 @@
 		<value condition="!IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
 		<value condition="!IsEmpty(Container(9500).ListItem.Art(fanart))">$INFO[Container(9500).ListItem.Art(fanart)]</value>
 		<value condition="!IsEmpty(ListItem.Property(Fanart_Image))">$INFO[ListItem.Property(Fanart_Image)]</value>
+		<!--
 		<value condition="!IsEmpty(Container.Art(artist.fanart))">$INFO[Container.Art(artist.fanart)]</value>
+		-->
 		<value condition="!IsEmpty(Skin.String(fanart.fallback))">$INFO[Skin.String(fanart.fallback)]</value>
 		<value>common/null.png</value>
 	</variable>
