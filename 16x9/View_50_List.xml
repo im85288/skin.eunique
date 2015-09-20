@@ -376,6 +376,18 @@
 				<textcolor>white2</textcolor>
 			</control>
 			<control type="label">
+			<centerright>112</centerright>
+			<centertop>33</centertop>
+				<width>32</width>
+				<height>32</height>
+							<align>center</align>
+				<font>minisymbol</font>
+				<label>$VAR[PercentWatchedLabel]</label>
+				<textcolor>$VAR[UnwatchedColourHighlight]</textcolor>
+				<scroll>true</scroll>
+				<visible>[Container.Content(tvshows) | Container.Content(seasons)]</visible>
+			</control>
+			<control type="label">
 			<centerright>110</centerright>
 			<centertop>32</centertop>
 				<width>32</width>
@@ -383,6 +395,7 @@
 				<font>symbolview</font>
 				<label>$VAR[PercentWatchedLabel]</label>
 				<textcolor>$VAR[UnwatchedColourHighlight]</textcolor>
+				<visible>![Container.Content(tvshows) | Container.Content(seasons)]</visible>
 			</control>
 			<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched) + !ListItem.IsResumable</visible>
 		</control>
@@ -536,6 +549,18 @@
 				<textcolor>white2</textcolor>
 			</control>
 			<control type="label">
+			<centerright>112</centerright>
+			<centertop>33</centertop>
+				<width>32</width>
+				<height>32</height>
+							<align>center</align>
+				<font>minisymbol</font>
+				<label>$VAR[PercentWatchedLabel]</label>
+				<textcolor>$VAR[UnwatchedColourHighlight]</textcolor>
+				<scroll>true</scroll>
+				<visible>[Container.Content(tvshows) | Container.Content(seasons)]</visible>
+			</control>
+			<control type="label">
 			<centerright>110</centerright>
 			<centertop>32</centertop>
 				<width>32</width>
@@ -543,6 +568,7 @@
 				<font>symbolview</font>
 				<label>$VAR[PercentWatchedLabel]</label>
 				<textcolor>$VAR[UnwatchedColourHighlight]</textcolor>
+				<visible>![Container.Content(tvshows) | Container.Content(seasons)]</visible>
 			</control>
 			<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched) + !ListItem.IsResumable</visible>
 		</control>

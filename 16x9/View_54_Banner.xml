@@ -143,6 +143,18 @@
 				<textcolor>white2</textcolor>
 			</control>
 			<control type="label">
+							<right>12</right>
+				<top>11</top>
+				<width>32</width>
+				<height>32</height>
+							<align>center</align>
+				<font>minisymbol</font>
+				<label>$VAR[PercentWatchedLabel]</label>
+				<textcolor>$VAR[UnwatchedColourHighlight]</textcolor>
+				<scroll>true</scroll>
+				<visible>[Container.Content(tvshows) | Container.Content(seasons)]</visible>
+			</control>
+			<control type="label">
 							<right>10</right>
 							<top>10</top>
 				<width>32</width>
@@ -150,6 +162,7 @@
 				<font>symbolview</font>
 				<label>$VAR[PercentWatchedLabel]</label>
 				<textcolor>$VAR[UnwatchedColourHighlight]</textcolor>
+				<visible>![Container.Content(tvshows) | Container.Content(seasons)]</visible>
 			</control>
 			<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched) + !ListItem.IsResumable</visible>
 		</control>
@@ -287,6 +300,18 @@
 				<textcolor>white2</textcolor>
 			</control>
 			<control type="label">
+							<right>12</right>
+				<top>11</top>
+				<width>32</width>
+				<height>32</height>
+							<align>center</align>
+				<font>minisymbol</font>
+				<label>$VAR[PercentWatchedLabel]</label>
+				<textcolor>$VAR[UnwatchedColourHighlight]</textcolor>
+				<scroll>true</scroll>
+				<visible>[Container.Content(tvshows) | Container.Content(seasons)]</visible>
+			</control>
+			<control type="label">
 							<right>10</right>
 							<top>10</top>
 				<width>32</width>
@@ -294,6 +319,7 @@
 				<font>symbolview</font>
 				<label>$VAR[PercentWatchedLabel]</label>
 				<textcolor>$VAR[UnwatchedColourHighlight]</textcolor>
+				<visible>![Container.Content(tvshows) | Container.Content(seasons)]</visible>
 			</control>
 			<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched) + !ListItem.IsResumable</visible>
 		</control>
@@ -488,6 +514,18 @@
 				<textcolor>white2</textcolor>
 			</control>
 			<control type="label">
+							<right>12</right>
+				<top>11</top>
+				<width>32</width>
+				<height>32</height>
+							<align>center</align>
+				<font>minisymbol</font>
+				<label>$VAR[PercentWatchedLabel]</label>
+				<textcolor>$VAR[UnwatchedColourHighlight]</textcolor>
+				<scroll>true</scroll>
+				<visible>[Container.Content(tvshows) | Container.Content(seasons)]</visible>
+			</control>
+			<control type="label">
 							<right>10</right>
 							<top>10</top>
 				<width>32</width>
@@ -495,6 +533,7 @@
 				<font>symbolview</font>
 				<label>$VAR[PercentWatchedLabel]</label>
 				<textcolor>$VAR[UnwatchedColourHighlight]</textcolor>
+				<visible>![Container.Content(tvshows) | Container.Content(seasons)]</visible>
 			</control>
 			<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched) + !ListItem.IsResumable</visible>
 		</control>
@@ -673,6 +712,18 @@
 				<textcolor>white2</textcolor>
 			</control>
 			<control type="label">
+							<right>12</right>
+				<top>11</top>
+				<width>32</width>
+				<height>32</height>
+							<align>center</align>
+				<font>minisymbol</font>
+				<label>$VAR[PercentWatchedLabel]</label>
+				<textcolor>$VAR[UnwatchedColourHighlight]</textcolor>
+				<scroll>true</scroll>
+				<visible>[Container.Content(tvshows) | Container.Content(seasons)]</visible>
+			</control>
+			<control type="label">
 							<right>10</right>
 							<top>10</top>
 				<width>32</width>
@@ -680,6 +731,7 @@
 				<font>symbolview</font>
 				<label>$VAR[PercentWatchedLabel]</label>
 				<textcolor>$VAR[UnwatchedColourHighlight]</textcolor>
+				<visible>![Container.Content(tvshows) | Container.Content(seasons)]</visible>
 			</control>
 			<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched) + !ListItem.IsResumable</visible>
 		</control>
