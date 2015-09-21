@@ -33,11 +33,9 @@
             <aspectratio align="center">scale</aspectratio>
             <texture colordiffuse="$INFO[Window(home).Property(MusicInfo.ImageColor)]" fallback="common/black.png" background="true" diffuse="diffuse/dv-mask.png">$INFO[Window(home).Property(MusicInfo.ImageFilter)]</texture>
             <visible>!Skin.HasSetting(lights.out) + Window.IsVisible(DialogAlbumInfo.xml) + !Skin.HasSetting(furniture.info.fanart) + Skin.HasSetting(toggled.ai.info)</visible>
-            <visible>!Player.HasAudio</visible>
         </control>
         <control type="group">
             <visible>Skin.HasSetting(toggled.ai.info)</visible>
-            <visible>!Player.HasAudio</visible>
             <animation effect="slide" end="195,0" center="auto" time="200" condition="Control.HasFocus(9500)">Conditional</animation>
             <left>NewSidePad</left>
             <right>NewSidePad</right>
@@ -715,7 +713,6 @@
             <visible>!Skin.HasSetting(toggled.ai.info)</visible>
             <visible>!Window.IsVisible(script-ExtendedInfo Script-DialogAlbumInfo.xml)</visible>
             <visible>!Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)</visible>
-            <visible>!Player.HasAudio</visible>
             <left>NewSidePad</left>
             <right>NewSidePad</right>
             <top>TopPad</top>
@@ -836,7 +833,8 @@
                 <top>340</top>
                 <animation effect="slide" start="0,0" end="-0,20" center="auto" time="200" condition="Container(54).OnScrollNext">Conditional</animation>
                 <animation effect="slide" start="0,0" end="0,20" center="auto" time="200" condition="Container(54).OnScrollPrevious">Conditional</animation>
-                <control type="label">
+				<!--
+				<control type="label">
                     <left>643</left>
                     <width>246</width>
                     <top>-56</top>
@@ -847,49 +845,10 @@
                     <animation type="conditional" condition="true" reversible="false">
                         <effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
                     </animation>
-                    <visible>!Container.Content(tvshows) + !Container.Content(episodes) + !Container.Content(seasons)</visible>
                 </control>
-                <control type="label">
+				-->
+               <control type="label">
                     <left>643</left>
-                    <width>246</width>
-                    <top>-56</top>
-                    <align>left</align>
-                    <font>SmallBold</font>
-                    <textcolor>white2</textcolor>
-                    <label>33054</label>
-                    <animation type="conditional" condition="true" reversible="false">
-                        <effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
-                    </animation>
-                    <visible>Container.Content(tvshows)</visible>
-                </control>
-                <control type="label">
-                    <left>643</left>
-                    <width>246</width>
-                    <top>-56</top>
-                    <align>left</align>
-                    <font>SmallBold</font>
-                    <textcolor>white2</textcolor>
-                    <label>$INFO[ListItem.Label]</label>
-                    <animation type="conditional" condition="true" reversible="false">
-                        <effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
-                    </animation>
-                    <visible>Container.Content(seasons)</visible>
-                </control>
-                <control type="label">
-                    <left>643</left>
-                    <width>246</width>
-                    <top>-56</top>
-                    <align>left</align>
-                    <font>SmallBold</font>
-                    <textcolor>white2</textcolor>
-                    <label>31824</label>
-                    <animation type="conditional" condition="true" reversible="false">
-                        <effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
-                    </animation>
-                    <visible>Container.Content(episodes)</visible>
-                </control>
-                <control type="label">
-                    <left>957</left>
                     <width>246</width>
                     <top>-56</top>
                     <align>left</align>
@@ -900,7 +859,8 @@
                         <effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
                     </animation>
                 </control>
-                <control type="label">
+				<!--
+               <control type="label">
                     <left>1271</left>
                     <width>246</width>
                     <top>-56</top>
@@ -925,18 +885,8 @@
                         <effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
                     </animation>
                 </control>
-                <control type="textbox">
-                    <left>643</left>
-                    <width>246</width>
-                    <height>92</height>
-                    <align>left</align>
-                    <font>TinyBold</font>
-                    <textcolor>white</textcolor>
-                    <label fallback="19055">$INFO[ListItem.Season]</label>
-                    <autoscroll delay="500" time="1000" repeat="500"/>
-                    <fadetime>500</fadetime>
-                    <visible>Container.Content(tvshows)</visible>
-                </control>
+				-->
+				<!--
                 <control type="textbox">
                     <left>643</left>
                     <width>246</width>
@@ -947,34 +897,10 @@
                     <label fallback="19055">$VAR[LabelDirector]</label>
                     <autoscroll delay="500" time="1000" repeat="500"/>
                     <fadetime>500</fadetime>
-                    <visible>!Container.Content(seasons) + !Container.Content(tvshows) + !Container.Content(episodes)</visible>
                 </control>
+				-->
                 <control type="textbox">
                     <left>643</left>
-                    <width>246</width>
-                    <height>92</height>
-                    <align>left</align>
-                    <font>TinyBold</font>
-                    <textcolor>white</textcolor>
-                    <label fallback="19055">$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20360]]</label>
-                    <autoscroll delay="500" time="1000" repeat="500"/>
-                    <fadetime>500</fadetime>
-                    <visible>Container.Content(seasons)</visible>
-                </control>
-                <control type="textbox">
-                    <left>643</left>
-                    <width>246</width>
-                    <height>92</height>
-                    <align>left</align>
-                    <font>TinyBold</font>
-                    <textcolor>white</textcolor>
-                    <label fallback="19055">$INFO[ListItem.Premiered]</label>
-                    <autoscroll delay="500" time="1000" repeat="500"/>
-                    <fadetime>500</fadetime>
-                    <visible>Container.Content(episodes)</visible>
-                </control>
-                <control type="textbox">
-                    <left>957</left>
                     <width>246</width>
                     <height>92</height>
                     <align>left</align>
@@ -984,6 +910,7 @@
                     <autoscroll delay="500" time="1000" repeat="500"/>
                     <fadetime>500</fadetime>
                 </control>
+				<!--
                 <control type="textbox">
                     <left>1271</left>
                     <width>246</width>
@@ -1005,6 +932,7 @@
                     <label fallback="19055">$INFO[Window(Home).Property(SkinHelper.ListItemStudios)]</label>
                     <fadetime>500</fadetime>
                 </control>
+			-->
                 <visible>!stringcompare(ListItem.Label,..) + !Container.Content(albums) + !Container.Content(songs)</visible>
             </control>
             <!-- Button grouplist -->
@@ -1392,7 +1320,7 @@
         <control type="multiimage">
             <include>Dimensions_Fullscreen</include>
             <fadetime>600</fadetime>
-            <timeperimage>20000</timeperimage>
+            <timeperimage>3000</timeperimage>
             <randomize>true</randomize>
             <aspectratio scalediffuse="false">stretch</aspectratio>
             <imagepath background="true">$INFO[Window(Home).Property(SkinHelper.ExtraFanArtPath)]</imagepath>
@@ -1401,7 +1329,6 @@
             <animation effect="slide" start="110,00" end="00,-200" center="auto" time="25000" delay="10000" condition="Control.HasFocus(101)" reversible="true" loop="true">Conditional</animation>
             <animation effect="zoom" start="130" end="110" center="auto" time="15000" delay="15000" condition="Control.HasFocus(101)" reversible="true" loop="true">Conditional</animation>
             <visible>!IsEmpty(Window(Home).Property(SkinHelper.ExtraFanArtPath)) + Control.HasFocus(101)</visible>
-            <visible>!Player.HasAudio</visible>
         </control>
         <control type="image">
             <fadetime>600</fadetime>
@@ -1413,7 +1340,6 @@
             <animation effect="slide" start="110,00" end="00,-200" center="auto" time="25000" delay="10000" condition="Control.HasFocus(101)" reversible="true" loop="true">Conditional</animation>
             <animation effect="zoom" start="130" end="110" center="auto" time="15000" delay="15000" condition="Control.HasFocus(101)" reversible="true" loop="true">Conditional</animation>
             <visible>IsEmpty(Window(Home).Property(SkinHelper.ExtraFanArtPath)) + Control.HasFocus(101)</visible>
-            <visible>!Player.HasAudio</visible>
         </control>
 
         <!-- Music Playing Section 
