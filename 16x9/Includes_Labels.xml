@@ -55,7 +55,7 @@
 		<value condition="[Container.Content(episodes) | Container.Content(seasons) | Container.Content(tvshows)] + !Control.IsVisible(54)">$INFO[ListItem.TvShowTitle]</value>
 		<value condition="[Container.Content(episodes) | Container.Content(seasons) | Container.Content(tvshows)] + Control.IsVisible(54)">$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20360]]</value>
 		<value condition="!IsEmpty(Window(Home).Property(SkinHelper.ListItemDirectors)) + [Control.IsVisible(54) | Window.IsVisible(DialogVideoInfo.xml)]">$INFO[Window(Home).Property(SkinHelper.ListItemDirectors)]</value>
-		<value condition="!IsEmpty(Window(home).Property(SkinHelper.MovieSet.Director))">$INFO[Window(home).Property(SkinHelper.MovieSet.Director)]</value>
+		<value condition="!IsEmpty(Window(home).Property(SkinHelper.ListItemDirectors))">$INFO[Window(home).Property(SkinHelper.ListItemDirectors)]</value>
 		<value condition="!IsEmpty(ListItem.Director)">$INFO[ListItem.Director]</value>
 		<value>$LOCALIZE[19055]</value>
 	</variable>

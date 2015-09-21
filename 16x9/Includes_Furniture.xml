@@ -213,7 +213,7 @@
 	<include name="Furniture_ScrollbarM">
 		<control type="scrollbar" id="60">
 			<onback>50</onback>
-			<posx>-250</posx>
+			<posx>-20</posx>
 			<posy>TopPad</posy>
 			<height>720</height>
 			<width>10</width>
@@ -222,13 +222,13 @@
 			<texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
 			<texturesliderbar border="4" colordiffuse="$VAR[ColourHighlight]">scrollbar/scrollv.png</texturesliderbar>
 			<texturesliderbarfocus border="4" colordiffuse="$VAR[ColourHighlight]">scrollbar/scrollv.png</texturesliderbarfocus>
-			<animation effect="fade" start="100" end="33" time="200" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
+			<animation effect="fade" start="100" end="0" time="200" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
 			<animation effect="slide" end="-100,0" time="200" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
 			<visible>Container.Column(0)</visible>
 		</control>
 		<control type="scrollbar" id="60">
 			<onback>50</onback>
-			<posx>3360</posx>
+			<posx>1930</posx>
 			<posy>TopPad</posy>
 			<height>720</height>
 			<width>10</width>
@@ -237,7 +237,7 @@
 			<texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
 			<texturesliderbar border="4" colordiffuse="$VAR[ColourHighlight]">scrollbar/scrollv.png</texturesliderbar>
 			<texturesliderbarfocus border="4" colordiffuse="$VAR[ColourHighlight]">scrollbar/scrollv.png</texturesliderbarfocus>
-			<animation effect="fade" start="100" end="33" time="200" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
+			<animation effect="fade" start="100" end="0" time="200" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
 			<animation effect="slide" end="100,0" time="200" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
 			<visible>!Container.Column(0)</visible>
 		</control>
@@ -1341,14 +1341,14 @@
 				<left>643</left>
 				<right>10</right>
 				<top>90</top>
-				<bottom>650</bottom>
+				<bottom>425</bottom>
 				<align>justify</align>
 				<font>Medium</font>
 				<textcolor>white2</textcolor>
 				<label>$VAR[LabelOverlayPlot]</label>
 			</control>
 			<control type="group">
-				<top>340</top>
+				<top>566</top>
 				<animation effect="slide" start="0,0" end="-0,20" center="auto" time="200" condition="Container(54).OnScrollNext">Conditional</animation>
 				<animation effect="slide" start="0,0" end="0,20" center="auto" time="200" condition="Container(54).OnScrollPrevious">Conditional</animation>
 				<control type="label">
@@ -1443,7 +1443,7 @@
 				<control type="textbox">
 					<left>643</left>
 					<width>246</width>
-					<height>178</height>
+					<height>182</height>
 					<align>left</align>
 					<font>TinyBold</font>
 					<textcolor>white</textcolor>
@@ -1455,7 +1455,7 @@
 				<control type="textbox">
 					<left>643</left>
 					<width>246</width>
-					<height>178</height>
+					<height>182</height>
 					<align>left</align>
 					<font>TinyBold</font>
 					<textcolor>white</textcolor>
@@ -1467,7 +1467,7 @@
 				<control type="textbox">
 					<left>643</left>
 					<width>246</width>
-					<height>178</height>
+					<height>182</height>
 					<align>left</align>
 					<font>TinyBold</font>
 					<textcolor>white</textcolor>
@@ -1479,7 +1479,7 @@
 				<control type="textbox">
 					<left>643</left>
 					<width>246</width>
-					<height>178</height>
+					<height>182</height>
 					<align>left</align>
 					<font>TinyBold</font>
 					<textcolor>white</textcolor>
@@ -1491,7 +1491,7 @@
 				<control type="textbox">
 					<left>957</left>
 					<width>246</width>
-					<height>178</height>
+					<height>182</height>
 					<align>left</align>
 					<font>TinyBold</font>
 					<textcolor>white</textcolor>
@@ -1502,7 +1502,7 @@
 				<control type="textbox">
 					<left>1271</left>
 					<width>246</width>
-					<height>178</height>
+					<height>182</height>
 					<align>left</align>
 					<font>TinyBold</font>
 					<textcolor>white</textcolor>
@@ -1513,7 +1513,7 @@
 				<control type="textbox">
 					<left>1585</left>
 					<width>246</width>
-					<height>178</height>
+					<height>182</height>
 					<align>left</align>
 					<font>TinyBold</font>
 					<textcolor>white</textcolor>
@@ -1537,6 +1537,28 @@
 							<visible>!stringcompare(ListItem.Label,..) + !Container.Content(albums) + !Container.Content(songs)</visible>
 			</control>
 		</control>
+		<control type="group">
+			<left>NewSidePad</left>
+			<right>NewSidePad</right>
+			<top>TopPad</top>
+			<visible>![Container.Content(songs) | Container.Content(albums)]</visible>
+			<visible>![Skin.HasSetting(osd.hidespoilers) + Container.Content(episodes) + [stringcompare(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]]</visible>
+			<visible>[!Window.IsVisible(DialogVideoInfo.xml) + System.IdleTime(3) + Skin.HasSetting(furniture.overlayinfo)] | Control.HasFocus(9601) | [System.IdleTime(3) + Window.IsVisible(DialogVideoInfo.xml) + Control.HasFocus(132)]</visible>
+			<visible>![Window.IsVisible(script-skinshortcuts.xml) | Window.IsVisible(DialogSongInfo.xml) | Window.IsVisible(DialogPictureInfo.xml) | Window.IsVisible(FileBrowser.xml) | Window.IsVisible(DialogProgress.xml) | Window.IsVisible(DialogYesNo.xml) | Window.IsVisible(DialogOK.xml) | Window.IsVisible(DialogSelect.xml) | Window.IsVisible(DialogContextMenu.xml) | Window.IsVisible(DialogButtonMenu.xml) | ControlGroup(9000).HasFocus()]</visible>
+			<visible>[!IsEmpty(Window(home).Property(SkinHelper.MovieSet.ExtendedPlot)) + [Container.Content(Sets) | substring(ListItem.Path,videodb://movies/sets,left)]] | !IsEmpty(ListItem.Plot)</visible>
+			<visible>!System.IdleTime(20)</visible>
+			<control type="group">
+				<left>1654</left>
+				<top>759</top>
+				<control type="image">
+					<width>228</width>
+					<height>100</height>
+					<texture>$VAR[ClearLogo]</texture>
+					<aspectratio align="center" aligny="center">keep</aspectratio>
+					<fadetime>50</fadetime>
+				</control>
+			</control>
+			</control>
 	</include>
 	<include name="Furniture_Cast">
 		<control type="group">
