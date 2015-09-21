@@ -125,7 +125,7 @@
                     <height>38</height>
                     <width>auto</width>
                     <label></label>
-                    <visible>Container.Content(Artists) + [!IsEmpty(Window(Home).Property(Artist_Formed)) | !StringCompare(Window(Home).Property(Artist_Formed),0)]</visible>
+                    <visible>Container.Content(Artists) + [!IsEmpty(Window(Home).Property(Artist_Formed)) + !StringCompare(Window(Home).Property(Artist_Formed),0)]</visible>
                 </control>
                 <control type="label">
                     <aligny>center</aligny>
@@ -135,7 +135,7 @@
                     <height>38</height>
                     <width>auto</width>
                     <label>$INFO[Window(Home).Property(Artist_Formed),,  ]</label>
-                    <visible>Container.Content(Artists) + [!IsEmpty(Window(Home).Property(Artist_Formed)) | !StringCompare(Window(Home).Property(Artist_Formed),0)]</visible>
+                    <visible>Container.Content(Artists) + [!IsEmpty(Window(Home).Property(Artist_Formed)) + !StringCompare(Window(Home).Property(Artist_Formed),0)]</visible>
                 </control>
                 <control type="label">
                     <aligny>center</aligny>
