@@ -535,18 +535,6 @@
 					<onclick condition="!IsEmpty(Window(home).Property(TVShowID))">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[(Window(home).Property(TVShowID)],name=$INFO[ListItem.TvShowTitle])</onclick>
 					<animation condition="Control.HasFocus(19)" effect="zoom" end="200"  time="100" center="auto">Conditional</animation>
 				</control>
-                <!-- Get x Button -->
-                <control type="button" id="101">
-                    <width>116</width>
-                    <height>116</height>
-                    <label>-</label>
-                    <onclick>SetFocus(19)</onclick>
-                    <focusedcolor>-</focusedcolor>
-                    <texturefocus>-</texturefocus>
-                    <texturenofocus>-</texturenofocus>
-                    <alttexturefocus>-</alttexturefocus>
-                    <alttexturenofocus>-</alttexturenofocus>
-                </control>
 			</control>
 			<control id="9002" type="grouplist">
 				<left>450</left>
@@ -1126,7 +1114,7 @@
 					<align>left</align>
 					<font>SmallBold</font>
 					<textcolor>white2</textcolor>
-					<label>Studio</label>
+					<label>572</label>
 					<fadetime>500</fadetime>
 					<animation type="conditional" condition="true" reversible="false">
 						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
