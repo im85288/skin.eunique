@@ -165,7 +165,7 @@
 			<control type="group" description="timebox">
 				<width>44</width>
 				<control type="label">
-					<top>2</top>
+					<top>0</top>
 					<left>-24</left>
 					<height>46</height>
 					<font>symbolview</font>
@@ -176,7 +176,7 @@
 			<control type="group" description="timebox">
 				<width min="0" max="1500">auto</width>
 				<control type="label">
-					<top>-2</top>
+					<top>-4</top>
 					<left>-56</left>
 					<height>52</height>
 					<font>SmallBold</font>
@@ -676,7 +676,7 @@
 				<width>auto</width>
 				<height>34</height>
 				<selectedcolor>Dark1</selectedcolor>
-				<label>[UPPERCASE]$VAR[HDSD]$INFO[ListItem.VideoResolution, ,P]$VAR[MPAA, / ]$VAR[VideoCodec, / ]$VAR[AudioCodec, / ,][/UPPERCASE]</label>
+				<label>[UPPERCASE]  $VAR[HDSD]$INFO[ListItem.VideoResolution, ,P]$VAR[MPAA, / ]$VAR[VideoCodec, / ]$VAR[AudioCodec, / ,][/UPPERCASE]</label>
 				<visible>Container.Content(movies) | Container.Content(episodes)</visible>
 			</control>
 			<control type="label">
@@ -1328,7 +1328,7 @@
 					<font>MediumSmallBold</font>
 					<textcolor>Dark1</textcolor>
 					<selectedcolor>Dark1</selectedcolor>
-					<label>[UPPERCASE]$VAR[HDSD]$INFO[VideoPlayer.VideoResolution, ,P]$INFO[VideoPlayer.Rating, / ]$VAR[MPAA, / ]$VAR[VideoCodec, / ]$VAR[AudioCodec, / ][/UPPERCASE]</label>
+					<label>[UPPERCASE]  $VAR[HDSD]$INFO[VideoPlayer.VideoResolution, ,P]$INFO[VideoPlayer.Rating, / ]$VAR[MPAA, / ]$VAR[VideoCodec, / ]$VAR[AudioCodec, / ][/UPPERCASE]</label>
 				</control>
 			</control>
 		</control>
