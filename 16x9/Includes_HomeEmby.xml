@@ -102,6 +102,7 @@
 				</control>
 			</control>
 			<control type="group" description="iconbox">
+				<visible>!Container.Scrolling + !Control.HasFocus(60)</visible>
 				<width>50</width>
 				<height>50</height>
 				<control type="label">
@@ -114,16 +115,6 @@
 					<label>$VAR[HeaderIcon]</label>
 					<visible>!Control.HasFocus(3635)</visible>
 				</control>
-				<!--
-				<control type="image">
-					<top>-14</top>
-					<left>-14</left>
-					<width>78</width>
-					<height>78</height>
-					<texture colordiffuse="$VAR[EmbyLeftColourHighlight]" border="8">$VAR[HeaderIcon]</texture>
-					<visible>!Control.HasFocus(3635)</visible>
-				</control>
-				-->
 				<control type="label">
 					<top>-21</top>
 					<left>0</left>
@@ -139,13 +130,28 @@
 					<onright>3634</onright>
 					<onup>303</onup>
 					<ondown>300</ondown>
-			<onback>300</onback>
+					<onback>300</onback>
 					<onclick condition="![Player.HasAudio | Player.HasVideo] + !StringCompare(Container(300).ListItem.Property(defaultID),music)">RunScript(script.skin.helper.service,action=videosearch)</onclick>
 					<onclick condition="![Player.HasAudio | Player.HasVideo] + StringCompare(Container(300).ListItem.Property(defaultID),music)">RunScript(script.skin.helper.service,action=musicsearch)</onclick>
 					<onclick condition="[Player.HasAudio | Player.HasVideo]">Action(FullScreen)</onclick>
 					<font>Button</font>
 					<texturefocus>-</texturefocus>
 					<texturenofocus>-</texturenofocus>
+				</control>
+			</control>
+			<control type="group" description="iconbox scrolling">
+				<visible>Container.Scrolling | Control.HasFocus(60)</visible>
+				<visible>!Skin.HasSetting(hide.busydialog) | !Window.IsVisible(DialogBusy.xml)</visible>
+				<width>50</width>
+				<height>50</height>
+				<control type="label">
+					<top>-21</top>
+					<left>0</left>
+					<width>78</width>
+					<height>88</height>
+					<font>symbolmenu</font>
+					<label>$VAR[SortLetter]</label>
+					<textcolor>$VAR[EmbyLeftColourHighlight]</textcolor>
 				</control>
 			</control>
 			<control type="group" description="timebox">
