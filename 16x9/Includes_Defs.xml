@@ -1393,7 +1393,7 @@
 					<height>42</height>
 					<textoffsetx>5</textoffsetx>
 					<font>Home</font>
-					<label>System Settings</label>
+					<label>$LOCALIZE[13000] $LOCALIZE[21417]</label>
 					<textcolor>white</textcolor>
 					<aligny>center</aligny>
 				</control>
@@ -1794,7 +1794,7 @@
 			<height>42</height>
 			<textoffsetx>5</textoffsetx>
 			<font>Home</font>
-			<label>View Options</label>
+			<label>14018</label>
 			<textcolor>white</textcolor>
 			<aligny>center</aligny>
 		</control>
@@ -1802,7 +1802,7 @@
 			<description>View</description>
 			<include>DefContextButtonBlade</include>
 			<align>left</align>
-			<label>View: $INFO[Container.Viewmode]</label>
+			<label>24140: $INFO[Container.Viewmode]</label>
 			<onclick>XBMC.RunScript(script.skin.helper.service,action=setview)</onclick>
 		</control>
 		<control type="button" id="3">
@@ -1917,7 +1917,7 @@
 		<control type="radiobutton" id="9022" description="Title Overlay (515)">
 			<include>DefContextButtonBlade</include>
 			<align>left</align>
-			<label>Show title overlay</label>
+			<label>$LOCALIZE[31844] $LOCALIZE[369] $LOCALIZE[31845]</label>
 			<selected>Skin.HasSetting(views.titleoverlay)</selected>
 			<onclick>Skin.ToggleSetting(views.titleoverlay)</onclick>
 			<visible>Control.IsVisible(515)</visible>
@@ -1925,7 +1925,7 @@
 		<control type="radiobutton" id="9023" description="Prefer Fanart (500)">
 			<include>DefContextButtonBlade</include>
 			<align>left</align>
-			<label>Show Fanart Image</label>
+			<label>$LOCALIZE[31844] $LOCALIZE[31846] $LOCALIZE[31813]</label>
 			<selected>Skin.HasSetting(views.500.showfanart)</selected>
 			<onclick>Skin.ToggleSetting(views.500.showfanart)</onclick>
 			<visible>Control.IsVisible(500)</visible>
@@ -1933,7 +1933,7 @@
 		<control type="radiobutton" id="9024" description="Prefer Fanart (51)">
 			<include>DefContextButtonBlade</include>
 			<align>left</align>
-			<label>Show Fanart Image</label>
+			<label>$LOCALIZE[31844] $LOCALIZE[31846] $LOCALIZE[31813]</label>
 			<selected>Skin.HasSetting(views.51.showfanart)</selected>
 			<onclick>Skin.ToggleSetting(views.51.showfanart)</onclick>
 			<visible>Control.IsVisible(51)</visible>
@@ -1941,7 +1941,7 @@
 		<control type="radiobutton" id="9028" description="Show Tick (155)">
 			<include>DefContextButtonBlade</include>
 			<align>left</align>
-			<label>Hide Watched/Unwatched Indicator</label>
+			<label>$LOCALIZE[31133]/$LOCALIZE[16101] $LOCALIZE[536]</label>
 			<selected>Skin.HasSetting(views.155.showtick)</selected>
 			<onclick>Skin.ToggleSetting(views.155.showtick)</onclick>
 			<visible>Control.IsVisible(155)</visible>
@@ -1970,7 +1970,7 @@
 			<height>42</height>
 			<textoffsetx>5</textoffsetx>
 			<font>Home</font>
-			<label>View Options</label>
+			<label>14018</label>
 			<textcolor>white</textcolor>
 			<aligny>center</aligny>
 		</control>
@@ -1978,7 +1978,7 @@
 			<description>View</description>
 			<include>DefContextButtonBlade</include>
 			<align>left</align>
-			<label>View: $INFO[Container.Viewmode]</label>
+			<label>24140: $INFO[Container.Viewmode]</label>
 			<onclick>XBMC.RunScript(script.skin.helper.service,action=setview)</onclick>
 		</control>
 		<control type="button" id="3">
