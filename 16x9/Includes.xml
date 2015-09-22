@@ -76,7 +76,7 @@
                         <label></label>
                     </control>
                     <control type="label">
-					<visible>ControlGroup(9000).HasFocus()</visible>
+					<visible>ControlGroup(9000).HasFocus() + !Control.HasFocus(19)</visible>
 					<top>8</top>
  					<aligny>center</aligny>
 					<align>center</align>
@@ -85,13 +85,37 @@
                         <label></label>
                     </control>
                     <control type="label">
-					<visible>ControlGroup(9010).HasFocus()</visible>
+					<visible>ControlGroup(9010).HasFocus() + !Control.HasFocus(19)</visible>
 					<top>8</top>
  					<aligny>center</aligny>
 					<align>center</align>
 					<textcolor>white2</textcolor>
                         <font>symbol</font>
                         <label></label>
+                    </control>
+                </control>
+				<!--up-->
+                <control type="group">
+				<left>1316</left>
+                         <width>116</width>
+                        <height>116</height>
+                    <control type="label">
+					<visible>ControlGroup(9000).HasFocus() + Control.HasFocus(19)</visible>
+					<top>8</top>
+ 					<aligny>center</aligny>
+					<align>center</align>
+					<textcolor>white2</textcolor>
+                        <font>symbol</font>
+                        <label></label>
+                    </control>
+                    <control type="label">
+					<visible>ControlGroup(9010).HasFocus() + Control.HasFocus(19)</visible>
+					<top>8</top>
+ 					<aligny>center</aligny>
+					<align>center</align>
+					<textcolor>white2</textcolor>
+                        <font>symbol</font>
+                        <label></label>
                     </control>
                 </control>
 				<!--down-->
@@ -150,7 +174,7 @@
                 </control>
 				<!--right-->
                 <control type="group">
-					<visible>Control.HasFocus(10)</visible>
+					<visible>Control.HasFocus(10) + !Window.IsVisible(DialogVideoInfo.xml)</visible>
 					<left>1424</left>
 					<width>116</width>
 					<height>116</height>

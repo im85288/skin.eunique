@@ -10,6 +10,24 @@
 	<onunload>ClearProperty(VideoInfo.ImageColor,home)</onunload>
 	<onunload>ClearProperty(VideoInfo.ImageFilter,home)</onunload>
 	<controls>
+		<!-- Get x Button -->
+		<control type="button" id="101">
+			<width>1</width>
+			<height>1</height>
+			<label>-</label>
+			<onup>setfocus(19)</onup>
+			<onup>setfocus(19)</onup>
+			<ondown>setfocus(19)</ondown>
+			<onback>19</onback>
+			<onleft>19</onleft>
+			<onright>19</onright>
+			<onclick>SetFocus(19)</onclick>
+			<focusedcolor>-</focusedcolor>
+			<texturefocus>-</texturefocus>
+			<texturenofocus>-</texturenofocus>
+			<alttexturefocus>-</alttexturefocus>
+			<alttexturenofocus>-</alttexturenofocus>
+		</control>
 		<control type="image">
 			<include>Dimensions_Fullscreen</include>
 			<aspectratio align="center">scale</aspectratio>
@@ -395,13 +413,17 @@
 				<height>116</height>
 				<itemgap>0</itemgap>
 				<onleft>back</onleft>
-					<onright condition="!System.HasAddon(script.extendedinfo)">ActivateWindow(Videos,plugin://script.extendedinfo)</onright>
-					<onright condition="IsEmpty(ListItem.TvShowTitle) + !Container.Content(tvshows)">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[ListItem.DBID],name=$INFO[ListItem.Title])</onright>
-					<onright condition="Container.Content(tvshows) + IsEmpty(Window(home).Property(TVShowID))">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[ListItem.DBID],name=$INFO[ListItem.TvShowTitle])</onright>
-					<onright condition="!IsEmpty(Window(home).Property(TVShowID))">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[(Window(home).Property(TVShowID)],name=$INFO[ListItem.TvShowTitle])</onright>
-				<onup>Skin.ToggleSetting(toggled.dv.info)</onup>
-				<onup>setfocus(9010)</onup>
-				<ondown>9499</ondown>
+
+                <onup condition="!Control.HasFocus(19)">Skin.ToggleSetting(toggled.dv.info)</onup>
+                <onup condition="!Control.HasFocus(19)">setfocus(9010)</onup>
+                <onup condition="Control.HasFocus(19)">setfocus(101)</onup>
+
+                <ondown>9499</ondown>
+
+				<onright condition="!System.HasAddon(script.extendedinfo)">ActivateWindow(Videos,plugin://script.extendedinfo)</onright>
+				<onright condition="IsEmpty(ListItem.TvShowTitle) + !Container.Content(tvshows)">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[ListItem.DBID],name=$INFO[ListItem.Title])</onright>
+				<onright condition="Container.Content(tvshows) + IsEmpty(Window(home).Property(TVShowID))">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[ListItem.DBID],name=$INFO[ListItem.TvShowTitle])</onright>
+				<onright condition="!IsEmpty(Window(home).Property(TVShowID))">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[(Window(home).Property(TVShowID)],name=$INFO[ListItem.TvShowTitle])</onright>
 				<orientation>horizontal</orientation>
 				<include>DialogVideoInfoAnimation</include>
 				<defaultcontrol always="true">8</defaultcontrol>
@@ -886,6 +908,7 @@
 				</control>
 			</control>
 			<include>ButtonControlWidget</include>
+				<animation effect="fade" start="100" end="0" time="200" delay="0" condition="Control.HasFocus(101)" reversible="true">Conditional</animation>
 		</control>
 
 		<control type="group">
@@ -1091,7 +1114,7 @@
 					<align>left</align>
 					<font>SmallBold</font>
 					<textcolor>white2</textcolor>
-					<label>Studio</label>
+					<label>572</label>
 					<fadetime>500</fadetime>
 					<animation type="conditional" condition="true" reversible="false">
 						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
@@ -1187,13 +1210,17 @@
 				<height>116</height>
 				<itemgap>0</itemgap>
 				<onleft>back</onleft>
-					<onright condition="!System.HasAddon(script.extendedinfo)">ActivateWindow(Videos,plugin://script.extendedinfo)</onright>
-					<onright condition="IsEmpty(ListItem.TvShowTitle) + !Container.Content(tvshows)">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[ListItem.DBID],name=$INFO[ListItem.Title])</onright>
-					<onright condition="Container.Content(tvshows) + IsEmpty(Window(home).Property(TVShowID))">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[ListItem.DBID],name=$INFO[ListItem.TvShowTitle])</onright>
-					<onright condition="!IsEmpty(Window(home).Property(TVShowID))">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[(Window(home).Property(TVShowID)],name=$INFO[ListItem.TvShowTitle])</onright>
-				<onup>9501</onup>
-				<ondown>Skin.ToggleSetting(toggled.dv.info)</ondown>
-				<ondown>setfocus(9000)</ondown>
+
+                <ondown>Skin.ToggleSetting(toggled.dv.info)</ondown>
+                <ondown>setfocus(9000)</ondown>
+                <onup condition="Control.HasFocus(19)">setfocus(101)</onup>
+
+                <onup condition="!Control.HasFocus(19)">9501</onup>
+
+				<onright condition="!System.HasAddon(script.extendedinfo)">ActivateWindow(Videos,plugin://script.extendedinfo)</onright>
+				<onright condition="IsEmpty(ListItem.TvShowTitle) + !Container.Content(tvshows)">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[ListItem.DBID],name=$INFO[ListItem.Title])</onright>
+				<onright condition="Container.Content(tvshows) + IsEmpty(Window(home).Property(TVShowID))">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[ListItem.DBID],name=$INFO[ListItem.TvShowTitle])</onright>
+				<onright condition="!IsEmpty(Window(home).Property(TVShowID))">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[(Window(home).Property(TVShowID)],name=$INFO[ListItem.TvShowTitle])</onright>
 				<orientation>horizontal</orientation>
 				<include>DialogVideoInfoAnimation</include>
 				<defaultcontrol always="true">8</defaultcontrol>
@@ -1746,8 +1773,22 @@
 
 
 			<include>ButtonControlWidget</include>
+				<animation effect="fade" start="100" end="0" time="200" delay="0" condition="Control.HasFocus(101)" reversible="true">Conditional</animation>
 
 		</control>
+			<control type="multiimage">
+				<include>Dimensions_Fullscreen</include>
+				<fadetime>600</fadetime>
+				<timeperimage>3000</timeperimage>
+				<randomize>true</randomize>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<imagepath background="true">$VAR[GlobalFanart]</imagepath>
+				<animation effect="zoom" start="110" end="150" center="auto" time="10000" condition="Control.HasFocus(101)" reversible="true" loop="true">Conditional</animation>
+				<animation effect="slide" start="0" end="-90,177" center="auto" time="15000" delay="5000" condition="Control.HasFocus(101)" reversible="true" loop="true">Conditional</animation>
+				<animation effect="slide" start="110,00" end="00,-200" center="auto" time="25000" delay="10000" condition="Control.HasFocus(101)" reversible="true" loop="true">Conditional</animation>
+				<animation effect="zoom" start="130" end="110" center="auto" time="15000" delay="15000" condition="Control.HasFocus(101)" reversible="true" loop="true">Conditional</animation>
+				<visible>Control.HasFocus(101)</visible>
+			</control>
 	
 	
 	</controls>
