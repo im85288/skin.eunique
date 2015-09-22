@@ -1347,14 +1347,14 @@
 		<value>dark pastel red</value>
 	</variable>
 	<variable name="SelectionColourHighlight">
-		<value condition="Control.HasFocus(8) | Control.HasFocus(1)">$INFO[Skin.String(emby.middle.colour.name)]</value>
-		<value condition="Control.HasFocus(1003)">$INFO[Skin.String(emby.right.colour.name)]</value>
-		<value condition="Control.HasFocus(1006)">$INFO[Skin.String(emby.right.colour.name)]</value>
+		<value condition="Control.HasFocus(8) | Control.HasFocus(1)">$VAR[EmbyMiddleColourHighlight]</value>
+		<value condition="Control.HasFocus(1003)">$VAR[EmbyRightColourHighlight]</value>
+		<value condition="Control.HasFocus(1006)">$VAR[EmbyRightColourHighlight]</value>
 		<value condition="Control.HasFocus(10) | Control.HasFocus(6)">$INFO[Skin.String(emby.left.colour.name)]</value>
-		<value condition="Control.HasFocus(20)">$INFO[Skin.String(emby.left.colour.name)]</value>
-		<value condition="Control.HasFocus(18)">$INFO[Skin.String(emby.right.colour.name)]</value>
-		<value condition="Control.HasFocus(3443)">$INFO[Skin.String(emby.left.colour.name)]</value>
-		<value condition="Control.HasFocus(19)">$INFO[Skin.String(emby.left.colour.name)]</value>
+		<value condition="Control.HasFocus(20)">$VAR[EmbyLeftColourHighlight]</value>
+		<value condition="Control.HasFocus(18)">$VAR[EmbyRightColourHighlight]</value>
+		<value condition="Control.HasFocus(3443)">$VAR[EmbyLeftColourHighlight]</value>
+		<value condition="Control.HasFocus(19)">$VAR[EmbyLeftColourHighlight]</value>
 		<value>dark pastel red</value>
 	</variable>
 	<variable name="EmbyMenuColourHighlight">
