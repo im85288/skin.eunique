@@ -156,7 +156,6 @@
 							<texturenofocus>-</texturenofocus>
 							<onfocus condition="Container.Content(movies)">ClearProperty(TVShowID,home)</onfocus>
 							<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
-							<onfocus condition="!Container.Scrolling">RunScript(script.toolbox,info=blur,id='"$VAR[LandscapeImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=LandscapeInfo)</onfocus>
 						</control>
 						<control type="image">
 							<posx>5</posx>
