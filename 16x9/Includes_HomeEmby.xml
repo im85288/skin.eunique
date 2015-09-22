@@ -266,7 +266,7 @@
 					<height>54</height>
 					<align>center</align>
 					<aligny>center</aligny>
-					<label fallback="N/A">$INFO[ListItem.Rating]</label>
+					<label fallback="-">$INFO[ListItem.Rating]</label>
 					<font>DurationFont</font>
 					<textcolor>$VAR[ColourTextFlags]</textcolor>
 				</control>
@@ -294,7 +294,7 @@
 					<align>center</align>
 					<aligny>center</aligny>
 					<scroll>true</scroll>
-					<label fallback="N/A">$VAR[LabelNextAiredDetails]</label>
+					<label fallback="-">$VAR[LabelNextAiredDetails]</label>
 					<font>DurationFontSmall</font>
 					<textcolor>$VAR[ColourTextFlags]</textcolor>
 				</control>
@@ -322,7 +322,7 @@
 					<align>center</align>
 					<aligny>center</aligny>
 					<scroll>true</scroll>
-					<label fallback="N/A">$VAR[LabelNextAiredDetails]</label>
+					<label fallback="-">$VAR[LabelNextAiredDetails]</label>
 					<font>DurationFontSmall</font>
 					<textcolor>$VAR[ColourTextFlags]</textcolor>
 				</control>
@@ -361,7 +361,7 @@
 					<height>54</height>
 					<align>center</align>
 					<textcolor>$VAR[ColourTextFlags]</textcolor>
-					<label>N/R</label>
+					<label>$LOCALIZE[31847]</label>
 					<font>DurationFont</font>
 					<visible>!IsEmpty(ListItem.Mpaa) + [SubString(ListItem.Mpaa,NOT RATED) | SubString(ListItem.Mpaa,APPROVED)]</visible>
 				</control>
@@ -387,7 +387,7 @@
 					<height>54</height>
 					<align>center</align>
 					<aligny>center</aligny>
-					<label fallback="N/A">$VAR[VideoAspect]</label>
+					<label fallback="-">$VAR[VideoAspect]</label>
 					<font>DurationFont</font>
 					<textcolor>$VAR[ColourTextFlags]</textcolor>
 				</control>
@@ -413,7 +413,7 @@
 					<height>54</height>
 					<align>center</align>
 					<aligny>center</aligny>
-					<label fallback="N/A">$VAR[VideoCodec]</label>
+					<label fallback="-">$VAR[VideoCodec]</label>
 					<font>DurationFont</font>
 					<textcolor>$VAR[ColourTextFlags]</textcolor>
 				</control>
@@ -439,7 +439,7 @@
 					<height>54</height>
 					<align>center</align>
 					<aligny>center</aligny>
-					<label fallback="N/A">$VAR[AudioCodec]</label>
+					<label fallback="-">$VAR[AudioCodec]</label>
 					<font>DurationFont</font>
 					<textcolor>$VAR[ColourTextFlags]</textcolor>
 				</control>
@@ -465,7 +465,7 @@
 					<height>54</height>
 					<align>center</align>
 					<aligny>center</aligny>
-					<label fallback="N/A">$VAR[FlagAudioChannels]</label>
+					<label fallback="-">$VAR[FlagAudioChannels]</label>
 					<font>DurationFont</font>
 					<textcolor>$VAR[ColourTextFlags]</textcolor>
 				</control>
@@ -492,7 +492,7 @@
 					<height>54</height>
 					<align>center</align>
 					<aligny>center</aligny>
-					<label fallback="N/A">$VAR[DurationLong]</label>
+					<label fallback="-">$VAR[DurationLong]</label>
 					<font>DurationFont</font>
 					<textcolor>$VAR[ColourTextFlags]</textcolor>
 				</control>
@@ -519,7 +519,7 @@
 					<height>54</height>
 					<align>center</align>
 					<aligny>center</aligny>
-					<label fallback="N/A">$VAR[DurationLong]</label>
+					<label fallback="-">$VAR[DurationLong]</label>
 					<font>DurationFont</font>
 					<textcolor>$VAR[ColourTextFlags]</textcolor>
 				</control>
@@ -970,7 +970,7 @@
 					<height>54</height>
 					<align>center</align>
 					<aligny>center</aligny>
-					<label fallback="N/A">$INFO[VideoPlayer.Rating]</label>
+					<label fallback="-">$INFO[VideoPlayer.Rating]</label>
 					<font>DurationFont</font>
 					<textcolor>$VAR[ColourTextFlags]</textcolor>
 				</control>
@@ -998,7 +998,7 @@
 					<align>center</align>
 					<aligny>center</aligny>
 					<scroll>true</scroll>
-					<label fallback="N/A">$VAR[LabelNextAiredDetails]</label>
+					<label fallback="-">$VAR[LabelNextAiredDetails]</label>
 					<font>DurationFontSmall</font>
 					<textcolor>$VAR[ColourTextFlags]</textcolor>
 				</control>
@@ -1026,7 +1026,7 @@
 					<align>center</align>
 					<aligny>center</aligny>
 					<scroll>true</scroll>
-					<label fallback="N/A">$VAR[LabelNextAiredDetails]</label>
+					<label fallback="-">$VAR[LabelNextAiredDetails]</label>
 					<font>DurationFontSmall</font>
 					<textcolor>$VAR[ColourTextFlags]</textcolor>
 				</control>
@@ -1065,7 +1065,7 @@
 					<height>54</height>
 					<align>center</align>
 					<textcolor>$VAR[ColourTextFlags]</textcolor>
-					<label>N/R</label>
+					<label>$LOCALIZE[31847]</label>
 					<font>DurationFont</font>
 					<visible>!IsEmpty(VideoPlayer.mpaa) + [SubString(VideoPlayer.mpaa,NOT RATED) | SubString(VideoPlayer.mpaa,APPROVED)]</visible>
 				</control>
@@ -1091,7 +1091,7 @@
 					<height>54</height>
 					<align>center</align>
 					<aligny>center</aligny>
-					<label fallback="N/A">$VAR[VideoAspect]</label>
+					<label fallback="-">$VAR[VideoAspect]</label>
 					<font>DurationFont</font>
 					<textcolor>$VAR[ColourTextFlags]</textcolor>
 				</control>
@@ -1117,7 +1117,7 @@
 					<height>54</height>
 					<align>center</align>
 					<aligny>center</aligny>
-					<label fallback="N/A">$VAR[VideoCodec]</label>
+					<label fallback="-">$VAR[VideoCodec]</label>
 					<font>DurationFont</font>
 					<textcolor>$VAR[ColourTextFlags]</textcolor>
 				</control>
@@ -1143,7 +1143,7 @@
 					<height>54</height>
 					<align>center</align>
 					<aligny>center</aligny>
-					<label fallback="N/A">$VAR[AudioCodec]</label>
+					<label fallback="-">$VAR[AudioCodec]</label>
 					<font>DurationFont</font>
 					<textcolor>$VAR[ColourTextFlags]</textcolor>
 				</control>
@@ -1169,7 +1169,7 @@
 					<height>54</height>
 					<align>center</align>
 					<aligny>center</aligny>
-					<label fallback="N/A">$VAR[FlagAudioChannels]</label>
+					<label fallback="-">$VAR[FlagAudioChannels]</label>
 					<font>DurationFont</font>
 					<textcolor>$VAR[ColourTextFlags]</textcolor>
 				</control>
@@ -1196,7 +1196,7 @@
 					<height>54</height>
 					<align>center</align>
 					<aligny>center</aligny>
-					<label fallback="N/A">$INFO[VideoPlayer.Duration]</label>
+					<label fallback="-">$INFO[VideoPlayer.Duration]</label>
 					<font>DurationFont</font>
 					<textcolor>$VAR[ColourTextFlags]</textcolor>
 				</control>
@@ -2391,7 +2391,7 @@
 							<font>SmallBold</font>
 							<textcolor>white2</textcolor>
 							<selectedcolor>white2</selectedcolor>
-							<label fallback="N/A">$INFO[Container(9017).ListItem.Rating]$INFO[Container(9017).ListItem.Votes, (, $LOCALIZE[20350])]</label>
+							<label fallback="-">$INFO[Container(9017).ListItem.Rating]$INFO[Container(9017).ListItem.Votes, (, $LOCALIZE[20350])]</label>
 						</control>
 					</control>
 					<control type="image">
@@ -3071,7 +3071,7 @@
 					<selectedcolor>$VAR[ColourHighlight2]</selectedcolor>
 					<texturefocus>-</texturefocus>
 					<texturenofocus>-</texturenofocus>
-					<label>Maps</label>
+					<label>33035</label>
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),Weather)</visible>
 					<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(3439)">Conditional</animation>
 				</control>
@@ -3808,7 +3808,7 @@
 							<font>SmallBold</font>
 							<textcolor>white2</textcolor>
 							<selectedcolor>white2</selectedcolor>
-							<label fallback="N/A">$INFO[Container(10017).ListItem.Rating]$INFO[Container(10017).ListItem.Votes, (, $LOCALIZE[20350])]</label>
+							<label fallback="-">$INFO[Container(10017).ListItem.Rating]$INFO[Container(10017).ListItem.Votes, (, $LOCALIZE[20350])]</label>
 						</control>
 					</control>
 					<control type="image">
@@ -4677,7 +4677,7 @@
 							<font>SmallBold</font>
 							<textcolor>white2</textcolor>
 							<selectedcolor>white2</selectedcolor>
-							<label fallback="N/A">$INFO[Container(14017).ListItem.Rating]$INFO[Container(14017).ListItem.Votes, (, $LOCALIZE[20350])]</label>
+							<label fallback="-">$INFO[Container(14017).ListItem.Rating]$INFO[Container(14017).ListItem.Votes, (, $LOCALIZE[20350])]</label>
 						</control>
 					</control>
 					<control type="image">
@@ -5671,7 +5671,7 @@
 							<font>SmallBold</font>
 							<textcolor>white2</textcolor>
 							<selectedcolor>white2</selectedcolor>
-							<label fallback="N/A">$INFO[Container(15017).ListItem.Title]</label>
+							<label fallback="-">$INFO[Container(15017).ListItem.Title]</label>
 						</control>
 					</control>
 					<control type="image">
