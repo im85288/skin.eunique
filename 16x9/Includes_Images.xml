@@ -463,4 +463,11 @@
 		<value condition="!IsEmpty(Window(home).Property(SkinHelper.PVR.Thumb))">$INFO[Window(home).Property(SkinHelper.PVR.Thumb)]</value>
 		<value>pvr/background.jpg</value>
 	</variable>
+
+	<variable name="RealFanartImage">
+		<value condition="!IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
+		<value condition="!IsEmpty(ListItem.Art(landscape))">$INFO[ListItem.Art(landscape)]</value>
+		<value condition="!IsEmpty(ListItem.Art(tvshow.landscape))">$INFO[ListItem.Art(tvshow.landscape)]</value>
+		<value>$INFO[ListItem.Icon]</value>
+	</variable>
 </includes>

@@ -1217,6 +1217,10 @@
 		<value condition="Container.Content(movies) + !IsEmpty(ListItem.Tagline)">$INFO[ListItem.Tagline]</value>
 		<value>$INFO[ListItem.Title]</value>
 	</variable>
+	<variable name="ShortVideoInfoLabel">
+		<value condition="Container.Content(episodes)">$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Title]</value>
+		<value condition="Container.Content(movies) + !IsEmpty(ListItem.Tagline)">$INFO[ListItem.Tagline]</value>
+	</variable>
 	<variable name="CastList">
 		<value condition="!IsEmpty(Window(movieinformation).Property(Actor3))">$INFO[Window(movieinformation).Property(Actor1)], $INFO[Window(movieinformation).Property(Actor2)], $INFO[Window(movieinformation).Property(Actor3)]</value>
 		<value condition="!IsEmpty(Window(movieinformation).Property(Actor2))">$INFO[Window(movieinformation).Property(Actor1)], $INFO[Window(movieinformation).Property(Actor2)]</value>
