@@ -28,13 +28,7 @@
 			<textcolor>$VAR[EmbyMenuColourHighlight]</textcolor>
 			<shadowcolor>-</shadowcolor>
 		</control>
-		<control type="image">
-			<left>520</left>
-			<top>77</top>
-			<height>711</height>
-			<texture colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
-			<aspectratio>stretch</aspectratio>
-		</control>
+
 		<control type="list" id="9000">
 			<top>72</top>
 			<height>824</height>
@@ -260,7 +254,7 @@
 			<left>520</left>
 			<top>799</top>
 			<height>92</height>
-			<texture colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</texture>
+			<texture colordiffuse="$VAR[EmbyMiddleColourHighlight]">common/box.png</texture>
 			<aspectratio>stretch</aspectratio>
 		</control>
 		<control type="textbox">
@@ -281,10 +275,10 @@
 			<control type="grouplist" id="9001">
 				<description>Home window control area</description>
 				<left>522</left>
-				<top>72</top>
-				<right>10</right>
-				<height>720</height>
-				<itemgap>0</itemgap>
+				<top>77</top>
+				<right>0</right>
+				<height>710</height>
+				<itemgap>10</itemgap>
 				<pagecontrol>60</pagecontrol>
 				<onleft>9000</onleft>
 				<onright>60</onright>
@@ -295,7 +289,7 @@
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
 					<label>31247</label>
-					<label2>[COLOR=$VAR[ColourHighlight2]]$VAR[LabelHomeWidgetStyle][/COLOR]</label2>
+					<label2>[COLOR=$VAR[ColourSelected]]$VAR[LabelHomeWidgetStyle][/COLOR]</label2>
 					<onclick>SetProperty(Dialog.NumItems,5)</onclick>
 					<onclick>SetProperty(Dialog.1.Label,Default)</onclick>
 					<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetBool(home.emby) || Skin.Reset(home.vertical) || Skin.Reset(home.classicwidgets) || Skin.Reset(home.netflix))</onclick>
@@ -354,7 +348,7 @@
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
 					<label>31131</label>
-					<label2>[COLOR=$VAR[ColourHighlight2]]$INFO[Skin.String(home.slideshowpath)][/COLOR]</label2>
+					<label2>[COLOR=$VAR[ColourSelected]]$INFO[Skin.String(home.slideshowpath)][/COLOR]</label2>
 					<onclick condition="IsEmpty(Skin.String(home.slideshowpath))">Skin.SetPath(home.slideshowpath)</onclick>
 					<onclick condition="!IsEmpty(Skin.String(home.slideshowpath))">Skin.Reset(home.dontshowfanart)</onclick>
 					<onclick condition="!IsEmpty(Skin.String(home.slideshowpath))">Skin.Reset(home.slideshowpath)</onclick>
@@ -363,7 +357,7 @@
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
 					<label>31182</label>
-					<label2>[COLOR=$VAR[ColourHighlight2]]$INFO[Skin.String(MovieHubWidget)][/COLOR]</label2>
+					<label2>[COLOR=$VAR[ColourSelected]]$INFO[Skin.String(MovieHubWidget)][/COLOR]</label2>
 					<onclick condition="IsEmpty(Skin.String(MovieHubWidget))">Skin.SetFile(MovieHubWidget,.xsp|.m3u,special://profile/playlists/video/)</onclick>
 					<onclick condition="!IsEmpty(Skin.String(MovieHubWidget))">Skin.Reset(MovieHubWidget)</onclick>
 				</control>
@@ -377,7 +371,7 @@
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
 					<label>31183</label>
-					<label2>[COLOR=$VAR[ColourHighlight2]]$INFO[Skin.String(TVHubWidget)][/COLOR]</label2>
+					<label2>[COLOR=$VAR[ColourSelected]]$INFO[Skin.String(TVHubWidget)][/COLOR]</label2>
 					<onclick condition="IsEmpty(Skin.String(TVHubWidget))">Skin.SetFile(TVHubWidget,.xsp|.m3u,special://profile/playlists/video/)</onclick>
 					<onclick condition="!IsEmpty(Skin.String(TVHubWidget))">Skin.Reset(TVHubWidget)</onclick>
 				</control>
@@ -391,10 +385,10 @@
 			<control type="grouplist" id="9007">
 				<description>Custom Widgets control area</description>
 				<left>522</left>
-				<top>72</top>
-				<right>10</right>
-				<height>720</height>
-				<itemgap>0</itemgap>
+				<top>77</top>
+				<right>0</right>
+				<height>710</height>
+				<itemgap>10</itemgap>
 				<pagecontrol>60</pagecontrol>
 				<onleft>9000</onleft>
 				<onright>60</onright>
@@ -448,80 +442,80 @@
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
 					<label>31759</label>
-					<label2>[COLOR=$VAR[ColourHighlight2]]$INFO[Skin.String(CustomWidget1)][/COLOR]</label2>
+					<label2>[COLOR=$VAR[ColourSelected]]$INFO[Skin.String(CustomWidget1)][/COLOR]</label2>
 					<onclick>Skin.SetString(CustomWidget1)</onclick>
 				</control>
 				<control type="button" id="9247" description="Custom Widget 2">
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
 					<label>31760</label>
-					<label2>[COLOR=$VAR[ColourHighlight2]]$INFO[Skin.String(CustomWidget2)][/COLOR]</label2>
+					<label2>[COLOR=$VAR[ColourSelected]]$INFO[Skin.String(CustomWidget2)][/COLOR]</label2>
 					<onclick>Skin.SetString(CustomWidget2)</onclick>
 				</control>
 				<control type="button" id="9248" description="Custom Widget 3">
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
 					<label>31761</label>
-					<label2>[COLOR=$VAR[ColourHighlight2]]$INFO[Skin.String(CustomWidget3)][/COLOR]</label2>
+					<label2>[COLOR=$VAR[ColourSelected]]$INFO[Skin.String(CustomWidget3)][/COLOR]</label2>
 					<onclick>Skin.SetString(CustomWidget3)</onclick>
 				</control>
 				<control type="button" id="9249" description="Custom Widget 4">
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
 					<label>31762</label>
-					<label2>[COLOR=$VAR[ColourHighlight2]]$INFO[Skin.String(CustomWidget4)][/COLOR]</label2>
+					<label2>[COLOR=$VAR[ColourSelected]]$INFO[Skin.String(CustomWidget4)][/COLOR]</label2>
 					<onclick>Skin.SetString(CustomWidget4)</onclick>
 				</control>
 				<control type="button" id="92491" description="Custom Widget 5">
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
 					<label>31763</label>
-					<label2>[COLOR=$VAR[ColourHighlight2]]$INFO[Skin.String(CustomWidget5)][/COLOR]</label2>
+					<label2>[COLOR=$VAR[ColourSelected]]$INFO[Skin.String(CustomWidget5)][/COLOR]</label2>
 					<onclick>Skin.SetString(CustomWidget5)</onclick>
 				</control>
 				<control type="button" id="92492" description="Custom Widget 6">
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
 					<label>31764</label>
-					<label2>[COLOR=$VAR[ColourHighlight2]]$INFO[Skin.String(CustomWidget6)][/COLOR]</label2>
+					<label2>[COLOR=$VAR[ColourSelected]]$INFO[Skin.String(CustomWidget6)][/COLOR]</label2>
 					<onclick>Skin.SetString(CustomWidget6)</onclick>
 				</control>
 				<control type="button" id="92493" description="Custom Widget 7">
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
 					<label>31765</label>
-					<label2>[COLOR=$VAR[ColourHighlight2]]$INFO[Skin.String(CustomWidget7)][/COLOR]</label2>
+					<label2>[COLOR=$VAR[ColourSelected]]$INFO[Skin.String(CustomWidget7)][/COLOR]</label2>
 					<onclick>Skin.SetString(CustomWidget7)</onclick>
 				</control>
 				<control type="button" id="92494" description="Custom Widget 8">
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
 					<label>31766</label>
-					<label2>[COLOR=$VAR[ColourHighlight2]]$INFO[Skin.String(CustomWidget8)][/COLOR]</label2>
+					<label2>[COLOR=$VAR[ColourSelected]]$INFO[Skin.String(CustomWidget8)][/COLOR]</label2>
 					<onclick>Skin.SetString(CustomWidget8)</onclick>
 				</control>
 				<control type="button" id="92495" description="Custom Widget 9">
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
 					<label>31767</label>
-					<label2>[COLOR=$VAR[ColourHighlight2]]$INFO[Skin.String(CustomWidget9)][/COLOR]</label2>
+					<label2>[COLOR=$VAR[ColourSelected]]$INFO[Skin.String(CustomWidget9)][/COLOR]</label2>
 					<onclick>Skin.SetString(CustomWidget9)</onclick>
 				</control>
 				<control type="button" id="92496" description="Custom Widget 10">
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
 					<label>31768</label>
-					<label2>[COLOR=$VAR[ColourHighlight2]]$INFO[Skin.String(CustomWidget10)][/COLOR]</label2>
+					<label2>[COLOR=$VAR[ColourSelected]]$INFO[Skin.String(CustomWidget10)][/COLOR]</label2>
 					<onclick>Skin.SetString(CustomWidget10)</onclick>
 				</control>
 			</control>
 			<control type="grouplist" id="9006">
 				<description>Backgrounds control area</description>
 				<left>522</left>
-				<top>72</top>
-				<right>10</right>
-				<height>720</height>
-				<itemgap>0</itemgap>
+				<top>77</top>
+				<right>0</right>
+				<height>710</height>
+				<itemgap>10</itemgap>
 				<pagecontrol>60</pagecontrol>
 				<onleft>9000</onleft>
 				<onright>60</onright>
@@ -564,7 +558,7 @@
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
 					<label>$LOCALIZE[31780]</label>
-					<label2 fallback="Normal">[COLOR=$VAR[ColourHighlight2]]$INFO[Skin.String(FanartFade)][/COLOR]</label2>
+					<label2 fallback="Normal">[COLOR=$VAR[ColourSelected]]$INFO[Skin.String(FanartFade)][/COLOR]</label2>
 					<onclick>SetProperty(Dialog.NumItems,6)</onclick>
 					<onclick>SetProperty(Dialog.1.Label,Darkest)</onclick>
 					<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(FanartFade,Darkest))</onclick>
@@ -593,7 +587,7 @@
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
 					<label>31150</label>
-					<label2>[COLOR=$VAR[ColourHighlight2]]$INFO[Skin.String(fanart.fallback)][/COLOR]</label2>
+					<label2>[COLOR=$VAR[ColourSelected]]$INFO[Skin.String(fanart.fallback)][/COLOR]</label2>
 					<onclick condition="IsEmpty(Skin.String(fanart.fallback))">Skin.SetImage(fanart.fallback)</onclick>
 					<onclick condition="!IsEmpty(Skin.String(fanart.fallback))">Skin.Reset(fanart.fallback)</onclick>
 					<visible>!Skin.HasSetting(lights.out)</visible>
@@ -602,7 +596,7 @@
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
 					<label>Path to Music Directory</label>
-					<label2>[COLOR=$VAR[ColourHighlight2]]$INFO[Skin.String(cdartlocation)][/COLOR]</label2>
+					<label2>[COLOR=$VAR[ColourSelected]]$INFO[Skin.String(cdartlocation)][/COLOR]</label2>
 					<onclick>Skin.SetPath(cdartlocation)</onclick>
 				</control>
 				<control type="radiobutton" id="9221" description="Show video in background">
@@ -623,10 +617,10 @@
 			<control type="grouplist" id="9002">
 				<description>General control area</description>
 				<left>522</left>
-				<top>72</top>
-				<right>10</right>
-				<height>720</height>
-				<itemgap>0</itemgap>
+				<top>77</top>
+				<right>0</right>
+				<height>710</height>
+				<itemgap>10</itemgap>
 				<pagecontrol>60</pagecontrol>
 				<onleft>9000</onleft>
 				<onright>60</onright>
@@ -712,7 +706,7 @@
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
 					<label>$LOCALIZE[31753]</label>
-					<label2 fallback="UK">[COLOR=$VAR[ColourHighlight2]]$VAR[MovieMPAALangLabel][/COLOR]</label2>
+					<label2 fallback="UK">[COLOR=$VAR[ColourSelected]]$VAR[MovieMPAALangLabel][/COLOR]</label2>
 					<onclick>SetProperty(Dialog.NumItems,4)</onclick>
 					<onclick>SetProperty(Dialog.1.Label,Default - UK)</onclick>
 					<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(RatingCountry,UK))</onclick>
@@ -785,7 +779,7 @@
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
 					<label>Blur Level</label>
-					<label2 fallback="2">[COLOR=$VAR[ColourHighlight2]]$VAR[VideoInfoBlurLevel][/COLOR]</label2>
+					<label2 fallback="2">[COLOR=$VAR[ColourSelected]]$VAR[VideoInfoBlurLevel][/COLOR]</label2>
 					<onclick>SetProperty(Dialog.NumItems,11)</onclick>
 					<onclick>SetProperty(Dialog.1.Label,1)</onclick>
 					<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(VideoInfoBlur,1))</onclick>
@@ -815,10 +809,10 @@
 			<control type="grouplist" id="9005">
 				<description>Colors control area</description>
 				<left>522</left>
-				<top>72</top>
-				<right>10</right>
-				<height>720</height>
-				<itemgap>0</itemgap>
+				<top>77</top>
+				<right>0</right>
+				<height>710</height>
+				<itemgap>10</itemgap>
 				<pagecontrol>60</pagecontrol>
 				<onleft>9000</onleft>
 				<onright>60</onright>
@@ -872,10 +866,10 @@
 			<control type="grouplist" id="9003">
 				<description>Extras control area</description>
 				<left>522</left>
-				<top>72</top>
-				<right>10</right>
-				<height>720</height>
-				<itemgap>0</itemgap>
+				<top>77</top>
+				<right>0</right>
+				<height>710</height>
+				<itemgap>10</itemgap>
 				<pagecontrol>60</pagecontrol>
 				<onleft>9000</onleft>
 				<onright>60</onright>
@@ -893,7 +887,7 @@
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
 					<label>31168</label>
-					<label2>[COLOR=$VAR[ColourHighlight2]]$INFO[Skin.String(StartupPlaylist)][/COLOR]</label2>
+					<label2>[COLOR=$VAR[ColourSelected]]$INFO[Skin.String(StartupPlaylist)][/COLOR]</label2>
 					<onclick condition="IsEmpty(Skin.String(StartupPlaylist))">Skin.SetFile(StartupPlaylist,.mp4|.avi|.mkv|.xvid|.wmv|.mov)</onclick>
 					<onclick condition="!IsEmpty(Skin.String(StartupPlaylist))">Skin.Reset(StartupPlaylist)</onclick>
 				</control>
@@ -955,10 +949,10 @@
 			<control type="grouplist" id="9004">
 				<description>Advanced control area</description>
 				<left>522</left>
-				<top>72</top>
-				<right>10</right>
-				<height>720</height>
-				<itemgap>0</itemgap>
+				<top>77</top>
+				<right>0</right>
+				<height>710</height>
+				<itemgap>10</itemgap>
 				<pagecontrol>60</pagecontrol>
 				<onleft>9000</onleft>
 				<onright>60</onright>
@@ -990,8 +984,8 @@
 				<control type="radiobutton" id="9284">
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
-					<selected>Skin.HasSetting(ColourHighlight2)</selected>
-					<onclick>Skin.ToggleSetting(ColourHighlight2)</onclick>
+					<selected>Skin.HasSetting(ColourSelected)</selected>
+					<onclick>Skin.ToggleSetting(ColourSelected)</onclick>
 					<label>Change second highlight colour</label>
 				</control>
 				<control type="button" id="9285">
@@ -999,15 +993,15 @@
 					<include>DefSettingsButton2</include>
 					<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=focuscolor2.name)</onclick>
 					<label> - Set second highlight colour</label>
-					<label2>[COLOR=$VAR[ColourHighlight2]]$INFO[Skin.String(focuscolor2.name)][/COLOR]</label2>
-					<visible>Skin.HasSetting(ColourHighlight2)</visible>
+					<label2>[COLOR=$VAR[ColourSelected]]$INFO[Skin.String(focuscolor2.name)][/COLOR]</label2>
+					<visible>Skin.HasSetting(ColourSelected)</visible>
 				</control>
 				<control type="button" id="9286">
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
 					<onclick>Skin.SetString(focuscolor2.name,Highlight2)</onclick>
 					<label> - $LOCALIZE[409]</label>
-					<visible>Skin.HasSetting(ColourHighlight2)</visible>
+					<visible>Skin.HasSetting(ColourSelected)</visible>
 				</control>
 				<control type="radiobutton" id="9287">
 					<width>1390</width>
@@ -1264,10 +1258,10 @@
 			<control type="grouplist" id="9008">
 				<description>Advanced control area</description>
 				<left>522</left>
-				<top>72</top>
-				<right>10</right>
-				<height>720</height>
-				<itemgap>0</itemgap>
+				<top>77</top>
+				<right>0</right>
+				<height>710</height>
+				<itemgap>10</itemgap>
 				<pagecontrol>60</pagecontrol>
 				<onleft>9000</onleft>
 				<onright>60</onright>
