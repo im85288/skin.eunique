@@ -1382,9 +1382,9 @@
 		<value>black</value>
 	</variable>
 	<variable name="3ColumnHighlight">
-		<value condition="Container.Column(0)">$VAR[EmbyLeftColourHighlight]</value>
-		<value condition="Container.Column(1)">$VAR[EmbyMiddleColourHighlight]</value>
-		<value condition="Container.Column(2)">$VAR[EmbyRightColourHighlight]</value>
+		<value condition="Container(9000).Column(0)">$VAR[EmbyLeftColourHighlight]</value>
+		<value condition="Container(9000).Column(1)">$VAR[EmbyMiddleColourHighlight]</value>
+		<value condition="Container(9000).Column(2)">$VAR[EmbyRightColourHighlight]</value>
 		<value>$VAR[ColourHighlight]</value>
 	</variable>
 	<variable name="EmbyEndTimeSymbol">
