@@ -10,19 +10,19 @@
 		<include>Furniture_EmbyClock</include>
 		<control type="group">
 			<include>Animation.Common</include>
-			<left>72</left>
-			<right>72</right>
-			<top>208</top>
-			<height>656</height>
+			<left>NewSidePad</left>
+			<right>NewSidePad</right>
+			<top>TopPad</top>
+			<height>730</height>
 			<control type="image">
-				<top>100</top>
+				<top>107</top>
+				<left>480</left>
 				<width>100%</width>
-				<height>556</height>
+				<height>610</height>
 				<texture border="16" colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
 			</control>
 			<control type="image">
-				<width>100%</width>
-				<height>100</height>
+				<height>72</height>
 				<texture>common/white.png</texture>
 				<colordiffuse>$VAR[EmbyMenuTextColourHighlight]</colordiffuse>
 				<aspectratio>stretch</aspectratio>
@@ -72,13 +72,14 @@
 				<!-- Left Group -->
 				<control type="grouplist" id="9101">
 					<width>450</width>
-					<top>140</top>
+					<top>100</top>
 					<bottom>0</bottom>
-					<itemgap>0</itemgap>
+					<itemgap>10</itemgap>
 					<onleft>9000</onleft>
 					<onright>9000</onright>
 					<onup>9101</onup>
 					<ondown>9101</ondown>
+					<itemgap>10</itemgap>
 					<control type="button" id="95">
 						<description>General</description>
 						<include>DefSettingsButton2</include>
