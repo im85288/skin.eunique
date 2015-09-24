@@ -218,7 +218,7 @@
                             <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true">$VAR[PosterImage]</texture>
                             <fadetime>200</fadetime>
-							<visible>[!IsEmpty(ListItem.Art(tvshow.clearart)) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]] | [!IsEmpty(ListItem.Art(clearart)) +  [Container.Content(movies) | Container.Content(sets)]]</visible>
+							<visible>[!IsEmpty(ListItem.Art(tvshow.clearart)) + [Container.Content(seasons) | Container.Content(episodes)]] | [!IsEmpty(ListItem.Art(clearart)) +  [Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows)]]</visible>
                         </control>
                         <control type="image">
                             <right>15</right>
