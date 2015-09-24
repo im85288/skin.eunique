@@ -10,33 +10,25 @@
     <include>Furniture_NowPlaying</include>
     <!--main menu-->
     <control type="group">
-        <posx>col-4-begin</posx>
-        <posy>row-7-begin</posy>
+        <left>NewSidePad</left>
+        <right>NewSidePad</right>
+        <top>TopPad</top>
         <!--animations-->
         <include>Animation.Common</include>
         <control type="image">
-            <posx>0</posx>
-            <posy>0</posy>
-            <width>18-col</width>
-            <height>2-row</height>
+            <left>10</left>
+            <right>10</right>
+            <height>72</height>
             <texture>common/white.png</texture>
             <colordiffuse>$VAR[EmbyMenuTextColourHighlight]</colordiffuse>
             <aspectratio>stretch</aspectratio>
         </control>
-        <control type="image">
-            <posx>0</posx>
-            <posy>2-row</posy>
-            <width>18-col</width>
-            <height>12-row</height>
-            <texture colordiffuse="$VAR[EmbyMenuColourHighlight]" border="16">common/box.png</texture>
-            <aspectratio>stretch</aspectratio>
-        </control>
         <control type="label">
-            <posx>12</posx>
-            <posy>-10</posy>
-            <width>8-col</width>
-            <height>2-row</height>
+            <left>10</left>
+            <right>10</right>
+            <height>72</height>
             <aligny>center</aligny>
+            <align>center</align>
             <font>HeaderFont</font>
             <label>$LOCALIZE[5]</label>
             <textcolor>$VAR[EmbyMenuColourHighlight]</textcolor>
@@ -44,92 +36,87 @@
         </control>
         <!--menu-->
         <control type="Panel" id="9000">
-            <posx>12</posx>
-            <posy>2-row</posy>
-            <width>18-col</width>
-            <height>12-col</height>
+            <posy>72</posy>
+            <height>900</height>
             <onup>9000</onup>
             <ondown>9000</ondown>
-            <itemlayout width="6-col" height="3-row">
+            <itemlayout width="633.33" height="204">
                 <control type="image">
-                    <posx>0</posx>
-                    <posy>18</posy>
-                    <width>1-col</width>
-                    <height>1-col</height>
+                    <top>10</top>
+                    <bottom>10</bottom>
+                    <left>10</left>
+                    <right>10</right>
                     <aspectratio scalediffuse="false">scale</aspectratio>
-                    <texture>common/white.png</texture>
+                    <texture>common/box.png</texture>
                     <colordiffuse>$VAR[EmbyMenuColourHighlight]</colordiffuse>
                 </control>
                 <control type="label">
-                    <posx>0</posx>
-                    <posy>0</posy>
-                    <width>1-col</width>
-                    <height>3-row</height>
-                    <align>center</align>
+                    <left>20</left>
+                    <top>28</top>
+                    <height>152</height>
+                    <align>left</align>
                     <aligny>center</aligny>
-                    <font>symbolbig</font>
+                    <font>symbolbiggest</font>
                     <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
                     <label>$INFO[ListItem.label2]</label>
                 </control>
                 <control type="label">
-                    <posx>84</posx>
+                    <right>20</right>
                     <posy>0</posy>
-                    <width>5-col-gutter</width>
-                    <height>2-row</height>
+                    <height>72</height>
                     <aligny>center</aligny>
+                    <align>right</align>
                     <font>TinyBold</font>
                     <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
                     <label>$INFO[ListItem.label]</label>
                 </control>
                 <control type="label">
-                    <posx>84</posx>
+                    <right>20</right>
                     <posy>1-row</posy>
-                    <width>5-col-gutter</width>
-                    <height>2-row</height>
+                    <height>72</height>
                     <aligny>center</aligny>
+                    <align>right</align>
                     <font>Tiny</font>
                     <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
                     <label>$INFO[listitem.property(label3)]</label>
                 </control>
             </itemlayout>
-            <focusedlayout width="6-col" height="3-row">
+            <focusedlayout width="633.33" height="204">
                 <control type="image">
-                    <posx>0</posx>
-                    <posy>18</posy>
-                    <width>1-col</width>
-                    <height>1-col</height>
+                    <top>10</top>
+                    <bottom>10</bottom>
+                    <left>10</left>
+                    <right>10</right>
                     <aspectratio scalediffuse="false">scale</aspectratio>
-                    <texture>common/white.png</texture>
-                    <colordiffuse>$VAR[ColourHighlight]</colordiffuse>
-                    <include>spinFocusIcon</include>
+                    <texture>common/box.png</texture>
+                    <colordiffuse>$VAR[3ColumnHighlight]</colordiffuse>
                 </control>
                 <control type="label">
-                    <posx>0</posx>
-                    <posy>0</posy>
-                    <width>1-col</width>
-                    <height>3-row</height>
-                    <align>center</align>
+                    <left>20</left>
+                    <top>28</top>
+                    <height>152</height>
+                    <align>left</align>
                     <aligny>center</aligny>
-                    <font>symbolbig</font>
+                    <font>symbolbiggest</font>
                     <textcolor>$VAR[ColourSelected]</textcolor>
                     <label>$INFO[ListItem.label2]</label>
                 </control>
                 <control type="label">
-                    <posx>84</posx>
                     <posy>0</posy>
-                    <width>5-col-gutter</width>
-                    <height>2-row</height>
+                    <right>20</right>
+                    <height>72</height>
+                    <align>right</align>
                     <aligny>center</aligny>
                     <font>TinyBold</font>
                     <textcolor>$VAR[ColourSelected]</textcolor>
                     <label>$INFO[ListItem.label]</label>
                 </control>
                 <control type="label">
-                    <posx>84</posx>
                     <posy>1-row</posy>
-                    <width>5-col-gutter</width>
-                    <height>2-row</height>
+                    <right>20</right>
+                    <height>72</height>
                     <aligny>center</aligny>
+                    <align>right</align>
                     <font>Tiny</font>
                     <textcolor>$VAR[ColourSelected]</textcolor>
                     <label>$INFO[listitem.property(label3)]</label>
@@ -140,55 +127,55 @@
                     <description>Appearance</description>
                     <label>480</label>
                     <label2></label2>
-                    <property name="label3">Skin • Screensaver</property>
+                    <property name="label3">$LOCALIZE[31851]</property>
                     <onclick>activatewindow(AppearanceSettings)</onclick>
                 </item>
                 <item id="2">
                     <description>Videos</description>
                     <label>3</label>
                     <label2></label2>
-                    <property name="label3">File Lists • $LOCALIZE[24012]</property>
+                    <property name="label3">$LOCALIZE[31852] • $LOCALIZE[24012]</property>
                     <onclick>activatewindow(VideosSettings)</onclick>
                 </item>
                 <item id="9">
                     <label>$LOCALIZE[19191]</label>
                     <label2></label2>
-                    <property name="label3">Live TV • EPG</property>
+                    <property name="label3">$LOCALIZE[31853] • $LOCALIZE[31854]</property>
                     <onclick>ActivateWindow(PVRSettings)</onclick>
                 </item>
                 <item id="3">
                     <description>Music</description>
                     <label>2</label>
                     <label2></label2>
-                    <property name="label3">File Lists • CDs</property>
+                    <property name="label3">$LOCALIZE[31855] • $LOCALIZE[31856]</property>
                     <onclick>activatewindow(MusicSettings)</onclick>
                 </item>
                 <item id="4">
                     <description>Addons</description>
                     <label>24001</label>
                     <label2></label2>
-                    <property name="label3">System extensions</property>
+                    <property name="label3">$LOCALIZE[31857]</property>
                     <onclick>activatewindow(AddonBrowser)</onclick>
                 </item>
                 <item id="5">
                     <description>Pictures</description>
                     <label>1</label>
                     <label2></label2>
-                    <property name="label3">File Lists • Slideshows</property>
+                    <property name="label3">$LOCALIZE[31855] • $LOCALIZE[31858]</property>
                     <onclick>activatewindow(PicturesSettings)</onclick>
                 </item>
                 <item id="6">
                     <description>Weather</description>
                     <label>8</label>
                     <label2></label2>
-                    <property name="label3">Locations • Addons</property>
+                    <property name="label3">$LOCALIZE[31859] • $LOCALIZE[31860]</property>
                     <onclick>activatewindow(WeatherSettings)</onclick>
                 </item>
                 <item id="7">
                     <description>Services</description>
                     <label>14036</label>
                     <label2></label2>
-                    <property name="label3">Networking • Airplay</property>
+                    <property name="label3">$LOCALIZE[31861] • $LOCALIZE[31862]</property>
                     <onclick>activatewindow(ServiceSettings)</onclick>
                 </item>
                 <item id="8">
@@ -202,21 +189,20 @@
                     <description>Profiles</description>
                     <label>13200</label>
                     <label2></label2>
-                    <property name="label3">Login settings • Users</property>
+                    <property name="label3">$LOCALIZE[31863] • $LOCALIZE[31864]</property>
                     <onclick>activatewindow(profiles)</onclick>
                 </item>
                 <item id="10">
                     <description>File Manager</description>
                     <label>10003</label>
                     <label2></label2>
-                    <property name="label3">Copy Files • Transfer</property>
+                    <property name="label3">$LOCALIZE[31865] • $LOCALIZE[31866]</property>
                     <onclick>activatewindow(3)</onclick>
                 </item>
                 <item id="11">
                     <label>130</label>
                     <label2></label2>
-                    <property name="label3">CPU • Hardware</property>
-                    <icon>special://skin/extras/icons/sysinfo.png</icon>
+                    <property name="label3">$LOCALIZE[31867] • $LOCALIZE[31868]</property>
                     <onclick>activatewindow(7)</onclick>
                 </item>
             </content>

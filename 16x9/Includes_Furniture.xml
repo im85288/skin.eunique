@@ -361,7 +361,7 @@
 	<include name="Furniture_Logo">
 		<control type="group">
 			<visible>Skin.HasSetting(furniture.logo)</visible>
-			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml) + !Control.IsVisible(500) + !Control.IsVisible(54) + !Control.IsVisible(52 + !Control.IsVisible(515) + !ControlGroup(9000).HasFocus()</visible>
+			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml) + !Control.IsVisible(500) + !Control.IsVisible(54) + !Control.IsVisible(52) + !Control.IsVisible(515) + !ControlGroup(9000).HasFocus()</visible>
 			<visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(albums) | Container.Content(songs)</visible>
 			<left>1664</left>
 			<top>909</top>
@@ -378,6 +378,29 @@
 				<texture>$VAR[ClearLogo]</texture>
 				<aspectratio align="center" aligny="center">keep</aspectratio>
 				<fadetime>50</fadetime>
+				<visible>!Control.IsVisible(516)</visible>
+			</control>
+			<control type="image" id="12323">
+				<!--cdart image -->
+				<top>-10</top>
+				<width>120</width>
+				<height>120</height>
+				<right>10</right>
+				<texture fallback="empty" background="true">$INFO[ListItem.Art(discart)]</texture>
+				<aspectratio scalediffuse="false" align="center" aligny="bottom">keep</aspectratio>
+				<visible>!IsEmpty(ListItem.Art(discart))</visible>
+				<visible>Control.IsVisible(516)</visible>
+			</control>
+			<control type="image">
+				<!--cdart image -->
+				<top>-10</top>
+				<width>120</width>
+				<height>120</height>
+				<right>10</right>
+				<texture diffuse="cdart/cdart-mask.png">$VAR[PosterImage]</texture>
+				<aspectratio aligny="center">stretch</aspectratio>
+				<visible>Substring(Control.GetLabel(12323),empty)</visible>
+				<visible>Control.IsVisible(516)</visible>
 			</control>
 		</control>
 	</include>
@@ -1560,6 +1583,7 @@
 			<visible>![Window.IsVisible(script-skinshortcuts.xml) | Window.IsVisible(DialogSongInfo.xml) | Window.IsVisible(DialogPictureInfo.xml) | Window.IsVisible(FileBrowser.xml) | Window.IsVisible(DialogProgress.xml) | Window.IsVisible(DialogYesNo.xml) | Window.IsVisible(DialogOK.xml) | Window.IsVisible(DialogSelect.xml) | Window.IsVisible(DialogContextMenu.xml) | Window.IsVisible(DialogButtonMenu.xml) | ControlGroup(9000).HasFocus()]</visible>
 			<visible>[!IsEmpty(Window(home).Property(SkinHelper.MovieSet.ExtendedPlot)) + [Container.Content(Sets) | substring(ListItem.Path,videodb://movies/sets,left)]] | !IsEmpty(ListItem.Plot)</visible>
 			<visible>!System.IdleTime(20)</visible>
+			<visible>!Control.IsVisible(516)</visible>
 			<control type="group">
 				<left>1654</left>
 				<top>759</top>
@@ -1685,7 +1709,19 @@
 				<font>MediumSmallBold</font>
 				<textcolor>white</textcolor>
 				<label>$VAR[Plot]</label>
-				<visible>!Control.IsVisible(50)</visible>
+				<visible>!Control.IsVisible(50) + !Control.IsVisible(516)</visible>
+			</control>
+			<control type="textbox">
+				<description>textarea</description>
+				<left>975</left>
+				<top>194</top>
+				<right>140</right>
+				<height>129</height>
+				<align>justify</align>
+				<font>MediumSmallBold</font>
+				<textcolor>white</textcolor>
+				<label>$VAR[Plot]</label>
+				<visible>Control.IsVisible(516)</visible>
 			</control>
 			<control type="image">
 				<left>970</left>

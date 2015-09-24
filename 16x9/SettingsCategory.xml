@@ -20,33 +20,20 @@
     </control>
     <!--Settings category-->
     <control type="group" id="9001">
-        <posx>col-4-begin</posx>
-        <posy>row-5-begin</posy>
+        <left>NewSidePad</left>
+        <top>TopPad</top>
         <!--animations-->
         <include>Animation.Common</include>
         <control type="image">
-            <posx>0</posx>
-            <posy>0</posy>
-            <width>18-col</width>
-            <height>2-row</height>
+            <height>72</height>
             <texture>common/white.png</texture>
             <colordiffuse>$VAR[EmbyMenuTextColourHighlight]</colordiffuse>
             <aspectratio>stretch</aspectratio>
         </control>
-        <control type="image">
-            <posx>0</posx>
-            <posy>2-row</posy>
-            <width>18-col</width>
-            <height>18-row</height>
-            <texture colordiffuse="$VAR[EmbyMenuColourHighlight]" border="16">common/box.png</texture>
-            <aspectratio>stretch</aspectratio>
-        </control>
         <control type="label">
-            <posx>24</posx>
-            <posy>-10</posy>
-            <width>16-col</width>
-            <height>2-row</height>
+            <height>72</height>
             <aligny>center</aligny>
+            <align>center</align>
             <font>HeaderFont</font>
             <label>$INFO[control.getlabel(2)]</label>
             <textcolor>$VAR[EmbyMenuColourHighlight]</textcolor>
@@ -54,26 +41,26 @@
         </control>
         <!--settings level button-->
         <control type="grouplist">
-            <posx>13-col</posx>
-            <posy>-10</posy>
+            <left>10</left>
+            <posy>0</posy>
             <orientation>horizontal</orientation>
             <control type="label">
                 <width>auto</width>
-                <height>2-row</height>
+                <height>72w</height>
                 <font>SmallHeaderFont</font>
                 <aligny>center</aligny>
                 <label>$LOCALIZE[31803]:</label>
-                <textcolor>$VAR[EmbyMenuColourHighlight]</textcolor>
+                <textcolor>white3</textcolor>
                 <shadowcolor>-</shadowcolor>
             </control>
             <control type="button" id="20">
                 <top>10</top>
                 <align>left</align>
-                <height>2-row</height>
+                <height>72</height>
                 <width>2-col</width>
                 <font>SmallHeaderFont</font>
                 <label>$LOCALIZE[10037]</label>
-                <textcolor>$VAR[EmbyMenuColourHighlight]</textcolor>
+                <textcolor>white3</textcolor>
                 <focusedcolor>$VAR[ColourHighlight]</focusedcolor>
                 <texturefocus>-</texturefocus>
                 <texturenofocus>-</texturenofocus>
@@ -86,29 +73,21 @@
         <!--Category submenu-->
         <control type="grouplist" id="3">
             <posx>0</posx>
-            <posy>2-row</posy>
-            <width>4-col</width>
-            <itemgap>0</itemgap>
-            <height>18-row</height>
+            <posy>77</posy>
+            <width>500</width>
+            <itemgap>10</itemgap>
+            <height>824</height>
             <onleft>9000</onleft>
             <onright>5</onright>
             <onup>20</onup>
             <orientation>vertical</orientation>
         </control>
-        <!--options-->
-        <control type="image">
-            <posx>4-col</posx>
-            <posy>2-row</posy>
-            <width>14-col</width>
-            <height>18-row</height>
-            <texture colordiffuse="$VAR[EmbyMenuColourHighlight]" border="16">common/box.png</texture>
-            <aspectratio>stretch</aspectratio>
-        </control>
         <control type="grouplist" id="5">
-            <posx>4-col</posx>
-            <posy>2-row</posy>
-            <width>14-col</width>
-            <height>18-row</height>
+            <left>522</left>
+            <top>77</top>
+            <right>0</right>
+            <height>824</height>
+            <itemgap>10</itemgap>
             <onleft>3</onleft>
             <onright>3</onright>
             <onup>20</onup>
