@@ -37,6 +37,7 @@
 		<value>$INFO[ListItem.Label]</value>
 	</variable>
 	<variable name="LabelYear">
+		<value condition="Container.Content(tvshows) + Control.IsVisible(516) + !stringcompare(Container.SortMethod,$LOCALIZE[20360])">$INFO[ListItem.Property(TotalSeasons), • , Seasons]$INFO[ListItem.Property(TotalEpisodes), • , Episodes]</value>
 		<value condition="Container.Content(tvshows) + stringcompare(Container.SortMethod,$LOCALIZE[20360])">$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20360]]</value>
 		<value condition="[Container.Content(tvshows) | Container.Content(episodes) | Container.Content(seasons)] + stringcompare(Container.SortMethod,$LOCALIZE[568])">$INFO[ListItem.LastPlayed]</value>
 		<value condition="Container.Content(episodes)">$INFO[ListItem.Premiered]</value>
@@ -88,7 +89,7 @@
 		<value condition="stringcompare(Container.SortMethod,$LOCALIZE[567])">$INFO[ListItem.PlayCount]</value>
 		<value condition="!IsEmpty(ListItem.Duration)">$INFO[ListItem.Duration,, $LOCALIZE[31102]]</value>
 		<value condition="!IsEmpty(Container(3012).ListItem.Duration)">$INFO[Container(3012).ListItem.Duration,, $LOCALIZE[31102]]</value>
-		<value condition="[Container.Content(tvshows) + !Control.IsVisible(54)] | Container.Content(episodes) | Container.Content(seasons)">$VAR[LabelYear]</value>
+		<value condition="[Container.Content(tvshows) + !Control.IsVisible(54) + !Control.IsVisible(516)] | Container.Content(episodes) | Container.Content(seasons)">$VAR[LabelYear]</value>
 		<value condition="!IsEmpty(Window(home).Property(SkinHelper.MovieSet.Runtime))">$INFO[Window(home).Property(SkinHelper.MovieSet.Runtime)]</value>
 	</variable>
 	<variable name="LabelPlotBox">
