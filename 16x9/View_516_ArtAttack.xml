@@ -6,7 +6,7 @@
             <include>Animation.Common</include>
             <visible>Control.IsVisible(516)</visible>
             <visible>!Window.IsVisible(DialogVideoInfo.xml)</visible>
-            <animation effect="slide" end="10,0" center="auto" time="200" condition="Control.HasFocus(60)">Conditional</animation>
+			<animation effect="slide" end="20,0" center="auto" time="200" condition="Control.HasFocus(60)">Conditional</animation>
             <animation type="Conditional" reversible="true"
                        condition="![Skin.HasSetting(osd.hidespoilers) + Container.Content(episodes) + [stringcompare(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]] + [Container.Content(musicvideos) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets) | Container.Content(episodes)] + !System.IdleTime(20) + System.IdleTime(3) + Skin.HasSetting(furniture.overlayinfo) + ![ControlGroup(9000).HasFocus() | Window.IsVisible(DialogContextMenu.xml)]">
                 <effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out"/>
@@ -16,7 +16,7 @@
                 <control type="fixedlist" id="516">
                     <visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(seasons) | Container.Content(sets)</visible>
                     <top>TopPad</top>
-                    <height>720</height>
+                    <height>730</height>
                     <left>NewSidePad</left>
                     <right>NewSidePad</right>
                     <width>1900</width>
@@ -53,6 +53,9 @@
                             <textcolor>white</textcolor>
                         </control>
                         <control type="group">
+                                <top>10</top>
+                                <right>-8</right>
+                        <control type="group">
                             <control type="label">
                                 <right>8</right>
                                 <top>6</top>
@@ -150,6 +153,7 @@
                             </control>
                             <visible>!stringcompare(ListItem.Label,..) + ListItem.IsResumable</visible>
                         </control>
+                        </control>
                     </itemlayout>
                     <focusedlayout width="1900" height="600">
                         <control type="button">
@@ -164,33 +168,34 @@
                             <top>0</top>
                             <right>0</right>
                             <bottom>0</bottom>
-                            <texture colordiffuse="$INFO[Window(home).Property(ArtAttackInfo.ImageColor)]" border="5">common/box.png</texture>
+                            <texture colordiffuse="$INFO[Window(home).Property(ArtAttackInfo.ImageColor)]" border="5">diffuse/extraposter-ref-blur-rev.png</texture>
                             <fadetime>200</fadetime>
                         </control>
+						<!--
                         <control type="image">
-                            <left>0</left>
-                            <top>0</top>
-                            <right>0</right>
-                            <bottom>0</bottom>
-                            <texture colordiffuse="$INFO[Window(home).Property(ArtAttackInfo.ImageColor)]" diffuse="diffuse/extraposter-ref-blur-rev.png" background="true">$VAR[RealFanartImage]</texture>
-                            <aspectratio scalediffuse="false">stretch</aspectratio>
+                            <left>-10</left>
+                            <top>-216</top>
+                            <width>1920</width>
+                            <height>1080</height>
+                            <texture colordiffuse="$INFO[Window(home).Property(ArtAttackInfo.ImageColor)]" diffuse="diffuse/extraposter-ref-blur-rev.png" background="true">$VAR[GlobalFanart]</texture>
+                            <aspectratio scalediffuse="false">scale</aspectratio>
                             <fadetime>200</fadetime>
                         </control>
+						-->
                         <control type="image">
                             <description>Landscape</description>
-                            <top>100</top>
-                            <right>5</right>
-                            <width>889</width>
-                            <height>490</height>
+                            <top>90</top>
+                            <width>894</width>
+                            <height>510</height>
                             <texture background="true">$VAR[LandscapeImage]</texture>
                             <aspectratio scalediffuse="false">stretch</aspectratio>
                             <fadetime>200</fadetime>
                         </control>
                         <control type="image">
-                            <left>5</left>
-                            <top>100</top>
-                            <width>991</width>
-                            <height>183</height>
+                            <right>0</right>
+                            <top>90</top>
+                            <width>1006</width>
+                            <height>203</height>
                             <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true">$VAR[BannerImage]</texture>
                             <fadetime>200</fadetime>
@@ -198,25 +203,26 @@
                         <control type="image">
                             <description>Landscape</description>
                             <top>293</top>
-                            <left>5</left>
-                            <width>530</width>
-                            <height>297</height>
+                            <left>894</left>
+                            <width>535</width>
+                            <height>307</height>
                             <texture background="true">$VAR[RealFanartImage]</texture>
                             <aspectratio scalediffuse="false">stretch</aspectratio>
                             <fadetime>200</fadetime>
                         </control>
                         <control type="image">
-                            <left>545</left>
+                            <left>1429</left>
                             <top>293</top>
                             <width>200</width>
-                            <height>297</height>
+                            <height>307</height>
                             <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true">$VAR[PosterImage]</texture>
                             <fadetime>200</fadetime>
+							<visible>[!IsEmpty(ListItem.Art(tvshow.clearart)) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]] | [!IsEmpty(ListItem.Art(clearart)) +  [Container.Content(movies) | Container.Content(sets)]]</visible>
                         </control>
                         <control type="image">
-                            <left>755</left>
-                            <bottom>10</bottom>
+                            <right>15</right>
+                            <top>316</top>
                             <width>236</width>
                             <height>133</height>
                             <aspectratio scalediffuse="false">keep</aspectratio>
@@ -224,14 +230,48 @@
                             <fadetime>200</fadetime>
                         </control>
                         <control type="image">
-                            <left>755</left>
-                            <top>293</top>
+                            <bottom>20</bottom>
+                            <right>15</right>
                             <width>236</width>
                             <height>133</height>
                             <aspectratio scalediffuse="false">keep</aspectratio>
                             <texture diffuse="diffuse/extraposter-ref-blur-rev.png" flipy="true" background="true">$VAR[ClearArtOnly]</texture>
                             <fadetime>200</fadetime>
                         </control>
+						<control type="group">
+                            <left>1429</left>
+                            <top>293</top>
+							<width>471</width>
+							<height>307</height>
+							<control type="image">
+								<width>471</width>
+							<height>307</height>
+								<align>bottom</align>
+								<aspectratio>scale</aspectratio>
+								<texture background="true" flipx="true" flipy="true">$INFO[Listitem.Thumb]</texture>
+							</control>
+							<control type="image">
+								<left>0</left>
+								<width>471</width>
+								<height>245</height>
+								<aspectratio>center</aspectratio>
+								<texture background="true">$INFO[Listitem.Thumb]</texture>
+							</control>
+							<control type="image">
+								<left>0</left>
+								<top>130</top>
+								<width>295</width>
+								<height>177</height>
+								<aspectratio>center</aspectratio>
+								<texture background="true" flipx="true">$INFO[Listitem.Thumb]</texture>
+							</control>
+							<control type="image">
+								<align>right</align>
+								<aspectratio>keep</aspectratio>
+								<texture background="true">$INFO[Listitem.Thumb]</texture>
+							</control>
+							<visible>IsEmpty(ListItem.Art(tvshow.clearart)) + IsEmpty(ListItem.Art(clearart))</visible>
+						</control>
                         <control type="label" id="13370">
                             <left>0</left>
                             <top>0</top>
@@ -248,6 +288,8 @@
                             </animation>
                         </control>
                         <control type="group">
+                                <right>-8</right>
+                        <control type="group">
                             <control type="label">
                                 <right>8</right>
                                 <top>6</top>
@@ -345,53 +387,41 @@
                             </control>
                             <visible>!stringcompare(ListItem.Label,..) + ListItem.IsResumable</visible>
                         </control>
+                        </control>
                         <control type="image">
-                            <left>NewSidePad</left>
-                            <top>10</top>
+                            <left>0</left>
+                            <top>5</top>
                             <width>206</width>
                             <height>80</height>
                             <texture>$VAR[ClearLogo]</texture>
-                            <aspectratio align="left" aligny="bottom">keep</aspectratio>
+                            <aspectratio align="left" aligny="center">keep</aspectratio>
                             <fadetime>50</fadetime>
                         </control>
                         <control type="label">
-                            <left>226</left>
-                            <right>NewSidePad</right>
-                            <top>50</top>
-                            <height>50</height>
-                            <align>left</align>
-                            <font>MediumBold</font>
+                            <left>315</left>
+                            <right>315</right>
+                            <height>90</height>
+                            <align>center</align>
+                            <aligny>center</aligny>
+                            <font>ReallyLargeBold</font>
                             <textcolor>$VAR[ColourSelected]</textcolor>
                             <label>$VAR[ShortVideoInfoLabel]</label>
                         </control>
                         <control type="label">
                             <left>337</left>
-                            <right>10</right>
-                            <top>64</top>
+                            <right>0</right>
+                            <top>59</top>
                             <aligny>center</aligny>
                             <height>26</height>
                             <align>right</align>
                             <font>Tiny</font>
                             <textcolor>$VAR[ColourSelected]</textcolor>
-                            <visible>Container.Content(seasons)</visible>
-                            <label fallback="19055">$INFO[ListItem.Property(UnWatchedEpisodes),, $LOCALIZE[31215]]</label>
-                        </control>
-                        <control type="label">
-                            <left>337</left>
-                            <right>10</right>
-                            <top>64</top>
-                            <aligny>center</aligny>
-                            <height>26</height>
-                            <align>right</align>
-                            <font>Tiny</font>
-                            <textcolor>$VAR[ColourSelected]</textcolor>
-                            <visible>!Container.Content(seasons)</visible>
-                            <label fallback="19055">$VAR[LabelYear]$VAR[LabelDuration, • ]$INFO[ListItem.Rating, • ]</label>
+                            <label fallback="19055">$INFO[ListItem.Property(UnWatchedEpisodes),, $LOCALIZE[31215] ]$VAR[LabelYear]$VAR[LabelDuration, • ]$INFO[ListItem.Rating, • ]</label>
                         </control>
                     </focusedlayout>
                 </control>
             </control>
-            <include>Furniture_ScrollbarD</include>
+            <include>Furniture_ScrollbarBannerPlex</include>
         </control>
     </include>
 </includes>

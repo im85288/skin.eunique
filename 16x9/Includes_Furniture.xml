@@ -380,26 +380,27 @@
 				<fadetime>50</fadetime>
 				<visible>!Control.IsVisible(516)</visible>
 			</control>
-			<control type="image" id="12323">
 				<!--cdart image -->
-				<top>-10</top>
-				<width>120</width>
+			<control type="image" id="12323">
+			<top>-10</top>
+				<width>228</width>
 				<height>120</height>
-				<right>10</right>
 				<texture fallback="empty" background="true">$INFO[ListItem.Art(discart)]</texture>
-				<aspectratio scalediffuse="false" align="center" aligny="bottom">keep</aspectratio>
+				<aspectratio align="center" aligny="center">keep</aspectratio>
+				<fadetime>50</fadetime>
 				<visible>!IsEmpty(ListItem.Art(discart))</visible>
 				<visible>Control.IsVisible(516)</visible>
 			</control>
 			<control type="image">
 				<!--cdart image -->
-				<top>-10</top>
+			<top>-10</top>
+                                <left>54</left>
 				<width>120</width>
 				<height>120</height>
-				<right>10</right>
 				<texture diffuse="cdart/cdart-mask.png">$VAR[PosterImage]</texture>
-				<aspectratio aligny="center">stretch</aspectratio>
-				<visible>Substring(Control.GetLabel(12323),empty)</visible>
+				<aspectratio align="center" aligny="center">stretch</aspectratio>
+				<fadetime>50</fadetime>
+				<visible>IsEmpty(ListItem.Art(discart))</visible>
 				<visible>Control.IsVisible(516)</visible>
 			</control>
 		</control>
@@ -1709,8 +1710,9 @@
 				<font>MediumSmallBold</font>
 				<textcolor>white</textcolor>
 				<label>$VAR[Plot]</label>
-				<visible>!Control.IsVisible(50) + !Control.IsVisible(516)</visible>
+				<visible>!Control.IsVisible(50)</visible>
 			</control>
+			<!--
 			<control type="textbox">
 				<description>textarea</description>
 				<left>975</left>
@@ -1723,6 +1725,7 @@
 				<label>$VAR[Plot]</label>
 				<visible>Control.IsVisible(516)</visible>
 			</control>
+			-->
 			<control type="image">
 				<left>970</left>
 				<top>333</top>
@@ -1733,19 +1736,20 @@
 			<control type="label">
 				<left>975</left>
 				<top>330</top>
-				<right>10</right>
+				<right>191</right>
 				<height>51</height>
 				<font>MediumBold</font>
 				<textcolor>$VAR[ColourSelected]</textcolor>
+				<scroll>true</scroll>
 				<label>$INFO[Container(508923).ListItem(0).Label]$INFO[Container(508923).ListItem(0).Label2, $LOCALIZE[20347] ]</label>
 			</control>
 			<control type="image">
-				<right>93</right>
-				<top>303</top>
-				<width>96</width>
-				<height>113</height>
+			<left>1664</left>
+				<top>330</top>
+				<width>228</width>
+				<height>61</height>
 				<texture colordiffuse="White">$VAR[ColourStudio]</texture>
-				<aspectratio aligny="center" align="right">keep</aspectratio>
+				<aspectratio aligny="center" align="center">keep</aspectratio>
 			</control>
 		</control>
 	</include>
