@@ -10,25 +10,19 @@
         <include>Furniture_HeaderEmby</include>
         <include>Furniture_EmbyClock</include>
         <include>Furniture_NowPlaying</include>
-        
+
         <control type="group">
             <include>Animation.Common</include>
             <control type="group">
                 <description>Left panel</description>
-                <left>SidePad</left>
-                <top>PosterPad</top>
-                <height>640</height>
-                <width>870</width>
+                <left>NewSidePad</left>
+                <top>TopPad</top>
+                <height>901</height>
+                <width>945</width>
                 <control type="image">
                     <width>100%</width>
                     <height>73</height>
-                    <texture border="16" colordiffuse="$VAR[EmbyMenuTextColourHighlight]">common/box.png</texture>
-                </control>
-                <control type="image">
-                    <top>73</top>
-                    <width>100%</width>
-                    <height>567</height>
-                    <texture border="5" colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
+                    <texture border="5" colordiffuse="$VAR[EmbyMenuTextColourHighlight]">common/box.png</texture>
                 </control>
 
                 <control type="label" id="101">
@@ -43,28 +37,31 @@
 
                 <control type="list" id="20">
                     <description>Left File List</description>
-                    <left>15</left>
-                    <bottom>15</bottom>
-                    <right>15</right>
-                    <height>552</height>
+                    <top>73</top>
+                    <height>828</height>
                     <onleft>21</onleft>
                     <onright>21</onright>
                     <onup>20</onup>
                     <ondown>20</ondown>
 
-                    <itemlayout height="69" width="840">
+                    <itemlayout height="69" width="945">
+                        <control type="image">
+                            <top>1</top>
+                            <height>67</height>
+                            <texture border="5" colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
+                        </control>
 
                         <control type="label">
-                            <posx>30</posx>
-                            <width>720</width>
+                            <left>10</left>
+                            <right>10</right>
                             <align>left</align>
                             <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
                             <info>ListItem.Label</info>
                         </control>
 
                         <control type="label">
-                            <right>30</right>
-                            <width>150</width>
+                            <left>10</left>
+                            <right>10</right>
                             <align>right</align>
                             <font>Tiny</font>
                             <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
@@ -73,26 +70,26 @@
 
                     </itemlayout>
 
-                    <focusedlayout height="69" width="840">
+                    <focusedlayout height="69" width="945">
 
                         <control type="image">
                             <width>100%</width>
                             <height>66</height>
-                            <texture border="5" colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
+                            <texture border="5" colordiffuse="$VAR[EmbyLeftColourHighlight]">common/box.png</texture>
                             <animation effect="fade" start="100" end="50" condition="!Control.HasFocus(20)">Conditional</animation>
                         </control>
 
                         <control type="label">
-                            <posx>30</posx>
-                            <width>720</width>
+                            <left>10</left>
+                            <right>10</right>
                             <align>left</align>
                             <textcolor>$VAR[ColourSelected]</textcolor>
                             <info>ListItem.Label</info>
                         </control>
 
                         <control type="label">
-                            <right>30</right>
-                            <width>720</width>
+                            <left>10</left>
+                            <right>10</right>
                             <align>right</align>
                             <textcolor>$VAR[ColourSelected]</textcolor>
                             <font>Tiny</font>
@@ -102,35 +99,19 @@
                     </focusedlayout>
 
                 </control>
-
-                <control type="label" id="12">
-                    <description>Header Label</description>
-                    <posx>23</posx>
-                    <posy>882</posy>
-                    <width>480</width>
-                    <align>left</align>
-                    <label>-</label>
-                </control>
-
             </control>
-            
+
             <control type="group">
                 <description>Right panel</description>
-                <right>SidePad</right>
-                <top>PosterPad</top>
-                <height>640</height>
-                <width>870</width>
+                <right>NewSidePad</right>
+                <top>TopPad</top>
+                <height>901</height>
+                <width>945</width>
 
                 <control type="image">
                     <width>100%</width>
                     <height>73</height>
-                    <texture border="16" colordiffuse="$VAR[EmbyMenuTextColourHighlight]">common/box.png</texture>
-                </control>
-                <control type="image">
-                    <top>73</top>
-                    <width>100%</width>
-                    <height>567</height>
-                    <texture border="5" colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
+                    <texture border="5" colordiffuse="$VAR[EmbyMenuTextColourHighlight]">common/box.png</texture>
                 </control>
                 <control type="label" id="102">
                     <description>Header Label</description>
@@ -144,30 +125,32 @@
 
                 <control type="list" id="21">
                     <description>Left File List</description>
-                    <left>15</left>
-                    <bottom>15</bottom>
-                    <right>15</right>
-                    <height>552</height>
+                    <top>73</top>
+                    <height>828</height>
                     <onleft>20</onleft>
                     <onright>20</onright>
                     <onup>21</onup>
                     <ondown>21</ondown>
 
-                    <itemlayout height="69" width="840">
+                    <itemlayout height="69" width="945">
 
-                        
 
+                        <control type="image">
+                            <top>1</top>
+                            <height>67</height>
+                            <texture border="5" colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
+                        </control>
                         <control type="label">
-                            <posx>30</posx>
-                            <width>720</width>
+                            <left>10</left>
+                            <right>10</right>
                             <align>left</align>
                             <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
                             <info>ListItem.Label</info>
                         </control>
 
                         <control type="label">
-                            <right>30</right>
-                            <width>150</width>
+                            <left>10</left>
+                            <right>10</right>
                             <align>right</align>
                             <font>Tiny</font>
                             <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
@@ -176,26 +159,26 @@
 
                     </itemlayout>
 
-                    <focusedlayout height="69" width="840">
+                    <focusedlayout height="69" width="945">
 
                         <control type="image">
                             <width>100%</width>
                             <height>66</height>
-                            <texture border="5" colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
+                            <texture border="5" colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</texture>
                             <animation effect="fade" start="100" end="50" condition="!Control.HasFocus(21)">Conditional</animation>
                         </control>
 
                         <control type="label">
-                            <posx>30</posx>
-                            <width>720</width>
+                            <left>10</left>
+                            <right>10</right>
                             <align>left</align>
                             <textcolor>$VAR[ColourSelected]</textcolor>
                             <info>ListItem.Label</info>
                         </control>
 
                         <control type="label">
-                            <right>30</right>
-                            <width>720</width>
+                            <left>10</left>
+                            <right>10</right>
                             <align>right</align>
                             <textcolor>$VAR[ColourSelected]</textcolor>
                             <font>Tiny</font>
@@ -206,19 +189,12 @@
 
                 </control>
 
-                <control type="label" id="22">
-                    <description>Header Label</description>
-                    <posx>23</posx>
-                    <posy>882</posy>
-                    <width>480</width>
-                    <align>left</align>
-                    <label>-</label>
-                </control>
+
 
             </control>
-            
+
         </control>
-        
+
     </controls>
 
 </window>
