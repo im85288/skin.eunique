@@ -17,12 +17,12 @@
 			<control type="image">
 				<top>107</top>
 				<left>480</left>
-				<width>100%</width>
-				<height>610</height>
+				<height>607</height>
 				<texture border="16" colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
 			</control>
 			<control type="image">
-				<height>72</height>
+				<height>95</height>
+				<left>8</left>
 				<texture>common/white.png</texture>
 				<colordiffuse>$VAR[EmbyMenuTextColourHighlight]</colordiffuse>
 				<aspectratio>stretch</aspectratio>
@@ -30,7 +30,7 @@
 			<control type="group">
 				<left>8</left>
 				<right>8</right>
-				<top>8</top>
+				<top>1</top>
 				<bottom>8</bottom>
 				<!-- Lines -->
 				<control type="label">
@@ -44,7 +44,7 @@
 				<control type="label">
 					<left>30</left>
 					<right>30</right>
-					<posy>61</posy>
+					<posy>55</posy>
 					<height>30</height>
 					<font>Tiny</font>
 					<label>$INFO[System.FriendlyName]</label>
@@ -62,7 +62,27 @@
 				<control type="label" id="52" description="XBMC Build Version">
 					<left>480</left>
 					<right>30</right>
-					<posy>61</posy>
+					<posy>55</posy>
+					<height>30</height>
+					<font>Tiny</font>
+					<height>40</height>
+					<textcolor>$VAR[EmbyMenuColourHighlight]</textcolor>
+					<scroll>true</scroll>
+				</control>
+				<control type="label" description="Build Header">
+					<left>480</left>
+					<right>30</right>
+					<align>right</align>
+					<posy>-2</posy>
+					<font>HeaderFont</font>
+					<label>$LOCALIZE[174]</label>
+					<textcolor>$VAR[EmbyMenuColourHighlight]</textcolor>
+				</control>
+				<control type="label" id="53" description="XBMC Build date">
+					<left>480</left>
+					<right>30</right>
+					<align>right</align>
+					<posy>55</posy>
 					<height>30</height>
 					<font>Tiny</font>
 					<height>40</height>
@@ -72,7 +92,7 @@
 				<!-- Left Group -->
 				<control type="grouplist" id="9101">
 					<width>450</width>
-					<top>100</top>
+					<top>106</top>
 					<bottom>0</bottom>
 					<itemgap>10</itemgap>
 					<onleft>9000</onleft>
@@ -118,68 +138,6 @@
 					<right>30</right>
 					<itemgap>0</itemgap>
 					<usecontrolcoords>true</usecontrolcoords>
-					<control type="label">
-						<description>CPU Text</description>
-						<font>Tiny</font>
-						<posy>-60</posy>
-						<posx>750</posx>
-						<align>right</align>
-						<width>600</width>
-						<height>60</height>
-						<label>$LOCALIZE[13271]</label>
-						<include>DefSettingsButton2</include>
-					</control>
-					<control type="label">
-						<description>CPU Text</description>
-						<font>Tiny</font>
-						<posy>-60</posy>
-						<align>right</align>
-						<width>750</width>
-						<height>60</height>
-						<label>$INFO[System.CPUUsage]</label>
-						<include>DefSettingsButton2</include>
-					</control>
-					<control type="progress" id="22">
-						<description>CPU BAR</description>
-						<font>Tiny</font>
-						<height>10</height>
-						<width>750</width>
-						<info>System.CPUUsage</info>
-						<include>DefSettingsButton2</include>
-					</control>
-					<control type="label">
-						<description>Memory Text</description>
-						<posy>-70</posy>
-						<posx>800</posx>
-						<font>Tiny</font>
-						<height>60</height>
-						<label>$LOCALIZE[31104]:</label>
-						<include>DefSettingsButton2</include>
-					</control>
-					<control type="label">
-						<description>Memory Text</description>
-						<posy>-60</posy>
-						<align>right</align>
-						<posx>800</posx>
-						<font>Tiny</font>
-						<height>60</height>
-						<label>$INFO[system.memory(used.percent)]</label>
-						<include>DefSettingsButton2</include>
-					</control>
-					<control type="progress" id="24">
-						<description>Memory BAR</description>
-						<font>Tiny</font>
-						<posx>800</posx>
-						<height>10</height>
-						<info>system.memory(used)</info>
-						<include>DefSettingsButton2</include>
-					</control>
-					<control type="label" id="25">
-						<description>Spacer</description>
-						<font>-</font>
-						<font>Tiny</font>
-						<height>25</height>
-					</control>
 					<control type="label" id="2">
 						<description>Label 2</description>
 						<font>Tiny</font>
@@ -238,6 +196,45 @@
 						<description>Label 11</description>
 						<font>Tiny</font>
 						<height>40</height>
+						<include>DefSettingsButton2</include>
+					</control>
+				</control>
+				<control type="group">
+					<left>480</left>
+					<top>580</top>
+					<control type="label">
+						<description>CPU Text</description>
+						<font>Tiny</font>
+						<align>left</align>
+						<height>30</height>
+						<label>$LOCALIZE[13271] $INFO[System.CPUUsage]</label>
+						<include>DefSettingsButton2</include>
+					</control>
+					<control type="progress" id="22">
+						<top>40</top>
+						<description>CPU BAR</description>
+						<height>10</height>
+						<info>System.CPUUsage</info>
+						<lefttexture colordiffuse="$VAR[EmbyLeftColourHighlight]">osd/progress-end.png</lefttexture>
+						<midtexture colordiffuse="$VAR[EmbyLeftColourHighlight]">osd/progress-end.png</midtexture>
+						<include>DefSettingsButton2</include>
+					</control>
+					<control type="label">
+						<description>Memory Text</description>
+						<top>70</top>
+						<font>Tiny</font>
+						<height>30</height>
+						<align>left</align>
+						<label>$LOCALIZE[31104] $INFO[system.memory(used),(] [B]/[/B] $INFO[system.memory(total),,)] [B]-[/B] $INFO[system.memory(used.percent)]</label>
+						<include>DefSettingsButton2</include>
+					</control>
+					<control type="progress" id="24">
+						<description>Memory BAR</description>
+						<top>110</top>
+						<height>10</height>
+						<info>system.memory(used)</info>
+						<lefttexture colordiffuse="$VAR[EmbyMiddleColourHighlight]">osd/progress-end.png</lefttexture>
+						<midtexture colordiffuse="$VAR[EmbyMiddleColourHighlight]">osd/progress-end.png</midtexture>
 						<include>DefSettingsButton2</include>
 					</control>
 				</control>
