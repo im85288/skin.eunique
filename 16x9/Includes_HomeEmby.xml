@@ -5423,6 +5423,8 @@
 							<onfocus>CancelAlarm(musicscroll,true)</onfocus>
 							<onunfocus>AlarmClock(musicscroll,Control.Move(5017,6),00:10,silent,loop)</onunfocus>
 						</control>
+						<control type="group">
+							<animation effect="zoom" start="100" end="127" time="100" reversible="false" center="auto">Focus</animation>
 						<control type="image">
 							<aspectratio>stretch</aspectratio>
 							<top>0</top>
@@ -5458,6 +5460,7 @@
 							<midtexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</midtexture>
 							<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
 							<visible>ListItem.IsResumable</visible>
+						</control>
 						</control>
 					</focusedlayout>
 					<content target="video">$VAR[DefWidget14Content]</content>
