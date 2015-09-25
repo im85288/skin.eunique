@@ -65,28 +65,6 @@
 	<value condition="StringCompare(ListItem.Icon,DefaultVideoPlugins.png)"></value>
 	<value></value>
 </variable>
-<variable name="DefSettingsOnRight">
-		<value condition="Window.IsVisible(AppearanceSettings)">ReplaceWindow(VideosSettings)</value>
-		<value condition="Window.IsVisible(VideosSettings)">ReplaceWindow(MusicSettings)</value>
-		<value condition="Window.IsVisible(MusicSettings)">ReplaceWindow(PicturesSettings)</value>
-		<value condition="Window.IsVisible(PicturesSettings)">ReplaceWindow(WeatherSettings)</value>
-		<value condition="Window.IsVisible(WeatherSettings)">ReplaceWindow(NetworkSettings)</value>
-		<value condition="Window.IsVisible(NetworkSettings)">ReplaceWindow(SystemSettings)</value>
-		<value condition="Window.IsVisible(SystemSettings)">ReplaceWindow(PvrSettings)</value>
-		<value condition="Window.IsVisible(PvrSettings)">ReplaceWindow(SkinSettings)</value>
-		<value condition="Window.IsVisible(SkinSettings)">ReplaceWindow(AppearanceSettings)</value>
-	</variable>
-	<variable name="DefSettingsOnLeft">
-		<value condition="Window.IsVisible(AppearanceSettings)">ReplaceWindow(SkinSettings)</value>
-		<value condition="Window.IsVisible(VideosSettings)">ReplaceWindow(AppearanceSettings)</value>
-		<value condition="Window.IsVisible(MusicSettings)">ReplaceWindow(VideosSettings)</value>
-		<value condition="Window.IsVisible(PicturesSettings)">ReplaceWindow(MusicSettings)</value>
-		<value condition="Window.IsVisible(WeatherSettings)">ReplaceWindow(PicturesSettings)</value>
-		<value condition="Window.IsVisible(NetworkSettings)">ReplaceWindow(WeatherSettings)</value>
-		<value condition="Window.IsVisible(SystemSettings)">ReplaceWindow(NetworkSettings)</value>
-		<value condition="Window.IsVisible(PvrSettings)">ReplaceWindow(SystemSettings)</value>
-		<value condition="Window.IsVisible(SkinSettings)">ReplaceWindow(PvrSettings)</value>
-	</variable>
 	<variable name="DefWidgetCast">
 		<value condition="substring(ListItem.Path,videodb://movies/sets,left)">plugin://script.skin.helper.service/?action=getcast&amp;movieset=$INFO[ListItem.DBID]</value>
 		<value condition="Container.Content(movies)">plugin://script.skin.helper.service/?action=getcast&amp;movie=$INFO[ListItem.DBID]</value>
@@ -2043,11 +2021,6 @@
 		<value condition="stringcompare(Window(1103).Property(content),1)">plugin://script.extendedinfo?info=studio&amp;&amp;studio=$INFO[Window(home).Property(ExtStudio)]</value>
 		<value condition="stringcompare(Window(1103).Property(content),2)">plugin://script.extendedinfo?info=similarmovies&amp;&amp;dbid=$INFO[Window(home).Property(ExtDBID)]</value>
 		<value>plugin://script.extendedinfo?info=directormovies&amp;&amp;director=$INFO[Window(home).Property(ExtDirector)]</value>
-	</variable>
-	<variable name="DefDirectorInfoWindowContent">
-		<value condition="stringcompare(Window.Property(content),1)">plugin://script.extendedinfo?info=studio&amp;&amp;studio=$INFO[ListItem.Studio]</value>
-		<value condition="stringcompare(Window.Property(content),2)">plugin://script.extendedinfo?info=similarmovies&amp;&amp;dbid=$INFO[ListItem.DBID]</value>
-		<value>plugin://script.extendedinfo?info=directormovies&amp;&amp;director=$INFO[ListItem.Director]</value>
 	</variable>
 	<variable name="DefMovieDBMoviesContent">
 		<value condition="stringcompare(Window(1104).Property(content),1)">plugin://script.extendedinfo?info=topratedmovies</value>
