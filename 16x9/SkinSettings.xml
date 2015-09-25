@@ -317,7 +317,7 @@
 				<control type="radiobutton" id="9215" description="home.fade">
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
-					<label>Fade Home Screen on Idle</label>
+					<label>31884</label>
 					<selected>Skin.HasSetting(home.fade)</selected>
 					<onclick>Skin.ToggleSetting(home.fade)</onclick>
 				</control>
@@ -525,7 +525,7 @@
 				<control type="radiobutton" id="9199" description="Fade widgets">
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
-					<label>Dim widgets on menu focus</label>
+					<label>31885</label>
 					<selected>Skin.HasSetting(widgets.dim)</selected>
 					<onclick>Skin.ToggleSetting(widgets.dim)</onclick>
 				</control>
@@ -533,7 +533,7 @@
 				<control type="radiobutton" id="9201" description="Lights Out">
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
-					<label>Lights Out</label>
+					<label>31886</label>
 					<selected>Skin.HasSetting(lights.out)</selected>
 					<onclick>Skin.ToggleSetting(lights.out)</onclick>
 				</control>
@@ -595,7 +595,7 @@
 				<control type="button" id="9227" description="Set Music Dir">
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
-					<label>Path to Music Directory</label>
+					<label>31887</label>
 					<label2>[COLOR=$VAR[ColourSelected]]$INFO[Skin.String(cdartlocation)][/COLOR]</label2>
 					<onclick>Skin.SetPath(cdartlocation)</onclick>
 				</control>
@@ -630,14 +630,14 @@
 				<control type="radiobutton" id="92615" description="Hide indicators">
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
-					<label>Hide all indicators</label>
+					<label>31888</label>
 					<selected>Skin.HasSetting(furniture.hideindicators)</selected>
 					<onclick>Skin.ToggleSetting(furniture.hideindicators)</onclick>
 				</control>
 				<control type="radiobutton" id="92616" description="Alternate indicators">
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
-					<label>Use alternate indicators</label>
+					<label>31889</label>
 					<visible>!Skin.HasSetting(furniture.hideindicators)</visible>
 					<selected>Skin.HasSetting(furniture.alternateindicators)</selected>
 					<onclick>Skin.ToggleSetting(furniture.alternateindicators)</onclick>
@@ -645,7 +645,7 @@
 				<control type="radiobutton" id="92611" description="Watched/Unwatched">
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
-					<label>Show unwatched indicator</label>
+					<label>31890</label>
 					<visible>!Skin.HasSetting(furniture.hideindicators)</visible>
 					<selected>Skin.HasSetting(furniture.unwatched)</selected>
 					<onclick>Skin.ToggleSetting(furniture.unwatched)</onclick>
@@ -653,7 +653,7 @@
 				<control type="radiobutton" id="92612" description="Resume indicator">
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
-					<label>Do not show resume indicator</label>
+					<label>31891</label>
 					<visible>!Skin.HasSetting(furniture.hideindicators)</visible>
 					<selected>Skin.HasSetting(furniture.hideresume)</selected>
 					<onclick>Skin.ToggleSetting(furniture.hideresume)</onclick>
@@ -661,7 +661,7 @@
 				<control type="radiobutton" id="92613" description="New indicator">
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
-					<label>Do not show new indicator</label>
+					<label>31892</label>
 					<visible>!Skin.HasSetting(furniture.hideindicators)</visible>
 					<selected>Skin.HasSetting(furniture.hidenew)</selected>
 					<onclick>Skin.ToggleSetting(furniture.hidenew)</onclick>
@@ -694,13 +694,6 @@
 					<label>31154</label>
 					<selected>Skin.HasSetting(furniture.flags)</selected>
 					<onclick>Skin.ToggleSetting(furniture.flags)</onclick>
-				</control>
-				<control type="radiobutton" id="92631" description="Alternate Duration">
-					<width>1390</width>
-					<include>DefSettingsButton2</include>
-					<label>Use Default Duration</label>
-					<selected>Skin.HasSetting(furniture.alternate.duration)</selected>
-					<onclick>Skin.ToggleSetting(furniture.alternate.duration)</onclick>
 				</control>
 				<control type="button" id="9269" description="Country Rating">
 					<width>1390</width>
@@ -757,28 +750,28 @@
 				<control type="radiobutton" id="9270" description="DiscArt">
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
-					<label>Do not show DiscArt</label>
+					<label>31893</label>
 					<selected>Skin.HasSetting(furniture.nodiscart)</selected>
 					<onclick>Skin.ToggleSetting(furniture.nodiscart)</onclick>
 				</control>
 				<control type="radiobutton" id="92702" description="Colour icons">
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
-					<label>Use colour flags</label>
+					<label>31894</label>
 					<selected>Skin.HasSetting(furniture.flags.colour)</selected>
 					<onclick>Skin.ToggleSetting(furniture.flags.colour)</onclick>
 				</control>
 				<control type="radiobutton" id="92703" description="Fanart Dialog Info">
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
-					<label>Show fanart on video info screen</label>
+					<label>31895</label>
 					<selected>Skin.HasSetting(furniture.info.fanart)</selected>
 					<onclick>Skin.ToggleSetting(furniture.info.fanart)</onclick>
 				</control>
 				<control type="button" id="92705" description="Video Info Blur">
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
-					<label>Blur Level</label>
+					<label>31896</label>
 					<label2 fallback="2">[COLOR=$VAR[ColourSelected]]$VAR[VideoInfoBlurLevel][/COLOR]</label2>
 					<onclick>SetProperty(Dialog.NumItems,11)</onclick>
 					<onclick>SetProperty(Dialog.1.Label,1)</onclick>
@@ -858,7 +851,7 @@
 				<control type="radiobutton" id="9240" description="Hide spoilers">
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
-					<label>Hide Spoilers for unwatched TV Shows</label>
+					<label>31897</label>
 					<selected>Skin.HasSetting(osd.hidespoilers)</selected>
 					<onclick>Skin.ToggleSetting(osd.hidespoilers)</onclick>
 				</control>
@@ -879,7 +872,7 @@
 				<control type="radiobutton" id="92722" description="Next Up Poster">
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
-					<label>Show episode poster for next up</label>
+					<label>31934</label>
 					<selected>Skin.HasSetting(nextup.poster)</selected>
 					<onclick>Skin.ToggleSetting(nextup.poster)</onclick>
 				</control>
@@ -929,13 +922,13 @@
 				<control type="button" id="9278" description="export skin settings">
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
-					<label>Backup skin settings</label>
+					<label>31898</label>
 					<onclick>RunScript(script.skin.helper.service,action=backup)</onclick>
 				</control>
 				<control type="button" id="9279" description="import skin settings">
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
-					<label>Import skin settings</label>
+					<label>31899</label>
 					<onclick>RunScript(script.skin.helper.service,action=restore)</onclick>
 				</control>
 				<!-- Views -->
@@ -964,13 +957,13 @@
 					<include>DefSettingsButton2</include>
 					<selected>Skin.HasSetting(ColourHighlight)</selected>
 					<onclick>Skin.ToggleSetting(ColourHighlight)</onclick>
-					<label>Change main highlight colour</label>
+					<label>31900</label>
 				</control>
 				<control type="button" id="9282">
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
 					<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=focuscolor.name)</onclick>
-					<label> - Set main highlight colour</label>
+					<label>31901</label>
 					<label2>[COLOR=$VAR[ColourHighlight]]$INFO[Skin.String(focuscolor.name)][/COLOR]</label2>
 					<visible>Skin.HasSetting(ColourHighlight)</visible>
 				</control>
@@ -986,13 +979,13 @@
 					<include>DefSettingsButton2</include>
 					<selected>Skin.HasSetting(ColourSelected)</selected>
 					<onclick>Skin.ToggleSetting(ColourSelected)</onclick>
-					<label>Change second highlight colour</label>
+					<label>31902</label>
 				</control>
 				<control type="button" id="9285">
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
 					<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=focuscolor2.name)</onclick>
-					<label> - Set second highlight colour</label>
+					<label>31903</label>
 					<label2>[COLOR=$VAR[ColourSelected]]$INFO[Skin.String(focuscolor2.name)][/COLOR]</label2>
 					<visible>Skin.HasSetting(ColourSelected)</visible>
 				</control>
@@ -1008,13 +1001,13 @@
 					<include>DefSettingsButton2</include>
 					<selected>Skin.HasSetting(ColourSelected)</selected>
 					<onclick>Skin.ToggleSetting(ColourSelected)</onclick>
-					<label>Change the selected colour</label>
+					<label>31904</label>
 				</control>
 				<control type="button" id="9288">
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
 					<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=selectedcolor.name)</onclick>
-					<label> - Set selected colour</label>
+					<label>31905</label>
 					<label2>[COLOR=$VAR[ColourSelected]]$INFO[Skin.String(selectedcolor.name)][/COLOR]</label2>
 					<visible>Skin.HasSetting(ColourSelected)</visible>
 				</control>
@@ -1030,14 +1023,14 @@
 					<include>DefSettingsButton2</include>
 					<selected>Skin.HasSetting(WatchedColour)</selected>
 					<onclick>Skin.ToggleSetting(WatchedColour)</onclick>
-					<label>Change the watched icon colour</label>
+					<label>31906</label>
 					<visible>Skin.HasSetting(furniture.alternateindicators)</visible>
 				</control>
 				<control type="button" id="92818">
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
 					<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=watched.colour.name)</onclick>
-					<label> - Set watched colour</label>
+					<label>31907</label>
 					<label2>[COLOR=$INFO[Skin.String(watched.colour.name)]]$INFO[Skin.String(watched.colour.name)][/COLOR]</label2>
 					<visible>Skin.HasSetting(WatchedColour)</visible>
 					<visible>Skin.HasSetting(furniture.alternateindicators)</visible>
@@ -1047,14 +1040,14 @@
 					<include>DefSettingsButton2</include>
 					<selected>Skin.HasSetting(UnwatchedColour)</selected>
 					<onclick>Skin.ToggleSetting(UnwatchedColour)</onclick>
-					<label>Change the unwatched icon colour</label>
+					<label>31908</label>
 					<visible>Skin.HasSetting(furniture.alternateindicators)</visible>
 				</control>
 				<control type="button" id="92828">
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
 					<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=unwatched.colour.name)</onclick>
-					<label> - Set unwatched colour</label>
+					<label>31909</label>
 					<label2>[COLOR=$INFO[Skin.String(unwatched.colour.name)]]$INFO[Skin.String(unwatched.colour.name)][/COLOR]</label2>
 					<visible>Skin.HasSetting(UnwatchedColour)</visible>
 					<visible>Skin.HasSetting(furniture.alternateindicators)</visible>
@@ -1064,14 +1057,14 @@
 					<include>DefSettingsButton2</include>
 					<selected>Skin.HasSetting(NewColour)</selected>
 					<onclick>Skin.ToggleSetting(NewColour)</onclick>
-					<label>Change the new icon colour</label>
+					<label>31910</label>
 					<visible>Skin.HasSetting(furniture.alternateindicators)</visible>
 				</control>
 				<control type="button" id="92838">
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
 					<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=new.colour.name)</onclick>
-					<label> - Set new colour</label>
+					<label>31911</label>
 					<label2>[COLOR=$INFO[Skin.String(new.colour.name)]]$INFO[Skin.String(new.colour.name)][/COLOR]</label2>
 					<visible>Skin.HasSetting(NewColour)</visible>
 					<visible>Skin.HasSetting(furniture.alternateindicators)</visible>
@@ -1081,14 +1074,14 @@
 					<include>DefSettingsButton2</include>
 					<selected>Skin.HasSetting(ResumeColour)</selected>
 					<onclick>Skin.ToggleSetting(ResumeColour)</onclick>
-					<label>Change the resume icon colour</label>
+					<label>31912</label>
 					<visible>Skin.HasSetting(furniture.alternateindicators)</visible>
 				</control>
 				<control type="button" id="92848">
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
 					<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=resume.colour.name)</onclick>
-					<label> - Set resume colour</label>
+					<label>31913</label>
 					<label2>[COLOR=$INFO[Skin.String(resume.colour.name)]]$INFO[Skin.String(resume.colour.name)][/COLOR]</label2>
 					<visible>Skin.HasSetting(ResumeColour)</visible>
 					<visible>Skin.HasSetting(furniture.alternateindicators)</visible>
@@ -1098,14 +1091,14 @@
 					<include>DefSettingsButton2</include>
 					<selected>Skin.HasSetting(PlayingColour)</selected>
 					<onclick>Skin.ToggleSetting(PlayingColour)</onclick>
-					<label>Change the playing icon colour</label>
+					<label>31914</label>
 					<visible>Skin.HasSetting(furniture.alternateindicators)</visible>
 				</control>
 				<control type="button" id="92858">
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
 					<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=playing.colour.name)</onclick>
-					<label> - Set playing colour</label>
+					<label>31915</label>
 					<label2>[COLOR=$INFO[Skin.String(playing.colour.name)]]$INFO[Skin.String(playing.colour.name)][/COLOR]</label2>
 					<visible>Skin.HasSetting(PlayingColour)</visible>
 					<visible>Skin.HasSetting(furniture.alternateindicators)</visible>
@@ -1115,14 +1108,14 @@
 					<include>DefSettingsButton2</include>
 					<selected>Skin.HasSetting(PosterBackingColour)</selected>
 					<onclick>Skin.ToggleSetting(PosterBackingColour)</onclick>
-					<label>Change indicators backing colour</label>
+					<label>31916</label>
 					<visible>!Skin.HasSetting(furniture.alternateindicators)</visible>
 				</control>
 				<control type="button" id="92868">
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
 					<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=posterbacking.colour.name)</onclick>
-					<label> - Set backing colour</label>
+					<label>31917</label>
 					<label2>[COLOR=$INFO[Skin.String(posterbacking.colour.name)]]$INFO[Skin.String(posterbacking.colour.name)][/COLOR]</label2>
 					<visible>Skin.HasSetting(PosterBackingColour)</visible>
 				</control>
@@ -1131,14 +1124,14 @@
 					<include>DefSettingsButton2</include>
 					<selected>Skin.HasSetting(emby.left.colour)</selected>
 					<onclick>Skin.ToggleSetting(emby.left.colour)</onclick>
-					<label>Change left thumb colour emby screen</label>
+					<label>31918</label>
 					<visible>Skin.HasSetting(home.emby)</visible>
 				</control>
 				<control type="button" id="92870">
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
 					<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=emby.left.colour.name)</onclick>
-					<label> - Set left colour</label>
+					<label>31919</label>
 					<label2>[COLOR=$INFO[Skin.String(emby.left.colour.name)]]$INFO[Skin.String(emby.left.colour.name)][/COLOR]</label2>
 					<visible>Skin.HasSetting(emby.left.colour) + Skin.HasSetting(home.emby)</visible>
 				</control>
@@ -1147,14 +1140,14 @@
 					<include>DefSettingsButton2</include>
 					<selected>Skin.HasSetting(emby.right.colour)</selected>
 					<onclick>Skin.ToggleSetting(emby.right.colour)</onclick>
-					<label>Change right thumb colour emby</label>
+					<label>31920</label>
 					<visible>Skin.HasSetting(home.emby)</visible>
 				</control>
 				<control type="button" id="92872">
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
 					<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=emby.right.colour.name)</onclick>
-					<label> - Set right colour</label>
+					<label>31921</label>
 					<label2>[COLOR=$INFO[Skin.String(emby.right.colour.name)]]$INFO[Skin.String(emby.right.colour.name)][/COLOR]</label2>
 					<visible>Skin.HasSetting(emby.right.colour) + Skin.HasSetting(home.emby)</visible>
 				</control>
@@ -1163,13 +1156,13 @@
 					<include>DefSettingsButton2</include>
 					<selected>Skin.HasSetting(emby.middle.colour)</selected>
 					<onclick>Skin.ToggleSetting(emby.middle.colour)</onclick>
-					<label>Change middle thumb colour emby screen</label>
+					<label>31922</label>
 				</control>
 				<control type="button" id="92874">
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
 					<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=emby.middle.colour.name)</onclick>
-					<label> - Set middle colour</label>
+					<label>31923</label>
 					<label2>[COLOR=$INFO[Skin.String(emby.middle.colour.name)]]$INFO[Skin.String(emby.middle.colour.name)][/COLOR]</label2>
 					<visible>Skin.HasSetting(emby.middle.colour) + Skin.HasSetting(home.emby)</visible>
 				</control>
@@ -1178,14 +1171,14 @@
 					<include>DefSettingsButton2</include>
 					<selected>Skin.HasSetting(emby.menu.colour)</selected>
 					<onclick>Skin.ToggleSetting(emby.menu.colour)</onclick>
-					<label>Change home menu colour</label>
+					<label>31924</label>
 					<visible>Skin.HasSetting(home.emby)</visible>
 				</control>
 				<control type="button" id="92876">
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
 					<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=emby.menu.colour.name)</onclick>
-					<label> - Set menu colour</label>
+					<label>31925</label>
 					<label2>[COLOR=$INFO[Skin.String(emby.menu.colour.name)]]$INFO[Skin.String(emby.menu.colour.name)][/COLOR]</label2>
 					<visible>Skin.HasSetting(emby.menu.colour) + Skin.HasSetting(home.emby)</visible>
 				</control>
@@ -1194,14 +1187,14 @@
 					<include>DefSettingsButton2</include>
 					<selected>Skin.HasSetting(emby.menu.text.colour)</selected>
 					<onclick>Skin.ToggleSetting(emby.menu.text.colour)</onclick>
-					<label>Change menu text colour</label>
+					<label>31926</label>
 					<visible>Skin.HasSetting(home.emby)</visible>
 				</control>
 				<control type="button" id="92884">
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
 					<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=emby.menu.text.colour.name)</onclick>
-					<label> - Set menu text colour</label>
+					<label>31927</label>
 					<label2>[COLOR=$INFO[Skin.String(emby.menu.text.colour.name)]]$INFO[Skin.String(emby.menu.text.colour.name)][/COLOR]</label2>
 					<visible>Skin.HasSetting(emby.menu.text.colour) + Skin.HasSetting(home.emby)</visible>
 				</control>
@@ -1210,14 +1203,14 @@
 					<include>DefSettingsButton2</include>
 					<selected>Skin.HasSetting(emby.flags.colour)</selected>
 					<onclick>Skin.ToggleSetting(emby.flags.colour)</onclick>
-					<label>Change flags back colour</label>
+					<label>31928</label>
 					<visible>Skin.HasSetting(home.emby)</visible>
 				</control>
 				<control type="button" id="92878">
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
 					<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=emby.flags.colour.name)</onclick>
-					<label> - Set flags back colour</label>
+					<label>31929</label>
 					<label2>[COLOR=$INFO[Skin.String(emby.flags.colour.name)]]$INFO[Skin.String(emby.flags.colour.name)][/COLOR]</label2>
 					<visible>Skin.HasSetting(emby.flags.colour) + Skin.HasSetting(home.emby)</visible>
 				</control>
@@ -1226,14 +1219,14 @@
 					<include>DefSettingsButton2</include>
 					<selected>Skin.HasSetting(emby.flags.text.colour)</selected>
 					<onclick>Skin.ToggleSetting(emby.flags.text.colour)</onclick>
-					<label>Change flags text colour</label>
+					<label>31930</label>
 					<visible>Skin.HasSetting(home.emby)</visible>
 				</control>
 				<control type="button" id="92880">
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
 					<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=emby.flags.text.colour.name)</onclick>
-					<label> - Set flags text colour</label>
+					<label>31931</label>
 					<label2>[COLOR=$INFO[Skin.String(emby.flags.text.colour.name)]]$INFO[Skin.String(emby.flags.text.colour.name)][/COLOR]</label2>
 					<visible>Skin.HasSetting(emby.flags.text.colour) + Skin.HasSetting(home.emby)</visible>
 				</control>
@@ -1242,14 +1235,14 @@
 					<include>DefSettingsButton2</include>
 					<selected>Skin.HasSetting(emby.flags.icon.colour)</selected>
 					<onclick>Skin.ToggleSetting(emby.flags.icon.colour)</onclick>
-					<label>Change flags icon colour</label>
+					<label>31932</label>
 					<visible>Skin.HasSetting(home.emby)</visible>
 				</control>
 				<control type="button" id="92882">
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
 					<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=emby.flags.icon.colour.name)</onclick>
-					<label> - Set flags icon colour</label>
+					<label>31933</label>
 					<label2>[COLOR=$INFO[Skin.String(emby.flags.icon.colour.name)]]$INFO[Skin.String(emby.flags.icon.colour.name)][/COLOR]</label2>
 					<visible>Skin.HasSetting(emby.flags.icon.colour) + Skin.HasSetting(home.emby)</visible>
 				</control>
