@@ -85,6 +85,7 @@
 		<value condition="Container.Content(tvshows)">$INFO[ListItem.Property(TotalSeasons),, $LOCALIZE[33054]]$INFO[ListItem.Property(UnWatchedEpisodes), • , $LOCALIZE[31215]]$INFO[ListItem.Property(TotalEpisodes), • , $LOCALIZE[20360]]$INFO[ListItem.Rating, • ]</value>
 		<value condition="[Container.Content(seasons)]">$INFO[ListItem.Property(UnWatchedEpisodes),, $LOCALIZE[31215]]$INFO[ListItem.Property(TotalEpisodes), • , $LOCALIZE[20360]]$INFO[ListItem.Rating, • ]$INFO[ListItem.LastPlayed]</value>
 		<value condition="Container.Content(episodes)">$INFO[ListItem.Premiered]$VAR[LabelDuration, • ]$INFO[ListItem.Rating, • ]</value>
+		<value condition="Container.Content(movies)">$VAR[LabelYear]$VAR[LabelDuration, • ]$INFO[ListItem.Rating, • ]</value>
 		<value condition="!IsEmpty(Window(home).Property(SkinHelper.MovieSet.Years))">$INFO[Window(home).Property(SkinHelper.MovieSet.Years)]</value>
 	</variable>
 	<variable name="LabelDuration">
