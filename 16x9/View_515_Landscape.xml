@@ -34,7 +34,17 @@
                 <viewtype label="31833">list</viewtype>
                 <scrolltime tween="quadratic">400</scrolltime>
                 <itemlayout width="384" height="216">
-
+                        <control type="label" id="13370">
+                        <posx>5</posx>
+                        <posy>5</posy>
+                        <width>374</width>
+                        <height>206</height>
+                            <aligny>center</aligny>
+                            <align>center</align>
+                            <font>symbolbiggest</font>
+                            <label>$VAR[SwapDefaultImage]</label>
+                            <textcolor>white</textcolor>
+                        </control>
                     <control type="image">
                         <description>Landscape</description>
                         <posx>5</posx>
@@ -42,7 +52,7 @@
                         <width>374</width>
                         <height>206</height>
                         <texture background="true">$VAR[LandscapeImage]</texture>
-                        <aspectratio scalediffuse="false">stretch</aspectratio>
+                        <aspectratio scalediffuse="false" aligny="top">scale</aspectratio>
                         <fadetime>200</fadetime>
                     </control>
                     <control type="group">
@@ -158,6 +168,17 @@
                             <onfocus condition="Container.Content(movies)">ClearProperty(TVShowID,home)</onfocus>
                             <onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
                         </control>
+                        <control type="label" id="13370">
+                         <posx>5</posx>
+                        <posy>5</posy>
+                        <width>374</width>
+                        <height>206</height>
+                           <aligny>center</aligny>
+                            <align>center</align>
+                            <font>symbolbiggest</font>
+                            <label>$VAR[SwapDefaultImage]</label>
+                            <textcolor>white</textcolor>
+                        </control>
                         <control type="image">
                             <posx>5</posx>
                             <posy>5</posy>
@@ -171,7 +192,7 @@
                             <posy>5</posy>
                             <width>374</width>
                             <height>206</height>
-                            <aspectratio scalediffuse="false">stretch</aspectratio>
+                            <aspectratio scalediffuse="false" aligny="top">scale</aspectratio>
                             <texture diffuse="diffuse/extraposter-ref-blur-rev.png" background="true">$VAR[LandscapeImage]</texture>
                             <fadetime>200</fadetime>
                         </control>
