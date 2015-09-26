@@ -1227,6 +1227,7 @@
 	</variable>
 	<variable name="ShortVideoInfoLabel">
 		<value condition="Container.Content(episodes)">$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Title]</value>
+		<value condition="Container.Content(seasons)">$INFO[ListItem.Label]</value>
 		<value condition="Container.Content(movies) + !IsEmpty(ListItem.Tagline)">$INFO[ListItem.Tagline]</value>
 	</variable>
 	<variable name="CastList">
@@ -1573,25 +1574,6 @@
 		<value condition="substring(VideoPlayer.mpaa,Brazil:16) | substring(VideoPlayer.mpaa,16 anos)">16</value>
 		<value condition="substring(VideoPlayer.mpaa,Brazil:18) | substring(VideoPlayer.mpaa,18 anos)">18</value>
 		<value>$INFO[VideoPlayer.mpaa]</value>
-	</variable>
-	<variable name="MPAA_Home">
-		<value condition="SubString(Container(301).ListItem.Mpaa,gb-pgpg)">PG</value>
-		<value condition="SubString(Container(301).ListItem.Mpaa,gb-12A12A)">12A</value>
-		<value condition="SubString(Container(301).ListItem.Mpaa,gb-12)">12</value>
-		<value condition="SubString(Container(301).ListItem.Mpaa,gb-15)">15</value>
-		<value condition="SubString(Container(301).ListItem.Mpaa,gb-18)">18</value>
-		<value condition="SubString(Container(301).ListItem.Mpaa,gb-u)">U</value>
-		<value condition="SubString(Container(301).ListItem.Mpaa,gb-r18)">R18</value>
-		<value>$INFO[Container(301).ListItem.Mpaa]</value>
-	</variable>
-	<variable name="DefaultMusicLabel">
-		<value condition="Stringcompare(ListItem.Icon,DefaultAddonMusic.png)"></value>
-		<value condition="Stringcompare(ListItem.Icon,DefaultAlbumCover.png)"></value>
-		<value condition="Stringcompare(ListItem.Icon,DefaultMusicRecentlyPlayed.png)"></value>
-		<value condition="Stringcompare(ListItem.Icon,DefaultMusicSongs.png)"></value>
-		<value condition="Stringcompare(ListItem.Icon,xxDefaultAlbumCover.png)">PG</value>
-		<value condition="Substring(ListItem.Icon,Default,left) | [IsEmpty(ListItem.Title) + IsEmpty(ListItem.Icon)]"></value>
-		<value></value>
 	</variable>
 	<variable name="VideoAspect">
 		<value condition="StringCompare(ListItem.VideoAspect,1.33)">4:3</value>

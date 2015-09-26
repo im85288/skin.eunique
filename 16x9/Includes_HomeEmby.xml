@@ -768,16 +768,6 @@
 					<texture colordiffuse="PanelWhite100" border="8">$VAR[HeaderIcon]</texture>
 					<visible>false</visible>
 				</control>
-				<!--<control type="image">
-					<top>-14</top>
-					<left>-14</left>
-					<width>78</width>
-					<height>78</height>
-					<texture diffuse="common/circle.png" colordiffuse="PanelWhite100">$VAR[HeaderIcon]</texture>
-					<visible>!Container.Scrolling</visible>
-					<visible>[!Skin.HasSetting(hide.busydialog) | !Window.IsVisible(DialogBusy.xml)] + !Substring(Control.GetLabel(8308),empty.png)</visible>
-					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
-				</control>-->
 				<control type="image">
 					<texture diffuse="common/circle.png">special://skin/extras/icons/emby2.png</texture>
 					<visible>[!Skin.HasSetting(hide.busydialog) | !Window.IsVisible(DialogBusy.xml)] + IsEmpty(Window(Home).Property(EmbyUserImage))</visible>
@@ -1881,7 +1871,7 @@
 					<onleft>6013</onleft>
 					<onright>6014</onright>
 					<onback>300</onback>
-					<left>358</left>
+					<left>353</left>
 					<width>274</width>
 					<posy>790</posy>
 					<height>245</height>
@@ -3250,7 +3240,7 @@
 					<visible>!Control.HasFocus(30133)</visible>
 				</control>
 				<control type="label">
-					<left>431</left>
+					<left>432</left>
 					<top>805</top>
 					<width>50</width>
 					<height>40</height>
@@ -4014,7 +4004,7 @@
 					<visible>!Control.HasFocus(40133)</visible>
 				</control>
 				<control type="label">
-					<left>431</left>
+					<left>432</left>
 					<top>805</top>
 					<width>50</width>
 					<height>40</height>
@@ -4167,7 +4157,7 @@
 					<visible>!Control.HasFocus(40155)</visible>
 				</control>
 				<control type="label">
-					<left>841</left>
+					<left>842</left>
 					<top>805</top>
 					<width>50</width>
 					<height>40</height>
@@ -4712,7 +4702,7 @@
 					<include>Animation.FadeOut</include>
 					<itemlayout width="820" height="460">
 						<control type="image">
-							<aspectratio>keep</aspectratio>
+							<aspectratio>scale</aspectratio>
 							<texture background="true">$VAR[FanartImage]</texture>
 							<visible>!Stringcompare(Skin.String(widget12),PopularArtists)</visible>
 							<visible>!Stringcompare(Skin.String(widget12),HypedArtists)</visible>
@@ -4757,7 +4747,7 @@
                             <texture border="5" colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
                         </control>
 						<control type="image">
-							<aspectratio>keep</aspectratio>
+							<aspectratio>scale</aspectratio>
 							<texture background="true">$VAR[FanartImage]</texture>
                             <animation type="Focus" reversible="false">
                                 <effect type="zoom" end="95" time="200" center="auto" tween="quadratic" easing="out"/>
@@ -5059,7 +5049,7 @@
 					<onleft>5013</onleft>
 					<onright>5014</onright>
 					<onback>300</onback>
-					<left>358</left>
+					<left>353</left>
 					<width>274</width>
 					<posy>790</posy>
 					<height>245</height>
@@ -5190,7 +5180,7 @@
 					<include>Animation.FadeOut</include>
 					<itemlayout width="273" height="245">
 						<control type="image">
-							<aspectratio>keep</aspectratio>
+							<aspectratio>scale</aspectratio>
 							<texture background="true" colordiffuse="$VAR[EmbyRightColourHighlight]">$VAR[MusicGenres]</texture>
 						</control>
 					</itemlayout>
@@ -5214,7 +5204,7 @@
                             <textcolor>white</textcolor>
                         </control>
 						<control type="image">
-							<aspectratio>keep</aspectratio>
+							<aspectratio>scale</aspectratio>
 							<texture background="true" colordiffuse="$VAR[EmbyRightColourHighlight]">$VAR[MusicGenres]</texture>
 						</control>
 						<control type="label">
@@ -5285,7 +5275,7 @@
 							<aligny>center</aligny>
 							<align>center</align>
 							<font>symbolbiggest</font>
-							<label>$VAR[DefaultMusicLabel]</label>
+							<label>$VAR[SwapDefaultImage]</label>
 							<visible>!Stringcompare(Skin.String(widget13),PopularArtists)</visible>
 							<visible>!Stringcompare(Skin.String(widget13),HypedArtists)</visible>
 							<visible>IsEmpty(ListItem.Title) | substring(ListItem.Icon,Default,left)</visible>
@@ -5317,7 +5307,7 @@
 								<aligny>center</aligny>
 								<align>center</align>
 								<font>symbolbiggest</font>
-								<label>$VAR[DefaultMusicLabel]</label>
+								<label>$VAR[SwapDefaultImage]</label>
 								<visible>!Stringcompare(Skin.String(widget13),PopularArtists)</visible>
 								<visible>!Stringcompare(Skin.String(widget13),HypedArtists)</visible>
 								<visible>IsEmpty(ListItem.Title) | substring(ListItem.Icon,Default,left)</visible>
@@ -5329,6 +5319,28 @@
 									<texture background="true">$INFO[Listitem.Thumb]</texture>
 								</control>
 								<visible>Stringcompare(Skin.String(widget13),PopularArtists) | Stringcompare(Skin.String(widget13),HypedArtists)</visible>
+							</control>
+							<control type="image">
+								<description>Title overlay</description>
+								<left>0</left>
+								<top>0</top>
+								<right>0</right>
+								<bottom>0</bottom>
+								<texture border="15" colordiffuse="af000000">common/white.png</texture>
+								<visible>Control.HasFocus(5016)</visible>
+							</control>
+							<control type="textbox">
+								<left>0</left>
+								<top>0</top>
+								<right>0</right>
+								<bottom>0</bottom>
+								<align>center</align>
+								<aligny>center</aligny>
+								<font>Tiny</font>
+								<textcolor>white2</textcolor>
+								<selectedcolor>white2</selectedcolor>
+								<label>$INFO[ListItem.Artist][CR] • [CR]$INFO[ListItem.Label]</label>
+								<visible>Control.HasFocus(5016)</visible>
 							</control>
 							<control type="progress">
 								<bottom>7</bottom>
@@ -5396,7 +5408,7 @@
 							<aligny>center</aligny>
 							<align>center</align>
 							<font>symbolbiggest</font>
-							<label>$VAR[DefaultMusicLabel]</label>
+							<label>$VAR[SwapDefaultImage]</label>
 							<visible>!Stringcompare(Skin.String(widget14),PopularArtists)</visible>
 							<visible>!Stringcompare(Skin.String(widget14),HypedArtists)</visible>
 							<visible>IsEmpty(ListItem.Title) | substring(ListItem.Icon,Default,left)</visible>
@@ -5442,7 +5454,7 @@
 							<aligny>center</aligny>
 							<align>center</align>
 							<font>symbolbiggest</font>
-							<label>$VAR[DefaultMusicLabel]</label>
+							<label>$VAR[SwapDefaultImage]</label>
 							<visible>!Stringcompare(Skin.String(widget14),PopularArtists)</visible>
 							<visible>!Stringcompare(Skin.String(widget14),HypedArtists)</visible>
 							<visible>IsEmpty(ListItem.Title) | substring(ListItem.Icon,Default,left)</visible>
@@ -5456,6 +5468,28 @@
 							</control>
 							<visible>Stringcompare(Skin.String(widget14),PopularArtists) | Stringcompare(Skin.String(widget14),HypedArtists)</visible>
 						</control>
+							<control type="image">
+								<description>Title overlay</description>
+								<left>0</left>
+								<top>0</top>
+								<right>0</right>
+								<bottom>0</bottom>
+								<texture border="15" colordiffuse="af000000">common/white.png</texture>
+								<visible>Control.HasFocus(5017)</visible>
+							</control>
+							<control type="textbox">
+								<left>0</left>
+								<top>0</top>
+								<right>0</right>
+								<bottom>0</bottom>
+								<align>center</align>
+								<aligny>center</aligny>
+								<font>Tiny</font>
+								<textcolor>white2</textcolor>
+								<selectedcolor>white2</selectedcolor>
+								<label>$INFO[ListItem.Artist][CR] • [CR]$INFO[ListItem.Label]</label>
+								<visible>Control.HasFocus(5017)</visible>
+							</control>
 						<control type="progress">
 							<bottom>7</bottom>
 							<height>8</height>
@@ -5620,23 +5654,17 @@
 						</control>
 						<control type="image">
 							<description>Title overlay</description>
-							<left>0</left>
-							<top>390</top>
-							<width>316</width>
-							<height>80</height>
 							<texture border="15" colordiffuse="af000000">common/white.png</texture>
+								<visible>Control.HasFocus(15017)</visible>
 						</control>
 						<control type="textbox">
-							<left>0</left>
-							<top>390</top>
-							<width>311</width>
-							<height>78</height>
 							<align>center</align>
 							<aligny>center</aligny>
 							<font>SmallBold</font>
 							<textcolor>white2</textcolor>
 							<selectedcolor>white2</selectedcolor>
-							<label fallback="-">$INFO[Container(15017).ListItem.Title]</label>
+							<label fallback="-">$INFO[Container(15017).ListItem.Artist][CR] • [CR]$INFO[Container(15017).ListItem.Label]</label>
+								<visible>Control.HasFocus(15017)</visible>
 						</control>
 					</control>
 				</control>
@@ -5715,7 +5743,7 @@
 					<include>Animation.FadeOut</include>
 					<itemlayout width="820" height="460">
 						<control type="image">
-							<aspectratio>stretch</aspectratio>
+							<aspectratio>scale</aspectratio>
 							<texture background="true">$VAR[FanartImage]</texture>
 						</control>
 					</itemlayout>
@@ -5724,7 +5752,7 @@
                             <texture border="5" colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
                         </control>
 						<control type="image">
-							<aspectratio>keep</aspectratio>
+							<aspectratio>scale</aspectratio>
 							<texture background="true">$VAR[FanartImage]</texture>
                             <animation type="Focus" reversible="false">
                                 <effect type="zoom" end="95" time="200" center="auto" tween="quadratic" easing="out"/>
@@ -5744,9 +5772,10 @@
 					<texture border="15" colordiffuse="af000000">common/white.png</texture>
 				</control>
 				<control type="label">
-					<posx>200</posx>
+					<left>185</left>
 					<posy>712</posy>
-					<width>695</width>
+					<width>800</width>
+					<align>left</align>
 					<aligny>center</aligny>
 					<height>78</height>
 					<font>SmallBold</font>
@@ -5975,7 +6004,7 @@
 					<description>All Movies</description>
 					<left>980</left>
 					<posy>790</posy>
-					<width>383</width>
+					<width>410</width>
 					<height>245</height>
 					<texture border="15" colordiffuse="$VAR[EmbyLeftColourHighlight]">common/white.png</texture>
 				</control>
@@ -5984,7 +6013,7 @@
 					<description>All music</description>
 					<left>980</left>
 					<posy>790</posy>
-					<width>383</width>
+					<width>410</width>
 					<height>245</height>
 					<label></label>
 					<font>symbolbiggest</font>
@@ -5996,14 +6025,14 @@
 					<description>Title overlay</description>
 					<left>980</left>
 					<posy>990</posy>
-					<width>383</width>
+					<width>410</width>
 					<height>45</height>
 					<texture border="15" colordiffuse="af000000">common/white.png</texture>
 				</control>
 				<control type="label">
 					<left>980</left>
 					<posy>990</posy>
-					<width>383</width>
+					<width>410</width>
 					<align>center</align>
 					<height>45</height>
 					<font>Small</font>
@@ -6065,25 +6094,26 @@
 					<label>19023</label>
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 				</control>
-				<control type="image">
-					<left>1905</left>
-					<top>805</top>
-					<height>45</height>
-					<width>40</width>
-					<texture colordiffuse="Dark1">common/circle.png</texture>
-					<aspectratio align="center" aligny="center">keep</aspectratio>
+				<control type="label">
+					<left>1892</left>
+					<top>798</top>
+					<width>50</width>
+					<height>50</height>
+					<font>symbolmenu</font>
+					<label></label>
+					<textcolor>white2</textcolor>
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 				</control>
 				<control type="label">
-					<left>1905</left>
+					<left>1892</left>
 					<top>805</top>
-					<height>45</height>
-					<width>40</width>
+					<width>50</width>
+					<height>40</height>
 					<align>center</align>
 					<aligny>center</aligny>
-					<label>$INFO[Pvr.BackendChannels]</label>
-					<font>Flag</font>
+					<font>minisymbol</font>
 					<textcolor>black</textcolor>
+					<label>$INFO[Pvr.BackendChannels]</label>
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 				</control>
 				</control>
@@ -6102,7 +6132,7 @@
 						<onleft condition="!IntegerGreaterThan(Container(7016).NumItems,0)">70121</onleft>
 						<onup>300</onup>
 						<ondown>7016</ondown>
-					<onback>300</onback>
+						<onback>300</onback>
 						<textoffsetx>0</textoffsetx>
 						<label>$VAR[EmbyWidget5Label]</label>
 						<focusedcolor>$VAR[ColourHighlight]</focusedcolor>
@@ -6124,7 +6154,7 @@
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 					<top>330</top>
 					<left>980</left>
-					<width>383</width>
+					<width>410</width>
 					<height>460</height>
 					<onup condition="Skin.HasSetting(global.kioskmode)">300</onup>
 					<onup condition="!Skin.HasSetting(global.kioskmode)">70161</onup>
@@ -6141,18 +6171,31 @@
 					<scrolltime tween="quadratic">100</scrolltime>
 					<include>Animation.FadeIn</include>
 					<include>Animation.FadeOut</include>
-					<itemlayout height="46" width="383">
+					<itemlayout height="46" width="410">
 						<control type="label">
+							<left>5</left>
+							<align>left</align>
+							<aligny>center</aligny>
+							<height>46</height>
+							<width>48</width>
+							<font>MiniBold</font>
+							<textcolor>white</textcolor>
+							<selectedcolor>white</selectedcolor>
+							<label>$INFO[ListItem.ChannelNumberLabel]</label>
+						</control>
+						<control type="label">
+							<left>50</left>
+							<right>5</right>
 							<align>left</align>
 							<aligny>center</aligny>
 							<height>46</height>
 							<font>MiniBold</font>
 							<textcolor>white</textcolor>
 							<selectedcolor>white</selectedcolor>
-							<label>$INFO[ListItem.ChannelNumberLabel,,  ]$INFO[ListItem.ChannelName]$INFO[ListItem.Title,  [I],[/I]]</label>
+							<label>$INFO[ListItem.ChannelName]$INFO[ListItem.Title,  [I],[/I]]</label>
 						</control>
 					</itemlayout>
-					<focusedlayout height="46" width="383">
+					<focusedlayout height="46" width="410">
 						<control type="button" id="70171">
 							<onfocus>CancelAlarm(livetvscroll,true)</onfocus>
 							<onunfocus>AlarmClock(livetvscroll,Control.Move(7016,1),00:10,silent,loop)</onunfocus>
@@ -6170,13 +6213,26 @@
 							<visible>!Control.HasFocus(7016)</visible>
 						</control>
 						<control type="label">
+							<left>5</left>
+							<align>left</align>
+							<aligny>center</aligny>
+							<height>46</height>
+							<width>48</width>
+							<font>MiniBold</font>
+							<textcolor>$VAR[ColourSelected]</textcolor>
+							<selectedcolor>$VAR[ColourSelected]</selectedcolor>
+							<label>$INFO[ListItem.ChannelNumberLabel]</label>
+						</control>
+						<control type="label">
+							<left>50</left>
+							<right>5</right>
 							<align>left</align>
 							<aligny>center</aligny>
 							<height>46</height>
 							<font>MiniBold</font>
 							<textcolor>$VAR[ColourSelected]</textcolor>
 							<selectedcolor>$VAR[ColourSelected]</selectedcolor>
-							<label>$INFO[ListItem.ChannelNumberLabel,,  ]$INFO[ListItem.ChannelName]$INFO[ListItem.Title,  [I],[/I]]</label>
+							<label>$INFO[ListItem.ChannelName]$INFO[ListItem.Title,  [I],[/I]]</label>
 						</control>
 					</focusedlayout>
 					<content target="video">$VAR[DefWidget5Content]</content>
@@ -6207,20 +6263,12 @@
 						<control type="group">
 							<height>317</height>
 							<control type="image">
-								<left>2</left>
-								<top>2</top>
-								<right>2</right>
-								<bottom>2</bottom>
 								<fadetime>200</fadetime>
 								<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 								<texture diffuse="common/box.png" background="true" fallback="pvr/background.jpg">$INFO[Container(7016).ListItem.Thumb]</texture>
 								<visible>IsEmpty(Window(Home).Property(SkinHelper.ListItemThumb))</visible>
 							</control>
 							<control type="image">
-								<left>2</left>
-								<top>2</top>
-								<right>2</right>
-								<bottom>2</bottom>
 								<fadetime>200</fadetime>
 								<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
 								<texture diffuse="common/box.png" background="true" fallback="pvr/background.jpg">$INFO[Window(Home).Property(SkinHelper.ListItemThumb)]</texture>
@@ -6228,10 +6276,6 @@
 							</control>
 							<control type="image">
 								<description>Title overlay</description>
-								<left>2</left>
-								<top>2</top>
-								<right>2</right>
-								<bottom>2</bottom>
 								<texture border="15" colordiffuse="44000000">common/white.png</texture>
 								<visible>!IsEmpty(Window(Home).Property(SkinHelper.ListItemThumb))</visible>
 							</control>
@@ -6267,8 +6311,8 @@
 						</control>
 						<control type="group">
 							<visible>Control.HasFocus(7016)</visible>
-							<left>2</left>
-							<right>2</right>
+							<left>5</left>
+							<right>5</right>
 							<top>317</top>
 							<height>143</height>
 							<control type="label">
@@ -6303,8 +6347,8 @@
 							</control>
 							<control type="progress">
 								<top>42</top>
-								<left>10</left>
-								<right>10</right>
+								<left>5</left>
+								<right>5</right>
 								<height>6</height>
 								<reveal>true</reveal>
 								<info>Container(7016).ListItem.Progress</info>
@@ -6330,8 +6374,8 @@
 						</control>
 						<control type="group">
 							<visible>!Control.HasFocus(7016)</visible>
-							<left>2</left>
-							<right>2</right>
+							<left>5</left>
+							<right>5</right>
 							<top>317</top>
 							<height>143</height>
 							<control type="label">
@@ -6366,8 +6410,8 @@
 							</control>
 							<control type="progress">
 								<top>42</top>
-								<left>10</left>
-								<right>10</right>
+								<left>5</left>
+								<right>5</right>
 								<height>6</height>
 								<reveal>true</reveal>
 								<info>Container(7016).ListItem.Progress</info>
