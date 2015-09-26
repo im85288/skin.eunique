@@ -125,6 +125,15 @@
 				<visible>!Container.Content(albums)</visible>
 			</control>
 			<control type="image">
+				<left>602</left>
+				<right>10</right>
+				<height>879</height>
+				<fadetime>1000</fadetime>
+				<aspectratio align="left" aligny="center" scalediffuse="false">scale</aspectratio>
+				<texture flipx="true" background="true" diffuse="diffuse/listposter-ref.png">$INFO[Window(home).Property(VideoInfo.ImageFilter)]</texture>
+				<visible>Container.Content(albums)</visible>
+			</control>
+			<control type="image">
 				<width>879</width>
 				<height>879</height>
 				<fadetime>100</fadetime>
@@ -141,26 +150,16 @@
 				<texture flipx="true" background="true" diffuse="diffuse/listposter-ref.png">$INFO[Window(home).Property(VideoInfo.ImageFilter)]</texture>
 				<visible>!Container.Content(albums)</visible>
 			</control>
-			<control type="image">
-				<left>602</left>
-				<right>10</right>
-				<height>879</height>
-				<fadetime>1000</fadetime>
-				<aspectratio align="left" aligny="center" scalediffuse="false">scale</aspectratio>
-				<texture flipx="true" background="true" diffuse="diffuse/listposter-ref.png">$INFO[Window(home).Property(VideoInfo.ImageFilter)]</texture>
-				<visible>Container.Content(albums)</visible>
-			</control>
 			<control type="textbox">
 				<left>607</left>
-				<top>-5</top>
+				<top>0</top>
 				<right>15</right>
 				<align>left</align>
-				<height>46</height>
+				<height>50</height>
 				<font>MediumBold</font>
 				<scroll>true</scroll>
 				<textcolor>white</textcolor>
 				<label>$VAR[LabelDirector]</label>
-				<visible>!Container.Content(albums)</visible>
 			</control>
 			<control type="label">
 				<left>607</left>
@@ -171,19 +170,17 @@
 			   <font>MediumSmallBold</font>
 				<textcolor>white</textcolor>
 				<label>$VAR[LabelDuration]</label>
-				<visible>!Container.Content(albums)</visible>
 			</control>
 			<control type="textbox">
 				<left>607</left>
 				<top>110</top>
 				<right>10</right>
-				<height>32</height>
+				<height>34</height>
 				<align>left</align>
 				<font>TinyBold</font>
 				<textcolor>white</textcolor>
 				<label>$VAR[LabelGenreList]</label>
 				<autoscroll delay="500" time="1000" repeat="500"/>
-				<visible>!Container.Content(albums)</visible>
 			</control>
 			<control type="textbox">
 				<left>607</left>
@@ -212,9 +209,9 @@
 			<control type="textbox">
 				<description>textarea</description>
 				<left>607</left>
-				<top>10</top>
+				<top>245</top>
 				<right>15</right>
-				<bottom>40</bottom>
+				<bottom>57</bottom>
 				<align>right</align>
 				<font>MediumLargeBold</font>
 				<textcolor>white</textcolor>

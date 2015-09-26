@@ -43,6 +43,8 @@
 		<value condition="Container.Content(genres) + Window.IsVisible(MyVideoNav.xml)">$VAR[MovieGenres]</value>
 		<value condition="Container.Content(genres) + Window.IsVisible(MyMusicNav.xml)">$VAR[MusicGenres]</value>
 		<value condition="!IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>
+		<value condition="!IsEmpty(Container.Art(artist.thumb))">$INFO[Container.Art(artist.thumb)]</value>
+		<value condition="!IsEmpty(Container.Art(artist.fanart))">$INFO[Container.Art(artist.fanart)]</value>
 		<value condition="Substring(ListItem.Icon,Default,left) | [IsEmpty(ListItem.Title) + IsEmpty(ListItem.Icon)]">Default.png</value>
 		<value>$INFO[ListItem.Icon]</value>
 	</variable>

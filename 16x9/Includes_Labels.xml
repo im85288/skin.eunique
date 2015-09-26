@@ -71,6 +71,7 @@
 		<value>$LOCALIZE[19055]</value>
 	</variable>
 	<variable name="LabelGenreList">
+		<value condition="Container.Content(albums) + [Control.IsVisible(50) | Control.IsVisible(57)]">$INFO[Window(Home).Property(SkinHelper.ListItemGenres)]</value>
 		<value condition="Container.Content(albums)">$INFO[ListItem.Album]</value>
 		<value condition="Container.Content(seasons)">$INFO[Window(Home).Property(SkinHelper.ListItemGenres)]</value>
 		<value condition="Container.Content(tvshows)">$INFO[Window(Home).Property(SkinHelper.ListItemGenres)]</value>
