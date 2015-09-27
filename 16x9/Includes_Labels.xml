@@ -1255,19 +1255,19 @@
 		<value>UK</value>
 	</variable>
 	<variable name="RottenTomatoesIcon">
-		<value condition="IntegerGreaterThan(Window(Home).Property(EmbySkinHelper.ListItemRottenTomatoes),59)"></value>
-		<value condition="!IntegerGreaterThan(Window(Home).Property(EmbySkinHelper.ListItemRottenTomatoes),59)"></value>
+		<value condition="IntegerGreaterThan(Window(Home).Property(SkinHelper.RottenTomatoesRating),59)"></value>
+		<value condition="!IntegerGreaterThan(Window(Home).Property(SkinHelper.RottenTomatoesRating),59)"></value>
 	</variable>
 
 	<variable name="RottenTomatoesIconColour">
-		<value condition="IntegerGreaterThan(Window(Home).Property(EmbySkinHelper.ListItemRottenTomatoes),59)">Red</value>
-		<value condition="!IntegerGreaterThan(Window(Home).Property(EmbySkinHelper.ListItemRottenTomatoes),59)">Green</value>
+		<value condition="IntegerGreaterThan(Window(Home).Property(SkinHelper.RottenTomatoesRating),59)">Red</value>
+		<value condition="!IntegerGreaterThan(Window(Home).Property(SkinHelper.RottenTomatoesRating),59)">Green</value>
 	</variable>
 
 	<variable name="CommunityRatingColour">
-		<value condition="IntegerGreaterThan(Window(Home).Property(EmbySkinHelper.ListItemMetaScore),59)">Green</value>
-		<value condition="[IntegerGreaterThan(Window(Home).Property(EmbySkinHelper.ListItemMetaScore),39) + !IntegerGreaterThan(Window(Home).Property(EmbySkinHelper.ListItemMetaScore),59)]">SelectedOrange</value>
-		<value condition="!IntegerGreaterThan(Window(Home).Property(EmbySkinHelper.ListItemMetaScore),39)">SelectedRed</value>
+		<value condition="IntegerGreaterThan(Window(Home).Property(SkinHelper.RottenTomatoesAudienceRating),59)">Green</value>
+		<value condition="[IntegerGreaterThan(Window(Home).Property(SkinHelper.RottenTomatoesAudienceRating),39) + !IntegerGreaterThan(Window(Home).Property(SkinHelper.RottenTomatoesAudienceRating),59)]">SelectedOrange</value>
+		<value condition="!IntegerGreaterThan(Window(Home).Property(SkinHelper.RottenTomatoesAudienceRating),39)">SelectedRed</value>
 	</variable>
 
 	<variable name="FanartFadeLabel">
