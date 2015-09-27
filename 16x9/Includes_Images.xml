@@ -161,16 +161,16 @@
 	<variable name="ClearArtOnly">
 		<value condition="!IsEmpty(ListItem.Art(tvshow.clearart))">$INFO[ListItem.Art(tvshow.clearart)]</value>
 		<value condition="!IsEmpty(ListItem.Art(clearart))">$INFO[ListItem.Art(clearart)]</value>
-		<value>resource://resource.images.studios.coloured/$INFO[Window(home).Property(ListItemStudioLabel),,.png]</value>
+		<value>resource://resource.images.studios.coloured/$INFO[Window(home).Property(SkinHelper.ListItemStudio),,.png]</value>
 	</variable>
 	<variable name="CDArt">
-		<value condition="!container.content(movies)">resource://resource.images.studios.coloured/$INFO[Window(home).Property(ListItemStudioLabel),,.png]</value>
+		<value condition="!container.content(movies)">resource://resource.images.studios.coloured/$INFO[Window(home).Property(SkinHelper.ListItemStudio),,.png]</value>
 		<value condition="!IsEmpty(ListItem.Art(discart))">$INFO[ListItem.Art(discart)]</value>
 		<value condition="IntegerGreaterThan(ListItem.VideoResolution,719)">cdart/bd.png</value>
 		<value condition="!IsEmpty(ListItem.VideoResolution)">cdart/default.png</value>
 	</variable>
 	<variable name="ColourStudio">
-		<value>resource://resource.images.studios.coloured/$INFO[Window(home).Property(ListItemStudioLabel),,.png]</value>
+		<value>resource://resource.images.studios.coloured/$INFO[Window(home).Property(SkinHelper.ListItemStudio),,.png]</value>
 	</variable>
 	<variable name="MusicFanart">
 		<value condition="!IsEmpty(Container.Art(artist.fanart))">$INFO[Container.Art(artist.fanart)]</value>
