@@ -113,6 +113,159 @@
 				</animation>
 			</control>
 			<control type="grouplist">
+					<visible>Skin.HasSetting(furniture.flags)</visible>
+				<top>218</top>
+				<height>42</height>
+				<left>450</left>
+				<right>10</right>
+				<orientation>horizontal</orientation>
+				<itemgap>10</itemgap>
+				<control type="label">
+					<aligny>center</aligny>
+					<align>left</align>
+					<font>symbol</font>
+					<textcolor>selective yellow</textcolor>
+					<height>38</height>
+					<width>auto</width>
+					<label></label>
+					<visible>!IsEmpty(ListItem.Rating)</visible>
+				</control>
+				<control type="label">
+					<aligny>center</aligny>
+					<align>left</align>
+					<font>Medium</font>
+					<textcolor>white</textcolor>
+					<height>38</height>
+					<width>auto</width>
+					<label fallback="-  ">$INFO[ListItem.Rating,,  ]</label>
+					<visible>!IsEmpty(ListItem.Rating)</visible>
+				</control>
+					<control type="label">
+						<aligny>center</aligny>
+						<align>left</align>
+						<font>symbol</font>
+						<textcolor>$VAR[RottenTomatoesIconColour]</textcolor>
+						<height>38</height>
+						<width>auto</width>
+						<label>$VAR[RottenTomatoesIcon]</label>
+						<visible>!IsEmpty(Window(Home).Property(SkinHelper.RottenTomatoesRating))</visible>
+					</control>
+					<control type="label">
+						<aligny>center</aligny>
+						<align>left</align>
+						<font>Medium</font>
+						<textcolor>white</textcolor>
+						<height>38</height>
+						<width>auto</width>
+						<label fallback="-  ">$INFO[Window(Home).Property(SkinHelper.RottenTomatoesRating),,%  ]</label>
+						<visible>!IsEmpty(Window(Home).Property(SkinHelper.RottenTomatoesRating))</visible>
+					</control>
+				<control type="button">
+					<width>38</width>
+					<height>38</height>
+					<textcolor>black2</textcolor>
+					<textoffsetx>0</textoffsetx>
+					<label>$INFO[Window(Home).Property(SkinHelper.RottenTomatoesAudienceRating)]</label>
+					<font>MediumSmall</font>
+					<texturefocus colordiffuse="$VAR[CommunityRatingColour]" border="5">common/white.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[CommunityRatingColour]" border="5">common/white.png</texturenofocus>
+					<visible>!IsEmpty(Window(Home).Property(SkinHelper.RottenTomatoesAudienceRating))</visible>
+				</control>
+					<control type="label">
+						<aligny>center</aligny>
+						<align>left</align>
+						<font>symbol</font>
+						<height>38</height>
+						<textcolor>white</textcolor>
+						<width>auto</width>
+						<label>  </label>
+						<visible>Container.Content(movies)</visible>
+					</control>
+					<control type="label">
+						<aligny>center</aligny>
+						<align>left</align>
+						<font>Medium</font>
+						<textcolor>white</textcolor>
+						<height>38</height>
+						<width>auto</width>
+						<label fallback="-  ">$INFO[ListItem.PlayCount,  ,  ]</label>
+						<visible>Container.Content(movies)</visible>
+					</control>
+					<control type="label">
+						<aligny>center</aligny>
+						<align>left</align>
+						<font>Medium</font>
+						<textcolor>white</textcolor>
+						<height>38</height>
+						<width>auto</width>
+						<label fallback="-  ">$VAR[DurationLong,,  ]</label>
+						<visible>Container.Content(movies)</visible>
+					</control>
+					<control type="label">
+						<aligny>center</aligny>
+						<align>left</align>
+						<font>Medium</font>
+						<textcolor>white</textcolor>
+						<height>38</height>
+						<width>auto</width>
+						<label fallback="-">$INFO[Window(Home).Property(SkinHelper.ListItemGenres)]</label>
+						<visible>Container.Content(movies)</visible>
+					</control>
+					<control type="label">
+						<aligny>center</aligny>
+						<align>left</align>
+						<font>Medium</font>
+						<textcolor>white</textcolor>
+						<height>38</height>
+						<width>auto</width>
+						<label fallback="  -  ">$INFO[ListItem.Year,  ,  ]</label>
+						<visible>Container.Content(movies)</visible>
+					</control>
+					<control type="label">
+						<aligny>center</aligny>
+						<align>left</align>
+						<font>Medium</font>
+						<textcolor>white</textcolor>
+						<height>38</height>
+						<width>auto</width>
+						<label fallback="-  ">$VAR[MPAA,,  ]</label>
+						<visible>Container.Content(movies)</visible>
+					</control>
+				<control type="label">
+					<aligny>center</aligny>
+					<align>left</align>
+					<font>Medium</font>
+					<textcolor>white</textcolor>
+					<height>38</height>
+					<width>auto</width>
+					<label fallback="">$INFO[Window(Home).Property(SkinHelper.RottenTomatoesBoxOffice)]</label>
+					<visible>Container.Content(movies)</visible>
+				</control>
+
+
+					<control type="label">
+						<aligny>center</aligny>
+						<align>left</align>
+						<font>Medium</font>
+						<textcolor>white</textcolor>
+						<height>38</height>
+						<width>auto</width>
+						<label>$INFO[ListItem.Season,,]$INFO[ListItem.Episode,x,  ]$INFO[ListItem.Title,,  ]$VAR[LabelDuration,,  ]</label>
+						<visible>!Container.Content(movies) + !Container.Content(TVShows)</visible>
+					</control>
+					<control type="label">
+						<aligny>center</aligny>
+						<align>left</align>
+						<font>Medium</font>
+						<textcolor>white</textcolor>
+						<height>38</height>
+						<width>auto</width>
+						<label>$INFO[ListItem.Season,,]$INFO[ListItem.Episode,x,  ]$INFO[ListItem.Studio,,  ]$VAR[LabelDuration,,  ]</label>
+					<visible>Container.Content(TVShows)</visible>
+				</control>
+			</control>
+			<control type="grouplist">
+					<visible>!Skin.HasSetting(furniture.flags)</visible>
 				<top>218</top>
 				<height>42</height>
 				<left>450</left>
