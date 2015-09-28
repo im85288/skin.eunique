@@ -238,12 +238,15 @@
                             <right>12</right>
                             <top>206</top>
                             <align>center</align>
-                            <height>42</height>
+                            <height>90</height>
                             <autoscroll>false</autoscroll>
                             <font>MediumBold</font>
                             <textcolor>$INFO[Window(home).Property(DiscInfo.ImageColor)]</textcolor>
                             <selectedcolor>white</selectedcolor>
-                            <label>$INFO[ListItem.Rating]$VAR[LabelDuration, ]$VAR[MPAA, ]$VAR[HDSD, ]</label>
+                            <label>$INFO[ListItem.Rating]$VAR[LabelDuration, ]$VAR[MPAA, ][CR]$VAR[HDSD, ]$VAR[LabelYear, ]</label>
+                            <animation type="Focus">
+								<effect type="rotate" end="3" center="auto" time="100" delay="135" tween="quadratic" easing="out"/>
+                            </animation>
                         </control>
                     </control>
                 </focusedlayout>
