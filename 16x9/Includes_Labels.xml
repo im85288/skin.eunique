@@ -1212,7 +1212,7 @@
 		<value condition="!IsEmpty(ListItem.Plot)">$INFO[ListItem.Plot]</value>
 	</variable>
 	<variable name="PlotCritic">
-		<value condition="!IsEmpty(Window(Home).Property(SkinHelper.RottenTomatoesConsensus))">$INFO[Window(Home).Property(SkinHelper.RottenTomatoesConsensus)]</value>
+		<value condition="!IsEmpty(Window(Home).Property(SkinHelper.RottenTomatoesConsensus))">$INFO[ListItem.Tagline,[B],[/B][CR],]$INFO[Window(Home).Property(SkinHelper.RottenTomatoesConsensus)]</value>
 		<value condition="!IsEmpty(Window(home).Property(SkinHelper.MovieSet.ExtendedPlot)) + [Container.Content(Sets) | substring(ListItem.Path,videodb://movies/sets,left)]">$INFO[Window(home).Property(SkinHelper.MovieSet.ExtendedPlot)]</value>
 		<value condition="Container.Content(movies) + !IsEmpty(ListItem.PlotOutline)">$INFO[ListItem.Tagline,[B],[/B][CR],]$INFO[ListItem.PlotOutline]</value>
 		<value condition="Container.Content(movies) + IsEmpty(ListItem.PlotOutline)">$INFO[ListItem.Tagline,[B],[/B][CR],]$INFO[ListItem.Plot]</value>
