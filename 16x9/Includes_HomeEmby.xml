@@ -695,7 +695,7 @@
 				<aligny>center</aligny>
 				<align>left</align>
 				<font>symbolview</font>
-				<textcolor>selective yellow</textcolor>
+				<textcolor>IMDB</textcolor>
 				<height>34</height>
 				<width>auto</width>
 				<label></label>
@@ -744,6 +744,27 @@
 				<texturenofocus colordiffuse="$VAR[CommunityRatingColour]" border="5">common/white.png</texturenofocus>
 				<visible>!IsEmpty(Window(Home).Property(SkinHelper.RottenTomatoesAudienceRating)) + !StringCompare(Window(Home).Property(SkinHelper.RottenTomatoesAudienceRating),N/A)</visible>
 			</control>
+
+            <control type="label">
+                <aligny>center</aligny>
+                <align>left</align>
+                <font>symbolview</font>
+                <textcolor>IMDB</textcolor>
+                <height>34</height>
+                <width>auto</width>
+                <label>  </label>
+                <visible>!IsEmpty(ListItem.Top250)</visible>
+            </control>
+            <control type="label">
+                <aligny>center</aligny>
+                <align>left</align>
+                <font>MediumSmallBold</font>
+                <textcolor>Dark1</textcolor>
+                <height>34</height>
+                <width>auto</width>
+                <label>$INFO[ListItem.Top250,#,]</label>
+                <visible>!IsEmpty(ListItem.Top250)</visible>
+            </control>
 		</control>
 
 	</include>
