@@ -1419,6 +1419,9 @@
 		<value condition="!Skin.HasSetting(furniture.hideendtime) + [!IsEmpty(Container(4017).ListItem.EndTime) + Control.HasFocus(15017)]">$INFO[Container(15017).ListItem.EndTime(hh:mm)]</value>
 	</variable>
 
+	<variable name="PercentWatchedBack">
+		<value condition="!Skin.HasSetting(furniture.hideindicators)"></value>
+	</variable>
 	<variable name="PercentWatchedLabel">
 		<value condition="!Skin.HasSetting(furniture.hideindicators) + ListItem.IsPlaying"></value>
 		<value condition="!Skin.HasSetting(furniture.hideindicators) + !Skin.HasSetting(furniture.hideresume) + ListItem.IsResumable"></value>

@@ -512,7 +512,7 @@
 					<onclick condition="IsEmpty(ListItem.TVShowTitle)">SetProperty(listcontent,$INFO[ListItem.Title],home)</onclick>
 					<onclick>ActivateWindow(1168)</onclick>
 				</control>
-                    <control type="button" id="3443">
+				<control type="button" id="3443">
 					<width>116</width>
 					<height>116</height>
 					<font>symbol</font>
@@ -521,13 +521,13 @@
 					<focusedcolor>$VAR[EmbyLeftColourHighlight]</focusedcolor>
 					<texturefocus colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]" border="5">common/box.png</texturefocus>
 					<texturenofocus colordiffuse="$VAR[EmbyLeftColourHighlight]" border="5">common/box.png</texturenofocus>
-                        <onclick>SetProperty(Dialog.1.Label,Extra Info)</onclick>
-                        <onclick>SetProperty(Dialog.1.BuiltIn,RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[ListItem.Director]))</onclick>
-                        <onclick>SetProperty(Dialog.2.Label,Search on Youtube)</onclick>
-                        <onclick>SetProperty(Dialog.2.BuiltIn,SetProperty(listcontent,$INFO[ListItem.Director],home)||ActivateWindow(1168))</onclick>
-                        <onclick>RunScript(script.toolbox,info=selectdialog,header=$INFO[ListItem.Director])</onclick>
-						<visible>Container.Content(movies)</visible>
-                    </control>
+					<onclick>SetProperty(Dialog.1.Label,Extra Info)</onclick>
+					<onclick>SetProperty(Dialog.1.BuiltIn,RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[ListItem.Director]))</onclick>
+					<onclick>SetProperty(Dialog.2.Label,Search on Youtube)</onclick>
+					<onclick>SetProperty(Dialog.2.BuiltIn,SetProperty(listcontent,$INFO[ListItem.Director],home)||ActivateWindow(1168))</onclick>
+					<onclick>RunScript(script.toolbox,info=selectdialog,header=$INFO[ListItem.Director])</onclick>
+					<visible>Container.Content(movies)</visible>
+				</control>
 				<!--Extended Info Button -->
 				<control type="button" id="19">
 					<width>116</width>
@@ -1008,7 +1008,7 @@
 					<width>76</width>
 					<height>76</height>
 					<font>symbolbackbig</font>
-					<label></label>
+					<label>$VAR[PercentWatchedBack]</label>
 					<textcolor>white2</textcolor>
 					<visible>ControlGroup(9010).HasFocus</visible>
 				</control>

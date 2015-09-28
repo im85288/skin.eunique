@@ -307,42 +307,12 @@
 					<label>31132</label>
 					<onclick>RunScript(script.skinshortcuts,type=resetall)</onclick>
 				</control>
-				<control type="radiobutton" id="9214" description="Show Header">
-					<width>1390</width>
-					<include>DefSettingsButton2</include>
-					<label>31115</label>
-					<selected>Skin.HasSetting(home.showheader)</selected>
-					<onclick>Skin.ToggleSetting(home.showheader)</onclick>
-				</control>
 				<control type="radiobutton" id="9215" description="home.fade">
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
 					<label>31884</label>
 					<selected>Skin.HasSetting(home.fade)</selected>
 					<onclick>Skin.ToggleSetting(home.fade)</onclick>
-				</control>
-				<control type="radiobutton" id="9216" description="Always Show Weather Widget">
-					<width>1390</width>
-					<include>DefSettingsButton2</include>
-					<label>31145</label>
-					<enable>!Skin.HasSetting(furniture.weather)</enable>
-					<selected>Skin.HasSetting(home.showweatherfanart)</selected>
-					<onclick>Skin.ToggleSetting(home.showweatherfanart)</onclick>
-				</control>
-				<control type="radiobutton" id="9217" description="Show Icons">
-					<width>1390</width>
-					<include>DefSettingsButton2</include>
-					<label>31190</label>
-					<selected>Skin.HasSetting(home.showicons)</selected>
-					<onclick>Skin.ToggleSetting(home.showicons)</onclick>
-				</control>
-				<control type="radiobutton" id="9218" description="Horz Sub">
-					<width>1390</width>
-					<include>DefSettingsButton2</include>
-					<label>31202</label>
-					<enable>!Skin.HasSetting(home.showicons) + !Skin.HasSetting(home.vertical)</enable>
-					<selected>Skin.HasSetting(home.submenu2)</selected>
-					<onclick>Skin.ToggleSetting(home.submenu2)</onclick>
 				</control>
 				<control type="button" id="9219" description="Set Slideshow Path">
 					<width>1390</width>
@@ -634,14 +604,6 @@
 					<selected>Skin.HasSetting(furniture.hideindicators)</selected>
 					<onclick>Skin.ToggleSetting(furniture.hideindicators)</onclick>
 				</control>
-				<control type="radiobutton" id="92616" description="Alternate indicators">
-					<width>1390</width>
-					<include>DefSettingsButton2</include>
-					<label>31889</label>
-					<visible>!Skin.HasSetting(furniture.hideindicators)</visible>
-					<selected>Skin.HasSetting(furniture.alternateindicators)</selected>
-					<onclick>Skin.ToggleSetting(furniture.alternateindicators)</onclick>
-				</control>
 				<control type="radiobutton" id="92611" description="Watched/Unwatched">
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
@@ -666,50 +628,12 @@
 					<selected>Skin.HasSetting(furniture.hidenew)</selected>
 					<onclick>Skin.ToggleSetting(furniture.hidenew)</onclick>
 				</control>
-				<control type="radiobutton" id="9261" description="Header">
-					<width>1390</width>
-					<include>DefSettingsButton2</include>
-					<label>31115</label>
-					<selected>!Skin.HasSetting(furniture.header)</selected>
-					<onclick>Skin.ToggleSetting(furniture.header)</onclick>
-				</control>
-				<control type="radiobutton" id="9262" description="Clock">
-					<width>1390</width>
-					<include>DefSettingsButton2</include>
-					<label>31153</label>
-					<selected>!Skin.HasSetting(furniture.clock)</selected>
-					<onclick>Skin.ToggleSetting(furniture.clock)</onclick>
-				</control>
-				<control type="radiobutton" id="9265" description="Weather">
-					<width>1390</width>
-					<include>DefSettingsButton2</include>
-					<label>31197</label>
-					<selected>Skin.HasSetting(furniture.weather)</selected>
-					<onclick>Skin.ToggleSetting(furniture.weather)</onclick>
-					<enable>!Skin.HasSetting(furniture.clock)</enable>
-				</control>
 				<control type="radiobutton" id="9263" description="Flags">
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
 					<label>31154</label>
 					<selected>Skin.HasSetting(furniture.flags)</selected>
 					<onclick>Skin.ToggleSetting(furniture.flags)</onclick>
-				</control>
-				<control type="button" id="9269" description="Country Rating">
-					<width>1390</width>
-					<include>DefSettingsButton2</include>
-					<label>$LOCALIZE[31753]</label>
-					<label2 fallback="UK">[COLOR=$VAR[ColourSelected]]$VAR[MovieMPAALangLabel][/COLOR]</label2>
-					<onclick>SetProperty(Dialog.NumItems,4)</onclick>
-					<onclick>SetProperty(Dialog.1.Label,Default - UK)</onclick>
-					<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(RatingCountry,UK))</onclick>
-					<onclick>SetProperty(Dialog.2.Label,US)</onclick>
-					<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(RatingCountry,US))</onclick>
-					<onclick>SetProperty(Dialog.3.Label,Germany)</onclick>
-					<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(RatingCountry,Germany))</onclick>
-					<onclick>SetProperty(Dialog.4.Label,NL)</onclick>
-					<onclick>SetProperty(Dialog.4.BuiltIn,Skin.SetString(RatingCountry,NL))</onclick>
-					<onclick>RunScript(script.toolbox,info=selectdialog,header=Select Rating Country)</onclick>
 				</control>
 				<control type="radiobutton" id="9264" description="Now Playing">
 					<width>1390</width>
@@ -718,48 +642,12 @@
 					<selected>!Skin.HasSetting(furniture.nowplaying)</selected>
 					<onclick>Skin.ToggleSetting(furniture.nowplaying)</onclick>
 				</control>
-				<control type="radiobutton" id="9267" description="Reflections">
-					<width>1390</width>
-					<include>DefSettingsButton2</include>
-					<label>31219</label>
-					<selected>Skin.HasSetting(show.reflections)</selected>
-					<onclick>Skin.ToggleSetting(show.reflections)</onclick>
-				</control>
 				<control type="radiobutton" id="9361" description="Plot Overlay">
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
 					<label>31254</label>
 					<selected>Skin.HasSetting(furniture.overlayinfo)</selected>
 					<onclick>Skin.ToggleSetting(furniture.overlayinfo)</onclick>
-				</control>
-				<control type="radiobutton" id="9268" description="Logo">
-					<width>1390</width>
-					<include>DefSettingsButton2</include>
-					<label>31744</label>
-					<selected>Skin.HasSetting(furniture.logo)</selected>
-					<onclick>Skin.ToggleSetting(furniture.logo)</onclick>
-				</control>
-				<control type="radiobutton" id="926811" description="Show clearart">
-					<width>1390</width>
-					<include>DefSettingsButton2</include>
-					<label>31802</label>
-					<visible>Skin.HasSetting(furniture.logo)</visible>
-					<selected>Skin.HasSetting(furniture.logo.clearart)</selected>
-					<onclick>Skin.ToggleSetting(furniture.logo.clearart)</onclick>
-				</control>
-				<control type="radiobutton" id="9270" description="DiscArt">
-					<width>1390</width>
-					<include>DefSettingsButton2</include>
-					<label>31893</label>
-					<selected>Skin.HasSetting(furniture.nodiscart)</selected>
-					<onclick>Skin.ToggleSetting(furniture.nodiscart)</onclick>
-				</control>
-				<control type="radiobutton" id="92702" description="Colour icons">
-					<width>1390</width>
-					<include>DefSettingsButton2</include>
-					<label>31894</label>
-					<selected>Skin.HasSetting(furniture.flags.colour)</selected>
-					<onclick>Skin.ToggleSetting(furniture.flags.colour)</onclick>
 				</control>
 				<control type="radiobutton" id="92703" description="Fanart Dialog Info">
 					<width>1390</width>
@@ -1024,7 +912,7 @@
 					<selected>Skin.HasSetting(WatchedColour)</selected>
 					<onclick>Skin.ToggleSetting(WatchedColour)</onclick>
 					<label>31906</label>
-					<visible>Skin.HasSetting(furniture.alternateindicators)</visible>
+					
 				</control>
 				<control type="button" id="92818">
 					<width>1390</width>
@@ -1033,7 +921,7 @@
 					<label>31907</label>
 					<label2>[COLOR=$INFO[Skin.String(watched.colour.name)]]$INFO[Skin.String(watched.colour.name)][/COLOR]</label2>
 					<visible>Skin.HasSetting(WatchedColour)</visible>
-					<visible>Skin.HasSetting(furniture.alternateindicators)</visible>
+					
 				</control>
 				<control type="radiobutton" id="92827">
 					<width>1390</width>
@@ -1041,7 +929,7 @@
 					<selected>Skin.HasSetting(UnwatchedColour)</selected>
 					<onclick>Skin.ToggleSetting(UnwatchedColour)</onclick>
 					<label>31908</label>
-					<visible>Skin.HasSetting(furniture.alternateindicators)</visible>
+					
 				</control>
 				<control type="button" id="92828">
 					<width>1390</width>
@@ -1050,7 +938,7 @@
 					<label>31909</label>
 					<label2>[COLOR=$INFO[Skin.String(unwatched.colour.name)]]$INFO[Skin.String(unwatched.colour.name)][/COLOR]</label2>
 					<visible>Skin.HasSetting(UnwatchedColour)</visible>
-					<visible>Skin.HasSetting(furniture.alternateindicators)</visible>
+					
 				</control>
 				<control type="radiobutton" id="92837">
 					<width>1390</width>
@@ -1058,7 +946,7 @@
 					<selected>Skin.HasSetting(NewColour)</selected>
 					<onclick>Skin.ToggleSetting(NewColour)</onclick>
 					<label>31910</label>
-					<visible>Skin.HasSetting(furniture.alternateindicators)</visible>
+					
 				</control>
 				<control type="button" id="92838">
 					<width>1390</width>
@@ -1067,7 +955,7 @@
 					<label>31911</label>
 					<label2>[COLOR=$INFO[Skin.String(new.colour.name)]]$INFO[Skin.String(new.colour.name)][/COLOR]</label2>
 					<visible>Skin.HasSetting(NewColour)</visible>
-					<visible>Skin.HasSetting(furniture.alternateindicators)</visible>
+					
 				</control>
 				<control type="radiobutton" id="92847">
 					<width>1390</width>
@@ -1075,7 +963,7 @@
 					<selected>Skin.HasSetting(ResumeColour)</selected>
 					<onclick>Skin.ToggleSetting(ResumeColour)</onclick>
 					<label>31912</label>
-					<visible>Skin.HasSetting(furniture.alternateindicators)</visible>
+					
 				</control>
 				<control type="button" id="92848">
 					<width>1390</width>
@@ -1084,7 +972,7 @@
 					<label>31913</label>
 					<label2>[COLOR=$INFO[Skin.String(resume.colour.name)]]$INFO[Skin.String(resume.colour.name)][/COLOR]</label2>
 					<visible>Skin.HasSetting(ResumeColour)</visible>
-					<visible>Skin.HasSetting(furniture.alternateindicators)</visible>
+					
 				</control>
 				<control type="radiobutton" id="92857">
 					<width>1390</width>
@@ -1092,7 +980,7 @@
 					<selected>Skin.HasSetting(PlayingColour)</selected>
 					<onclick>Skin.ToggleSetting(PlayingColour)</onclick>
 					<label>31914</label>
-					<visible>Skin.HasSetting(furniture.alternateindicators)</visible>
+					
 				</control>
 				<control type="button" id="92858">
 					<width>1390</width>
@@ -1101,7 +989,7 @@
 					<label>31915</label>
 					<label2>[COLOR=$INFO[Skin.String(playing.colour.name)]]$INFO[Skin.String(playing.colour.name)][/COLOR]</label2>
 					<visible>Skin.HasSetting(PlayingColour)</visible>
-					<visible>Skin.HasSetting(furniture.alternateindicators)</visible>
+					
 				</control>
 				<control type="radiobutton" id="92867">
 					<width>1390</width>
