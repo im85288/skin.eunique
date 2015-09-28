@@ -688,9 +688,16 @@
 				<width>auto</width>
 				<height>34</height>
 				<selectedcolor>Dark1</selectedcolor>
-				<label> / </label>
+				<label>/ </label>
 				<visible>![IsEmpty(ListItem.Rating) + IsEmpty(Window(Home).Property(EmbySkinHelper.ListItemRottenTomatoes)) + IsEmpty(Window(Home).Property(EmbySkinHelper.ListItemMetaScore))] + [Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows)] + !Container.Content(seasons)</visible>
 			</control>
+            <control type="image">
+                <left>7</left>
+                <width>40</width>
+                <height>40</height>
+                <texture>$INFO[Window(Home).Property(SkinHelper.ListItemAudioStreams.0.Language),flags/language/,.png]</texture>
+                <visible>!IsEmpty(Window(Home).Property(SkinHelper.ListItemAudioStreams.0.Language))</visible>
+            </control>
 			<control type="label">
 				<aligny>center</aligny>
 				<align>left</align>
@@ -698,7 +705,7 @@
 				<textcolor>IMDB</textcolor>
 				<height>34</height>
 				<width>auto</width>
-				<label></label>
+				<label> </label>
 				<visible>!IsEmpty(ListItem.Rating)</visible>
 			</control>
 			<control type="label">
