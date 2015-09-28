@@ -147,7 +147,7 @@
 						<height>38</height>
 						<width>auto</width>
 						<label>$VAR[RottenTomatoesIcon]</label>
-						<visible>!IsEmpty(Window(Home).Property(EmbySkinHelper.ListItemRottenTomatoes))</visible>
+						<visible>!IsEmpty(Window(Home).Property(SkinHelper.RottenTomatoesRating))</visible>
 					</control>
 					<control type="label">
 						<aligny>center</aligny>
@@ -156,19 +156,19 @@
 						<textcolor>white</textcolor>
 						<height>38</height>
 						<width>auto</width>
-						<label fallback="-  ">$INFO[Window(Home).Property(EmbySkinHelper.ListItemRottenTomatoes),,%  ]</label>
-						<visible>!IsEmpty(Window(Home).Property(EmbySkinHelper.ListItemRottenTomatoes))</visible>
+						<label fallback="-  ">$INFO[Window(Home).Property(SkinHelper.RottenTomatoesRating),,%  ]</label>
+						<visible>!IsEmpty(Window(Home).Property(SkinHelper.RottenTomatoesRating))</visible>
 					</control>
 				<control type="button">
 					<width>38</width>
 					<height>38</height>
 					<textcolor>black2</textcolor>
 					<textoffsetx>0</textoffsetx>
-					<label>$INFO[Window(Home).Property(EmbySkinHelper.ListItemMetaScore)]</label>
+					<label>$INFO[Window(Home).Property(SkinHelper.RottenTomatoesAudienceRating)]</label>
 					<font>MediumSmall</font>
 					<texturefocus colordiffuse="$VAR[CommunityRatingColour]" border="5">common/white.png</texturefocus>
 					<texturenofocus colordiffuse="$VAR[CommunityRatingColour]" border="5">common/white.png</texturenofocus>
-					<visible>!IsEmpty(Window(Home).Property(EmbySkinHelper.ListItemMetaScore))</visible>
+					<visible>!IsEmpty(Window(Home).Property(SkinHelper.RottenTomatoesAudienceRating))</visible>
 				</control>
 					<control type="label">
 						<aligny>center</aligny>
@@ -230,7 +230,16 @@
 						<label fallback="-  ">$VAR[MPAA,,  ]</label>
 						<visible>Container.Content(movies)</visible>
 					</control>
-
+				<control type="label">
+					<aligny>center</aligny>
+					<align>left</align>
+					<font>Medium</font>
+					<textcolor>white</textcolor>
+					<height>38</height>
+					<width>auto</width>
+					<label fallback="">$INFO[Window(Home).Property(SkinHelper.RottenTomatoesBoxOffice)]</label>
+					<visible>Container.Content(movies)</visible>
+				</control>
 
 
 					<control type="label">
@@ -810,6 +819,19 @@
 					</item>
 				</content>
 			</control>
+
+				<control type="label">
+					<width>1900</width>
+					<height>34</height>
+					<aligny>center</aligny>
+					<align>right</align>
+					<height>34</height>
+					<font>Small</font>
+					<textcolor>white2</textcolor>
+					<label>$INFO[Window(Home).Property(SkinHelper.RottenTomatoesAwards)]</label>
+					<visible>!Control.HasFocus(9499)</visible>
+				</control>
+
 				<control type="label">
 					<width>1200</width>
 					<height>34</height>
