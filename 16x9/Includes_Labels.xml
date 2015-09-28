@@ -1220,6 +1220,13 @@
 		<value condition="!IsEmpty(ListItem.PlotOutline)">$INFO[ListItem.PlotOutline]</value>
 		<value condition="!IsEmpty(ListItem.Plot)">$INFO[ListItem.Plot]</value>
 	</variable>
+	<variable name="PlotFurniture">
+		<value condition="!IsEmpty(Window(home).Property(SkinHelper.MovieSet.ExtendedPlot)) + [Container.Content(Sets) | substring(ListItem.Path,videodb://movies/sets,left)]">$INFO[Window(home).Property(SkinHelper.MovieSet.ExtendedPlot)]</value>
+		<value condition="Container.Content(movies)">$INFO[ListItem.Tagline,[B],[/B]]$INFO[ListItem.Plot,[CR]]$INFO[Window(Home).Property(SkinHelper.RottenTomatoesConsensus),[CR][CR][I]$LOCALIZE[31941][/I] ,]</value>
+		<value condition="[!IsEmpty(ListItem.PlotOutline) | !IsEmpty(ListItem.Plot)] + Skin.HasSetting(osd.hidespoilers) + Container.Content(episodes) + [stringcompare(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]">$LOCALIZE[20370]</value>
+		<value condition="!IsEmpty(ListItem.PlotOutline)">$INFO[ListItem.PlotOutline]</value>
+		<value condition="!IsEmpty(ListItem.Plot)">$INFO[ListItem.Plot]</value>
+	</variable>
 
 	<variable name="VideoInfoLabel">
 		<value condition="Container.Content(episodes)">$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Title]</value>
