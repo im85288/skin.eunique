@@ -1212,7 +1212,7 @@
 		<value condition="!IsEmpty(ListItem.Plot)">$INFO[ListItem.Plot]</value>
 	</variable>
 	<variable name="PlotCritic">
-		<value condition="!IsEmpty(Window(Home).Property(SkinHelper.RottenTomatoesConsensus))">$INFO[Window(Home).Property(SkinHelper.RottenTomatoesConsensus)]</value>
+		<value condition="!IsEmpty(Window(Home).Property(SkinHelper.RottenTomatoesConsensus)) + !StringCompare(Window(Home).Property(SkinHelper.RottenTomatoesConsensus),N/A)">$INFO[ListItem.Tagline,[B],[/B][CR],]$INFO[Window(Home).Property(SkinHelper.RottenTomatoesConsensus)]</value>
 		<value condition="!IsEmpty(Window(home).Property(SkinHelper.MovieSet.ExtendedPlot)) + [Container.Content(Sets) | substring(ListItem.Path,videodb://movies/sets,left)]">$INFO[Window(home).Property(SkinHelper.MovieSet.ExtendedPlot)]</value>
 		<value condition="Container.Content(movies) + !IsEmpty(ListItem.PlotOutline)">$INFO[ListItem.Tagline,[B],[/B][CR],]$INFO[ListItem.PlotOutline]</value>
 		<value condition="Container.Content(movies) + IsEmpty(ListItem.PlotOutline)">$INFO[ListItem.Tagline,[B],[/B][CR],]$INFO[ListItem.Plot]</value>
@@ -1222,7 +1222,8 @@
 	</variable>
 	<variable name="PlotFurniture">
 		<value condition="!IsEmpty(Window(home).Property(SkinHelper.MovieSet.ExtendedPlot)) + [Container.Content(Sets) | substring(ListItem.Path,videodb://movies/sets,left)]">$INFO[Window(home).Property(SkinHelper.MovieSet.ExtendedPlot)]</value>
-		<value condition="Container.Content(movies)">$INFO[ListItem.Tagline,[B],[/B]]$INFO[ListItem.Plot,[CR]]$INFO[Window(Home).Property(SkinHelper.RottenTomatoesConsensus),[CR][CR][I]$LOCALIZE[31941][/I] ,]</value>
+		<value condition="Container.Content(movies) + !StringCompare(Window(Home).Property(SkinHelper.RottenTomatoesConsensus),N/A)">$INFO[ListItem.Tagline,[B],[/B]]$INFO[ListItem.Plot,[CR]]$INFO[Window(Home).Property(SkinHelper.RottenTomatoesConsensus),[CR][CR][I]$LOCALIZE[31941][/I] ,]</value>
+		<value condition="Container.Content(movies)">$INFO[ListItem.Tagline,[B],[/B]]$INFO[ListItem.Plot,[CR]]</value>
 		<value condition="[!IsEmpty(ListItem.PlotOutline) | !IsEmpty(ListItem.Plot)] + Skin.HasSetting(osd.hidespoilers) + Container.Content(episodes) + [stringcompare(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]">$LOCALIZE[20370]</value>
 		<value condition="!IsEmpty(ListItem.PlotOutline)">$INFO[ListItem.PlotOutline]</value>
 		<value condition="!IsEmpty(ListItem.Plot)">$INFO[ListItem.Plot]</value>
@@ -1691,5 +1692,11 @@
 		<value condition="StringCompare(ListItem.SortLetter,7)"></value>
 		<value condition="StringCompare(ListItem.SortLetter,8)"></value>
 		<value condition="StringCompare(ListItem.SortLetter,9)"></value>
+	</variable>
+
+	<variable name="GenreFormatted">
+		<value condition="IsEmpty(Window(Home).Property(EuniqueSkinHelper.GenreListItem.1)">$INFO[Window(Home).Property(EuniqueSkinHelper.GenreListItem.0)]</value>
+		<value condition="!IsEmpty(Window(Home).Property(EuniqueSkinHelper.GenreListItem.1) + IsEmpty(Window(Home).Property(EuniqueSkinHelper.GenreListItem.2)">$INFO[Window(Home).Property(EuniqueSkinHelper.GenreListItem.0)][COLOR=$VAR[ColourHighlight]] • [/COLOR]$INFO[Window(Home).Property(EuniqueSkinHelper.GenreListItem.1)]</value>
+		<value condition="!IsEmpty(Window(Home).Property(EuniqueSkinHelper.GenreListItem.1) + !IsEmpty(Window(Home).Property(EuniqueSkinHelper.GenreListItem.2)">$INFO[Window(Home).Property(EuniqueSkinHelper.GenreListItem.0)][COLOR=$VAR[ColourHighlight]] • [/COLOR]$INFO[Window(Home).Property(EuniqueSkinHelper.GenreListItem.1)][COLOR=$VAR[ColourHighlight]] • [/COLOR]$INFO[Window(Home).Property(EuniqueSkinHelper.GenreListItem.2)]</value>
 	</variable>
 </includes>
