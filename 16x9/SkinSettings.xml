@@ -285,16 +285,6 @@
 				<onup>9001</onup>
 				<ondown>9001</ondown>
 				<visible>Container(9000).HasFocus(1)</visible>
-				<control type="button" id="9211" description="Home Style">
-					<width>1390</width>
-					<include>DefSettingsButton2</include>
-					<label>31247</label>
-					<label2>[COLOR=$VAR[ColourSelected]]$VAR[LabelHomeWidgetStyle][/COLOR]</label2>
-					<onclick>SetProperty(Dialog.NumItems,5)</onclick>
-					<onclick>SetProperty(Dialog.1.Label,Default)</onclick>
-					<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetBool(home.emby) || Skin.Reset(home.vertical) || Skin.Reset(home.classicwidgets) || Skin.Reset(home.netflix))</onclick>
-					<onclick>RunScript(script.toolbox,info=selectdialog,header=Select Home Layout)</onclick>
-				</control>
 				<control type="button" id="9212" description="Customise Home">
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
@@ -323,33 +313,12 @@
 					<onclick condition="!IsEmpty(Skin.String(home.slideshowpath))">Skin.Reset(home.dontshowfanart)</onclick>
 					<onclick condition="!IsEmpty(Skin.String(home.slideshowpath))">Skin.Reset(home.slideshowpath)</onclick>
 				</control>
-				<control type="button" id="92181" description="Select Movies Hub Widget">
+				<control type="button" id="9216" description="Set Music Dir">
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
-					<label>31182</label>
-					<label2>[COLOR=$VAR[ColourSelected]]$INFO[Skin.String(MovieHubWidget)][/COLOR]</label2>
-					<onclick condition="IsEmpty(Skin.String(MovieHubWidget))">Skin.SetFile(MovieHubWidget,.xsp|.m3u,special://profile/playlists/video/)</onclick>
-					<onclick condition="!IsEmpty(Skin.String(MovieHubWidget))">Skin.Reset(MovieHubWidget)</onclick>
-				</control>
-				<control type="button" id="92182" description="Select Movies Hub Items">
-					<width>1390</width>
-					<include>DefSettingsButton2</include>
-					<label>$LOCALIZE[20342] [LOWERCASE]$LOCALIZE[31178][/LOWERCASE]</label>
-					<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=movieshub)</onclick>
-				</control>
-				<control type="button" id="92183" description="Select TV Shows Hub Widget">
-					<width>1390</width>
-					<include>DefSettingsButton2</include>
-					<label>31183</label>
-					<label2>[COLOR=$VAR[ColourSelected]]$INFO[Skin.String(TVHubWidget)][/COLOR]</label2>
-					<onclick condition="IsEmpty(Skin.String(TVHubWidget))">Skin.SetFile(TVHubWidget,.xsp|.m3u,special://profile/playlists/video/)</onclick>
-					<onclick condition="!IsEmpty(Skin.String(TVHubWidget))">Skin.Reset(TVHubWidget)</onclick>
-				</control>
-				<control type="button" id="92184" description="Select Movies Hub Items">
-					<width>1390</width>
-					<include>DefSettingsButton2</include>
-					<label>$LOCALIZE[20343] [LOWERCASE]$LOCALIZE[31178][/LOWERCASE]</label>
-					<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=episodeshub)</onclick>
+					<label>31887</label>
+					<label2>[COLOR=$VAR[ColourSelected]]$INFO[Skin.String(cdartlocation)][/COLOR]</label2>
+					<onclick>Skin.SetPath(cdartlocation)</onclick>
 				</control>
 			</control>
 			<control type="grouplist" id="9007">
@@ -561,13 +530,6 @@
 					<onclick condition="IsEmpty(Skin.String(fanart.fallback))">Skin.SetImage(fanart.fallback)</onclick>
 					<onclick condition="!IsEmpty(Skin.String(fanart.fallback))">Skin.Reset(fanart.fallback)</onclick>
 					<visible>!Skin.HasSetting(lights.out)</visible>
-				</control>
-				<control type="button" id="9227" description="Set Music Dir">
-					<width>1390</width>
-					<include>DefSettingsButton2</include>
-					<label>31887</label>
-					<label2>[COLOR=$VAR[ColourSelected]]$INFO[Skin.String(cdartlocation)][/COLOR]</label2>
-					<onclick>Skin.SetPath(cdartlocation)</onclick>
 				</control>
 				<control type="radiobutton" id="9221" description="Show video in background">
 					<width>1390</width>

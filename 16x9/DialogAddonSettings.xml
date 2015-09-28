@@ -15,20 +15,31 @@
 
             <control type="image">
                 <posx>-30</posx>
-                <posy>-30</posy>
+                <posy>42</posy>
                 <width>1500</width>
-                <height>975</height>
-                <texture border="16" colordiffuse="White100">common/rounded-shadow8.png</texture>
+                <height>903</height>
+                <texture border="16" colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
             </control>
 
+            <control type="image">
+                <posx>-30</posx>
+                <posy>-30</posy>
+                <width>1500</width>
+                <height>72</height>
+                <texture>common/white.png</texture>
+                <colordiffuse>$VAR[EmbyMenuTextColourHighlight]</colordiffuse>
+                <aspectratio>stretch</aspectratio>
+            </control>
             <control type="label" id="20">
-                <description>Header Label</description>
-                <posx>15</posx>
-                <posy>-15</posy>
+                <posx>-30</posx>
+                <posy>-30</posy>
+                <width>1500</width>
+                <height>72</height>
+                <aligny>center</aligny>
                 <align>center</align>
-                <font>MediumBold</font>
-                <width>1410</width>
-                <label>-</label>
+                <font>HeaderFont</font>
+                <textcolor>$VAR[EmbyMenuColourHighlight]</textcolor>
+                <shadowcolor>-</shadowcolor>
             </control>
 
             <control type="grouplist" id="9">
@@ -61,18 +72,21 @@
                 <description>Default Category Button</description>
                 <width>387</width>
                 <align>left</align>
+                <include>DefSettingsButton2</include>
                 <texturefocus colordiffuse="$VAR[ColourHighlight]" border="8">common/box.png</texturefocus>
                 <alttexturefocus colordiffuse="$VAR[ColourHighlight]" border="8">common/box.png</alttexturefocus>
             </control>
 
             <control type="button" id="3">
                 <description>Default Button</description>
+                <include>DefSettingsButton2</include>
                 <align>left</align>
                 <texturefocus colordiffuse="$VAR[ColourHighlight]" border="8">common/box.png</texturefocus>
             </control>
 
             <control type="radiobutton" id="4">
                 <description>Default RadioButton</description>
+                <include>DefSettingsButton2</include>
                 <align>left</align>
                 <radioposx>910</radioposx>
                 <texturefocus colordiffuse="$VAR[ColourHighlight]" border="8">common/box.png</texturefocus>
@@ -80,12 +94,14 @@
 
             <control type="spincontrolex" id="5">
                 <description>Default spincontrolex</description>
+                <include>DefSettingsButton2</include>
                 <reverse>yes</reverse>
                 <align>left</align>
                 <texturefocus colordiffuse="$VAR[ColourHighlight]" border="8">common/box.png</texturefocus>
             </control>
 
             <control type="label" id="7">
+                <include>DefSettingsButton2</include>
                 <label>-</label>
                 <textcolor>$VAR[ColourHighlight]</textcolor>
             </control>
@@ -98,6 +114,7 @@
 
             <control type="sliderex" id="8">
                 <description>Default Slider</description>
+                <include>DefSettingsButton2</include>
                 <width>969</width>
                 <align>left</align>
                 <texturefocus colordiffuse="$VAR[ColourHighlight]" border="8">common/box.png</texturefocus>
@@ -128,7 +145,7 @@
                     <ondown>2</ondown>
                     <texturefocus colordiffuse="$VAR[ColourHighlight]" border="5">common/box.png</texturefocus>
                     <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
-                    <include>DefDialogButtons</include>
+                    <include>DefSettingsButton2</include>
                 </control>
 
                 <control type="button" id="11">
@@ -143,7 +160,7 @@
                     <ondown>2</ondown>
                     <texturefocus colordiffuse="$VAR[ColourHighlight]" border="5">common/box.png</texturefocus>
                     <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
-                    <include>DefDialogButtons</include>
+                    <include>DefSettingsButton2</include>
                 </control>
 
                 <control type="button" id="12">
@@ -158,7 +175,7 @@
                     <ondown>2</ondown>
                     <texturefocus colordiffuse="$VAR[ColourHighlight]" border="5">common/box.png</texturefocus>
                     <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
-                    <include>DefDialogButtons</include>
+                    <include>DefSettingsButton2</include>
                 </control>
 
             </control>
