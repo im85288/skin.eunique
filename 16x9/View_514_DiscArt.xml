@@ -41,8 +41,8 @@
                     </control>
                     <control type="group">
                         <control type="label">
-                            <centerright>34</centerright>
-                            <centertop>32</centertop>
+                            <centerright>180</centerright>
+                            <centertop>179</centertop>
                             <width>40</width>
                             <height>40</height>
                             <font>symbolback</font>
@@ -50,8 +50,8 @@
                             <textcolor>white2</textcolor>
                         </control>
                         <control type="label">
-                            <centerright>32</centerright>
-                            <centertop>32</centertop>
+                            <centerright>178</centerright>
+                            <centertop>179</centertop>
                             <width>32</width>
                             <height>32</height>
                             <font>symbolview</font>
@@ -62,8 +62,8 @@
                     </control>
                     <control type="group">
                         <control type="label">
-                            <centerright>34</centerright>
-                            <centertop>32</centertop>
+                            <centerright>180</centerright>
+                            <centertop>179</centertop>
                             <width>40</width>
                             <height>40</height>
                             <font>symbolback</font>
@@ -71,8 +71,8 @@
                             <textcolor>white2</textcolor>
                         </control>
                         <control type="label">
-                            <centerright>32</centerright>
-                            <centertop>32</centertop>
+                            <centerright>178</centerright>
+                            <centertop>179</centertop>
                             <top>10</top>
                             <width>32</width>
                             <height>32</height>
@@ -84,8 +84,8 @@
                     </control>
                     <control type="group">
                         <control type="label">
-                            <centerright>34</centerright>
-                            <centertop>32</centertop>
+                            <centerright>180</centerright>
+                            <centertop>179</centertop>
                             <width>40</width>
                             <height>40</height>
                             <font>symbolback</font>
@@ -93,8 +93,8 @@
                             <textcolor>white2</textcolor>
                         </control>
                         <control type="label">
-                            <centerright>32</centerright>
-                            <centertop>32</centertop>
+                            <centerright>178</centerright>
+                            <centertop>179</centertop>
                             <width>32</width>
                             <height>32</height>
                             <font>symbolview</font>
@@ -105,8 +105,8 @@
                     </control>
                     <control type="group">
                         <control type="label">
-                            <centerright>34</centerright>
-                            <centertop>32</centertop>
+                            <centerright>180</centerright>
+                            <centertop>179</centertop>
                             <width>40</width>
                             <height>40</height>
                             <font>symbolback</font>
@@ -114,8 +114,8 @@
                             <textcolor>white2</textcolor>
                         </control>
                         <control type="label">
-                            <centerright>32</centerright>
-                            <centertop>32</centertop>
+                            <centerright>178</centerright>
+                            <centertop>179</centertop>
                             <width>32</width>
                             <height>32</height>
                             <font>symbolview</font>
@@ -127,7 +127,6 @@
                 </itemlayout>
                 <focusedlayout width="360" height="360">
                     <control type="group">
-                        <animation effect="zoom" start="100" end="106" time="100" reversible="false" center="auto">Focus</animation>
                         <control type="button">
                             <texturefocus>-</texturefocus>
                             <texturenofocus>-</texturenofocus>
@@ -142,12 +141,17 @@
                             <height>350</height>
                             <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture colordiffuse="$INFO[Window(home).Property(DiscInfo.ImageColor)]" background="true" fallback="cdart/default.png">$VAR[CDArt]</texture>
-                            <animation effect="rotate" end="-359" center="auto" time="200" loop="false" reversible="false">Focus</animation>
+                            <animation type="Focus">
+								<effect type="rotate" end="-37" center="auto" time="100" delay="35" tween="quadratic" easing="out"/>
+								<effect type="rotate" end="37" center="auto" time="50" delay="125" tween="quadratic" easing="out"/>
+								<effect type="rotate" end="1" center="auto" time="100" delay="150" tween="quadratic" easing="out"/>
+								<effect type="zoom" end="106" center="auto" time="100" delay="200" tween="quadratic" easing="out"/>
+                            </animation>
                         </control>
                         <control type="group">
                             <control type="label">
-                                <centerright>34</centerright>
-                                <centertop>32</centertop>
+                                <centerright>180</centerright>
+                                <centertop>179</centertop>
                                 <width>40</width>
                                 <height>40</height>
                                 <font>symbolback</font>
@@ -155,8 +159,8 @@
                                 <textcolor>white2</textcolor>
                             </control>
                             <control type="label">
-                                <centerright>32</centerright>
-                                <centertop>32</centertop>
+                                <centerright>178</centerright>
+                                <centertop>179</centertop>
                                 <width>32</width>
                                 <height>32</height>
                                 <font>symbolview</font>
@@ -167,8 +171,8 @@
                         </control>
                         <control type="group">
                             <control type="label">
-                                <centerright>34</centerright>
-                                <centertop>32</centertop>
+                                <centerright>180</centerright>
+                                <centertop>179</centertop>
                                 <width>40</width>
                                 <height>40</height>
                                 <font>symbolback</font>
@@ -176,8 +180,8 @@
                                 <textcolor>white2</textcolor>
                             </control>
                             <control type="label">
-                                <centerright>32</centerright>
-                                <centertop>32</centertop>
+                                <centerright>178</centerright>
+                                <centertop>179</centertop>
                                 <top>10</top>
                                 <width>32</width>
                                 <height>32</height>
@@ -189,8 +193,8 @@
                         </control>
                         <control type="group">
                             <control type="label">
-                                <centerright>34</centerright>
-                                <centertop>32</centertop>
+                                <centerright>180</centerright>
+                                <centertop>179</centertop>
                                 <width>40</width>
                                 <height>40</height>
                                 <font>symbolback</font>
@@ -198,8 +202,8 @@
                                 <textcolor>white2</textcolor>
                             </control>
                             <control type="label">
-                                <centerright>32</centerright>
-                                <centertop>32</centertop>
+                                <centerright>178</centerright>
+                                <centertop>179</centertop>
                                 <width>32</width>
                                 <height>32</height>
                                 <font>symbolview</font>
@@ -210,8 +214,8 @@
                         </control>
                         <control type="group">
                             <control type="label">
-                                <centerright>34</centerright>
-                                <centertop>32</centertop>
+                                <centerright>180</centerright>
+                                <centertop>179</centertop>
                                 <width>40</width>
                                 <height>40</height>
                                 <font>symbolback</font>
@@ -219,8 +223,8 @@
                                 <textcolor>white2</textcolor>
                             </control>
                             <control type="label">
-                                <centerright>32</centerright>
-                                <centertop>32</centertop>
+                                <centerright>178</centerright>
+                                <centertop>179</centertop>
                                 <width>32</width>
                                 <height>32</height>
                                 <font>symbolview</font>
@@ -230,16 +234,16 @@
                             <visible>!stringcompare(ListItem.Label,..) + ListItem.IsResumable</visible>
                         </control>
                         <control type="textbox">
-                            <left>30</left>
-                            <right>30</right>
-                            <top>158</top>
+                            <left>12</left>
+                            <right>12</right>
+                            <top>206</top>
                             <align>center</align>
-                            <height>34</height>
+                            <height>42</height>
                             <autoscroll>false</autoscroll>
-                            <font>SmallBold</font>
-                            <textcolor>$VAR[ColourHighlight]</textcolor>
+                            <font>MediumBold</font>
+                            <textcolor>$INFO[Window(home).Property(DiscInfo.ImageColor)]</textcolor>
                             <selectedcolor>white</selectedcolor>
-                            <label>$INFO[ListItem.Rating]$VAR[LabelYear, ]$VAR[LabelDuration, ]$VAR[MPAA, ]$VAR[HDSD, ]</label>
+                            <label>$INFO[ListItem.Rating]$VAR[LabelDuration, ]$VAR[MPAA, ]$VAR[HDSD, ]</label>
                         </control>
                     </control>
                 </focusedlayout>
