@@ -1692,4 +1692,10 @@
 		<value condition="StringCompare(ListItem.SortLetter,8)"></value>
 		<value condition="StringCompare(ListItem.SortLetter,9)"></value>
 	</variable>
+
+	<variable name="GenreFormatted">
+		<value condition="IsEmpty(Window(Home).Property(EuniqueSkinHelper.GenreListItem.1)">$INFO[Window(Home).Property(EuniqueSkinHelper.GenreListItem.0)]</value>
+		<value condition="!IsEmpty(Window(Home).Property(EuniqueSkinHelper.GenreListItem.1) + IsEmpty(Window(Home).Property(EuniqueSkinHelper.GenreListItem.2)">$INFO[Window(Home).Property(EuniqueSkinHelper.GenreListItem.0)][COLOR=$VAR[ColourHighlight]] • [/COLOR]$INFO[Window(Home).Property(EuniqueSkinHelper.GenreListItem.1)]</value>
+		<value condition="!IsEmpty(Window(Home).Property(EuniqueSkinHelper.GenreListItem.1) + !IsEmpty(Window(Home).Property(EuniqueSkinHelper.GenreListItem.2)">$INFO[Window(Home).Property(EuniqueSkinHelper.GenreListItem.0)][COLOR=$VAR[ColourHighlight]] • [/COLOR]$INFO[Window(Home).Property(EuniqueSkinHelper.GenreListItem.1)][COLOR=$VAR[ColourHighlight]] • [/COLOR]$INFO[Window(Home).Property(EuniqueSkinHelper.GenreListItem.2)]</value>
+	</variable>
 </includes>
