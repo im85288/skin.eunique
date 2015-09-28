@@ -742,7 +742,7 @@
 				<align>center</align>
 				<texturefocus colordiffuse="$VAR[CommunityRatingColour]" border="5">common/white.png</texturefocus>
 				<texturenofocus colordiffuse="$VAR[CommunityRatingColour]" border="5">common/white.png</texturenofocus>
-				<visible>!IsEmpty(Window(Home).Property(SkinHelper.RottenTomatoesAudienceRating))</visible>
+				<visible>!IsEmpty(Window(Home).Property(SkinHelper.RottenTomatoesAudienceRating)) + !StringCompare(Window(Home).Property(SkinHelper.RottenTomatoesAudienceRating),N/A)</visible>
 			</control>
 		</control>
 
