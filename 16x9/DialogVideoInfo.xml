@@ -920,7 +920,7 @@
                     <font>Small</font>
                     <textcolor>white2</textcolor>
                     <label>$INFO[Window(Home).Property(SkinHelper.RottenTomatoesAwards)]</label>
-                    <visible>!Control.HasFocus(9499)</visible>
+                    <visible>!Control.HasFocus(9499) + !StringCompare(Window(Home).Property(SkinHelper.RottenTomatoesAwards),N/A)</visible>
                 </control>
 
                 <control type="label">
