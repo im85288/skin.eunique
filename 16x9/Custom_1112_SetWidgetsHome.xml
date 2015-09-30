@@ -169,7 +169,13 @@
 					</item>
 					<item id="17">
 						<label>LiveTV Left Widget</label>
-						<onfocus>Skin.SetString(widget.helper,videoinfo)</onfocus>
+						<onfocus>Skin.SetString(widget.helper,videoinfo1)</onfocus>
+						<onclick>SetFocus(2612)</onclick>
+						<onright>SetFocus(2612)</onright>
+					</item>
+					<item id="18">
+						<label>LiveTV Right Widget</label>
+						<onfocus>Skin.SetString(widget.helper,videoinfo2)</onfocus>
 						<onclick>SetFocus(2612)</onclick>
 						<onright>SetFocus(2612)</onright>
 					</item>
@@ -2882,7 +2888,7 @@
 				</content>
 			</control>
 			<control type="list" id="2612">
-				<visible>StringCompare(Skin.String(widget.helper),videoinfo)</visible>
+				<visible>StringCompare(Skin.String(widget.helper),videoinfo1)</visible>
 				<posy>48</posy>
 				<posx>0</posx>
 				<width>900</width>
@@ -2991,6 +2997,60 @@
 					<item id="14">
 						<label>$LOCALIZE[636] 10</label>
 						<onclick>Skin.SetString(widget4,Custom10)</onclick>
+						<onclick>back</onclick>
+					</item>
+				</content>
+			</control>
+			<control type="list" id="2612">
+				<visible>StringCompare(Skin.String(widget.helper),videoinfo2)</visible>
+				<posy>48</posy>
+				<posx>0</posx>
+				<width>900</width>
+				<height>454</height>
+				<scrolltime tween="cubic" easing="out">500</scrolltime>
+				<onleft>back</onleft>
+				<onright>back</onright>
+				<onup>2612</onup>
+				<ondown>2612</ondown>
+				<itemlayout width="900" height="50">
+					<control type="label">
+						<width>900</width>
+						<height>70</height>
+						<font>Tiny</font>
+						<align>center</align>
+						<bottom>-10</bottom>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout width="900" height="50">
+					<control type="image">
+						<texture colordiffuse="$VAR[ColourHighlight]" border="16">common/white.png</texture>
+					</control>
+					<control type="label">
+						<align>center</align>
+						<bottom>-10</bottom>
+						<width>900</width>
+						<height>70</height>
+						<font>Tiny</font>
+						<label>$INFO[ListItem.Label]</label>
+						<textcolor>$VAR[ColourSelected]</textcolor>
+					</control>
+				</focusedlayout>
+				<content>
+					<item id="0">
+						<label>Channels</label>
+						<onclick>Skin.SetString(widget5,LiveTV)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="1">
+						<label>Recordings</label>
+						<onclick>Skin.SetString(widget5,Recordings)</onclick>
+						<onclick>back</onclick>
+					</item>
+					<item id="2">
+						<label>Smartish Channels</label>
+						<onclick>Skin.SetString(widget5,SmartLiveTV)</onclick>
 						<onclick>back</onclick>
 					</item>
 				</content>
