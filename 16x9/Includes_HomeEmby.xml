@@ -688,24 +688,17 @@
 				<width>auto</width>
 				<height>34</height>
 				<selectedcolor>Dark1</selectedcolor>
-				<label>/ </label>
+				<label> / </label>
 				<visible>![IsEmpty(ListItem.Rating) + IsEmpty(Window(Home).Property(EmbySkinHelper.ListItemRottenTomatoes)) + IsEmpty(Window(Home).Property(EmbySkinHelper.ListItemMetaScore))] + [Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows)] + !Container.Content(seasons)</visible>
 			</control>
-            <control type="image">
-                <left>7</left>
-                <width>40</width>
-                <height>40</height>
-                <texture>$INFO[Window(Home).Property(SkinHelper.ListItemAudioStreams.0.Language),flags/language/,.png]</texture>
-                <visible>!IsEmpty(Window(Home).Property(SkinHelper.ListItemAudioStreams.0.Language))</visible>
-            </control>
 			<control type="label">
 				<aligny>center</aligny>
 				<align>left</align>
 				<font>symbolview</font>
-				<textcolor>IMDB</textcolor>
+				<textcolor>selective yellow</textcolor>
 				<height>34</height>
 				<width>auto</width>
-				<label> </label>
+				<label></label>
 				<visible>!IsEmpty(ListItem.Rating)</visible>
 			</control>
 			<control type="label">
@@ -727,6 +720,7 @@
 				<width>auto</width>
 				<label>$VAR[RottenTomatoesIcon]</label>
 				<visible>!IsEmpty(Window(Home).Property(SkinHelper.RottenTomatoesRating))</visible>
+				<visible>!StringCompare(Window(Home).Property(SkinHelper.RottenTomatoesRating),n/a)</visible>
 			</control>
 			<control type="label">
 				<aligny>center</aligny>
@@ -737,6 +731,7 @@
 				<width>auto</width>
 				<label fallback="-  ">$INFO[Window(Home).Property(SkinHelper.RottenTomatoesRating),,%  ]</label>
 				<visible>!IsEmpty(Window(Home).Property(SkinHelper.RottenTomatoesRating))</visible>
+				<visible>!StringCompare(Window(Home).Property(SkinHelper.RottenTomatoesRating),n/a)</visible>
 			</control>
 			<control type="button">
 				<width>34</width>
@@ -749,29 +744,9 @@
 				<align>center</align>
 				<texturefocus colordiffuse="$VAR[CommunityRatingColour]" border="5">common/white.png</texturefocus>
 				<texturenofocus colordiffuse="$VAR[CommunityRatingColour]" border="5">common/white.png</texturenofocus>
-				<visible>!IsEmpty(Window(Home).Property(SkinHelper.RottenTomatoesAudienceRating)) + !StringCompare(Window(Home).Property(SkinHelper.RottenTomatoesAudienceRating),N/A)</visible>
+				<visible>!IsEmpty(Window(Home).Property(SkinHelper.RottenTomatoesAudienceRating))</visible>
+				<visible>!StringCompare(Window(Home).Property(SkinHelper.RottenTomatoesAudienceRating),n/a)</visible>
 			</control>
-
-            <control type="label">
-                <aligny>center</aligny>
-                <align>left</align>
-                <font>symbolview</font>
-                <textcolor>IMDB</textcolor>
-                <height>34</height>
-                <width>auto</width>
-                <label>  </label>
-                <visible>!IsEmpty(ListItem.Top250)</visible>
-            </control>
-            <control type="label">
-                <aligny>center</aligny>
-                <align>left</align>
-                <font>MediumSmallBold</font>
-                <textcolor>Dark1</textcolor>
-                <height>34</height>
-                <width>auto</width>
-                <label>$INFO[ListItem.Top250,#,]</label>
-                <visible>!IsEmpty(ListItem.Top250)</visible>
-            </control>
 		</control>
 
 	</include>
@@ -881,10 +856,10 @@
 				</control>
 			</control>
 			<control type="group" description="timebox">
-				<width>120</width>
+				<width>128</width>
 				<control type="label">
 					<height>46</height>
-					<font>MediumLargeBold</font>
+					<font>LargeBold</font>
 					<textcolor>Dark1</textcolor>
 					<label>$INFO[System.Time(hh:mm)]</label>
 				</control>
@@ -893,6 +868,7 @@
 				<animation effect="slide" end="0,1" condition="true" time="200">Conditional</animation>
 				<width>44</width>
 				<control type="label">
+					<top>-1</top>
 					<left>-24</left>
 					<height>46</height>
 					<font>symbolview</font>
@@ -904,6 +880,7 @@
 				<width min="0" max="1500">auto</width>
 				<animation effect="slide" end="0,-3" condition="true" time="200">Conditional</animation>
 				<control type="label">
+					<top>-1</top>
 					<left>-56</left>
 					<height>52</height>
 					<font>SmallBold</font>
@@ -916,8 +893,8 @@
 			<visible>Skin.HasSetting(furniture.flags)</visible>
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
-			<left>408</left>
-			<top>45</top>
+			<left>416</left>
+			<top>43</top>
 			<width>1626</width>
 			<height>64</height>
 			<orientation>horizontal</orientation>
@@ -3161,7 +3138,7 @@
 						<right>10</right>
 						<aligny>center</aligny>
 						<height>78</height>
-						<font>SmallHeaderFont</font>
+						<font>NetflixSmall</font>
 						<textcolor>white2</textcolor>
 						<selectedcolor>white2</selectedcolor>
 						<label>[B]$INFO[Container(3441).ListItem.Label][/B][CR]$INFO[Window(Weather).Property(Location),, - ]$INFO[Window(Weather).Property(Current.Condition),, - ]$INFO[Window(Weather).Property(Today.Sunrise),$LOCALIZE[33027]: , - ]$INFO[Window(Weather).Property(Today.Sunset),$LOCALIZE[33028]: , - ][B]$INFO[Window(Weather).Property(Current.Temperature)]$INFO[System.TemperatureUnits][/B]</label>

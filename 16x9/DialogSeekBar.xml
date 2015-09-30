@@ -80,6 +80,7 @@
 						<texture colordiffuse="$VAR[ColourHighlight]" background="true">common/white.png</texture>
 						<animation effect="zoom" end="108" time="0" center="auto">Focus</animation>
                         <visible>!VideoPlayer.Content(LiveTV)</visible>
+                        <visible>!IsEmpty(Player.Art(tvshow.poster)) | !IsEmpty(Player.Art(poster))</visible>
 					</control>
                     <control type="image">
                         <top>-139</top>
