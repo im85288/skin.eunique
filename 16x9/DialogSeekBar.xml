@@ -36,7 +36,7 @@
                     <width>100%</width>
                     <height>374</height>
                     <colordiffuse>black</colordiffuse>
-                    <animation effect="fade" start="100" end="90" condition="Skin.HasSetting(osd.usetheme) | [!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)]">Conditional</animation>
+                    <animation effect="fade" start="100" end="90" condition="[!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)]">Conditional</animation>
                     <texture border="5">common/box.png</texture>
                 </control>
                 <control type="image">
@@ -44,7 +44,7 @@
                     <width>100%</width>
                     <height>100</height>
                     <colordiffuse>black</colordiffuse>
-                    <animation effect="fade" start="100" end="90" condition="Skin.HasSetting(osd.usetheme) | [!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)]">Conditional</animation>
+                    <animation effect="fade" start="100" end="90" condition="[!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)]">Conditional</animation>
                     <texture border="15">common/white.png</texture>
                     <visible>Window.IsVisible(fullscreeninfo) | Player.ShowInfo | !IsEmpty(Window(home).Property(osdshowinfo)) | [Player.Paused + Skin.HasSetting(osd.showinfoonpause)]</visible>
                 </control>

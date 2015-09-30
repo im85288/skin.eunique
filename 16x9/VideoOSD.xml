@@ -85,14 +85,14 @@
 				<usecontrolcoords>true</usecontrolcoords>
 				<control type="button" id="1">
 					<description>Audio</description>
-					<label>292</label>
+					<label></label>
 					<align>left</align>
 					<onclick>ActivateWindow(124)</onclick>
 					<include>DefOSDButtons</include>
 				</control>
 				<control type="button" id="2">
 					<description>Video Settings</description>
-					<label>291</label>
+					<label></label>
 					<align>left</align>
 					<onclick>ActivateWindow(123)</onclick>
 					<include>DefOSDButtons</include>
@@ -102,23 +102,22 @@
 					<ondown>9301</ondown>
 					<description>Subs</description>
 					<align>left</align>
-					<label>$LOCALIZE[287]</label>
+					<label></label>
 					<onclick>Action(ShowSubtitles)</onclick>
 					<include>DefOSDButtons</include>
 				</control>
 			</control>
 			<control type="grouplist" id="101">
 				<top>13</top>
-				<width>100%</width>
-				<height>48</height>
-				<itemgap>16</itemgap>
+				<width>1920</width>
+				<height>52</height>
+				<itemgap>2</itemgap>
 				<orientation>horizontal</orientation>
 				<align>center</align>
 				<onleft>3</onleft>
 				<onright>4</onright>
 				<ondown>noop</ondown>
-				<include condition="!Skin.HasSetting(osd.usetheme)">OSDVideoControls</include>
-				<include condition="Skin.HasSetting(osd.usetheme)">OSDVideoControlsFlip</include>
+				<include>OSDVideoControlsFlip</include>
 			</control>
 			<control type="grouplist" id="102">
 				<top>13</top>

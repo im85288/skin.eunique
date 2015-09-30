@@ -17,18 +17,6 @@
                 <effect type="fade" end="0" start="100" time="150"/>
             </animation>
 
-            <control type="grouplist" id="101">
-                <top>64</top>
-                <width>100%</width>
-                <height>48</height>
-                <itemgap>16</itemgap>
-                <orientation>horizontal</orientation>
-                <align>center</align>
-                <onleft>101</onleft>
-                <onright>101</onright>
-                <include condition="!Skin.HasSetting(osd.usetheme)">OSDVideoControls</include>
-                <include condition="Skin.HasSetting(osd.usetheme)">OSDVideoControlsFlip</include>
-            </control>
 
             <control type="grouplist" id="100">
                 <top>0</top>
