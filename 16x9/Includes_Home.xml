@@ -708,7 +708,7 @@
 				<textcolor>Dark1</textcolor>
 				<height>34</height>
 				<width>auto</width>
-				<label fallback="-  ">$INFO[ListItem.Rating,[UPPERCASE],  [/UPPERCASE]]</label>
+				<label>$INFO[ListItem.Rating,[UPPERCASE],[/UPPERCASE]]</label>
 				<visible>!IsEmpty(ListItem.Rating)</visible>
 			</control>
 			<control type="label">
@@ -718,7 +718,7 @@
 				<textcolor>$VAR[RottenTomatoesIconColour]</textcolor>
 				<height>34</height>
 				<width>auto</width>
-				<label>$VAR[RottenTomatoesIcon]</label>
+				<label>  $VAR[RottenTomatoesIcon]</label>
 				<visible>!IsEmpty(Window(Home).Property(SkinHelper.RottenTomatoesRating))</visible>
 				<visible>!StringCompare(Window(Home).Property(SkinHelper.RottenTomatoesRating),n/a)</visible>
 			</control>
@@ -729,7 +729,7 @@
 				<textcolor>Dark1</textcolor>
 				<height>34</height>
 				<width>auto</width>
-				<label fallback="-  ">$INFO[Window(Home).Property(SkinHelper.RottenTomatoesRating),,%]</label>
+				<label>$INFO[Window(Home).Property(SkinHelper.RottenTomatoesRating),,%]</label>
 				<visible>!IsEmpty(Window(Home).Property(SkinHelper.RottenTomatoesRating))</visible>
 				<visible>!StringCompare(Window(Home).Property(SkinHelper.RottenTomatoesRating),n/a)</visible>
 			</control>
