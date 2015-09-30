@@ -18,7 +18,7 @@
                 <description>background image</description>
                 <width>660</width>
                 <height>100</height>
-                <animation effect="fade" start="100" end="90" condition="Skin.HasSetting(osd.usetheme) | [!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)]">Conditional</animation>
+                <animation effect="fade" start="100" end="90" condition="[!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)]">Conditional</animation>
                 <texture border="16" colordiffuse="black">common/box.png</texture>
             </control>
             <control type="group">
