@@ -8,7 +8,7 @@
 		<control type="group">
 			<centerleft>50%</centerleft>
 			<posy>310</posy>
-			<width>900</width>
+			<width>1350</width>
 			<include>Animation.FadeIn.Slide</include>
 			<control type="image">
 				<posx>-30</posx>
@@ -29,14 +29,156 @@
 				<centerleft>50%</centerleft>
 				<width>885</width>
 				<font>HeaderFont</font>
+				<textcolor>black</textcolor>
 				<align>center</align>
 				<label>$LOCALIZE[31791] $VAR[WidgetTitleHome]</label>
 				<top>-20</top>
 			</control>
+			<control type="list" id="12612">
+				<posy>48</posy>
+				<posx>0</posx>
+				<width>450</width>
+				<height>454</height>
+				<scrolltime tween="cubic" easing="out">500</scrolltime>
+				<onleft>back</onleft>
+				<onright>2612</onright>
+				<onup>12612</onup>
+				<ondown>12612</ondown>
+				<onleft>back</onleft>
+				<itemlayout width="450" height="50">
+					<control type="label">
+						<width>450</width>
+						<height>70</height>
+						<font>Tiny</font>
+						<align>center</align>
+						<bottom>-10</bottom>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout width="450" height="50">
+					<control type="image">
+						<texture colordiffuse="$VAR[ColourHighlight]" border="16">common/white.png</texture>
+					</control>
+					<control type="label">
+						<align>center</align>
+						<bottom>-10</bottom>
+						<width>450</width>
+						<height>70</height>
+						<font>Tiny</font>
+						<label>$INFO[ListItem.Label]</label>
+						<textcolor>$VAR[ColourSelected]</textcolor>
+					</control>
+				</focusedlayout>
+				<content>
+					<item id="1">
+						<label>Videos Left Widget</label>
+						<onfocus>Skin.SetString(widget.helper,videos1)</onfocus>
+						<onclick>SetFocus(2612)</onclick>
+						<onright>SetFocus(2612)</onright>
+					</item>
+					<item id="2">
+						<label>Videos Middle Left Widget</label>
+						<onfocus>Skin.SetString(widget.helper,videos2)</onfocus>
+						<onclick>SetFocus(2612)</onclick>
+						<onright>SetFocus(2612)</onright>
+					</item>
+					<item id="3">
+						<label>Videos Middle Right Widget</label>
+						<onfocus>Skin.SetString(widget.helper,videos3)</onfocus>
+						<onclick>SetFocus(2612)</onclick>
+						<onright>SetFocus(2612)</onright>
+					</item>
+					<item id="4">
+						<label>Videos Right Widget</label>
+						<onfocus>Skin.SetString(widget.helper,videos4)</onfocus>
+						<onclick>SetFocus(2612)</onclick>
+						<onright>SetFocus(2612)</onright>
+					</item>
+					<item id="5">
+						<label>Movies Left Widget</label>
+						<onfocus>Skin.SetString(widget.helper,movies1)</onfocus>
+						<onclick>SetFocus(2612)</onclick>
+						<onright>SetFocus(2612)</onright>
+					</item>
+					<item id="6">
+						<label>Movies Middle Left Widget</label>
+						<onfocus>Skin.SetString(widget.helper,movies2)</onfocus>
+						<onclick>SetFocus(2612)</onclick>
+						<onright>SetFocus(2612)</onright>
+					</item>
+					<item id="7">
+						<label>Movies Middle Right Widget</label>
+						<onfocus>Skin.SetString(widget.helper,movies3)</onfocus>
+						<onclick>SetFocus(2612)</onclick>
+						<onright>SetFocus(2612)</onright>
+					</item>
+					<item id="8">
+						<label>Movies Right Widget</label>
+						<onfocus>Skin.SetString(widget.helper,movies4)</onfocus>
+						<onclick>SetFocus(2612)</onclick>
+						<onright>SetFocus(2612)</onright>
+					</item>
+					<item id="9">
+						<label>TV Shows Left Widget</label>
+						<onfocus>Skin.SetString(widget.helper,tv1)</onfocus>
+						<onclick>SetFocus(2612)</onclick>
+						<onright>SetFocus(2612)</onright>
+					</item>
+					<item id="10">
+						<label>TV Shows Middle Left Widget</label>
+						<onfocus>Skin.SetString(widget.helper,tv2)</onfocus>
+						<onclick>SetFocus(2612)</onclick>
+						<onright>SetFocus(2612)</onright>
+					</item>
+					<item id="11">
+						<label>TV Shows Middle Right Widget</label>
+						<onfocus>Skin.SetString(widget.helper,tv3)</onfocus>
+						<onclick>SetFocus(2612)</onclick>
+						<onright>SetFocus(2612)</onright>
+					</item>
+					<item id="12">
+						<label>TV Shows Right Widget</label>
+						<onfocus>Skin.SetString(widget.helper,tv4)</onfocus>
+						<onclick>SetFocus(2612)</onclick>
+						<onright>SetFocus(2612)</onright>
+					</item>
+					<item id="13">
+						<label>Music Left Widget</label>
+						<onfocus>Skin.SetString(widget.helper,music1)</onfocus>
+						<onclick>SetFocus(2612)</onclick>
+						<onright>SetFocus(2612)</onright>
+					</item>
+					<item id="14">
+						<label>Music Middle Left Widget</label>
+						<onfocus>Skin.SetString(widget.helper,music2)</onfocus>
+						<onclick>SetFocus(2612)</onclick>
+						<onright>SetFocus(2612)</onright>
+					</item>
+					<item id="15">
+						<label>Music Middle Right Widget</label>
+						<onfocus>Skin.SetString(widget.helper,music3)</onfocus>
+						<onclick>SetFocus(2612)</onclick>
+						<onright>SetFocus(2612)</onright>
+					</item>
+					<item id="16">
+						<label>Music Right Widget</label>
+						<onfocus>Skin.SetString(widget.helper,music4)</onfocus>
+						<onclick>SetFocus(2612)</onclick>
+						<onright>SetFocus(2612)</onright>
+					</item>
+					<item id="17">
+						<label>LiveTV Left Widget</label>
+						<onfocus>Skin.SetString(widget.helper,videoinfo)</onfocus>
+						<onclick>SetFocus(2612)</onclick>
+						<onright>SetFocus(2612)</onright>
+					</item>
+				</content>
+			</control>
 			<control type="list" id="2612">
 				<visible>StringCompare(Skin.String(widget.helper),videos1)</visible>
 				<posy>48</posy>
-				<posx>0</posx>
+				<posx>900</posx>
 				<width>900</width>
 				<height>454</height>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
@@ -173,12 +315,12 @@
 						<onclick>back</onclick>
 					</item>
 					<item id="21">
-						<label>Custom1</label>
+						<label>$LOCALIZE[636] 1</label>
 						<onclick>Skin.SetString(widget2,Custom1)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="22">
-						<label>Custom2</label>
+						<label>$LOCALIZE[636] 2</label>
 						<onclick>Skin.SetString(widget2,Custom2)</onclick>
 						<onclick>back</onclick>
 					</item>
@@ -357,12 +499,12 @@
 						<onclick>back</onclick>
 					</item>
 					<item id="21">
-						<label>Custom1</label>
+						<label>$LOCALIZE[636] 1</label>
 						<onclick>Skin.SetString(widget1,Custom1)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="22">
-						<label>Custom2</label>
+						<label>$LOCALIZE[636] 2</label>
 						<onclick>Skin.SetString(widget1,Custom2)</onclick>
 						<onclick>back</onclick>
 					</item>
@@ -541,12 +683,12 @@
 						<onclick>back</onclick>
 					</item>
 					<item id="21">
-						<label>Custom1</label>
+						<label>$LOCALIZE[636] 1</label>
 						<onclick>Skin.SetString(widget3,Custom1)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="22">
-						<label>Custom2</label>
+						<label>$LOCALIZE[636] 2</label>
 						<onclick>Skin.SetString(widget3,Custom2)</onclick>
 						<onclick>back</onclick>
 					</item>
@@ -725,12 +867,12 @@
 						<onclick>back</onclick>
 					</item>
 					<item id="21">
-						<label>Custom1</label>
+						<label>$LOCALIZE[636] 1</label>
 						<onclick>Skin.SetString(widget15,Custom1)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="22">
-						<label>Custom2</label>
+						<label>$LOCALIZE[636] 2</label>
 						<onclick>Skin.SetString(widget15,Custom2)</onclick>
 						<onclick>back</onclick>
 					</item>
@@ -909,12 +1051,12 @@
 						<onclick>back</onclick>
 					</item>
 					<item id="21">
-						<label>Custom1</label>
+						<label>$LOCALIZE[636] 1</label>
 						<onclick>Skin.SetString(widget6,Custom1)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="22">
-						<label>Custom2</label>
+						<label>$LOCALIZE[636] 2</label>
 						<onclick>Skin.SetString(widget6,Custom2)</onclick>
 						<onclick>back</onclick>
 					</item>
@@ -1093,12 +1235,12 @@
 						<onclick>back</onclick>
 					</item>
 					<item id="21">
-						<label>Custom1</label>
+						<label>$LOCALIZE[636] 1</label>
 						<onclick>Skin.SetString(widget7,Custom1)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="22">
-						<label>Custom2</label>
+						<label>$LOCALIZE[636] 2</label>
 						<onclick>Skin.SetString(widget7,Custom2)</onclick>
 						<onclick>back</onclick>
 					</item>
@@ -1277,12 +1419,12 @@
 						<onclick>back</onclick>
 					</item>
 					<item id="21">
-						<label>Custom1</label>
+						<label>$LOCALIZE[636] 1</label>
 						<onclick>Skin.SetString(widget8,Custom1)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="22">
-						<label>Custom2</label>
+						<label>$LOCALIZE[636] 2</label>
 						<onclick>Skin.SetString(widget8,Custom2)</onclick>
 						<onclick>back</onclick>
 					</item>
@@ -1461,12 +1603,12 @@
 						<onclick>back</onclick>
 					</item>
 					<item id="21">
-						<label>Custom1</label>
+						<label>$LOCALIZE[636] 1</label>
 						<onclick>Skin.SetString(widget16,Custom1)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="22">
-						<label>Custom2</label>
+						<label>$LOCALIZE[636] 2</label>
 						<onclick>Skin.SetString(widget16,Custom2)</onclick>
 						<onclick>back</onclick>
 					</item>
@@ -1645,12 +1787,12 @@
 						<onclick>back</onclick>
 					</item>
 					<item id="21">
-						<label>Custom1</label>
+						<label>$LOCALIZE[636] 1</label>
 						<onclick>Skin.SetString(widget9,Custom1)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="22">
-						<label>Custom2</label>
+						<label>$LOCALIZE[636] 2</label>
 						<onclick>Skin.SetString(widget9,Custom2)</onclick>
 						<onclick>back</onclick>
 					</item>
@@ -1829,12 +1971,12 @@
 						<onclick>back</onclick>
 					</item>
 					<item id="21">
-						<label>Custom1</label>
+						<label>$LOCALIZE[636] 1</label>
 						<onclick>Skin.SetString(widget10,Custom1)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="22">
-						<label>Custom2</label>
+						<label>$LOCALIZE[636] 2</label>
 						<onclick>Skin.SetString(widget10,Custom2)</onclick>
 						<onclick>back</onclick>
 					</item>
@@ -2013,12 +2155,12 @@
 						<onclick>back</onclick>
 					</item>
 					<item id="21">
-						<label>Custom1</label>
+						<label>$LOCALIZE[636] 1</label>
 						<onclick>Skin.SetString(widget11,Custom1)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="22">
-						<label>Custom2</label>
+						<label>$LOCALIZE[636] 2</label>
 						<onclick>Skin.SetString(widget11,Custom2)</onclick>
 						<onclick>back</onclick>
 					</item>
@@ -2197,12 +2339,12 @@
 						<onclick>back</onclick>
 					</item>
 					<item id="21">
-						<label>Custom1</label>
+						<label>$LOCALIZE[636] 1</label>
 						<onclick>Skin.SetString(widget18,Custom1)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="22">
-						<label>Custom2</label>
+						<label>$LOCALIZE[636] 2</label>
 						<onclick>Skin.SetString(widget18,Custom2)</onclick>
 						<onclick>back</onclick>
 					</item>
@@ -2316,52 +2458,52 @@
 						<onclick>back</onclick>
 					</item>
 					<item id="7">
-						<label>Custom 1</label>
+						<label>$LOCALIZE[636] 1</label>
 						<onclick>Skin.SetString(widget12,Custom1)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="8">
-						<label>Custom 2</label>
+						<label>$LOCALIZE[636] 2</label>
 						<onclick>Skin.SetString(widget12,Custom2)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="9">
-						<label>Custom 3</label>
+						<label>$LOCALIZE[636] 3</label>
 						<onclick>Skin.SetString(widget12,Custom3)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="10">
-						<label>Custom 4</label>
+						<label>$LOCALIZE[636] 4</label>
 						<onclick>Skin.SetString(widget12,Custom4)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="11">
-						<label>Custom 5</label>
+						<label>$LOCALIZE[636] 5</label>
 						<onclick>Skin.SetString(widget12,Custom5)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="12">
-						<label>Custom 6</label>
+						<label>$LOCALIZE[636] 6</label>
 						<onclick>Skin.SetString(widget12,Custom6)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="13">
-						<label>Custom 7</label>
+						<label>$LOCALIZE[636] 7</label>
 						<onclick>Skin.SetString(widget12,Custom7)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="14">
-						<label>Custom 8</label>
+						<label>$LOCALIZE[636] 8</label>
 						<onclick>Skin.SetString(widget12,Custom8)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="15">
-						<label>Custom 9</label>
+						<label>$LOCALIZE[636] 9</label>
 						<onclick>Skin.SetString(widget12,Custom9)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="16">
-						<label>Custom 10</label>
+						<label>$LOCALIZE[636] 10</label>
 						<onclick>Skin.SetString(widget12,Custom10)</onclick>
 						<onclick>back</onclick>
 					</item>
@@ -2440,52 +2582,52 @@
 						<onclick>back</onclick>
 					</item>
 					<item id="7">
-						<label>Custom 1</label>
+						<label>$LOCALIZE[636] 1</label>
 						<onclick>Skin.SetString(widget13,Custom1)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="8">
-						<label>Custom 2</label>
+						<label>$LOCALIZE[636] 2</label>
 						<onclick>Skin.SetString(widget13,Custom2)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="9">
-						<label>Custom 3</label>
+						<label>$LOCALIZE[636] 3</label>
 						<onclick>Skin.SetString(widget13,Custom3)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="10">
-						<label>Custom 4</label>
+						<label>$LOCALIZE[636] 4</label>
 						<onclick>Skin.SetString(widget13,Custom4)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="11">
-						<label>Custom 5</label>
+						<label>$LOCALIZE[636] 5</label>
 						<onclick>Skin.SetString(widget13,Custom5)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="12">
-						<label>Custom 6</label>
+						<label>$LOCALIZE[636] 6</label>
 						<onclick>Skin.SetString(widget13,Custom6)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="13">
-						<label>Custom 7</label>
+						<label>$LOCALIZE[636] 7</label>
 						<onclick>Skin.SetString(widget13,Custom7)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="14">
-						<label>Custom 8</label>
+						<label>$LOCALIZE[636] 8</label>
 						<onclick>Skin.SetString(widget13,Custom8)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="15">
-						<label>Custom 9</label>
+						<label>$LOCALIZE[636] 9</label>
 						<onclick>Skin.SetString(widget13,Custom9)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="16">
-						<label>Custom 10</label>
+						<label>$LOCALIZE[636] 10</label>
 						<onclick>Skin.SetString(widget13,Custom10)</onclick>
 						<onclick>back</onclick>
 					</item>
@@ -2564,52 +2706,52 @@
 						<onclick>back</onclick>
 					</item>
 					<item id="7">
-						<label>Custom 1</label>
+						<label>$LOCALIZE[636] 1</label>
 						<onclick>Skin.SetString(widget14,Custom1)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="8">
-						<label>Custom 2</label>
+						<label>$LOCALIZE[636] 2</label>
 						<onclick>Skin.SetString(widget14,Custom2)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="9">
-						<label>Custom 3</label>
+						<label>$LOCALIZE[636] 3</label>
 						<onclick>Skin.SetString(widget14,Custom3)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="10">
-						<label>Custom 4</label>
+						<label>$LOCALIZE[636] 4</label>
 						<onclick>Skin.SetString(widget14,Custom4)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="11">
-						<label>Custom 5</label>
+						<label>$LOCALIZE[636] 5</label>
 						<onclick>Skin.SetString(widget14,Custom5)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="12">
-						<label>Custom 6</label>
+						<label>$LOCALIZE[636] 6</label>
 						<onclick>Skin.SetString(widget14,Custom6)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="13">
-						<label>Custom 7</label>
+						<label>$LOCALIZE[636] 7</label>
 						<onclick>Skin.SetString(widget14,Custom7)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="14">
-						<label>Custom 8</label>
+						<label>$LOCALIZE[636] 8</label>
 						<onclick>Skin.SetString(widget14,Custom8)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="15">
-						<label>Custom 9</label>
+						<label>$LOCALIZE[636] 9</label>
 						<onclick>Skin.SetString(widget14,Custom9)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="16">
-						<label>Custom 10</label>
+						<label>$LOCALIZE[636] 10</label>
 						<onclick>Skin.SetString(widget14,Custom10)</onclick>
 						<onclick>back</onclick>
 					</item>
@@ -2688,52 +2830,52 @@
 						<onclick>back</onclick>
 					</item>
 					<item id="7">
-						<label>Custom 1</label>
+						<label>$LOCALIZE[636] 1</label>
 						<onclick>Skin.SetString(widget17,Custom1)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="8">
-						<label>Custom 2</label>
+						<label>$LOCALIZE[636] 2</label>
 						<onclick>Skin.SetString(widget17,Custom2)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="9">
-						<label>Custom 3</label>
+						<label>$LOCALIZE[636] 3</label>
 						<onclick>Skin.SetString(widget17,Custom3)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="10">
-						<label>Custom 4</label>
+						<label>$LOCALIZE[636] 4</label>
 						<onclick>Skin.SetString(widget17,Custom4)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="11">
-						<label>Custom 5</label>
+						<label>$LOCALIZE[636] 5</label>
 						<onclick>Skin.SetString(widget17,Custom5)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="12">
-						<label>Custom 6</label>
+						<label>$LOCALIZE[636] 6</label>
 						<onclick>Skin.SetString(widget17,Custom6)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="13">
-						<label>Custom 7</label>
+						<label>$LOCALIZE[636] 7</label>
 						<onclick>Skin.SetString(widget17,Custom7)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="14">
-						<label>Custom 8</label>
+						<label>$LOCALIZE[636] 8</label>
 						<onclick>Skin.SetString(widget17,Custom8)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="15">
-						<label>Custom 9</label>
+						<label>$LOCALIZE[636] 9</label>
 						<onclick>Skin.SetString(widget17,Custom9)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="16">
-						<label>Custom 10</label>
+						<label>$LOCALIZE[636] 10</label>
 						<onclick>Skin.SetString(widget17,Custom10)</onclick>
 						<onclick>back</onclick>
 					</item>
@@ -2777,158 +2919,78 @@
 				</focusedlayout>
 				<content>
 					<item id="0">
-						<label>$LOCALIZE[31818]</label>
-						<onclick>Skin.SetString(widgetvideoinfo,SimilarVideos)</onclick>
+						<label>Engadget</label>
+						<onclick>Skin.SetString(widget4,Engadget)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="1">
-						<label>$LOCALIZE[31819]</label>
-						<onclick>Skin.SetString(widgetvideoinfo,Cast)</onclick>
+						<label>Eurogamer</label>
+						<onclick>Skin.SetString(widget4,Eurogamer)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="2">
-						<label>$LOCALIZE[31793]</label>
-						<onclick>Skin.SetString(widgetvideoinfo,RecommendedEpisodes)</onclick>
+						<label>MobileTech Review</label>
+						<onclick>Skin.SetString(widget4,MobileTech)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="3">
-						<label>$LOCALIZE[31126]</label>
-						<onclick>Skin.SetString(widgetvideoinfo,RandomEpisodes)</onclick>
+						<label>Channels</label>
+						<onclick>Skin.SetString(widget4,LiveTV)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="4">
-						<label>$LOCALIZE[31125]</label>
-						<onclick>Skin.SetString(widgetvideoinfo,RecentEpisodes)</onclick>
+						<label>Recordings</label>
+						<onclick>Skin.SetString(widget4,Recordings)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="5">
-						<label>$LOCALIZE[31784]</label>
-						<onclick>Skin.SetString(widgetvideoinfo,RecommendedShows)</onclick>
+						<label>$LOCALIZE[636] 1</label>
+						<onclick>Skin.SetString(widget4,Custom1)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="6">
-						<label>$LOCALIZE[31127]</label>
-						<onclick>Skin.SetString(widgetvideoinfo,RandomMovies)</onclick>
+						<label>$LOCALIZE[636] 2</label>
+						<onclick>Skin.SetString(widget4,Custom2)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="7">
-						<label>$LOCALIZE[31124]</label>
-						<onclick>Skin.SetString(widgetvideoinfo,RecentMovies)</onclick>
+						<label>$LOCALIZE[636] 3</label>
+						<onclick>Skin.SetString(widget4,Custom3)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="8">
-						<label>$LOCALIZE[31794]</label>
-						<onclick>Skin.SetString(widgetvideoinfo,RecommendedMovies)</onclick>
+						<label>$LOCALIZE[636] 4</label>
+						<onclick>Skin.SetString(widget4,Custom4)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="9">
-						<label>$LOCALIZE[31782]</label>
-						<onclick>Skin.SetString(widgetvideoinfo,SimilarMovies)</onclick>
+						<label>$LOCALIZE[636] 5</label>
+						<onclick>Skin.SetString(widget4,Custom5)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="10">
-						<label>$LOCALIZE[31208]</label>
-						<onclick>Skin.SetString(widgetvideoinfo,InCinemas)</onclick>
+						<label>$LOCALIZE[636] 6</label>
+						<onclick>Skin.SetString(widget4,Custom6)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="11">
-						<label>$LOCALIZE[31223]</label>
-						<onclick>Skin.SetString(widgetvideoinfo,Upcoming)</onclick>
+						<label>$LOCALIZE[636] 7</label>
+						<onclick>Skin.SetString(widget4,Custom7)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="12">
-						<label>$LOCALIZE[31224]</label>
-						<onclick>Skin.SetString(widgetvideoinfo,PopularMovies)</onclick>
+						<label>$LOCALIZE[636] 8</label>
+						<onclick>Skin.SetString(widget4,Custom8)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="13">
-						<label>$LOCALIZE[31225]</label>
-						<onclick>Skin.SetString(widgetvideoinfo,TopRatedMovies)</onclick>
+						<label>$LOCALIZE[636] 9</label>
+						<onclick>Skin.SetString(widget4,Custom9)</onclick>
 						<onclick>back</onclick>
 					</item>
 					<item id="14">
-						<label>$LOCALIZE[31134]</label>
-						<onclick>Skin.SetString(widgetvideoinfo,TrendingMovies)</onclick>
-						<onclick>back</onclick>
-					</item>
-					<item id="15">
-						<label>$LOCALIZE[31226]</label>
-						<onclick>Skin.SetString(widgetvideoinfo,PopularTvShows)</onclick>
-						<onclick>back</onclick>
-					</item>
-					<item id="16">
-						<label>$LOCALIZE[31227]</label>
-						<onclick>Skin.SetString(widgetvideoinfo,TopRatedTvShows)</onclick>
-						<onclick>back</onclick>
-					</item>
-					<item id="17">
-						<label>$LOCALIZE[31228]</label>
-						<onclick>Skin.SetString(widgetvideoinfo,OnAirTvShows)</onclick>
-						<onclick>back</onclick>
-					</item>
-					<item id="18">
-						<label>$LOCALIZE[31229]</label>
-						<onclick>Skin.SetString(widgetvideoinfo,AiringTodayTvShows)</onclick>
-						<onclick>back</onclick>
-					</item>
-					<item id="19">
-						<label>$LOCALIZE[31135]</label>
-						<onclick>Skin.SetString(widgetvideoinfo,TrendingShows)</onclick>
-						<onclick>back</onclick>
-					</item>
-					<item id="20">
-						<label>$LOCALIZE[31136]</label>
-						<onclick>Skin.SetString(widgetvideoinfo,AiringShows)</onclick>
-						<onclick>back</onclick>
-					</item>
-					<item id="21">
-						<label>$LOCALIZE[31137]</label>
-						<onclick>Skin.SetString(widgetvideoinfo,PremiereShows)</onclick>
-						<onclick>back</onclick>
-					</item>
-					<item id="22">
-						<label>Custom1</label>
-						<onclick>Skin.SetString(widgetvideoinfo,Custom1)</onclick>
-						<onclick>back</onclick>
-					</item>
-					<item id="23">
-						<label>Custom2</label>
-						<onclick>Skin.SetString(widgetvideoinfo,Custom2)</onclick>
-						<onclick>back</onclick>
-					</item>
-					<item id="24">
-						<label>$INFO[Window(Home).Property(emby.nodes.1.title)]</label>
-						<onclick>Skin.SetString(widgetvideoinfo,embynode1)</onclick>
-						<onclick>back</onclick>
-					</item>
-					<item id="25">
-						<label>$INFO[Window(Home).Property(emby.nodes.0.title)]</label>
-						<onclick>Skin.SetString(widgetvideoinfo,embynode0)</onclick>
-						<onclick>back</onclick>
-					</item>
-					<item id="26">
-						<label>$INFO[Window(Home).Property(emby.nodes.0.recent.title)]</label>
-						<onclick>Skin.SetString(widgetvideoinfo,embynode0recent)</onclick>
-						<onclick>back</onclick>
-					</item>
-					<item id="27">
-						<label>$INFO[Window(Home).Property(emby.nodes.1.recentepisodes.title)]</label>
-						<onclick>Skin.SetString(widgetvideoinfo,embynode1recentepisodes)</onclick>
-						<onclick>back</onclick>
-					</item>
-					<item id="28">
-						<label>$INFO[Window(Home).Property(emby.nodes.0.inprogress.title)]</label>
-						<onclick>Skin.SetString(widgetvideoinfo,embynode0inprogress)</onclick>
-						<onclick>back</onclick>
-					</item>
-					<item id="29">
-						<label>$INFO[Window(Home).Property(emby.nodes.1.inprogressepisodes.title)]</label>
-						<onclick>Skin.SetString(widgetvideoinfo,embynode1inprogressepisodes)</onclick>
-						<onclick>back</onclick>
-					</item>
-					<item id="30">
-						<label>$INFO[Window(Home).Property(emby.nodes.1.nextepisodes.title)]</label>
-						<onclick>Skin.SetString(widgetvideoinfo,embynode1nextepisodes)</onclick>
+						<label>$LOCALIZE[636] 10</label>
+						<onclick>Skin.SetString(widget4,Custom10)</onclick>
 						<onclick>back</onclick>
 					</item>
 				</content>
