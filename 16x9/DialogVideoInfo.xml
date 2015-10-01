@@ -1889,6 +1889,15 @@
             <animation effect="fade" start="100" end="0" time="200" delay="0" condition="Control.HasFocus(101)" reversible="true">Conditional</animation>
 
         </control>
+		<control type="image">
+			<left>0</left>
+			<top>0</top>
+			<right>0</right>
+			<bottom>0</bottom>
+			<aspectratio scalediffuse="false">stretch</aspectratio>
+			<texture colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" background="true">common/white.png</texture>
+			<animation effect="fade" start="100" end="00" time="1000" condition="!Control.HasFocus(101)">Conditional</animation>
+		</control>
         <control type="multiimage">
             <include>Dimensions_Fullscreen</include>
             <fadetime>600</fadetime>

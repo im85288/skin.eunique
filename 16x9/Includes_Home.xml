@@ -34,8 +34,7 @@
 		<control type="grouplist">
 			<top>50</top>
 			<left>NewSidePad</left>
-			<visible>!Skin.HasSetting(furniture.header)</visible>
-			<visible>!ControlGroup(303).HasFocus()</visible>
+			<visible>!ControlGroup(303).HasFocus(101)</visible>
 			<visible>!Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)</visible>
 			<include condition="!Window.IsVisible(script-ExtendedInfo Script-VideoList.xml)">Animation.FurnitureFadeInOut</include>
 			<include condition="Window.IsVisible(script-ExtendedInfo Script-VideoList.xml)">FurnitureFadeInOutExtended</include>
@@ -1666,8 +1665,9 @@
 							<aspectratio>scale</aspectratio>
 							<texture background="true">$VAR[FanartImage]</texture>
                             <animation type="Focus" reversible="false">
-                                <effect type="zoom" end="95,89" time="200" center="auto" tween="quadratic" easing="out"/>
+                                <effect type="zoom" end="96,93" time="200" center="auto" tween="quadratic" easing="out"/>
                                 <effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
+                                <effect type="slide" end="3,0" time="200" center="auto" tween="quadratic" easing="out"/>
                             </animation>
 						</control>
 					</focusedlayout>
