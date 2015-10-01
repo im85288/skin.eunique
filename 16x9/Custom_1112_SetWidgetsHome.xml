@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Foundation -->
 <window type="dialog" id="1112">
-	<defaultcontrol always="false">2612</defaultcontrol>
+	<defaultcontrol always="false">12612</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
 	<controls>
 		<include>GlobalOverlay</include>
@@ -13,178 +13,188 @@
 			<control type="image">
 				<posx>-30</posx>
 				<posy>-30</posy>
-				<width>960</width>
+				<width>1350</width>
 				<height>73</height>
 				<texture border="16" colordiffuse="$VAR[EmbyMenuTextColourHighlight]">common/box.png</texture>
 			</control>
 			<control type="image">
 				<posx>-30</posx>
 				<posy>41</posy>
-				<width>960</width>
+				<width>1350</width>
 				<height>471</height>
 				<texture border="16" colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
 			</control>
 			<control type="label">
 				<description>Heading</description>
 				<centerleft>50%</centerleft>
-				<width>885</width>
+				<width>1350</width>
 				<font>HeaderFont</font>
 				<textcolor>black</textcolor>
 				<align>center</align>
 				<label>$LOCALIZE[31791] $VAR[WidgetTitleHome]</label>
 				<top>-20</top>
 			</control>
-			<control type="list" id="12612">
+			<control type="grouplist" id="12612">
 				<posy>48</posy>
 				<posx>0</posx>
 				<width>450</width>
 				<height>454</height>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
 				<onleft>back</onleft>
-				<onright>2612</onright>
-				<onup>12612</onup>
-				<ondown>12612</ondown>
-				<onleft>back</onleft>
-				<itemlayout width="450" height="50">
-					<control type="label">
-						<width>450</width>
-						<height>70</height>
-						<font>Tiny</font>
-						<align>center</align>
-						<bottom>-10</bottom>
-						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
-						<label>$INFO[ListItem.Label]</label>
-					</control>
-				</itemlayout>
-				<focusedlayout width="450" height="50">
-					<control type="image">
-						<texture colordiffuse="$VAR[ColourHighlight]" border="16">common/white.png</texture>
-					</control>
-					<control type="label">
-						<align>center</align>
-						<bottom>-10</bottom>
-						<width>450</width>
-						<height>70</height>
-						<font>Tiny</font>
-						<label>$INFO[ListItem.Label]</label>
-						<textcolor>$VAR[ColourSelected]</textcolor>
-					</control>
-				</focusedlayout>
-				<content>
-					<item id="1">
-						<label>Videos Left Widget</label>
-						<onfocus>Skin.SetString(widget.helper,videos1)</onfocus>
 						<onclick>SetFocus(2612)</onclick>
 						<onright>SetFocus(2612)</onright>
-					</item>
-					<item id="2">
+				<onup>12612</onup>
+				<ondown>12612</ondown>
+				<itemgap>10</itemgap>
+				<control type="button" id="1" description="Customise Home">
+					<width>450</width>
+					<include>DefSettingsButton2</include>
+					<onfocus>Skin.SetString(widget.helper,videos1)</onfocus>
+					<label>Videos Left Widget</label>
+					<onclick>Skin.SetString(widget.helper,videos1)</onclick>
+					<onright>SetFocus(2612)</onright>
+				</control>
+					<control type="button" id="2">
+					<width>450</width>
+					<include>DefSettingsButton2</include>
 						<label>Videos Middle Left Widget</label>
 						<onfocus>Skin.SetString(widget.helper,videos2)</onfocus>
 						<onclick>SetFocus(2612)</onclick>
 						<onright>SetFocus(2612)</onright>
-					</item>
-					<item id="3">
+					</control>
+					<control type="button" id="3">
+					<width>450</width>
+					<include>DefSettingsButton2</include>
 						<label>Videos Middle Right Widget</label>
 						<onfocus>Skin.SetString(widget.helper,videos3)</onfocus>
 						<onclick>SetFocus(2612)</onclick>
 						<onright>SetFocus(2612)</onright>
-					</item>
-					<item id="4">
+					</control>
+					<control type="button" id="4">
+					<width>450</width>
+					<include>DefSettingsButton2</include>
 						<label>Videos Right Widget</label>
 						<onfocus>Skin.SetString(widget.helper,videos4)</onfocus>
 						<onclick>SetFocus(2612)</onclick>
 						<onright>SetFocus(2612)</onright>
-					</item>
-					<item id="5">
+					</control>
+					<control type="button" id="5">
+					<width>450</width>
+					<include>DefSettingsButton2</include>
 						<label>Movies Left Widget</label>
 						<onfocus>Skin.SetString(widget.helper,movies1)</onfocus>
 						<onclick>SetFocus(2612)</onclick>
 						<onright>SetFocus(2612)</onright>
-					</item>
-					<item id="6">
+					</control>
+					<control type="button" id="6">
+					<width>450</width>
+					<include>DefSettingsButton2</include>
 						<label>Movies Middle Left Widget</label>
 						<onfocus>Skin.SetString(widget.helper,movies2)</onfocus>
 						<onclick>SetFocus(2612)</onclick>
 						<onright>SetFocus(2612)</onright>
-					</item>
-					<item id="7">
+					</control>
+					<control type="button" id="7">
+					<width>450</width>
+					<include>DefSettingsButton2</include>
 						<label>Movies Middle Right Widget</label>
 						<onfocus>Skin.SetString(widget.helper,movies3)</onfocus>
 						<onclick>SetFocus(2612)</onclick>
 						<onright>SetFocus(2612)</onright>
-					</item>
-					<item id="8">
+					</control>
+					<control type="button" id="8">
+					<width>450</width>
+					<include>DefSettingsButton2</include>
 						<label>Movies Right Widget</label>
 						<onfocus>Skin.SetString(widget.helper,movies4)</onfocus>
 						<onclick>SetFocus(2612)</onclick>
 						<onright>SetFocus(2612)</onright>
-					</item>
-					<item id="9">
+					</control>
+					<control type="button" id="9">
+					<width>450</width>
+					<include>DefSettingsButton2</include>
 						<label>TV Shows Left Widget</label>
 						<onfocus>Skin.SetString(widget.helper,tv1)</onfocus>
 						<onclick>SetFocus(2612)</onclick>
 						<onright>SetFocus(2612)</onright>
-					</item>
-					<item id="10">
+					</control>
+					<control type="button" id="10">
+					<width>450</width>
+					<include>DefSettingsButton2</include>
 						<label>TV Shows Middle Left Widget</label>
 						<onfocus>Skin.SetString(widget.helper,tv2)</onfocus>
 						<onclick>SetFocus(2612)</onclick>
 						<onright>SetFocus(2612)</onright>
-					</item>
-					<item id="11">
+					</control>
+					<control type="button" id="11">
+					<width>450</width>
+					<include>DefSettingsButton2</include>
 						<label>TV Shows Middle Right Widget</label>
 						<onfocus>Skin.SetString(widget.helper,tv3)</onfocus>
 						<onclick>SetFocus(2612)</onclick>
 						<onright>SetFocus(2612)</onright>
-					</item>
-					<item id="12">
+					</control>
+					<control type="button" id="12">
+					<width>450</width>
+					<include>DefSettingsButton2</include>
 						<label>TV Shows Right Widget</label>
 						<onfocus>Skin.SetString(widget.helper,tv4)</onfocus>
 						<onclick>SetFocus(2612)</onclick>
 						<onright>SetFocus(2612)</onright>
-					</item>
-					<item id="13">
+					</control>
+					<control type="button" id="13">
+					<width>450</width>
+					<include>DefSettingsButton2</include>
 						<label>Music Left Widget</label>
 						<onfocus>Skin.SetString(widget.helper,music1)</onfocus>
 						<onclick>SetFocus(2612)</onclick>
 						<onright>SetFocus(2612)</onright>
-					</item>
-					<item id="14">
+					</control>
+					<control type="button" id="14">
+					<width>450</width>
+					<include>DefSettingsButton2</include>
 						<label>Music Middle Left Widget</label>
 						<onfocus>Skin.SetString(widget.helper,music2)</onfocus>
 						<onclick>SetFocus(2612)</onclick>
 						<onright>SetFocus(2612)</onright>
-					</item>
-					<item id="15">
+					</control>
+					<control type="button" id="15">
+					<width>450</width>
+					<include>DefSettingsButton2</include>
 						<label>Music Middle Right Widget</label>
 						<onfocus>Skin.SetString(widget.helper,music3)</onfocus>
 						<onclick>SetFocus(2612)</onclick>
 						<onright>SetFocus(2612)</onright>
-					</item>
-					<item id="16">
+					</control>
+					<control type="button" id="16">
+					<width>450</width>
+					<include>DefSettingsButton2</include>
 						<label>Music Right Widget</label>
 						<onfocus>Skin.SetString(widget.helper,music4)</onfocus>
 						<onclick>SetFocus(2612)</onclick>
 						<onright>SetFocus(2612)</onright>
-					</item>
-					<item id="17">
+					</control>
+					<control type="button" id="17">
+					<width>450</width>
+					<include>DefSettingsButton2</include>
 						<label>LiveTV Left Widget</label>
 						<onfocus>Skin.SetString(widget.helper,videoinfo1)</onfocus>
 						<onclick>SetFocus(2612)</onclick>
 						<onright>SetFocus(2612)</onright>
-					</item>
-					<item id="18">
+					</control>
+					<control type="button" id="18">
+					<width>450</width>
+					<include>DefSettingsButton2</include>
 						<label>LiveTV Right Widget</label>
 						<onfocus>Skin.SetString(widget.helper,videoinfo2)</onfocus>
 						<onclick>SetFocus(2612)</onclick>
 						<onright>SetFocus(2612)</onright>
-					</item>
-				</content>
+					</control>
 			</control>
 			<control type="list" id="2612">
 				<visible>StringCompare(Skin.String(widget.helper),videos1)</visible>
 				<posy>48</posy>
-				<posx>900</posx>
+				<posx>450</posx>
 				<width>900</width>
 				<height>454</height>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
@@ -192,7 +202,7 @@
 				<onright>back</onright>
 				<onup>2612</onup>
 				<ondown>2612</ondown>
-				<onleft>back</onleft>
+				<onleft>12612</onleft>
 				<onright>back</onright>
 				<itemlayout width="900" height="50">
 					<control type="label">
@@ -370,11 +380,11 @@
 			<control type="list" id="2612">
 				<visible>StringCompare(Skin.String(widget.helper),videos2)</visible>
 				<posy>48</posy>
-				<posx>0</posx>
+				<posx>450</posx>
 				<width>900</width>
 				<height>454</height>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
-				<onleft>back</onleft>
+				<onleft>12612</onleft>
 				<onright>back</onright>
 				<onup>2612</onup>
 				<ondown>2612</ondown>
@@ -554,11 +564,11 @@
 			<control type="list" id="2612">
 				<visible>StringCompare(Skin.String(widget.helper),videos3)</visible>
 				<posy>48</posy>
-				<posx>0</posx>
+				<posx>450</posx>
 				<width>900</width>
 				<height>454</height>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
-				<onleft>back</onleft>
+				<onleft>12612</onleft>
 				<onright>back</onright>
 				<onup>2612</onup>
 				<ondown>2612</ondown>
@@ -738,11 +748,11 @@
 			<control type="list" id="2612">
 				<visible>StringCompare(Skin.String(widget.helper),videos4)</visible>
 				<posy>48</posy>
-				<posx>0</posx>
+				<posx>450</posx>
 				<width>900</width>
 				<height>454</height>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
-				<onleft>back</onleft>
+				<onleft>12612</onleft>
 				<onright>back</onright>
 				<onup>2612</onup>
 				<ondown>2612</ondown>
@@ -922,11 +932,11 @@
 			<control type="list" id="2612">
 				<visible>StringCompare(Skin.String(widget.helper),movies1)</visible>
 				<posy>48</posy>
-				<posx>0</posx>
+				<posx>450</posx>
 				<width>900</width>
 				<height>454</height>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
-				<onleft>back</onleft>
+				<onleft>12612</onleft>
 				<onright>back</onright>
 				<onup>2612</onup>
 				<ondown>2612</ondown>
@@ -1106,11 +1116,11 @@
 			<control type="list" id="2612">
 				<visible>StringCompare(Skin.String(widget.helper),movies2)</visible>
 				<posy>48</posy>
-				<posx>0</posx>
+				<posx>450</posx>
 				<width>900</width>
 				<height>454</height>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
-				<onleft>back</onleft>
+				<onleft>12612</onleft>
 				<onright>back</onright>
 				<onup>2612</onup>
 				<ondown>2612</ondown>
@@ -1290,11 +1300,11 @@
 			<control type="list" id="2612">
 				<visible>StringCompare(Skin.String(widget.helper),movies3)</visible>
 				<posy>48</posy>
-				<posx>0</posx>
+				<posx>450</posx>
 				<width>900</width>
 				<height>454</height>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
-				<onleft>back</onleft>
+				<onleft>12612</onleft>
 				<onright>back</onright>
 				<onup>2612</onup>
 				<ondown>2612</ondown>
@@ -1474,11 +1484,11 @@
 			<control type="list" id="2612">
 				<visible>StringCompare(Skin.String(widget.helper),movies4)</visible>
 				<posy>48</posy>
-				<posx>0</posx>
+				<posx>450</posx>
 				<width>900</width>
 				<height>454</height>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
-				<onleft>back</onleft>
+				<onleft>12612</onleft>
 				<onright>back</onright>
 				<onup>2612</onup>
 				<ondown>2612</ondown>
@@ -1658,11 +1668,11 @@
 			<control type="list" id="2612">
 				<visible>StringCompare(Skin.String(widget.helper),tv1)</visible>
 				<posy>48</posy>
-				<posx>0</posx>
+				<posx>450</posx>
 				<width>900</width>
 				<height>454</height>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
-				<onleft>back</onleft>
+				<onleft>12612</onleft>
 				<onright>back</onright>
 				<onup>2612</onup>
 				<ondown>2612</ondown>
@@ -1842,11 +1852,11 @@
 			<control type="list" id="2612">
 				<visible>StringCompare(Skin.String(widget.helper),tv2)</visible>
 				<posy>48</posy>
-				<posx>0</posx>
+				<posx>450</posx>
 				<width>900</width>
 				<height>454</height>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
-				<onleft>back</onleft>
+				<onleft>12612</onleft>
 				<onright>back</onright>
 				<onup>2612</onup>
 				<ondown>2612</ondown>
@@ -2026,11 +2036,11 @@
 			<control type="list" id="2612">
 				<visible>StringCompare(Skin.String(widget.helper),tv3)</visible>
 				<posy>48</posy>
-				<posx>0</posx>
+				<posx>450</posx>
 				<width>900</width>
 				<height>454</height>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
-				<onleft>back</onleft>
+				<onleft>12612</onleft>
 				<onright>back</onright>
 				<onup>2612</onup>
 				<ondown>2612</ondown>
@@ -2210,11 +2220,11 @@
 			<control type="list" id="2612">
 				<visible>StringCompare(Skin.String(widget.helper),tv4)</visible>
 				<posy>48</posy>
-				<posx>0</posx>
+				<posx>450</posx>
 				<width>900</width>
 				<height>454</height>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
-				<onleft>back</onleft>
+				<onleft>12612</onleft>
 				<onright>back</onright>
 				<onup>2612</onup>
 				<ondown>2612</ondown>
@@ -2394,11 +2404,11 @@
 			<control type="list" id="2612">
 				<visible>StringCompare(Skin.String(widget.helper),music1)</visible>
 				<posy>48</posy>
-				<posx>0</posx>
+				<posx>450</posx>
 				<width>900</width>
 				<height>454</height>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
-				<onleft>back</onleft>
+				<onleft>12612</onleft>
 				<onright>back</onright>
 				<onup>2612</onup>
 				<ondown>2612</ondown>
@@ -2518,11 +2528,11 @@
 			<control type="list" id="2612">
 				<visible>StringCompare(Skin.String(widget.helper),music2)</visible>
 				<posy>48</posy>
-				<posx>0</posx>
+				<posx>450</posx>
 				<width>900</width>
 				<height>454</height>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
-				<onleft>back</onleft>
+				<onleft>12612</onleft>
 				<onright>back</onright>
 				<onup>2612</onup>
 				<ondown>2612</ondown>
@@ -2642,11 +2652,11 @@
 			<control type="list" id="2612">
 				<visible>StringCompare(Skin.String(widget.helper),music3)</visible>
 				<posy>48</posy>
-				<posx>0</posx>
+				<posx>450</posx>
 				<width>900</width>
 				<height>454</height>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
-				<onleft>back</onleft>
+				<onleft>12612</onleft>
 				<onright>back</onright>
 				<onup>2612</onup>
 				<ondown>2612</ondown>
@@ -2766,11 +2776,11 @@
 			<control type="list" id="2612">
 				<visible>StringCompare(Skin.String(widget.helper),music4)</visible>
 				<posy>48</posy>
-				<posx>0</posx>
+				<posx>450</posx>
 				<width>900</width>
 				<height>454</height>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
-				<onleft>back</onleft>
+				<onleft>12612</onleft>
 				<onright>back</onright>
 				<onup>2612</onup>
 				<ondown>2612</ondown>
@@ -2890,11 +2900,11 @@
 			<control type="list" id="2612">
 				<visible>StringCompare(Skin.String(widget.helper),videoinfo1)</visible>
 				<posy>48</posy>
-				<posx>0</posx>
+				<posx>450</posx>
 				<width>900</width>
 				<height>454</height>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
-				<onleft>back</onleft>
+				<onleft>12612</onleft>
 				<onright>back</onright>
 				<onup>2612</onup>
 				<ondown>2612</ondown>
@@ -3004,11 +3014,11 @@
 			<control type="list" id="2612">
 				<visible>StringCompare(Skin.String(widget.helper),videoinfo2)</visible>
 				<posy>48</posy>
-				<posx>0</posx>
+				<posx>450</posx>
 				<width>900</width>
 				<height>454</height>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
-				<onleft>back</onleft>
+				<onleft>12612</onleft>
 				<onright>back</onright>
 				<onup>2612</onup>
 				<ondown>2612</ondown>
