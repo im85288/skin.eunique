@@ -1707,7 +1707,7 @@
 					<font>Small</font>
 					<textcolor>white2</textcolor>
 					<selectedcolor>white2</selectedcolor>
-					<label>$INFO[Container(6012).ListItem.Year,, • ]$INFO[Container(6012).ListItem.Rating]$INFO[Container(6012).ListItem.Votes, (, $LOCALIZE[20350])]</label>
+					<label>$INFO[Container(6012).ListItem.Year]$INFO[Container(6012).ListItem.Rating, • ]$INFO[Container(6012).ListItem.Votes, (, $LOCALIZE[20350])]</label>
 					<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 				</control>
 				<control type="group">
@@ -3353,7 +3353,7 @@
 					<font>Small</font>
 					<textcolor>white2</textcolor>
 					<selectedcolor>white2</selectedcolor>
-					<label>$INFO[Container(3012).ListItem.Year,, • ]$INFO[Container(3012).ListItem.Rating]$INFO[Container(3012).ListItem.Votes, (, $LOCALIZE[20350])]</label>
+					<label>$INFO[Container(3012).ListItem.Year]$INFO[Container(3012).ListItem.Rating, • ]$INFO[Container(3012).ListItem.Votes, (, $LOCALIZE[20350])]</label>
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
 				</control>
 				<control type="group">
@@ -4089,7 +4089,7 @@
 					<font>Small</font>
 					<textcolor>white2</textcolor>
 					<selectedcolor>white2</selectedcolor>
-					<label>$INFO[Container(4012).ListItem.Duration,, $LOCALIZE[31102] • ]$INFO[Container(4012).ListItem.Rating]</label>
+					<label>$INFO[Container(4012).ListItem.Duration,, $LOCALIZE[31102]]$INFO[Container(4012).ListItem.Rating, • ]</label>
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !IsEmpty(Container(4012).ListItem.Rating) + !IsEmpty(Container(4012).ListItem.Duration)</visible>
 				</control>
 				<control type="label">
