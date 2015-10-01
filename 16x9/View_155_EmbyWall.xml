@@ -6,8 +6,8 @@
             <include>Animation.Common</include>
             <visible>Control.IsVisible(155)</visible>
             <visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml)</visible>
-            <animation effect="slide" end="-20,0" center="auto" time="200" condition="Container.Column(7)">Conditional</animation>
-            <animation effect="slide" end="20,0" center="auto" time="200" condition="Container.Column(0)">Conditional</animation>
+            <animation effect="slide" end="-20,0" center="auto" time="200" condition="Container.Column(7) + !Control.HasFocus(60)">Conditional</animation>
+            <animation effect="slide" end="20,0" center="auto" time="200" condition="Container.Column(0) + !Control.HasFocus(60)">Conditional</animation>
             <animation effect="slide" end="0,-10" center="auto" time="200" condition="Container.Row(1)">Conditional</animation>
             <animation effect="slide" end="0,10" center="auto" time="200" condition="Container.Row(0)">Conditional</animation>
             <animation type="Conditional" reversible="true"
@@ -168,7 +168,10 @@
                             <bottom>4</bottom>
                             <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture colordiffuse="$VAR[ColourHighlight]" background="true">common/white.png</texture>
-                            <animation effect="zoom" end="108" time="0" center="auto">Focus</animation>
+                            <animation type="Focus" reversible="false">
+                                <effect type="zoom" start="108,112" end="105,107" time="200" center="auto" tween="quadratic" easing="out"/>
+                                <effect type="rotate" end="1.5" time="200" center="auto" tween="quadratic" easing="out"/>
+                            </animation>
                         </control>
                         <control type="image">
                             <left>10</left>
