@@ -290,6 +290,14 @@
 		<value condition="System.HasAddon(script.image.resource.select) + !IsEmpty(Skin.String(weathericons.path))">$INFO[Skin.String(weathericons.path)]</value>
 		<value>resource://resource.images.weathericons.default/</value>
 	</variable>
+	<variable name="DefWeatherIconExt">
+		<value condition="Skin.HasSetting(weathericons.multi)">/</value>
+		<value>.png</value>
+	</variable>
+	<variable name="DefWeatherFanart">
+		<value condition="Skin.HasSetting(weatherfanart.multi)">/</value>
+		<value>.jpg</value>
+	</variable>
 
 	<variable name="PVRFanart">
 		<value condition="!IsEmpty(Window(home).Property(SkinHelper.PVR.FanArt))">$INFO[Window(home).Property(SkinHelper.PVR.FanArt)]</value>

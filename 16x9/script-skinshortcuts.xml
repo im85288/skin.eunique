@@ -218,7 +218,7 @@
                     <include>DefDialogButtons</include>
                 </control>
                 <control type="button" id="301" description="Add"> <!--new shortcut workaround-->
-                   <visible>false</visible>
+                    <visible>false</visible>
                 </control>
                 <control type="button" id="1301" description="Add"> <!--new shortcut workaround-->
                     <width>100%</width>
@@ -230,13 +230,13 @@
                     <label>$ADDON[script.skinshortcuts 32000]</label>
                     <onfocus>ClearProperty(customWidget, Home)</onfocus>
                 </control>
-               <!-- <control type="button" id="302" description="Delete">
-                    <width>100%</width>
-                    <height>66</height>
-                    <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
-                    <include>DefDialogButtons</include>
-                    <label>$ADDON[script.skinshortcuts 32001]</label>
-                </control> -->
+                <!-- <control type="button" id="302" description="Delete">
+                     <width>100%</width>
+                     <height>66</height>
+                     <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+                     <include>DefDialogButtons</include>
+                     <label>$ADDON[script.skinshortcuts 32001]</label>
+                 </control> -->
                 <control type="button" id="308" description="Reset">
                     <width>100%</width>
                     <height>66</height>
@@ -247,7 +247,15 @@
             </control>
 
 
-
+        </control>
+        <!-- 404, for setting custom property -->
+        <control type="button" id="404">
+            <visible>False</visible>
+            <left>-100000</left>
+            <top>-100000</top>
+            <width>1</width>
+            <height>1</height>
+            <onclick>noop</onclick>
         </control>
     </controls>
 </window>
