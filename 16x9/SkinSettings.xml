@@ -598,6 +598,14 @@
 					<selected>Skin.HasSetting(furniture.hidenew)</selected>
 					<onclick>Skin.ToggleSetting(furniture.hidenew)</onclick>
 				</control>
+				<control type="button" id="9262" description="Set Border Image">
+					<width>1390</width>
+					<include>DefSettingsButton2</include>
+					<label>31946</label>
+					<label2>[COLOR=$VAR[ColourSelected]]$INFO[Skin.String(border.image)][/COLOR]</label2>
+					<onclick condition="IsEmpty(Skin.String(border.image))">Skin.SetImage(border.image)</onclick>
+					<onclick condition="!IsEmpty(Skin.String(border.image))">Skin.Reset(border.image)</onclick>
+				</control>
 				<control type="radiobutton" id="9263" description="Flags">
 					<width>1390</width>
 					<include>DefSettingsButton2</include>
@@ -960,22 +968,6 @@
 					<label2>[COLOR=$INFO[Skin.String(playing.colour.name)]]$INFO[Skin.String(playing.colour.name)][/COLOR]</label2>
 					<visible>Skin.HasSetting(PlayingColour)</visible>
 					
-				</control>
-				<control type="radiobutton" id="92867">
-					<width>1390</width>
-					<include>DefSettingsButton2</include>
-					<selected>Skin.HasSetting(PosterBackingColour)</selected>
-					<onclick>Skin.ToggleSetting(PosterBackingColour)</onclick>
-					<label>31916</label>
-					<visible>!Skin.HasSetting(furniture.alternateindicators)</visible>
-				</control>
-				<control type="button" id="92868">
-					<width>1390</width>
-					<include>DefSettingsButton2</include>
-					<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=posterbacking.colour.name)</onclick>
-					<label>31917</label>
-					<label2>[COLOR=$INFO[Skin.String(posterbacking.colour.name)]]$INFO[Skin.String(posterbacking.colour.name)][/COLOR]</label2>
-					<visible>Skin.HasSetting(PosterBackingColour)</visible>
 				</control>
 				<control type="radiobutton" id="92869">
 					<width>1390</width>

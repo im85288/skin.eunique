@@ -7,6 +7,7 @@
 			<visible>Control.IsVisible(513)</visible>
 			<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets) | Container.Content(episodes)</visible>
 			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml)</visible>
+            <animation effect="slide" end="0,-20" center="auto" time="200" condition="Container.Row(1)">Conditional</animation>
 			<animation type="Conditional" reversible="true" condition="![Skin.HasSetting(osd.hidespoilers) + Container.Content(episodes) + [stringcompare(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]] + [Container.Content(musicvideos) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets) | Container.Content(episodes)] + !System.IdleTime(20) + System.IdleTime(3) + Skin.HasSetting(furniture.overlayinfo) + ![ControlGroup(9000).HasFocus() | Window.IsVisible(DialogContextMenu.xml)]">
 				<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out"/>
 				<effect type="zoom" end="1000,7" time="200" center="auto" tween="quadratic" easing="out"/>
@@ -183,6 +184,9 @@
 					</control>
 				</itemlayout>
 				<focusedlayout width="360" height="360">
+					<control type="group">
+					<animation effect="slide" end="0,-20" time="200" condition="container.row(0)">Focus</animation>	
+					<animation effect="slide" end="0,20" time="200" condition="container.row(1)">Focus</animation>	
 					<control type="button">
 						<texturefocus>-</texturefocus>
 						<texturenofocus>-</texturenofocus>
@@ -191,18 +195,13 @@
 					</control>
 					<control type="group">
 						<animation type="Focus">
-							<effect type="rotate" end="-37" center="auto" time="100" delay="35" tween="quadratic" easing="out"/>
-							<effect type="rotate" end="37" center="auto" time="50" delay="125" tween="quadratic" easing="out"/>
-							<effect type="rotate" end="2" center="auto" time="100" delay="150" tween="quadratic" easing="out"/>
 							<effect type="zoom" end="106" center="auto" time="100" delay="200" tween="quadratic" easing="out"/>
 						</animation>
 						<control type="image">
-							<description>Landscape</description>
-							<posx>16</posx>
-							<posy>-4</posy>
-							<width>360</width>
-							<height>360</height>
-							<texture background="true" colordiffuse="$VAR[ColourHighlight]">common/box-mask.png</texture>
+							<description>border</description>
+							<posx>30</posx>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<texture background="true" colordiffuse="$VAR[ColourHighlight]">special://skin/extras/borders/gradient1.png</texture>
 						</control>
 					</control>
 					<control type="group">
@@ -365,6 +364,7 @@
 								<visible>!stringcompare(ListItem.Label,..) + ListItem.IsResumable</visible>
 							</control>
 						</control>
+					</control>
 					</control>
 				</focusedlayout>
 			</control>

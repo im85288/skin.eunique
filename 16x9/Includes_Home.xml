@@ -1659,7 +1659,18 @@
 							<onfocus>Skin.SetString(widget.helper,videos1)</onfocus>
 						</control>
                         <control type="image">
-                            <texture border="5" colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
+							<left>0</left>
+							<width>50%</width>
+							<height>100%</height>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+                            <texture border="5" colordiffuse="$VAR[ColourHighlight]">special://skin/extras/borders/gradient1.png</texture>
+                        </control>
+                        <control type="image">
+							<left>50%</left>
+							<width>50%</width>
+							<height>100%</height>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+                            <texture border="5" colordiffuse="$VAR[ColourHighlight]" flipx="true">special://skin/extras/borders/gradient1.png</texture>
                         </control>
 						<control type="image">
 							<aspectratio>scale</aspectratio>
@@ -3308,14 +3319,26 @@
 							<onfocus>Skin.SetString(widget.helper,movies1)</onfocus>
 						</control>
                         <control type="image">
-                            <texture border="5" colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
+							<left>0</left>
+							<width>50%</width>
+							<height>100%</height>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+                            <texture border="5" colordiffuse="$VAR[ColourHighlight]">special://skin/extras/borders/gradient1.png</texture>
+                        </control>
+                        <control type="image">
+							<left>50%</left>
+							<width>50%</width>
+							<height>100%</height>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+                            <texture border="5" colordiffuse="$VAR[ColourHighlight]" flipx="true">special://skin/extras/borders/gradient1.png</texture>
                         </control>
 						<control type="image">
 							<aspectratio>scale</aspectratio>
 							<texture background="true">$VAR[LandscapeImage]</texture>
                             <animation type="Focus" reversible="false">
-                                <effect type="zoom" end="95,89" time="200" center="auto" tween="quadratic" easing="out"/>
+                                <effect type="zoom" end="96,93" time="200" center="auto" tween="quadratic" easing="out"/>
                                 <effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
+                                <effect type="slide" end="3,0" time="200" center="auto" tween="quadratic" easing="out"/>
                             </animation>
 						</control>
 					</focusedlayout>
@@ -4043,14 +4066,26 @@
 							<onfocus>Skin.SetString(widget.helper,tv1)</onfocus>
 						</control>
                         <control type="image">
-                            <texture border="5" colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
+							<left>0</left>
+							<width>50%</width>
+							<height>100%</height>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+                            <texture border="5" colordiffuse="$VAR[ColourHighlight]">special://skin/extras/borders/gradient1.png</texture>
+                        </control>
+                        <control type="image">
+							<left>50%</left>
+							<width>50%</width>
+							<height>100%</height>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+                            <texture border="5" colordiffuse="$VAR[ColourHighlight]" flipx="true">special://skin/extras/borders/gradient1.png</texture>
                         </control>
 						<control type="image">
 							<aspectratio>scale</aspectratio>
 							<texture background="true">$VAR[LandscapeImage]</texture>
                             <animation type="Focus" reversible="false">
-                                <effect type="zoom" end="95,89" time="200" center="auto" tween="quadratic" easing="out"/>
+                                <effect type="zoom" end="96,93" time="200" center="auto" tween="quadratic" easing="out"/>
                                 <effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
+                                <effect type="slide" end="3,0" time="200" center="auto" tween="quadratic" easing="out"/>
                             </animation>
 						</control>
 					</focusedlayout>
@@ -4554,6 +4589,7 @@
 								<label>$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Title]</label>
 								<visible>Control.HasFocus(4016)</visible>
 							</control>
+							<!-- NEEDS SYMBOLISING
 							<control type="image">
 								<centerright>32</centerright>
 								<centertop>32</centertop>
@@ -4572,6 +4608,7 @@
 								<texture>$VAR[PosterPercentWatched]</texture>
 								<visible>Control.HasFocus(4016)</visible>
 							</control>
+							-->
 							<control type="progress">
 								<bottom>0</bottom>
 								<height>8</height>
@@ -4632,14 +4669,6 @@
 							<aspectratio>stretch</aspectratio>
 							<texture background="true">$VAR[PosterImage]</texture>
 						</control>
-						<control type="image">
-							<centerright>32</centerright>
-							<centertop>32</centertop>
-							<width>32</width>
-							<height>32</height>
-							<aspectratio aligny="top">keep</aspectratio>
-							<texture>$VAR[PercentWatched]</texture>
-						</control>
 					</itemlayout>
 					<focusedlayout width="158" height="235">
 						<control type="button">
@@ -4670,14 +4699,6 @@
 							<textcolor>white2</textcolor>
 							<selectedcolor>white2</selectedcolor>
 							<label>$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,. ][CR][B]$INFO[ListItem.Title][/B]</label>
-						</control>
-						<control type="image">
-							<centerright>32</centerright>
-							<centertop>32</centertop>
-							<width>32</width>
-							<height>32</height>
-							<aspectratio aligny="top">keep</aspectratio>
-							<texture>$VAR[PercentWatched]</texture>
 						</control>
 						</control>
 					</focusedlayout>
@@ -4927,14 +4948,26 @@
 							<onfocus>Skin.SetString(widget.helper,music1)</onfocus>
 						</control>
                         <control type="image">
-                            <texture border="5" colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
+							<left>0</left>
+							<width>50%</width>
+							<height>100%</height>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+                            <texture border="5" colordiffuse="$VAR[ColourHighlight]">special://skin/extras/borders/gradient1.png</texture>
+                        </control>
+                        <control type="image">
+							<left>50%</left>
+							<width>50%</width>
+							<height>100%</height>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+                            <texture border="5" colordiffuse="$VAR[ColourHighlight]" flipx="true">special://skin/extras/borders/gradient1.png</texture>
                         </control>
 						<control type="image">
 							<aspectratio>scale</aspectratio>
 							<texture background="true">$VAR[FanartImage]</texture>
                             <animation type="Focus" reversible="false">
-                                <effect type="zoom" end="95,89" time="200" center="auto" tween="quadratic" easing="out"/>
+                                <effect type="zoom" end="96,93" time="200" center="auto" tween="quadratic" easing="out"/>
                                 <effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
+                                <effect type="slide" end="3,0" time="200" center="auto" tween="quadratic" easing="out"/>
                             </animation>
 							<visible>!Stringcompare(Skin.String(widget12),PopularArtists)</visible>
 							<visible>!Stringcompare(Skin.String(widget12),HypedArtists)</visible>
@@ -5904,14 +5937,26 @@
 							<onfocus>Skin.SetString(widget.helper,videoinfo1)</onfocus>
 						</control>
                         <control type="image">
-                            <texture border="5" colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
+							<left>0</left>
+							<width>50%</width>
+							<height>100%</height>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+                            <texture border="5" colordiffuse="$VAR[ColourHighlight]">special://skin/extras/borders/gradient1.png</texture>
+                        </control>
+                        <control type="image">
+							<left>50%</left>
+							<width>50%</width>
+							<height>100%</height>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+                            <texture border="5" colordiffuse="$VAR[ColourHighlight]" flipx="true">special://skin/extras/borders/gradient1.png</texture>
                         </control>
 						<control type="image">
 							<aspectratio>scale</aspectratio>
 							<texture background="true">$VAR[FanartImage]</texture>
                             <animation type="Focus" reversible="false">
-                                <effect type="zoom" end="95,89" time="200" center="auto" tween="quadratic" easing="out"/>
+                                <effect type="zoom" end="96,93" time="200" center="auto" tween="quadratic" easing="out"/>
                                 <effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
+                                <effect type="slide" end="3,0" time="200" center="auto" tween="quadratic" easing="out"/>
                             </animation>
 						</control>
 					</focusedlayout>

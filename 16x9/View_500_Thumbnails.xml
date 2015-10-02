@@ -217,8 +217,8 @@
                             <top>4</top>
                             <right>0</right>
                             <bottom>4</bottom>
-                            <aspectratio scalediffuse="false">stretch</aspectratio>
-                            <texture colordiffuse="$VAR[ColourHighlight]" background="true">common/white.png</texture>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<texture background="true" colordiffuse="$VAR[ColourHighlight]">special://skin/extras/borders/gradient1.png</texture>
                             <animation effect="zoom" end="105" time="0" center="auto">Focus</animation>
                         </control>
                         <control type="label">
@@ -231,15 +231,6 @@
                             <font>Tiny</font>
                             <label>$INFO[ListItem.Label]</label>
                             <textcolor>$VAR[ColourSelected]</textcolor>
-                        </control>
-                        <control type="image">
-                            <left>10</left>
-                            <top>10</top>
-                            <right>10</right>
-                            <height>226</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
-                            <texture colordiffuse="$VAR[ColourHighlight]">common/white.png</texture>
-                            <animation effect="zoom" end="105" time="0" center="auto">Focus</animation>
                         </control>
                         <control type="image">
                             <left>10</left>
@@ -506,15 +497,6 @@
                                 <label>$VAR[SwapDefaultImage]</label>
                                 <textcolor>white</textcolor>
                             </control>
-                            <control type="image">
-                                <centerright>32</centerright>
-                                <centertop>32</centertop>
-                                <width>32</width>
-                                <height>32</height>
-                                <aspectratio aligny="top">keep</aspectratio>
-                                <texture>$VAR[PercentWatched]</texture>
-                                <visible>!stringcompare(ListItem.Label,..)</visible>
-                            </control>
                             <control type="label">
                                 <centerright>34</centerright>
                                 <centertop>33</centertop>
@@ -583,8 +565,8 @@
                                 <top>4</top>
                                 <right>0</right>
                                 <bottom>4</bottom>
-                                <aspectratio scalediffuse="false">stretch</aspectratio>
-                                <texture colordiffuse="$VAR[ColourHighlight]" background="true">common/white.png</texture>
+								<aspectratio scalediffuse="false">scale</aspectratio>
+								<texture background="true" colordiffuse="$VAR[ColourHighlight]">special://skin/extras/borders/gradient1.png</texture>
                                 <animation effect="zoom" end="105" time="0" center="auto">Focus</animation>
                             </control>
                             <control type="label">
@@ -597,15 +579,6 @@
                                 <font>Tiny</font>
                                 <label>$INFO[ListItem.Label]</label>
                                 <textcolor>$VAR[ColourSelected]</textcolor>
-                            </control>
-                            <control type="image">
-                                <left>10</left>
-                                <top>10</top>
-                                <right>10</right>
-                                <height>226</height>
-                                <aspectratio scalediffuse="false">scale</aspectratio>
-                                <texture colordiffuse="$VAR[ColourHighlight]">common/white.png</texture>
-                                <animation effect="zoom" end="105" time="0" center="auto">Focus</animation>
                             </control>
                             <control type="image">
                                 <left>10</left>
@@ -661,15 +634,6 @@
                                     <effect type="zoom" end="145" time="200" center="auto" tween="quadratic" easing="out"/>
                                     <effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
                                 </animation>
-                            </control>
-                            <control type="image">
-                                <centerright>32</centerright>
-                                <centertop>32</centertop>
-                                <width>32</width>
-                                <height>32</height>
-                                <aspectratio aligny="top">keep</aspectratio>
-                                <texture>$VAR[PercentWatched]</texture>
-                                <visible>!stringcompare(ListItem.Label,..)</visible>
                             </control>
                             <control type="label">
                                 <centerright>34</centerright>
