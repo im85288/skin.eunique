@@ -156,7 +156,7 @@
                             <texturenofocus>-</texturenofocus>
                             <onfocus condition="Container.Content(movies)">ClearProperty(TVShowID,home)</onfocus>
                             <onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
-                            <onfocus condition="!Container.Scrolling">RunScript(script.toolbox,info=blur,id='"$INFO[ListItem.Art(fanart)]"',radius=$VAR[VideoInfoBlurLevel],prefix=DiscInfo)</onfocus>
+                            <onfocus condition="!Container.Scrolling">RunScript(script.toolbox,info=blur,id='"$INFO[ListItem.Art(fanart)]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfo)</onfocus>
                         </control>
 						<control type="image">
 							<aspectratio scalediffuse="false">scale</aspectratio>
@@ -172,7 +172,7 @@
                             <width>350</width>
                             <height>350</height>
                             <aspectratio scalediffuse="false">stretch</aspectratio>
-                            <texture colordiffuse="$INFO[Window(home).Property(DiscInfo.ImageColor)]" background="true" fallback="cdart/default.png">$VAR[CDArt]</texture>
+                            <texture colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" background="true" fallback="cdart/default.png">$VAR[CDArt]</texture>
                             <animation type="Focus">
 								<effect type="rotate" end="-37" center="auto" time="100" delay="35" tween="quadratic" easing="out"/>
 								<effect type="rotate" end="37" center="auto" time="50" delay="125" tween="quadratic" easing="out"/>
@@ -187,7 +187,7 @@
                             <width>350</width>
                             <height>350</height>
                             <aspectratio scalediffuse="false">stretch</aspectratio>
-                            <texture colordiffuse="$INFO[Window(home).Property(DiscInfo.ImageColor)]" diffuse="cdart/cdart-mask.png" background="true" fallback="cdart/default.png">$VAR[PosterImage]</texture>
+                            <texture colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" diffuse="cdart/cdart-mask.png" background="true" fallback="cdart/default.png">$VAR[PosterImage]</texture>
                             <animation type="Focus">
                                 <effect type="rotate" end="-37" center="auto" time="100" delay="35" tween="quadratic" easing="out"/>
                                 <effect type="rotate" end="37" center="auto" time="50" delay="125" tween="quadratic" easing="out"/>
@@ -302,7 +302,7 @@
                             <height>90</height>
                             <autoscroll>false</autoscroll>
                             <font>MediumBold</font>
-                            <textcolor>$INFO[Window(home).Property(DiscInfo.ImageColor)]</textcolor>
+                            <textcolor>$INFO[Window(home).Property(VideoInfo.ImageColor)]</textcolor>
                             <selectedcolor>white</selectedcolor>
                             <label>$INFO[ListItem.Rating]$VAR[LabelDuration, ]$VAR[MPAA, ][CR]$VAR[HDSD, ]$VAR[LabelYear, ]</label>
                             <animation type="Focus">
@@ -318,7 +318,7 @@
                             <height>90</height>
                             <autoscroll>false</autoscroll>
                             <font>MediumBold</font>
-                            <textcolor>$INFO[Window(home).Property(DiscInfo.ImageColor)]</textcolor>
+                            <textcolor>$INFO[Window(home).Property(VideoInfo.ImageColor)]</textcolor>
                             <selectedcolor>white</selectedcolor>
                             <label>$INFO[ListItem.Rating]$VAR[LabelDuration, ]$VAR[MPAA, ][CR]$INFO[ListItem.Studio, ]</label>
                             <animation type="Focus">

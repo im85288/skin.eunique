@@ -811,11 +811,39 @@
 						<top>-10</top>
 							<width>613</width>
 							<height>920</height>
-						<control type="image">
-							<aspectratio scalediffuse="false">stretch</aspectratio>
-							<texture colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" background="true">common/white.png</texture>
+							<control type="group">
+								<control type="image">
+									<left>0</left>
+									<width>50%</width>
+									<height>50%</height>
+									<aspectratio scalediffuse="false">scale</aspectratio>
+									<texture colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" background="true">special://skin/extras/borders/gradient1.png</texture>
+								</control>
+								<control type="image">
+									<left>50%</left>
+									<width>50%</width>
+									<height>50%</height>
+									<aspectratio scalediffuse="false">scale</aspectratio>
+									<texture colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" background="true">special://skin/extras/borders/gradient1.png</texture>
+								</control>
+								<control type="image">
+									<left>0</left>
+									<top>50%</top>
+									<width>50%</width>
+									<height>50%</height>
+									<aspectratio scalediffuse="false">scale</aspectratio>
+									<texture colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" background="true" flipy="true">special://skin/extras/borders/gradient1.png</texture>
+								</control>
+								<control type="image">
+									<left>50%</left>
+									<top>50%</top>
+									<width>50%</width>
+									<height>50%</height>
+									<aspectratio scalediffuse="false">scale</aspectratio>
+									<texture colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" background="true" flipy="true">special://skin/extras/borders/gradient1.png</texture>
+								</control>
 							<animation type="conditional" condition="true" reversible="false">
-								<effect type="zoom" start="100" end="108" time="200" center="auto" tween="quadratic" easing="out" />
+								<effect type="zoom" start="100" end="108" time="200" center="auto" tween="quadratic" easing="out"/>
 							</animation>
 						</control>
 						<control type="image">

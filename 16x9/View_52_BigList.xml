@@ -51,6 +51,13 @@
 					<include>View_52_BigList_ItemLayout</include>
 				</itemlayout>
 				<focusedlayout height="133" width="955">
+					<control type="button">
+						<texturefocus>-</texturefocus>
+						<texturenofocus>-</texturenofocus>
+						<onfocus condition="Container.Content(movies)">ClearProperty(TVShowID,home)</onfocus>
+						<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
+						<onfocus condition="!Container.Scrolling">RunScript(script.toolbox,info=blur,id='"$VAR[PosterImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfo)</onfocus>
+					</control>
 					<control type="image">
 						<left>0</left>
 						<top>0</top>
@@ -126,6 +133,13 @@
 					<include>View_52_BigList_ItemLayout</include>
 				</itemlayout>
 				<focusedlayout height="133" width="955">
+					<control type="button">
+						<texturefocus>-</texturefocus>
+						<texturenofocus>-</texturenofocus>
+						<onfocus condition="Container.Content(movies)">ClearProperty(TVShowID,home)</onfocus>
+						<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
+						<onfocus condition="!Container.Scrolling">RunScript(script.toolbox,info=blur,id='"$VAR[PosterImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfo)</onfocus>
+					</control>
 					<control type="image">
 						<left>0</left>
 						<top>0</top>
