@@ -9,16 +9,16 @@
             <centerleft>50%</centerleft>
             <centertop>50%</centertop>
             <width>1065</width>
-            <height>657</height>
+            <height>584</height>
             <control type="image">
                 <description>background image</description>
 				<height>72</height>
-                <texture border="16" colordiffuse="$VAR[EmbyMenuTextColourHighlight]">common/box.png</texture>
+                <texture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">common/box.png</texture>
             </control>
             <control type="image">
                 <description>background image</description>
                 <top>72</top>
-                <texture border="16" colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
+                <texture colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
             </control>
 
             <control type="label" id="500">
@@ -35,26 +35,19 @@
             <!-- Left List: Current Shortcuts -->
             <control type="list" id="211">
                 <description>Rules List Control</description>
-                <left>15</left>
-                <bottom>15</bottom>
+                <left>0</left>
+                <bottom>0</bottom>
                 <width>600</width>
-                <height>552</height>
+                <height>512</height>
                 <onup>211</onup>
                 <onleft>211</onleft>
                 <onright>9100</onright>
                 <ondown>211</ondown>
                 <scrolltime>0</scrolltime>
-                <itemlayout width="600" height="69">
-                    <control type="image">
-                        <posx>0</posx>
-                        <posy>0</posy>
-                        <width>100%</width>
-                        <height>66</height>
-                        <texture border="5" colordiffuse="Black12">common/box.png</texture>
-                    </control>
+                <itemlayout width="600" height="64">
                     <control type="label">
-                        <left>30</left>
-                        <right>30</right>
+                        <left>10</left>
+                        <right>10</right>
                         <info>ListItem.Label</info>
                         <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
                     </control>
@@ -62,32 +55,28 @@
                         <right>0</right>
                         <top>0</top>
                         <width>66</width>
-                        <height>66</height>
+                        <height>64</height>
                         <texture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">$INFO[ListItem.Icon]</texture>
                         <visible>substring(ListItem.Icon,special://skin/extras/icons)</visible>
                         <visible>Skin.HasSetting(home.showicons)</visible>
                     </control>
                 </itemlayout>
-                <focusedlayout width="600" height="69">
+                <focusedlayout width="600" height="64">
                     <control type="image">
-                        <posx>0</posx>
-                        <posy>0</posy>
-                        <width>100%</width>
-                        <height>66</height>
-                        <texture border="5" colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
-                        <!-- <visible>Control.HasFocus(211)</visible> -->
+                        <texture colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
+						<animation effect="fade" time="50" start="100" end="50" condition="!Control.HasFocus(303) + !Control.HasFocus(302) + !Control.HasFocus(304)">Conditional</animation>
                     </control>
                     <control type="label">
-                        <left>30</left>
-                        <right>30</right>
+                        <left>10</left>
+                        <right>10</right>
                         <info>ListItem.Label</info>
                         <textcolor>$VAR[ColourSelected]</textcolor>
                     </control>
                     <control type="image">
                         <right>0</right>
                         <top>0</top>
-                        <width>66</width>
-                        <height>66</height>
+                        <width>64</width>
+                        <height>64</height>
                         <texture colordiffuse="$VAR[ColourSelected]">$INFO[ListItem.Icon]</texture>
                         <visible>substring(ListItem.Icon,special://skin/extras/icons)</visible>
                         <visible>Skin.HasSetting(home.showicons)</visible>
@@ -96,8 +85,7 @@
             </control>
 
             <control type="grouplist" id="9200">
-                <left>15</left>
-                <top>91</top>
+                <top>72</top>
                 <width>600</width>
                 <align>right</align>
                 <itemgap>-20</itemgap>
@@ -106,18 +94,18 @@
                 <ondown>Control.Move(211,1)</ondown>
                 <orientation>horizontal</orientation>
                 <animation effect="slide" end="-48" condition="Skin.HasSetting(home.showicons)">Conditional</animation>
-                <animation effect="slide" end="0,69" condition="IntegerGreaterThan(Container(211).Position,0)">Conditional</animation>
-                <animation effect="slide" end="0,69" condition="IntegerGreaterThan(Container(211).Position,1)">Conditional</animation>
-                <animation effect="slide" end="0,69" condition="IntegerGreaterThan(Container(211).Position,2)">Conditional</animation>
-                <animation effect="slide" end="0,69" condition="IntegerGreaterThan(Container(211).Position,3)">Conditional</animation>
-                <animation effect="slide" end="0,69" condition="IntegerGreaterThan(Container(211).Position,4)">Conditional</animation>
-                <animation effect="slide" end="0,69" condition="IntegerGreaterThan(Container(211).Position,5)">Conditional</animation>
-                <animation effect="slide" end="0,69" condition="IntegerGreaterThan(Container(211).Position,6)">Conditional</animation>
-                <animation effect="slide" end="0,69" condition="IntegerGreaterThan(Container(211).Position,7)">Conditional</animation>
-                <animation effect="slide" end="0,69" condition="IntegerGreaterThan(Container(211).Position,8)">Conditional</animation>
-                <animation effect="slide" end="0,69" condition="IntegerGreaterThan(Container(211).Position,9)">Conditional</animation>
-                <animation effect="slide" end="0,69" condition="IntegerGreaterThan(Container(211).Position,10)">Conditional</animation>
-                <animation effect="slide" end="0,69" condition="IntegerGreaterThan(Container(211).Position,11)">Conditional</animation>
+                <animation effect="slide" end="0,64" condition="IntegerGreaterThan(Container(211).Position,0)">Conditional</animation>
+                <animation effect="slide" end="0,64" condition="IntegerGreaterThan(Container(211).Position,1)">Conditional</animation>
+                <animation effect="slide" end="0,64" condition="IntegerGreaterThan(Container(211).Position,2)">Conditional</animation>
+                <animation effect="slide" end="0,64" condition="IntegerGreaterThan(Container(211).Position,3)">Conditional</animation>
+                <animation effect="slide" end="0,64" condition="IntegerGreaterThan(Container(211).Position,4)">Conditional</animation>
+                <animation effect="slide" end="0,64" condition="IntegerGreaterThan(Container(211).Position,5)">Conditional</animation>
+                <animation effect="slide" end="0,64" condition="IntegerGreaterThan(Container(211).Position,6)">Conditional</animation>
+                <animation effect="slide" end="0,64" condition="IntegerGreaterThan(Container(211).Position,7)">Conditional</animation>
+                <animation effect="slide" end="0,64" condition="IntegerGreaterThan(Container(211).Position,8)">Conditional</animation>
+                <animation effect="slide" end="0,64" condition="IntegerGreaterThan(Container(211).Position,9)">Conditional</animation>
+                <animation effect="slide" end="0,64" condition="IntegerGreaterThan(Container(211).Position,10)">Conditional</animation>
+                <animation effect="slide" end="0,64" condition="IntegerGreaterThan(Container(211).Position,11)">Conditional</animation>
                 <control type="button" id="302" description="Delete">
                     <width>64</width>
                     <height>64</height>
@@ -150,39 +138,39 @@
 
             <!-- Right Buttons -->
             <control type="grouplist" id="9100">
+                <top>72</top>
+				<left>600</left>
+               <width>465</width>
+                <height>584</height>
                 <onleft>304</onleft>
                 <onright>303</onright>
                 <onup>9100</onup>
                 <ondown>9100</ondown>
-                <right>15</right>
-                <bottom>15</bottom>
-                <width>420</width>
-                <height>552</height>
                 <orientation>vertical</orientation>
-                <itemgap>3</itemgap>
+                <itemgap>0</itemgap>
                 <control type="button" id="401" description="Alt chooser">
                     <width>100%</width>
-                    <height>66</height>
-                    <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+                    <height>64</height>
+                    <texturenofocus colordiffuse="Black12">common/box.png</texturenofocus>
                     <include>DefDialogButtons</include>
                 </control>
                 <control type="button" id="307" description="Custom">
                     <width>100%</width>
-                    <height>66</height>
-                    <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+                    <height>64</height>
+                    <texturenofocus colordiffuse="Black12">common/box.png</texturenofocus>
                     <include>DefDialogButtons</include>
                 </control>
                 <control type="button" id="305" description="Set Label">
                     <width>100%</width>
-                    <height>66</height>
-                    <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+                    <height>64</height>
+                    <texturenofocus colordiffuse="Black12">common/box.png</texturenofocus>
                     <include>DefDialogButtons</include>
                 </control>
                 <control type="button" id="312" description="Widget">
                     <width>100%</width>
-                    <height>66</height>
+                    <height>64</height>
                     <visible>stringcompare(Window.Property(groupname),mainmenu)</visible>
-                    <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+                    <texturenofocus colordiffuse="Black12">common/box.png</texturenofocus>
                     <include>DefDialogButtons</include>
                 </control>
                 <control type="button" id="309">
@@ -191,25 +179,25 @@
                 </control>
                 <control type="button" id="310" description="Background">
                     <width>100%</width>
-                    <height>66</height>
+                    <height>64</height>
                     <visible>stringcompare(Window.Property(groupname),mainmenu)</visible>
-                    <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+                    <texturenofocus colordiffuse="Black12">common/box.png</texturenofocus>
                     <include>DefDialogButtons</include>
                 </control>
                 <control type="button" id="311" description="Browse for Thumb">
                     <width>100%</width>
-                    <height>66</height>
+                    <height>64</height>
                     <label>31181</label>
-                    <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+                    <texturenofocus colordiffuse="Black12">common/box.png</texturenofocus>
                     <include>DefDialogButtons</include>
                     <visible>Skin.HasSetting(home.showicons)</visible>
                 </control>
                 <control type="button" id="405" description="Set Submenu">
                     <width>100%</width>
-                    <height>66</height>
+                    <height>64</height>
                     <label>31112</label>
                     <visible>stringcompare(Window.Property(groupname),mainmenu)</visible>
-                    <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+                    <texturenofocus colordiffuse="Black12">common/box.png</texturenofocus>
                     <include>DefDialogButtons</include>
                 </control>
                 <control type="button" id="301" description="Add"> <!--new shortcut workaround-->
@@ -217,8 +205,8 @@
                 </control>
                 <control type="button" id="1301" description="Add"> <!--new shortcut workaround-->
                     <width>100%</width>
-                    <height>66</height>
-                    <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+                    <height>64</height>
+                    <texturenofocus colordiffuse="Black12">common/box.png</texturenofocus>
                     <include>DefDialogButtons</include>
                     <onclick>XBMC.RunScript(script.skin.helper.service,action=ADDSHORTCUT)</onclick>
                     <onclick>ClearProperty(customWidget, Home)</onclick>
@@ -227,15 +215,15 @@
                 </control>
                 <!-- <control type="button" id="302" description="Delete">
                      <width>100%</width>
-                     <height>66</height>
-                     <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+                     <height>64</height>
+                     <texturenofocus colordiffuse="Black12">common/box.png</texturenofocus>
                      <include>DefDialogButtons</include>
                      <label>$ADDON[script.skinshortcuts 32001]</label>
                  </control> -->
                 <control type="button" id="308" description="Reset">
                     <width>100%</width>
-                    <height>66</height>
-                    <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+                    <height>64</height>
+                    <texturenofocus colordiffuse="Black12">common/box.png</texturenofocus>
                     <include>DefDialogButtons</include>
                     <visible>!stringcompare(Window.Property(groupname),mainmenu)</visible>
                 </control>
