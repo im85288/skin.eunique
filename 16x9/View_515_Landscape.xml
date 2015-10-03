@@ -34,17 +34,17 @@
                 <viewtype label="31833">list</viewtype>
                 <scrolltime tween="quadratic">400</scrolltime>
                 <itemlayout width="384" height="216">
-                        <control type="label" id="13370">
-                        <posx>5</posx>
-                        <posy>5</posy>
-                        <width>374</width>
-                        <height>206</height>
-                            <aligny>center</aligny>
-                            <align>center</align>
-                            <font>symbolbiggest</font>
-                            <label>$VAR[SwapDefaultImage]</label>
-                            <textcolor>white</textcolor>
-                        </control>
+					<control type="label" id="13370">
+						<posx>5</posx>
+						<posy>5</posy>
+						<width>374</width>
+						<height>206</height>
+						<aligny>center</aligny>
+						<align>center</align>
+						<font>symbolbiggest</font>
+						<label>$VAR[SwapDefaultImage]</label>
+						<textcolor>white</textcolor>
+					</control>
                     <control type="image">
                         <description>Landscape</description>
                         <posx>5</posx>
@@ -177,17 +177,6 @@
                                 <effect type="rotate" end="1.5" time="200" center="auto" tween="quadratic" easing="out"/>
 							</animation>
 						</control>
-                        <control type="label" id="13370">
-                         <posx>5</posx>
-                        <posy>5</posy>
-                        <width>374</width>
-                        <height>206</height>
-                           <aligny>center</aligny>
-                            <align>center</align>
-                            <font>symbolbiggest</font>
-                            <label>$VAR[SwapDefaultImage]</label>
-                            <textcolor>white</textcolor>
-                        </control>
                         <control type="image">
                             <posx>5</posx>
                             <posy>5</posy>
@@ -196,6 +185,17 @@
                             <texture colordiffuse="$VAR[EmbyRightColourHighlight]" border="5">common/box.png</texture>
                             <fadetime>200</fadetime>
                         </control>
+						<control type="label" id="13370">
+							<posx>5</posx>
+							<posy>5</posy>
+							<width>374</width>
+							<height>206</height>
+							<aligny>center</aligny>
+							<align>center</align>
+							<font>symbolbiggest</font>
+							<label>$VAR[SwapDefaultImage]</label>
+							<textcolor>white</textcolor>
+						</control>
                         <control type="image">
                             <posx>5</posx>
                             <posy>5</posy>
@@ -255,9 +255,8 @@
                         <control type="textbox">
                             <left>10</left>
                             <right>10</right>
-                            <top>10</top>
+                            <top>179</top>
                             <align>center</align>
-                            <aligny>center</aligny>
                             <font>TinyBold</font>
                             <textcolor>$VAR[ColourSelected]</textcolor>
                             <selectedcolor>$VAR[ColourSelected]</selectedcolor>

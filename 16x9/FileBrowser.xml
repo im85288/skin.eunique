@@ -12,18 +12,18 @@
             <include>Animation.ZoomIn</include>
             <centerleft>50%</centerleft>
             <posy>90</posy>
-            <height>900</height>
+            <height>860</height>
             <width>1080</width>
             <control type="image">
                 <width>1080</width>
-                <height>100</height>
-                <texture border="16" colordiffuse="$VAR[EmbyMenuTextColourHighlight]">common/box.png</texture>
+                <height>92</height>
+                <texture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">common/box.png</texture>
             </control>
             <control type="image">
                 <width>1080</width>
-                <top>100</top>
-                <height>800</height>
-                <texture border="16" colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
+                <top>92</top>
+                <height>768</height>
+                <texture colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
             </control>
 
             <control type="label" id="411">
@@ -50,61 +50,48 @@
             </control>
 
             <control type="list" id="450">
-                <posx>8</posx>
-                <posy>120</posy>
-                <width>700</width>
-                <height>690</height>
+                <posx>0</posx>
+                <posy>92</posy>
+                <width>720</width>
+                <height>768</height>
                 <onleft>9000</onleft>
                 <onright>9000</onright>
                 <onup>450</onup>
                 <ondown>450</ondown>
 
-                <itemlayout height="138">
+                <itemlayout height="128" width="720">
 
                     <control type="image">
-                        <posx>32</posx>
-                        <posy>12</posy>
-                        <width>111</width>
-                        <height>111</height>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
-                        <texture diffuse="diffuse/dialogselect.png" fallback="DefaultAddonNone.png">$INFO[Listitem.Icon]</texture>
-                        <visible>!Skin.HasSetting(global.hidecirles) + !substring(ListItem.Path,spinners)</visible>
-                    </control>
-                    <control type="image">
-                        <posx>32</posx>
-                        <posy>12</posy>
-                        <width>111</width>
-                        <height>111</height>
+						<width>444</width>
+						<height>128</height>
                         <aspectratio scalediffuse="false">keep</aspectratio>
                         <texture fallback="DefaultAddonNone.png">$INFO[Listitem.Icon]</texture>
                         <visible>Skin.HasSetting(global.hidecirles) + !substring(ListItem.Path,spinners)</visible>
                     </control>
                     <control type="image">
-                        <posx>32</posx>
-                        <posy>12</posy>
-                        <width>111</width>
-                        <height>111</height>
-                        <aspectratio scalediffuse="false">center</aspectratio>
-                        <texture fallback="DefaultAddonNone.png" colordiffuse="$VAR[ColourHighlight]">$INFO[Listitem.FileNameAndPath]</texture>
+						<width>444</width>
+						<height>128</height>
+                        <aspectratio scalediffuse="false">keep</aspectratio>
+                        <texture colordiffuse="$VAR[ColourHighlight]">$INFO[Listitem.FileNameAndPath]</texture>
                         <visible>substring(ListItem.Path,spinners)</visible>
                     </control>
 
                     <control type="label">
-                        <posy>-18</posy>
-                        <posx>170</posx>
-                        <width>496</width>
-                        <height>135</height>
-                        <font>SmallBold</font>
+						<right>10</right>
+                        <left>170</left>
+                        <height>128</height>
+						<aligny>center</aligny>
+                       <font>SmallBold</font>
                         <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
                         <selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
                         <info>ListItem.Label</info>
                         <animation effect="slide" end="0,18" condition="IsEmpty(ListItem.Property(Addon.Summary))">Conditional</animation>
                     </control>
                     <control type="label">
-                        <posx>170</posx>
-                        <posy>18</posy>
-                        <width>496</width>
-                        <height>135</height>
+						<right>10</right>
+                        <left>170</left>
+                            <top>100</top>
+                            <bottom>10</bottom>
                         <font>Mini</font>
                         <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
                         <selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
@@ -113,115 +100,88 @@
 
                 </itemlayout>
 
-                <focusedlayout height="138">
+                <focusedlayout height="128" width="720">
                     <control type="group">
                         <visible>!Control.HasFocus(450)</visible>
-                        <control type="image">
-                            <posx>32</posx>
-                            <posy>12</posy>
-                            <width>111</width>
-                            <height>111</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
-                            <texture diffuse="diffuse/dialogselect.png" fallback="DefaultAddonNone.png">$INFO[Listitem.Icon]</texture>
-                            <visible>!Skin.HasSetting(global.hidecirles) + !substring(ListItem.Path,spinners)</visible>
-                        </control>
-                        <control type="image">
-                            <posx>32</posx>
-                            <posy>12</posy>
-                            <width>111</width>
-                            <height>111</height>
-                            <aspectratio scalediffuse="false">keep</aspectratio>
-                            <texture fallback="DefaultAddonNone.png">$INFO[Listitem.Icon]</texture>
-                            <visible>Skin.HasSetting(global.hidecirles) + !substring(ListItem.Path,spinners)</visible>
-                        </control>
-                        <control type="image">
-                            <posx>32</posx>
-                            <posy>12</posy>
-                            <width>111</width>
-                            <height>111</height>
-                            <aspectratio scalediffuse="false">center</aspectratio>
-                            <texture fallback="DefaultAddonNone.png" colordiffuse="$VAR[ColourHighlight]">$INFO[Listitem.FileNameAndPath]</texture>
-                            <visible>substring(ListItem.Path,spinners)</visible>
-                        </control>
-                        <control type="label">
-                            <posy>-18</posy>
-                            <posx>170</posx>
-                            <width>496</width>
-                            <height>135</height>
-                            <font>SmallBold</font>
-                            <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
-                            <selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
-                            <info>ListItem.Label</info>
-                            <animation effect="slide" end="0,18" condition="IsEmpty(ListItem.Label2)">Conditional</animation>
-                        </control>
-                        <control type="label">
-                            <posx>170</posx>
-                            <posy>18</posy>
-                            <width>496</width>
-                            <height>135</height>
-                            <font>Mini</font>
-                            <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
-                            <selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
-                            <label>$INFO[ListItem.Label2]</label>
-                        </control>
+                    <control type="image">
+						<width>444</width>
+						<height>128</height>
+                        <aspectratio scalediffuse="false">keep</aspectratio>
+                        <texture fallback="DefaultAddonNone.png">$INFO[Listitem.Icon]</texture>
+                        <visible>Skin.HasSetting(global.hidecirles) + !substring(ListItem.Path,spinners)</visible>
+                    </control>
+                    <control type="image">
+						<width>444</width>
+						<height>128</height>
+                        <aspectratio scalediffuse="false">keep</aspectratio>
+                        <texture colordiffuse="$VAR[ColourHighlight]">$INFO[Listitem.FileNameAndPath]</texture>
+                        <visible>substring(ListItem.Path,spinners)</visible>
+                    </control>
+                    <control type="label">
+						<right>10</right>
+                        <left>170</left>
+                        <height>128</height>
+						<aligny>center</aligny>
+                       <font>SmallBold</font>
+                        <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+                        <selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
+                        <info>ListItem.Label</info>
+                        <animation effect="slide" end="0,18" condition="IsEmpty(ListItem.Property(Addon.Summary))">Conditional</animation>
+                    </control>
+                    <control type="label">
+						<right>10</right>
+                        <left>170</left>
+                        <width>496</width>
+                            <top>100</top>
+                            <bottom>10</bottom>
+                        <font>Mini</font>
+                        <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+                        <selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
+                        <label>$INFO[ListItem.Property(Addon.Summary)]</label>
+                    </control>
                     </control>
                     <control type="group">
                         <visible>Control.HasFocus(450)</visible>
                         <control type="image">
-                            <width>696</width>
-                            <height>135</height>
-                            <texture border="5" colordiffuse="$VAR[ColourHighlight]">common/white.png</texture>
+                            <texture colordiffuse="$VAR[ColourHighlight]">common/white.png</texture>
                         </control>
 
-                        <control type="image">
-                            <posx>32</posx>
-                            <posy>12</posy>
-                            <width>111</width>
-                            <height>111</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
-                            <texture diffuse="diffuse/dialogselect.png" fallback="DefaultAddonNone.png">$INFO[Listitem.Icon]</texture>
-                            <visible>!Skin.HasSetting(global.hidecirles) + !substring(ListItem.Path,spinners)</visible>
-                        </control>
-                        <control type="image">
-                            <posx>32</posx>
-                            <posy>12</posy>
-                            <width>111</width>
-                            <height>111</height>
-                            <aspectratio scalediffuse="false">keep</aspectratio>
-                            <texture fallback="DefaultAddonNone.png">$INFO[Listitem.Icon]</texture>
-                            <visible>Skin.HasSetting(global.hidecirles) + !substring(ListItem.Path,spinners)</visible>
-                        </control>
-                        <control type="image">
-                            <posx>32</posx>
-                            <posy>12</posy>
-                            <width>111</width>
-                            <height>111</height>
-                            <aspectratio scalediffuse="false">center</aspectratio>
-                            <texture fallback="DefaultAddonNone.png">$INFO[Listitem.FileNameAndPath]</texture>
-                            <visible>substring(ListItem.Path,spinners)</visible>
-                        </control>
-
-                        <control type="label">
-                            <posy>-18</posy>
-                            <posx>170</posx>
-                            <width>496</width>
-                            <height>135</height>
-                            <font>SmallBold</font>
-                            <textcolor>$VAR[ColourSelected]</textcolor>
-                            <selectedcolor>$VAR[ColourSelected]</selectedcolor>
-                            <info>ListItem.Label</info>
-                            <animation effect="slide" end="0,18" condition="IsEmpty(ListItem.Label2)">Conditional</animation>
-                        </control>
-                        <control type="label">
-                            <left>170</left>
-                            <posy>18</posy>
-                            <width>496</width>
-                            <height>135</height>
-                            <font>Mini</font>
-                            <textcolor>$VAR[ColourSelected]</textcolor>
-                            <selectedcolor>$VAR[ColourSelected]</selectedcolor>
-                            <label>$INFO[ListItem.Label2]</label>
-                        </control>
+                    <control type="image">
+						<width>444</width>
+						<height>128</height>
+                        <aspectratio scalediffuse="false">keep</aspectratio>
+                        <texture fallback="DefaultAddonNone.png">$INFO[Listitem.Icon]</texture>
+                        <visible>Skin.HasSetting(global.hidecirles) + !substring(ListItem.Path,spinners)</visible>
+                    </control>
+                    <control type="image">
+						<width>444</width>
+						<height>128</height>
+                        <aspectratio scalediffuse="false">keep</aspectratio>
+                        <texture colordiffuse="$VAR[ColourHighlight]">$INFO[Listitem.FileNameAndPath]</texture>
+                        <visible>substring(ListItem.Path,spinners)</visible>
+                    </control>
+                    <control type="label">
+						<right>10</right>
+                        <left>170</left>
+                        <height>128</height>
+						<aligny>center</aligny>
+                       <font>SmallBold</font>
+                        <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+                        <selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
+                        <info>ListItem.Label</info>
+                        <animation effect="slide" end="0,18" condition="IsEmpty(ListItem.Property(Addon.Summary))">Conditional</animation>
+                    </control>
+                    <control type="label">
+						<right>10</right>
+                        <left>170</left>
+                        <width>496</width>
+                            <top>100</top>
+                            <bottom>10</bottom>
+                        <font>Mini</font>
+                        <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+                        <selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
+                        <label>$INFO[ListItem.Property(Addon.Summary)]</label>
+                    </control>
                     </control>
 
 
@@ -230,28 +190,31 @@
             </control>
 
             <control type="grouplist" id="9000">
-                <posx>738</posx>
-                <posy>120</posy>
-                <itemgap>3</itemgap>
+                <posx>720</posx>
+                <posy>92</posy>
+				<width>360</width>
+                <itemgap>00</itemgap>
                 <orientation>vertical</orientation>
                 <onright>450</onright>
                 <onleft>450</onleft>
 
                 <control type="button" id="413">
                     <description>Ok</description>
-                    
+					<width>360</width>
                     <label>186</label>
                     <include>DefDialogButtons</include>
                 </control>
 
                 <control type="button" id="414">
                     <description>Cancel</description>
+					<width>360</width>
                     <label>222</label>
                     <include>DefDialogButtons</include>
                 </control>
 
                 <control type="button" id="415">
                     <description>Create Folder</description>
+					<width>360</width>
                     <label>119</label>
                     <include>DefDialogButtons</include>
                 </control>
@@ -270,11 +233,11 @@
             </control>
             
             <control type="image">
-                <posx>705</posx>
-                <top>120</top>
-                <height>687</height>
+                <posx>720</posx>
+                <top>92</top>
+                <bottom>0</bottom>
                 <width>1</width>
-                <texture colordiffuse="Black12">common/white.png</texture>
+                <texture colordiffuse="white">common/white.png</texture>
             </control>
 
         </control>
