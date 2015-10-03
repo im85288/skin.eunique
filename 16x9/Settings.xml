@@ -16,8 +16,6 @@
         <!--animations-->
         <include>Animation.Common</include>
         <control type="image">
-            <left>10</left>
-            <right>10</right>
             <height>72</height>
             <texture>common/white.png</texture>
             <colordiffuse>$VAR[EmbyMenuTextColourHighlight]</colordiffuse>
@@ -42,38 +40,34 @@
             <ondown>9000</ondown>
             <itemlayout width="633.33" height="204">
                 <control type="image">
-                    <top>10</top>
-                    <bottom>10</bottom>
-                    <left>10</left>
-                    <right>10</right>
-                    <aspectratio scalediffuse="false">scale</aspectratio>
+                    <aspectratio scalediffuse="false">stretch</aspectratio>
                     <texture>common/box.png</texture>
                     <colordiffuse>$VAR[EmbyMenuColourHighlight]</colordiffuse>
                 </control>
                 <control type="label">
-                    <left>20</left>
-                    <top>28</top>
-                    <height>152</height>
+                    <bottom>20</bottom>
+                    <left>10</left>
+                    <height>112</height>
                     <align>left</align>
-                    <aligny>center</aligny>
+                    <aligny>bottom</aligny>
                     <font>symbolbiggest</font>
                     <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
                     <label>$INFO[ListItem.label2]</label>
                 </control>
                 <control type="label">
-                    <right>20</right>
-                    <posy>0</posy>
-                    <height>72</height>
-                    <aligny>center</aligny>
+                    <right>10</right>
+                    <posy>10</posy>
+                    <height>31</height>
+                    <aligny>top</aligny>
                     <align>right</align>
-                    <font>TinyBold</font>
+                    <font>SmallBold</font>
                     <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
                     <label>$INFO[ListItem.label]</label>
                 </control>
                 <control type="label">
-                    <right>20</right>
-                    <posy>1-row</posy>
-                    <height>72</height>
+                    <right>10</right>
+                    <posy>51</posy>
+                    <height>25</height>
                     <aligny>center</aligny>
                     <align>right</align>
                     <font>Tiny</font>
@@ -83,38 +77,34 @@
             </itemlayout>
             <focusedlayout width="633.33" height="204">
                 <control type="image">
-                    <top>10</top>
-                    <bottom>10</bottom>
-                    <left>10</left>
-                    <right>10</right>
-                    <aspectratio scalediffuse="false">scale</aspectratio>
+                    <aspectratio scalediffuse="false">stretch</aspectratio>
                     <texture>common/box.png</texture>
                     <colordiffuse>$VAR[3ColumnHighlight]</colordiffuse>
                 </control>
                 <control type="label">
-                    <left>20</left>
-                    <top>28</top>
-                    <height>152</height>
+                    <bottom>20</bottom>
+                    <left>10</left>
+                    <height>112</height>
                     <align>left</align>
-                    <aligny>center</aligny>
+                    <aligny>bottom</aligny>
                     <font>symbolbiggest</font>
                     <textcolor>$VAR[ColourSelected]</textcolor>
                     <label>$INFO[ListItem.label2]</label>
                 </control>
                 <control type="label">
-                    <posy>0</posy>
-                    <right>20</right>
-                    <height>72</height>
+                    <posy>10</posy>
+                    <right>10</right>
+                    <height>31</height>
                     <align>right</align>
-                    <aligny>center</aligny>
-                    <font>TinyBold</font>
+                    <aligny>top</aligny>
+                    <font>SmallBold</font>
                     <textcolor>$VAR[ColourSelected]</textcolor>
                     <label>$INFO[ListItem.label]</label>
                 </control>
                 <control type="label">
-                    <posy>1-row</posy>
-                    <right>20</right>
-                    <height>72</height>
+                    <posy>51</posy>
+                    <right>10</right>
+                    <height>25</height>
                     <aligny>center</aligny>
                     <align>right</align>
                     <font>Tiny</font>

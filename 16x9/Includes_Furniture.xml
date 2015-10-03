@@ -786,11 +786,11 @@
 			<top>TopPad</top>
 			<visible>![Container.Content(songs) | Container.Content(albums)]</visible>
 			<visible>![Skin.HasSetting(osd.hidespoilers) + Container.Content(episodes) + [stringcompare(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]]</visible>
-			<visible>[!Window.IsVisible(DialogVideoInfo.xml) + System.IdleTime(3) + Skin.HasSetting(furniture.overlayinfo)] | Control.HasFocus(9601) | [System.IdleTime(3) + Window.IsVisible(DialogVideoInfo.xml) + Control.HasFocus(132)]</visible>
+			<visible>[!Window.IsVisible(DialogVideoInfo.xml) + System.IdleTime(5) + Skin.HasSetting(furniture.overlayinfo)] | Control.HasFocus(9601) | [System.IdleTime(5) + Window.IsVisible(DialogVideoInfo.xml) + Control.HasFocus(132)]</visible>
 			<visible>![Window.IsVisible(script-skinshortcuts.xml) | Window.IsVisible(DialogSongInfo.xml) | Window.IsVisible(DialogPictureInfo.xml) | Window.IsVisible(FileBrowser.xml) | Window.IsVisible(DialogProgress.xml) | Window.IsVisible(DialogYesNo.xml) | Window.IsVisible(DialogOK.xml) | Window.IsVisible(DialogSelect.xml) | Window.IsVisible(DialogContextMenu.xml) | Window.IsVisible(DialogButtonMenu.xml) | ControlGroup(9000).HasFocus()]</visible>
 			<visible>[!IsEmpty(Window(home).Property(SkinHelper.MovieSet.ExtendedPlot)) + [Container.Content(Sets) | substring(ListItem.Path,videodb://movies/sets,left)]] | !IsEmpty(ListItem.Plot)</visible>
-			<visible>!System.IdleTime(20)</visible>
-							<animation type="conditional" condition="System.IdleTime(8)" reversible="false">
+			<visible>!System.IdleTime(26)</visible>
+							<animation type="conditional" condition="System.IdleTime(18)" reversible="false">
 								<effect type="fade" end="0" start="100" time="5000" center="auto" tween="quadratic" easing="out" />
 							</animation>
 			<include>Animation.FadeIn.Slide</include>
@@ -1130,10 +1130,10 @@
 			<top>TopPad</top>
 			<visible>![Container.Content(songs) | Container.Content(albums)]</visible>
 			<visible>![Skin.HasSetting(osd.hidespoilers) + Container.Content(episodes) + [stringcompare(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]]</visible>
-			<visible>[!Window.IsVisible(DialogVideoInfo.xml) + System.IdleTime(3) + Skin.HasSetting(furniture.overlayinfo)] | Control.HasFocus(9601) | [System.IdleTime(3) + Window.IsVisible(DialogVideoInfo.xml) + Control.HasFocus(132)]</visible>
+			<visible>[!Window.IsVisible(DialogVideoInfo.xml) + System.IdleTime(5) + Skin.HasSetting(furniture.overlayinfo)] | Control.HasFocus(9601) | [System.IdleTime(5) + Window.IsVisible(DialogVideoInfo.xml) + Control.HasFocus(132)]</visible>
 			<visible>![Window.IsVisible(script-skinshortcuts.xml) | Window.IsVisible(DialogSongInfo.xml) | Window.IsVisible(DialogPictureInfo.xml) | Window.IsVisible(FileBrowser.xml) | Window.IsVisible(DialogProgress.xml) | Window.IsVisible(DialogYesNo.xml) | Window.IsVisible(DialogOK.xml) | Window.IsVisible(DialogSelect.xml) | Window.IsVisible(DialogContextMenu.xml) | Window.IsVisible(DialogButtonMenu.xml) | ControlGroup(9000).HasFocus()]</visible>
 			<visible>[!IsEmpty(Window(home).Property(SkinHelper.MovieSet.ExtendedPlot)) + [Container.Content(Sets) | substring(ListItem.Path,videodb://movies/sets,left)]] | !IsEmpty(ListItem.Plot)</visible>
-			<visible>!System.IdleTime(20)</visible>
+			<visible>!System.IdleTime(26)</visible>
 			<visible>!Control.IsVisible(516)</visible>
 			<control type="group">
 				<left>1654</left>
@@ -1156,7 +1156,7 @@
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
 			<include>Animation.Common.Killer</include>
-			<animation type="Conditional" reversible="true" condition="![Skin.HasSetting(osd.hidespoilers) + Container.Content(episodes) + [stringcompare(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]] + [Container.Content(musicvideos) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets) | Container.Content(episodes)] + !System.IdleTime(20) + System.IdleTime(3) + Skin.HasSetting(furniture.overlayinfo) + ![ControlGroup(9000).HasFocus() | Window.IsVisible(DialogContextMenu.xml)]">
+			<animation type="Conditional" reversible="true" condition="![Skin.HasSetting(osd.hidespoilers) + Container.Content(episodes) + [stringcompare(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]] + [Container.Content(musicvideos) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets) | Container.Content(episodes)] + !System.IdleTime(26) + System.IdleTime(5) + Skin.HasSetting(furniture.overlayinfo) + ![ControlGroup(9000).HasFocus() | Window.IsVisible(DialogContextMenu.xml)]">
 				<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out" />
 				<effect type="zoom" end="95" time="200" center="auto" tween="quadratic" easing="out" />
 				<effect type="rotate" end="-1" time="200" center="auto" tween="quadratic" easing="out" />
@@ -1187,7 +1187,7 @@
 							<top>0</top>
 							<right>0</right>
 							<bottom>0</bottom>
-							<height>189</height>
+							<height>190</height>
 							<aligny>center</aligny>
 							<align>center</align>
 							<font>symbolbiggest</font>
@@ -1280,7 +1280,7 @@
 				<top>333</top>
 				<right>10</right>
 				<height>51</height>
-				<texture border="15" colordiffuse="$VAR[EmbyRightColourHighlight]">common/white.png</texture>
+				<texture colordiffuse="$VAR[EmbyRightColourHighlight]">common/white.png</texture>
 			</control>
 			<control type="label">
 				<left>975</left>
@@ -1293,11 +1293,11 @@
 				<label>$INFO[Container(508923).ListItem(0).Label]$INFO[Container(508923).ListItem(0).Label2, $LOCALIZE[20347] ]</label>
 			</control>
 			<control type="image">
-			<left>1664</left>
-				<top>330</top>
+				<left>1664</left>
+				<top>333</top>
 				<width>228</width>
-				<height>61</height>
-				<texture colordiffuse="White">$VAR[ColourStudio]</texture>
+				<height>51</height>
+				<texture>$VAR[ColourStudio]</texture>
 				<aspectratio aligny="center" align="center">keep</aspectratio>
 			</control>
 		</control>
@@ -1310,7 +1310,7 @@
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
 			<include>Animation.Common.Killer</include>
-			<animation type="Conditional" reversible="true" condition="![Skin.HasSetting(osd.hidespoilers) + Container.Content(episodes) + [stringcompare(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]] + [Container.Content(musicvideos) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets) | Container.Content(episodes)] + !System.IdleTime(20) + System.IdleTime(3) + Skin.HasSetting(furniture.overlayinfo) + ![ControlGroup(9000).HasFocus() | Window.IsVisible(DialogContextMenu.xml)]">
+			<animation type="Conditional" reversible="true" condition="![Skin.HasSetting(osd.hidespoilers) + Container.Content(episodes) + [stringcompare(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]] + [Container.Content(musicvideos) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets) | Container.Content(episodes)] + !System.IdleTime(26) + System.IdleTime(5) + Skin.HasSetting(furniture.overlayinfo) + ![ControlGroup(9000).HasFocus() | Window.IsVisible(DialogContextMenu.xml)]">
 				<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out" />
 				<effect type="zoom" end="95" time="200" center="auto" tween="quadratic" easing="out" />
 				<effect type="rotate" end="-1" time="200" center="auto" tween="quadratic" easing="out" />

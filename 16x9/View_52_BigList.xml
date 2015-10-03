@@ -12,7 +12,7 @@
 			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml)</visible>
 			<animation effect="slide" end="-20,0" center="auto" time="200" condition="Container.Column(1) + control.hasfocus(60)">Conditional</animation>
 			<animation effect="slide" end="20,0" center="auto" time="200" condition="Container.Column(0) + control.hasfocus(60)">Conditional</animation>
-			<animation type="Conditional" reversible="true" condition="![Skin.HasSetting(osd.hidespoilers) + Container.Content(episodes) + [stringcompare(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]] + [Container.Content(musicvideos) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets) | Container.Content(episodes)] + !System.IdleTime(20) + System.IdleTime(3) + Skin.HasSetting(furniture.overlayinfo) + ![ControlGroup(9000).HasFocus() | Window.IsVisible(DialogContextMenu.xml)]">
+			<animation type="Conditional" reversible="true" condition="![Skin.HasSetting(osd.hidespoilers) + Container.Content(episodes) + [stringcompare(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]] + [Container.Content(musicvideos) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets) | Container.Content(episodes)] + !System.IdleTime(26) + System.IdleTime(5) + Skin.HasSetting(furniture.overlayinfo) + ![ControlGroup(9000).HasFocus() | Window.IsVisible(DialogContextMenu.xml)]">
 				<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out" />
 				<effect type="zoom" end="1000,7" time="200" center="auto" tween="quadratic" easing="out" />
 			</animation>
@@ -94,7 +94,7 @@
 			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml)</visible>
 			<animation effect="slide" end="-20,0" center="auto" time="200" condition="Container.Column(1) + control.hasfocus(60)">Conditional</animation>
 			<animation effect="slide" end="20,0" center="auto" time="200" condition="Container.Column(0) + control.hasfocus(60)">Conditional</animation>
-			<animation type="Conditional" reversible="true" condition="![Skin.HasSetting(osd.hidespoilers) + Container.Content(episodes) + [stringcompare(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]] + [Container.Content(musicvideos) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets) | Container.Content(episodes)] + !System.IdleTime(20) + System.IdleTime(3) + Skin.HasSetting(furniture.overlayinfo) + ![ControlGroup(9000).HasFocus() | Window.IsVisible(DialogContextMenu.xml)]">
+			<animation type="Conditional" reversible="true" condition="![Skin.HasSetting(osd.hidespoilers) + Container.Content(episodes) + [stringcompare(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]] + [Container.Content(musicvideos) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets) | Container.Content(episodes)] + !System.IdleTime(26) + System.IdleTime(5) + Skin.HasSetting(furniture.overlayinfo) + ![ControlGroup(9000).HasFocus() | Window.IsVisible(DialogContextMenu.xml)]">
 				<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out" />
 				<effect type="zoom" end="1000,7" time="200" center="auto" tween="quadratic" easing="out" />
 			</animation>
@@ -189,7 +189,7 @@
 			<control type="image">
 				<right>10</right>
 				<height>51</height>
-				<texture border="15" colordiffuse="$VAR[ColourFlags]">common/white.png</texture>
+				<texture colordiffuse="$VAR[ColourFlags]">common/white.png</texture>
 			</control>
 			<control type="label">
 				<right>10</right>
@@ -240,7 +240,7 @@
 							<top>0</top>
 							<right>0</right>
 							<bottom>0</bottom>
-							<height>234</height>
+							<height>231</height>
 							<aligny>center</aligny>
 							<align>center</align>
 							<font>symbolbiggest</font>
@@ -262,7 +262,7 @@
 							<top>0</top>
 							<right>0</right>
 							<bottom>0</bottom>
-							<texture border="15" colordiffuse="99000000">common/white.png</texture>
+							<texture colordiffuse="99000000">common/white.png</texture>
 						</control>
 					</control>
 				</itemlayout>
@@ -273,7 +273,7 @@
 							<top>0</top>
 							<right>0</right>
 							<bottom>0</bottom>
-							<height>234</height>
+							<height>231</height>
 							<aligny>center</aligny>
 							<align>center</align>
 							<font>symbolbiggest</font>
@@ -299,7 +299,7 @@
 				<bottom>51</bottom>
 				<right>10</right>
 				<height>139</height>
-				<texture border="15" colordiffuse="$VAR[EmbyLeftColourHighlight]">common/white.png</texture>
+				<texture colordiffuse="$VAR[EmbyLeftColourHighlight]">common/white.png</texture>
 			</control>
 			<control type="textbox">
 				<description>textarea</description>
@@ -330,14 +330,14 @@
 				<bottom>0</bottom>
 				<right>10</right>
 				<height>51</height>
-				<texture border="15" colordiffuse="$VAR[EmbyRightColourHighlight]">common/white.png</texture>
+				<texture colordiffuse="$VAR[EmbyRightColourHighlight]">common/white.png</texture>
 			</control>
 			<control type="image">
 				<left>1135</left>
 				<bottom>180</bottom>
 				<right>10</right>
 				<height>51</height>
-				<texture border="15" colordiffuse="$VAR[ColourFlags]">common/white.png</texture>
+				<texture colordiffuse="$VAR[ColourFlags]">common/white.png</texture>
 			</control>
 			<control type="label">
 				<left>1135</left>
@@ -376,12 +376,12 @@
 				<label>$INFO[Container(508922).ListItem(0).Label]$INFO[Container(508922).ListItem(0).Label2, $LOCALIZE[20347] ]</label>
 			</control>
 			<control type="image">
-				<right>93</right>
-				<top>999</top>
-				<width>96</width>
-				<height>113</height>
-				<texture colordiffuse="White">$VAR[ColourStudio]</texture>
-				<aspectratio aligny="center" align="right">keep</aspectratio>
+				<bottom>0</bottom>
+				<left>1664</left>
+				<width>228</width>
+				<height>51</height>
+				<texture>$VAR[ColourStudio]</texture>
+				<aspectratio aligny="center" align="center">keep</aspectratio>
 			</control>
 		</control>
 	</include>

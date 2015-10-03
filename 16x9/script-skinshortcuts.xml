@@ -12,28 +12,23 @@
             <height>657</height>
             <control type="image">
                 <description>background image</description>
-                <top>-8</top>
-                <height>100</height>
-                <left>-8</left>
-                <right>-8</right>
+				<height>72</height>
                 <texture border="16" colordiffuse="$VAR[EmbyMenuTextColourHighlight]">common/box.png</texture>
             </control>
             <control type="image">
                 <description>background image</description>
-                <top>92</top>
-                <bottom>-8</bottom>
-                <left>-8</left>
-                <right>-8</right>
+                <top>72</top>
                 <texture border="16" colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
             </control>
 
             <control type="label" id="500">
                 <description>header label</description>
-                <posy>10</posy>
                 <left>22</left>
                 <right>22</right>
-                <font>SmallHeaderFont</font>
-                <align>left</align>
+				<height>72</height>
+				<aligny>center</aligny>
+				<align>center</align>
+				<font>settingsheader</font>
                 <textcolor>$VAR[EmbyMenuColourHighlight]</textcolor>
             </control>
 
@@ -128,7 +123,7 @@
                     <height>64</height>
                     <font>-</font>
                     <texturenofocus colordiffuse="$VAR[EmbyMenuTextColourHighlight]">buttons/delete.png</texturenofocus>
-                    <texturefocus colordiffuse="$VAR[ColourSelected]">buttons/delete.png</texturefocus>
+                    <texturefocus colordiffuse="$VAR[EmbyRightColourHighlight]">buttons/delete.png</texturefocus>
                 </control>
                 <!-- <control type="button" id="301" description="Add">
                     <width>64</width>
@@ -142,14 +137,14 @@
                     <height>64</height>
                     <font>-</font>
                     <texturenofocus colordiffuse="$VAR[EmbyMenuTextColourHighlight]">buttons/moveup.png</texturenofocus>
-                    <texturefocus colordiffuse="$VAR[ColourSelected]">buttons/moveup.png</texturefocus>
+                    <texturefocus colordiffuse="$VAR[EmbyRightColourHighlight]">buttons/moveup.png</texturefocus>
                 </control>
                 <control type="button" id="304" description="Down">
                     <width>64</width>
                     <height>64</height>
                     <font>-</font>
                     <texturenofocus colordiffuse="$VAR[EmbyMenuTextColourHighlight]" flipy="true">buttons/moveup.png</texturenofocus>
-                    <texturefocus colordiffuse="$VAR[ColourSelected]" flipy="true">buttons/moveup.png</texturefocus>
+                    <texturefocus colordiffuse="$VAR[EmbyRightColourHighlight]" flipy="true">buttons/moveup.png</texturefocus>
                 </control>
             </control>
 

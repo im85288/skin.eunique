@@ -40,13 +40,12 @@
 			<scrolltime tween="quadratic" easing="out">200</scrolltime>
 			<itemlayout height="103" width="500">
 				<control type="image">
-					<top>5</top>
-					<bottom>5</bottom>
-					<aspectratio scalediffuse="false">scale</aspectratio>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
 					<texture>common/box.png</texture>
 					<colordiffuse>$VAR[EmbyMenuColourHighlight]</colordiffuse>
 				</control>
 				<control type="label">
+					<height>103</height>
 					<font>Medium</font>
 					<textoffsetx>10</textoffsetx>
 					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
@@ -57,14 +56,13 @@
 			</itemlayout>
 			<focusedlayout height="103" width="500">
 				<control type="image">
-					<top>5</top>
-					<bottom>5</bottom>
-					<aspectratio scalediffuse="false">scale</aspectratio>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
 					<texture>common/box.png</texture>
 					<colordiffuse>$VAR[EmbyLeftColourHighlight]</colordiffuse>
 					<animation effect="fade" time="50" start="100" end="50" condition="!Control.HasFocus(9000)">Conditional</animation>
 				</control>
 				<control type="label">
+					<height>103</height>
 					<font>Medium</font>
 					<textoffsetx>10</textoffsetx>
 					<textcolor>$VAR[ColourSelected]</textcolor>
@@ -109,160 +107,19 @@
 				</item>
 			</content>
 		</control>
-		<control type="group">
-			<top>10</top>
-			<left>10</left>
-			<control type="image">
-				<width>50</width>
-				<height>50</height>
-				<texture border="5" colordiffuse="$VAR[EmbyLeftColourHighlight]">common/box.png</texture>
-			</control>
-			<control type="label">
-				<description>Loading</description>
-				<width>50</width>
-				<height>50</height>
-				<align>center</align>
-				<aligny>center</aligny>
-				<label>E</label>
-				<font>LargeBoldReg</font>
-				<textcolor>black</textcolor>
-				<animation effect="fade" start="100" end="0" time="500" tween="quadratic">WindowClose</animation>
-			</control>
-		</control>
-		<control type="group">
-			<top>10</top>
-			<left>60</left>
-			<control type="image">
-				<width>50</width>
-				<height>50</height>
-				<texture border="5" colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
-			</control>
-			<control type="label">
-				<description>Loading</description>
-				<width>50</width>
-				<height>50</height>
-				<align>center</align>
-				<aligny>center</aligny>
-				<label>u</label>
-				<font>LargeBoldReg</font>
-				<textcolor>black</textcolor>
-				<animation effect="fade" start="100" end="0" time="500" tween="quadratic">WindowClose</animation>
-			</control>
-		</control>
-		<control type="group">
-			<top>10</top>
-			<left>110</left>
-			<control type="image">
-				<width>50</width>
-				<height>50</height>
-				<texture border="5" colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</texture>
-			</control>
-			<control type="label">
-				<description>Loading</description>
-				<width>50</width>
-				<height>50</height>
-				<align>center</align>
-				<aligny>center</aligny>
-				<label>n</label>
-				<font>LargeBoldReg</font>
-				<textcolor>black</textcolor>
-				<animation effect="fade" start="100" end="0" time="500" tween="quadratic">WindowClose</animation>
-			</control>
-		</control>
-		<control type="group">
-			<top>10</top>
-			<left>160</left>
-			<control type="image">
-				<width>50</width>
-				<height>50</height>
-				<texture border="5" colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
-			</control>
-			<control type="label">
-				<description>Loading</description>
-				<width>50</width>
-				<height>50</height>
-				<align>center</align>
-				<aligny>center</aligny>
-				<label>i</label>
-				<font>LargeBoldReg</font>
-				<textcolor>black</textcolor>
-				<animation effect="fade" start="100" end="0" time="500" tween="quadratic">WindowClose</animation>
-			</control>
-		</control>
-		<control type="group">
-			<top>13</top>
-			<left>210</left>
-			<control type="image">
-				<width>50</width>
-				<height>50</height>
-				<texture border="5" colordiffuse="$VAR[EmbyLeftColourHighlight]">common/box.png</texture>
-			</control>
-			<control type="label">
-				<top>-3</top>
-				<description>Loading</description>
-				<width>50</width>
-				<height>50</height>
-				<align>center</align>
-				<aligny>center</aligny>
-				<label>q</label>
-				<font>LargeBoldReg</font>
-				<textcolor>black</textcolor>
-				<animation effect="fade" start="100" end="0" time="500" tween="quadratic">WindowClose</animation>
-			</control>
-		</control>
-		<control type="group">
-			<top>10</top>
-			<left>260</left>
-			<control type="image">
-				<width>50</width>
-				<height>50</height>
-				<texture border="5" colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
-			</control>
-			<control type="label">
-				<description>Loading</description>
-				<width>50</width>
-				<height>50</height>
-				<align>center</align>
-				<aligny>center</aligny>
-				<label>u</label>
-				<font>LargeBoldReg</font>
-				<textcolor>black</textcolor>
-				<animation effect="fade" start="100" end="0" time="500" tween="quadratic">WindowClose</animation>
-			</control>
-		</control>
-		<control type="group">
-			<top>10</top>
-			<left>310</left>
-			<control type="image">
-				<width>50</width>
-				<height>50</height>
-				<texture border="5" colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</texture>
-			</control>
-			<control type="label">
-				<description>Loading</description>
-				<width>50</width>
-				<height>50</height>
-				<align>center</align>
-				<aligny>center</aligny>
-				<label>e</label>
-				<font>LargeBoldReg</font>
-				<textcolor>black</textcolor>
-				<animation effect="fade" start="100" end="0" time="500" tween="quadratic">WindowClose</animation>
-			</control>
-		</control>
 		<control type="image">
-			<left>520</left>
-			<top>799</top>
-			<height>92</height>
+			<left>500</left>
+			<top>793</top>
+			<height>103</height>
 			<texture colordiffuse="$VAR[EmbyMiddleColourHighlight]">common/box.png</texture>
 			<aspectratio>stretch</aspectratio>
 		</control>
 		<control type="textbox">
 			<description>description area</description>
-			<left>552</left>
-			<top>802</top>
-			<right>10</right>
-			<height>86</height>
+			<left>505</left>
+			<top>798</top>
+			<right>5</right>
+			<height>93</height>
 			<font>SmallBold</font>
 			<align>left</align>
 			<textcolor>$VAR[ColourSelected]</textcolor>
@@ -274,11 +131,10 @@
 		<control type="group" id="9010">
 			<control type="grouplist" id="9001">
 				<description>Home window control area</description>
-				<left>522</left>
-				<top>77</top>
-				<right>0</right>
-				<height>710</height>
-				<itemgap>10</itemgap>
+				<left>500</left>
+				<top>72</top>
+				<height>721</height>
+				<itemgap>0</itemgap>
 				<pagecontrol>60</pagecontrol>
 				<onleft>9000</onleft>
 				<onright>60</onright>
@@ -286,26 +142,26 @@
 				<ondown>9001</ondown>
 				<visible>Container(9000).HasFocus(1)</visible>
 				<control type="button" id="9212" description="Customise Home">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<label>31109</label>
 					<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>
 				</control>
 				<control type="button" id="9213" description="Reset Home to Defaults">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<label>31132</label>
 					<onclick>RunScript(script.skinshortcuts,type=resetall)</onclick>
 				</control>
 				<control type="radiobutton" id="9215" description="home.fade">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<label>31884</label>
 					<selected>Skin.HasSetting(home.fade)</selected>
 					<onclick>Skin.ToggleSetting(home.fade)</onclick>
 				</control>
 				<control type="button" id="9219" description="Set Slideshow Path">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<label>31131</label>
 					<label2>[COLOR=$VAR[ColourSelected]]$INFO[Skin.String(home.slideshowpath)][/COLOR]</label2>
@@ -314,7 +170,7 @@
 					<onclick condition="!IsEmpty(Skin.String(home.slideshowpath))">Skin.Reset(home.slideshowpath)</onclick>
 				</control>
 				<control type="button" id="9216" description="Set Music Dir">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<label>31887</label>
 					<label2>[COLOR=$VAR[ColourSelected]]$INFO[Skin.String(cdartlocation)][/COLOR]</label2>
@@ -323,11 +179,10 @@
 			</control>
 			<control type="grouplist" id="9007">
 				<description>Custom Widgets control area</description>
-				<left>522</left>
-				<top>77</top>
-				<right>0</right>
-				<height>710</height>
-				<itemgap>10</itemgap>
+				<left>500</left>
+				<top>72</top>
+				<height>721</height>
+				<itemgap>0</itemgap>
 				<pagecontrol>60</pagecontrol>
 				<onleft>9000</onleft>
 				<onright>60</onright>
@@ -335,7 +190,7 @@
 				<ondown>9007</ondown>
 				<visible>Container(9000).HasFocus(2)</visible>
 				<control type="radiobutton" id="92431" description="SmartShortcuts Playlists">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<label>31785</label>
 					<onclick>Skin.ToggleSetting(SmartShortcuts.playlists)</onclick>
@@ -343,7 +198,7 @@
 					<onclick>Notification($LOCALIZE[24074],$LOCALIZE[31790])</onclick>
 				</control>
 				<control type="radiobutton" id="92432" description="SmartShortcuts Favourites">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<label>31786</label>
 					<onclick>Skin.ToggleSetting(SmartShortcuts.favorites)</onclick>
@@ -351,7 +206,7 @@
 					<onclick>Notification($LOCALIZE[24074],$LOCALIZE[31790])</onclick>
 				</control>
 				<control type="radiobutton" id="92433" description="SmartShortcuts Emby">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<label>31787</label>
 					<selected>Skin.HasSetting(SmartShortcuts.emby) + System.HasAddon(plugin.video.emby)</selected>
@@ -360,7 +215,7 @@
 					<onclick>Notification($LOCALIZE[24074],$LOCALIZE[31790])</onclick>
 				</control>
 				<control type="radiobutton" id="92434" description="SmartShortcuts Plex">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<label>31788</label>
 					<onclick>Skin.ToggleSetting(SmartShortcuts.plex)</onclick>
@@ -369,7 +224,7 @@
 					<onclick>Notification($LOCALIZE[24074],$LOCALIZE[31790])</onclick>
 				</control>
 				<control type="radiobutton" id="92435" description="SmartShortcuts Netflix">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<label>31789</label>
 					<onclick>Skin.ToggleSetting(SmartShortcuts.netflix)</onclick>
@@ -378,70 +233,70 @@
 					<onclick>Notification($LOCALIZE[24074],$LOCALIZE[31790])</onclick>
 				</control>
 				<control type="button" id="9246" description="Custom Widget 1">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<label>31759</label>
 					<label2>[COLOR=$VAR[ColourSelected]]$INFO[Skin.String(CustomWidget1)][/COLOR]</label2>
 					<onclick>Skin.SetString(CustomWidget1)</onclick>
 				</control>
 				<control type="button" id="9247" description="Custom Widget 2">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<label>31760</label>
 					<label2>[COLOR=$VAR[ColourSelected]]$INFO[Skin.String(CustomWidget2)][/COLOR]</label2>
 					<onclick>Skin.SetString(CustomWidget2)</onclick>
 				</control>
 				<control type="button" id="9248" description="Custom Widget 3">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<label>31761</label>
 					<label2>[COLOR=$VAR[ColourSelected]]$INFO[Skin.String(CustomWidget3)][/COLOR]</label2>
 					<onclick>Skin.SetString(CustomWidget3)</onclick>
 				</control>
 				<control type="button" id="9249" description="Custom Widget 4">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<label>31762</label>
 					<label2>[COLOR=$VAR[ColourSelected]]$INFO[Skin.String(CustomWidget4)][/COLOR]</label2>
 					<onclick>Skin.SetString(CustomWidget4)</onclick>
 				</control>
 				<control type="button" id="92491" description="Custom Widget 5">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<label>31763</label>
 					<label2>[COLOR=$VAR[ColourSelected]]$INFO[Skin.String(CustomWidget5)][/COLOR]</label2>
 					<onclick>Skin.SetString(CustomWidget5)</onclick>
 				</control>
 				<control type="button" id="92492" description="Custom Widget 6">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<label>31764</label>
 					<label2>[COLOR=$VAR[ColourSelected]]$INFO[Skin.String(CustomWidget6)][/COLOR]</label2>
 					<onclick>Skin.SetString(CustomWidget6)</onclick>
 				</control>
 				<control type="button" id="92493" description="Custom Widget 7">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<label>31765</label>
 					<label2>[COLOR=$VAR[ColourSelected]]$INFO[Skin.String(CustomWidget7)][/COLOR]</label2>
 					<onclick>Skin.SetString(CustomWidget7)</onclick>
 				</control>
 				<control type="button" id="92494" description="Custom Widget 8">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<label>31766</label>
 					<label2>[COLOR=$VAR[ColourSelected]]$INFO[Skin.String(CustomWidget8)][/COLOR]</label2>
 					<onclick>Skin.SetString(CustomWidget8)</onclick>
 				</control>
 				<control type="button" id="92495" description="Custom Widget 9">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<label>31767</label>
 					<label2>[COLOR=$VAR[ColourSelected]]$INFO[Skin.String(CustomWidget9)][/COLOR]</label2>
 					<onclick>Skin.SetString(CustomWidget9)</onclick>
 				</control>
 				<control type="button" id="92496" description="Custom Widget 10">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<label>31768</label>
 					<label2>[COLOR=$VAR[ColourSelected]]$INFO[Skin.String(CustomWidget10)][/COLOR]</label2>
@@ -450,11 +305,10 @@
 			</control>
 			<control type="grouplist" id="9006">
 				<description>Backgrounds control area</description>
-				<left>522</left>
-				<top>77</top>
-				<right>0</right>
-				<height>710</height>
-				<itemgap>10</itemgap>
+				<left>500</left>
+				<top>72</top>
+				<height>721</height>
+				<itemgap>0</itemgap>
 				<pagecontrol>60</pagecontrol>
 				<onleft>9000</onleft>
 				<onright>60</onright>
@@ -462,7 +316,7 @@
 				<ondown>9006</ondown>
 				<visible>Container(9000).HasFocus(3)</visible>
 				<control type="radiobutton" id="9199" description="Fade widgets">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<label>31885</label>
 					<selected>Skin.HasSetting(widgets.dim)</selected>
@@ -470,7 +324,7 @@
 				</control>
 				<!-- Fanart -->
 				<control type="radiobutton" id="9201" description="Lights Out">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<label>31886</label>
 					<selected>Skin.HasSetting(lights.out)</selected>
@@ -478,14 +332,14 @@
 				</control>
 				<!-- Fanart -->
 				<control type="radiobutton" id="9202" description="Fags Out">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<label>31939</label>
 					<selected>Skin.HasSetting(fags.out)</selected>
 					<onclick>Skin.ToggleSetting(fags.out)</onclick>
 				</control>
 				<control type="radiobutton" id="9223" description="Show fanart">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<label>31121</label>
 					<selected>!Skin.HasSetting(global.hidefanart)</selected>
@@ -493,7 +347,7 @@
 					<visible>!Skin.HasSetting(lights.out)</visible>
 				</control>
 				<control type="radiobutton" id="9228" description="Show Extra fanart">
-					<width>1390</width>
+					<width>1410</width>
 					<visible>!Skin.HasSetting(global.hidefanart)</visible>
 					<include>DefSettingsButton2</include>
 					<label>31730</label>
@@ -502,7 +356,7 @@
 					<visible>!Skin.HasSetting(lights.out)</visible>
 				</control>
 				<control type="button" id="92281" description="Fanart Opacity">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<label>$LOCALIZE[31780]</label>
 					<label2 fallback="Normal">[COLOR=$VAR[ColourSelected]]$INFO[Skin.String(FanartFade)][/COLOR]</label2>
@@ -523,7 +377,7 @@
 					<visible>!Skin.HasSetting(lights.out)</visible>
 				</control>
 				<control type="radiobutton" id="9224" description="Animate Fanart">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<label>31146</label>
 					<selected>Skin.HasSetting(Fanart.Animate)</selected>
@@ -531,7 +385,7 @@
 					<visible>!Skin.HasSetting(lights.out)</visible>
 				</control>
 				<control type="button" id="9225" description="Set Fallback Image">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<label>31150</label>
 					<label2>[COLOR=$VAR[ColourSelected]]$INFO[Skin.String(fanart.fallback)][/COLOR]</label2>
@@ -540,14 +394,14 @@
 					<visible>!Skin.HasSetting(lights.out)</visible>
 				</control>
 				<control type="radiobutton" id="9221" description="Show video in background">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<label>31111</label>
 					<selected>Skin.HasSetting(global.showvideo)</selected>
 					<onclick>Skin.ToggleSetting(global.showvideo)</onclick>
 				</control>
 				<control type="radiobutton" id="9222" description="Show vis in background">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<label>31172</label>
 					<selected>Skin.HasSetting(global.showvisualisation)</selected>
@@ -556,11 +410,10 @@
 			</control>
 			<control type="grouplist" id="9002">
 				<description>General control area</description>
-				<left>522</left>
-				<top>77</top>
-				<right>0</right>
-				<height>710</height>
-				<itemgap>10</itemgap>
+				<left>500</left>
+				<top>72</top>
+				<height>721</height>
+				<itemgap>0</itemgap>
 				<pagecontrol>60</pagecontrol>
 				<onleft>9000</onleft>
 				<onright>60</onright>
@@ -568,14 +421,14 @@
 				<ondown>9002</ondown>
 				<visible>Container(9000).HasFocus(4)</visible>
 				<control type="radiobutton" id="92615" description="Hide indicators">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<label>31888</label>
 					<selected>Skin.HasSetting(furniture.hideindicators)</selected>
 					<onclick>Skin.ToggleSetting(furniture.hideindicators)</onclick>
 				</control>
 				<control type="radiobutton" id="92611" description="Watched/Unwatched">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<label>31890</label>
 					<visible>!Skin.HasSetting(furniture.hideindicators)</visible>
@@ -583,7 +436,7 @@
 					<onclick>Skin.ToggleSetting(furniture.unwatched)</onclick>
 				</control>
 				<control type="radiobutton" id="92612" description="Resume indicator">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<label>31891</label>
 					<visible>!Skin.HasSetting(furniture.hideindicators)</visible>
@@ -591,7 +444,7 @@
 					<onclick>Skin.ToggleSetting(furniture.hideresume)</onclick>
 				</control>
 				<control type="radiobutton" id="92613" description="New indicator">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<label>31892</label>
 					<visible>!Skin.HasSetting(furniture.hideindicators)</visible>
@@ -599,7 +452,7 @@
 					<onclick>Skin.ToggleSetting(furniture.hidenew)</onclick>
 				</control>
 				<control type="button" id="9262" description="Set Border Image">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<label>31946</label>
 					<label2>[COLOR=$VAR[ColourSelected]]$INFO[Skin.String(border.image)][/COLOR]</label2>
@@ -607,35 +460,35 @@
 					<onclick condition="!IsEmpty(Skin.String(border.image))">Skin.Reset(border.image)</onclick>
 				</control>
 				<control type="radiobutton" id="9263" description="Flags">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<label>31154</label>
 					<selected>Skin.HasSetting(furniture.flags)</selected>
 					<onclick>Skin.ToggleSetting(furniture.flags)</onclick>
 				</control>
 				<control type="radiobutton" id="9264" description="Now Playing">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<label>31155</label>
 					<selected>!Skin.HasSetting(furniture.nowplaying)</selected>
 					<onclick>Skin.ToggleSetting(furniture.nowplaying)</onclick>
 				</control>
 				<control type="radiobutton" id="9361" description="Plot Overlay">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<label>31254</label>
 					<selected>Skin.HasSetting(furniture.overlayinfo)</selected>
 					<onclick>Skin.ToggleSetting(furniture.overlayinfo)</onclick>
 				</control>
 				<control type="radiobutton" id="92703" description="Fanart Dialog Info">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<label>31895</label>
 					<selected>Skin.HasSetting(furniture.info.fanart)</selected>
 					<onclick>Skin.ToggleSetting(furniture.info.fanart)</onclick>
 				</control>
 				<control type="button" id="92705" description="Video Info Blur">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<label>31896</label>
 					<label2 fallback="2">[COLOR=$VAR[ColourSelected]]$VAR[VideoInfoBlurLevel][/COLOR]</label2>
@@ -667,11 +520,10 @@
 			</control>
 			<control type="grouplist" id="9005">
 				<description>Colors control area</description>
-				<left>522</left>
-				<top>77</top>
-				<right>0</right>
-				<height>710</height>
-				<itemgap>10</itemgap>
+				<left>500</left>
+				<top>72</top>
+				<height>721</height>
+				<itemgap>0</itemgap>
 				<pagecontrol>60</pagecontrol>
 				<onleft>9000</onleft>
 				<onright>60</onright>
@@ -679,7 +531,7 @@
 				<ondown>9005</ondown>
 				<visible>Container(9000).HasFocus(5)</visible>
 				<control type="radiobutton" id="9231" description="Show artist slideshow">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<label>31118</label>
 					<enable>System.HasAddon(script.artistslideshow)</enable>
@@ -687,7 +539,7 @@
 					<onclick>Skin.ToggleSetting(ArtistSlideShow.Disabled)</onclick>
 				</control>
 				<control type="radiobutton" id="9233" description="Animate Artist slideshow">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<label>31120</label>
 					<selected>Skin.HasSetting(ArtistSlideshow.Animate)</selected>
@@ -695,27 +547,27 @@
 					<enable>!Skin.HasSetting(ArtistSlideShow.Disabled) + System.HasAddon(script.artistslideshow)</enable>
 				</control>
 				<control type="radiobutton" id="9236" description="Show detailed info on pause">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<label>31201</label>
 					<selected>Skin.HasSetting(osd.showinfoonpause)</selected>
 					<onclick>Skin.ToggleSetting(osd.showinfoonpause)</onclick>
 				</control>
 				<control type="button" id="92366">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<label>$LOCALIZE[31799]: $INFO[skin.string(SkinHelper.ShowInfoAtPlaybackStart)] $LOCALIZE[31800]</label>
 					<onclick>Skin.SetNumeric(SkinHelper.ShowInfoAtPlaybackStart)</onclick>
 				</control>
 				<control type="radiobutton" id="9237" description="Show clearart">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<label>31217</label>
 					<selected>Skin.HasSetting(ShowClearArtOSD)</selected>
 					<onclick>Skin.ToggleSetting(ShowClearArtOSD)</onclick>
 				</control>
 				<control type="radiobutton" id="9240" description="Hide spoilers">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<label>31897</label>
 					<selected>Skin.HasSetting(osd.hidespoilers)</selected>
@@ -724,11 +576,10 @@
 			</control>
 			<control type="grouplist" id="9003">
 				<description>Extras control area</description>
-				<left>522</left>
-				<top>77</top>
-				<right>0</right>
-				<height>710</height>
-				<itemgap>10</itemgap>
+				<left>500</left>
+				<top>72</top>
+				<height>721</height>
+				<itemgap>0</itemgap>
 				<pagecontrol>60</pagecontrol>
 				<onleft>9000</onleft>
 				<onright>60</onright>
@@ -736,14 +587,14 @@
 				<ondown>9003</ondown>
 				<visible>Container(9000).HasFocus(6)</visible>
 				<control type="radiobutton" id="92722" description="Next Up Poster">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<label>31934</label>
 					<selected>Skin.HasSetting(nextup.poster)</selected>
 					<onclick>Skin.ToggleSetting(nextup.poster)</onclick>
 				</control>
 				<control type="button" id="9271" description="Startup Video">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<label>31168</label>
 					<label2>[COLOR=$VAR[ColourSelected]]$INFO[Skin.String(StartupPlaylist)][/COLOR]</label2>
@@ -751,34 +602,34 @@
 					<onclick condition="!IsEmpty(Skin.String(StartupPlaylist))">Skin.Reset(StartupPlaylist)</onclick>
 				</control>
 				<control type="radiobutton" id="9272" description="Kiosk Mode">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<label>31199</label>
 					<selected>Skin.HasSetting(global.kioskmode)</selected>
 					<onclick>Skin.ToggleSetting(global.kioskmode)</onclick>
 				</control>
 				<control type="radiobutton" id="9273" description="Dont use circle icons">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<label>31186</label>
 					<selected>!Skin.HasSetting(global.hidecirles)</selected>
 					<onclick>Skin.ToggleSetting(global.hidecirles)</onclick>
 				</control>
 				<control type="button" id="9274">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<label>$LOCALIZE[31216]: $INFO[Skin.String(SkinHelper.SpinnerTexture)]</label>
 					<onclick>RunScript(script.skin.helper.service,action=busytexture)</onclick>
 				</control>
 				<control type="radiobutton" id="9277" description="Busy Loader Minimal">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<label>31237</label>
 					<selected>Skin.HasSetting(hide.busydialog)</selected>
 					<onclick>Skin.ToggleSetting(hide.busydialog)</onclick>
 				</control>
 				<control type="radiobutton" id="9276" description="Update Next Aired on Startup">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<label>31180</label>
 					<selected>Skin.HasSetting(NextAired.Update)</selected>
@@ -786,20 +637,20 @@
 					<enable>System.HasAddon(script.tv.show.next.aired)</enable>
 				</control>
 				<control type="button" id="9278" description="export skin settings">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<label>31898</label>
 					<onclick>RunScript(script.skin.helper.service,action=backup)</onclick>
 				</control>
 				<control type="button" id="9279" description="import skin settings">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<label>31899</label>
 					<onclick>RunScript(script.skin.helper.service,action=restore)</onclick>
 				</control>
 				<!-- Views -->
 				<control type="button" id="9291" description="Enable or Disable views">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<onclick>RunScript(script.skin.helper.service,action=enableviews)</onclick>
 					<label>31769</label>
@@ -807,11 +658,10 @@
 			</control>
 			<control type="grouplist" id="9004">
 				<description>Advanced control area</description>
-				<left>522</left>
-				<top>77</top>
-				<right>0</right>
-				<height>710</height>
-				<itemgap>10</itemgap>
+				<left>500</left>
+				<top>72</top>
+				<height>721</height>
+				<itemgap>0</itemgap>
 				<pagecontrol>60</pagecontrol>
 				<onleft>9000</onleft>
 				<onright>60</onright>
@@ -819,14 +669,14 @@
 				<ondown>9004</ondown>
 				<visible>Container(9000).HasFocus(7)</visible>
 				<control type="radiobutton" id="9281">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<selected>Skin.HasSetting(ColourHighlight)</selected>
 					<onclick>Skin.ToggleSetting(ColourHighlight)</onclick>
 					<label>31900</label>
 				</control>
 				<control type="button" id="9282">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=focuscolor.name)</onclick>
 					<label>31901</label>
@@ -834,21 +684,21 @@
 					<visible>Skin.HasSetting(ColourHighlight)</visible>
 				</control>
 				<control type="button" id="9283">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<onclick>Skin.SetString(focuscolor.name,Highlight)</onclick>
 					<label> - $LOCALIZE[409]</label>
 					<visible>Skin.HasSetting(ColourHighlight)</visible>
 				</control>
 				<control type="radiobutton" id="9284">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<selected>Skin.HasSetting(ColourSelected)</selected>
 					<onclick>Skin.ToggleSetting(ColourSelected)</onclick>
 					<label>31902</label>
 				</control>
 				<control type="button" id="9285">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=focuscolor2.name)</onclick>
 					<label>31903</label>
@@ -856,21 +706,21 @@
 					<visible>Skin.HasSetting(ColourSelected)</visible>
 				</control>
 				<control type="button" id="9286">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<onclick>Skin.SetString(focuscolor2.name,Highlight2)</onclick>
 					<label> - $LOCALIZE[409]</label>
 					<visible>Skin.HasSetting(ColourSelected)</visible>
 				</control>
 				<control type="radiobutton" id="9287">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<selected>Skin.HasSetting(ColourSelected)</selected>
 					<onclick>Skin.ToggleSetting(ColourSelected)</onclick>
 					<label>31904</label>
 				</control>
 				<control type="button" id="9288">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=selectedcolor.name)</onclick>
 					<label>31905</label>
@@ -878,14 +728,14 @@
 					<visible>Skin.HasSetting(ColourSelected)</visible>
 				</control>
 				<control type="button" id="9289">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<onclick>Skin.SetString(selectedcolor.name,Selected)</onclick>
 					<label> - $LOCALIZE[409]</label>
 					<visible>Skin.HasSetting(ColourSelected)</visible>
 				</control>
 				<control type="radiobutton" id="92817">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<selected>Skin.HasSetting(WatchedColour)</selected>
 					<onclick>Skin.ToggleSetting(WatchedColour)</onclick>
@@ -893,7 +743,7 @@
 					
 				</control>
 				<control type="button" id="92818">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=watched.colour.name)</onclick>
 					<label>31907</label>
@@ -902,7 +752,7 @@
 					
 				</control>
 				<control type="radiobutton" id="92827">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<selected>Skin.HasSetting(UnwatchedColour)</selected>
 					<onclick>Skin.ToggleSetting(UnwatchedColour)</onclick>
@@ -910,7 +760,7 @@
 					
 				</control>
 				<control type="button" id="92828">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=unwatched.colour.name)</onclick>
 					<label>31909</label>
@@ -919,7 +769,7 @@
 					
 				</control>
 				<control type="radiobutton" id="92837">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<selected>Skin.HasSetting(NewColour)</selected>
 					<onclick>Skin.ToggleSetting(NewColour)</onclick>
@@ -927,7 +777,7 @@
 					
 				</control>
 				<control type="button" id="92838">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=new.colour.name)</onclick>
 					<label>31911</label>
@@ -936,7 +786,7 @@
 					
 				</control>
 				<control type="radiobutton" id="92847">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<selected>Skin.HasSetting(ResumeColour)</selected>
 					<onclick>Skin.ToggleSetting(ResumeColour)</onclick>
@@ -944,7 +794,7 @@
 					
 				</control>
 				<control type="button" id="92848">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=resume.colour.name)</onclick>
 					<label>31913</label>
@@ -953,7 +803,7 @@
 					
 				</control>
 				<control type="radiobutton" id="92857">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<selected>Skin.HasSetting(PlayingColour)</selected>
 					<onclick>Skin.ToggleSetting(PlayingColour)</onclick>
@@ -961,7 +811,7 @@
 					
 				</control>
 				<control type="button" id="92858">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=playing.colour.name)</onclick>
 					<label>31915</label>
@@ -970,7 +820,7 @@
 					
 				</control>
 				<control type="radiobutton" id="92869">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<selected>Skin.HasSetting(emby.left.colour)</selected>
 					<onclick>Skin.ToggleSetting(emby.left.colour)</onclick>
@@ -978,7 +828,7 @@
 					<visible>Skin.HasSetting(home.emby)</visible>
 				</control>
 				<control type="button" id="92870">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=emby.left.colour.name)</onclick>
 					<label>31919</label>
@@ -986,7 +836,7 @@
 					<visible>Skin.HasSetting(emby.left.colour) + Skin.HasSetting(home.emby)</visible>
 				</control>
 				<control type="radiobutton" id="92871">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<selected>Skin.HasSetting(emby.right.colour)</selected>
 					<onclick>Skin.ToggleSetting(emby.right.colour)</onclick>
@@ -994,7 +844,7 @@
 					<visible>Skin.HasSetting(home.emby)</visible>
 				</control>
 				<control type="button" id="92872">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=emby.right.colour.name)</onclick>
 					<label>31921</label>
@@ -1002,14 +852,14 @@
 					<visible>Skin.HasSetting(emby.right.colour) + Skin.HasSetting(home.emby)</visible>
 				</control>
 				<control type="radiobutton" id="92873">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<selected>Skin.HasSetting(emby.middle.colour)</selected>
 					<onclick>Skin.ToggleSetting(emby.middle.colour)</onclick>
 					<label>31922</label>
 				</control>
 				<control type="button" id="92874">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=emby.middle.colour.name)</onclick>
 					<label>31923</label>
@@ -1017,7 +867,7 @@
 					<visible>Skin.HasSetting(emby.middle.colour) + Skin.HasSetting(home.emby)</visible>
 				</control>
 				<control type="radiobutton" id="92875">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<selected>Skin.HasSetting(emby.menu.colour)</selected>
 					<onclick>Skin.ToggleSetting(emby.menu.colour)</onclick>
@@ -1025,7 +875,7 @@
 					<visible>Skin.HasSetting(home.emby)</visible>
 				</control>
 				<control type="button" id="92876">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=emby.menu.colour.name)</onclick>
 					<label>31925</label>
@@ -1033,7 +883,7 @@
 					<visible>Skin.HasSetting(emby.menu.colour) + Skin.HasSetting(home.emby)</visible>
 				</control>
 				<control type="radiobutton" id="92883">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<selected>Skin.HasSetting(emby.menu.text.colour)</selected>
 					<onclick>Skin.ToggleSetting(emby.menu.text.colour)</onclick>
@@ -1041,7 +891,7 @@
 					<visible>Skin.HasSetting(home.emby)</visible>
 				</control>
 				<control type="button" id="92884">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=emby.menu.text.colour.name)</onclick>
 					<label>31927</label>
@@ -1049,7 +899,7 @@
 					<visible>Skin.HasSetting(emby.menu.text.colour) + Skin.HasSetting(home.emby)</visible>
 				</control>
 				<control type="radiobutton" id="92877">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<selected>Skin.HasSetting(emby.flags.colour)</selected>
 					<onclick>Skin.ToggleSetting(emby.flags.colour)</onclick>
@@ -1057,7 +907,7 @@
 					<visible>Skin.HasSetting(home.emby)</visible>
 				</control>
 				<control type="button" id="92878">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=emby.flags.colour.name)</onclick>
 					<label>31929</label>
@@ -1065,7 +915,7 @@
 					<visible>Skin.HasSetting(emby.flags.colour) + Skin.HasSetting(home.emby)</visible>
 				</control>
 				<control type="radiobutton" id="92879">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<selected>Skin.HasSetting(emby.flags.text.colour)</selected>
 					<onclick>Skin.ToggleSetting(emby.flags.text.colour)</onclick>
@@ -1073,7 +923,7 @@
 					<visible>Skin.HasSetting(home.emby)</visible>
 				</control>
 				<control type="button" id="92880">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=emby.flags.text.colour.name)</onclick>
 					<label>31931</label>
@@ -1081,7 +931,7 @@
 					<visible>Skin.HasSetting(emby.flags.text.colour) + Skin.HasSetting(home.emby)</visible>
 				</control>
 				<control type="radiobutton" id="92881">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<selected>Skin.HasSetting(emby.flags.icon.colour)</selected>
 					<onclick>Skin.ToggleSetting(emby.flags.icon.colour)</onclick>
@@ -1089,7 +939,7 @@
 					<visible>Skin.HasSetting(home.emby)</visible>
 				</control>
 				<control type="button" id="92882">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=emby.flags.icon.colour.name)</onclick>
 					<label>31933</label>
@@ -1100,11 +950,10 @@
 
 			<control type="grouplist" id="9008">
 				<description>Advanced control area</description>
-				<left>522</left>
-				<top>77</top>
-				<right>0</right>
-				<height>710</height>
-				<itemgap>10</itemgap>
+				<left>500</left>
+				<top>72</top>
+				<height>721</height>
+				<itemgap>0</itemgap>
 				<pagecontrol>60</pagecontrol>
 				<onleft>9000</onleft>
 				<onright>60</onright>
@@ -1112,7 +961,7 @@
 				<ondown>9008</ondown>
 				<visible>Container(9000).HasFocus(8)</visible>
 				<control type="button" id="9291">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<label>31814</label>
 					<label2>$INFO[Skin.String(moviegenreicons.name)]</label2>
@@ -1120,7 +969,7 @@
 					<visible>System.HasAddon(script.image.resource.select)</visible>
 				</control>
 				<control type="button" id="9292">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<label>31815</label>
 					<label2>$INFO[Skin.String(musicgenreicons.name)]</label2>
@@ -1128,7 +977,7 @@
 					<visible>System.HasAddon(script.image.resource.select)</visible>
 				</control>
 				<control type="button" id="9293">
-					<width>1390</width>
+					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<label>31816</label>
 					<label2>$INFO[Skin.String(weatherfanart.name)]</label2>

@@ -11,42 +11,38 @@
 			<width>1350</width>
 			<include>Animation.Common</include>
 			<control type="image">
-				<posx>-30</posx>
-				<posy>-30</posy>
 				<width>1350</width>
-				<height>73</height>
-				<texture border="16" colordiffuse="$VAR[EmbyMenuTextColourHighlight]">common/box.png</texture>
+				<height>72</height>
+				<texture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">common/box.png</texture>
 			</control>
 			<control type="image">
-				<posx>-30</posx>
-				<posy>41</posy>
+				<posy>72</posy>
 				<width>1350</width>
-				<height>433</height>
-				<texture border="16" colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
+				<height>412</height>
+				<texture colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
 			</control>
 			<control type="label">
 				<description>Heading</description>
 				<centerleft>50%</centerleft>
 				<width>1350</width>
 				<font>settingsheader</font>
+				<height>72</height>
 				<textcolor>black</textcolor>
 				<align>center</align>
 				<aligny>center</aligny>
 				<label>$LOCALIZE[31791] $VAR[WidgetTitleHome]</label>
-				<top>-28</top>
 			</control>
 			<control type="grouplist" id="12612">
-				<posy>56</posy>
-				<posx>-15</posx>
+				<posy>72</posy>
 				<width>450</width>
-				<height>402</height>
+				<height>412</height>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
 				<onleft>back</onleft>
 				<onclick>SetFocus(2612)</onclick>
 				<onright>SetFocus(2612)</onright>
 				<onup>12612</onup>
 				<ondown>12612</ondown>
-				<itemgap>10</itemgap>
+				<itemgap>0</itemgap>
 				<control type="button" id="1" description="Customise Home">
 					<width>450</width>
 					<include>DefSettingsButton2</include>
@@ -194,19 +190,19 @@
 			</control>
 			<control type="list" id="2612">
 				<visible>StringCompare(Skin.String(widget.helper),videos1)</visible>
-				<posy>56</posy>
-				<posx>445</posx>
-				<width>860</width>
-				<height>405</height>
+				<posy>72</posy>
+				<posx>450</posx>
+				<width>900</width>
+				<height>412</height>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
 				<onright>back</onright>
 				<onup>2612</onup>
 				<ondown>2612</ondown>
 				<onleft>12612</onleft>
 				<onright>back</onright>
-				<itemlayout width="860" height="50">
+				<itemlayout width="900" height="51.5">
 					<control type="label">
-						<width>860</width>
+						<width>900</width>
 						<font>Tiny</font>
 						<align>center</align>
 						<bottom>-10</bottom>
@@ -214,15 +210,15 @@
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 				</itemlayout>
-				<focusedlayout width="860" height="50">
+				<focusedlayout width="900" height="51.5">
 					<control type="image">
-						<texture colordiffuse="$VAR[ColourHighlight]" border="16">common/white.png</texture>
+						<texture colordiffuse="$VAR[ColourHighlight]">common/white.png</texture>
 						<visible>!ControlGroup(12612).HasFocus</visible>
 					</control>
 					<control type="label">
 						<align>center</align>
 						<bottom>-10</bottom>
-						<width>860</width>
+						<width>900</width>
 						<font>Tiny</font>
 						<label>$INFO[ListItem.Label]</label>
 						<textcolor>$VAR[ColourSelected]</textcolor>
@@ -378,18 +374,18 @@
 			</control>
 			<control type="list" id="2612">
 				<visible>StringCompare(Skin.String(widget.helper),videos2)</visible>
-				<posy>56</posy>
-				<posx>445</posx>
-				<width>860</width>
-				<height>405</height>
+				<posy>72</posy>
+				<posx>450</posx>
+				<width>900</width>
+				<height>412</height>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
 				<onleft>12612</onleft>
 				<onright>back</onright>
 				<onup>2612</onup>
 				<ondown>2612</ondown>
-				<itemlayout width="860" height="50">
+				<itemlayout width="900" height="51.5">
 					<control type="label">
-						<width>860</width>
+						<width>900</width>
 						<font>Tiny</font>
 						<align>center</align>
 						<bottom>-10</bottom>
@@ -397,15 +393,15 @@
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 				</itemlayout>
-				<focusedlayout width="860" height="50">
+				<focusedlayout width="900" height="51.5">
 					<control type="image">
-						<texture colordiffuse="$VAR[ColourHighlight]" border="16">common/white.png</texture>
+						<texture colordiffuse="$VAR[ColourHighlight]">common/white.png</texture>
 						<visible>!ControlGroup(12612).HasFocus</visible>
 					</control>
 					<control type="label">
 						<align>center</align>
 						<bottom>-10</bottom>
-						<width>860</width>
+						<width>900</width>
 						<font>Tiny</font>
 						<label>$INFO[ListItem.Label]</label>
 						<textcolor>$VAR[ColourSelected]</textcolor>
@@ -561,18 +557,18 @@
 			</control>
 			<control type="list" id="2612">
 				<visible>StringCompare(Skin.String(widget.helper),videos3)</visible>
-				<posy>56</posy>
-				<posx>445</posx>
-				<width>860</width>
-				<height>405</height>
+				<posy>72</posy>
+				<posx>450</posx>
+				<width>900</width>
+				<height>412</height>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
 				<onleft>12612</onleft>
 				<onright>back</onright>
 				<onup>2612</onup>
 				<ondown>2612</ondown>
-				<itemlayout width="860" height="50">
+				<itemlayout width="900" height="51.5">
 					<control type="label">
-						<width>860</width>
+						<width>900</width>
 						<font>Tiny</font>
 						<align>center</align>
 						<bottom>-10</bottom>
@@ -580,15 +576,15 @@
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 				</itemlayout>
-				<focusedlayout width="860" height="50">
+				<focusedlayout width="900" height="51.5">
 					<control type="image">
-						<texture colordiffuse="$VAR[ColourHighlight]" border="16">common/white.png</texture>
+						<texture colordiffuse="$VAR[ColourHighlight]">common/white.png</texture>
 						<visible>!ControlGroup(12612).HasFocus</visible>
 					</control>
 					<control type="label">
 						<align>center</align>
 						<bottom>-10</bottom>
-						<width>860</width>
+						<width>900</width>
 						<font>Tiny</font>
 						<label>$INFO[ListItem.Label]</label>
 						<textcolor>$VAR[ColourSelected]</textcolor>
@@ -744,18 +740,18 @@
 			</control>
 			<control type="list" id="2612">
 				<visible>StringCompare(Skin.String(widget.helper),videos4)</visible>
-				<posy>56</posy>
-				<posx>445</posx>
-				<width>860</width>
-				<height>405</height>
+				<posy>72</posy>
+				<posx>450</posx>
+				<width>900</width>
+				<height>412</height>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
 				<onleft>12612</onleft>
 				<onright>back</onright>
 				<onup>2612</onup>
 				<ondown>2612</ondown>
-				<itemlayout width="860" height="50">
+				<itemlayout width="900" height="51.5">
 					<control type="label">
-						<width>860</width>
+						<width>900</width>
 						<font>Tiny</font>
 						<align>center</align>
 						<bottom>-10</bottom>
@@ -763,15 +759,15 @@
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 				</itemlayout>
-				<focusedlayout width="860" height="50">
+				<focusedlayout width="900" height="51.5">
 					<control type="image">
-						<texture colordiffuse="$VAR[ColourHighlight]" border="16">common/white.png</texture>
+						<texture colordiffuse="$VAR[ColourHighlight]">common/white.png</texture>
 						<visible>!ControlGroup(12612).HasFocus</visible>
 					</control>
 					<control type="label">
 						<align>center</align>
 						<bottom>-10</bottom>
-						<width>860</width>
+						<width>900</width>
 						<font>Tiny</font>
 						<label>$INFO[ListItem.Label]</label>
 						<textcolor>$VAR[ColourSelected]</textcolor>
@@ -927,18 +923,18 @@
 			</control>
 			<control type="list" id="2612">
 				<visible>StringCompare(Skin.String(widget.helper),movies1)</visible>
-				<posy>56</posy>
-				<posx>445</posx>
-				<width>860</width>
-				<height>405</height>
+				<posy>72</posy>
+				<posx>450</posx>
+				<width>900</width>
+				<height>412</height>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
 				<onleft>12612</onleft>
 				<onright>back</onright>
 				<onup>2612</onup>
 				<ondown>2612</ondown>
-				<itemlayout width="860" height="50">
+				<itemlayout width="900" height="51.5">
 					<control type="label">
-						<width>860</width>
+						<width>900</width>
 						<font>Tiny</font>
 						<align>center</align>
 						<bottom>-10</bottom>
@@ -946,15 +942,15 @@
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 				</itemlayout>
-				<focusedlayout width="860" height="50">
+				<focusedlayout width="900" height="51.5">
 					<control type="image">
-						<texture colordiffuse="$VAR[ColourHighlight]" border="16">common/white.png</texture>
+						<texture colordiffuse="$VAR[ColourHighlight]">common/white.png</texture>
 						<visible>!ControlGroup(12612).HasFocus</visible>
 					</control>
 					<control type="label">
 						<align>center</align>
 						<bottom>-10</bottom>
-						<width>860</width>
+						<width>900</width>
 						<font>Tiny</font>
 						<label>$INFO[ListItem.Label]</label>
 						<textcolor>$VAR[ColourSelected]</textcolor>
@@ -1110,18 +1106,18 @@
 			</control>
 			<control type="list" id="2612">
 				<visible>StringCompare(Skin.String(widget.helper),movies2)</visible>
-				<posy>56</posy>
-				<posx>445</posx>
-				<width>860</width>
-				<height>405</height>
+				<posy>72</posy>
+				<posx>450</posx>
+				<width>900</width>
+				<height>412</height>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
 				<onleft>12612</onleft>
 				<onright>back</onright>
 				<onup>2612</onup>
 				<ondown>2612</ondown>
-				<itemlayout width="860" height="50">
+				<itemlayout width="900" height="51.5">
 					<control type="label">
-						<width>860</width>
+						<width>900</width>
 						<font>Tiny</font>
 						<align>center</align>
 						<bottom>-10</bottom>
@@ -1129,15 +1125,15 @@
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 				</itemlayout>
-				<focusedlayout width="860" height="50">
+				<focusedlayout width="900" height="51.5">
 					<control type="image">
-						<texture colordiffuse="$VAR[ColourHighlight]" border="16">common/white.png</texture>
+						<texture colordiffuse="$VAR[ColourHighlight]">common/white.png</texture>
 						<visible>!ControlGroup(12612).HasFocus</visible>
 					</control>
 					<control type="label">
 						<align>center</align>
 						<bottom>-10</bottom>
-						<width>860</width>
+						<width>900</width>
 						<font>Tiny</font>
 						<label>$INFO[ListItem.Label]</label>
 						<textcolor>$VAR[ColourSelected]</textcolor>
@@ -1293,18 +1289,18 @@
 			</control>
 			<control type="list" id="2612">
 				<visible>StringCompare(Skin.String(widget.helper),movies3)</visible>
-				<posy>56</posy>
-				<posx>445</posx>
-				<width>860</width>
-				<height>405</height>
+				<posy>72</posy>
+				<posx>450</posx>
+				<width>900</width>
+				<height>412</height>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
 				<onleft>12612</onleft>
 				<onright>back</onright>
 				<onup>2612</onup>
 				<ondown>2612</ondown>
-				<itemlayout width="860" height="50">
+				<itemlayout width="900" height="51.5">
 					<control type="label">
-						<width>860</width>
+						<width>900</width>
 						<font>Tiny</font>
 						<align>center</align>
 						<bottom>-10</bottom>
@@ -1312,15 +1308,15 @@
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 				</itemlayout>
-				<focusedlayout width="860" height="50">
+				<focusedlayout width="900" height="51.5">
 					<control type="image">
-						<texture colordiffuse="$VAR[ColourHighlight]" border="16">common/white.png</texture>
+						<texture colordiffuse="$VAR[ColourHighlight]">common/white.png</texture>
 						<visible>!ControlGroup(12612).HasFocus</visible>
 					</control>
 					<control type="label">
 						<align>center</align>
 						<bottom>-10</bottom>
-						<width>860</width>
+						<width>900</width>
 						<font>Tiny</font>
 						<label>$INFO[ListItem.Label]</label>
 						<textcolor>$VAR[ColourSelected]</textcolor>
@@ -1476,18 +1472,18 @@
 			</control>
 			<control type="list" id="2612">
 				<visible>StringCompare(Skin.String(widget.helper),movies4)</visible>
-				<posy>56</posy>
-				<posx>445</posx>
-				<width>860</width>
-				<height>405</height>
+				<posy>72</posy>
+				<posx>450</posx>
+				<width>900</width>
+				<height>412</height>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
 				<onleft>12612</onleft>
 				<onright>back</onright>
 				<onup>2612</onup>
 				<ondown>2612</ondown>
-				<itemlayout width="860" height="50">
+				<itemlayout width="900" height="51.5">
 					<control type="label">
-						<width>860</width>
+						<width>900</width>
 						<font>Tiny</font>
 						<align>center</align>
 						<bottom>-10</bottom>
@@ -1495,15 +1491,15 @@
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 				</itemlayout>
-				<focusedlayout width="860" height="50">
+				<focusedlayout width="900" height="51.5">
 					<control type="image">
-						<texture colordiffuse="$VAR[ColourHighlight]" border="16">common/white.png</texture>
+						<texture colordiffuse="$VAR[ColourHighlight]">common/white.png</texture>
 						<visible>!ControlGroup(12612).HasFocus</visible>
 					</control>
 					<control type="label">
 						<align>center</align>
 						<bottom>-10</bottom>
-						<width>860</width>
+						<width>900</width>
 						<font>Tiny</font>
 						<label>$INFO[ListItem.Label]</label>
 						<textcolor>$VAR[ColourSelected]</textcolor>
@@ -1659,18 +1655,18 @@
 			</control>
 			<control type="list" id="2612">
 				<visible>StringCompare(Skin.String(widget.helper),tv1)</visible>
-				<posy>56</posy>
-				<posx>445</posx>
-				<width>860</width>
-				<height>405</height>
+				<posy>72</posy>
+				<posx>450</posx>
+				<width>900</width>
+				<height>412</height>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
 				<onleft>12612</onleft>
 				<onright>back</onright>
 				<onup>2612</onup>
 				<ondown>2612</ondown>
-				<itemlayout width="860" height="50">
+				<itemlayout width="900" height="51.5">
 					<control type="label">
-						<width>860</width>
+						<width>900</width>
 						<font>Tiny</font>
 						<align>center</align>
 						<bottom>-10</bottom>
@@ -1678,15 +1674,15 @@
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 				</itemlayout>
-				<focusedlayout width="860" height="50">
+				<focusedlayout width="900" height="51.5">
 					<control type="image">
-						<texture colordiffuse="$VAR[ColourHighlight]" border="16">common/white.png</texture>
+						<texture colordiffuse="$VAR[ColourHighlight]">common/white.png</texture>
 						<visible>!ControlGroup(12612).HasFocus</visible>
 					</control>
 					<control type="label">
 						<align>center</align>
 						<bottom>-10</bottom>
-						<width>860</width>
+						<width>900</width>
 						<font>Tiny</font>
 						<label>$INFO[ListItem.Label]</label>
 						<textcolor>$VAR[ColourSelected]</textcolor>
@@ -1842,18 +1838,18 @@
 			</control>
 			<control type="list" id="2612">
 				<visible>StringCompare(Skin.String(widget.helper),tv2)</visible>
-				<posy>56</posy>
-				<posx>445</posx>
-				<width>860</width>
-				<height>405</height>
+				<posy>72</posy>
+				<posx>450</posx>
+				<width>900</width>
+				<height>412</height>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
 				<onleft>12612</onleft>
 				<onright>back</onright>
 				<onup>2612</onup>
 				<ondown>2612</ondown>
-				<itemlayout width="860" height="50">
+				<itemlayout width="900" height="51.5">
 					<control type="label">
-						<width>860</width>
+						<width>900</width>
 						<font>Tiny</font>
 						<align>center</align>
 						<bottom>-10</bottom>
@@ -1861,15 +1857,15 @@
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 				</itemlayout>
-				<focusedlayout width="860" height="50">
+				<focusedlayout width="900" height="51.5">
 					<control type="image">
-						<texture colordiffuse="$VAR[ColourHighlight]" border="16">common/white.png</texture>
+						<texture colordiffuse="$VAR[ColourHighlight]">common/white.png</texture>
 						<visible>!ControlGroup(12612).HasFocus</visible>
 					</control>
 					<control type="label">
 						<align>center</align>
 						<bottom>-10</bottom>
-						<width>860</width>
+						<width>900</width>
 						<font>Tiny</font>
 						<label>$INFO[ListItem.Label]</label>
 						<textcolor>$VAR[ColourSelected]</textcolor>
@@ -2025,18 +2021,18 @@
 			</control>
 			<control type="list" id="2612">
 				<visible>StringCompare(Skin.String(widget.helper),tv3)</visible>
-				<posy>56</posy>
-				<posx>445</posx>
-				<width>860</width>
-				<height>405</height>
+				<posy>72</posy>
+				<posx>450</posx>
+				<width>900</width>
+				<height>412</height>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
 				<onleft>12612</onleft>
 				<onright>back</onright>
 				<onup>2612</onup>
 				<ondown>2612</ondown>
-				<itemlayout width="860" height="50">
+				<itemlayout width="900" height="51.5">
 					<control type="label">
-						<width>860</width>
+						<width>900</width>
 						<font>Tiny</font>
 						<align>center</align>
 						<bottom>-10</bottom>
@@ -2044,15 +2040,15 @@
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 				</itemlayout>
-				<focusedlayout width="860" height="50">
+				<focusedlayout width="900" height="51.5">
 					<control type="image">
-						<texture colordiffuse="$VAR[ColourHighlight]" border="16">common/white.png</texture>
+						<texture colordiffuse="$VAR[ColourHighlight]">common/white.png</texture>
 						<visible>!ControlGroup(12612).HasFocus</visible>
 					</control>
 					<control type="label">
 						<align>center</align>
 						<bottom>-10</bottom>
-						<width>860</width>
+						<width>900</width>
 						<font>Tiny</font>
 						<label>$INFO[ListItem.Label]</label>
 						<textcolor>$VAR[ColourSelected]</textcolor>
@@ -2208,18 +2204,18 @@
 			</control>
 			<control type="list" id="2612">
 				<visible>StringCompare(Skin.String(widget.helper),tv4)</visible>
-				<posy>56</posy>
-				<posx>445</posx>
-				<width>860</width>
-				<height>405</height>
+				<posy>72</posy>
+				<posx>450</posx>
+				<width>900</width>
+				<height>412</height>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
 				<onleft>12612</onleft>
 				<onright>back</onright>
 				<onup>2612</onup>
 				<ondown>2612</ondown>
-				<itemlayout width="860" height="50">
+				<itemlayout width="900" height="51.5">
 					<control type="label">
-						<width>860</width>
+						<width>900</width>
 						<font>Tiny</font>
 						<align>center</align>
 						<bottom>-10</bottom>
@@ -2227,15 +2223,15 @@
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 				</itemlayout>
-				<focusedlayout width="860" height="50">
+				<focusedlayout width="900" height="51.5">
 					<control type="image">
-						<texture colordiffuse="$VAR[ColourHighlight]" border="16">common/white.png</texture>
+						<texture colordiffuse="$VAR[ColourHighlight]">common/white.png</texture>
 						<visible>!ControlGroup(12612).HasFocus</visible>
 					</control>
 					<control type="label">
 						<align>center</align>
 						<bottom>-10</bottom>
-						<width>860</width>
+						<width>900</width>
 						<font>Tiny</font>
 						<label>$INFO[ListItem.Label]</label>
 						<textcolor>$VAR[ColourSelected]</textcolor>
@@ -2391,18 +2387,18 @@
 			</control>
 			<control type="list" id="2612">
 				<visible>StringCompare(Skin.String(widget.helper),music1)</visible>
-				<posy>56</posy>
-				<posx>445</posx>
-				<width>860</width>
-				<height>405</height>
+				<posy>72</posy>
+				<posx>450</posx>
+				<width>900</width>
+				<height>412</height>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
 				<onleft>12612</onleft>
 				<onright>back</onright>
 				<onup>2612</onup>
 				<ondown>2612</ondown>
-				<itemlayout width="860" height="50">
+				<itemlayout width="900" height="51.5">
 					<control type="label">
-						<width>860</width>
+						<width>900</width>
 						<font>Tiny</font>
 						<align>center</align>
 						<bottom>-10</bottom>
@@ -2410,15 +2406,15 @@
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 				</itemlayout>
-				<focusedlayout width="860" height="50">
+				<focusedlayout width="900" height="51.5">
 					<control type="image">
-						<texture colordiffuse="$VAR[ColourHighlight]" border="16">common/white.png</texture>
+						<texture colordiffuse="$VAR[ColourHighlight]">common/white.png</texture>
 						<visible>!ControlGroup(12612).HasFocus</visible>
 					</control>
 					<control type="label">
 						<align>center</align>
 						<bottom>-10</bottom>
-						<width>860</width>
+						<width>900</width>
 						<font>Tiny</font>
 						<label>$INFO[ListItem.Label]</label>
 						<textcolor>$VAR[ColourSelected]</textcolor>
@@ -2514,18 +2510,18 @@
 			</control>
 			<control type="list" id="2612">
 				<visible>StringCompare(Skin.String(widget.helper),music2)</visible>
-				<posy>56</posy>
-				<posx>445</posx>
-				<width>860</width>
-				<height>405</height>
+				<posy>72</posy>
+				<posx>450</posx>
+				<width>900</width>
+				<height>412</height>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
 				<onleft>12612</onleft>
 				<onright>back</onright>
 				<onup>2612</onup>
 				<ondown>2612</ondown>
-				<itemlayout width="860" height="50">
+				<itemlayout width="900" height="51.5">
 					<control type="label">
-						<width>860</width>
+						<width>900</width>
 						<font>Tiny</font>
 						<align>center</align>
 						<bottom>-10</bottom>
@@ -2533,15 +2529,15 @@
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 				</itemlayout>
-				<focusedlayout width="860" height="50">
+				<focusedlayout width="900" height="51.5">
 					<control type="image">
-						<texture colordiffuse="$VAR[ColourHighlight]" border="16">common/white.png</texture>
+						<texture colordiffuse="$VAR[ColourHighlight]">common/white.png</texture>
 						<visible>!ControlGroup(12612).HasFocus</visible>
 					</control>
 					<control type="label">
 						<align>center</align>
 						<bottom>-10</bottom>
-						<width>860</width>
+						<width>900</width>
 						<font>Tiny</font>
 						<label>$INFO[ListItem.Label]</label>
 						<textcolor>$VAR[ColourSelected]</textcolor>
@@ -2637,18 +2633,18 @@
 			</control>
 			<control type="list" id="2612">
 				<visible>StringCompare(Skin.String(widget.helper),music3)</visible>
-				<posy>56</posy>
-				<posx>445</posx>
-				<width>860</width>
-				<height>405</height>
+				<posy>72</posy>
+				<posx>450</posx>
+				<width>900</width>
+				<height>412</height>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
 				<onleft>12612</onleft>
 				<onright>back</onright>
 				<onup>2612</onup>
 				<ondown>2612</ondown>
-				<itemlayout width="860" height="50">
+				<itemlayout width="900" height="51.5">
 					<control type="label">
-						<width>860</width>
+						<width>900</width>
 						<font>Tiny</font>
 						<align>center</align>
 						<bottom>-10</bottom>
@@ -2656,15 +2652,15 @@
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 				</itemlayout>
-				<focusedlayout width="860" height="50">
+				<focusedlayout width="900" height="51.5">
 					<control type="image">
-						<texture colordiffuse="$VAR[ColourHighlight]" border="16">common/white.png</texture>
+						<texture colordiffuse="$VAR[ColourHighlight]">common/white.png</texture>
 						<visible>!ControlGroup(12612).HasFocus</visible>
 					</control>
 					<control type="label">
 						<align>center</align>
 						<bottom>-10</bottom>
-						<width>860</width>
+						<width>900</width>
 						<font>Tiny</font>
 						<label>$INFO[ListItem.Label]</label>
 						<textcolor>$VAR[ColourSelected]</textcolor>
@@ -2760,18 +2756,18 @@
 			</control>
 			<control type="list" id="2612">
 				<visible>StringCompare(Skin.String(widget.helper),music4)</visible>
-				<posy>56</posy>
-				<posx>445</posx>
-				<width>860</width>
-				<height>405</height>
+				<posy>72</posy>
+				<posx>450</posx>
+				<width>900</width>
+				<height>412</height>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
 				<onleft>12612</onleft>
 				<onright>back</onright>
 				<onup>2612</onup>
 				<ondown>2612</ondown>
-				<itemlayout width="860" height="50">
+				<itemlayout width="900" height="51.5">
 					<control type="label">
-						<width>860</width>
+						<width>900</width>
 						<font>Tiny</font>
 						<align>center</align>
 						<bottom>-10</bottom>
@@ -2779,15 +2775,15 @@
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 				</itemlayout>
-				<focusedlayout width="860" height="50">
+				<focusedlayout width="900" height="51.5">
 					<control type="image">
-						<texture colordiffuse="$VAR[ColourHighlight]" border="16">common/white.png</texture>
+						<texture colordiffuse="$VAR[ColourHighlight]">common/white.png</texture>
 						<visible>!ControlGroup(12612).HasFocus</visible>
 					</control>
 					<control type="label">
 						<align>center</align>
 						<bottom>-10</bottom>
-						<width>860</width>
+						<width>900</width>
 						<font>Tiny</font>
 						<label>$INFO[ListItem.Label]</label>
 						<textcolor>$VAR[ColourSelected]</textcolor>
@@ -2883,18 +2879,18 @@
 			</control>
 			<control type="list" id="2612">
 				<visible>StringCompare(Skin.String(widget.helper),videoinfo1)</visible>
-				<posy>56</posy>
-				<posx>445</posx>
-				<width>860</width>
-				<height>405</height>
+				<posy>72</posy>
+				<posx>450</posx>
+				<width>900</width>
+				<height>412</height>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
 				<onleft>12612</onleft>
 				<onright>back</onright>
 				<onup>2612</onup>
 				<ondown>2612</ondown>
-				<itemlayout width="860" height="50">
+				<itemlayout width="900" height="51.5">
 					<control type="label">
-						<width>860</width>
+						<width>900</width>
 						<font>Tiny</font>
 						<align>center</align>
 						<bottom>-10</bottom>
@@ -2902,15 +2898,15 @@
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 				</itemlayout>
-				<focusedlayout width="860" height="50">
+				<focusedlayout width="900" height="51.5">
 					<control type="image">
-						<texture colordiffuse="$VAR[ColourHighlight]" border="16">common/white.png</texture>
+						<texture colordiffuse="$VAR[ColourHighlight]">common/white.png</texture>
 						<visible>!ControlGroup(12612).HasFocus</visible>
 					</control>
 					<control type="label">
 						<align>center</align>
 						<bottom>-10</bottom>
-						<width>860</width>
+						<width>900</width>
 						<font>Tiny</font>
 						<label>$INFO[ListItem.Label]</label>
 						<textcolor>$VAR[ColourSelected]</textcolor>
@@ -2996,18 +2992,17 @@
 			</control>
 			<control type="list" id="2612">
 				<visible>StringCompare(Skin.String(widget.helper),videoinfo2)</visible>
-				<posy>56</posy>
-				<posx>445</posx>
-				<width>860</width>
-				<height>405</height>
+				<posy>72</posy>
+				<posx>450</posx>
+				<width>900</width>
+				<height>412</height>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
 				<onleft>12612</onleft>
 				<onright>back</onright>
 				<onup>2612</onup>
 				<ondown>2612</ondown>
-				<itemlayout width="860" height="50">
+				<itemlayout width="900" height="51.5">
 					<control type="label">
-						<width>860</width>
 						<font>Tiny</font>
 						<align>center</align>
 						<bottom>-10</bottom>
@@ -3015,15 +3010,14 @@
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 				</itemlayout>
-				<focusedlayout width="860" height="50">
+				<focusedlayout width="900" height="51.5">
 					<control type="image">
-						<texture colordiffuse="$VAR[ColourHighlight]" border="16">common/white.png</texture>
+						<texture colordiffuse="$VAR[ColourHighlight]">common/white.png</texture>
 						<visible>!ControlGroup(12612).HasFocus</visible>
 					</control>
 					<control type="label">
 						<align>center</align>
 						<bottom>-10</bottom>
-						<width>860</width>
 						<font>Tiny</font>
 						<label>$INFO[ListItem.Label]</label>
 						<textcolor>$VAR[ColourSelected]</textcolor>
