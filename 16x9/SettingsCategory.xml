@@ -31,6 +31,13 @@
             <colordiffuse>$VAR[EmbyMenuTextColourHighlight]</colordiffuse>
             <aspectratio>stretch</aspectratio>
         </control>
+		<control type="image">
+			<top>72</top>
+			<height>824</height>
+			<texture>common/white.png</texture>
+			<colordiffuse>black</colordiffuse>
+			<aspectratio>stretch</aspectratio>
+		</control>
         <control type="label">
             <height>72</height>
             <aligny>center</aligny>
@@ -123,13 +130,13 @@
             <font>Small</font>
             <texturenofocus>-</texturenofocus>
         </control>
-        <control type="image">
-            <posx>500</posx>
-            <top>72</top>
-            <bottom>0</bottom>
-            <width>1</width>
-            <texture colordiffuse="white">common/white.png</texture>
-        </control>
+		<control type="image">
+			<posx>500</posx>
+			<top>72</top>
+			<bottom>34</bottom>
+			<width>1</width>
+			<texture colordiffuse="white">common/white.png</texture>
+		</control>
     </control>
 </controls>
 </window>
