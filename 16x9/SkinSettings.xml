@@ -109,6 +109,10 @@
 					<onclick>noop</onclick>
 				</item>
 				<item id="8">
+					<label>$LOCALIZE[31947]</label>
+					<onclick>noop</onclick>
+				</item>
+				<item id="9">
 					<label>$LOCALIZE[31813]</label>
 					<onclick>noop</onclick>
 				</item>
@@ -955,8 +959,8 @@
 				</control>
 			</control>
 
-			<control type="grouplist" id="9008">
-				<description>Advanced control area</description>
+			<control type="grouplist" id="9009">
+				<description>Themes</description>
 				<left>500</left>
 				<top>72</top>
 				<height>721</height>
@@ -967,6 +971,47 @@
 				<onup>9008</onup>
 				<ondown>9008</ondown>
 				<visible>Container(9000).HasFocus(8)</visible>
+				<control type="button" id="92991">
+					<width>1410</width>
+					<include>DefSettingsButton2</include>
+					<label>$ADDON[script.skin.helper.service 32085]</label>
+					<onclick>XBMC.RunScript(script.skin.helper.service,action=ColorThemes)</onclick>
+				</control>
+				<control type="radiobutton" id="92992">
+					<width>1410</width>
+					<include>DefSettingsButton2</include>
+					<label>31948</label>
+					<onclick>Skin.ToggleSetting(SkinHelper.EnableDayNightThemes)</onclick>
+					<selected>Skin.HasSetting(SkinHelper.EnableDayNightThemes)</selected>
+				</control>
+				<control type="button" id="92993">
+					<width>1410</width>
+					<include>DefSettingsButton2</include>
+					<label>$LOCALIZE[31949]: $INFO[Skin.String(SkinHelper.ColorTheme.Day)]</label>
+					<onclick>XBMC.RunScript(script.skin.helper.service,action=ColorThemes,daynight=day)</onclick>
+					<visible>Skin.HasSetting(SkinHelper.EnableDayNightThemes)</visible>
+				</control>
+				<control type="button" id="92994">
+					<width>1410</width>
+					<include>DefSettingsButton2</include>
+					<label>$LOCALIZE[31950]: $INFO[Skin.String(SkinHelper.ColorTheme.Night)]</label>
+					<onclick>XBMC.RunScript(script.skin.helper.service,action=ColorThemes,daynight=night)</onclick>
+					<visible>Skin.HasSetting(SkinHelper.EnableDayNightThemes)</visible>
+				</control>
+			</control>
+
+			<control type="grouplist" id="9009">
+				<description>Images</description>
+				<left>500</left>
+				<top>72</top>
+				<height>721</height>
+				<itemgap>0</itemgap>
+				<pagecontrol>60</pagecontrol>
+				<onleft>9000</onleft>
+				<onright>60</onright>
+				<onup>9008</onup>
+				<ondown>9008</ondown>
+				<visible>Container(9000).HasFocus(9)</visible>
 				<control type="button" id="9291">
 					<width>1410</width>
 					<include>DefSettingsButton2</include>
