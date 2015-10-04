@@ -290,11 +290,21 @@
 		</control>
 -->
 		<control type="image">
+			<width>100%</width>
+			<height>100%</height>
+			<texture border="8" colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
+			<bordertexture colordiffuse="$VAR[ColourSelected]">common/white.png</bordertexture>
+			<bordersize>20,0,0,0</bordersize>
+			<visible>!Skin.HasSetting(furniture.gradient)</visible>
+		</control>
+
+		<control type="image">
 			<left>0</left>
 			<width>25%</width>
 			<height>100%</height>
 			<aspectratio scalediffuse="false">scale</aspectratio>
 			<texture border="8" colordiffuse="$VAR[ColourHighlight]" flipy="true">special://skin/extras/borders/gradient1.png</texture>
+			<visible>Skin.HasSetting(furniture.gradient)</visible>
 		</control>
 		<control type="image">
 			<left>25%</left>
@@ -302,6 +312,7 @@
 			<height>100%</height>
 			<aspectratio scalediffuse="false">scale</aspectratio>
 			<texture border="8" colordiffuse="$VAR[ColourHighlight]">special://skin/extras/borders/gradient1.png</texture>
+			<visible>Skin.HasSetting(furniture.gradient)</visible>
 		</control>
 		<control type="image">
 			<left>50%</left>
@@ -309,6 +320,7 @@
 			<height>100%</height>
 			<aspectratio scalediffuse="false">scale</aspectratio>
 			<texture border="8" colordiffuse="$VAR[ColourHighlight]" flipy="true">special://skin/extras/borders/gradient1.png</texture>
+			<visible>Skin.HasSetting(furniture.gradient)</visible>
 		</control>
 		<control type="image">
 			<left>75%</left>
@@ -316,6 +328,7 @@
 			<height>100%</height>
 			<aspectratio scalediffuse="false">scale</aspectratio>
 			<texture border="8" colordiffuse="$VAR[ColourHighlight]">special://skin/extras/borders/gradient1.png</texture>
+			<visible>Skin.HasSetting(furniture.gradient)</visible>
 		</control>
 		<control type="label">
 			<posx>30</posx>
