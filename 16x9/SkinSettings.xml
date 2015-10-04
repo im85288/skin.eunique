@@ -13,6 +13,7 @@
 		<right>NewSidePad</right>
 		<top>TopPad</top>
 		<include>Animation.Common</include>
+		<visible>!Window.IsVisible(script-skinshortcuts.xml)</visible>
 		<control type="image">
 			<height>72</height>
 			<texture>common/white.png</texture>
@@ -23,7 +24,7 @@
 			<top>72</top>
 			<height>824</height>
 			<texture>common/white.png</texture>
-			<colordiffuse>black</colordiffuse>
+			<colordiffuse>$VAR[EmbyMenuColourHighlight]</colordiffuse>
 			<aspectratio>stretch</aspectratio>
 		</control>
 		<control type="label">
