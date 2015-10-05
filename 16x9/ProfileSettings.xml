@@ -16,23 +16,15 @@
             
             <control type="label" id="2">
                 <description>Header Label</description>
-                <centerleft>50%</centerleft>
-                <width>870</width>
-                <align>center</align>
-                <posy>15</posy>
-                <font>MediumBold</font>
+                <include>DefDialogHeader</include>
             </control>
             <control type="image" id="101">
-                <top>15</top>
-                <left>15</left>
-                <width>100</width>
-                <height>100</height>
+                <width>92</width>
+                <height>92</height>
             </control>
             <control type="grouplist" id="5">
                 <description>Control Area</description>
-                <left>15</left>
-                <right>15</right>
-                <top>140</top>
+                <top>92</top>
                 <height>420</height>
                 <itemgap>0</itemgap>
                 <onleft>5</onleft>
@@ -41,18 +33,10 @@
                 <ondown>28</ondown>
                 <orientation>vertical</orientation>
             </control>
-            <control type="label" id="103">
-                <description>Header Label</description>
-                <centerleft>50%</centerleft>
-                <width>870</width>
-                <align>center</align>
-                <posy>60</posy>
-                <font>Tiny</font>
-            </control>
             <control type="button" id="28">
                 <description>Ok</description>
                 <posx>150</posx>
-                <bottom>30</bottom>
+                <bottom>33</bottom>
                 <width>270</width>
                 <label>12321</label>
                 <onleft>29</onleft>
@@ -66,7 +50,7 @@
             <control type="button" id="29">
                 <description>Cancel</description>
                 <posx>480</posx>
-                <bottom>30</bottom>
+                <bottom>33</bottom>
                 <width>270</width>
                 <label>222</label>
                 <onleft>28</onleft>
@@ -83,7 +67,7 @@
         
         <!-- Defaults -->
         <control type="button" id="7">
-            <width>870</width>
+            <width>900</width>
             <description>Default Button</description>
             <align>left</align>
             <height>70</height>
@@ -91,7 +75,7 @@
         </control>
 
         <control type="radiobutton" id="8">
-            <width>870</width>
+            <width>900</width>
             <description>Default Radio Button</description>
             <align>left</align>
             <height>70</height>
@@ -100,7 +84,7 @@
         </control>
 
         <control type="spincontrolex" id="9">
-            <width>870</width>
+            <width>900</width>
             <description>Default Spin Control</description>
             <align>left</align>
             <height>70</height>

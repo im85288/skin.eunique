@@ -42,8 +42,6 @@
 		<value>resource://resource.images.musicgenreicons.text/$INFO[Listitem.Label,,.jpg]</value>
 	</variable>
 	<variable name="PosterImage">
-		<value condition="IsEmpty(ListItem.Art(tvshow.clearart)) + Control.IsVisible(516) + Container.Content(episodes) + [!Skin.HasSetting(osd.hidespoilers) | [Skin.HasSetting(osd.hidespoilers) + stringcompare(ListItem.Overlay,OverlayWatched.png)]]">$INFO[ListItem.Art(season.poster)]</value>
-		<value condition="Control.IsVisible(516) + Skin.HasSetting(osd.hidespoilers) + Container.Content(episodes) + [stringcompare(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]">$INFO[ListItem.Art(tvshow.landscape)]</value>
 		<value condition="!IsEmpty(ListItem.Art(season.poster))">$INFO[ListItem.Art(season.poster)]</value>
 		<value condition="Container.Content(seasons)">$INFO[ListItem.Icon]</value>
 		<value condition="!IsEmpty(ListItem.Art(tvshow.poster))">$INFO[ListItem.Art(tvshow.poster)]</value>

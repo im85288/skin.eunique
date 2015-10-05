@@ -17,21 +17,14 @@
             
             <control type="label">
                 <description>Header Label</description>
-                <centerleft>50%</centerleft>
-                <width>1000</width>
-                <align>center</align>
+                <include>DefDialogHeader</include>
                 <label>10130</label>
-                <posy>10</posy>
-                <font>settingsheader</font>
-                <textcolor>$VAR[EmbyMenuColourHighlight]</textcolor>
             </control>
 
             <control type="radiobutton" id="4">
                 <description>Enable Login Screen</description>
-                <left>-8</left>
-                <right>-8</right>
                 <textoffsetx>20</textoffsetx>
-                <posy>100</posy>
+                <posy>92</posy>
                 <label>20096</label>
                 <align>left</align>
                 <ondown>2</ondown>
@@ -39,17 +32,15 @@
                 <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
                 <textureradiofocus colordiffuse="$VAR[ColourSelected]">buttons/radio-on.png</textureradiofocus>
                 <textureradionofocus colordiffuse="$VAR[EmbyMenuTextColourHighlight]">buttons/radio-off.png</textureradionofocus>
-                <texturefocus colordiffuse="$VAR[EmbyMiddleColourHighlight]" border="5">common/box.png</texturefocus>
-                <texturenofocus colordiffuse="$VAR[EmbyMenuColourHighlight]" border="5">common/box.png</texturenofocus>
+                <texturefocus colordiffuse="$VAR[EmbyMiddleColourHighlight]">common/box.png</texturefocus>
+                <texturenofocus colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texturenofocus>
             </control>
 
             <control type="list" id="2">
-                <left>-8</left>
-                <right>-8</right>
                 <posy>159</posy>
                 <height>483</height>
                 <onup>4</onup>
-                <itemlayout height="69" width="716">
+                <itemlayout height="64" width="700">
 
                     <control type="label">
                         <posx>20</posx>
@@ -67,13 +58,13 @@
 
                 </itemlayout>
 
-                <focusedlayout height="69" width="716">
+                <focusedlayout height="64" width="700">
                     <control type="group">
                         
                         <visible>Control.HasFocus(2)</visible>
                         <control type="image">
-                            <height>66</height>
-                            <texture border="5" colordiffuse="$VAR[EmbyMiddleColourHighlight]">common/box.png</texture>
+                            <height>64</height>
+                            <texture colordiffuse="$VAR[EmbyMiddleColourHighlight]">common/box.png</texture>
                         </control>
 
                         <control type="label">
@@ -93,15 +84,15 @@
                     <control type="group">
                         <visible>!Control.HasFocus(2)</visible>
                         <control type="label">
-                            <posx>20</posx>
-                            <width>810</width>
+                            <posx>10</posx>
+                            <width>700</width>
                             <info>ListItem.Label</info>
                             <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
                         </control>
 
                         <control type="label">
-                            <right>20</right>
-                            <width>810</width>
+                            <right>10</right>
+                            <width>700</width>
                             <align>right</align>
                             <font>Tiny</font>
                             <info>ListItem.Label2</info>
