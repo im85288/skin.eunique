@@ -24,14 +24,14 @@
                 <left>-18</left>
                 <right>-18</right>
                 <height>75</height>
-                <texture border="16" colordiffuse="$VAR[EmbyMenuTextColourHighlight]">common/box.png</texture>
+                <texture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">common/box.png</texture>
             </control>
             <control type="image">
                 <top>-18</top>
                 <bottom>-18</bottom>
                 <left>-18</left>
                 <right>-18</right>
-                <texture border="16" colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
+                <texture colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
             </control>
 
             <control type="image">
@@ -40,7 +40,7 @@
                 <right>10</right>
                 <height>75</height>
                 <aspectratio>stretch</aspectratio>
-                <texture border="20" colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
+                <texture colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
             </control>
             <control type="label" id="311">
                 <description>Heading</description>
@@ -60,7 +60,7 @@
                 <height>75</height>
                 <align>center</align>
                 <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
-                <texturefocus colordiffuse="$VAR[ColourHighlight]" border="5">common/box.png</texturefocus>
+                <texturefocus colordiffuse="$VAR[ColourHighlight]">common/box.png</texturefocus>
             </control>
 
             <control type="group" id="4000">
@@ -478,7 +478,7 @@
                         <bottom>-18</bottom>
                         <left>-18</left>
                         <right>-18</right>
-                        <texture border="16" colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
+                        <texture colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
                     </control>
                     <control type="group">
                         <animation effect="fade" time="300" tween="cubic" start="0" end="100" reversible="false" condition="!IsEmpty(Container(5000).ListItem.Label)">Conditional</animation>
@@ -499,7 +499,7 @@
                                 <top>5</top>
                                 <width>296</width>
                                 <height>70</height>
-                                <texture border="5" colordiffuse="Black12">common/box.png</texture>
+                                <texture colordiffuse="Black12">common/box.png</texture>
                             </control>
                             <control type="label">
                                 <top>5</top>
@@ -517,7 +517,7 @@
                                 <top>5</top>
                                 <width>296</width>
                                 <height>70</height>
-                                <texture border="5" colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
+                                <texture colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
                                 <visible>Control.HasFocus(5000)</visible>
                             </control>
                             <control type="label">

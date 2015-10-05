@@ -36,14 +36,14 @@
 				<control type="image">
 					<width>92%</width>
 					<height>92%</height>
-					<texture border="5">$INFO[ListItem.Icon]</texture>
+					<texture>$INFO[ListItem.Icon]</texture>
 				</control>
 			</itemlayout>
 			<focusedlayout height="150" width="150">
 				<control type="image">
 					<width>95%</width>
 					<height>95%</height>
-					<texture border="5">$INFO[ListItem.Icon]</texture>
+					<texture>$INFO[ListItem.Icon]</texture>
 				</control>
 				<control type="textbox">
 					<font>Small</font>
@@ -83,7 +83,7 @@
 				<width>100</width>
 				<height>60</height>
 				<aspectratio>stretch</aspectratio>
-				<texture border="5">panel.png</texture>
+				<texture>panel.png</texture>
 				<colordiffuse>$INFO[Window.Property(colorstring)]</colordiffuse>
 			</control>
 			<!-- edit manual -->
@@ -98,8 +98,8 @@
 				<label>$ADDON[script.skin.helper.service 32012]</label>
 				<label2>$INFO[Window.Property(colorstring)]</label2>
 				<textcolor>white</textcolor>
-				<texturefocus colordiffuse="$VAR[ColourHighlight]" border="5">common/box.png</texturefocus>
-				<texturenofocus colordiffuse="White70" border="5">common/box.png</texturenofocus>
+				<texturefocus colordiffuse="$VAR[ColourHighlight]">common/box.png</texturefocus>
+				<texturenofocus colordiffuse="White70">common/box.png</texturenofocus>
 			</control>
 
 			<!-- Save button -->
@@ -111,8 +111,8 @@
 				<onleft>3010</onleft>
 				<label>190</label>
 				<textcolor>white</textcolor>
-				<texturefocus colordiffuse="$VAR[ColourHighlight]" border="5">common/box.png</texturefocus>
-				<texturenofocus colordiffuse="White70" border="5">common/box.png</texturenofocus>
+				<texturefocus colordiffuse="$VAR[ColourHighlight]">common/box.png</texturefocus>
+				<texturenofocus colordiffuse="White70">common/box.png</texturenofocus>
 			</control>
 
 			<!-- None -->
@@ -124,8 +124,8 @@
 				<onleft>3010</onleft>
 				<label>$ADDON[script.skin.helper.service 32013]</label>
 				<textcolor>white</textcolor>
-				<texturefocus colordiffuse="$VAR[ColourHighlight]" border="5">common/box.png</texturefocus>
-				<texturenofocus colordiffuse="White70" border="5">common/box.png</texturenofocus>
+				<texturefocus colordiffuse="$VAR[ColourHighlight]">common/box.png</texturefocus>
+				<texturenofocus colordiffuse="White70">common/box.png</texturenofocus>
 			</control>
 
 			<control type="group" id="3020">
@@ -139,8 +139,8 @@
 					<onup>3110</onup>
 					<label>$ADDON[script.skin.helper.service 32049]:</label>
 					<textcolor>white</textcolor>
-					<texturefocus colordiffuse="$VAR[ColourHighlight]" border="5">common/box.png</texturefocus>
-					<texturenofocus colordiffuse="White70" border="5">common/box.png</texturenofocus>
+					<texturefocus colordiffuse="$VAR[ColourHighlight]">common/box.png</texturefocus>
+					<texturenofocus colordiffuse="White70">common/box.png</texturenofocus>
 				</control>
 				<control type="slider" id="3015">
 					<!-- opacity slider -->
@@ -161,8 +161,8 @@
 					<onleft>3010</onleft>
 					<label>$INFO[Control.Getlabel(3015)]</label>
 					<textcolor>white</textcolor>
-					<texturefocus colordiffuse="$VAR[ColourHighlight]" border="5">common/box.png</texturefocus>
-					<texturenofocus colordiffuse="White70" border="5">common/box.png</texturenofocus>
+					<texturefocus colordiffuse="$VAR[ColourHighlight]">common/box.png</texturefocus>
+					<texturenofocus colordiffuse="White70">common/box.png</texturenofocus>
 				</control>
 			</control>
 		</control>

@@ -32,7 +32,8 @@
             <include>Dimensions_Fullscreen</include>
             <aspectratio align="center">scale</aspectratio>
             <texture colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" fallback="common/black.png" background="true" diffuse="diffuse/dv-mask.png">$INFO[Window(home).Property(VideoInfo.ImageFilter)]</texture>
-            <visible>!Skin.HasSetting(lights.out) + Window.IsVisible(DialogVideoInfo.xml) + !Skin.HasSetting(furniture.info.fanart) + Skin.HasSetting(toggled.dv.info)</visible>
+            <visible>!Skin.HasSetting(lights.out)</visible>
+			<visible>![[Skin.HasSetting(global.showvideo) + Player.HasVideo] | [Skin.HasSetting(global.showvisualisation) + Player.HasAudio]] + Window.IsVisible(DialogVideoInfo.xml) + Skin.HasSetting(toggled.dv.info)</visible>
         </control>
         <control type="group">
             <visible>Skin.HasSetting(toggled.dv.info)</visible>
@@ -195,8 +196,8 @@
                     <textoffsetx>0</textoffsetx>
                     <label>$INFO[Window(Home).Property(SkinHelper.RottenTomatoesAudienceRating)]</label>
                     <font>MediumSmall</font>
-                    <texturefocus colordiffuse="$VAR[CommunityRatingColour]" border="5">common/white.png</texturefocus>
-                    <texturenofocus colordiffuse="$VAR[CommunityRatingColour]" border="5">common/white.png</texturenofocus>
+                    <texturefocus colordiffuse="$VAR[CommunityRatingColour]">common/white.png</texturefocus>
+                    <texturenofocus colordiffuse="$VAR[CommunityRatingColour]">common/white.png</texturenofocus>
                     <visible>!IsEmpty(Window(Home).Property(SkinHelper.RottenTomatoesAudienceRating)) + !StringCompare(Window(Home).Property(SkinHelper.RottenTomatoesAudienceRating),N/A)</visible>
                 </control>
                 <control type="label">
@@ -568,12 +569,12 @@
                     <textoffsetx>20</textoffsetx>
                     <textcolor>white</textcolor>
                     <focusedcolor>$VAR[EmbyMiddleColourHighlight]</focusedcolor>
-                    <texturefocus colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]" border="5">common/box.png</texturefocus>
-                    <texturenofocus colordiffuse="$VAR[EmbyMiddleColourHighlight]" border="5">common/box.png</texturenofocus>
-                    <alttexturefocus colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]" border="5">common/box.png</alttexturefocus>
-                    <alttexturenofocus colordiffuse="$VAR[EmbyMiddleColourHighlight]" border="5">common/box.png</alttexturenofocus>
+                    <texturefocus colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]">common/box.png</texturefocus>
+                    <texturenofocus colordiffuse="$VAR[EmbyMiddleColourHighlight]">common/box.png</texturenofocus>
+                    <alttexturefocus colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]">common/box.png</alttexturefocus>
+                    <alttexturenofocus colordiffuse="$VAR[EmbyMiddleColourHighlight]">common/box.png</alttexturenofocus>
                 </control>
-                <!-- Cinema Experience Button <control id="21" type="button"><width>200</width><height>116</height><onup condition="Control.IsVisible(90901)">90901</onup><ondown>9500</ondown><onclick>Dialog.Close(MovieInformation)</onclick><onclick>RunScript(script.cinema.experience,movieid=$INFO[ListItem.DBID])</onclick><font>symbol</font><label></label><textcolor>Black700</textcolor><texturefocus colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" border="5">common/box.png</texturefocus><texturenofocus colordiffuse="white" border="5">common/box.png</texturenofocus><visible>System.HasAddon(script.cinema.experience) + Container.Content(movies)</visible><visible>false</visible></control> -->
+                <!-- Cinema Experience Button <control id="21" type="button"><width>200</width><height>116</height><onup condition="Control.IsVisible(90901)">90901</onup><ondown>9500</ondown><onclick>Dialog.Close(MovieInformation)</onclick><onclick>RunScript(script.cinema.experience,movieid=$INFO[ListItem.DBID])</onclick><font>symbol</font><label></label><textcolor>Black700</textcolor><texturefocus colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]">common/box.png</texturefocus><texturenofocus colordiffuse="white">common/box.png</texturenofocus><visible>System.HasAddon(script.cinema.experience) + Container.Content(movies)</visible><visible>false</visible></control> -->
                 <control id="1003" type="button">
                     <width>116</width>
                     <height>116</height>
@@ -585,11 +586,11 @@
                     <textcolor>white</textcolor>
                     <focusedcolor>$VAR[EmbyRightColourHighlight]</focusedcolor>
                     <visible>!IsEmpty(ListItem.Trailer)</visible>
-                    <texturefocus colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]" border="5">common/box.png</texturefocus>
-                    <texturenofocus colordiffuse="$VAR[EmbyRightColourHighlight]" border="5">common/box.png</texturenofocus>
+                    <texturefocus colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]">common/box.png</texturefocus>
+                    <texturenofocus colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</texturenofocus>
                 </control>
                 <!-- Refresh button
-                <control id="6" type="button"><width>116</width><height>116</height><onup condition="Control.IsVisible(90901)">90901</onup><ondown>9500</ondown><font>symbol</font><label></label><textcolor>Black700</textcolor><visible>Control.IsEnabled(6)</visible><visible>Container.Content(episodes)</visible><texturefocus colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" border="5">common/box.png</texturefocus><texturenofocus colordiffuse="white" border="5">common/box.png</texturenofocus></control>
+                <control id="6" type="button"><width>116</width><height>116</height><onup condition="Control.IsVisible(90901)">90901</onup><ondown>9500</ondown><font>symbol</font><label></label><textcolor>Black700</textcolor><visible>Control.IsEnabled(6)</visible><visible>Container.Content(episodes)</visible><texturefocus colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]">common/box.png</texturefocus><texturenofocus colordiffuse="white">common/box.png</texturenofocus></control>
                 --><!-- Get Thumb Button -->
                 <control id="10" type="button">
                     <width>116</width>
@@ -599,8 +600,8 @@
                     <textcolor>white</textcolor>
                     <focusedcolor>$VAR[EmbyLeftColourHighlight]</focusedcolor>
                     <visible>Control.IsEnabled(10)</visible>
-                    <texturefocus colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]" border="5">common/box.png</texturefocus>
-                    <texturenofocus colordiffuse="$VAR[EmbyLeftColourHighlight]" border="5">common/box.png</texturenofocus>
+                    <texturefocus colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]">common/box.png</texturefocus>
+                    <texturenofocus colordiffuse="$VAR[EmbyLeftColourHighlight]">common/box.png</texturenofocus>
                 </control>
                 <!-- Artwork Downloader Button -->
                 <control id="20" type="button">
@@ -613,8 +614,8 @@
                     <textoffsetx>20</textoffsetx>
                     <textcolor>white</textcolor>
                     <focusedcolor>$VAR[EmbyLeftColourHighlight]</focusedcolor>
-                    <texturefocus colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]" border="5">common/box.png</texturefocus>
-                    <texturenofocus colordiffuse="$VAR[EmbyLeftColourHighlight]" border="5">common/box.png</texturenofocus>
+                    <texturefocus colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]">common/box.png</texturefocus>
+                    <texturenofocus colordiffuse="$VAR[EmbyLeftColourHighlight]">common/box.png</texturenofocus>
                     <visible>System.HasAddon(script.artwork.downloader) + [Container.Content(movies) | Container.Content(tvshows)]</visible>
                 </control>
                 <!-- Search YouTube-->
@@ -625,8 +626,8 @@
                     <label></label>
                     <textcolor>white</textcolor>
                     <focusedcolor>$VAR[EmbyRightColourHighlight]</focusedcolor>
-                    <texturefocus colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]" border="5">common/box.png</texturefocus>
-                    <texturenofocus colordiffuse="$VAR[EmbyRightColourHighlight]" border="5">common/box.png</texturenofocus>
+                    <texturefocus colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]">common/box.png</texturefocus>
+                    <texturenofocus colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</texturenofocus>
                     <onclick condition="!IsEmpty(ListItem.TVShowTitle)">SetProperty(listcontent,$INFO[ListItem.TVShowTitle],home)</onclick>
                     <onclick condition="IsEmpty(ListItem.TVShowTitle)">SetProperty(listcontent,$INFO[ListItem.Title],home)</onclick>
                     <onclick>ActivateWindow(1168)</onclick>
@@ -638,8 +639,8 @@
                     <label></label>
                     <textcolor>white</textcolor>
                     <focusedcolor>$VAR[EmbyLeftColourHighlight]</focusedcolor>
-                    <texturefocus colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]" border="5">common/box.png</texturefocus>
-                    <texturenofocus colordiffuse="$VAR[EmbyLeftColourHighlight]" border="5">common/box.png</texturenofocus>
+                    <texturefocus colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]">common/box.png</texturefocus>
+                    <texturenofocus colordiffuse="$VAR[EmbyLeftColourHighlight]">common/box.png</texturenofocus>
                     <onclick>SetProperty(Dialog.1.Label,Extra Info)</onclick>
                     <onclick>SetProperty(Dialog.1.BuiltIn,RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[ListItem.Director]))</onclick>
                     <onclick>SetProperty(Dialog.2.Label,Search on Youtube)</onclick>
@@ -655,8 +656,8 @@
                     <label></label>
                     <textcolor>$VAR[EmbyLeftColourHighlight]</textcolor>
                     <focusedcolor>$VAR[ColourHighlight]</focusedcolor>
-                    <texturefocus colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]" border="5">-</texturefocus>
-                    <texturenofocus colordiffuse="$VAR[EmbyLeftColourHighlight]" border="5">-</texturenofocus>
+                    <texturefocus colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]">-</texturefocus>
+                    <texturenofocus colordiffuse="$VAR[EmbyLeftColourHighlight]">-</texturenofocus>
                     <onclick condition="!System.HasAddon(script.extendedinfo)">ActivateWindow(Videos,plugin://script.extendedinfo)</onclick>
                     <onclick condition="IsEmpty(ListItem.TvShowTitle) + !Container.Content(tvshows)">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[ListItem.DBID],name=$INFO[ListItem.Title])</onclick>
                     <onclick condition="Container.Content(tvshows) + IsEmpty(Window(home).Property(TVShowID))">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[ListItem.DBID],name=$INFO[ListItem.TvShowTitle])</onclick>
@@ -1023,7 +1024,7 @@
                                 <top>0</top>
                                 <right>0</right>
                                 <bottom>0</bottom>
-                                <texture border="15" colordiffuse="af000000">common/white.png</texture>
+                                <texture colordiffuse="af000000">common/white.png</texture>
                                 <visible>Control.HasFocus(9500)</visible>
                             </control>
                             <control type="textbox">
@@ -1408,12 +1409,12 @@
                     <textoffsetx>20</textoffsetx>
                     <textcolor>white</textcolor>
                     <focusedcolor>$VAR[EmbyMiddleColourHighlight]</focusedcolor>
-                    <texturefocus colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]" border="5">common/box.png</texturefocus>
-                    <texturenofocus colordiffuse="$VAR[EmbyMiddleColourHighlight]" border="5">common/box.png</texturenofocus>
-                    <alttexturefocus colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]" border="5">common/box.png</alttexturefocus>
-                    <alttexturenofocus colordiffuse="$VAR[EmbyMiddleColourHighlight]" border="5">common/box.png</alttexturenofocus>
+                    <texturefocus colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]">common/box.png</texturefocus>
+                    <texturenofocus colordiffuse="$VAR[EmbyMiddleColourHighlight]">common/box.png</texturenofocus>
+                    <alttexturefocus colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]">common/box.png</alttexturefocus>
+                    <alttexturenofocus colordiffuse="$VAR[EmbyMiddleColourHighlight]">common/box.png</alttexturenofocus>
                 </control>
-                <!-- Cinema Experience Button <control id="21" type="button"><width>200</width><height>116</height><ondown>9007</ondown><onclick>Dialog.Close(MovieInformation)</onclick><onclick>RunScript(script.cinema.experience,movieid=$INFO[ListItem.DBID])</onclick><font>symbol</font><label></label><textcolor>Black700</textcolor><texturefocus colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" border="5">common/box.png</texturefocus><texturenofocus colordiffuse="white" border="5">common/box.png</texturenofocus><visible>System.HasAddon(script.cinema.experience) + Container.Content(movies)</visible><visible>false</visible></control> -->
+                <!-- Cinema Experience Button <control id="21" type="button"><width>200</width><height>116</height><ondown>9007</ondown><onclick>Dialog.Close(MovieInformation)</onclick><onclick>RunScript(script.cinema.experience,movieid=$INFO[ListItem.DBID])</onclick><font>symbol</font><label></label><textcolor>Black700</textcolor><texturefocus colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]">common/box.png</texturefocus><texturenofocus colordiffuse="white">common/box.png</texturenofocus><visible>System.HasAddon(script.cinema.experience) + Container.Content(movies)</visible><visible>false</visible></control> -->
                 <control id="1003" type="button">
                     <width>116</width>
                     <height>116</height>
@@ -1425,10 +1426,10 @@
                     <textcolor>white</textcolor>
                     <focusedcolor>$VAR[EmbyRightColourHighlight]</focusedcolor>
                     <visible>!IsEmpty(ListItem.Trailer)</visible>
-                    <texturefocus colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]" border="5">common/box.png</texturefocus>
-                    <texturenofocus colordiffuse="$VAR[EmbyRightColourHighlight]" border="5">common/box.png</texturenofocus>
+                    <texturefocus colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]">common/box.png</texturefocus>
+                    <texturenofocus colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</texturenofocus>
                 </control>
-                <!-- Refresh button <control id="6" type="button"><width>200</width><height>116</height><ondown>9007</ondown><font>symbol</font><label></label><textcolor>Black700</textcolor><visible>Control.IsEnabled(6)</visible><visible>Container.Content(episodes)</visible><texturefocus colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" border="5">common/box.png</texturefocus><texturenofocus colordiffuse="white" border="5">common/box.png</texturenofocus></control> --><!-- Get Thumb Button -->
+                <!-- Refresh button <control id="6" type="button"><width>200</width><height>116</height><ondown>9007</ondown><font>symbol</font><label></label><textcolor>Black700</textcolor><visible>Control.IsEnabled(6)</visible><visible>Container.Content(episodes)</visible><texturefocus colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]">common/box.png</texturefocus><texturenofocus colordiffuse="white">common/box.png</texturenofocus></control> --><!-- Get Thumb Button -->
                 <control id="10" type="button">
                     <width>116</width>
                     <height>116</height>
@@ -1438,8 +1439,8 @@
                     <textcolor>white</textcolor>
                     <focusedcolor>$VAR[EmbyLeftColourHighlight]</focusedcolor>
                     <visible>Control.IsEnabled(10)</visible>
-                    <texturefocus colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]" border="5">common/box.png</texturefocus>
-                    <texturenofocus colordiffuse="$VAR[EmbyLeftColourHighlight]" border="5">common/box.png</texturenofocus>
+                    <texturefocus colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]">common/box.png</texturefocus>
+                    <texturenofocus colordiffuse="$VAR[EmbyLeftColourHighlight]">common/box.png</texturenofocus>
                 </control>
                 <!-- Artwork Downloader Button -->
                 <control id="20" type="button">
@@ -1453,8 +1454,8 @@
                     <textoffsetx>20</textoffsetx>
                     <textcolor>white</textcolor>
                     <focusedcolor>$VAR[EmbyLeftColourHighlight]</focusedcolor>
-                    <texturefocus colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]" border="5">common/box.png</texturefocus>
-                    <texturenofocus colordiffuse="$VAR[EmbyLeftColourHighlight]" border="5">common/box.png</texturenofocus>
+                    <texturefocus colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]">common/box.png</texturefocus>
+                    <texturenofocus colordiffuse="$VAR[EmbyLeftColourHighlight]">common/box.png</texturenofocus>
                     <visible>System.HasAddon(script.artwork.downloader) + [Container.Content(movies) | Container.Content(tvshows)]</visible>
                 </control>
                 <!-- Search YouTube-->
@@ -1465,8 +1466,8 @@
                     <label></label>
                     <textcolor>white</textcolor>
                     <focusedcolor>$VAR[EmbyRightColourHighlight]</focusedcolor>
-                    <texturefocus colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]" border="5">common/box.png</texturefocus>
-                    <texturenofocus colordiffuse="$VAR[EmbyRightColourHighlight]" border="5">common/box.png</texturenofocus>
+                    <texturefocus colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]">common/box.png</texturefocus>
+                    <texturenofocus colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</texturenofocus>
                     <onclick condition="!IsEmpty(ListItem.TVShowTitle)">SetProperty(listcontent,$INFO[ListItem.TVShowTitle],home)</onclick>
                     <onclick condition="IsEmpty(ListItem.TVShowTitle)">SetProperty(listcontent,$INFO[ListItem.Title],home)</onclick>
                     <onclick>ActivateWindow(1168)</onclick>
@@ -1478,8 +1479,8 @@
                     <label></label>
                     <textcolor>white</textcolor>
                     <focusedcolor>$VAR[EmbyLeftColourHighlight]</focusedcolor>
-                    <texturefocus colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]" border="5">common/box.png</texturefocus>
-                    <texturenofocus colordiffuse="$VAR[EmbyLeftColourHighlight]" border="5">common/box.png</texturenofocus>
+                    <texturefocus colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]">common/box.png</texturefocus>
+                    <texturenofocus colordiffuse="$VAR[EmbyLeftColourHighlight]">common/box.png</texturenofocus>
                     <onclick>SetProperty(Dialog.1.Label,Extra Info)</onclick>
                     <onclick>SetProperty(Dialog.1.BuiltIn,RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[ListItem.Director]))</onclick>
                     <onclick>SetProperty(Dialog.2.Label,Search on Youtube)</onclick>
@@ -1496,8 +1497,8 @@
                     <label></label>
                     <textcolor>$VAR[EmbyLeftColourHighlight]</textcolor>
                     <focusedcolor>$VAR[ColourHighlight]</focusedcolor>
-                    <texturefocus colordiffuse="$VAR[EmbyLeftColourHighlight]" border="5">-</texturefocus>
-                    <texturenofocus colordiffuse="$VAR[EmbyLeftColourHighlight]" border="5">-</texturenofocus>
+                    <texturefocus colordiffuse="$VAR[EmbyLeftColourHighlight]">-</texturefocus>
+                    <texturenofocus colordiffuse="$VAR[EmbyLeftColourHighlight]">-</texturenofocus>
                     <onclick condition="!System.HasAddon(script.extendedinfo)">ActivateWindow(Videos,plugin://script.extendedinfo)</onclick>
                     <onclick condition="IsEmpty(ListItem.TvShowTitle) + !Container.Content(tvshows)">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[ListItem.DBID],name=$INFO[ListItem.Title])</onclick>
                     <onclick condition="Container.Content(tvshows) + IsEmpty(Window(home).Property(TVShowID))">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[ListItem.DBID],name=$INFO[ListItem.TvShowTitle])</onclick>
@@ -1917,7 +1918,7 @@
                             <top>0</top>
                             <right>0</right>
                             <bottom>0</bottom>
-                            <texture border="15" colordiffuse="af000000">common/white.png</texture>
+                            <texture colordiffuse="af000000">common/white.png</texture>
                             <visible>Control.HasFocus(9500)</visible>
                         </control>
                         <control type="textbox">

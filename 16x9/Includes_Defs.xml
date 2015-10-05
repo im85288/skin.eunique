@@ -1258,7 +1258,7 @@
 			<width>1080</width>
 			<top>92</top>
 			<height>800</height>
-			<texture border="16" colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
+			<texture colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
 		</control>
 		<control type="image">
 			<width>1080</width>
@@ -1278,7 +1278,7 @@
 			<posy>40</posy>
 			<width>960</width>
 			<height>374</height>
-			<texture border="16" colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
+			<texture colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
 		</control>
 		<control type="image">
 			<posx>-30</posx>
@@ -1346,8 +1346,8 @@
 		<textureradiofocus colordiffuse="$VAR[ColourHighlight2]">buttons/radio-on.png</textureradiofocus>
 		<textureradionofocus colordiffuse="Black30">buttons/radio-off.png</textureradionofocus>
 		<focusedcolor>$VAR[ColourSelected]</focusedcolor>
-		<alttexturefocus colordiffuse="Dark1" border="16">common/white.png</alttexturefocus>
-		<texturefocus colordiffuse="Dark1" border="16">common/white.png</texturefocus>
+		<alttexturefocus colordiffuse="Dark1">common/white.png</alttexturefocus>
+		<texturefocus colordiffuse="Dark1">common/white.png</texturefocus>
 	</include>
 	<include name="DefContextButton2">
 		<textoffsetx>5</textoffsetx>
@@ -1359,9 +1359,9 @@
 		<textureradiofocus colordiffuse="$VAR[ColourHighlight2]">buttons/radio-on.png</textureradiofocus>
 		<textureradionofocus colordiffuse="Black30">buttons/radio-off.png</textureradionofocus>
 		<focusedcolor>$VAR[ColourSelected]</focusedcolor>
-		<alttexturefocus colordiffuse="white" border="16">common/white.png</alttexturefocus>
+		<alttexturefocus colordiffuse="white">common/white.png</alttexturefocus>
 		<texturenofocus colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texturenofocus>
-		<texturefocus colordiffuse="$VAR[ColourHighlight]" border="16">common/white.png</texturefocus>
+		<texturefocus colordiffuse="$VAR[ColourHighlight]">common/white.png</texturefocus>
 	</include>
 	<include name="DefContextButtonBlade">
 		<textoffsetx>5</textoffsetx>
@@ -1373,9 +1373,9 @@
 		<textureradiofocus colordiffuse="$VAR[ColourSelected]">buttons/radio-on.png</textureradiofocus>
 		<textureradionofocus colordiffuse="$VAR[ColourSelected]">buttons/radio-off.png</textureradionofocus>
 		<focusedcolor>$VAR[ColourSelected]</focusedcolor>
-		<alttexturefocus colordiffuse="$VAR[ColourHighlight]" border="16">common/white.png</alttexturefocus>
+		<alttexturefocus colordiffuse="$VAR[ColourHighlight]">common/white.png</alttexturefocus>
 		<texturenofocus colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texturenofocus>
-		<texturefocus colordiffuse="$VAR[ColourHighlight]" border="16">common/white.png</texturefocus>
+		<texturefocus colordiffuse="$VAR[ColourHighlight]">common/white.png</texturefocus>
 	</include>
 	<include name="DefSettingsButton2">
 		<radioposx>1330</radioposx>
@@ -1391,6 +1391,24 @@
 		<textureradiofocus colordiffuse="$VAR[ColourSelected]">buttons/radio-on.png</textureradiofocus>
 		<textureradionofocus colordiffuse="$VAR[EmbyMenuTextColourHighlight]">buttons/radio-off.png</textureradionofocus>
 		<texturefocus colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</texturefocus>
+		<texturenofocus colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texturenofocus>
+		<alttexturefocus colordiffuse="$VAR[EmbyMenuTextColourHighlight]">common/white.png</alttexturefocus>
+		<alttexturenofocus colordiffuse="$VAR[ColourHighlight]">common/white.png</alttexturenofocus>
+	</include>
+	<include name="DefSettingsButton3">
+		<radioposx>1330</radioposx>
+		<align>left</align>
+		<font>symbol</font>
+		<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+		<disabledcolor>black3</disabledcolor>
+		<height>103</height>
+		<textureup flipy="true" colordiffuse="$VAR[EmbyMenuTextColourHighlight]">buttons/spin-down.png</textureup>
+		<texturedown colordiffuse="$VAR[EmbyMenuTextColourHighlight]">buttons/spin-down.png</texturedown>
+		<textureupfocus flipy="true" colordiffuse="$VAR[ColourSelected]">buttons/spin-down.png</textureupfocus>
+		<texturedownfocus colordiffuse="$VAR[EmbyMenuTextColourHighlight]">buttons/spin-down.png</texturedownfocus>
+		<textureradiofocus colordiffuse="$VAR[ColourSelected]">buttons/radio-on.png</textureradiofocus>
+		<textureradionofocus colordiffuse="$VAR[EmbyMenuTextColourHighlight]">buttons/radio-off.png</textureradionofocus>
+		<texturefocus colordiffuse="$VAR[EmbyMiddleColourHighlight]">common/box.png</texturefocus>
 		<texturenofocus colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texturenofocus>
 		<alttexturefocus colordiffuse="$VAR[EmbyMenuTextColourHighlight]">common/white.png</alttexturefocus>
 		<alttexturenofocus colordiffuse="$VAR[ColourHighlight]">common/white.png</alttexturenofocus>
@@ -2202,7 +2220,7 @@
 				<posx>15</posx>
 				<width>445</width>
 				<height>240</height>
-				<texture border="10">common/nofocus-shadow10.png</texture>
+				<texture>common/nofocus-shadow10.png</texture>
 			</control>
 			<control type="image">
 				<posx>25</posx>
@@ -2259,7 +2277,7 @@
 				<posx>15</posx>
 				<width>445</width>
 				<height>240</height>
-				<texture border="10">common/nofocus-shadow10.png</texture>
+				<texture>common/nofocus-shadow10.png</texture>
 			</control>
 			<control type="image">
 				<posx>25</posx>

@@ -47,7 +47,7 @@
 					<texture diffuse="common/circle.png" colordiffuse="Panel">common/box.png</texture>
 				</control>
 				<control id="8308" type="image">
-					<texture colordiffuse="PanelWhite100" border="8">$VAR[HeaderIcon]</texture>
+					<texture colordiffuse="PanelWhite100">$VAR[HeaderIcon]</texture>
 					<visible>false</visible>
 				</control>
 				<!--<control type="image">
@@ -89,7 +89,7 @@
 					<left>-14</left>
 					<width>78</width>
 					<height>78</height>
-					<texture colordiffuse="$VAR[ColourHighlight]" border="8">special://skin/extras/icons/configure.png</texture>
+					<texture colordiffuse="$VAR[ColourHighlight]">special://skin/extras/icons/configure.png</texture>
 					<visible>Control.HasFocus(3634)</visible>
 					<visible>System.HasAddon(plugin.video.emby)</visible>
 				</control>
@@ -205,7 +205,7 @@
 				<width>225</width>
 				<height>64</height>
 				<control type="image">
-					<texture border="5" colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
+					<texture colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
 				</control>
 				<control type="label">
 					<centertop>50%</centertop>
@@ -250,7 +250,7 @@
 				<width>140</width>
 				<height>64</height>
 				<control type="image">
-					<texture border="5" colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
+					<texture colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
 				</control>
 				<control type="label">
 					<centertop>50%</centertop>
@@ -276,7 +276,7 @@
 				<width>512</width>
 				<height>64</height>
 				<control type="image">
-					<texture border="5" colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
+					<texture colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
 				</control>
 				<control type="label">
 					<centertop>50%</centertop>
@@ -304,7 +304,7 @@
 				<width>128</width>
 				<height>64</height>
 				<control type="image">
-					<texture border="5" colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
+					<texture colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
 				</control>
 				<control type="label">
 					<centertop>50%</centertop>
@@ -334,7 +334,7 @@
 				<width>140</width>
 				<height>64</height>
 				<control type="image">
-					<texture border="5" colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
+					<texture colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
 				</control>
 				<control type="label">
 					<centertop>50%</centertop>
@@ -371,7 +371,7 @@
 				<width>140</width>
 				<height>64</height>
 				<control type="image">
-					<texture border="5" colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
+					<texture colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
 				</control>
 				<control type="label">
 					<centertop>50%</centertop>
@@ -397,7 +397,7 @@
 				<width>148</width>
 				<height>64</height>
 				<control type="image">
-					<texture border="5" colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
+					<texture colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
 				</control>
 				<control type="label">
 					<centertop>50%</centertop>
@@ -423,7 +423,7 @@
 				<width>200</width>
 				<height>64</height>
 				<control type="image">
-					<texture border="5" colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
+					<texture colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
 				</control>
 				<control type="label">
 					<centertop>50%</centertop>
@@ -449,7 +449,7 @@
 				<width>140</width>
 				<height>64</height>
 				<control type="image">
-					<texture border="5" colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
+					<texture colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
 				</control>
 				<control type="label">
 					<centertop>50%</centertop>
@@ -476,7 +476,7 @@
 				<width>274</width>
 				<height>64</height>
 				<control type="image">
-					<texture border="5" colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
+					<texture colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
 				</control>
 				<control type="label">
 					<centertop>50%</centertop>
@@ -503,7 +503,7 @@
 				<width>274</width>
 				<height>64</height>
 				<control type="image">
-					<texture border="5" colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
+					<texture colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
 				</control>
 				<control type="label">
 					<centertop>50%</centertop>
@@ -752,8 +752,8 @@
 				<font>TinyBold</font>
 				<aligny>center</aligny>
 				<align>center</align>
-				<texturefocus colordiffuse="$VAR[CommunityRatingColour]" border="5">common/white.png</texturefocus>
-				<texturenofocus colordiffuse="$VAR[CommunityRatingColour]" border="5">common/white.png</texturenofocus>
+				<texturefocus colordiffuse="$VAR[CommunityRatingColour]">common/white.png</texturefocus>
+				<texturenofocus colordiffuse="$VAR[CommunityRatingColour]">common/white.png</texturenofocus>
 				<visible>!IsEmpty(Window(Home).Property(SkinHelper.RottenTomatoesAudienceRating))</visible>
 				<visible>!StringCompare(Window(Home).Property(SkinHelper.RottenTomatoesAudienceRating),n/a)</visible>
 			</control>
@@ -805,7 +805,7 @@
 					<texture diffuse="common/circle.png" colordiffuse="Panel">common/box.png</texture>
 				</control>
 				<control id="8308" type="image">
-					<texture colordiffuse="PanelWhite100" border="8">$VAR[HeaderIcon]</texture>
+					<texture colordiffuse="PanelWhite100">$VAR[HeaderIcon]</texture>
 					<visible>false</visible>
 				</control>
 				<control type="image">
@@ -836,7 +836,7 @@
 					<left>-14</left>
 					<width>78</width>
 					<height>78</height>
-					<texture colordiffuse="$VAR[ColourHighlight]" border="8">special://skin/extras/icons/configure.png</texture>
+					<texture colordiffuse="$VAR[ColourHighlight]">special://skin/extras/icons/configure.png</texture>
 					<visible>Control.HasFocus(3634)</visible>
 					<visible>System.HasAddon(plugin.video.emby)</visible>
 				</control>
@@ -866,7 +866,7 @@
 					<left>-14</left>
 					<width>78</width>
 					<height>78</height>
-					<texture colordiffuse="$VAR[EmbyLeftColourHighlight]" border="8">$VAR[HeaderIcon]</texture>
+					<texture colordiffuse="$VAR[EmbyLeftColourHighlight]">$VAR[HeaderIcon]</texture>
 					<visible>!Control.HasFocus(3635)</visible>
 				</control>
 				-->
@@ -941,7 +941,7 @@
 				<width>140</width>
 				<height>64</height>
 				<control type="image">
-					<texture border="5" colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
+					<texture colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
 				</control>
 				<control type="label">
 					<centertop>50%</centertop>
@@ -987,7 +987,7 @@
 				<width>140</width>
 				<height>64</height>
 				<control type="image">
-					<texture border="5" colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
+					<texture colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
 				</control>
 				<control type="label">
 					<centertop>50%</centertop>
@@ -1013,7 +1013,7 @@
 				<width>512</width>
 				<height>64</height>
 				<control type="image">
-					<texture border="5" colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
+					<texture colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
 				</control>
 				<control type="label">
 					<centertop>50%</centertop>
@@ -1041,7 +1041,7 @@
 				<width>128</width>
 				<height>64</height>
 				<control type="image">
-					<texture border="5" colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
+					<texture colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
 				</control>
 				<control type="label">
 					<centertop>50%</centertop>
@@ -1071,7 +1071,7 @@
 				<width>140</width>
 				<height>64</height>
 				<control type="image">
-					<texture border="5" colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
+					<texture colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
 				</control>
 				<control type="label">
 					<centertop>50%</centertop>
@@ -1108,7 +1108,7 @@
 				<width>140</width>
 				<height>64</height>
 				<control type="image">
-					<texture border="5" colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
+					<texture colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
 				</control>
 				<control type="label">
 					<centertop>50%</centertop>
@@ -1134,7 +1134,7 @@
 				<width>148</width>
 				<height>64</height>
 				<control type="image">
-					<texture border="5" colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
+					<texture colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
 				</control>
 				<control type="label">
 					<centertop>50%</centertop>
@@ -1160,7 +1160,7 @@
 				<width>200</width>
 				<height>64</height>
 				<control type="image">
-					<texture border="5" colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
+					<texture colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
 				</control>
 				<control type="label">
 					<centertop>50%</centertop>
@@ -1186,7 +1186,7 @@
 				<width>140</width>
 				<height>64</height>
 				<control type="image">
-					<texture border="5" colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
+					<texture colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
 				</control>
 				<control type="label">
 					<centertop>50%</centertop>
@@ -1213,7 +1213,7 @@
 				<width>274</width>
 				<height>64</height>
 				<control type="image">
-					<texture border="5" colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
+					<texture colordiffuse="$VAR[ColourFlags]">common/box.png</texture>
 				</control>
 				<control type="label">
 					<centertop>50%</centertop>
@@ -1436,7 +1436,7 @@
 				<control type="image">
 					<left>0</left>
 					<right>0</right>
-					<texture border="5" colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
+					<texture colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
 				</control>
 				<control type="label">
 					<align>center</align>
@@ -1450,7 +1450,7 @@
 				<control type="image">
 					<left>0</left>
 					<right>0</right>
-					<texture border="5" colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
+					<texture colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
 				</control>
 				<control type="label">
 					<align>center</align>
@@ -1488,7 +1488,7 @@
 			<control type="image">
 				<left>0</left>
 				<right>0</right>
-				<texture border="5" colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
+				<texture colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
 			</control>
 			<control type="label">
 				<left>5</left>
@@ -1505,7 +1505,7 @@
 			<control type="image">
 				<left>0</left>
 				<right>0</right>
-				<texture border="5" colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
+				<texture colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
 							<animation effect="slide" start="0,0" end="0,-20" time="0" reversible="true" center="auto">Focus</animation>
 							<animation effect="slide" start="0,0" end="0,20" time="0" reversible="true" center="auto" condition="!ControlGroup.HasFocus(300) + !control.hasfocus(302)">Conditional</animation>
 							<animation effect="slide" start="0,0" end="0,-20" time="0" reversible="true" center="auto" condition="control.hasfocus(302)">Conditional</animation>
@@ -1663,14 +1663,14 @@
 							<width>50%</width>
 							<height>100%</height>
 							<aspectratio scalediffuse="false">scale</aspectratio>
-                            <texture border="5" colordiffuse="$VAR[BorderHighlight]">$VAR[FocusedBorderImage]</texture>
+                            <texture colordiffuse="$VAR[BorderHighlight]">$VAR[FocusedBorderImage]</texture>
                         </control>
                         <control type="image">
 							<left>50%</left>
 							<width>50%</width>
 							<height>100%</height>
 							<aspectratio scalediffuse="false">scale</aspectratio>
-                            <texture border="5" colordiffuse="$VAR[BorderHighlight]" flipx="true">$VAR[FocusedBorderImage]</texture>
+                            <texture colordiffuse="$VAR[BorderHighlight]" flipx="true">$VAR[FocusedBorderImage]</texture>
                         </control>
 						<control type="image">
 							<aspectratio>scale</aspectratio>
@@ -1691,7 +1691,7 @@
 					<posy>712</posy>
 					<width>820</width>
 					<height>78</height>
-					<texture border="15" colordiffuse="af000000">common/white.png</texture>
+					<texture colordiffuse="af000000">common/white.png</texture>
 				</control>
 				<control type="label">
 					<left>175</left>
@@ -1737,7 +1737,7 @@
 					<posy>790</posy>
 					<width>273</width>
 					<height>245</height>
-					<texture border="15" colordiffuse="$VAR[EmbyLeftColourHighlight]">common/white.png</texture>
+					<texture colordiffuse="$VAR[EmbyLeftColourHighlight]">common/white.png</texture>
 					<visible>!Control.HasFocus(60133)</visible>
 				</control>
 				<control type="label">
@@ -1760,7 +1760,7 @@
 					<posy>990</posy>
 					<width>273</width>
 					<height>45</height>
-					<texture border="15" colordiffuse="af000000">common/white.png</texture>
+					<texture colordiffuse="af000000">common/white.png</texture>
 					<visible>!Control.HasFocus(60133)</visible>
 				</control>
 				<control type="label">
@@ -1808,7 +1808,7 @@
 						<control type="image">
 							<description>Title overlay</description>
 							<bottom>0</bottom>
-							<texture border="15" colordiffuse="af000000">common/white.png</texture>
+							<texture colordiffuse="af000000">common/white.png</texture>
 						</control>
                         <control type="label" id="13370">
 							<bottom>45</bottom>
@@ -1855,7 +1855,7 @@
 					<posy>790</posy>
 					<width>274</width>
 					<height>245</height>
-					<texture border="15" colordiffuse="$VAR[EmbyMiddleColourHighlight]">common/white.png</texture>
+					<texture colordiffuse="$VAR[EmbyMiddleColourHighlight]">common/white.png</texture>
 					<visible>!Control.HasFocus(60155)</visible>
 				</control>
 				<control type="label">
@@ -1878,7 +1878,7 @@
 					<posy>990</posy>
 					<width>274</width>
 					<height>45</height>
-					<texture border="15" colordiffuse="af000000">common/white.png</texture>
+					<texture colordiffuse="af000000">common/white.png</texture>
 					<visible>!Control.HasFocus(60155)</visible>
 				</control>
 				<control type="label">
@@ -1951,7 +1951,7 @@
 						<control type="image">
 							<description>Title overlay</description>
 							<bottom>0</bottom>
-							<texture border="15" colordiffuse="af000000">common/white.png</texture>
+							<texture colordiffuse="af000000">common/white.png</texture>
 						</control>
                         <control type="label" id="13370">
 							<bottom>45</bottom>
@@ -1999,7 +1999,7 @@
 					<posy>790</posy>
 					<width>273</width>
 					<height>245</height>
-					<texture border="15" colordiffuse="$VAR[EmbyRightColourHighlight]">common/white.png</texture>
+					<texture colordiffuse="$VAR[EmbyRightColourHighlight]">common/white.png</texture>
 					<visible>!Control.HasFocus(60144)</visible>
 				</control>
 				<control type="label">
@@ -2022,7 +2022,7 @@
 					<posy>990</posy>
 					<width>273</width>
 					<height>45</height>
-					<texture border="15" colordiffuse="af000000">common/white.png</texture>
+					<texture colordiffuse="af000000">common/white.png</texture>
 					<visible>!Control.HasFocus(60144)</visible>
 				</control>
 				<control type="label">
@@ -2073,7 +2073,7 @@
 						<control type="image">
 							<description>Title overlay</description>
 							<bottom>0</bottom>
-							<texture border="15" colordiffuse="af000000">common/white.png</texture>
+							<texture colordiffuse="af000000">common/white.png</texture>
 						</control>
                         <control type="label" id="13370">
 							<bottom>45</bottom>
@@ -2176,7 +2176,7 @@
 								<top>0</top>
 								<right>0</right>
 								<bottom>0</bottom>
-								<texture border="15" colordiffuse="af000000">common/white.png</texture>
+								<texture colordiffuse="af000000">common/white.png</texture>
 								<visible>Control.HasFocus(6016)</visible>
 							</control>
 							<control type="textbox">
@@ -2268,7 +2268,7 @@
 							<left>0</left>
 							<top>0</top>
 							<right>0</right>
-							<texture border="15" colordiffuse="af000000">common/white.png</texture>
+							<texture colordiffuse="af000000">common/white.png</texture>
 							<visible>Control.HasFocus(6017)</visible>
 						</control>
 						<control type="textbox">
@@ -2431,7 +2431,7 @@
 							<top>390</top>
 							<width>316</width>
 							<height>80</height>
-							<texture border="15" colordiffuse="af000000">common/white.png</texture>
+							<texture colordiffuse="af000000">common/white.png</texture>
 						</control>
 						<control type="textbox">
 							<left>0</left>
@@ -2461,7 +2461,7 @@
 						<top>10</top>
 						<right>10</right>
 						<bottom>10</bottom>
-						<texture border="5" colordiffuse="Panel">common/box.png</texture>
+						<texture colordiffuse="Panel">common/box.png</texture>
 					</control>
 					<control type="multiimage" description="Fanart">
 						<left>10</left>
@@ -2629,14 +2629,14 @@
 								<top>0</top>
 								<right>0</right>
 								<bottom>0</bottom>
-								<texture border="10">common/nofocus-shadow10.png</texture>
+								<texture>common/nofocus-shadow10.png</texture>
 							</control>
 							<control type="image">
 								<left>10</left>
 								<top>10</top>
 								<right>10</right>
 								<bottom>10</bottom>
-								<texture border="5" colordiffuse="Panel">common/box.png</texture>
+								<texture colordiffuse="Panel">common/box.png</texture>
 							</control>
 							<control type="multiimage" description="Fanart">
 								<left>10</left>
@@ -2700,14 +2700,14 @@
 								<top>0</top>
 								<right>0</right>
 								<bottom>0</bottom>
-								<texture border="10">common/nofocus-shadow10.png</texture>
+								<texture>common/nofocus-shadow10.png</texture>
 							</control>
 							<control type="image">
 								<left>10</left>
 								<top>10</top>
 								<right>10</right>
 								<bottom>10</bottom>
-								<texture border="5" colordiffuse="panel">common/box.png</texture>
+								<texture colordiffuse="panel">common/box.png</texture>
 								<visible>!Control.HasFocus(3444)</visible>
 							</control>
 							<control type="image">
@@ -2715,7 +2715,7 @@
 								<top>10</top>
 								<right>10</right>
 								<bottom>10</bottom>
-								<texture border="5" colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
+								<texture colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
 								<visible>Control.HasFocus(3444)</visible>
 							</control>
 							<control type="multiimage" description="Fanart">
@@ -2998,7 +2998,7 @@
 						<right>0</right>
 						<bottom>0</bottom>
 						<height>70</height>
-						<texture border="15" colordiffuse="bf000000">common/white.png</texture>
+						<texture colordiffuse="bf000000">common/white.png</texture>
 					</control>
 					<control type="label">
 						<width>auto</width>
@@ -3028,8 +3028,8 @@
 					<textureradioonnofocus colordiffuse="Black100">-</textureradioonnofocus>
 					<textureradioofffocus colordiffuse="White70">-</textureradioofffocus>
 					<textureradiooffnofocus colordiffuse="Black100">-</textureradiooffnofocus>
-					<texturefocus border="5" colordiffuse="White70">common/box.png</texturefocus>
-					<texturenofocus border="5" colordiffuse="White70">common/box.png</texturenofocus>
+					<texturefocus colordiffuse="White70">common/box.png</texturefocus>
+					<texturenofocus colordiffuse="White70">common/box.png</texturenofocus>
 					<align>left</align>
 					<aligny>top</aligny>
 					<textoffsetx>6</textoffsetx>
@@ -3143,14 +3143,14 @@
 							<width>50%</width>
 							<height>100%</height>
 							<aspectratio scalediffuse="false">scale</aspectratio>
-                            <texture border="5" colordiffuse="$VAR[BorderHighlight]">$VAR[FocusedBorderImage]</texture>
+                            <texture colordiffuse="$VAR[BorderHighlight]">$VAR[FocusedBorderImage]</texture>
                         </control>
                         <control type="image">
 							<left>50%</left>
 							<width>50%</width>
 							<height>100%</height>
 							<aspectratio scalediffuse="false">scale</aspectratio>
-                            <texture border="5" colordiffuse="$VAR[BorderHighlight]" flipx="true">$VAR[FocusedBorderImage]</texture>
+                            <texture colordiffuse="$VAR[BorderHighlight]" flipx="true">$VAR[FocusedBorderImage]</texture>
                         </control>
 						<control type="image">
 							<aspectratio>scale</aspectratio>
@@ -3171,7 +3171,7 @@
 					<posy>712</posy>
 					<width>820</width>
 					<height>78</height>
-					<texture border="15" colordiffuse="af000000">common/white.png</texture>
+					<texture colordiffuse="af000000">common/white.png</texture>
 				</control>
 				<control type="label">
 					<left>85</left>
@@ -3215,7 +3215,7 @@
 					<posy>790</posy>
 					<width>410</width>
 					<height>245</height>
-					<texture border="15" colordiffuse="$VAR[EmbyLeftColourHighlight]">common/white.png</texture>
+					<texture colordiffuse="$VAR[EmbyLeftColourHighlight]">common/white.png</texture>
 					<visible>!Control.HasFocus(30133)</visible>
 				</control>
 				<control type="label">
@@ -3238,7 +3238,7 @@
 					<posy>990</posy>
 					<width>410</width>
 					<height>45</height>
-					<texture border="15" colordiffuse="af000000">common/white.png</texture>
+					<texture colordiffuse="af000000">common/white.png</texture>
 					<visible>!Control.HasFocus(30133)</visible>
 				</control>
 				<control type="label">
@@ -3310,7 +3310,7 @@
 						<control type="image">
 							<description>Title overlay</description>
 							<bottom>0</bottom>
-							<texture border="15" colordiffuse="af000000">common/white.png</texture>
+							<texture colordiffuse="af000000">common/white.png</texture>
 						</control>
                         <control type="label" id="13370">
 							<bottom>45</bottom>
@@ -3358,7 +3358,7 @@
 					<posy>790</posy>
 					<width>410</width>
 					<height>245</height>
-					<texture border="15" colordiffuse="$VAR[EmbyRightColourHighlight]">common/white.png</texture>
+					<texture colordiffuse="$VAR[EmbyRightColourHighlight]">common/white.png</texture>
 					<visible>!Control.HasFocus(30143)</visible>
 				</control>
 				<control type="label">
@@ -3381,7 +3381,7 @@
 					<posy>990</posy>
 					<width>410</width>
 					<height>45</height>
-					<texture border="15" colordiffuse="af000000">common/white.png</texture>
+					<texture colordiffuse="af000000">common/white.png</texture>
 					<visible>!Control.HasFocus(30143)</visible>
 				</control>
 				<control type="label">
@@ -3432,7 +3432,7 @@
 						<control type="image">
 							<description>Title overlay</description>
 							<bottom>0</bottom>
-							<texture border="15" colordiffuse="af000000">common/white.png</texture>
+							<texture colordiffuse="af000000">common/white.png</texture>
 						</control>
                         <control type="label" id="13370">
 							<bottom>45</bottom>
@@ -3537,7 +3537,7 @@
 								<top>0</top>
 								<right>0</right>
 								<bottom>0</bottom>
-								<texture border="15" colordiffuse="af000000">common/white.png</texture>
+								<texture colordiffuse="af000000">common/white.png</texture>
 								<visible>Control.HasFocus(3016)</visible>
 							</control>
 							<control type="textbox">
@@ -3641,7 +3641,7 @@
 								<top>0</top>
 								<right>0</right>
 								<bottom>0</bottom>
-								<texture border="15" colordiffuse="af000000">common/white.png</texture>
+								<texture colordiffuse="af000000">common/white.png</texture>
 								<visible>Control.HasFocus(3017)</visible>
 							</control>
 							<control type="textbox">
@@ -3815,7 +3815,7 @@
 							<top>390</top>
 							<width>316</width>
 							<height>80</height>
-							<texture border="15" colordiffuse="af000000">common/white.png</texture>
+							<texture colordiffuse="af000000">common/white.png</texture>
 						</control>
 						<control type="textbox">
 							<!--<animation effect="zoom" start="105" end="100" time="200" tween="quadratic" reversible="false" condition="![container(10017).onnext]" center="auto">conditional</animation>
@@ -3890,14 +3890,14 @@
 							<width>50%</width>
 							<height>100%</height>
 							<aspectratio scalediffuse="false">scale</aspectratio>
-                            <texture border="5" colordiffuse="$VAR[BorderHighlight]">$VAR[FocusedBorderImage]</texture>
+                            <texture colordiffuse="$VAR[BorderHighlight]">$VAR[FocusedBorderImage]</texture>
                         </control>
                         <control type="image">
 							<left>50%</left>
 							<width>50%</width>
 							<height>100%</height>
 							<aspectratio scalediffuse="false">scale</aspectratio>
-                            <texture border="5" colordiffuse="$VAR[BorderHighlight]" flipx="true">$VAR[FocusedBorderImage]</texture>
+                            <texture colordiffuse="$VAR[BorderHighlight]" flipx="true">$VAR[FocusedBorderImage]</texture>
                         </control>
 						<control type="image">
 							<aspectratio>scale</aspectratio>
@@ -3918,7 +3918,7 @@
 					<posy>712</posy>
 					<width>820</width>
 					<height>78</height>
-					<texture border="15" colordiffuse="af000000">common/white.png</texture>
+					<texture colordiffuse="af000000">common/white.png</texture>
 				</control>
 				<control type="label">
 					<left>85</left>
@@ -3991,7 +3991,7 @@
 					<posy>790</posy>
 					<width>410</width>
 					<height>245</height>
-					<texture border="15" colordiffuse="$VAR[EmbyLeftColourHighlight]">common/white.png</texture>
+					<texture colordiffuse="$VAR[EmbyLeftColourHighlight]">common/white.png</texture>
 					<visible>!Control.HasFocus(40133)</visible>
 				</control>
 				<control type="label">
@@ -4014,7 +4014,7 @@
 					<posy>990</posy>
 					<width>410</width>
 					<height>45</height>
-					<texture border="15" colordiffuse="af000000">common/white.png</texture>
+					<texture colordiffuse="af000000">common/white.png</texture>
 					<visible>!Control.HasFocus(40133)</visible>
 				</control>
 				<control type="label">
@@ -4086,7 +4086,7 @@
 						<control type="image">
 							<description>Title overlay</description>
 							<bottom>0</bottom>
-							<texture border="15" colordiffuse="af000000">common/white.png</texture>
+							<texture colordiffuse="af000000">common/white.png</texture>
 						</control>
                         <control type="label" id="13370">
 							<bottom>45</bottom>
@@ -4144,7 +4144,7 @@
 					<posy>790</posy>
 					<width>410</width>
 					<height>245</height>
-					<texture border="15" colordiffuse="$VAR[EmbyRightColourHighlight]">common/white.png</texture>
+					<texture colordiffuse="$VAR[EmbyRightColourHighlight]">common/white.png</texture>
 					<visible>!Control.HasFocus(40155)</visible>
 				</control>
 				<control type="label">
@@ -4167,7 +4167,7 @@
 					<posy>990</posy>
 					<width>410</width>
 					<height>45</height>
-					<texture border="15" colordiffuse="af000000">common/white.png</texture>
+					<texture colordiffuse="af000000">common/white.png</texture>
 					<visible>!Control.HasFocus(40155)</visible>
 				</control>
 				<control type="label">
@@ -4240,7 +4240,7 @@
 						<control type="image">
 							<description>Title overlay</description>
 							<bottom>0</bottom>
-							<texture border="15" colordiffuse="af000000">common/white.png</texture>
+							<texture colordiffuse="af000000">common/white.png</texture>
 						</control>
                         <control type="label" id="13370">
 							<bottom>45</bottom>
@@ -4285,7 +4285,7 @@
 					<posy>790</posy>
 					<width>273</width>
 					<height>245</height>
-					<texture border="15" colordiffuse="$VAR[EmbyRightColourHighlight]">common/white.png</texture>
+					<texture colordiffuse="$VAR[EmbyRightColourHighlight]">common/white.png</texture>
 				</control>
 				<control type="label">
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
@@ -4306,7 +4306,7 @@
 					<posy>990</posy>
 					<width>273</width>
 					<height>45</height>
-					<texture border="15" colordiffuse="af000000">common/white.png</texture>
+					<texture colordiffuse="af000000">common/white.png</texture>
 				</control>
 				<control type="label">
 					<left>627</left>
@@ -4394,7 +4394,7 @@
 								<description>Title overlay</description>
 								<bottom>0</bottom>
 								<height>45</height>
-								<texture border="15" colordiffuse="af000000">common/white.png</texture>
+								<texture colordiffuse="af000000">common/white.png</texture>
 								<visible>Control.HasFocus(4016)</visible>
 							</control>
 							<control type="label">
@@ -4506,7 +4506,7 @@
 							<top>0</top>
 							<right>0</right>
 							<bottom>0</bottom>
-							<texture border="15" colordiffuse="af000000">common/white.png</texture>
+							<texture colordiffuse="af000000">common/white.png</texture>
 						</control>
 						<control type="textbox">
 							<left>5</left>
@@ -4667,7 +4667,7 @@
 							<top>390</top>
 						<width>316</width>
 						<height>80</height>
-							<texture border="15" colordiffuse="af000000">common/white.png</texture>
+							<texture colordiffuse="af000000">common/white.png</texture>
 						</control>
 						<control type="textbox">
 							<left>0</left>
@@ -4772,14 +4772,14 @@
 							<width>50%</width>
 							<height>100%</height>
 							<aspectratio scalediffuse="false">scale</aspectratio>
-                            <texture border="5" colordiffuse="$VAR[BorderHighlight]">$VAR[FocusedBorderImage]</texture>
+                            <texture colordiffuse="$VAR[BorderHighlight]">$VAR[FocusedBorderImage]</texture>
                         </control>
                         <control type="image">
 							<left>50%</left>
 							<width>50%</width>
 							<height>100%</height>
 							<aspectratio scalediffuse="false">scale</aspectratio>
-                            <texture border="5" colordiffuse="$VAR[BorderHighlight]" flipx="true">$VAR[FocusedBorderImage]</texture>
+                            <texture colordiffuse="$VAR[BorderHighlight]" flipx="true">$VAR[FocusedBorderImage]</texture>
                         </control>
 						<control type="image">
 							<aspectratio>scale</aspectratio>
@@ -4837,7 +4837,7 @@
 					<posy>712</posy>
 					<width>820</width>
 					<height>78</height>
-					<texture border="15" colordiffuse="af000000">common/white.png</texture>
+					<texture colordiffuse="af000000">common/white.png</texture>
 				</control>
 				<control type="label">
 					<left>175</left>
@@ -4870,7 +4870,7 @@
 					<posy>790</posy>
 					<width>273</width>
 					<height>245</height>
-					<texture border="15" colordiffuse="$VAR[EmbyLeftColourHighlight]">common/white.png</texture>
+					<texture colordiffuse="$VAR[EmbyLeftColourHighlight]">common/white.png</texture>
 					<visible>!Control.HasFocus(50133)</visible>
 				</control>
 				<control type="label">
@@ -4893,7 +4893,7 @@
 					<posy>990</posy>
 					<width>273</width>
 					<height>45</height>
-					<texture border="15" colordiffuse="af000000">common/white.png</texture>
+					<texture colordiffuse="af000000">common/white.png</texture>
 					<visible>!Control.HasFocus(50133)</visible>
 				</control>
 				<control type="label">
@@ -4965,7 +4965,7 @@
 						<control type="image">
 							<description>Title overlay</description>
 							<bottom>0</bottom>
-							<texture border="15" colordiffuse="af000000">common/white.png</texture>
+							<texture colordiffuse="af000000">common/white.png</texture>
 						</control>
                         <control type="label" id="13370">
 							<bottom>45</bottom>
@@ -5012,7 +5012,7 @@
 					<posy>790</posy>
 					<width>274</width>
 					<height>245</height>
-					<texture border="15" colordiffuse="$VAR[EmbyMiddleColourHighlight]">common/white.png</texture>
+					<texture colordiffuse="$VAR[EmbyMiddleColourHighlight]">common/white.png</texture>
 					<visible>!Control.HasFocus(50155)</visible>
 				</control>
 				<control type="label">
@@ -5035,7 +5035,7 @@
 					<posy>990</posy>
 					<width>274</width>
 					<height>45</height>
-					<texture border="15" colordiffuse="af000000">common/white.png</texture>
+					<texture colordiffuse="af000000">common/white.png</texture>
 					<visible>!Control.HasFocus(50155)</visible>
 				</control>
 				<control type="label">
@@ -5108,7 +5108,7 @@
 						<control type="image">
 							<description>Title overlay</description>
 							<bottom>0</bottom>
-							<texture border="15" colordiffuse="af000000">common/white.png</texture>
+							<texture colordiffuse="af000000">common/white.png</texture>
 						</control>
                         <control type="label" id="13370">
 							<bottom>45</bottom>
@@ -5155,7 +5155,7 @@
 					<posy>790</posy>
 					<width>273</width>
 					<height>245</height>
-					<texture border="15" colordiffuse="$VAR[EmbyRightColourHighlight]">common/white.png</texture>
+					<texture colordiffuse="$VAR[EmbyRightColourHighlight]">common/white.png</texture>
 					<visible>!Control.HasFocus(50144)</visible>
 				</control>
 				<control type="label">
@@ -5178,7 +5178,7 @@
 					<posy>990</posy>
 					<width>273</width>
 					<height>45</height>
-					<texture border="15" colordiffuse="af000000">common/white.png</texture>
+					<texture colordiffuse="af000000">common/white.png</texture>
 					<visible>!Control.HasFocus(50144)</visible>
 				</control>
 				<control type="label">
@@ -5228,7 +5228,7 @@
 						<control type="image">
 							<description>Title overlay</description>
 							<bottom>0</bottom>
-							<texture border="15" colordiffuse="af000000">common/white.png</texture>
+							<texture colordiffuse="af000000">common/white.png</texture>
 						</control>
                         <control type="label" id="13370">
 							<bottom>45</bottom>
@@ -5362,7 +5362,7 @@
 								<top>0</top>
 								<right>0</right>
 								<bottom>0</bottom>
-								<texture border="15" colordiffuse="af000000">common/white.png</texture>
+								<texture colordiffuse="af000000">common/white.png</texture>
 								<visible>Control.HasFocus(5016)</visible>
 							</control>
 							<control type="textbox">
@@ -5510,7 +5510,7 @@
 								<top>0</top>
 								<right>0</right>
 								<bottom>0</bottom>
-								<texture border="15" colordiffuse="af000000">common/white.png</texture>
+								<texture colordiffuse="af000000">common/white.png</texture>
 								<visible>Control.HasFocus(5017)</visible>
 							</control>
 							<control type="textbox">
@@ -5690,7 +5690,7 @@
 						</control>
 						<control type="image">
 							<description>Title overlay</description>
-							<texture border="15" colordiffuse="af000000">common/white.png</texture>
+							<texture colordiffuse="af000000">common/white.png</texture>
 								<visible>Control.HasFocus(15017)</visible>
 						</control>
 						<control type="textbox">
@@ -5761,14 +5761,14 @@
 							<width>50%</width>
 							<height>100%</height>
 							<aspectratio scalediffuse="false">scale</aspectratio>
-                            <texture border="5" colordiffuse="$VAR[BorderHighlight]">$VAR[FocusedBorderImage]</texture>
+                            <texture colordiffuse="$VAR[BorderHighlight]">$VAR[FocusedBorderImage]</texture>
                         </control>
                         <control type="image">
 							<left>50%</left>
 							<width>50%</width>
 							<height>100%</height>
 							<aspectratio scalediffuse="false">scale</aspectratio>
-                            <texture border="5" colordiffuse="$VAR[BorderHighlight]" flipx="true">$VAR[FocusedBorderImage]</texture>
+                            <texture colordiffuse="$VAR[BorderHighlight]" flipx="true">$VAR[FocusedBorderImage]</texture>
                         </control>
 						<control type="image">
 							<aspectratio>scale</aspectratio>
@@ -5789,7 +5789,7 @@
 					<posy>712</posy>
 					<width>820</width>
 					<height>78</height>
-					<texture border="15" colordiffuse="af000000">common/white.png</texture>
+					<texture colordiffuse="af000000">common/white.png</texture>
 				</control>
 				<control type="label">
 					<left>175</left>
@@ -5822,7 +5822,7 @@
 					<posy>790</posy>
 					<width>273</width>
 					<height>245</height>
-					<texture border="15" colordiffuse="$VAR[EmbyLeftColourHighlight]">common/white.png</texture>
+					<texture colordiffuse="$VAR[EmbyLeftColourHighlight]">common/white.png</texture>
 				</control>
 				<control type="label">
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
@@ -5843,7 +5843,7 @@
 					<posy>990</posy>
 					<width>273</width>
 					<height>45</height>
-					<texture border="15" colordiffuse="af000000">common/white.png</texture>
+					<texture colordiffuse="af000000">common/white.png</texture>
 				</control>
 				<control type="label">
 					<left>SidePad</left>
@@ -5897,7 +5897,7 @@
 					<posy>790</posy>
 					<width>274</width>
 					<height>245</height>
-					<texture border="15" colordiffuse="$VAR[EmbyMiddleColourHighlight]">common/white.png</texture>
+					<texture colordiffuse="$VAR[EmbyMiddleColourHighlight]">common/white.png</texture>
 				</control>
 				<control type="label">
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
@@ -5918,7 +5918,7 @@
 					<posy>990</posy>
 					<width>274</width>
 					<height>45</height>
-					<texture border="15" colordiffuse="af000000">common/white.png</texture>
+					<texture colordiffuse="af000000">common/white.png</texture>
 				</control>
 				<control type="label">
 					<left>353</left>
@@ -5950,7 +5950,7 @@
 					<posy>790</posy>
 					<width>273</width>
 					<height>245</height>
-					<texture border="15" colordiffuse="$VAR[EmbyRightColourHighlight]">common/white.png</texture>
+					<texture colordiffuse="$VAR[EmbyRightColourHighlight]">common/white.png</texture>
 				</control>
 				<control type="label">
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
@@ -5971,7 +5971,7 @@
 					<posy>990</posy>
 					<width>273</width>
 					<height>45</height>
-					<texture border="15" colordiffuse="af000000">common/white.png</texture>
+					<texture colordiffuse="af000000">common/white.png</texture>
 				</control>
 				<control type="label">
 					<left>627</left>
@@ -6026,7 +6026,7 @@
 					<posy>790</posy>
 					<width>410</width>
 					<height>245</height>
-					<texture border="15" colordiffuse="$VAR[EmbyLeftColourHighlight]">common/white.png</texture>
+					<texture colordiffuse="$VAR[EmbyLeftColourHighlight]">common/white.png</texture>
 				</control>
 				<control type="label">
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
@@ -6047,7 +6047,7 @@
 					<posy>990</posy>
 					<width>410</width>
 					<height>45</height>
-					<texture border="15" colordiffuse="af000000">common/white.png</texture>
+					<texture colordiffuse="af000000">common/white.png</texture>
 				</control>
 				<control type="label">
 					<left>980</left>
@@ -6078,7 +6078,7 @@
 					<posy>790</posy>
 					<width>560</width>
 					<height>245</height>
-					<texture border="15" colordiffuse="$VAR[EmbyRightColourHighlight]">common/white.png</texture>
+					<texture colordiffuse="$VAR[EmbyRightColourHighlight]">common/white.png</texture>
 				</control>
 				<control type="label">
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
@@ -6099,7 +6099,7 @@
 					<posy>990</posy>
 					<width>560</width>
 					<height>45</height>
-					<texture border="15" colordiffuse="af000000">common/white.png</texture>
+					<texture colordiffuse="af000000">common/white.png</texture>
 				</control>
 				<control type="label">
 					<left>1390</left>
@@ -6217,13 +6217,13 @@
 						<control type="image">
 							<width>100%</width>
 							<height>100%</height>
-							<texture colordiffuse="$VAR[ColourHighlight]" border="5">common/box.png</texture>
+							<texture colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
 							<visible>Control.HasFocus(7016)</visible>
 						</control>
 						<control type="image">
 							<width>100%</width>
 							<height>100%</height>
-							<texture colordiffuse="selective yellow" border="5">common/box.png</texture>
+							<texture colordiffuse="selective yellow">common/box.png</texture>
 							<visible>!Control.HasFocus(7016)</visible>
 						</control>
 						<control type="label">
@@ -6272,7 +6272,7 @@
 							<right>0</right>
 							<top>0</top>
 							<bottom>0</bottom>
-							<texture colordiffuse="black" border="5">common/box.png</texture>
+							<texture colordiffuse="black">common/box.png</texture>
 						</control>
 						<control type="group">
 							<height>317</height>
@@ -6290,7 +6290,7 @@
 							</control>
 							<control type="image">
 								<description>Title overlay</description>
-								<texture border="15" colordiffuse="44000000">common/white.png</texture>
+								<texture colordiffuse="44000000">common/white.png</texture>
 								<visible>!IsEmpty(Window(Home).Property(SkinHelper.ListItemThumb))</visible>
 							</control>
 							<control type="image">
@@ -6308,7 +6308,7 @@
 								<description>Title overlay</description>
 								<bottom>0</bottom>
 								<height>35</height>
-								<texture border="15" colordiffuse="selective yellow">common/white.png</texture>
+								<texture colordiffuse="selective yellow">common/white.png</texture>
 								<visible>Control.HasFocus(7016)</visible>
 							</control>
 							<control type="label">

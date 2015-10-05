@@ -12,7 +12,7 @@
 				<width>1920</width>
 				<height>1080</height>
 				<aspectratio>stretch</aspectratio>
-				<texture colordiffuse="black" border="16">common/box.png</texture>
+				<texture colordiffuse="black">common/box.png</texture>
 				<animation effect="fade" reversible="false" end="50" time="0" condition="true">Conditional</animation>
 			</control>
 			<control type="group">
@@ -30,7 +30,7 @@
 				<height>920</height>
 				<colordiffuse>black</colordiffuse>
 				<animation effect="fade" start="100" end="90" condition="true">Conditional</animation>
-				<texture border="5">common/box.png</texture>
+				<texture>common/box.png</texture>
 			</control>
 			<control type="image">
 				<right>20</right>
@@ -39,7 +39,7 @@
 				<height>920</height>
 				<colordiffuse>black</colordiffuse>
 				<animation effect="fade" start="100" end="90" condition="true">Conditional</animation>
-				<texture border="5">common/box.png</texture>
+				<texture>common/box.png</texture>
 			</control>
 			<control type="multiimage">
 				<left>-100</left>
@@ -225,7 +225,7 @@
 						<control type="image">
 							<width>100%</width>
 							<height>100%</height>
-							<texture colordiffuse="selective yellow" border="5">common/box.png</texture>
+							<texture colordiffuse="selective yellow">common/box.png</texture>
 							<visible>ListItem.IsPlaying</visible>
 						</control>
 						<control type="progress">
@@ -279,13 +279,13 @@
 						<control type="image">
 							<width>100%</width>
 							<height>100%</height>
-							<texture colordiffuse="$VAR[ColourHighlight]" border="5">common/box.png</texture>
+							<texture colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
 							<visible>!ListItem.IsPlaying</visible>
 						</control>
 						<control type="image">
 							<width>100%</width>
 							<height>100%</height>
-							<texture colordiffuse="selective yellow" border="5">common/box.png</texture>
+							<texture colordiffuse="selective yellow">common/box.png</texture>
 							<visible>ListItem.IsPlaying</visible>
 						</control>
 						<control type="group">

@@ -185,7 +185,7 @@
 				<ondown>7</ondown>
 				<font>Button</font>
 				<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
-				<texturefocus colordiffuse="$VAR[ColourHighlight]" border="5">common/box.png</texturefocus>
+				<texturefocus colordiffuse="$VAR[ColourHighlight]">common/box.png</texturefocus>
 			</control>
 			<control type="button" id="7">
 				<description>Delete</description>
@@ -204,14 +204,14 @@
 				<ondown condition="!Control.IsVisible(3)">6</ondown>
 				<font>Button</font>
 				<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
-				<texturefocus colordiffuse="$VAR[ColourHighlight]" border="5">common/box.png</texturefocus>
+				<texturefocus colordiffuse="$VAR[ColourHighlight]">common/box.png</texturefocus>
 			</control>
 			<control type="image">
 				<description>Large Icon Image</description>
-				<posx>760</posx>
-				<bottom>10</bottom>
-				<width>310</width>
-				<height>450</height>
+				<posx>720</posx>
+				<bottom>0</bottom>
+				<width>360</width>
+				<height>470</height>
 				<texture fallback="DefaultAddonNone.png">$INFO[Container(6).ListItem.Icon]</texture>
 				<aspectratio align="center" aligny="bottom">keep</aspectratio>
 				<visible>Control.IsVisible(6)</visible>

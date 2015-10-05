@@ -102,6 +102,7 @@
 						<control type="group">
 							<visible>IsEmpty(Window(home).Property(SkinHelper.PVR.Poster))</visible>
 							<control type="image">
+								<left>-3</left>
 								<width>613</width>
 								<height>450</height>
 								<aspectratio scalediffuse="false">scale</aspectratio>
@@ -111,6 +112,7 @@
 								</animation>
 							</control>
 							<control type="image">
+								<left>3</left>
 								<top>470</top>
 								<width>613</width>
 								<height>450</height>
@@ -158,8 +160,8 @@
 						<textoffsetx>20</textoffsetx>
 						<textcolor>white</textcolor>
 						<focusedcolor>$VAR[EmbyLeftColourHighlight]</focusedcolor>
-						<texturefocus colordiffuse="$INFO[Window(home).Property(PVRInfo.ImageColor)]" border="5">common/box.png</texturefocus>
-						<texturenofocus colordiffuse="$VAR[EmbyLeftColourHighlight]" border="5">common/box.png</texturenofocus>
+						<texturefocus colordiffuse="$INFO[Window(home).Property(PVRInfo.ImageColor)]">common/box.png</texturefocus>
+						<texturenofocus colordiffuse="$VAR[EmbyLeftColourHighlight]">common/box.png</texturenofocus>
 					</control>
 					<!-- Record -->
 					<control id="66" type="button">
@@ -174,8 +176,8 @@
 						<textoffsetx>20</textoffsetx>
 						<onclick>SendClick(2003,6)</onclick>
 						<focusedcolor>$VAR[EmbyMiddleColourHighlight]</focusedcolor>
-						<texturefocus colordiffuse="$INFO[Window(home).Property(PVRInfo.ImageColor)]" border="5">common/box.png</texturefocus>
-						<texturenofocus colordiffuse="$VAR[EmbyMiddleColourHighlight]" border="5">common/box.png</texturenofocus>
+						<texturefocus colordiffuse="$INFO[Window(home).Property(PVRInfo.ImageColor)]">common/box.png</texturefocus>
+						<texturenofocus colordiffuse="$VAR[EmbyMiddleColourHighlight]">common/box.png</texturenofocus>
 					</control>
 					<!-- Ok/Close Button -->
 					<control id="7" type="button">
@@ -191,8 +193,8 @@
 						<textoffsetx>20</textoffsetx>
 						<textcolor>white</textcolor>
 						<focusedcolor>$VAR[EmbyRightColourHighlight]</focusedcolor>
-						<texturefocus colordiffuse="$INFO[Window(home).Property(PVRInfo.ImageColor)]" border="5">common/box.png</texturefocus>
-						<texturenofocus colordiffuse="$VAR[EmbyRightColourHighlight]" border="5">common/box.png</texturenofocus>
+						<texturefocus colordiffuse="$INFO[Window(home).Property(PVRInfo.ImageColor)]">common/box.png</texturefocus>
+						<texturenofocus colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</texturenofocus>
 					</control>
 
 					<!--Extended Info Button -->
@@ -206,8 +208,8 @@
 						<label></label>
 					<textcolor>$VAR[EmbyLeftColourHighlight]</textcolor>
 					<focusedcolor>$VAR[ColourHighlight]</focusedcolor>
-					<texturefocus colordiffuse="$INFO[Window(home).Property(PVRInfo.ImageColor)]" border="5">-</texturefocus>
-					<texturenofocus colordiffuse="$VAR[EmbyLeftColourHighlight]" border="5">-</texturenofocus>
+					<texturefocus colordiffuse="$INFO[Window(home).Property(PVRInfo.ImageColor)]">-</texturefocus>
+					<texturenofocus colordiffuse="$VAR[EmbyLeftColourHighlight]">-</texturenofocus>
 						<onclick>RunScript(script.extendedinfo,info=extendedtvinfo,name=$INFO[ListItem.Label])</onclick>
 						<animation condition="Control.HasFocus(19)" effect="zoom" end="200"  time="100" center="auto">Conditional</animation>
 					</control>

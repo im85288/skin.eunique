@@ -108,7 +108,7 @@
                     <control type="image">
                         <height>66</height>
                         <width>100%</width>
-                        <texture border="5" colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
+                        <texture colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
                     </control>
                     <control type="image">
                         <posx>11</posx>
@@ -209,8 +209,8 @@
                 <align>left</align>
                 <textcolor>Black30</textcolor>
                 <focusedcolor>White100</focusedcolor>
-                <texturefocus border="5" colordiffuse="$VAR[ColourHighlight]">common/box.png</texturefocus>
-                <texturenofocus border="5" colordiffuse="Black12">common/box.png</texturenofocus>
+                <texturefocus colordiffuse="$VAR[ColourHighlight]">common/box.png</texturefocus>
+                <texturenofocus colordiffuse="Black12">common/box.png</texturenofocus>
             </control>
             
             <!-- Providers -->
@@ -230,7 +230,7 @@
                     <control type="image">
                         <height>66</height>
                         <width>100%</width>
-                        <texture border="5" colordiffuse="Black12">common/box.png</texture>
+                        <texture colordiffuse="Black12">common/box.png</texture>
                     </control>
                     <control type="label">
                         <left>30</left>
@@ -248,13 +248,13 @@
                     <control type="image">
                         <height>66</height>
                         <width>100%</width>
-                        <texture border="5" colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
+                        <texture colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
                         <visible>Control.HasFocus(150)</visible>
                     </control>
                     <control type="image">
                         <height>69</height>
                         <width>100%</width>
-                        <texture border="5" colordiffuse="Black12">common/box.png</texture>
+                        <texture colordiffuse="Black12">common/box.png</texture>
                         <visible>!Control.HasFocus(150)</visible>
                     </control>
                     <control type="label">

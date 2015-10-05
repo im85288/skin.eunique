@@ -9,7 +9,7 @@
         <control type="image">
             <include>Dimensions_Fullscreen</include>
             <aspectratio>stretch</aspectratio>
-            <texture colordiffuse="black" border="16">common/box.png</texture>
+            <texture colordiffuse="black">common/box.png</texture>
             <animation effect="fade" reversible="false" end="75" time="0" condition="true">Conditional</animation>
         </control>
         <control type="group">
@@ -28,7 +28,7 @@
                     <height>392</height>
                     <animation effect="fade" time="320" delay="200">Visible</animation>
                     <animation effect="fade" time="200">Hidden</animation>
-                    <texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
+                    <texture colordiffuse="$VAR[ColourHighlight]">common/selectbox.png</texture>
                     <animation effect="slide" end="0,380" time="300" tween="cubic" easing="inout" condition="Container(450).Row(1)">Conditional</animation>
                     <animation effect="slide" end="380,0" time="300" tween="cubic" easing="inout" condition="Container(450).Column(3)">Conditional</animation>
                     <animation effect="slide" end="380,0" time="300" tween="cubic" easing="inout" condition="Container(450).Column(3) | Container(450).Column(2)">Conditional</animation>
@@ -75,7 +75,7 @@
                             <left>6</left>
                             <width>368</width>
                             <height>368</height>
-                            <texture border="15" colordiffuse="af000000">common/white.png</texture>
+                            <texture colordiffuse="af000000">common/white.png</texture>
                         </control>
                         <control type="textbox">
                             <width>368</width>

@@ -34,7 +34,7 @@
 					<left>-8</left>
 					<right>-8</right>
 					<height>310</height>
-					<texture colordiffuse="black" border="5">common/box.png</texture>
+					<texture colordiffuse="black">common/box.png</texture>
 				</control>
 				<control type="group">
 					<top>10</top>
@@ -156,7 +156,7 @@
 					<right>-8</right>
 					<top>310</top>
 					<height>620</height>
-					<texture colordiffuse="black" border="5">common/box.png</texture>
+					<texture colordiffuse="black">common/box.png</texture>
 				</control>
 
 				<control type="epggrid" id="10">
@@ -205,7 +205,7 @@
 							<left>57</left>
 							<width>357</width>
 							<height>67</height>
-							<texture border="12" colordiffuse="selective yellow">common/white.png</texture>
+							<texture colordiffuse="selective yellow">common/white.png</texture>
 							<visible>ListItem.IsPlaying</visible>
 						</control>
 						<control type="label">
@@ -258,7 +258,7 @@
 							<left>57</left>
 							<width>357</width>
 							<height>67</height>
-							<texture border="12" colordiffuse="white">common/white.png</texture>
+							<texture colordiffuse="white">common/white.png</texture>
 							<visible>Control.HasFocus(10) + !ListItem.IsPlaying</visible>
 						</control>
 						<control type="image">
@@ -266,7 +266,7 @@
 							<left>57</left>
 							<width>357</width>
 							<height>67</height>
-							<texture border="12" colordiffuse="selective yellow">common/white.png</texture>
+							<texture colordiffuse="selective yellow">common/white.png</texture>
 							<visible>Control.HasFocus(10) + ListItem.IsPlaying</visible>
 						</control>
 						<control type="label">
@@ -286,7 +286,7 @@
 					</focusedchannellayout>
 					<itemlayout height="70" width="100">
 						<control type="image" id="2">
-							<texture border="5">common/white.png</texture>
+							<texture>common/white.png</texture>
 							<colordiffuse>black</colordiffuse>
 							<visible>!Skin.HasSetting(EPGGenreColors.Enabled)</visible>
 							<bordertexture colordiffuse="white2">common/white.png</bordertexture>
@@ -338,7 +338,7 @@
 					</itemlayout>
 					<focusedlayout height="70" width="100">
 						<control type="image" id="2">
-							<texture border="1" colordiffuse="$VAR[ColourHighlight]">common/white.png</texture>
+							<texture colordiffuse="$VAR[ColourHighlight]">common/white.png</texture>
 							<bordertexture colordiffuse="black">common/white.png</bordertexture>
 							<bordersize>1</bordersize>
 							<visible>!Skin.HasSetting(EPGGenreColors.Enabled)</visible>
@@ -348,7 +348,7 @@
 							<left>2</left>
 							<top>2</top>
 							<height>66</height>
-							<texture border="1" colordiffuse="white">common/white.png</texture>
+							<texture colordiffuse="white">common/white.png</texture>
 							<visible>Skin.HasSetting(EPGGenreColors.Enabled)</visible>
 						</control>
 						<control type="label" id="1">
@@ -510,7 +510,7 @@
 								<control type="image">
 									<width>100%</width>
 									<height>100%</height>
-									<texture colordiffuse="Dark1" border="5">common/box.png</texture>
+									<texture colordiffuse="Dark1">common/box.png</texture>
 								</control>
 								<control type="image">
 									<left>10</left>
@@ -832,7 +832,7 @@
 								<control type="image">
 									<width>100%</width>
 									<height>100%</height>
-									<texture colordiffuse="Dark1" border="5">common/box.png</texture>
+									<texture colordiffuse="Dark1">common/box.png</texture>
 								</control>
 								<control type="image">
 									<left>10</left>
@@ -1155,7 +1155,7 @@
 								<control type="image">
 									<width>100%</width>
 									<height>100%</height>
-									<texture colordiffuse="Dark1" border="5">common/box.png</texture>
+									<texture colordiffuse="Dark1">common/box.png</texture>
 								</control>
 								<control type="image">
 									<left>10</left>
