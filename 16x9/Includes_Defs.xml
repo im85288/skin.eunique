@@ -2185,6 +2185,54 @@
 			<label>$LOCALIZE[31946]: $INFO[Skin.String(border.image)]</label>
 			<onclick>ActivateWindow(1114)</onclick>
 		</control>
+		<control type="radiobutton" id="9004" description="Plot List (50)">
+			<include>DefContextButtonBlade</include>
+			<align>left</align>
+			<label>31214</label>
+			<selected>Skin.HasSetting(seasons.50list.showplot)</selected>
+			<onclick>Skin.ToggleSetting(seasons.50list.showplot)</onclick>
+			<visible>Control.IsVisible(50) + Container.Content(seasons)</visible>
+		</control>
+		<control type="radiobutton" id="9005" description="Plot List (50)">
+			<include>DefContextButtonBlade</include>
+			<align>left</align>
+			<label>31214</label>
+			<selected>Skin.HasSetting(episodes.50list.showplot)</selected>
+			<onclick>Skin.ToggleSetting(episodes.50list.showplot)</onclick>
+			<visible>Control.IsVisible(50) + Container.Content(episodes)</visible>
+		</control>
+		<control type="radiobutton" id="9006" description="Plot List (50)">
+			<include>DefContextButtonBlade</include>
+			<align>left</align>
+			<label>31214</label>
+			<selected>Skin.HasSetting(artists.50list.showplot)</selected>
+			<onclick>Skin.ToggleSetting(artists.50list.showplot)</onclick>
+			<visible>Control.IsVisible(50) + Container.Content(artists)</visible>
+		</control>
+		<control type="radiobutton" id="9007" description="Plot List (50)">
+			<include>DefContextButtonBlade</include>
+			<align>left</align>
+			<label>31214</label>
+			<selected>Skin.HasSetting(albums.50list.showplot)</selected>
+			<onclick>Skin.ToggleSetting(albums.50list.showplot)</onclick>
+			<visible>Control.IsVisible(50) + Container.Content(albums)</visible>
+		</control>
+		<control type="radiobutton" id="9008" description="Plot List (50)">
+			<include>DefContextButtonBlade</include>
+			<align>left</align>
+			<label>31214</label>
+			<selected>Skin.HasSetting(songs.50list.showplot)</selected>
+			<onclick>Skin.ToggleSetting(songs.50list.showplot)</onclick>
+			<visible>Control.IsVisible(50) + Container.Content(songs)</visible>
+		</control>
+		<control type="radiobutton" id="9009" description="Plot List (50)">
+			<include>DefContextButtonBlade</include>
+			<align>left</align>
+			<label>31214</label>
+			<selected>Skin.HasSetting(general.50list.showplot)</selected>
+			<onclick>Skin.ToggleSetting(general.50list.showplot)</onclick>
+			<visible>Control.IsVisible(50) + !Container.Content(songs) + !Container.Content(albums) + !Container.Content(artists) + !Container.Content(episodes) + !Container.Content(seasons) + !Container.Content(tvshows) + !Container.Content(movies)</visible>
+		</control>
 		<control type="radiobutton" id="9016" description="Plot List (57)">
 			<include>DefContextButtonBlade</include>
 			<align>left</align>

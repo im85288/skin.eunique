@@ -305,9 +305,8 @@
 
 	<include name="Furniture_Logo">
 		<control type="group">
-			<visible>Skin.HasSetting(furniture.logo)</visible>
 			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml) + !Control.IsVisible(500) + !Control.IsVisible(54) + !Control.IsVisible(52) + !Control.IsVisible(515) + !ControlGroup(9000).HasFocus()</visible>
-			<visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(albums) | Container.Content(songs)</visible>
+			<visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(albums) | Container.Content(songs) | Container.Content(artists)</visible>
 			<left>1664</left>
 			<top>909</top>
 			<include>Animation.FadeIn</include>
@@ -327,7 +326,7 @@
 			</control>
 				<!--cdart image -->
 			<control type="image" id="12323">
-			<top>-10</top>
+				<top>-10</top>
 				<width>228</width>
 				<height>120</height>
 				<texture fallback="empty" background="true">$INFO[ListItem.Art(discart)]</texture>
