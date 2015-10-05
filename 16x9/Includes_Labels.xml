@@ -1186,6 +1186,10 @@
 		<value condition="Container.Content(Seasons)">$INFO[ListItem.TVShowTitle]</value>
 		<value>$INFO[ListItem.Label]</value>
 	</variable>
+	<variable name="BorderHighlight">
+		<value condition="Skin.HasSetting(BorderHighlight)">$INFO[Skin.String(bordercolor.name)]</value>
+		<value condition="!Skin.HasSetting(BorderHighlight)">HighlightB</value>
+	</variable>
 	<variable name="ColourHighlight">
 		<value condition="Skin.HasSetting(ColourHighlight)">$INFO[Skin.String(focuscolor.name)]</value>
 		<value condition="!Skin.HasSetting(ColourHighlight)">Highlight</value>

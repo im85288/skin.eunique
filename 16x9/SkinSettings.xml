@@ -678,6 +678,8 @@
 				<onup>9004</onup>
 				<ondown>9004</ondown>
 				<visible>Container(9000).HasFocus(7)</visible>
+
+
 				<control type="radiobutton" id="9281">
 					<width>1410</width>
 					<include>DefSettingsButton2</include>
@@ -700,11 +702,13 @@
 					<label> - $LOCALIZE[409]</label>
 					<visible>Skin.HasSetting(ColourHighlight)</visible>
 				</control>
+
+
 				<control type="radiobutton" id="9284">
 					<width>1410</width>
 					<include>DefSettingsButton2</include>
-					<selected>Skin.HasSetting(ColourSelected)</selected>
-					<onclick>Skin.ToggleSetting(ColourSelected)</onclick>
+					<selected>Skin.HasSetting(ColourHighlight2)</selected>
+					<onclick>Skin.ToggleSetting(ColourHighlight2)</onclick>
 					<label>31902</label>
 				</control>
 				<control type="button" id="9285">
@@ -713,15 +717,16 @@
 					<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=focuscolor2.name)</onclick>
 					<label>31903</label>
 					<label2>[COLOR=$VAR[ColourSelected]]$INFO[Skin.String(focuscolor2.name)][/COLOR]</label2>
-					<visible>Skin.HasSetting(ColourSelected)</visible>
+					<visible>Skin.HasSetting(ColourHighlight2)</visible>
 				</control>
 				<control type="button" id="9286">
 					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<onclick>Skin.SetString(focuscolor2.name,Highlight2)</onclick>
 					<label> - $LOCALIZE[409]</label>
-					<visible>Skin.HasSetting(ColourSelected)</visible>
+					<visible>Skin.HasSetting(ColourHighlight2)</visible>
 				</control>
+
 				<control type="radiobutton" id="9287">
 					<width>1410</width>
 					<include>DefSettingsButton2</include>
@@ -744,13 +749,31 @@
 					<label> - $LOCALIZE[409]</label>
 					<visible>Skin.HasSetting(ColourSelected)</visible>
 				</control>
+
+
+				<control type="radiobutton" id="92800">
+					<width>1410</width>
+					<include>DefSettingsButton2</include>
+					<selected>Skin.HasSetting(BorderHighlight)</selected>
+					<onclick>Skin.ToggleSetting(BorderHighlight)</onclick>
+					<label>31128</label>
+				</control>
+				<control type="button" id="92801">
+					<width>1410</width>
+					<include>DefSettingsButton2</include>
+					<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=bordercolor.name)</onclick>
+					<label> - $LOCALIZE[31129]</label>
+					<label2>[COLOR=$INFO[Skin.String(bordercolor.name)]]$INFO[Skin.String(bordercolor.name)][/COLOR]</label2>
+					<visible>Skin.HasSetting(BorderHighlight)</visible>
+				</control>
+
+
 				<control type="radiobutton" id="92875">
 					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<selected>Skin.HasSetting(emby.menu.colour)</selected>
 					<onclick>Skin.ToggleSetting(emby.menu.colour)</onclick>
 					<label>31924</label>
-					<visible>Skin.HasSetting(home.emby)</visible>
 				</control>
 				<control type="button" id="92876">
 					<width>1410</width>
@@ -758,15 +781,16 @@
 					<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=emby.menu.colour.name)</onclick>
 					<label>31925</label>
 					<label2>[COLOR=$INFO[Skin.String(emby.menu.colour.name)]]$INFO[Skin.String(emby.menu.colour.name)][/COLOR]</label2>
-					<visible>Skin.HasSetting(emby.menu.colour) + Skin.HasSetting(home.emby)</visible>
+					<visible>Skin.HasSetting(emby.menu.colour)</visible>
 				</control>
+
+
 				<control type="radiobutton" id="92883">
 					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<selected>Skin.HasSetting(emby.menu.text.colour)</selected>
 					<onclick>Skin.ToggleSetting(emby.menu.text.colour)</onclick>
 					<label>31926</label>
-					<visible>Skin.HasSetting(home.emby)</visible>
 				</control>
 				<control type="button" id="92884">
 					<width>1410</width>
@@ -774,15 +798,16 @@
 					<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=emby.menu.text.colour.name)</onclick>
 					<label>31927</label>
 					<label2>[COLOR=$INFO[Skin.String(emby.menu.text.colour.name)]]$INFO[Skin.String(emby.menu.text.colour.name)][/COLOR]</label2>
-					<visible>Skin.HasSetting(emby.menu.text.colour) + Skin.HasSetting(home.emby)</visible>
+					<visible>Skin.HasSetting(emby.menu.text.colour)</visible>
 				</control>
+
+
 				<control type="radiobutton" id="92869">
 					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<selected>Skin.HasSetting(emby.left.colour)</selected>
 					<onclick>Skin.ToggleSetting(emby.left.colour)</onclick>
 					<label>31918</label>
-					<visible>Skin.HasSetting(home.emby)</visible>
 				</control>
 				<control type="button" id="92870">
 					<width>1410</width>
@@ -790,15 +815,16 @@
 					<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=emby.left.colour.name)</onclick>
 					<label>31919</label>
 					<label2>[COLOR=$INFO[Skin.String(emby.left.colour.name)]]$INFO[Skin.String(emby.left.colour.name)][/COLOR]</label2>
-					<visible>Skin.HasSetting(emby.left.colour) + Skin.HasSetting(home.emby)</visible>
+					<visible>Skin.HasSetting(emby.left.colour)</visible>
 				</control>
+
+
 				<control type="radiobutton" id="92871">
 					<width>1410</width>
 					<include>DefSettingsButton2</include>
 					<selected>Skin.HasSetting(emby.right.colour)</selected>
 					<onclick>Skin.ToggleSetting(emby.right.colour)</onclick>
 					<label>31920</label>
-					<visible>Skin.HasSetting(home.emby)</visible>
 				</control>
 				<control type="button" id="92872">
 					<width>1410</width>
@@ -806,8 +832,10 @@
 					<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=emby.right.colour.name)</onclick>
 					<label>31921</label>
 					<label2>[COLOR=$INFO[Skin.String(emby.right.colour.name)]]$INFO[Skin.String(emby.right.colour.name)][/COLOR]</label2>
-					<visible>Skin.HasSetting(emby.right.colour) + Skin.HasSetting(home.emby)</visible>
+					<visible>Skin.HasSetting(emby.right.colour)</visible>
 				</control>
+
+
 				<control type="radiobutton" id="92873">
 					<width>1410</width>
 					<include>DefSettingsButton2</include>
@@ -821,9 +849,10 @@
 					<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=emby.middle.colour.name)</onclick>
 					<label>31923</label>
 					<label2>[COLOR=$INFO[Skin.String(emby.middle.colour.name)]]$INFO[Skin.String(emby.middle.colour.name)][/COLOR]</label2>
-					<visible>Skin.HasSetting(emby.middle.colour) + Skin.HasSetting(home.emby)</visible>
+					<visible>Skin.HasSetting(emby.middle.colour)</visible>
 				</control>
 
+<!-- -->
 				<control type="radiobutton" id="92817">
 					<width>1410</width>
 					<include>DefSettingsButton2</include>
@@ -915,7 +944,7 @@
 					<selected>Skin.HasSetting(emby.flags.colour)</selected>
 					<onclick>Skin.ToggleSetting(emby.flags.colour)</onclick>
 					<label>31928</label>
-					<visible>Skin.HasSetting(home.emby)</visible>
+					
 				</control>
 				<control type="button" id="92878">
 					<width>1410</width>
@@ -923,7 +952,7 @@
 					<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=emby.flags.colour.name)</onclick>
 					<label>31929</label>
 					<label2>[COLOR=$INFO[Skin.String(emby.flags.colour.name)]]$INFO[Skin.String(emby.flags.colour.name)][/COLOR]</label2>
-					<visible>Skin.HasSetting(emby.flags.colour) + Skin.HasSetting(home.emby)</visible>
+					<visible>Skin.HasSetting(emby.flags.colour)</visible>
 				</control>
 				<control type="radiobutton" id="92879">
 					<width>1410</width>
@@ -931,7 +960,7 @@
 					<selected>Skin.HasSetting(emby.flags.text.colour)</selected>
 					<onclick>Skin.ToggleSetting(emby.flags.text.colour)</onclick>
 					<label>31930</label>
-					<visible>Skin.HasSetting(home.emby)</visible>
+					
 				</control>
 				<control type="button" id="92880">
 					<width>1410</width>
@@ -939,7 +968,7 @@
 					<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=emby.flags.text.colour.name)</onclick>
 					<label>31931</label>
 					<label2>[COLOR=$INFO[Skin.String(emby.flags.text.colour.name)]]$INFO[Skin.String(emby.flags.text.colour.name)][/COLOR]</label2>
-					<visible>Skin.HasSetting(emby.flags.text.colour) + Skin.HasSetting(home.emby)</visible>
+					<visible>Skin.HasSetting(emby.flags.text.colour)</visible>
 				</control>
 				<control type="radiobutton" id="92881">
 					<width>1410</width>
@@ -947,7 +976,7 @@
 					<selected>Skin.HasSetting(emby.flags.icon.colour)</selected>
 					<onclick>Skin.ToggleSetting(emby.flags.icon.colour)</onclick>
 					<label>31932</label>
-					<visible>Skin.HasSetting(home.emby)</visible>
+					
 				</control>
 				<control type="button" id="92882">
 					<width>1410</width>
@@ -955,7 +984,7 @@
 					<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=emby.flags.icon.colour.name)</onclick>
 					<label>31933</label>
 					<label2>[COLOR=$INFO[Skin.String(emby.flags.icon.colour.name)]]$INFO[Skin.String(emby.flags.icon.colour.name)][/COLOR]</label2>
-					<visible>Skin.HasSetting(emby.flags.icon.colour) + Skin.HasSetting(home.emby)</visible>
+					<visible>Skin.HasSetting(emby.flags.icon.colour)</visible>
 				</control>
 			</control>
 
