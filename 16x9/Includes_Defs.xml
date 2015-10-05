@@ -2168,6 +2168,63 @@
 			<visible>Window.IsVisible(MyMusicSongs.xml)</visible>
 			<visible>!stringcompare(Container.FolderPath,special://musicplaylists/)</visible>
 		</control>
+		<!--
+		<control type="button" id="334">
+			<description>widget</description>
+			<include>DefContextButtonBlade</include>
+			<align>left</align>
+			<label>$LOCALIZE[31951]: $VAR[FurnitureWidgetLabel]</label>
+			<onclick>ActivateWindow(1113)</onclick>
+			<visible>!Control.IsVisible(52) + !Control.IsVisible(54) + !Control.IsVisible(515) + !Control.IsVisible(53) + !Control.IsVisible(500)</visible>
+		</control>
+		-->
+		<control type="button" id="335">
+			<description>widget</description>
+			<include>DefContextButtonBlade</include>
+			<align>left</align>
+			<label>$LOCALIZE[31946]: $INFO[Skin.String(border.image)]</label>
+			<onclick>ActivateWindow(1114)</onclick>
+		</control>
+		<control type="radiobutton" id="9016" description="Plot List (57)">
+			<include>DefContextButtonBlade</include>
+			<align>left</align>
+			<label>31214</label>
+			<selected>Skin.HasSetting(artists.57list.showplot)</selected>
+			<onclick>Skin.ToggleSetting(artists.57list.showplot)</onclick>
+			<visible>Control.IsVisible(57) + Container.Content(artists)</visible>
+		</control>
+		<control type="radiobutton" id="9017" description="Plot List (57)">
+			<include>DefContextButtonBlade</include>
+			<align>left</align>
+			<label>31214</label>
+			<selected>Skin.HasSetting(albums.57list.showplot)</selected>
+			<onclick>Skin.ToggleSetting(albums.57list.showplot)</onclick>
+			<visible>Control.IsVisible(57) + Container.Content(albums)</visible>
+		</control>
+		<control type="radiobutton" id="9018" description="Plot List (57)">
+			<include>DefContextButtonBlade</include>
+			<align>left</align>
+			<label>31214</label>
+			<selected>Skin.HasSetting(songs.57list.showplot)</selected>
+			<onclick>Skin.ToggleSetting(songs.57list.showplot)</onclick>
+			<visible>Control.IsVisible(57) + Container.Content(songs)</visible>
+		</control>
+		<control type="radiobutton" id="9019" description="Plot List (57)">
+			<include>DefContextButtonBlade</include>
+			<align>left</align>
+			<label>31214</label>
+			<selected>Skin.HasSetting(general.57list.showplot)</selected>
+			<onclick>Skin.ToggleSetting(general.57list.showplot)</onclick>
+			<visible>Control.IsVisible(57) + !Container.Content(songs) + !Container.Content(albums) + !Container.Content(artists) + !Container.Content(episodes) + !Container.Content(seasons) + !Container.Content(tvshows) + !Container.Content(movies)</visible>
+		</control>
+		<control type="radiobutton" id="9031" description="Banner show poster (54)">
+			<include>DefContextButtonBlade</include>
+			<align>left</align>
+			<label>31147</label>
+			<selected>Skin.HasSetting(54banner.showinfo)</selected>
+			<onclick>Skin.ToggleSetting(54banner.showinfo)</onclick>
+			<visible>Control.IsVisible(54) + !Container.Content(seasons)</visible>
+		</control>
 		<control type="button" id="9098">
 			<description>Now Playing</description>
 			<include>DefContextButtonBlade</include>
