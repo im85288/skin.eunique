@@ -1636,8 +1636,7 @@
 					<left>SidePad</left>
 					<width>820</width>
 					<height>460</height>
-					<onup condition="Skin.HasSetting(global.kioskmode)">300</onup>
-					<onup condition="!Skin.HasSetting(global.kioskmode)">60121</onup>
+					<onup>300</onup>
 					<ondown>6013</ondown>
 					<onleft>301</onleft>
 					<onright>301</onright>
@@ -1682,7 +1681,7 @@
                             </animation>
 						</control>
 					</focusedlayout>
-					<content target="video">$VAR[DefWidget2Content]</content>
+					<content target="$VAR[DefWidget2Target]">$VAR[DefWidget2Content]</content>
 				</control>
 				<control type="image">
 					<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
@@ -2131,8 +2130,7 @@
 					<left>980</left>
 					<width>410</width>
 					<height>705</height>
-					<onup condition="Skin.HasSetting(global.kioskmode)">300</onup>
-					<onup condition="!Skin.HasSetting(global.kioskmode)">60161</onup>
+					<onup>300</onup>
 					<ondown>6016</ondown>
 					<onleft>6012</onleft>
 					<onright>6017</onright>
@@ -2194,7 +2192,7 @@
 							</control>
 						</control>
 					</focusedlayout>
-					<content target="video">$VAR[DefWidget1Content]</content>
+					<content target="$VAR[DefWidget1Target]">$VAR[DefWidget1Content]</content>
 				</control>
 				<!-- Latest Movies -->
 				<control type="group">
@@ -2225,8 +2223,7 @@
 					<left>1470</left>
 					<width>316</width>
 					<height>705</height>
-					<onup condition="Skin.HasSetting(global.kioskmode)">300</onup>
-					<onup condition="!Skin.HasSetting(global.kioskmode)">60171</onup>
+					<onup>300</onup>
 					<ondown>6017</ondown>
 					<onright condition="Control.IsVisible(9017)">9017</onright>
 					<onleft condition="Control.IsVisible(6016)">6016</onleft>
@@ -2286,7 +2283,7 @@
 						</control>
 						</control>
 					</focusedlayout>
-					<content target="video">$VAR[DefWidget3Content]</content>
+					<content target="$VAR[DefWidget3Target]">$VAR[DefWidget3Content]</content>
 				</control>
 				<!-- Latest XBMC -->
 				<control type="group">
@@ -2319,8 +2316,7 @@
 					<left>1860</left>
 					<width>491</width>
 					<height>705</height>
-					<onup condition="Skin.HasSetting(global.kioskmode)">300</onup>
-					<onup condition="!Skin.HasSetting(global.kioskmode)">90171</onup>
+					<onup>300</onup>
 					<onback>300</onback>
 					<ondown>6017</ondown>
 					<onleft condition="Control.IsVisible(6017)">6017</onleft>
@@ -2336,7 +2332,7 @@
 							<onfocus>Skin.SetString(widget.helper,videos4)</onfocus>
 						</control>
 					</focusedlayout>
-					<content target="video">$VAR[DefWidget15Content]</content>
+					<content target="$VAR[DefWidget15Target]">$VAR[DefWidget15Content]</content>
 				</control>
 				<control type="group">
 					<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
@@ -3116,8 +3112,7 @@
 					<left>SidePad</left>
 					<width>820</width>
 					<height>460</height>
-					<onup condition="Skin.HasSetting(global.kioskmode)">300</onup>
-					<onup condition="!Skin.HasSetting(global.kioskmode)">30121</onup>
+					<onup>300</onup>
 					<ondown>3013</ondown>
 					<onleft>301</onleft>
 					<onright>301</onright>
@@ -3162,7 +3157,7 @@
                             </animation>
 						</control>
 					</focusedlayout>
-					<content target="video">$VAR[DefWidget6Content]</content>
+					<content target="$VAR[DefWidget6Target]">$VAR[DefWidget6Content]</content>
 				</control>
 				<control type="image">
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
@@ -3491,8 +3486,7 @@
 					<left>980</left>
 					<width>410</width>
 					<height>705</height>
-					<onup condition="Skin.HasSetting(global.kioskmode)">300</onup>
-					<onup condition="!Skin.HasSetting(global.kioskmode)">30161</onup>
+					<onup>300</onup>
 					<ondown>3016</ondown>
 					<onleft>3012</onleft>
 					<onright>3017</onright>
@@ -3566,7 +3560,7 @@
 							</control>
 						</control>
 					</focusedlayout>
-					<content target="video">$VAR[DefWidget7Content]</content>
+					<content target="$VAR[DefWidget7Target]">$VAR[DefWidget7Content]</content>
 				</control>
 				<!-- Latest Movies -->
 				<control type="group">
@@ -3597,8 +3591,7 @@
 					<left>1470</left>
 					<width>316</width>
 					<height>705</height>
-					<onup condition="Skin.HasSetting(global.kioskmode)">300</onup>
-					<onup condition="!Skin.HasSetting(global.kioskmode)">30171</onup>
+					<onup>300</onup>
 					<ondown>3017</ondown>
 					<onright condition="Control.IsVisible(10017)">10017</onright>
 					<onleft condition="Control.IsVisible(3016)">3016</onleft>
@@ -3670,7 +3663,7 @@
 						</control>
 						</control>
 					</focusedlayout>
-					<content target="video">$VAR[DefWidget8Content]</content>
+					<content target="$VAR[DefWidget8Target]">$VAR[DefWidget8Content]</content>
 				</control>
 				<!-- Latest Similar XBMC -->
 				<control type="group">
@@ -3704,8 +3697,7 @@
 					<width>491</width>
 					<height>705</height>
 					<onback>300</onback>
-					<onup condition="Skin.HasSetting(global.kioskmode)">300</onup>
-					<onup condition="!Skin.HasSetting(global.kioskmode)">100171</onup>
+					<onup>300</onup>
 					<ondown>3017</ondown>
 					<onleft condition="Control.IsVisible(3017)">3017</onleft>
 					<onleft condition="!Control.IsVisible(3017)">3012</onleft>
@@ -3720,7 +3712,7 @@
 							<onfocus>Skin.SetString(widget.helper,movies4)</onfocus>
 						</control>
 					</focusedlayout>
-					<content target="video">$VAR[DefWidget16Content]</content>
+					<content target="$VAR[DefWidget16Target]">$VAR[DefWidget16Content]</content>
 				</control>
 				<control type="group">
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
@@ -3863,8 +3855,7 @@
 					<left>SidePad</left>
 					<width>820</width>
 					<height>460</height>
-					<onup condition="Skin.HasSetting(global.kioskmode)">300</onup>
-					<onup condition="!Skin.HasSetting(global.kioskmode)">40121</onup>
+					<onup>300</onup>
 					<ondown>4013</ondown>
 					<onleft>301</onleft>
 					<onright>301</onright>
@@ -3909,7 +3900,7 @@
                             </animation>
 						</control>
 					</focusedlayout>
-					<content target="video">$VAR[DefWidget9Content]</content>
+					<content target="$VAR[DefWidget9Target]">$VAR[DefWidget9Content]</content>
 				</control>
 				<control type="image">
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
@@ -4351,8 +4342,7 @@
 					<left>980</left>
 					<width>410</width>
 					<height>705</height>
-					<onup condition="Skin.HasSetting(global.kioskmode)">300</onup>
-					<onup condition="!Skin.HasSetting(global.kioskmode)">40161</onup>
+					<onup>300</onup>
 					<ondown>4016</ondown>
 					<onback>300</onback>
 					<onleft>4012</onleft>
@@ -4443,7 +4433,7 @@
 							</control>
 						</control>
 					</focusedlayout>
-					<content target="video">$VAR[DefWidget10Content]</content>
+					<content target="$VAR[DefWidget10Target]">$VAR[DefWidget10Content]</content>
 				</control>
 				<!-- Latest Tv -->
 				<control type="group">
@@ -4474,8 +4464,7 @@
 					<left>1470</left>
 					<width>316</width>
 					<height>705</height>
-					<onup condition="Skin.HasSetting(global.kioskmode)">300</onup>
-					<onup condition="!Skin.HasSetting(global.kioskmode)">40171</onup>
+					<onup>300</onup>
 					<ondown>4017</ondown>
 					<onleft>4016</onleft>
 					<onright>14017</onright>
@@ -4522,7 +4511,7 @@
 						</control>
 						</control>
 					</focusedlayout>
-					<content target="video">$VAR[DefWidget11Content]</content>
+					<content target="$VAR[DefWidget11Target]">$VAR[DefWidget11Content]</content>
 				</control>
 				<!-- Latest TV XBMC -->
 				<control type="group">
@@ -4555,8 +4544,7 @@
 					<left>1860</left>
 					<width>491</width>
 					<height>705</height>
-					<onup condition="Skin.HasSetting(global.kioskmode)">300</onup>
-					<onup condition="!Skin.HasSetting(global.kioskmode)">140171</onup>
+					<onup>300</onup>
 					<ondown>4017</ondown>
 					<onleft condition="Control.IsVisible(4017)">4017</onleft>
 					<onleft condition="!Control.IsVisible(4017)">4012</onleft>
@@ -4572,7 +4560,7 @@
 							<onfocus>Skin.SetString(widget.helper,tv4)</onfocus>
 						</control>
 					</focusedlayout>
-					<content target="video">$VAR[DefWidget18Content]</content>
+					<content target="$VAR[DefWidget18Target]">$VAR[DefWidget18Content]</content>
 				</control>
 				<control type="group">
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
@@ -4712,8 +4700,7 @@
 					<left>SidePad</left>
 					<width>820</width>
 					<height>460</height>
-					<onup condition="Skin.HasSetting(global.kioskmode)">300</onup>
-					<onup condition="!Skin.HasSetting(global.kioskmode)">50121</onup>
+					<onup>300</onup>
 					<ondown>5013</ondown>
 					<onleft>301</onleft>
 					<onright>301</onright>
@@ -4828,7 +4815,7 @@
                             </animation>
 						</control>
 					</focusedlayout>
-					<content target="video">$VAR[DefWidget12Content]</content>
+					<content target="$VAR[DefWidget12Target]">$VAR[DefWidget12Content]</content>
 				</control>
 				<control type="image">
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
@@ -5287,8 +5274,7 @@
 					<left>980</left>
 					<width>235</width>
 					<height>705</height>
-					<onup condition="Skin.HasSetting(global.kioskmode)">300</onup>
-					<onup condition="!Skin.HasSetting(global.kioskmode)">50161</onup>
+					<onup>300</onup>
 					<ondown>5016</ondown>
 					<onleft>5012</onleft>
 					<onright>5017</onright>
@@ -5391,7 +5377,7 @@
 							</control>
 						</control>
 					</focusedlayout>
-					<content target="video">$VAR[DefWidget13Content]</content>
+					<content target="$VAR[DefWidget13Target]">$VAR[DefWidget13Content]</content>
 				</control>
 				<!-- Latest Albums -->
 				<control type="group">
@@ -5422,8 +5408,7 @@
 					<left>1290</left>
 					<width>470</width>
 					<height>705</height>
-					<onup condition="Skin.HasSetting(global.kioskmode)">300</onup>
-					<onup condition="!Skin.HasSetting(global.kioskmode)">50171</onup>
+					<onup>300</onup>
 					<ondown>5017</ondown>
 					<onleft>5016</onleft>
 					<onright>15017</onright>
@@ -5539,7 +5524,7 @@
 						</control>
 						</control>
 					</focusedlayout>
-					<content target="video">$VAR[DefWidget14Content]</content>
+					<content target="$VAR[DefWidget14Target]">$VAR[DefWidget14Content]</content>
 				</control>
 
 				<!-- Latest Music XBMC -->
@@ -5573,8 +5558,7 @@
 					<left>1860</left>
 					<width>491</width>
 					<height>705</height>
-					<onup condition="Skin.HasSetting(global.kioskmode)">300</onup>
-					<onup condition="!Skin.HasSetting(global.kioskmode)">150171</onup>
+					<onup>300</onup>
 					<ondown>5017</ondown>
 					<onleft condition="Control.IsVisible(5017)">5017</onleft>
 					<onleft condition="!Control.IsVisible(5017)">5012</onleft>
@@ -5590,7 +5574,7 @@
 							<onfocus>Skin.SetString(widget.helper,music4)</onfocus>
 						</control>
 					</focusedlayout>
-					<content target="video">$VAR[DefWidget17Content]</content>
+					<content target="$VAR[DefWidget17Target]">$VAR[DefWidget17Content]</content>
 				</control>
 				<control type="group">
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
@@ -5736,8 +5720,7 @@
 					<left>SidePad</left>
 					<width>820</width>
 					<height>460</height>
-					<onup condition="Skin.HasSetting(global.kioskmode)">300</onup>
-					<onup condition="!Skin.HasSetting(global.kioskmode)">70121</onup>
+					<onup>300</onup>
 					<ondown>7013</ondown>
 						<onback>300</onback>
 				<preloaditems>2</preloaditems>
@@ -5780,7 +5763,7 @@
                             </animation>
 						</control>
 					</focusedlayout>
-					<content target="video">$VAR[DefWidget4Content]</content>
+					<content target="$VAR[DefWidget4Target]">$VAR[DefWidget4Content]</content>
 				</control>
 				<control type="image">
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
@@ -6169,8 +6152,7 @@
 					<left>980</left>
 					<width>410</width>
 					<height>460</height>
-					<onup condition="Skin.HasSetting(global.kioskmode)">300</onup>
-					<onup condition="!Skin.HasSetting(global.kioskmode)">70161</onup>
+					<onup>300</onup>
 					<onup>ClearProperty(SkinHelper.ListItemThumb,home)</onup>
 					<ondown>7016</ondown>
 					<onleft condition="IntegerGreaterThan(Container(7016).NumItems,0)">7012</onleft>
@@ -6249,7 +6231,7 @@
 							<label>$INFO[ListItem.ChannelName]$INFO[ListItem.Title,  [I],[/I]]</label>
 						</control>
 					</focusedlayout>
-					<content target="video">$VAR[DefWidget5Content]</content>
+					<content target="$VAR[DefWidget5Target]">$VAR[DefWidget5Content]</content>
 				</control>
 				<control type="group">
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>

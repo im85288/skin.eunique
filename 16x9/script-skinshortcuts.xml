@@ -106,12 +106,52 @@
                         <include>DefSettingsButton2</include>
                         <label2>$INFO[Container(211).ListItem.Label]</label2>
                     </control>
-                    <control type="button" id="501" description="Widgets">
+                  <!--  <control type="button" id="501" description="Widgets">
                         <width>1410</width>
                         <include>DefSettingsButton2</include>
                         <label>31951</label>
                         <onclick>ActivateWindow(1112)</onclick>
+                    </control> -->
+
+                    <control type="button" id="312"> <!--set widget-->
+                        <width>1410</width>
+                        <include>DefSettingsButton2</include>
+                        <label>$ADDON[script.skinshortcuts 32044] 1</label>
+                        <label2>$INFO[Container(211).Listitem.Property(widgetName)]</label2>
+                        <onclick>SetProperty(customWidget, normal, Home)</onclick>
+                        <visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
                     </control>
+
+                    <control type="button" id="1407"> <!--set widget 2-->
+                        <width>1410</width>
+                        <include>DefSettingsButton2</include>
+                        <onclick>SetProperty(widgetID, 1)</onclick>
+                        <onclick>SendClick(312)</onclick>
+                        <label>$ADDON[script.skinshortcuts 32044] 2</label>
+                        <label2>$INFO[Container(211).Listitem.Property(widgetName.1)]</label2>
+                        <visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
+                    </control>
+
+                    <control type="button" id="1408"> <!--set widget 3-->
+                        <width>1410</width>
+                        <include>DefSettingsButton2</include>
+                        <onclick>SetProperty(widgetID, 2)</onclick>
+                        <onclick>SendClick(312)</onclick>
+                        <label>$ADDON[script.skinshortcuts 32044] 3</label>
+                        <label2>$INFO[Container(211).Listitem.Property(widgetName.2)]</label2>
+                        <visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
+                    </control>
+
+                    <control type="button" id="1409"> <!--set widget 4-->
+                        <width>1410</width>
+                        <include>DefSettingsButton2</include>
+                        <onclick>SetProperty(widgetID, 3)</onclick>
+                        <onclick>SendClick(312)</onclick>
+                        <label>$ADDON[script.skinshortcuts 32044] 4</label>
+                        <label2>$INFO[Container(211).Listitem.Property(widgetName.3)]</label2>
+                        <visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
+                    </control>
+
                     <control type="button" id="310" description="Background">
                         <width>1410</width>
                         <include>DefSettingsButton2</include>
