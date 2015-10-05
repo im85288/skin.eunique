@@ -8,23 +8,23 @@
         <control type="group">
             <centerleft>50%</centerleft>
             <posy>310</posy>
-            <width>1350</width>
+            <width>950</width>
             <include>Animation.Common</include>
             <control type="image">
-                <width>1350</width>
+                <width>950</width>
                 <height>72</height>
                 <texture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">common/box.png</texture>
             </control>
             <control type="image">
                 <posy>72</posy>
-                <width>1350</width>
+                <width>950</width>
                 <height>412</height>
                 <texture colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
             </control>
             <control type="label">
                 <description>Heading</description>
                 <centerleft>50%</centerleft>
-                <width>1350</width>
+                <width>950</width>
                 <font>settingsheader</font>
                 <height>72</height>
                 <textcolor>$VAR[EmbyMenuColourHighlight]</textcolor>
@@ -34,16 +34,16 @@
             </control>
             <control type="list" id="2612">
                 <posy>72</posy>
-                <width>1350</width>
+                <width>950</width>
                 <height>412</height>
                 <scrolltime tween="cubic" easing="out">500</scrolltime>
 				
                 <onright>back</onright>
                 <onup>2612</onup>
                 <ondown>2612</ondown>
-                <itemlayout width="1350" height="51.5">
+                <itemlayout width="950" height="51.5">
                     <control type="label">
-                        <width>1350</width>
+                        <width>950</width>
                         <font>Tiny</font>
                         <align>center</align>
                         <bottom>-10</bottom>
@@ -51,7 +51,7 @@
                         <label>$INFO[ListItem.Label]</label>
                     </control>
                 </itemlayout>
-                <focusedlayout width="1350" height="51.5">
+                <focusedlayout width="950" height="51.5">
                     <control type="image">
                         <texture colordiffuse="$VAR[EmbyRightColourHighlight]">common/white.png</texture>
                         <visible>!ControlGroup(12612).HasFocus</visible>
@@ -59,7 +59,7 @@
                     <control type="label">
                         <align>center</align>
                         <bottom>-10</bottom>
-                        <width>1350</width>
+                        <width>950</width>
                         <font>Tiny</font>
                         <label>$INFO[ListItem.Label]</label>
                         <textcolor>$VAR[ColourSelected]</textcolor>
@@ -218,13 +218,6 @@
 
                     </item>
                 </content>
-            </control>
-            <control type="image">
-                <posx>450</posx>
-                <top>72</top>
-                <height>412</height>
-                <width>1</width>
-                <texture colordiffuse="white">common/white.png</texture>
             </control>
         </control>
     </controls>
