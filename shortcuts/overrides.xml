@@ -1,8 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <overrides>
 
-    <!-- Smart shortcuts -->
-    <widget label="Widgets" type="32010">||BROWSE||script.skin.helper.service/?action=widgets&amp;path=skinplaylists,librarydataprovider,scriptwidgets,extendedinfo,smartshortcuts,pvr,smartishwidgets</widget>
+    <widget-groupings>
+        <!-- script.skin.helper.service default widgets -->
+        <shortcut label="$ADDON[script.skin.helper.service 32063]" type="32010" condition="System.HasAddon(script.skin.helper.service)">||BROWSE||script.skin.helper.service/?action=widgets&amp;path=pvr,skinplaylists,scriptwidgets,smartshortcuts,extendedinfo,smartishwidgets,favourites,static</shortcut>
+        <content>widgets</content>
+        <node label="32030">
+            <content>video</content>
+            <node label="32040">
+                <content>playlist-video</content>
+            </node>
+            <node label="32010">
+                <content>addon-video</content>
+            </node>
+            <node label="32075">
+                <content>videosources</content>
+            </node>
+        </node>
+        <node label="32031">
+            <content>music</content>
+            <node label="32040">
+                <content>playlist-audio</content>
+            </node>
+            <node label="32011">
+                <content>addon-audio</content>
+            </node>
+            <node label="32075">
+                <content>musicsources</content>
+            </node>
+        </node>
+        <node label="32020">
+            <content>picturesources</content>
+        </node>
+        <node label="32007">
+            <node label="32010">
+                <content>addon-video</content>
+            </node>
+            <node label="32011">
+                <content>addon-audio</content>
+            </node>
+            <node label="32012">
+                <content>addon-image</content>
+            </node>
+            <node label="32009">
+                <content>addon-program-plugin</content>
+            </node>
+            <shortcut label="10001" type="32021" icon="DefaultAddonProgram.png" widget="addon" widgetType="program" widgetTarget="programs">addons://sources/executable</shortcut>
+            <shortcut label="1037" type="32014" icon="DefaultAddonVideo.png" widget="addon" widgetType="video" widgetTarget="video">addons://sources/video</shortcut>
+            <shortcut label="1038" type="32019" icon="DefaultAddonMusic.png" widget="addon" widgetType="music" widgetTarget="music">addons://sources/audio</shortcut>
+            <shortcut label="1039" type="32020" icon="DefaultAddonPicture.png" widget="addon" widgetType="picture" widgetTarget="pictures">addons://sources/image</shortcut>
+        </node>
+    </widget-groupings>
+
+    <widget label="31955" type="32010">||BROWSE||script.skin.helper.service/?action=smartshortcuts</widget>
+
     <!-- Playlist -->
     <widgetPlaylists>True</widgetPlaylists>
 
@@ -17,28 +68,6 @@
     <widget label="31766">Custom8</widget>
     <widget label="31767">Custom9</widget>
     <widget label="31768">Custom10</widget>
-
-    <!-- Live TV Widget -->
-    <widget label="31103" condition="System.GetBool(pvrmanager.enabled)">LiveTV</widget>
-
-    <!-- Weather Widget -->
-    <widget label="31251" condition="!IsEmpty(Skin.String(weather.fanart))">Weather</widget>
-
-    <!-- Next Aired -->
-    <widget label="31220" condition="System.HasAddon(script.tv.show.next.aired)">NextAired</widget>
-
-    <!-- Favourites -->
-    <widget label="1036" condition="System.HasAddon(script.favourites)">Favourites</widget>
-
-    <!-- Extended Info themoviedb.org -->
-    <widget label="31208">InCinemas</widget>
-    <widget label="31223">Upcoming</widget>
-    <widget label="31224">PopularMovies</widget>
-    <widget label="31225">TopRatedMovies</widget>
-    <widget label="31226">PopularTvShows</widget>
-    <widget label="31227">TopRatedTvShows</widget>
-    <widget label="31228">OnAirTvShows</widget>
-    <widget label="31229">AiringTodayTvShows</widget>
 
     <widgetdefaultnode defaultID="movies" group="mainmenu" label="20386" type="movies" path="plugin://service.library.data.provider?type=recentmovies&amp;reload=$INFO[Window.Property(recentmovies)]" target="video">recentmovies</widgetdefaultnode>
     <widgetdefaultnode defaultID="tvshows" group="mainmenu" label="31125" type="episodes" path="plugin://service.library.data.provider?type=recentepisodes&amp;reload=$INFO[Window.Property(recentepisodes)]" target="video">recentepisodes</widgetdefaultnode>
