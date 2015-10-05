@@ -11,27 +11,26 @@
         <control type="group">
             <animation effect="fade" start="100" end="0" time="400" condition="Window.IsVisible(SliderDialog) | Window.IsVisible(FileBrowser)">Conditional</animation>
 
-            <height>866</height>
-            <width>1100</width>
             <include>DefDialogInfoPanel</include>
             
             <control type="label" id="1">
                 <description>Header Label</description>
-                <centerleft>50%</centerleft>
-                <width>1000</width>
-                <align>center</align>
+				<centerleft>50%</centerleft>
+				<posy>15</posy>
+				<width>990</width>
+				<align>center</align>
                 <label>5</label>
-                <posy>5</posy>
+				<textcolor>$VAR[EmbyMenuColourHighlight]</textcolor>
                 <font>settingsheader</font>
             </control>
   
             <control type="grouplist" id="5">
                 <description>Control Area</description>
-                <left>15</left>
-                <right>15</right>
-                <top>100</top>
-                <height>618</height>
-                <itemgap>3</itemgap>
+                <left>0</left>
+                <right>0</right>
+                <top>92</top>
+                <height>640</height>
+                <itemgap>0</itemgap>
                 <orientation>vertical</orientation>
                 <pagecontrol>60</pagecontrol>
                 <onleft>28</onleft>
@@ -43,30 +42,26 @@
             <control type="button" id="28">
                 <description>OK</description>
                 <centerleft>33%</centerleft>
-                <bottom>30</bottom>
+                <bottom>33</bottom>
                 <width>270</width>
                 <label>186</label>
                 <onleft>27</onleft>
                 <onright>27</onright>
                 <onup>5</onup>
                 <ondown>5</ondown>
-                <font>Button</font>
-                <texturefocus colordiffuse="$VAR[ColourHighlight]" border="5">common/box.png</texturefocus>
-                <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+					<include>DefDialogButtons</include>
             </control>
             <control type="button" id="27">
                 <description>Defaults</description>
                 <centerleft>66%</centerleft>
-                <bottom>30</bottom>
+                <bottom>33</bottom>
                 <width>270</width>
                 <label>192</label>
                 <onleft>28</onleft>
                 <onright>28</onright>
                 <onup>5</onup>
                 <ondown>5</ondown>
-                <font>Button</font>
-                <texturefocus colordiffuse="$VAR[ColourHighlight]" border="5">common/box.png</texturefocus>
-                <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+					<include>DefDialogButtons</include>
             </control>
 
             <control type="button" id="7">
@@ -99,7 +94,13 @@
                 <description>Default Slider</description>
                 <texturefocus colordiffuse="$VAR[ColourHighlight]" border="8">common/box.png</texturefocus>
             </control>
-
+			<control type="image">
+				<posx>660</posx>
+				<top>92</top>
+				<height>640</height>
+				<width>1</width>
+				<texture colordiffuse="white">common/white.png</texture>
+			</control>
         </control>
 
     </controls>

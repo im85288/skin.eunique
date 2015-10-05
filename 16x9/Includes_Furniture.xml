@@ -338,14 +338,26 @@
 			</control>
 			<control type="image">
 				<!--cdart image -->
-			<top>-10</top>
-                                <left>54</left>
+				<top>-10</top>
+				<left>54</left>
 				<width>120</width>
 				<height>120</height>
 				<texture diffuse="cdart/cdart-mask.png">$VAR[PosterImage]</texture>
 				<aspectratio align="center" aligny="center">stretch</aspectratio>
 				<fadetime>50</fadetime>
-				<visible>IsEmpty(ListItem.Art(discart))</visible>
+				<visible>IsEmpty(ListItem.Art(discart)) + Container.Content(movies)</visible>
+				<visible>Control.IsVisible(516)</visible>
+			</control>
+			<control type="image">
+				<!--cdart image -->
+				<top>-10</top>
+				<left>54</left>
+				<width>120</width>
+				<height>120</height>
+				<texture diffuse="cdart/cdart-mask.png">$VAR[PosterImage]</texture>
+				<aspectratio align="center" aligny="center">stretch</aspectratio>
+				<fadetime>50</fadetime>
+				<visible>IsEmpty(ListItem.Art(discart)) + !Container.Content(movies)</visible>
 				<visible>Control.IsVisible(516)</visible>
 			</control>
 		</control>

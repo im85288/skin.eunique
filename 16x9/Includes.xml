@@ -423,7 +423,7 @@
 				<visible>Window.IsVisible(DialogPVRInfo.xml)</visible>
 				<include>Dimensions_Fullscreen</include>
 				<aspectratio align="center">scale</aspectratio>
-				<texture colordiffuse="$INFO[Window(home).Property(PVRInfo.ImageColor)]" background="true">$VAR[PVRFanart]</texture>
+				<texture colordiffuse="$INFO[Window(home).Property(PVRInfo.ImageColor)]" background="true">$INFO[Window(home).Property(PVRInfo.ImageFilter)]</texture>
 			</control>
             <control id="8328" type="image">
                 <include>Dimensions_Fullscreen</include>

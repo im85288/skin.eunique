@@ -51,11 +51,13 @@
                             <colordiffuse>$VAR[EmbyMenuColourHighlight]</colordiffuse>
                         </control>
                         <control type="label">
-                            <left>30</left>
-                            <right>30</right>
-                            <info>ListItem.Label</info>
-                            <font>Small</font>
-                            <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+							<height>103</height>
+							<font>Medium</font>
+							<textoffsetx>10</textoffsetx>
+							<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label]</label>
                         </control>
                     </itemlayout>
                     <focusedlayout width="500" height="103">
@@ -66,11 +68,13 @@
                             <animation effect="fade" time="50" start="100" end="50" condition="!Control.HasFocus(211)">Conditional</animation>
                         </control>
                         <control type="label">
-                            <left>30</left>
-                            <right>30</right>
-                            <info>ListItem.Label</info>
-                            <font>Small</font>
-                            <textcolor>$VAR[ColourSelected]</textcolor>
+							<height>103</height>
+							<font>Medium</font>
+							<textoffsetx>10</textoffsetx>
+							<textcolor>$VAR[ColourSelected]</textcolor>
+							<label>$INFO[ListItem.label]</label>
+							<align>left</align>
+							<aligny>center</aligny>
                         </control>
                     </focusedlayout>
                 </control>
@@ -145,6 +149,13 @@
                 </control>
 
             </control>
+		<control type="image">
+			<posx>500</posx>
+			<top>72</top>
+			<bottom>34</bottom>
+			<width>1</width>
+			<texture colordiffuse="white">common/white.png</texture>
+		</control>
         </control>
         <!-- 404, for setting custom property -->
         <control type="button" id="404">

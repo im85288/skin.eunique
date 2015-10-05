@@ -18,59 +18,59 @@
             
             <control type="image">
                 <posx>705</posx>
-                <top>120</top>
+                <top>92</top>
                 <height>483</height>
                 <width>1</width>
                 <texture colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
             </control>
 
             <control type="list" id="10">
-                <posx>8</posx>
+                <posx>0</posx>
                 <posy>120</posy>
-                <width>696</width>
+                <width>700</width>
                 <height>483</height>
                 <onup>19</onup>
                 <onleft>9000</onleft>
                 <onright>9000</onright>
                 <ondown>12</ondown>
-                <itemlayout height="69" width="1064">
+                <itemlayout height="64" width="700">
 
                     <control type="label">
-                        <left>30</left>
-                        <right>30</right>
+                        <left>10</left>
+                        <right>10</right>
                         <font>SmallBold</font>
                         <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
-                        <height>66</height>
+                        <height>64</height>
                         <aligny>center</aligny>
                         <info>ListItem.Label</info>
                     </control>
 
                     <control type="label">
-                        <left>30</left>
-                        <right>30</right>
+                        <left>10</left>
+                        <right>10</right>
                         <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
                         <align>right</align>
-                        <height>66</height>
+                        <height>64</height>
                         <aligny>center</aligny>
                         <info>ListItem.Label2</info>
                     </control>
 
                 </itemlayout>
 
-                <focusedlayout height="69" width="1064">
+                <focusedlayout height="64" width="700">
 
                     <control type="image">
                         <left>0</left>
                         <right>0</right>
-                        <height>66</height>
+                        <height>64</height>
                         <texture border="5" colordiffuse="$VAR[ColourHighlight]">common/white.png</texture>
                         <animation effect="fade" start="100" end="50" condition="!Control.HasFocus(10)">Conditional</animation>
                     </control>
 
                     <control type="label">
-                        <left>30</left>
-                        <right>30</right>
-                        <height>66</height>
+                        <left>10</left>
+                        <right>10</right>
+                        <height>64</height>
                         <font>SmallBold</font>
                         <aligny>center</aligny>
                         <textcolor>$VAR[ColourSelected]</textcolor>
@@ -78,10 +78,10 @@
                     </control>
 
                     <control type="label">
-                        <left>30</left>
-                        <right>30</right>
+                        <left>10</left>
+                        <right>10</right>
+                        <height>64</height>
                         <align>right</align>
-                        <height>66</height>
                         <aligny>center</aligny>
                         <textcolor>$VAR[ColourSelected]</textcolor>
                         <info>ListItem.Label2</info>
@@ -92,9 +92,10 @@
             </control>
 
             <control type="grouplist" id="9000">
-                <posx>738</posx>
-                <posy>120</posy>
-                <itemgap>3</itemgap>
+                <posx>700</posx>
+                <posy>92</posy>
+                <width>380</width>
+                <itemgap>0</itemgap>
                 <orientation>vertical</orientation>
                 <onleft>10</onleft>
                 <onright>10</onright>
