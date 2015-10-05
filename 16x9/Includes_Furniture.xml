@@ -1201,7 +1201,7 @@
 							<right>0</right>
 							<bottom>0</bottom>
 							<aspectratio align="center" aligny="top">scale</aspectratio>
-							<texture background="true">$INFO[ListItem.Icon]</texture>
+							<texture background="true">$VAR[PosterImage]</texture>
 							<fadetime>200</fadetime>
 						</control>
 						<control type="image">
@@ -1234,12 +1234,12 @@
 							<right>0</right>
 							<bottom>0</bottom>
 							<aspectratio align="center" aligny="top">scale</aspectratio>
-							<texture background="true" fallback="DefaultActor.png">$INFO[ListItem.Icon]</texture>
+							<texture background="true" fallback="DefaultActor.png">$VAR[PosterImage]</texture>
 							<fadetime>00</fadetime>
 						</control>
 					</control>
 				</focusedlayout>
-				<content target="video">$VAR[DefWidgetCast]</content>
+				<content target="video">$VAR[DefWidgetFurniture]</content>
 			</control>
 			<control type="image">
 				<left>970</left>

@@ -65,6 +65,59 @@
 	<value condition="StringCompare(ListItem.Icon,DefaultVideoPlugins.png)"></value>
 	<value></value>
 </variable>
+	<variable name="DefWidgetFurniture">
+		<value condition="Stringcompare(Skin.String(widgetfurniture),ShowCast)">$VAR[DefWidgetCast]</value>
+		<value condition="Stringcompare(Skin.String(widgetfurniture),SimilarVideos)">$VAR[SimilarVideos]</value>
+		<value condition="Stringcompare(Skin.String(widgetfurniture),RandomEpisodes)">plugin://service.library.data.provider?type=randomepisodes&amp;reload=$INFO[Window.Property(randomepisodes)]</value>
+		<value condition="Stringcompare(Skin.String(widgetfurniture),RecentEpisodes)">plugin://service.library.data.provider?type=recentepisodes&amp;reload=$INFO[Window.Property(recentepisodes)]</value>
+		<value condition="Stringcompare(Skin.String(widgetfurniture),RecommendedEpisodes)">plugin://service.library.data.provider?type=recommendedepisodes&amp;reload=$INFO[Window.Property(recommendedepisodes)]</value>
+		<value condition="Stringcompare(Skin.String(widgetfurniture),RandomMovies)">plugin://service.library.data.provider?type=randommovies&amp;reload=$INFO[Window.Property(randommovies)]</value>
+		<value condition="Stringcompare(Skin.String(widgetfurniture),RecentMovies)">plugin://service.library.data.provider?type=recentmovies&amp;reload=$INFO[Window.Property(recentmovies)]</value>
+		<value condition="Stringcompare(Skin.String(widgetfurniture),RecommendedMovies)">plugin://script.skin.helper.service/?action=recommendedmovies&amp;limit=27&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
+		<value condition="Stringcompare(Skin.String(widgetfurniture),SimilarMovies)">plugin://script.skin.helper.service/?action=similarmovies&amp;limit=2videoinfo&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
+		<value condition="Stringcompare(Skin.String(widgetfurniture),TrendingMovies)">plugin://script.extendedinfo?info=trendingmovies</value>
+		<value condition="Stringcompare(Skin.String(widgetfurniture),InCinemas)">plugin://script.extendedinfo?info=incinemas</value>
+		<value condition="Stringcompare(Skin.String(widgetfurniture),Upcoming)">plugin://script.extendedinfo?info=upcoming</value>
+		<value condition="Stringcompare(Skin.String(widgetfurniture),PopularMovies)">plugin://script.extendedinfo?info=popularmovies</value>
+		<value condition="Stringcompare(Skin.String(widgetfurniture),TopRatedMovies)">plugin://script.extendedinfo?info=topratedmovies</value>
+		<value condition="Stringcompare(Skin.String(widgetfurniture),PopularTvShows)">plugin://script.extendedinfo?info=populartvshows</value>
+		<value condition="Stringcompare(Skin.String(widgetfurniture),TopRatedTvShows)">plugin://script.extendedinfo?info=topratedtvshows</value>
+		<value condition="Stringcompare(Skin.String(widgetfurniture),OnAirTvShows)">plugin://script.extendedinfo?info=onairtvshows</value>
+		<value condition="Stringcompare(Skin.String(widgetfurniture),AiringTodayTvShows)">plugin://script.extendedinfo?info=airingtodaytvshows</value>
+		<value condition="Stringcompare(Skin.String(widgetfurniture),TrendingShows)">plugin://script.extendedinfo?info=trendingshows</value>
+		<value condition="Stringcompare(Skin.String(widgetfurniture),AiringShows)">plugin://script.extendedinfo?info=airingshows</value>
+		<value condition="Stringcompare(Skin.String(widgetfurniture),PremiereShows)">plugin://script.extendedinfo?info=premiereshows</value>
+		<value condition="Stringcompare(Skin.String(widgetfurniture),RecommendedShows)">plugin://script.skin.helper.service/?action=recommendedmedia&amp;limit=2videoinfo&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
+		<value condition="Stringcompare(Skin.String(widgetfurniture),Custom1)">$INFO[Skin.String(CustomWidget1)]</value>
+		<value condition="Stringcompare(Skin.String(widgetfurniture),Custom2)">$INFO[Skin.String(CustomWidget2)]</value>
+		<value condition="Stringcompare(Skin.String(widgetfurniture),Custom3)">$INFO[Skin.String(Customwidget3)]</value>
+		<value condition="Stringcompare(Skin.String(widgetfurniture),Custom4)">$INFO[Skin.String(CustomWidget4)]</value>
+		<value condition="Stringcompare(Skin.String(widgetfurniture),Custom5)">$INFO[Skin.String(CustomWidget5)]</value>
+		<value condition="Stringcompare(Skin.String(widgetfurniture),Custom6)">$INFO[Skin.String(CustomWidget6)]</value>
+		<value condition="Stringcompare(Skin.String(widgetfurniture),Custom7)">$INFO[Skin.String(CustomWidget7)]</value>
+		<value condition="Stringcompare(Skin.String(widgetfurniture),Custom8)">$INFO[Skin.String(CustomWidget8)]</value>
+		<value condition="Stringcompare(Skin.String(widgetfurniture),Custom9)">$INFO[Skin.String(CustomWidget9)]</value>
+		<value condition="Stringcompare(Skin.String(widgetfurniture),Custom10)">$INFO[Skin.String(CustomWidget10)]</value>
+		<value condition="Stringcompare(Skin.String(widgetfurniture),embynode0) + !IsEmpty(Window(Home).Property(emby.nodes.0.content))">$INFO[Window(Home).Property(emby.nodes.0.content)]</value>
+		<value condition="Stringcompare(Skin.String(widgetfurniture),embynode0recent) + !IsEmpty(Window(Home).Property(emby.nodes.0.recent.content))">$INFO[Window(Home).Property(emby.nodes.0.recent.content)]</value>
+		<value condition="Stringcompare(Skin.String(widgetfurniture),embynode0recentepisodes) + !IsEmpty(Window(Home).Property(emby.nodes.0.recentepisodes.content))">$INFO[Window(Home).Property(emby.nodes.0.recentepisodes.content)]</value>
+		<value condition="Stringcompare(Skin.String(widgetfurniture),embynode0inprogress) + !IsEmpty(Window(Home).Property(emby.nodes.0.inprogress.content))">$INFO[Window(Home).Property(emby.nodes.0.inprogress.content)]</value>
+		<value condition="Stringcompare(Skin.String(widgetfurniture),embynode0inprogressepisodes) + !IsEmpty(Window(Home).Property(emby.nodes.0.inprogressepisodes.content))">$INFO[Window(Home).Property(emby.nodes.0.inprogressepisodes.content)]</value>
+		<value condition="Stringcompare(Skin.String(widgetfurniture),embynode0nextepisodes) + !IsEmpty(Window(Home).Property(emby.nodes.0.nextepisodes.content))">$INFO[Window(Home).Property(emby.nodes.0.nextepisodes.content)]</value>
+		<value condition="Stringcompare(Skin.String(widgetfurniture),embynode1) + !IsEmpty(Window(Home).Property(emby.nodes.1.content))">$INFO[Window(Home).Property(emby.nodes.1.content)]</value>
+		<value condition="Stringcompare(Skin.String(widgetfurniture),embynode1recent) + !IsEmpty(Window(Home).Property(emby.nodes.1.recent.content))">$INFO[Window(Home).Property(emby.nodes.1.recent.content)]</value>
+		<value condition="Stringcompare(Skin.String(widgetfurniture),embynode1recentepisodes) + !IsEmpty(Window(Home).Property(emby.nodes.1.recentepisodes.content))">$INFO[Window(Home).Property(emby.nodes.1.recentepisodes.content)]</value>
+		<value condition="Stringcompare(Skin.String(widgetfurniture),embynode1inprogress) + !IsEmpty(Window(Home).Property(emby.nodes.1.inprogress.content))">$INFO[Window(Home).Property(emby.nodes.1.inprogress.content)]</value>
+		<value condition="Stringcompare(Skin.String(widgetfurniture),embynode1inprogressepisodes) + !IsEmpty(Window(Home).Property(emby.nodes.1.inprogressepisodes.content))">$INFO[Window(Home).Property(emby.nodes.1.inprogressepisodes.content)]</value>
+		<value condition="Stringcompare(Skin.String(widgetfurniture),embynode1nextepisodes) + !IsEmpty(Window(Home).Property(emby.nodes.1.nextepisodes.content))">$INFO[Window(Home).Property(emby.nodes.1.nextepisodes.content)]</value>
+		<value condition="Stringcompare(Skin.String(widgetfurniture),embynode2) + !IsEmpty(Window(Home).Property(emby.nodes.2.content))">$INFO[Window(Home).Property(emby.nodes.2.content)]</value>
+		<value condition="Stringcompare(Skin.String(widgetfurniture),embynode2recent) + !IsEmpty(Window(Home).Property(emby.nodes.2.recent.content))">$INFO[Window(Home).Property(emby.nodes.2.recent.content)]</value>
+		<value condition="Stringcompare(Skin.String(widgetfurniture),embynode2recentepisodes) + !IsEmpty(Window(Home).Property(emby.nodes.2.recentepisodes.content))">$INFO[Window(Home).Property(emby.nodes.2.recentepisodes.content)]</value>
+		<value condition="Stringcompare(Skin.String(widgetfurniture),embynode2inprogress) + !IsEmpty(Window(Home).Property(emby.nodes.2.inprogress.content))">$INFO[Window(Home).Property(emby.nodes.2.inprogress.content)]</value>
+		<value condition="Stringcompare(Skin.String(widgetfurniture),embynode2inprogressepisodes) + !IsEmpty(Window(Home).Property(emby.nodes.2.inprogressepisodes.content))">$INFO[Window(Home).Property(emby.nodes.2.inprogressepisodes.content)]</value>
+		<value condition="Stringcompare(Skin.String(widgetfurniture),embynode2nextepisodes) + !IsEmpty(Window(Home).Property(emby.nodes.2.nextepisodes.content))">$INFO[Window(Home).Property(emby.nodes.2.nextepisodes.content)]</value>
+		<value>$VAR[DefWidgetCast]</value>
+	</variable>
 	<variable name="DefWidgetCast">
 		<value condition="Container.Content(sets) | substring(ListItem.Path,videodb://movies/sets,left)">plugin://script.skin.helper.service/?action=getcast&amp;movieset=$INFO[ListItem.DBID]</value>
 		<value condition="Container.Content(movies)">plugin://script.skin.helper.service/?action=getcast&amp;movie=$INFO[ListItem.DBID]</value>
@@ -844,7 +897,7 @@
 		<value condition="Stringcompare(Skin.String(widgetvideoinfo),Custom4)">$INFO[Skin.String(CustomWidget4)]</value>
 		<value condition="Stringcompare(Skin.String(widgetvideoinfo),Custom5)">$INFO[Skin.String(CustomWidget5)]</value>
 		<value condition="Stringcompare(Skin.String(widgetvideoinfo),Custom6)">$INFO[Skin.String(Customwidget6)]</value>
-		<value condition="Stringcompare(Skin.String(widgetvideoinfo),Customvideoinfo)">$INFO[Skin.String(CustomWidgetvideoinfo)]</value>
+		<value condition="Stringcompare(Skin.String(widgetvideoinfo),Custom7)">$INFO[Skin.String(CustomWidgetvideoinfo)]</value>
 		<value condition="Stringcompare(Skin.String(widgetvideoinfo),Custom8)">$INFO[Skin.String(CustomWidget8)]</value>
 		<value condition="Stringcompare(Skin.String(widgetvideoinfo),Custom9)">$INFO[Skin.String(CustomWidget9)]</value>
 		<value condition="Stringcompare(Skin.String(widgetvideoinfo),Custom10)">$INFO[Skin.String(CustomWidget10)]</value>
@@ -897,7 +950,7 @@
 		<value condition="Stringcompare(Skin.String(widgetvideoinfocast),Custom4)">$INFO[Skin.String(CustomWidget4)]</value>
 		<value condition="Stringcompare(Skin.String(widgetvideoinfocast),Custom5)">$INFO[Skin.String(CustomWidget5)]</value>
 		<value condition="Stringcompare(Skin.String(widgetvideoinfocast),Custom6)">$INFO[Skin.String(Customwidget6)]</value>
-		<value condition="Stringcompare(Skin.String(widgetvideoinfocast),Customvideoinfo)">$INFO[Skin.String(Customwidgetvideoinfocast)]</value>
+		<value condition="Stringcompare(Skin.String(widgetvideoinfocast),Custom7)">$INFO[Skin.String(CustomWidget7)]</value>
 		<value condition="Stringcompare(Skin.String(widgetvideoinfocast),Custom8)">$INFO[Skin.String(CustomWidget8)]</value>
 		<value condition="Stringcompare(Skin.String(widgetvideoinfocast),Custom9)">$INFO[Skin.String(CustomWidget9)]</value>
 		<value condition="Stringcompare(Skin.String(widgetvideoinfocast),Custom10)">$INFO[Skin.String(CustomWidget10)]</value>
@@ -1790,6 +1843,13 @@
 			<align>left</align>
 			<label>584</label>
 			<altlabel>585</altlabel>
+		</control>
+		<control type="button" id="334">
+			<description>widget</description>
+			<include>DefContextButtonBlade</include>
+			<align>left</align>
+			<label>$LOCALIZE[31791]: $VAR[FurnitureWidgetLabel]</label>
+			<onclick>ActivateWindow(1113)</onclick>
 		</control>
 		<control type="radiobutton" id="9001" description="Plot Overlay">
 			<include>DefContextButtonBlade</include>
