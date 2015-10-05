@@ -1848,8 +1848,16 @@
 			<description>widget</description>
 			<include>DefContextButtonBlade</include>
 			<align>left</align>
-			<label>$LOCALIZE[31791]: $VAR[FurnitureWidgetLabel]</label>
+			<label>$LOCALIZE[31951]: $VAR[FurnitureWidgetLabel]</label>
 			<onclick>ActivateWindow(1113)</onclick>
+			<visible>!Control.IsVisible(52) + !Control.IsVisible(54) + !Control.IsVisible(515) + !Control.IsVisible(53) + !Control.IsVisible(500)</visible>
+		</control>
+		<control type="button" id="335">
+			<description>widget</description>
+			<include>DefContextButtonBlade</include>
+			<align>left</align>
+			<label>$LOCALIZE[31946]: $INFO[Skin.String(border.image)]</label>
+			<onclick>ActivateWindow(1114)</onclick>
 		</control>
 		<control type="radiobutton" id="9001" description="Plot Overlay">
 			<include>DefContextButtonBlade</include>
