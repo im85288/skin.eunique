@@ -166,26 +166,12 @@
                             <top>4</top>
                             <right>0</right>
                             <bottom>4</bottom>
-                            <aspectratio scalediffuse="false">stretch</aspectratio>
-                            <texture colordiffuse="$VAR[ColourHighlight]" background="true">common/white.png</texture>
-                            <animation type="Focus" reversible="false">
-                                <effect type="zoom" start="108,112" end="105,107" time="200" center="auto" tween="quadratic" easing="out"/>
-                                <effect type="rotate" end="1.5" time="200" center="auto" tween="quadratic" easing="out"/>
-                            </animation>
-                            <visible>!Skin.HasSetting(furniture.gradient)</visible>
-                        </control>
-                        <control type="image">
-                            <left>0</left>
-                            <top>4</top>
-                            <right>0</right>
-                            <bottom>4</bottom>
 							<aspectratio scalediffuse="false">scale</aspectratio>
-							<texture background="true" colordiffuse="$VAR[ColourHighlight]">special://skin/extras/borders/gradient1.png</texture>
+							<texture background="true" colordiffuse="$VAR[ColourHighlight]">$VAR[FocusedBorderImage]</texture>
                             <animation type="Focus" reversible="false">
                                 <effect type="zoom" start="108,112" end="105,107" time="200" center="auto" tween="quadratic" easing="out"/>
                                 <effect type="rotate" end="1.5" time="200" center="auto" tween="quadratic" easing="out"/>
                             </animation>
-                            <visible>Skin.HasSetting(furniture.gradient)</visible>
                         </control>
                         <control type="image">
                             <left>10</left>

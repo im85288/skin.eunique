@@ -1208,7 +1208,7 @@
 		<font>Button</font>
 		<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 		<disabledcolor>white3</disabledcolor>
-		<texturefocus colordiffuse="$VAR[ColourHighlight]" border="5">common/box.png</texturefocus>
+		<texturefocus colordiffuse="$VAR[ColourHighlight]">common/box.png</texturefocus>
 	</include>
 	<include name="DefDialogInfoPanel">
 		<include>Animation.FadeIn.Slide</include>
@@ -1311,15 +1311,15 @@
 		<width>600</width>
 		<height>66</height>
 		<align>left</align>
-		<texturefocus colordiffuse="$VAR[ColourHighlight]" border="5">common/box.png</texturefocus>
+		<texturefocus colordiffuse="$VAR[ColourHighlight]">common/box.png</texturefocus>
 		<radioposx>540</radioposx>
 		<textcolor>Black70</textcolor>
 	</include>
 	<include name="DefKeyboardKeys">
 		<width>85</width>
 		<height>75</height>
-		<texturenofocus border="5" colordiffuse="Black12">common/box.png</texturenofocus>
-		<texturefocus border="5" colordiffuse="$VAR[ColourHighlight]">common/box.png</texturefocus>
+		<texturenofocus colordiffuse="Black12">common/box.png</texturenofocus>
+		<texturefocus colordiffuse="$VAR[ColourHighlight]">common/box.png</texturefocus>
 		<textoffsetx>0</textoffsetx>
 		<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 		<focusedcolor>$VAR[ColourSelected]</focusedcolor>
@@ -1330,7 +1330,7 @@
 		<width>90</width>
 		<height>90</height>
 		<texturenofocus colordiffuse="white3">common/box.png</texturenofocus>
-		<texturefocus border="5" colordiffuse="$VAR[ColourHighlight]">common/box.png</texturefocus>
+		<texturefocus colordiffuse="$VAR[ColourHighlight]">common/box.png</texturefocus>
 		<textoffsetx>0</textoffsetx>
 		<textcolor>white</textcolor>
 		<focusedcolor>$VAR[ColourSelected]</focusedcolor>
@@ -1360,7 +1360,7 @@
 		<textureradionofocus colordiffuse="Black30">buttons/radio-off.png</textureradionofocus>
 		<focusedcolor>$VAR[ColourSelected]</focusedcolor>
 		<alttexturefocus colordiffuse="white" border="16">common/white.png</alttexturefocus>
-		<texturenofocus colordiffuse="$VAR[EmbyMenuColourHighlight]" border="5">common/box.png</texturenofocus>
+		<texturenofocus colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texturenofocus>
 		<texturefocus colordiffuse="$VAR[ColourHighlight]" border="16">common/white.png</texturefocus>
 	</include>
 	<include name="DefContextButtonBlade">
@@ -1374,7 +1374,7 @@
 		<textureradionofocus colordiffuse="$VAR[ColourSelected]">buttons/radio-off.png</textureradionofocus>
 		<focusedcolor>$VAR[ColourSelected]</focusedcolor>
 		<alttexturefocus colordiffuse="$VAR[ColourHighlight]" border="16">common/white.png</alttexturefocus>
-		<texturenofocus colordiffuse="$VAR[EmbyMenuColourHighlight]" border="5">common/box.png</texturenofocus>
+		<texturenofocus colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texturenofocus>
 		<texturefocus colordiffuse="$VAR[ColourHighlight]" border="16">common/white.png</texturefocus>
 	</include>
 	<include name="DefSettingsButton2">
@@ -1391,7 +1391,7 @@
 		<textureradiofocus colordiffuse="$VAR[ColourSelected]">buttons/radio-on.png</textureradiofocus>
 		<textureradionofocus colordiffuse="$VAR[EmbyMenuTextColourHighlight]">buttons/radio-off.png</textureradionofocus>
 		<texturefocus colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</texturefocus>
-		<texturenofocus colordiffuse="$VAR[EmbyMenuColourHighlight]" border="5">common/box.png</texturenofocus>
+		<texturenofocus colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texturenofocus>
 		<alttexturefocus colordiffuse="$VAR[EmbyMenuTextColourHighlight]">common/white.png</alttexturefocus>
 		<alttexturenofocus colordiffuse="$VAR[ColourHighlight]">common/white.png</alttexturenofocus>
 	</include>
@@ -1501,7 +1501,7 @@
 			<top>-12</top>
 			<width>455</width>
 			<height>1104</height>
-			<texture colordiffuse="black" border="5">common/box.png</texture>
+			<texture colordiffuse="black">common/box.png</texture>
 		</control>
 		<left>-10</left>
 		<control type="group">
@@ -1510,7 +1510,7 @@
 			<control type="image">
 				<width>50</width>
 				<height>50</height>
-				<texture border="5" colordiffuse="$VAR[EmbyLeftColourHighlight]">common/box.png</texture>
+				<texture colordiffuse="$VAR[EmbyLeftColourHighlight]">common/box.png</texture>
 			</control>
 			<control type="label">
 				<description>Loading</description>
@@ -1530,7 +1530,7 @@
 			<control type="image">
 				<width>50</width>
 				<height>50</height>
-				<texture border="5" colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
+				<texture colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
 			</control>
 			<control type="label">
 				<description>Loading</description>
@@ -1550,7 +1550,7 @@
 			<control type="image">
 				<width>50</width>
 				<height>50</height>
-				<texture border="5" colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</texture>
+				<texture colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</texture>
 			</control>
 			<control type="label">
 				<description>Loading</description>
@@ -1570,7 +1570,7 @@
 			<control type="image">
 				<width>50</width>
 				<height>50</height>
-				<texture border="5" colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
+				<texture colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
 			</control>
 			<control type="label">
 				<description>Loading</description>
@@ -1590,7 +1590,7 @@
 			<control type="image">
 				<width>50</width>
 				<height>50</height>
-				<texture border="5" colordiffuse="$VAR[EmbyLeftColourHighlight]">common/box.png</texture>
+				<texture colordiffuse="$VAR[EmbyLeftColourHighlight]">common/box.png</texture>
 			</control>
 			<control type="label">
 				<top>-3</top>
@@ -1611,7 +1611,7 @@
 			<control type="image">
 				<width>50</width>
 				<height>50</height>
-				<texture border="5" colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
+				<texture colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
 			</control>
 			<control type="label">
 				<description>Loading</description>
@@ -1631,7 +1631,7 @@
 			<control type="image">
 				<width>50</width>
 				<height>50</height>
-				<texture border="5" colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</texture>
+				<texture colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</texture>
 			</control>
 			<control type="label">
 				<description>Loading</description>
@@ -1653,7 +1653,7 @@
 			<top>-12</top>
 			<width>455</width>
 			<height>1104</height>
-			<texture colordiffuse="black" border="5">common/box.png</texture>
+			<texture colordiffuse="black">common/box.png</texture>
 		</control>
 		<left>1920</left>
 		<control type="group">
@@ -1662,7 +1662,7 @@
 			<control type="image">
 				<width>50</width>
 				<height>50</height>
-				<texture border="5" colordiffuse="$VAR[EmbyLeftColourHighlight]">common/box.png</texture>
+				<texture colordiffuse="$VAR[EmbyLeftColourHighlight]">common/box.png</texture>
 			</control>
 			<control type="label">
 				<description>Loading</description>
@@ -1682,7 +1682,7 @@
 			<control type="image">
 				<width>50</width>
 				<height>50</height>
-				<texture border="5" colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
+				<texture colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
 			</control>
 			<control type="label">
 				<description>Loading</description>
@@ -1702,7 +1702,7 @@
 			<control type="image">
 				<width>50</width>
 				<height>50</height>
-				<texture border="5" colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</texture>
+				<texture colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</texture>
 			</control>
 			<control type="label">
 				<description>Loading</description>
@@ -1722,7 +1722,7 @@
 			<control type="image">
 				<width>50</width>
 				<height>50</height>
-				<texture border="5" colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
+				<texture colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
 			</control>
 			<control type="label">
 				<description>Loading</description>
@@ -1742,7 +1742,7 @@
 			<control type="image">
 				<width>50</width>
 				<height>50</height>
-				<texture border="5" colordiffuse="$VAR[EmbyLeftColourHighlight]">common/box.png</texture>
+				<texture colordiffuse="$VAR[EmbyLeftColourHighlight]">common/box.png</texture>
 			</control>
 			<control type="label">
 				<top>-3</top>
@@ -1763,7 +1763,7 @@
 			<control type="image">
 				<width>50</width>
 				<height>50</height>
-				<texture border="5" colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
+				<texture colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
 			</control>
 			<control type="label">
 				<description>Loading</description>
@@ -1783,7 +1783,7 @@
 			<control type="image">
 				<width>50</width>
 				<height>50</height>
-				<texture border="5" colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</texture>
+				<texture colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</texture>
 			</control>
 			<control type="label">
 				<description>Loading</description>
@@ -2183,10 +2183,10 @@
 		<width>313</width>
 		<height>68</height>
 		<onfocus>ClearProperty(content)</onfocus>
-		<texturenofocus colordiffuse="Dark4" border="5">common/box.png</texturenofocus>
-		<texturefocus colordiffuse="$VAR[ColourHighlight]" border="5">common/box.png</texturefocus>
-		<alttexturenofocus colordiffuse="Dark4" border="5">common/box.png</alttexturenofocus>
-		<alttexturefocus colordiffuse="$VAR[ColourHighlight]" border="5">common/box.png</alttexturefocus>
+		<texturenofocus colordiffuse="Dark4">common/box.png</texturenofocus>
+		<texturefocus colordiffuse="$VAR[ColourHighlight]">common/box.png</texturefocus>
+		<alttexturenofocus colordiffuse="Dark4">common/box.png</alttexturenofocus>
+		<alttexturefocus colordiffuse="$VAR[ColourHighlight]">common/box.png</alttexturefocus>
 	</include>
 	<include name="YoutubeItemLayout">
 		<control type="group">

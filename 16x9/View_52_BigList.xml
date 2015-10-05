@@ -534,15 +534,8 @@
 		<control type="image">
 			<width>120</width>
 			<height>120</height>
-			<texture colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
-			<visible>!Skin.HasSetting(furniture.gradient)</visible>
-		</control>
-		<control type="image">
-			<width>120</width>
-			<height>120</height>
 			<aspectratio scalediffuse="false">scale</aspectratio>
-			<texture background="true" colordiffuse="$VAR[ColourHighlight]">special://skin/extras/borders/gradient1.png</texture>
-			<visible>Skin.HasSetting(furniture.gradient)</visible>
+			<texture background="true" colordiffuse="$VAR[ColourHighlight]">$VAR[FocusedBorderImage]</texture>
 		</control>
 		<control type="label" id="13370">
 			<left>10</left>

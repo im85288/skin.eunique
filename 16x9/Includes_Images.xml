@@ -1,5 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+	<variable name="FocusedBorderImage">
+		<value condition="StringCompare(Skin.String(border.image),1)">special://skin/extras/borders/gradient1.png</value>
+		<value condition="StringCompare(Skin.String(border.image),2)">special://skin/extras/borders/gradient2.png</value>
+		<value condition="StringCompare(Skin.String(border.image),3)">special://skin/extras/borders/gradient3.png</value>
+		<value condition="StringCompare(Skin.String(border.image),4)">special://skin/extras/borders/gradient4.png</value>
+		<value condition="StringCompare(Skin.String(border.image),5)">special://skin/extras/borders/gradient5.png</value>
+		<value condition="StringCompare(Skin.String(border.image),6)">special://skin/extras/borders/gradient6.png</value>
+		<value condition="StringCompare(Skin.String(border.image),7)">special://skin/extras/borders/gradient7.png</value>
+		<value condition="StringCompare(Skin.String(border.image),8)">special://skin/extras/borders/gradient8.png</value>
+		<value condition="StringCompare(Skin.String(border.image),9)">special://skin/extras/borders/box.png</value>
+		<value>special://skin/extras/borders/box.png</value>
+	</variable>
+	<variable name="FocusedBorderImagePreview">
+		<value condition="StringCompare(Skin.String(border.image.preview),1)">special://skin/extras/borders/gradient1.png</value>
+		<value condition="StringCompare(Skin.String(border.image.preview),2)">special://skin/extras/borders/gradient2.png</value>
+		<value condition="StringCompare(Skin.String(border.image.preview),3)">special://skin/extras/borders/gradient3.png</value>
+		<value condition="StringCompare(Skin.String(border.image.preview),4)">special://skin/extras/borders/gradient4.png</value>
+		<value condition="StringCompare(Skin.String(border.image.preview),5)">special://skin/extras/borders/gradient5.png</value>
+		<value condition="StringCompare(Skin.String(border.image.preview),6)">special://skin/extras/borders/gradient6.png</value>
+		<value condition="StringCompare(Skin.String(border.image.preview),7)">special://skin/extras/borders/gradient7.png</value>
+		<value condition="StringCompare(Skin.String(border.image.preview),8)">special://skin/extras/borders/gradient8.png</value>
+		<value condition="StringCompare(Skin.String(border.image.preview),9)">special://skin/extras/borders/box.png</value>
+		<value>special://skin/extras/borders/box.png</value>
+	</variable>
 	<variable name="MovieGenres">
 		<value condition="System.HasAddon(script.image.resource.select) + !IsEmpty(Skin.String(moviegenreicons.path)) + SubString(Skin.String(moviegenreicons.path),coloured)">resource://resource.images.moviegenreicons.coloured/$INFO[Listitem.Label,,.jpg]</value>
 		<value condition="System.HasAddon(script.image.resource.select) + !IsEmpty(Skin.String(moviegenreicons.path)) + SubString(Skin.String(moviegenreicons.path),transparent)">resource://resource.images.moviegenreicons.transparent/$INFO[Listitem.Label,,.png]</value>
