@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
     <include name="NextAiredGroup">
-        <width>354</width>
+        <width>380</width>
     </include>
     <include name="NextAiredLabel">
         <left>0</left>
@@ -21,16 +21,15 @@
                 <label>$INFO[Window(home).Property(NextAired.$PARAM[id].Weekday)]$INFO[Window(home).Property(NextAired.$PARAM[id].Date), - ,]</label>
             </control>
             <control type="list" id="$PARAM[id]">
-                <top>40</top>
-                <height>640</height>
-                <width>442</width>
+                <height>896</height>
+                <width>475</width>
                 <onleft>$PARAM[onleft]</onleft>
                 <onright>$PARAM[onright]</onright>
                 <orientation>vertical</orientation>
-                <itemlayout height="200" width="354">
+                <itemlayout height="224" width="380">
                     <include>NextAiredListItem</include>
                 </itemlayout>
-                <focusedlayout height="200" width="354">
+                <focusedlayout height="224" width="380">
                     <control type="group">
                         <visible>!Control.HasFocus($PARAM[id])</visible>
                         <include>NextAiredListItem</include>
