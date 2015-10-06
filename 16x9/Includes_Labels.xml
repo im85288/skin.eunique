@@ -672,13 +672,6 @@
 		<value condition="Control.IsVisible(50)">$INFO[ListItem.Title,, $LOCALIZE[206]]</value>
 		<value condition="!IsEmpty(ListItem.Tagline)">$INFO[ListItem.Tagline]</value>
 	</variable>
-	<variable name="LabelHomeWidgetStyle">
-		<value condition="!Skin.HasSetting(home.classicwidgets) + !Skin.HasSetting(home.vertical) + !Skin.HasSetting(home.netflix) + !Skin.HasSetting(home.emby)">$LOCALIZE[31248]</value>
-		<value condition="!Skin.HasSetting(home.classicwidgets) + Skin.HasSetting(home.vertical) + !Skin.HasSetting(home.netflix) + !Skin.HasSetting(home.emby)">$LOCALIZE[31250]</value>
-		<value condition="Skin.HasSetting(home.classicwidgets) + !Skin.HasSetting(home.netflix) + !Skin.HasSetting(home.emby)">$LOCALIZE[31249]</value>
-		<value condition="Skin.HasSetting(home.netflix)">$LOCALIZE[31751]</value>
-		<value condition="Skin.HasSetting(home.emby)">$LOCALIZE[31840]</value>
-	</variable>
 	<variable name="IndicatorColourHighlight">
 		<value condition="ListItem.IsResumable + Skin.HasSetting(ResumeColour)">$INFO[Skin.String(resume.colour.name)]</value>
 		<value condition="stringcompare(ListItem.Overlay,OverlayWatched.png) + Skin.HasSetting(WatchedColour)">$INFO[Skin.String(watched.colour.name)]</value>

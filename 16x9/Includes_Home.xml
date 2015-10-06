@@ -2857,7 +2857,7 @@
 							<property name="LowTemp">$INFO[Window(weather).Property(Day8.LowTemp)]$INFO[System.TemperatureUnits]</property>
 							<property name="Fanart">$INFO[Skin.String(weatherfanart)]$INFO[Window(Weather).Property(Day8.FanartCode)]$VAR[DefWeatherFanart]</property>
 							<onclick>noop</onclick>
-							<visible>!IsEmpty(Window(weather).Property(Day8.Title)) !IsEmpty(Window(weather).Property(Day9.Title))</visible>
+							<visible>!IsEmpty(Window(weather).Property(Day8.Title))</visible>
 						</item>
 						<item>
 							<label>$INFO[Window(weather).Property(Day9.Title)]</label>
