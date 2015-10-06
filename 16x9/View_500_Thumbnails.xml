@@ -58,21 +58,12 @@
                             <height>256</height>
                             <aspectratio scalediffuse="false" align="center" aligny="center">keep</aspectratio>
                             <texture background="true">$VAR[LandscapeImage]</texture>
-                            <visible>!Container.Content(albums) + !Container.Content(artists) + !Container.Content(songs) + !Skin.HasSetting(views.500.showfanart)</visible>
+                            <visible>!Skin.HasSetting(views.500.showfanart)</visible>
                             <animation type="Conditional" reversible="true" condition="stringcompare(ListItem.Overlay,OverlayWatched.png)">
                                 <effect type="fade" start="25" end="25" time="200" tween="quadratic" easing="out"/>
                                 <effect type="zoom" end="95" time="200" center="auto" tween="quadratic" easing="out"/>
                                 <effect type="rotate" end="-1" time="200" center="auto" tween="quadratic" easing="out"/>
                             </animation>
-                        </control>
-                        <control type="image">
-                            <left>10</left>
-                            <top>10</top>
-                            <right>10</right>
-                            <height>256</height>
-                            <aspectratio scalediffuse="false" align="center" aligny="center">keep</aspectratio>
-                            <texture background="true">$INFO[Listitem.thumb]</texture>
-                            <visible>SubString(Container.FolderPath,plugin://,left)</visible>
                         </control>
                         <control type="label" id="13370">
                             <left>15</left>
@@ -93,7 +84,7 @@
                             <height>256</height>
                             <aspectratio scalediffuse="false" align="center" aligny="center">keep</aspectratio>
                             <texture background="true">$VAR[FanartImage]</texture>
-                            <visible>!Container.Content(albums) + !Container.Content(artists) + !Container.Content(songs) + Skin.HasSetting(views.500.showfanart)</visible>
+                            <visible>Skin.HasSetting(views.500.showfanart)</visible>
                             <animation type="Conditional" reversible="true" condition="stringcompare(ListItem.Overlay,OverlayWatched.png)">
                                 <effect type="fade" start="25" end="25" time="200" tween="quadratic" easing="out"/>
                                 <effect type="zoom" end="95" time="200" center="auto" tween="quadratic" easing="out"/>
@@ -252,16 +243,7 @@
                                 <effect type="zoom" end="105" time="200" center="auto" tween="quadratic" easing="out"/>
                                 <effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
                             </animation>
-                            <visible>!Container.Content(albums) + !Container.Content(artists) + !Container.Content(songs) + !Skin.HasSetting(views.500.showfanart)</visible>
-                        </control>
-                        <control type="image">
-                            <left>10</left>
-                            <top>10</top>
-                            <right>10</right>
-                            <height>256</height>
-                            <aspectratio scalediffuse="false" align="center" aligny="center">keep</aspectratio>
-                            <texture background="true">$INFO[Listitem.thumb]</texture>
-                            <visible>SubString(Container.FolderPath,plugin://,left)</visible>
+                            <visible>!Skin.HasSetting(views.500.showfanart)</visible>
                         </control>
                         <control type="image">
                             <left>10</left>
@@ -274,7 +256,7 @@
                                 <effect type="zoom" end="105" time="200" center="auto" tween="quadratic" easing="out"/>
                                 <effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
                             </animation>
-                            <visible>!Container.Content(albums) + !Container.Content(artists) + !Container.Content(songs) + Skin.HasSetting(views.500.showfanart)</visible>
+                            <visible>Skin.HasSetting(views.500.showfanart)</visible>
                         </control>
                         <control type="image">
                             <left>10</left>
