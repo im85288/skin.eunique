@@ -16,7 +16,6 @@
 	<onload condition="!Skin.HasSetting(startup.init) + System.HasAddon(plugin.video.netflix)">Skin.SetBool(global.netflix)</onload>
 	<onload condition="!Skin.HasSetting(startup.init)">Skin.SetBool(SkinHelper.EnableExtraFanart)</onload>
 	<onload>Skin.SetBool(SkinHelper.EnablePVRThumbs)</onload>
-	<onload condition="!Skin.HasSetting(startup.init)">Skin.SetBool(furniture.logo)</onload>
 	<onload condition="IsEmpty(Skin.String(RatingCountry))">Skin.SetString(RatingCountry,UK)</onload>
 	<onload condition="IsEmpty(Skin.String(weatherfanart))">Skin.SetString(weatherfanart,http://aeon-nox-background-packs.googlecode.com/svn/trunk/weather-fanart/default/)</onload>
 	<onload condition="!Skin.HasSetting(startup.init)">Skin.SetBool(startup.init)</onload>
