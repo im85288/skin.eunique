@@ -96,7 +96,7 @@
 							<height>128</height>
 							<aspectratio scalediffuse="false">keep</aspectratio>
 							<texture fallback="DefaultAddonNone.png">$INFO[Listitem.Icon]</texture>
-							<visible>Skin.HasSetting(global.hidecirles) + !substring(ListItem.Path,spinners)</visible>
+							<visible>!substring(ListItem.Path,spinners)</visible>
 						</control>
 						<control type="image">
 							<width>170</width>
@@ -137,7 +137,7 @@
 							<height>128</height>
 							<aspectratio scalediffuse="false">keep</aspectratio>
 							<texture fallback="DefaultAddonNone.png">$INFO[Listitem.Icon]</texture>
-							<visible>Skin.HasSetting(global.hidecirles) + !substring(ListItem.Path,spinners)</visible>
+							<visible>!substring(ListItem.Path,spinners)</visible>
 						</control>
 						<control type="image">
 							<width>170</width>
