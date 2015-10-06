@@ -171,10 +171,8 @@
                 <onleft>120</onleft>
                 <align>center</align>
                 <aligny>center</aligny>
-				<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
-				<selectedcolor>$VAR[EmbyMiddleColourHighlight]</selectedcolor>
-                <texturefocus colordiffuse="$VAR[ColourHighlight]">common/box.png</texturefocus>
-                <texturenofocus colordiffuse="Black12">common/box.png</texturenofocus>
+					<texturefocus colordiffuse="$VAR[EmbyLeftColourHighlight]">common/box.png</texturefocus>
+					<include>DefSettingsButton2</include>
             </control>
             
             <!-- Providers -->
@@ -212,29 +210,24 @@
                         <texture colordiffuse="$VAR[EmbyMiddleColourHighlight]">common/box.png</texture>
                         <visible>Control.HasFocus(150)</visible>
                     </control>
-                    <control type="image">
-                <width>330</width>
-                        <texture colordiffuse="Black12">common/box.png</texture>
-                        <visible>!Control.HasFocus(150)</visible>
-                    </control>
                     <control type="label">
-                <width>330</width>
+			<width>330</width>
                         <height>64</height>
                         <aligny>center</aligny>
                         <align>center</align>
                         <label>$INFO[ListItem.Label]</label>
-						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
-						<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
+			<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+			<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
                         <visible>!Control.HasFocus(150)</visible>
                     </control>
                     <control type="label">
-                <width>330</width>
+			<width>330</width>
                         <height>64</height>
                         <aligny>center</aligny>
                         <align>center</align>
                         <label>$INFO[ListItem.Label]</label>
-                        <textcolor>White100</textcolor>
-                        <selectedcolor>$VAR[ColourHighlight2]</selectedcolor>
+                        <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+                        <selectedcolor>$VAR[ColourHighlight]</selectedcolor>
                         <visible>Control.HasFocus(150)</visible>
                     </control>
                 </focusedlayout>
