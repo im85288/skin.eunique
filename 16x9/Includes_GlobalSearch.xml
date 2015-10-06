@@ -10,7 +10,7 @@
         <height>40</height>
         <aligny>center</aligny>
         <font>TinyBold</font>
-        <textcolor>Black70</textcolor>
+        <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
         <align>left</align>
     </include>
     <include name="GlobalSearchLeftArrow">
@@ -18,14 +18,14 @@
         <centerleft>15</centerleft>
         <width>16</width>
         <height>16</height>
-        <texture colordiffuse="Black70" flipx="true">common/arrow-small-right.png</texture>
+        <texture colordiffuse="$VAR[EmbyMenuTextColourHighlight]" flipx="true">common/arrow-small-right.png</texture>
     </include>
     <include name="GlobalSearchRightArrow">
         <centertop>150</centertop>
         <centerright>15</centerright>
         <width>16</width>
         <height>16</height>
-        <texture colordiffuse="Black70" flipx="false">common/arrow-small-right.png</texture>
+        <texture colordiffuse="$VAR[EmbyMenuTextColourHighlight]" flipx="false">common/arrow-small-right.png</texture>
     </include>
     <variable name="GlobalSearchArt">
         <value condition="!IsEmpty(ListItem.Property(Fanart))">$INFO[ListItem.Property(Fanart)]</value>
@@ -63,7 +63,7 @@
             <right>10</right>
             <height>48</height>
             <bottom>10</bottom>
-            <texture colordiffuse="Black70">common/white.png</texture>
+            <texture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">common/white.png</texture>
         </control>
         <control type="label">
             <left>20</left>
@@ -72,7 +72,7 @@
             <bottom>10</bottom>
             <align>left</align>
             <font>TinyBold</font>
-            <textcolor>White100</textcolor>
+            <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
             <label>$INFO[ListItem.Label]</label>
         </control>
     </include>
@@ -99,7 +99,7 @@
             <bottom>10</bottom>
             <align>left</align>
             <font>TinyBold</font>
-            <textcolor>Selected</textcolor>
+            <textcolor>$VAR[ColourSelected]</textcolor>
             <label>$INFO[ListItem.Label]</label>
         </control>
     </include>
