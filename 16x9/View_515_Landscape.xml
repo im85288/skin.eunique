@@ -55,6 +55,17 @@
                         <aspectratio scalediffuse="false" aligny="top">scale</aspectratio>
                         <fadetime>200</fadetime>
                     </control>
+                    <control type="image">
+                        <description>Landscape</description>
+                        <posx>5</posx>
+                        <posy>5</posy>
+                        <width>374</width>
+                        <height>206</height>
+                        <texture background="true">$INFO[Listitem.thumb]</texture>
+                        <aspectratio scalediffuse="false" aligny="top">scale</aspectratio>
+                        <fadetime>200</fadetime>
+						<visible>SubString(Container.FolderPath,plugin://,left)</visible>
+                    </control>
                     <control type="group">
                         <control type="label">
                             <centerright>34</centerright>
@@ -205,6 +216,17 @@
                             <texture diffuse="diffuse/extraposter-ref-blur-rev.png" background="true">$VAR[LandscapeImage]</texture>
                             <fadetime>200</fadetime>
                         </control>
+						<control type="image">
+							<description>Landscape</description>
+							<posx>5</posx>
+							<posy>5</posy>
+							<width>374</width>
+							<height>206</height>
+							<texture diffuse="diffuse/extraposter-ref-blur-rev.png" background="true">$INFO[Listitem.thumb]</texture>
+							<aspectratio scalediffuse="false" aligny="top">scale</aspectratio>
+							<fadetime>200</fadetime>
+							<visible>SubString(Container.FolderPath,plugin://,left)</visible>
+						</control>
                         <control type="image">
                             <top>10</top>
                             <left>123</left>

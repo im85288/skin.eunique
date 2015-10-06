@@ -65,6 +65,15 @@
                                 <effect type="rotate" end="-1" time="200" center="auto" tween="quadratic" easing="out"/>
                             </animation>
                         </control>
+                        <control type="image">
+                            <left>10</left>
+                            <top>10</top>
+                            <right>10</right>
+                            <height>256</height>
+                            <aspectratio scalediffuse="false" align="center" aligny="center">keep</aspectratio>
+                            <texture background="true">$INFO[Listitem.thumb]</texture>
+                            <visible>SubString(Container.FolderPath,plugin://,left)</visible>
+                        </control>
                         <control type="label" id="13370">
                             <left>15</left>
                             <right>15</right>
@@ -244,6 +253,15 @@
                                 <effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
                             </animation>
                             <visible>!Container.Content(albums) + !Container.Content(artists) + !Container.Content(songs) + !Skin.HasSetting(views.500.showfanart)</visible>
+                        </control>
+                        <control type="image">
+                            <left>10</left>
+                            <top>10</top>
+                            <right>10</right>
+                            <height>256</height>
+                            <aspectratio scalediffuse="false" align="center" aligny="center">keep</aspectratio>
+                            <texture background="true">$INFO[Listitem.thumb]</texture>
+                            <visible>SubString(Container.FolderPath,plugin://,left)</visible>
                         </control>
                         <control type="image">
                             <left>10</left>
