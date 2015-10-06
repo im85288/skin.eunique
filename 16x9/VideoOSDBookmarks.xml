@@ -31,7 +31,7 @@
                 <itemlayout height="330" width="330">
 
                     <control type="image">
-                        <texture colordiffuse="EmbyMenuColourHighlight">common/box.png</texture>
+                        <texture colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
                     </control>
 
                     <control type="image">
@@ -98,8 +98,7 @@
                     <label>294</label>
                     <width>330</width>
                     <texturefocus colordiffuse="$VAR[ColourHighlight]">common/box.png</texturefocus>
-                    <texturenofocus colordiffuse="Black12">common/box.png</texturenofocus>
-                    <include>DefDialogButtons</include>
+					<include>DefSettingsButton2</include>
                 </control>
 
                 <control type="button" id="3">
@@ -107,8 +106,7 @@
                     <label>296</label>
                     <width>330</width>
                     <texturefocus colordiffuse="$VAR[ColourHighlight]">common/box.png</texturefocus>
-                    <texturenofocus colordiffuse="Black12">common/box.png</texturenofocus>
-                    <include>DefDialogButtons</include>
+					<include>DefSettingsButton2</include>
                 </control>
 
                 <control type="button" id="4">
@@ -116,8 +114,7 @@
                     <label>20406</label>
                     <width>330</width>
                     <texturefocus colordiffuse="$VAR[ColourHighlight]">common/box.png</texturefocus>
-                    <texturenofocus colordiffuse="Black12">common/box.png</texturenofocus>
-                    <include>DefDialogButtons</include>
+					<include>DefSettingsButton2</include>
                     <visible>videoplayer.content(episodes)</visible>
                 </control>
 
