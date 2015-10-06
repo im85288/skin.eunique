@@ -31,11 +31,11 @@
                 <itemlayout height="330" width="330">
 
                     <control type="image">
-                        <texture colordiffuse="Black12">common/box.png</texture>
+                        <texture colordiffuse="EmbyMenuColourHighlight">common/box.png</texture>
                     </control>
 
                     <control type="image">
-						<height>236</height>
+			<height>236</height>
                         <aspectratio>scale</aspectratio>
                         <info>ListItem.Icon</info>
                     </control>
@@ -47,6 +47,7 @@
                         <align>center</align>
                         <aligny>center</aligny>
                         <font>Tiny</font>
+                        <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
                         <label>$INFO[ListItem.Label]$INFO[ListItem.Label2, (,)]</label>
                     </control>
 
@@ -59,7 +60,7 @@
                     </control>
 
                     <control type="image">
-						<height>236</height>
+			<height>236</height>
                         <aspectratio>scale</aspectratio>
                         <info>ListItem.Icon</info>
                     </control>
@@ -71,6 +72,7 @@
                         <align>center</align>
                         <aligny>center</aligny>
                         <font>Tiny</font>
+                        <textcolor>$VAR[ColourSelected]</textcolor>
                         <label>$INFO[ListItem.Label]$INFO[ListItem.Label2, (,)]</label>
                     </control>
 
