@@ -1351,19 +1351,67 @@
 			<width>1626</width>
 			<height>64</height>
 			<orientation>horizontal</orientation>
-			<align>left</align>
-			<itemgap>0</itemgap>
-			<usecontrolcoords>true</usecontrolcoords>
-			<control type="group">
+			<itemgap>6</itemgap>
+				<control type="label">
+					<align>left</align>
+					<aligny>center</aligny>
+					<font>MediumSmallBold</font>
+					<width>auto</width>
+					<textcolor>Dark1</textcolor>
+					<selectedcolor>Dark1</selectedcolor>
+					<label>[UPPERCASE]  $VAR[HDSD]$INFO[VideoPlayer.VideoResolution, ,P]$VAR[MPAA, / ]$VAR[VideoCodec, / ]$VAR[AudioCodec, / ][/UPPERCASE]</label>
+				</control>
 				<control type="label">
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>MediumSmallBold</font>
 					<textcolor>Dark1</textcolor>
+					<width>auto</width>
+					<height>64</height>
 					<selectedcolor>Dark1</selectedcolor>
-					<label>[UPPERCASE]  $VAR[HDSD]$INFO[VideoPlayer.VideoResolution, ,P]$INFO[VideoPlayer.Rating, / ]$VAR[MPAA, / ]$VAR[VideoCodec, / ]$VAR[AudioCodec, / ][/UPPERCASE]</label>
+					<label>/ </label>
+					<visible>!IsEmpty(VideoPlayer.Rating)</visible>
 				</control>
-			</control>
+				<control type="label">
+					<aligny>center</aligny>
+					<align>left</align>
+					<font>symbolview</font>
+					<textcolor>IMDB</textcolor>
+					<height>64</height>
+					<width>auto</width>
+					<label></label>
+					<visible>!IsEmpty(VideoPlayer.Rating)</visible>
+				</control>
+				<control type="label">
+					<aligny>center</aligny>
+					<align>left</align>
+					<font>MediumSmallBold</font>
+					<textcolor>Dark1</textcolor>
+					<height>64</height>
+					<width>auto</width>
+					<label>$INFO[VideoPlayer.Rating,[UPPERCASE],[/UPPERCASE]]</label>
+					<visible>!IsEmpty(VideoPlayer.Rating)</visible>
+				</control>
+				<control type="label">
+					<aligny>center</aligny>
+					<align>left</align>
+					<font>symbolview</font>
+					<textcolor>IMDB</textcolor>
+					<height>64</height>
+					<width>auto</width>
+					<label>  </label>
+					<visible>!IsEmpty(VideoPlayer.Top250)</visible>
+				</control>
+				<control type="label">
+					<aligny>center</aligny>
+					<align>left</align>
+					<font>MediumSmallBold</font>
+					<textcolor>Dark1</textcolor>
+					<height>64</height>
+					<width>auto</width>
+					<label>$INFO[VideoPlayer.Top250,#,]</label>
+					<visible>!IsEmpty(VideoPlayer.Top250)</visible>
+				</control>
 		</control>
 	</include>
 	<include name="HomeEmbyRow">
