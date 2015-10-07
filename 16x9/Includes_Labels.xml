@@ -199,47 +199,47 @@
 		<value>$LOCALIZE[31224]</value>
 	</variable>
 	<variable name="EmbyWidget4Label">
-		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetName))">$INFO[Container(300).ListItem.Property(widgetName)]</value>
+		<value condition="!IsEmpty(Skin.String(livetv1widget.name))">$INFO[Skin.String(livetv1widget.name)]</value>
 		<value>$LOCALIZE[31737]</value>
 	</variable>
 	<variable name="EmbyWidget5Label">
-		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetName.1))">$INFO[Container(300).ListItem.Property(widgetName.1)]</value>
+		<value condition="!IsEmpty(Skin.String(livetv2widget.name))">$INFO[Skin.String(livetv2widget.name)]</value>
 		<value>$LOCALIZE[19019]</value>
 	</variable>
 	<variable name="EmbyWidget6Label">
-		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetName))">$INFO[Container(300).ListItem.Property(widgetName)]</value>
+		<value condition="!IsEmpty(Skin.String(movies1widget.name))">$INFO[Skin.String(movies1widget.name)]</value>
 		<value>$LOCALIZE[31124]</value>
 	</variable>
 	<variable name="EmbyWidget7Label">
-		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetName.1))">$INFO[Container(300).ListItem.Property(widgetName.1)]</value>
+		<value condition="!IsEmpty(Skin.String(movies2widget.name))">$INFO[Skin.String(movies2widget.name)]</value>
 		<value>$LOCALIZE[31794]</value>
 	</variable>
 	<variable name="EmbyWidget8Label">
-		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetName.2))">$INFO[Container(300).ListItem.Property(widgetName.2)]</value>
+		<value condition="!IsEmpty(Skin.String(movies3widget.name))">$INFO[Skin.String(movies3widget.name)]</value>
 		<value>$LOCALIZE[31127]</value>
 	</variable>
 	<variable name="EmbyWidget9Label">
-		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetName))">$INFO[Container(300).ListItem.Property(widgetName)]</value>
+		<value condition="!IsEmpty(Skin.String(tvshows1widget.name))">$INFO[Skin.String(tvshows1widget.name)]</value>
 		<value>$LOCALIZE[31125]</value>
 	</variable>
 	<variable name="EmbyWidget10Label">
-		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetName.1))">$INFO[Container(300).ListItem.Property(widgetName.1)]</value>
+		<value condition="!IsEmpty(Skin.String(tvshows2widget.name))">$INFO[Skin.String(tvshows2widget.name)]</value>
 		<value>$LOCALIZE[31793]</value>
 	</variable>
 	<variable name="EmbyWidget11Label">
-		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetName.2))">$INFO[Container(300).ListItem.Property(widgetName.2)]</value>
+		<value condition="!IsEmpty(Skin.String(tvshows3widget.name))">$INFO[Skin.String(tvshows3widget.name)]</value>
 		<value>$LOCALIZE[31126]</value>
 	</variable>
 	<variable name="EmbyWidget12Label">
-		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetName))">$INFO[Container(300).ListItem.Property(widgetName)]</value>
+		<value condition="!IsEmpty(Skin.String(music1widget.name))">$INFO[Skin.String(music1widget.name)]</value>
 		<value>$LOCALIZE[31187]</value>
 	</variable>
 	<variable name="EmbyWidget13Label">
-		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetName.1))">$INFO[Container(300).ListItem.Property(widgetName.1)]</value>
+		<value condition="!IsEmpty(Skin.String(music2widget.name))">$INFO[Skin.String(music2widget.name)]</value>
 		<value>$LOCALIZE[31795]</value>
 	</variable>
 	<variable name="EmbyWidget14Label">
-		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetName.2))">$INFO[Container(300).ListItem.Property(widgetName.2)]</value>
+		<value condition="!IsEmpty(Skin.String(music3widget.name))">$INFO[Skin.String(music3widget.name)]</value>
 		<value>$LOCALIZE[31189]</value>
 	</variable>
 	<variable name="EmbyWidget15Label">
@@ -247,15 +247,15 @@
 		<value>$LOCALIZE[31225]</value>
 	</variable>
 	<variable name="EmbyWidget16Label">
-		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetName.3))">$INFO[Container(300).ListItem.Property(widgetName.3)]</value>
+		<value condition="!IsEmpty(Skin.String(movies4widget.name))">$INFO[Skin.String(movies4widget.name)]</value>
 		<value>$LOCALIZE[31782]$INFO[Container(10017).ListItem.Property(originaltitle), ","]</value>
 	</variable>
 	<variable name="EmbyWidget17Label">
-		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetName.3))">$INFO[Container(300).ListItem.Property(widgetName.3)]</value>
+		<value condition="!IsEmpty(Skin.String(music4widget.name))">$INFO[Skin.String(music4widget.name)]</value>
 		<value>$LOCALIZE[31187]</value>
 	</variable>
 	<variable name="EmbyWidget18Label">
-		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetName.3))">$INFO[Container(300).ListItem.Property(widgetName.3)]</value>
+		<value condition="!IsEmpty(Skin.String(tvshows4widget.name))">$INFO[Skin.String(tvshows4widget.name)]</value>
 		<value>$LOCALIZE[31226]</value>
 	</variable>
 	<variable name="VideoInfoWidgetLabel">
@@ -1055,7 +1055,7 @@
 
 
 	<variable name="FurnitureWidgetLabel">
-		<value condition="!IsEmpty(Skin.String(furniturewidget.label))">$INFO[Skin.String(furniturewidget.label)]</value>
+		<value condition="!IsEmpty(Skin.String(furniturewidget.name))">$INFO[Skin.String(furniturewidget.name)]</value>
 		<value>$LOCALIZE[31819]</value>
 	</variable>
 </includes>

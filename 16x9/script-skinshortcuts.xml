@@ -113,13 +113,144 @@
                         <onclick>ActivateWindow(1112)</onclick>
                     </control> -->
 
+                    <control type="button" id="1450">
+                        <width>1410</width>
+                        <include>DefSettingsButton2</include>
+                        <label>$ADDON[script.skinshortcuts 32044] 1</label>
+                        <label2 fallback="31737">$INFO[Skin.String(livetv1widget.name)]</label2>
+                        <onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=True&amp;skinWidgetName=livetv1widget.name&amp;skinWidgetTarget=livetv1widget.target&amp;skinWidgetPath=livetv1widget.path)</onclick>
+                        <visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
+                        <visible>StringCompare(Container(211).ListItem.Property(defaultID),livetv)</visible>
+                    </control>
+                    <control type="button" id="1451">
+                        <width>1410</width>
+                        <include>DefSettingsButton2</include>
+                        <label>$ADDON[script.skinshortcuts 32044] 2</label>
+                        <label2 fallback="19019">$INFO[Skin.String(livetv2widget.name)]</label2>
+                        <onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=True&amp;skinWidgetName=livetv2widget.name&amp;skinWidgetTarget=livetv2widget.target&amp;skinWidgetPath=livetv2widget.path)</onclick>
+                        <visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
+                        <visible>StringCompare(Container(211).ListItem.Property(defaultID),livetv)</visible>
+                    </control>
+
+                    <control type="button" id="1452">
+                        <width>1410</width>
+                        <include>DefSettingsButton2</include>
+                        <label>$ADDON[script.skinshortcuts 32044] 1</label>
+                        <label2 fallback="31124">$INFO[Skin.String(movies1widget.name)]</label2>
+                        <onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=True&amp;skinWidgetName=movies1widget.name&amp;skinWidgetTarget=movies1widget.target&amp;skinWidgetPath=movies1widget.path)</onclick>
+                        <visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
+                        <visible>StringCompare(Container(211).ListItem.Property(defaultID),movies)</visible>
+                    </control>
+                    <control type="button" id="1453">
+                        <width>1410</width>
+                        <include>DefSettingsButton2</include>
+                        <label>$ADDON[script.skinshortcuts 32044] 2</label>
+                        <label2 fallback="31794">$INFO[Skin.String(movies2widget.name)]</label2>
+                        <onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=True&amp;skinWidgetName=movies2widget.name&amp;skinWidgetTarget=movies2widget.target&amp;skinWidgetPath=movies2widget.path)</onclick>
+                        <visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
+                        <visible>StringCompare(Container(211).ListItem.Property(defaultID),movies)</visible>
+                    </control>
+                    <control type="button" id="1454">
+                        <width>1410</width>
+                        <include>DefSettingsButton2</include>
+                        <label>$ADDON[script.skinshortcuts 32044] 3</label>
+                        <label2 fallback="31127">$INFO[Skin.String(movies3widget.name)]</label2>
+                        <onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=True&amp;skinWidgetName=movies3widget.name&amp;skinWidgetTarget=movies3widget.target&amp;skinWidgetPath=movies3widget.path)</onclick>
+                        <visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
+                        <visible>StringCompare(Container(211).ListItem.Property(defaultID),movies)</visible>
+                    </control>
+                    <control type="button" id="1455">
+                        <width>1410</width>
+                        <include>DefSettingsButton2</include>
+                        <label>$ADDON[script.skinshortcuts 32044] 4</label>
+                        <label2 fallback="31782">$INFO[Skin.String(movies4widget.name)]</label2>
+                        <onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=True&amp;skinWidgetName=movies4widget.name&amp;skinWidgetTarget=movies4widget.target&amp;skinWidgetPath=movies4widget.path)</onclick>
+                        <visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
+                        <visible>StringCompare(Container(211).ListItem.Property(defaultID),movies)</visible>
+                    </control>
+
+                    <control type="button" id="1456">
+                        <width>1410</width>
+                        <include>DefSettingsButton2</include>
+                        <label>$ADDON[script.skinshortcuts 32044] 1</label>
+                        <label2 fallback="31125">$INFO[Skin.String(tvshows1widget.name)]</label2>
+                        <onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=True&amp;skinWidgetName=tvshows1widget.name&amp;skinWidgetTarget=tvshows1widget.target&amp;skinWidgetPath=tvshows1widget.path)</onclick>
+                        <visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
+                        <visible>StringCompare(Container(211).ListItem.Property(defaultID),tvshows)</visible>
+                    </control>
+                    <control type="button" id="1457">
+                        <width>1410</width>
+                        <include>DefSettingsButton2</include>
+                        <label>$ADDON[script.skinshortcuts 32044] 2</label>
+                        <label2 fallback="31793">$INFO[Skin.String(tvshows2widget.name)]</label2>
+                        <onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=True&amp;skinWidgetName=tvshows2widget.name&amp;skinWidgetTarget=tvshows2widget.target&amp;skinWidgetPath=tvshows2widget.path)</onclick>
+                        <visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
+                        <visible>StringCompare(Container(211).ListItem.Property(defaultID),tvshows)</visible>
+                    </control>
+                    <control type="button" id="1458">
+                        <width>1410</width>
+                        <include>DefSettingsButton2</include>
+                        <label>$ADDON[script.skinshortcuts 32044] 3</label>
+                        <label2 fallback="31126">$INFO[Skin.String(tvshows3widget.name)]</label2>
+                        <onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=True&amp;skinWidgetName=tvshows3widget.name&amp;skinWidgetTarget=tvshows3widget.target&amp;skinWidgetPath=tvshows3widget.path)</onclick>
+                        <visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
+                        <visible>StringCompare(Container(211).ListItem.Property(defaultID),tvshows)</visible>
+                    </control>
+                    <control type="button" id="1459">
+                        <width>1410</width>
+                        <include>DefSettingsButton2</include>
+                        <label>$ADDON[script.skinshortcuts 32044] 4</label>
+                        <label2 fallback="31226">$INFO[Skin.String(tvshows4widget.name)]</label2>
+                        <onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=True&amp;skinWidgetName=tvshows4widget.name&amp;skinWidgetTarget=tvshows4widget.target&amp;skinWidgetPath=tvshows4widget.path)</onclick>
+                        <visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
+                        <visible>StringCompare(Container(211).ListItem.Property(defaultID),tvshows)</visible>
+                    </control>
+
+                    <control type="button" id="1460">
+                        <width>1410</width>
+                        <include>DefSettingsButton2</include>
+                        <label>$ADDON[script.skinshortcuts 32044] 1</label>
+                        <label2 fallback="31187">$INFO[Skin.String(music1widget.name)]</label2>
+                        <onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=True&amp;skinWidgetName=music1widget.name&amp;skinWidgetTarget=music1widget.target&amp;skinWidgetPath=music1widget.path)</onclick>
+                        <visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
+                        <visible>StringCompare(Container(211).ListItem.Property(defaultID),music)</visible>
+                    </control>
+                    <control type="button" id="1461">
+                        <width>1410</width>
+                        <include>DefSettingsButton2</include>
+                        <label>$ADDON[script.skinshortcuts 32044] 2</label>
+                        <label2 fallback="31795">$INFO[Skin.String(music2widget.name)]</label2>
+                        <onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=True&amp;skinWidgetName=music2widget.name&amp;skinWidgetTarget=music2widget.target&amp;skinWidgetPath=music2widget.path)</onclick>
+                        <visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
+                        <visible>StringCompare(Container(211).ListItem.Property(defaultID),music)</visible>
+                    </control>
+                    <control type="button" id="1462">
+                        <width>1410</width>
+                        <include>DefSettingsButton2</include>
+                        <label>$ADDON[script.skinshortcuts 32044] 3</label>
+                        <label2 fallback="31189">$INFO[Skin.String(music3widget.name)]</label2>
+                        <onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=True&amp;skinWidgetName=music3widget.name&amp;skinWidgetTarget=music3widget.target&amp;skinWidgetPath=music3widget.path)</onclick>
+                        <visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
+                        <visible>StringCompare(Container(211).ListItem.Property(defaultID),music)</visible>
+                    </control>
+                    <control type="button" id="1463">
+                        <width>1410</width>
+                        <include>DefSettingsButton2</include>
+                        <label>$ADDON[script.skinshortcuts 32044] 4</label>
+                        <label2 fallback="31187">$INFO[Skin.String(music4widget.name)]</label2>
+                        <onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=True&amp;skinWidgetName=music4widget.name&amp;skinWidgetTarget=music4widget.target&amp;skinWidgetPath=music4widget.path)</onclick>
+                        <visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
+                        <visible>StringCompare(Container(211).ListItem.Property(defaultID),music)</visible>
+                    </control>
+
                     <control type="button" id="312"> <!--set widget-->
                         <width>1410</width>
                         <include>DefSettingsButton2</include>
                         <label>$ADDON[script.skinshortcuts 32044] 1</label>
-                        <label2>$INFO[Container(211).Listitem.Property(widgetName)]</label2>
+                        <label2 fallback="31134">$INFO[Container(211).Listitem.Property(widgetName)]</label2>
                         <onclick>SetProperty(customWidget, normal, Home)</onclick>
                         <visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
+                        <visible>!StringCompare(Container(211).ListItem.Property(defaultID),livetv) + !StringCompare(Container(211).ListItem.Property(defaultID),movies) + !StringCompare(Container(211).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(211).ListItem.Property(defaultID),music) + !StringCompare(Container(211).ListItem.Property(defaultID),weather)</visible>
                     </control>
 
                     <control type="button" id="1407"> <!--set widget 2-->
@@ -128,8 +259,9 @@
                         <onclick>SetProperty(widgetID, 1)</onclick>
                         <onclick>SendClick(312)</onclick>
                         <label>$ADDON[script.skinshortcuts 32044] 2</label>
-                        <label2>$INFO[Container(211).Listitem.Property(widgetName.1)]</label2>
+                        <label2 fallback="31135">$INFO[Container(211).Listitem.Property(widgetName.1)]</label2>
                         <visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
+                        <visible>!StringCompare(Container(211).ListItem.Property(defaultID),livetv) + !StringCompare(Container(211).ListItem.Property(defaultID),movies) + !StringCompare(Container(211).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(211).ListItem.Property(defaultID),music) + !StringCompare(Container(211).ListItem.Property(defaultID),weather)</visible>
                     </control>
 
                     <control type="button" id="1408"> <!--set widget 3-->
@@ -138,8 +270,9 @@
                         <onclick>SetProperty(widgetID, 2)</onclick>
                         <onclick>SendClick(312)</onclick>
                         <label>$ADDON[script.skinshortcuts 32044] 3</label>
-                        <label2>$INFO[Container(211).Listitem.Property(widgetName.2)]</label2>
+                        <label2 fallback="31224">$INFO[Container(211).Listitem.Property(widgetName.2)]</label2>
                         <visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
+                        <visible>!StringCompare(Container(211).ListItem.Property(defaultID),livetv) + !StringCompare(Container(211).ListItem.Property(defaultID),movies) + !StringCompare(Container(211).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(211).ListItem.Property(defaultID),music) + !StringCompare(Container(211).ListItem.Property(defaultID),weather)</visible>
                     </control>
 
                     <control type="button" id="1409"> <!--set widget 4-->
@@ -148,8 +281,9 @@
                         <onclick>SetProperty(widgetID, 3)</onclick>
                         <onclick>SendClick(312)</onclick>
                         <label>$ADDON[script.skinshortcuts 32044] 4</label>
-                        <label2>$INFO[Container(211).Listitem.Property(widgetName.3)]</label2>
+                        <label2 fallback="31225">$INFO[Container(211).Listitem.Property(widgetName.3)]</label2>
                         <visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
+                        <visible>!StringCompare(Container(211).ListItem.Property(defaultID),livetv) + !StringCompare(Container(211).ListItem.Property(defaultID),movies) + !StringCompare(Container(211).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(211).ListItem.Property(defaultID),music) + !StringCompare(Container(211).ListItem.Property(defaultID),weather)</visible>
                     </control>
 
                     <control type="button" id="310" description="Background">
