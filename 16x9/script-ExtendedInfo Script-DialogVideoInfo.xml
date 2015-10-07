@@ -21,15 +21,6 @@
                 <aspectratio align="center">scale</aspectratio>
                 <texture colordiffuse="$INFO[Window(home).Property(ImageColor)]">diffuseoverlay.png</texture>
             </control>
-            <control type="button" id="20000">
-                <height>0</height>
-                <width>0</width>
-                <texturefocus>-</texturefocus>
-                <posx>-5000</posx>
-                <onfocus>SetFocus(132)</onfocus>
-                <onclick>noop</onclick>
-                <visible allowhiddenfocus="true">Control.HasFocus(20000)</visible>
-            </control>
             <control type="button" id="20001">
                 <height>0</height>
                 <width>0</width>
@@ -37,6 +28,10 @@
                 <posx>-5000</posx>
                 <onclick>noop</onclick>
                 <visible allowhiddenfocus="true">Control.HasFocus(20001)</visible>
+            </control>
+            <control type="group">
+                <include>Animation.Common.Killer</include>
+                <include>Furniture_EmbyClock</include>
             </control>
             <control type="group">
                 <posx>-40</posx>
@@ -60,35 +55,15 @@
                     <control type="group" id="140">
                         <height>220</height>
                         <visible>!IsEmpty(Window.Property(movie.Plot))</visible>
-                        <control type="radiobutton" id="132">
-                            <posx>0</posx>
-                            <posy>0</posy>
-                            <width>1085</width>
-                            <height>255</height>
-                            <radioposx>30</radioposx>
-                            <radioposy>20</radioposy>
-                            <radiowidth>46</radiowidth>
-                            <radioheight>46</radioheight>
-                            <ondown>5000</ondown>
-                            <onback>9009</onback>
-                            <onup>SetFocus(20000)</onup>
-                            <textureradioonfocus colordiffuse="FFFAFAFA">icons/DefaultAddonTvInfo.png</textureradioonfocus>
-                            <textureradioofffocus colordiffuse="FFFAFAFA">icons/DefaultAddonTvInfo.png</textureradioofffocus>
-                            <textureradiooffnofocus colordiffuse="FFFAFAFA">icons/DefaultAddonTvInfo.png</textureradiooffnofocus>
-                            <textureradioonnofocus colordiffuse="FFFAFAFA">icons/DefaultAddonTvInfo.png</textureradioonnofocus>
-                            <texturefocus border="40" colordiffuse="$INFO[Window(home).Property(ImageColor)]">buttons/roundedbutton-focus.png</texturefocus>
-                            <texturenofocus border="40" colordiffuse="$INFO[Window(home).Property(ImageColor)]">buttons/roundedbutton-nofocus.png</texturenofocus>
-                            <label>-</label>
-                        </control>
                         <control type="textbox" id="800">
-                            <posx>93</posx>
+                            <posx>20</posx>
                             <posy>20</posy>
-                            <width>960</width>
-                            <height>210</height>
+                            <width>1080</width>
+                            <height>200</height>
                             <textcolor>FFFAFAFA</textcolor>
                             <align>left</align>
                             <label fallback="19055">[B]$INFO[Window.Property(movie.TagLine),,[CR]][/B]$INFO[Window.Property(movie.Plot)]</label>
-                            <font>font12</font>
+                            <font>MediumSmall</font>
                             <autoscroll delay="10000" time="2000" repeat="10000">true</autoscroll>
                         </control>
                     </control>
@@ -115,77 +90,55 @@
                             <visible>Container(5000).HasNext + ControlGroup(5000).HasFocus</visible>
                         </control>
                         <control type="grouplist" id="5000">
-                            <posx>0</posx>
-                            <posy>0</posy>
+                            <posx>20</posx>
+                            <posy>10</posy>
                             <width>1090</width>
-                            <height>400</height>
+                            <height>116</height>
                             <onup>132</onup>
                             <ondown>1000</ondown>
-                            <itemgap>-10</itemgap>
+                            <itemgap>0</itemgap>
                             <orientation>horizontal</orientation>
                             <scrolltime tween="quadratic">200</scrolltime>
-                            <control type="radiobutton" id="8">
-                                <label>$LOCALIZE[208]</label>
-                                <textureradioonfocus colordiffuse="FFFAFAFA">icons/play.png</textureradioonfocus>
-                                <textureradioofffocus colordiffuse="FFFAFAFA">icons/play.png</textureradioofffocus>
-                                <textureradiooffnofocus colordiffuse="FF999999">icons/play.png</textureradiooffnofocus>
-                                <textureradioonnofocus colordiffuse="FF999999">icons/play.png</textureradioonnofocus>
-                                <width>280</width>
-                                <height>140</height>
-                                <textoffsetx>0</textoffsetx>
-                                <align>center</align>
-                                <texturefocus border="40" colordiffuse="$INFO[Window(home).Property(ImageColor)]">buttons/roundedbutton-focus.png</texturefocus>
-                                <texturenofocus border="40" colordiffuse="$INFO[Window(home).Property(ImageColor)]">buttons/roundedbutton-nofocus.png</texturenofocus>
-                                <font>font13</font>
-                                <textcolor>FF999999</textcolor>
-                                <focusedcolor>FFFAFAFA</focusedcolor>
-                                <aligny>bottom</aligny>
-                                <textoffsety>77</textoffsety>
-                                <radioposx>118</radioposx>
-                                <radioposy>30</radioposy>
-                                <radiowidth>44</radiowidth>
-                                <radioheight>44</radioheight>
+                            <control type="button" id="8">
+                               <!-- <label>$LOCALIZE[208]</label> -->
+                                <width>116</width>
+                                <height>116</height>
+                                <font>symbol</font>
+                                <label>$VAR[VideoInfoButton8]</label>
+                                <textoffsetx>20</textoffsetx>
+                                <textcolor>white</textcolor>
+                                <focusedcolor>$VAR[EmbyMiddleColourHighlight]</focusedcolor>
+                                <texturefocus colordiffuse="$INFO[Window(home).Property(ImageColor)]">common/box.png</texturefocus>
+                                <texturenofocus colordiffuse="$VAR[EmbyMiddleColourHighlight]">common/box.png</texturenofocus>
                                 <visible>!IsEmpty(Window.Property(movie.DBID)) + !Stringcompare(Window.Property(Type),tvshow)</visible>
                             </control>
-                            <control type="radiobutton" id="120">
-                                <label>$LOCALIZE[21385]</label>
-                                <textureradioonfocus colordiffuse="FFFAFAFA">icons/play.png</textureradioonfocus>
-                                <textureradioofffocus colordiffuse="FFFAFAFA">icons/play.png</textureradioofffocus>
-                                <textureradiooffnofocus colordiffuse="FF999999">icons/play.png</textureradiooffnofocus>
-                                <textureradioonnofocus colordiffuse="FF999999">icons/play.png</textureradioonnofocus>
-                                <width>280</width>
-                                <height>140</height>
-                                <textoffsetx>0</textoffsetx>
-                                <align>center</align>
-                                <texturefocus border="40" colordiffuse="$INFO[Window(home).Property(ImageColor)]">buttons/roundedbutton-focus.png</texturefocus>
-                                <texturenofocus border="40" colordiffuse="$INFO[Window(home).Property(ImageColor)]">buttons/roundedbutton-nofocus.png</texturenofocus>
-                                <font>font13</font>
-                                <textcolor>FF999999</textcolor>
-                                <focusedcolor>FFFAFAFA</focusedcolor>
-                                <aligny>bottom</aligny>
-                                <textoffsety>77</textoffsety>
-                                <radioposx>118</radioposx>
-                                <radioposy>30</radioposy>
-                                <radiowidth>44</radiowidth>
-                                <radioheight>44</radioheight>
+                            <control type="button" id="120">
+                               <!-- <label>$LOCALIZE[21385]</label> -->
+                                <width>116</width>
+                                <height>116</height>
+                                <font>symbol</font>
+                                <label>$VAR[VideoInfoButton8]</label>
+                                <textoffsetx>20</textoffsetx>
+                                <textcolor>white</textcolor>
+                                <focusedcolor>$VAR[EmbyMiddleColourHighlight]</focusedcolor>
+                                <texturefocus colordiffuse="$INFO[Window(home).Property(ImageColor)]">common/box.png</texturefocus>
+                                <texturenofocus colordiffuse="$VAR[EmbyMiddleColourHighlight]">common/box.png</texturenofocus>
                                 <visible>!IsEmpty(Window.Property(movie.DBID)) + Stringcompare(Window.Property(Type),tvshow)</visible>
                             </control>
                             <control type="group" id="99">
-                                <width>280</width>
+                                <width>116</width>
                                 <visible>!IsEmpty(Window.Property(movie.DBID)) + IntegerGreaterThan(Window.Property(movie.PercentPlayed),0)</visible>
                                 <control type="button" id="9">
                                     <label>$LOCALIZE[13404] $INFO[Window.Property(movie.PercentPlayed),(,%)]</label>
-                                    <width>280</width>
-                                    <height>140</height>
-                                    <textoffsetx>0</textoffsetx>
+                                    <width>116</width>
+                                    <height>116</height>
                                     <align>center</align>
-                                    <texturefocus border="40" colordiffuse="$INFO[Window(home).Property(ImageColor)]">buttons/roundedbutton-focus.png</texturefocus>
-                                    <texturenofocus border="40" colordiffuse="$INFO[Window(home).Property(ImageColor)]">buttons/roundedbutton-nofocus.png</texturenofocus>
-                                    <font>font13</font>
-                                    <textcolor>FF999999</textcolor>
-                                    <focusedcolor>FFFAFAFA</focusedcolor>
-                                    <aligny>bottom</aligny>
-                                    <textoffsety>77</textoffsety>
+                                    <textoffsetx>20</textoffsetx>
+                                    <textcolor>white</textcolor>
+                                    <focusedcolor>$VAR[EmbyMiddleColourHighlight]</focusedcolor>
+                                    <texturefocus colordiffuse="$INFO[Window(home).Property(ImageColor)]">common/box.png</texturefocus>
+                                    <texturenofocus colordiffuse="$VAR[EmbyMiddleColourHighlight]">common/box.png</texturenofocus>
+
                                     <onclick>Action(Close)</onclick>
                                     <onleft>120</onleft>
                                     <onright>6001</onright>
@@ -204,9 +157,9 @@
                                 <posx>0</posx>
                                 <posy>0</posy>
                                 <visible>!StringCompare(Window.Property(type),season)</visible>
-                                <width>280</width>
-                                <height>400</height>
-                                <control type="radiobutton" id="6001">
+                                <width>116</width>
+                                <height>116</height>
+                                <control type="button" id="6001">
                                     <label>$ADDON[script.extendedinfo 32129]</label>
                                     <textureradioonfocus colordiffuse="FFFAFAFA">-</textureradioonfocus>
                                     <textureradioofffocus colordiffuse="FFFAFAFA">icons/heart.png</textureradioofffocus>
@@ -214,12 +167,13 @@
                                     <textureradioonnofocus colordiffuse="FF999999">-</textureradioonnofocus>
                                     <posx>0</posx>
                                     <posy>0</posy>
-                                    <width>280</width>
-                                    <height>140</height>
-                                    <textoffsetx>0</textoffsetx>
-                                    <align>center</align>
-                                    <texturefocus border="40" colordiffuse="$INFO[Window(home).Property(ImageColor)]">buttons/roundedbutton-focus.png</texturefocus>
-                                    <texturenofocus border="40" colordiffuse="$INFO[Window(home).Property(ImageColor)]">buttons/roundedbutton-nofocus.png</texturenofocus>
+                                    <width>116</width>
+                                    <height>116</height>
+                                    <textoffsetx>20</textoffsetx>
+                                    <textcolor>white</textcolor>
+                                    <focusedcolor>$VAR[EmbyMiddleColourHighlight]</focusedcolor>
+                                    <texturefocus colordiffuse="$INFO[Window(home).Property(ImageColor)]">common/box.png</texturefocus>
+                                    <texturenofocus colordiffuse="$VAR[EmbyLeftColourHighlight]">common/box.png</texturenofocus>
                                     <font>font13</font>
                                     <textcolor>FF999999</textcolor>
                                     <focusedcolor>FFFAFAFA</focusedcolor>
@@ -249,19 +203,21 @@
                                     <label>$INFO[Window.Property(movie.rated)]</label>
                                 </control>
                             </control>
-                            <control type="radiobutton" id="6003">
+                            <control type="button" id="6003">
                                 <label>$INFO[Window.Property(movie.FavButton_Label)]</label>
                                 <onleft>6001</onleft>
                                 <textureradioonfocus colordiffuse="FFFAFAFA">icons/starminus.png</textureradioonfocus>
                                 <textureradioofffocus colordiffuse="FFFAFAFA">icons/star.png</textureradioofffocus>
                                 <textureradiooffnofocus colordiffuse="FF999999">icons/star.png</textureradiooffnofocus>
                                 <textureradioonnofocus colordiffuse="FF999999">icons/starminus.png</textureradioonnofocus>
-                                <width>280</width>
-                                <height>140</height>
-                                <textoffsetx>0</textoffsetx>
-                                <align>center</align>
-                                <texturefocus border="40" colordiffuse="$INFO[Window(home).Property(ImageColor)]">buttons/roundedbutton-focus.png</texturefocus>
-                                <texturenofocus border="40" colordiffuse="$INFO[Window(home).Property(ImageColor)]">buttons/roundedbutton-nofocus.png</texturenofocus>
+                                <width>116</width>
+                                <height>116</height>
+                                <textoffsetx>20</textoffsetx>
+                                <textcolor>white</textcolor>
+                                <focusedcolor>$VAR[EmbyMiddleColourHighlight]</focusedcolor>
+                                <texturefocus colordiffuse="$INFO[Window(home).Property(ImageColor)]">common/box.png</texturefocus>
+                                <texturenofocus colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</texturenofocus>
+
                                 <font>font13</font>
                                 <textcolor>FF999999</textcolor>
                                 <focusedcolor>FFFAFAFA</focusedcolor>
@@ -275,18 +231,20 @@
                                 <visible>!IsEmpty(Window.Property(tmdb_logged_in))</visible>
                                 <visible>!StringCompare(Window.Property(type),season) + !StringCompare(Window.Property(type),episode)</visible>
                             </control>
-                            <control type="radiobutton" id="6005">
+                            <control type="button" id="6005">
                                 <label>$ADDON[script.extendedinfo 32107]</label>
                                 <textureradioonfocus colordiffuse="FFFAFAFA">icons/checkmark.png</textureradioonfocus>
                                 <textureradioofffocus colordiffuse="FFFAFAFA">icons/checkmark.png</textureradioofffocus>
                                 <textureradiooffnofocus colordiffuse="FF999999">icons/checkmark.png</textureradiooffnofocus>
                                 <textureradioonnofocus colordiffuse="FF999999">icons/checkmark.png</textureradioonnofocus>
-                                <width>280</width>
-                                <height>140</height>
-                                <textoffsetx>0</textoffsetx>
-                                <align>center</align>
-                                <texturefocus border="40" colordiffuse="$INFO[Window(home).Property(ImageColor)]">buttons/roundedbutton-focus.png</texturefocus>
-                                <texturenofocus border="40" colordiffuse="$INFO[Window(home).Property(ImageColor)]">buttons/roundedbutton-nofocus.png</texturenofocus>
+                                <width>116</width>
+                                <height>116</height>
+                                <textoffsetx>20</textoffsetx>
+                                <textcolor>white</textcolor>
+                                <focusedcolor>$VAR[EmbyMiddleColourHighlight]</focusedcolor>
+                                <texturefocus colordiffuse="$INFO[Window(home).Property(ImageColor)]">common/box.png</texturefocus>
+                                <texturenofocus colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</texturenofocus>
+
                                 <font>font13</font>
                                 <textcolor>FF999999</textcolor>
                                 <focusedcolor>FFFAFAFA</focusedcolor>
@@ -299,18 +257,20 @@
                                 <visible>!IsEmpty(Window.Property(tmdb_logged_in))</visible>
                                 <visible>!StringCompare(Window.Property(type),season) + !StringCompare(Window.Property(type),episode)</visible>
                             </control>
-                            <control type="radiobutton" id="6002">
+                            <control type="button" id="6002">
                                 <label>$ADDON[script.extendedinfo 32130]</label>
                                 <textureradioonfocus colordiffuse="FFFAFAFA">icons/list2.png</textureradioonfocus>
                                 <textureradioofffocus colordiffuse="FFFAFAFA">icons/list2.png</textureradioofffocus>
                                 <textureradiooffnofocus colordiffuse="FF999999">icons/list2.png</textureradiooffnofocus>
                                 <textureradioonnofocus colordiffuse="FF999999">icons/list2.png</textureradioonnofocus>
-                                <width>280</width>
-                                <height>140</height>
-                                <textoffsetx>0</textoffsetx>
-                                <align>center</align>
-                                <texturefocus border="40" colordiffuse="$INFO[Window(home).Property(ImageColor)]">buttons/roundedbutton-focus.png</texturefocus>
-                                <texturenofocus border="40" colordiffuse="$INFO[Window(home).Property(ImageColor)]">buttons/roundedbutton-nofocus.png</texturenofocus>
+                                <width>116</width>
+                                <height>116</height>
+                                <textoffsetx>20</textoffsetx>
+                                <textcolor>white</textcolor>
+                                <focusedcolor>$VAR[EmbyMiddleColourHighlight]</focusedcolor>
+                                <texturefocus colordiffuse="$INFO[Window(home).Property(ImageColor)]">common/box.png</texturefocus>
+                                <texturenofocus colordiffuse="$VAR[EmbyLeftColourHighlight]">common/box.png</texturenofocus>
+
                                 <font>font13</font>
                                 <textcolor>FF999999</textcolor>
                                 <focusedcolor>FFFAFAFA</focusedcolor>
@@ -323,18 +283,20 @@
                                 <visible>!IsEmpty(Window.Property(tmdb_logged_in))</visible>
                                 <visible>!StringCompare(Window.Property(type),season) + !StringCompare(Window.Property(type),episode)</visible>
                             </control>
-                            <control type="radiobutton" id="6006">
+                            <control type="button" id="6006">
                                 <label>$ADDON[script.extendedinfo 32131]</label>
                                 <textureradioonfocus colordiffuse="FFFAFAFA">icons/list2.png</textureradioonfocus>
                                 <textureradioofffocus colordiffuse="FFFAFAFA">icons/list2.png</textureradioofffocus>
                                 <textureradiooffnofocus colordiffuse="FF999999">icons/list2.png</textureradiooffnofocus>
                                 <textureradioonnofocus colordiffuse="FF999999">icons/list2.png</textureradioonnofocus>
-                                <width>280</width>
-                                <height>140</height>
-                                <textoffsetx>0</textoffsetx>
-                                <align>center</align>
-                                <texturefocus border="40" colordiffuse="$INFO[Window(home).Property(ImageColor)]">buttons/roundedbutton-focus.png</texturefocus>
-                                <texturenofocus border="40" colordiffuse="$INFO[Window(home).Property(ImageColor)]">buttons/roundedbutton-nofocus.png</texturenofocus>
+                                <width>116</width>
+                                <height>116</height>
+                                <textoffsetx>20</textoffsetx>
+                                <textcolor>white</textcolor>
+                                <focusedcolor>$VAR[EmbyMiddleColourHighlight]</focusedcolor>
+                                <texturefocus colordiffuse="$INFO[Window(home).Property(ImageColor)]">common/box.png</texturefocus>
+                                <texturenofocus colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</texturenofocus>
+
                                 <font>font13</font>
                                 <textcolor>FF999999</textcolor>
                                 <focusedcolor>FFFAFAFA</focusedcolor>
@@ -347,13 +309,15 @@
                                 <visible>IsEmpty(Window.Property(tmdb_logged_in))</visible>
                                 <visible>!StringCompare(Window.Property(type),season) + !StringCompare(Window.Property(type),TVShow)</visible>
                             </control>
-                            <control type="radiobutton" id="100">
-                                <width>280</width>
-                                <height>140</height>
-                                <textoffsetx>0</textoffsetx>
-                                <align>center</align>
-                                <texturefocus border="40" colordiffuse="$INFO[Window(home).Property(ImageColor)]">buttons/roundedbutton-focus.png</texturefocus>
-                                <texturenofocus border="40" colordiffuse="$INFO[Window(home).Property(ImageColor)]">buttons/roundedbutton-nofocus.png</texturenofocus>
+                            <control type="button" id="100">
+                                <width>116</width>
+                                <height>116</height>
+                                <textoffsetx>20</textoffsetx>
+                                <textcolor>white</textcolor>
+                                <focusedcolor>$VAR[EmbyMiddleColourHighlight]</focusedcolor>
+                                <texturefocus colordiffuse="$INFO[Window(home).Property(ImageColor)]">common/box.png</texturefocus>
+                                <texturenofocus colordiffuse="$VAR[EmbyMiddleColourHighlight]">common/box.png</texturenofocus>
+
                                 <font>font13</font>
                                 <textcolor>FF999999</textcolor>
                                 <focusedcolor>FFFAFAFA</focusedcolor>
@@ -372,13 +336,15 @@
                                 <textureradiooffnofocus colordiffuse="FF999999">icons/plus2.png</textureradiooffnofocus>
                                 <textureradioonnofocus colordiffuse="FF999999">icons/plus2.png</textureradioonnofocus>
                             </control>
-                            <control type="radiobutton" id="445">
-                                <width>280</width>
-                                <height>140</height>
-                                <textoffsetx>0</textoffsetx>
-                                <align>center</align>
-                                <texturefocus border="40" colordiffuse="$INFO[Window(home).Property(ImageColor)]">buttons/roundedbutton-focus.png</texturefocus>
-                                <texturenofocus border="40" colordiffuse="$INFO[Window(home).Property(ImageColor)]">buttons/roundedbutton-nofocus.png</texturenofocus>
+                            <control type="button" id="445">
+                                <width>116</width>
+                                <height>116</height>
+                                <textoffsetx>20</textoffsetx>
+                                <textcolor>white</textcolor>
+                                <focusedcolor>$VAR[EmbyMiddleColourHighlight]</focusedcolor>
+                                <texturefocus colordiffuse="$INFO[Window(home).Property(ImageColor)]">common/box.png</texturefocus>
+                                <texturenofocus colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</texturenofocus>
+
                                 <font>font13</font>
                                 <textcolor>FF999999</textcolor>
                                 <focusedcolor>FFFAFAFA</focusedcolor>
@@ -2904,14 +2870,15 @@
                             <itemgap>0</itemgap>
                             <orientation>horizontal</orientation>
                             <usecontrolcoords>true</usecontrolcoords>
-                            <control type="image">
+                            <control type="label">
                                 <posx>0</posx>
                                 <posy>5</posy>
                                 <width>135</width>
                                 <height>67</height>
+                                <font>Medium</font>
+                                <align>center</align>
                                 <visible>!StringCompare(Window.Property(type),Season) + !StringCompare(Window.Property(type),episode)</visible>
-                                <aspectratio align="center">keep</aspectratio>
-                                <texture colordiffuse="FFFAFAFA" fallback="flags/rating/MPAA_NR_Certificate_US.png">$INFO[Window.Property(movie.mpaa),flags/rating/,.png]</texture>
+                                <label>$VAR[ExtendedInfoMPAA]</label>
                             </control>
                             <control type="group">
                                 <posx>0</posx>

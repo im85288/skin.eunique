@@ -3,6 +3,10 @@
     <defaultcontrol always="true">4000</defaultcontrol>
     <controls>
         <control type="group">
+            <include>Animation.Common.Killer</include>
+            <include>Furniture_EmbyClock</include>
+        </control>
+        <control type="group">
             <!-- left side -->
             <animation effect="slide" start="-1500,0" end="0,0" delay="600" time="900" tween="sine">WindowOpen</animation>
             <animation effect="slide" end="-1500,0" time="900" tween="sine" condition="Control.HasFocus(132) | ControlGroup(5000).HasFocus">WindowClose</animation>
