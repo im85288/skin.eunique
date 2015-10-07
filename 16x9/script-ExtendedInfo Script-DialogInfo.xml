@@ -1,1324 +1,480 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
 <window>
-    <defaultcontrol always="true">4000</defaultcontrol>
+    <defaultcontrol always="true">9000</defaultcontrol>
+    <allowoverlay>no</allowoverlay>  
+    <onload>SetProperty(150_onback,SetFocus(9000))</onload>
+    <onload>SetProperty(250_onback,SetFocus(9000))</onload>
+    <onload>SetProperty(350_onback,SetFocus(9000))</onload>
+    <onload>SetProperty(550_onback,SetFocus(9000))</onload>
+    <onload>ClearProperty(content)</onload>  
+    <onload>Dialog.Close(2003)</onload>
     <controls>
-        <control type="group">
-            <include>Animation.Common.Killer</include>
-            <include>Furniture_EmbyClock</include>
+        <control type="image">
+            <width>100%</width>
+            <height>100%</height>
+            <animation effect="fade" start="100" end="90" condition="Skin.HasSetting(osd.usetheme)">Conditional</animation>
+            <texture colordiffuse="$VAR[OSDPanel]">common/white.png</texture>
+            <visible>Window.IsVisible(fullscreenvideo)</visible>
         </control>
         <control type="group">
-            <!-- left side -->
-            <animation effect="slide" start="-1500,0" end="0,0" delay="600" time="900" tween="sine">WindowOpen</animation>
-            <animation effect="slide" end="-1500,0" time="900" tween="sine" condition="Control.HasFocus(132) | ControlGroup(5000).HasFocus">WindowClose</animation>
-            <animation effect="slide" end="-749,0" time="450" tween="sine" easing="inout" condition="!Control.HasFocus(132) + !ControlGroup(5000).HasFocus">Conditional</animation>
-            <control type="image">
-                <width>729</width>
-                <height>1080</height>
-                <texture>info/movieinfogradient.png</texture>
-            </control>
-            <control type="image">
-                <width>729</width>
-                <height>1080</height>
-                <aspectratio aligny="top">scale</aspectratio>
-                <fadetime>300</fadetime>
-                <texture>$INFO[Window.Property(actor.thumb)]</texture>
-            </control>
-        </control>
-        <control type="button" id="20000">
-            <height>0</height>
-            <width>0</width>
-            <texturefocus>-</texturefocus>
-            <posx>-5000</posx>
-            <onfocus>SetFocus(132)</onfocus>
-            <onclick>noop</onclick>
-            <visible allowhiddenfocus="true">Control.HasFocus(20000)</visible>
-        </control>
-        <control type="button" id="20001">
-            <height>0</height>
-            <width>0</width>
-            <texturefocus>-</texturefocus>
-            <posx>-5000</posx>
-            <onclick>noop</onclick>
-            <visible allowhiddenfocus="true">Control.HasFocus(20001)</visible>
-        </control>
-        <control type="group">
-            <animation effect="slide" start="5042,0" end="0,0" time="1500" tween="sine">WindowOpen</animation>
-            <animation effect="slide" end="1242,0" time="450" tween="sine" condition="Control.HasFocus(132) | ControlGroup(5000).HasFocus">WindowClose</animation>
-            <animation effect="slide" end="0,1080" time="450" tween="sine" condition="!Control.HasFocus(132) + !ControlGroup(5000).HasFocus">WindowClose</animation>
-            <animation effect="slide" end="-749,0" time="450" tween="sine" easing="inout" condition="!Control.HasFocus(132) + !ControlGroup(5000).HasFocus">Conditional</animation>
-            <!-- right side -->
-            <control type="image">
-                <posx>729</posx>
-                <width>1950</width>
-                <height>1080</height>
-                <aspectratio align="center">scale</aspectratio>
-                <texture fallback="common/black.png">$INFO[Window.Property(actor.ImageFilter)]</texture>
-            </control>
-            <control type="image">
-                <posx>729</posx>
-                <width>1950</width>
-                <animation effect="fade" start="100" end="60" time="0" condition="true">Conditional</animation>
-                <height>1080</height>
-                <aspectratio align="center">scale</aspectratio>
-                <texture colordiffuse="$INFO[Window(home).Property(ImageColor)]">diffuseoverlay.png</texture>
-            </control>
-            <control type="group" id="33000">
-                <posx>825</posx>
-                <posy>22</posy>
-                <visible>!Control.HasFocus(132)</visible>
-                <animation effect="fade" time="250">VisibleChange</animation>
-                <control type="image">
-                    <posx>990</posx>
-                    <posy>-20</posy>
-                    <width>830</width>
-                    <height>130</height>
-                    <aspectratio align="right">keep</aspectratio>
-                    <texture>moviedb.png</texture>
-                </control>
-            </control>
+            <animation type="Conditional" reversible="true" condition="Window.IsVisible(FileBrowser.xml) | Window.IsVisible(DialogProgress.xml) | Window.IsVisible(DialogYesNo.xml) | Window.IsVisible(DialogOK.xml) | Window.IsVisible(DialogSelect.xml) | Window.IsVisible(DialogContextMenu.xml) | Window.IsVisible(DialogButtonMenu.xml)">
+                <effect type="zoom" end="95" start="100" time="200" center="auto" tween="quadratic" easing="in" />
+            </animation>
+            <!-- Side Poster -->
             <control type="group">
-                <posx>825</posx>
-                <posy>68</posy>
-                <width>1042</width>
-                <height>854</height>
-                <control type="label">
-                    <posx>-40</posx>
-                    <posy>-15</posy>
-                    <height>60</height>
-                    <width>1050</width>
-                    <label>$INFO[Window.Property(actor.title)]</label>
-                    <font>font30_title</font>
-                    <scroll>true</scroll>
+                <animation effect="slide" start="-1920" end="0" delay="300" time="300" tween="quadratic" easing="out">WindowOpen</animation>
+                <animation effect="slide" start="0" end="-1920" time="300" tween="quadratic" easing="in">WindowClose</animation>
+                <animation effect="slide" start="-1920" end="0" delay="0" time="300" tween="quadratic" easing="out">Visible</animation>
+                <animation effect="slide" start="0" end="-1920" time="300" tween="quadratic" easing="in">Hidden</animation>
+                <control type="group" description="Poster">
+                    <left>SidePad</left>
+                    <top>PosterPad</top>
+                    <control type="image">
+                        <top>PosterH</top>
+                        <width>PosterW</width>
+                        <height>PosterH</height>
+                        <fadetime>100</fadetime>
+                        <aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
+                        <texture flipy="true" diffuse="diffuse/listposter-ref.png" background="true">$INFO[Window.Property(movie.thumb)]</texture>
+                        <visible>Skin.HasSetting(show.reflections)</visible>
+                    </control>
+                    <control type="image">
+                        <centertop>PosterH</centertop>
+                        <width>PosterW</width>
+                        <height>48</height>
+                        <aspectratio>stretch</aspectratio>
+                        <texture>diffuse/shadowspot.png</texture>
+                        
+                    </control>
+                    <control type="image">
+                        <width>PosterW</width>
+                        <height>PosterH</height>
+                        <texture border="5" colordiffuse="FF181818">common/box.png</texture>
+                    </control>
+                    <control type="image">
+                        <width>PosterW</width>
+                        <height>PosterH</height>
+                        <fadetime>100</fadetime>
+                        <aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
+                        <texture diffuse="diffuse/listposter.png" background="true">$INFO[Window.Property(actor.thumb)]</texture>
+                    </control>
+                    <control type="image">
+                        <left>-24</left>
+                        <top>-24</top>
+                        <width>PosterShadowW</width>
+                        <height>PosterShadowH</height>
+                        <texture border="32">common/shadow-24.png</texture>
+                    </control>
                 </control>
-                <control type="image">
-                    <posx>-40</posx>
-                    <posy>58</posy>
-                    <width>1042</width>
+            </control>
+
+            <!-- Right Side Info -->
+            <control type="group">
+                <animation effect="slide" start="1920" end="0" delay="300" time="300" tween="quadratic" easing="out">WindowOpen</animation>
+                <animation effect="slide" start="0" end="1920" time="300" tween="quadratic" easing="in">WindowClose</animation>
+                <animation effect="slide" start="1920" end="0" delay="0" time="300" tween="quadratic" easing="out">Visible</animation>
+                <animation effect="slide" start="0" end="1920" time="300" tween="quadratic" easing="in">Hidden</animation>
+          
+                <!-- Arrows -->
+                <control type="group">
+                    <include>Animation.DelayFadeIn</include>
+                    <visible>!IsEmpty(Window.Property(content))</visible>
+                    <visible>[Control.HasFocus(150) + !Container(150).IsUpdating] | [Control.HasFocus(250) + !Container(250).IsUpdating] | [Control.HasFocus(350) + !Container(350).IsUpdating] | [Control.HasFocus(550) + !Container(550).IsUpdating] | [Control.HasFocus(750) + !Container(750).IsUpdating] | [Control.HasFocus(1000) + !Container(1000).IsUpdating] | [Control.HasFocus(1150) + !Container(1150).IsUpdating] | [Control.HasFocus(50) + !Container(50).IsUpdating] | [Control.HasFocus(9501) + !Container(9501).IsUpdating]</visible>
+                    <centerbottom>366</centerbottom>
+                    <height>16</height>
+                    <control type="image">
+                        <centerleft>524</centerleft>
+                        <width>16</width>
+                        <height>16</height>
+                        <texture colordiffuse="Dark3" flipx="true">common/arrow-small-right.png</texture>
+                    </control>
+                    <control type="image">
+                        <centerright>64</centerright>
+                        <width>16</width>
+                        <height>16</height>
+                        <texture colordiffuse="Dark3" flipx="false">common/arrow-small-right.png</texture>
+                    </control>
+                </control>
+
+                <control type="button" id ="9601">
+                    <width>1</width>
                     <height>1</height>
-                    <texture>info/infopanel_line.png</texture>
+                    <visible allowhiddenfocus="true">false</visible>
+                    <onback>9000</onback>
+                    <onup>9000</onup>
+                    <ondown>9000</ondown>
+                    <onleft>9000</onleft>
+                    <onright>9000</onright>
                 </control>
-                <control type="grouplist" id="4000">
-                    <posx>-80</posx>
-                    <posy>60</posy>
-                    <width>2000</width>
-                    <itemgap>15</itemgap>
-                    <height>1000</height>
-                    <animation type="Conditional" condition="!IsEmpty(Window.Property(Bounce.Down))" reversible="false">
-                        <effect type="slide" end="0,20" time="60" tween="sine" />
-                        <effect type="slide" end="0,-20" time="180" tween="sine" delay="80" />
-                    </animation>
-                    <animation type="Conditional" condition="!IsEmpty(Window.Property(Bounce.Up))" reversible="false">
-                        <effect type="slide" end="0,-20" time="60" tween="sine" />
-                        <effect type="slide" end="0,20" time="180" tween="sine" delay="80" />
-                    </animation>
-                    <scrolltime tween="sine">400</scrolltime>
-                    <orientation>vertical</orientation>
-                    <usecontrolcoords>true</usecontrolcoords>
-                    <control type="label">
-                        <align>left</align>
-                        <aligny>center</aligny>
-                        <posx>40</posx>
-                        <posy>10</posy>
-                        <width>1000</width>
-                        <height>25</height>
-                        <textcolor>FF999999</textcolor>
-                        <font>font12</font>
-                        <label>$INFO[Window.Property(actor.AlsoKnownAs),$ADDON[script.extendedinfo 32016]: [COLOR=FFFAFAFA],[/COLOR]]</label>
-                        <visible>!isEmpty(Window.Property(actor.AlsoKnownAs))</visible>
+
+                <!-- Control Buttons -->
+                <control type="grouplist" id="9000">
+                    <visible allowhiddenfocus="true">ControlGroup(9000).HasFocus()</visible>
+                    <bottom>224</bottom>
+                    <left>540</left>
+                    <right>SidePad</right>
+                    <height>68</height>
+                    <bottom>33</bottom>
+                    <itemgap>16</itemgap>
+                    <ondown>9000</ondown>
+                    <onup condition="Control.IsVisible(50)">51</onup>
+                    <onup condition="Control.IsVisible(9501)">9501</onup>
+                    <onup condition="!Control.IsVisible(50) + !Control.IsVisible(9501)">9601</onup>
+                    <orientation>horizontal</orientation>
+
+                    <control type="button" id ="9002">
+                        <description>Movies</description>
+                        <label>$ADDON[script.extendedinfo 32010]</label>
+                        <include>DefInfoButtons</include>
+                        <onclick>SetProperty(content,150)</onclick>
+                        <onclick>SetFocus(150)</onclick>
                     </control>
-                    <control type="label">
-                        <align>left</align>
-                        <aligny>center</aligny>
-                        <posx>40</posx>
-                        <posy>10</posy>
-                        <width>1000</width>
-                        <height>25</height>
-                        <textcolor>FF999999</textcolor>
-                        <font>font12</font>
-                        <label>$INFO[Window.Property(actor.Birthday),$ADDON[script.extendedinfo 32012]: [COLOR=FFFAFAFA],[/COLOR]] $INFO[Window.Property(actor.Age),$ADDON[script.extendedinfo 32020]: [COLOR=FFFAFAFA],[/COLOR]]</label>
-                        <visible>!isEmpty(Window.Property(actor.Birthday))</visible>
+
+                    <control type="button" id ="9003">
+                        <description>TvShows</description>
+                        <label>$ADDON[script.extendedinfo 32031]</label>
+                        <include>DefInfoButtons</include>
+                        <onclick>SetProperty(content,250)</onclick>
+                        <onclick>SetFocus(250)</onclick>
                     </control>
-                    <control type="label">
-                        <align>left</align>
-                        <aligny>center</aligny>
-                        <posx>40</posx>
-                        <posy>10</posy>
-                        <width>1000</width>
-                        <height>25</height>
-                        <textcolor>FF999999</textcolor>
-                        <font>font12</font>
-                        <label>$INFO[Window.Property(actor.PlaceOfBirth),$ADDON[script.extendedinfo 32014]: [COLOR=FFFAFAFA],[/COLOR]]</label>
-                        <visible>!isEmpty(Window.Property(actor.PlaceOfBirth))</visible>
+                    <control type="button" id ="9004">
+                        <description>Youtube</description>
+                        <label>$ADDON[script.extendedinfo 32118]</label>
+                        <include>DefInfoButtons</include>
+                        <onclick>SetProperty(content,350)</onclick>
+                        <onclick>SetFocus(350)</onclick>
                     </control>
-                    <control type="label">
-                        <align>left</align>
-                        <aligny>center</aligny>
-                        <posx>40</posx>
-                        <posy>10</posy>
-                        <width>1000</width>
-                        <height>25</height>
-                        <textcolor>FF999999</textcolor>
-                        <font>font12</font>
-                        <label>$INFO[Window.Property(actor.TotalMovies),$ADDON[script.extendedinfo 32011]: [COLOR=FFFAFAFA],[/COLOR]]</label>
-                        <visible>!isEmpty(Window.Property(actor.TotalMovies))</visible>
-                    </control>
-                    <control type="label">
-                        <align>left</align>
-                        <aligny>center</aligny>
-                        <posx>40</posx>
-                        <posy>10</posy>
-                        <width>1000</width>
-                        <height>25</height>
-                        <textcolor>FF999999</textcolor>
-                        <font>font12</font>
-                        <label>$INFO[Window.Property(actor.DBMovies),$ADDON[script.extendedinfo 32021]: [COLOR=FFFAFAFA],[/COLOR]]</label>
-                        <visible>!isEmpty(Window.Property(actor.DBMovies))</visible>
-                    </control>
-                    <control type="label">
-                        <align>left</align>
-                        <aligny>center</aligny>
-                        <posx>40</posx>
-                        <posy>10</posy>
-                        <width>1000</width>
-                        <height>25</height>
-                        <textcolor>FF999999</textcolor>
-                        <font>font12</font>
-                        <label>$INFO[Window.Property(actor.Homepage),$ADDON[script.extendedinfo 32017]: [COLOR=FFFAFAFA],[/COLOR]]</label>
-                        <visible>!isEmpty(Window.Property(actor.Homepage))</visible>
-                    </control>
-                    <control type="label">
-                        <align>left</align>
-                        <aligny>center</aligny>
-                        <posx>40</posx>
-                        <posy>0</posy>
-                        <width>1000</width>
-                        <height>25</height>
-                        <textcolor>FF999999</textcolor>
-                        <font>font12</font>
-                        <label>$INFO[Window.Property(actor.Deathday),$ADDON[script.extendedinfo 32013]: [COLOR=FFFAFAFA],[/COLOR]]</label>
-                        <visible>!isEmpty(Window.Property(actor.Deathday))</visible>
-                    </control>
-                    <control type="group" id="140">
-                        <height>255</height>
-                        <control type="radiobutton" id="132">
-                            <posx>0</posx>
-                            <posy>0</posy>
-                            <width>1120</width>
-                            <height>255</height>
-                            <radioposx>30</radioposx>
-                            <radioposy>20</radioposy>
-                            <radiowidth>46</radiowidth>
-                            <radioheight>46</radioheight>
-                            <onup>SetFocus(20000)</onup>
-                            <ondown>150</ondown>
-                            <onback>9009</onback>
-                            <textureradioonfocus colordiffuse="FFFAFAFA">icons/DefaultAddonTvInfo.png</textureradioonfocus>
-                            <textureradioofffocus colordiffuse="FFFAFAFA">icons/DefaultAddonTvInfo.png</textureradioofffocus>
-                            <textureradiooffnofocus colordiffuse="FFFAFAFA">icons/DefaultAddonTvInfo.png</textureradiooffnofocus>
-                            <textureradioonnofocus colordiffuse="FFFAFAFA">icons/DefaultAddonTvInfo.png</textureradioonnofocus>
-                            <texturefocus border="40" colordiffuse="$INFO[Window(home).Property(ImageColor)]">buttons/roundedbutton-focus.png</texturefocus>
-                            <texturenofocus border="40" colordiffuse="$INFO[Window(home).Property(ImageColor)]">buttons/roundedbutton-nofocus.png</texturenofocus>
-                            <label>-</label>
-                        </control>
-                        <control type="textbox" id="800">
-                            <posx>93</posx>
-                            <posy>20</posy>
-                            <width>980</width>
-                            <height>210</height>
-                            <align>left</align>
-                            <label fallback="No info available">$INFO[Window.Property(actor.Biography)]</label>
-                            <font>font12</font>
-                            <autoscroll delay="10000" time="2000" repeat="10000">true</autoscroll>
-                        </control>
-                    </control>
-                    <control type="group" id="1500">
-                        <visible>IntegerGreaterThan(Container(150).NumItems,0)</visible>
-                        <height>540</height>
+                    <control type="button" id ="9005">
+                        <description>AsCrew</description>
+                        <label>$ADDON[script.extendedinfo 32115]</label>
+                        <include>DefInfoButtons</include>
+                        <onclick>SetProperty(content,550)</onclick>
+                        <onclick>SetFocus(550)</onclick>
+                    </control>  
+                </control>
+
+                <control type="label">
+                    <visible>stringcompare(Window.Property(content),150)</visible>
+                    <visible>Control.IsVisible(150)</visible>
+                    <visible>Control.HasFocus(150)</visible>
+                    <left>540</left>
+                    <right>SidePad</right>
+                    <top>260</top>
+                    <description>Header Label</description>
+                    <textcolor>Dark2</textcolor>
+                    <font>Small</font>
+                    <label>$INFO[Window.Property(actor.title)] $ADDON[script.extendedinfo 32010]</label>
+                    <include>Animation.DelayFadeIn</include>
+                </control>
+                <control type="label">
+                    <right>SidePad</right>
+                    <left>540</left>
+                    <bottom>264</bottom>
+                    <height>50</height>
+                    <font>Mini</font>
+                    <scroll>true</scroll>
+                    <textcolor>Dark3</textcolor>
+                    <label>$INFO[Container(150).NumItems,, $LOCALIZE[31101]  •  ]$INFO[Container(150).CurrentPage,, $LOCALIZE[20163] ]$INFO[Container(150).NumPages,, $LOCALIZE[31243]]</label>
+                    <aligny>center</aligny>
+                    <align>right</align>
+                    <visible>Control.IsVisible(150)</visible>
+                    <visible>Control.HasFocus(150)</visible>
+                    <include>Animation.DelayFadeIn</include>
+                </control>
+                <control type="label">
+                    <visible>stringcompare(Window.Property(content),250)</visible>
+                    <visible>Control.IsVisible(250)</visible>
+                    <visible>Control.HasFocus(250)</visible>
+                    <left>540</left>
+                    <right>SidePad</right>
+                    <top>260</top>
+                    <description>Header Label</description>
+                    <textcolor>Dark2</textcolor>
+                    <font>Small</font>
+                    <label>$INFO[Window.Property(actor.title)] $ADDON[script.extendedinfo 32031]</label>
+                    <include>Animation.DelayFadeIn</include>
+                </control>
+                <control type="label">
+                    <right>SidePad</right>
+                    <left>540</left>
+                    <bottom>264</bottom>
+                    <height>50</height>
+                    <font>Mini</font>
+                    <scroll>true</scroll>
+                    <textcolor>Dark3</textcolor>
+                    <label>$INFO[Container(250).NumItems,, $LOCALIZE[31101]  •  ]$INFO[Container(250).CurrentPage,, $LOCALIZE[20163] ]$INFO[Container(250).NumPages,, $LOCALIZE[31243]]</label>
+                    <aligny>center</aligny>
+                    <align>right</align>
+                    <visible>Control.IsVisible(250)</visible>
+                    <visible>Control.HasFocus(250)</visible>
+                    <include>Animation.DelayFadeIn</include>
+                </control>
+                <control type="label">
+                    <visible>stringcompare(Window.Property(content),350)</visible>
+                    <visible>Control.IsVisible(350)</visible>
+                    <visible>Control.HasFocus(350)</visible>
+                    <left>540</left>
+                    <right>SidePad</right>
+                    <top>260</top>
+                    <description>Header Label</description>
+                    <textcolor>Dark2</textcolor>
+                    <font>Small</font>
+                    <label>$INFO[Window.Property(actor.title)] $ADDON[script.extendedinfo 32118]</label>
+                    <include>Animation.DelayFadeIn</include>
+                </control>
+                <control type="label">
+                    <right>SidePad</right>
+                    <left>540</left>
+                    <bottom>264</bottom>
+                    <height>50</height>
+                    <font>Mini</font>
+                    <scroll>true</scroll>
+                    <textcolor>Dark3</textcolor>
+                    <label>$INFO[Container(350).NumItems,, $LOCALIZE[31101]  •  ]$INFO[Container(350).CurrentPage,, $LOCALIZE[20163] ]$INFO[Container(350).NumPages,, $LOCALIZE[31243]]</label>
+                    <aligny>center</aligny>
+                    <align>right</align>
+                    <visible>Control.IsVisible(350)</visible>
+                    <visible>Control.HasFocus(350)</visible>
+                    <include>Animation.DelayFadeIn</include>
+                </control>
+                <control type="label">
+                    <visible>stringcompare(Window.Property(content),550)</visible>
+                    <visible>Control.IsVisible(550)</visible>
+                    <visible>Control.HasFocus(550)</visible>
+                    <left>540</left>
+                    <right>SidePad</right>
+                    <top>260</top>
+                    <description>Header Label</description>
+                    <textcolor>Dark2</textcolor>
+                    <font>Small</font>
+                    <label>$INFO[Window.Property(actor.title)] $ADDON[script.extendedinfo 32115]</label>
+                    <include>Animation.DelayFadeIn</include>
+                </control>
+                <control type="label">
+                    <right>SidePad</right>
+                    <left>540</left>
+                    <bottom>264</bottom>
+                    <height>50</height>
+                    <font>Mini</font>
+                    <scroll>true</scroll>
+                    <textcolor>Dark3</textcolor>
+                    <label>$INFO[Container(550).NumItems,, $LOCALIZE[31101]  •  ]$INFO[Container(550).CurrentPage,, $LOCALIZE[20163] ]$INFO[Container(550).NumPages,, $LOCALIZE[31243]]</label>
+                    <aligny>center</aligny>
+                    <align>right</align>
+                    <visible>Control.IsVisible(550)</visible>
+                    <visible>Control.HasFocus(550)</visible>
+                    <include>Animation.DelayFadeIn</include>
+                </control>
+                <control type="group">
+                    <left>540</left>
+                    <right>SidePad</right>
+                    <bottom>292</bottom>
+                    <top>PosterPad</top>
+                    <visible>IsEmpty(Window.Property(content))</visible>
+                    <control type="grouplist">
+                        <left>30</left>
+                        <right>30</right>
+                        <itemgap>0</itemgap>
                         <control type="label">
-                            <posy>6</posy>
-                            <posx>25</posx>
-                            <width>500</width>
-                            <height>25</height>
-                            <aligny>center</aligny>
-                            <font>font14</font>
-                            <label>$ADDON[script.extendedinfo 32120]$INFO[Container(150).NumItems, (,)]</label>
+                            <description>Header Label</description>
+                            <textcolor>Dark1</textcolor>
+                            <include>DefDialogInfoHeader</include>
+                            <label>$INFO[Window.Property(actor.title)]</label>
                         </control>
-                        <control type="image">
-                            <posx>0</posx>
-                            <posy>200</posy>
-                            <width>28</width>
-                            <height>28</height>
-                            <texture colordiffuse="$INFO[Window.Property(movie.ImageColor)]" flipx="true">arrowright.png</texture>
-                            <animation effect="slide" start="30,0" end="0,0" time="200">VisibleChange</animation>
-                            <animation effect="slide" start="-150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
-                            <visible>Container(150).HasPrevious + Control.HasFocus(150)</visible>
+                        <control type="group">
+                            <height>50</height>
+                            <control type="label">
+                                <posy>-10</posy>
+                                <width>100%</width>
+                                <height>36</height>
+                                <font>Tiny</font>
+                                <textcolor>Dark2</textcolor>
+                                <label>$INFO[Window.Property(actor.AlsoKnownAs)]</label>
+                                <aligny>center</aligny>
+                            </control>
                         </control>
-                        <control type="image">
-                            <posx>1883</posx>
-                            <posy>200</posy>
-                            <width>28</width>
-                            <height>28</height>
-                            <texture colordiffuse="$INFO[Window.Property(movie.ImageColor)]">arrowright.png</texture>
-                            <animation effect="slide" start="-30,0" end="0,0" time="200">VisibleChange</animation>
-                            <animation effect="slide" start="150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
-                            <visible>Container(150).HasNext + Control.HasFocus(150)</visible>
+                        <control type="group">
+                            <visible>IsEmpty(Window.Property(content)) + !IsEmpty(Window.Property(actor.Birthday))</visible>
+                            <height>36</height>
+                            <control type="label">
+                                <width>100%</width>
+                                <height>36</height>
+                                <font>Tiny</font>
+                                <textcolor>Dark1</textcolor>
+                                <label>[B]$ADDON[script.extendedinfo 32012][/B]</label>
+                                <aligny>center</aligny>
+                            </control>
+                            <control type="label">
+                                <left>250</left>
+                                <width>100%</width>
+                                <height>36</height>
+                                <font>Tiny</font>
+                                <textcolor>Dark2</textcolor>
+                                <label fallback="19055">$INFO[Window.Property(actor.Birthday)]</label>
+                                <aligny>center</aligny>
+                            </control>
                         </control>
-                        <control type="panel" id="150">
-                            <posy>30</posy>
-                            <posx>-45</posx>
-                            <width>1950</width>
-                            <height>600</height>
-                            <onleft>150</onleft>
-                            <onright>150</onright>
-                            <onup>132</onup>
-                            <ondown>250</ondown>
-                            <onback>9009</onback>
-                            <scrolltime>200</scrolltime>
-                            <orientation>horizontal</orientation>
-                            <animation type="WindowOpen" reversible="false">
-                                <effect type="slide" start="0,1080" end="0,0" delay="0" tween="sine" time="1300" />
-                            </animation>
-                            <itemlayout height="400" width="270">
-                                <control type="group">
-                                    <control type="image">
-                                        <posy>0</posy>
-                                        <posx>50</posx>
-                                        <width>280</width>
-                                        <height>380</height>
-                                        <texture border="40" colordiffuse="$INFO[Window(home).Property(ImageColor)]">buttons/roundedbutton-nofocus.png</texture>
-                                    </control>
-                                    <control type="group">
-                                        <posx>77</posx>
-                                        <posy>18</posy>
-                                        <control type="image">
-                                            <posy>10</posy>
-                                            <width>224</width>
-                                            <height>325</height>
-                                            <texture background="true" fallback="DefaultVideo.png">$INFO[ListItem.Thumb]</texture>
-                                            <aspectratio aligny="center">scale</aspectratio>
-                                            <fadetime>0</fadetime>
-                                        </control>
-                                        <control type="image">
-                                            <width>55</width>
-                                            <height>55</height>
-                                            <posy>10</posy>
-                                            <posx>169</posx>
-                                            <texture>flags/local.png</texture>
-                                            <visible>!IsEmpty(ListItem.Property(DBID))</visible>
-                                        </control>
-                                        <control type="image">
-                                            <posy>310</posy>
-                                            <width>54</width>
-                                            <height>25</height>
-                                            <texture>common/black.png</texture>
-                                            <animation effect="fade" end="60" time="0" condition="true">Conditional</animation>
-                                            <aspectratio aligny="center">scale</aspectratio>
-                                            <visible>!IsEmpty(ListItem.Year)</visible>
-                                        </control>
-                                        <control type="label">
-                                            <posx>5</posx>
-                                            <posy>310</posy>
-                                            <width>84</width>
-                                            <height>25</height>
-                                            <font>font10</font>
-                                            <aligny>center</aligny>
-                                            <align>left</align>
-                                            <label>$INFO[ListItem.Year]</label>
-                                        </control>
-                                        <control type="image">
-                                            <posy>10</posy>
-                                            <width>224</width>
-                                            <height>325</height>
-                                            <texture>common/black.png</texture>
-                                            <animation effect="fade" start="100" end="0" time="200" condition="!Control.HasFocus(150)">Conditional</animation>
-                                            <animation effect="fade" end="30" time="0" condition="true">Conditional</animation>
-                                            <aspectratio aligny="center">scale</aspectratio>
-                                        </control>
-                                        <control type="textbox">
-                                            <width>228</width>
-                                            <height>140</height>
-                                            <posx>0</posx>
-                                            <posy>340</posy>
-                                            <align>center</align>
-                                            <font>font12</font>
-                                            <textcolor>FFF0F0F0</textcolor>
-                                            <label>$INFO[ListItem.Label][CR][COLOR FF999999]$INFO[ListItem.Property(Character)][/COLOR]</label>
-                                        </control>
-                                    </control>
-                                </control>
-                            </itemlayout>
-                            <focusedlayout height="400" width="270">
-                                <control type="group">
-                                    <control type="image">
-                                        <posy>0</posy>
-                                        <posx>50</posx>
-                                        <width>280</width>
-                                        <height>380</height>
-                                        <texture border="40" colordiffuse="$INFO[Window(home).Property(ImageColor)]">buttons/roundedbutton-nofocus.png</texture>
-                                    </control>
-                                    <control type="image">
-                                        <posy>0</posy>
-                                        <posx>50</posx>
-                                        <width>280</width>
-                                        <height>380</height>
-                                        <texture border="40" colordiffuse="$INFO[Window(home).Property(ImageColor)]">buttons/roundedbutton-focus.png</texture>
-                                        <animation effect="fade" start="0" end="100" time="160">Focus</animation>
-                                        <animation effect="fade" start="0" end="100" time="0">UnFocus</animation>
-                                    </control>
-                                    <control type="group">
-                                        <posx>77</posx>
-                                        <posy>18</posy>
-                                        <control type="image">
-                                            <posy>10</posy>
-                                            <width>224</width>
-                                            <height>325</height>
-                                            <texture background="true" fallback="DefaultVideo.png">$INFO[ListItem.Thumb]</texture>
-                                            <aspectratio aligny="center">scale</aspectratio>
-                                            <fadetime>0</fadetime>
-                                        </control>
-                                        <control type="image">
-                                            <width>55</width>
-                                            <height>55</height>
-                                            <posy>10</posy>
-                                            <posx>169</posx>
-                                            <texture>flags/local.png</texture>
-                                            <visible>!IsEmpty(ListItem.Property(DBID))</visible>
-                                        </control>
-                                        <control type="image">
-                                            <posy>310</posy>
-                                            <width>54</width>
-                                            <height>25</height>
-                                            <texture>common/black.png</texture>
-                                            <animation effect="fade" end="60" time="0" condition="true">Conditional</animation>
-                                            <aspectratio aligny="center">scale</aspectratio>
-                                            <visible>!IsEmpty(ListItem.Year)</visible>
-                                        </control>
-                                        <control type="label">
-                                            <posx>5</posx>
-                                            <posy>310</posy>
-                                            <width>84</width>
-                                            <height>25</height>
-                                            <font>font10</font>
-                                            <aligny>center</aligny>
-                                            <align>left</align>
-                                            <label>$INFO[ListItem.Year]</label>
-                                        </control>
-                                        <control type="textbox">
-                                            <width>228</width>
-                                            <height>140</height>
-                                            <posx>0</posx>
-                                            <posy>340</posy>
-                                            <align>center</align>
-                                            <font>font12</font>
-                                            <textcolor>FFF0F0F0</textcolor>
-                                            <label>$INFO[ListItem.Label][CR][COLOR FF999999]$INFO[ListItem.Property(Character)][/COLOR]</label>
-                                        </control>
-                                    </control>
-                                </control>
-                            </focusedlayout>
+                        <control type="group">
+                            <visible>IsEmpty(Window.Property(content)) + !IsEmpty(Window.Property(actor.PlaceOfBirth))</visible>
+                            <height>36</height>
+                            <control type="label">
+                                <width>100%</width>
+                                <height>36</height>
+                                <font>Tiny</font>
+                                <textcolor>Dark1</textcolor>
+                                <label>[B]$ADDON[script.extendedinfo 32014][/B]</label>
+                                <aligny>center</aligny>
+                            </control>
+                            <control type="label">
+                                <left>250</left>
+                                <width>100%</width>
+                                <height>36</height>
+                                <font>Tiny</font>
+                                <textcolor>Dark2</textcolor>
+                                <label fallback="19055">$INFO[Window.Property(actor.PlaceOfBirth)]</label>
+                                <aligny>center</aligny>
+                            </control>
                         </control>
-                    </control>
-                    <control type="group" id="2500">
-                        <height>540</height>
-                        <visible>IntegerGreaterThan(Container(250).NumItems,0)</visible>
+                        <control type="group">
+                            <visible>IsEmpty(Window.Property(content)) + !IsEmpty(Window.Property(actor.DeathDay))</visible>
+                            <height>36</height>
+                            <control type="label">
+                                <width>100%</width>
+                                <height>36</height>
+                                <font>Tiny</font>
+                                <textcolor>Dark1</textcolor>
+                                <label>[B]$ADDON[script.extendedinfo 32013][/B]</label>
+                                <aligny>center</aligny>
+                            </control>
+                            <control type="label">
+                                <left>250</left>
+                                <width>100%</width>
+                                <height>36</height>
+                                <font>Tiny</font>
+                                <textcolor>Dark2</textcolor>
+                                <label fallback="19055">$INFO[Window.Property(actor.DeathDay)]</label>
+                                <aligny>center</aligny>
+                            </control>
+                        </control>
+                        <control type="group">
+                            <visible>IsEmpty(Window.Property(content)) !IsEmpty(Window.Property(actor.Age))</visible>
+                            <height>36</height>
+                            <control type="label">
+                                <width>100%</width>
+                                <height>36</height>
+                                <font>Tiny</font>
+                                <textcolor>Dark1</textcolor>
+                                <label>[B]$ADDON[script.extendedinfo 32020][/B]</label>
+                                <aligny>center</aligny>
+                            </control>
+                            <control type="label">
+                                <left>250</left>
+                                <width>100%</width>
+                                <height>36</height>
+                                <font>Tiny</font>
+                                <textcolor>Dark2</textcolor>
+                                <label fallback="19055">$INFO[Window.Property(actor.Age)]</label>
+                                <aligny>center</aligny>
+                            </control>
+                        </control>
+                        
+                        
+                      
                         <control type="label">
-                            <posy>6</posy>
-                            <posx>25</posx>
-                            <width>500</width>
-                            <height>25</height>
+                            <width>100%</width>
+                            <height>24</height>
+                            <font>Tiny</font>
+                            <textcolor>Dark1</textcolor>
+                            <label></label>
                             <aligny>center</aligny>
-                            <font>font14</font>
-                            <label>$ADDON[script.extendedinfo 32121]$INFO[Container(250).NumItems, (,)]</label>
                         </control>
-                        <control type="image">
-                            <posx>0</posx>
-                            <posy>200</posy>
-                            <width>28</width>
-                            <height>28</height>
-                            <texture colordiffuse="$INFO[Window.Property(movie.ImageColor)]" flipx="true">arrowright.png</texture>
-                            <animation effect="slide" start="30,0" end="0,0" time="200">VisibleChange</animation>
-                            <animation effect="slide" start="-150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
-                            <visible>Container(250).HasPrevious + Control.HasFocus(250)</visible>
+                        <control type="textbox">
+                            <visible>IsEmpty(Window.Property(content))</visible>
+                            <width>100%</width>
+                            <height>250</height>
+                            <font>Tiny</font>
+                            <textcolor>Dark2</textcolor>
+                            <label>$INFO[Window.Property(actor.Biography)]</label>
                         </control>
-                        <control type="image">
-                            <posx>1883</posx>
-                            <posy>200</posy>
-                            <width>28</width>
-                            <height>28</height>
-                            <texture colordiffuse="$INFO[Window.Property(movie.ImageColor)]">arrowright.png</texture>
-                            <animation effect="slide" start="-30,0" end="0,0" time="200">VisibleChange</animation>
-                            <animation effect="slide" start="150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
-                            <visible>Container(250).HasNext + Control.HasFocus(250)</visible>
-                        </control>
-                        <control type="panel" id="250">
-                            <posy>30</posy>
-                            <posx>-45</posx>
-                            <width>1950</width>
-                            <height>600</height>
-                            <onleft>250</onleft>
-                            <onright>250</onright>
-                            <onup>150</onup>
-                            <ondown>550</ondown>
-                            <onback>9009</onback>
-                            <scrolltime>200</scrolltime>
-                            <orientation>horizontal</orientation>
-                            <animation type="WindowOpen" reversible="false">
-                                <effect type="slide" start="0,1080" end="0,0" delay="0" tween="sine" time="1300" />
-                            </animation>
-                            <itemlayout height="400" width="270">
-                                <control type="group">
-                                    <control type="image">
-                                        <posy>0</posy>
-                                        <posx>50</posx>
-                                        <width>280</width>
-                                        <height>380</height>
-                                        <texture border="40" colordiffuse="$INFO[Window(home).Property(ImageColor)]">buttons/roundedbutton-nofocus.png</texture>
-                                    </control>
-                                    <control type="group">
-                                        <posx>77</posx>
-                                        <posy>18</posy>
-                                        <control type="image">
-                                            <posy>10</posy>
-                                            <width>224</width>
-                                            <height>325</height>
-                                            <texture background="true" fallback="DefaultVideo.png">$INFO[ListItem.Thumb]</texture>
-                                            <aspectratio aligny="center">scale</aspectratio>
-                                            <fadetime>0</fadetime>
-                                        </control>
-                                        <control type="image">
-                                            <width>55</width>
-                                            <height>55</height>
-                                            <posy>10</posy>
-                                            <posx>169</posx>
-                                            <texture>flags/local.png</texture>
-                                            <visible>!IsEmpty(ListItem.Property(DBID))</visible>
-                                        </control>
-                                        <control type="image">
-                                            <posy>310</posy>
-                                            <width>54</width>
-                                            <height>25</height>
-                                            <texture>common/black.png</texture>
-                                            <animation effect="fade" end="60" time="0" condition="true">Conditional</animation>
-                                            <aspectratio aligny="center">scale</aspectratio>
-                                            <visible>!IsEmpty(ListItem.Year)</visible>
-                                        </control>
-                                        <control type="label">
-                                            <posx>5</posx>
-                                            <posy>310</posy>
-                                            <width>84</width>
-                                            <height>25</height>
-                                            <font>font10</font>
-                                            <aligny>center</aligny>
-                                            <align>left</align>
-                                            <label>$INFO[ListItem.Year]</label>
-                                        </control>
-                                        <control type="image">
-                                            <posy>10</posy>
-                                            <width>224</width>
-                                            <height>325</height>
-                                            <texture>common/black.png</texture>
-                                            <animation effect="fade" start="100" end="0" time="200" condition="!Control.HasFocus(250)">Conditional</animation>
-                                            <animation effect="fade" end="30" time="0" condition="true">Conditional</animation>
-                                            <aspectratio aligny="center">scale</aspectratio>
-                                        </control>
-                                        <control type="textbox">
-                                            <width>228</width>
-                                            <height>140</height>
-                                            <posx>0</posx>
-                                            <posy>340</posy>
-                                            <align>center</align>
-                                            <font>font12</font>
-                                            <textcolor>FFF0F0F0</textcolor>
-                                            <label>$INFO[ListItem.Label][CR][COLOR FF999999]$INFO[ListItem.Property(Character)][/COLOR]</label>
-                                        </control>
-                                    </control>
-                                </control>
-                            </itemlayout>
-                            <focusedlayout height="400" width="270">
-                                <control type="group">
-                                    <control type="image">
-                                        <posy>0</posy>
-                                        <posx>50</posx>
-                                        <width>280</width>
-                                        <height>380</height>
-                                        <texture border="40" colordiffuse="$INFO[Window(home).Property(ImageColor)]">buttons/roundedbutton-nofocus.png</texture>
-                                    </control>
-                                    <control type="image">
-                                        <posy>0</posy>
-                                        <posx>50</posx>
-                                        <width>280</width>
-                                        <height>380</height>
-                                        <texture border="40" colordiffuse="$INFO[Window(home).Property(ImageColor)]">buttons/roundedbutton-focus.png</texture>
-                                        <animation effect="fade" start="0" end="100" time="160">Focus</animation>
-                                        <animation effect="fade" start="0" end="100" time="0">UnFocus</animation>
-                                    </control>
-                                    <control type="group">
-                                        <posx>77</posx>
-                                        <posy>18</posy>
-                                        <control type="image">
-                                            <posy>10</posy>
-                                            <width>224</width>
-                                            <height>325</height>
-                                            <texture background="true" fallback="DefaultVideo.png">$INFO[ListItem.Thumb]</texture>
-                                            <aspectratio aligny="center">scale</aspectratio>
-                                            <fadetime>0</fadetime>
-                                        </control>
-                                        <control type="image">
-                                            <width>55</width>
-                                            <height>55</height>
-                                            <posy>10</posy>
-                                            <posx>169</posx>
-                                            <texture>flags/local.png</texture>
-                                            <visible>!IsEmpty(ListItem.Property(DBID))</visible>
-                                        </control>
-                                        <control type="image">
-                                            <posy>310</posy>
-                                            <width>54</width>
-                                            <height>25</height>
-                                            <texture>common/black.png</texture>
-                                            <animation effect="fade" end="60" time="0" condition="true">Conditional</animation>
-                                            <aspectratio aligny="center">scale</aspectratio>
-                                            <visible>!IsEmpty(ListItem.Year)</visible>
-                                        </control>
-                                        <control type="label">
-                                            <posx>5</posx>
-                                            <posy>310</posy>
-                                            <width>84</width>
-                                            <height>25</height>
-                                            <font>font10</font>
-                                            <aligny>center</aligny>
-                                            <align>left</align>
-                                            <label>$INFO[ListItem.Year]</label>
-                                        </control>
-                                        <control type="textbox">
-                                            <width>228</width>
-                                            <height>140</height>
-                                            <posx>0</posx>
-                                            <posy>340</posy>
-                                            <align>center</align>
-                                            <font>font12</font>
-                                            <textcolor>FFF0F0F0</textcolor>
-                                            <label>$INFO[ListItem.Label][CR][COLOR FF999999]$INFO[ListItem.Property(Character)][/COLOR]</label>
-                                        </control>
-                                    </control>
-                                </control>
-                            </focusedlayout>
-                        </control>
-                    </control>
-                    <control type="group" id="5500">
-                        <visible>IntegerGreaterThan(Container(550).NumItems,0)</visible>
-                        <height>540</height>
-                        <control type="label">
-                            <posy>6</posy>
-                            <posx>25</posx>
-                            <width>500</width>
-                            <height>25</height>
-                            <aligny>center</aligny>
-                            <font>font14</font>
-                            <label>$ADDON[script.extendedinfo 32122]$INFO[Container(550).NumItems, (,)]</label>
-                        </control>
-                        <control type="image">
-                            <posx>0</posx>
-                            <posy>200</posy>
-                            <width>28</width>
-                            <height>28</height>
-                            <texture colordiffuse="$INFO[Window.Property(movie.ImageColor)]" flipx="true">arrowright.png</texture>
-                            <animation effect="slide" start="30,0" end="0,0" time="200">VisibleChange</animation>
-                            <animation effect="slide" start="-150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
-                            <visible>Container(550).HasPrevious + Control.HasFocus(550)</visible>
-                        </control>
-                        <control type="image">
-                            <posx>1883</posx>
-                            <posy>200</posy>
-                            <width>28</width>
-                            <height>28</height>
-                            <texture colordiffuse="$INFO[Window.Property(movie.ImageColor)]">arrowright.png</texture>
-                            <animation effect="slide" start="-30,0" end="0,0" time="200">VisibleChange</animation>
-                            <animation effect="slide" start="150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
-                            <visible>Container(550).HasNext + Control.HasFocus(550)</visible>
-                        </control>
-                        <control type="panel" id="550">
-                            <posy>30</posy>
-                            <posx>-45</posx>
-                            <width>1950</width>
-                            <height>600</height>
-                            <onleft>550</onleft>
-                            <onright>550</onright>
-                            <onup>250</onup>
-                            <ondown>650</ondown>
-                            <onback>9009</onback>
-                            <scrolltime>200</scrolltime>
-                            <orientation>horizontal</orientation>
-                            <animation type="WindowOpen" reversible="false">
-                                <effect type="slide" start="0,1080" end="0,0" delay="0" tween="sine" time="1300" />
-                            </animation>
-                            <itemlayout height="400" width="270">
-                                <control type="group">
-                                    <control type="image">
-                                        <posy>0</posy>
-                                        <posx>50</posx>
-                                        <width>280</width>
-                                        <height>380</height>
-                                        <texture border="40" colordiffuse="$INFO[Window(home).Property(ImageColor)]">buttons/roundedbutton-nofocus.png</texture>
-                                    </control>
-                                    <control type="group">
-                                        <posx>77</posx>
-                                        <posy>18</posy>
-                                        <control type="image">
-                                            <posy>10</posy>
-                                            <width>224</width>
-                                            <height>325</height>
-                                            <texture background="true" fallback="DefaultVideo.png">$INFO[ListItem.Thumb]</texture>
-                                            <aspectratio aligny="center">scale</aspectratio>
-                                            <fadetime>0</fadetime>
-                                        </control>
-                                        <control type="image">
-                                            <width>55</width>
-                                            <height>55</height>
-                                            <posy>10</posy>
-                                            <posx>169</posx>
-                                            <texture>flags/local.png</texture>
-                                            <visible>!IsEmpty(ListItem.Property(DBID))</visible>
-                                        </control>
-                                        <control type="image">
-                                            <posy>310</posy>
-                                            <width>54</width>
-                                            <height>25</height>
-                                            <texture>common/black.png</texture>
-                                            <animation effect="fade" end="60" time="0" condition="true">Conditional</animation>
-                                            <aspectratio aligny="center">scale</aspectratio>
-                                            <visible>!IsEmpty(ListItem.Year)</visible>
-                                        </control>
-                                        <control type="label">
-                                            <posx>5</posx>
-                                            <posy>310</posy>
-                                            <width>84</width>
-                                            <height>25</height>
-                                            <font>font10</font>
-                                            <aligny>center</aligny>
-                                            <align>left</align>
-                                            <label>$INFO[ListItem.Year]</label>
-                                        </control>
-                                        <control type="image">
-                                            <posy>10</posy>
-                                            <width>224</width>
-                                            <height>325</height>
-                                            <texture>common/black.png</texture>
-                                            <animation effect="fade" start="100" end="0" time="0" condition="!Control.HasFocus(550)">Conditional</animation>
-                                            <animation effect="fade" end="30" time="0" condition="true">Conditional</animation>
-                                            <aspectratio aligny="center">scale</aspectratio>
-                                        </control>
-                                        <control type="textbox">
-                                            <width>228</width>
-                                            <height>140</height>
-                                            <posx>0</posx>
-                                            <posy>340</posy>
-                                            <align>center</align>
-                                            <font>font12</font>
-                                            <textcolor>FFF0F0F0</textcolor>
-                                            <label>$INFO[ListItem.Label][CR][COLOR FF999999]$INFO[ListItem.Property(Job)][/COLOR]</label>
-                                        </control>
-                                    </control>
-                                </control>
-                            </itemlayout>
-                            <focusedlayout height="400" width="270">
-                                <control type="group">
-                                    <control type="image">
-                                        <posy>0</posy>
-                                        <posx>50</posx>
-                                        <width>280</width>
-                                        <height>380</height>
-                                        <texture border="40" colordiffuse="$INFO[Window(home).Property(ImageColor)]">buttons/roundedbutton-nofocus.png</texture>
-                                    </control>
-                                    <control type="image">
-                                        <posy>0</posy>
-                                        <posx>50</posx>
-                                        <width>280</width>
-                                        <height>380</height>
-                                        <texture border="40" colordiffuse="$INFO[Window(home).Property(ImageColor)]">buttons/roundedbutton-focus.png</texture>
-                                        <animation effect="fade" start="0" end="100" time="160">Focus</animation>
-                                        <animation effect="fade" start="0" end="100" time="0">UnFocus</animation>
-                                    </control>
-                                    <control type="group">
-                                        <posx>77</posx>
-                                        <posy>18</posy>
-                                        <control type="image">
-                                            <posy>10</posy>
-                                            <width>224</width>
-                                            <height>325</height>
-                                            <texture background="true" fallback="DefaultVideo.png">$INFO[ListItem.Thumb]</texture>
-                                            <aspectratio aligny="center">scale</aspectratio>
-                                            <fadetime>0</fadetime>
-                                        </control>
-                                        <control type="image">
-                                            <width>55</width>
-                                            <height>55</height>
-                                            <posy>10</posy>
-                                            <posx>169</posx>
-                                            <texture>flags/local.png</texture>
-                                            <visible>!IsEmpty(ListItem.Property(DBID))</visible>
-                                        </control>
-                                        <control type="image">
-                                            <posy>310</posy>
-                                            <width>54</width>
-                                            <height>25</height>
-                                            <texture>common/black.png</texture>
-                                            <animation effect="fade" end="60" time="0" condition="true">Conditional</animation>
-                                            <aspectratio aligny="center">scale</aspectratio>
-                                            <visible>!IsEmpty(ListItem.Year)</visible>
-                                        </control>
-                                        <control type="label">
-                                            <posx>5</posx>
-                                            <posy>310</posy>
-                                            <width>84</width>
-                                            <height>25</height>
-                                            <font>font10</font>
-                                            <aligny>center</aligny>
-                                            <align>left</align>
-                                            <label>$INFO[ListItem.Year]</label>
-                                        </control>
-                                        <control type="textbox">
-                                            <width>228</width>
-                                            <height>140</height>
-                                            <posx>0</posx>
-                                            <posy>340</posy>
-                                            <align>center</align>
-                                            <font>font12</font>
-                                            <textcolor>FFF0F0F0</textcolor>
-                                            <label>$INFO[ListItem.Label][CR][COLOR FF999999]$INFO[ListItem.Property(Job)][/COLOR]</label>
-                                        </control>
-                                    </control>
-                                </control>
-                            </focusedlayout>
-                        </control>
-                    </control>
-                    <control type="group" id="6500">
-                        <height>540</height>
-                        <visible>IntegerGreaterThan(Container(650).NumItems,0)</visible>
-                        <control type="label">
-                            <posy>6</posy>
-                            <posx>25</posx>
-                            <width>500</width>
-                            <height>25</height>
-                            <aligny>center</aligny>
-                            <font>font14</font>
-                            <label>$ADDON[script.extendedinfo 32123]$INFO[Container(650).NumItems, (,)]</label>
-                        </control>
-                        <control type="image">
-                            <posx>0</posx>
-                            <posy>200</posy>
-                            <width>28</width>
-                            <height>28</height>
-                            <texture colordiffuse="$INFO[Window.Property(movie.ImageColor)]" flipx="true">arrowright.png</texture>
-                            <animation effect="slide" start="30,0" end="0,0" time="200">VisibleChange</animation>
-                            <animation effect="slide" start="-150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
-                            <visible>Container(650).HasPrevious + Control.HasFocus(650)</visible>
-                        </control>
-                        <control type="image">
-                            <posx>1883</posx>
-                            <posy>200</posy>
-                            <width>28</width>
-                            <height>28</height>
-                            <texture colordiffuse="$INFO[Window.Property(movie.ImageColor)]">arrowright.png</texture>
-                            <animation effect="slide" start="-30,0" end="0,0" time="200">VisibleChange</animation>
-                            <animation effect="slide" start="150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
-                            <visible>Container(650).HasNext + Control.HasFocus(650)</visible>
-                        </control>
-                        <control type="panel" id="650">
-                            <posy>30</posy>
-                            <posx>-45</posx>
-                            <width>1950</width>
-                            <height>600</height>
-                            <onleft>650</onleft>
-                            <onright>650</onright>
-                            <onup>550</onup>
-                            <ondown>350</ondown>
-                            <onback>9009</onback>
-                            <scrolltime>200</scrolltime>
-                            <orientation>horizontal</orientation>
-                            <animation type="WindowOpen" reversible="false">
-                                <effect type="slide" start="0,1080" end="0,0" delay="0" tween="sine" time="1300" />
-                            </animation>
-                            <itemlayout height="400" width="270">
-                                <control type="group">
-                                    <control type="image">
-                                        <posy>0</posy>
-                                        <posx>50</posx>
-                                        <width>280</width>
-                                        <height>380</height>
-                                        <texture border="40" colordiffuse="$INFO[Window(home).Property(ImageColor)]">buttons/roundedbutton-nofocus.png</texture>
-                                    </control>
-                                    <control type="group">
-                                        <posx>77</posx>
-                                        <posy>18</posy>
-                                        <control type="image">
-                                            <posy>10</posy>
-                                            <width>224</width>
-                                            <height>325</height>
-                                            <texture background="true" fallback="DefaultVideo.png">$INFO[ListItem.Thumb]</texture>
-                                            <aspectratio aligny="center">scale</aspectratio>
-                                            <fadetime>0</fadetime>
-                                        </control>
-                                        <control type="image">
-                                            <width>55</width>
-                                            <height>55</height>
-                                            <posy>10</posy>
-                                            <posx>169</posx>
-                                            <texture>flags/local.png</texture>
-                                            <visible>!IsEmpty(ListItem.Property(DBID))</visible>
-                                        </control>
-                                        <control type="image">
-                                            <posy>310</posy>
-                                            <width>54</width>
-                                            <height>25</height>
-                                            <texture>common/black.png</texture>
-                                            <animation effect="fade" end="60" time="0" condition="true">Conditional</animation>
-                                            <aspectratio aligny="center">scale</aspectratio>
-                                            <visible>!IsEmpty(ListItem.Year)</visible>
-                                        </control>
-                                        <control type="label">
-                                            <posx>5</posx>
-                                            <posy>310</posy>
-                                            <width>84</width>
-                                            <height>25</height>
-                                            <font>font10</font>
-                                            <aligny>center</aligny>
-                                            <align>left</align>
-                                            <label>$INFO[ListItem.Year]</label>
-                                        </control>
-                                        <control type="image">
-                                            <posy>10</posy>
-                                            <width>224</width>
-                                            <height>325</height>
-                                            <texture>common/black.png</texture>
-                                            <animation effect="fade" start="100" end="0" time="0" condition="!Control.HasFocus(650)">Conditional</animation>
-                                            <animation effect="fade" end="30" time="0" condition="true">Conditional</animation>
-                                            <aspectratio aligny="center">scale</aspectratio>
-                                        </control>
-                                        <control type="textbox">
-                                            <width>228</width>
-                                            <height>140</height>
-                                            <posx>0</posx>
-                                            <posy>340</posy>
-                                            <align>center</align>
-                                            <font>font12</font>
-                                            <textcolor>FFF0F0F0</textcolor>
-                                            <label>$INFO[ListItem.Label][CR][COLOR FF999999]$INFO[ListItem.Property(Job)][/COLOR]</label>
-                                        </control>
-                                    </control>
-                                </control>
-                            </itemlayout>
-                            <focusedlayout height="400" width="270">
-                                <control type="group">
-                                    <control type="image">
-                                        <posy>0</posy>
-                                        <posx>50</posx>
-                                        <width>280</width>
-                                        <height>380</height>
-                                        <texture border="40" colordiffuse="$INFO[Window(home).Property(ImageColor)]">buttons/roundedbutton-nofocus.png</texture>
-                                    </control>
-                                    <control type="image">
-                                        <posy>0</posy>
-                                        <posx>50</posx>
-                                        <width>280</width>
-                                        <height>380</height>
-                                        <texture border="40" colordiffuse="$INFO[Window(home).Property(ImageColor)]">buttons/roundedbutton-focus.png</texture>
-                                        <animation effect="fade" start="0" end="100" time="160">Focus</animation>
-                                        <animation effect="fade" start="0" end="100" time="0">UnFocus</animation>
-                                    </control>
-                                    <control type="group">
-                                        <posx>77</posx>
-                                        <posy>18</posy>
-                                        <control type="image">
-                                            <posy>10</posy>
-                                            <width>224</width>
-                                            <height>325</height>
-                                            <texture background="true" fallback="DefaultVideo.png">$INFO[ListItem.Thumb]</texture>
-                                            <aspectratio aligny="center">scale</aspectratio>
-                                            <fadetime>0</fadetime>
-                                        </control>
-                                        <control type="image">
-                                            <width>55</width>
-                                            <height>55</height>
-                                            <posy>10</posy>
-                                            <posx>169</posx>
-                                            <texture>flags/local.png</texture>
-                                            <visible>!IsEmpty(ListItem.Property(DBID))</visible>
-                                        </control>
-                                        <control type="image">
-                                            <posy>310</posy>
-                                            <width>54</width>
-                                            <height>25</height>
-                                            <texture>common/black.png</texture>
-                                            <animation effect="fade" end="60" time="0" condition="true">Conditional</animation>
-                                            <aspectratio aligny="center">scale</aspectratio>
-                                            <visible>!IsEmpty(ListItem.Year)</visible>
-                                        </control>
-                                        <control type="label">
-                                            <posx>5</posx>
-                                            <posy>310</posy>
-                                            <width>84</width>
-                                            <height>25</height>
-                                            <font>font10</font>
-                                            <aligny>center</aligny>
-                                            <align>left</align>
-                                            <label>$INFO[ListItem.Year]</label>
-                                        </control>
-                                        <control type="textbox">
-                                            <width>228</width>
-                                            <height>140</height>
-                                            <posx>0</posx>
-                                            <posy>340</posy>
-                                            <align>center</align>
-                                            <font>font12</font>
-                                            <textcolor>FFF0F0F0</textcolor>
-                                            <label>$INFO[ListItem.Label][CR][COLOR FF999999]$INFO[ListItem.Property(Job)][/COLOR]</label>
-                                        </control>
-                                    </control>
-                                </control>
-                            </focusedlayout>
-                        </control>
-                    </control>
-                    <control type="group">
-                        <visible>IntegerGreaterThan(Container(350).NumItems,0)</visible>
-                        <height>440</height>
-                        <control type="label">
-                            <posy>6</posy>
-                            <posx>25</posx>
-                            <width>500</width>
-                            <height>25</height>
-                            <aligny>center</aligny>
-                            <font>font14</font>
-                            <label>$ADDON[script.extendedinfo 32118]$INFO[Container(350).NumItems, (,)]</label>
-                        </control>
-                        <control type="image">
-                            <posx>0</posx>
-                            <posy>150</posy>
-                            <width>28</width>
-                            <height>28</height>
-                            <texture colordiffuse="$INFO[Window.Property(movie.ImageColor)]" flipx="true">arrowright.png</texture>
-                            <animation effect="slide" start="30,0" end="0,0" time="200">VisibleChange</animation>
-                            <animation effect="slide" start="-150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
-                            <visible>Container(350).HasPrevious + Control.HasFocus(350)</visible>
-                        </control>
-                        <control type="image">
-                            <posx>1883</posx>
-                            <posy>150</posy>
-                            <width>28</width>
-                            <height>28</height>
-                            <texture colordiffuse="$INFO[Window.Property(movie.ImageColor)]">arrowright.png</texture>
-                            <animation effect="slide" start="-30,0" end="0,0" time="200">VisibleChange</animation>
-                            <animation effect="slide" start="150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
-                            <visible>Container(350).HasNext + Control.HasFocus(350)</visible>
-                        </control>
-                        <control type="panel" id="350">
-                            <posx>-45</posx>
-                            <posy>30</posy>
-                            <width>1950</width>
-                            <height>700</height>
-                            <onleft>250</onleft>
-                            <onright>250</onright>
-                            <onup>650</onup>
-                            <ondown>450</ondown>
-                            <onback>9009</onback>
-                            <pagecontrol>60</pagecontrol>
-                            <scrolltime>300</scrolltime>
-                            <orientation>horizontal</orientation>
-                            <preloaditems>2</preloaditems>
-                            <itemlayout height="410" width="380">
-                                <control type="image">
-                                    <posy>0</posy>
-                                    <posx>50</posx>
-                                    <width>373</width>
-                                    <height>260</height>
-                                    <texture border="40" colordiffuse="$INFO[Window(home).Property(ImageColor)]">buttons/roundedbutton-nofocus.png</texture>
-                                </control>
-                                <control type="group">
-                                    <posx>77</posx>
-                                    <posy>18</posy>
-                                    <control type="image">
-                                        <posy>10</posy>
-                                        <width>320</width>
-                                        <height>200</height>
-                                        <texture background="true" fallback="DefaultVideo.png">$INFO[ListItem.Thumb]</texture>
-                                        <aspectratio aligny="center">scale</aspectratio>
-                                        <fadetime>0</fadetime>
-                                    </control>
-                                    <control type="textbox">
-                                        <width>323</width>
-                                        <height>100</height>
-                                        <posx>0</posx>
-                                        <posy>227</posy>
-                                        <align>center</align>
-                                        <font>font12</font>
-                                        <textcolor>FFF0F0F0</textcolor>
-                                        <info>ListItem.Label</info>
-                                    </control>
-                                </control>
-                            </itemlayout>
-                            <focusedlayout height="410" width="380">
-                                <control type="image">
-                                    <posy>0</posy>
-                                    <posx>50</posx>
-                                    <width>373</width>
-                                    <height>260</height>
-                                    <texture border="40" colordiffuse="$INFO[Window(home).Property(ImageColor)]">buttons/roundedbutton-nofocus.png</texture>
-                                </control>
-                                <control type="image">
-                                    <posy>0</posy>
-                                    <posx>50</posx>
-                                    <width>373</width>
-                                    <animation effect="fade" start="0" end="100" time="160">Focus</animation>
-                                    <animation effect="fade" start="0" end="100" time="0">UnFocus</animation>
-                                    <height>260</height>
-                                    <texture border="40" colordiffuse="$INFO[Window(home).Property(ImageColor)]">buttons/roundedbutton-focus.png</texture>
-                                </control>
-                                <control type="group">
-                                    <posx>77</posx>
-                                    <posy>18</posy>
-                                    <control type="image">
-                                        <posy>10</posy>
-                                        <width>320</width>
-                                        <height>200</height>
-                                        <texture background="true" fallback="DefaultVideo.png">$INFO[ListItem.Thumb]</texture>
-                                        <aspectratio aligny="center">scale</aspectratio>
-                                        <fadetime>0</fadetime>
-                                    </control>
-                                    <control type="textbox">
-                                        <width>323</width>
-                                        <height>100</height>
-                                        <posx>0</posx>
-                                        <posy>227</posy>
-                                        <align>center</align>
-                                        <font>font12</font>
-                                        <textcolor>FFF0F0F0</textcolor>
-                                        <info>ListItem.Label</info>
-                                    </control>
-                                </control>
-                            </focusedlayout>
-                        </control>
-                    </control>
-                    <control type="group" id="4500">
-                        <height>450</height>
-                        <visible>IntegerGreaterThan(Container(450).NumItems,0)</visible>
-                        <control type="label">
-                            <posy>6</posy>
-                            <posx>25</posx>
-                            <width>500</width>
-                            <height>25</height>
-                            <aligny>center</aligny>
-                            <font>font14</font>
-                            <label>$ADDON[script.extendedinfo 32119]$INFO[Container(450).NumItems, (,)]</label>
-                        </control>
-                        <control type="image">
-                            <posx>0</posx>
-                            <posy>200</posy>
-                            <width>28</width>
-                            <height>28</height>
-                            <texture colordiffuse="$INFO[Window.Property(movie.ImageColor)]" flipx="true">arrowright.png</texture>
-                            <animation effect="slide" start="30,0" end="0,0" time="200">VisibleChange</animation>
-                            <animation effect="slide" start="-150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
-                            <visible>Container(450).HasPrevious + Control.HasFocus(450)</visible>
-                        </control>
-                        <control type="image">
-                            <posx>1883</posx>
-                            <posy>200</posy>
-                            <width>28</width>
-                            <height>28</height>
-                            <texture colordiffuse="$INFO[Window.Property(movie.ImageColor)]">arrowright.png</texture>
-                            <animation effect="slide" start="-30,0" end="0,0" time="200">VisibleChange</animation>
-                            <animation effect="slide" start="150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
-                            <visible>Container(450).HasNext + Control.HasFocus(450)</visible>
-                        </control>
-                        <control type="panel" id="450">
-                            <posy>30</posy>
-                            <posx>-45</posx>
-                            <width>1950</width>
-                            <height>600</height>
-                            <onleft>450</onleft>
-                            <onright>450</onright>
-                            <onup>350</onup>
-                            <ondown>750</ondown>
-                            <onback>9009</onback>
-                            <scrolltime>200</scrolltime>
-                            <orientation>horizontal</orientation>
-                            <animation type="WindowOpen" reversible="false">
-                                <effect type="slide" start="0,1080" end="0,0" delay="0" tween="sine" time="1300" />
-                            </animation>
-                            <itemlayout height="400" width="270">
-                                <control type="group">
-                                    <control type="image">
-                                        <posy>0</posy>
-                                        <posx>50</posx>
-                                        <width>280</width>
-                                        <height>380</height>
-                                        <texture border="40" colordiffuse="$INFO[Window(home).Property(ImageColor)]">buttons/roundedbutton-nofocus.png</texture>
-                                    </control>
-                                    <control type="image">
-                                        <posx>77</posx>
-                                        <posy>28</posy>
-                                        <width>224</width>
-                                        <height>325</height>
-                                        <texture background="true" fallback="DefaultVideo.png">$INFO[ListItem.Thumb]</texture>
-                                        <aspectratio aligny="center">scale</aspectratio>
-                                        <fadetime>0</fadetime>
-                                    </control>
-                                </control>
-                            </itemlayout>
-                            <focusedlayout height="400" width="270">
-                                <control type="group">
-                                    <control type="image">
-                                        <posy>0</posy>
-                                        <posx>50</posx>
-                                        <width>280</width>
-                                        <height>380</height>
-                                        <texture border="40" colordiffuse="$INFO[Window(home).Property(ImageColor)]">buttons/roundedbutton-nofocus.png</texture>
-                                    </control>
-                                    <control type="image">
-                                        <posy>0</posy>
-                                        <posx>50</posx>
-                                        <width>280</width>
-                                        <height>380</height>
-                                        <texture border="40" colordiffuse="$INFO[Window(home).Property(ImageColor)]">buttons/roundedbutton-focus.png</texture>
-                                        <animation effect="fade" start="0" end="100" time="160">Focus</animation>
-                                        <animation effect="fade" start="0" end="100" time="0">UnFocus</animation>
-                                    </control>
-                                    <control type="group">
-                                        <posx>77</posx>
-                                        <posy>18</posy>
-                                        <control type="image">
-                                            <posy>10</posy>
-                                            <width>224</width>
-                                            <height>325</height>
-                                            <texture background="true" fallback="DefaultVideo.png">$INFO[ListItem.Thumb]</texture>
-                                            <aspectratio aligny="center">scale</aspectratio>
-                                            <fadetime>0</fadetime>
-                                        </control>
-                                    </control>
-                                </control>
-                            </focusedlayout>
-                        </control>
-                    </control>
-                    <control type="group" id="7500">
-                        <height>550</height>
-                        <visible>IntegerGreaterThan(Container(750).NumItems,0)</visible>
-                        <control type="label">
-                            <posx>25</posx>
-                            <posy>6</posy>
-                            <width>500</width>
-                            <height>25</height>
-                            <aligny>center</aligny>
-                            <font>font14</font>
-                            <label>$LOCALIZE[20445]$INFO[Container(750).NumItems, (,)]</label>
-                        </control>
-                        <control type="image">
-                            <posx>0</posx>
-                            <posy>200</posy>
-                            <width>28</width>
-                            <height>28</height>
-                            <texture colordiffuse="$INFO[Window.Property(movie.ImageColor)]" flipx="true">arrowright.png</texture>
-                            <animation effect="slide" start="30,0" end="0,0" time="200">VisibleChange</animation>
-                            <animation effect="slide" start="-150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
-                            <visible>Container(750).HasPrevious + Control.HasFocus(750)</visible>
-                        </control>
-                        <control type="image">
-                            <posx>1883</posx>
-                            <posy>200</posy>
-                            <width>28</width>
-                            <height>28</height>
-                            <texture colordiffuse="$INFO[Window.Property(movie.ImageColor)]">arrowright.png</texture>
-                            <animation effect="slide" start="-30,0" end="0,0" time="200">VisibleChange</animation>
-                            <animation effect="slide" start="150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
-                            <visible>Container(750).HasNext + Control.HasFocus(750)</visible>
-                        </control>
-                        <control type="panel" id="750">
-                            <posy>30</posy>
-                            <posx>-45</posx>
-                            <width>1950</width>
-                            <height>600</height>
-                            <onleft>750</onleft>
-                            <onright>750</onright>
-                            <onup>450</onup>
-                            <ondown>SetFocus(20001)</ondown>
-                            <onback>9009</onback>
-                            <scrolltime>200</scrolltime>
-                            <orientation>horizontal</orientation>
-                            <animation type="WindowOpen" reversible="false">
-                                <effect type="slide" start="0,1080" end="0,0" delay="0" tween="sine" time="1300" />
-                            </animation>
-                            <itemlayout height="400" width="665">
-                                <control type="group">
-                                    <control type="image">
-                                        <posy>0</posy>
-                                        <posx>50</posx>
-                                        <width>560</width>
-                                        <height>380</height>
-                                        <texture border="40" colordiffuse="$INFO[Window(home).Property(ImageColor)]">buttons/roundedbutton-nofocus.png</texture>
-                                    </control>
-                                    <control type="image">
-                                        <posx>77</posx>
-                                        <posy>28</posy>
-                                        <width>505</width>
-                                        <height>325</height>
-                                        <texture background="true" fallback="DefaultVideo.png">$INFO[ListItem.Thumb]</texture>
-                                        <aspectratio aligny="center">scale</aspectratio>
-                                    </control>
-                                    <control type="label">
-                                        <posx>77</posx>
-                                        <posy>350</posy>
-                                        <height>60</height>
-                                        <width>505</width>
-                                        <label>$INFO[ListItem.Title]</label>
-                                        <font>font12_title</font>
-                                        <align>center</align>
-                                        <aligny>center</aligny>
-                                        <scroll>true</scroll>
-                                    </control>
-                                </control>
-                            </itemlayout>
-                            <focusedlayout height="400" width="665">
-                                <control type="group">
-                                    <control type="image">
-                                        <posy>0</posy>
-                                        <posx>50</posx>
-                                        <width>560</width>
-                                        <height>380</height>
-                                        <texture border="40" colordiffuse="$INFO[Window(home).Property(ImageColor)]">buttons/roundedbutton-nofocus.png</texture>
-                                    </control>
-                                    <control type="image">
-                                        <posy>0</posy>
-                                        <posx>50</posx>
-                                        <width>560</width>
-                                        <height>380</height>
-                                        <texture border="40" colordiffuse="$INFO[Window(home).Property(ImageColor)]">buttons/roundedbutton-focus.png</texture>
-                                        <animation effect="fade" start="0" end="100" time="160">Focus</animation>
-                                        <animation effect="fade" start="0" end="100" time="0">UnFocus</animation>
-                                    </control>
-                                    <control type="image">
-                                        <posx>77</posx>
-                                        <posy>28</posy>
-                                        <width>505</width>
-                                        <height>325</height>
-                                        <texture background="true" fallback="DefaultVideo.png">$INFO[ListItem.Thumb]</texture>
-                                        <aspectratio aligny="center">scale</aspectratio>
-                                    </control>
-                                    <control type="label">
-                                        <posx>77</posx>
-                                        <posy>350</posy>
-                                        <height>60</height>
-                                        <width>505</width>
-                                        <label>$INFO[ListItem.Title]</label>
-                                        <font>font12_title</font>
-                                        <align>center</align>
-                                        <aligny>center</aligny>
-                                        <scroll>true</scroll>
-                                    </control>
-                                </control>
-                            </focusedlayout>
-                        </control>
+                        
                     </control>
                 </control>
+
+                <control type="list" id="150">
+                    <visible allowhiddenfocus="true">StringCompare(Window.Property(content),150)</visible>
+                    <onleft>150</onleft>
+                    <onright>150</onright>
+                    <include>DefExtendedInfoList</include>
+                </control>
+                <control type="list" id="250">
+                    <visible allowhiddenfocus="true">StringCompare(Window.Property(content),250)</visible>
+                    <onleft>250</onleft>
+                    <onright>250</onright>
+                    <include>DefExtendedInfoList</include>
+                </control>
+                <control type="list" id="350">
+                    <visible allowhiddenfocus="true">StringCompare(Window.Property(content),350)</visible>
+                    <onleft>350</onleft>
+                    <onright>350</onright>
+                    <include>DefExtendedInfoListWide</include>
+                </control>                
+                <control type="list" id="450"><visible>false</visible></control>
+                <control type="list" id="550">
+                    <visible allowhiddenfocus="true">StringCompare(Window.Property(content),550)</visible>
+                    <onleft>550</onleft>
+                    <onright>550</onright>
+                    <include>DefExtendedInfoList</include>
+                </control>
+                <control type="list" id="650"><visible>false</visible></control>
+                <control type="list" id="750"><visible>false</visible></control>
+            </control>
+        </control>
+
+        <control type="group">
+            <visible>Control.HasFocus(9601)</visible>
+            <include>Animation.FadeIn</include>
+            <include>Animation.FadeOut</include>
+            
+            <control type="image" description="Background">
+                <include>Dimensions_Fullscreen</include>
+                <texture colordiffuse="Background">common/bg.jpg</texture>
+                <animation effect="fade" start="100" end="95" condition="true">Conditional</animation>
+            </control>
+        </control>
+
+        <control type="group">
+            <left>SidePad</left>
+            <right>SidePad</right>
+            <top>PosterPad</top>
+            <height>670</height>
+            <visible>Control.HasFocus(9601)</visible>
+            <include>Animation.FadeIn.Slide</include>
+            <include>Animation.FadeOut</include>
+            
+            
+            <control type="label">
+                <description>header label</description>
+                <left>60</left>
+                <right>60</right>
+                <posy>60</posy>
+                <font>EpisodeNumber</font>
+                <textcolor>Dark1</textcolor>
+                <height>45</height>
+                <label>$INFO[Window.Property(actor.title)]</label>
+            </control>
+
+            <control type="textbox">
+                <description>textarea</description>
+                <left>60</left>
+                <right>60</right>
+                <top>150</top>
+                <bottom>0</bottom>
+                <font>Medium</font>
+                <textcolor>Dark1</textcolor>
+                <label>$INFO[Window.Property(actor.Biography)]</label>
             </control>
         </control>
     </controls>
+
 </window>
