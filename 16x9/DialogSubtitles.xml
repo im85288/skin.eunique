@@ -22,15 +22,16 @@
                     <control type="image">
                         <width>64</width>
                         <height>64</height>
-                        <texture fallback="DefaultAddonNone.png">subs/$INFO[ListItem.Thumb].png</texture>
+                        <texture fallback="DefaultAddonNone.png">media/flags/language/$INFO[ListItem.Thumb].png</texture>
                     </control>
-                    <control type="image">
+                    <control type="label">
                         <left>74</left>
                         <top>20</top>
                         <width>100</width>
                         <height>24</height>
-                        <aspectratio align="left">keep</aspectratio>
-                        <texture>subs/icon_close_caption.png</texture>
+                        <align>left</align>
+                        <font>symbol24</font>
+                        <label>/label>
                         <visible>!ListItem.property(hearing_imp)</visible>
                         <animation effect="fade" start="100" end="25" condition="true">Conditional</animation>
                     </control>
@@ -39,27 +40,30 @@
                         <top>20</top>
                         <width>100</width>
                         <height>24</height>
-                        <aspectratio align="left">keep</aspectratio>
-                        <texture>subs/icon_sync.png</texture>
+                        <align>left</align>
+                        <font>symbol24</font>
+                        <label>label>
                         <visible>!ListItem.property(sync)</visible>
                         <animation effect="fade" start="100" end="25" condition="true">Conditional</animation>
                     </control>
-                    <control type="image">
+                    <control type="label">
                         <left>74</left>
                         <top>20</top>
                         <width>100</width>
                         <height>24</height>
-                        <aspectratio align="left">keep</aspectratio>
-                        <texture>subs/icon_close_caption.png</texture>
+                        <align>left</align>
+                        <font>symbol24</font>
+                        <label>/label>
                         <visible>ListItem.property(hearing_imp)</visible>
                     </control>
-                    <control type="image">
+                    <control type="label">
                         <left>134</left>
                         <top>20</top>
                         <width>100</width>
                         <height>24</height>
-                        <aspectratio align="left">keep</aspectratio>
-                        <texture>subs/icon_sync.png</texture>
+                        <align>left</align>
+                        <font>symbol24</font>
+                        <label>/label>
                         <visible>ListItem.property(sync)</visible>
                     </control>
 
@@ -69,7 +73,7 @@
                         <height>64</height>
                         <aligny>center</aligny>
                         <label>$INFO[ListItem.Label,,  •  ]$INFO[ListItem.Label2]</label>
-						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+			<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
                         <font>Small</font>
                     </control>
 
@@ -85,13 +89,14 @@
                         <height>64</height>
                         <texture fallback="DefaultAddonNone.png">subs/$INFO[ListItem.Thumb].png</texture>
                     </control>
-                    <control type="image">
+                    <control type="label">
                         <left>74</left>
                         <top>20</top>
                         <width>100</width>
                         <height>24</height>
-                        <aspectratio align="left">keep</aspectratio>
-                        <texture>subs/icon_close_caption.png</texture>
+                        <align>left</align>
+                        <font>symbol24</font>
+                        <label>/label>
                         <visible>!ListItem.property(hearing_imp)</visible>
                         <animation effect="fade" start="100" end="25" condition="true">Conditional</animation>
                     </control>
@@ -100,27 +105,30 @@
                         <top>20</top>
                         <width>100</width>
                         <height>24</height>
-                        <aspectratio align="left">keep</aspectratio>
-                        <texture>subs/icon_sync.png</texture>
+                        <align>left</align>
+                        <font>symbol24</font>
+                        <label>label>
                         <visible>!ListItem.property(sync)</visible>
                         <animation effect="fade" start="100" end="25" condition="true">Conditional</animation>
                     </control>
-                    <control type="image">
+                    <control type="label">
                         <left>74</left>
                         <top>20</top>
                         <width>100</width>
                         <height>24</height>
-                        <aspectratio align="left">keep</aspectratio>
-                        <texture>subs/icon_close_caption.png</texture>
+                        <align>left</align>
+                        <font>symbol24</font>
+                        <label>/label>
                         <visible>ListItem.property(hearing_imp)</visible>
                     </control>
-                    <control type="image">
+                    <control type="label">
                         <left>134</left>
                         <top>20</top>
                         <width>100</width>
                         <height>24</height>
-                        <aspectratio align="left">keep</aspectratio>
-                        <texture>subs/icon_sync.png</texture>
+                        <align>left</align>
+                        <font>symbol24</font>
+                        <label>/label>
                         <visible>ListItem.property(sync)</visible>
                     </control>
 
