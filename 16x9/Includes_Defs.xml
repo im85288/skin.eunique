@@ -1524,28 +1524,12 @@
 			<visible>!Control.IsVisible(52) + !Control.IsVisible(54) + !Control.IsVisible(515) + !Control.IsVisible(53) + !Control.IsVisible(500)</visible>
 		</control>
 		-->
-		<control type="button" id="335">
+		<control type="button" id="9005">
 			<description>widget</description>
 			<include>DefContextButtonBlade</include>
 			<align>left</align>
 			<label>$LOCALIZE[31946]: $INFO[Skin.String(border.image)]</label>
 			<onclick>ActivateWindow(1114)</onclick>
-		</control>
-		<control type="radiobutton" id="9004" description="Plot List (50)">
-			<include>DefContextButtonBlade</include>
-			<align>left</align>
-			<label>31214</label>
-			<selected>Skin.HasSetting(seasons.50list.showplot)</selected>
-			<onclick>Skin.ToggleSetting(seasons.50list.showplot)</onclick>
-			<visible>Control.IsVisible(50) + Container.Content(seasons)</visible>
-		</control>
-		<control type="radiobutton" id="9005" description="Plot List (50)">
-			<include>DefContextButtonBlade</include>
-			<align>left</align>
-			<label>31214</label>
-			<selected>Skin.HasSetting(episodes.50list.showplot)</selected>
-			<onclick>Skin.ToggleSetting(episodes.50list.showplot)</onclick>
-			<visible>Control.IsVisible(50) + Container.Content(episodes)</visible>
 		</control>
 		<control type="radiobutton" id="9006" description="Plot List (50)">
 			<include>DefContextButtonBlade</include>
@@ -1626,15 +1610,6 @@
 			<align>left</align>
 			<onclick>ActivateWindow(MusicPlaylist)</onclick>
 			<visible>IntegerGreaterThan(Playlist.Length(music),1)</visible>
-		</control>
-		<control type="radiobutton" id="9008" description="Big Wide Info (51)">
-			<include>DefContextButtonBlade</include>
-			<align>left</align>
-			<label>31147</label>
-			<selected>Skin.HasSetting(51bigwide.showinfo)</selected>
-			<onclick>Skin.ToggleSetting(51bigwide.showinfo)</onclick>
-			<onclick>ReloadSkin()</onclick>
-			<visible>Control.IsVisible(51)</visible>
 		</control>
 	</include>
 	<variable name="DefDirectorWindowContent">
