@@ -1022,10 +1022,16 @@
                                 <label></label>
                                 <textcolor>white</textcolor>
                                 <fadetime>300</fadetime>
+								<animation type="Conditional" reversible="true" condition="Control.HasFocus(95004) + Stringcompare(Skin.String(widgetvideoinfo),ShowCast)">
+									<effect type="zoom" start="100" end="110" time="200" center="auto" tween="quadratic" easing="out"/>
+								</animation>
                             </control>
                             <control type="image">
                                 <aspectratio scalediffuse="false">stretch</aspectratio>
                                 <texture background="true">$VAR[PosterImage]</texture>
+								<animation type="Conditional" reversible="true" condition="Control.HasFocus(95004) + Stringcompare(Skin.String(widgetvideoinfo),ShowCast)">
+									<effect type="zoom" start="100" end="110" time="200" center="auto" tween="quadratic" easing="out"/>
+								</animation>
                             </control>
                             <control type="image">
                                 <description>Title overlay</description>
@@ -1864,7 +1870,6 @@
                 <texturenofocus>-</texturenofocus>
                 <onfocus>setfocus(9498)</onfocus>
             </control>
-
             <control type="wraplist" id="9501">
                 <visible allowhiddenfocus="true">!Container(9501).IsUpdating</visible>
                 <include>Animation.FadeIn</include>
@@ -1881,7 +1886,7 @@
                 <pagecontrol>60</pagecontrol>
                 <viewtype label="536">list</viewtype>
                 <scrolltime tween="quadratic">400</scrolltime>
-                <autoscroll time="3000">!Control.HasFocus(9501)</autoscroll>
+                <autoscroll time="3000">![Control.HasFocus(9501) |Control.HasFocus(95005)]</autoscroll>
                 <focusposition>0</focusposition>
                 <itemlayout height="210" width="140">
                     <control type="label">
@@ -1903,7 +1908,7 @@
                     </control>
                 </itemlayout>
                 <focusedlayout height="210" width="140">
-                    <control type="group">
+				<control type="group">
                         <control type="label">
                             <left>0</left>
                             <top>0</top>
@@ -1916,10 +1921,16 @@
                             <label></label>
                             <textcolor>white</textcolor>
                             <fadetime>300</fadetime>
+                            <animation type="Conditional" reversible="true" condition="Control.HasFocus(95005) + Stringcompare(Skin.String(widgetvideoinfo),ShowCast)">
+								<effect type="zoom" start="100" end="110" time="200" center="auto" tween="quadratic" easing="out"/>
+							</animation>
                         </control>
                         <control type="image">
                             <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true">$VAR[PosterImage]</texture>
+                            <animation type="Conditional" reversible="true" condition="Control.HasFocus(95005) + Stringcompare(Skin.String(widgetvideoinfo),ShowCast)">
+								<effect type="zoom" start="100" end="110" time="200" center="auto" tween="quadratic" easing="out"/>
+							</animation>
                         </control>
                         <control type="image">
                             <description>Title overlay</description>
