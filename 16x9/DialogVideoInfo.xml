@@ -39,7 +39,7 @@
             <visible>Skin.HasSetting(toggled.dv.info)</visible>
             <visible>!Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml)</visible>
             <visible>!Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)</visible>
-            <animation effect="slide" end="195,0" center="auto" time="200" condition="Control.HasFocus(9500)">Conditional</animation>
+            <animation effect="slide" end="195,0" center="auto" time="200" condition="Control.HasFocus(9500) | Control.HasFocus(95004)">Conditional</animation>
             <left>NewSidePad</left>
             <right>NewSidePad</right>
             <top>TopPad</top>
@@ -81,8 +81,8 @@
             </control>
 
             <control type="group">
-                <animation effect="slide" end="448,0" center="auto" time="200" condition="Control.HasFocus(9500)">Conditional</animation>
-                <animation effect="fade" end="0" start="100" time="200" condition="!Control.HasFocus(9500)">Conditional</animation>
+                <animation effect="slide" end="448,0" center="auto" time="200" condition="Control.HasFocus(9500) | Control.HasFocus(95004)">Conditional</animation>
+                <animation effect="fade" end="0" start="100" time="200" condition="!Control.HasFocus(9500) + !Control.HasFocus(95004)">Conditional</animation>
                 <left>-633</left>
                 <top>-10</top>
                 <width>613</width>
@@ -395,7 +395,7 @@
                 <label>$VAR[PlotCritic]</label>
             </control>
             <control type="group">
-                <visible>!Control.HasFocus(9500)</visible>
+                <visible>!Control.HasFocus(9500) + !Control.HasFocus(95004)</visible>
                 <top>220</top>
                 <left>10</left>
                 <width>400</width>
@@ -751,7 +751,7 @@
             </control>
             <!-- Bottom Section -->
             <control type="group">
-                <animation effect="slide" end="450,0" center="auto" time="200" condition="Control.HasFocus(9500)">Conditional</animation>
+                <animation effect="slide" end="450,0" center="auto" time="200" condition="Control.HasFocus(9500) | Control.HasFocus(95004)">Conditional</animation>
                 <bottom>0</bottom>
                 <height>265</height>
                 <control type="list" id="9499">
@@ -759,7 +759,8 @@
                     <width>300</width>
                     <height>34</height>
                     <onup>9000</onup>
-                    <ondown>9500</ondown>
+                    <ondown condition="Stringcompare(Skin.String(widgetvideoinfo),ShowCast)">95004</ondown>
+                    <ondown condition="!Stringcompare(Skin.String(widgetvideoinfo),ShowCast)">9500</ondown>
                     <onback>9000</onback>
                     <orientation>horizontal</orientation>
                     <scrolltime tween="cubic" easing="out">500</scrolltime>
@@ -964,6 +965,14 @@
                     <visible>!Control.HasFocus(9499)</visible>
                 </control>
 
+                <control type="button" id="95004">
+                    <onup>9000</onup>
+                    <onback>9000</onback>
+                    <onright>Control.Move(9500,1)</onright>
+                    <onleft>Control.Move(9500,-1)</onleft>
+                    <onclick>RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Container(9500).ListItem.Label])</onclick>
+                    <visible>Stringcompare(Skin.String(widgetvideoinfo),ShowCast)</visible>
+                </control>
                 <control type="wraplist" id="9500">
                     <visible allowhiddenfocus="true">!Container(9500).IsUpdating</visible>
                     <include>Animation.FadeIn</include>
@@ -978,7 +987,7 @@
                     <pagecontrol>60</pagecontrol>
                     <viewtype label="536">list</viewtype>
                     <scrolltime tween="quadratic">400</scrolltime>
-                    <autoscroll time="3000">!Control.HasFocus(9500)</autoscroll>
+                    <autoscroll time="3000">!Control.HasFocus(9500) + !Control.HasFocus(95004)</autoscroll>
                     <focusposition>0</focusposition>
                     <itemlayout height="210" width="140">
                         <control type="label">
