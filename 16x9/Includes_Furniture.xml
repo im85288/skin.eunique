@@ -1183,6 +1183,8 @@
 				<onright>noop</onright>
 				<onright condition="!Window.IsVisible(1103)">SetProperty(BounceRight,1,Home)</onright>
 				<onback>9000</onback>
+				<onfocus>CancelAlarm(castScroll,true)</onfocus>
+				<onunfocus>AlarmClock(castScroll,Control.Move(508923,-1),00:03,silent,loop)</onunfocus>
 				<preloaditems>8</preloaditems>
 				<focusposition>6</focusposition>
 				<viewtype label="">list</viewtype>
@@ -1225,10 +1227,6 @@
 					</control>
 				</itemlayout>
 				<focusedlayout height="190" width="137.142">
-					<control type="button" id="50171">
-						<onfocus>CancelAlarm(castScroll,true)</onfocus>
-						<onunfocus>AlarmClock(castScroll,Control.Move(508923,-1),00:03,silent,loop)</onunfocus>
-					</control>
 					<control type="group">
 						<control type="label">
 							<left>0</left>
