@@ -11,18 +11,11 @@
     <onload>ClearProperty(content)</onload>
     <onload>Dialog.Close(2003)</onload>
     <controls>
-        <control type="image">
-            <width>100%</width>
-            <height>100%</height>
-            <animation effect="fade" start="100" end="90" condition="Skin.HasSetting(osd.usetheme)">Conditional</animation>
-            <texture colordiffuse="$VAR[OSDPanel]">common/white.png</texture>
-            <visible>Window.IsVisible(fullscreenvideo)</visible>
-        </control>
         <control type="group">
             <animation type="Conditional" reversible="true" condition="Window.IsVisible(FileBrowser.xml) | Window.IsVisible(DialogProgress.xml) | Window.IsVisible(DialogYesNo.xml) | Window.IsVisible(DialogOK.xml) | Window.IsVisible(DialogSelect.xml) | Window.IsVisible(DialogContextMenu.xml) | Window.IsVisible(DialogButtonMenu.xml)">
-                <effect type="zoom" end="95" start="100" time="200" center="auto" tween="quadratic" easing="in" />
+                <effect type="zoom" end="95" start="100" time="200" center="auto" tween="quadratic" easing="in"/>
             </animation>
-      
+
             <!-- Side Poster -->
             <control type="group">
                 <animation effect="slide" start="-1920" end="0" delay="300" time="300" tween="quadratic" easing="out">WindowOpen</animation>
@@ -30,43 +23,55 @@
                 <animation effect="slide" start="-1920" end="0" delay="0" time="300" tween="quadratic" easing="out">Visible</animation>
                 <animation effect="slide" start="0" end="-1920" time="300" tween="quadratic" easing="in">Hidden</animation>
                 <control type="group" description="Poster">
-                    <left>SidePad</left>
-                    <top>PosterPad</top>
-                    <control type="image">
-                        <top>PosterH</top>
-                        <width>PosterW</width>
-                        <height>PosterH</height>
-                        <fadetime>100</fadetime>
-                        <aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-                        <texture flipy="true" diffuse="diffuse/listposter-ref.png" background="true">$INFO[Window.Property(movie.thumb)]</texture>
-                        <visible>Skin.HasSetting(show.reflections)</visible>
-                    </control>
-                    <control type="image">
-                        <centertop>PosterH</centertop>
-                        <width>PosterW</width>
-                        <height>48</height>
-                        <aspectratio>stretch</aspectratio>
-                        <texture>diffuse/shadowspot.png</texture>
-                        
-                    </control>
-                    <control type="image">
-                        <width>PosterW</width>
-                        <height>PosterH</height>
-                        <texture border="5" colordiffuse="FF181818">common/box.png</texture>
-                    </control>
-                    <control type="image">
-                        <width>PosterW</width>
-                        <height>PosterH</height>
-                        <fadetime>100</fadetime>
-                        <aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-                        <texture diffuse="diffuse/listposter.png" background="true">$INFO[Window.Property(movie.thumb)]</texture>
-                    </control>
-                    <control type="image">
-                        <left>-24</left>
-                        <top>-24</top>
-                        <width>PosterShadowW</width>
-                        <height>PosterShadowH</height>
-                        <texture border="32">common/shadow-24.png</texture>
+                    <left>NewSidePad</left>
+                    <top>TopPad</top>
+                    <control type="group">
+                        <left>10</left>
+                        <top>-10</top>
+                        <width>613</width>
+                        <height>920</height>
+                        <control type="group">
+                            <control type="image">
+                                <left>0</left>
+                                <width>50%</width>
+                                <height>50%</height>
+                                <aspectratio scalediffuse="false">scale</aspectratio>
+                                <texture colordiffuse="$INFO[Window(home).Property(ImageColor)]" background="true">$VAR[FocusedBorderImage]</texture>
+                            </control>
+                            <control type="image">
+                                <left>50%</left>
+                                <width>50%</width>
+                                <height>50%</height>
+                                <aspectratio scalediffuse="false">scale</aspectratio>
+                                <texture colordiffuse="$INFO[Window(home).Property(ImageColor)]" background="true">$VAR[FocusedBorderImage]</texture>
+                            </control>
+                            <control type="image">
+                                <left>0</left>
+                                <top>50%</top>
+                                <width>50%</width>
+                                <height>50%</height>
+                                <aspectratio scalediffuse="false">scale</aspectratio>
+                                <texture colordiffuse="$INFO[Window(home).Property(ImageColor)]" background="true" flipy="true">$VAR[FocusedBorderImage]</texture>
+                            </control>
+                            <control type="image">
+                                <left>50%</left>
+                                <top>50%</top>
+                                <width>50%</width>
+                                <height>50%</height>
+                                <aspectratio scalediffuse="false">scale</aspectratio>
+                                <texture colordiffuse="$INFO[Window(home).Property(ImageColor)]" background="true" flipy="true">$VAR[FocusedBorderImage]</texture>
+                            </control>
+                            <animation type="conditional" condition="true" reversible="false">
+                                <effect type="zoom" start="100" end="108" time="200" center="auto" tween="quadratic" easing="out"/>
+                            </animation>
+                        </control>
+                            <control type="image">
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
+                            <texture background="true">$INFO[Window.Property(movie.thumb)]</texture>
+                            <animation type="conditional" condition="true" reversible="false">
+                                <effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
+                            </animation>
+                        </control>
                     </control>
                 </control>
             </control>
@@ -77,22 +82,27 @@
                 <animation effect="slide" start="0" end="1920" time="300" tween="quadratic" easing="in">WindowClose</animation>
                 <animation effect="slide" start="1920" end="0" delay="0" time="300" tween="quadratic" easing="out">Visible</animation>
                 <animation effect="slide" start="0" end="1920" time="300" tween="quadratic" easing="in">Hidden</animation>
-          
+
                 <control type="group">
                     <include>Animation.DelayFadeIn</include>
                     <visible>!IsEmpty(Window.Property(content))</visible>
-                    <visible>[Control.HasFocus(150) + !Container(150).IsUpdating] | [Control.HasFocus(250) + !Container(250).IsUpdating] | [Control.HasFocus(350) + !Container(350).IsUpdating] | [Control.HasFocus(550) + !Container(550).IsUpdating] | [Control.HasFocus(750) + !Container(750).IsUpdating] | [Control.HasFocus(1000) + !Container(1000).IsUpdating] | [Control.HasFocus(1150) + !Container(1150).IsUpdating] | [Control.HasFocus(50) + !Container(50).IsUpdating] | [Control.HasFocus(9501) + !Container(9501).IsUpdating]</visible>
+                    <visible>[Control.HasFocus(150) + !Container(150).IsUpdating] | [Control.HasFocus(250) + !Container(250).IsUpdating] | [Control.HasFocus(350) + !Container(350).IsUpdating] | [Control.HasFocus(550) + !Container(550).IsUpdating] | [Control.HasFocus(750) + !Container(750).IsUpdating] | [Control.HasFocus(1000) + !Container(1000).IsUpdating] | [Control.HasFocus(1150) + !Container(1150).IsUpdating] | [Control.HasFocus(50) + !Container(50).IsUpdating] | [Control.HasFocus(9501) +
+                        !Container(9501).IsUpdating]
+                    </visible>
                     <centerbottom>366</centerbottom>
                     <height>16</height>
                     <control type="image">
-                        <visible>[Control.HasFocus(150) + Container(150).HasPrevious] | [Control.HasFocus(250) + Container(250).HasPrevious] | [Control.HasFocus(350) + Container(350).HasPrevious] | [Control.HasFocus(550) + Container(550).HasPrevious] | [Control.HasFocus(750) + Container(750).HasPrevious] | [Control.HasFocus(1000) + Container(1000).HasPrevious] | [Control.HasFocus(1150) + Container(1150).HasPrevious] | [Control.HasFocus(50) + Container(50).HasPrevious] | [Control.HasFocus(9501) + Container(9501).HasPrevious]</visible>
+                        <visible>[Control.HasFocus(150) + Container(150).HasPrevious] | [Control.HasFocus(250) + Container(250).HasPrevious] | [Control.HasFocus(350) + Container(350).HasPrevious] | [Control.HasFocus(550) + Container(550).HasPrevious] | [Control.HasFocus(750) + Container(750).HasPrevious] | [Control.HasFocus(1000) + Container(1000).HasPrevious] | [Control.HasFocus(1150) + Container(1150).HasPrevious] | [Control.HasFocus(50) + Container(50).HasPrevious] | [Control.HasFocus(9501) +
+                            Container(9501).HasPrevious]
+                        </visible>
                         <centerleft>524</centerleft>
                         <width>16</width>
                         <height>16</height>
                         <texture colordiffuse="Dark3" flipx="true">common/arrow-small-right.png</texture>
                     </control>
                     <control type="image">
-                        <visible>[Control.HasFocus(150) + Container(150).HasNext] | [Control.HasFocus(250) + Container(250).HasNext] | [Control.HasFocus(350) + Container(350).HasNext] | [Control.HasFocus(550) + Container(550).HasNext] | [Control.HasFocus(750) + Container(750).HasNext] | [Control.HasFocus(1000) + Container(1000).HasNext] | [Control.HasFocus(1150) + Container(1150).HasNext] | [Control.HasFocus(50) + Container(50).HasNext] | [Control.HasFocus(9501) + Container(9501).HasNext]</visible>
+                        <visible>[Control.HasFocus(150) + Container(150).HasNext] | [Control.HasFocus(250) + Container(250).HasNext] | [Control.HasFocus(350) + Container(350).HasNext] | [Control.HasFocus(550) + Container(550).HasNext] | [Control.HasFocus(750) + Container(750).HasNext] | [Control.HasFocus(1000) + Container(1000).HasNext] | [Control.HasFocus(1150) + Container(1150).HasNext] | [Control.HasFocus(50) + Container(50).HasNext] | [Control.HasFocus(9501) + Container(9501).HasNext]
+                        </visible>
                         <centerright>64</centerright>
                         <width>16</width>
                         <height>16</height>
@@ -100,7 +110,7 @@
                     </control>
                 </control>
 
-                <control type="button" id ="9601">
+                <control type="button" id="9601">
                     <width>1</width>
                     <height>1</height>
                     <visible allowhiddenfocus="true">false</visible>
@@ -114,72 +124,109 @@
                 <!-- Control Buttons -->
                 <control type="grouplist" id="9000">
                     <visible allowhiddenfocus="true">ControlGroup(9000).HasFocus()</visible>
-                    <bottom>224</bottom>
-                    <left>540</left>
-                    <right>SidePad</right>
-                    <height>68</height>
-                    <bottom>33</bottom>
-                    <itemgap>16</itemgap>
+                    <left>683</left>
+                    <top>901</top>
+                    <width>1267</width>
+                    <height>116</height>
+                    <itemgap>0</itemgap>
+                    <onleft>back</onleft>
                     <ondown>9000</ondown>
                     <onup condition="Control.IsVisible(50)">51</onup>
                     <onup condition="Control.IsVisible(9501)">9501</onup>
                     <onup condition="!Control.IsVisible(50) + !Control.IsVisible(9501)">9601</onup>
                     <orientation>horizontal</orientation>
 
-                    <control type="button" id ="8">
+                    <control type="button" id="8">
                         <description>Play</description>
                         <label>208</label>
-                        <include>DefInfoButtons</include>
+                        <width>240</width>
+                        <height>116</height>
+                        <textoffsetx>20</textoffsetx>
+                        <textcolor>white</textcolor>
+                        <focusedcolor>$VAR[EmbyMiddleColourHighlight]</focusedcolor>
+                        <texturefocus colordiffuse="$INFO[Window(home).Property(ImageColor)]">common/box.png</texturefocus>
+                        <texturenofocus colordiffuse="$VAR[EmbyMiddleColourHighlight]">common/box.png</texturenofocus>
+
                         <visible>!IsEmpty(Window.Property(movie.DBID)) + !Stringcompare(Window.Property(Type),tvshow)</visible>
                         <visible>IsEmpty(Window(home).Property(globalsearch))</visible>
                     </control>
 
-                    <control type="button" id ="120">
+                    <control type="button" id="120">
                         <description>Browse</description>
                         <label>21385</label>
-                        <include>DefInfoButtons</include>
+                        <width>240</width>
+                        <height>116</height>
+                        <textoffsetx>20</textoffsetx>
+                        <textcolor>white</textcolor>
+                        <focusedcolor>$VAR[EmbyRightColourHighlight]</focusedcolor>
+                        <texturefocus colordiffuse="$INFO[Window(home).Property(ImageColor)]">common/box.png</texturefocus>
+                        <texturenofocus colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</texturenofocus>
                         <visible>!IsEmpty(Window.Property(movie.DBID)) + Stringcompare(Window.Property(Type),tvshow)</visible>
                         <visible>IsEmpty(Window(home).Property(globalsearch))</visible>
                     </control>
 
-                    <control type="button" id ="9002">
+                    <control type="button" id="9002">
                         <description>Cast</description>
                         <label>206</label>
-                        <include>DefInfoButtons</include>
+                        <width>240</width>
+                        <height>116</height>
+                        <textoffsetx>20</textoffsetx>
+                        <textcolor>white</textcolor>
+                        <focusedcolor>$VAR[EmbyRightColourHighlight]</focusedcolor>
+                        <texturefocus colordiffuse="$INFO[Window(home).Property(ImageColor)]">common/box.png</texturefocus>
+                        <texturenofocus colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</texturenofocus>
                         <onclick>SetProperty(content,1000)</onclick>
                         <onclick>SetFocus(1000)</onclick>
                     </control>
 
-                    <control type="button" id ="9003">
+                    <control type="button" id="9003">
                         <description>Similar</description>
                         <label>31206</label>
-                        <include>DefInfoButtons</include>
+                        <width>240</width>
+                        <height>116</height>
+                        <textoffsetx>20</textoffsetx>
+                        <textcolor>white</textcolor>
+                        <focusedcolor>$VAR[EmbyRightColourHighlight]</focusedcolor>
+                        <texturefocus colordiffuse="$INFO[Window(home).Property(ImageColor)]">common/box.png</texturefocus>
+                        <texturenofocus colordiffuse="$VAR[EmbyLeftColourHighlight]">common/box.png</texturenofocus>
                         <onclick>SetProperty(content,150)</onclick>
                         <onclick>SetFocus(150)</onclick>
-                        
+
                     </control>
-                    <control type="button" id ="9004">
+                    <control type="button" id="9004">
                         <description>Youtube</description>
                         <label>$ADDON[script.extendedinfo 32118]</label>
-                        <include>DefInfoButtons</include>
+                        <width>240</width>
+                        <height>116</height>
+                        <textoffsetx>20</textoffsetx>
+                        <textcolor>white</textcolor>
+                        <focusedcolor>$VAR[EmbyRightColourHighlight]</focusedcolor>
+                        <texturefocus colordiffuse="$INFO[Window(home).Property(ImageColor)]">common/box.png</texturefocus>
+                        <texturenofocus colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</texturenofocus>
                         <onclick>SetProperty(content,350)</onclick>
                         <onclick>SetFocus(350)</onclick>
                     </control>
-                    <control type="button" id ="9005">
+                    <control type="button" id="9005">
                         <description>Crew</description>
                         <label>$ADDON[script.extendedinfo 32115]</label>
-                        <include>DefInfoButtons</include>
+                        <width>240</width>
+                        <height>116</height>
+                        <textoffsetx>20</textoffsetx>
+                        <textcolor>white</textcolor>
+                        <focusedcolor>$VAR[EmbyRightColourHighlight]</focusedcolor>
+                        <texturefocus colordiffuse="$INFO[Window(home).Property(ImageColor)]">common/box.png</texturefocus>
+                        <texturenofocus colordiffuse="$VAR[EmbyLeftColourHighlight]">common/box.png</texturenofocus>
                         <onclick>SetProperty(content,750)</onclick>
                         <onclick>SetFocus(750)</onclick>
-                    </control>  
+                    </control>
                 </control>
 
                 <!-- List Headers -->
                 <control type="label">
                     <visible>stringcompare(Window.Property(content),1000)</visible>
                     <visible>Control.HasFocus(1000)</visible>
-                    <left>540</left>
-                    <right>SidePad</right>
+                    <left>660</left>
+                    <right>NewSidePad</right>
                     <top>260</top>
                     <description>Header Label</description>
                     <textcolor>Dark2</textcolor>
@@ -188,14 +235,14 @@
                     <include>Animation.DelayFadeIn</include>
                 </control>
                 <control type="label">
-                    <right>SidePad</right>
-                    <left>540</left>
+                    <right>NewSidePad</right>
+                    <left>660</left>
                     <bottom>264</bottom>
                     <height>50</height>
                     <font>Mini</font>
                     <scroll>true</scroll>
                     <textcolor>Dark3</textcolor>
-                    <label>$INFO[Container(1000).NumItems,, $LOCALIZE[31101]  •  ]$INFO[Container(1000).CurrentPage,, $LOCALIZE[20163] ]$INFO[Container(1000).NumPages,, $LOCALIZE[31243]]</label>
+                    <label>$INFO[Container(1000).NumItems,, $LOCALIZE[31101] • ]$INFO[Container(1000).CurrentPage,, $LOCALIZE[20163] ]$INFO[Container(1000).NumPages,, $LOCALIZE[31243]]</label>
                     <aligny>center</aligny>
                     <align>right</align>
                     <visible>Control.HasFocus(1000)</visible>
@@ -204,8 +251,8 @@
                 <control type="label">
                     <visible>stringcompare(Window.Property(content),150)</visible>
                     <visible>Control.HasFocus(150)</visible>
-                    <left>540</left>
-                    <right>SidePad</right>
+                    <left>660</left>
+                    <right>NewSidePad</right>
                     <top>260</top>
                     <description>Header Label</description>
                     <textcolor>Dark2</textcolor>
@@ -214,14 +261,14 @@
                     <include>Animation.DelayFadeIn</include>
                 </control>
                 <control type="label">
-                    <right>SidePad</right>
-                    <left>540</left>
+                    <right>NewSidePad</right>
+                    <left>660</left>
                     <bottom>264</bottom>
                     <height>50</height>
                     <font>Mini</font>
                     <scroll>true</scroll>
                     <textcolor>Dark3</textcolor>
-                    <label>$INFO[Container(150).NumItems,, $LOCALIZE[31101]  •  ]$INFO[Container(150).CurrentPage,, $LOCALIZE[20163] ]$INFO[Container(150).NumPages,, $LOCALIZE[31243]]</label>
+                    <label>$INFO[Container(150).NumItems,, $LOCALIZE[31101] • ]$INFO[Container(150).CurrentPage,, $LOCALIZE[20163] ]$INFO[Container(150).NumPages,, $LOCALIZE[31243]]</label>
                     <aligny>center</aligny>
                     <align>right</align>
                     <visible>Control.HasFocus(150)</visible>
@@ -230,8 +277,8 @@
                 <control type="label">
                     <visible>stringcompare(Window.Property(content),350)</visible>
                     <visible>Control.HasFocus(350)</visible>
-                    <left>540</left>
-                    <right>SidePad</right>
+                    <left>660</left>
+                    <right>NewSidePad</right>
                     <top>260</top>
                     <description>Header Label</description>
                     <textcolor>Dark2</textcolor>
@@ -240,14 +287,14 @@
                     <include>Animation.DelayFadeIn</include>
                 </control>
                 <control type="label">
-                    <right>SidePad</right>
-                    <left>540</left>
+                    <right>NewSidePad</right>
+                    <left>660</left>
                     <bottom>264</bottom>
                     <height>50</height>
                     <font>Mini</font>
                     <scroll>true</scroll>
                     <textcolor>Dark3</textcolor>
-                    <label>$INFO[Container(350).NumItems,, $LOCALIZE[31101]  •  ]$INFO[Container(350).CurrentPage,, $LOCALIZE[20163] ]$INFO[Container(350).NumPages,, $LOCALIZE[31243]]</label>
+                    <label>$INFO[Container(350).NumItems,, $LOCALIZE[31101] • ]$INFO[Container(350).CurrentPage,, $LOCALIZE[20163] ]$INFO[Container(350).NumPages,, $LOCALIZE[31243]]</label>
                     <aligny>center</aligny>
                     <align>right</align>
                     <visible>Control.HasFocus(350)</visible>
@@ -256,8 +303,8 @@
                 <control type="label">
                     <visible>stringcompare(Window.Property(content),750)</visible>
                     <visible>Control.HasFocus(750)</visible>
-                    <left>540</left>
-                    <right>SidePad</right>
+                    <left>660</left>
+                    <right>NewSidePad</right>
                     <top>260</top>
                     <description>Header Label</description>
                     <textcolor>Dark2</textcolor>
@@ -266,14 +313,14 @@
                     <include>Animation.DelayFadeIn</include>
                 </control>
                 <control type="label">
-                    <right>SidePad</right>
-                    <left>540</left>
+                    <right>NewSidePad</right>
+                    <left>660</left>
                     <bottom>264</bottom>
                     <height>50</height>
                     <font>Mini</font>
                     <scroll>true</scroll>
                     <textcolor>Dark3</textcolor>
-                    <label>$INFO[Container(750).NumItems,, $LOCALIZE[31101]  •  ]$INFO[Container(750).CurrentPage,, $LOCALIZE[20163] ]$INFO[Container(750).NumPages,, $LOCALIZE[31243]]</label>
+                    <label>$INFO[Container(750).NumItems,, $LOCALIZE[31101] • ]$INFO[Container(750).CurrentPage,, $LOCALIZE[20163] ]$INFO[Container(750).NumPages,, $LOCALIZE[31243]]</label>
                     <aligny>center</aligny>
                     <align>right</align>
                     <visible>Control.HasFocus(750)</visible>
@@ -282,10 +329,10 @@
 
                 <!-- Info -->
                 <control type="group">
-                    <left>540</left>
-                    <right>SidePad</right>
-                    <bottom>224</bottom>
-                    <top>PosterPad</top>
+                    <left>660</left>
+                    <right>NewSidePad</right>
+                    <bottom>120</bottom>
+                    <top>TopPad</top>
                     <visible>IsEmpty(Window.Property(content))</visible>
                     <control type="grouplist">
                         <left>30</left>
@@ -293,18 +340,21 @@
                         <itemgap>0</itemgap>
                         <control type="label">
                             <description>Header Label</description>
-                            <textcolor>Dark1</textcolor>
-                            <include>DefDialogInfoHeader</include>
+                            <top>20</top>
+                            <font>EpisodeNumber</font>
+                            <textcolor>white</textcolor>
+                            <height>80</height>
                             <label>$INFO[Window.Property(movie.Title)]</label>
                         </control>
                         <control type="group">
+                            <top>40</top>
                             <height>50</height>
                             <control type="label">
-                                <posy>-10</posy>
+                                <top>10</top>
                                 <width>100%</width>
                                 <height>36</height>
                                 <font>Tiny</font>
-                                <textcolor>Dark2</textcolor>
+                                <textcolor>white2</textcolor>
                                 <label fallback="19055">$INFO[Window.Property(movie.Tagline)]</label>
                                 <aligny>center</aligny>
                             </control>
@@ -477,7 +527,7 @@
                                 <aligny>center</aligny>
                             </control>
                         </control>
-                      
+
                         <control type="label">
                             <width>100%</width>
                             <height>24</height>
@@ -489,12 +539,12 @@
                         <control type="textbox">
                             <visible>IsEmpty(Window.Property(content))</visible>
                             <width>100%</width>
-                            <height>110</height>
-                            <font>Tiny</font>
-                            <textcolor>Dark2</textcolor>
+                            <height>300</height>
+                            <font>Small</font>
+                            <textcolor>white2</textcolor>
                             <label>$INFO[Window.Property(movie.plot)]</label>
                         </control>
-                        
+
                     </control>
                 </control>
 
@@ -504,40 +554,60 @@
                     <onright>150</onright>
                     <include>DefExtendedInfoList</include>
                 </control>
-                <control type="list" id="250"><visible>false</visible></control>
+                <control type="list" id="250">
+                    <visible>false</visible>
+                </control>
                 <control type="list" id="350">
                     <visible allowhiddenfocus="true">StringCompare(Window.Property(content),350)</visible>
                     <onleft>350</onleft>
                     <onright>350</onright>
                     <include>DefExtendedInfoListWide</include>
                 </control>
-                <control type="list" id="450"><visible>false</visible></control>
-                <control type="list" id="550"><visible>false</visible></control>
-                <control type="list" id="650"><visible>false</visible></control>
+                <control type="list" id="450">
+                    <visible>false</visible>
+                </control>
+                <control type="list" id="550">
+                    <visible>false</visible>
+                </control>
+                <control type="list" id="650">
+                    <visible>false</visible>
+                </control>
                 <control type="list" id="750">
                     <visible allowhiddenfocus="true">StringCompare(Window.Property(content),750)</visible>
                     <onleft>750</onleft>
                     <onright>750</onright>
                     <include>DefExtendedInfoList</include>
                 </control>
-                <control type="list" id="850"><visible>false</visible></control>
-                <control type="list" id="950"><visible>false</visible></control>
+                <control type="list" id="850">
+                    <visible>false</visible>
+                </control>
+                <control type="list" id="950">
+                    <visible>false</visible>
+                </control>
                 <control type="list" id="1000">
                     <visible allowhiddenfocus="true">StringCompare(Window.Property(content),1000)</visible>
                     <onleft>1000</onleft>
                     <onright>1000</onright>
                     <include>DefExtendedInfoList</include>
                 </control>
-                <control type="list" id="1050"><visible>false</visible></control>
+                <control type="list" id="1050">
+                    <visible>false</visible>
+                </control>
                 <control type="list" id="1150">
                     <visible allowhiddenfocus="true">StringCompare(Window.Property(content),1150)</visible>
                     <onleft>1150</onleft>
                     <onright>1150</onright>
                     <include>DefExtendedInfoListWide</include>
                 </control>
-                <control type="list" id="1250"><visible>false</visible></control>
-                <control type="list" id="1350"><visible>false</visible></control>
-                <control type="list" id="1450"><visible>false</visible></control>
+                <control type="list" id="1250">
+                    <visible>false</visible>
+                </control>
+                <control type="list" id="1350">
+                    <visible>false</visible>
+                </control>
+                <control type="list" id="1450">
+                    <visible>false</visible>
+                </control>
             </control>
         </control>
 
@@ -545,7 +615,7 @@
             <visible>Control.HasFocus(9601)</visible>
             <include>Animation.FadeIn</include>
             <include>Animation.FadeOut</include>
-            
+
             <control type="image" description="Background">
                 <include>Dimensions_Fullscreen</include>
                 <texture colordiffuse="Background">common/bg.jpg</texture>
@@ -554,15 +624,15 @@
         </control>
 
         <control type="group">
-            <left>SidePad</left>
-            <right>SidePad</right>
-            <top>PosterPad</top>
+            <left>NewSidePad</left>
+            <right>NewSidePad</right>
+            <top>TopPad</top>
             <height>670</height>
             <visible>Control.HasFocus(9601)</visible>
             <include>Animation.FadeIn.Slide</include>
             <include>Animation.FadeOut</include>
-            
-            
+
+
             <control type="label">
                 <description>header label</description>
                 <left>60</left>
