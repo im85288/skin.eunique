@@ -157,6 +157,7 @@
                 <bottom>10</bottom>
                 <align>center</align>
                 <font>Tiny</font>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
                 <label>$INFO[Control.GetLabel(140),,   ]$INFO[Player.FileName]</label>
             </control>
             
@@ -191,7 +192,7 @@
                 <itemlayout height="64" width="330">
                     <control type="image">
 						<width>330</width>
-                        <texture colordiffuse="Black12">common/box.png</texture>
+                        <texture colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
                     </control>
                     <control type="label">
                 <width>330</width>
