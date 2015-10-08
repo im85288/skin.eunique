@@ -11,6 +11,19 @@
     <onload>SetProperty(content,1000)</onload>
     <onload>Dialog.Close(2003)</onload>
     <controls>
+        <include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
+        <control type="group">
+            <include>Animation.FadeIn</include>
+            <include>Animation.FadeOut</include>
+            <include>GlobalOverlay</include>
+        </control>
+        <include condition="Skin.HasSetting(fags.out)">CerberosSmoke</include>
+        <control type="image">
+            <include>Dimensions_Fullscreen</include>
+            <aspectratio align="center">scale</aspectratio>
+            <texture colordiffuse="$INFO[Window(home).Property(ImageColor)]" fallback="common/black.png" background="true" diffuse="diffuse/dv-mask.png">$INFO[Window(home).Property(ImageFilter)]</texture>
+            <visible>!Skin.HasSetting(lights.out)</visible>
+        </control>
         <control type="group">
             <animation type="Conditional" reversible="true" condition="Window.IsVisible(FileBrowser.xml) | Window.IsVisible(DialogProgress.xml) | Window.IsVisible(DialogYesNo.xml) | Window.IsVisible(DialogOK.xml) | Window.IsVisible(DialogSelect.xml) | Window.IsVisible(DialogContextMenu.xml) | Window.IsVisible(DialogButtonMenu.xml)">
                 <effect type="zoom" end="95" start="100" time="200" center="auto" tween="quadratic" easing="in"/>
@@ -138,7 +151,7 @@
             </control>
             <control type="grouplist">
                 <visible>Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml)</visible>
-                <animation effect="slide" end="114" condition="!Window.IsVisible(Home) + [container.Content(movies) | Container.Content(episodes)]" time="200">Conditional</animation>
+                <animation effect="slide" end="114" condition="true" time="200">Conditional</animation>
                 <include>Animation.FadeIn</include>
                 <include>Animation.FadeOut</include>
                 <left>212</left>
@@ -340,7 +353,6 @@
                     <width>1267</width>
                     <height>116</height>
                     <itemgap>0</itemgap>
-                    <onleft>back</onleft>
                     <ondown>9000</ondown>
                     <onup condition="Control.IsVisible(50)">51</onup>
                     <onup condition="Control.IsVisible(9501)">9501</onup>
@@ -354,7 +366,8 @@
 
                     <control type="button" id="8">
                         <description>Play</description>
-                        <label>208</label>
+                        <label></label>
+                        <font>symbol</font>
                         <width>240</width>
                         <height>116</height>
                         <textoffsetx>20</textoffsetx>
@@ -362,14 +375,13 @@
                         <focusedcolor>$VAR[EmbyMiddleColourHighlight]</focusedcolor>
                         <texturefocus colordiffuse="$INFO[Window(home).Property(ImageColor)]">common/box.png</texturefocus>
                         <texturenofocus colordiffuse="$VAR[EmbyMiddleColourHighlight]">common/box.png</texturenofocus>
-
                         <visible>!IsEmpty(Window.Property(movie.DBID)) + !Stringcompare(Window.Property(Type),tvshow)</visible>
-                        <visible>IsEmpty(Window(home).Property(globalsearch))</visible>
                     </control>
 
                     <control type="button" id="120">
                         <description>Browse</description>
-                        <label>21385</label>
+                        <label></label>
+                        <font>symbol</font>
                         <width>240</width>
                         <height>116</height>
                         <textoffsetx>20</textoffsetx>
@@ -378,63 +390,101 @@
                         <texturefocus colordiffuse="$INFO[Window(home).Property(ImageColor)]">common/box.png</texturefocus>
                         <texturenofocus colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</texturenofocus>
                         <visible>!IsEmpty(Window.Property(movie.DBID)) + Stringcompare(Window.Property(Type),tvshow)</visible>
+                    </control>
+                    <control type="button" id="100">
+                        <description>Extras</description>
+                        <label></label>
+                        <font>symbol</font>
+                        <width>240</width>
+                        <height>116</height>
+                        <textoffsetx>20</textoffsetx>
+                        <textcolor>white</textcolor>
+                        <focusedcolor>$VAR[EmbyRightColourHighlight]</focusedcolor>
+                        <texturefocus colordiffuse="$INFO[Window(home).Property(ImageColor)]">common/box.png</texturefocus>
+                        <texturenofocus colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</texturenofocus>
+                        <onclick>XBMC.RunScript(script.videoextras,display,"$INFO[Window.Property(movie.FilenameAndPath)]")</onclick>
+                        <visible>System.HasAddon(script.videoextras) + IsEmpty(Window(movieinformation).Property(HideVideoExtrasButton))</visible>
+                        <visible>!IsEmpty(Window.Property(movie.FilenameAndPath))</visible>
+                    </control>
+                    <control type="button" id="445">
+                        <description>Manage</description>
+                        <label></label>
+                        <font>symbol</font>
+                        <width>240</width>
+                        <height>116</height>
+                        <textoffsetx>20</textoffsetx>
+                        <textcolor>white</textcolor>
+                        <focusedcolor>$VAR[EmbyRightColourHighlight]</focusedcolor>
+                        <texturefocus colordiffuse="$INFO[Window(home).Property(ImageColor)]">common/box.png</texturefocus>
+                        <texturenofocus colordiffuse="$VAR[EmbyLeftColourHighlight]">common/box.png</texturenofocus>
+                    </control>
+                </control>
+                <control id="9002" type="grouplist">
+                    <left>683</left>
+                    <top>946</top>
+                    <width>1267</width>
+                    <height>116</height>
+                    <itemgap>0</itemgap>
+                    <onleft>9002</onleft>
+                    <onright>9002</onright>
+                    <orientation>horizontal</orientation>
+                    <include>DialogVideoInfoAnimation</include>
+                    <defaultcontrol always="true">8</defaultcontrol>
+                    <animation condition="Control.HasFocus(50) | Control.HasFocus(5000)" effect="slide" end="0,-192" start="0,0" time="200">Conditional</animation>
+                    <!-- Play/Browse Button -->
+                    <control id="8" type="button">
+                        <width>240</width>
+                        <height>116</height>
+                        <textcolor>white</textcolor>
+                        <textoffsetx>0</textoffsetx>
+                        <font>StudioFont</font>
+                        <label>208</label>
+                        <altlabel>31872</altlabel>
+                        <animation condition="Control.HasFocus(8)" effect="fade" end="100" start="0" time="10">Conditional</animation>
+                        <animation condition="!Control.HasFocus(8)" effect="fade" end="0" start="100" time="10">Conditional</animation>
+                        <visible>!IsEmpty(Window.Property(movie.DBID)) + !Stringcompare(Window.Property(Type),tvshow)</visible>
+                    </control>
+
+                    <control type="button" id="120">
+                        <description>Browse</description>
+                        <label>21385</label>
+                        <width>240</width>
+                        <height>116</height>
+                        <textoffsetx>0</textoffsetx>
+                        <textcolor>white</textcolor>
+                        <font>StudioFont</font>
+                        <visible>!IsEmpty(Window.Property(movie.DBID)) + Stringcompare(Window.Property(Type),tvshow)</visible>
                         <visible>IsEmpty(Window(home).Property(globalsearch))</visible>
+                        <animation condition="Control.HasFocus(120)" effect="fade" end="100" start="0" time="10">Conditional</animation>
+                        <animation condition="!Control.HasFocus(120)" effect="fade" end="0" start="100" time="10">Conditional</animation>
                     </control>
 
-                    <control type="button" id="9002">
-                        <description>Cast</description>
-                        <label>206</label>
+                    <control type="button" id="100">
+                        <description>Extras</description>
+                        <label>$ADDON[script.extendedinfo 32132]</label>
                         <width>240</width>
                         <height>116</height>
-                        <textoffsetx>20</textoffsetx>
+                        <textoffsetx>0</textoffsetx>
                         <textcolor>white</textcolor>
-                        <focusedcolor>$VAR[EmbyRightColourHighlight]</focusedcolor>
-                        <texturefocus colordiffuse="$INFO[Window(home).Property(ImageColor)]">common/box.png</texturefocus>
-                        <texturenofocus colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</texturenofocus>
-                        <onclick>SetProperty(content,1000)</onclick>
-                        <onclick>SetFocus(1000)</onclick>
+                        <font>StudioFont</font>
+                        <visible>System.HasAddon(script.videoextras) + IsEmpty(Window(movieinformation).Property(HideVideoExtrasButton))</visible>
+                        <visible>!IsEmpty(Window.Property(movie.FilenameAndPath))</visible>
+                        <animation condition="Control.HasFocus(100)" effect="fade" end="100" start="0" time="10">Conditional</animation>
+                        <animation condition="!Control.HasFocus(100)" effect="fade" end="0" start="100" time="10">Conditional</animation>
                     </control>
 
-                    <control type="button" id="9003">
-                        <description>Similar</description>
-                        <label>31206</label>
+                    <control type="button" id="445">
+                        <description>Manage</description>
+                        <label>$ADDON[script.extendedinfo 32133]</label>
                         <width>240</width>
                         <height>116</height>
-                        <textoffsetx>20</textoffsetx>
+                        <textoffsetx>0</textoffsetx>
                         <textcolor>white</textcolor>
-                        <focusedcolor>$VAR[EmbyRightColourHighlight]</focusedcolor>
-                        <texturefocus colordiffuse="$INFO[Window(home).Property(ImageColor)]">common/box.png</texturefocus>
-                        <texturenofocus colordiffuse="$VAR[EmbyLeftColourHighlight]">common/box.png</texturenofocus>
-                        <onclick>SetProperty(content,150)</onclick>
-                        <onclick>SetFocus(150)</onclick>
+                        <font>StudioFont</font>
+                        <animation condition="Control.HasFocus(445)" effect="fade" end="100" start="0" time="10">Conditional</animation>
+                        <animation condition="!Control.HasFocus(445)" effect="fade" end="0" start="100" time="10">Conditional</animation>
+                    </control>
 
-                    </control>
-                    <control type="button" id="9004">
-                        <description>Youtube</description>
-                        <label>$ADDON[script.extendedinfo 32118]</label>
-                        <width>240</width>
-                        <height>116</height>
-                        <textoffsetx>20</textoffsetx>
-                        <textcolor>white</textcolor>
-                        <focusedcolor>$VAR[EmbyRightColourHighlight]</focusedcolor>
-                        <texturefocus colordiffuse="$INFO[Window(home).Property(ImageColor)]">common/box.png</texturefocus>
-                        <texturenofocus colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</texturenofocus>
-                        <onclick>SetProperty(content,350)</onclick>
-                        <onclick>SetFocus(350)</onclick>
-                    </control>
-                    <control type="button" id="9005">
-                        <description>Crew</description>
-                        <label>$ADDON[script.extendedinfo 32115]</label>
-                        <width>240</width>
-                        <height>116</height>
-                        <textoffsetx>20</textoffsetx>
-                        <textcolor>white</textcolor>
-                        <focusedcolor>$VAR[EmbyRightColourHighlight]</focusedcolor>
-                        <texturefocus colordiffuse="$INFO[Window(home).Property(ImageColor)]">common/box.png</texturefocus>
-                        <texturenofocus colordiffuse="$VAR[EmbyLeftColourHighlight]">common/box.png</texturenofocus>
-                        <onclick>SetProperty(content,750)</onclick>
-                        <onclick>SetFocus(750)</onclick>
-                    </control>
                 </control>
 
                 <!-- Widget Content Selection -->
