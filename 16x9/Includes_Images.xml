@@ -115,7 +115,7 @@
 	</variable>
 	<variable name="PlayerFanart">
 		<value condition="!IsEmpty(Player.Art(fanart))">$INFO[Player.Art(fanart)]</value>
-		<value condition="IsEmpty(Player.Art(fanart))">genrethumb/headphones.jpg</value>
+		<value condition="IsEmpty(Player.Art(fanart))">special://skin/extras/backgrounds/headphones.jpg</value>
 	</variable>
 	<variable name="BannerImage">
 		<value condition="!IsEmpty(Window(Home).Property(SkinHelper.Music.BannerArt))">$INFO[Window(Home).Property(SkinHelper.Music.BannerArt)]</value>
@@ -190,13 +190,8 @@
 		<value condition="!IsEmpty(Container.Art(artist.fanart))">$INFO[Container.Art(artist.fanart)]</value>
 		<value condition="!IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
 		<value condition="!IsEmpty(Container.Art(artist.fanart))">$INFO[Container.Art(artist.fanart)]</value>
-		<value>genrethumb/headphones.jpg</value>
+		<value>special://skin/extras/backgrounds/headphones.jpg</value>
 	</variable>
-	<include name="Furniture_FlagUpright">
-		<width>2</width>
-		<height>71</height>
-		<texture>info/tripanel/upright.png</texture>
-	</include>
 	<variable name="ProgressPercent">
 		<value condition="IntegerGreaterThan(Control.GetLabel(9666),99)">nextup/30.png</value>
 		<value condition="IntegerGreaterThan(Control.GetLabel(9666),98)">nextup/30.png</value>
