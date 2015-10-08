@@ -239,6 +239,17 @@
                     <left>NewSidePad</left>
                     <top>TopPad</top>
                     <control type="group">
+                        <left>1654</left>
+                        <top>759</top>
+                        <control type="image">
+                            <width>228</width>
+                            <height>100</height>
+                            <texture>$INFO[Window.Property(movie.Logo)]</texture>
+                            <aspectratio align="center" aligny="center">keep</aspectratio>
+                            <fadetime>50</fadetime>
+                        </control>
+                    </control>
+                    <control type="group">
                         <left>10</left>
                         <top>-10</top>
                         <width>613</width>
@@ -284,7 +295,7 @@
                             <animation type="conditional" condition="true" reversible="false">
                                 <effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
                             </animation>
-                            <visible>!Control.HasFocus(350) + !Control.HasFocus(1150) + !Control.HasFocus(250) + !Control.HasFocus(1350) + !Control.HasFocus(850)</visible>
+                            <visible>!Control.HasFocus(350) + !Control.HasFocus(1150) + !Control.HasFocus(1350) + !Control.HasFocus(850) + !Control.HasFocus(2000)</visible>
                         </control>
                         <control type="image">
                             <aspectratio scalediffuse="false">scale</aspectratio>
@@ -293,32 +304,7 @@
                                 <effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
                             </animation>
                             <visible>!ControlGroup(9000).HasFocus</visible>
-                            <visible>[StringCompare(Window.Property(content),150) | StringCompare(Window.Property(content),750) | StringCompare(Window.Property(content),1000) | StringCompare(Window.Property(content),250) | StringCompare(Window.Property(content),1250)] | [Control.HasFocus(1000)]</visible>
-                        </control>
-                        <control type="image">
-                            <left>-3</left>
-                            <width>613</width>
-                            <height>450</height>
-                            <aspectratio scalediffuse="false">keep</aspectratio>
-                            <texture background="true">$INFO[Window.Property(movie.set.fanart)]</texture>
-                            <animation type="conditional" condition="true" reversible="false">
-                                <effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
-                            </animation>
-                            <visible>!ControlGroup(9000).HasFocus + !Control.HasFocus(9498)</visible>
-                            <visible>StringCompare(Window.Property(content),250) + !IsEmpty(Window.Property(movie.set.fanart))</visible>
-                        </control>
-                        <control type="image">
-                            <top>470</top>
-                            <left>-3</left>
-                            <width>613</width>
-                            <height>450</height>
-                            <aspectratio scalediffuse="false">keep</aspectratio>
-                            <texture background="true">$INFO[Window.Property(movie.set.thumb)]</texture>
-                            <animation type="conditional" condition="true" reversible="false">
-                                <effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
-                            </animation>
-                            <visible>!ControlGroup(9000).HasFocus + !Control.HasFocus(9498)</visible>
-                            <visible>StringCompare(Window.Property(content),250) + !IsEmpty(Window.Property(movie.set.thumb))</visible>
+                            <visible>[StringCompare(Window.Property(content),150) | StringCompare(Window.Property(content),250) | StringCompare(Window.Property(content),750) | StringCompare(Window.Property(content),1000) | StringCompare(Window.Property(content),250) | StringCompare(Window.Property(content),1250)] | [Control.HasFocus(1000)]</visible>
                         </control>
                         <control type="image">
                             <top>200</top>
@@ -331,7 +317,7 @@
                                 <effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
                             </animation>
                             <visible>!ControlGroup(9000).HasFocus + !Control.HasFocus(9498)</visible>
-                            <visible>StringCompare(Window.Property(content),350) | StringCompare(Window.Property(content),1150) | StringCompare(Window.Property(content),1350)</visible>
+                            <visible>StringCompare(Window.Property(content),350) | StringCompare(Window.Property(content),1150) | StringCompare(Window.Property(content),1350) | StringCompare(Window.Property(content),2000)</visible>
                         </control>
                         <control type="image">
                             <top>200</top>
@@ -345,6 +331,20 @@
                             </animation>
                             <visible>!ControlGroup(9000).HasFocus + !Control.HasFocus(9498)</visible>
                             <visible>StringCompare(Window.Property(content),850)</visible>
+                        </control>
+                        <control type="textbox">
+                            <top>10</top>
+                            <left>10</left>
+                            <right>10</right>
+                            <height>180</height>
+                            <align>center</align>
+                            <aligny>bottom</aligny>
+                            <font>Small</font>
+                            <textcolor>$VAR[ColourSelected]</textcolor>
+                            <label>$INFO[Container(2000).ListItem(0).Episode,[B],[/B]]$INFO[Container(2000).ListItem(0).Label,[B]:[/B] ]$INFO[Container(2000).ListItem(0).Property(release_date),[CR],]</label>
+                            <visible>!ControlGroup(9000).HasFocus</visible>
+                            <visible>!Control.HasFocus(9498)</visible>
+                            <visible>StringCompare(Window.Property(content),2000) + !Control.HasFocus(9498)</visible>
                         </control>
                         <control type="textbox">
                             <top>10</top>
@@ -445,6 +445,7 @@
                     <onup condition="Control.IsVisible(1150)">1150</onup>
                     <onup condition="Control.IsVisible(1250)">1250</onup>
                     <onup condition="Control.IsVisible(1350)">1350</onup>
+                    <onup condition="Control.IsVisible(2000)">2000</onup>
                     <onup condition="!Control.IsVisible(50) + !Control.IsVisible(9501)">9601</onup>
                     <orientation>horizontal</orientation>
 
@@ -588,6 +589,7 @@
                     <ondown condition="Control.IsVisible(1250)">1250</ondown>
                     <ondown condition="Control.IsVisible(1350)">1350</ondown>
                     <ondown condition="Control.IsVisible(950)">950</ondown>
+                    <ondown condition="Control.IsVisible(2000)">2000</ondown>
                     <onback>9000</onback>
                     <orientation>horizontal</orientation>
                     <scrolltime tween="cubic" easing="out">500</scrolltime>
@@ -681,6 +683,11 @@
                             <label>$LOCALIZE[31960]</label>
                             <onclick>SetProperty(content,950)</onclick>
                             <visible>IntegerGreaterThan(Container(950).NumItems,0)</visible>
+                        </item>
+                        <item id="10">
+                            <label>$LOCALIZE[20360]</label>
+                            <onclick>SetProperty(content,2000)</onclick>
+                            <visible>IntegerGreaterThan(Container(2000).NumItems,0)</visible>
                         </item>
                     </content>
                 </control>
@@ -863,6 +870,24 @@
                     <textcolor>Dark2</textcolor>
                     <font>Small</font>
                     <label>$LOCALIZE[31960]$INFO[Container(950).ListItem(0).Label,: ,]</label>
+                    <include>Animation.DelayFadeIn</include>
+                </control>
+                <control type="label">
+                    <visible>stringcompare(Window.Property(content),2000)</visible>
+                    <visible>!Control.HasFocus(9498)</visible>
+                    <left>683</left>
+                    <top>650</top>
+                    <width>1200</width>
+                    <height>34</height>
+                    <aligny>center</aligny>
+                    <align>left</align>
+                    <height>34</height>
+                    <font>Small</font>
+                    <textcolor>white2</textcolor>
+                    <description>Header Label</description>
+                    <textcolor>Dark2</textcolor>
+                    <font>Small</font>
+                    <label>$INFO[Container(2000).ListItem.Episode,[B],[/B]]$INFO[Container(2000).ListItem.Label,[B]:[/B] ]$INFO[Container(2000).ListItem.Property(release_date),[CR][COLOR white3],[/COLOR]]</label>
                     <include>Animation.DelayFadeIn</include>
                 </control>
 
@@ -1173,6 +1198,13 @@
                 </control>
                 <control type="wraplist" id="1450">
                     <visible>false</visible>
+                </control>
+                <control type="wraplist" id="2000">
+                    <visible allowhiddenfocus="true">StringCompare(Window.Property(content),2000)</visible>
+                    <autoscroll time="3000">!Control.HasFocus(2000)</autoscroll>
+                    <onleft>2000</onleft>
+                    <onright>2000</onright>
+                    <include>DefExtendedInfoListWideEpisode</include>
                 </control>
             </control>
         </control>
