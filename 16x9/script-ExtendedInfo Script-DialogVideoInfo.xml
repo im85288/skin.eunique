@@ -332,7 +332,7 @@
                     <left>660</left>
                     <right>NewSidePad</right>
                     <bottom>120</bottom>
-                    <top>TopPad</top>
+                    <top>100</top>
                     <visible>IsEmpty(Window.Property(content))</visible>
                     <control type="grouplist">
                         <left>30</left>
@@ -340,7 +340,6 @@
                         <itemgap>0</itemgap>
                         <control type="label">
                             <description>Header Label</description>
-                            <top>20</top>
                             <font>EpisodeNumber</font>
                             <textcolor>white</textcolor>
                             <height>80</height>
@@ -548,7 +547,7 @@
                     </control>
                 </control>
 
-                <control type="list" id="150">
+                <control type="wraplist" id="150">
                     <visible allowhiddenfocus="true">StringCompare(Window.Property(content),150)</visible>
                     <onleft>150</onleft>
                     <onright>150</onright>
@@ -559,6 +558,7 @@
                 </control>
                 <control type="list" id="350">
                     <visible allowhiddenfocus="true">StringCompare(Window.Property(content),350)</visible>
+
                     <onleft>350</onleft>
                     <onright>350</onright>
                     <include>DefExtendedInfoListWide</include>
@@ -584,8 +584,9 @@
                 <control type="list" id="950">
                     <visible>false</visible>
                 </control>
-                <control type="list" id="1000">
-                    <visible allowhiddenfocus="true">StringCompare(Window.Property(content),1000)</visible>
+                <control type="wraplist" id="1000">
+                    <visible allowhiddenfocus="true">!StringCompare(Window.Property(content),750) + !StringCompare(Window.Property(content),1150) + !StringCompare(Window.Property(content),350) + !StringCompare(Window.Property(content),150)</visible>
+                    <autoscroll time="3000">true</autoscroll>
                     <onleft>1000</onleft>
                     <onright>1000</onright>
                     <include>DefExtendedInfoList</include>
