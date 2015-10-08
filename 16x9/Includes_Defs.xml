@@ -1857,13 +1857,17 @@
 			<selectedcolor>white2</selectedcolor>
 			<label>$INFO[ListItem.Rating]$INFO[ListItem.Votes,[CR](, $LOCALIZE[20350])]</label>
 		</control>
-		<control type="image">
+		<control type="label">
 			<centerleft>50%</centerleft>
-			<centertop>160</centertop>
-			<width>128</width>
-			<height>128</height>
-			<aspectratio>keep</aspectratio>
-			<texture colordiffuse="88ffffff">common/playring.png</texture>
+			<top>50</top>
+			<width>112</width>
+			<height>112</height>
+			<label></label>
+			<textcolor>$INFO[Window(home).Property(ImageColor)]</textcolor>
+			<focusedcolor>$INFO[Window(home).Property(ImageColor)]</focusedcolor>
+			<font>symbolbiggest</font>
+			<aligny>center</aligny>
+			<align>center</align>
 			<animation type="Focus">
 				<effect type="zoom" start="90" end="100" time="150" tween="sine" easing="inout" center="auto" />
 				<effect type="fade" start="0" end="100" time="150" tween="sine" easing="in" />
