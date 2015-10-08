@@ -1568,4 +1568,229 @@
 			</control>
 		</control>
 	</include>
+	<include name="Furniture_HeaderExtended">
+		<control type="grouplist">
+			<top>50</top>
+			<left>NewSidePad</left>
+			<visible>Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml)</visible>
+			<include condition="!Window.IsVisible(script-ExtendedInfo Script-VideoList.xml)">Animation.FurnitureFadeInOut</include>
+			<include condition="Window.IsVisible(script-ExtendedInfo Script-VideoList.xml)">FurnitureFadeInOutExtended</include>
+			<orientation>horizontal</orientation>
+			<itemgap>24</itemgap>
+			<control type="group" description="iconbox">
+				<width>50</width>
+				<height>50</height>
+				<control type="image">
+					<texture diffuse="common/circle.png" colordiffuse="Panel">common/box.png</texture>
+				</control>
+				<control id="8308" type="image">
+					<texture colordiffuse="PanelWhite100">$VAR[HeaderIcon]</texture>
+					<visible>false</visible>
+				</control>
+				<control type="image">
+					<texture diffuse="common/circle.png">special://skin/extras/icons/emby2.png</texture>
+					<visible>[!Skin.HasSetting(hide.busydialog) | !Window.IsVisible(DialogBusy.xml)] + IsEmpty(Window(Home).Property(EmbyUserImage))</visible>
+					<visible>System.HasAddon(plugin.video.emby)</visible>
+					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
+				</control>
+				<control type="image">
+					<texture diffuse="common/circle.png">$INFO[Window(Home).Property(EmbyUserImage)]</texture>
+					<visible>System.HasAddon(plugin.video.emby)</visible>
+					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
+					<visible>!Control.HasFocus(3634)</visible>
+				</control>
+				<control type="button" id="3634">
+					<onleft>3635</onleft>
+					<onright>3635</onright>
+					<onup>303</onup>
+					<ondown>300</ondown>
+					<onclick>RunPlugin("plugin://plugin.video.emby?mode=userprefs")</onclick>
+					<onback>300</onback>
+					<font>Button</font>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<visible>[!Skin.HasSetting(hide.busydialog) | !Window.IsVisible(DialogBusy.xml)] + !IsEmpty(Window(Home).Property(EmbyUserImage))</visible>
+				</control>
+				<control type="image">
+					<top>-14</top>
+					<left>-14</left>
+					<width>78</width>
+					<height>78</height>
+					<texture colordiffuse="$VAR[ColourHighlight]">special://skin/extras/icons/configure.png</texture>
+					<visible>Control.HasFocus(3634)</visible>
+					<visible>System.HasAddon(plugin.video.emby)</visible>
+				</control>
+				<control type="image">
+					<texture diffuse="common/circle.png">$INFO[System.ProfileThumb]</texture>
+					<visible>!System.HasAddon(plugin.video.emby)</visible>
+					<visible>[!Skin.HasSetting(hide.busydialog) | !Window.IsVisible(DialogBusy.xml)] + Substring(Control.GetLabel(8308),empty.png) + !IsEmpty(System.ProfileThumb)</visible>
+					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
+				</control>
+			</control>
+			<control type="group" description="iconbox">
+				<visible>!Container.Scrolling + !Control.HasFocus(60)</visible>
+				<width>50</width>
+				<height>50</height>
+				<control type="label">
+					<top>-21</top>
+					<left>0</left>
+					<width>78</width>
+					<height>88</height>
+					<font>symbolmenu</font>
+					<textcolor>$VAR[EmbyLeftColourHighlight]</textcolor>
+					<label>$VAR[HeaderIcon]</label>
+					<visible>!Control.HasFocus(3635)</visible>
+				</control>
+				<control type="label">
+					<top>-21</top>
+					<left>0</left>
+					<width>78</width>
+					<height>88</height>
+					<font>symbolmenu</font>
+					<textcolor>$VAR[ColourHighlight]</textcolor>
+					<label>$VAR[HeaderIcon]</label>
+					<visible>Control.HasFocus(3635)</visible>
+				</control>
+				<control type="button" id="3635">
+					<onleft>3634</onleft>
+					<onright>3634</onright>
+					<onup>303</onup>
+					<ondown>300</ondown>
+					<onback>300</onback>
+					<onclick condition="![Player.HasAudio | Player.HasVideo] + !StringCompare(Container(300).ListItem.Property(defaultID),music)">RunScript(script.skin.helper.service,action=videosearch)</onclick>
+					<onclick condition="![Player.HasAudio | Player.HasVideo] + StringCompare(Container(300).ListItem.Property(defaultID),music)">RunScript(script.skin.helper.service,action=musicsearch)</onclick>
+					<onclick condition="[Player.HasAudio | Player.HasVideo]">Action(FullScreen)</onclick>
+					<font>Button</font>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>
+				</control>
+			</control>
+			<control type="group" description="iconbox scrolling">
+				<visible>Container.Scrolling | Control.HasFocus(60)</visible>
+				<visible>!Skin.HasSetting(hide.busydialog) | !Window.IsVisible(DialogBusy.xml)</visible>
+				<width>50</width>
+				<height>50</height>
+				<control type="label">
+					<top>-21</top>
+					<left>0</left>
+					<width>78</width>
+					<height>88</height>
+					<font>symbolmenu</font>
+					<label>$VAR[SortLetter]</label>
+					<textcolor>$VAR[EmbyLeftColourHighlight]</textcolor>
+				</control>
+			</control>
+			<control type="group" description="timebox">
+				<width>128</width>
+				<control type="label">
+					<height>46</height>
+					<font>LargeBold</font>
+					<textcolor>Dark1</textcolor>
+					<label>$INFO[System.Time(hh:mm)]</label>
+				</control>
+			</control>
+			<control type="group" description="timebox">
+				<width>44</width>
+				<control type="label">
+					<top>2</top>
+					<left>-24</left>
+					<height>46</height>
+					<font>symbolview</font>
+					<textcolor>Dark1</textcolor>
+					<label>$VAR[EmbyEndTimeSymbol, ]</label>
+				</control>
+			</control>
+			<control type="group" description="timebox">
+				<width min="0" max="1500">auto</width>
+				<control type="label">
+					<top>-2</top>
+					<left>-56</left>
+					<height>52</height>
+					<font>SmallBold</font>
+					<textcolor>Dark1</textcolor>
+					<label>$VAR[EmbyEndTimeLabel, ]</label>
+				</control>
+			</control>
+		</control>
+		<control type="grouplist">
+			<visible>Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml)</visible>
+			<animation effect="slide" end="114" condition="!Window.IsVisible(Home) + [container.Content(movies) | Container.Content(episodes)]" time="200">Conditional</animation>
+			<include>Animation.FadeIn</include>
+			<include>Animation.FadeOut</include>
+			<left>292</left>
+			<top>57</top>
+			<width>1626</width>
+			<height>34</height>
+			<orientation>horizontal</orientation>
+			<itemgap>6</itemgap>
+			<control type="label">
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>MediumSmallBold</font>
+				<textcolor>Dark1</textcolor>
+				<width>auto</width>
+				<height>34</height>
+				<selectedcolor>Dark1</selectedcolor>
+				<label>[UPPERCASE]  $VAR[HDSD]$INFO[Window.Property(movie.VideoResolution), ,P]$VAR[ExtendedInfoMPAA, / ]$VAR[VideoCodec, / ]$VAR[AudioCodec, / ,][/UPPERCASE]</label>
+			</control>
+			<control type="label">
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>MediumSmallBold</font>
+				<textcolor>Dark1</textcolor>
+				<width>auto</width>
+				<height>34</height>
+				<selectedcolor>Dark1</selectedcolor>
+				<label>/ </label>
+				<visible>!IsEmpty(Window.Property(movie.Rating))</visible>
+			</control>
+			<control type="label">
+				<aligny>center</aligny>
+				<align>left</align>
+				<font>symbolview</font>
+				<textcolor>IMDB</textcolor>
+				<height>34</height>
+				<width>auto</width>
+				<label></label>
+				<visible>!IsEmpty(Window.Property(movie.Rating))</visible>
+			</control>
+			<control type="label">
+				<aligny>center</aligny>
+				<align>left</align>
+				<font>MediumSmallBold</font>
+				<textcolor>Dark1</textcolor>
+				<height>34</height>
+				<width>auto</width>
+				<label>$INFO[Window.Property(movie.Rating),[UPPERCASE],[/UPPERCASE]]</label>
+				<visible>!IsEmpty(Window.Property(movie.Rating))</visible>
+			</control>
+			<control type="label">
+				<aligny>center</aligny>
+				<align>left</align>
+				<font>symbolview</font>
+				<textcolor>IMDB</textcolor>
+				<height>34</height>
+				<width>auto</width>
+				<label>  </label>
+				<visible>!IsEmpty(Window.Property(movie.Top250))</visible>
+			</control>
+			<control type="label">
+				<aligny>center</aligny>
+				<align>left</align>
+				<font>MediumSmallBold</font>
+				<textcolor>Dark1</textcolor>
+				<height>34</height>
+				<width>auto</width>
+				<label>$INFO[Window.Property(movie.Top250),#,]</label>
+				<visible>!IsEmpty(Window.Property(movie.Top250))</visible>
+			</control>
+			<control type="image">
+				<width>70</width>
+				<height>40</height>
+				<texture>$INFO[Window.Property(movie.AudioLanguage.1),flags/language/,.png]</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<visible>!IsEmpty(Window.Property(movie.AudioLanguage.1))</visible>
+			</control>
+		</control>
+	</include>
 </includes>

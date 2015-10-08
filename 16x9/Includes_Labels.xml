@@ -467,6 +467,7 @@
 		<value condition="VideoPlayer.IsStereoScopic | !IsEmpty(VideoPlayer.Property(Video3DFormat)) | substring(VideoPlayer.FileName,.3d.)">3D</value>
 		<value condition="IntegerGreaterThan(ListItem.VideoResolution,1080) | SubString(ListItem.Filenameandpath,4k)">4K</value>
 		<value condition="IntegerGreaterThan(VideoPlayer.VideoResolution,1080) | SubString(VideoPlayer.Filenameandpath,4k)">4K</value>
+		<value condition="IntegerGreaterThan(Window.Property(movie.VideoResolution),1080)">4K</value>
 		<value condition="[substring(ListItem.FilenameAndPath,bdmv) | substring(ListItem.FilenameAndPath,blu-ray) | substring(ListItem.FilenameAndPath,bluray) | substring(ListItem.FilenameAndPath,bdrip) | substring(ListItem.FilenameAndPath,bd25) | substring(ListItem.FilenameAndPath,bd50)]">BD</value>
 		<value condition="[substring(VideoPlayer.FilenameAndPath,bdmv) | substring(VideoPlayer.FilenameAndPath,blu-ray) | substring(VideoPlayer.FilenameAndPath,bluray) | substring(VideoPlayer.FilenameAndPath,bdrip) | substring(VideoPlayer.FilenameAndPath,bd25) | substring(VideoPlayer.FilenameAndPath,bd50)]">BD</value>
 		<value condition="SubString(ListItem.Filenameandpath,dvd) | SubString(ListItem.Filenameandpath,.ifo,Right) | SubString(ListItem.Filenameandpath,.iso,Right)">DVD</value>
@@ -477,8 +478,10 @@
 		<value condition="SubString(VideoPlayer.Filenameandpath,WEBRIP) | SubString(VideoPlayer.Filenameandpath,WEB-RIP)">$LOCALIZE[31839]</value>
 		<value condition="IntegerGreaterThan(ListItem.VideoResolution,719) + !IsEmpty(ListItem.VideoResolution)">HD</value>
 		<value condition="IntegerGreaterThan(VideoPlayer.VideoResolution,719) + !IsEmpty(VideoPlayer.VideoResolution)">HD</value>
+		<value condition="IntegerGreaterThan(Window.Property(movie.VideoResolution),719) + !IsEmpty(Window.Property(movie.VideoResolution))">HD</value>
 		<value condition="!IntegerGreaterThan(ListItem.VideoResolution,719) + !IsEmpty(ListItem.VideoResolution)">SD</value>
 		<value condition="!IntegerGreaterThan(VideoPlayer.VideoResolution,719) + !IsEmpty(VideoPlayer.VideoResolution)">SD</value>
+		<value condition="!IntegerGreaterThan(Window.Property(movie.VideoResolution),719) + !IsEmpty(Window.Property(movie.VideoResolution))">SD</value>
 		<value condition="!IsEmpty(ListItem.FileExtension)">$INFO[ListItem.FileExtension]</value>
 		<value condition="!IsEmpty(VideoPlayer.FileExtension)">$INFO[VideoPlayer.FileExtension]</value>
 		<value>SD</value>
@@ -998,6 +1001,11 @@
 		<value condition="SubString(VideoPlayer.VideoCodec,MPEG2)">MPEG2</value>
 		<value condition="SubString(VideoPlayer.VideoCodec,MPEG4)">MPEG4</value>
 		<value condition="!IsEmpty(VideoPlayer.VideoCodec)">$INFO[VideoPlayer.VideoCodec]</value>
+		<value condition="SubString(Window.Property(movie.VideoCodec),H264)">H.264</value>
+		<value condition="SubString(Window.Property(movie.VideoCodec),H265)">H.265</value>
+		<value condition="SubString(Window.Property(movie.VideoCodec),MPEG2)">MPEG2</value>
+		<value condition="SubString(Window.Property(movie.VideoCodec),MPEG4)">MPEG4</value>
+		<value condition="!IsEmpty(Window.Property(movie.VideoCodec))">$INFO[Window.Property(movie.VideoCodec)]</value>
 		<value condition="SubString(Container(301).ListItem..VideoCodec,H264)">H.264</value>
 		<value condition="SubString(Container(301).ListItem..VideoCodec,H265)">H.265</value>
 		<value condition="SubString(Container(301).ListItem..VideoCodec,MPEG2)">MPEG2</value>
@@ -1018,6 +1026,12 @@
 		<value condition="SubString(VideoPlayer.AudioCodec,dtshd)">DTS HD</value>
 		<value condition="SubString(VideoPlayer.AudioCodec,pcm)">PCM</value>
 		<value condition="!IsEmpty(VideoPlayer.AudioCodec)">$INFO[VideoPlayer.AudioCodec]</value>
+		<value condition="StringCompare(Window.Property(movie.AudioCodec),ac3)">DOLBY D</value>
+		<value condition="StringCompare(Window.Property(movie.AudioCodec),dca)">DTS</value>
+		<value condition="SubString(Window.Property(movie.AudioCodec),dts-hd)">DTS HD</value>
+		<value condition="SubString(Window.Property(movie.AudioCodec),dtshd)">DTS HD</value>
+		<value condition="SubString(Window.Property(movie.AudioCodec),pcm)">PCM</value>
+		<value condition="!IsEmpty(Window.Property(movie.AudioCodec))">$INFO[Window.Property(movie.AudioCodec)]</value>
 		<value>$INFO[ListItem.AudioCodec]</value>
 	</variable>
 
