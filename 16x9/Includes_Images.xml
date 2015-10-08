@@ -35,6 +35,17 @@
 		<value condition="System.HasAddon(script.image.resource.select) + !IsEmpty(Skin.String(moviegenreicons.path)) + SubString(Skin.String(moviegenreicons.path),filmstrip)">resource://resource.images.moviegenreicons.filmstrip/$INFO[Listitem.Label,,.jpg]</value>
 		<value>resource://resource.images.moviegenreicons.coloured/$INFO[Listitem.Label,,.jpg]</value>
 	</variable>
+	<variable name="MovieGenres850">
+		<value condition="System.HasAddon(script.image.resource.select) + !IsEmpty(Skin.String(moviegenreicons.path)) + SubString(Skin.String(moviegenreicons.path),coloured)">resource://resource.images.moviegenreicons.coloured/$INFO[Container(850).ListItem(0).Label,,.jpg]</value>
+		<value condition="System.HasAddon(script.image.resource.select) + !IsEmpty(Skin.String(moviegenreicons.path)) + SubString(Skin.String(moviegenreicons.path),transparent)">resource://resource.images.moviegenreicons.transparent/$INFO[Container(850).ListItem(0).Label,,.png]</value>
+		<value condition="System.HasAddon(script.image.resource.select) + !IsEmpty(Skin.String(moviegenreicons.path)) + SubString(Skin.String(moviegenreicons.path),xzener-reflection)">resource://resource.images.moviegenreicons.xzener-reflection/$INFO[Container(850).ListItem(0).Label,,.png]</value>
+		<value condition="System.HasAddon(script.image.resource.select) + !IsEmpty(Skin.String(moviegenreicons.path)) + SubString(Skin.String(moviegenreicons.path),xzener-flat)">resource://resource.images.moviegenreicons.xzener-flat/$INFO[Container(850).ListItem(0).Label,,.png]</value>
+		<value condition="System.HasAddon(script.image.resource.select) + !IsEmpty(Skin.String(moviegenreicons.path)) + SubString(Skin.String(moviegenreicons.path),white)">resource://resource.images.moviegenreicons.white/$INFO[Container(850).ListItem(0).Label,,.jpg]</value>
+		<value condition="System.HasAddon(script.image.resource.select) + !IsEmpty(Skin.String(moviegenreicons.path)) + SubString(Skin.String(moviegenreicons.path),poster)">resource://resource.images.moviegenreicons.poster/$INFO[Container(850).ListItem(0).Label,,.jpg]</value>
+		<value condition="System.HasAddon(script.image.resource.select) + !IsEmpty(Skin.String(moviegenreicons.path)) + SubString(Skin.String(moviegenreicons.path),grey)">resource://resource.images.moviegenreicons.grey/$INFO[Container(850).ListItem(0).Label,,.jpg]</value>
+		<value condition="System.HasAddon(script.image.resource.select) + !IsEmpty(Skin.String(moviegenreicons.path)) + SubString(Skin.String(moviegenreicons.path),filmstrip)">resource://resource.images.moviegenreicons.filmstrip/$INFO[Container(850).ListItem(0).Label,,.jpg]</value>
+		<value>resource://resource.images.moviegenreicons.coloured/$INFO[Container(850).ListItem(0).Label,,.jpg]</value>
+	</variable>
 	<variable name="MusicGenres">
 		<value condition="System.HasAddon(script.image.resource.select) + !IsEmpty(Skin.String(musicgenreicons.path)) + SubString(Skin.String(musicgenreicons.path),text)">resource://resource.images.musicgenreicons.text/$INFO[Listitem.Label,,.jpg]</value>
 		<value condition="System.HasAddon(script.image.resource.select) + !IsEmpty(Skin.String(musicgenreicons.path)) + SubString(Skin.String(musicgenreicons.path),grey)">resource://resource.images.musicgenreicons.grey/$INFO[Listitem.Label,,.jpg]</value>
@@ -81,6 +92,7 @@
 		<value condition="!IsEmpty(Container(150).ListItem.Icon) + Control.HasFocus(150)">$INFO[Container(150).ListItem.Icon]</value>
 		<value condition="!IsEmpty(Container(350).ListItem.Icon) + Control.HasFocus(350)">$INFO[Container(350).ListItem.Icon]</value>
 		<value condition="!IsEmpty(Container(750).ListItem.Icon) + Control.HasFocus(750)">$INFO[Container(750).ListItem.Icon]</value>
+		<value condition="!IsEmpty(Container(850).ListItem.Icon) + Control.HasFocus(850)">$INFO[Container(850).ListItem.Icon]</value>
 		<value condition="!IsEmpty(Container(250).ListItem.Icon) + Control.HasFocus(250)">$INFO[Container(250).ListItem.Icon]</value>
 		<value condition="!IsEmpty(Container(1150).ListItem.Icon) + Control.HasFocus(1150)">$INFO[Container(1150).ListItem.Icon]</value>
 		<value condition="!IsEmpty(Container(1250).ListItem.Icon) + Control.HasFocus(1250)">$INFO[Container(1250).ListItem.Icon]</value>

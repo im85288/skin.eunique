@@ -284,7 +284,7 @@
                             <animation type="conditional" condition="true" reversible="false">
                                 <effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
                             </animation>
-                            <visible>!Control.HasFocus(350) + !Control.HasFocus(1150) + !Control.HasFocus(250) + !Control.HasFocus(1350)</visible>
+                            <visible>!Control.HasFocus(350) + !Control.HasFocus(1150) + !Control.HasFocus(250) + !Control.HasFocus(1350) + !Control.HasFocus(850)</visible>
                         </control>
                         <control type="image">
                             <aspectratio scalediffuse="false">scale</aspectratio>
@@ -304,7 +304,7 @@
                             <animation type="conditional" condition="true" reversible="false">
                                 <effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
                             </animation>
-                            <visible>!ControlGroup(9000).HasFocus</visible>
+                            <visible>!ControlGroup(9000).HasFocus + !Control.HasFocus(9498)</visible>
                             <visible>StringCompare(Window.Property(content),250) + !IsEmpty(Window.Property(movie.set.fanart))</visible>
                         </control>
                         <control type="image">
@@ -317,7 +317,7 @@
                             <animation type="conditional" condition="true" reversible="false">
                                 <effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
                             </animation>
-                            <visible>!ControlGroup(9000).HasFocus</visible>
+                            <visible>!ControlGroup(9000).HasFocus + !Control.HasFocus(9498)</visible>
                             <visible>StringCompare(Window.Property(content),250) + !IsEmpty(Window.Property(movie.set.thumb))</visible>
                         </control>
                         <control type="image">
@@ -330,8 +330,21 @@
                             <animation type="conditional" condition="true" reversible="false">
                                 <effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
                             </animation>
-                            <visible>!ControlGroup(9000).HasFocus</visible>
+                            <visible>!ControlGroup(9000).HasFocus + !Control.HasFocus(9498)</visible>
                             <visible>StringCompare(Window.Property(content),350) | StringCompare(Window.Property(content),1150) | StringCompare(Window.Property(content),1350)</visible>
+                        </control>
+                        <control type="image">
+                            <top>200</top>
+                            <left>-3</left>
+                            <width>613</width>
+                            <height>450</height>
+                            <aspectratio scalediffuse="false">keep</aspectratio>
+                            <texture background="true">$VAR[MovieGenres850]</texture>
+                            <animation type="conditional" condition="true" reversible="false">
+                                <effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
+                            </animation>
+                            <visible>!ControlGroup(9000).HasFocus + !Control.HasFocus(9498)</visible>
+                            <visible>StringCompare(Window.Property(content),850)</visible>
                         </control>
                         <control type="textbox">
                             <top>10</top>
@@ -345,7 +358,21 @@
                             <label>$INFO[Container(350).ListItem(0).Label]</label>
                             <visible>!ControlGroup(9000).HasFocus</visible>
                             <visible>!Control.HasFocus(9498)</visible>
-                            <visible>StringCompare(Window.Property(content),350)</visible>
+                            <visible>StringCompare(Window.Property(content),350) + !Control.HasFocus(9498)</visible>
+                        </control>
+                        <control type="textbox">
+                            <top>10</top>
+                            <left>10</left>
+                            <right>10</right>
+                            <height>180</height>
+                            <align>center</align>
+                            <aligny>bottom</aligny>
+                            <font>Small</font>
+                            <textcolor>$VAR[ColourSelected]</textcolor>
+                            <label>$INFO[Container(850).ListItem(0).Label]</label>
+                            <visible>!ControlGroup(9000).HasFocus</visible>
+                            <visible>!Control.HasFocus(9498)</visible>
+                            <visible>StringCompare(Window.Property(content),850) + !Control.HasFocus(9498)</visible>
                         </control>
                         <control type="textbox">
                             <top>10</top>
@@ -359,7 +386,7 @@
                             <label>$INFO[Container(1150).ListItem(0).Property(Type),[B],: [/B]]$INFO[Container(1150).ListItem(0).Label]</label>
                             <visible>!ControlGroup(9000).HasFocus</visible>
                             <visible>!Control.HasFocus(9498)</visible>
-                            <visible>StringCompare(Window.Property(content),1150)</visible>
+                            <visible>StringCompare(Window.Property(content),1150) + !Control.HasFocus(9498)</visible>
                         </control>
                         <control type="textbox">
                             <top>10</top>
@@ -373,7 +400,7 @@
                             <label>$INFO[Container(1350).ListItem(0).Label]</label>
                             <visible>!ControlGroup(9000).HasFocus</visible>
                             <visible>!Control.HasFocus(9498)</visible>
-                            <visible>StringCompare(Window.Property(content),1350)</visible>
+                            <visible>StringCompare(Window.Property(content),1350) + !Control.HasFocus(9498)</visible>
                         </control>
                     </control>
                 </control>
@@ -413,6 +440,7 @@
                     <onup condition="Control.IsVisible(250)">250</onup>
                     <onup condition="Control.IsVisible(350)">350</onup>
                     <onup condition="Control.IsVisible(750)">750</onup>
+                    <onup condition="Control.IsVisible(850)">850</onup>
                     <onup condition="Control.IsVisible(1150)">1150</onup>
                     <onup condition="Control.IsVisible(1250)">1250</onup>
                     <onup condition="Control.IsVisible(1350)">1350</onup>
@@ -554,6 +582,7 @@
                     <ondown condition="Control.IsVisible(250)">250</ondown>
                     <ondown condition="Control.IsVisible(350)">350</ondown>
                     <ondown condition="Control.IsVisible(750)">750</ondown>
+                    <ondown condition="Control.IsVisible(850)">850</ondown>
                     <ondown condition="Control.IsVisible(1150)">1150</ondown>
                     <ondown condition="Control.IsVisible(1250)">1250</ondown>
                     <ondown condition="Control.IsVisible(1350)">1350</ondown>
@@ -640,6 +669,11 @@
                             <label>$LOCALIZE[20445]</label>
                             <onclick>SetProperty(content,1350)</onclick>
                             <visible>IntegerGreaterThan(Container(1350).NumItems,0)</visible>
+                        </item>
+                        <item id="8">
+                            <label>$LOCALIZE[515]</label>
+                            <onclick>SetProperty(content,850)</onclick>
+                            <visible>IntegerGreaterThan(Container(850).NumItems,0)</visible>
                         </item>
                     </content>
                 </control>
@@ -786,6 +820,24 @@
                     <textcolor>Dark2</textcolor>
                     <font>Small</font>
                     <label>$LOCALIZE[20445]$INFO[Container(1350).ListItem(0).Label,: ,]</label>
+                    <include>Animation.DelayFadeIn</include>
+                </control>
+                <control type="label">
+                    <visible>stringcompare(Window.Property(content),850)</visible>
+                    <visible>!Control.HasFocus(9498)</visible>
+                    <left>683</left>
+                    <top>650</top>
+                    <width>1200</width>
+                    <height>34</height>
+                    <aligny>center</aligny>
+                    <align>left</align>
+                    <height>34</height>
+                    <font>Small</font>
+                    <textcolor>white2</textcolor>
+                    <description>Header Label</description>
+                    <textcolor>Dark2</textcolor>
+                    <font>Small</font>
+                    <label>$LOCALIZE[515]$INFO[Container(850).ListItem(0).Label,: ,]</label>
                     <include>Animation.DelayFadeIn</include>
                 </control>
 
@@ -1050,7 +1102,11 @@
                     <include>DefExtendedInfoList</include>
                 </control>
                 <control type="wraplist" id="850">
-                    <visible>false</visible>
+                    <visible allowhiddenfocus="true">StringCompare(Window.Property(content),850)</visible>
+                    <autoscroll time="3000">!Control.HasFocus(850)</autoscroll>
+                    <onleft>850</onleft>
+                    <onright>850</onright>
+                    <include>DefExtendedInfoListWideGenre</include>
                 </control>
                 <control type="wraplist" id="950">
                     <visible>false</visible>

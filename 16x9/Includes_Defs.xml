@@ -1799,6 +1799,30 @@
 		</focusedlayout>
 	</include>
 
+	<include name="DefExtendedInfoListWideGenre">
+		<left>683</left>
+		<top>690</top>
+		<bottom>10</bottom>
+		<width>1920</width>
+		<preloaditems>2</preloaditems>
+		<orientation>horizontal</orientation>
+		<pagecontrol>60</pagecontrol>
+		<viewtype label="536">list</viewtype>
+		<scrolltime tween="quadratic">400</scrolltime>
+		<include>Animation.FadeIn.Slide</include>
+		<ondown>9000</ondown>
+		<onup>94988</onup>
+		<orientation>horizontal</orientation>
+		<preloaditems>2</preloaditems>
+		<scrolltime tween="quadratic">400</scrolltime>
+		<itemlayout height="210" width="373">
+			<include>DefExtendedInfoItemContentGenre</include>
+		</itemlayout>
+		<focusedlayout height="210" width="373">
+			<include>DefExtendedInfoFocusContentGenre</include>
+		</focusedlayout>
+	</include>
+
 	<include name="DefExtendedInfoItemContent">
 		<control type="label">
 			<left>0</left>
@@ -1877,6 +1901,34 @@
 				<effect type="fade" start="100" end="0" time="150" tween="sine" easing="out" />
 			</animation>
 			<visible>!substring(ListItem.Path,script.extendedinfo) +!Control.IsVisible(1250) + !Control.IsVisible(1350)</visible>
+		</control>
+		<animation type="Focus" reversible="false">
+			<effect type="zoom" start="100" end="110" time="200" center="auto" tween="quadratic" easing="out"/>
+		</animation>
+	</include>
+
+	<include name="DefExtendedInfoItemContentGenre">
+		<control type="image">
+			<aspectratio scalediffuse="false">keep</aspectratio>
+			<texture diffuse="diffuse/wall.png" background="true" fallback="DefaultPicture.png">$VAR[MovieGenres]</texture>
+		</control>
+	</include>
+
+	<include name="DefExtendedInfoFocusContentGenre">
+		<control type="image">
+			<aspectratio scalediffuse="false">keep</aspectratio>
+			<texture colordiffuse="$INFO[Window(home).Property(ImageColor)]" background="true" fallback="DefaultPicture.png">$VAR[MovieGenres]</texture>
+		</control>
+		<control type="textbox">
+			<left>5</left>
+			<right>5</right>
+			<top>30</top>
+			<bottom>30</bottom>
+			<align>center</align>
+			<aligny>center</aligny>
+			<font>Small</font>
+			<textcolor>white2</textcolor>
+			<selectedcolor>white2</selectedcolor>
 		</control>
 		<animation type="Focus" reversible="false">
 			<effect type="zoom" start="100" end="110" time="200" center="auto" tween="quadratic" easing="out"/>
