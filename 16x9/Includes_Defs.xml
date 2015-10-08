@@ -1876,7 +1876,7 @@
 				<effect type="zoom" start="100" end="90" time="150" tween="sine" easing="inout" center="auto" />
 				<effect type="fade" start="100" end="0" time="150" tween="sine" easing="out" />
 			</animation>
-			<visible>!substring(ListItem.Path,script.extendedinfo)</visible>
+			<visible>!substring(ListItem.Path,script.extendedinfo) +!Control.IsVisible(1250) + !Control.IsVisible(1350)</visible>
 		</control>
 		<animation type="Focus" reversible="false">
 			<effect type="zoom" start="100" end="110" time="200" center="auto" tween="quadratic" easing="out"/>
