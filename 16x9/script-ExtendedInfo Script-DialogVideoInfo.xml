@@ -441,6 +441,7 @@
                     <onup condition="Control.IsVisible(350)">350</onup>
                     <onup condition="Control.IsVisible(750)">750</onup>
                     <onup condition="Control.IsVisible(850)">850</onup>
+                    <onup condition="Control.IsVisible(950)">950</onup>
                     <onup condition="Control.IsVisible(1150)">1150</onup>
                     <onup condition="Control.IsVisible(1250)">1250</onup>
                     <onup condition="Control.IsVisible(1350)">1350</onup>
@@ -586,6 +587,7 @@
                     <ondown condition="Control.IsVisible(1150)">1150</ondown>
                     <ondown condition="Control.IsVisible(1250)">1250</ondown>
                     <ondown condition="Control.IsVisible(1350)">1350</ondown>
+                    <ondown condition="Control.IsVisible(950)">950</ondown>
                     <onback>9000</onback>
                     <orientation>horizontal</orientation>
                     <scrolltime tween="cubic" easing="out">500</scrolltime>
@@ -674,6 +676,11 @@
                             <label>$LOCALIZE[515]</label>
                             <onclick>SetProperty(content,850)</onclick>
                             <visible>IntegerGreaterThan(Container(850).NumItems,0)</visible>
+                        </item>
+                        <item id="9">
+                            <label>$LOCALIZE[31960]</label>
+                            <onclick>SetProperty(content,950)</onclick>
+                            <visible>IntegerGreaterThan(Container(950).NumItems,0)</visible>
                         </item>
                     </content>
                 </control>
@@ -838,6 +845,24 @@
                     <textcolor>Dark2</textcolor>
                     <font>Small</font>
                     <label>$LOCALIZE[515]$INFO[Container(850).ListItem(0).Label,: ,]</label>
+                    <include>Animation.DelayFadeIn</include>
+                </control>
+                <control type="label">
+                    <visible>stringcompare(Window.Property(content),950)</visible>
+                    <visible>!Control.HasFocus(9498)</visible>
+                    <left>683</left>
+                    <top>650</top>
+                    <width>1200</width>
+                    <height>34</height>
+                    <aligny>center</aligny>
+                    <align>left</align>
+                    <height>34</height>
+                    <font>Small</font>
+                    <textcolor>white2</textcolor>
+                    <description>Header Label</description>
+                    <textcolor>Dark2</textcolor>
+                    <font>Small</font>
+                    <label>$LOCALIZE[31960]$INFO[Container(950).ListItem(0).Label,: ,]</label>
                     <include>Animation.DelayFadeIn</include>
                 </control>
 
@@ -1109,7 +1134,11 @@
                     <include>DefExtendedInfoListWideGenre</include>
                 </control>
                 <control type="wraplist" id="950">
-                    <visible>false</visible>
+                    <visible allowhiddenfocus="true">StringCompare(Window.Property(content),950)</visible>
+                    <autoscroll time="3000">!Control.HasFocus(950)</autoscroll>
+                    <onleft>950</onleft>
+                    <onright>950</onright>
+                    <include>DefExtendedInfoListWideWord</include>
                 </control>
                 <control type="wraplist" id="1000">
                     <visible allowhiddenfocus="true">StringCompare(Window.Property(content),1000)</visible>

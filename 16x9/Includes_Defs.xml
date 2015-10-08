@@ -1823,6 +1823,30 @@
 		</focusedlayout>
 	</include>
 
+	<include name="DefExtendedInfoListWideWord">
+		<left>683</left>
+		<top>690</top>
+		<bottom>10</bottom>
+		<width>1920</width>
+		<preloaditems>2</preloaditems>
+		<orientation>horizontal</orientation>
+		<pagecontrol>60</pagecontrol>
+		<viewtype label="536">list</viewtype>
+		<scrolltime tween="quadratic">400</scrolltime>
+		<include>Animation.FadeIn.Slide</include>
+		<ondown>9000</ondown>
+		<onup>94988</onup>
+		<orientation>horizontal</orientation>
+		<preloaditems>2</preloaditems>
+		<scrolltime tween="quadratic">400</scrolltime>
+		<itemlayout height="210" width="373">
+			<include>DefExtendedInfoItemContentWord</include>
+		</itemlayout>
+		<focusedlayout height="210" width="373">
+			<include>DefExtendedInfoFocusContentWord</include>
+		</focusedlayout>
+	</include>
+
 	<include name="DefExtendedInfoItemContent">
 		<control type="label">
 			<left>0</left>
@@ -1929,6 +1953,45 @@
 			<font>Small</font>
 			<textcolor>white2</textcolor>
 			<selectedcolor>white2</selectedcolor>
+		</control>
+		<animation type="Focus" reversible="false">
+			<effect type="zoom" start="100" end="110" time="200" center="auto" tween="quadratic" easing="out"/>
+		</animation>
+	</include>
+
+	<include name="DefExtendedInfoItemContentWord">
+		<control type="image">
+			<texture colordiffuse="$INFO[Window(home).Property(ImageColor)]">common/box.png</texture>
+		</control>
+		<control type="textbox">
+			<left>5</left>
+			<right>5</right>
+			<top>30</top>
+			<bottom>30</bottom>
+			<align>center</align>
+			<aligny>center</aligny>
+			<font>LargeHeaderFont</font>
+			<textcolor>white2</textcolor>
+			<selectedcolor>white2</selectedcolor>
+			<label>$INFO[ListItem.Label]</label>
+		</control>
+	</include>
+
+	<include name="DefExtendedInfoFocusContentWord">
+		<control type="image">
+			<texture colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
+		</control>
+		<control type="textbox">
+			<left>5</left>
+			<right>5</right>
+			<top>30</top>
+			<bottom>30</bottom>
+			<align>center</align>
+			<aligny>center</aligny>
+			<font>LargeHeaderFont</font>
+			<textcolor>$VAR[ColourSelected]</textcolor>
+			<selectedcolor>$VAR[ColourSelected]</selectedcolor>
+			<label>$INFO[ListItem.Label]</label>
 		</control>
 		<animation type="Focus" reversible="false">
 			<effect type="zoom" start="100" end="110" time="200" center="auto" tween="quadratic" easing="out"/>
