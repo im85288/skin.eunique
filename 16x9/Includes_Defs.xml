@@ -1753,7 +1753,7 @@
 	</include>
 	<include name="DefExtendedInfoList">
 		<left>683</left>
-		<top>680</top>
+		<top>690</top>
 		<bottom>10</bottom>
 		<width>1920</width>
 		<preloaditems>2</preloaditems>
@@ -1762,8 +1762,8 @@
 		<viewtype label="536">list</viewtype>
 		<scrolltime tween="quadratic">400</scrolltime>
 		<include>Animation.FadeIn.Slide</include>
-		<ondown>ClearProperty(content)</ondown>
 		<ondown>9000</ondown>
+		<onup>94988</onup>
 		<orientation>horizontal</orientation>
 		<preloaditems>2</preloaditems>
 		<scrolltime tween="quadratic">400</scrolltime>
@@ -1776,25 +1776,43 @@
 	</include>
 
 	<include name="DefExtendedInfoListWide">
-		<bottom>80</bottom>
-		<left>660</left>
-		<width>1320</width>
-		<height>670</height>
+		<left>683</left>
+		<top>690</top>
+		<bottom>10</bottom>
+		<width>1920</width>
+		<preloaditems>2</preloaditems>
+		<orientation>horizontal</orientation>
+		<pagecontrol>60</pagecontrol>
+		<viewtype label="536">list</viewtype>
+		<scrolltime tween="quadratic">400</scrolltime>
 		<include>Animation.FadeIn.Slide</include>
-		<ondown>ClearProperty(content)</ondown>
 		<ondown>9000</ondown>
+		<onup>94988</onup>
 		<orientation>horizontal</orientation>
 		<preloaditems>2</preloaditems>
 		<scrolltime tween="quadratic">400</scrolltime>
-		<itemlayout height="425" width="660">
+		<itemlayout height="210" width="373">
 			<include>DefExtendedInfoItemContent</include>
 		</itemlayout>
-		<focusedlayout height="425" width="660">
+		<focusedlayout height="210" width="373">
 			<include>DefExtendedInfoFocusContent</include>
 		</focusedlayout>
 	</include>
 
 	<include name="DefExtendedInfoItemContent">
+		<control type="label">
+			<left>0</left>
+			<top>0</top>
+			<right>0</right>
+			<bottom>0</bottom>
+			<height>210</height>
+			<aligny>center</aligny>
+			<align>center</align>
+			<font>symbolbiggest</font>
+			<label></label>
+			<textcolor>white</textcolor>
+			<fadetime>300</fadetime>
+		</control>
 		<control type="image">
 			<aspectratio scalediffuse="false">stretch</aspectratio>
 			<texture diffuse="diffuse/wall.png" background="true" fallback="DefaultPicture.png">$INFO[ListItem.Icon]</texture>
@@ -1802,6 +1820,19 @@
 	</include>
 
 	<include name="DefExtendedInfoFocusContent">
+		<control type="label">
+			<left>0</left>
+			<top>0</top>
+			<right>0</right>
+			<bottom>0</bottom>
+			<height>210</height>
+			<aligny>center</aligny>
+			<align>center</align>
+			<font>symbolbiggest</font>
+			<label></label>
+			<textcolor>white</textcolor>
+			<fadetime>300</fadetime>
+		</control>
 		<control type="image">
 			<aspectratio scalediffuse="false">scale</aspectratio>
 			<texture diffuse="diffuse/wall.png" background="true" fallback="DefaultPicture.png">$INFO[ListItem.Icon]</texture>
@@ -1824,7 +1855,7 @@
 			<font>Tiny</font>
 			<textcolor>white2</textcolor>
 			<selectedcolor>white2</selectedcolor>
-			<label>$INFO[ListItem.Label,,[CR]]$INFO[ListItem.Rating]$INFO[ListItem.Votes,[CR](, $LOCALIZE[20350])]</label>
+			<label>$INFO[ListItem.Rating]$INFO[ListItem.Votes,[CR](, $LOCALIZE[20350])]</label>
 		</control>
 		<control type="image">
 			<centerleft>50%</centerleft>
@@ -1843,5 +1874,8 @@
 			</animation>
 			<visible>!substring(ListItem.Path,script.extendedinfo)</visible>
 		</control>
+		<animation type="Focus" reversible="false">
+			<effect type="zoom" start="100" end="110" time="200" center="auto" tween="quadratic" easing="out"/>
+		</animation>
 	</include>
 </includes>
