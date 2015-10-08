@@ -1775,6 +1775,30 @@
 		</focusedlayout>
 	</include>
 
+	<include name="BigDefExtendedInfoList">
+		<left>683</left>
+		<top>690</top>
+		<bottom>10</bottom>
+		<width>1920</width>
+		<preloaditems>2</preloaditems>
+		<orientation>horizontal</orientation>
+		<pagecontrol>60</pagecontrol>
+		<viewtype label="536">list</viewtype>
+		<scrolltime tween="quadratic">400</scrolltime>
+		<include>Animation.FadeIn.Slide</include>
+		<ondown>9000</ondown>
+		<onup>94988</onup>
+		<orientation>horizontal</orientation>
+		<preloaditems>2</preloaditems>
+		<scrolltime tween="quadratic">400</scrolltime>
+		<itemlayout height="310" width="207">
+			<include>DefExtendedInfoItemContent</include>
+		</itemlayout>
+		<focusedlayout height="310" width="207">
+			<include>DefExtendedInfoFocusContent</include>
+		</focusedlayout>
+	</include>
+
 	<include name="DefExtendedInfoListWide">
 		<left>683</left>
 		<top>690</top>
@@ -1795,6 +1819,30 @@
 			<include>DefExtendedInfoItemContent</include>
 		</itemlayout>
 		<focusedlayout height="210" width="373">
+			<include>DefExtendedInfoFocusContent</include>
+		</focusedlayout>
+	</include>
+
+	<include name="BigDefExtendedInfoListWide">
+		<left>683</left>
+		<top>690</top>
+		<bottom>10</bottom>
+		<width>1920</width>
+		<preloaditems>2</preloaditems>
+		<orientation>horizontal</orientation>
+		<pagecontrol>60</pagecontrol>
+		<viewtype label="536">list</viewtype>
+		<scrolltime tween="quadratic">400</scrolltime>
+		<include>Animation.FadeIn.Slide</include>
+		<ondown>9000</ondown>
+		<onup>94988</onup>
+		<orientation>horizontal</orientation>
+		<preloaditems>2</preloaditems>
+		<scrolltime tween="quadratic">400</scrolltime>
+		<itemlayout height="310" width="552">
+			<include>DefExtendedInfoItemContent</include>
+		</itemlayout>
+		<focusedlayout height="310" width="552">
 			<include>DefExtendedInfoFocusContent</include>
 		</focusedlayout>
 	</include>
@@ -1948,7 +1996,7 @@
 				<effect type="zoom" start="100" end="90" time="150" tween="sine" easing="inout" center="auto" />
 				<effect type="fade" start="100" end="0" time="150" tween="sine" easing="out" />
 			</animation>
-			<visible>!substring(ListItem.Path,script.extendedinfo) + !Control.IsVisible(1250) + !Control.IsVisible(1350) + !Control.IsVisible(250)</visible>
+			<visible>!substring(ListItem.Path,script.extendedinfo) + !Control.IsVisible(1250) + !Control.IsVisible(1350) + !Control.IsVisible(250) + !Control.IsVisible(450)</visible>
 		</control>
 		<animation type="Focus" reversible="false">
 			<effect type="zoom" start="100" end="110" time="200" center="auto" tween="quadratic" easing="out"/>

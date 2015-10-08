@@ -371,7 +371,7 @@
 			<include>Dimensions_Fullscreen</include>
 			<aspectratio align="center">scale</aspectratio>
 			<texture fallback="common/black.png" background="true">$INFO[Window(home).Property(ImageFilter)]</texture>
-			<visible>Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml)</visible>
+			<visible>Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) | Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)</visible>
 			<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
 			<fadetime>600</fadetime>
 		</control>
@@ -381,7 +381,7 @@
 			<aspectratio align="center">scale</aspectratio>
 			<texture colordiffuse="$INFO[Window(home).Property(ImageColor)]">common/screen-overlay-shard.png</texture>
 			<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
-			<visible>Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml)</visible>
+			<visible>Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) | Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)</visible>
 		</control>
 		<control type="image">
 			<include>Dimensions_Fullscreen</include>
