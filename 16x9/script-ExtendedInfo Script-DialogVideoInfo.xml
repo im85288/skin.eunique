@@ -8,7 +8,7 @@
     <onload>SetProperty(750_onback,SetFocus(9000))</onload>
     <onload>SetProperty(1000_onback,SetFocus(9000))</onload>
     <onload>SetProperty(1150_onback,SetFocus(9000))</onload>
-    <onload>SetProperty(content,1000)</onload>
+    <onload>SetProperty(content,150)</onload>
     <onload>Dialog.Close(2003)</onload>
     <controls>
         <include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
@@ -239,14 +239,25 @@
                     <left>NewSidePad</left>
                     <top>TopPad</top>
                     <control type="group">
-                        <left>1654</left>
-                        <top>759</top>
+                        <left>683</left>
                         <control type="image">
-                            <width>228</width>
-                            <height>100</height>
+                            <top>-5</top>
+                            <width>800</width>
+                            <height>210</height>
                             <texture>$INFO[Window.Property(movie.Logo)]</texture>
-                            <aspectratio align="center" aligny="center">keep</aspectratio>
+                            <aspectratio align="left" aligny="bottom">keep</aspectratio>
                             <fadetime>50</fadetime>
+                            <visible>!IsEmpty(Window.Property(movie.Logo))</visible>
+                        </control>
+                        <control type="label">
+                            <description>Header Label</description>
+                            <font>EpisodeNumber</font>
+                            <textcolor>white</textcolor>
+                            <top>-5</top>
+                            <width>800</width>
+                            <height>210</height>
+                            <label>$INFO[Window.Property(movie.Title)]</label>
+                            <visible>IsEmpty(Window.Property(movie.Logo))</visible>
                         </control>
                     </control>
                     <control type="group">
@@ -435,7 +446,6 @@
                     <ondown>9000</ondown>
                     <onup condition="Control.IsVisible(50)">51</onup>
                     <onup condition="Control.IsVisible(9501)">9501</onup>
-                    <onup condition="Control.IsVisible(1000)">1000</onup>
                     <onup condition="Control.IsVisible(150)">150</onup>
                     <onup condition="Control.IsVisible(250)">250</onup>
                     <onup condition="Control.IsVisible(350)">350</onup>
@@ -446,7 +456,7 @@
                     <onup condition="Control.IsVisible(1250)">1250</onup>
                     <onup condition="Control.IsVisible(1350)">1350</onup>
                     <onup condition="Control.IsVisible(2000)">2000</onup>
-                    <onup condition="!Control.IsVisible(50) + !Control.IsVisible(9501)">9601</onup>
+                    <onup condition="!Control.IsVisible(150) + !Control.IsVisible(250) + !Control.IsVisible(350) + !Control.IsVisible(750) + !Control.IsVisible(850) + !Control.IsVisible(950) + !Control.IsVisible(1150) + !Control.IsVisible(1250) + !Control.IsVisible(1350) + !Control.IsVisible(2000)">9498</onup>
                     <orientation>horizontal</orientation>
 
                     <control type="button" id="8">
@@ -578,8 +588,7 @@
                     <top>650</top>
                     <width>400</width>
                     <height>34</height>
-                    <onup>9000</onup>
-                    <ondown condition="Control.IsVisible(1000)">1000</ondown>
+                    <onup>1000</onup>
                     <ondown condition="Control.IsVisible(150)">150</ondown>
                     <ondown condition="Control.IsVisible(250)">250</ondown>
                     <ondown condition="Control.IsVisible(350)">350</ondown>
@@ -635,10 +644,6 @@
                         </control>
                     </focusedlayout>
                     <content>
-                        <item id="0">
-                            <label>206</label>
-                            <onclick>SetProperty(content,1000)</onclick>
-                        </item>
                         <item id="1">
                             <label>$LOCALIZE[31206]</label>
                             <onclick>SetProperty(content,150)</onclick>
@@ -693,10 +698,8 @@
                 </control>
                 <!-- Widget Headers -->
                 <control type="label">
-                    <visible>StringCompare(Window.Property(content),1000)</visible>
-                    <visible>!Control.HasFocus(9498)</visible>
                     <left>683</left>
-                    <top>650</top>
+                    <top>360</top>
                     <width>1200</width>
                     <height>34</height>
                     <aligny>center</aligny>
@@ -891,228 +894,20 @@
                     <include>Animation.DelayFadeIn</include>
                 </control>
 
-                <!-- Info -->
-                <control type="group">
-                    <left>660</left>
-                    <right>NewSidePad</right>
-                    <bottom>120</bottom>
-                    <top>100</top>
-                    <control type="grouplist">
-                        <left>30</left>
-                        <right>30</right>
-                        <itemgap>0</itemgap>
-                        <control type="label">
-                            <description>Header Label</description>
-                            <font>ReallyLargeBold</font>
-                            <textcolor>white</textcolor>
-                            <height>60</height>
-                            <label>$INFO[Window.Property(movie.Title)]</label>
-                        </control>
-                        <control type="group">
-                            <top>40</top>
-                            <height>50</height>
-                            <control type="label">
-                                <top>10</top>
-                                <width>100%</width>
-                                <height>36</height>
-                                <font>Tiny</font>
-                                <textcolor>white2</textcolor>
-                                <label fallback="19055">$INFO[Window.Property(movie.Tagline)]</label>
-                                <aligny>center</aligny>
-                            </control>
-                        </control>
-                        <control type="group">
-                            <visible>!IsEmpty(Window.Property(movie.ReleaseDate))</visible>
-                            <height>36</height>
-                            <control type="label">
-                                <width>100%</width>
-                                <height>36</height>
-                                <font>Tiny</font>
-                                <textcolor>Dark1</textcolor>
-                                <label>[B]$LOCALIZE[345][/B]</label>
-                                <aligny>center</aligny>
-                            </control>
-                            <control type="label">
-                                <left>160</left>
-                                <width>100%</width>
-                                <height>36</height>
-                                <font>Tiny</font>
-                                <textcolor>Dark2</textcolor>
-                                <label fallback="19055">$INFO[Window.Property(movie.ReleaseDate),, ]$INFO[Window.Property(movie.Status),(,)]</label>
-                                <aligny>center</aligny>
-                            </control>
-                        </control>
-                        <control type="group">
-                            <visible>!IsEmpty(Window.Property(movie.mpaa))</visible>
-                            <height>36</height>
-                            <control type="label">
-                                <width>100%</width>
-                                <height>36</height>
-                                <font>Tiny</font>
-                                <textcolor>Dark1</textcolor>
-                                <label>[B]$LOCALIZE[563][/B]</label>
-                                <aligny>center</aligny>
-                            </control>
-                            <control type="label">
-                                <left>160</left>
-                                <width>100%</width>
-                                <height>36</height>
-                                <font>Tiny</font>
-                                <textcolor>Dark2</textcolor>
-                                <label fallback="19055">$INFO[Window.Property(movie.mpaa)]</label>
-                                <aligny>center</aligny>
-                            </control>
-                        </control>
-                        <control type="group">
-                            <visible>!IsEmpty(Window.Property(movie.duration))</visible>
-                            <height>36</height>
-                            <control type="label">
-                                <width>100%</width>
-                                <height>36</height>
-                                <font>Tiny</font>
-                                <textcolor>Dark1</textcolor>
-                                <label>[B]$LOCALIZE[2050][/B]</label>
-                                <aligny>center</aligny>
-                            </control>
-                            <control type="label">
-                                <left>160</left>
-                                <width>100%</width>
-                                <height>36</height>
-                                <font>Tiny</font>
-                                <textcolor>Dark2</textcolor>
-                                <label fallback="19055">$INFO[Window.Property(movie.duration),, $LOCALIZE[12391]]</label>
-                                <aligny>center</aligny>
-                            </control>
-                        </control>
-                        <control type="group">
-                            <visible>!IsEmpty(Window.Property(movie.Budget))</visible>
-                            <height>36</height>
-                            <control type="label">
-                                <width>100%</width>
-                                <height>36</height>
-                                <font>Tiny</font>
-                                <textcolor>Dark1</textcolor>
-                                <label>[B]$ADDON[script.extendedinfo 32109][/B]</label>
-                                <aligny>center</aligny>
-                            </control>
-                            <control type="label">
-                                <left>160</left>
-                                <width>100%</width>
-                                <height>36</height>
-                                <font>Tiny</font>
-                                <textcolor>Dark2</textcolor>
-                                <label fallback="19055">$INFO[Window.Property(movie.Budget),$,]</label>
-                                <aligny>center</aligny>
-                            </control>
-                        </control>
-                        <control type="group">
-                            <visible>!IsEmpty(Window.Property(movie.Revenue))</visible>
-                            <height>36</height>
-                            <control type="label">
-                                <width>100%</width>
-                                <height>36</height>
-                                <font>Tiny</font>
-                                <textcolor>Dark1</textcolor>
-                                <label>[B]$ADDON[script.extendedinfo 32108][/B]</label>
-                                <aligny>center</aligny>
-                            </control>
-                            <control type="label">
-                                <left>160</left>
-                                <width>100%</width>
-                                <height>36</height>
-                                <font>Tiny</font>
-                                <textcolor>Dark2</textcolor>
-                                <label fallback="19055">$INFO[Window.Property(movie.Revenue),$,]</label>
-                                <aligny>center</aligny>
-                            </control>
-                        </control>
-                        <control type="group">
-                            <visible>!IsEmpty(Window.Property(movie.studio))</visible>
-                            <height>36</height>
-                            <control type="label">
-                                <width>100%</width>
-                                <height>36</height>
-                                <font>Tiny</font>
-                                <textcolor>Dark1</textcolor>
-                                <label>[B]$LOCALIZE[572][/B]</label>
-                                <aligny>center</aligny>
-                            </control>
-                            <control type="label">
-                                <left>160</left>
-                                <width>100%</width>
-                                <height>36</height>
-                                <font>Tiny</font>
-                                <textcolor>Dark2</textcolor>
-                                <label fallback="19055">$INFO[Window.Property(movie.studio)]</label>
-                                <aligny>center</aligny>
-                            </control>
-                        </control>
-                        <control type="group">
-                            <visible>!IsEmpty(Window.Property(movie.genre))</visible>
-                            <height>36</height>
-                            <control type="label">
-                                <width>100%</width>
-                                <height>36</height>
-                                <font>Tiny</font>
-                                <textcolor>Dark1</textcolor>
-                                <label>[B]$LOCALIZE[515][/B]</label>
-                                <aligny>center</aligny>
-                            </control>
-                            <control type="label">
-                                <left>160</left>
-                                <width>100%</width>
-                                <height>36</height>
-                                <font>Tiny</font>
-                                <textcolor>Dark2</textcolor>
-                                <label fallback="19055">$INFO[Window.Property(movie.genre)]</label>
-                                <aligny>center</aligny>
-                            </control>
-                        </control>
-                        <control type="group">
-                            <visible>!IsEmpty(Window.Property(movie.director))</visible>
-                            <height>36</height>
-                            <control type="label">
-                                <width>100%</width>
-                                <height>36</height>
-                                <font>Tiny</font>
-                                <textcolor>Dark1</textcolor>
-                                <label>[B]$LOCALIZE[20339][/B]</label>
-                                <aligny>center</aligny>
-                            </control>
-                            <control type="label">
-                                <left>160</left>
-                                <width>100%</width>
-                                <height>36</height>
-                                <font>Tiny</font>
-                                <textcolor>Dark2</textcolor>
-                                <label fallback="19055">$INFO[Window.Property(movie.director)]</label>
-                                <aligny>center</aligny>
-                            </control>
-                        </control>
-
-                        <control type="label">
-                            <width>100%</width>
-                            <height>24</height>
-                            <font>Tiny</font>
-                            <textcolor>Dark1</textcolor>
-                            <label></label>
-                            <aligny>center</aligny>
-                        </control>
-                        <control type="textbox">
-                            <width>100%</width>
-                            <height>112</height>
-                            <font>Small</font>
-                            <textcolor>white2</textcolor>
-                            <label>$INFO[Window.Property(movie.plot)]</label>
-                        </control>
-
-                    </control>
-                </control>
-
                 <control type="button" id="94988">
                     <texturefocus>-</texturefocus>
                     <texturenofocus>-</texturenofocus>
                     <onfocus>setfocus(9498)</onfocus>
+                </control>
+
+                <control type="wraplist" id="1000">
+                    <description>top</description>
+                    <visible>true</visible>
+                    <autoscroll time="3000">!Control.HasFocus(1000)</autoscroll>
+                    <onleft>1000</onleft>
+                    <onright>1000</onright>
+                    <onfocus>SetProperty(content,1000)</onfocus>
+                    <include>TopDefExtendedInfoList</include>
                 </control>
                 <control type="wraplist" id="150">
                     <visible allowhiddenfocus="true">StringCompare(Window.Property(content),150)</visible>
@@ -1164,13 +959,6 @@
                     <onleft>950</onleft>
                     <onright>950</onright>
                     <include>DefExtendedInfoListWideWord</include>
-                </control>
-                <control type="wraplist" id="1000">
-                    <visible allowhiddenfocus="true">StringCompare(Window.Property(content),1000)</visible>
-                    <autoscroll time="3000">!Control.HasFocus(1000)</autoscroll>
-                    <onleft>1000</onleft>
-                    <onright>1000</onright>
-                    <include>DefExtendedInfoList</include>
                 </control>
                 <control type="wraplist" id="1050">
                     <visible>false</visible>

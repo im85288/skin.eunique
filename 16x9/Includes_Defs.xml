@@ -1751,6 +1751,38 @@
 			</control>
 		</control>
 	</include>
+	<include name="TopDefExtendedInfoList">
+		<left>683</left>
+		<top>400</top>
+		<bottom>10</bottom>
+		<width>1920</width>
+		<preloaditems>2</preloaditems>
+		<orientation>horizontal</orientation>
+		<pagecontrol>60</pagecontrol>
+		<viewtype label="536">list</viewtype>
+		<scrolltime tween="quadratic">400</scrolltime>
+		<include>Animation.FadeIn.Slide</include>
+		<ondown condition="Control.IsVisible(150)">150</ondown>
+		<ondown condition="Control.IsVisible(250)">250</ondown>
+		<ondown condition="Control.IsVisible(350)">350</ondown>
+		<ondown condition="Control.IsVisible(750)">750</ondown>
+		<ondown condition="Control.IsVisible(850)">850</ondown>
+		<ondown condition="Control.IsVisible(1150)">1150</ondown>
+		<ondown condition="Control.IsVisible(1250)">1250</ondown>
+		<ondown condition="Control.IsVisible(1350)">1350</ondown>
+		<ondown condition="Control.IsVisible(950)">950</ondown>
+		<ondown condition="Control.IsVisible(2000)">2000</ondown>
+		<onup>9000</onup>
+		<orientation>horizontal</orientation>
+		<preloaditems>2</preloaditems>
+		<scrolltime tween="quadratic">400</scrolltime>
+		<itemlayout height="210" width="140">
+			<include>DefExtendedInfoItemContent</include>
+		</itemlayout>
+		<focusedlayout height="210" width="140">
+			<include>DefExtendedInfoFocusContent</include>
+		</focusedlayout>
+	</include>
 	<include name="DefExtendedInfoList">
 		<left>683</left>
 		<top>690</top>
@@ -2094,7 +2126,7 @@
 
 	<include name="DefExtendedInfoFocusContentWord">
 		<control type="image">
-			<texture colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
+			<texture colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</texture>
 		</control>
 		<control type="textbox">
 			<left>5</left>
