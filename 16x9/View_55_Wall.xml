@@ -42,6 +42,7 @@
                 <scrolltime tween="quadratic">400</scrolltime>
                 <itemlayout width="240" height="360">
                     <control type="group">
+                        <visible>Container.Row(0)</visible>
                         <top>180</top>
                         <bottom>-180</bottom>
                         <control type="image">
@@ -151,9 +152,9 @@
                             </control>
                             <visible>!stringcompare(ListItem.Label,..) + ListItem.IsResumable</visible>
                         </control>
-                        <visible>Container.Row(0)</visible>
                     </control>
                     <control type="group">
+                        <visible>Container.Row(1)</visible>
                         <top>-180</top>
                         <bottom>180</bottom>
                         <control type="image">
@@ -263,12 +264,11 @@
                             </control>
                             <visible>!stringcompare(ListItem.Label,..) + ListItem.IsResumable</visible>
                         </control>
-                        </control>
-                        <visible>Container.Row(1)</visible>
                     </control>
                 </itemlayout>
                 <focusedlayout width="240" height="360">
                     <control type="group">
+                        <visible>Container.Row(0)</visible>
                         <animation effect="zoom" start="100" end="145" time="100" reversible="false" center="auto">Focus</animation>
                         <top>180</top>
                         <bottom>-180</bottom>
@@ -284,8 +284,8 @@
                             <top>2</top>
                             <right>0</right>
                             <bottom>2</bottom>
-							<aspectratio scalediffuse="false">scale</aspectratio>
-							<texture background="true" colordiffuse="$VAR[BorderHighlight]">$VAR[FocusedBorderImage]</texture>
+                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <texture background="true" colordiffuse="$VAR[BorderHighlight]">$VAR[FocusedBorderImage]</texture>
                             <animation effect="zoom" end="107" time="0" center="auto">Focus</animation>
                         </control>
                         <control type="image">
@@ -397,10 +397,9 @@
                             </control>
                             <visible>!stringcompare(ListItem.Label,..) + ListItem.IsResumable</visible>
                         </control>
-                        </control>
-                        <visible>Container.Row(0)</visible>
                     </control>
                     <control type="group">
+                        <visible>Container.Row(1)</visible>
                         <animation effect="zoom" start="100" end="145" time="100" reversible="false" center="auto">Focus</animation>
                         <top>-180</top>
                         <bottom>180</bottom>
@@ -416,8 +415,8 @@
                             <top>2</top>
                             <right>0</right>
                             <bottom>2</bottom>
-							<aspectratio scalediffuse="false">scale</aspectratio>
-							<texture background="true" colordiffuse="$VAR[BorderHighlight]">$VAR[FocusedBorderImage]</texture>
+                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <texture background="true" colordiffuse="$VAR[BorderHighlight]">$VAR[FocusedBorderImage]</texture>
                             <animation effect="zoom" end="107" time="0" center="auto">Focus</animation>
                         </control>
                         <control type="image">
@@ -529,8 +528,6 @@
                             </control>
                             <visible>!stringcompare(ListItem.Label,..) + ListItem.IsResumable</visible>
                         </control>
-                        </control>
-                        <visible>Container.Row(1)</visible>
                     </control>
                 </focusedlayout>
             </control>
