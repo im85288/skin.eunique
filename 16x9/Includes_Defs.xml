@@ -1753,7 +1753,7 @@
 	</include>
 	<include name="TopDefExtendedInfoList">
 		<left>683</left>
-		<top>400</top>
+		<top>550</top>
 		<bottom>10</bottom>
 		<width>1920</width>
 		<preloaditems>2</preloaditems>
@@ -1763,15 +1763,15 @@
 		<scrolltime tween="quadratic">400</scrolltime>
 		<include>Animation.FadeIn.Slide</include>
 		<ondown condition="Control.IsVisible(150)">150</ondown>
-		<ondown condition="Control.IsVisible(250)">250</ondown>
-		<ondown condition="Control.IsVisible(350)">350</ondown>
 		<ondown condition="Control.IsVisible(750)">750</ondown>
+		<ondown condition="Control.IsVisible(250)">250</ondown>
+		<ondown condition="Control.IsVisible(2000)">2000</ondown>
+		<ondown condition="Control.IsVisible(350)">350</ondown>
 		<ondown condition="Control.IsVisible(850)">850</ondown>
+		<ondown condition="Control.IsVisible(950)">950</ondown>
 		<ondown condition="Control.IsVisible(1150)">1150</ondown>
 		<ondown condition="Control.IsVisible(1250)">1250</ondown>
 		<ondown condition="Control.IsVisible(1350)">1350</ondown>
-		<ondown condition="Control.IsVisible(950)">950</ondown>
-		<ondown condition="Control.IsVisible(2000)">2000</ondown>
 		<onup>9000</onup>
 		<orientation>horizontal</orientation>
 		<preloaditems>2</preloaditems>
@@ -1780,13 +1780,11 @@
 			<include>DefExtendedInfoItemContent</include>
 		</itemlayout>
 		<focusedlayout height="210" width="140">
-			<include>DefExtendedInfoFocusContent</include>
+			<include>DefExtendedInfoFocusContentCast</include>
 		</focusedlayout>
 	</include>
-	<include name="DefExtendedInfoList">
-		<left>683</left>
-		<top>690</top>
-		<bottom>10</bottom>
+	<include name="DefExtendedInfoListCrew">
+		<top>40</top>
 		<width>1920</width>
 		<preloaditems>2</preloaditems>
 		<orientation>horizontal</orientation>
@@ -1794,8 +1792,6 @@
 		<viewtype label="536">list</viewtype>
 		<scrolltime tween="quadratic">400</scrolltime>
 		<include>Animation.FadeIn.Slide</include>
-		<ondown>9000</ondown>
-		<onup>94988</onup>
 		<orientation>horizontal</orientation>
 		<preloaditems>2</preloaditems>
 		<scrolltime tween="quadratic">400</scrolltime>
@@ -1803,7 +1799,64 @@
 			<include>DefExtendedInfoItemContent</include>
 		</itemlayout>
 		<focusedlayout height="210" width="140">
-			<include>DefExtendedInfoFocusContent</include>
+			<include>DefExtendedInfoFocusContentCrew</include>
+		</focusedlayout>
+	</include>
+	<include name="DefExtendedInfoListSimilar">
+		<top>40</top>
+		<width>1920</width>
+		<preloaditems>2</preloaditems>
+		<orientation>horizontal</orientation>
+		<pagecontrol>60</pagecontrol>
+		<viewtype label="536">list</viewtype>
+		<scrolltime tween="quadratic">400</scrolltime>
+		<include>Animation.FadeIn.Slide</include>
+		<orientation>horizontal</orientation>
+		<preloaditems>2</preloaditems>
+		<scrolltime tween="quadratic">400</scrolltime>
+		<itemlayout height="210" width="140">
+			<include>DefExtendedInfoItemContent</include>
+		</itemlayout>
+		<focusedlayout height="210" width="140">
+			<include>DefExtendedInfoFocusContentSimilar</include>
+		</focusedlayout>
+	</include>
+	<include name="DefExtendedInfoListSets">
+		<top>40</top>
+		<width>1920</width>
+		<preloaditems>2</preloaditems>
+		<orientation>horizontal</orientation>
+		<pagecontrol>60</pagecontrol>
+		<viewtype label="536">list</viewtype>
+		<scrolltime tween="quadratic">400</scrolltime>
+		<include>Animation.FadeIn.Slide</include>
+		<orientation>horizontal</orientation>
+		<preloaditems>2</preloaditems>
+		<scrolltime tween="quadratic">400</scrolltime>
+		<itemlayout height="210" width="140">
+			<include>DefExtendedInfoItemContent</include>
+		</itemlayout>
+		<focusedlayout height="210" width="140">
+			<include>DefExtendedInfoFocusContentSets</include>
+		</focusedlayout>
+	</include>
+	<include name="DefExtendedInfoListImages">
+		<top>40</top>
+		<width>1920</width>
+		<preloaditems>2</preloaditems>
+		<orientation>horizontal</orientation>
+		<pagecontrol>60</pagecontrol>
+		<viewtype label="536">list</viewtype>
+		<scrolltime tween="quadratic">400</scrolltime>
+		<include>Animation.FadeIn.Slide</include>
+		<orientation>horizontal</orientation>
+		<preloaditems>2</preloaditems>
+		<scrolltime tween="quadratic">400</scrolltime>
+		<itemlayout height="210" width="140">
+			<include>DefExtendedInfoItemContent</include>
+		</itemlayout>
+		<focusedlayout height="210" width="140">
+			<include>DefExtendedInfoFocusContentImages</include>
 		</focusedlayout>
 	</include>
 
@@ -1812,14 +1865,14 @@
 		<top>690</top>
 		<bottom>10</bottom>
 		<width>1920</width>
+		<ondown>9000</ondown>
+		<onup>94988</onup>
 		<preloaditems>2</preloaditems>
 		<orientation>horizontal</orientation>
 		<pagecontrol>60</pagecontrol>
 		<viewtype label="536">list</viewtype>
 		<scrolltime tween="quadratic">400</scrolltime>
 		<include>Animation.FadeIn.Slide</include>
-		<ondown>9000</ondown>
-		<onup>94988</onup>
 		<orientation>horizontal</orientation>
 		<preloaditems>2</preloaditems>
 		<scrolltime tween="quadratic">400</scrolltime>
@@ -1831,10 +1884,8 @@
 		</focusedlayout>
 	</include>
 
-	<include name="DefExtendedInfoListWide">
-		<left>683</left>
-		<top>690</top>
-		<bottom>10</bottom>
+	<include name="DefExtendedInfoListWideYoutube">
+		<top>40</top>
 		<width>1920</width>
 		<preloaditems>2</preloaditems>
 		<orientation>horizontal</orientation>
@@ -1842,8 +1893,63 @@
 		<viewtype label="536">list</viewtype>
 		<scrolltime tween="quadratic">400</scrolltime>
 		<include>Animation.FadeIn.Slide</include>
-		<ondown>9000</ondown>
-		<onup>94988</onup>
+		<orientation>horizontal</orientation>
+		<preloaditems>2</preloaditems>
+		<scrolltime tween="quadratic">400</scrolltime>
+		<itemlayout height="210" width="373">
+			<include>DefExtendedInfoItemContent</include>
+		</itemlayout>
+		<focusedlayout height="210" width="373">
+			<include>DefExtendedInfoFocusContentYoutube</include>
+		</focusedlayout>
+	</include>
+	<include name="DefExtendedInfoListWideVideos">
+		<top>40</top>
+		<width>1920</width>
+		<preloaditems>2</preloaditems>
+		<orientation>horizontal</orientation>
+		<pagecontrol>60</pagecontrol>
+		<viewtype label="536">list</viewtype>
+		<scrolltime tween="quadratic">400</scrolltime>
+		<include>Animation.FadeIn.Slide</include>
+		<orientation>horizontal</orientation>
+		<preloaditems>2</preloaditems>
+		<scrolltime tween="quadratic">400</scrolltime>
+		<itemlayout height="210" width="373">
+			<include>DefExtendedInfoItemContent</include>
+		</itemlayout>
+		<focusedlayout height="210" width="373">
+			<include>DefExtendedInfoFocusContentVideos</include>
+		</focusedlayout>
+	</include>
+	<include name="DefExtendedInfoListWideFanart">
+		<top>40</top>
+		<width>1920</width>
+		<preloaditems>2</preloaditems>
+		<orientation>horizontal</orientation>
+		<pagecontrol>60</pagecontrol>
+		<viewtype label="536">list</viewtype>
+		<scrolltime tween="quadratic">400</scrolltime>
+		<include>Animation.FadeIn.Slide</include>
+		<orientation>horizontal</orientation>
+		<preloaditems>2</preloaditems>
+		<scrolltime tween="quadratic">400</scrolltime>
+		<itemlayout height="210" width="373">
+			<include>DefExtendedInfoItemContent</include>
+		</itemlayout>
+		<focusedlayout height="210" width="373">
+			<include>DefExtendedInfoFocusContentFanart</include>
+		</focusedlayout>
+	</include>
+	<include name="DefExtendedInfoListWide">
+		<top>40</top>
+		<width>1920</width>
+		<preloaditems>2</preloaditems>
+		<orientation>horizontal</orientation>
+		<pagecontrol>60</pagecontrol>
+		<viewtype label="536">list</viewtype>
+		<scrolltime tween="quadratic">400</scrolltime>
+		<include>Animation.FadeIn.Slide</include>
 		<orientation>horizontal</orientation>
 		<preloaditems>2</preloaditems>
 		<scrolltime tween="quadratic">400</scrolltime>
@@ -1880,9 +1986,7 @@
 	</include>
 
 	<include name="DefExtendedInfoListWideEpisode">
-		<left>683</left>
-		<top>690</top>
-		<bottom>10</bottom>
+		<top>40</top>
 		<width>1920</width>
 		<preloaditems>2</preloaditems>
 		<orientation>horizontal</orientation>
@@ -1904,9 +2008,7 @@
 	</include>
 
 	<include name="DefExtendedInfoListWideGenre">
-		<left>683</left>
-		<top>690</top>
-		<bottom>10</bottom>
+		<top>40</top>
 		<width>1920</width>
 		<preloaditems>2</preloaditems>
 		<orientation>horizontal</orientation>
@@ -1914,8 +2016,6 @@
 		<viewtype label="536">list</viewtype>
 		<scrolltime tween="quadratic">400</scrolltime>
 		<include>Animation.FadeIn.Slide</include>
-		<ondown>9000</ondown>
-		<onup>94988</onup>
 		<orientation>horizontal</orientation>
 		<preloaditems>2</preloaditems>
 		<scrolltime tween="quadratic">400</scrolltime>
@@ -1928,9 +2028,7 @@
 	</include>
 
 	<include name="DefExtendedInfoListWideWord">
-		<left>683</left>
-		<top>690</top>
-		<bottom>10</bottom>
+		<top>40</top>
 		<width>1920</width>
 		<preloaditems>2</preloaditems>
 		<orientation>horizontal</orientation>
@@ -1967,8 +2065,399 @@
 		</control>
 		<control type="image">
 			<aspectratio scalediffuse="false">stretch</aspectratio>
-			<texture diffuse="diffuse/wall.png" background="true" fallback="DefaultPicture.png">$INFO[ListItem.Icon]</texture>
+			<texture colordiffuse="$INFO[Window(home).Property(ImageColor)]" background="true" fallback="DefaultPicture.png">$INFO[ListItem.Icon]</texture>
 		</control>
+	</include>
+
+	<include name="DefExtendedInfoFocusContentCast">
+		<control type="label">
+			<left>0</left>
+			<top>0</top>
+			<right>0</right>
+			<bottom>0</bottom>
+			<height>210</height>
+			<aligny>center</aligny>
+			<align>center</align>
+			<font>symbolbiggest</font>
+			<label></label>
+			<textcolor>white</textcolor>
+			<fadetime>300</fadetime>
+		</control>
+		<control type="image">
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture background="true" fallback="DefaultPicture.png">$INFO[ListItem.Icon]</texture>
+			<visible>!Control.HasFocus(1000)</visible>
+		</control>
+		<control type="image">
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture colordiffuse="$VAR[ColourHighlight]" background="true" fallback="DefaultPicture.png">$INFO[ListItem.Icon]</texture>
+			<visible>Control.HasFocus(1000)</visible>
+		</control>
+		<control type="textbox">
+			<left>5</left>
+			<right>5</right>
+			<top>30</top>
+			<bottom>30</bottom>
+			<align>center</align>
+			<aligny>center</aligny>
+			<font>Tiny</font>
+			<textcolor>white2</textcolor>
+			<selectedcolor>white2</selectedcolor>
+			<label>$INFO[ListItem.Rating]$INFO[ListItem.Votes,[CR](, $LOCALIZE[20350])]</label>
+		</control>
+		<animation type="Focus" reversible="false">
+			<effect type="zoom" start="100" end="110" time="200" center="auto" tween="quadratic" easing="out"/>
+		</animation>
+	</include>
+
+	<include name="DefExtendedInfoFocusContentCrew">
+		<control type="label">
+			<left>0</left>
+			<top>0</top>
+			<right>0</right>
+			<bottom>0</bottom>
+			<height>210</height>
+			<aligny>center</aligny>
+			<align>center</align>
+			<font>symbolbiggest</font>
+			<label></label>
+			<textcolor>white</textcolor>
+			<fadetime>300</fadetime>
+		</control>
+		<control type="image">
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture background="true" fallback="DefaultPicture.png">$INFO[ListItem.Icon]</texture>
+			<visible>!Control.HasFocus(750)</visible>
+		</control>
+		<control type="image">
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture colordiffuse="$VAR[ColourHighlight]" background="true" fallback="DefaultPicture.png">$INFO[ListItem.Icon]</texture>
+			<visible>Control.HasFocus(750)</visible>
+		</control>
+		<control type="textbox">
+			<left>5</left>
+			<right>5</right>
+			<top>30</top>
+			<bottom>30</bottom>
+			<align>center</align>
+			<aligny>center</aligny>
+			<font>Tiny</font>
+			<textcolor>white2</textcolor>
+			<selectedcolor>white2</selectedcolor>
+			<label>$INFO[ListItem.Rating]$INFO[ListItem.Votes,[CR](, $LOCALIZE[20350])]</label>
+		</control>
+		<animation type="Focus" reversible="false">
+			<effect type="zoom" start="100" end="110" time="200" center="auto" tween="quadratic" easing="out"/>
+		</animation>
+	</include>
+
+	<include name="DefExtendedInfoFocusContentSets">
+		<control type="label">
+			<left>0</left>
+			<top>0</top>
+			<right>0</right>
+			<bottom>0</bottom>
+			<height>210</height>
+			<aligny>center</aligny>
+			<align>center</align>
+			<font>symbolbiggest</font>
+			<label></label>
+			<textcolor>white</textcolor>
+			<fadetime>300</fadetime>
+		</control>
+		<control type="image">
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture background="true" fallback="DefaultPicture.png">$INFO[ListItem.Icon]</texture>
+			<visible>!Control.HasFocus(250)</visible>
+		</control>
+		<control type="image">
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture colordiffuse="$VAR[ColourHighlight]" background="true" fallback="DefaultPicture.png">$INFO[ListItem.Icon]</texture>
+			<visible>Control.HasFocus(250)</visible>
+		</control>
+		<control type="textbox">
+			<left>5</left>
+			<right>5</right>
+			<top>30</top>
+			<bottom>30</bottom>
+			<align>center</align>
+			<aligny>center</aligny>
+			<font>Tiny</font>
+			<textcolor>white2</textcolor>
+			<selectedcolor>white2</selectedcolor>
+			<label>$INFO[ListItem.Rating]$INFO[ListItem.Votes,[CR](, $LOCALIZE[20350])]</label>
+		</control>
+		<animation type="Focus" reversible="false">
+			<effect type="zoom" start="100" end="110" time="200" center="auto" tween="quadratic" easing="out"/>
+		</animation>
+	</include>
+
+	<include name="DefExtendedInfoFocusContentImages">
+		<control type="label">
+			<left>0</left>
+			<top>0</top>
+			<right>0</right>
+			<bottom>0</bottom>
+			<height>210</height>
+			<aligny>center</aligny>
+			<align>center</align>
+			<font>symbolbiggest</font>
+			<label></label>
+			<textcolor>white</textcolor>
+			<fadetime>300</fadetime>
+		</control>
+		<control type="image">
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture background="true" fallback="DefaultPicture.png">$INFO[ListItem.Icon]</texture>
+			<visible>!Control.HasFocus(1250)</visible>
+		</control>
+		<control type="image">
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture colordiffuse="$VAR[ColourHighlight]" background="true" fallback="DefaultPicture.png">$INFO[ListItem.Icon]</texture>
+			<visible>Control.HasFocus(1250)</visible>
+		</control>
+		<control type="textbox">
+			<left>5</left>
+			<right>5</right>
+			<top>30</top>
+			<bottom>30</bottom>
+			<align>center</align>
+			<aligny>center</aligny>
+			<font>Tiny</font>
+			<textcolor>white2</textcolor>
+			<selectedcolor>white2</selectedcolor>
+			<label>$INFO[ListItem.Rating]$INFO[ListItem.Votes,[CR](, $LOCALIZE[20350])]</label>
+		</control>
+		<animation type="Focus" reversible="false">
+			<effect type="zoom" start="100" end="110" time="200" center="auto" tween="quadratic" easing="out"/>
+		</animation>
+	</include>
+
+	<include name="DefExtendedInfoFocusContentSimilar">
+		<control type="label">
+			<left>0</left>
+			<top>0</top>
+			<right>0</right>
+			<bottom>0</bottom>
+			<height>210</height>
+			<aligny>center</aligny>
+			<align>center</align>
+			<font>symbolbiggest</font>
+			<label></label>
+			<textcolor>white</textcolor>
+			<fadetime>300</fadetime>
+		</control>
+		<control type="image">
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture background="true" fallback="DefaultPicture.png">$INFO[ListItem.Icon]</texture>
+			<visible>!Control.HasFocus(150)</visible>
+		</control>
+		<control type="image">
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture colordiffuse="$VAR[ColourHighlight]" background="true" fallback="DefaultPicture.png">$INFO[ListItem.Icon]</texture>
+			<visible>Control.HasFocus(150)</visible>
+		</control>
+		<control type="textbox">
+			<left>5</left>
+			<right>5</right>
+			<top>30</top>
+			<bottom>30</bottom>
+			<align>center</align>
+			<aligny>center</aligny>
+			<font>Tiny</font>
+			<textcolor>white2</textcolor>
+			<selectedcolor>white2</selectedcolor>
+			<label>$INFO[ListItem.Rating]$INFO[ListItem.Votes,[CR](, $LOCALIZE[20350])]</label>
+		</control>
+		<control type="label">
+			<centerleft>50%</centerleft>
+			<top>50</top>
+			<width>112</width>
+			<height>112</height>
+			<label></label>
+			<textcolor>$INFO[Window(home).Property(ImageColor)]</textcolor>
+			<focusedcolor>$INFO[Window(home).Property(ImageColor)]</focusedcolor>
+			<font>symbolbiggest</font>
+			<aligny>center</aligny>
+			<align>center</align>
+			<animation type="Focus">
+				<effect type="zoom" start="90" end="100" time="150" tween="sine" easing="inout" center="auto" />
+				<effect type="fade" start="0" end="100" time="150" tween="sine" easing="in" />
+			</animation>
+			<animation type="Unfocus">
+				<effect type="zoom" start="100" end="90" time="150" tween="sine" easing="inout" center="auto" />
+				<effect type="fade" start="100" end="0" time="150" tween="sine" easing="out" />
+			</animation>
+			<visible>!substring(ListItem.Path,script.extendedinfo)</visible>
+		</control>
+		<animation type="Focus" reversible="false">
+			<effect type="zoom" start="100" end="110" time="200" center="auto" tween="quadratic" easing="out"/>
+		</animation>
+	</include>
+
+	<include name="DefExtendedInfoFocusContentVideos">
+		<control type="label">
+			<left>0</left>
+			<top>0</top>
+			<right>0</right>
+			<bottom>0</bottom>
+			<height>210</height>
+			<aligny>center</aligny>
+			<align>center</align>
+			<font>symbolbiggest</font>
+			<label></label>
+			<textcolor>white</textcolor>
+			<fadetime>300</fadetime>
+		</control>
+		<control type="image">
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture background="true" fallback="DefaultPicture.png">$INFO[ListItem.Icon]</texture>
+			<visible>!Control.HasFocus(1150)</visible>
+		</control>
+		<control type="image">
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture colordiffuse="$VAR[ColourHighlight]" background="true" fallback="DefaultPicture.png">$INFO[ListItem.Icon]</texture>
+			<visible>Control.HasFocus(1150)</visible>
+		</control>
+		<control type="textbox">
+			<left>5</left>
+			<right>5</right>
+			<top>30</top>
+			<bottom>30</bottom>
+			<align>center</align>
+			<aligny>center</aligny>
+			<font>Tiny</font>
+			<textcolor>white2</textcolor>
+			<selectedcolor>white2</selectedcolor>
+			<label>$INFO[ListItem.Rating]$INFO[ListItem.Votes,[CR](, $LOCALIZE[20350])]</label>
+		</control>
+		<control type="label">
+			<centerleft>50%</centerleft>
+			<top>50</top>
+			<width>112</width>
+			<height>112</height>
+			<label></label>
+			<textcolor>$INFO[Window(home).Property(ImageColor)]</textcolor>
+			<focusedcolor>$INFO[Window(home).Property(ImageColor)]</focusedcolor>
+			<font>symbolbiggest</font>
+			<aligny>center</aligny>
+			<align>center</align>
+			<animation type="Focus">
+				<effect type="zoom" start="90" end="100" time="150" tween="sine" easing="inout" center="auto" />
+				<effect type="fade" start="0" end="100" time="150" tween="sine" easing="in" />
+			</animation>
+			<animation type="Unfocus">
+				<effect type="zoom" start="100" end="90" time="150" tween="sine" easing="inout" center="auto" />
+				<effect type="fade" start="100" end="0" time="150" tween="sine" easing="out" />
+			</animation>
+			<visible>!substring(ListItem.Path,script.extendedinfo)</visible>
+		</control>
+		<animation type="Focus" reversible="false">
+			<effect type="zoom" start="100" end="110" time="200" center="auto" tween="quadratic" easing="out"/>
+		</animation>
+	</include>
+
+	<include name="DefExtendedInfoFocusContentYoutube">
+		<control type="label">
+			<left>0</left>
+			<top>0</top>
+			<right>0</right>
+			<bottom>0</bottom>
+			<height>210</height>
+			<aligny>center</aligny>
+			<align>center</align>
+			<font>symbolbiggest</font>
+			<label></label>
+			<textcolor>white</textcolor>
+			<fadetime>300</fadetime>
+		</control>
+		<control type="image">
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture background="true" fallback="DefaultPicture.png">$INFO[ListItem.Icon]</texture>
+			<visible>!Control.HasFocus(350)</visible>
+		</control>
+		<control type="image">
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture colordiffuse="$VAR[ColourHighlight]" background="true" fallback="DefaultPicture.png">$INFO[ListItem.Icon]</texture>
+			<visible>Control.HasFocus(350)</visible>
+		</control>
+		<control type="textbox">
+			<left>5</left>
+			<right>5</right>
+			<top>30</top>
+			<bottom>30</bottom>
+			<align>center</align>
+			<aligny>center</aligny>
+			<font>Tiny</font>
+			<textcolor>white2</textcolor>
+			<selectedcolor>white2</selectedcolor>
+			<label>$INFO[ListItem.Rating]$INFO[ListItem.Votes,[CR](, $LOCALIZE[20350])]</label>
+		</control>
+		<control type="label">
+			<centerleft>50%</centerleft>
+			<top>50</top>
+			<width>112</width>
+			<height>112</height>
+			<label></label>
+			<textcolor>$INFO[Window(home).Property(ImageColor)]</textcolor>
+			<focusedcolor>$INFO[Window(home).Property(ImageColor)]</focusedcolor>
+			<font>symbolbiggest</font>
+			<aligny>center</aligny>
+			<align>center</align>
+			<animation type="Focus">
+				<effect type="zoom" start="90" end="100" time="150" tween="sine" easing="inout" center="auto" />
+				<effect type="fade" start="0" end="100" time="150" tween="sine" easing="in" />
+			</animation>
+			<animation type="Unfocus">
+				<effect type="zoom" start="100" end="90" time="150" tween="sine" easing="inout" center="auto" />
+				<effect type="fade" start="100" end="0" time="150" tween="sine" easing="out" />
+			</animation>
+			<visible>!substring(ListItem.Path,script.extendedinfo)</visible>
+		</control>
+		<animation type="Focus" reversible="false">
+			<effect type="zoom" start="100" end="110" time="200" center="auto" tween="quadratic" easing="out"/>
+		</animation>
+	</include>
+
+	<include name="DefExtendedInfoFocusContentFanart">
+		<control type="label">
+			<left>0</left>
+			<top>0</top>
+			<right>0</right>
+			<bottom>0</bottom>
+			<height>210</height>
+			<aligny>center</aligny>
+			<align>center</align>
+			<font>symbolbiggest</font>
+			<label></label>
+			<textcolor>white</textcolor>
+			<fadetime>300</fadetime>
+		</control>
+		<control type="image">
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture background="true" fallback="DefaultPicture.png">$INFO[ListItem.Icon]</texture>
+			<visible>!Control.HasFocus(1350)</visible>
+		</control>
+		<control type="image">
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture colordiffuse="$VAR[ColourHighlight]" background="true" fallback="DefaultPicture.png">$INFO[ListItem.Icon]</texture>
+			<visible>Control.HasFocus(1350)</visible>
+		</control>
+		<control type="textbox">
+			<left>5</left>
+			<right>5</right>
+			<top>30</top>
+			<bottom>30</bottom>
+			<align>center</align>
+			<aligny>center</aligny>
+			<font>Tiny</font>
+			<textcolor>white2</textcolor>
+			<selectedcolor>white2</selectedcolor>
+			<label>$INFO[ListItem.Rating]$INFO[ListItem.Votes,[CR](, $LOCALIZE[20350])]</label>
+		</control>
+		<animation type="Focus" reversible="false">
+			<effect type="zoom" start="100" end="110" time="200" center="auto" tween="quadratic" easing="out"/>
+		</animation>
 	</include>
 
 	<include name="DefExtendedInfoFocusContent">
@@ -1987,15 +2476,7 @@
 		</control>
 		<control type="image">
 			<aspectratio scalediffuse="false">scale</aspectratio>
-			<texture diffuse="diffuse/wall.png" background="true" fallback="DefaultPicture.png">$INFO[ListItem.Icon]</texture>
-		</control>
-		<control type="image">
-			<description>Title overlay</description>
-			<left>0</left>
-			<top>0</top>
-			<right>0</right>
-			<bottom>0</bottom>
-			<texture colordiffuse="af000000">common/white.png</texture>
+			<texture colordiffuse="$VAR[ColourHighlight]" background="true" fallback="DefaultPicture.png">$INFO[ListItem.Icon]</texture>
 		</control>
 		<control type="textbox">
 			<left>5</left>
@@ -2051,15 +2532,13 @@
 		</control>
 		<control type="image">
 			<aspectratio scalediffuse="false">scale</aspectratio>
-			<texture diffuse="diffuse/wall.png" background="true" fallback="DefaultPicture.png">$INFO[ListItem.Icon]</texture>
+			<texture background="true" fallback="DefaultPicture.png">$INFO[ListItem.Icon]</texture>
+			<visible>!Control.HasFocus(2000)</visible>
 		</control>
 		<control type="image">
-			<description>Title overlay</description>
-			<left>0</left>
-			<top>0</top>
-			<right>0</right>
-			<bottom>0</bottom>
-			<texture colordiffuse="af000000">common/white.png</texture>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture colordiffuse="$VAR[ColourHighlight]" background="true" fallback="DefaultPicture.png">$INFO[ListItem.Icon]</texture>
+			<visible>Control.HasFocus(2000)</visible>
 		</control>
 		<control type="textbox">
 			<left>5</left>
@@ -2081,14 +2560,20 @@
 	<include name="DefExtendedInfoItemContentGenre">
 		<control type="image">
 			<aspectratio scalediffuse="false">keep</aspectratio>
-			<texture diffuse="diffuse/wall.png" background="true" fallback="DefaultPicture.png">$VAR[MovieGenres]</texture>
+			<texture colordiffuse="$INFO[Window(home).Property(ImageColor)]" background="true" fallback="DefaultPicture.png">$VAR[MovieGenres]</texture>
 		</control>
 	</include>
 
 	<include name="DefExtendedInfoFocusContentGenre">
 		<control type="image">
 			<aspectratio scalediffuse="false">keep</aspectratio>
-			<texture colordiffuse="$INFO[Window(home).Property(ImageColor)]" background="true" fallback="DefaultPicture.png">$VAR[MovieGenres]</texture>
+			<texture background="true" fallback="DefaultPicture.png">$VAR[MovieGenres]</texture>
+			<visible>!Control.HasFocus(850)</visible>
+		</control>
+		<control type="image">
+			<aspectratio scalediffuse="false">keep</aspectratio>
+			<texture colordiffuse="$VAR[ColourHighlight]" background="true" fallback="DefaultPicture.png">$VAR[MovieGenres]</texture>
+			<visible>Control.HasFocus(850)</visible>
 		</control>
 		<control type="textbox">
 			<left>5</left>
@@ -2127,6 +2612,11 @@
 	<include name="DefExtendedInfoFocusContentWord">
 		<control type="image">
 			<texture colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</texture>
+			<visible>!Control.HasFocus(950)</visible>
+		</control>
+		<control type="image">
+			<texture colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
+			<visible>Control.HasFocus(950)</visible>
 		</control>
 		<control type="textbox">
 			<left>5</left>
