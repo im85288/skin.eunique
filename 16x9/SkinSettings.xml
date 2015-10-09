@@ -13,7 +13,7 @@
 		<right>NewSidePad</right>
 		<top>TopPad</top>
 		<include>Animation.Common</include>
-		<visible>!Window.IsVisible(script-skinshortcuts.xml)</visible>
+		<visible>!Window.IsVisible(script-skinshortcuts.xml) + !Window.IsVisible(script-skin_helper_service-ColorPicker.xml)</visible>
 		<control type="image">
 			<height>72</height>
 			<texture>common/white.png</texture>
@@ -169,15 +169,6 @@
 					<label>31884</label>
 					<selected>Skin.HasSetting(home.fade)</selected>
 					<onclick>Skin.ToggleSetting(home.fade)</onclick>
-				</control>
-				<control type="button" id="9219" description="Set Slideshow Path">
-					<width>1410</width>
-					<include>DefSettingsButton2</include>
-					<label>31131</label>
-					<label2>[COLOR=$VAR[ColourSelected]]$INFO[Skin.String(home.slideshowpath)][/COLOR]</label2>
-					<onclick condition="IsEmpty(Skin.String(home.slideshowpath))">Skin.SetPath(home.slideshowpath)</onclick>
-					<onclick condition="!IsEmpty(Skin.String(home.slideshowpath))">Skin.Reset(home.dontshowfanart)</onclick>
-					<onclick condition="!IsEmpty(Skin.String(home.slideshowpath))">Skin.Reset(home.slideshowpath)</onclick>
 				</control>
 				<control type="button" id="9216" description="Set Music Dir">
 					<width>1410</width>

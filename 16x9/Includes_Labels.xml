@@ -1102,4 +1102,9 @@
 		<value condition="!IsEmpty(Skin.String(furniturewidget.name))">$INFO[Skin.String(furniturewidget.name)]</value>
 		<value>$LOCALIZE[31819]</value>
 	</variable>
+
+	<variable name="ArtistLabel">
+		<value condition="Container.Content(albums) + !IsEmpty(ListItem.AlbumArtist)">$INFO[ListItem.AlbumArtist]</value>
+		<value>$INFO[ListItem.Artist]</value>
+	</variable>
 </includes>
