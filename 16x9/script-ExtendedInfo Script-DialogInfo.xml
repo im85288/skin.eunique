@@ -299,203 +299,6 @@
                     </control>
                 </control>
 
-                <control type="list" id="9498">
-                    <left>683</left>
-                    <top>650</top>
-                    <width>400</width>
-                    <height>34</height>
-                    <onup>9000</onup>
-                    <ondown condition="Control.IsVisible(150)">150</ondown>
-                    <ondown condition="Control.IsVisible(250)">250</ondown>
-                    <ondown condition="Control.IsVisible(350)">350</ondown>
-                    <ondown condition="Control.IsVisible(450)">450</ondown>
-                    <ondown condition="Control.IsVisible(550)">550</ondown>
-                    <ondown condition="Control.IsVisible(650)">650</ondown>
-                    <onback>9000</onback>
-                    <orientation>horizontal</orientation>
-                    <scrolltime tween="cubic" easing="out">500</scrolltime>
-                    <visible>Control.HasFocus(94988) | Control.HasFocus(9498)</visible>
-                    <itemlayout width="400" height="34">
-                        <control type="label">
-                            <aligny>center</aligny>
-                            <align>left</align>
-                            <height>34</height>
-                            <font>Small</font>
-                            <textcolor>white2</textcolor>
-                            <label>$INFO[ListItem.Label]</label>
-                            <visible>!Control.HasFocus(9498)</visible>
-                        </control>
-                        <control type="label">
-                            <aligny>center</aligny>
-                            <align>left</align>
-                            <height>34</height>
-                            <font>Small</font>
-                            <textcolor>$VAR[ColourHighlight]</textcolor>
-                            <label>$INFO[ListItem.Label]</label>
-                            <visible>Control.HasFocus(9498)</visible>
-                        </control>
-                    </itemlayout>
-                    <focusedlayout width="400" height="34">
-                        <control type="label">
-                            <aligny>center</aligny>
-                            <align>left</align>
-                            <height>34</height>
-                            <font>Small</font>
-                            <textcolor>white2</textcolor>
-                            <label>$INFO[ListItem.Label]</label>
-                            <visible>!Control.HasFocus(9498)</visible>
-                        </control>
-                        <control type="label">
-                            <aligny>center</aligny>
-                            <align>left</align>
-                            <height>34</height>
-                            <font>Small</font>
-                            <textcolor>$VAR[ColourHighlight]</textcolor>
-                            <label>$INFO[ListItem.Label]</label>
-                            <visible>Control.HasFocus(9498)</visible>
-                        </control>
-                    </focusedlayout>
-                    <content>
-                        <item id="0">
-                            <label>$ADDON[script.extendedinfo 32010]</label>
-                            <onclick>SetProperty(content,150)</onclick>
-                        </item>
-                        <item id="1">
-                            <label>$ADDON[script.extendedinfo 32031]</label>
-                            <onclick>SetProperty(content,250)</onclick>
-                            <visible>IntegerGreaterThan(Container(250).NumItems,0)</visible>
-                        </item>
-                        <item id="2">
-                            <label>$ADDON[script.extendedinfo 32118]</label>
-                            <onclick>SetProperty(content,350)</onclick>
-                            <visible>IntegerGreaterThan(Container(350).NumItems,0)</visible>
-                        </item>
-                        <item id="3">
-                            <label>$ADDON[script.extendedinfo 32119]</label>
-                            <onclick>SetProperty(content,450)</onclick>
-                            <visible>IntegerGreaterThan(Container(450).NumItems,0)</visible>
-                        </item>
-                        <item id="4">
-                            <label>$ADDON[script.extendedinfo 32115]</label>
-                            <onclick>SetProperty(content,550)</onclick>
-                            <visible>IntegerGreaterThan(Container(550).NumItems,0)</visible>
-                        </item>
-                        <item id="5">
-                            <label>$LOCALIZE[31961]</label>
-                            <onclick>SetProperty(content,650)</onclick>
-                            <visible>IntegerGreaterThan(Container(650).NumItems,0)</visible>
-                        </item>
-                    </content>
-                </control>
-
-                <control type="label">
-                    <visible>stringcompare(Window.Property(content),150)</visible>
-                    <visible>!Control.HasFocus(9498)</visible>
-                    <left>683</left>
-                    <top>650</top>
-                    <width>1200</width>
-                    <height>34</height>
-                    <aligny>center</aligny>
-                    <align>left</align>
-                    <height>34</height>
-                    <font>Small</font>
-                    <textcolor>white2</textcolor>
-                    <description>Header Label</description>
-                    <textcolor>Dark2</textcolor>
-                    <font>Small</font>
-                    <label>$INFO[Window.Property(actor.title)] $ADDON[script.extendedinfo 32010]$INFO[Container(150).ListItem(0).Label,: ,]</label>
-                    <include>Animation.DelayFadeIn</include>
-                </control>
-                <control type="label">
-                    <visible>stringcompare(Window.Property(content),250)</visible>
-                    <visible>!Control.HasFocus(9498)</visible>
-                    <left>683</left>
-                    <top>650</top>
-                    <width>1200</width>
-                    <height>34</height>
-                    <aligny>center</aligny>
-                    <align>left</align>
-                    <height>34</height>
-                    <font>Small</font>
-                    <textcolor>white2</textcolor>
-                    <description>Header Label</description>
-                    <textcolor>Dark2</textcolor>
-                    <font>Small</font>
-                    <label>$INFO[Window.Property(actor.title)] $ADDON[script.extendedinfo 32031]$INFO[Container(250).ListItem(0).Label,: ,]</label>
-                    <include>Animation.DelayFadeIn</include>
-                </control>
-                <control type="label">
-                    <visible>stringcompare(Window.Property(content),350)</visible>
-                    <visible>!Control.HasFocus(9498)</visible>
-                    <left>683</left>
-                    <top>650</top>
-                    <width>1200</width>
-                    <height>34</height>
-                    <aligny>center</aligny>
-                    <align>left</align>
-                    <height>34</height>
-                    <font>Small</font>
-                    <textcolor>white2</textcolor>
-                    <description>Header Label</description>
-                    <textcolor>Dark2</textcolor>
-                    <font>Small</font>
-                    <label>$INFO[Window.Property(actor.title)] $ADDON[script.extendedinfo 32118]$INFO[Container(350).ListItem(0).Label,: ,]</label>
-                    <include>Animation.DelayFadeIn</include>
-                </control>
-                <control type="label">
-                    <visible>stringcompare(Window.Property(content),450)</visible>
-                    <visible>!Control.HasFocus(9498)</visible>
-                    <left>683</left>
-                    <top>650</top>
-                    <width>1200</width>
-                    <height>34</height>
-                    <aligny>center</aligny>
-                    <align>left</align>
-                    <height>34</height>
-                    <font>Small</font>
-                    <textcolor>white2</textcolor>
-                    <description>Header Label</description>
-                    <textcolor>Dark2</textcolor>
-                    <font>Small</font>
-                    <label>$INFO[Window.Property(actor.title)] $ADDON[script.extendedinfo 32119]$INFO[Container(450).ListItem(0).Label,: ,]</label>
-                    <include>Animation.DelayFadeIn</include>
-                </control>
-                <control type="label">
-                    <visible>stringcompare(Window.Property(content),550)</visible>
-                    <visible>!Control.HasFocus(9498)</visible>
-                    <left>683</left>
-                    <top>650</top>
-                    <width>1200</width>
-                    <height>34</height>
-                    <aligny>center</aligny>
-                    <align>left</align>
-                    <height>34</height>
-                    <font>Small</font>
-                    <textcolor>white2</textcolor>
-                    <description>Header Label</description>
-                    <textcolor>Dark2</textcolor>
-                    <font>Small</font>
-                    <label>$INFO[Window.Property(actor.title)] $ADDON[script.extendedinfo 32115]$INFO[Container(550).ListItem(0).Label,: ,]</label>
-                    <include>Animation.DelayFadeIn</include>
-                </control>
-                <control type="label">
-                    <visible>stringcompare(Window.Property(content),650)</visible>
-                    <visible>!Control.HasFocus(9498)</visible>
-                    <left>683</left>
-                    <top>650</top>
-                    <width>1200</width>
-                    <height>34</height>
-                    <aligny>center</aligny>
-                    <align>left</align>
-                    <height>34</height>
-                    <font>Small</font>
-                    <textcolor>white2</textcolor>
-                    <description>Header Label</description>
-                    <textcolor>Dark2</textcolor>
-                    <font>Small</font>
-                    <label>$INFO[Window.Property(actor.title)] $LOCALIZE[31961]$INFO[Container(650).ListItem(0).Label,: ,]</label>
-                    <include>Animation.DelayFadeIn</include>
-                </control>
                 <control type="group">
                     <left>660</left>
                     <right>NewSidePad</right>
@@ -608,8 +411,6 @@
                                 <aligny>center</aligny>
                             </control>
                         </control>
-                        
-                        
                       
                         <control type="label">
                             <width>100%</width>
@@ -621,67 +422,251 @@
                         </control>
                         <control type="textbox">
                             <width>100%</width>
-                            <height>290</height>
+                            <height>260</height>
                             <font>Small</font>
                             <textcolor>white2</textcolor>
                             <label>$INFO[Window.Property(actor.Biography)]</label>
                         </control>
-                        
                     </control>
                 </control>
 
-                <control type="button" id="94988">
-                    <texturefocus>-</texturefocus>
-                    <texturenofocus>-</texturenofocus>
-                    <onfocus>setfocus(9498)</onfocus>
+                <!--up widgets -->
+                <control type="group">
+                    <top>1000</top>
+                    <left>870</left>
+                    <width>100</width>
+                    <height>40</height>
+                    <control type="label">
+                        <aligny>center</aligny>
+                        <align>center</align>
+                        <textcolor>$VAR[ExtendedActorSelectionColourHighlight]</textcolor>
+                        <font>symbolbackbig</font>
+                        <label></label>
+                    </control>
+
+                    <control type="label">
+                        <top>8</top>
+                        <aligny>center</aligny>
+                        <align>center</align>
+                        <textcolor>white2</textcolor>
+                        <font>symbol</font>
+                        <label></label>
+                    </control>
+                </control>
+                <!-- Down actor -->
+                <control type="group">
+                    <visible>!ControlGroup(9000).HasFocus() + Control.HasFocus(150)</visible>
+                    <top>1000</top>
+                    <left>924</left>
+                    <width>100</width>
+                    <height>40</height>
+                    <control type="label">
+                        <aligny>center</aligny>
+                        <align>center</align>
+                        <textcolor>$VAR[ExtendedActorSelectionColourHighlight]</textcolor>
+                        <font>symbolbackbig</font>
+                        <label></label>
+                    </control>
+
+                    <control type="label">
+                        <top>-8</top>
+                        <aligny>center</aligny>
+                        <align>center</align>
+                        <textcolor>white2</textcolor>
+                        <font>symbol</font>
+                        <label></label>
+                    </control>
+                </control>
+                <!-- Down widgets -->
+                <control type="group">
+                    <visible>!ControlGroup(9000).HasFocus() + !Control.HasFocus(150)</visible>
+                    <top>1000</top>
+                    <left>924</left>
+                    <width>100</width>
+                    <height>40</height>
+                    <control type="label">
+                        <aligny>center</aligny>
+                        <align>center</align>
+                        <textcolor>$VAR[ExtendedActorSelectionColourHighlight]</textcolor>
+                        <font>symbolbackbig</font>
+                        <label></label>
+                    </control>
+                    <control type="label">
+                        <top>-8</top>
+                        <aligny>center</aligny>
+                        <align>center</align>
+                        <textcolor>white2</textcolor>
+                        <font>symbol</font>
+                        <label></label>
+                    </control>
+                </control>
+                <control type="grouplist">
+                    <height>380</height>
+                    <width>1920</width>
+                    <orientation>vertical</orientation>
+                    <left>683</left>
+                    <top>620</top>
+                    <bottom>10</bottom>
+                    <ondown>9000</ondown>
+                    <!-- Movie Roles -->
+                    <control type="group">
+                        <visible>IntegerGreaterThan(Container(150).NumItems,0)</visible>
+                        <height>380</height>
+                        <control type="label">
+                            <width>1200</width>
+                            <height>34</height>
+                            <aligny>center</aligny>
+                            <align>left</align>
+                            <height>34</height>
+                            <font>Small</font>
+                            <textcolor>white</textcolor>
+                            <description>Header Label</description>
+                            <font>Small</font>
+                            <label>$INFO[Window.Property(actor.title)] $ADDON[script.extendedinfo 32010]$INFO[Container(150).ListItem(0).Label,: ,]</label>
+                            <include>Animation.DelayFadeIn</include>
+                        </control>
+                        <control type="wraplist" id="150">
+                            <autoscroll time="3000">!Control.HasFocus(150)</autoscroll>
+                            <onleft>150</onleft>
+                            <onright>150</onright>
+                            <ondown>9000</ondown>
+                            <onup>250</onup>
+                            <include>BigDefExtendedInfoList150</include>
+                        </control>
+                    </control>
+                    <!-- TV Roles -->
+                    <control type="group">
+                        <visible>IntegerGreaterThan(Container(250).NumItems,0)</visible>
+                        <height>380</height>
+                        <control type="label">
+                            <width>1200</width>
+                            <height>34</height>
+                            <aligny>center</aligny>
+                            <align>left</align>
+                            <height>34</height>
+                            <font>Small</font>
+                            <textcolor>white</textcolor>
+                            <description>Header Label</description>
+                            <font>Small</font>
+                            <label>$INFO[Window.Property(actor.title)] $ADDON[script.extendedinfo 32031]$INFO[Container(250).ListItem(0).Label,: ,]</label>
+                            <include>Animation.DelayFadeIn</include>
+                        </control>
+                        <control type="wraplist" id="250">
+                            <autoscroll time="3000">!Control.HasFocus(250)</autoscroll>
+                            <onleft>250</onleft>
+                            <onright>250</onright>
+                            <ondown>150</ondown>
+                            <onup>350</onup>
+                            <include>BigDefExtendedInfoList250</include>
+                        </control>
+                    </control>
+                    <!-- Youtube -->
+                    <control type="group">
+                        <visible>IntegerGreaterThan(Container(350).NumItems,0)</visible>
+                        <height>380</height>
+                        <control type="label">
+                            <width>1200</width>
+                            <height>34</height>
+                            <aligny>center</aligny>
+                            <align>left</align>
+                            <height>34</height>
+                            <font>Small</font>
+                            <textcolor>white</textcolor>
+                            <description>Header Label</description>
+                            <font>Small</font>
+                            <label>$INFO[Window.Property(actor.title)] $ADDON[script.extendedinfo 32118]$INFO[Container(350).ListItem(0).Label,: ,]</label>
+                            <include>Animation.DelayFadeIn</include>
+                        </control>
+                        <control type="wraplist" id="350">
+                            <autoscroll time="3000">!Control.HasFocus(350)</autoscroll>
+                            <onleft>350</onleft>
+                            <onright>350</onright>
+                            <ondown>250</ondown>
+                            <onup>450</onup>
+                            <include>BigDefExtendedInfoListWide</include>
+                        </control>
+                    </control>
+                    <!-- Images -->
+                    <control type="group">
+                        <visible>IntegerGreaterThan(Container(450).NumItems,0)</visible>
+                        <height>380</height>
+                        <control type="label">
+                            <width>1200</width>
+                            <height>34</height>
+                            <aligny>center</aligny>
+                            <align>left</align>
+                            <height>34</height>
+                            <font>Small</font>
+                            <textcolor>white</textcolor>
+                            <description>Header Label</description>
+                            <font>Small</font>
+                            <label>$INFO[Window.Property(actor.title)] $ADDON[script.extendedinfo 32119]$INFO[Container(450).ListItem(0).Label,: ,]</label>
+                            <include>Animation.DelayFadeIn</include>
+                        </control>
+                        <control type="wraplist" id="450">
+                            <autoscroll time="3000">!Control.HasFocus(450)</autoscroll>
+                            <onleft>450</onleft>
+                            <onright>450</onright>
+                            <ondown>350</ondown>
+                            <onup>550</onup>
+                            <include>BigDefExtendedInfoList450</include>
+                        </control>
+                    </control>
+                    <!-- Movie Crew -->
+                    <control type="group">
+                        <visible>IntegerGreaterThan(Container(550).NumItems,0)</visible>
+                        <height>380</height>
+                        <control type="label">
+                            <width>1200</width>
+                            <height>34</height>
+                            <aligny>center</aligny>
+                            <align>left</align>
+                            <height>34</height>
+                            <font>Small</font>
+                            <textcolor>white</textcolor>
+                            <description>Header Label</description>
+                            <font>Small</font>
+                            <label>$INFO[Window.Property(actor.title)] $ADDON[script.extendedinfo 32115]$INFO[Container(550).ListItem(0).Label,: ,]</label>
+                            <include>Animation.DelayFadeIn</include>
+                        </control>
+                        <control type="wraplist" id="550">
+                            <autoscroll time="3000">!Control.HasFocus(550)</autoscroll>
+                            <onleft>550</onleft>
+                            <onright>550</onright>
+                            <ondown>450</ondown>
+                            <onup>650</onup>
+                            <include>BigDefExtendedInfoList550</include>
+                        </control>
+                    </control>
+                    <!-- TV Crew -->
+                    <control type="group">
+                        <visible>IntegerGreaterThan(Container(650).NumItems,0)</visible>
+                        <height>380</height>
+                        <control type="label">
+                            <width>1200</width>
+                            <height>34</height>
+                            <aligny>center</aligny>
+                            <align>left</align>
+                            <height>34</height>
+                            <font>Small</font>
+                            <textcolor>white</textcolor>
+                            <description>Header Label</description>
+                            <font>Small</font>
+                            <label>$INFO[Window.Property(actor.title)] $LOCALIZE[31961]$INFO[Container(650).ListItem(0).Label,: ,]</label>
+                            <include>Animation.DelayFadeIn</include>
+                        </control>
+                        <control type="wraplist" id="650">
+                            <autoscroll time="3000">!Control.HasFocus(650)</autoscroll>
+                            <onleft>650</onleft>
+                            <onright>650</onright>
+                            <ondown>550</ondown>
+                            <onup>150</onup>
+                            <include>BigDefExtendedInfoList650</include>
+                        </control>
+                    </control>
+
                 </control>
 
-                <!-- Movie Roles -->
-                <control type="wraplist" id="150">
-                    <visible allowhiddenfocus="true">StringCompare(Window.Property(content),150)</visible>
-                    <autoscroll time="3000">!Control.HasFocus(150)</autoscroll>
-                    <onleft>150</onleft>
-                    <onright>150</onright>
-                    <include>BigDefExtendedInfoList150</include>
-                </control>
-                <!-- TV Roles -->
-                <control type="wraplist" id="250">
-                    <visible allowhiddenfocus="true">StringCompare(Window.Property(content),250)</visible>
-                    <autoscroll time="3000">!Control.HasFocus(250)</autoscroll>
-                    <onleft>250</onleft>
-                    <onright>250</onright>
-                    <include>BigDefExtendedInfoList250</include>
-                </control>
-                <!-- Youtube -->
-                <control type="wraplist" id="350">
-                    <visible allowhiddenfocus="true">StringCompare(Window.Property(content),350)</visible>
-                    <autoscroll time="3000">!Control.HasFocus(350)</autoscroll>
-                    <onleft>350</onleft>
-                    <onright>350</onright>
-                    <include>BigDefExtendedInfoListWide</include>
-                </control>
-                <!-- Images -->
-                <control type="wraplist" id="450">
-                    <visible allowhiddenfocus="true">StringCompare(Window.Property(content),450)</visible>
-                    <autoscroll time="3000">!Control.HasFocus(450)</autoscroll>
-                    <onleft>450</onleft>
-                    <onright>450</onright>
-                    <include>BigDefExtendedInfoList450</include>
-                </control>
-                <!-- Movie Crew -->
-                <control type="wraplist" id="550">
-                    <visible allowhiddenfocus="true">StringCompare(Window.Property(content),550)</visible>
-                    <autoscroll time="3000">!Control.HasFocus(550)</autoscroll>
-                    <onleft>550</onleft>
-                    <onright>550</onright>
-                    <include>BigDefExtendedInfoList550</include>
-                </control>
-                <!-- TV Crew -->
-                <control type="wraplist" id="650"><visible allowhiddenfocus="true">StringCompare(Window.Property(content),650)</visible>
-                    <autoscroll time="3000">!Control.HasFocus(650)</autoscroll>
-                    <onleft>650</onleft>
-                    <onright>650</onright>
-                    <include>BigDefExtendedInfoList650</include></control>
                 <control type="list" id="750"><visible>false</visible></control>
             </control>
         </control>

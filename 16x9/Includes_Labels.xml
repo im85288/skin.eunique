@@ -712,6 +712,21 @@
 		<value condition="Control.HasFocus(19)">$VAR[EmbyLeftColourHighlight]</value>
 		<value>dark pastel red</value>
 	</variable>
+	<variable name="ExtendedDVInfoSelectionColourHighlight">
+		<value condition="Control.HasFocus(1) | Control.HasFocus(120)">$VAR[EmbyMiddleColourHighlight]</value>
+		<value condition="Control.HasFocus(100)">$VAR[EmbyRightColourHighlight]</value>
+		<value condition="Control.HasFocus(445)">$VAR[EmbyRightColourHighlight]</value>
+		<value condition="Control.HasFocus(19)">$VAR[EmbyLeftColourHighlight]</value>
+		<value condition="!ControlGroup(9000).HasFocus() + Control.HasFocus(1000)">$VAR[EmbyRightColourHighlight]</value>
+		<value condition="!ControlGroup(9000).HasFocus() + !Control.HasFocus(1000)">$VAR[EmbyLeftColourHighlight]</value>
+		<value>dark pastel red</value>
+	</variable>
+	<variable name="ExtendedActorSelectionColourHighlight">
+		<value condition="Control.HasFocus(88)">$VAR[EmbyMiddleColourHighlight]</value>
+		<value condition="!ControlGroup(9000).HasFocus() + Control.HasFocus(150)">$VAR[EmbyRightColourHighlight]</value>
+		<value condition="!ControlGroup(9000).HasFocus() + !Control.HasFocus(150)">$VAR[EmbyLeftColourHighlight]</value>
+		<value>dark pastel red</value>
+	</variable>
 	<variable name="EmbyMenuColourHighlight">
 		<value condition="Skin.HasSetting(emby.menu.colour)">$INFO[Skin.String(emby.menu.colour.name)]</value>
 		<value>white</value>

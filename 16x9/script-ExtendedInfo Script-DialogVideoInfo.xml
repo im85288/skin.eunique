@@ -605,6 +605,7 @@
 
                 <!--up-->
                 <control type="group">
+                    <animation condition="!Control.IsVisible(8) + !Control.IsVisible(120)" effect="slide" end="-240,0" start="0,0" time="200">Conditional</animation>
                     <visible>!ControlGroup(9000).HasFocus() +  Control.HasFocus(1000)</visible>
                     <top>380</top>
                     <left>1270</left>
@@ -613,7 +614,7 @@
                     <control type="label">
                         <aligny>center</aligny>
                         <align>center</align>
-                        <textcolor>$VAR[SelectionColourHighlight]</textcolor>
+                        <textcolor>$VAR[ExtendedDVInfoSelectionColourHighlight]</textcolor>
                         <font>symbolbackbig</font>
                         <label></label>
                     </control>
@@ -627,7 +628,8 @@
                     </control>
                 </control>
                 <control type="group">
-                    <visible>!ControlGroup(9000).HasFocus() +  !Control.HasFocus(1000)</visible>
+                    <animation condition="!Control.IsVisible(8) + !Control.IsVisible(120)" effect="slide" end="-240,0" start="0,0" time="200">Conditional</animation>
+                    <visible>!ControlGroup(9000).HasFocus() +  Control.HasFocus(150)</visible>
                     <top>380</top>
                     <left>1270</left>
                     <width>116</width>
@@ -635,7 +637,7 @@
                     <control type="label">
                         <aligny>center</aligny>
                         <align>center</align>
-                        <textcolor>$VAR[SelectionColourHighlight]</textcolor>
+                        <textcolor>$VAR[ExtendedDVInfoSelectionColourHighlight]</textcolor>
                         <font>symbolbackbig</font>
                         <label></label>
                     </control>
@@ -648,8 +650,32 @@
                         <label></label>
                     </control>
                 </control>
+                <control type="group">
+                    <animation condition="!Control.IsVisible(8) + !Control.IsVisible(120)" effect="slide" end="-240,0" start="0,0" time="200">Conditional</animation>
+                    <visible>!ControlGroup(9000).HasFocus() +  !Control.HasFocus(1000) +  !Control.HasFocus(150)</visible>
+                    <top>380</top>
+                    <left>1270</left>
+                    <width>116</width>
+                    <height>116</height>
+                    <control type="label">
+                        <aligny>center</aligny>
+                        <align>center</align>
+                        <textcolor>$VAR[ExtendedDVInfoSelectionColourHighlight]</textcolor>
+                        <font>symbolbackbig</font>
+                        <label></label>
+                    </control>
+                    <control type="label">
+                        <top>8</top>
+                        <aligny>center</aligny>
+                        <align>center</align>
+                        <textcolor>white2</textcolor>
+                        <font>symbol</font>
+                        <label></label>
+                    </control>
+                </control>
                 <!--down-->
                 <control type="group">
+                    <animation condition="!Control.IsVisible(8) + !Control.IsVisible(120)" effect="slide" end="-240,0" start="0,0" time="200">Conditional</animation>
                     <visible>ControlGroup(9000).HasFocus()</visible>
                     <top>380</top>
                     <left>1270</left>
@@ -658,7 +684,7 @@
                     <control type="label">
                         <aligny>center</aligny>
                         <align>center</align>
-                        <textcolor>$VAR[SelectionColourHighlight]</textcolor>
+                        <textcolor>$VAR[ExtendedDVInfoSelectionColourHighlight]</textcolor>
                         <font>symbolbackbig</font>
                         <label></label>
                     </control>
@@ -669,10 +695,11 @@
                         <align>center</align>
                         <textcolor>white2</textcolor>
                         <font>symbol</font>
-                        <label></label>
+                        <label></label>
                     </control>
                 </control>
                 <control type="group">
+                    <animation condition="!Control.IsVisible(8) + !Control.IsVisible(120)" effect="slide" end="-240,0" start="0,0" time="200">Conditional</animation>
                     <visible>!ControlGroup(9000).HasFocus()</visible>
                     <top>380</top>
                     <left>1324</left>
@@ -681,21 +708,21 @@
                     <control type="label">
                         <aligny>center</aligny>
                         <align>center</align>
-                        <textcolor>$VAR[SelectionColourHighlight]</textcolor>
+                        <textcolor>$VAR[ExtendedDVInfoSelectionColourHighlight]</textcolor>
                         <font>symbolbackbig</font>
                         <label></label>
                     </control>
-
                     <control type="label">
                         <top>-8</top>
                         <aligny>center</aligny>
                         <align>center</align>
                         <textcolor>white2</textcolor>
                         <font>symbol</font>
-                        <label></label>
+                        <label></label>
                     </control>
                 </control>
                 <control type="group">
+                    <animation condition="!Control.IsVisible(8) + !Control.IsVisible(120)" effect="slide" end="-240,0" start="0,0" time="200">Conditional</animation>
                     <visible>Control.HasFocus(19)</visible>
                     <top>380</top>
                     <left>1324</left>
@@ -704,7 +731,7 @@
                     <control type="label">
                         <aligny>center</aligny>
                         <align>center</align>
-                        <textcolor>$VAR[SelectionColourHighlight]</textcolor>
+                        <textcolor>$VAR[ExtendedDVInfoSelectionColourHighlight]</textcolor>
                         <font>symbolbackbig</font>
                         <label></label>
                     </control>
