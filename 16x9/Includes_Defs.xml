@@ -664,11 +664,23 @@
 	<include name="DefKeyboardKeys">
 		<width>85</width>
 		<height>75</height>
-		<texturenofocus colordiffuse="Black12">common/box.png</texturenofocus>
+		<texturenofocus colordiffuse="$VAR[EmbyMenuTextColourHighlight]">common/box.png</texturenofocus>
 		<texturefocus colordiffuse="$VAR[ColourHighlight]">common/box.png</texturefocus>
 		<textoffsetx>0</textoffsetx>
-		<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+		<textcolor>$VAR[EmbyMenuColourHighlight]</textcolor>
 		<focusedcolor>$VAR[ColourSelected]</focusedcolor>
+		<radioposx>320</radioposx>
+		<radioposy>22</radioposy>
+	</include>
+	<include name="DefKeyboardKeysNumeric">
+		<width>85</width>
+		<height>75</height>
+		<textoffsetx>0</textoffsetx>
+		<texturenofocus colordiffuse="Black12">-</texturenofocus>
+		<texturefocus colordiffuse="$VAR[ColourHighlight]">-</texturefocus>
+		<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+		<selectedcolor>$VAR[ColourHighlight]</selectedcolor>
+		<focusedcolor>$VAR[ColourHighlight]</focusedcolor>
 		<radioposx>320</radioposx>
 		<radioposy>22</radioposy>
 	</include>

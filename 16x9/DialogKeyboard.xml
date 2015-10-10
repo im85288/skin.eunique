@@ -59,7 +59,8 @@
                 <posy>11</posy>
                 <height>75</height>
                 <align>center</align>
-                <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+                <textcolor>$VAR[EmbyMenuColourHighlight]</textcolor>
+                <texturenofocus colordiffuse="$VAR[EmbyMenuTextColourHighlight]">common/box.png</texturenofocus>
                 <texturefocus colordiffuse="$VAR[ColourHighlight]">common/box.png</texturefocus>
             </control>
 
@@ -499,14 +500,14 @@
                                 <top>5</top>
                                 <width>296</width>
                                 <height>70</height>
-                                <texture colordiffuse="Black12">common/box.png</texture>
+                                <texture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">common/box.png</texture>
                             </control>
                             <control type="label">
                                 <top>5</top>
                                 <width>296</width>
                                 <height>70</height>
                                 <align>center</align>
-                                <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+                                <textcolor>$VAR[EmbyMenuColourHighlight]</textcolor>
                                 <textoffsetx>5</textoffsetx>
                                 <font>Small</font>
                                 <label>$INFO[ListItem.Label]</label>

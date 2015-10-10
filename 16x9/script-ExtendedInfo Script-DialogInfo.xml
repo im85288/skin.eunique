@@ -12,11 +12,21 @@
     <onload>SetProperty(content,150)</onload>
     <onload>Dialog.Close(2003)</onload>
     <controls>
+        <control type="multiimage">
+            <left>-100</left>
+            <top>-100</top>
+            <height>1</height>
+            <width>1</width>
+            <imagepath>plugin://script.skin.helper.service/?action=getthumb&amp;path=$INFO[Window.Property(actor.title)]</imagepath>
+            <aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+            <visible>!IsEmpty(Window.Property(actor.title))</visible>
+        </control>
         <include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
         <control type="group">
+            <include>GlobalOverlay</include>
             <include>Animation.FadeIn</include>
             <include>Animation.FadeOut</include>
-            <include>GlobalOverlay</include>
+            <include>Furniture_EmbyClock</include>
         </control>
         <include condition="Skin.HasSetting(fags.out)">CerberosSmoke</include>
         <control type="image">
