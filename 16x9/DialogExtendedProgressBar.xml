@@ -6,7 +6,7 @@
     <controls>
         <control type="group">
             <right>72</right>
-            <posy>70</posy>
+            <posy>30</posy>
             <width>660</width>
             <height>100</height>
             <include>Animation.FadeIn.Slide</include>
@@ -31,23 +31,30 @@
                     <centertop>50%</centertop>
                     <width>64</width>
                     <height>64</height>
-                    <control type="image" description="Back">
-                        <centerleft>50%</centerleft>
-                        <centertop>50%</centertop>
-                        <width>100</width>
-                        <height>100</height>
-                        <aspectratio align="center" aligny="center">keep</aspectratio>
-                        <texture>dialog/loading-back-busy.png</texture>
-                        <colordiffuse>$VAR[EmbyMenuTextColourHighlight]</colordiffuse>
-                        <animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
+                    <control type="label">
+                        <aligny>center</aligny>
+                        <align>center</align>
+                        <top>6</top>
+                        <font>symbolosd</font>
+                        <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+                        <height>48</height>
+                        <width>auto</width>
+                        <label></label>
                     </control>
-                    
                     <control type="image">
                         <centerleft>50%</centerleft>
                         <centertop>50%</centertop>
-                        <width>100</width>
-                        <height>100</height>
-                        <texture>$INFO[Control.GetLabel(32),dialog/progress/p,.png]</texture>
+                        <width>90</width>
+                        <height>90</height>
+                        <texture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">nextup/30.png</texture>
+                        <aspectratio align="center">keep</aspectratio>
+                    </control>
+                    <control type="image">
+                        <centerleft>50%</centerleft>
+                        <centertop>50%</centertop>
+                        <width>90</width>
+                        <height>90</height>
+                        <texture colordiffuse="$VAR[EmbyLeftColourHighlight]">$VAR[ProgressPercent32]</texture>
                         <aspectratio align="center">keep</aspectratio>
                     </control>
                 </control>
@@ -55,17 +62,17 @@
                 <control type="label" id="30">
                     <left>104</left>
                     <top>22</top>
-                    <height>24</height>
+                    <height>31</height>
                     <aligny>center</aligny>
-                    <font>TinyBold</font>
+                    <font>SmallBold</font>
                     <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
                 </control>
                 <control type="label" id="31">
                     <left>104</left>
-                    <bottom>22</bottom>
-                    <height>24</height>
+                    <bottom>15</bottom>
+                    <height>30</height>
                     <aligny>center</aligny>
-                    <font>Tiny</font>
+                    <font>Small</font>
                     <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
                 </control>
 

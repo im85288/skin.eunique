@@ -18,152 +18,19 @@
             <onfocus condition="!Player.HasVideo + !IsEmpty(Skin.String(StartupPlaylist))">ReplaceWindow(Home)</onfocus>
             <onfocus condition="IsEmpty(Skin.String(StartupPlaylist))">AlarmClock(GoHome,ReplaceWindow(home),00:01,silent,false)</onfocus>
         </control>
-        <control type="group">
-            <top>500</top>
-            <left>550</left>
-            <control type="image">
-                <width>110</width>
-                <height>110</height>
-                <texture colordiffuse="$VAR[EmbyLeftColourHighlight]">common/box.png</texture>
-            </control>
-            <control type="label">
-                <description>Loading</description>
-                <width>110</width>
-                <height>110</height>
-                <align>center</align>
-                <aligny>center</aligny>
-                <label>E</label>
-                <font>EpisodeNumber</font>
-                <textcolor>black</textcolor>
-                <animation effect="fade" start="100" end="0" time="500" tween="quadratic">WindowClose</animation>
-                <visible>IsEmpty(Skin.String(StartupPlaylist))</visible>
-            </control>
-        </control>
-        <control type="group">
-            <top>500</top>
-            <left>670</left>
-            <control type="image">
-                <width>110</width>
-                <height>110</height>
-                <texture colordiffuse="$VAR[EmbyMiddleColourHighlight]">common/box.png</texture>
-            </control>
-            <control type="label">
-                <description>Loading</description>
-                <width>110</width>
-                <height>110</height>
-                <align>center</align>
-                <aligny>center</aligny>
-                <label>u</label>
-                <font>EpisodeNumber</font>
-                <textcolor>black</textcolor>
-                <animation effect="fade" start="100" end="0" time="500" tween="quadratic">WindowClose</animation>
-                <visible>IsEmpty(Skin.String(StartupPlaylist))</visible>
-            </control>
-        </control>
-        <control type="group">
-            <top>500</top>
-            <left>790</left>
-            <control type="image">
-                <width>110</width>
-                <height>110</height>
-                <texture colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</texture>
-            </control>
-            <control type="label">
-                <description>Loading</description>
-                <width>110</width>
-                <height>110</height>
-                <align>center</align>
-                <aligny>center</aligny>
-                <label>n</label>
-                <font>EpisodeNumber</font>
-                <textcolor>black</textcolor>
-                <animation effect="fade" start="100" end="0" time="500" tween="quadratic">WindowClose</animation>
-                <visible>IsEmpty(Skin.String(StartupPlaylist))</visible>
-            </control>
-        </control>
-        <control type="group">
-            <top>500</top>
-            <left>910</left>
-            <control type="image">
-                <width>110</width>
-                <height>110</height>
-                <texture colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
-            </control>
-            <control type="label">
-                <description>Loading</description>
-                <width>110</width>
-                <height>110</height>
-                <align>center</align>
-                <aligny>center</aligny>
-                <label>i</label>
-                <font>EpisodeNumber</font>
-                <textcolor>black</textcolor>
-                <animation effect="fade" start="100" end="0" time="500" tween="quadratic">WindowClose</animation>
-                <visible>IsEmpty(Skin.String(StartupPlaylist))</visible>
-            </control>
-        </control>
-        <control type="group">
-            <top>540</top>
-            <left>1030</left>
-            <control type="image">
-                <width>110</width>
-                <height>110</height>
-                <texture colordiffuse="$VAR[EmbyLeftColourHighlight]">common/box.png</texture>
-            </control>
-            <control type="label">
-                <description>Loading</description>
-                <width>110</width>
-                <height>110</height>
-                <align>center</align>
-                <aligny>center</aligny>
-                <label>q</label>
-                <font>EpisodeNumber</font>
-                <textcolor>black</textcolor>
-                <animation effect="fade" start="100" end="0" time="500" tween="quadratic">WindowClose</animation>
-                <visible>IsEmpty(Skin.String(StartupPlaylist))</visible>
-            </control>
-        </control>
-        <control type="group">
-            <top>500</top>
-            <left>1150</left>
-            <control type="image">
-                <width>110</width>
-                <height>110</height>
-                <texture colordiffuse="$VAR[EmbyMiddleColourHighlight]">common/box.png</texture>
-            </control>
-            <control type="label">
-                <description>Loading</description>
-                <width>110</width>
-                <height>110</height>
-                <align>center</align>
-                <aligny>center</aligny>
-                <label>u</label>
-                <font>EpisodeNumber</font>
-                <textcolor>black</textcolor>
-                <animation effect="fade" start="100" end="0" time="500" tween="quadratic">WindowClose</animation>
-                <visible>IsEmpty(Skin.String(StartupPlaylist))</visible>
-            </control>
-        </control>
-        <control type="group">
-            <top>500</top>
-            <left>1270</left>
-            <control type="image">
-                <width>110</width>
-                <height>110</height>
-                <texture colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</texture>
-            </control>
-            <control type="label">
-                <description>Loading</description>
-                <width>110</width>
-                <height>110</height>
-                <align>center</align>
-                <aligny>center</aligny>
-                <label>e</label>
-                <font>EpisodeNumber</font>
-                <textcolor>black</textcolor>
-                <animation effect="fade" start="100" end="0" time="500" tween="quadratic">WindowClose</animation>
-                <visible>IsEmpty(Skin.String(StartupPlaylist))</visible>
-            </control>
-        </control>
+        <include condition="IsEmpty(Skin.String(StartupPlaylist))" name="EuniqueLogoHorizontal">
+            <param name="left" value="550"/>
+            <param name="left2" value="670"/>
+            <param name="left3" value="790"/>
+            <param name="left4" value="910"/>
+            <param name="left5" value="1030"/>
+            <param name="left6" value="1150"/>
+            <param name="left7" value="1270"/>
+            <param name="top" value="500"/>
+            <param name="top2" value="540"/>
+            <param name="width" value="110"/>
+            <param name="height" value="110"/>
+            <param name="font" value="EpisodeNumber"/>
+        </include>
     </controls>
 </window>

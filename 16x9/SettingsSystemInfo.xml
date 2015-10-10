@@ -8,16 +8,30 @@
 		<include>Furniture_NowPlaying</include>
 		<include>Furniture_HeaderEmby</include>
 		<include>Furniture_EmbyClock</include>
+		<include condition="IsEmpty(Skin.String(StartupPlaylist))" name="EuniqueLogoHorizontal">
+			<param name="left" value="550"/>
+			<param name="left2" value="670"/>
+			<param name="left3" value="790"/>
+			<param name="left4" value="910"/>
+			<param name="left5" value="1030"/>
+			<param name="left6" value="1150"/>
+			<param name="left7" value="1270"/>
+			<param name="top" value="950"/>
+			<param name="top2" value="970"/>
+			<param name="width" value="80"/>
+			<param name="height" value="80"/>
+			<param name="font" value="TitleHeader"/>
+		</include>
 		<control type="group">
 			<include>Animation.Common</include>
 			<left>NewSidePad</left>
 			<right>NewSidePad</right>
 			<top>TopPad</top>
-			<height>730</height>
+			<height>790</height>
 			<control type="image">
 				<top>107</top>
 				<left>480</left>
-				<height>607</height>
+				<height>668</height>
 				<texture colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
 			</control>
 			<control type="image">
@@ -201,7 +215,7 @@
 				</control>
 				<control type="group">
 					<left>480</left>
-					<top>580</top>
+					<top>640</top>
 					<control type="label">
 						<description>CPU Text</description>
 						<font>Tiny</font>
