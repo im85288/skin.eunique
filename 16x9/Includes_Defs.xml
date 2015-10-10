@@ -1860,7 +1860,7 @@
 		</focusedlayout>
 	</include>
 
-	<include name="BigDefExtendedInfoList">
+	<include name="BigDefExtendedInfoList150">
 		<left>683</left>
 		<top>690</top>
 		<bottom>10</bottom>
@@ -1880,7 +1880,99 @@
 			<include>DefExtendedInfoItemContent</include>
 		</itemlayout>
 		<focusedlayout height="310" width="207">
-			<include>DefExtendedInfoFocusContent</include>
+			<include>DefExtendedInfoFocusContent150</include>
+		</focusedlayout>
+	</include>
+	<include name="BigDefExtendedInfoList250">
+		<left>683</left>
+		<top>690</top>
+		<bottom>10</bottom>
+		<width>1920</width>
+		<ondown>9000</ondown>
+		<onup>94988</onup>
+		<preloaditems>2</preloaditems>
+		<orientation>horizontal</orientation>
+		<pagecontrol>60</pagecontrol>
+		<viewtype label="536">list</viewtype>
+		<scrolltime tween="quadratic">400</scrolltime>
+		<include>Animation.FadeIn.Slide</include>
+		<orientation>horizontal</orientation>
+		<preloaditems>2</preloaditems>
+		<scrolltime tween="quadratic">400</scrolltime>
+		<itemlayout height="310" width="207">
+			<include>DefExtendedInfoItemContent</include>
+		</itemlayout>
+		<focusedlayout height="310" width="207">
+			<include>DefExtendedInfoFocusContent250</include>
+		</focusedlayout>
+	</include>
+	<include name="BigDefExtendedInfoList450">
+		<left>683</left>
+		<top>690</top>
+		<bottom>10</bottom>
+		<width>1920</width>
+		<ondown>9000</ondown>
+		<onup>94988</onup>
+		<preloaditems>2</preloaditems>
+		<orientation>horizontal</orientation>
+		<pagecontrol>60</pagecontrol>
+		<viewtype label="536">list</viewtype>
+		<scrolltime tween="quadratic">400</scrolltime>
+		<include>Animation.FadeIn.Slide</include>
+		<orientation>horizontal</orientation>
+		<preloaditems>2</preloaditems>
+		<scrolltime tween="quadratic">400</scrolltime>
+		<itemlayout height="310" width="207">
+			<include>DefExtendedInfoItemContent</include>
+		</itemlayout>
+		<focusedlayout height="310" width="207">
+			<include>DefExtendedInfoFocusContent450</include>
+		</focusedlayout>
+	</include>
+	<include name="BigDefExtendedInfoList550">
+		<left>683</left>
+		<top>690</top>
+		<bottom>10</bottom>
+		<width>1920</width>
+		<ondown>9000</ondown>
+		<onup>94988</onup>
+		<preloaditems>2</preloaditems>
+		<orientation>horizontal</orientation>
+		<pagecontrol>60</pagecontrol>
+		<viewtype label="536">list</viewtype>
+		<scrolltime tween="quadratic">400</scrolltime>
+		<include>Animation.FadeIn.Slide</include>
+		<orientation>horizontal</orientation>
+		<preloaditems>2</preloaditems>
+		<scrolltime tween="quadratic">400</scrolltime>
+		<itemlayout height="310" width="207">
+			<include>DefExtendedInfoItemContent</include>
+		</itemlayout>
+		<focusedlayout height="310" width="207">
+			<include>DefExtendedInfoFocusContent550</include>
+		</focusedlayout>
+	</include>
+	<include name="BigDefExtendedInfoList650">
+		<left>683</left>
+		<top>690</top>
+		<bottom>10</bottom>
+		<width>1920</width>
+		<ondown>9000</ondown>
+		<onup>94988</onup>
+		<preloaditems>2</preloaditems>
+		<orientation>horizontal</orientation>
+		<pagecontrol>60</pagecontrol>
+		<viewtype label="536">list</viewtype>
+		<scrolltime tween="quadratic">400</scrolltime>
+		<include>Animation.FadeIn.Slide</include>
+		<orientation>horizontal</orientation>
+		<preloaditems>2</preloaditems>
+		<scrolltime tween="quadratic">400</scrolltime>
+		<itemlayout height="310" width="207">
+			<include>DefExtendedInfoItemContent</include>
+		</itemlayout>
+		<focusedlayout height="310" width="207">
+			<include>DefExtendedInfoFocusContent650</include>
 		</focusedlayout>
 	</include>
 
@@ -1981,7 +2073,7 @@
 			<include>DefExtendedInfoItemContent</include>
 		</itemlayout>
 		<focusedlayout height="310" width="552">
-			<include>DefExtendedInfoFocusContent</include>
+			<include>DefExtendedInfoFocusContent350</include>
 		</focusedlayout>
 	</include>
 
@@ -2466,6 +2558,328 @@
 				<effect type="zoom" start="100" end="110" time="200" center="auto" tween="quadratic" easing="out"/>
 			</animation>
 			<visible>Control.HasFocus(1350)</visible>
+		</control>
+		<control type="textbox">
+			<left>5</left>
+			<right>5</right>
+			<top>30</top>
+			<bottom>30</bottom>
+			<align>center</align>
+			<aligny>center</aligny>
+			<font>Tiny</font>
+			<textcolor>white2</textcolor>
+			<selectedcolor>white2</selectedcolor>
+			<label>$INFO[ListItem.Rating]$INFO[ListItem.Votes,[CR](, $LOCALIZE[20350])]</label>
+		</control>
+		<animation type="Focus" reversible="false">
+			<effect type="zoom" start="100" end="110" time="200" center="auto" tween="quadratic" easing="out"/>
+		</animation>
+	</include>
+
+	<include name="DefExtendedInfoFocusContent150">
+		<control type="label">
+			<left>0</left>
+			<top>0</top>
+			<right>0</right>
+			<bottom>0</bottom>
+			<height>210</height>
+			<aligny>center</aligny>
+			<align>center</align>
+			<font>symbolbiggest</font>
+			<label></label>
+			<textcolor>white</textcolor>
+			<fadetime>300</fadetime>
+		</control>
+		<control type="image">
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture background="true" fallback="DefaultPicture.png">$INFO[ListItem.Icon]</texture>
+			<visible>!Control.HasFocus(150)</visible>
+		</control>
+		<control type="image">
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture colordiffuse="$VAR[ColourHighlight]" background="true" fallback="DefaultPicture.png">$INFO[ListItem.Icon]</texture>
+			<animation type="Conditional" reversible="true" condition="Control.HasFocus(150)">
+				<effect type="zoom" start="100" end="110" time="200" center="auto" tween="quadratic" easing="out"/>
+			</animation>
+			<visible>Control.HasFocus(150)</visible>
+		</control>
+		<control type="textbox">
+			<left>5</left>
+			<right>5</right>
+			<top>30</top>
+			<bottom>30</bottom>
+			<align>center</align>
+			<aligny>center</aligny>
+			<font>Tiny</font>
+			<textcolor>white2</textcolor>
+			<selectedcolor>white2</selectedcolor>
+			<label>$INFO[ListItem.Rating]$INFO[ListItem.Votes,[CR](, $LOCALIZE[20350])]</label>
+		</control>
+		<control type="label">
+			<centerleft>50%</centerleft>
+			<top>50</top>
+			<width>112</width>
+			<height>112</height>
+			<label></label>
+			<textcolor>$INFO[Window(home).Property(ImageColor)]</textcolor>
+			<focusedcolor>$INFO[Window(home).Property(ImageColor)]</focusedcolor>
+			<font>symbolbiggest</font>
+			<aligny>center</aligny>
+			<align>center</align>
+			<animation type="Focus">
+				<effect type="zoom" start="90" end="100" time="150" tween="sine" easing="inout" center="auto" />
+				<effect type="fade" start="0" end="100" time="150" tween="sine" easing="in" />
+			</animation>
+			<animation type="Unfocus">
+				<effect type="zoom" start="100" end="90" time="150" tween="sine" easing="inout" center="auto" />
+				<effect type="fade" start="100" end="0" time="150" tween="sine" easing="out" />
+			</animation>
+			<visible>!substring(ListItem.Path,script.extendedinfo)</visible>
+		</control>
+		<animation type="Focus" reversible="false">
+			<effect type="zoom" start="100" end="110" time="200" center="auto" tween="quadratic" easing="out"/>
+		</animation>
+	</include>
+	<include name="DefExtendedInfoFocusContent250">
+		<control type="label">
+			<left>0</left>
+			<top>0</top>
+			<right>0</right>
+			<bottom>0</bottom>
+			<height>210</height>
+			<aligny>center</aligny>
+			<align>center</align>
+			<font>symbolbiggest</font>
+			<label></label>
+			<textcolor>white</textcolor>
+			<fadetime>300</fadetime>
+		</control>
+		<control type="image">
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture background="true" fallback="DefaultPicture.png">$INFO[ListItem.Icon]</texture>
+			<visible>!Control.HasFocus(250)</visible>
+		</control>
+		<control type="image">
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture colordiffuse="$VAR[ColourHighlight]" background="true" fallback="DefaultPicture.png">$INFO[ListItem.Icon]</texture>
+			<animation type="Conditional" reversible="true" condition="Control.HasFocus(250)">
+				<effect type="zoom" start="100" end="110" time="200" center="auto" tween="quadratic" easing="out"/>
+			</animation>
+			<visible>Control.HasFocus(250)</visible>
+		</control>
+		<control type="textbox">
+			<left>5</left>
+			<right>5</right>
+			<top>30</top>
+			<bottom>30</bottom>
+			<align>center</align>
+			<aligny>center</aligny>
+			<font>Tiny</font>
+			<textcolor>white2</textcolor>
+			<selectedcolor>white2</selectedcolor>
+			<label>$INFO[ListItem.Rating]$INFO[ListItem.Votes,[CR](, $LOCALIZE[20350])]</label>
+		</control>
+		<control type="label">
+			<centerleft>50%</centerleft>
+			<top>50</top>
+			<width>112</width>
+			<height>112</height>
+			<label></label>
+			<textcolor>$INFO[Window(home).Property(ImageColor)]</textcolor>
+			<focusedcolor>$INFO[Window(home).Property(ImageColor)]</focusedcolor>
+			<font>symbolbiggest</font>
+			<aligny>center</aligny>
+			<align>center</align>
+			<animation type="Focus">
+				<effect type="zoom" start="90" end="100" time="150" tween="sine" easing="inout" center="auto" />
+				<effect type="fade" start="0" end="100" time="150" tween="sine" easing="in" />
+			</animation>
+			<animation type="Unfocus">
+				<effect type="zoom" start="100" end="90" time="150" tween="sine" easing="inout" center="auto" />
+				<effect type="fade" start="100" end="0" time="150" tween="sine" easing="out" />
+			</animation>
+			<visible>!substring(ListItem.Path,script.extendedinfo)</visible>
+		</control>
+		<animation type="Focus" reversible="false">
+			<effect type="zoom" start="100" end="110" time="200" center="auto" tween="quadratic" easing="out"/>
+		</animation>
+	</include>
+	<include name="DefExtendedInfoFocusContent350">
+		<control type="label">
+			<left>0</left>
+			<top>0</top>
+			<right>0</right>
+			<bottom>0</bottom>
+			<height>210</height>
+			<aligny>center</aligny>
+			<align>center</align>
+			<font>symbolbiggest</font>
+			<label></label>
+			<textcolor>white</textcolor>
+			<fadetime>300</fadetime>
+		</control>
+		<control type="image">
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture background="true" fallback="DefaultPicture.png">$INFO[ListItem.Icon]</texture>
+			<visible>!Control.HasFocus(350)</visible>
+		</control>
+		<control type="image">
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture colordiffuse="$VAR[ColourHighlight]" background="true" fallback="DefaultPicture.png">$INFO[ListItem.Icon]</texture>
+			<animation type="Conditional" reversible="true" condition="Control.HasFocus(350)">
+				<effect type="zoom" start="100" end="110" time="200" center="auto" tween="quadratic" easing="out"/>
+			</animation>
+			<visible>Control.HasFocus(350)</visible>
+		</control>
+		<control type="textbox">
+			<left>5</left>
+			<right>5</right>
+			<top>30</top>
+			<bottom>30</bottom>
+			<align>center</align>
+			<aligny>center</aligny>
+			<font>Tiny</font>
+			<textcolor>white2</textcolor>
+			<selectedcolor>white2</selectedcolor>
+			<label>$INFO[ListItem.Rating]$INFO[ListItem.Votes,[CR](, $LOCALIZE[20350])]</label>
+		</control>
+		<control type="label">
+			<centerleft>50%</centerleft>
+			<top>50</top>
+			<width>112</width>
+			<height>112</height>
+			<label></label>
+			<textcolor>$INFO[Window(home).Property(ImageColor)]</textcolor>
+			<focusedcolor>$INFO[Window(home).Property(ImageColor)]</focusedcolor>
+			<font>symbolbiggest</font>
+			<aligny>center</aligny>
+			<align>center</align>
+			<animation type="Focus">
+				<effect type="zoom" start="90" end="100" time="150" tween="sine" easing="inout" center="auto" />
+				<effect type="fade" start="0" end="100" time="150" tween="sine" easing="in" />
+			</animation>
+			<animation type="Unfocus">
+				<effect type="zoom" start="100" end="90" time="150" tween="sine" easing="inout" center="auto" />
+				<effect type="fade" start="100" end="0" time="150" tween="sine" easing="out" />
+			</animation>
+			<visible>!substring(ListItem.Path,script.extendedinfo)</visible>
+		</control>
+		<animation type="Focus" reversible="false">
+			<effect type="zoom" start="100" end="110" time="200" center="auto" tween="quadratic" easing="out"/>
+		</animation>
+	</include>
+	<include name="DefExtendedInfoFocusContent450">
+		<control type="label">
+			<left>0</left>
+			<top>0</top>
+			<right>0</right>
+			<bottom>0</bottom>
+			<height>210</height>
+			<aligny>center</aligny>
+			<align>center</align>
+			<font>symbolbiggest</font>
+			<label></label>
+			<textcolor>white</textcolor>
+			<fadetime>300</fadetime>
+		</control>
+		<control type="image">
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture background="true" fallback="DefaultPicture.png">$INFO[ListItem.Icon]</texture>
+			<visible>!Control.HasFocus(450)</visible>
+		</control>
+		<control type="image">
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture colordiffuse="$VAR[ColourHighlight]" background="true" fallback="DefaultPicture.png">$INFO[ListItem.Icon]</texture>
+			<animation type="Conditional" reversible="true" condition="Control.HasFocus(450)">
+				<effect type="zoom" start="100" end="110" time="200" center="auto" tween="quadratic" easing="out"/>
+			</animation>
+			<visible>Control.HasFocus(450)</visible>
+		</control>
+		<control type="textbox">
+			<left>5</left>
+			<right>5</right>
+			<top>30</top>
+			<bottom>30</bottom>
+			<align>center</align>
+			<aligny>center</aligny>
+			<font>Tiny</font>
+			<textcolor>white2</textcolor>
+			<selectedcolor>white2</selectedcolor>
+			<label>$INFO[ListItem.Rating]$INFO[ListItem.Votes,[CR](, $LOCALIZE[20350])]</label>
+		</control>
+		<animation type="Focus" reversible="false">
+			<effect type="zoom" start="100" end="110" time="200" center="auto" tween="quadratic" easing="out"/>
+		</animation>
+	</include>
+	<include name="DefExtendedInfoFocusContent550">
+		<control type="label">
+			<left>0</left>
+			<top>0</top>
+			<right>0</right>
+			<bottom>0</bottom>
+			<height>210</height>
+			<aligny>center</aligny>
+			<align>center</align>
+			<font>symbolbiggest</font>
+			<label></label>
+			<textcolor>white</textcolor>
+			<fadetime>300</fadetime>
+		</control>
+		<control type="image">
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture colordiffuse="$VAR[ColourHighlight]" background="true" fallback="DefaultPicture.png">$INFO[ListItem.Icon]</texture>
+			<visible>!Control.HasFocus(550)</visible>
+		</control>
+		<control type="image">
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture colordiffuse="$VAR[ColourHighlight]" background="true" fallback="DefaultPicture.png">$INFO[ListItem.Icon]</texture>
+			<animation type="Conditional" reversible="true" condition="Control.HasFocus(550)">
+				<effect type="zoom" start="100" end="110" time="200" center="auto" tween="quadratic" easing="out"/>
+			</animation>
+			<visible>Control.HasFocus(550)</visible>
+		</control>
+		<control type="textbox">
+			<left>5</left>
+			<right>5</right>
+			<top>30</top>
+			<bottom>30</bottom>
+			<align>center</align>
+			<aligny>center</aligny>
+			<font>Tiny</font>
+			<textcolor>white2</textcolor>
+			<selectedcolor>white2</selectedcolor>
+			<label>$INFO[ListItem.Rating]$INFO[ListItem.Votes,[CR](, $LOCALIZE[20350])]</label>
+		</control>
+		<animation type="Focus" reversible="false">
+			<effect type="zoom" start="100" end="110" time="200" center="auto" tween="quadratic" easing="out"/>
+		</animation>
+	</include>
+	<include name="DefExtendedInfoFocusContent650">
+		<control type="label">
+			<left>0</left>
+			<top>0</top>
+			<right>0</right>
+			<bottom>0</bottom>
+			<height>210</height>
+			<aligny>center</aligny>
+			<align>center</align>
+			<font>symbolbiggest</font>
+			<label></label>
+			<textcolor>white</textcolor>
+			<fadetime>300</fadetime>
+		</control>
+		<control type="image">
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture background="true" fallback="DefaultPicture.png">$INFO[ListItem.Icon]</texture>
+			<visible>!Control.HasFocus(650)</visible>
+		</control>
+		<control type="image">
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture colordiffuse="$VAR[ColourHighlight]" background="true" fallback="DefaultPicture.png">$INFO[ListItem.Icon]</texture>
+			<animation type="Conditional" reversible="true" condition="Control.HasFocus(650)">
+				<effect type="zoom" start="100" end="110" time="200" center="auto" tween="quadratic" easing="out"/>
+			</animation>
+			<visible>Control.HasFocus(650)</visible>
 		</control>
 		<control type="textbox">
 			<left>5</left>
