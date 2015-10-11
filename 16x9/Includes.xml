@@ -266,6 +266,7 @@
         <value condition="!IsEmpty(Window(home).Property(ExtendedInfo_fanart)) + Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml)">$INFO[Window(home).Property(ExtendedInfo_fanart)]</value>
         <value condition="Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml) + !IsEmpty(Window(Home).Property(SkinHelper.ListItemThumb))">$INFO[Window(Home).Property(SkinHelper.ListItemThumb)]</value>
         <value condition="Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml) + IsEmpty(Window(Home).Property(SkinHelper.ListItemThumb))">special://skin/extras/backgrounds/Avatar.jpg</value>
+        <value condition="Window.IsVisible(script-ExtendedInfo Script-VideoList.xml) + Control.HasFocus(500) + !IsEmpty(Container(500).ListItem.Property(Fanart_small))">$INFO[Container(500).ListItem.Property(Fanart_small)]</value>
         <value condition="Window.IsVisible(script-ExtendedInfo Script-VideoList.xml) + Control.HasFocus(500) + !IsEmpty(Container(500).ListItem.Art(fanart))">$INFO[Container(500).ListItem.Art(fanart)]</value>
         <value condition="Window.IsVisible(home) + Control.HasFocus(3016)">$INFO[Container(3016).ListItem.Art(fanart)]</value>
         <value condition="Window.IsVisible(home) + Control.HasFocus(3017)">$INFO[Container(3017).ListItem.Art(fanart)]</value>
