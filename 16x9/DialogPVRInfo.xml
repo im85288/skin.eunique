@@ -35,19 +35,25 @@
 						<control type="image">
 							<width>207</width>
 							<height>116</height>
-							<texture>$INFO[Window(home).Property(SkinHelper.PVR.ChannelLogo)]</texture>
+							<texture>$INFO[Window(home).Property(SkinHelper.PVR.Thumb)]</texture>
 							<aspectratio align="center" aligny="center">stretch</aspectratio>
 							<fadetime>50</fadetime>
-							<visible>!IsEmpty(Window(home).Property(SkinHelper.PVR.Poster))</visible>
 						</control>
 						<control type="image">
 							<left>-217</left>
 							<width>207</width>
 							<height>116</height>
-							<texture>$INFO[Window(home).Property(SkinHelper.PVR.Thumb)]</texture>
-							<aspectratio align="center" aligny="center">scale</aspectratio>
+							<texture>$INFO[Window(home).Property(SkinHelper.PVR.Landscape)]</texture>
+							<aspectratio align="center" aligny="center">stretch</aspectratio>
 							<fadetime>50</fadetime>
-							<visible>!IsEmpty(Window(home).Property(SkinHelper.PVR.Poster))</visible>
+						</control>
+						<control type="image">
+							<left>-434</left>
+							<width>207</width>
+							<height>116</height>
+							<texture>$INFO[Window(home).Property(SkinHelper.PVR.ChannelLogo)]</texture>
+							<aspectratio align="center" aligny="center">stretch</aspectratio>
+							<fadetime>50</fadetime>
 						</control>
 					</control>
 					<control type="group">
@@ -61,14 +67,14 @@
 					<width>50%</width>
 					<height>50%</height>
                     <aspectratio scalediffuse="false">scale</aspectratio>
-                    <texture colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]" background="true">$VAR[FocusedBorderImage]</texture>
+                    <texture colordiffuse="$INFO[Window(home).Property(PVRInfo.ImageColor)]" background="true">$VAR[FocusedBorderImage]</texture>
                 </control>
                 <control type="image">
 					<left>50%</left>
 					<width>50%</width>
 					<height>50%</height>
                     <aspectratio scalediffuse="false">scale</aspectratio>
-                    <texture colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]" background="true">$VAR[FocusedBorderImage]</texture>
+                    <texture colordiffuse="$INFO[Window(home).Property(PVRInfo.ImageColor)]" background="true">$VAR[FocusedBorderImage]</texture>
                 </control>
                 <control type="image">
 					<left>0</left>
@@ -76,7 +82,7 @@
 					<width>50%</width>
 					<height>50%</height>
                     <aspectratio scalediffuse="false">scale</aspectratio>
-                    <texture colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]" background="true" flipy="true">$VAR[FocusedBorderImage]</texture>
+                    <texture colordiffuse="$INFO[Window(home).Property(PVRInfo.ImageColor)]" background="true" flipy="true">$VAR[FocusedBorderImage]</texture>
                 </control>
                 <control type="image">
 					<left>50%</left>
@@ -84,7 +90,7 @@
 					<width>50%</width>
 					<height>50%</height>
                     <aspectratio scalediffuse="false">scale</aspectratio>
-                    <texture colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]" background="true" flipy="true">$VAR[FocusedBorderImage]</texture>
+                    <texture colordiffuse="$INFO[Window(home).Property(PVRInfo.ImageColor)]" background="true" flipy="true">$VAR[FocusedBorderImage]</texture>
                 </control>
                     <animation type="conditional" condition="true" reversible="false">
                         <effect type="zoom" start="100" end="108" time="200" center="auto" tween="quadratic" easing="out"/>
@@ -121,6 +127,19 @@
 								<animation type="conditional" condition="true" reversible="false">
 									<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
 								</animation>
+								<visible>!IsEmpty(Window(home).Property(SkinHelper.PVR.ChannelLogo))</visible>
+							</control>
+							<control type="image">
+								<left>3</left>
+								<top>470</top>
+								<width>613</width>
+								<height>450</height>
+								<aspectratio scalediffuse="false">stretch</aspectratio>
+								<texture fallback="pvr/background.jpg" background="true">$INFO[Window(home).Property(SkinHelper.PVR.Landscape)]</texture>
+								<animation type="conditional" condition="true" reversible="false">
+									<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
+								</animation>
+								<visible>IsEmpty(Window(home).Property(SkinHelper.PVR.ChannelLogo))</visible>
 							</control>
 						</control>
 						<animation type="conditional" condition="true" reversible="false">
@@ -265,13 +284,23 @@
 					<right>10</right>
 					<bottom>224</bottom>
 					<top>TopPad</top>
+						<control type="image">
+							<top>-150</top>
+							<width>800</width>
+							<height>210</height>
+							<texture>$INFO[Window(home).Property(SkinHelper.PVR.Logo)]</texture>
+							<aspectratio align="left" aligny="bottom">keep</aspectratio>
+							<fadetime>50</fadetime>
+							<visible>!IsEmpty(Window(home).Property(SkinHelper.PVR.Logo))</visible>
+						</control>
 						<control type="label">
-					<left>-8</left>
+							<left>-8</left>
 							<description>Header Label</description>
 							<font>EpisodeNumber</font>
 							<textcolor>white</textcolor>
 							<height>60</height>
 							<label>$INFO[ListItem.Title]</label>
+							<visible>IsEmpty(Window(home).Property(SkinHelper.PVR.Logo))</visible>
 						</control>
 					<control type="grouplist">
 							<top>85</top>
@@ -290,171 +319,80 @@
 							<visible>!IsEmpty(ListItem.EpisodeName)</visible>
 							<height>36</height>
 							<control type="label">
-								<width>150</width>
 								<height>36</height>
 								<font>SmallBold</font>
 								<textcolor>white</textcolor>
-								<label>[B]$LOCALIZE[21442][/B]</label>
+								<label>[B]$LOCALIZE[21442][/B]$INFO[ListItem.EpisodeName, ,]</label>
 								<aligny>center</aligny>
-						<align>right</align>
-					<animation type="conditional" condition="true" reversible="false">
-						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
-					</animation>
-							</control>
-							<control type="label">
-								<left>150</left>
-								<width>100%</width>
-								<height>36</height>
-								<font>SmallBold</font>
-								<textcolor>white2</textcolor>
-								<label fallback="19055">  $INFO[ListItem.EpisodeName]</label>
-								<aligny>center</aligny>
+						<align>left</align>
 							</control>
 						</control>
 						<control type="group">
 							<visible>!IsEmpty(ListItem.Season)</visible>
 							<height>36</height>
 							<control type="label">
-								<width>150</width>
 								<height>36</height>
 								<font>SmallBold</font>
 								<textcolor>white</textcolor>
-								<label>[B]$LOCALIZE[20373][/B]</label>
+								<label>[B]$LOCALIZE[20373][/B]$INFO[ListItem.Season, ,]</label>
 								<aligny>center</aligny>
-						<align>right</align>
-					<animation type="conditional" condition="true" reversible="false">
-						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
-					</animation>
-							</control>
-							<control type="label">
-								<left>150</left>
-								<width>100%</width>
-								<height>36</height>
-								<font>SmallBold</font>
-								<textcolor>white2</textcolor>
-								<label fallback="19055">  $INFO[ListItem.Season]</label>
-								<aligny>center</aligny>
+						<align>left</align>
 							</control>
 						</control>
 						<control type="group">
 							<visible>!IsEmpty(ListItem.Episode)</visible>
 							<height>36</height>
 							<control type="label">
-								<width>150</width>
 								<height>36</height>
 								<font>SmallBold</font>
 								<textcolor>white</textcolor>
-								<label>[B]$LOCALIZE[20359][/B]</label>
+								<label>[B]$LOCALIZE[20359][/B]$INFO[ListItem.Episode, ,]</label>
 								<aligny>center</aligny>
-						<align>right</align>
-					<animation type="conditional" condition="true" reversible="false">
-						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
-					</animation>
-							</control>
-							<control type="label">
-								<left>150</left>
-								<width>100%</width>
-								<height>36</height>
-								<font>SmallBold</font>
-								<textcolor>white2</textcolor>
-								<label fallback="19055">  $INFO[ListItem.Episode]</label>
-								<aligny>center</aligny>
+						<align>left</align>
 							</control>
 						</control>
 						<control type="group">
 							<height>36</height>
 							<control type="label">
-								<width>150</width>
 								<height>36</height>
 								<font>SmallBold</font>
 								<textcolor>white</textcolor>
-								<label>[B]$LOCALIZE[2050][/B]</label>
+								<label>[B]$LOCALIZE[2050][/B] $INFO[ListItem.Duration,, $LOCALIZE[12391]]</label>
 								<aligny>center</aligny>
-						<align>right</align>
-					<animation type="conditional" condition="true" reversible="false">
-						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
-					</animation>
-							</control>
-							<control type="label">
-								<left>150</left>
-								<width>100%</width>
-								<height>36</height>
-								<font>SmallBold</font>
-								<textcolor>white2</textcolor>
-								<label fallback="19055">  $INFO[ListItem.Duration,, $LOCALIZE[12391]]</label>
-								<aligny>center</aligny>
+						<align>left</align>
 							</control>
 						</control>
 						<control type="group">
 							<height>36</height>
 							<control type="label">
-								<width>150</width>
 								<height>36</height>
 								<font>SmallBold</font>
 								<textcolor>white</textcolor>
-								<label>[B]$LOCALIZE[19126][/B]</label>
+								<label>[B]$LOCALIZE[19126][/B] $INFO[ListItem.StartDate] - $INFO[ListItem.StartTime]</label>
 								<aligny>center</aligny>
-						<align>right</align>
-					<animation type="conditional" condition="true" reversible="false">
-						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
-					</animation>
-							</control>
-							<control type="label">
-								<left>150</left>
-								<width>100%</width>
-								<height>36</height>
-								<font>SmallBold</font>
-								<textcolor>white2</textcolor>
-								<label fallback="19055">  $INFO[ListItem.StartDate] - $INFO[ListItem.StartTime]</label>
-								<aligny>center</aligny>
+						<align>left</align>
 							</control>
 						</control>
 						<control type="group">
 							<height>36</height>
 							<control type="label">
-								<width>150</width>
 								<height>36</height>
 								<font>SmallBold</font>
 								<textcolor>white</textcolor>
-								<label>[B]$LOCALIZE[19127][/B]</label>
+								<label>[B]$LOCALIZE[19127][/B] $INFO[ListItem.EndDate] - $INFO[ListItem.EndTime]</label>
 								<aligny>center</aligny>
-						<align>right</align>
-					<animation type="conditional" condition="true" reversible="false">
-						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
-					</animation>
-							</control>
-							<control type="label">
-								<left>150</left>
-								<width>100%</width>
-								<height>36</height>
-								<font>SmallBold</font>
-								<textcolor>white2</textcolor>
-								<label fallback="19055">  $INFO[ListItem.EndDate] - $INFO[ListItem.EndTime]</label>
-								<aligny>center</aligny>
+						<align>left</align>
 							</control>
 						</control>
 						<control type="group">
 							<height>36</height>
 							<control type="label">
-								<width>150</width>
 								<height>36</height>
 								<font>SmallBold</font>
 								<textcolor>white</textcolor>
-								<label>[B]$LOCALIZE[515][/B]</label>
+								<label>[B]$LOCALIZE[515][/B] $INFO[ListItem.Genre]</label>
 								<aligny>center</aligny>
-						<align>right</align>
-					<animation type="conditional" condition="true" reversible="false">
-						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
-					</animation>
-							</control>
-							<control type="label">
-								<left>150</left>
-								<width>100%</width>
-								<height>36</height>
-								<font>SmallBold</font>
-								<textcolor>white2</textcolor>
-								<label fallback="19055">  $INFO[ListItem.Genre]</label>
-								<aligny>center</aligny>
+						<align>left</align>
 							</control>
 						</control>
 						<control type="group">
