@@ -223,8 +223,18 @@
 					<bottom>10</bottom>
 					<fadetime>200</fadetime>
 					<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-					<texture diffuse="diffuse/pvrinfo.png" background="true" fallback="pvr/background.jpg">$VAR[ListItem.Thumb]</texture>
-					<visible>!Player.HasVideo + IsEmpty(Window(Home).Property(SkinHelper.PVR.Thumb)) + IsEmpty(Window(Home).Property(SkinHelper.PVR.FanArt))</visible>
+					<texture diffuse="diffuse/pvrinfo.png" background="true" fallback="pvr/background.jpg">$INFO[Window(Home).Property(SkinHelper.PVR.ChannelLogo)]</texture>
+					<visible>!Player.HasVideo + IsEmpty(Window(Home).Property(SkinHelper.PVR.Thumb)) + IsEmpty(Window(Home).Property(SkinHelper.PVR.FanArt)) + IsEmpty(Window(Home).Property(SkinHelper.PVR.Landscape))</visible>
+				</control>
+				<control type="image">
+					<left>10</left>
+					<top>10</top>
+					<right>10</right>
+					<bottom>10</bottom>
+					<fadetime>200</fadetime>
+					<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+					<texture diffuse="diffuse/pvrinfo.png" background="true" fallback="pvr/background.jpg">$INFO[Window(Home).Property(SkinHelper.PVR.Landscape)]</texture>
+					<visible>!Player.HasVideo + !IsEmpty(Window(Home).Property(SkinHelper.PVR.Landscape))</visible>
 				</control>
 				<control type="image">
 					<left>10</left>
@@ -234,7 +244,7 @@
 					<fadetime>200</fadetime>
 					<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 					<texture diffuse="diffuse/pvrinfo.png" background="true" fallback="pvr/background.jpg">$INFO[Window(Home).Property(SkinHelper.PVR.Thumb)]</texture>
-					<visible>!Player.HasVideo + !IsEmpty(Window(Home).Property(SkinHelper.PVR.Thumb))</visible>
+					<visible>!Player.HasVideo + !IsEmpty(Window(Home).Property(SkinHelper.PVR.Thumb)) + IsEmpty(Window(Home).Property(SkinHelper.PVR.Landscape))</visible>
 				</control>
 				<control type="image">
 					<left>10</left>
@@ -244,7 +254,7 @@
 					<fadetime>200</fadetime>
 					<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 					<texture diffuse="diffuse/pvrinfo.png" background="true" fallback="pvr/background.jpg">$INFO[Window(Home).Property(SkinHelper.PVR.FanArt)]</texture>
-					<visible>!Player.HasVideo + IsEmpty(Window(Home).Property(SkinHelper.PVR.Thumb))</visible>
+					<visible>!Player.HasVideo + IsEmpty(Window(Home).Property(SkinHelper.PVR.Thumb)) + IsEmpty(Window(Home).Property(SkinHelper.PVR.Landscape))</visible>
 				</control>
 			</control>
 			<control type="group">
@@ -252,6 +262,14 @@
 				<right>20</right>
 				<posy>370</posy>
 				<height>540</height>
+				<control type="image">
+					<top>0</top>
+					<height>50</height>
+					<texture>$INFO[Window(home).Property(SkinHelper.PVR.Logo)]</texture>
+					<aspectratio align="center" aligny="bottom">keep</aspectratio>
+					<fadetime>50</fadetime>
+					<visible>!IsEmpty(Window(home).Property(SkinHelper.PVR.Logo))</visible>
+				</control>
 				<control type="label">
 					<top>20</top>
 					<aligny>center</aligny>
@@ -261,6 +279,7 @@
 					<textcolor>white</textcolor>
 					<selectedcolor>white</selectedcolor>
 					<label>$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]</label>
+					<visible>IsEmpty(Window(home).Property(SkinHelper.PVR.Logo))</visible>
 				</control>
 				<control type="label">
 					<top>20</top>
