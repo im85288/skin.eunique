@@ -3259,8 +3259,20 @@
 					<width>410</width>
 					<height>245</height>
 					<texture colordiffuse="$VAR[EmbyLeftColourHighlight]">common/white.png</texture>
-					<visible>!Control.HasFocus(30133)</visible>
+					<visible>!Control.HasFocus(30133) + IsEmpty(Window(Home).Property(SkinHelper.UnwatchedMoviesBackground))</visible>
 				</control>
+					<control type="multiimage">
+						<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
+						<left>SidePad</left>
+						<posy>790</posy>
+						<width>410</width>
+						<height>245</height>
+						<timeperimage>20000</timeperimage>
+						<randomize>true</randomize>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<imagepath background="true">$INFO[Window(Home).Property(SkinHelper.UnwatchedMoviesBackground)]</imagepath>
+						<visible>!Control.HasFocus(30133) + !IsEmpty(Window(Home).Property(SkinHelper.UnwatchedMoviesBackground))</visible>
+					</control>
 				<control type="label">
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
 					<description>All music</description>
@@ -4031,8 +4043,20 @@
 					<width>410</width>
 					<height>245</height>
 					<texture colordiffuse="$VAR[EmbyLeftColourHighlight]">common/white.png</texture>
-					<visible>!Control.HasFocus(40133)</visible>
+					<visible>!Control.HasFocus(40133) + IsEmpty(Window(Home).Property(SkinHelper.AllTvShowsBackground))</visible>
 				</control>
+					<control type="multiimage">
+						<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+						<left>SidePad</left>
+						<posy>790</posy>
+						<width>410</width>
+						<height>245</height>
+						<timeperimage>20000</timeperimage>
+						<randomize>true</randomize>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<imagepath background="true">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground)]</imagepath>
+						<visible>!Control.HasFocus(40133) + !IsEmpty(Window(Home).Property(SkinHelper.AllTvShowsBackground))</visible>
+					</control>
 				<control type="label">
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
 					<description>All music</description>
