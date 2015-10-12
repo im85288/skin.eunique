@@ -1005,7 +1005,7 @@
                         </control>
                         <control type="image">
                             <aspectratio scalediffuse="false">stretch</aspectratio>
-                            <texture background="true">$VAR[PosterImage]</texture>
+                            <texture colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]" background="true">$VAR[PosterImage]</texture>
                         </control>
                     </itemlayout>
                     <focusedlayout height="210" width="140">
@@ -1892,7 +1892,7 @@
                     </control>
                     <control type="image">
                         <aspectratio scalediffuse="false">stretch</aspectratio>
-                        <texture background="true">$VAR[PosterImage]</texture>
+                        <texture colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]" background="true">$VAR[PosterImage]</texture>
                     </control>
                 </itemlayout>
                 <focusedlayout height="210" width="140">
