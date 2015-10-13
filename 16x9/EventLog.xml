@@ -11,17 +11,7 @@
 		<control type="group">
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
-			<visible>ControlGroup(9000).HasFocus()</visible>
 			<include>GlobalOverlay</include>
-		</control>
-		<control type="image">
-			<description>Section header image</description>
-			<left>20</left>
-			<top>3</top>
-			<width>35</width>
-			<height>35</height>
-			<aspectratio>keep</aspectratio>
-			<texture>icon_events.png</texture>
 		</control>
 		<control type="group">
 			<visible>Control.IsVisible(570)</visible>
@@ -173,15 +163,13 @@
 				<top>115</top>
 				<width>435</width>
 				<height>1080</height>
-				<onleft>9000</onleft>
-				<onright>ClearProperty(MediaMenu,Home)</onright>
-				<onright condition="![Window.IsVisible(tvguide) | Window.IsActive(SettingsCategory.xml)]">50</onright>
-				<onright condition="Window.IsVisible(tvguide)">10</onright>
-				<onright condition="Window.IsActive(SettingsCategory.xml)">3</onright>
 				<onup>9000</onup>
 				<ondown>9000</ondown>
 				<onback>570</onback>
+				<onleft>570</onleft>
+				<onright>570</onright>
 				<itemgap>0</itemgap>
+				<animation effect="slide" start="-440,0" end="0,0" time="400" tween="quadratic" easing="out">Visible</animation>
 				<control type="label" id="200">
 					<height>42</height>
 					<textoffsetx>5</textoffsetx>

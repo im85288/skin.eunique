@@ -1417,28 +1417,6 @@
 	<include name="HomeEmbyRow">
 		<!-- Home Row -->
 		<control type="group">
-			<!--<control type="image">
-				<include>Animation.FadeIn.Delay</include>
-				<include>Animation.FadeOut</include>
-				<animation effect="fade" start="100" end="00" condition="control.hasfocus(302)" time="200">Conditional</animation>
-				<visible>IntegerGreaterThan(Container(300).NumItems,8)</visible>
-				<bottom>893</bottom>
-				<left>32</left>
-				<width>16</width>
-				<height>16</height>
-				<texture colordiffuse="Dark2" flipx="true">common/arrow-small-right.png</texture>
-			</control>
-			<control type="image">
-				<include>Animation.FadeIn.Delay</include>
-				<include>Animation.FadeOut</include>
-				<animation effect="fade" start="100" end="00" condition="control.hasfocus(302)" time="200">Conditional</animation>
-				<visible>IntegerGreaterThan(Container(300).NumItems,8)</visible>
-				<bottom>893</bottom>
-				<right>32</right>
-				<width>16</width>
-				<height>16</height>
-				<texture colordiffuse="Dark2" flipx="false">common/arrow-small-right.png</texture>
-			</control>-->
 			<control type="list" id="300">
 				<animation effect="slide" end="0,58" condition="control.hasfocus(302)" time="200">Conditional</animation>
 				<include>Animation.FadeIn.Delay</include>
@@ -1567,6 +1545,10 @@
 				<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 				<font>HomeEmby</font>
 				<label>$INFO[ListItem.Label]</label>
+				<animation effect="slide" start="0,0" end="0,-20" time="0" reversible="true" center="auto">Focus</animation>
+				<animation effect="slide" start="0,0" end="0,20" time="0" reversible="true" center="auto" condition="!ControlGroup.HasFocus(300) + !control.hasfocus(302)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,-20" time="0" reversible="true" center="auto" condition="control.hasfocus(302)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,-40" time="0" reversible="true" center="auto" condition="control.hasfocus(8308) | control.hasfocus(3634) | control.hasfocus(3635)">Conditional</animation>
 			</control>
 			<control type="image">
 				<top>0</top>
@@ -3270,7 +3252,7 @@
 						<timeperimage>20000</timeperimage>
 						<randomize>true</randomize>
 						<aspectratio scalediffuse="false">scale</aspectratio>
-						<imagepath background="true">$INFO[Window(Home).Property(SkinHelper.UnwatchedMoviesBackground)]</imagepath>
+						<imagepath colordiffuse="$VAR[EmbyLeftColourHighlight]" background="true">$INFO[Window(Home).Property(SkinHelper.UnwatchedMoviesBackground)]</imagepath>
 						<visible>!Control.HasFocus(30133) + !IsEmpty(Window(Home).Property(SkinHelper.UnwatchedMoviesBackground))</visible>
 					</control>
 				<control type="label">
@@ -4054,7 +4036,7 @@
 						<timeperimage>20000</timeperimage>
 						<randomize>true</randomize>
 						<aspectratio scalediffuse="false">scale</aspectratio>
-						<imagepath background="true">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground)]</imagepath>
+						<imagepath colordiffuse="$VAR[EmbyLeftColourHighlight]" background="true">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground)]</imagepath>
 						<visible>!Control.HasFocus(40133) + !IsEmpty(Window(Home).Property(SkinHelper.AllTvShowsBackground))</visible>
 					</control>
 				<control type="label">

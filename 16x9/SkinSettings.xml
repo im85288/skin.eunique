@@ -177,13 +177,6 @@
 					<label2>[COLOR=$VAR[ColourSelected]]$INFO[Skin.String(cdartlocation)][/COLOR]</label2>
 					<onclick>Skin.SetPath(cdartlocation)</onclick>
 				</control>
-				<control type="button" id="9216111">
-					<width>1410</width>
-					<include>DefSettingsButton2</include>
-					<onclick>Skin.SetPath(weatherfanart)</onclick>
-					<label>$LOCALIZE[31143]</label>
-					<label2>[COLOR=$VAR[ColourSelected]]$INFO[Skin.String(weatherfanart)][/COLOR]</label2>
-				</control>
 			</control>
 			<control type="grouplist" id="9007">
 				<description>Custom Widgets control area</description>
@@ -984,6 +977,13 @@
 					<label2>$INFO[Skin.String(weatherfanart.name)]</label2>
 					<onclick>RunScript(script.image.resource.select,property=weatherfanart&amp;type=resource.images.weatherfanart)</onclick>
 					<visible>System.HasAddon(script.image.resource.select)</visible>
+				</control>
+				<control type="button" id="92931">
+					<width>1410</width>
+					<include>DefSettingsButton2</include>
+					<onclick>Skin.SetPath(weatherfanart)</onclick>
+					<label>$LOCALIZE[31143]</label>
+					<label2>[COLOR=$VAR[ColourSelected]]$INFO[Skin.String(weatherfanart)][/COLOR]</label2>
 				</control>
 			</control>
 		</control>
