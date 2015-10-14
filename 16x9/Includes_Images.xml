@@ -138,6 +138,12 @@
 		<value condition="!IsEmpty(Player.Art(fanart))">$INFO[Player.Art(fanart)]</value>
 		<value condition="IsEmpty(Player.Art(fanart))">special://skin/extras/backgrounds/headphones.jpg</value>
 	</variable>
+	<variable name="BannerOnly">
+		<value condition="!IsEmpty(Window(Home).Property(SkinHelper.Music.BannerArt))">$INFO[Window(Home).Property(SkinHelper.Music.BannerArt)]</value>
+		<value condition="!IsEmpty(ListItem.Art(tvshow.banner))">$INFO[ListItem.Art(tvshow.banner)]</value>
+		<value condition="!IsEmpty(ListItem.Art(banner))">$INFO[ListItem.Art(banner)]</value>
+		<value condition="!IsEmpty(ListItem.Property(banner))">$INFO[ListItem.Property(banner)]</value>
+	</variable>
 	<variable name="BannerImage">
 		<value condition="!IsEmpty(Window(Home).Property(SkinHelper.Music.BannerArt))">$INFO[Window(Home).Property(SkinHelper.Music.BannerArt)]</value>
 		<value condition="!IsEmpty(ListItem.Art(tvshow.banner))">$INFO[ListItem.Art(tvshow.banner)]</value>
@@ -436,6 +442,15 @@
 		<value condition="!IsEmpty(Window(home).Property(SkinHelper.PVR.FanArt))">$INFO[Window(home).Property(SkinHelper.PVR.FanArt)]</value>
 		<value condition="!IsEmpty(Window(home).Property(SkinHelper.PVR.Landscape))">$INFO[Window(home).Property(SkinHelper.PVR.Landscape)]</value>
 		<value condition="!IsEmpty(Window(home).Property(SkinHelper.PVR.Thumb))">$INFO[Window(home).Property(SkinHelper.PVR.Thumb)]</value>
+		<value>pvr/background.jpg</value>
+	</variable>
+
+
+	<variable name="PVRLandscape">
+		<value condition="!IsEmpty(Window(home).Property(SkinHelper.PVR.Landscape))">$INFO[Window(home).Property(SkinHelper.PVR.Landscape)]</value>
+		<value condition="!IsEmpty(Window(home).Property(SkinHelper.PVR.FanArt))">$INFO[Window(home).Property(SkinHelper.PVR.FanArt)]</value>
+		<value condition="!IsEmpty(Window(home).Property(SkinHelper.PVR.Thumb))">$INFO[Window(home).Property(SkinHelper.PVR.Thumb)]</value>
+		<value condition="!IsEmpty(Window(home).Property(SkinHelper.PVR.ChannelLogo))">$INFO[Window(home).Property(SkinHelper.PVR.ChannelLogo)]</value>
 		<value>pvr/background.jpg</value>
 	</variable>
 

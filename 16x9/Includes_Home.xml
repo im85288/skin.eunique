@@ -32,6 +32,44 @@
 	</include>
 	<include name="Furniture_HeaderEmby">
 		<control type="grouplist">
+			<top>10</top>
+			<left>NewSidePad</left>
+			<visible>!ControlGroup(303).HasFocus(101)</visible>
+			<visible>!Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)</visible>
+			<include condition="!Window.IsVisible(script-ExtendedInfo Script-VideoList.xml)">Animation.FurnitureFadeInOut</include>
+			<include condition="Window.IsVisible(script-ExtendedInfo Script-VideoList.xml)">FurnitureFadeInOutExtended</include>
+			<orientation>horizontal</orientation>
+			<itemgap>24</itemgap>
+			<control type="group" description="iconbox">
+				<width>30</width>
+				<height>30</height>
+				<control type="image">
+					<texture diffuse="common/circle.png">$INFO[Window(Home).Property(EmbyAdditionalUserImage.0)]</texture>
+					<visible>System.HasAddon(plugin.video.emby)</visible>
+					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
+					<visible>!IsEmpty(Window(Home).Property(EmbyAdditionalUserImage.0))</visible>
+				</control>
+				<control type="image">
+					<texture diffuse="common/circle.png">$INFO[Window(Home).Property(EmbyAdditionalUserImage.1)]</texture>
+					<visible>System.HasAddon(plugin.video.emby)</visible>
+					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
+					<visible>!IsEmpty(Window(Home).Property(EmbyAdditionalUserImage.1))</visible>
+				</control>
+				<control type="image">
+					<texture diffuse="common/circle.png">$INFO[Window(Home).Property(EmbyAdditionalUserImage.2)]</texture>
+					<visible>System.HasAddon(plugin.video.emby)</visible>
+					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
+					<visible>!IsEmpty(Window(Home).Property(EmbyAdditionalUserImage.2))</visible>
+				</control>
+				<control type="image">
+					<texture diffuse="common/circle.png">$INFO[Window(Home).Property(EmbyAdditionalUserImage.3)]</texture>
+					<visible>System.HasAddon(plugin.video.emby)</visible>
+					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
+					<visible>!IsEmpty(Window(Home).Property(EmbyAdditionalUserImage.3))</visible>
+				</control>
+			</control>
+		</control>
+		<control type="grouplist">
 			<top>50</top>
 			<left>NewSidePad</left>
 			<visible>!ControlGroup(303).HasFocus(101)</visible>
@@ -77,7 +115,11 @@
 					<onright>3635</onright>
 					<onup>303</onup>
 					<ondown>300</ondown>
-					<onclick>RunPlugin("plugin://plugin.video.emby?mode=userprefs")</onclick>
+					<onclick>SetProperty(Dialog.1.Label,$LOCALIZE[31963])</onclick>
+					<onclick>SetProperty(Dialog.1.BuiltIn,RunPlugin("plugin://plugin.video.emby?mode=userprefs"))</onclick>
+					<onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31964])</onclick>
+					<onclick>SetProperty(Dialog.2.BuiltIn,RunPlugin("plugin://plugin.video.emby?mode=adduser"))</onclick>
+					<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31965])</onclick>
 					<onback>300</onback>
 					<font>Button</font>
 					<texturefocus>-</texturefocus>
@@ -6211,7 +6253,6 @@
 					<width>410</width>
 					<height>460</height>
 					<onup>300</onup>
-					<onup>ClearProperty(SkinHelper.ListItemThumb,home)</onup>
 					<ondown>7016</ondown>
 					<onleft condition="IntegerGreaterThan(Container(7016).NumItems,0)">7012</onleft>
 					<onleft condition="!IntegerGreaterThan(Container(7016).NumItems,0)">70121</onleft>
@@ -6293,15 +6334,6 @@
 				</control>
 				<control type="group">
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
-					<control type="multiimage">
-						<left>-100</left>
-						<top>-100</top>
-						<height>1</height>
-						<width>1</width>
-						<imagepath>plugin://script.skin.helper.service/?action=getthumb&amp;path=$INFO[Container(7016).ListItem.Title] $INFO[Container(7016).ListItem.ChannelName]</imagepath>
-						<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-						<visible>Control.HasFocus(7016)</visible>
-					</control>
 					<control type="group">
 						<top>330</top>
 						<left>1390</left>
@@ -6320,18 +6352,18 @@
 								<fadetime>200</fadetime>
 								<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 								<texture diffuse="common/box.png" background="true" fallback="pvr/background.jpg">$INFO[Container(7016).ListItem.Thumb]</texture>
-								<visible>IsEmpty(Window(Home).Property(SkinHelper.ListItemThumb))</visible>
+								<visible>IsEmpty(Window(home).Property(SkinHelper.PVR.Landscape)) + IsEmpty(Window(home).Property(SkinHelper.PVR.FanArt)) + IsEmpty(Window(home).Property(SkinHelper.PVR.Thumb)) + IsEmpty(Window(home).Property(SkinHelper.PVR.ChannelLogo))</visible>
 							</control>
 							<control type="image">
 								<fadetime>200</fadetime>
 								<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-								<texture diffuse="common/box.png" background="true" fallback="pvr/background.jpg">$INFO[Window(Home).Property(SkinHelper.ListItemThumb)]</texture>
-								<visible>!IsEmpty(Window(Home).Property(SkinHelper.ListItemThumb))</visible>
+								<texture diffuse="common/box.png" background="true" fallback="pvr/background.jpg">$VAR[PVRLandscape]</texture>
+								<visible>!IsEmpty(Window(home).Property(SkinHelper.PVR.Landscape)) | !IsEmpty(Window(home).Property(SkinHelper.PVR.FanArt)) | !IsEmpty(Window(home).Property(SkinHelper.PVR.Thumb)) | !IsEmpty(Window(home).Property(SkinHelper.PVR.ChannelLogo))</visible>
 							</control>
 							<control type="image">
 								<description>Title overlay</description>
 								<texture colordiffuse="44000000">common/white.png</texture>
-								<visible>!IsEmpty(Window(Home).Property(SkinHelper.ListItemThumb))</visible>
+								<visible>!IsEmpty(Window(home).Property(SkinHelper.PVR.Landscape)) | !IsEmpty(Window(home).Property(SkinHelper.PVR.FanArt)) | !IsEmpty(Window(home).Property(SkinHelper.PVR.Thumb)) | !IsEmpty(Window(home).Property(SkinHelper.PVR.ChannelLogo))</visible>
 							</control>
 							<control type="image">
 								<bottom>35</bottom>
@@ -6341,9 +6373,8 @@
 								<fadetime>200</fadetime>
 								<aspectratio align="right" aligny="bottom" scalediffuse="false">keep</aspectratio>
 								<texture diffuse="common/box.png" background="true">$INFO[Container(7016).ListItem.Thumb]</texture>
-								<visible>!IsEmpty(Window(Home).Property(SkinHelper.ListItemThumb))</visible>
+								<visible>[!IsEmpty(Window(home).Property(SkinHelper.PVR.Landscape)) | !IsEmpty(Window(home).Property(SkinHelper.PVR.FanArt)) | !IsEmpty(Window(home).Property(SkinHelper.PVR.Thumb))] + IsEmpty(Window(home).Property(SkinHelper.PVR.ChannelLogo))</visible>
 							</control>
-
 							<control type="image">
 								<description>Title overlay</description>
 								<bottom>0</bottom>
@@ -6369,6 +6400,14 @@
 							<right>5</right>
 							<top>317</top>
 							<height>143</height>
+							<control type="image">
+								<top>0</top>
+								<height>50</height>
+								<texture>$INFO[Window(home).Property(SkinHelper.PVR.Logo)]</texture>
+								<aspectratio align="center" aligny="bottom">keep</aspectratio>
+								<fadetime>50</fadetime>
+								<visible>!IsEmpty(Window(home).Property(SkinHelper.PVR.Logo))</visible>
+							</control>
 							<control type="label">
 								<top>2</top>
 								<aligny>center</aligny>
@@ -6378,6 +6417,7 @@
 								<textcolor>white</textcolor>
 								<selectedcolor>white</selectedcolor>
 								<label>$INFO[Container(7016).ListItem.Season,,x]$INFO[Container(7016).ListItem.Episode,,. ]$INFO[Container(7016).ListItem.Title]$INFO[Container(7016).ListItem.EpisodeName, (,)]</label>
+								<visible>IsEmpty(Window(home).Property(SkinHelper.PVR.Logo))</visible>
 							</control>
 							<control type="label">
 								<top>2</top>
@@ -6432,6 +6472,14 @@
 							<right>5</right>
 							<top>317</top>
 							<height>143</height>
+							<control type="image">
+								<top>0</top>
+								<height>50</height>
+								<texture>$INFO[Window(home).Property(SkinHelper.PVR.Logo)]</texture>
+								<aspectratio align="center" aligny="bottom">keep</aspectratio>
+								<fadetime>50</fadetime>
+								<visible>!IsEmpty(Window(home).Property(SkinHelper.PVR.Logo))</visible>
+							</control>
 							<control type="label">
 								<top>2</top>
 								<aligny>center</aligny>
@@ -6441,6 +6489,7 @@
 								<textcolor>white</textcolor>
 								<selectedcolor>white</selectedcolor>
 								<label>$INFO[Container(7016).ListItem.Season,,x]$INFO[Container(7016).ListItem.Episode,,. ]$INFO[Container(7016).ListItem.Title]$INFO[Container(7016).ListItem.EpisodeName, (,)]</label>
+								<visible>IsEmpty(Window(home).Property(SkinHelper.PVR.Logo))</visible>
 							</control>
 							<control type="label">
 								<top>2</top>

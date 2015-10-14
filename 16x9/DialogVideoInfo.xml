@@ -641,9 +641,9 @@
                     <focusedcolor>$VAR[EmbyLeftColourHighlight]</focusedcolor>
                     <texturefocus colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]">common/box.png</texturefocus>
                     <texturenofocus colordiffuse="$VAR[EmbyLeftColourHighlight]">common/box.png</texturenofocus>
-                    <onclick>SetProperty(Dialog.1.Label,Extra Info)</onclick>
+                    <onclick>SetProperty(Dialog.1.Label,$LOCALIZE[31147])</onclick>
                     <onclick>SetProperty(Dialog.1.BuiltIn,RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[ListItem.Director]))</onclick>
-                    <onclick>SetProperty(Dialog.2.Label,Search on Youtube)</onclick>
+                    <onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31752])</onclick>
                     <onclick>SetProperty(Dialog.2.BuiltIn,SetProperty(listcontent,$INFO[ListItem.Director],home)||ActivateWindow(1168))</onclick>
                     <onclick>RunScript(script.toolbox,info=selectdialog,header=$INFO[ListItem.Director])</onclick>
                     <visible>Container.Content(movies)</visible>
