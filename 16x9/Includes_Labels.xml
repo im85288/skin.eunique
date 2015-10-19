@@ -248,7 +248,7 @@
 	</variable>
 	<variable name="EmbyWidget16Label">
 		<value condition="!IsEmpty(Skin.String(movies4widget.name))">$INFO[Skin.String(movies4widget.name)]</value>
-		<value>$LOCALIZE[31782]$INFO[Container(10017).ListItem.Property(originaltitle), ","]</value>
+		<value>$LOCALIZE[31782]$INFO[Container(10017).ListItem.Property(similartitle), ","]</value>
 	</variable>
 	<variable name="EmbyWidget17Label">
 		<value condition="!IsEmpty(Skin.String(music4widget.name))">$INFO[Skin.String(music4widget.name)]</value>
@@ -267,7 +267,7 @@
 		<value condition="Stringcompare(Skin.String(widgetvideoinfo),RandomMovies)">$LOCALIZE[31127]</value>
 		<value condition="Stringcompare(Skin.String(widgetvideoinfo),RecentMovies)">$LOCALIZE[31124]</value>
 		<value condition="Stringcompare(Skin.String(widgetvideoinfo),RecommendedMovies)">$LOCALIZE[31794]</value>
-		<value condition="Stringcompare(Skin.String(widgetvideoinfo),SimilarMovies)">$LOCALIZE[31782]$INFO[Container(3016).ListItem.Property(originaltitle), ","]</value>
+		<value condition="Stringcompare(Skin.String(widgetvideoinfo),SimilarMovies)">$LOCALIZE[31782]$INFO[Container(3016).ListItem.Property(similartitle), ","]</value>
 		<value condition="Stringcompare(Skin.String(widgetvideoinfo),TrendingMovies)">$LOCALIZE[31134]</value>
 		<value condition="Stringcompare(Skin.String(widgetvideoinfo),InCinemas)">$LOCALIZE[31208]</value>
 		<value condition="Stringcompare(Skin.String(widgetvideoinfo),Upcoming)">$LOCALIZE[31223]</value>
@@ -310,7 +310,7 @@
 		<value condition="Stringcompare(Skin.String(widgetvideoinfocast),RandomMovies)">$LOCALIZE[31127]</value>
 		<value condition="Stringcompare(Skin.String(widgetvideoinfocast),RecentMovies)">$LOCALIZE[31124]</value>
 		<value condition="Stringcompare(Skin.String(widgetvideoinfocast),RecommendedMovies)">$LOCALIZE[31794]</value>
-		<value condition="Stringcompare(Skin.String(widgetvideoinfocast),SimilarMovies)">$LOCALIZE[31782]$INFO[Container(3016).ListItem.Property(originaltitle), ","]</value>
+		<value condition="Stringcompare(Skin.String(widgetvideoinfocast),SimilarMovies)">$LOCALIZE[31782]$INFO[Container(3016).ListItem.Property(similartitle), ","]</value>
 		<value condition="Stringcompare(Skin.String(widgetvideoinfocast),TrendingMovies)">$LOCALIZE[31134]</value>
 		<value condition="Stringcompare(Skin.String(widgetvideoinfocast),InCinemas)">$LOCALIZE[31208]</value>
 		<value condition="Stringcompare(Skin.String(widgetvideoinfocast),Upcoming)">$LOCALIZE[31223]</value>
@@ -444,15 +444,15 @@
 		<value condition="[Player.Seeking | Player.DisplayAfterSeek] + !IsEmpty(Player.SeekOffset)">$LOCALIZE[773]$INFO[Player.SeekOffset, ,]</value>
 		<value condition="Player.Seeking + IsEmpty(Player.SeekOffset)">$LOCALIZE[773]$INFO[Player.SeekStepSize, ,]</value>
 		<value condition="Player.Paused">$LOCALIZE[112]</value>
-		<value condition="!Player.HasVideo + !IsEmpty(MusicPlayer.offset(1).Title)">[B]$INFO[MusicPlayer.TrackNumber][/B]$INFO[MusicPlayer.PlaylistLength,/] [B]$LOCALIZE[209]...  [/B]$INFO[MusicPlayer.offset(1).Title]</value>
+		<value condition="!Player.HasVideo + !IsEmpty(MusicPlayer.offset(1).Title)">[B]$INFO[MusicPlayer.TrackNumber][/B]$INFO[MusicPlayer.PlaylistLength,/] [B]$LOCALIZE[209]..  [/B]$INFO[MusicPlayer.offset(1).Title]</value>
 		<value condition="Player.Playing">$LOCALIZE[31236]</value>
 		<value>$INFO[Player.FinishTime,$LOCALIZE[31106] ,]</value>
 	</variable>
 	<variable name="LabelNextRecordingHeader">
-		<value condition="Pvr.HasTimer">$LOCALIZE[19157]...</value>
+		<value condition="Pvr.HasTimer">$LOCALIZE[19157]..</value>
 	</variable>
 	<variable name="LabelNowRecordingHeader">
-		<value condition="Pvr.IsRecording">$LOCALIZE[19158]...</value>
+		<value condition="Pvr.IsRecording">$LOCALIZE[19158]..</value>
 	</variable>
 	<variable name="LabelNextRecording">
 		<value condition="Pvr.HasTimer">[COLOR=$VAR[ColourHighlight]]$INFO[Pvr.NextRecordingTitle][/COLOR]$INFO[Pvr.NextRecordingDateTime, ,]$INFO[Pvr.NextRecordingChannel, ,]</value>
@@ -660,45 +660,39 @@
 		<value>white</value>
 	</variable>
 	<variable name="ResumeColourHighlight">
-		<value condition="Skin.HasSetting(ResumeColour)">$INFO[Skin.String(resume.colour.name)]</value>
-		<value condition="!Skin.HasSetting(ResumeColour) + Skin.HasSetting(ColourHighlight2)">$INFO[Skin.String(focuscolor2.name)]</value>
-		<value condition="!Skin.HasSetting(ResumeColour) + !Skin.HasSetting(ColourHighlight2)">Highlight2</value>
+		<value condition="Skin.HasSetting(ResumeColour) + !IsEmpty(Skin.String(resume.colour.name))">$INFO[Skin.String(resume.colour.name)]</value>
+		<value>Highlight2</value>
 	</variable>
 	<variable name="PlayingColourHighlight">
-		<value condition="Skin.HasSetting(PlayingColour)">$INFO[Skin.String(playing.colour.name)]</value>
-		<value condition="!Skin.HasSetting(PlayingColour) + Skin.HasSetting(ColourHighlight2)">$INFO[Skin.String(focuscolor2.name)]</value>
-		<value condition="!Skin.HasSetting(PlayingColour) + !Skin.HasSetting(ColourHighlight2)">Highlight2</value>
+		<value condition="Skin.HasSetting(PlayingColour) + !IsEmpty(Skin.String(playing.colour.name))">$INFO[Skin.String(playing.colour.name)]</value>
+		<value>Highlight2</value>
 	</variable>
 	<variable name="NewColourHighlight">
-		<value condition="Skin.HasSetting(NewColour)">$INFO[Skin.String(new.colour.name)]</value>
-		<value condition="!Skin.HasSetting(NewColour) + Skin.HasSetting(ColourHighlight2)">$INFO[Skin.String(focuscolor2.name)]</value>
-		<value condition="!Skin.HasSetting(NewColour) + !Skin.HasSetting(ColourHighlight2)">Highlight2</value>
+		<value condition="Skin.HasSetting(NewColour) + !IsEmpty(Skin.String(new.colour.name))">$INFO[Skin.String(new.colour.name)]</value>
+		<value>Highlight2</value>
 	</variable>
 	<variable name="WatchedColourHighlight">
-		<value condition="Skin.HasSetting(WatchedColour)">$INFO[Skin.String(watched.colour.name)]</value>
-		<value condition="!Skin.HasSetting(WatchedColour) + Skin.HasSetting(ColourHighlight2)">$INFO[Skin.String(focuscolor2.name)]</value>
-		<value condition="!Skin.HasSetting(WatchedColour) + !Skin.HasSetting(ColourHighlight2)">Highlight2</value>
+		<value condition="Skin.HasSetting(WatchedColour) + !IsEmpty(Skin.String(watched.colour.name))">$INFO[Skin.String(watched.colour.name)]</value>
+		<value>Highlight2</value>
 	</variable>
 	<variable name="UnwatchedColourHighlight">
-		<value condition="Skin.HasSetting(UnwatchedColour)">$INFO[Skin.String(unwatched.colour.name)]</value>
-		<value condition="!Skin.HasSetting(UnwatchedColour) + Skin.HasSetting(ColourHighlight2)">$INFO[Skin.String(focuscolor2.name)]</value>
-		<value condition="!Skin.HasSetting(UnwatchedColour) + !Skin.HasSetting(ColourHighlight2)">Highlight2</value>
+		<value condition="Skin.HasSetting(UnwatchedColour) + !IsEmpty(Skin.String(unwatched.colour.name))">$INFO[Skin.String(unwatched.colour.name)]</value>
+		<value>Highlight2</value>
 	</variable>
 	<variable name="PercentColourHighlight">
-		<value condition="Skin.HasSetting(PosterBackingColour)">$INFO[Skin.String(posterbacking.colour.name)]</value>
-		<value condition="Skin.HasSetting(ColourHighlight)">$INFO[Skin.String(focuscolor.name)]</value>
-		<value condition="!Skin.HasSetting(ColourHighlight)">Highlight</value>
+		<value condition="Skin.HasSetting(PosterBackingColour) + !IsEmpty(Skin.String(posterbacking.colour.name))">$INFO[Skin.String(posterbacking.colour.name)]</value>
+		<value>Highlight</value>
 	</variable>
 	<variable name="EmbyLeftColourHighlight">
-		<value condition="Skin.HasSetting(emby.left.colour)">$INFO[Skin.String(emby.left.colour.name)]</value>
+		<value condition="Skin.HasSetting(emby.left.colour) + !IsEmpty(Skin.String(emby.left.colour.name))">$INFO[Skin.String(emby.left.colour.name)]</value>
 		<value>dark pastel blue</value>
 	</variable>
 	<variable name="EmbyRightColourHighlight">
-		<value condition="Skin.HasSetting(emby.right.colour)">$INFO[Skin.String(emby.right.colour.name)]</value>
+		<value condition="Skin.HasSetting(emby.right.colour) + !IsEmpty(Skin.String(emby.right.colour.name))">$INFO[Skin.String(emby.right.colour.name)]</value>
 		<value>dark pastel green</value>
 	</variable>
 	<variable name="EmbyMiddleColourHighlight">
-		<value condition="Skin.HasSetting(emby.middle.colour)">$INFO[Skin.String(emby.middle.colour.name)]</value>
+		<value condition="Skin.HasSetting(emby.middle.colour) + !IsEmpty(Skin.String(emby.middle.colour.name))">$INFO[Skin.String(emby.middle.colour.name)]</value>
 		<value>dark pastel red</value>
 	</variable>
 	<variable name="SelectionColourHighlight">
@@ -728,23 +722,23 @@
 		<value>dark pastel red</value>
 	</variable>
 	<variable name="EmbyMenuColourHighlight">
-		<value condition="Skin.HasSetting(emby.menu.colour)">$INFO[Skin.String(emby.menu.colour.name)]</value>
+		<value condition="Skin.HasSetting(emby.menu.colour) + !IsEmpty(Skin.String(emby.menu.colour.name))">$INFO[Skin.String(emby.menu.colour.name)]</value>
 		<value>white</value>
 	</variable>
 	<variable name="EmbyMenuTextColourHighlight">
-		<value condition="Skin.HasSetting(emby.menu.text.colour)">$INFO[Skin.String(emby.menu.text.colour.name)]</value>
+		<value condition="Skin.HasSetting(emby.menu.text.colour) + !IsEmpty(Skin.String(remby.menu.text.colour.name))">$INFO[Skin.String(emby.menu.text.colour.name)]</value>
 		<value>black2</value>
 	</variable>
 	<variable name="ColourFlags">
-		<value condition="Skin.HasSetting(emby.flags.colour)">$INFO[Skin.String(emby.flags.colour.name)]</value>
+		<value condition="Skin.HasSetting(emby.flags.colour) + !IsEmpty(Skin.String(emby.flags.colour.name))">$INFO[Skin.String(emby.flags.colour.name)]</value>
 		<value>north texas green</value>
 	</variable>
 	<variable name="ColourTextFlags">
-		<value condition="Skin.HasSetting(emby.flags.text.colour)">$INFO[Skin.String(emby.flags.text.colour.name)]</value>
+		<value condition="Skin.HasSetting(emby.flags.text.colour) + !IsEmpty(Skin.String(emby.flags.text.colour.name))">$INFO[Skin.String(emby.flags.text.colour.name)]</value>
 		<value>black</value>
 	</variable>
 	<variable name="ColourIconFlags">
-		<value condition="Skin.HasSetting(emby.flags.icon.colour)">$INFO[Skin.String(emby.flags.icon.colour.name)]</value>
+		<value condition="Skin.HasSetting(emby.flags.icon.colour) + !IsEmpty(Skin.String(emby.flags.icon.colour.name))">$INFO[Skin.String(emby.flags.icon.colour.name)]</value>
 		<value>black</value>
 	</variable>
 	<variable name="3ColumnHighlight">
@@ -998,11 +992,11 @@
 		<value condition="StringCompare(VideoPlayer.VideoAspect,1.78)">16:9</value>
 		<value condition="StringCompare(VideoPlayer.VideoAspect,1.85)">16:9</value>
 		<value condition="!IsEmpty(VideoPlayer.VideoAspect)">$INFO[VideoPlayer.VideoAspect]</value>
-		<value condition="StringCompare(Container(301).ListItem..VideoAspect,1.33)">4:3</value>
-		<value condition="StringCompare(Container(301).ListItem..VideoAspect,1.37)">4:3</value>
-		<value condition="StringCompare(Container(301).ListItem..VideoAspect,1.78)">16:9</value>
-		<value condition="StringCompare(Container(301).ListItem..VideoAspect,1.85)">16:9</value>
-		<value condition="!IsEmpty(Container(301).ListItem..VideoAspect)">$INFO[Container(301).ListItem..VideoAspect]</value>
+		<value condition="StringCompare(Container(301).ListItem.VideoAspect,1.33)">4:3</value>
+		<value condition="StringCompare(Container(301).ListItem.VideoAspect,1.37)">4:3</value>
+		<value condition="StringCompare(Container(301).ListItem.VideoAspect,1.78)">16:9</value>
+		<value condition="StringCompare(Container(301).ListItem.VideoAspect,1.85)">16:9</value>
+		<value condition="!IsEmpty(Container(301).ListItem.VideoAspect)">$INFO[Container(301).ListItem.VideoAspect]</value>
 		<value>$INFO[ListItem.VideoAspect]</value>
 	</variable>
 
@@ -1021,10 +1015,10 @@
 		<value condition="SubString(Window.Property(movie.VideoCodec),MPEG2)">MPEG2</value>
 		<value condition="SubString(Window.Property(movie.VideoCodec),MPEG4)">MPEG4</value>
 		<value condition="!IsEmpty(Window.Property(movie.VideoCodec))">$INFO[Window.Property(movie.VideoCodec)]</value>
-		<value condition="SubString(Container(301).ListItem..VideoCodec,H264)">H.264</value>
-		<value condition="SubString(Container(301).ListItem..VideoCodec,H265)">H.265</value>
-		<value condition="SubString(Container(301).ListItem..VideoCodec,MPEG2)">MPEG2</value>
-		<value condition="!IsEmpty(Container(301).ListItem..VideoCodec)">$INFO[Container(301).ListItem..VideoCodec]</value>
+		<value condition="SubString(Container(301).ListItem.VideoCodec,H264)">H.264</value>
+		<value condition="SubString(Container(301).ListItem.VideoCodec,H265)">H.265</value>
+		<value condition="SubString(Container(301).ListItem.VideoCodec,MPEG2)">MPEG2</value>
+		<value condition="!IsEmpty(Container(301).ListItem.VideoCodec)">$INFO[Container(301).ListItem.VideoCodec]</value>
 		<value>$INFO[ListItem.VideoCodec]</value>
 	</variable>
 
@@ -1121,5 +1115,10 @@
 	<variable name="ArtistLabel">
 		<value condition="Container.Content(albums) + !IsEmpty(ListItem.AlbumArtist)">$INFO[ListItem.AlbumArtist]</value>
 		<value>$INFO[ListItem.Artist]</value>
+	</variable>
+
+	<variable name="LabelHomeStyle">
+		<value condition="!Skin.HasSetting(home.vertical)">$LOCALIZE[31248]</value>
+		<value condition="Skin.HasSetting(home.vertical)">$LOCALIZE[31250]</value>
 	</variable>
 </includes>

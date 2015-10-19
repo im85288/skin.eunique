@@ -425,6 +425,10 @@
 		<value condition="IntegerGreaterThan(Control.GetLabel(32),0)">nextup/00.png</value>
 	</variable>
 
+	<variable name="LanguageFlagsIcon">
+		<value condition="System.HasAddon(script.image.resource.select) + !IsEmpty(Skin.String(languageflags.path))">$INFO[Skin.String(languageflags.path)]</value>
+		<value>resource://resource.images.languageflags.colour/</value>
+	</variable>
 	<variable name="WeatherIconVar">
 		<value condition="System.HasAddon(script.image.resource.select) + !IsEmpty(Skin.String(weathericons.path))">$INFO[Skin.String(weathericons.path)]</value>
 		<value>resource://resource.images.weathericons.default/</value>
@@ -436,6 +440,10 @@
 	<variable name="DefWeatherFanart">
 		<value condition="Skin.HasSetting(weatherfanart.multi)">/</value>
 		<value>.jpg</value>
+	</variable>
+	<variable name="WeatherFanart">
+		<value condition="System.HasAddon(script.image.resource.select) + !IsEmpty(Skin.String(weatherfanart.path))">$INFO[Skin.String(weatherfanart.path)]</value>
+		<value>resource://resource.images.weatherfanart.multi/</value>
 	</variable>
 
 	<variable name="PVRFanart">

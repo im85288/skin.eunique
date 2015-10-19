@@ -822,12 +822,11 @@
 			<control type="image">
 				<width>70</width>
 				<height>40</height>
-				<texture>$INFO[Window(Home).Property(SkinHelper.ListItemAudioStreams.0.Language),flags/language/,.png]</texture>
+				<texture>$VAR[LanguageFlagsIcon]$INFO[Window(Home).Property(SkinHelper.ListItemAudioStreams.0.Language),,.png]</texture>
 				<aspectratio scalediffuse="false">keep</aspectratio>
 				<visible>!IsEmpty(Window(Home).Property(SkinHelper.ListItemAudioStreams.0.Language))</visible>
 			</control>
 		</control>
-
 	</include>
 	<include name="Furniture_OSDEmby">
 		<control type="grouplist">
@@ -1466,11 +1465,14 @@
 				<description>Home Wraplist</description>
 				<left>NewSidePad</left>
 				<right>NewSidePad</right>
-				<ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">3016</ondown>
-				<ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">4016</ondown>
-				<ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),music)">5016</ondown>
+				<ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),movies) + IntegerGreaterThan(Container(3016).NumItems,0)">3016</ondown>
+				<ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),movies) + !IntegerGreaterThan(Container(3016).NumItems,0)">3012</ondown>
+				<ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows + IntegerGreaterThan(Container(4016).NumItems,0))">4016</ondown>
+				<ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows + !IntegerGreaterThan(Container(4016).NumItems,0))">4012</ondown>
+				<ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),music) + IntegerGreaterThan(Container(5016).NumItems,0)">5016</ondown>
+				<ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),music) + !IntegerGreaterThan(Container(5016).NumItems,0)">5012</ondown>
 				<ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv) + IntegerGreaterThan(Container(7016).NumItems,0)">7016</ondown>
-				<ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv) + !IntegerGreaterThan(Container(7016).NumItems,0)">70161</ondown>
+				<ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv) + !IntegerGreaterThan(Container(7016).NumItems,0)">7012</ondown>
 				<ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),Weather)">3444</ondown>
 				<ondown condition="!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather)">6016</ondown>
 				<onup condition="IntegerGreaterThan(Container(302).NumItems,0)">SetFocus(302,0)</onup>
@@ -2541,7 +2543,7 @@
 						<randomize>true</randomize>
 						<aspectratio>scale</aspectratio>
 						<animation effect="fade" start="100" end="30" condition="true">Conditional</animation>
-						<imagepath background="true">$INFO[Skin.String(weatherfanart)]$INFO[Window(Weather).Property(Current.FanartCode)]$VAR[DefWeatherFanart]</imagepath>
+						<imagepath background="true">$VAR[WeatherFanart]$INFO[Window(Weather).Property(Current.FanartCode)]$VAR[DefWeatherFanart]</imagepath>
 					</control>
 					<control type="label">
 						<description>weather location label</description>
@@ -2847,7 +2849,7 @@
 							<icon>$VAR[WeatherIconVar]$INFO[Window(weather).Property(Day0.FanartCode),,.png]</icon>
 							<property name="HighTemp">$INFO[Window(weather).Property(Day0.HighTemp)]$INFO[System.TemperatureUnits]</property>
 							<property name="LowTemp">$INFO[Window(weather).Property(Day0.LowTemp)]$INFO[System.TemperatureUnits]</property>
-							<property name="Fanart">$INFO[Skin.String(weatherfanart)]$INFO[Window(Weather).Property(Day0.FanartCode)]$VAR[DefWeatherFanart]</property>
+							<property name="Fanart">$VAR[WeatherFanart]$INFO[Window(Weather).Property(Day0.FanartCode)]$VAR[DefWeatherFanart]</property>
 							<onclick>noop</onclick>
 							<visible>!IsEmpty(Window(weather).Property(Day0.Title))</visible>
 						</item>
@@ -2857,7 +2859,7 @@
 							<icon>$VAR[WeatherIconVar]$INFO[Window(weather).Property(Day1.FanartCode),,.png]</icon>
 							<property name="HighTemp">$INFO[Window(weather).Property(Day1.HighTemp)]$INFO[System.TemperatureUnits]</property>
 							<property name="LowTemp">$INFO[Window(weather).Property(Day1.LowTemp)]$INFO[System.TemperatureUnits]</property>
-							<property name="Fanart">$INFO[Skin.String(weatherfanart)]$INFO[Window(Weather).Property(Day1.FanartCode)]$VAR[DefWeatherFanart]</property>
+							<property name="Fanart">$VAR[WeatherFanart]$INFO[Window(Weather).Property(Day1.FanartCode)]$VAR[DefWeatherFanart]</property>
 							<onclick>noop</onclick>
 							<visible>!IsEmpty(Window(weather).Property(Day1.Title))</visible>
 						</item>
@@ -2867,7 +2869,7 @@
 							<icon>$VAR[WeatherIconVar]$INFO[Window(weather).Property(Day2.FanartCode),,.png]</icon>
 							<property name="HighTemp">$INFO[Window(weather).Property(Day2.HighTemp)]$INFO[System.TemperatureUnits]</property>
 							<property name="LowTemp">$INFO[Window(weather).Property(Day2.LowTemp)]$INFO[System.TemperatureUnits]</property>
-							<property name="Fanart">$INFO[Skin.String(weatherfanart)]$INFO[Window(Weather).Property(Day2.FanartCode)]$VAR[DefWeatherFanart]</property>
+							<property name="Fanart">$VAR[WeatherFanart]$INFO[Window(Weather).Property(Day2.FanartCode)]$VAR[DefWeatherFanart]</property>
 							<onclick>noop</onclick>
 							<visible>!IsEmpty(Window(weather).Property(Day2.Title))</visible>
 						</item>
@@ -2877,7 +2879,7 @@
 							<icon>$VAR[WeatherIconVar]$INFO[Window(weather).Property(Day3.FanartCode),,.png]</icon>
 							<property name="HighTemp">$INFO[Window(weather).Property(Day3.HighTemp)]$INFO[System.TemperatureUnits]</property>
 							<property name="LowTemp">$INFO[Window(weather).Property(Day3.LowTemp)]$INFO[System.TemperatureUnits]</property>
-							<property name="Fanart">$INFO[Skin.String(weatherfanart)]$INFO[Window(Weather).Property(Day3.FanartCode)]$VAR[DefWeatherFanart]</property>
+							<property name="Fanart">$VAR[WeatherFanart]$INFO[Window(Weather).Property(Day3.FanartCode)]$VAR[DefWeatherFanart]</property>
 							<onclick>noop</onclick>
 							<visible>!IsEmpty(Window(weather).Property(Day3.Title))</visible>
 						</item>
@@ -2887,7 +2889,7 @@
 							<icon>$VAR[WeatherIconVar]$INFO[Window(weather).Property(Day4.FanartCode),,.png]</icon>
 							<property name="HighTemp">$INFO[Window(weather).Property(Day4.HighTemp)]$INFO[System.TemperatureUnits]</property>
 							<property name="LowTemp">$INFO[Window(weather).Property(Day4.LowTemp)]$INFO[System.TemperatureUnits]</property>
-							<property name="Fanart">$INFO[Skin.String(weatherfanart)]$INFO[Window(Weather).Property(Day4.FanartCode)]$VAR[DefWeatherFanart]</property>
+							<property name="Fanart">$VAR[WeatherFanart]$INFO[Window(Weather).Property(Day4.FanartCode)]$VAR[DefWeatherFanart]</property>
 							<onclick>noop</onclick>
 							<visible>!IsEmpty(Window(weather).Property(Day4.Title))</visible>
 						</item>
@@ -2897,7 +2899,7 @@
 							<icon>$VAR[WeatherIconVar]$INFO[Window(weather).Property(Day5.FanartCode),,.png]</icon>
 							<property name="HighTemp">$INFO[Window(weather).Property(Day5.HighTemp)]$INFO[System.TemperatureUnits]</property>
 							<property name="LowTemp">$INFO[Window(weather).Property(Day5.LowTemp)]$INFO[System.TemperatureUnits]</property>
-							<property name="Fanart">$INFO[Skin.String(weatherfanart)]$INFO[Window(Weather).Property(Day5.FanartCode)]$VAR[DefWeatherFanart]</property>
+							<property name="Fanart">$VAR[WeatherFanart]$INFO[Window(Weather).Property(Day5.FanartCode)]$VAR[DefWeatherFanart]</property>
 							<onclick>noop</onclick>
 							<visible>!IsEmpty(Window(weather).Property(Day5.Title))</visible>
 						</item>
@@ -2907,7 +2909,7 @@
 							<icon>$VAR[WeatherIconVar]$INFO[Window(weather).Property(Day6.FanartCode),,.png]</icon>
 							<property name="HighTemp">$INFO[Window(weather).Property(Day6.HighTemp)]$INFO[System.TemperatureUnits]</property>
 							<property name="LowTemp">$INFO[Window(weather).Property(Day6.LowTemp)]$INFO[System.TemperatureUnits]</property>
-							<property name="Fanart">$INFO[Skin.String(weatherfanart)]$INFO[Window(Weather).Property(Day6.FanartCode)]$VAR[DefWeatherFanart]</property>
+							<property name="Fanart">$VAR[WeatherFanart]$INFO[Window(Weather).Property(Day6.FanartCode)]$VAR[DefWeatherFanart]</property>
 							<onclick>noop</onclick>
 							<visible>!IsEmpty(Window(weather).Property(Day6.Title)) + !IsEmpty(Window(weather).Property(Day7.Title))</visible>
 						</item>
@@ -2917,7 +2919,7 @@
 							<icon>$VAR[WeatherIconVar]$INFO[Window(weather).Property(Day7.FanartCode),,.png]</icon>
 							<property name="HighTemp">$INFO[Window(weather).Property(Day7.HighTemp)]$INFO[System.TemperatureUnits]</property>
 							<property name="LowTemp">$INFO[Window(weather).Property(Day7.LowTemp)]$INFO[System.TemperatureUnits]</property>
-							<property name="Fanart">$INFO[Skin.String(weatherfanart)]$INFO[Window(Weather).Property(Day7.FanartCode)]$VAR[DefWeatherFanart]</property>
+							<property name="Fanart">$VAR[WeatherFanart]$INFO[Window(Weather).Property(Day7.FanartCode)]$VAR[DefWeatherFanart]</property>
 							<onclick>noop</onclick>
 							<visible>!IsEmpty(Window(weather).Property(Day7.Title))</visible>
 						</item>
@@ -2927,7 +2929,7 @@
 							<icon>$VAR[WeatherIconVar]$INFO[Window(weather).Property(Day8.FanartCode),,.png]</icon>
 							<property name="HighTemp">$INFO[Window(weather).Property(Day8.HighTemp)]$INFO[System.TemperatureUnits]</property>
 							<property name="LowTemp">$INFO[Window(weather).Property(Day8.LowTemp)]$INFO[System.TemperatureUnits]</property>
-							<property name="Fanart">$INFO[Skin.String(weatherfanart)]$INFO[Window(Weather).Property(Day8.FanartCode)]$VAR[DefWeatherFanart]</property>
+							<property name="Fanart">$VAR[WeatherFanart]$INFO[Window(Weather).Property(Day8.FanartCode)]$VAR[DefWeatherFanart]</property>
 							<onclick>noop</onclick>
 							<visible>!IsEmpty(Window(weather).Property(Day8.Title))</visible>
 						</item>
@@ -2937,7 +2939,7 @@
 							<icon>$VAR[WeatherIconVar]$INFO[Window(weather).Property(Day9.FanartCode),,.png]</icon>
 							<property name="HighTemp">$INFO[Window(weather).Property(Day9.HighTemp)]$INFO[System.TemperatureUnits]</property>
 							<property name="LowTemp">$INFO[Window(weather).Property(Day9.LowTemp)]$INFO[System.TemperatureUnits]</property>
-							<property name="Fanart">$INFO[Skin.String(weatherfanart)]$INFO[Window(Weather).Property(Day9.FanartCode)]$VAR[DefWeatherFanart]</property>
+							<property name="Fanart">$VAR[WeatherFanart]$INFO[Window(Weather).Property(Day9.FanartCode)]$VAR[DefWeatherFanart]</property>
 							<onclick>noop</onclick>
 							<visible>!IsEmpty(Window(weather).Property(Day9.Title))</visible>
 						</item>
@@ -2947,7 +2949,7 @@
 							<icon>$VAR[WeatherIconVar]$INFO[Window(weather).Property(Day10.FanartCode),,.png]</icon>
 							<property name="HighTemp">$INFO[Window(weather).Property(Day10.HighTemp)]$INFO[System.TemperatureUnits]</property>
 							<property name="LowTemp">$INFO[Window(weather).Property(Day10.LowTemp)]$INFO[System.TemperatureUnits]</property>
-							<property name="Fanart">$INFO[Skin.String(weatherfanart)]$INFO[Window(Weather).Property(Day10.FanartCode)]$VAR[DefWeatherFanart]</property>
+							<property name="Fanart">$VAR[WeatherFanart]$INFO[Window(Weather).Property(Day10.FanartCode)]$VAR[DefWeatherFanart]</property>
 							<onclick>noop</onclick>
 							<visible>!IsEmpty(Window(weather).Property(Day10.Title)) !IsEmpty(Window(weather).Property(Day11.Title))</visible>
 						</item>
@@ -2957,7 +2959,7 @@
 							<icon>$VAR[WeatherIconVar]$INFO[Window(weather).Property(Day11.FanartCode),,.png]</icon>
 							<property name="HighTemp">$INFO[Window(weather).Property(Day11.HighTemp)]$INFO[System.TemperatureUnits]</property>
 							<property name="LowTemp">$INFO[Window(weather).Property(Day11.LowTemp)]$INFO[System.TemperatureUnits]</property>
-							<property name="Fanart">$INFO[Skin.String(weatherfanart)]$INFO[Window(Weather).Property(Day11.FanartCode)]$VAR[DefWeatherFanart]</property>
+							<property name="Fanart">$VAR[WeatherFanart]$INFO[Window(Weather).Property(Day11.FanartCode)]$VAR[DefWeatherFanart]</property>
 							<onclick>noop</onclick>
 							<visible>!IsEmpty(Window(weather).Property(Day11.Title))</visible>
 						</item>
@@ -2967,7 +2969,7 @@
 							<icon>$VAR[WeatherIconVar]$INFO[Window(weather).Property(Day12.FanartCode),,.png]</icon>
 							<property name="HighTemp">$INFO[Window(weather).Property(Day12.HighTemp)]$INFO[System.TemperatureUnits]</property>
 							<property name="LowTemp">$INFO[Window(weather).Property(Day12.LowTemp)]$INFO[System.TemperatureUnits]</property>
-							<property name="Fanart">$INFO[Skin.String(weatherfanart)]$INFO[Window(Weather).Property(Day12.FanartCode)]$VAR[DefWeatherFanart]</property>
+							<property name="Fanart">$VAR[WeatherFanart]$INFO[Window(Weather).Property(Day12.FanartCode)]$VAR[DefWeatherFanart]</property>
 							<onclick>noop</onclick>
 							<visible>!IsEmpty(Window(weather).Property(Day12.Title)) !IsEmpty(Window(weather).Property(Day13.Title))</visible>
 						</item>
@@ -2977,7 +2979,7 @@
 							<icon>$VAR[WeatherIconVar]$INFO[Window(weather).Property(Day13.FanartCode),,.png]</icon>
 							<property name="HighTemp">$INFO[Window(weather).Property(Day13.HighTemp)]$INFO[System.TemperatureUnits]</property>
 							<property name="LowTemp">$INFO[Window(weather).Property(Day13.LowTemp)]$INFO[System.TemperatureUnits]</property>
-							<property name="Fanart">$INFO[Skin.String(weatherfanart)]$INFO[Window(Weather).Property(Day13.FanartCode)]$VAR[DefWeatherFanart]</property>
+							<property name="Fanart">$VAR[WeatherFanart]$INFO[Window(Weather).Property(Day13.FanartCode)]$VAR[DefWeatherFanart]</property>
 							<onclick>noop</onclick>
 							<visible>!IsEmpty(Window(weather).Property(Day13.Title))</visible>
 						</item>
@@ -3294,8 +3296,8 @@
 						<timeperimage>20000</timeperimage>
 						<randomize>true</randomize>
 						<aspectratio scalediffuse="false">scale</aspectratio>
-						<imagepath colordiffuse="$VAR[EmbyLeftColourHighlight]" background="true">$INFO[Window(Home).Property(SkinHelper.UnwatchedMoviesBackground)]</imagepath>
-						<visible>!Control.HasFocus(30133) + !IsEmpty(Window(Home).Property(SkinHelper.UnwatchedMoviesBackground))</visible>
+						<imagepath colordiffuse="$VAR[EmbyLeftColourHighlight]" background="true">$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground.Wall)]</imagepath>
+						<visible>!Control.HasFocus(30133) + !IsEmpty(Window(Home).Property(SkinHelper.AllMoviesBackground.Wall))</visible>
 					</control>
 				<control type="label">
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
@@ -6376,6 +6378,16 @@
 								<visible>[!IsEmpty(Window(home).Property(SkinHelper.PVR.Landscape)) | !IsEmpty(Window(home).Property(SkinHelper.PVR.FanArt)) | !IsEmpty(Window(home).Property(SkinHelper.PVR.Thumb))] + IsEmpty(Window(home).Property(SkinHelper.PVR.ChannelLogo))</visible>
 							</control>
 							<control type="image">
+								<bottom>35</bottom>
+								<left>0</left>
+								<height>130</height>
+								<width>130</width>
+								<fadetime>200</fadetime>
+								<aspectratio align="left" aligny="bottom" scalediffuse="false">keep</aspectratio>
+								<texture diffuse="common/box.png" background="true">$INFO[Window(home).Property(SkinHelper.PVR.CharacterArt)]</texture>
+								<visible>!IsEmpty(Window(home).Property(SkinHelper.PVR.CharacterArt))</visible>
+							</control>
+							<control type="image">
 								<description>Title overlay</description>
 								<bottom>0</bottom>
 								<height>35</height>
@@ -6402,22 +6414,11 @@
 							<height>143</height>
 							<control type="image">
 								<top>0</top>
-								<height>50</height>
+								<height>40</height>
 								<texture>$INFO[Window(home).Property(SkinHelper.PVR.Logo)]</texture>
 								<aspectratio align="center" aligny="bottom">keep</aspectratio>
 								<fadetime>50</fadetime>
 								<visible>!IsEmpty(Window(home).Property(SkinHelper.PVR.Logo))</visible>
-							</control>
-							<control type="label">
-								<top>2</top>
-								<aligny>center</aligny>
-								<align>center</align>
-								<height>38</height>
-								<font>TinyBold</font>
-								<textcolor>white</textcolor>
-								<selectedcolor>white</selectedcolor>
-								<label>$INFO[Container(7016).ListItem.Season,,x]$INFO[Container(7016).ListItem.Episode,,. ]$INFO[Container(7016).ListItem.Title]$INFO[Container(7016).ListItem.EpisodeName, (,)]</label>
-								<visible>IsEmpty(Window(home).Property(SkinHelper.PVR.Logo))</visible>
 							</control>
 							<control type="label">
 								<top>2</top>
@@ -6427,7 +6428,7 @@
 								<font>TinyBold</font>
 								<textcolor>white2</textcolor>
 								<selectedcolor>white2</selectedcolor>
-								<label>$INFO[Container(7016).ListItem.StartTime]</label>
+								<label>$INFO[Container(7016).ListItem.StartTime(hh:mm)]</label>
 							</control>
 							<control type="label">
 								<top>2</top>
@@ -6437,7 +6438,7 @@
 								<font>TinyBold</font>
 								<textcolor>white2</textcolor>
 								<selectedcolor>white2</selectedcolor>
-								<label>$INFO[Container(7016).ListItem.EndTime]</label>
+								<label>$INFO[Container(7016).ListItem.EndTime(hh:mm)]</label>
 							</control>
 							<control type="progress">
 								<top>42</top>
@@ -6474,22 +6475,11 @@
 							<height>143</height>
 							<control type="image">
 								<top>0</top>
-								<height>50</height>
+								<height>40</height>
 								<texture>$INFO[Window(home).Property(SkinHelper.PVR.Logo)]</texture>
 								<aspectratio align="center" aligny="bottom">keep</aspectratio>
 								<fadetime>50</fadetime>
 								<visible>!IsEmpty(Window(home).Property(SkinHelper.PVR.Logo))</visible>
-							</control>
-							<control type="label">
-								<top>2</top>
-								<aligny>center</aligny>
-								<align>center</align>
-								<height>38</height>
-								<font>TinyBold</font>
-								<textcolor>white</textcolor>
-								<selectedcolor>white</selectedcolor>
-								<label>$INFO[Container(7016).ListItem.Season,,x]$INFO[Container(7016).ListItem.Episode,,. ]$INFO[Container(7016).ListItem.Title]$INFO[Container(7016).ListItem.EpisodeName, (,)]</label>
-								<visible>IsEmpty(Window(home).Property(SkinHelper.PVR.Logo))</visible>
 							</control>
 							<control type="label">
 								<top>2</top>
@@ -6499,7 +6489,7 @@
 								<font>TinyBold</font>
 								<textcolor>white2</textcolor>
 								<selectedcolor>white2</selectedcolor>
-								<label>$INFO[Container(7016).ListItem.StartTime]</label>
+								<label>$INFO[Container(7016).ListItem.StartTime(hh:mm)]</label>
 							</control>
 							<control type="label">
 								<top>2</top>
@@ -6509,7 +6499,7 @@
 								<font>TinyBold</font>
 								<textcolor>white2</textcolor>
 								<selectedcolor>white2</selectedcolor>
-								<label>$INFO[Container(7016).ListItem.EndTime]</label>
+								<label>$INFO[Container(7016).ListItem.EndTime(hh:mm)]</label>
 							</control>
 							<control type="progress">
 								<top>42</top>
@@ -6537,6 +6527,1784 @@
 								<textcolor>white2</textcolor>
 								<selectedcolor>white2</selectedcolor>
 								<label>$INFO[Container(7016).ListItem.NextGenre]</label>
+							</control>
+						</control>
+					</control>
+					<control type="group">
+						<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
+						<top>290</top>
+						<left>1390</left>
+						<width>560</width>
+						<control type="label">
+							<aligny>center</aligny>
+							<align>left</align>
+							<height>38</height>
+							<font>HomeWidgetLabelFont</font>
+							<textcolor>white</textcolor>
+							<selectedcolor>white</selectedcolor>
+							<label>$INFO[Container(7016).ListItem.Season,,x]$INFO[Container(7016).ListItem.Episode,,. ]$INFO[Container(7016).ListItem.Title]$INFO[Container(7016).ListItem.EpisodeName, (,)]</label>
+						</control>
+					</control>
+				</control>
+			</control>
+		</control>
+	</include>
+
+	<include name="HomeVerticalMenu">
+		<control type="group">
+			<include>Animation.Common</include>
+			<!-- LEFT SIDE -->
+			<control type="group">
+				<!-- Home List -->
+				<control type="list" id="300">
+					<animation effect="fade" start="100" end="33" time="400" condition="ControlGroup(301).HasFocus()">Conditional</animation>
+					<animation effect="slide" start="0" end="-100" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(301).HasFocus()">Conditional</animation>
+					<animation effect="slide" start="-100" end="0" time="200" delay="100" tween="quadratic" easing="out" condition="!ControlGroup(301).HasFocus()">Conditional</animation>
+					<animation effect="slide" start="-500" end="0" time="200" delay="100" tween="quadratic" easing="out">Visible</animation>
+					<visible allowhiddenfocus="true">!Control.HasFocus(302)</visible>
+					<include>Animation.FadeIn</include>
+					<include>Animation.FadeOut</include>
+					<description>Home Wraplist</description>
+					<left>NewSidePad</left>
+					<top>TopPad</top>
+					<width>PosterW</width>
+					<height>880</height>
+					<orientation>vertical</orientation>
+
+					<onright>301</onright>
+
+					<onleft>302</onleft>
+					<onback>302</onback>
+					<scrolltime>200</scrolltime>
+					<itemlayout width="437" height="80">
+						<control type="label">
+							<right>30</right>
+							<left>0</left>
+							<align>right</align>
+							<aligny>center</aligny>
+							<height>100%</height>
+							<textcolor>$VAR[EmbyMenuColourHighlight]</textcolor>
+							<font>Large</font>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+					</itemlayout>
+					<focusedlayout width="437" height="80">
+						<control type="label">
+							<right>30</right>
+							<left>0</left>
+							<align>right</align>
+							<aligny>center</aligny>
+							<height>100%</height>
+							<textcolor>$VAR[ColourHighlight]</textcolor>
+							<font>LargeBoldReg</font>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+					</focusedlayout>
+					<content>
+						<include>skinshortcuts-mainmenu</include>
+					</content>
+				</control>
+				<!-- SubMenu List -->
+				<control type="list" id="302">
+					<visible allowhiddenfocus="true">Control.HasFocus(302)</visible>
+					<animation effect="fade" start="100" end="33" time="400" condition="ControlGroup(301).HasFocus()">Conditional</animation>
+					<animation effect="slide" start="-500" end="0" time="200" delay="100" tween="quadratic" easing="out">Visible</animation>
+					<include>Animation.FadeIn</include>
+					<include>Animation.FadeOut</include>
+					<description>Home Wraplist</description>
+					<left>NewSidePad</left>
+					<top>TopPad</top>
+					<width>PosterW</width>
+					<height>880</height>
+					<orientation>vertical</orientation>
+					<onright>300</onright>
+					<onleft>3634</onleft>
+					<ondown>302</ondown>
+					<onup>302</onup>
+					<onback>300</onback>
+					<scrolltime>200</scrolltime>
+					<itemlayout width="437" height="80">
+						<control type="label">
+							<right>30</right>
+							<left>0</left>
+							<align>right</align>
+							<aligny>center</aligny>
+							<height>100%</height>
+							<textcolor>$VAR[EmbyMenuColourHighlight]</textcolor>
+							<font>MediumSmall</font>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+					</itemlayout>
+					<focusedlayout width="437" height="80">
+						<control type="label">
+							<right>30</right>
+							<left>0</left>
+							<align>right</align>
+							<aligny>center</aligny>
+							<height>100%</height>
+							<textcolor>$VAR[ColourHighlight]</textcolor>
+							<font>MediumSmallBold</font>
+							<label>$INFO[ListItem.Label]</label>
+							<visible>Control.HasFocus(302)</visible>
+						</control>
+						<control type="label">
+							<right>30</right>
+							<left>0</left>
+							<align>right</align>
+							<aligny>center</aligny>
+							<height>100%</height>
+							<textcolor>$VAR[EmbyMenuColourHighlight]</textcolor>
+							<font>MediumSmallBold</font>
+							<label>$INFO[ListItem.Label]</label>
+							<visible>!Control.HasFocus(302)</visible>
+						</control>
+					</focusedlayout>
+					<content>
+						<include>skinshortcuts-submenu</include>
+					</content>
+				</control>
+			</control>
+			<!-- RIGHT SIDE -->
+			<control type="group">
+				<control type="group">
+					<animation effect="fade" start="100" end="0" time="0" delay="0" reversible="false" condition="![[!IsEmpty(Container(300).ListItem.Property(widget)) | [IsEmpty(Container(300).ListItem.Property(widget)) + [IsEmpty(Container(300).ListItem.Property(Background)) + [!Skin.HasSetting(home.dontshowfanart)]]]]] | !IntegerGreaterThan(Container(301).NumItems,0) | Container(301).IsUpdating | [!Weather.IsFetched + StringCompare(Container(300).ListItem.Property(widget),Weather)]">Conditional</animation>
+					<animation effect="fade" start="0" end="100" time="200" delay="200" reversible="false" condition="[!Container(301).IsUpdating + IntegerGreaterThan(Container(301).NumItems,0) + [!IsEmpty(Container(300).ListItem.Property(widget)) | [IsEmpty(Container(300).ListItem.Property(widget)) + [IsEmpty(Container(300).ListItem.Property(Background)) + [IsEmpty(Skin.String(home.slideshowpath))]]]]] | [Weather.IsFetched + StringCompare(Container(300).ListItem.Property(widget),Weather)]">Conditional</animation>
+					<animation effect="slide" start="0" end="-250" time="200" delay="100" tween="quadratic" easing="out">Focus</animation>
+					<animation effect="slide" start="-250" end="0" time="200" delay="100" tween="quadratic" easing="out">UnFocus</animation>
+
+					<!-- Widgets -->
+					<control type="grouplist" id="301">
+						<top>TopPad</top>
+						<left>470</left>
+						<width>1854</width>
+						<height>1480</height>
+						<orientation>vertical</orientation>
+						<onup>300</onup>
+						<ondown>300</ondown>
+
+						<!-- Movies -->
+						<control type="group">
+							<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
+							<visible>!Control.HasFocus(3017) + !Control.HasFocus(10017)</visible>
+							<height>370</height>
+							<control type="label">
+								<width>1200</width>
+								<height>34</height>
+								<aligny>center</aligny>
+								<align>left</align>
+								<height>34</height>
+								<font>Small</font>
+								<font>HomeWidgetLabelFont</font>
+								<label>$VAR[EmbyWidget6Label]</label>
+								<include>Animation.DelayFadeIn</include>
+							</control>
+							<control type="wraplist" id="3012">
+								<description>Widget</description>
+								<top>40</top>
+								<height>325</height>
+								<width>1854</width>
+								<onup>300</onup>
+								<ondown>3016</ondown>
+								<onback>300</onback>
+								<preloaditems>2</preloaditems>
+								<orientation>horizontal</orientation>
+								<autoscroll time="10000">!Control.HasFocus(3012)</autoscroll>
+								<scrolltime tween="quadratic">100</scrolltime>
+								<include>Animation.FadeIn</include>
+								<include>Animation.FadeOut</include>
+								<itemlayout width="577" height="325" condition="!StringCompare(Skin.String(movies1widget.aspectratio),POSTER) + !StringCompare(Skin.String(movies1widget.aspectratio),SQUARE)">
+									<include>WidgetLandscapeItemLayout</include>
+								</itemlayout>
+								<itemlayout width="218" height="325" condition="StringCompare(Skin.String(movies1widget.aspectratio),POSTER)">
+									<include>WidgetPosterItemLayout</include>
+								</itemlayout>
+								<itemlayout width="325" height="325" condition="StringCompare(Skin.String(movies1widget.aspectratio),SQUARE)">
+									<include>WidgetSquareItemLayout</include>
+								</itemlayout>
+								<focusedlayout width="577" height="325" condition="!StringCompare(Skin.String(movies1widget.aspectratio),POSTER) + !StringCompare(Skin.String(movies1widget.aspectratio),SQUARE)">
+									<include>WidgetLandscapeFocusedItemLayout</include>
+								</focusedlayout>
+								<focusedlayout width="218" height="325" condition="StringCompare(Skin.String(movies1widget.aspectratio),POSTER)">
+									<include>WidgetPosterFocusedItemLayout</include>
+								</focusedlayout>
+								<focusedlayout width="325" height="325" condition="StringCompare(Skin.String(movies1widget.aspectratio),SQUARE)">
+									<include>WidgetSquareFocusedItemLayout</include>
+								</focusedlayout>
+								<content target="$VAR[DefWidget6Target]">$VAR[DefWidget6Content]</content>
+							</control>
+						</control>
+						<control type="group">
+							<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
+							<visible>!Control.HasFocus(10017)</visible>
+							<top>370</top>
+							<height>370</height>
+							<control type="label">
+								<width>1200</width>
+								<height>34</height>
+								<aligny>center</aligny>
+								<align>left</align>
+								<height>34</height>
+								<font>Small</font>
+								<font>HomeWidgetLabelFont</font>
+								<label>$VAR[EmbyWidget7Label]</label>
+								<include>Animation.DelayFadeIn</include>
+							</control>
+							<control type="wraplist" id="3016">
+								<description>Widget</description>
+								<top>40</top>
+								<height>325</height>
+								<width>1854</width>
+								<onup>3012</onup>
+								<ondown>3017</ondown>
+								<onback>300</onback>
+								<preloaditems>2</preloaditems>
+								<orientation>horizontal</orientation>
+								<autoscroll time="10000">!Control.HasFocus(3016)</autoscroll>
+								<scrolltime tween="quadratic">100</scrolltime>
+								<include>Animation.FadeIn</include>
+								<include>Animation.FadeOut</include>
+								<itemlayout width="577" height="325" condition="!StringCompare(Skin.String(movies2widget.aspectratio),POSTER) + !StringCompare(Skin.String(movies2widget.aspectratio),SQUARE)">
+									<include>WidgetLandscapeItemLayout</include>
+								</itemlayout>
+								<itemlayout width="218" height="325" condition="StringCompare(Skin.String(movies2widget.aspectratio),POSTER)">
+									<include>WidgetPosterItemLayout</include>
+								</itemlayout>
+								<itemlayout width="325" height="325" condition="StringCompare(Skin.String(movies2widget.aspectratio),SQUARE)">
+									<include>WidgetSquareItemLayout</include>
+								</itemlayout>
+								<focusedlayout width="577" height="325" condition="!StringCompare(Skin.String(movies2widget.aspectratio),POSTER) + !StringCompare(Skin.String(movies2widget.aspectratio),SQUARE)">
+									<include>WidgetLandscapeFocusedItemLayout</include>
+								</focusedlayout>
+								<focusedlayout width="218" height="325" condition="StringCompare(Skin.String(movies2widget.aspectratio),POSTER)">
+									<include>WidgetPosterFocusedItemLayout</include>
+								</focusedlayout>
+								<focusedlayout width="325" height="325" condition="StringCompare(Skin.String(movies2widget.aspectratio),SQUARE)">
+									<include>WidgetSquareFocusedItemLayout</include>
+								</focusedlayout>
+								<content target="$VAR[DefWidget7Target]">$VAR[DefWidget7Content]</content>
+							</control>
+						</control>
+						<control type="group">
+							<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
+							<top>740</top>
+							<height>370</height>
+							<control type="label">
+								<width>1200</width>
+								<height>34</height>
+								<aligny>center</aligny>
+								<align>left</align>
+								<height>34</height>
+								<font>Small</font>
+								<font>HomeWidgetLabelFont</font>
+								<label>$VAR[EmbyWidget8Label]</label>
+								<include>Animation.DelayFadeIn</include>
+							</control>
+							<control type="wraplist" id="3017">
+								<description>Widget</description>
+								<top>40</top>
+								<height>325</height>
+								<width>1854</width>
+								<onup>3016</onup>
+								<ondown>10017</ondown>
+								<onback>300</onback>
+								<preloaditems>2</preloaditems>
+								<orientation>horizontal</orientation>
+								<autoscroll time="10000">!Control.HasFocus(3017)</autoscroll>
+								<scrolltime tween="quadratic">100</scrolltime>
+								<include>Animation.FadeIn</include>
+								<include>Animation.FadeOut</include>
+								<itemlayout width="577" height="325" condition="!StringCompare(Skin.String(movies3widget.aspectratio),POSTER) + !StringCompare(Skin.String(movies3widget.aspectratio),SQUARE)">
+									<include>WidgetLandscapeItemLayout</include>
+								</itemlayout>
+								<itemlayout width="218" height="325" condition="StringCompare(Skin.String(movies3widget.aspectratio),POSTER)">
+									<include>WidgetPosterItemLayout</include>
+								</itemlayout>
+								<itemlayout width="325" height="325" condition="StringCompare(Skin.String(movies3widget.aspectratio),SQUARE)">
+									<include>WidgetSquareItemLayout</include>
+								</itemlayout>
+								<focusedlayout width="577" height="325" condition="!StringCompare(Skin.String(movies3widget.aspectratio),POSTER) + !StringCompare(Skin.String(movies3widget.aspectratio),SQUARE)">
+									<include>WidgetLandscapeFocusedItemLayout</include>
+								</focusedlayout>
+								<focusedlayout width="218" height="325" condition="StringCompare(Skin.String(movies3widget.aspectratio),POSTER)">
+									<include>WidgetPosterFocusedItemLayout</include>
+								</focusedlayout>
+								<focusedlayout width="325" height="325" condition="StringCompare(Skin.String(movies3widget.aspectratio),SQUARE)">
+									<include>WidgetSquareFocusedItemLayout</include>
+								</focusedlayout>
+								<content target="$VAR[DefWidget8Target]">$VAR[DefWidget8Content]</content>
+							</control>
+						</control>
+						<control type="group">
+							<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
+							<top>1110</top>
+							<height>370</height>
+							<control type="label">
+								<width>1200</width>
+								<height>34</height>
+								<aligny>center</aligny>
+								<align>left</align>
+								<height>34</height>
+								<font>Small</font>
+								<font>HomeWidgetLabelFont</font>
+								<label>$VAR[EmbyWidget16Label]</label>
+								<include>Animation.DelayFadeIn</include>
+							</control>
+							<control type="wraplist" id="10017">
+								<description>Widget</description>
+								<top>40</top>
+								<height>325</height>
+								<width>1854</width>
+								<onup>3017</onup>
+								<ondown>300</ondown>
+								<onback>300</onback>
+								<preloaditems>2</preloaditems>
+								<orientation>horizontal</orientation>
+								<autoscroll time="10000">!Control.HasFocus(10017)</autoscroll>
+								<scrolltime tween="quadratic">100</scrolltime>
+								<include>Animation.FadeIn</include>
+								<include>Animation.FadeOut</include>
+								<itemlayout width="577" height="325" condition="!StringCompare(Skin.String(movies4widget.aspectratio),POSTER) + !StringCompare(Skin.String(movies4widget.aspectratio),SQUARE)">
+									<include>WidgetLandscapeItemLayout</include>
+								</itemlayout>
+								<itemlayout width="218" height="325" condition="StringCompare(Skin.String(movies4widget.aspectratio),POSTER)">
+									<include>WidgetPosterItemLayout</include>
+								</itemlayout>
+								<itemlayout width="325" height="325" condition="StringCompare(Skin.String(movies4widget.aspectratio),SQUARE)">
+									<include>WidgetSquareItemLayout</include>
+								</itemlayout>
+								<focusedlayout width="577" height="325" condition="!StringCompare(Skin.String(movies4widget.aspectratio),POSTER) + !StringCompare(Skin.String(movies4widget.aspectratio),SQUARE)">
+									<include>WidgetLandscapeFocusedItemLayout</include>
+								</focusedlayout>
+								<focusedlayout width="218" height="325" condition="StringCompare(Skin.String(movies4widget.aspectratio),POSTER)">
+									<include>WidgetPosterFocusedItemLayout</include>
+								</focusedlayout>
+								<focusedlayout width="325" height="325" condition="StringCompare(Skin.String(movies4widget.aspectratio),SQUARE)">
+									<include>WidgetSquareFocusedItemLayout</include>
+								</focusedlayout>
+								<content target="$VAR[DefWidget16Target]">$VAR[DefWidget16Content]</content>
+							</control>
+						</control>
+
+						<!-- TV Shows -->
+						<control type="group">
+							<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+							<visible>!Control.HasFocus(4017) + !Control.HasFocus(14017)</visible>
+							<height>370</height>
+							<control type="label">
+								<width>1200</width>
+								<height>34</height>
+								<aligny>center</aligny>
+								<align>left</align>
+								<height>34</height>
+								<font>Small</font>
+								<font>HomeWidgetLabelFont</font>
+								<label>$VAR[EmbyWidget9Label]</label>
+								<include>Animation.DelayFadeIn</include>
+							</control>
+							<control type="wraplist" id="4012">
+								<description>Widget</description>
+								<top>40</top>
+								<height>325</height>
+								<width>1854</width>
+								<onup>300</onup>
+								<ondown>4016</ondown>
+								<onback>300</onback>
+								<preloaditems>2</preloaditems>
+								<orientation>horizontal</orientation>
+								<autoscroll time="10000">!Control.HasFocus(4012)</autoscroll>
+								<scrolltime tween="quadratic">100</scrolltime>
+								<include>Animation.FadeIn</include>
+								<include>Animation.FadeOut</include>
+								<itemlayout width="577" height="325" condition="!StringCompare(Skin.String(tvshows1widget.aspectratio),POSTER) + !StringCompare(Skin.String(tvshows1widget.aspectratio),SQUARE)">
+									<include>WidgetLandscapeItemLayout</include>
+								</itemlayout>
+								<itemlayout width="218" height="325" condition="StringCompare(Skin.String(tvshows1widget.aspectratio),POSTER)">
+									<include>WidgetPosterItemLayout</include>
+								</itemlayout>
+								<itemlayout width="325" height="325" condition="StringCompare(Skin.String(tvshows1widget.aspectratio),SQUARE)">
+									<include>WidgetSquareItemLayout</include>
+								</itemlayout>
+								<focusedlayout width="577" height="325" condition="!StringCompare(Skin.String(tvshows1widget.aspectratio),POSTER) + !StringCompare(Skin.String(tvshows1widget.aspectratio),SQUARE)">
+									<include>WidgetLandscapeFocusedItemLayout</include>
+								</focusedlayout>
+								<focusedlayout width="218" height="325" condition="StringCompare(Skin.String(tvshows1widget.aspectratio),POSTER)">
+									<include>WidgetPosterFocusedItemLayout</include>
+								</focusedlayout>
+								<focusedlayout width="325" height="325" condition="StringCompare(Skin.String(tvshows1widget.aspectratio),SQUARE)">
+									<include>WidgetSquareFocusedItemLayout</include>
+								</focusedlayout>
+								<content target="$VAR[DefWidget9Target]">$VAR[DefWidget9Content]</content>
+							</control>
+						</control>
+						<control type="group">
+							<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+							<visible>!Control.HasFocus(14017)</visible>
+							<top>370</top>
+							<height>370</height>
+							<control type="label">
+								<width>1200</width>
+								<height>34</height>
+								<aligny>center</aligny>
+								<align>left</align>
+								<height>34</height>
+								<font>Small</font>
+								<font>HomeWidgetLabelFont</font>
+								<label>$VAR[EmbyWidget10Label]</label>
+								<include>Animation.DelayFadeIn</include>
+							</control>
+							<control type="wraplist" id="4016">
+								<description>Widget</description>
+								<top>40</top>
+								<height>325</height>
+								<width>1854</width>
+								<onup>4012</onup>
+								<ondown>4017</ondown>
+								<onback>300</onback>
+								<preloaditems>2</preloaditems>
+								<orientation>horizontal</orientation>
+								<autoscroll time="10000">!Control.HasFocus(4016)</autoscroll>
+								<scrolltime tween="quadratic">100</scrolltime>
+								<include>Animation.FadeIn</include>
+								<include>Animation.FadeOut</include>
+								<itemlayout width="577" height="325" condition="!StringCompare(Skin.String(tvshows2widget.aspectratio),POSTER) + !StringCompare(Skin.String(tvshows2widget.aspectratio),SQUARE)">
+									<include>WidgetLandscapeItemLayout</include>
+								</itemlayout>
+								<itemlayout width="218" height="325" condition="StringCompare(Skin.String(tvshows2widget.aspectratio),POSTER)">
+									<include>WidgetPosterItemLayout</include>
+								</itemlayout>
+								<itemlayout width="325" height="325" condition="StringCompare(Skin.String(tvshows2widget.aspectratio),SQUARE)">
+									<include>WidgetSquareItemLayout</include>
+								</itemlayout>
+								<focusedlayout width="577" height="325" condition="!StringCompare(Skin.String(tvshows2widget.aspectratio),POSTER) + !StringCompare(Skin.String(tvshows2widget.aspectratio),SQUARE)">
+									<include>WidgetLandscapeFocusedItemLayout</include>
+								</focusedlayout>
+								<focusedlayout width="218" height="325" condition="StringCompare(Skin.String(tvshows2widget.aspectratio),POSTER)">
+									<include>WidgetPosterFocusedItemLayout</include>
+								</focusedlayout>
+								<focusedlayout width="325" height="325" condition="StringCompare(Skin.String(tvshows2widget.aspectratio),SQUARE)">
+									<include>WidgetSquareFocusedItemLayout</include>
+								</focusedlayout>
+								<content target="$VAR[DefWidget10Target]">$VAR[DefWidget10Content]</content>
+							</control>
+						</control>
+						<control type="group">
+							<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+							<top>740</top>
+							<height>370</height>
+							<control type="label">
+								<width>1200</width>
+								<height>34</height>
+								<aligny>center</aligny>
+								<align>left</align>
+								<height>34</height>
+								<font>Small</font>
+								<font>HomeWidgetLabelFont</font>
+								<label>$VAR[EmbyWidget11Label]</label>
+								<include>Animation.DelayFadeIn</include>
+							</control>
+							<control type="wraplist" id="4017">
+								<description>Widget</description>
+								<top>40</top>
+								<height>325</height>
+								<width>1854</width>
+								<onup>4016</onup>
+								<ondown>14017</ondown>
+								<onback>300</onback>
+								<preloaditems>2</preloaditems>
+								<orientation>horizontal</orientation>
+								<autoscroll time="10000">!Control.HasFocus(4017)</autoscroll>
+								<scrolltime tween="quadratic">100</scrolltime>
+								<include>Animation.FadeIn</include>
+								<include>Animation.FadeOut</include>
+								<itemlayout width="577" height="325" condition="!StringCompare(Skin.String(tvshows3widget.aspectratio),POSTER) + !StringCompare(Skin.String(tvshows3widget.aspectratio),SQUARE)">
+									<include>WidgetLandscapeItemLayout</include>
+								</itemlayout>
+								<itemlayout width="218" height="325" condition="StringCompare(Skin.String(tvshows3widget.aspectratio),POSTER)">
+									<include>WidgetPosterItemLayout</include>
+								</itemlayout>
+								<itemlayout width="325" height="325" condition="StringCompare(Skin.String(tvshows3widget.aspectratio),SQUARE)">
+									<include>WidgetSquareItemLayout</include>
+								</itemlayout>
+								<focusedlayout width="577" height="325" condition="!StringCompare(Skin.String(tvshows3widget.aspectratio),POSTER) + !StringCompare(Skin.String(tvshows3widget.aspectratio),SQUARE)">
+									<include>WidgetLandscapeFocusedItemLayout</include>
+								</focusedlayout>
+								<focusedlayout width="218" height="325" condition="StringCompare(Skin.String(tvshows3widget.aspectratio),POSTER)">
+									<include>WidgetPosterFocusedItemLayout</include>
+								</focusedlayout>
+								<focusedlayout width="325" height="325" condition="StringCompare(Skin.String(tvshows3widget.aspectratio),SQUARE)">
+									<include>WidgetSquareFocusedItemLayout</include>
+								</focusedlayout>
+								<content target="$VAR[DefWidget11Target]">$VAR[DefWidget11Content]</content>
+							</control>
+						</control>
+						<control type="group">
+							<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+							<top>1110</top>
+							<height>370</height>
+							<control type="label">
+								<width>1200</width>
+								<height>34</height>
+								<aligny>center</aligny>
+								<align>left</align>
+								<height>34</height>
+								<font>Small</font>
+								<font>HomeWidgetLabelFont</font>
+								<label>$VAR[EmbyWidget18Label]</label>
+								<include>Animation.DelayFadeIn</include>
+							</control>
+							<control type="wraplist" id="14017">
+								<description>Widget</description>
+								<top>40</top>
+								<height>325</height>
+								<width>1854</width>
+								<onup>4017</onup>
+								<ondown>300</ondown>
+								<onback>300</onback>
+								<preloaditems>2</preloaditems>
+								<orientation>horizontal</orientation>
+								<autoscroll time="10000">!Control.HasFocus(14017)</autoscroll>
+								<scrolltime tween="quadratic">100</scrolltime>
+								<include>Animation.FadeIn</include>
+								<include>Animation.FadeOut</include>
+								<itemlayout width="577" height="325" condition="!StringCompare(Skin.String(tvshows4widget.aspectratio),POSTER) + !StringCompare(Skin.String(tvshows4widget.aspectratio),SQUARE)">
+									<include>WidgetLandscapeItemLayout</include>
+								</itemlayout>
+								<itemlayout width="218" height="325" condition="StringCompare(Skin.String(tvshows4widget.aspectratio),POSTER)">
+									<include>WidgetPosterItemLayout</include>
+								</itemlayout>
+								<itemlayout width="325" height="325" condition="StringCompare(Skin.String(tvshows4widget.aspectratio),SQUARE)">
+									<include>WidgetSquareItemLayout</include>
+								</itemlayout>
+								<focusedlayout width="577" height="325" condition="!StringCompare(Skin.String(tvshows4widget.aspectratio),POSTER) + !StringCompare(Skin.String(tvshows4widget.aspectratio),SQUARE)">
+									<include>WidgetLandscapeFocusedItemLayout</include>
+								</focusedlayout>
+								<focusedlayout width="218" height="325" condition="StringCompare(Skin.String(tvshows4widget.aspectratio),POSTER)">
+									<include>WidgetPosterFocusedItemLayout</include>
+								</focusedlayout>
+								<focusedlayout width="325" height="325" condition="StringCompare(Skin.String(tvshows4widget.aspectratio),SQUARE)">
+									<include>WidgetSquareFocusedItemLayout</include>
+								</focusedlayout>
+								<content target="$VAR[DefWidget18Target]">$VAR[DefWidget18Content]</content>
+							</control>
+						</control>
+
+					<!-- Music -->
+						<control type="group">
+							<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+							<visible>!Control.HasFocus(5017) + !Control.HasFocus(15017)</visible>
+							<height>370</height>
+							<control type="label">
+								<width>1200</width>
+								<height>34</height>
+								<aligny>center</aligny>
+								<align>left</align>
+								<height>34</height>
+								<font>Small</font>
+								<font>HomeWidgetLabelFont</font>
+								<label>$VAR[EmbyWidget12Label]</label>
+								<include>Animation.DelayFadeIn</include>
+							</control>
+							<control type="wraplist" id="5012">
+								<description>Widget</description>
+								<top>40</top>
+								<height>325</height>
+								<width>1854</width>
+								<onup>300</onup>
+								<ondown>5016</ondown>
+								<onback>300</onback>
+								<preloaditems>2</preloaditems>
+								<orientation>horizontal</orientation>
+								<autoscroll time="10000">!Control.HasFocus(5012)</autoscroll>
+								<scrolltime tween="quadratic">100</scrolltime>
+								<include>Animation.FadeIn</include>
+								<include>Animation.FadeOut</include>
+								<itemlayout width="325" height="325" condition="!StringCompare(Skin.String(music1widget.aspectratio),POSTER) + !StringCompare(Skin.String(music1widget.aspectratio),LANDSCAPE)">
+									<include>WidgetSquareItemLayout</include>
+								</itemlayout>
+								<itemlayout width="218" height="325" condition="StringCompare(Skin.String(music1widget.aspectratio),POSTER)">
+									<include>WidgetPosterItemLayout</include>
+								</itemlayout>
+								<itemlayout width="577" height="325" condition="StringCompare(Skin.String(music1widget.aspectratio),LANDSCAPE)">
+									<include>WidgetLandscapeItemLayout</include>
+								</itemlayout>
+								<focusedlayout width="325" height="325" condition="!StringCompare(Skin.String(music1widget.aspectratio),POSTER) + !StringCompare(Skin.String(music1widget.aspectratio),LANDSCAPE)">
+									<include>WidgetSquareFocusedItemLayout</include>
+								</focusedlayout>
+								<focusedlayout width="218" height="325" condition="StringCompare(Skin.String(music1widget.aspectratio),POSTER)">
+									<include>WidgetPosterFocusedItemLayout</include>
+								</focusedlayout>
+								<focusedlayout width="577" height="325" condition="StringCompare(Skin.String(music1widget.aspectratio),LANDSCAPE)">
+									<include>WidgetLandscapeFocusedItemLayout</include>
+								</focusedlayout>
+								<content target="$VAR[DefWidget12Target]">$VAR[DefWidget12Content]</content>
+							</control>
+						</control>
+						<control type="group">
+							<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+							<visible>!Control.HasFocus(15017)</visible>
+							<top>370</top>
+							<height>370</height>
+							<control type="label">
+								<width>1200</width>
+								<height>34</height>
+								<aligny>center</aligny>
+								<align>left</align>
+								<height>34</height>
+								<font>Small</font>
+								<font>HomeWidgetLabelFont</font>
+								<label>$VAR[EmbyWidget13Label]</label>
+								<include>Animation.DelayFadeIn</include>
+							</control>
+							<control type="wraplist" id="5016">
+								<description>Widget</description>
+								<top>40</top>
+								<height>325</height>
+								<width>1854</width>
+								<onup>5012</onup>
+								<ondown>5017</ondown>
+								<onback>300</onback>
+								<preloaditems>2</preloaditems>
+								<orientation>horizontal</orientation>
+								<autoscroll time="10000">!Control.HasFocus(5016)</autoscroll>
+								<scrolltime tween="quadratic">100</scrolltime>
+								<include>Animation.FadeIn</include>
+								<include>Animation.FadeOut</include>
+								<itemlayout width="325" height="325" condition="!StringCompare(Skin.String(music2widget.aspectratio),POSTER) + !StringCompare(Skin.String(music2widget.aspectratio),LANDSCAPE)">
+									<include>WidgetSquareItemLayout</include>
+								</itemlayout>
+								<itemlayout width="218" height="325" condition="StringCompare(Skin.String(music2widget.aspectratio),POSTER)">
+									<include>WidgetPosterItemLayout</include>
+								</itemlayout>
+								<itemlayout width="577" height="325" condition="StringCompare(Skin.String(music2widget.aspectratio),LANDSCAPE)">
+									<include>WidgetSquareItemLayoutWidgetLandscapeItemLayout</include>
+								</itemlayout>
+								<focusedlayout width="325" height="325" condition="!StringCompare(Skin.String(music2widget.aspectratio),POSTER) + !StringCompare(Skin.String(music2widget.aspectratio),LANDSCAPE)">
+									<include>WidgetSquareFocusedItemLayout</include>
+								</focusedlayout>
+								<focusedlayout width="218" height="325" condition="StringCompare(Skin.String(music2widget.aspectratio),POSTER)">
+									<include>WidgetPosterFocusedItemLayout</include>
+								</focusedlayout>
+								<focusedlayout width="577" height="325" condition="StringCompare(Skin.String(music2widget.aspectratio),LANDSCAPE)">
+									<include>WidgetLandscapeFocusedItemLayout</include>
+								</focusedlayout>
+								<content target="$VAR[DefWidget13Target]">$VAR[DefWidget13Content]</content>
+							</control>
+						</control>
+						<control type="group">
+							<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+							<top>740</top>
+							<height>370</height>
+							<control type="label">
+								<width>1200</width>
+								<height>34</height>
+								<aligny>center</aligny>
+								<align>left</align>
+								<height>34</height>
+								<font>Small</font>
+								<font>HomeWidgetLabelFont</font>
+								<label>$VAR[EmbyWidget14Label]</label>
+								<include>Animation.DelayFadeIn</include>
+							</control>
+							<control type="wraplist" id="5017">
+								<description>Widget</description>
+								<top>40</top>
+								<height>325</height>
+								<width>1854</width>
+								<onup>5016</onup>
+								<ondown>15017</ondown>
+								<onback>300</onback>
+								<preloaditems>2</preloaditems>
+								<orientation>horizontal</orientation>
+								<autoscroll time="10000">!Control.HasFocus(5017)</autoscroll>
+								<scrolltime tween="quadratic">100</scrolltime>
+								<include>Animation.FadeIn</include>
+								<include>Animation.FadeOut</include>
+								<itemlayout width="325" height="325" condition="!StringCompare(Skin.String(music3widget.aspectratio),POSTER) + !StringCompare(Skin.String(music3widget.aspectratio),LANDSCAPE)">
+									<include>WidgetSquareItemLayout</include>
+								</itemlayout>
+								<itemlayout width="218" height="325" condition="StringCompare(Skin.String(music3widget.aspectratio),POSTER)">
+									<include>WidgetPosterItemLayout</include>
+								</itemlayout>
+								<itemlayout width="577" height="325" condition="StringCompare(Skin.String(music3widget.aspectratio),LANDSCAPE)">
+									<include>WidgetLandscapeItemLayout</include>
+								</itemlayout>
+								<focusedlayout width="325" height="325" condition="!StringCompare(Skin.String(music3widget.aspectratio),POSTER) + !StringCompare(Skin.String(music3widget.aspectratio),LANDSCAPE)">
+									<include>WidgetLandscapeFocusedItemLayout</include>
+								</focusedlayout>
+								<focusedlayout width="218" height="325" condition="StringCompare(Skin.String(music3widget.aspectratio),POSTER)">
+									<include>WidgetPosterFocusedItemLayout</include>
+								</focusedlayout>
+								<focusedlayout width="577" height="325" condition="StringCompare(Skin.String(music3widget.aspectratio),LANDSCAPE)">
+									<include>WidgetSquareFocusedItemLayout</include>
+								</focusedlayout>
+								<content target="$VAR[DefWidget14Target]">$VAR[DefWidget14Content]</content>
+							</control>
+						</control>
+						<control type="group">
+							<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+							<top>1110</top>
+							<height>370</height>
+							<control type="label">
+								<width>1200</width>
+								<height>34</height>
+								<aligny>center</aligny>
+								<align>left</align>
+								<height>34</height>
+								<font>Small</font>
+								<font>HomeWidgetLabelFont</font>
+								<label>$VAR[EmbyWidget17Label]</label>
+								<include>Animation.DelayFadeIn</include>
+							</control>
+							<control type="wraplist" id="15017">
+								<description>Widget</description>
+								<top>40</top>
+								<height>325</height>
+								<width>1854</width>
+								<onup>5017</onup>
+								<ondown>300</ondown>
+								<onback>300</onback>
+								<preloaditems>2</preloaditems>
+								<orientation>horizontal</orientation>
+								<autoscroll time="10000">!Control.HasFocus(15017)</autoscroll>
+								<scrolltime tween="quadratic">100</scrolltime>
+								<include>Animation.FadeIn</include>
+								<include>Animation.FadeOut</include>
+								<itemlayout width="325" height="325" condition="!StringCompare(Skin.String(music4widget.aspectratio),POSTER) + !StringCompare(Skin.String(music4widget.aspectratio),LANDSCAPE)">
+									<include>WidgetSquareItemLayout</include>
+								</itemlayout>
+								<itemlayout width="218" height="325" condition="StringCompare(Skin.String(music4widget.aspectratio),POSTER)">
+									<include>WidgetPosterItemLayout</include>
+								</itemlayout>
+								<itemlayout width="577" height="325" condition="StringCompare(Skin.String(music4widget.aspectratio),LANDSCAPE)">
+									<include>WidgetLandscapeItemLayout</include>
+								</itemlayout>
+								<focusedlayout width="325" height="325" condition="!StringCompare(Skin.String(music4widget.aspectratio),POSTER) + !StringCompare(Skin.String(music4widget.aspectratio),LANDSCAPE)">
+									<include>WidgetSquareFocusedItemLayout</include>
+								</focusedlayout>
+								<focusedlayout width="218" height="325" condition="StringCompare(Skin.String(music4widget.aspectratio),POSTER)">
+									<include>WidgetPosterFocusedItemLayout</include>
+								</focusedlayout>
+								<focusedlayout width="577" height="325" condition="StringCompare(Skin.String(music4widget.aspectratio),LANDSCAPE)">
+									<include>WidgetLandscapeFocusedItemLayout</include>
+								</focusedlayout>
+								<content target="$VAR[DefWidget17Target]">$VAR[DefWidget17Content]</content>
+							</control>
+						</control>
+
+
+						<!-- Default Items -->
+						<control type="group">
+							<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
+							<visible>!Control.HasFocus(6017) + !Control.HasFocus(9017)</visible>
+							<height>370</height>
+							<control type="label">
+								<width>1200</width>
+								<height>34</height>
+								<aligny>center</aligny>
+								<align>left</align>
+								<height>34</height>
+								<font>Small</font>
+								<font>HomeWidgetLabelFont</font>
+								<label>$VAR[EmbyWidget2Label]</label>
+								<include>Animation.DelayFadeIn</include>
+							</control>
+							<control type="wraplist" id="6012">
+								<description>Widget</description>
+								<top>40</top>
+								<height>325</height>
+								<width>1854</width>
+								<onup>300</onup>
+								<ondown>6016</ondown>
+								<onback>300</onback>
+								<preloaditems>2</preloaditems>
+								<orientation>horizontal</orientation>
+								<autoscroll time="10000">!Control.HasFocus(6012)</autoscroll>
+								<scrolltime tween="quadratic">100</scrolltime>
+								<include>Animation.FadeIn</include>
+								<include>Animation.FadeOut</include>
+								<itemlayout width="577" height="325" condition="!StringCompare(Container(300).ListItem.Property(widget1Icon),Poster)  + !StringCompare(Container(300).ListItem.Property(widget1Icon),Square)">
+									<include>WidgetLandscapeItemLayout</include>
+								</itemlayout>
+								<itemlayout width="218" height="325" condition="StringCompare(Container(300).ListItem.Property(widget1Icon),Poster)">
+									<include>WidgetPosterItemLayout</include>
+								</itemlayout>
+								<itemlayout width="325" height="325" condition="StringCompare(Container(300).ListItem.Property(widget1Icon),Square)">
+									<include>WidgetSquareItemLayout</include>
+								</itemlayout>
+								<focusedlayout width="577" height="325" condition="!StringCompare(Container(300).ListItem.Property(widget1Icon),Poster) + !StringCompare(Container(300).ListItem.Property(widget1Icon),Square)">
+									<include>WidgetLandscapeFocusedItemLayout</include>
+								</focusedlayout>
+								<focusedlayout width="218" height="325" condition="StringCompare(Container(300).ListItem.Property(widget1Icon),Poster)">
+									<include>WidgetPosterFocusedItemLayout</include>
+								</focusedlayout>
+								<focusedlayout width="325" height="325" condition="StringCompare(Container(300).ListItem.Property(widget1Icon),Square)">
+									<include>WidgetSquareFocusedItemLayout</include>
+								</focusedlayout>
+								<content target="$VAR[DefWidget2Target]">$VAR[DefWidget2Content]</content>
+							</control>
+						</control>
+						<control type="group">
+							<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
+							<visible>!Control.HasFocus(9017)</visible>
+							<top>370</top>
+							<height>370</height>
+							<control type="label">
+								<width>1200</width>
+								<height>34</height>
+								<aligny>center</aligny>
+								<align>left</align>
+								<height>34</height>
+								<font>Small</font>
+								<font>HomeWidgetLabelFont</font>
+								<label>$VAR[EmbyWidget1Label]</label>
+								<include>Animation.DelayFadeIn</include>
+							</control>
+							<control type="wraplist" id="6016">
+								<description>Widget</description>
+								<top>40</top>
+								<height>325</height>
+								<width>1854</width>
+								<onup>6012</onup>
+								<ondown>6017</ondown>
+								<onback>300</onback>
+								<preloaditems>2</preloaditems>
+								<orientation>horizontal</orientation>
+								<autoscroll time="10000">!Control.HasFocus(6016)</autoscroll>
+								<scrolltime tween="quadratic">100</scrolltime>
+								<include>Animation.FadeIn</include>
+								<include>Animation.FadeOut</include>
+								<itemlayout width="577" height="325" condition="!StringCompare(Container(300).ListItem.Property(widget2Icon),Poster) + !StringCompare(Container(300).ListItem.Property(widget2Icon),Square)">
+									<include>WidgetLandscapeItemLayout</include>
+								</itemlayout>
+								<itemlayout width="218" height="325" condition="StringCompare(Container(300).ListItem.Property(widget2Icon),Poster)">
+									<include>WidgetPosterItemLayout</include>
+								</itemlayout>
+								<itemlayout width="325" height="325" condition="StringCompare(Container(300).ListItem.Property(widget2Icon),Square)">
+									<include>WidgetSquareItemLayout</include>
+								</itemlayout>
+								<focusedlayout width="577" height="325" condition="!StringCompare(Container(300).ListItem.Property(widget2Icon),Poster) + !StringCompare(Container(300).ListItem.Property(widget2Icon),Square)">
+									<include>WidgetLandscapeFocusedItemLayout</include>
+								</focusedlayout>
+								<focusedlayout width="218" height="325" condition="StringCompare(Container(300).ListItem.Property(widget2Icon),Poster)">
+									<include>WidgetPosterFocusedItemLayout</include>
+								</focusedlayout>
+								<focusedlayout width="325" height="325" condition="StringCompare(Container(300).ListItem.Property(widget2Icon),Square)">
+									<include>WidgetSquareFocusedItemLayout</include>
+								</focusedlayout>
+								<content target="$VAR[DefWidget1Target]">$VAR[DefWidget1Content]</content>
+							</control>
+						</control>
+						<control type="group">
+							<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
+							<top>740</top>
+							<height>370</height>
+							<control type="label">
+								<width>1200</width>
+								<height>34</height>
+								<aligny>center</aligny>
+								<align>left</align>
+								<height>34</height>
+								<font>Small</font>
+								<font>HomeWidgetLabelFont</font>
+								<label>$VAR[EmbyWidget3Label]</label>
+								<include>Animation.DelayFadeIn</include>
+							</control>
+							<control type="wraplist" id="6017">
+								<description>Widget</description>
+								<top>40</top>
+								<height>325</height>
+								<width>1854</width>
+								<onup>6016</onup>
+								<ondown>9017</ondown>
+								<onback>300</onback>
+								<preloaditems>2</preloaditems>
+								<orientation>horizontal</orientation>
+								<autoscroll time="10000">!Control.HasFocus(6017)</autoscroll>
+								<scrolltime tween="quadratic">100</scrolltime>
+								<include>Animation.FadeIn</include>
+								<include>Animation.FadeOut</include>
+								<itemlayout width="577" height="325" condition="!StringCompare(Container(300).ListItem.Property(widget3Icon),Poster) + !StringCompare(Container(300).ListItem.Property(widget3Icon),Square)">
+									<include>WidgetLandscapeItemLayout</include>
+								</itemlayout>
+								<itemlayout width="218" height="325" condition="StringCompare(Container(300).ListItem.Property(widget3Icon),Poster)">
+									<include>WidgetPosterItemLayout</include>
+								</itemlayout>
+								<itemlayout width="325" height="325" condition="StringCompare(Container(300).ListItem.Property(widget3Icon),Square)">
+									<include>WidgetSquareItemLayout</include>
+								</itemlayout>
+								<focusedlayout width="577" height="325" condition="!StringCompare(Container(300).ListItem.Property(widget3Icon),Poster) + !StringCompare(Container(300).ListItem.Property(widget3Icon),Square)">
+									<include>WidgetLandscapeFocusedItemLayout</include>
+								</focusedlayout>
+								<focusedlayout width="218" height="325" condition="StringCompare(Container(300).ListItem.Property(widget3Icon),Poster)">
+									<include>WidgetPosterFocusedItemLayout</include>
+								</focusedlayout>
+								<focusedlayout width="325" height="325" condition="StringCompare(Container(300).ListItem.Property(widget3Icon),Square)">
+									<include>WidgetSquareFocusedItemLayout</include>
+								</focusedlayout>
+								<content target="$VAR[DefWidget3Target]">$VAR[DefWidget3Content]</content>
+							</control>
+						</control>
+						<control type="group">
+							<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
+							<top>1110</top>
+							<height>370</height>
+							<control type="label">
+								<width>1200</width>
+								<height>34</height>
+								<aligny>center</aligny>
+								<align>left</align>
+								<height>34</height>
+								<font>Small</font>
+								<font>HomeWidgetLabelFont</font>
+								<label>$VAR[EmbyWidget15Label]</label>
+								<include>Animation.DelayFadeIn</include>
+							</control>
+							<control type="wraplist" id="9017">
+								<description>Widget</description>
+								<top>40</top>
+								<height>325</height>
+								<width>1854</width>
+								<onup>6017</onup>
+								<ondown>300</ondown>
+								<onback>300</onback>
+								<preloaditems>2</preloaditems>
+								<orientation>horizontal</orientation>
+								<autoscroll time="10000">!Control.HasFocus(9017)</autoscroll>
+								<scrolltime tween="quadratic">100</scrolltime>
+								<include>Animation.FadeIn</include>
+								<include>Animation.FadeOut</include>
+								<itemlayout width="577" height="325" condition="!StringCompare(Container(300).ListItem.Property(widget4Icon),Poster) + !StringCompare(Container(300).ListItem.Property(widget4Icon),Square)">
+									<include>WidgetLandscapeItemLayout</include>
+								</itemlayout>
+								<itemlayout width="218" height="325" condition="StringCompare(Container(300).ListItem.Property(widget4Icon),Poster)">
+									<include>WidgetPosterItemLayout</include>
+								</itemlayout>
+								<itemlayout width="325" height="325" condition="StringCompare(Container(300).ListItem.Property(widget4Icon),Square)">
+									<include>WidgetSquareItemLayout</include>
+								</itemlayout>
+								<focusedlayout width="577" height="325" condition="!StringCompare(Container(300).ListItem.Property(widget4Icon),Poster) + !StringCompare(Container(300).ListItem.Property(widget4Icon),Square)">
+									<include>WidgetLandscapeFocusedItemLayout</include>
+								</focusedlayout>
+								<focusedlayout width="218" height="325" condition="StringCompare(Container(300).ListItem.Property(widget4Icon),Poster)">
+									<include>WidgetPosterFocusedItemLayout</include>
+								</focusedlayout>
+								<focusedlayout width="325" height="325" condition="StringCompare(Container(300).ListItem.Property(widget4Icon),Square)">
+									<include>WidgetSquareFocusedItemLayout</include>
+								</focusedlayout>
+								<content target="$VAR[DefWidget15Target]">$VAR[DefWidget15Content]</content>
+							</control>
+						</control>
+
+						<!-- Live TV -->
+						<control type="group">
+							<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
+							<height>1340</height>
+							<control type="group">
+								<height>900</height>
+								<control type="label">
+									<width>770</width>
+									<height>34</height>
+									<aligny>center</aligny>
+									<align>left</align>
+									<height>34</height>
+									<font>Small</font>
+									<font>HomeWidgetLabelFont</font>
+									<label>$VAR[EmbyWidget5Label]</label>
+									<include>Animation.DelayFadeIn</include>
+								</control>
+								<control type="list" id="7016">
+									<description>Widget</description>
+									<width>770</width>
+									<height>368</height>
+									<top>40</top>
+									<onup>300</onup>
+									<onleft>300</onleft>
+									<onleft>ClearProperty(SkinHelper.ListItemThumb,home)</onleft>
+									<onright>7012</onright>
+									<onback>300</onback>
+									<preloaditems>2</preloaditems>
+									<orientation>vertical</orientation>
+									<autoscroll time="7000">!Control.HasFocus(7016)</autoscroll>
+									<scrolltime tween="quadratic">100</scrolltime>
+									<include>Animation.FadeIn</include>
+									<include>Animation.FadeOut</include>
+									<itemlayout height="46" width="770">
+										<control type="label">
+											<left>5</left>
+											<align>left</align>
+											<aligny>center</aligny>
+											<height>46</height>
+											<width>48</width>
+											<font>MiniBold</font>
+											<textcolor>white</textcolor>
+											<selectedcolor>white</selectedcolor>
+											<label>$INFO[ListItem.ChannelNumberLabel]</label>
+										</control>
+										<control type="label">
+											<left>80</left>
+											<right>5</right>
+											<align>left</align>
+											<aligny>center</aligny>
+											<height>46</height>
+											<font>MiniBold</font>
+											<textcolor>white</textcolor>
+											<selectedcolor>white</selectedcolor>
+											<label>$INFO[ListItem.ChannelName]$INFO[ListItem.Title,  [I],[/I]]</label>
+										</control>
+									</itemlayout>
+									<focusedlayout height="46" width="770">
+										<control type="button" id="70171">
+											<onfocus>CancelAlarm(livetvscroll,true)</onfocus>
+											<onunfocus>AlarmClock(livetvscroll,Control.Move(7016,1),00:10,silent,loop)</onunfocus>
+											<onfocus>Skin.SetString(widget.helper,videoinfo2)</onfocus>
+										</control>
+										<control type="image">
+											<width>100%</width>
+											<height>100%</height>
+											<texture colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
+											<visible>Control.HasFocus(7016)</visible>
+										</control>
+										<control type="image">
+											<width>100%</width>
+											<height>100%</height>
+											<texture colordiffuse="selective yellow">common/box.png</texture>
+											<visible>!Control.HasFocus(7016)</visible>
+										</control>
+										<control type="label">
+											<left>5</left>
+											<align>left</align>
+											<aligny>center</aligny>
+											<height>46</height>
+											<width>48</width>
+											<font>MiniBold</font>
+											<textcolor>$VAR[ColourSelected]</textcolor>
+											<selectedcolor>$VAR[ColourSelected]</selectedcolor>
+											<label>$INFO[ListItem.ChannelNumberLabel]</label>
+										</control>
+										<control type="label">
+											<left>80</left>
+											<right>5</right>
+											<align>left</align>
+											<aligny>center</aligny>
+											<height>46</height>
+											<font>MiniBold</font>
+											<textcolor>$VAR[ColourSelected]</textcolor>
+											<selectedcolor>$VAR[ColourSelected]</selectedcolor>
+											<label>$INFO[ListItem.ChannelName]$INFO[ListItem.Title,  [I],[/I]]</label>
+										</control>
+									</focusedlayout>
+									<content target="$VAR[DefWidget5Target]">$VAR[DefWidget5Content]</content>
+								</control>
+								<control type="group">
+									<control type="group">
+										<top>460</top>
+										<width>770</width>
+										<height>460</height>
+										<control type="image">
+											<left>0</left>
+											<right>0</right>
+											<top>0</top>
+											<bottom>0</bottom>
+											<texture colordiffuse="black">common/box.png</texture>
+										</control>
+										<control type="group">
+											<height>317</height>
+											<control type="image">
+												<fadetime>200</fadetime>
+												<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+												<texture diffuse="common/box.png" background="true" fallback="pvr/background.jpg">$INFO[Container(7016).ListItem.Thumb]</texture>
+												<visible>IsEmpty(Window(home).Property(SkinHelper.PVR.Landscape)) + IsEmpty(Window(home).Property(SkinHelper.PVR.FanArt)) + IsEmpty(Window(home).Property(SkinHelper.PVR.Thumb)) + IsEmpty(Window(home).Property(SkinHelper.PVR.ChannelLogo))</visible>
+											</control>
+											<control type="image">
+												<fadetime>200</fadetime>
+												<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+												<texture diffuse="common/box.png" background="true" fallback="pvr/background.jpg">$VAR[PVRLandscape]</texture>
+												<visible>!IsEmpty(Window(home).Property(SkinHelper.PVR.Landscape)) | !IsEmpty(Window(home).Property(SkinHelper.PVR.FanArt)) | !IsEmpty(Window(home).Property(SkinHelper.PVR.Thumb)) | !IsEmpty(Window(home).Property(SkinHelper.PVR.ChannelLogo))</visible>
+											</control>
+											<control type="image">
+												<description>Title overlay</description>
+												<texture colordiffuse="44000000">common/white.png</texture>
+												<visible>!IsEmpty(Window(home).Property(SkinHelper.PVR.Landscape)) | !IsEmpty(Window(home).Property(SkinHelper.PVR.FanArt)) | !IsEmpty(Window(home).Property(SkinHelper.PVR.Thumb)) | !IsEmpty(Window(home).Property(SkinHelper.PVR.ChannelLogo))</visible>
+											</control>
+											<control type="image">
+												<bottom>35</bottom>
+												<right>0</right>
+												<height>130</height>
+												<width>130</width>
+												<fadetime>200</fadetime>
+												<aspectratio align="right" aligny="bottom" scalediffuse="false">keep</aspectratio>
+												<texture diffuse="common/box.png" background="true">$INFO[Container(7016).ListItem.Thumb]</texture>
+												<visible>[!IsEmpty(Window(home).Property(SkinHelper.PVR.Landscape)) | !IsEmpty(Window(home).Property(SkinHelper.PVR.FanArt)) | !IsEmpty(Window(home).Property(SkinHelper.PVR.Thumb))] + IsEmpty(Window(home).Property(SkinHelper.PVR.ChannelLogo))</visible>
+											</control>
+											<control type="image">
+												<bottom>35</bottom>
+												<left>0</left>
+												<height>130</height>
+												<width>130</width>
+												<fadetime>200</fadetime>
+												<aspectratio align="left" aligny="bottom" scalediffuse="false">keep</aspectratio>
+												<texture diffuse="common/box.png" background="true">$INFO[Window(home).Property(SkinHelper.PVR.CharacterArt)]</texture>
+												<visible>!IsEmpty(Window(home).Property(SkinHelper.PVR.CharacterArt))</visible>
+											</control>
+											<control type="image">
+												<description>Title overlay</description>
+												<bottom>0</bottom>
+												<height>35</height>
+												<texture colordiffuse="selective yellow">common/white.png</texture>
+												<visible>Control.HasFocus(7016)</visible>
+											</control>
+											<control type="label">
+												<align>center</align>
+												<aligny>center</aligny>
+												<height>35</height>
+												<bottom>0</bottom>
+												<font>MiniBold</font>
+												<textcolor>black</textcolor>
+												<selectedcolor>black</selectedcolor>
+												<label>$INFO[Container(7016).ListItem.ChannelNumberLabel,,  ]$INFO[Container(7016).ListItem.ChannelName]</label>
+												<visible>Control.HasFocus(7016)</visible>
+											</control>
+										</control>
+										<control type="group">
+											<visible>Control.HasFocus(7016)</visible>
+											<left>5</left>
+											<right>5</right>
+											<top>317</top>
+											<height>143</height>
+											<control type="image">
+												<top>0</top>
+												<height>40</height>
+												<texture>$INFO[Window(home).Property(SkinHelper.PVR.Logo)]</texture>
+												<aspectratio align="center" aligny="bottom">keep</aspectratio>
+												<fadetime>50</fadetime>
+												<visible>!IsEmpty(Window(home).Property(SkinHelper.PVR.Logo))</visible>
+											</control>
+											<control type="label">
+												<top>2</top>
+												<aligny>center</aligny>
+												<align>left</align>
+												<height>38</height>
+												<font>TinyBold</font>
+												<textcolor>white2</textcolor>
+												<selectedcolor>white2</selectedcolor>
+												<label>$INFO[Container(7016).ListItem.StartTime(hh:mm)]</label>
+											</control>
+											<control type="label">
+												<top>2</top>
+												<aligny>center</aligny>
+												<align>right</align>
+												<height>38</height>
+												<font>TinyBold</font>
+												<textcolor>white2</textcolor>
+												<selectedcolor>white2</selectedcolor>
+												<label>$INFO[Container(7016).ListItem.EndTime(hh:mm)]</label>
+											</control>
+											<control type="progress">
+												<top>42</top>
+												<left>5</left>
+												<right>5</right>
+												<height>6</height>
+												<reveal>true</reveal>
+												<info>Container(7016).ListItem.Progress</info>
+											</control>
+											<control type="label">
+												<top>51</top>
+												<height>30</height>
+												<aligny>center</aligny>
+												<font>Tiny</font>
+												<textcolor>white</textcolor>
+												<selectedcolor>white</selectedcolor>
+												<label fallback="19055">$INFO[Container(7016).ListItem.Genre]</label>
+											</control>
+											<control type="textbox">
+												<top>87</top>
+												<height>55</height>
+												<align>justify</align>
+												<font>MiniBold</font>
+												<textcolor>white</textcolor>
+												<selectedcolor>white</selectedcolor>
+												<label fallback="19055">$INFO[Container(7016).ListItem.Plot]$INFO[Container(7016).ListItem.NextStartTime,[CR][CR]$LOCALIZE[31801], ]$INFO[Container(7016).ListItem.NextTitle]</label>
+											</control>
+										</control>
+										<control type="group">
+											<visible>!Control.HasFocus(7016)</visible>
+											<left>5</left>
+											<right>5</right>
+											<top>317</top>
+											<height>143</height>
+											<control type="image">
+												<top>0</top>
+												<height>40</height>
+												<texture>$INFO[Window(home).Property(SkinHelper.PVR.Logo)]</texture>
+												<aspectratio align="center" aligny="bottom">keep</aspectratio>
+												<fadetime>50</fadetime>
+												<visible>!IsEmpty(Window(home).Property(SkinHelper.PVR.Logo))</visible>
+											</control>
+											<control type="label">
+												<top>2</top>
+												<aligny>center</aligny>
+												<align>left</align>
+												<height>38</height>
+												<font>TinyBold</font>
+												<textcolor>white2</textcolor>
+												<selectedcolor>white2</selectedcolor>
+												<label>$INFO[Container(7016).ListItem.StartTime(hh:mm)]</label>
+											</control>
+											<control type="label">
+												<top>2</top>
+												<aligny>center</aligny>
+												<align>right</align>
+												<height>38</height>
+												<font>TinyBold</font>
+												<textcolor>white2</textcolor>
+												<selectedcolor>white2</selectedcolor>
+												<label>$INFO[Container(7016).ListItem.EndTime(hh:mm)]</label>
+											</control>
+											<control type="progress">
+												<top>42</top>
+												<left>5</left>
+												<right>5</right>
+												<height>6</height>
+												<reveal>true</reveal>
+												<info>Container(7016).ListItem.Progress</info>
+											</control>
+											<control type="label">
+												<top>65</top>
+												<aligny>center</aligny>
+												<align>left</align>
+												<height>38</height>
+												<font>TinyBold</font>
+												<textcolor>white2</textcolor>
+												<selectedcolor>white2</selectedcolor>
+												<label>$INFO[Container(7016).ListItem.NextStartTime,$LOCALIZE[31801], ]$INFO[Container(7016).ListItem.NextTitle]</label>
+											</control>
+											<control type="label">
+												<top>104</top>
+												<height>30</height>
+												<aligny>center</aligny>
+												<font>Tiny</font>
+												<textcolor>white2</textcolor>
+												<selectedcolor>white2</selectedcolor>
+												<label>$INFO[Container(7016).ListItem.NextGenre]</label>
+											</control>
+										</control>
+									</control>
+									<control type="group">
+										<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
+										<top>422</top>
+										<width>750</width>
+										<control type="label">
+											<aligny>center</aligny>
+											<align>left</align>
+											<height>38</height>
+											<font>HomeWidgetLabelFont</font>
+											<textcolor>white</textcolor>
+											<selectedcolor>white</selectedcolor>
+											<label>$INFO[Container(7016).ListItem.Season,,x]$INFO[Container(7016).ListItem.Episode,,. ]$INFO[Container(7016).ListItem.Title]$INFO[Container(7016).ListItem.EpisodeName, (,)]</label>
+										</control>
+									</control>
+								</control>
+							</control>
+							<control type="label">
+								<left>850</left>
+								<width>577</width>
+								<height>34</height>
+								<aligny>center</aligny>
+								<align>left</align>
+								<height>34</height>
+								<font>Small</font>
+								<font>HomeWidgetLabelFont</font>
+								<label>$VAR[EmbyWidget4Label]</label>
+								<include>Animation.DelayFadeIn</include>
+							</control>
+							<control type="panel" id="7012">
+								<description>Widget</description>
+								<left>850</left>
+								<top>40</top>
+								<height>920</height>
+								<width>820</width>
+								<onleft>7016</onleft>
+								<onright>300</onright>
+								<onback>300</onback>
+								<preloaditems>2</preloaditems>
+								<orientation>vertical</orientation>
+								<autoscroll time="10000">!Control.HasFocus(7012)</autoscroll>
+								<scrolltime tween="quadratic">100</scrolltime>
+								<include>Animation.FadeIn</include>
+								<include>Animation.FadeOut</include>
+								<itemlayout width="410" height="230">
+									<include>WidgetLandscapeItemLayout</include>
+								</itemlayout>
+								<focusedlayout width="410" height="230">
+									<include>WidgetLandscapeFocusedItemLayout</include>
+								</focusedlayout>
+								<content target="$VAR[DefWidget4Target]">$VAR[DefWidget4Content]</content>
+							</control>
+						</control>
+
+
+						<!-- Weather -->
+						<control type="group">
+							<visible>StringCompare(Container(300).ListItem.Property(defaultID),weather)</visible>
+							<height>705</height>
+							<control type="group">
+								<height>705</height>
+								<control type="panel" id="3444">
+									<visible>Weather.IsFetched</visible>
+									<include>Animation.FadeIn</include>
+									<width>730</width>
+									<height>905</height>
+									<onup>300</onup>
+									<onleft>300</onleft>
+									<onback>300</onback>
+									<orientation>vertical</orientation>
+									<scrolltime tween="quadratic">500</scrolltime>
+									<autoscroll time="7000">!Control.HasFocus(3444)</autoscroll>
+									<itemlayout height="452.5" width="365">
+										<control type="group">
+											<control type="image">
+												<left>0</left>
+												<top>0</top>
+												<right>0</right>
+												<bottom>0</bottom>
+												<texture>common/nofocus-shadow10.png</texture>
+											</control>
+											<control type="image">
+												<left>10</left>
+												<top>10</top>
+												<right>10</right>
+												<bottom>10</bottom>
+												<texture colordiffuse="Panel">common/box.png</texture>
+											</control>
+											<control type="multiimage" description="Fanart">
+												<left>10</left>
+												<top>10</top>
+												<right>10</right>
+												<bottom>10</bottom>
+												<fadetime>600</fadetime>
+												<timeperimage>12000</timeperimage>
+												<randomize>true</randomize>
+												<aspectratio>scale</aspectratio>
+												<animation effect="fade" start="100" end="10" condition="true">Conditional</animation>
+												<imagepath background="true">$INFO[ListItem.Property(Fanart)]</imagepath>
+											</control>
+											<control type="image">
+												<description>current weather icon</description>
+												<top>80</top>
+												<width>340</width>
+												<height>280</height>
+												<texture>$INFO[ListItem.Icon]</texture>
+												<aspectratio aligny="top">keep</aspectratio>
+											</control>
+											<control type="label">
+												<width>340</width>
+												<height>60</height>
+												<font>Medium</font>
+												<align>center</align>
+												<textcolor>Dark2</textcolor>
+												<label>$INFO[ListItem.Label]</label>
+												<textoffsetx>15</textoffsetx>
+											</control>
+											<control type="label">
+												<bottom>50</bottom>
+												<width>340</width>
+												<height>60</height>
+												<font>Small</font>
+												<align>center</align>
+												<textcolor>Dark2</textcolor>
+												<label>$INFO[ListItem.Label2]</label>
+												<textoffsetx>15</textoffsetx>
+											</control>
+											<control type="label">
+												<bottom>10</bottom>
+												<width>340</width>
+												<height>60</height>
+												<font>Small</font>
+												<align>center</align>
+												<textcolor>Dark2</textcolor>
+												<label>$INFO[ListItem.Property(HighTemp),[B],[/B]]$INFO[ListItem.Property(LowTemp),  ]</label>
+												<textoffsetx>15</textoffsetx>
+											</control>
+										</control>
+									</itemlayout>
+									<focusedlayout height="452.5" width="365">
+										<control type="button" id="50171">
+											<onfocus>CancelAlarm(weatherscroll,true)</onfocus>
+											<onunfocus>AlarmClock(weatherscroll,Control.Move(3444,1),00:10,silent,loop)</onunfocus>
+										</control>
+										<control type="group">
+											<control type="image">
+												<left>0</left>
+												<top>0</top>
+												<right>0</right>
+												<bottom>0</bottom>
+												<texture>common/nofocus-shadow10.png</texture>
+											</control>
+											<control type="image">
+												<left>10</left>
+												<top>10</top>
+												<right>10</right>
+												<bottom>10</bottom>
+												<texture colordiffuse="panel">common/box.png</texture>
+												<visible>!Control.HasFocus(3444)</visible>
+											</control>
+											<control type="image">
+												<left>10</left>
+												<top>10</top>
+												<right>10</right>
+												<bottom>10</bottom>
+												<texture colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
+												<visible>Control.HasFocus(3444)</visible>
+											</control>
+											<control type="multiimage" description="Fanart">
+												<left>10</left>
+												<top>10</top>
+												<right>10</right>
+												<bottom>10</bottom>
+												<fadetime>600</fadetime>
+												<timeperimage>12000</timeperimage>
+												<randomize>true</randomize>
+												<aspectratio>scale</aspectratio>
+												<animation effect="fade" start="100" end="10" condition="true">Conditional</animation>
+												<imagepath background="true">$INFO[ListItem.Property(Fanart)]</imagepath>
+											</control>
+											<control type="image">
+												<description>current weather icon</description>
+												<top>80</top>
+												<width>340</width>
+												<height>280</height>
+												<texture>$INFO[ListItem.Icon]</texture>
+												<aspectratio aligny="top">keep</aspectratio>
+											</control>
+											<control type="label">
+												<width>340</width>
+												<height>60</height>
+												<font>Medium</font>
+												<align>center</align>
+												<textcolor>$VAR[ColourSelected]</textcolor>
+												<selectedcolor>$VAR[ColourSelected</selectedcolor>
+												<label>$INFO[ListItem.Label]</label>
+												<textoffsetx>15</textoffsetx>
+											</control>
+											<control type="label">
+												<bottom>50</bottom>
+												<width>340</width>
+												<height>60</height>
+												<font>Small</font>
+												<align>center</align>
+												<textcolor>$VAR[ColourSelected]</textcolor>
+												<selectedcolor>$VAR[ColourSelected]</selectedcolor>
+												<label>$INFO[ListItem.Label2]</label>
+												<textoffsetx>15</textoffsetx>
+											</control>
+											<control type="label">
+												<bottom>10</bottom>
+												<width>340</width>
+												<height>60</height>
+												<font>Small</font>
+												<align>center</align>
+												<textcolor>$VAR[ColourSelected]</textcolor>
+												<selectedcolor>$VAR[ColourSelected]</selectedcolor>
+												<label>$INFO[ListItem.Property(HighTemp),[B],[/B]]$INFO[ListItem.Property(LowTemp),  ]</label>
+												<textoffsetx>15</textoffsetx>
+											</control>
+										</control>
+									</focusedlayout>
+									<content>
+										<item>
+											<label>$LOCALIZE[33006]</label>
+											<label2>$INFO[Window(weather).Property(Day0.Outlook)]</label2>
+											<icon>$VAR[WeatherIconVar]$INFO[Window(weather).Property(Day0.FanartCode),,.png]</icon>
+											<property name="HighTemp">$INFO[Window(weather).Property(Day0.HighTemp)]$INFO[System.TemperatureUnits]</property>
+											<property name="LowTemp">$INFO[Window(weather).Property(Day0.LowTemp)]$INFO[System.TemperatureUnits]</property>
+											<property name="Fanart">$VAR[WeatherFanart]$INFO[Window(Weather).Property(Day0.FanartCode)]$VAR[DefWeatherFanart]</property>
+											<onclick>noop</onclick>
+											<visible>!IsEmpty(Window(weather).Property(Day0.Title))</visible>
+										</item>
+										<item>
+											<label>$LOCALIZE[33007]</label>
+											<label2>$INFO[Window(weather).Property(Day1.Outlook)]</label2>
+											<icon>$VAR[WeatherIconVar]$INFO[Window(weather).Property(Day1.FanartCode),,.png]</icon>
+											<property name="HighTemp">$INFO[Window(weather).Property(Day1.HighTemp)]$INFO[System.TemperatureUnits]</property>
+											<property name="LowTemp">$INFO[Window(weather).Property(Day1.LowTemp)]$INFO[System.TemperatureUnits]</property>
+											<property name="Fanart">$VAR[WeatherFanart]$INFO[Window(Weather).Property(Day1.FanartCode)]$VAR[DefWeatherFanart]</property>
+											<onclick>noop</onclick>
+											<visible>!IsEmpty(Window(weather).Property(Day1.Title))</visible>
+										</item>
+										<item>
+											<label>$INFO[Window(weather).Property(Day2.Title)]</label>
+											<label2>$INFO[Window(weather).Property(Day2.Outlook)]</label2>
+											<icon>$VAR[WeatherIconVar]$INFO[Window(weather).Property(Day2.FanartCode),,.png]</icon>
+											<property name="HighTemp">$INFO[Window(weather).Property(Day2.HighTemp)]$INFO[System.TemperatureUnits]</property>
+											<property name="LowTemp">$INFO[Window(weather).Property(Day2.LowTemp)]$INFO[System.TemperatureUnits]</property>
+											<property name="Fanart">$VAR[WeatherFanart]$INFO[Window(Weather).Property(Day2.FanartCode)]$VAR[DefWeatherFanart]</property>
+											<onclick>noop</onclick>
+											<visible>!IsEmpty(Window(weather).Property(Day2.Title))</visible>
+										</item>
+										<item>
+											<label>$INFO[Window(weather).Property(Day3.Title)]</label>
+											<label2>$INFO[Window(weather).Property(Day3.Outlook)]</label2>
+											<icon>$VAR[WeatherIconVar]$INFO[Window(weather).Property(Day3.FanartCode),,.png]</icon>
+											<property name="HighTemp">$INFO[Window(weather).Property(Day3.HighTemp)]$INFO[System.TemperatureUnits]</property>
+											<property name="LowTemp">$INFO[Window(weather).Property(Day3.LowTemp)]$INFO[System.TemperatureUnits]</property>
+											<property name="Fanart">$VAR[WeatherFanart]$INFO[Window(Weather).Property(Day3.FanartCode)]$VAR[DefWeatherFanart]</property>
+											<onclick>noop</onclick>
+											<visible>!IsEmpty(Window(weather).Property(Day3.Title))</visible>
+										</item>
+										<item>
+											<label>$INFO[Window(weather).Property(Day4.Title)]</label>
+											<label2>$INFO[Window(weather).Property(Day4.Outlook)]</label2>
+											<icon>$VAR[WeatherIconVar]$INFO[Window(weather).Property(Day4.FanartCode),,.png]</icon>
+											<property name="HighTemp">$INFO[Window(weather).Property(Day4.HighTemp)]$INFO[System.TemperatureUnits]</property>
+											<property name="LowTemp">$INFO[Window(weather).Property(Day4.LowTemp)]$INFO[System.TemperatureUnits]</property>
+											<property name="Fanart">$VAR[WeatherFanart]$INFO[Window(Weather).Property(Day4.FanartCode)]$VAR[DefWeatherFanart]</property>
+											<onclick>noop</onclick>
+											<visible>!IsEmpty(Window(weather).Property(Day4.Title))</visible>
+										</item>
+										<item>
+											<label>$INFO[Window(weather).Property(Day5.Title)]</label>
+											<label2>$INFO[Window(weather).Property(Day5.Outlook)]</label2>
+											<icon>$VAR[WeatherIconVar]$INFO[Window(weather).Property(Day5.FanartCode),,.png]</icon>
+											<property name="HighTemp">$INFO[Window(weather).Property(Day5.HighTemp)]$INFO[System.TemperatureUnits]</property>
+											<property name="LowTemp">$INFO[Window(weather).Property(Day5.LowTemp)]$INFO[System.TemperatureUnits]</property>
+											<property name="Fanart">$VAR[WeatherFanart]$INFO[Window(Weather).Property(Day5.FanartCode)]$VAR[DefWeatherFanart]</property>
+											<onclick>noop</onclick>
+											<visible>!IsEmpty(Window(weather).Property(Day5.Title))</visible>
+										</item>
+										<item>
+											<label>$INFO[Window(weather).Property(Day6.Title)]</label>
+											<label2>$INFO[Window(weather).Property(Day6.Outlook)]</label2>
+											<icon>$VAR[WeatherIconVar]$INFO[Window(weather).Property(Day6.FanartCode),,.png]</icon>
+											<property name="HighTemp">$INFO[Window(weather).Property(Day6.HighTemp)]$INFO[System.TemperatureUnits]</property>
+											<property name="LowTemp">$INFO[Window(weather).Property(Day6.LowTemp)]$INFO[System.TemperatureUnits]</property>
+											<property name="Fanart">$VAR[WeatherFanart]$INFO[Window(Weather).Property(Day6.FanartCode)]$VAR[DefWeatherFanart]</property>
+											<onclick>noop</onclick>
+											<visible>!IsEmpty(Window(weather).Property(Day6.Title)) + !IsEmpty(Window(weather).Property(Day7.Title))</visible>
+										</item>
+										<item>
+											<label>$INFO[Window(weather).Property(Day7.Title)]</label>
+											<label2>$INFO[Window(weather).Property(Day7.Outlook)]</label2>
+											<icon>$VAR[WeatherIconVar]$INFO[Window(weather).Property(Day7.FanartCode),,.png]</icon>
+											<property name="HighTemp">$INFO[Window(weather).Property(Day7.HighTemp)]$INFO[System.TemperatureUnits]</property>
+											<property name="LowTemp">$INFO[Window(weather).Property(Day7.LowTemp)]$INFO[System.TemperatureUnits]</property>
+											<property name="Fanart">$VAR[WeatherFanart]$INFO[Window(Weather).Property(Day7.FanartCode)]$VAR[DefWeatherFanart]</property>
+											<onclick>noop</onclick>
+											<visible>!IsEmpty(Window(weather).Property(Day7.Title))</visible>
+										</item>
+										<item>
+											<label>$INFO[Window(weather).Property(Day8.Title)]</label>
+											<label2>$INFO[Window(weather).Property(Day8.Outlook)]</label2>
+											<icon>$VAR[WeatherIconVar]$INFO[Window(weather).Property(Day8.FanartCode),,.png]</icon>
+											<property name="HighTemp">$INFO[Window(weather).Property(Day8.HighTemp)]$INFO[System.TemperatureUnits]</property>
+											<property name="LowTemp">$INFO[Window(weather).Property(Day8.LowTemp)]$INFO[System.TemperatureUnits]</property>
+											<property name="Fanart">$VAR[WeatherFanart]$INFO[Window(Weather).Property(Day8.FanartCode)]$VAR[DefWeatherFanart]</property>
+											<onclick>noop</onclick>
+											<visible>!IsEmpty(Window(weather).Property(Day8.Title))</visible>
+										</item>
+										<item>
+											<label>$INFO[Window(weather).Property(Day9.Title)]</label>
+											<label2>$INFO[Window(weather).Property(Day9.Outlook)]</label2>
+											<icon>$VAR[WeatherIconVar]$INFO[Window(weather).Property(Day9.FanartCode),,.png]</icon>
+											<property name="HighTemp">$INFO[Window(weather).Property(Day9.HighTemp)]$INFO[System.TemperatureUnits]</property>
+											<property name="LowTemp">$INFO[Window(weather).Property(Day9.LowTemp)]$INFO[System.TemperatureUnits]</property>
+											<property name="Fanart">$VAR[WeatherFanart]$INFO[Window(Weather).Property(Day9.FanartCode)]$VAR[DefWeatherFanart]</property>
+											<onclick>noop</onclick>
+											<visible>!IsEmpty(Window(weather).Property(Day9.Title))</visible>
+										</item>
+										<item>
+											<label>$INFO[Window(weather).Property(Day10.Title)]</label>
+											<label2>$INFO[Window(weather).Property(Day10.Outlook)]</label2>
+											<icon>$VAR[WeatherIconVar]$INFO[Window(weather).Property(Day10.FanartCode),,.png]</icon>
+											<property name="HighTemp">$INFO[Window(weather).Property(Day10.HighTemp)]$INFO[System.TemperatureUnits]</property>
+											<property name="LowTemp">$INFO[Window(weather).Property(Day10.LowTemp)]$INFO[System.TemperatureUnits]</property>
+											<property name="Fanart">$VAR[WeatherFanart]$INFO[Window(Weather).Property(Day10.FanartCode)]$VAR[DefWeatherFanart]</property>
+											<onclick>noop</onclick>
+											<visible>!IsEmpty(Window(weather).Property(Day10.Title)) !IsEmpty(Window(weather).Property(Day11.Title))</visible>
+										</item>
+										<item>
+											<label>$INFO[Window(weather).Property(Day11.Title)]</label>
+											<label2>$INFO[Window(weather).Property(Day11.Outlook)]</label2>
+											<icon>$VAR[WeatherIconVar]$INFO[Window(weather).Property(Day11.FanartCode),,.png]</icon>
+											<property name="HighTemp">$INFO[Window(weather).Property(Day11.HighTemp)]$INFO[System.TemperatureUnits]</property>
+											<property name="LowTemp">$INFO[Window(weather).Property(Day11.LowTemp)]$INFO[System.TemperatureUnits]</property>
+											<property name="Fanart">$VAR[WeatherFanart]$INFO[Window(Weather).Property(Day11.FanartCode)]$VAR[DefWeatherFanart]</property>
+											<onclick>noop</onclick>
+											<visible>!IsEmpty(Window(weather).Property(Day11.Title))</visible>
+										</item>
+										<item>
+											<label>$INFO[Window(weather).Property(Day12.Title)]</label>
+											<label2>$INFO[Window(weather).Property(Day12.Outlook)]</label2>
+											<icon>$VAR[WeatherIconVar]$INFO[Window(weather).Property(Day12.FanartCode),,.png]</icon>
+											<property name="HighTemp">$INFO[Window(weather).Property(Day12.HighTemp)]$INFO[System.TemperatureUnits]</property>
+											<property name="LowTemp">$INFO[Window(weather).Property(Day12.LowTemp)]$INFO[System.TemperatureUnits]</property>
+											<property name="Fanart">$VAR[WeatherFanart]$INFO[Window(Weather).Property(Day12.FanartCode)]$VAR[DefWeatherFanart]</property>
+											<onclick>noop</onclick>
+											<visible>!IsEmpty(Window(weather).Property(Day12.Title)) !IsEmpty(Window(weather).Property(Day13.Title))</visible>
+										</item>
+										<item>
+											<label>$INFO[Window(weather).Property(Day13.Title)]</label>
+											<label2>$INFO[Window(weather).Property(Day13.Outlook)]</label2>
+											<icon>$VAR[WeatherIconVar]$INFO[Window(weather).Property(Day13.FanartCode),,.png]</icon>
+											<property name="HighTemp">$INFO[Window(weather).Property(Day13.HighTemp)]$INFO[System.TemperatureUnits]</property>
+											<property name="LowTemp">$INFO[Window(weather).Property(Day13.LowTemp)]$INFO[System.TemperatureUnits]</property>
+											<property name="Fanart">$VAR[WeatherFanart]$INFO[Window(Weather).Property(Day13.FanartCode)]$VAR[DefWeatherFanart]</property>
+											<onclick>noop</onclick>
+											<visible>!IsEmpty(Window(weather).Property(Day13.Title))</visible>
+										</item>
+									</content>
+								</control>
+							</control>
+							<control type="group">
+								<visible>Weather.IsFetched</visible>
+								<left>750</left>
+								<width>950</width>
+								<height>905</height>
+								<control type="image">
+									<left>10</left>
+									<top>10</top>
+									<right>10</right>
+									<bottom>10</bottom>
+									<texture colordiffuse="Panel">common/box.png</texture>
+								</control>
+								<control type="multiimage" description="Fanart">
+									<left>10</left>
+									<top>10</top>
+									<right>10</right>
+									<bottom>10</bottom>
+									<fadetime>600</fadetime>
+									<timeperimage>12000</timeperimage>
+									<randomize>true</randomize>
+									<aspectratio>scale</aspectratio>
+									<animation effect="fade" start="100" end="30" condition="true">Conditional</animation>
+									<imagepath background="true">$VAR[WeatherFanart]$INFO[Window(Weather).Property(Current.FanartCode)]$VAR[DefWeatherFanart]</imagepath>
+								</control>
+								<control type="label">
+									<description>weather location label</description>
+									<left>30</left>
+									<top>10</top>
+									<height>30</height>
+									<font>TinyBold</font>
+									<textcolor>PanelWhite100</textcolor>
+									<scroll>false</scroll>
+									<align>left</align>
+									<aligny>center</aligny>
+									<label>$INFO[Window(Weather).Property(Location)]</label>
+								</control>
+								<control type="label">
+									<description>update label</description>
+									<right>20</right>
+									<top>10</top>
+									<height>30</height>
+									<font>TinyBold</font>
+									<label>$LOCALIZE[31871] - $INFO[Window(Weather).Property(Updated)]</label>
+									<align>right</align>
+									<aligny>center</aligny>
+									<textcolor>PanelWhite70</textcolor>
+								</control>
+								<control type="label">
+									<left>0</left>
+									<top>10</top>
+									<height>45</height>
+									<font>MediumBold</font>
+									<align>center</align>
+									<aligny>center</aligny>
+									<textcolor>PanelWhite100</textcolor>
+									<label fallback="161">$LOCALIZE[19030]</label>
+								</control>
+								<control type="image">
+									<top>225</top>
+									<left>0</left>
+									<height>320</height>
+									<aspectratio align="center" aligny="center">keep</aspectratio>
+									<texture>$VAR[WeatherIconVar]$INFO[Window(Weather).Property(Current.FanartCode)]$VAR[DefWeatherIconExt]</texture>
+								</control>
+								<control type="label">
+									<left>0</left>
+									<top>110</top>
+									<height>100</height>
+									<font>EpisodeNumber</font>
+									<align>center</align>
+									<aligny>center</aligny>
+									<textcolor>PanelWhite100</textcolor>
+									<label fallback="N/A">$INFO[Window(Weather).Property(Current.Temperature),[B],[/B]]$INFO[System.TemperatureUnits]</label>
+								</control>
+								<control type="label">
+									<left>0</left>
+									<height>300</height>
+									<top>500</top>
+									<align>center</align>
+									<aligny>center</aligny>
+									<autoscroll>false</autoscroll>
+									<align>center</align>
+									<font>TinyBold</font>
+									<textcolor>PanelWhite100</textcolor>
+									<label fallback="161">$INFO[Window(Weather).Property(Current.Condition),,[CR]]$INFO[Window(Weather).Property(Current.FeelsLike),$LOCALIZE[402] ,]$INFO[System.TemperatureUnits,,[CR]]$INFO[Window(Weather).Property(Current.DewPoint),$LOCALIZE[405] ,]$INFO[System.TemperatureUnits,,[CR]]$INFO[Window(Weather).Property(Current.Humidity),, $LOCALIZE[406][CR]]$INFO[Window(Weather).Property(Current.UVIndex),$LOCALIZE[403] ,[CR]]$INFO[Window(Weather).Property(Current.Wind),$LOCALIZE[404] ,]</label>
+								</control>
+
+								<control type="image">
+									<left>20</left>
+									<bottom>10</bottom>
+									<height>46</height>
+									<aspectratio align="center" aligny="bottom">keep</aspectratio>
+									<texture>$INFO[Window(Weather).Property(WeatherProviderLogo)]</texture>
+								</control>
+								<control type="label">
+									<description>Provider Text</description>
+									<left>20</left>
+									<bottom>10</bottom>
+									<height>46</height>
+									<font>SmallBold</font>
+									<textcolor>PanelWhite100</textcolor>
+									<scroll>true</scroll>
+									<align>center</align>
+									<aligny>bottom</aligny>
+									<label>$LOCALIZE[31938] : [COLOR=$VAR[ColourHighlight]]$INFO[Window(Weather).Property(WeatherProvider)][/COLOR]</label>
+									<visible>IsEmpty(Window(Weather).Property(WeatherProviderLogo))</visible>
+								</control>
+								<control type="label">
+									<description>Provider Text</description>
+									<left>30</left>
+									<bottom>10</bottom>
+									<height>46</height>
+									<font>SmallBold</font>
+									<textcolor>PanelWhite100</textcolor>
+									<scroll>true</scroll>
+									<align>left</align>
+									<aligny>bottom</aligny>
+									<label>$INFO[Window(Weather).Property(Today.Sunrise),$LOCALIZE[33027] ,]</label>
+								</control>
+								<control type="label">
+									<description>Provider Text</description>
+									<left>20</left>
+									<right>20</right>
+									<bottom>10</bottom>
+									<height>46</height>
+									<font>SmallBold</font>
+									<textcolor>PanelWhite100</textcolor>
+									<scroll>true</scroll>
+									<align>right</align>
+									<aligny>bottom</aligny>
+									<label>$INFO[Window(Weather).Property(Today.Sunset),$LOCALIZE[33028] ,]</label>
+								</control>
+								<control type="label">
+									<right>200</right>
+									<top>50</top>
+									<font>symbol</font>
+									<label></label>
+									<align>right</align>
+									<textcolor>fire engine red</textcolor>
+									<visible>!IsEmpty(Window(weather).Property(Alerts.IsFetched))</visible>
+								</control>
+								<control type="textbox">
+									<description>Weather Alerts</description>
+									<top>100</top>
+									<right>20</right>
+									<width>400</width>
+									<height>500</height>
+									<align>justify</align>
+									<label>$INFO[Window(weather).Property(Alerts)]</label>
+									<visible>!IsEmpty(Window(weather).Property(Alerts.IsFetched))</visible>
+								</control>
 							</control>
 						</control>
 					</control>

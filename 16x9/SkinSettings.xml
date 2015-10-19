@@ -163,6 +163,18 @@
 					<label>31132</label>
 					<onclick>RunScript(script.skinshortcuts,type=resetall)</onclick>
 				</control>
+				<control type="button" id="9211" description="Home Style">
+					<width>1410</width>
+					<include>DefSettingsButton2</include>
+					<label>31247</label>
+					<label2>[COLOR=$VAR[ColourSelected]]$VAR[LabelHomeStyle][/COLOR]</label2>
+					<onclick>SetProperty(Dialog.NumItems,2)</onclick>
+					<onclick>SetProperty(Dialog.1.Label,Default - Horizontal)</onclick>
+					<onclick>SetProperty(Dialog.1.BuiltIn,Skin.Reset(home.vertical))</onclick>
+					<onclick>SetProperty(Dialog.2.Label,Vertical)</onclick>
+					<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetBool(home.vertical))</onclick>
+					<onclick>RunScript(script.toolbox,info=selectdialog,header=Select Home Layout)</onclick>
+				</control>
 				<control type="radiobutton" id="9215" description="home.fade">
 					<width>1410</width>
 					<include>DefSettingsButton2</include>
@@ -592,14 +604,16 @@
 				<ondown>9004</ondown>
 				<visible>Container(9000).HasFocus(7)</visible>
 
-
 				<control type="radiobutton" id="9281">
 					<width>1410</width>
+					<textureradiofocus colordiffuse="$VAR[ColourHighlight]">buttons/radio-on.png</textureradiofocus>
+					<textureradionofocus colordiffuse="$VAR[ColourHighlight]">common/box.png</textureradionofocus>
 					<include>DefSettingsButton2</include>
 					<selected>Skin.HasSetting(ColourHighlight)</selected>
 					<onclick>Skin.ToggleSetting(ColourHighlight)</onclick>
 					<label>31900</label>
 				</control>
+
 				<control type="button" id="9282">
 					<width>1410</width>
 					<include>DefSettingsButton2</include>
@@ -619,6 +633,8 @@
 
 				<control type="radiobutton" id="9284">
 					<width>1410</width>
+					<textureradiofocus colordiffuse="$VAR[ColourHighlight2]">buttons/radio-on.png</textureradiofocus>
+					<textureradionofocus colordiffuse="$VAR[ColourHighlight2]">common/box.png</textureradionofocus>
 					<include>DefSettingsButton2</include>
 					<selected>Skin.HasSetting(ColourHighlight2)</selected>
 					<onclick>Skin.ToggleSetting(ColourHighlight2)</onclick>
@@ -629,7 +645,7 @@
 					<include>DefSettingsButton2</include>
 					<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=focuscolor2.name)</onclick>
 					<label>31903</label>
-					<label2>[COLOR=$VAR[ColourSelected]]$INFO[Skin.String(focuscolor2.name)][/COLOR]</label2>
+					<label2>[COLOR=$VAR[ColourHighlight2]]$INFO[Skin.String(focuscolor2.name)][/COLOR]</label2>
 					<visible>Skin.HasSetting(ColourHighlight2)</visible>
 				</control>
 				<control type="button" id="9286">
@@ -642,6 +658,8 @@
 
 				<control type="radiobutton" id="9287">
 					<width>1410</width>
+					<textureradiofocus colordiffuse="$VAR[ColourSelected]">buttons/radio-on.png</textureradiofocus>
+					<textureradionofocus colordiffuse="$VAR[ColourSelected]">common/box.png</textureradionofocus>
 					<include>DefSettingsButton2</include>
 					<selected>Skin.HasSetting(ColourSelected)</selected>
 					<onclick>Skin.ToggleSetting(ColourSelected)</onclick>
@@ -666,6 +684,8 @@
 
 				<control type="radiobutton" id="92800">
 					<width>1410</width>
+					<textureradiofocus colordiffuse="$VAR[BorderHighlight]">buttons/radio-on.png</textureradiofocus>
+					<textureradionofocus colordiffuse="$VAR[BorderHighlight]">common/box.png</textureradionofocus>
 					<include>DefSettingsButton2</include>
 					<selected>Skin.HasSetting(BorderHighlight)</selected>
 					<onclick>Skin.ToggleSetting(BorderHighlight)</onclick>
@@ -676,13 +696,15 @@
 					<include>DefSettingsButton2</include>
 					<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=bordercolor.name)</onclick>
 					<label> - $LOCALIZE[31129]</label>
-					<label2>[COLOR=$INFO[Skin.String(bordercolor.name)]]$INFO[Skin.String(bordercolor.name)][/COLOR]</label2>
+					<label2>[COLOR=$VAR[BorderHighlight]]$INFO[Skin.String(bordercolor.name)][/COLOR]</label2>
 					<visible>Skin.HasSetting(BorderHighlight)</visible>
 				</control>
 
 
 				<control type="radiobutton" id="92875">
 					<width>1410</width>
+					<textureradiofocus colordiffuse="$VAR[EmbyMenuColourHighlight]">buttons/radio-on.png</textureradiofocus>
+					<textureradionofocus colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</textureradionofocus>
 					<include>DefSettingsButton2</include>
 					<selected>Skin.HasSetting(emby.menu.colour)</selected>
 					<onclick>Skin.ToggleSetting(emby.menu.colour)</onclick>
@@ -693,13 +715,15 @@
 					<include>DefSettingsButton2</include>
 					<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=emby.menu.colour.name)</onclick>
 					<label>31925</label>
-					<label2>[COLOR=$INFO[Skin.String(emby.menu.colour.name)]]$INFO[Skin.String(emby.menu.colour.name)][/COLOR]</label2>
+					<label2>[COLOR=$VAR[EmbyMenuColourHighlight]]$INFO[Skin.String(emby.menu.colour.name)][/COLOR]</label2>
 					<visible>Skin.HasSetting(emby.menu.colour)</visible>
 				</control>
 
 
 				<control type="radiobutton" id="92883">
 					<width>1410</width>
+					<textureradiofocus colordiffuse="$VAR[EmbyMenuTextColourHighlight]">buttons/radio-on.png</textureradiofocus>
+					<textureradionofocus colordiffuse="$VAR[EmbyMenuTextColourHighlight]">common/box.png</textureradionofocus>
 					<include>DefSettingsButton2</include>
 					<selected>Skin.HasSetting(emby.menu.text.colour)</selected>
 					<onclick>Skin.ToggleSetting(emby.menu.text.colour)</onclick>
@@ -710,13 +734,15 @@
 					<include>DefSettingsButton2</include>
 					<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=emby.menu.text.colour.name)</onclick>
 					<label>31927</label>
-					<label2>[COLOR=$INFO[Skin.String(emby.menu.text.colour.name)]]$INFO[Skin.String(emby.menu.text.colour.name)][/COLOR]</label2>
+					<label2>[COLOR=$VAR[EmbyMenuTextColourHighlight]]$INFO[Skin.String(emby.menu.text.colour.name)][/COLOR]</label2>
 					<visible>Skin.HasSetting(emby.menu.text.colour)</visible>
 				</control>
 
 
 				<control type="radiobutton" id="92869">
 					<width>1410</width>
+					<textureradiofocus colordiffuse="$VAR[EmbyLeftColourHighlight]">buttons/radio-on.png</textureradiofocus>
+					<textureradionofocus colordiffuse="$VAR[EmbyLeftColourHighlight]">common/box.png</textureradionofocus>
 					<include>DefSettingsButton2</include>
 					<selected>Skin.HasSetting(emby.left.colour)</selected>
 					<onclick>Skin.ToggleSetting(emby.left.colour)</onclick>
@@ -727,13 +753,15 @@
 					<include>DefSettingsButton2</include>
 					<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=emby.left.colour.name)</onclick>
 					<label>31919</label>
-					<label2>[COLOR=$INFO[Skin.String(emby.left.colour.name)]]$INFO[Skin.String(emby.left.colour.name)][/COLOR]</label2>
+					<label2>[COLOR=$VAR[EmbyLeftColourHighlight]]$INFO[Skin.String(emby.left.colour.name)][/COLOR]</label2>
 					<visible>Skin.HasSetting(emby.left.colour)</visible>
 				</control>
 
 
 				<control type="radiobutton" id="92871">
 					<width>1410</width>
+					<textureradiofocus colordiffuse="$VAR[EmbyRightColourHighlight]">buttons/radio-on.png</textureradiofocus>
+					<textureradionofocus colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</textureradionofocus>
 					<include>DefSettingsButton2</include>
 					<selected>Skin.HasSetting(emby.right.colour)</selected>
 					<onclick>Skin.ToggleSetting(emby.right.colour)</onclick>
@@ -744,13 +772,15 @@
 					<include>DefSettingsButton2</include>
 					<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=emby.right.colour.name)</onclick>
 					<label>31921</label>
-					<label2>[COLOR=$INFO[Skin.String(emby.right.colour.name)]]$INFO[Skin.String(emby.right.colour.name)][/COLOR]</label2>
+					<label2>[COLOR=$VAR[EmbyRightColourHighlight]]$INFO[Skin.String(emby.right.colour.name)][/COLOR]</label2>
 					<visible>Skin.HasSetting(emby.right.colour)</visible>
 				</control>
 
 
 				<control type="radiobutton" id="92873">
 					<width>1410</width>
+					<textureradiofocus colordiffuse="$VAR[EmbyMiddleColourHighlight]">buttons/radio-on.png</textureradiofocus>
+					<textureradionofocus colordiffuse="$VAR[EmbyMiddleColourHighlight]">common/box.png</textureradionofocus>
 					<include>DefSettingsButton2</include>
 					<selected>Skin.HasSetting(emby.middle.colour)</selected>
 					<onclick>Skin.ToggleSetting(emby.middle.colour)</onclick>
@@ -761,13 +791,15 @@
 					<include>DefSettingsButton2</include>
 					<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=emby.middle.colour.name)</onclick>
 					<label>31923</label>
-					<label2>[COLOR=$INFO[Skin.String(emby.middle.colour.name)]]$INFO[Skin.String(emby.middle.colour.name)][/COLOR]</label2>
+					<label2>[COLOR=$VAR[EmbyMiddleColourHighlight]]$INFO[Skin.String(emby.middle.colour.name)][/COLOR]</label2>
 					<visible>Skin.HasSetting(emby.middle.colour)</visible>
 				</control>
 
 <!-- -->
 				<control type="radiobutton" id="92817">
 					<width>1410</width>
+					<textureradiofocus colordiffuse="$VAR[WatchedColourHighlight]">buttons/radio-on.png</textureradiofocus>
+					<textureradionofocus colordiffuse="$VAR[WatchedColourHighlight]">common/box.png</textureradionofocus>
 					<include>DefSettingsButton2</include>
 					<selected>Skin.HasSetting(WatchedColour)</selected>
 					<onclick>Skin.ToggleSetting(WatchedColour)</onclick>
@@ -779,12 +811,14 @@
 					<include>DefSettingsButton2</include>
 					<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=watched.colour.name)</onclick>
 					<label>31907</label>
-					<label2>[COLOR=$INFO[Skin.String(watched.colour.name)]]$INFO[Skin.String(watched.colour.name)][/COLOR]</label2>
+					<label2>[COLOR=$VAR[WatchedColourHighlight]]$INFO[Skin.String(watched.colour.name)][/COLOR]</label2>
 					<visible>Skin.HasSetting(WatchedColour)</visible>
 					
 				</control>
 				<control type="radiobutton" id="92827">
 					<width>1410</width>
+					<textureradiofocus colordiffuse="$VAR[UnwatchedColourHighlight]">buttons/radio-on.png</textureradiofocus>
+					<textureradionofocus colordiffuse="$VAR[UnwatchedColourHighlight]">common/box.png</textureradionofocus>
 					<include>DefSettingsButton2</include>
 					<selected>Skin.HasSetting(UnwatchedColour)</selected>
 					<onclick>Skin.ToggleSetting(UnwatchedColour)</onclick>
@@ -796,12 +830,14 @@
 					<include>DefSettingsButton2</include>
 					<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=unwatched.colour.name)</onclick>
 					<label>31909</label>
-					<label2>[COLOR=$INFO[Skin.String(unwatched.colour.name)]]$INFO[Skin.String(unwatched.colour.name)][/COLOR]</label2>
+					<label2>[COLOR=$VAR[UnwatchedColourHighlight]]$INFO[Skin.String(unwatched.colour.name)][/COLOR]</label2>
 					<visible>Skin.HasSetting(UnwatchedColour)</visible>
 					
 				</control>
 				<control type="radiobutton" id="92837">
 					<width>1410</width>
+					<textureradiofocus colordiffuse="$VAR[NewColourHighlight]">buttons/radio-on.png</textureradiofocus>
+					<textureradionofocus colordiffuse="$VAR[NewColourHighlight]">common/box.png</textureradionofocus>
 					<include>DefSettingsButton2</include>
 					<selected>Skin.HasSetting(NewColour)</selected>
 					<onclick>Skin.ToggleSetting(NewColour)</onclick>
@@ -813,12 +849,14 @@
 					<include>DefSettingsButton2</include>
 					<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=new.colour.name)</onclick>
 					<label>31911</label>
-					<label2>[COLOR=$INFO[Skin.String(new.colour.name)]]$INFO[Skin.String(new.colour.name)][/COLOR]</label2>
+					<label2>[COLOR=$VAR[NewColourHighlight]]$INFO[Skin.String(new.colour.name)][/COLOR]</label2>
 					<visible>Skin.HasSetting(NewColour)</visible>
 					
 				</control>
 				<control type="radiobutton" id="92847">
 					<width>1410</width>
+					<textureradiofocus colordiffuse="$VAR[ResumeColourHighlight]">buttons/radio-on.png</textureradiofocus>
+					<textureradionofocus colordiffuse="$VAR[ResumeColourHighlight]">common/box.png</textureradionofocus>
 					<include>DefSettingsButton2</include>
 					<selected>Skin.HasSetting(ResumeColour)</selected>
 					<onclick>Skin.ToggleSetting(ResumeColour)</onclick>
@@ -830,12 +868,14 @@
 					<include>DefSettingsButton2</include>
 					<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=resume.colour.name)</onclick>
 					<label>31913</label>
-					<label2>[COLOR=$INFO[Skin.String(resume.colour.name)]]$INFO[Skin.String(resume.colour.name)][/COLOR]</label2>
+					<label2>[COLOR=$VAR[ResumeColourHighlight]]$INFO[Skin.String(resume.colour.name)][/COLOR]</label2>
 					<visible>Skin.HasSetting(ResumeColour)</visible>
 					
 				</control>
 				<control type="radiobutton" id="92857">
 					<width>1410</width>
+					<textureradiofocus colordiffuse="$VAR[PlayingColourHighlight]">buttons/radio-on.png</textureradiofocus>
+					<textureradionofocus colordiffuse="$VAR[PlayingColourHighlight]">common/box.png</textureradionofocus>
 					<include>DefSettingsButton2</include>
 					<selected>Skin.HasSetting(PlayingColour)</selected>
 					<onclick>Skin.ToggleSetting(PlayingColour)</onclick>
@@ -847,12 +887,14 @@
 					<include>DefSettingsButton2</include>
 					<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=playing.colour.name)</onclick>
 					<label>31915</label>
-					<label2>[COLOR=$INFO[Skin.String(playing.colour.name)]]$INFO[Skin.String(playing.colour.name)][/COLOR]</label2>
+					<label2>[COLOR=$VAR[PlayingColourHighlight]]$INFO[Skin.String(playing.colour.name)][/COLOR]</label2>
 					<visible>Skin.HasSetting(PlayingColour)</visible>
 					
 				</control>
 				<control type="radiobutton" id="92877">
 					<width>1410</width>
+					<textureradiofocus colordiffuse="$VAR[ColourFlags]">buttons/radio-on.png</textureradiofocus>
+					<textureradionofocus colordiffuse="$VAR[ColourFlags]">common/box.png</textureradionofocus>
 					<include>DefSettingsButton2</include>
 					<selected>Skin.HasSetting(emby.flags.colour)</selected>
 					<onclick>Skin.ToggleSetting(emby.flags.colour)</onclick>
@@ -864,11 +906,13 @@
 					<include>DefSettingsButton2</include>
 					<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=emby.flags.colour.name)</onclick>
 					<label>31929</label>
-					<label2>[COLOR=$INFO[Skin.String(emby.flags.colour.name)]]$INFO[Skin.String(emby.flags.colour.name)][/COLOR]</label2>
+					<label2>[COLOR=$VAR[ColourFlags]]$INFO[Skin.String(emby.flags.colour.name)][/COLOR]</label2>
 					<visible>Skin.HasSetting(emby.flags.colour)</visible>
 				</control>
 				<control type="radiobutton" id="92879">
 					<width>1410</width>
+					<textureradiofocus colordiffuse="$VAR[ColourTextFlags]">buttons/radio-on.png</textureradiofocus>
+					<textureradionofocus colordiffuse="$VAR[ColourTextFlags]">common/box.png</textureradionofocus>
 					<include>DefSettingsButton2</include>
 					<selected>Skin.HasSetting(emby.flags.text.colour)</selected>
 					<onclick>Skin.ToggleSetting(emby.flags.text.colour)</onclick>
@@ -880,11 +924,13 @@
 					<include>DefSettingsButton2</include>
 					<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=emby.flags.text.colour.name)</onclick>
 					<label>31931</label>
-					<label2>[COLOR=$INFO[Skin.String(emby.flags.text.colour.name)]]$INFO[Skin.String(emby.flags.text.colour.name)][/COLOR]</label2>
+					<label2>[COLOR=$VAR[ColourTextFlags]]$INFO[Skin.String(emby.flags.text.colour.name)][/COLOR]</label2>
 					<visible>Skin.HasSetting(emby.flags.text.colour)</visible>
 				</control>
 				<control type="radiobutton" id="92881">
 					<width>1410</width>
+					<textureradiofocus colordiffuse="$VAR[ColourIconFlags]">buttons/radio-on.png</textureradiofocus>
+					<textureradionofocus colordiffuse="$VAR[ColourIconFlags]">common/box.png</textureradionofocus>
 					<include>DefSettingsButton2</include>
 					<selected>Skin.HasSetting(emby.flags.icon.colour)</selected>
 					<onclick>Skin.ToggleSetting(emby.flags.icon.colour)</onclick>
@@ -896,7 +942,7 @@
 					<include>DefSettingsButton2</include>
 					<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=emby.flags.icon.colour.name)</onclick>
 					<label>31933</label>
-					<label2>[COLOR=$INFO[Skin.String(emby.flags.icon.colour.name)]]$INFO[Skin.String(emby.flags.icon.colour.name)][/COLOR]</label2>
+					<label2>[COLOR=$VAR[ColourIconFlags]]$INFO[Skin.String(emby.flags.icon.colour.name)][/COLOR]</label2>
 					<visible>Skin.HasSetting(emby.flags.icon.colour)</visible>
 				</control>
 			</control>
@@ -984,6 +1030,14 @@
 					<onclick>Skin.SetPath(weatherfanart)</onclick>
 					<label>$LOCALIZE[31143]</label>
 					<label2>[COLOR=$VAR[ColourSelected]]$INFO[Skin.String(weatherfanart)][/COLOR]</label2>
+				</control>
+				<control type="button" id="9294">
+					<width>1410</width>
+					<include>DefSettingsButton2</include>
+					<label>31966</label>
+					<label2>$INFO[Skin.String(languageflags.name)]</label2>
+					<onclick>RunScript(script.image.resource.select,property=languageflags&amp;type=resource.images.languageflags)</onclick>
+					<visible>System.HasAddon(script.image.resource.select)</visible>
 				</control>
 			</control>
 		</control>

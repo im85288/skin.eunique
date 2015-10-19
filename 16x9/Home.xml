@@ -18,7 +18,6 @@
 	<onload>Skin.SetBool(SkinHelper.EnablePVRThumbs)</onload>
 	<onload>SetProperty(SkinHelper.WidgetContainer,7016)</onload>
 	<onload condition="IsEmpty(Skin.String(RatingCountry))">Skin.SetString(RatingCountry,UK)</onload>
-	<onload condition="IsEmpty(Skin.String(weatherfanart))">Skin.SetString(weatherfanart,http://aeon-nox-background-packs.googlecode.com/svn/trunk/weather-fanart/default/)</onload>
 	<onload condition="!Skin.HasSetting(startup.init)">Skin.SetBool(startup.init)</onload>
 	<onload condition="!Skin.String(SkinHelper.SpinnerTexturePath)">Skin.SetString(SkinHelper.SpinnerTexturePath,special://skin/extras/busy_spinners/eunique.gif)</onload>
 	<!--
@@ -42,12 +41,13 @@
 				<effect type="zoom" start="100" end="90" time="750" tween="elastic"/>
 				<effect type="rotate" end="-1" time="1900" tween="elastic"/>
 			</animation>
-			<include>HomeWeatherWidget</include>
+			<include condition="Skin.HasSetting(home.vertical)">HomeVerticalMenu</include>
+			<include condition="!Skin.HasSetting(home.vertical)">HomeWeatherWidget</include>
 			<include>Furniture_NowPlaying</include>
-			<include>HomeEmbyRow</include>
-			<include>HomeEmbyWidgetInfo</include>
-			<include>HomeEmbySubMenu</include>
-			<include>HomeEmbySubMenu2</include>
+			<include condition="!Skin.HasSetting(home.vertical)">HomeEmbyRow</include>
+			<include condition="!Skin.HasSetting(home.vertical)">HomeEmbyWidgetInfo</include>
+			<include condition="!Skin.HasSetting(home.vertical)">HomeEmbySubMenu</include>
+			<include condition="!Skin.HasSetting(home.vertical)">HomeEmbySubMenu2</include>
 			<include>Furniture_EmbyClock</include>
 			<include>Furniture_HeaderEmby</include>
 			<include condition="Skin.HasSetting(fags.out)">CerberosSmoke</include>

@@ -225,7 +225,7 @@
                 <control type="image">
                     <width>70</width>
                     <height>40</height>
-                    <texture>$INFO[Window.Property(movie.AudioLanguage.1),flags/language/,.png]</texture>
+                    <texture>$VAR[LanguageFlagsIcon]$INFO[Window.Property(movie.AudioLanguage.1),,.png]</texture>
                     <aspectratio scalediffuse="false">keep</aspectratio>
                     <visible>!IsEmpty(Window.Property(movie.AudioLanguage.1))</visible>
                 </control>

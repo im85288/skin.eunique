@@ -553,7 +553,11 @@
 		<width>300</width>
 		<font>Button</font>
 		<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
-		<disabledcolor>white3</disabledcolor>
+		<disabledcolor>black3</disabledcolor>
+		<textureup flipy="true" colordiffuse="$VAR[EmbyMenuTextColourHighlight]">buttons/spin-down.png</textureup>
+		<texturedown colordiffuse="$VAR[EmbyMenuTextColourHighlight]">buttons/spin-down.png</texturedown>
+		<textureupfocus flipy="true" colordiffuse="$VAR[ColourSelected]">buttons/spin-down.png</textureupfocus>
+		<texturedownfocus colordiffuse="$VAR[EmbyMenuTextColourHighlight]">buttons/spin-down.png</texturedownfocus>
 		<texturefocus colordiffuse="$VAR[ColourHighlight]">common/box.png</texturefocus>
 	</include>
 	<include name="DefDialogInfoPanel">
@@ -2956,5 +2960,169 @@
 				</control>
 			</control>
 		</definition>
+	</include>
+	<include name="WidgetLandscapeItemLayout">
+		<control type="image">
+			<aspectratio>keep</aspectratio>
+			<texture background="true">$VAR[LandscapeImage]</texture>
+		</control>
+	</include>
+
+	<include name="WidgetLandscapeFocusedItemLayout">
+			<control type="image">
+				<left>0</left>
+				<width>50%</width>
+				<height>100%</height>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<texture colordiffuse="$VAR[BorderHighlight]">$VAR[FocusedBorderImage]</texture>
+			</control>
+			<control type="image">
+				<left>50%</left>
+				<width>50%</width>
+				<height>100%</height>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<texture colordiffuse="$VAR[BorderHighlight]" flipx="true">$VAR[FocusedBorderImage]</texture>
+			</control>
+			<control type="image">
+				<aspectratio>keep</aspectratio>
+				<texture background="true">$VAR[LandscapeImage]</texture>
+				<animation type="Focus" reversible="false">
+					<effect type="zoom" end="96,93" time="200" center="auto" tween="quadratic" easing="out"/>
+					<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
+					<effect type="slide" end="3,0" time="200" center="auto" tween="quadratic" easing="out"/>
+				</animation>
+			</control>
+			<control type="image">
+				<description>Title overlay</description>
+				<left>0</left>
+				<top>0</top>
+				<right>0</right>
+				<bottom>0</bottom>
+				<texture colordiffuse="af000000">common/white.png</texture>
+				<animation type="Focus" reversible="false">
+					<effect type="zoom" end="96,93" time="200" center="auto" tween="quadratic" easing="out"/>
+					<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
+					<effect type="slide" end="3,0" time="200" center="auto" tween="quadratic" easing="out"/>
+				</animation>
+				<visible>ControlGroup(301).HasFocus()</visible>
+			</control>
+			<control type="textbox">
+				<visible>ControlGroup(301).HasFocus()</visible>
+				<animation type="Focus" reversible="false">
+					<effect type="zoom" end="96,93" time="200" center="auto" tween="quadratic" easing="out"/>
+					<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
+					<effect type="slide" end="3,0" time="200" center="auto" tween="quadratic" easing="out"/>
+				</animation>
+				<left>0</left>
+				<top>0</top>
+				<right>0</right>
+				<bottom>0</bottom>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>Tiny</font>
+				<textcolor>white2</textcolor>
+				<selectedcolor>white2</selectedcolor>
+				<label>$INFO[Window(Home).Property(SkinHelper.ListItemDuration)]$INFO[ListItem.Rating, ]$INFO[ListItem.Votes,[CR](, $LOCALIZE[20350])]</label>
+			</control>
+	</include>
+
+	<include name="WidgetPosterItemLayout">
+		<control type="image">
+			<aspectratio>stretch</aspectratio>
+			<texture background="true">$VAR[PosterImage]</texture>
+		</control>
+		<control type="progress">
+			<bottom>0</bottom>
+			<height>8</height>
+			<info>ListItem.PercentPlayed</info>
+			<overlaytexture>-</overlaytexture>
+			<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
+			<lefttexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</lefttexture>
+			<midtexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</midtexture>
+			<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+			<visible>ListItem.IsResumable</visible>
+		</control>
+	</include>
+
+	<include name="WidgetPosterFocusedItemLayout">
+		<control type="group">
+			<animation effect="zoom" start="100" end="107" time="100" reversible="false" center="auto">Focus</animation>
+			<control type="image">
+				<aspectratio>stretch</aspectratio>
+				<texture background="true">$VAR[PosterImage]</texture>
+			</control>
+			<control type="image">
+				<description>Title overlay</description>
+				<left>0</left>
+				<top>0</top>
+				<right>0</right>
+				<bottom>0</bottom>
+				<texture colordiffuse="af000000">common/white.png</texture>
+				<visible>ControlGroup(301).HasFocus()</visible>
+			</control>
+			<control type="textbox">
+				<left>0</left>
+				<top>0</top>
+				<right>0</right>
+				<bottom>0</bottom>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>Tiny</font>
+				<textcolor>white2</textcolor>
+				<selectedcolor>white2</selectedcolor>
+				<visible>ControlGroup(301).HasFocus()</visible>
+				<label>$INFO[Window(Home).Property(SkinHelper.ListItemDuration)]$INFO[ListItem.Rating, ]$INFO[ListItem.Votes,[CR](, $LOCALIZE[20350])]</label>
+			</control>
+			<control type="progress">
+				<bottom>0</bottom>
+				<height>8</height>
+				<info>ListItem.PercentPlayed</info>
+				<overlaytexture>-</overlaytexture>
+				<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
+				<lefttexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</lefttexture>
+				<midtexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</midtexture>
+				<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+				<visible>ListItem.IsResumable</visible>
+			</control>
+		</control>
+	</include>
+
+	<include name="WidgetSquareItemLayout">
+		<control type="image">
+			<aspectratio>stretch</aspectratio>
+			<texture background="true">$VAR[PosterImage]</texture>
+		</control>
+	</include>
+
+	<include name="WidgetSquareFocusedItemLayout">
+		<control type="group">
+		<animation effect="zoom" start="100" end="107" time="100" reversible="false" center="auto">Focus</animation>
+			<control type="image">
+				<aspectratio>stretch</aspectratio>
+				<texture background="true">$VAR[PosterImage]</texture>
+			</control>
+			<control type="image">
+				<description>Title overlay</description>
+				<left>0</left>
+				<top>0</top>
+				<right>0</right>
+				<bottom>0</bottom>
+				<texture colordiffuse="af000000">common/white.png</texture>
+				<visible>ControlGroup(301).HasFocus()</visible>
+			</control>
+			<control type="textbox">
+				<left>0</left>
+				<top>0</top>
+				<right>0</right>
+				<bottom>0</bottom>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>Tiny</font>
+				<textcolor>white2</textcolor>
+				<selectedcolor>white2</selectedcolor>
+				<label>$INFO[ListItem.Artist,,[CR][CR]]$INFO[ListItem.Label]</label>
+				<visible>ControlGroup(301).HasFocus()</visible>
+			</control>
+		</control>
 	</include>
 </includes>
