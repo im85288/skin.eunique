@@ -474,7 +474,7 @@
                     <visible>Container.Content(tvshows)</visible>
                 </control>
                 <control type="textbox">
-                    <right>0</right>
+                    <right>80</right>
                     <left>0</left>
                     <height>100</height>
                     <top>38</top>
@@ -484,6 +484,18 @@
                     <label fallback="19055">$VAR[LabelDirector]</label>
                     <autoscroll delay="500" time="1000" repeat="500"/>
                     <fadetime>500</fadetime>
+                    <visible>!Container.Content(seasons) + !Container.Content(tvshows) + !Container.Content(episodes)</visible>
+                </control>
+                <control type="image">
+                    <height>100</height>
+                    <left>330</left>
+                    <width>70</width>
+                    <top>38</top>
+                    <aspectratio scalediffuse="false">scale</aspectratio>
+                    <texture background="true">http://localhost:52307/getthumb&amp;title=$INFO[Listitem.Director] IMDB</texture>
+                    <animation type="conditional" condition="true" reversible="false">
+                        <effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
+                    </animation>
                     <visible>!Container.Content(seasons) + !Container.Content(tvshows) + !Container.Content(episodes)</visible>
                 </control>
                 <control type="label">
@@ -1134,6 +1146,14 @@
                         <effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
                     </animation>
                     <visible>!Container.Content(episodes) | [Skin.HasSetting(osd.hidespoilers) + Container.Content(episodes) + [stringcompare(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]]</visible>
+                </control>
+                <control type="image">
+                    <aspectratio scalediffuse="false">scale</aspectratio>
+                    <texture background="true">http://localhost:52307/getthumb&amp;title=$INFO[Listitem.Director] IMDB</texture>
+                    <animation type="conditional" condition="true" reversible="false">
+                        <effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
+                    </animation>
+                    <visible>Control.HasFocus(3443)</visible>
                 </control>
                 <control type="group">
                     <control type="image">
