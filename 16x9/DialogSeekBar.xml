@@ -50,16 +50,6 @@
                 </control>
             </control>
             <control type="group">
-                <control type="multiimage">
-                    <top>-100</top>
-                    <left>-100</left>
-                    <width>1</width>
-                    <height>1</height>
-                    <imagepath>plugin://script.skin.helper.service/?action=getthumb&amp;path=$INFO[VideoPlayer.Title] $INFO[VideoPlayer.ChannelName]</imagepath>
-                    <aspectratio>keep</aspectratio>
-                    <aspectratio align="right" aligny="center" scalediffuse="false">scale</aspectratio>
-                    <visible>VideoPlayer.Content(LiveTV) + !IsEmpty(VideoPlayer.Title)</visible>
-                </control>
                 <top>300r</top>
                 <bottom>0</bottom>
                 <width>100%</width>
@@ -100,24 +90,24 @@
                         <height>280</height>
                         <aspectratio align="center" aligny="center">keep</aspectratio>
                         <texture>$INFO[Player.Art(thumb)]</texture>
-						<animation type="Conditional" reversible="false" condition="true">
-							<effect type="zoom" start="100" end="92" time="0" center="auto" tween="quadratic" easing="out" />
-							<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
-						</animation>
-                        <visible>VideoPlayer.Content(LiveTV) + !IsEmpty(Player.Art(thumb)) + IsEmpty(Window(Home).Property(SkinHelper.ListItemThumb))</visible>
+                        <animation type="Conditional" reversible="false" condition="true">
+                            <effect type="zoom" start="100" end="92" time="0" center="auto" tween="quadratic" easing="out" />
+                            <effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
+                        </animation>
+                        <visible>VideoPlayer.Content(LiveTV)</visible>
                     </control>
                     <control type="image">
-                        <left>NewSidePad</left>
-                        <width>280</width>
-                        <height>280</height>
-                        <aspectratio align="center" aligny="center">keep</aspectratio>
-                        <texture>$INFO[Window(Home).Property(SkinHelper.ListItemThumb)]</texture>
-                        <visible>VideoPlayer.Content(LiveTV) + !IsEmpty(Player.Art(thumb)) + !IsEmpty(Window(Home).Property(SkinHelper.ListItemThumb))</visible>
- 						<animation type="Conditional" reversible="false" condition="true">
-							<effect type="zoom" start="100" end="92" time="0" center="auto" tween="quadratic" easing="out" />
-							<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
-						</animation>
-                   </control>
+                        <top>-139</top>
+                        <left>0</left>
+                        <width>290</width>
+                        <height>421</height>
+                        <texture>http://localhost:52307/getpvrthumb&amp;title=$INFO[VideoPlayer.Title]&amp;channel=$INFO[VideoPlayer.ChannelName]&amp;type=poster</texture>
+                        <animation type="Conditional" reversible="false" condition="true">
+                            <effect type="zoom" start="100" end="92" time="0" center="auto" tween="quadratic" easing="out" />
+                            <effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
+                        </animation>
+                        <visible>VideoPlayer.Content(LiveTV)</visible>
+                    </control>
                     <control type="group">
  						<top>-10</top>
                         <visible>[!IsEmpty(Player.Art(tvshow.poster)) | !IsEmpty(Player.Art(poster))] |[VideoPlayer.Content(LiveTV) + !IsEmpty(Player.Art(thumb))] </visible>

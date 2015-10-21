@@ -177,15 +177,6 @@
 	</include>
 	<include name="PVRInfoPanel">
 		<control type="group">
-			<control type="multiimage">
-				<left>-100</left>
-				<top>-100</top>
-				<height>1</height>
-				<width>1</width>
-				<imagepath>plugin://script.skin.helper.service/?action=getthumb&amp;path=$INFO[ListItem.Title] $INFO[ListItem.ChannelName]</imagepath>
-				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-				<visible>!Player.HasVideo + !IsEmpty(ListItem.Title)</visible>
-			</control>
 			<right>20</right>
 			<width>900</width>
 			<top>TopPad</top>
@@ -223,38 +214,8 @@
 					<bottom>10</bottom>
 					<fadetime>200</fadetime>
 					<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-					<texture diffuse="diffuse/pvrinfo.png" background="true" fallback="pvr/background.jpg">$INFO[Window(Home).Property(SkinHelper.PVR.ChannelLogo)]</texture>
-					<visible>!Player.HasVideo + IsEmpty(Window(Home).Property(SkinHelper.PVR.Thumb)) + IsEmpty(Window(Home).Property(SkinHelper.PVR.FanArt)) + IsEmpty(Window(Home).Property(SkinHelper.PVR.Landscape))</visible>
-				</control>
-				<control type="image">
-					<left>10</left>
-					<top>10</top>
-					<right>10</right>
-					<bottom>10</bottom>
-					<fadetime>200</fadetime>
-					<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-					<texture diffuse="diffuse/pvrinfo.png" background="true" fallback="pvr/background.jpg">$INFO[Window(Home).Property(SkinHelper.PVR.Landscape)]</texture>
-					<visible>!Player.HasVideo + !IsEmpty(Window(Home).Property(SkinHelper.PVR.Landscape))</visible>
-				</control>
-				<control type="image">
-					<left>10</left>
-					<top>10</top>
-					<right>10</right>
-					<bottom>10</bottom>
-					<fadetime>200</fadetime>
-					<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-					<texture diffuse="diffuse/pvrinfo.png" background="true" fallback="pvr/background.jpg">$INFO[Window(Home).Property(SkinHelper.PVR.Thumb)]</texture>
-					<visible>!Player.HasVideo + !IsEmpty(Window(Home).Property(SkinHelper.PVR.Thumb)) + IsEmpty(Window(Home).Property(SkinHelper.PVR.Landscape))</visible>
-				</control>
-				<control type="image">
-					<left>10</left>
-					<top>10</top>
-					<right>10</right>
-					<bottom>10</bottom>
-					<fadetime>200</fadetime>
-					<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-					<texture diffuse="diffuse/pvrinfo.png" background="true" fallback="pvr/background.jpg">$INFO[Window(Home).Property(SkinHelper.PVR.FanArt)]</texture>
-					<visible>!Player.HasVideo + IsEmpty(Window(Home).Property(SkinHelper.PVR.Thumb)) + IsEmpty(Window(Home).Property(SkinHelper.PVR.Landscape))</visible>
+					<texture diffuse="diffuse/pvrinfo.png" background="true" fallback="pvr/background.jpg">http://localhost:52307/getpvrthumb&amp;title=$INFO[ListItem.Title]&amp;channel=$INFO[ListItem.ChannelName]&amp;type=fanart,landscape,thumb</texture>
+					<visible>!Player.HasVideo</visible>
 				</control>
 			</control>
 			<control type="group">
