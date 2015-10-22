@@ -298,6 +298,12 @@
 					<onclick>Skin.ToggleSetting(SkinHelper.EnableExtraFanart)</onclick>
 					<visible>!Skin.HasSetting(lights.out)</visible>
 				</control>
+				<control type="button" id="92286">
+					<width>1410</width>
+					<include>DefSettingsButton2</include>
+					<label>$LOCALIZE[31972]: $INFO[skin.string(SkinHelper.RandomFanartDelay)] $LOCALIZE[31800]</label>
+					<onclick>Skin.SetNumeric(SkinHelper.RandomFanartDelay)</onclick>
+				</control>
 				<control type="button" id="92281" description="Fanart Opacity">
 					<width>1410</width>
 					<include>DefSettingsButton2</include>
