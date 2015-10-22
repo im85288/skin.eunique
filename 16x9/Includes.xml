@@ -44,7 +44,7 @@
             <animation condition="ControlGroup(9010).HasFocus()" effect="slide" end="193,221" start="0,0" time="0">Conditional</animation>
             <animation condition="Container.Content(albums)" effect="slide" end="-345" start="0,0" time="0">Conditional</animation>
             <animation condition="Container.Content(artists)" effect="slide" end="-345" start="0,0" time="0">Conditional</animation>
-            <animation condition="Container.Content(episodes)" effect="slide" end="-232" start="0,0" time="0">Conditional</animation>
+            <animation condition="Container.Content(episodes)" effect="slide" end="-116" start="0,0" time="0">Conditional</animation>
             <animation condition="Container.Content(tvshows) | Container.Content(seasons)" effect="slide" end="-116" start="0,0" time="0">Conditional</animation>
             <control type="group">
                 <visible>Control.HasFocus(8) | Control.HasFocus(1)</visible>
@@ -409,7 +409,7 @@
             <visible>!IsEmpty(Window(home).Property(Concerts)) + Control.HasFocus(5013) + Window.IsVisible(DialogAlbumInfo.xml)</visible>
         </control>
         <control type="multiimage" description="Fanart">
-            <include condition="!Window.IsVisible(home) | [Window.IsVisible(home) + Skin.HasSetting(home.vertical)]">GlobalBackgroundFade</include>
+            <include condition="!Window.IsVisible(home) | Skin.HasSetting(home.vertical)">GlobalBackgroundFade</include>
             <visible>!Player.HasMedia | [!Skin.HasSetting(global.showvideo) + Player.HasVideo] | [!Skin.HasSetting(global.showvisualisation) + Player.HasAudio]</visible>
             <visible>!Skin.HasSetting(global.hidefanart) | Window.IsVisible(home)</visible>
             <visible>!Window.IsVisible(DialogAlbumInfo.xml)</visible>
