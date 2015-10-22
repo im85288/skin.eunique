@@ -5933,82 +5933,32 @@
 						<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 					</control>
 				</control>
-				<control type="wraplist" id="7012">
+				<control type="panel" id="7012">
 					<description>Widget</description>
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 					<top>330</top>
 					<left>SidePad</left>
-					<width>820</width>
 					<height>460</height>
-					<onup>300</onup>
-					<ondown>7013</ondown>
-						<onback>300</onback>
-				<preloaditems>2</preloaditems>
-					<orientation>horizontal</orientation>
+					<width>820</width>
+					<onleft>7013</onleft>
+					<onright>7016</onright>
+					<onback>300</onback>
+					<preloaditems>2</preloaditems>
+					<orientation>vertical</orientation>
 					<autoscroll time="10000">!Control.HasFocus(7012)</autoscroll>
 					<scrolltime tween="quadratic">100</scrolltime>
 					<include>Animation.FadeIn</include>
 					<include>Animation.FadeOut</include>
-					<itemlayout width="820" height="460">
-						<control type="image">
-							<aspectratio>scale</aspectratio>
-							<texture background="true">$VAR[FanartImage]</texture>
-						</control>
+					<itemlayout width="410" height="230">
+						<include>WidgetLandscapeItemLayout</include>
 					</itemlayout>
-					<focusedlayout width="820" height="460">
-						<control type="button">
-							<onfocus>Skin.SetString(widget.helper,videoinfo1)</onfocus>
-						</control>
-                        <control type="image">
-							<left>0</left>
-							<width>50%</width>
-							<height>100%</height>
-							<aspectratio scalediffuse="false">scale</aspectratio>
-                            <texture colordiffuse="$VAR[BorderHighlight]">$VAR[FocusedBorderImage]</texture>
-                        </control>
-                        <control type="image">
-							<left>50%</left>
-							<width>50%</width>
-							<height>100%</height>
-							<aspectratio scalediffuse="false">scale</aspectratio>
-                            <texture colordiffuse="$VAR[BorderHighlight]" flipx="true">$VAR[FocusedBorderImage]</texture>
-                        </control>
-						<control type="image">
-							<aspectratio>scale</aspectratio>
-							<texture background="true">$VAR[FanartImage]</texture>
-                            <animation type="Focus" reversible="false">
-                                <effect type="zoom" end="96,93" time="200" center="auto" tween="quadratic" easing="out"/>
-                                <effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
-                                <effect type="slide" end="3,0" time="200" center="auto" tween="quadratic" easing="out"/>
-                            </animation>
-						</control>
+					<focusedlayout width="410" height="230">
+						<include>WidgetLandscapeFocusedItemLayout</include>
 					</focusedlayout>
 					<content target="$VAR[DefWidget4Target]">$VAR[DefWidget4Content]</content>
 				</control>
-				<control type="image">
-					<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
-					<description>Title overlay</description>
-					<left>SidePad</left>
-					<posy>712</posy>
-					<width>820</width>
-					<height>78</height>
-					<texture colordiffuse="af000000">common/white.png</texture>
-				</control>
-				<control type="label">
-					<left>175</left>
-					<posy>712</posy>
-					<width>810</width>
-					<align>left</align>
-					<aligny>center</aligny>
-					<height>74</height>
-					<font>HeaderFont</font>
-					<textcolor>white2</textcolor>
-					<selectedcolor>white2</selectedcolor>
-					<label>$INFO[Container(7012).ListItem.Label]</label>
-					<animation effect="slide" start="0" end="-90" time="0" condition="![Container.Content(movies) | Container.Content(episodes)]">Conditional</animation>
-					<animation effect="slide" start="0" end="70" time="0" condition="Container.Content(episodes)">Conditional</animation>
-					<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
-				</control>
+
+
 				<control type="group">
                             <animation effect="slide" start="0,0" end="0,23" time="200" center="auto" condition="Control.HasFocus(7013)">Conditional</animation>
 				<control type="button" id="7013">
