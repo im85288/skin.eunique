@@ -574,6 +574,20 @@
                     <alttexturefocus colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]">common/box.png</alttexturefocus>
                     <alttexturenofocus colordiffuse="$VAR[EmbyMiddleColourHighlight]">common/box.png</alttexturenofocus>
                 </control>
+                <!-- Cinema Vision -->
+                <control id="210" type="button">
+                    <width>116</width>
+                    <height>116</height>
+                    <onclick>Dialog.Close(MovieInformation)</onclick>
+                    <onclick>RunScript(script.cinemavision,experience)</onclick>
+                    <font>symbol</font>
+                    <label></label>
+                    <textcolor>white</textcolor>
+                    <focusedcolor>$VAR[EmbyRightColourHighlight]</focusedcolor>
+                    <texturefocus colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]">common/box.png</texturefocus>
+                    <texturenofocus colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</texturenofocus>
+                    <visible>System.HasAddon(script.cinemavision) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes)]</visible>
+                </control>
                 <control id="1003" type="button">
                     <width>116</width>
                     <height>116</height>
@@ -617,20 +631,6 @@
                     <onclick>SetProperty(Dialog.2.BuiltIn,SetProperty(listcontent,$INFO[ListItem.Director],home)||ActivateWindow(1168))</onclick>
                     <onclick>RunScript(script.toolbox,info=selectdialog,header=$INFO[ListItem.Director])</onclick>
                     <visible>Container.Content(movies)</visible>
-                </control>
-                <!-- Cinema Vision -->
-                <control id="210" type="button">
-                    <width>116</width>
-                    <height>116</height>
-                    <onclick>Dialog.Close(MovieInformation)</onclick>
-                    <onclick>RunScript(script.cinemavision,experience)</onclick>
-                    <font>symbol</font>
-                    <label></label>
-                    <textcolor>white</textcolor>
-                    <focusedcolor>$VAR[EmbyRightColourHighlight]</focusedcolor>
-                    <texturefocus colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]">common/box.png</texturefocus>
-                    <texturenofocus colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</texturenofocus>
-                    <visible>System.HasAddon(script.cinemavision) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes)]</visible>
                 </control>
                 <!-- User rating -->
                 <control id="7" type="button">
@@ -701,6 +701,17 @@
                     <animation condition="Control.HasFocus(8)" effect="fade" end="100" start="0" time="10">Conditional</animation>
                     <animation condition="!Control.HasFocus(8)" effect="fade" end="0" start="100" time="10">Conditional</animation>
                 </control>
+                <control id="210" type="button">
+                    <width>116</width>
+                    <height>116</height>
+                    <textcolor>white</textcolor>
+                    <textoffsetx>0</textoffsetx>
+                    <label>$INFO[System.AddonTitle(script.cinemavision)]</label>
+                    <font>StudioFont</font>
+                    <animation condition="Control.HasFocus(210)" effect="fade" end="100" start="0" time="10">Conditional</animation>
+                    <animation condition="!Control.HasFocus(210)" effect="fade" end="0" start="100" time="10">Conditional</animation>
+                    <visible>System.HasAddon(script.cinemavision) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes)]</visible>
+                </control>
                 <control id="1003" type="button">
                     <width>116</width>
                     <height>116</height>
@@ -732,17 +743,6 @@
                     <animation condition="Control.HasFocus(3443)" effect="fade" end="100" start="0" time="10">Conditional</animation>
                     <animation condition="!Control.HasFocus(3443)" effect="fade" end="0" start="100" time="10">Conditional</animation>
                     <visible>Container.Content(movies)</visible>
-                </control>
-                <control id="210" type="button">
-                    <width>116</width>
-                    <height>116</height>
-                    <textcolor>white</textcolor>
-                    <textoffsetx>0</textoffsetx>
-                    <label>$INFO[System.AddonTitle(script.cinemavision)]</label>
-                    <font>StudioFont</font>
-                    <animation condition="Control.HasFocus(210)" effect="fade" end="100" start="0" time="10">Conditional</animation>
-                    <animation condition="!Control.HasFocus(210)" effect="fade" end="0" start="100" time="10">Conditional</animation>
-                    <visible>System.HasAddon(script.cinemavision) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes)]</visible>
                 </control>
                 <!-- User rating -->
                 <control id="7" type="button">
@@ -1448,20 +1448,6 @@
                     <alttexturefocus colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]">common/box.png</alttexturefocus>
                     <alttexturenofocus colordiffuse="$VAR[EmbyMiddleColourHighlight]">common/box.png</alttexturenofocus>
                 </control>
-                <control id="1003" type="button">
-                    <width>116</width>
-                    <height>116</height>
-                    <onclick condition="Player.HasMedia">PlayerControl(stop)</onclick>
-                    <onclick>dialog.close(all,true)</onclick>
-                    <onclick>PlayMedia($INFO[ListItem.Trailer])</onclick>
-                    <font>symbol</font>
-                    <label></label>
-                    <textcolor>white</textcolor>
-                    <focusedcolor>$VAR[EmbyRightColourHighlight]</focusedcolor>
-                    <visible>!IsEmpty(ListItem.Trailer)</visible>
-                    <texturefocus colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]">common/box.png</texturefocus>
-                    <texturenofocus colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</texturenofocus>
-                </control>
                 <!-- Cinema Vision -->
                 <control id="210" type="button">
                     <width>116</width>
@@ -1475,6 +1461,20 @@
                     <texturefocus colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]">common/box.png</texturefocus>
                     <texturenofocus colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</texturenofocus>
                     <visible>System.HasAddon(script.cinemavision) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes)]</visible>
+                </control>
+                <control id="1003" type="button">
+                    <width>116</width>
+                    <height>116</height>
+                    <onclick condition="Player.HasMedia">PlayerControl(stop)</onclick>
+                    <onclick>dialog.close(all,true)</onclick>
+                    <onclick>PlayMedia($INFO[ListItem.Trailer])</onclick>
+                    <font>symbol</font>
+                    <label></label>
+                    <textcolor>white</textcolor>
+                    <focusedcolor>$VAR[EmbyRightColourHighlight]</focusedcolor>
+                    <visible>!IsEmpty(ListItem.Trailer)</visible>
+                    <texturefocus colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]">common/box.png</texturefocus>
+                    <texturenofocus colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</texturenofocus>
                 </control>
                 <control id="10" type="button">
                     <width>116</width>
@@ -1556,17 +1556,6 @@
                     <animation condition="Control.HasFocus(8)" effect="fade" end="100" start="0" time="10">Conditional</animation>
                     <animation condition="!Control.HasFocus(8)" effect="fade" end="0" start="100" time="10">Conditional</animation>
                 </control>
-                <control id="1003" type="button">
-                    <width>116</width>
-                    <height>116</height>
-                    <textcolor>white</textcolor>
-                    <textoffsetx>0</textoffsetx>
-                    <visible>!IsEmpty(ListItem.Trailer)</visible>
-                    <label>31822</label>
-                    <font>StudioFont</font>
-                    <animation condition="Control.HasFocus(1003)" effect="fade" end="100" start="0" time="10">Conditional</animation>
-                    <animation condition="!Control.HasFocus(1003)" effect="fade" end="0" start="100" time="10">Conditional</animation>
-                </control>
                 <control id="210" type="button">
                     <width>116</width>
                     <height>116</height>
@@ -1578,7 +1567,17 @@
                     <animation condition="!Control.HasFocus(210)" effect="fade" end="0" start="100" time="10">Conditional</animation>
                     <visible>System.HasAddon(script.cinemavision) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes)]</visible>
                 </control>
-
+                <control id="1003" type="button">
+                    <width>116</width>
+                    <height>116</height>
+                    <textcolor>white</textcolor>
+                    <textoffsetx>0</textoffsetx>
+                    <visible>!IsEmpty(ListItem.Trailer)</visible>
+                    <label>31822</label>
+                    <font>StudioFont</font>
+                    <animation condition="Control.HasFocus(1003)" effect="fade" end="100" start="0" time="10">Conditional</animation>
+                    <animation condition="!Control.HasFocus(1003)" effect="fade" end="0" start="100" time="10">Conditional</animation>
+                </control>
                 <control id="10" type="button">
                     <width>116</width>
                     <height>116</height>
