@@ -316,7 +316,7 @@
                         </control>
                         <control type="image">
                             <aspectratio scalediffuse="false">stretch</aspectratio>
-                            <texture background="true">$INFO[Window.Property(movie.thumb)]</texture>
+                            <texture background="true">$INFO[Container(1250).ListItem(0).Icon]</texture>
                             <animation type="conditional" condition="true" reversible="false">
                                 <effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
                             </animation>
@@ -747,41 +747,39 @@
                     </control>
                 </control>
 
-                <!-- Widget Headers -->
-                <control type="label">
-                    <left>683</left>
-                    <top>510</top>
-                    <width>1200</width>
-                    <height>34</height>
-                    <aligny>center</aligny>
-                    <align>left</align>
-                    <height>34</height>
-                    <font>Small</font>
-                    <textcolor>white2</textcolor>
-                    <description>Header Label</description>
-                    <textcolor>Dark2</textcolor>
-                    <font>Small</font>
-                    <label>$LOCALIZE[206]$INFO[Container(1000).ListItem(0).Label,: ,]$INFO[Container(1000).ListItem(0).Property(character), $LOCALIZE[20347] ]</label>
-                    <include>Animation.DelayFadeIn</include>
-                </control>
-
-                <control type="wraplist" id="1000">
-                    <description>top</description>
-                    <visible>true</visible>
-                    <autoscroll time="3000">!Control.HasFocus(1000)</autoscroll>
-                    <onleft>1000</onleft>
-                    <onright>1000</onright>
-                    <onfocus>SetProperty(content,1000)</onfocus>
-                    <include>TopDefExtendedInfoList</include>
-                </control>
-
                 <control type="grouplist">
-                    <height>280</height>
+                    <height>560</height>
                     <width>1920</width>
                     <orientation>vertical</orientation>
                     <left>683</left>
-                    <top>800</top>
+                    <top>510</top>
                     <onup>1000</onup>
+
+                    <!-- Cast -->
+                    <control type="group">
+                        <visible>IntegerGreaterThan(Container(1000).NumItems,0)</visible>
+                        <height>280</height>
+                        <control type="label">
+                            <width>1200</width>
+                            <height>34</height>
+                            <aligny>center</aligny>
+                            <align>left</align>
+                            <height>34</height>
+                            <font>Small</font>
+                            <textcolor>white2</textcolor>
+                            <description>Header Label</description>
+                            <textcolor>Dark2</textcolor>
+                            <font>Small</font>
+                            <label>$LOCALIZE[206]$INFO[Container(1000).ListItem(0).Label,: ,]$INFO[Container(1000).ListItem(0).Property(character), $LOCALIZE[20347] ]</label>
+                            <include>Animation.DelayFadeIn</include>
+                        </control>
+                        <control type="wraplist" id="1000">
+                            <autoscroll time="3000">!Control.HasFocus(1000)</autoscroll>
+                            <onleft>1000</onleft>
+                            <onright>1000</onright>
+                            <include>TopDefExtendedInfoList</include>
+                        </control>
+                    </control>
 
                     <!-- Similar Movies -->
                     <control type="group">
