@@ -1462,22 +1462,6 @@
                     <texturefocus colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]">common/box.png</texturefocus>
                     <texturenofocus colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</texturenofocus>
                 </control>
-                <control type="button" id="3443">
-                    <width>116</width>
-                    <height>116</height>
-                    <font>symbol</font>
-                    <label></label>
-                    <textcolor>white</textcolor>
-                    <focusedcolor>$VAR[EmbyLeftColourHighlight]</focusedcolor>
-                    <texturefocus colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]">common/box.png</texturefocus>
-                    <texturenofocus colordiffuse="$VAR[EmbyLeftColourHighlight]">common/box.png</texturenofocus>
-                    <onclick>SetProperty(Dialog.1.Label,$LOCALIZE[31147])</onclick>
-                    <onclick>SetProperty(Dialog.1.BuiltIn,RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[ListItem.Director]))</onclick>
-                    <onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31752])</onclick>
-                    <onclick>SetProperty(Dialog.2.BuiltIn,SetProperty(listcontent,$INFO[ListItem.Director],home)||ActivateWindow(1168))</onclick>
-                    <onclick>RunScript(script.toolbox,info=selectdialog,header=$INFO[ListItem.Director])</onclick>
-                    <visible>![Container.Content(seasons) | Container.Content(tvshows)]</visible>
-                </control>
                 <!-- Cinema Vision -->
                 <control id="210" type="button">
                     <width>116</width>
@@ -1582,17 +1566,6 @@
                     <font>StudioFont</font>
                     <animation condition="Control.HasFocus(1003)" effect="fade" end="100" start="0" time="10">Conditional</animation>
                     <animation condition="!Control.HasFocus(1003)" effect="fade" end="0" start="100" time="10">Conditional</animation>
-                </control>
-                <control id="3443" type="button">
-                    <width>116</width>
-                    <height>116</height>
-                    <textoffsetx>0</textoffsetx>
-                    <textcolor>white</textcolor>
-                    <font>StudioFont</font>
-                    <label>31823</label>
-                    <animation condition="Control.HasFocus(3443)" effect="fade" end="100" start="0" time="10">Conditional</animation>
-                    <animation condition="!Control.HasFocus(3443)" effect="fade" end="0" start="100" time="10">Conditional</animation>
-                    <visible>![Container.Content(seasons) | Container.Content(tvshows)]</visible>
                 </control>
                 <control id="210" type="button">
                     <width>116</width>
