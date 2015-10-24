@@ -562,7 +562,6 @@
 	</variable>
 	<variable name="PlotFurniture">
 		<value condition="!IsEmpty(Window(home).Property(SkinHelper.MovieSet.ExtendedPlot)) + [Container.Content(Sets) | substring(ListItem.Path,videodb://movies/sets,left)]">$INFO[Window(home).Property(SkinHelper.MovieSet.ExtendedPlot)]</value>
-		<value condition="Container.Content(movies) + !StringCompare(Window(Home).Property(SkinHelper.RottenTomatoesConsensus),N/A)">$INFO[ListItem.Tagline,[I][COLOR=cadmium yellow]",[/I]"[/COLOR][CR]]$INFO[ListItem.Plot]$INFO[Window(Home).Property(SkinHelper.RottenTomatoesConsensus), [I][CR]'',''[/I]]</value>
 		<value condition="Container.Content(movies)">$INFO[ListItem.Tagline,[I][COLOR=cadmium yellow]",[/I]"[/COLOR][CR]]$INFO[ListItem.Plot]</value>
 		<value condition="[!IsEmpty(ListItem.PlotOutline) | !IsEmpty(ListItem.Plot)] + Skin.HasSetting(osd.hidespoilers) + Container.Content(episodes) + [stringcompare(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]">$LOCALIZE[20370]</value>
 		<value condition="!IsEmpty(ListItem.PlotOutline)">$INFO[ListItem.PlotOutline]</value>
