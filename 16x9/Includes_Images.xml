@@ -307,7 +307,6 @@
 		<value condition="IntegerGreaterThan(Control.GetLabel(9666),1)">nextup/01.png</value>
 		<value condition="IntegerGreaterThan(Control.GetLabel(9666),0)">nextup/00.png</value>
 	</variable>
-
 	<variable name="ProgressPercent32">
 		<value condition="IntegerGreaterThan(Control.GetLabel(32),99)">nextup/30.png</value>
 		<value condition="IntegerGreaterThan(Control.GetLabel(32),98)">nextup/30.png</value>
@@ -410,7 +409,6 @@
 		<value condition="IntegerGreaterThan(Control.GetLabel(32),1)">nextup/01.png</value>
 		<value condition="IntegerGreaterThan(Control.GetLabel(32),0)">nextup/00.png</value>
 	</variable>
-
 	<variable name="LanguageFlagsIcon">
 		<value condition="System.HasAddon(script.image.resource.select) + !IsEmpty(Skin.String(languageflags.path))">$INFO[Skin.String(languageflags.path)]</value>
 		<value>resource://resource.images.languageflags.colour/</value>
@@ -431,15 +429,12 @@
 		<value condition="System.HasAddon(script.image.resource.select) + !IsEmpty(Skin.String(weatherfanart.path))">$INFO[Skin.String(weatherfanart.path)]</value>
 		<value>resource://resource.images.weatherfanart.multi/</value>
 	</variable>
-
 	<variable name="PVRFanart">
 		<value condition="!IsEmpty(Window(home).Property(SkinHelper.PVR.FanArt))">$INFO[Window(home).Property(SkinHelper.PVR.FanArt)]</value>
 		<value condition="!IsEmpty(Window(home).Property(SkinHelper.PVR.Landscape))">$INFO[Window(home).Property(SkinHelper.PVR.Landscape)]</value>
 		<value condition="!IsEmpty(Window(home).Property(SkinHelper.PVR.Thumb))">$INFO[Window(home).Property(SkinHelper.PVR.Thumb)]</value>
 		<value>pvr/background.jpg</value>
 	</variable>
-
-
 	<variable name="PVRLandscape">
 		<value condition="!IsEmpty(Window(home).Property(SkinHelper.PVR.Landscape))">$INFO[Window(home).Property(SkinHelper.PVR.Landscape)]</value>
 		<value condition="!IsEmpty(Window(home).Property(SkinHelper.PVR.FanArt))">$INFO[Window(home).Property(SkinHelper.PVR.FanArt)]</value>
@@ -447,7 +442,6 @@
 		<value condition="!IsEmpty(Window(home).Property(SkinHelper.PVR.ChannelLogo))">$INFO[Window(home).Property(SkinHelper.PVR.ChannelLogo)]</value>
 		<value>pvr/background.jpg</value>
 	</variable>
-
 	<variable name="RealFanartImage">
 		<value condition="!IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
 		<value condition="!IsEmpty(ListItem.Art(landscape))">$INFO[ListItem.Art(landscape)]</value>

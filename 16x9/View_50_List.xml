@@ -13,8 +13,8 @@
 			</animation>
 			<control type="group">
 				<control type="list" id="50">
-                    <top>156</top>
-                    <height>730</height>
+					<top>156</top>
+					<height>730</height>
 					<left>15</left>
 					<width>ListW</width>
 					<onright condition="!Skin.HasSetting(global.kioskmode)">9000</onright>
@@ -73,7 +73,7 @@
 			<left>970</left>
 			<top>TopPad</top>
 			<visible>!IsEmpty(ListItem.Icon)</visible>
-            <control type="group">
+			<control type="group">
 				<top>-51</top>
 				<width>950</width>
 				<height>51</height>
@@ -167,7 +167,7 @@
 				<right>10</right>
 				<aligny>center</aligny>
 				<align>left</align>
-			   <font>MediumSmallBold</font>
+				<font>MediumSmallBold</font>
 				<textcolor>white</textcolor>
 				<label>$VAR[LabelDuration]</label>
 			</control>
@@ -220,7 +220,6 @@
 			</control>
 		</control>
 	</include>
-
 	<include name="View_50_SidePoster_Square">
 		<control type="group" description="Poster">
 			<left>SidePad</left>
@@ -247,8 +246,8 @@
 			</animation>
 			<control type="group">
 				<control type="list" id="50">
-                    <top>TopPad</top>
-                    <height>896</height>
+					<top>TopPad</top>
+					<height>896</height>
 					<left>10</left>
 					<right>10</right>
 					<onleft condition="!Skin.HasSetting(global.kioskmode)">9000</onleft>
@@ -274,22 +273,10 @@
 				</control>
 				<include>Furniture_ScrollbarS</include>
 			</control>
-			<!--
-			<include>View_50_SidePoster_Square</include>
-			-->
-		</control>
+			<!--<include>View_50_SidePoster_Square</include>--></control>
 	</include>
-
 	<include name="50focuslayout">
-	<!--
-			<control type="image">
-			<width>100%</width>
-			<height>100%</height>
-			<aspectratio scalediffuse="false">scale</aspectratio>
-			<texture colordiffuse="$VAR[BorderHighlight]">$VAR[FocusedBorderImage]</texture>
-		</control>
--->
-		<control type="image">
+		<!--<control type="image"><width>100%</width><height>100%</height><aspectratio scalediffuse="false">scale</aspectratio><texture colordiffuse="$VAR[BorderHighlight]">$VAR[FocusedBorderImage]</texture></control>--><control type="image">
 			<left>0</left>
 			<width>25%</width>
 			<height>100%</height>
@@ -364,8 +351,8 @@
 		</control>
 		<control type="group">
 			<control type="label">
-			<centerright>112</centerright>
-			<centertop>32</centertop>
+				<centerright>112</centerright>
+				<centertop>32</centertop>
 				<width>40</width>
 				<height>40</height>
 				<font>symbolback</font>
@@ -373,11 +360,11 @@
 				<textcolor>white2</textcolor>
 			</control>
 			<control type="label">
-			<centerright>112</centerright>
-			<centertop>33</centertop>
+				<centerright>112</centerright>
+				<centertop>33</centertop>
 				<width>32</width>
 				<height>32</height>
-							<align>center</align>
+				<align>center</align>
 				<font>minisymbol</font>
 				<label>$VAR[PercentWatchedLabel]</label>
 				<textcolor>$VAR[UnwatchedColourHighlight]</textcolor>
@@ -385,8 +372,8 @@
 				<visible>[Container.Content(tvshows) | Container.Content(seasons)]</visible>
 			</control>
 			<control type="label">
-			<centerright>110</centerright>
-			<centertop>32</centertop>
+				<centerright>110</centerright>
+				<centertop>32</centertop>
 				<width>32</width>
 				<height>32</height>
 				<font>symbolview</font>
@@ -398,8 +385,8 @@
 		</control>
 		<control type="group">
 			<control type="label">
-			<centerright>110</centerright>
-			<centertop>32</centertop>
+				<centerright>110</centerright>
+				<centertop>32</centertop>
 				<width>40</width>
 				<height>40</height>
 				<font>symbolback</font>
@@ -407,8 +394,8 @@
 				<textcolor>white2</textcolor>
 			</control>
 			<control type="label">
-			<centerright>110</centerright>
-			<centertop>32</centertop>
+				<centerright>110</centerright>
+				<centertop>32</centertop>
 				<top>10</top>
 				<width>32</width>
 				<height>32</height>
@@ -420,8 +407,8 @@
 		</control>
 		<control type="group">
 			<control type="label">
-			<centerright>110</centerright>
-			<centertop>32</centertop>
+				<centerright>110</centerright>
+				<centertop>32</centertop>
 				<width>40</width>
 				<height>40</height>
 				<font>symbolback</font>
@@ -429,11 +416,11 @@
 				<textcolor>white2</textcolor>
 			</control>
 			<control type="label">
-			<centerright>110</centerright>
-			<centertop>33</centertop>
+				<centerright>110</centerright>
+				<centertop>33</centertop>
 				<width>32</width>
 				<height>32</height>
-							<align>center</align>
+				<align>center</align>
 				<font>symbolview</font>
 				<label>$VAR[PercentWatchedLabel]</label>
 				<textcolor>$VAR[WatchedColourHighlight]</textcolor>
@@ -442,8 +429,8 @@
 		</control>
 		<control type="group">
 			<control type="label">
-			<centerright>112</centerright>
-			<centertop>32</centertop>
+				<centerright>112</centerright>
+				<centertop>32</centertop>
 				<width>40</width>
 				<height>40</height>
 				<font>symbolback</font>
@@ -451,8 +438,8 @@
 				<textcolor>white2</textcolor>
 			</control>
 			<control type="label">
-			<centerright>110</centerright>
-			<centertop>32</centertop>
+				<centerright>110</centerright>
+				<centertop>32</centertop>
 				<width>32</width>
 				<height>32</height>
 				<font>symbolview</font>
@@ -461,7 +448,6 @@
 			</control>
 			<visible>!stringcompare(ListItem.Label,..) + ListItem.IsResumable</visible>
 		</control>
-
 		<control type="label">
 			<right>30</right>
 			<width>500</width>
@@ -475,7 +461,6 @@
 			<visible>!stringcompare(ListItem.Label,..)</visible>
 			<visible>!Container.Content(seasons) + !Container.Content(albums) + !Container.Content(songs)</visible>
 		</control>
-
 		<control type="label">
 			<right>30</right>
 			<width>500</width>
@@ -537,8 +522,8 @@
 		</control>
 		<control type="group">
 			<control type="label">
-			<centerright>112</centerright>
-			<centertop>32</centertop>
+				<centerright>112</centerright>
+				<centertop>32</centertop>
 				<width>40</width>
 				<height>40</height>
 				<font>symbolback</font>
@@ -546,11 +531,11 @@
 				<textcolor>white2</textcolor>
 			</control>
 			<control type="label">
-			<centerright>112</centerright>
-			<centertop>33</centertop>
+				<centerright>112</centerright>
+				<centertop>33</centertop>
 				<width>32</width>
 				<height>32</height>
-							<align>center</align>
+				<align>center</align>
 				<font>minisymbol</font>
 				<label>$VAR[PercentWatchedLabel]</label>
 				<textcolor>$VAR[UnwatchedColourHighlight]</textcolor>
@@ -558,8 +543,8 @@
 				<visible>[Container.Content(tvshows) | Container.Content(seasons)]</visible>
 			</control>
 			<control type="label">
-			<centerright>110</centerright>
-			<centertop>32</centertop>
+				<centerright>110</centerright>
+				<centertop>32</centertop>
 				<width>32</width>
 				<height>32</height>
 				<font>symbolview</font>
@@ -571,8 +556,8 @@
 		</control>
 		<control type="group">
 			<control type="label">
-			<centerright>110</centerright>
-			<centertop>32</centertop>
+				<centerright>110</centerright>
+				<centertop>32</centertop>
 				<width>40</width>
 				<height>40</height>
 				<font>symbolback</font>
@@ -580,8 +565,8 @@
 				<textcolor>white2</textcolor>
 			</control>
 			<control type="label">
-			<centerright>110</centerright>
-			<centertop>32</centertop>
+				<centerright>110</centerright>
+				<centertop>32</centertop>
 				<top>10</top>
 				<width>32</width>
 				<height>32</height>
@@ -593,8 +578,8 @@
 		</control>
 		<control type="group">
 			<control type="label">
-			<centerright>110</centerright>
-			<centertop>32</centertop>
+				<centerright>110</centerright>
+				<centertop>32</centertop>
 				<width>40</width>
 				<height>40</height>
 				<font>symbolback</font>
@@ -602,11 +587,11 @@
 				<textcolor>white2</textcolor>
 			</control>
 			<control type="label">
-			<centerright>110</centerright>
-			<centertop>33</centertop>
+				<centerright>110</centerright>
+				<centertop>33</centertop>
 				<width>32</width>
 				<height>32</height>
-							<align>center</align>
+				<align>center</align>
 				<font>symbolview</font>
 				<label>$VAR[PercentWatchedLabel]</label>
 				<textcolor>$VAR[WatchedColourHighlight]</textcolor>
@@ -615,8 +600,8 @@
 		</control>
 		<control type="group">
 			<control type="label">
-			<centerright>112</centerright>
-			<centertop>32</centertop>
+				<centerright>112</centerright>
+				<centertop>32</centertop>
 				<width>40</width>
 				<height>40</height>
 				<font>symbolback</font>
@@ -624,8 +609,8 @@
 				<textcolor>white2</textcolor>
 			</control>
 			<control type="label">
-			<centerright>110</centerright>
-			<centertop>32</centertop>
+				<centerright>110</centerright>
+				<centertop>32</centertop>
 				<width>32</width>
 				<height>32</height>
 				<font>symbolview</font>
@@ -647,7 +632,6 @@
 			<visible>!stringcompare(ListItem.Label,..)</visible>
 			<visible>!Container.Content(seasons) + !Container.Content(albums) + !Container.Content(songs)</visible>
 		</control>
-
 		<control type="label">
 			<right>30</right>
 			<width>500</width>
@@ -660,7 +644,6 @@
 			<label>$INFO[ListItem.Year]</label>
 			<visible>Container.Content(albums) | Container.Content(songs)</visible>
 		</control>
-
 	</include>
 	<include name="50itemlayout_square">
 		<control type="image">

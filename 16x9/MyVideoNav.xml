@@ -5,8 +5,8 @@
 	<allowoverlay>yes</allowoverlay>
 	<views>50,52,53,550,54,55,57,155,59,52,500,501,513,515,514,516</views>
 	<onload condition="System.HasAddon(script.tv.show.next.aired)">RunScript(script.tv.show.next.aired,backend=True)</onload>
-	<onload>AlarmClock(castScroll,Control.Move(508923,-1),00:03,silent,loop)</onload> 
-	<onload>AlarmClock(castScroll2,Control.Move(508922,-1),00:03,silent,loop)</onload> 
+	<onload>AlarmClock(castScroll,Control.Move(508923,-1),00:03,silent,loop)</onload>
+	<onload>AlarmClock(castScroll2,Control.Move(508922,-1),00:03,silent,loop)</onload>
 	<onunload>CancelAlarm(castScroll,true)</onunload>
 	<onunload>CancelAlarm(castScroll2,true)</onunload>
 	<onunload>ClearProperty(SkinHelper.ListItemGenres,home)</onunload>
@@ -27,8 +27,7 @@
 		<include>View_515_Landscape</include>
 		<include>View_514_DiscArt</include>
 		<include>View_516_ArtAttack</include>
-		<!--<include>Furniture_NowPlaying</include>-->
-		<control type="group">
+		<!--<include>Furniture_NowPlaying</include>--><control type="group">
 			<include>Animation.Common.Killer</include>
 			<include>Furniture_EmbyClock</include>
 			<include>Furniture_HeaderEmby</include>
@@ -102,16 +101,7 @@
 					<textcolor>white</textcolor>
 					<aligny>center</aligny>
 				</control>
-				<!-- <control type="radiobutton" id="16"> <description>PartyMode</description> <include>DefContextButton</include> <align>left</align> <label>589</label> <visible>Container.Content(MusicVideos)</visible> </control> -->
-				<!-- <control type="button" id="9092">
-					<description>Set Custom Widget</description>
-					<include>DefContextButtonBlade</include>
-					<align>left</align>
-					<label>31222</label>
-					<onclick>Back</onclick>
-					<onclick>ActivateWindow(1106)</onclick>
-				</control> -->
-				<control type="button" id="9098">
+				<!-- <control type="radiobutton" id="16"> <description>PartyMode</description> <include>DefContextButton</include> <align>left</align> <label>589</label> <visible>Container.Content(MusicVideos)</visible> </control> --><!-- <control type="button" id="9092"><description>Set Custom Widget</description><include>DefContextButtonBlade</include><align>left</align><label>31222</label><onclick>Back</onclick><onclick>ActivateWindow(1106)</onclick></control> --><control type="button" id="9098">
 					<description>Video Playlist</description>
 					<include>DefContextButtonBlade</include>
 					<label>559</label>

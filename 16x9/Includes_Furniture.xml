@@ -270,7 +270,6 @@
 		<height>64</height>
 		<texture colordiffuse="Dark1">common/circle.png</texture>
 	</include>
-
 	<!-- MusicFlags -->
 	<variable name="MusicFlagstar5">
 		<value condition="StringCompare(ListItem.StarRating,rating5.png)">star10</value>
@@ -302,7 +301,6 @@
 		<value condition="StringCompare(ListItem.StarRating,rating1.png)">star10</value>
 		<value>star0</value>
 	</variable>
-
 	<include name="Furniture_Logo">
 		<control type="group">
 			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml) + !Control.IsVisible(500) + !Control.IsVisible(54) + !Control.IsVisible(52) + !Control.IsVisible(515) + !ControlGroup(9000).HasFocus()</visible>
@@ -324,7 +322,7 @@
 				<fadetime>50</fadetime>
 				<visible>!Control.IsVisible(516)</visible>
 			</control>
-				<!--cdart image -->
+			<!--cdart image -->
 			<control type="image" id="12323">
 				<top>-10</top>
 				<width>228</width>
@@ -422,7 +420,8 @@
 		<value condition="Window.IsVisible(DialogVideoInfo.xml) + Container.Content(episodes)">$INFO[ListItem.Title]</value>
 		<value condition="Window.IsVisible(DialogVideoInfo.xml) + Container.Content(musicvideos) + !IsEmpty(ListItem.Artist)">$INFO[ListItem.Artist]</value>
 		<value condition="Window.IsVisible(DialogVideoInfo.xml) + Container.Content(episodes) + !IsEmpty(ListItem.TvShowTitle)">$INFO[ListItem.TvShowTitle]</value>
-		<value condition="Window.IsVisible(script-ExtendedInfo Script-VideoList.xml) | Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) | Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)">$LOCALIZE[31241]</value>		<value condition="Window.IsVisible(MyVideoNav.xml) + StringCompare(Container.FolderPath,videodb://movies/titles/)">$LOCALIZE[20342]</value>
+		<value condition="Window.IsVisible(script-ExtendedInfo Script-VideoList.xml) | Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) | Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)">$LOCALIZE[31241]</value>
+		<value condition="Window.IsVisible(MyVideoNav.xml) + StringCompare(Container.FolderPath,videodb://movies/titles/)">$LOCALIZE[20342]</value>
 		<value condition="Window.IsVisible(MyVideoNav.xml) + StringCompare(Container.FolderPath,videodb://tvshows/titles/)">$LOCALIZE[20343]</value>
 		<value condition="Window.IsVisible(MyVideoNav.xml) + SubString(Container.FolderPath,videodb://movies/,Left)">$INFO[Container.FolderName]</value>
 		<value condition="Window.IsVisible(MyVideoNav.xml) + SubString(Container.FolderPath,videodb://tvshows/,Left) + Container.Content(episodes) + !IsEmpty(ListItem.TvShowTitle)">$INFO[ListItem.TvShowTitle]$INFO[ListItem.Season, - Season ,]</value>
@@ -696,7 +695,7 @@
 				<label></label>
 				<fadetime>200</fadetime>
 				<visible>[!IsEmpty(ListItem.EndTime) + [Container.Content(movies) | Container.Content(episodes)]] | [!IsEmpty(Container(301).ListItem.EndTime) + Control.HasFocus(301) + Skin.HasSetting(home.vertical)] | [!IsEmpty(Container(301).ListItem.EndTime) + !Skin.HasSetting(home.vertical)]</visible>
-			    <visible>[!Window.IsVisible(DialogVideoInfo.xml) + !Skin.HasSetting(furniture.hideendtime)] | Window.IsVisible(DialogVideoInfo.xml)</visible>
+				<visible>[!Window.IsVisible(DialogVideoInfo.xml) + !Skin.HasSetting(furniture.hideendtime)] | Window.IsVisible(DialogVideoInfo.xml)</visible>
 			</control>
 			<control type="label">
 				<centertop>219</centertop>
@@ -757,8 +756,6 @@
 			</control>
 		</control>
 	</include>
-
-
 	<variable name="HomeFlagstar1">
 		<value condition="IntegerGreaterThan(Container(301).ListItem.Rating,1)">star10</value>
 		<value condition="IntegerGreaterThan(Container(301).ListItem.Rating,0)">star5</value>
@@ -802,9 +799,9 @@
 			<visible>![Window.IsVisible(script-skinshortcuts.xml) | Window.IsVisible(DialogSongInfo.xml) | Window.IsVisible(DialogPictureInfo.xml) | Window.IsVisible(FileBrowser.xml) | Window.IsVisible(DialogProgress.xml) | Window.IsVisible(DialogYesNo.xml) | Window.IsVisible(DialogOK.xml) | Window.IsVisible(DialogSelect.xml) | Window.IsVisible(DialogContextMenu.xml) | Window.IsVisible(DialogButtonMenu.xml) | ControlGroup(9000).HasFocus()]</visible>
 			<visible>[!IsEmpty(Window(home).Property(SkinHelper.MovieSet.ExtendedPlot)) + [Container.Content(Sets) | substring(ListItem.Path,videodb://movies/sets,left)]] | !IsEmpty(ListItem.Plot)</visible>
 			<visible>!System.IdleTime(26)</visible>
-							<animation type="conditional" condition="System.IdleTime(18)" reversible="false">
-								<effect type="fade" end="0" start="100" time="5000" center="auto" tween="quadratic" easing="out" />
-							</animation>
+			<animation type="conditional" condition="System.IdleTime(18)" reversible="false">
+				<effect type="fade" end="0" start="100" time="5000" center="auto" tween="quadratic" easing="out" />
+			</animation>
 			<include>Animation.FadeIn.Slide</include>
 			<control type="group">
 				<left>1654</left>
@@ -818,76 +815,76 @@
 				</control>
 				<visible>Control.IsVisible(500) | Control.IsVisible(54) | Control.IsVisible(52) | Control.IsVisible(50)</visible>
 			</control>
-						<control type="group">
-						<left>10</left>
-						<top>-10</top>
-							<width>613</width>
-							<height>920</height>
-							<control type="group">
-								<control type="image">
-									<left>0</left>
-									<width>50%</width>
-									<height>50%</height>
-									<aspectratio scalediffuse="false">scale</aspectratio>
-									<texture colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" background="true">$VAR[FocusedBorderImage]</texture>
-								</control>
-								<control type="image">
-									<left>50%</left>
-									<width>50%</width>
-									<height>50%</height>
-									<aspectratio scalediffuse="false">scale</aspectratio>
-									<texture colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" background="true">$VAR[FocusedBorderImage]</texture>
-								</control>
-								<control type="image">
-									<left>0</left>
-									<top>50%</top>
-									<width>50%</width>
-									<height>50%</height>
-									<aspectratio scalediffuse="false">scale</aspectratio>
-									<texture colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" background="true" flipy="true">$VAR[FocusedBorderImage]</texture>
-								</control>
-								<control type="image">
-									<left>50%</left>
-									<top>50%</top>
-									<width>50%</width>
-									<height>50%</height>
-									<aspectratio scalediffuse="false">scale</aspectratio>
-									<texture colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" background="true" flipy="true">$VAR[FocusedBorderImage]</texture>
-								</control>
-							<animation type="conditional" condition="true" reversible="false">
-								<effect type="zoom" start="100" end="108" time="200" center="auto" tween="quadratic" easing="out"/>
-							</animation>
-						</control>
-						<control type="image">
-							<aspectratio scalediffuse="false">stretch</aspectratio>
-							<texture background="true">$VAR[PosterImage]</texture>
-							<animation type="conditional" condition="true" reversible="false">
-								<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
-							</animation>
-							<visible>!Container.Content(episodes)</visible>
-						</control>
-						<control type="group">
-							<control type="image">
-								<width>613</width>
-								<height>450</height>
-								<aspectratio scalediffuse="false">scale</aspectratio>
-								<texture background="true">$INFO[ListItem.Icon]</texture>
-								<animation type="conditional" condition="true" reversible="false">
-									<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
-								</animation>
-							</control>
-							<control type="image">
-								<top>470</top>
-								<width>613</width>
-								<height>450</height>
-								<aspectratio scalediffuse="false">keep</aspectratio>
-								<texture background="true">$INFO[ListItem.Art(tvshow.landscape)]</texture>
-								<animation type="conditional" condition="true" reversible="false">
-									<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
-								</animation>
-							</control>
-							<visible>Container.Content(episodes)</visible>
-						</control>
+			<control type="group">
+				<left>10</left>
+				<top>-10</top>
+				<width>613</width>
+				<height>920</height>
+				<control type="group">
+					<control type="image">
+						<left>0</left>
+						<width>50%</width>
+						<height>50%</height>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<texture colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" background="true">$VAR[FocusedBorderImage]</texture>
+					</control>
+					<control type="image">
+						<left>50%</left>
+						<width>50%</width>
+						<height>50%</height>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<texture colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" background="true">$VAR[FocusedBorderImage]</texture>
+					</control>
+					<control type="image">
+						<left>0</left>
+						<top>50%</top>
+						<width>50%</width>
+						<height>50%</height>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<texture colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" background="true" flipy="true">$VAR[FocusedBorderImage]</texture>
+					</control>
+					<control type="image">
+						<left>50%</left>
+						<top>50%</top>
+						<width>50%</width>
+						<height>50%</height>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<texture colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" background="true" flipy="true">$VAR[FocusedBorderImage]</texture>
+					</control>
+					<animation type="conditional" condition="true" reversible="false">
+						<effect type="zoom" start="100" end="108" time="200" center="auto" tween="quadratic" easing="out"/>
+					</animation>
+				</control>
+				<control type="image">
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<texture background="true">$VAR[PosterImage]</texture>
+					<animation type="conditional" condition="true" reversible="false">
+						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
+					</animation>
+					<visible>!Container.Content(episodes)</visible>
+				</control>
+				<control type="group">
+					<control type="image">
+						<width>613</width>
+						<height>450</height>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<texture background="true">$INFO[ListItem.Icon]</texture>
+						<animation type="conditional" condition="true" reversible="false">
+							<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
+						</animation>
+					</control>
+					<control type="image">
+						<top>470</top>
+						<width>613</width>
+						<height>450</height>
+						<aspectratio scalediffuse="false">keep</aspectratio>
+						<texture background="true">$INFO[ListItem.Art(tvshow.landscape)]</texture>
+						<animation type="conditional" condition="true" reversible="false">
+							<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
+						</animation>
+					</control>
+					<visible>Container.Content(episodes)</visible>
+				</control>
 				<control type="label">
 					<right>16</right>
 					<top>1</top>
@@ -907,11 +904,11 @@
 					<textcolor>$VAR[IndicatorColourHighlight]</textcolor>
 					<visible>!stringcompare(ListItem.Label,..)</visible>
 				</control>
-							<animation type="conditional" condition="true" reversible="false">
-								<effect type="zoom" start="100" end="94" time="200" center="auto" tween="quadratic" easing="out" />
-								<effect type="rotate" end="-1" time="200" center="auto" tween="quadratic" easing="out" />
-							</animation>
-						</control>
+				<animation type="conditional" condition="true" reversible="false">
+					<effect type="zoom" start="100" end="94" time="200" center="auto" tween="quadratic" easing="out" />
+					<effect type="rotate" end="-1" time="200" center="auto" tween="quadratic" easing="out" />
+				</animation>
+			</control>
 			<control type="label">
 				<description>header label</description>
 				<left>643</left>
@@ -945,10 +942,10 @@
 					<font>SmallBold</font>
 					<textcolor>white2</textcolor>
 					<label>20339</label>
-							<animation type="conditional" condition="true" reversible="false">
-								<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
-							</animation>
-							<visible>!Container.Content(tvshows) + !Container.Content(episodes) + !Container.Content(seasons)</visible>
+					<animation type="conditional" condition="true" reversible="false">
+						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
+					</animation>
+					<visible>!Container.Content(tvshows) + !Container.Content(episodes) + !Container.Content(seasons)</visible>
 				</control>
 				<control type="label">
 					<left>643</left>
@@ -958,10 +955,10 @@
 					<font>SmallBold</font>
 					<textcolor>white2</textcolor>
 					<label>33054</label>
-							<animation type="conditional" condition="true" reversible="false">
-								<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
-							</animation>
-							<visible>Container.Content(tvshows)</visible>
+					<animation type="conditional" condition="true" reversible="false">
+						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
+					</animation>
+					<visible>Container.Content(tvshows)</visible>
 				</control>
 				<control type="label">
 					<left>643</left>
@@ -971,10 +968,10 @@
 					<font>SmallBold</font>
 					<textcolor>white2</textcolor>
 					<label>$INFO[ListItem.Label]</label>
-							<animation type="conditional" condition="true" reversible="false">
-								<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
-							</animation>
-							<visible>Container.Content(seasons)</visible>
+					<animation type="conditional" condition="true" reversible="false">
+						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
+					</animation>
+					<visible>Container.Content(seasons)</visible>
 				</control>
 				<control type="label">
 					<left>643</left>
@@ -984,10 +981,10 @@
 					<font>SmallBold</font>
 					<textcolor>white2</textcolor>
 					<label>31824</label>
-							<animation type="conditional" condition="true" reversible="false">
-								<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
-							</animation>
-							<visible>Container.Content(episodes)</visible>
+					<animation type="conditional" condition="true" reversible="false">
+						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
+					</animation>
+					<visible>Container.Content(episodes)</visible>
 				</control>
 				<control type="label">
 					<left>957</left>
@@ -997,9 +994,9 @@
 					<font>SmallBold</font>
 					<textcolor>white2</textcolor>
 					<label>515</label>
-							<animation type="conditional" condition="true" reversible="false">
-								<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
-							</animation>
+					<animation type="conditional" condition="true" reversible="false">
+						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
+					</animation>
 				</control>
 				<control type="label">
 					<left>1271</left>
@@ -1009,9 +1006,9 @@
 					<font>SmallBold</font>
 					<textcolor>white2</textcolor>
 					<label>206</label>
-							<animation type="conditional" condition="true" reversible="false">
-								<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
-							</animation>
+					<animation type="conditional" condition="true" reversible="false">
+						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
+					</animation>
 				</control>
 				<control type="label">
 					<left>1585</left>
@@ -1021,10 +1018,10 @@
 					<font>SmallBold</font>
 					<textcolor>white2</textcolor>
 					<label>572</label>
-							<fadetime>500</fadetime>
-							<animation type="conditional" condition="true" reversible="false">
-								<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
-							</animation>
+					<fadetime>500</fadetime>
+					<animation type="conditional" condition="true" reversible="false">
+						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
+					</animation>
 				</control>
 				<control type="textbox">
 					<left>643</left>
@@ -1035,8 +1032,8 @@
 					<textcolor>white</textcolor>
 					<label fallback="19055">$INFO[ListItem.Season]</label>
 					<autoscroll delay="500" time="1000" repeat="500"/>
-							<fadetime>500</fadetime>
-							<visible>Container.Content(tvshows)</visible>
+					<fadetime>500</fadetime>
+					<visible>Container.Content(tvshows)</visible>
 				</control>
 				<control type="textbox">
 					<left>643</left>
@@ -1047,8 +1044,8 @@
 					<textcolor>white</textcolor>
 					<label fallback="19055">$VAR[LabelDirector]</label>
 					<autoscroll delay="500" time="1000" repeat="500"/>
-							<fadetime>500</fadetime>
-							<visible>!Container.Content(seasons) + !Container.Content(tvshows) + !Container.Content(episodes)</visible>
+					<fadetime>500</fadetime>
+					<visible>!Container.Content(seasons) + !Container.Content(tvshows) + !Container.Content(episodes)</visible>
 				</control>
 				<control type="textbox">
 					<left>643</left>
@@ -1059,8 +1056,8 @@
 					<textcolor>white</textcolor>
 					<label fallback="19055">$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20360]]</label>
 					<autoscroll delay="500" time="1000" repeat="500"/>
-							<fadetime>500</fadetime>
-							<visible>Container.Content(seasons)</visible>
+					<fadetime>500</fadetime>
+					<visible>Container.Content(seasons)</visible>
 				</control>
 				<control type="textbox">
 					<left>643</left>
@@ -1071,8 +1068,8 @@
 					<textcolor>white</textcolor>
 					<label fallback="19055">$INFO[ListItem.Premiered]</label>
 					<autoscroll delay="500" time="1000" repeat="500"/>
-							<fadetime>500</fadetime>
-							<visible>Container.Content(episodes)</visible>
+					<fadetime>500</fadetime>
+					<visible>Container.Content(episodes)</visible>
 				</control>
 				<control type="textbox">
 					<left>957</left>
@@ -1083,8 +1080,8 @@
 					<textcolor>white</textcolor>
 					<label fallback="19055">$INFO[Window(Home).Property(SkinHelper.ListItemGenres)]</label>
 					<autoscroll delay="500" time="1000" repeat="500"/>
-							<fadetime>500</fadetime>
-							<visible>Container.Content(episodes)</visible>
+					<fadetime>500</fadetime>
+					<visible>Container.Content(episodes)</visible>
 				</control>
 				<control type="textbox">
 					<left>957</left>
@@ -1095,8 +1092,8 @@
 					<textcolor>white</textcolor>
 					<label fallback="19055">$VAR[LabelGenreList]</label>
 					<autoscroll delay="500" time="1000" repeat="500"/>
-							<fadetime>500</fadetime>
-							<visible>!Container.Content(episodes)</visible>
+					<fadetime>500</fadetime>
+					<visible>!Container.Content(episodes)</visible>
 				</control>
 				<control type="textbox">
 					<left>1271</left>
@@ -1107,7 +1104,7 @@
 					<textcolor>white</textcolor>
 					<label fallback="19055">$INFO[Window(Home).Property(SkinHelper.ListItemCast)]</label>
 					<autoscroll delay="500" time="1000" repeat="500"/>
-							<fadetime>500</fadetime>
+					<fadetime>500</fadetime>
 				</control>
 				<control type="textbox">
 					<left>1585</left>
@@ -1117,23 +1114,9 @@
 					<font>TinyBold</font>
 					<textcolor>white</textcolor>
 					<label fallback="19055">$INFO[Window(Home).Property(SkinHelper.ListItemStudios)]</label>
-							<fadetime>500</fadetime>
+					<fadetime>500</fadetime>
 				</control>
-<!--
-				<control type="label">
-					<left>337</left>
-					<right>10</right>
-					<top>303</top>
-					<aligny>center</aligny>
-					<height>26</height>
-					<align>right</align>
-					<font>Tiny</font>
-					<textcolor>white</textcolor>
-					<visible>!Container.Content(seasons)</visible>
-					<label fallback="19055">$VAR[LabelYear,, • ]$VAR[LabelDuration,, • ]$INFO[ListItem.Rating]</label>
-				</control>
-				-->
-							<visible>!stringcompare(ListItem.Label,..) + !Container.Content(albums) + !Container.Content(songs)</visible>
+				<!--<control type="label"><left>337</left><right>10</right><top>303</top><aligny>center</aligny><height>26</height><align>right</align><font>Tiny</font><textcolor>white</textcolor><visible>!Container.Content(seasons)</visible><label fallback="19055">$VAR[LabelYear,, • ]$VAR[LabelDuration,, • ]$INFO[ListItem.Rating]</label></control>--><visible>!stringcompare(ListItem.Label,..) + !Container.Content(albums) + !Container.Content(songs)</visible>
 			</control>
 		</control>
 		<control type="group">
@@ -1158,7 +1141,7 @@
 					<fadetime>50</fadetime>
 				</control>
 			</control>
-			</control>
+		</control>
 	</include>
 	<include name="Furniture_Cast">
 		<control type="group">
@@ -1187,11 +1170,13 @@
 				<height>51</height>
 				<font>MediumSmallBold</font>
 				<textcolor>$VAR[ColourTextFlags]</textcolor>
-				<scroll>true</scroll><scrollspeed>150</scrollspeed><scrollsuffix>   </scrollsuffix>
+				<scroll>true</scroll>
+				<scrollspeed>150</scrollspeed>
+				<scrollsuffix>   </scrollsuffix>
 				<label>$INFO[Window(Home).Property(SkinHelper.RottenTomatoesConsensus),[I]",[/I]"]</label>
 				<visible>!StringCompare(Window(Home).Property(SkinHelper.RottenTomatoesConsensus),N/A)</visible>
 			</control>
-			</control>
+		</control>
 		<control type="group">
 			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml) + !Control.IsVisible(500) + !Control.IsVisible(54) + !Control.IsVisible(52) + !Control.IsVisible(53) + !Control.IsVisible(515)</visible>
 			<visible>Container.Content(sets) | Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)</visible>
@@ -1306,21 +1291,7 @@
 				<label>$VAR[PlotFurniture]</label>
 				<visible>!Control.IsVisible(50)</visible>
 			</control>
-			<!--
-			<control type="textbox">
-				<description>textarea</description>
-				<left>975</left>
-				<top>194</top>
-				<right>140</right>
-				<height>129</height>
-				<align>justify</align>
-				<font>MediumSmallBold</font>
-				<textcolor>white</textcolor>
-				<label>$VAR[Plot]</label>
-				<visible>Control.IsVisible(516)</visible>
-			</control>
-			-->
-			<control type="image">
+			<!--<control type="textbox"><description>textarea</description><left>975</left><top>194</top><right>140</right><height>129</height><align>justify</align><font>MediumSmallBold</font><textcolor>white</textcolor><label>$VAR[Plot]</label><visible>Control.IsVisible(516)</visible></control>--><control type="image">
 				<left>970</left>
 				<top>333</top>
 				<right>10</right>

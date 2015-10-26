@@ -79,68 +79,70 @@
 			<control type="group">
 				<include>Furniture_ScrollbarBigList</include>
 			</control>
-		<control type="group">
-			<visible>Container.Content(sets) | Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)</visible>
-			<include>Animation.FadeIn</include>
-			<include>Animation.FadeOut</include>
-			<include>Animation.Common.Killer</include>
-			<animation type="Conditional" reversible="true" condition="![Skin.HasSetting(osd.hidespoilers) + Container.Content(episodes) + [stringcompare(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]] + [Container.Content(musicvideos) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets) | Container.Content(episodes)] + !System.IdleTime(26) + System.IdleTime(5) + Skin.HasSetting(furniture.overlayinfo) + ![ControlGroup(9000).HasFocus() | Window.IsVisible(DialogContextMenu.xml)]">
-				<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out" />
-				<effect type="zoom" end="95" time="200" center="auto" tween="quadratic" easing="out" />
-				<effect type="rotate" end="-1" time="200" center="auto" tween="quadratic" easing="out" />
-			</animation>
-			<control type="image">
-				<left>10</left>
+			<control type="group">
+				<visible>Container.Content(sets) | Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)</visible>
+				<include>Animation.FadeIn</include>
+				<include>Animation.FadeOut</include>
+				<include>Animation.Common.Killer</include>
+				<animation type="Conditional" reversible="true" condition="![Skin.HasSetting(osd.hidespoilers) + Container.Content(episodes) + [stringcompare(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]] + [Container.Content(musicvideos) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets) | Container.Content(episodes)] + !System.IdleTime(26) + System.IdleTime(5) + Skin.HasSetting(furniture.overlayinfo) + ![ControlGroup(9000).HasFocus() | Window.IsVisible(DialogContextMenu.xml)]">
+					<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out" />
+					<effect type="zoom" end="95" time="200" center="auto" tween="quadratic" easing="out" />
+					<effect type="rotate" end="-1" time="200" center="auto" tween="quadratic" easing="out" />
+				</animation>
+				<control type="image">
+					<left>10</left>
+					<top>99</top>
+					<width>945</width>
+					<height>51</height>
+					<texture colordiffuse="$VAR[CommunityRatingColour]">common/white.png</texture>
+				</control>
+				<control type="label">
+					<description>textarea</description>
+					<left>10</left>
+					<top>98</top>
+					<width>945</width>
+					<height>51</height>
+					<font>MediumSmallBold</font>
+					<textcolor>$VAR[ColourTextFlags]</textcolor>
+					<scroll>true</scroll>
+					<scrollspeed>150</scrollspeed>
+					<scrollsuffix>   </scrollsuffix>
+					<label>$INFO[Window(Home).Property(SkinHelper.RottenTomatoesConsensus),[I]",[/I]"]</label>
+					<visible>!StringCompare(Window(Home).Property(SkinHelper.RottenTomatoesConsensus),N/A)</visible>
+				</control>
+			</control>
+			<control type="group">
 				<top>99</top>
-				<width>945</width>
-				<height>51</height>
-				<texture colordiffuse="$VAR[CommunityRatingColour]">common/white.png</texture>
-			</control>
-			<control type="label">
-				<description>textarea</description>
-				<left>10</left>
-				<top>98</top>
-				<width>945</width>
-				<height>51</height>
-				<font>MediumSmallBold</font>
-				<textcolor>$VAR[ColourTextFlags]</textcolor>
-				<scroll>true</scroll><scrollspeed>150</scrollspeed><scrollsuffix>   </scrollsuffix>
-				<label>$INFO[Window(Home).Property(SkinHelper.RottenTomatoesConsensus),[I]",[/I]"]</label>
-				<visible>!StringCompare(Window(Home).Property(SkinHelper.RottenTomatoesConsensus),N/A)</visible>
-			</control>
-			</control>
-            <control type="group">
-            <top>99</top>
 				<left>965</left>
-            <width>955</width>
+				<width>955</width>
 				<height>51</height>
-			<control type="image">
-				<right>10</right>
-				<height>51</height>
-				<texture colordiffuse="$VAR[ColourFlags]">common/white.png</texture>
-			</control>
-			<control type="label">
-				<right>10</right>
-				<height>51</height>
-				<align>center</align>
-				<aligny>center</aligny>
-				<scroll>true</scroll>
-				<label fallback="19055">$VAR[LabelNextAiredDetails]</label>
-				<font>DurationFontSmall</font>
-				<textcolor>$VAR[ColourTextFlags]</textcolor>
-				<visible>Container.Content(seasons) | Container.Content(tvshows) | Container.Content(episodes)</visible>
-			</control>
-			<control type="label">
-				<right>10</right>
-				<height>51</height>
-				<align>center</align>
-				<aligny>center</aligny>
-				<scroll>true</scroll>
-				<label fallback="19055">$INFO[ListItem.Year,, | ]$INFO[ListItem.RatingAndVotes]$INFO[ListItem.Country, | ]</label>
-				<font>DurationFontSmall</font>
-				<textcolor>$VAR[ColourTextFlags]</textcolor>
-				<visible>!Container.Content(seasons) + !Container.Content(tvshows) + !Container.Content(episodes)</visible>
-			</control>
+				<control type="image">
+					<right>10</right>
+					<height>51</height>
+					<texture colordiffuse="$VAR[ColourFlags]">common/white.png</texture>
+				</control>
+				<control type="label">
+					<right>10</right>
+					<height>51</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<scroll>true</scroll>
+					<label fallback="19055">$VAR[LabelNextAiredDetails]</label>
+					<font>DurationFontSmall</font>
+					<textcolor>$VAR[ColourTextFlags]</textcolor>
+					<visible>Container.Content(seasons) | Container.Content(tvshows) | Container.Content(episodes)</visible>
+				</control>
+				<control type="label">
+					<right>10</right>
+					<height>51</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<scroll>true</scroll>
+					<label fallback="19055">$INFO[ListItem.Year,, | ]$INFO[ListItem.RatingAndVotes]$INFO[ListItem.Country, | ]</label>
+					<font>DurationFontSmall</font>
+					<textcolor>$VAR[ColourTextFlags]</textcolor>
+					<visible>!Container.Content(seasons) + !Container.Content(tvshows) + !Container.Content(episodes)</visible>
+				</control>
 			</control>
 		</control>
 	</include>
@@ -222,35 +224,37 @@
 			<control type="group">
 				<include>Furniture_ScrollbarBigList</include>
 			</control>
-		<control type="group">
-			<visible>Container.Content(sets) | Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)</visible>
-			<include>Animation.FadeIn</include>
-			<include>Animation.FadeOut</include>
-			<include>Animation.Common.Killer</include>
-			<animation type="Conditional" reversible="true" condition="![Skin.HasSetting(osd.hidespoilers) + Container.Content(episodes) + [stringcompare(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]] + [Container.Content(musicvideos) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets) | Container.Content(episodes)] + !System.IdleTime(26) + System.IdleTime(5) + Skin.HasSetting(furniture.overlayinfo) + ![ControlGroup(9000).HasFocus() | Window.IsVisible(DialogContextMenu.xml)]">
-				<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out" />
-				<effect type="zoom" end="95" time="200" center="auto" tween="quadratic" easing="out" />
-				<effect type="rotate" end="-1" time="200" center="auto" tween="quadratic" easing="out" />
-			</animation>
-			<control type="image">
-				<left>10</left>
-				<top>99</top>
-				<width>945</width>
-				<height>51</height>
-				<texture colordiffuse="$VAR[CommunityRatingColour]">common/white.png</texture>
-			</control>
-			<control type="label">
-				<description>textarea</description>
-				<left>10</left>
-				<top>98</top>
-				<width>945</width>
-				<height>51</height>
-				<font>MediumSmallBold</font>
-				<textcolor>$VAR[ColourTextFlags]</textcolor>
-				<scroll>true</scroll><scrollspeed>150</scrollspeed><scrollsuffix>   </scrollsuffix>
-				<label>$INFO[Window(Home).Property(SkinHelper.RottenTomatoesConsensus),[I]",[/I]"]</label>
-				<visible>!StringCompare(Window(Home).Property(SkinHelper.RottenTomatoesConsensus),N/A)</visible>
-			</control>
+			<control type="group">
+				<visible>Container.Content(sets) | Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)</visible>
+				<include>Animation.FadeIn</include>
+				<include>Animation.FadeOut</include>
+				<include>Animation.Common.Killer</include>
+				<animation type="Conditional" reversible="true" condition="![Skin.HasSetting(osd.hidespoilers) + Container.Content(episodes) + [stringcompare(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]] + [Container.Content(musicvideos) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets) | Container.Content(episodes)] + !System.IdleTime(26) + System.IdleTime(5) + Skin.HasSetting(furniture.overlayinfo) + ![ControlGroup(9000).HasFocus() | Window.IsVisible(DialogContextMenu.xml)]">
+					<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out" />
+					<effect type="zoom" end="95" time="200" center="auto" tween="quadratic" easing="out" />
+					<effect type="rotate" end="-1" time="200" center="auto" tween="quadratic" easing="out" />
+				</animation>
+				<control type="image">
+					<left>10</left>
+					<top>99</top>
+					<width>945</width>
+					<height>51</height>
+					<texture colordiffuse="$VAR[CommunityRatingColour]">common/white.png</texture>
+				</control>
+				<control type="label">
+					<description>textarea</description>
+					<left>10</left>
+					<top>98</top>
+					<width>945</width>
+					<height>51</height>
+					<font>MediumSmallBold</font>
+					<textcolor>$VAR[ColourTextFlags]</textcolor>
+					<scroll>true</scroll>
+					<scrollspeed>150</scrollspeed>
+					<scrollsuffix>   </scrollsuffix>
+					<label>$INFO[Window(Home).Property(SkinHelper.RottenTomatoesConsensus),[I]",[/I]"]</label>
+					<visible>!StringCompare(Window(Home).Property(SkinHelper.RottenTomatoesConsensus),N/A)</visible>
+				</control>
 			</control>
 			<control type="image">
 				<top>TopPad</top>
@@ -270,38 +274,38 @@
 				<aspectratio align="left" aligny="top" scalediffuse="false" flipy="true">scale</aspectratio>
 				<texture colordiffuse="$INFO[Window(home).Property(BigListInfoExtra.ImageColor)]" background="true" flipy="true" fallback="common/white.png">$INFO[Window(home).Property(BigListInfoExtra.ImageFilter)]</texture>
 			</control>
-            <control type="group">
-            <top>99</top>
+			<control type="group">
+				<top>99</top>
 				<left>965</left>
-            <width>955</width>
+				<width>955</width>
 				<height>51</height>
-			<control type="image">
-				<right>10</right>
-				<height>51</height>
-				<texture colordiffuse="$VAR[ColourFlags]">common/white.png</texture>
-			</control>
-			<control type="label">
-				<right>10</right>
-				<height>51</height>
-				<align>center</align>
-				<aligny>center</aligny>
-				<scroll>true</scroll>
-				<label fallback="19055">$VAR[LabelNextAiredDetails]</label>
-				<font>DurationFontSmall</font>
-				<textcolor>$VAR[ColourTextFlags]</textcolor>
-				<visible>Container.Content(seasons) | Container.Content(tvshows) | Container.Content(episodes)</visible>
-			</control>
-			<control type="label">
-				<right>10</right>
-				<height>51</height>
-				<align>center</align>
-				<aligny>center</aligny>
-				<scroll>true</scroll>
-				<label fallback="19055">$INFO[ListItem.Year,, | ]$INFO[ListItem.RatingAndVotes]$INFO[ListItem.Country, | ]</label>
-				<font>DurationFontSmall</font>
-				<textcolor>$VAR[ColourTextFlags]</textcolor>
-				<visible>!Container.Content(seasons) + !Container.Content(tvshows) + !Container.Content(episodes)</visible>
-			</control>
+				<control type="image">
+					<right>10</right>
+					<height>51</height>
+					<texture colordiffuse="$VAR[ColourFlags]">common/white.png</texture>
+				</control>
+				<control type="label">
+					<right>10</right>
+					<height>51</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<scroll>true</scroll>
+					<label fallback="19055">$VAR[LabelNextAiredDetails]</label>
+					<font>DurationFontSmall</font>
+					<textcolor>$VAR[ColourTextFlags]</textcolor>
+					<visible>Container.Content(seasons) | Container.Content(tvshows) | Container.Content(episodes)</visible>
+				</control>
+				<control type="label">
+					<right>10</right>
+					<height>51</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<scroll>true</scroll>
+					<label fallback="19055">$INFO[ListItem.Year,, | ]$INFO[ListItem.RatingAndVotes]$INFO[ListItem.Country, | ]</label>
+					<font>DurationFontSmall</font>
+					<textcolor>$VAR[ColourTextFlags]</textcolor>
+					<visible>!Container.Content(seasons) + !Container.Content(tvshows) + !Container.Content(episodes)</visible>
+				</control>
 			</control>
 			<control id="508922" type="wraplist">
 				<left>965</left>
@@ -532,7 +536,7 @@
 				<top>11</top>
 				<width>32</width>
 				<height>32</height>
-							<align>center</align>
+				<align>center</align>
 				<font>minisymbol</font>
 				<label>$VAR[PercentWatchedLabel]</label>
 				<textcolor>$VAR[UnwatchedColourHighlight]</textcolor>
@@ -691,7 +695,7 @@
 				<top>11</top>
 				<width>32</width>
 				<height>32</height>
-							<align>center</align>
+				<align>center</align>
 				<font>minisymbol</font>
 				<label>$VAR[PercentWatchedLabel]</label>
 				<textcolor>$VAR[UnwatchedColourHighlight]</textcolor>

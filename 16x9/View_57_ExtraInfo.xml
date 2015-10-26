@@ -1,65 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Foundation -->
 <includes>
-    <include name="View_57_ExtraInfo">
-        <description>List View (id=57)</description>
-        <control type="group">
-            <include>Animation.Common</include>
-            <visible>Control.IsVisible(57)</visible>
-            <visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml)</visible>
+	<include name="View_57_ExtraInfo">
+		<description>List View (id=57)</description>
+		<control type="group">
+			<include>Animation.Common</include>
+			<visible>Control.IsVisible(57)</visible>
+			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml)</visible>
 			<animation type="Conditional" reversible="true" condition="![Skin.HasSetting(osd.hidespoilers) + Container.Content(episodes) + [stringcompare(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]] + [Container.Content(musicvideos) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets) | Container.Content(episodes)] + !System.IdleTime(26) + System.IdleTime(5) + Skin.HasSetting(furniture.overlayinfo) + ![ControlGroup(9000).HasFocus() | Window.IsVisible(DialogContextMenu.xml)]">
 				<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out" />
 				<effect type="zoom" end="1000,7" time="200" center="auto" tween="quadratic" easing="out" />
 			</animation>
-            <control type="group">
-				<!--
-                <control type="image">
+			<control type="group">
+				<!--<control type="image"><height>740</height><top>TopPad</top><left>10</left><width>1325</width><fadetime>200</fadetime><aspectratio align="right" aligny="center" scalediffuse="false">scale</aspectratio><texture background="true" diffuse="diffuse/extraposter-ref.png">$VAR[LandscapeImage]</texture></control>--><control type="image">
 					<height>740</height>
-				    <top>TopPad</top>
+					<top>TopPad</top>
 					<left>10</left>
-				    <width>1325</width>
-                    <fadetime>200</fadetime>
-                    <aspectratio align="right" aligny="center" scalediffuse="false">scale</aspectratio>
-                   <texture background="true" diffuse="diffuse/extraposter-ref.png">$VAR[LandscapeImage]</texture>
-                </control>
-				-->
-                <control type="image">
+					<width>960</width>
+					<fadetime>100</fadetime>
+					<aspectratio align="left" aligny="center" scalediffuse="false">scale</aspectratio>
+					<texture background="true">$VAR[LandscapeImage]</texture>
+				</control>
+				<control type="image">
 					<height>740</height>
-				    <top>TopPad</top>
-					<left>10</left>
-				    <width>960</width>
-                    <fadetime>100</fadetime>
-                    <aspectratio align="left" aligny="center" scalediffuse="false">scale</aspectratio>
-                   <texture background="true">$VAR[LandscapeImage]</texture>
-                </control>
-                <control type="image">
-					<height>740</height>
-				    <top>TopPad</top>
+					<top>TopPad</top>
 					<left>970</left>
-				    <width>365</width>
-                    <fadetime>1000</fadetime>
-                    <aspectratio align="right" aligny="center" scalediffuse="false">scale</aspectratio>
-                   <texture background="true" diffuse="diffuse/extraposter-ref-blur.png">$INFO[Window(home).Property(VideoInfoExtra.ImageFilter)]</texture>
-                </control>
-                <control type="list" id="57">
-                    <visible>Container.Content(musicvideos) | Container.Content(artists) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(actors) | Container.Content(sets) | Container.Content(seasons)</visible>
-                    <top>156</top>
-                    <height>760</height>
-                    <right>-220</right>
-                    <width>1160</width>
-                    <onleft condition="!Skin.HasSetting(global.kioskmode)">9000</onleft>
+					<width>365</width>
+					<fadetime>1000</fadetime>
+					<aspectratio align="right" aligny="center" scalediffuse="false">scale</aspectratio>
+					<texture background="true" diffuse="diffuse/extraposter-ref-blur.png">$INFO[Window(home).Property(VideoInfoExtra.ImageFilter)]</texture>
+				</control>
+				<control type="list" id="57">
+					<visible>Container.Content(musicvideos) | Container.Content(artists) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(actors) | Container.Content(sets) | Container.Content(seasons)</visible>
+					<top>156</top>
+					<height>760</height>
+					<right>-220</right>
+					<width>1160</width>
+					<onleft condition="!Skin.HasSetting(global.kioskmode)">9000</onleft>
 					<onright condition="!Skin.HasSetting(global.kioskmode) + !Control.IsVisible(60)">9000</onright>
-                    <onright>60</onright>
-                    <onup>57</onup>
-                    <ondown>57</ondown>
-                    <focusposition>3</focusposition>
-                    <movement>3</movement>
-                    <pagecontrol>60</pagecontrol>
-                    <viewtype label="31147">list</viewtype>
-                    <scrolltime tween="quadratic">400</scrolltime>
-                    <itemlayout width="920" height="66">
-                        <include>50itemlayout</include>
-                    </itemlayout>
+					<onright>60</onright>
+					<onup>57</onup>
+					<ondown>57</ondown>
+					<focusposition>3</focusposition>
+					<movement>3</movement>
+					<pagecontrol>60</pagecontrol>
+					<viewtype label="31147">list</viewtype>
+					<scrolltime tween="quadratic">400</scrolltime>
+					<itemlayout width="920" height="66">
+						<include>50itemlayout</include>
+					</itemlayout>
 					<focusedlayout width="920" height="128" condition="[Skin.HasSetting(movies.57list.showplot) + Container.Content(movies)] | [Skin.HasSetting(tvshows.57list.showplot) + Container.Content(tvshows)] | [Skin.HasSetting(seasons.57list.showplot) + Container.Content(seasons)] | [Skin.HasSetting(episodes.57list.showplot) + Container.Content(episodes)] | [Skin.HasSetting(artists.57list.showplot) + Container.Content(artists)] | [Skin.HasSetting(albums.57list.showplot) + Container.Content(albums)] | [Skin.HasSetting(songs.57list.showplot) + Container.Content(songs)] | [Skin.HasSetting(general.57list.showplot) + !Container.Content(songs) + !Container.Content(albums) + !Container.Content(artists) + !Container.Content(episodes) + !Container.Content(seasons) + !Container.Content(tvshows) + !Container.Content(movies)]">
 						<control type="button">
 							<texturefocus>-</texturefocus>
@@ -81,7 +70,7 @@
 								<font>Tiny</font>
 							</control>
 						</control>
-                    </focusedlayout>
+					</focusedlayout>
 					<focusedlayout width="920" height="66" condition="!IsEmpty(ListItem.Property(Addon.Name)) | [!Skin.HasSetting(movies.57list.showplot) + Container.Content(movies)] | [!Skin.HasSetting(tvshows.57list.showplot) + Container.Content(tvshows)] | [!Skin.HasSetting(seasons.57list.showplot) + Container.Content(seasons)] | [!Skin.HasSetting(episodes.57list.showplot) + Container.Content(episodes)] | [!Skin.HasSetting(artists.57list.showplot) + Container.Content(artists)] | [!Skin.HasSetting(albums.57list.showplot) + Container.Content(albums)] | [!Skin.HasSetting(songs.57list.showplot) + Container.Content(songs)] | [!Skin.HasSetting(general.57list.showplot) + !Container.Content(songs) + !Container.Content(albums) + !Container.Content(artists) + !Container.Content(episodes) + !Container.Content(seasons) + !Container.Content(tvshows) + !Container.Content(movies)]">
 						<control type="button">
 							<texturefocus>-</texturefocus>
@@ -93,101 +82,89 @@
 						<control type="group">
 							<include>50focuslayout</include>
 						</control>
-                    </focusedlayout>
-                </control>
-                <include>Furniture_Scrollbar</include>
-            </control>
-            <include name="Fanart_Info">
-                <param name="posx" value="10" />
-            </include>
-        </control>
-    </include>
-    <include name="Fanart_Info">
-        <control type="group">
-            <left>$PARAM[posx]</left>
-            <width>960</width>
-            <top>TopPad</top>
-            <height>1200</height>
-            <control type="group">
+					</focusedlayout>
+				</control>
+				<include>Furniture_Scrollbar</include>
+			</control>
+			<include name="Fanart_Info">
+				<param name="posx" value="10" />
+			</include>
+		</control>
+	</include>
+	<include name="Fanart_Info">
+		<control type="group">
+			<left>$PARAM[posx]</left>
+			<width>960</width>
+			<top>TopPad</top>
+			<height>1200</height>
+			<control type="group">
 				<top>-51</top>
 				<left>960</left>
 				<width>950</width>
 				<height>51</height>
-			<control type="image">
-				<right>10</right>
-				<height>51</height>
-				<texture colordiffuse="$VAR[ColourFlags]">common/white.png</texture>
-			</control>
-			<control type="label">
-				<right>10</right>
-				<height>51</height>
-				<align>center</align>
-				<aligny>center</aligny>
-				<scroll>true</scroll>
-				<label fallback="19055">$VAR[LabelNextAiredDetails]</label>
-				<font>DurationFontSmall</font>
-				<textcolor>$VAR[ColourTextFlags]</textcolor>
-				<visible>Container.Content(seasons) | Container.Content(tvshows) | Container.Content(episodes)</visible>
-			</control>
-			<control type="label">
-				<right>10</right>
-				<height>51</height>
-				<align>center</align>
-				<aligny>center</aligny>
-				<scroll>true</scroll>
-				<label fallback="19055">$INFO[ListItem.Year,, | ]$INFO[ListItem.RatingAndVotes]$INFO[ListItem.Country, | ]</label>
-				<font>DurationFontSmall</font>
-				<textcolor>$VAR[ColourTextFlags]</textcolor>
-				<visible>!Container.Content(seasons) + !Container.Content(tvshows) + !Container.Content(episodes)</visible>
-			</control>
-			</control>
- 				<control type="image">
-					<description>Title overlay</description>
-					<left>0</left>
-					<posy>660</posy>
-					<width>960</width>
-					<height>80</height>
-					<texture colordiffuse="af000000">common/white.png</texture>
+				<control type="image">
+					<right>10</right>
+					<height>51</height>
+					<texture colordiffuse="$VAR[ColourFlags]">common/white.png</texture>
 				</control>
-           <control type="group">
-					<posy>570</posy>
-               <height>80</height>
-                <control type="label">
- 					<left>5</left>
-                    <top>59</top>
-                    <aligny>center</aligny>
-                    <height>100</height>
- 					<width>125%</width>
-                   <font>MediumBold</font>
-                    <textcolor>Dark1</textcolor>
-                    <selectedcolor>Dark1</selectedcolor>
-                    <label>$VAR[LabelDirector]</label>
-                </control>
-                <control type="label">
-  					<left>5</left>
-                   <top>116</top>
-                    <height>64</height>
-                    <align>right</align>
-                    <aligny>center</aligny>
-                    <font>MediumBold</font>
+				<control type="label">
+					<right>10</right>
+					<height>51</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<scroll>true</scroll>
+					<label fallback="19055">$VAR[LabelNextAiredDetails]</label>
+					<font>DurationFontSmall</font>
+					<textcolor>$VAR[ColourTextFlags]</textcolor>
+					<visible>Container.Content(seasons) | Container.Content(tvshows) | Container.Content(episodes)</visible>
+				</control>
+				<control type="label">
+					<right>10</right>
+					<height>51</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<scroll>true</scroll>
+					<label fallback="19055">$INFO[ListItem.Year,, | ]$INFO[ListItem.RatingAndVotes]$INFO[ListItem.Country, | ]</label>
+					<font>DurationFontSmall</font>
+					<textcolor>$VAR[ColourTextFlags]</textcolor>
+					<visible>!Container.Content(seasons) + !Container.Content(tvshows) + !Container.Content(episodes)</visible>
+				</control>
+			</control>
+			<control type="image">
+				<description>Title overlay</description>
+				<left>0</left>
+				<posy>660</posy>
+				<width>960</width>
+				<height>80</height>
+				<texture colordiffuse="af000000">common/white.png</texture>
+			</control>
+			<control type="group">
+				<posy>570</posy>
+				<height>80</height>
+				<control type="label">
+					<left>5</left>
+					<top>59</top>
+					<aligny>center</aligny>
+					<height>100</height>
+					<width>125%</width>
+					<font>MediumBold</font>
+					<textcolor>Dark1</textcolor>
+					<selectedcolor>Dark1</selectedcolor>
+					<label>$VAR[LabelDirector]</label>
+				</control>
+				<control type="label">
+					<left>5</left>
+					<top>116</top>
+					<height>64</height>
+					<align>right</align>
+					<aligny>center</aligny>
+					<font>MediumBold</font>
 					<width>950</width>
-                    <textcolor>Dark1</textcolor>
-                    <selectedcolor>Dark1</selectedcolor>
-                    <label>$VAR[LabelGenre]</label>
-                </control>
-				<!--
-                <control type="textbox">
-                    <top>116</top>
-                    <bottom>19</bottom>
-                    <align>justify</align>
-                    <font>Tiny</font>
-                    <textcolor>Dark1</textcolor>
-                    <selectedcolor>Dark1</selectedcolor>
-                    <label>$VAR[LabelPlotBox]</label>
-                </control>
-				-->
-            </control>
-        </control>
-    </include>
-
+					<textcolor>Dark1</textcolor>
+					<selectedcolor>Dark1</selectedcolor>
+					<label>$VAR[LabelGenre]</label>
+				</control>
+				<!--<control type="textbox"><top>116</top><bottom>19</bottom><align>justify</align><font>Tiny</font><textcolor>Dark1</textcolor><selectedcolor>Dark1</selectedcolor><label>$VAR[LabelPlotBox]</label></control>--></control>
+		</control>
+	</include>
 </includes>
