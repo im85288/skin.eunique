@@ -25,25 +25,11 @@
 		<value>special://skin/extras/borders/box.png</value>
 	</variable>
 	<variable name="MovieGenres">
-		<value condition="System.HasAddon(script.image.resource.select) + !IsEmpty(Skin.String(moviegenreicons.path)) + SubString(Skin.String(moviegenreicons.path),coloured)">resource://resource.images.moviegenreicons.coloured/$INFO[Listitem.Label,,.jpg]</value>
-		<value condition="System.HasAddon(script.image.resource.select) + !IsEmpty(Skin.String(moviegenreicons.path)) + SubString(Skin.String(moviegenreicons.path),transparent)">resource://resource.images.moviegenreicons.transparent/$INFO[Listitem.Label,,.png]</value>
-		<value condition="System.HasAddon(script.image.resource.select) + !IsEmpty(Skin.String(moviegenreicons.path)) + SubString(Skin.String(moviegenreicons.path),xzener-reflection)">resource://resource.images.moviegenreicons.xzener-reflection/$INFO[Listitem.Label,,.png]</value>
-		<value condition="System.HasAddon(script.image.resource.select) + !IsEmpty(Skin.String(moviegenreicons.path)) + SubString(Skin.String(moviegenreicons.path),xzener-flat)">resource://resource.images.moviegenreicons.xzener-flat/$INFO[Listitem.Label,,.png]</value>
-		<value condition="System.HasAddon(script.image.resource.select) + !IsEmpty(Skin.String(moviegenreicons.path)) + SubString(Skin.String(moviegenreicons.path),white)">resource://resource.images.moviegenreicons.white/$INFO[Listitem.Label,,.jpg]</value>
-		<value condition="System.HasAddon(script.image.resource.select) + !IsEmpty(Skin.String(moviegenreicons.path)) + SubString(Skin.String(moviegenreicons.path),poster)">resource://resource.images.moviegenreicons.poster/$INFO[Listitem.Label,,.jpg]</value>
-		<value condition="System.HasAddon(script.image.resource.select) + !IsEmpty(Skin.String(moviegenreicons.path)) + SubString(Skin.String(moviegenreicons.path),grey)">resource://resource.images.moviegenreicons.grey/$INFO[Listitem.Label,,.jpg]</value>
-		<value condition="System.HasAddon(script.image.resource.select) + !IsEmpty(Skin.String(moviegenreicons.path)) + SubString(Skin.String(moviegenreicons.path),filmstrip)">resource://resource.images.moviegenreicons.filmstrip/$INFO[Listitem.Label,,.jpg]</value>
+		<value condition="System.HasAddon(script.image.resource.select) + !IsEmpty(Skin.String(moviegenreicons.path))">$INFO[Skin.String(moviegenreicons.path)]$INFO[Listitem.Label,,.jpg]</value>
 		<value>resource://resource.images.moviegenreicons.coloured/$INFO[Listitem.Label,,.jpg]</value>
 	</variable>
 	<variable name="MovieGenres850">
-		<value condition="System.HasAddon(script.image.resource.select) + !IsEmpty(Skin.String(moviegenreicons.path)) + SubString(Skin.String(moviegenreicons.path),coloured)">resource://resource.images.moviegenreicons.coloured/$INFO[Container(850).ListItem(0).Label,,.jpg]</value>
-		<value condition="System.HasAddon(script.image.resource.select) + !IsEmpty(Skin.String(moviegenreicons.path)) + SubString(Skin.String(moviegenreicons.path),transparent)">resource://resource.images.moviegenreicons.transparent/$INFO[Container(850).ListItem(0).Label,,.png]</value>
-		<value condition="System.HasAddon(script.image.resource.select) + !IsEmpty(Skin.String(moviegenreicons.path)) + SubString(Skin.String(moviegenreicons.path),xzener-reflection)">resource://resource.images.moviegenreicons.xzener-reflection/$INFO[Container(850).ListItem(0).Label,,.png]</value>
-		<value condition="System.HasAddon(script.image.resource.select) + !IsEmpty(Skin.String(moviegenreicons.path)) + SubString(Skin.String(moviegenreicons.path),xzener-flat)">resource://resource.images.moviegenreicons.xzener-flat/$INFO[Container(850).ListItem(0).Label,,.png]</value>
-		<value condition="System.HasAddon(script.image.resource.select) + !IsEmpty(Skin.String(moviegenreicons.path)) + SubString(Skin.String(moviegenreicons.path),white)">resource://resource.images.moviegenreicons.white/$INFO[Container(850).ListItem(0).Label,,.jpg]</value>
-		<value condition="System.HasAddon(script.image.resource.select) + !IsEmpty(Skin.String(moviegenreicons.path)) + SubString(Skin.String(moviegenreicons.path),poster)">resource://resource.images.moviegenreicons.poster/$INFO[Container(850).ListItem(0).Label,,.jpg]</value>
-		<value condition="System.HasAddon(script.image.resource.select) + !IsEmpty(Skin.String(moviegenreicons.path)) + SubString(Skin.String(moviegenreicons.path),grey)">resource://resource.images.moviegenreicons.grey/$INFO[Container(850).ListItem(0).Label,,.jpg]</value>
-		<value condition="System.HasAddon(script.image.resource.select) + !IsEmpty(Skin.String(moviegenreicons.path)) + SubString(Skin.String(moviegenreicons.path),filmstrip)">resource://resource.images.moviegenreicons.filmstrip/$INFO[Container(850).ListItem(0).Label,,.jpg]</value>
+		<value condition="System.HasAddon(script.image.resource.select) + !IsEmpty(Skin.String(moviegenreicons.path))">$INFO[Skin.String(moviegenreicons.path)]$INFO[Container(850).ListItem(0).Label,,.jpg]</value>
 		<value>resource://resource.images.moviegenreicons.coloured/$INFO[Container(850).ListItem(0).Label,,.jpg]</value>
 	</variable>
 	<variable name="MusicGenres">

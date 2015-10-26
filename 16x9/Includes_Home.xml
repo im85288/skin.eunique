@@ -3212,6 +3212,7 @@
 					<onleft>301</onleft>
 					<onright>301</onright>
 					<onback>300</onback>
+					<oninfo>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(301).ListItem.Label])</oninfo>
 					<preloaditems>2</preloaditems>
 					<orientation>horizontal</orientation>
 					<autoscroll time="10000">!Control.HasFocus(3012)</autoscroll>
@@ -3537,7 +3538,7 @@
 					<itemlayout width="410" height="245">
 						<control type="image">
 							<aspectratio>keep</aspectratio>
-							<texture background="true" colordiffuse="$VAR[EmbyRightColourHighlight]">$VAR[MovieGenres]</texture>
+							<texture background="true" colordiffuse="$VAR[EmbyRightColourHighlight]">http://localhost:52307/getvarimage&amp;title=$VAR[MovieGenres]</texture>
 						</control>
 					</itemlayout>
 					<focusedlayout width="410" height="245">
@@ -3561,7 +3562,7 @@
                         </control>
 						<control type="image">
 							<aspectratio>keep</aspectratio>
-							<texture background="true" colordiffuse="$VAR[EmbyRightColourHighlight]">$VAR[MovieGenres]</texture>
+							<texture background="true" colordiffuse="$VAR[EmbyRightColourHighlight]">http://localhost:52307/getvarimage&amp;title=$VAR[MovieGenres]</texture>
 						</control>
 						<control type="label">
 							<bottom>10</bottom>
@@ -3612,6 +3613,7 @@
 					<onleft>3012</onleft>
 					<onright>3017</onright>
 					<onback>300</onback>
+					<oninfo>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(301).ListItem.Label])</oninfo>
 					<preloaditems>2</preloaditems>
 					<orientation>vertical</orientation>
 					<autoscroll time="3000">!Control.HasFocus(3016)</autoscroll>
@@ -3718,6 +3720,7 @@
 					<onleft condition="Control.IsVisible(3016)">3016</onleft>
 					<onleft condition="!Control.IsVisible(3016)">3012</onleft>
 					<onback>300</onback>
+					<oninfo>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(301).ListItem.Label])</oninfo>
 					<preloaditems>2</preloaditems>
 					<scrolltime tween="quadratic">100</scrolltime>
 					<include>Animation.FadeIn</include>
@@ -3820,6 +3823,7 @@
 					<onback>300</onback>
 					<onup>300</onup>
 					<ondown>3017</ondown>
+					<oninfo>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(301).ListItem.Label])</oninfo>
 					<onleft condition="Control.IsVisible(3017)">3017</onleft>
 					<onleft condition="!Control.IsVisible(3017)">3012</onleft>
 					<preloaditems>9</preloaditems>
