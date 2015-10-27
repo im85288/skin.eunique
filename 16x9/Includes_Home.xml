@@ -1516,9 +1516,27 @@
 						<onclick>ActivateWindow(1112)</onclick>
 						<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 					</control>
+					<control type="label" id="91211">
+						<label>$VAR[EmbyWidgetLabel]</label>
+						<width>1</width>
+						<height>1</height>
+						<left>-1000</left>
+					</control>
+					<control type="image" id="89122">
+						<animation effect="slide" start="0" end="738,0" condition="[Control.HasFocus(9017) | Control.HasFocus(90171)| Control.HasFocus(10017) | Control.HasFocus(100171) | Control.HasFocus(15017) | Control.HasFocus(150171) | Control.HasFocus(14017) | Control.HasFocus(140171)]" time="200">Conditional</animation>
+						<animation effect="slide" start="0" end="221,0" condition="[Control.HasFocus(6017) | Control.HasFocus(60171) | Control.HasFocus(3017) | Control.HasFocus(30171)  | Control.HasFocus(5017) | Control.HasFocus(50171) | Control.HasFocus(4017) | Control.HasFocus(40171)]" time="200">Conditional</animation>
+						<top>773</top>
+						<width>228</width>
+						<height>100</height>
+						<texture fallback="empty.png">$VAR[EmbyWidgetLogo]</texture>
+						<aspectratio align="left" aligny="center">keep</aspectratio>
+						<fadetime>50</fadetime>
+						<visible>Skin.String(home.vertical,2) + !IsEmpty(Control.GetLabel(91211))</visible>
+					</control>
 					<control type="button">
-						<animation effect="slide" start="0" end="221,0" condition="!Skin.String(home.vertical,1) + !Skin.String(home.vertical,2) + [Control.HasFocus(6017) | Control.HasFocus(60171) | Control.HasFocus(3017) | Control.HasFocus(30171)  | Control.HasFocus(5017) | Control.HasFocus(50171) | Control.HasFocus(4017) | Control.HasFocus(40171)]" time="200">Conditional</animation>
-						<animation effect="slide" start="0" end="517,0" condition="Control.HasFocus(9017) | Control.HasFocus(90171)| Control.HasFocus(10017) | Control.HasFocus(100171) | Control.HasFocus(15017) | Control.HasFocus(150171) | Control.HasFocus(14017) | Control.HasFocus(140171)" time="200">Conditional</animation>
+						<animation effect="slide" start="0" end="245,0" condition="Skin.String(home.vertical,2) + !Substring(Control.GetLabel(89122),empty.png)" time="00">Conditional</animation>
+						<animation effect="slide" start="0" end="221,0" condition="!Skin.String(home.vertical,1)  + [Control.HasFocus(6017) | Control.HasFocus(60171) | Control.HasFocus(3017) | Control.HasFocus(30171)  | Control.HasFocus(5017) | Control.HasFocus(50171) | Control.HasFocus(4017) | Control.HasFocus(40171)]" time="200">Conditional</animation>
+						<animation effect="slide" start="0" end="738,0" condition="Control.HasFocus(9017) | Control.HasFocus(90171)| Control.HasFocus(10017) | Control.HasFocus(100171) | Control.HasFocus(15017) | Control.HasFocus(150171) | Control.HasFocus(14017) | Control.HasFocus(140171)" time="200">Conditional</animation>
 						<animation effect="slide" start="0" end="0,-18" condition="!Skin.String(home.vertical,1) + !Skin.String(home.vertical,2)" time="200">Conditional</animation>
 						<top>773</top>
 						<align>left</align>
