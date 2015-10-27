@@ -1514,6 +1514,22 @@
 						<onclick>ActivateWindow(1112)</onclick>
 						<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 					</control>
+					<control type="button">
+						<animation effect="slide" start="0" end="520,0" condition="Control.HasFocus(9017) | Control.HasFocus(90171)| Control.HasFocus(10017) | Control.HasFocus(100171) | Control.HasFocus(15017) | Control.HasFocus(150171) | Control.HasFocus(14017) | Control.HasFocus(140171)" time="200">Conditional</animation>
+						<top>773</top>
+						<align>left</align>
+						<aligny>top</aligny>
+						<font>HomeWidgetLabelFont</font>
+						<onup>300</onup>
+						<ondown>6012</ondown>
+						<onback>300</onback>
+						<textoffsetx>0</textoffsetx>
+						<label>$VAR[EmbyWidgetLabel]</label>
+						<focusedcolor>$VAR[ColourHighlight]</focusedcolor>
+						<texturenofocus>-</texturenofocus>
+						<texturefocus>-</texturefocus>
+						<onclick>ActivateWindow(1112)</onclick>
+					</control>
 				</control>
 				<control type="wraplist" id="6012">
 					<description>Widget</description>
@@ -1569,6 +1585,7 @@
 					</focusedlayout>
 					<content target="$VAR[DefWidget2Target]">$VAR[DefWidget2Content]</content>
 				</control>
+				<!--
 				<control type="image">
 					<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 					<description>Title overlay</description>
@@ -1606,6 +1623,7 @@
 					<label>$INFO[Container(6012).ListItem.Year]$INFO[Container(6012).ListItem.Rating, • ]$INFO[Container(6012).ListItem.Votes, (, $LOCALIZE[20350])]</label>
 					<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 				</control>
+				-->
 				<control type="group">
 					<animation effect="slide" start="0,0" end="0,23" time="200" center="auto" condition="Control.HasFocus(6013)">Conditional</animation>
 					<control type="button" id="6013">
@@ -2014,7 +2032,7 @@
 					<top>285</top>
 					<width>410</width>
 					<height>45</height>
-					<control type="button" id="60161">
+					<control type="button" id="1">
 						<animation effect="slide" end="0,755" condition="Control.HasFocus(6016) + Container(6016).Position(0)" time="00">Conditional</animation>
 						<align>left</align>
 						<aligny>top</aligny>
