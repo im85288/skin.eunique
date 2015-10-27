@@ -1226,10 +1226,42 @@
 			</control>
 		</control>
 	</include>
+	<include name="HomeEmbyColumn">
+		<!-- Home Row -->
+		<control type="group">
+			<top>105</top>
+			<control type="list" id="300">
+				<animation effect="slide" end="0,-67" condition="control.hasfocus(302)" time="200">Conditional</animation>
+				<include>Animation.FadeIn.Delay</include>
+				<include>Animation.FadeOut</include>
+				<description>Home Wraplist</description>
+				<left>NewSidePad</left>
+				<right>NewSidePad</right>
+				<onright condition="StringCompare(Container(300).ListItem.Property(defaultID),movies) + IntegerGreaterThan(Container(3016).NumItems,0)">3016</onright>
+				<onright condition="StringCompare(Container(300).ListItem.Property(defaultID),movies) + !IntegerGreaterThan(Container(3016).NumItems,0)">3012</onright>
+				<onright condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows + IntegerGreaterThan(Container(4016).NumItems,0))">4016</onright>
+				<onright condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows + !IntegerGreaterThan(Container(4016).NumItems,0))">4012</onright>
+				<onright condition="StringCompare(Container(300).ListItem.Property(defaultID),music) + IntegerGreaterThan(Container(5016).NumItems,0)">5016</onright>
+				<onright condition="StringCompare(Container(300).ListItem.Property(defaultID),music) + !IntegerGreaterThan(Container(5016).NumItems,0)">5012</onright>
+				<onright condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv) + IntegerGreaterThan(Container(7016).NumItems,0)">7016</onright>
+				<onright condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv) + !IntegerGreaterThan(Container(7016).NumItems,0)">7012</onright>
+				<onright condition="StringCompare(Container(300).ListItem.Property(defaultID),Weather)">3444</onright>
+				<onright condition="!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather)">6016</onright>
+				<onleft condition="IntegerGreaterThan(Container(302).NumItems,0)">SetFocus(302,0)</onleft>
+				<onleft condition="!IntegerGreaterThan(Container(302).NumItems,0)">3634</onleft>
+				<onleft>300</onleft>
+				<ondown>300</ondown>
+				<orientation>vertical</orientation>
+				<scrolltime>200</scrolltime>
+				<include>HomeEmbyContentColumn</include>
+			</control>
+		</control>
+	</include>
 	<include name="HomeEmbySubMenu">
 		<!-- Sub Menu -->
 		<control type="list" id="302">
 			<animation effect="slide" end="0,42" condition="control.hasfocus(302)" time="200">Conditional</animation>
+			<animation effect="slide" end="-50,0" condition="Skin.String(home.vertical,2)" time="200">Conditional</animation>
 			<include>Animation.FadeIn.Delay</include>
 			<include>Animation.FadeOut</include>
 			<left>60</left>
@@ -1279,8 +1311,8 @@
 	</include>
 	<include name="HomeEmbyContentNoIcon">
 		<top>TopPad</top>
-		<animation effect="fade" start="100" end="0" time="150" reversible="false" condition="Control.HasFocus(302) + Skin.HasSetting(home.submenu2)">Conditional</animation>
-		<animation type="Conditional" condition="!Control.HasFocus(302) + Skin.HasSetting(home.submenu2)" reversible="false">
+		<animation effect="fade" start="100" end="0" time="150" reversible="false" condition="Control.HasFocus(302)">Conditional</animation>
+		<animation type="Conditional" condition="!Control.HasFocus(302)" reversible="false">
 			<effect type="slide" start="0,-24" end="0" time="100" delay="200" />
 			<effect type="fade" start="0" end="100" time="200" delay="200" />
 		</animation>
@@ -1339,14 +1371,71 @@
 			<include>skinshortcuts-mainmenu</include>
 		</content>
 	</include>
+	<include name="HomeEmbyContentColumn">
+		<top>TopPad</top>
+		<itemlayout width="211.1" height="74">
+			<control type="image">
+				<left>0</left>
+				<right>0</right>
+				<texture colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
+			</control>
+			<control type="label">
+				<left>5</left>
+				<right>5</right>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+				<font>HomeEmby</font>
+				<label>$INFO[ListItem.Label]</label>
+				<animation effect="fade" start="100" end="25" condition="control.hasfocus(302)" time="200">Conditional</animation>
+			</control>
+		</itemlayout>
+		<focusedlayout width="211.1" height="74">
+			<control type="group">
+				<animation effect="slide" start="0,0" end="-10,0" time="0" reversible="true" center="auto">Focus</animation>
+				<animation effect="slide" start="0,0" end="10,0" time="0" reversible="true" center="auto" condition="!ControlGroup.HasFocus(300) + !control.hasfocus(302)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="-10,0" time="0" reversible="true" center="auto" condition="control.hasfocus(302)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="-20,0" time="0" reversible="true" center="auto" condition="control.hasfocus(8308) | control.hasfocus(3634) | control.hasfocus(3635)">Conditional</animation>
+			<control type="image">
+				<left>0</left>
+				<right>0</right>
+				<texture colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
+			</control>
+			<control type="label">
+				<left>5</left>
+				<right>5</right>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+				<font>HomeEmby</font>
+				<label>$INFO[ListItem.Label]</label>
+			</control>
+			<control type="image">
+				<top>0</top>
+				<centerleft>50%</centerleft>
+				<width>16</width>
+				<height>16</height>
+				<texture flipy="true" colordiffuse="$VAR[ColourHighlight]">common/arrow-small.png</texture>
+				<visible>Control.HasFocus(300)</visible>
+				<visible>IntegerGreaterThan(Container(302).NumItems,0)</visible>
+				<animation effect="slide" start="0,0" end="-10,0" time="0" reversible="true" center="auto" condition="control.hasfocus(300)">Conditional</animation>
+			</control>
+			</control>
+			<!-- <control type="label"><description>up arrow</description><top>0</top><centerleft>50%</centerleft><width>14</width><height>14</height><textcolor>$VAR[ColourSelected]</textcolor><font>minisymbol</font><label></label><visible>Control.HasFocus(300)</visible><visible>IntegerGreaterThan(Container(302).NumItems,0)</visible><animation effect="fade" end="100" start="0" delay="300" time="400" reversible="false" condition="true">conditional</animation></control> --></focusedlayout>
+		<content>
+			<include>skinshortcuts-mainmenu</include>
+		</content>
+	</include>
 	<include name="HomeEmbyWidgetInfo">
 		<!-- Widget Info -->
 		<control type="group">
+			<animation effect="slide" end="221,-75" condition="Skin.String(home.vertical,2)" time="00">Conditional</animation>
 			<animation effect="fade" start="100" end="00" condition="Skin.HasSetting(widgets.dim) + [Control.HasFocus(300) | Control.HasFocus(301) | Control.HasFocus(302) | Control.HasFocus(8308)  | Control.HasFocus(3634)  | Control.HasFocus(3635)]" time="200">Conditional</animation>
 			<left>-70</left>
 			<control type="group">
 				<animation effect="slide" start="0" end="-256,0" condition="Control.HasFocus(6017) | Control.HasFocus(60171) | Control.HasFocus(3017) | Control.HasFocus(30171)  | Control.HasFocus(5017) | Control.HasFocus(50171) | Control.HasFocus(4017) | Control.HasFocus(40171)" time="200">Conditional</animation>
 				<animation effect="slide" start="0" end="-520,0" condition="Control.HasFocus(9017) | Control.HasFocus(90171)| Control.HasFocus(10017) | Control.HasFocus(100171) | Control.HasFocus(15017) | Control.HasFocus(150171) | Control.HasFocus(14017) | Control.HasFocus(140171)" time="200">Conditional</animation>
+				<animation effect="slide" start="0" end="-220,0" condition="Skin.String(home.vertical,2) + [Control.HasFocus(9017) | Control.HasFocus(90171)| Control.HasFocus(10017) | Control.HasFocus(100171) | Control.HasFocus(15017) | Control.HasFocus(150171) | Control.HasFocus(14017) | Control.HasFocus(140171)]" time="200">Conditional</animation>
 				<!--<animation effect="slide" start="0" end="-520,0" condition="System.IdleTime(3) + !System.IdleTime(5)" time="1500" reversiible="true">Conditional</animation>--><animation type="WindowClose">
 					<effect type="fade" start="100" end="0" time="150" />
 				</animation>
@@ -2100,6 +2189,7 @@
 					<width>688</width>
 					<height>45</height>
 					<control type="button" id="90171">
+						<animation effect="slide" end="0,750" condition="Control.HasFocus(9017)" time="00">Conditional</animation>
 						<align>left</align>
 						<aligny>top</aligny>
 						<font>HomeWidgetLabelFont</font>
@@ -3506,6 +3596,7 @@
 					<width>688</width>
 					<height>45</height>
 					<control type="button" id="100171">
+						<animation effect="slide" end="0,750" condition="Control.HasFocus(10017)" time="00">Conditional</animation>
 						<align>left</align>
 						<aligny>top</aligny>
 						<font>HomeWidgetLabelFont</font>
@@ -4306,6 +4397,7 @@
 					<width>491</width>
 					<height>45</height>
 					<control type="button" id="140171">
+						<animation effect="slide" end="0,750" condition="Control.HasFocus(14017)" time="00">Conditional</animation>
 						<align>left</align>
 						<aligny>top</aligny>
 						<font>HomeWidgetLabelFont</font>
@@ -5343,6 +5435,7 @@
 					<width>688</width>
 					<height>45</height>
 					<control type="button" id="150171">
+						<animation effect="slide" end="0,750" condition="Control.HasFocus(15017)" time="00">Conditional</animation>
 						<align>left</align>
 						<aligny>top</aligny>
 						<font>HomeWidgetLabelFont</font>

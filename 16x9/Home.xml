@@ -37,13 +37,14 @@
 				<effect type="zoom" start="100" end="90" time="750" tween="elastic"/>
 				<effect type="rotate" end="-1" time="1900" tween="elastic"/>
 			</animation>
-			<include condition="Skin.HasSetting(home.vertical)">HomeVerticalMenu</include>
-			<include condition="!Skin.HasSetting(home.vertical)">HomeWeatherWidget</include>
+			<include condition="Skin.String(home.vertical,1)">HomeVerticalMenu</include>
+			<include condition="!Skin.String(home.vertical,1)">HomeWeatherWidget</include>
+			<include condition="Skin.String(home.vertical,2)">HomeEmbyColumn</include>
 			<include>Furniture_NowPlaying</include>
-			<include condition="!Skin.HasSetting(home.vertical)">HomeEmbyRow</include>
-			<include condition="!Skin.HasSetting(home.vertical)">HomeEmbyWidgetInfo</include>
-			<include condition="!Skin.HasSetting(home.vertical)">HomeEmbySubMenu</include>
-			<include condition="!Skin.HasSetting(home.vertical)">HomeEmbySubMenu2</include>
+			<include condition="Skin.String(home.vertical,)">HomeEmbyRow</include>
+			<include condition="!Skin.String(home.vertical,1)">HomeEmbyWidgetInfo</include>
+			<include condition="!Skin.String(home.vertical,1)">HomeEmbySubMenu</include>
+			<include condition="!Skin.String(home.vertical,1)">HomeEmbySubMenu2</include>
 			<include>Furniture_EmbyClock</include>
 			<include>Furniture_HeaderEmby</include>
 			<include condition="Skin.HasSetting(fags.out)">CerberosSmoke</include>

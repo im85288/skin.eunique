@@ -1097,7 +1097,8 @@
 		<value>$INFO[ListItem.Artist]</value>
 	</variable>
 	<variable name="LabelHomeStyle">
-		<value condition="!Skin.HasSetting(home.vertical)">$LOCALIZE[31248]</value>
-		<value condition="Skin.HasSetting(home.vertical)">$LOCALIZE[31250]</value>
+		<value condition="Skin.String(home.vertical,)">$LOCALIZE[31248]</value>
+		<value condition="Skin.String(home.vertical,1)">$LOCALIZE[31250]</value>
+		<value condition="Skin.String(home.vertical,2)">$LOCALIZE[31973]</value>
 	</variable>
 </includes>

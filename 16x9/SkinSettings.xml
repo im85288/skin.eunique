@@ -168,11 +168,13 @@
 						<include>DefSettingsButton2</include>
 						<label>31247</label>
 						<label2>[COLOR=$VAR[ColourSelected]]$VAR[LabelHomeStyle][/COLOR]</label2>
-						<onclick>SetProperty(Dialog.NumItems,2)</onclick>
+						<onclick>SetProperty(Dialog.NumItems,3)</onclick>
 						<onclick>SetProperty(Dialog.1.Label,Default - Horizontal)</onclick>
 						<onclick>SetProperty(Dialog.1.BuiltIn,Skin.Reset(home.vertical))</onclick>
 						<onclick>SetProperty(Dialog.2.Label,Vertical)</onclick>
-						<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetBool(home.vertical))</onclick>
+						<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(home.vertical,1))</onclick>
+						<onclick>SetProperty(Dialog.3.Label,Vertical Too)</onclick>
+						<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(home.vertical,2))</onclick>
 						<onclick>RunScript(script.toolbox,info=selectdialog,header=Select Home Layout)</onclick>
 					</control>
 					<control type="radiobutton" id="9215" description="home.fade">
