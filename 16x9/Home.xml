@@ -24,7 +24,6 @@
 	<onload condition="StringCompare(Container(300).ListItem.Property(defaultID),music)">AlarmClock(musicscroll,Control.Move(5017,6),00:10,silent,loop)</onload>
 	<onload condition="StringCompare(Container(300).ListItem.Property(defaultID),weather)">AlarmClock(weatherscroll,Control.Move(3444,1),00:10,silent,loop)</onload>
 	<onload>ClearProperty(SkinHelper.ListItemThumb,home)</onload>
-	<onload condition="Skin.HasSetting(home.blur)">RunScript(script.toolbox,info=blur,id='"$VAR[GlobalFanart]"',radius=1,prefix=HomeInfo)</onload>
 	<onunload>CancelAlarm(livetvscroll,true)</onunload>
 	<onunload>CancelAlarm(musicscroll,true)</onunload>
 	<menucontrol>900</menucontrol>

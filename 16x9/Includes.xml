@@ -410,7 +410,8 @@
 			<visible>!IsEmpty(Window(home).Property(Concerts)) + Control.HasFocus(5013) + Window.IsVisible(DialogAlbumInfo.xml)</visible>
 		</control>
 		<control type="image">
-			<include>Dimensions_FullscreenMinusTop</include>
+			<include condition="Skin.String(home.vertical,1) | Skin.String(home.vertical,2)">Dimensions_FullscreenMinusTop</include>
+			<include condition="!Skin.String(home.vertical,1) + !Skin.String(home.vertical,2)">Dimensions_Fullscreen</include>
 			<aspectratio align="center">scale</aspectratio>
 			<texture fallback="common/black.png" background="true">$INFO[Window(home).Property(HomeInfo.ImageFilter)]</texture>
 			<visible>Window.IsVisible(home) + Skin.HasSetting(home.blur)</visible>
@@ -418,7 +419,8 @@
 			<fadetime>600</fadetime>
 		</control>
 		<control type="image">
-			<include>Dimensions_FullscreenMinusTop</include>
+			<include condition="Skin.String(home.vertical,1) | Skin.String(home.vertical,2)">Dimensions_FullscreenMinusTop</include>
+			<include condition="!Skin.String(home.vertical,1) + !Skin.String(home.vertical,2)">Dimensions_Fullscreen</include>
 			<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
 			<aspectratio align="center">scale</aspectratio>
 			<texture colordiffuse="$INFO[Window(home).Property(HomeInfo.ImageColor)]">common/screen-overlay-shard.png</texture>
