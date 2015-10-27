@@ -1391,6 +1391,11 @@
 			</control>
 		</itemlayout>
 		<focusedlayout width="211.1" height="74">
+					<control type="button">
+						<texturefocus>-</texturefocus>
+						<texturenofocus>-</texturenofocus>
+						<onfocus condition="!Container.Scrolling + Skin.HasSetting(home.blur)">RunScript(script.toolbox,info=blur,id='"$VAR[GlobalFanart]"',radius=$VAR[VideoInfoBlurLevel],prefix=HomeInfo)</onfocus>
+					</control>
 			<control type="group">
 				<animation effect="slide" start="0,0" end="-10,0" time="0" reversible="true" center="auto">Focus</animation>
 				<animation effect="slide" start="0,0" end="10,0" time="0" reversible="true" center="auto" condition="!ControlGroup.HasFocus(300) + !control.hasfocus(302)">Conditional</animation>
@@ -1433,7 +1438,7 @@
 			<animation effect="fade" start="100" end="00" condition="Skin.HasSetting(widgets.dim) + [Control.HasFocus(300) | Control.HasFocus(301) | Control.HasFocus(302) | Control.HasFocus(8308)  | Control.HasFocus(3634)  | Control.HasFocus(3635)]" time="200">Conditional</animation>
 			<left>-70</left>
 			<control type="group">
-				<animation effect="slide" start="0" end="-256,0" condition="Control.HasFocus(6017) | Control.HasFocus(60171) | Control.HasFocus(3017) | Control.HasFocus(30171)  | Control.HasFocus(5017) | Control.HasFocus(50171) | Control.HasFocus(4017) | Control.HasFocus(40171)" time="200">Conditional</animation>
+				<animation effect="slide" start="0" end="-221,0" condition="Control.HasFocus(6017) | Control.HasFocus(60171) | Control.HasFocus(3017) | Control.HasFocus(30171)  | Control.HasFocus(5017) | Control.HasFocus(50171) | Control.HasFocus(4017) | Control.HasFocus(40171)" time="200">Conditional</animation>
 				<animation effect="slide" start="0" end="-520,0" condition="Control.HasFocus(9017) | Control.HasFocus(90171)| Control.HasFocus(10017) | Control.HasFocus(100171) | Control.HasFocus(15017) | Control.HasFocus(150171) | Control.HasFocus(14017) | Control.HasFocus(140171)" time="200">Conditional</animation>
 				<animation effect="slide" start="0" end="-220,0" condition="Skin.String(home.vertical,2) + [Control.HasFocus(9017) | Control.HasFocus(90171)| Control.HasFocus(10017) | Control.HasFocus(100171) | Control.HasFocus(15017) | Control.HasFocus(150171) | Control.HasFocus(14017) | Control.HasFocus(140171)]" time="200">Conditional</animation>
 				<animation effect="slide" start="0" end="-220,0" condition="Skin.String(home.vertical,2) + [Control.HasFocus(7016) | Control.HasFocus(7018) | Control.HasFocus(7019)]" time="200">Conditional</animation>
