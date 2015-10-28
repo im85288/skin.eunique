@@ -237,6 +237,22 @@
 		<value condition="!IsEmpty(Skin.String(tvshows4widget.target))">$INFO[Skin.String(tvshows4widget.target)]</value>
 		<value>video</value>
 	</variable>
+	<variable name="DefWidget19Content">
+		<value condition="!IsEmpty(Skin.String(movies5widget.path))">$INFO[Skin.String(movies5widget.path)]</value>
+		<value>plugin://script.skin.helper.service/?action=similarmovies&amp;limit=5&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
+	</variable>
+	<variable name="DefWidget19Target">
+		<value condition="!IsEmpty(Skin.String(movies5widget.target))">$INFO[Skin.String(movies5widget.target)]</value>
+		<value>video</value>
+	</variable>
+	<variable name="DefWidget20Content">
+		<value condition="!IsEmpty(Skin.String(tvshows5widget.path))">$INFO[Skin.String(tvshows5widget.path)]</value>
+		<value>plugin://script.skin.helper.service/?action=similarshows&amp;limit=5&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
+	</variable>
+	<variable name="DefWidget20Target">
+		<value condition="!IsEmpty(Skin.String(tvshows5widget.target))">$INFO[Skin.String(tvshows5widget.target)]</value>
+		<value>video</value>
+	</variable>
 	<variable name="DefWidgetContentVideoInfo">
 		<value condition="Stringcompare(Skin.String(widgetvideoinfo),SimilarVideos)">$VAR[SimilarVideos]</value>
 		<value condition="Stringcompare(Skin.String(widgetvideoinfo),ShowCast)">$VAR[DefWidgetCast]</value>
