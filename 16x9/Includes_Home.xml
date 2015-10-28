@@ -1201,6 +1201,11 @@
 	<include name="HomeEmbyRow">
 		<!-- Home Row -->
 		<control type="group">
+			<animation type="Conditional" reversible="true" condition="Skin.String(home.vertical,) + !Control.HasFocus(3634) + !Control.HasFocus(3635) + !Control.HasFocus(300) + !control.hasfocus(302)">
+				<effect type="zoom" end="100,0" center="10,150" time="200" tween="quadratic" easing="in" />
+				<effect type="rotate" end="3" center="10,150" tween="sine" delay="0" easing="out" time="200" />
+				<effect type="fade" start="100" end="0" tween="quadratic" delay="110" easing="out" time="200" />
+			</animation>
 			<control type="list" id="300">
 				<animation effect="slide" end="0,58" condition="control.hasfocus(302)" time="200">Conditional</animation>
 				<include>Animation.FadeIn.Delay</include>
@@ -1208,16 +1213,12 @@
 				<description>Home Wraplist</description>
 				<left>NewSidePad</left>
 				<right>NewSidePad</right>
-				<ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),movies) + IntegerGreaterThan(Container(3016).NumItems,0)">3016</ondown>
-				<ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),movies) + !IntegerGreaterThan(Container(3016).NumItems,0)">3012</ondown>
-				<ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows + IntegerGreaterThan(Container(4016).NumItems,0))">4016</ondown>
-				<ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows + !IntegerGreaterThan(Container(4016).NumItems,0))">4012</ondown>
-				<ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),music) + IntegerGreaterThan(Container(5016).NumItems,0)">5016</ondown>
-				<ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),music) + !IntegerGreaterThan(Container(5016).NumItems,0)">5012</ondown>
-				<ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv) + IntegerGreaterThan(Container(7016).NumItems,0)">7016</ondown>
-				<ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv) + !IntegerGreaterThan(Container(7016).NumItems,0)">7012</ondown>
+				<ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">3012</ondown>
+				<ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows">4012</ondown>
+				<ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),music)">5012</ondown>
+				<ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv)">7012</ondown>
 				<ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),Weather)">3444</ondown>
-				<ondown condition="!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather)">6016</ondown>
+				<ondown condition="!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather)">6012</ondown>
 				<onup condition="IntegerGreaterThan(Container(302).NumItems,0)">SetFocus(302,0)</onup>
 				<onup condition="!IntegerGreaterThan(Container(302).NumItems,0)">3634</onup>
 				<onleft>300</onleft>
@@ -1234,22 +1235,18 @@
 			<top>105</top>
 			<control type="list" id="300">
 				<animation effect="slide" end="0,-67" condition="control.hasfocus(302)" time="200">Conditional</animation>
-				<animation effect="slide" end="-230,0" condition="!control.hasfocus(300) + !control.hasfocus(302)" time="200">Conditional</animation>
+				<animation effect="slide" end="-230,0" condition="!control.hasfocus(300) + !control.hasfocus(302) + !Control.HasFocus(3634) + !Control.HasFocus(3635)" time="200">Conditional</animation>
 				<include>Animation.FadeIn.Delay</include>
 				<include>Animation.FadeOut</include>
 				<description>Home Wraplist</description>
 				<left>NewSidePad</left>
 				<right>NewSidePad</right>
-				<onright condition="StringCompare(Container(300).ListItem.Property(defaultID),movies) + IntegerGreaterThan(Container(3016).NumItems,0)">3016</onright>
-				<onright condition="StringCompare(Container(300).ListItem.Property(defaultID),movies) + !IntegerGreaterThan(Container(3016).NumItems,0)">3012</onright>
-				<onright condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows + IntegerGreaterThan(Container(4016).NumItems,0))">4016</onright>
-				<onright condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows + !IntegerGreaterThan(Container(4016).NumItems,0))">4012</onright>
-				<onright condition="StringCompare(Container(300).ListItem.Property(defaultID),music) + IntegerGreaterThan(Container(5016).NumItems,0)">5016</onright>
-				<onright condition="StringCompare(Container(300).ListItem.Property(defaultID),music) + !IntegerGreaterThan(Container(5016).NumItems,0)">5012</onright>
-				<onright condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv) + IntegerGreaterThan(Container(7016).NumItems,0)">7016</onright>
-				<onright condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv) + !IntegerGreaterThan(Container(7016).NumItems,0)">7012</onright>
+				<onright condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">3012</onright>
+				<onright condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows">4012</onright>
+				<onright condition="StringCompare(Container(300).ListItem.Property(defaultID),music)">5012</onright>
+				<onright condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv)">7012</onright>
 				<onright condition="StringCompare(Container(300).ListItem.Property(defaultID),Weather)">3444</onright>
-				<onright condition="!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather)">6016</onright>
+				<onright condition="!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather)">6012</onright>
 				<onleft condition="IntegerGreaterThan(Container(302).NumItems,0)">SetFocus(302,0)</onleft>
 				<onleft condition="!IntegerGreaterThan(Container(302).NumItems,0)">3634</onleft>
 				<onleft>300</onleft>
@@ -1440,13 +1437,13 @@
 		<!-- Widget Info -->
 		<control type="group">
 			<animation effect="slide" end="221,-75" condition="Skin.String(home.vertical,2)" time="00">Conditional</animation>
+			<animation effect="slide" end="0,-75" condition="Skin.String(home.vertical,) + !Control.HasFocus(3634) + !Control.HasFocus(3635) + !Control.HasFocus(300) + !control.hasfocus(302)" time="200">Conditional</animation>
 			<animation effect="fade" start="100" end="00" condition="Skin.HasSetting(widgets.dim) + [Control.HasFocus(300) | Control.HasFocus(301) | Control.HasFocus(302) | Control.HasFocus(8308)  | Control.HasFocus(3634)  | Control.HasFocus(3635)]" time="200">Conditional</animation>
 			<left>-70</left>
 			<control type="group">
 				<animation effect="slide" start="0" end="-221,0" condition="Control.HasFocus(6017) | Control.HasFocus(60171) | Control.HasFocus(3017) | Control.HasFocus(30171)  | Control.HasFocus(5017) | Control.HasFocus(50171) | Control.HasFocus(4017) | Control.HasFocus(40171)" time="200">Conditional</animation>
 				<animation effect="slide" start="0" end="-517,0" condition="Control.HasFocus(9017) | Control.HasFocus(90171)| Control.HasFocus(10017) | Control.HasFocus(100171) | Control.HasFocus(15017) | Control.HasFocus(150171) | Control.HasFocus(14017) | Control.HasFocus(140171)" time="200">Conditional</animation>
-				<animation effect="slide" start="0" end="-221,0" condition="Skin.String(home.vertical,2) + !Control.HasFocus(300) + !control.hasfocus(302)" time="200">Conditional</animation>
-				<animation effect="slide" start="0" end="-220,0" condition="Skin.String(home.vertical,2) + [Control.HasFocus(7016) | Control.HasFocus(7018) | Control.HasFocus(7019)]" time="200">Conditional</animation>
+				<animation effect="slide" start="0" end="-221,0" condition="Skin.String(home.vertical,2) + !Control.HasFocus(3634) + !Control.HasFocus(3635) + !Control.HasFocus(300) + !control.hasfocus(302)" time="200">Conditional</animation>
 				<!--
 				<animation effect="slide" start="0" end="-520,0" condition="System.IdleTime(3) + !System.IdleTime(5)" time="1500" reversiible="true">Conditional</animation>
 				-->
@@ -1543,7 +1540,6 @@
 						-->
 						<animation effect="slide" start="0" end="221,0" condition="!Skin.String(home.vertical,1)  + [Control.HasFocus(6017) | Control.HasFocus(60171) | Control.HasFocus(3017) | Control.HasFocus(30171)  | Control.HasFocus(5017) | Control.HasFocus(50171) | Control.HasFocus(4017) | Control.HasFocus(40171)]" time="200">Conditional</animation>
 						<animation effect="slide" start="0" end="517,0" condition="Control.HasFocus(9017) | Control.HasFocus(90171)| Control.HasFocus(10017) | Control.HasFocus(100171) | Control.HasFocus(15017) | Control.HasFocus(150171) | Control.HasFocus(14017) | Control.HasFocus(140171)" time="200">Conditional</animation>
-						<animation effect="slide" start="0" end="0,-18" condition="!Skin.String(home.vertical,1) + !Skin.String(home.vertical,2)" time="200">Conditional</animation>
 						<top>773</top>
 						<align>left</align>
 						<aligny>top</aligny>
@@ -1566,13 +1562,11 @@
 					<left>SidePad</left>
 					<width>820</width>
 					<height>460</height>
-					<onup>300</onup>
-					<ondown>6013</ondown>
-					<onleft>301</onleft>
-					<onright>301</onright>
+					<onleft>6013</onleft>
+					<onright>6016</onright>
 					<onback>300</onback>
 					<preloaditems>2</preloaditems>
-					<orientation>horizontal</orientation>
+					<orientation>vertical</orientation>
 					<autoscroll time="10000">!Control.HasFocus(6012)</autoscroll>
 					<scrolltime tween="quadratic">100</scrolltime>
 					<include>Animation.FadeIn</include>
@@ -1662,6 +1656,7 @@
 						<focusedcolor>-</focusedcolor>
 						<texturefocus>-</texturefocus>
 						<texturenofocus>-</texturenofocus>
+						<onleft>300</onleft>
 						<onup>6012</onup>
 						<onright>6015</onright>
 						<onclick>ActivateWindow(videos,addons,return)</onclick>
@@ -2265,18 +2260,16 @@
 				</control>
 				<control type="wraplist" id="9017">
 					<focusposition>0</focusposition>
-					<orientation>horizontal</orientation>
+					<orientation>vertical</orientation>
 					<description>Widget</description>
 					<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 					<top>-330</top>
 					<left>1860</left>
 					<width>491</width>
 					<height>705</height>
-					<onup>300</onup>
 					<onback>300</onback>
-					<ondown>6017</ondown>
-					<onleft condition="Control.IsVisible(6017)">6017</onleft>
-					<onleft condition="!Control.IsVisible(6017)">6012</onleft>
+					<onright>300</onright>
+					<onleft>6017</onleft>
 					<preloaditems>9</preloaditems>
 					<scrolltime tween="quadratic">100</scrolltime>
 					<autoscroll time="5000">!Control.HasFocus(9017)</autoscroll>
@@ -3065,14 +3058,12 @@
 					<left>SidePad</left>
 					<width>820</width>
 					<height>460</height>
-					<onup>300</onup>
-					<ondown>3013</ondown>
-					<onleft>301</onleft>
-					<onright>301</onright>
+					<onleft>3013</onleft>
+					<onright>3016</onright>
 					<onback>300</onback>
 					<oninfo>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(301).ListItem.Label])</oninfo>
 					<preloaditems>2</preloaditems>
-					<orientation>horizontal</orientation>
+					<orientation>vertical</orientation>
 					<autoscroll time="10000">!Control.HasFocus(3012)</autoscroll>
 					<scrolltime tween="quadratic">100</scrolltime>
 					<include>Animation.FadeIn</include>
@@ -3156,6 +3147,7 @@
 						<onup>3012</onup>
 						<onright>3014</onright>
 						<ondown>30133</ondown>
+						<onleft>300</onleft>
 						<onclick>ActivateWindow(Videos,MovieTitles,return)</onclick>
 						<onback>300</onback>
 						<!-- fix blank button test -->
@@ -3676,7 +3668,7 @@
 				</control>
 				<control type="wraplist" id="10017">
 					<focusposition>0</focusposition>
-					<orientation>horizontal</orientation>
+					<orientation>vertical</orientation>
 					<description>Widget</description>
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
 					<top>-330</top>
@@ -3684,11 +3676,10 @@
 					<width>491</width>
 					<height>705</height>
 					<onback>300</onback>
-					<onup>300</onup>
-					<ondown>3017</ondown>
+					<onright>300</onright>
+					<onright>300</onright>
+					<onleft>3017</onleft>
 					<oninfo>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(301).ListItem.Label])</oninfo>
-					<onleft condition="Control.IsVisible(3017)">3017</onleft>
-					<onleft condition="!Control.IsVisible(3017)">3012</onleft>
 					<preloaditems>9</preloaditems>
 					<scrolltime tween="quadratic">100</scrolltime>
 					<autoscroll time="5000">!Control.HasFocus(10017)</autoscroll>
@@ -3840,13 +3831,11 @@
 					<left>SidePad</left>
 					<width>820</width>
 					<height>460</height>
-					<onup>300</onup>
-					<ondown>4013</ondown>
-					<onleft>301</onleft>
-					<onright>301</onright>
+					<onleft>4013</onleft>
+					<onright>4016</onright>
 					<onback>300</onback>
 					<preloaditems>2</preloaditems>
-					<orientation>horizontal</orientation>
+					<orientation>vertical</orientation>
 					<autoscroll time="10000">!Control.HasFocus(4012)</autoscroll>
 					<scrolltime tween="quadratic">100</scrolltime>
 					<include>Animation.FadeIn</include>
@@ -3965,6 +3954,7 @@
 						<texturenofocus>-</texturenofocus>
 						<onup>4012</onup>
 						<onright>4015</onright>
+						<onleft>300</onleft>
 						<ondown>40133</ondown>
 						<onclick>ActivateWindow(Videos,TVShowTitles,return)</onclick>
 						<onback>300</onback>
@@ -4481,17 +4471,15 @@
 				</control>
 				<control type="wraplist" id="14017">
 					<focusposition>0</focusposition>
-					<orientation>horizontal</orientation>
+					<orientation>vertical</orientation>
 					<description>Widget</description>
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
 					<top>-330</top>
 					<left>1860</left>
 					<width>491</width>
 					<height>705</height>
-					<onup>300</onup>
-					<ondown>4017</ondown>
-					<onleft condition="Control.IsVisible(4017)">4017</onleft>
-					<onleft condition="!Control.IsVisible(4017)">4012</onleft>
+					<onright>300</onright>
+					<onleft>4017</onleft>
 					<onback>300</onback>
 					<preloaditems>9</preloaditems>
 					<scrolltime tween="quadratic">100</scrolltime>
@@ -4644,13 +4632,11 @@
 					<left>SidePad</left>
 					<width>820</width>
 					<height>460</height>
-					<onup>300</onup>
-					<ondown>5013</ondown>
-					<onleft>301</onleft>
-					<onright>301</onright>
+					<onleft>5013</onleft>
+					<onright>5016</onright>
 					<onback>300</onback>
 					<preloaditems>2</preloaditems>
-					<orientation>horizontal</orientation>
+					<orientation>vertical</orientation>
 					<autoscroll time="10000">!Control.HasFocus(5012)</autoscroll>
 					<scrolltime tween="quadratic">100</scrolltime>
 					<include>Animation.FadeIn</include>
@@ -4797,6 +4783,7 @@
 						<texturenofocus>-</texturenofocus>
 						<onup>5012</onup>
 						<onright>5015</onright>
+						<onleft>300</onleft>
 						<ondown>50133</ondown>
 						<onclick>ActivateWindow(Music)</onclick>
 						<onback>300</onback>
@@ -5521,17 +5508,15 @@
 				</control>
 				<control type="wraplist" id="15017">
 					<focusposition>0</focusposition>
-					<orientation>horizontal</orientation>
+					<orientation>vertical</orientation>
 					<description>Widget</description>
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
 					<top>-330</top>
 					<left>1860</left>
 					<width>491</width>
 					<height>705</height>
-					<onup>300</onup>
-					<ondown>5017</ondown>
-					<onleft condition="Control.IsVisible(5017)">5017</onleft>
-					<onleft condition="!Control.IsVisible(5017)">5012</onleft>
+					<onright>300</onright>
+					<onleft>5017</onleft>
 					<onback>300</onback>
 					<preloaditems>9</preloaditems>
 					<scrolltime tween="quadratic">100</scrolltime>
@@ -5689,11 +5674,11 @@
 					<left>SidePad</left>
 					<width>820</width>
 					<height>460</height>
-					<onup>300</onup>
-					<ondown>7013</ondown>
+					<onleft>7013</onleft>
 					<onback>300</onback>
+					<onright>7016</onright>
 					<preloaditems>2</preloaditems>
-					<orientation>horizontal</orientation>
+					<orientation>vertical</orientation>
 					<autoscroll time="10000">!Control.HasFocus(7012)</autoscroll>
 					<scrolltime tween="quadratic">100</scrolltime>
 					<include>Animation.FadeIn</include>
@@ -5770,6 +5755,7 @@
 						<texturenofocus>-</texturenofocus>
 						<onup condition="IntegerGreaterThan(Container(7016).NumItems,0)">7012</onup>
 						<onup condition="!IntegerGreaterThan(Container(7016).NumItems,0)">70121</onup>
+						<onleft>300</onleft>
 						<onright>7015</onright>
 						<onback>300</onback>
 						<onclick>ActivateWindow(tvtimers)</onclick>
@@ -6057,6 +6043,7 @@
 						<onleft>7018</onleft>
 						<onclick>ActivateWindow(tvchannels)</onclick>
 						<onback>300</onback>
+						<onright>300</onright>
 					</control>
 					<control type="image">
 						<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
@@ -6160,7 +6147,7 @@
 					<onleft condition="IntegerGreaterThan(Container(7016).NumItems,0)">7012</onleft>
 					<onleft condition="!IntegerGreaterThan(Container(7016).NumItems,0)">70121</onleft>
 					<onleft>ClearProperty(SkinHelper.ListItemThumb,home)</onleft>
-					<onright>7016</onright>
+					<onright>7018</onright>
 					<onback>300</onback>
 					<preloaditems>2</preloaditems>
 					<orientation>vertical</orientation>
@@ -6431,6 +6418,7 @@
 							</control>
 						</control>
 					</control>
+					<!--
 					<control type="group">
 						<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 						<top>290</top>
@@ -6446,6 +6434,7 @@
 							<label>$INFO[Container(7016).ListItem.Season,,x]$INFO[Container(7016).ListItem.Episode,,. ]$INFO[Container(7016).ListItem.Title]$INFO[Container(7016).ListItem.EpisodeName, (,)]</label>
 						</control>
 					</control>
+					-->
 				</control>
 			</control>
 		</control>
