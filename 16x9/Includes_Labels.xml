@@ -214,7 +214,6 @@
 		<value condition="Control.HasFocus(18004) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">$INFO[Container(18004).ListItem.Label][CR][COLOR=PanelWhite70]$INFO[Container(18004).ListItem.Year]$INFO[Container(18004).ListItem.Rating, • ]$INFO[Container(18004).ListItem.Votes, (, $LOCALIZE[20350])][/COLOR]</value>
 		<value condition="Control.HasFocus(18005) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">$INFO[Container(18005).ListItem.Label][CR][COLOR=PanelWhite70]$INFO[Container(18005).ListItem.Year]$INFO[Container(18005).ListItem.Rating, • ]$INFO[Container(18005).ListItem.Votes, (, $LOCALIZE[20350])][/COLOR]</value>
 		<value condition="Control.HasFocus(18006) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">$INFO[Container(18006).ListItem.Label][CR][COLOR=PanelWhite70]$INFO[Container(18006).ListItem.Year]$INFO[Container(18006).ListItem.Rating, • ]$INFO[Container(18006).ListItem.Votes, (, $LOCALIZE[20350])][/COLOR]</value>
-
 	</variable>
 	<variable name="EmbyWidget1Label">
 		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetName.1))">$INFO[Container(300).ListItem.Property(widgetName.1)]</value>
@@ -287,6 +286,14 @@
 	<variable name="EmbyWidget18Label">
 		<value condition="!IsEmpty(Skin.String(tvshows4widget.name))">$INFO[Skin.String(tvshows4widget.name)]</value>
 		<value>$LOCALIZE[31226]</value>
+	</variable>
+	<variable name="EmbyWidget19Label">
+		<value condition="!IsEmpty(Skin.String(movies5widget.name))">$INFO[Skin.String(movies5widget.name)]</value>
+		<value>$LOCALIZE[31782]$INFO[Container(18001).ListItem.Property(similartitle), ","]</value>
+	</variable>
+	<variable name="EmbyWidget20Label">
+		<value condition="!IsEmpty(Skin.String(tvshows5widget.name))">$INFO[Skin.String(tvshows5widget.name)]</value>
+		<value>$LOCALIZE[31782]$INFO[Container(18001).ListItem.Property(similartitle), ","]</value>
 	</variable>
 	<variable name="VideoInfoWidgetLabel">
 		<value condition="Stringcompare(Skin.String(widgetvideoinfo),SimilarVideos)">$LOCALIZE[31818]</value>
