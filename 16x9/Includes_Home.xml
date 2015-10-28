@@ -1234,7 +1234,7 @@
 		<control type="group">
 			<top>105</top>
 			<control type="list" id="300">
-				<animation effect="slide" end="0,-67" condition="control.hasfocus(302)" time="200">Conditional</animation>
+				<animation effect="slide" end="0,-49" condition="control.hasfocus(302)" time="200">Conditional</animation>
 				<animation effect="slide" end="-230,0" condition="!control.hasfocus(300) + !control.hasfocus(302) + !Control.HasFocus(3634) + !Control.HasFocus(3635)" time="200">Conditional</animation>
 				<include>Animation.FadeIn.Delay</include>
 				<include>Animation.FadeOut</include>
@@ -1260,13 +1260,14 @@
 	<include name="HomeEmbySubMenu">
 		<!-- Sub Menu -->
 		<control type="list" id="302">
+			<animation effect="slide" end="0,-18" condition="Skin.String(home.vertical,)" time="00">Conditional</animation>
 			<animation effect="slide" end="0,42" condition="control.hasfocus(302)" time="200">Conditional</animation>
 			<animation effect="slide" end="-50,0" condition="Skin.String(home.vertical,2)" time="200">Conditional</animation>
 			<include>Animation.FadeIn.Delay</include>
 			<include>Animation.FadeOut</include>
 			<left>60</left>
 			<right>60</right>
-			<top>82</top>
+			<top>100</top>
 			<onup>3634</onup>
 			<ondown>300</ondown>
 			<onleft>302</onleft>
