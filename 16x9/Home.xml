@@ -12,8 +12,8 @@
 	<onload condition="!Skin.HasSetting(startup.init)">Skin.SetString(SkinHelper.ShowInfoAtPlaybackStart, 3)</onload>
 	<onload condition="!Skin.HasSetting(startup.init)">Skin.SetBool(SmartShortcuts.playlists)</onload>
 	<onload condition="!Skin.HasSetting(startup.init)">Skin.SetBool(SmartShortcuts.emby)</onload>
-	<onload condition="!Skin.HasSetting(startup.init) + System.HasAddon(plugin.video.plexbmc)">Skin.SetBool(global.plex)</onload>
-	<onload condition="!Skin.HasSetting(startup.init) + System.HasAddon(plugin.video.netflix)">Skin.SetBool(global.netflix)</onload>
+	<onload condition="!Skin.HasSetting(startup.init) + System.HasAddon(plugin.video.plexbmc)">Skin.SetBool(SmartShortcuts.plex)</onload>
+	<onload condition="!Skin.HasSetting(startup.init) + System.HasAddon(plugin.video.netflix)">Skin.SetBool(SmartShortcuts.netflix)</onload>
 	<onload condition="!Skin.HasSetting(startup.init)">Skin.SetBool(SkinHelper.EnableExtraFanart)</onload>
 	<onload>Skin.SetBool(SkinHelper.EnablePVRThumbs)</onload>
 	<onload>SetProperty(SkinHelper.WidgetContainer,7016)</onload>
