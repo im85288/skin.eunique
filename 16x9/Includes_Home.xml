@@ -1515,13 +1515,13 @@
 						<onclick>ActivateWindow(1112)</onclick>
 						<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 					</control>
-					<!--
 					<control type="label" id="91211">
 						<label>$VAR[EmbyWidgetLabel]</label>
 						<width>1</width>
 						<height>1</height>
 						<left>-1000</left>
 					</control>
+					<!--
 					<control type="image" id="89122">
 						<animation effect="slide" start="0" end="738,0" condition="[Control.HasFocus(9017) | Control.HasFocus(90171)| Control.HasFocus(10017) | Control.HasFocus(100171) | Control.HasFocus(15017) | Control.HasFocus(150171) | Control.HasFocus(14017) | Control.HasFocus(140171)]" time="200">Conditional</animation>
 						<animation effect="slide" start="0" end="221,0" condition="[Control.HasFocus(6017) | Control.HasFocus(60171) | Control.HasFocus(3017) | Control.HasFocus(30171)  | Control.HasFocus(5017) | Control.HasFocus(50171) | Control.HasFocus(4017) | Control.HasFocus(40171)]" time="200">Conditional</animation>
@@ -1534,6 +1534,20 @@
 						<visible>Skin.String(home.vertical,2) + !IsEmpty(Control.GetLabel(91211))</visible>
 					</control>
 					-->
+					<control type="image" id="89122">
+						<animation effect="slide" start="0" end="221,0" condition="!Skin.String(home.vertical,1)  + [Control.HasFocus(6017) | Control.HasFocus(60171) | Control.HasFocus(3017) | Control.HasFocus(30171)  | Control.HasFocus(5017) | Control.HasFocus(50171) | Control.HasFocus(4017) | Control.HasFocus(40171)]" time="200">Conditional</animation>
+						<animation effect="slide" start="0" end="517,0" condition="Control.HasFocus(9017) | Control.HasFocus(90171) | Control.HasFocus(15017) | Control.HasFocus(150171)" time="200">Conditional</animation>
+						<animation effect="slide" start="0" end="717,0" condition="Control.HasFocus(10017) | Control.HasFocus(100171) | Control.HasFocus(14017) | Control.HasFocus(140171)" time="200">Conditional</animation>
+						<animation effect="slide" start="0" end="1537,0" condition="Control.HasFocus(18002) | Control.HasFocus(18003) | Control.HasFocus(18004) | Control.HasFocus(18005) | Control.HasFocus(18006)" time="200">Conditional</animation>
+						<top>781</top>
+						<left>0</left>
+						<width>228</width>
+						<height>64</height>
+						<texture>$VAR[EmbyWidgetLogo]</texture>
+						<aspectratio align="center" aligny="center">keep</aspectratio>
+						<fadetime>50</fadetime>
+						<visible>!Skin.String(home.vertical,1) + !IsEmpty(Control.GetLabel(91211))</visible>
+					</control>
 					<control type="button">
 						<!--
 						<animation effect="slide" start="0" end="245,0" condition="Skin.String(home.vertical,2) + !Substring(Control.GetLabel(89122),empty.png)" time="00">Conditional</animation>
@@ -1542,6 +1556,7 @@
 						<animation effect="slide" start="0" end="517,0" condition="Control.HasFocus(9017) | Control.HasFocus(90171) | Control.HasFocus(15017) | Control.HasFocus(150171)" time="200">Conditional</animation>
 						<animation effect="slide" start="0" end="717,0" condition="Control.HasFocus(10017) | Control.HasFocus(100171) | Control.HasFocus(14017) | Control.HasFocus(140171)" time="200">Conditional</animation>
 						<animation effect="slide" start="0" end="1537,0" condition="Control.HasFocus(18002) | Control.HasFocus(18003) | Control.HasFocus(18004) | Control.HasFocus(18005) | Control.HasFocus(18006)" time="200">Conditional</animation>
+						<left>238</left>
 						<top>773</top>
 						<align>left</align>
 						<aligny>top</aligny>
@@ -1580,23 +1595,6 @@
 						</control>
 					</itemlayout>
 					<focusedlayout width="820" height="460">
-						<control type="button">
-							<onfocus>Skin.SetString(widget.helper,videos1)</onfocus>
-						</control>
-						<control type="image">
-							<left>0</left>
-							<width>50%</width>
-							<height>100%</height>
-							<aspectratio scalediffuse="false">scale</aspectratio>
-							<texture colordiffuse="$VAR[BorderHighlight]">$VAR[FocusedBorderImage]</texture>
-						</control>
-						<control type="image">
-							<left>50%</left>
-							<width>50%</width>
-							<height>100%</height>
-							<aspectratio scalediffuse="false">scale</aspectratio>
-							<texture colordiffuse="$VAR[BorderHighlight]" flipx="true">$VAR[FocusedBorderImage]</texture>
-						</control>
 						<control type="image">
 							<aspectratio>scale</aspectratio>
 							<texture background="true">$VAR[FanartImage]</texture>
@@ -2095,7 +2093,7 @@
 					<itemlayout width="410" height="88.125">
 						<control type="image">
 							<aspectratio scalediffuse="false">stretch</aspectratio>
-							<texture colordiffuse="$INFO[Window(home).Property(HomeInfo.ImageColor)]" fallback="empty.png" background="true">$VAR[BannerImage]</texture>
+							<texture fallback="empty.png" background="true">$VAR[BannerImage]</texture>
 						</control>
 						<control type="progress">
 							<bottom>5</bottom>
@@ -2166,7 +2164,7 @@
 					<itemlayout width="158" height="235">
 						<control type="image">
 							<aspectratio>stretch</aspectratio>
-							<texture colordiffuse="$INFO[Window(home).Property(HomeInfo.ImageColor)]" background="true">$VAR[PosterImage]</texture>
+							<texture background="true">$VAR[PosterImage]</texture>
 						</control>
 						<control type="progress">
 							<bottom>5</bottom>
@@ -2198,7 +2196,7 @@
 				<control type="group">
 					<left>1865</left>
 					<top>285</top>
-					<width>688</width>
+					<width>632</width>
 					<height>45</height>
 					<control type="button" id="90171">
 						<animation effect="slide" end="0,755" condition="Control.HasFocus(9017)" time="00">Conditional</animation>
@@ -2246,14 +2244,14 @@
 					<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 					<top>330</top>
 					<left>1865</left>
-					<width>688</width>
+					<width>632</width>
 					<height>705</height>
 					<control type="image">
 						<left>316</left>
 						<top>0</top>
 						<width>158</width>
 						<height>235</height>
-						<texture colordiffuse="$INFO[Window(home).Property(HomeInfo.ImageColor)]" fallback="empty.png">$INFO[Container(9017).Listitem(1).Icon]</texture>
+						<texture fallback="empty.png">$INFO[Container(9017).Listitem(1).Icon]</texture>
 						<fadetime>100</fadetime>
 					</control>
 					<control type="image">
@@ -2261,7 +2259,7 @@
 						<top>0</top>
 						<width>158</width>
 						<height>235</height>
-						<texture colordiffuse="$INFO[Window(home).Property(HomeInfo.ImageColor)]" fallback="empty.png">$INFO[Container(9017).Listitem(2).Icon]</texture>
+						<texture fallback="empty.png">$INFO[Container(9017).Listitem(2).Icon]</texture>
 						<fadetime>100</fadetime>
 					</control>
 					<control type="image">
@@ -2269,7 +2267,7 @@
 						<top>235</top>
 						<width>158</width>
 						<height>235</height>
-						<texture colordiffuse="$INFO[Window(home).Property(HomeInfo.ImageColor)]" fallback="empty.png">$INFO[Container(9017).Listitem(3).Icon]</texture>
+						<texture fallback="empty.png">$INFO[Container(9017).Listitem(3).Icon]</texture>
 						<fadetime>100</fadetime>
 					</control>
 					<control type="image">
@@ -2277,7 +2275,7 @@
 						<top>235</top>
 						<width>158</width>
 						<height>235</height>
-						<texture colordiffuse="$INFO[Window(home).Property(HomeInfo.ImageColor)]" fallback="empty.png">$INFO[Container(9017).Listitem(4).Icon]</texture>
+						<texture fallback="empty.png">$INFO[Container(9017).Listitem(4).Icon]</texture>
 						<fadetime>100</fadetime>
 					</control>
 					<control type="image">
@@ -2285,7 +2283,7 @@
 						<top>470</top>
 						<width>158</width>
 						<height>235</height>
-						<texture colordiffuse="$INFO[Window(home).Property(HomeInfo.ImageColor)]" fallback="empty.png">$INFO[Container(9017).Listitem(5).Icon]</texture>
+						<texture fallback="empty.png">$INFO[Container(9017).Listitem(5).Icon]</texture>
 						<fadetime>100</fadetime>
 					</control>
 					<control type="image">
@@ -2293,7 +2291,7 @@
 						<top>470</top>
 						<width>158</width>
 						<height>235</height>
-						<texture colordiffuse="$INFO[Window(home).Property(HomeInfo.ImageColor)]" fallback="empty.png">$INFO[Container(9017).Listitem(6).Icon]</texture>
+						<texture fallback="empty.png">$INFO[Container(9017).Listitem(6).Icon]</texture>
 						<fadetime>100</fadetime>
 					</control>
 					<control type="image">
@@ -2301,7 +2299,7 @@
 						<top>470</top>
 						<width>158</width>
 						<height>235</height>
-						<texture colordiffuse="$INFO[Window(home).Property(HomeInfo.ImageColor)]" fallback="empty.png">$INFO[Container(9017).Listitem(7).Icon]</texture>
+						<texture fallback="empty.png">$INFO[Container(9017).Listitem(7).Icon]</texture>
 						<fadetime>100</fadetime>
 					</control>
 					<control type="image">
@@ -2309,7 +2307,7 @@
 						<top>470</top>
 						<width>158</width>
 						<height>235</height>
-						<texture colordiffuse="$INFO[Window(home).Property(HomeInfo.ImageColor)]" fallback="empty.png">$INFO[Container(9017).Listitem(8).Icon]</texture>
+						<texture fallback="empty.png">$INFO[Container(9017).Listitem(8).Icon]</texture>
 						<fadetime>100</fadetime>
 					</control>
 					<!-- main box -->
@@ -3000,23 +2998,6 @@
 						</control>
 					</itemlayout>
 					<focusedlayout width="820" height="460">
-						<control type="button">
-							<onfocus>Skin.SetString(widget.helper,movies1)</onfocus>
-						</control>
-						<control type="image">
-							<left>0</left>
-							<width>50%</width>
-							<height>100%</height>
-							<aspectratio scalediffuse="false">scale</aspectratio>
-							<texture colordiffuse="$VAR[BorderHighlight]">$VAR[FocusedBorderImage]</texture>
-						</control>
-						<control type="image">
-							<left>50%</left>
-							<width>50%</width>
-							<height>100%</height>
-							<aspectratio scalediffuse="false">scale</aspectratio>
-							<texture colordiffuse="$VAR[BorderHighlight]" flipx="true">$VAR[FocusedBorderImage]</texture>
-						</control>
 						<control type="image">
 							<aspectratio>scale</aspectratio>
 							<texture background="true">$VAR[LandscapeImage]</texture>
@@ -3402,7 +3383,7 @@
 					<itemlayout width="410" height="235">
 						<control type="image">
 							<aspectratio>scale</aspectratio>
-							<texture colordiffuse="$INFO[Window(home).Property(HomeInfo.ImageColor)]" background="true">$VAR[LandscapeImage]</texture>
+							<texture background="true">$VAR[LandscapeImage]</texture>
 						</control>
 						<control type="progress">
 							<bottom>0</bottom>
@@ -3485,7 +3466,7 @@
 					<itemlayout width="158" height="235">
 						<control type="image">
 							<aspectratio>stretch</aspectratio>
-							<texture colordiffuse="$INFO[Window(home).Property(HomeInfo.ImageColor)]" background="true">$VAR[PosterImage]</texture>
+							<texture background="true">$VAR[PosterImage]</texture>
 						</control>
 						<control type="progress">
 							<bottom>5</bottom>
@@ -3528,7 +3509,7 @@
 				<control type="group">
 					<left>1865</left>
 					<top>285</top>
-					<width>688</width>
+					<width>632</width>
 					<height>45</height>
 					<control type="button" id="100171">
 						<animation effect="slide" end="0,755" condition="Control.HasFocus(10017)" time="00">Conditional</animation>
@@ -3578,14 +3559,14 @@
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
 					<top>330</top>
 					<left>1865</left>
-					<width>688</width>
+					<width>632</width>
 					<height>705</height>
 					<control type="image">
 						<left>316</left>
 						<top>0</top>
 						<width>158</width>
 						<height>235</height>
-						<texture colordiffuse="$INFO[Window(home).Property(HomeInfo.ImageColor)]" fallback="empty.png">$INFO[Container(10017).Listitem(1).Icon]</texture>
+						<texture fallback="empty.png">$INFO[Container(10017).Listitem(1).Icon]</texture>
 						<fadetime>100</fadetime>
 					</control>
 					<control type="image">
@@ -3593,7 +3574,7 @@
 						<top>0</top>
 						<width>158</width>
 						<height>235</height>
-						<texture colordiffuse="$INFO[Window(home).Property(HomeInfo.ImageColor)]" fallback="empty.png">$INFO[Container(10017).Listitem(2).Icon]</texture>
+						<texture fallback="empty.png">$INFO[Container(10017).Listitem(2).Icon]</texture>
 						<fadetime>100</fadetime>
 					</control>
 					<control type="image">
@@ -3601,7 +3582,7 @@
 						<top>235</top>
 						<width>158</width>
 						<height>235</height>
-						<texture colordiffuse="$INFO[Window(home).Property(HomeInfo.ImageColor)]" fallback="empty.png">$INFO[Container(10017).Listitem(3).Icon]</texture>
+						<texture fallback="empty.png">$INFO[Container(10017).Listitem(3).Icon]</texture>
 						<fadetime>100</fadetime>
 					</control>
 					<control type="image">
@@ -3609,7 +3590,7 @@
 						<top>235</top>
 						<width>158</width>
 						<height>235</height>
-						<texture colordiffuse="$INFO[Window(home).Property(HomeInfo.ImageColor)]" fallback="empty.png">$INFO[Container(10017).Listitem(4).Icon]</texture>
+						<texture fallback="empty.png">$INFO[Container(10017).Listitem(4).Icon]</texture>
 						<fadetime>100</fadetime>
 					</control>
 					<control type="image">
@@ -3617,7 +3598,7 @@
 						<top>470</top>
 						<width>158</width>
 						<height>235</height>
-						<texture colordiffuse="$INFO[Window(home).Property(HomeInfo.ImageColor)]" fallback="empty.png">$INFO[Container(10017).Listitem(5).Icon]</texture>
+						<texture fallback="empty.png">$INFO[Container(10017).Listitem(5).Icon]</texture>
 						<fadetime>100</fadetime>
 					</control>
 					<control type="image">
@@ -3625,7 +3606,7 @@
 						<top>470</top>
 						<width>158</width>
 						<height>235</height>
-						<texture colordiffuse="$INFO[Window(home).Property(HomeInfo.ImageColor)]" fallback="empty.png">$INFO[Container(10017).Listitem(6).Icon]</texture>
+						<texture fallback="empty.png">$INFO[Container(10017).Listitem(6).Icon]</texture>
 						<fadetime>100</fadetime>
 					</control>
 					<control type="image">
@@ -3633,7 +3614,7 @@
 						<top>470</top>
 						<width>158</width>
 						<height>235</height>
-						<texture colordiffuse="$INFO[Window(home).Property(HomeInfo.ImageColor)]" fallback="empty.png">$INFO[Container(10017).Listitem(7).Icon]</texture>
+						<texture fallback="empty.png">$INFO[Container(10017).Listitem(7).Icon]</texture>
 						<fadetime>100</fadetime>
 					</control>
 					<control type="image">
@@ -3641,7 +3622,7 @@
 						<top>470</top>
 						<width>158</width>
 						<height>235</height>
-						<texture colordiffuse="$INFO[Window(home).Property(HomeInfo.ImageColor)]" fallback="empty.png">$INFO[Container(10017).Listitem(8).Icon]</texture>
+						<texture fallback="empty.png">$INFO[Container(10017).Listitem(8).Icon]</texture>
 						<fadetime>100</fadetime>
 					</control>
 					<!-- main box -->
@@ -3665,12 +3646,14 @@
 				</control>
 				<!-- 5th widget -->
 				<control type="group">
+					<left>11</left>
+				<control type="group">
 					<left>2565</left>
 					<top>285</top>
 					<width>943</width>
 					<height>45</height>
 					<control type="button" id="180011">
-						<animation effect="slide" end="0,765" condition="Control.HasFocus(18002)" time="00">Conditional</animation>
+						<width>943</width>
 						<align>left</align>
 						<aligny>top</aligny>
 						<font>HomeWidgetLabelFont</font>
@@ -3686,18 +3669,6 @@
 						<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
 					</control>
 				</control>
-				<control type="list" id="18001">
-					<description>Widget</description>
-					<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
-					<top>-10</top>
-					<width>10</width>
-					<height>1</height>
-					<viewtype label="">list</viewtype>
-					<orientation>horizontal</orientation>
-					<itemlayout height="1" width="1" />
-					<focusedlayout height="1" width="1" />
-					<content target="$VAR[DefWidget19Target]">$VAR[DefWidget19Content]</content>
-				</control>
 				<control type="list" id="18002">
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
 					<left>2565</left>
@@ -3707,11 +3678,13 @@
 					<onright>18003</onright>
 					<onleft>10017</onleft>
 					<onback>300</onback>
+					<onup>setfocus(18003,0)</onup>
+					<ondown>setfocus(18003,3)</ondown>
 					<oninfo>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(18002).ListItem.Label])</oninfo>
 					<itemlayout width="473" height="705">
 						<control type="image">
 							<aspectratio>stretch</aspectratio>
-							<texture colordiffuse="$INFO[Window(home).Property(HomeInfo.ImageColor)]" background="true">$VAR[PosterImage]</texture>
+							<texture background="true">$VAR[PosterImage]</texture>
 						</control>
 						<control type="progress">
 							<bottom>5</bottom>
@@ -3727,7 +3700,7 @@
 					</itemlayout>
 					<focusedlayout width="473" height="705">
 						<control type="group">
-							<animation effect="zoom" start="100" end="102" time="100" reversible="false" center="auto">Focus</animation>
+							<animation effect="zoom" start="105" end="90" time="200" tween="quadratic"reversible="false" center="auto">Focus</animation>
 							<control type="image">
 								<aspectratio>stretch</aspectratio>
 								<texture background="true">$VAR[PosterImage]</texture>
@@ -3735,7 +3708,7 @@
 							</control>
 							<control type="image">
 								<aspectratio>stretch</aspectratio>
-								<texture colordiffuse="$INFO[Window(home).Property(HomeInfo.ImageColor)]" background="true">$VAR[PosterImage]</texture>
+								<texture background="true">$VAR[PosterImage]</texture>
 								<visible>!Control.HasFocus(18002)</visible>
 							</control>
 							<control type="progress">
@@ -3751,24 +3724,25 @@
 							</control>
 						</control>
 					</focusedlayout>
-					<content limit="1" target="$VAR[DefWidget19Target]">$VAR[DefWidget19Content]</content>
+					<content limit="4" target="$VAR[DefWidget19Target]">$VAR[DefWidget19Content]</content>
 				</control>
 
-				<control type="list" id="18003">
+				<control type="panel" id="18003">
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
 					<left>3038</left>
 					<top>330</top>
-					<width>235</width>
-					<height>352.5</height>
-					<onright>18005</onright>
+					<width>470</width>
+					<height>705</height>
+					<onright>300</onright>
 					<onleft>18002</onleft>
-					<ondown>18004</ondown>
+					<onup>setfocus(18002)</onup>
+					<ondown>setfocus(18002)</ondown>
 					<onback>300</onback>
 					<oninfo>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(18003).ListItem.Label])</oninfo>
 					<itemlayout width="235" height="352.5">
 						<control type="image">
 							<aspectratio>stretch</aspectratio>
-							<texture colordiffuse="$INFO[Window(home).Property(HomeInfo.ImageColor)]" background="true">$VAR[PosterImage]</texture>
+							<texture background="true">$VAR[PosterImage]</texture>
 						</control>
 						<control type="progress">
 							<bottom>5</bottom>
@@ -3784,7 +3758,7 @@
 					</itemlayout>
 					<focusedlayout width="235" height="352.5">
 						<control type="group">
-							<animation effect="zoom" start="100" end="102" time="100" reversible="false" center="auto">Focus</animation>
+							<animation effect="zoom" start="105" end="90" time="200" tween="quadratic"reversible="false" center="auto">Focus</animation>
 							<control type="image">
 								<aspectratio>stretch</aspectratio>
 								<texture background="true">$VAR[PosterImage]</texture>
@@ -3792,7 +3766,7 @@
 							</control>
 							<control type="image">
 								<aspectratio>stretch</aspectratio>
-								<texture colordiffuse="$INFO[Window(home).Property(HomeInfo.ImageColor)]" background="true">$VAR[PosterImage]</texture>
+								<texture background="true">$VAR[PosterImage]</texture>
 								<visible>!Control.HasFocus(18003)</visible>
 							</control>
 							<control type="progress">
@@ -3808,179 +3782,8 @@
 							</control>
 						</control>
 					</focusedlayout>
-					<content limit="1" target="$VAR[DefWidget19Target]">$VAR[DefWidget19Content]</content>
+					<content limit="4" target="$VAR[DefWidget19Target]">$VAR[DefWidget19Content]</content>
 				</control>
-
-				<control type="list" id="18004">
-					<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
-					<left>3038</left>
-					<top>682.5</top>
-					<width>235</width>
-					<height>352.5</height>
-					<onright>18006</onright>
-					<onleft>18002</onleft>
-					<onup>18003</onup>
-					<onback>300</onback>
-					<oninfo>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(18004).ListItem.Label])</oninfo>
-					<itemlayout width="235" height="352.5">
-						<control type="image">
-							<aspectratio>stretch</aspectratio>
-							<texture colordiffuse="$INFO[Window(home).Property(HomeInfo.ImageColor)]" background="true">$VAR[PosterImage]</texture>
-						</control>
-						<control type="progress">
-							<bottom>5</bottom>
-							<height>8</height>
-							<info>ListItem.PercentPlayed</info>
-							<overlaytexture>-</overlaytexture>
-							<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
-							<lefttexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</lefttexture>
-							<midtexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</midtexture>
-							<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
-							<visible>ListItem.IsResumable</visible>
-						</control>
-					</itemlayout>
-					<focusedlayout width="235" height="352.5">
-						<control type="group">
-							<animation effect="zoom" start="100" end="102" time="100" reversible="false" center="auto">Focus</animation>
-							<control type="image">
-								<aspectratio>stretch</aspectratio>
-								<texture background="true">$VAR[PosterImage]</texture>
-								<visible>Control.HasFocus(18004)</visible>
-							</control>
-							<control type="image">
-								<aspectratio>stretch</aspectratio>
-								<texture colordiffuse="$INFO[Window(home).Property(HomeInfo.ImageColor)]" background="true">$VAR[PosterImage]</texture>
-								<visible>!Control.HasFocus(18004)</visible>
-							</control>
-							<control type="progress">
-								<bottom>0</bottom>
-								<height>8</height>
-								<info>ListItem.PercentPlayed</info>
-								<overlaytexture>-</overlaytexture>
-								<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
-								<lefttexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</lefttexture>
-								<midtexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</midtexture>
-								<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
-								<visible>ListItem.IsResumable</visible>
-							</control>
-						</control>
-					</focusedlayout>
-					<content limit="1" target="$VAR[DefWidget19Target]">$VAR[DefWidget19Content]</content>
-				</control>
-
-				<control type="list" id="18005">
-					<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
-					<left>3273</left>
-					<top>330</top>
-					<width>235</width>
-					<height>352.5</height>
-					<onright>300</onright>
-					<onleft>18003</onleft>
-					<ondown>18006</ondown>
-					<onup>300</onup>
-					<onback>300</onback>
-					<oninfo>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(18005).ListItem.Label])</oninfo>
-					<itemlayout width="235" height="352.5">
-						<control type="image">
-							<aspectratio>stretch</aspectratio>
-							<texture colordiffuse="$INFO[Window(home).Property(HomeInfo.ImageColor)]" background="true">$VAR[PosterImage]</texture>
-						</control>
-						<control type="progress">
-							<bottom>5</bottom>
-							<height>8</height>
-							<info>ListItem.PercentPlayed</info>
-							<overlaytexture>-</overlaytexture>
-							<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
-							<lefttexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</lefttexture>
-							<midtexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</midtexture>
-							<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
-							<visible>ListItem.IsResumable</visible>
-						</control>
-					</itemlayout>
-					<focusedlayout width="235" height="352.5">
-						<control type="group">
-							<animation effect="zoom" start="100" end="102" time="100" reversible="false" center="auto">Focus</animation>
-							<control type="image">
-								<aspectratio>stretch</aspectratio>
-								<texture background="true">$VAR[PosterImage]</texture>
-								<visible>Control.HasFocus(18005)</visible>
-							</control>
-							<control type="image">
-								<aspectratio>stretch</aspectratio>
-								<texture colordiffuse="$INFO[Window(home).Property(HomeInfo.ImageColor)]" background="true">$VAR[PosterImage]</texture>
-								<visible>!Control.HasFocus(18005)</visible>
-							</control>
-							<control type="progress">
-								<bottom>0</bottom>
-								<height>8</height>
-								<info>ListItem.PercentPlayed</info>
-								<overlaytexture>-</overlaytexture>
-								<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
-								<lefttexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</lefttexture>
-								<midtexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</midtexture>
-								<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
-								<visible>ListItem.IsResumable</visible>
-							</control>
-						</control>
-					</focusedlayout>
-					<content limit="1" target="$VAR[DefWidget19Target]">$VAR[DefWidget19Content]</content>
-				</control>
-
-				<control type="list" id="18006">
-					<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
-					<left>3273</left>
-					<top>682.5</top>
-					<width>235</width>
-					<height>352.5</height>
-					<onright>300</onright>
-					<onleft>18004</onleft>
-					<onup>18005</onup>
-					<onback>300</onback>
-					<oninfo>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(18006).ListItem.Label])</oninfo>
-					<itemlayout width="235" height="352.5">
-						<control type="image">
-							<aspectratio>stretch</aspectratio>
-							<texture colordiffuse="$INFO[Window(home).Property(HomeInfo.ImageColor)]" background="true">$VAR[PosterImage]</texture>
-						</control>
-						<control type="progress">
-							<bottom>5</bottom>
-							<height>8</height>
-							<info>ListItem.PercentPlayed</info>
-							<overlaytexture>-</overlaytexture>
-							<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
-							<lefttexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</lefttexture>
-							<midtexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</midtexture>
-							<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
-							<visible>ListItem.IsResumable</visible>
-						</control>
-					</itemlayout>
-					<focusedlayout width="235" height="352.5">
-						<control type="group">
-							<animation effect="zoom" start="100" end="102" time="100" reversible="false" center="auto">Focus</animation>
-							<control type="image">
-								<aspectratio>stretch</aspectratio>
-								<texture background="true">$VAR[PosterImage]</texture>
-								<visible>Control.HasFocus(18006)</visible>
-							</control>
-							<control type="image">
-								<aspectratio>stretch</aspectratio>
-								<texture colordiffuse="$INFO[Window(home).Property(HomeInfo.ImageColor)]" background="true">$VAR[PosterImage]</texture>
-								<visible>!Control.HasFocus(18006)</visible>
-							</control>
-							<control type="progress">
-								<bottom>0</bottom>
-								<height>8</height>
-								<info>ListItem.PercentPlayed</info>
-								<overlaytexture>-</overlaytexture>
-								<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
-								<lefttexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</lefttexture>
-								<midtexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</midtexture>
-								<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
-								<visible>ListItem.IsResumable</visible>
-							</control>
-						</control>
-					</focusedlayout>
-					<content limit="1" target="$VAR[DefWidget19Target]">$VAR[DefWidget19Content]</content>
 				</control>
 
 				<!-- TV menu item -->
@@ -4028,23 +3831,6 @@
 						</control>
 					</itemlayout>
 					<focusedlayout width="820" height="460">
-						<control type="button">
-							<onfocus>Skin.SetString(widget.helper,tv1)</onfocus>
-						</control>
-						<control type="image">
-							<left>0</left>
-							<width>50%</width>
-							<height>100%</height>
-							<aspectratio scalediffuse="false">scale</aspectratio>
-							<texture colordiffuse="$VAR[BorderHighlight]">$VAR[FocusedBorderImage]</texture>
-						</control>
-						<control type="image">
-							<left>50%</left>
-							<width>50%</width>
-							<height>100%</height>
-							<aspectratio scalediffuse="false">scale</aspectratio>
-							<texture colordiffuse="$VAR[BorderHighlight]" flipx="true">$VAR[FocusedBorderImage]</texture>
-						</control>
 						<control type="image">
 							<aspectratio>scale</aspectratio>
 							<texture background="true">$VAR[LandscapeImage]</texture>
@@ -4489,7 +4275,7 @@
 					<itemlayout width="410" height="235">
 						<control type="image">
 							<aspectratio>stretch</aspectratio>
-							<texture colordiffuse="$INFO[Window(home).Property(HomeInfo.ImageColor)]" background="true">$VAR[LandscapeImage]</texture>
+							<texture background="true">$VAR[LandscapeImage]</texture>
 						</control>
 						<control type="progress">
 							<bottom>0</bottom>
@@ -4571,7 +4357,7 @@
 					<itemlayout width="158" height="235">
 						<control type="image">
 							<aspectratio>stretch</aspectratio>
-							<texture colordiffuse="$INFO[Window(home).Property(HomeInfo.ImageColor)]" background="true">$VAR[PosterImage]</texture>
+							<texture background="true">$VAR[PosterImage]</texture>
 						</control>
 					</itemlayout>
 					<focusedlayout width="158" height="235">
@@ -4640,14 +4426,14 @@
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
 					<top>330</top>
 					<left>1865</left>
-					<width>688</width>
+					<width>632</width>
 					<height>705</height>
 					<control type="image">
 						<left>316</left>
 						<top>0</top>
 						<width>158</width>
 						<height>235</height>
-						<texture colordiffuse="$INFO[Window(home).Property(HomeInfo.ImageColor)]" fallback="empty.png">$INFO[Container(14017).Listitem(1).Icon]</texture>
+						<texture fallback="empty.png">$INFO[Container(14017).Listitem(1).Icon]</texture>
 						<fadetime>100</fadetime>
 					</control>
 					<control type="image">
@@ -4655,7 +4441,7 @@
 						<top>0</top>
 						<width>158</width>
 						<height>235</height>
-						<texture colordiffuse="$INFO[Window(home).Property(HomeInfo.ImageColor)]" fallback="empty.png">$INFO[Container(14017).Listitem(2).Icon]</texture>
+						<texture fallback="empty.png">$INFO[Container(14017).Listitem(2).Icon]</texture>
 						<fadetime>100</fadetime>
 					</control>
 					<control type="image">
@@ -4663,7 +4449,7 @@
 						<top>235</top>
 						<width>158</width>
 						<height>235</height>
-						<texture colordiffuse="$INFO[Window(home).Property(HomeInfo.ImageColor)]" fallback="empty.png">$INFO[Container(14017).Listitem(3).Icon]</texture>
+						<texture fallback="empty.png">$INFO[Container(14017).Listitem(3).Icon]</texture>
 						<fadetime>100</fadetime>
 					</control>
 					<control type="image">
@@ -4671,7 +4457,7 @@
 						<top>235</top>
 						<width>158</width>
 						<height>235</height>
-						<texture colordiffuse="$INFO[Window(home).Property(HomeInfo.ImageColor)]" fallback="empty.png">$INFO[Container(14017).Listitem(4).Icon]</texture>
+						<texture fallback="empty.png">$INFO[Container(14017).Listitem(4).Icon]</texture>
 						<fadetime>100</fadetime>
 					</control>
 					<control type="image">
@@ -4679,7 +4465,7 @@
 						<top>470</top>
 						<width>158</width>
 						<height>235</height>
-						<texture colordiffuse="$INFO[Window(home).Property(HomeInfo.ImageColor)]" fallback="empty.png">$INFO[Container(14017).Listitem(5).Icon]</texture>
+						<texture fallback="empty.png">$INFO[Container(14017).Listitem(5).Icon]</texture>
 						<fadetime>100</fadetime>
 					</control>
 					<control type="image">
@@ -4687,7 +4473,7 @@
 						<top>470</top>
 						<width>158</width>
 						<height>235</height>
-						<texture colordiffuse="$INFO[Window(home).Property(HomeInfo.ImageColor)]" fallback="empty.png">$INFO[Container(14017).Listitem(6).Icon]</texture>
+						<texture fallback="empty.png">$INFO[Container(14017).Listitem(6).Icon]</texture>
 						<fadetime>100</fadetime>
 					</control>
 					<control type="image">
@@ -4695,7 +4481,7 @@
 						<top>470</top>
 						<width>158</width>
 						<height>235</height>
-						<texture colordiffuse="$INFO[Window(home).Property(HomeInfo.ImageColor)]" fallback="empty.png">$INFO[Container(14017).Listitem(7).Icon]</texture>
+						<texture fallback="empty.png">$INFO[Container(14017).Listitem(7).Icon]</texture>
 						<fadetime>100</fadetime>
 					</control>
 					<control type="image">
@@ -4703,7 +4489,7 @@
 						<top>470</top>
 						<width>158</width>
 						<height>235</height>
-						<texture colordiffuse="$INFO[Window(home).Property(HomeInfo.ImageColor)]" fallback="empty.png">$INFO[Container(14017).Listitem(8).Icon]</texture>
+						<texture fallback="empty.png">$INFO[Container(14017).Listitem(8).Icon]</texture>
 						<fadetime>100</fadetime>
 					</control>
 					<!-- main box -->
@@ -4726,18 +4512,21 @@
 					</control>
 				</control>
 
-				<!-- 5th widget -->
+				<!-- 5th tv widget -->
+				<control type="group">
+					<left>11</left>
 				<control type="group">
 					<left>2565</left>
 					<top>285</top>
 					<width>943</width>
 					<height>45</height>
 					<control type="button" id="180011">
-						<animation effect="slide" end="0,755" condition="Control.HasFocus(18002)" time="00">Conditional</animation>
+						<width>943</width>
 						<align>left</align>
 						<aligny>top</aligny>
 						<font>HomeWidgetLabelFont</font>
 						<onup>300</onup>
+						<ondown>10017</ondown>
 						<onback>300</onback>
 						<textoffsetx>0</textoffsetx>
 						<label>$VAR[EmbyWidget20Label]</label>
@@ -4749,18 +4538,11 @@
 					</control>
 				</control>
 				<control type="list" id="18001">
-					<description>Widget</description>
-					<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
-					<top>-10</top>
-					<width>10</width>
-					<height>1</height>
-					<viewtype label="">list</viewtype>
-					<orientation>horizontal</orientation>
-					<itemlayout height="1" width="1" />
-					<focusedlayout height="1" width="1" />
-					<content target="$VAR[DefWidget20Target]">$VAR[DefWidget20Content]</content>
+					<itemlayout width="1" height="1"/>
+					<focusedlayout width="1" height="1"/>
+					<content limit="5" target="$VAR[DefWidget20Target]">$VAR[DefWidget20Content]</content>
 				</control>
-				<control type="list" id="18002">
+				<control type="button" id="18002">
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
 					<left>2565</left>
 					<top>330</top>
@@ -4769,8 +4551,34 @@
 					<onright>18003</onright>
 					<onleft>14017</onleft>
 					<onback>300</onback>
-					<oninfo>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(18002).ListItem.Label])</oninfo>
-					<itemlayout width="473" height="705">
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<onup>setfocus(18003,0)</onup>
+					<ondown>setfocus(18003,3)</ondown>
+					<oninfo>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(18001).ListItem(4).Label])</oninfo>
+				</control>
+				<control type="image">
+					<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+					<left>2565</left>
+					<top>330</top>
+					<width>473</width>
+					<height>705</height>
+					<texture>$INFO[Container(18001).ListItem(4).icon]</texture>
+					<animation effect="zoom" start="105" end="90" time="200" tween="quadratic"reversible="false" center="auto" condition="Control.HasFocus(18002)">Conditional</animation>
+				</control>
+				<control type="panel" id="18003">
+					<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+					<left>3038</left>
+					<top>330</top>
+					<width>470</width>
+					<height>705</height>
+					<onright>300</onright>
+					<onleft>18002</onleft>
+					<onup>setfocus(18002,0)</onup>
+					<ondown>setfocus(18002,3)</ondown>
+					<onback>300</onback>
+					<oninfo>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(18003).ListItem.Label])</oninfo>
+					<itemlayout width="235" height="352.5">
 						<control type="image">
 							<aspectratio>stretch</aspectratio>
 							<texture background="true">$VAR[PosterImage]</texture>
@@ -4787,76 +4595,19 @@
 							<visible>ListItem.IsResumable</visible>
 						</control>
 					</itemlayout>
-					<focusedlayout width="473" height="705">
+					<focusedlayout width="235" height="352.5">
 						<control type="group">
-							<animation effect="zoom" start="100" end="102" time="100" reversible="false" center="auto">Focus</animation>
+							<animation effect="zoom" start="105" end="90" time="200" tween="quadratic"reversible="false" center="auto">Focus</animation>
 							<control type="image">
 								<aspectratio>stretch</aspectratio>
-								<texture colordiffuse="$INFO[Window(home).Property(HomeInfo.ImageColor)]" background="true">$VAR[PosterImage]</texture>
-								<visible>!Control.HasFocus(18002)</visible>
+								<texture background="true">$VAR[PosterImage]</texture>
+								<visible>Control.HasFocus(18003)</visible>
 							</control>
 							<control type="image">
 								<aspectratio>stretch</aspectratio>
 								<texture background="true">$VAR[PosterImage]</texture>
-								<visible>Control.HasFocus(18002)</visible>
-							</control>
-							<control type="progress">
-								<bottom>0</bottom>
-								<height>8</height>
-								<info>ListItem.PercentPlayed</info>
-								<overlaytexture>-</overlaytexture>
-								<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
-								<lefttexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</lefttexture>
-								<midtexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</midtexture>
-								<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
-								<visible>ListItem.IsResumable</visible>
-							</control>
-						</control>
-					</focusedlayout>
-					<content limit="1" target="$VAR[DefWidget20Target]">$VAR[DefWidget20Content]</content>
-				</control>
-
-				<control type="list" id="18003">
-					<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
-					<left>3038</left>
-					<top>330</top>
-					<width>235</width>
-					<height>352.5</height>
-					<onright>18005</onright>
-					<onleft>18002</onleft>
-					<ondown>18004</ondown>
-					<onback>300</onback>
-					<oninfo>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(18003).ListItem.Label])</oninfo>
-					<itemlayout width="235" height="352.5">
-						<control type="image">
-							<aspectratio>stretch</aspectratio>
-							<texture background="true">$INFO[ListItem.Property(Poster)]</texture>
-						</control>
-						<control type="progress">
-							<bottom>5</bottom>
-							<height>8</height>
-							<info>ListItem.PercentPlayed</info>
-							<overlaytexture>-</overlaytexture>
-							<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
-							<lefttexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</lefttexture>
-							<midtexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</midtexture>
-							<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
-							<visible>ListItem.IsResumable</visible>
-						</control>
-					</itemlayout>
-					<focusedlayout width="235" height="352.5">
-						<control type="group">
-							<animation effect="zoom" start="100" end="102" time="100" reversible="false" center="auto">Focus</animation>
-							<control type="image">
-								<aspectratio>stretch</aspectratio>
-								<texture colordiffuse="$INFO[Window(home).Property(HomeInfo.ImageColor)]" background="true">$INFO[ListItem.Property(Poster)]</texture>
 								<visible>!Control.HasFocus(18003)</visible>
 							</control>
-							<control type="image">
-								<aspectratio>stretch</aspectratio>
-								<texture background="true">$INFO[ListItem.Property(Poster)]</texture>
-								<visible>Control.HasFocus(18003)</visible>
-							</control>
 							<control type="progress">
 								<bottom>0</bottom>
 								<height>8</height>
@@ -4870,227 +4621,8 @@
 							</control>
 						</control>
 					</focusedlayout>
-					<content>
-						<item>
-							<icon>$INFO[Container(18001).ListItemPosition(1).Icon]</icon>
-							<label>$INFO[Container(18001).ListItemPosition(1).Label]</label>
-							<label2>Label 2</label2>
-							<thumb>thumb1.png</thumb>
-							<property name="Poster">$INFO[Container(18001).ListItemPosition(1).Icon]</property>
-							<property name="Year">$INFO[Container(18001).ListItemPosition(1).Year]</property>
-							<property name="Rating">$INFO[Container(18001).ListItemPosition(1).Rating]</property>
-							<property name="Votes">$INFO[Container(18001).ListItemPosition(1).Votes]</property>
-							<onclick>ActivateWindow(Video,videodb://tvshows/titles/9/,return)</onclick>
-						</item>
-					</content>
+					<content limit="4" target="$VAR[DefWidget20Target]">$VAR[DefWidget20Content]</content>
 				</control>
-
-				<control type="list" id="18004">
-					<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
-					<left>3038</left>
-					<top>682.5</top>
-					<width>235</width>
-					<height>352.5</height>
-					<onright>18006</onright>
-					<onleft>18002</onleft>
-					<onup>18003</onup>
-					<onback>300</onback>
-					<oninfo>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(18004).ListItem.Label])</oninfo>
-					<itemlayout width="235" height="352.5">
-						<control type="image">
-							<aspectratio>stretch</aspectratio>
-							<texture background="true">$INFO[ListItem.Property(Poster)]</texture>
-						</control>
-						<control type="progress">
-							<bottom>5</bottom>
-							<height>8</height>
-							<info>ListItem.PercentPlayed</info>
-							<overlaytexture>-</overlaytexture>
-							<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
-							<lefttexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</lefttexture>
-							<midtexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</midtexture>
-							<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
-							<visible>ListItem.IsResumable</visible>
-						</control>
-					</itemlayout>
-					<focusedlayout width="235" height="352.5">
-						<control type="group">
-							<animation effect="zoom" start="100" end="102" time="100" reversible="false" center="auto">Focus</animation>
-							<control type="image">
-								<aspectratio>stretch</aspectratio>
-								<texture colordiffuse="$INFO[Window(home).Property(HomeInfo.ImageColor)]" background="true">$INFO[ListItem.Property(Poster)]</texture>
-								<visible>!Control.HasFocus(18004)</visible>
-							</control>
-							<control type="image">
-								<aspectratio>stretch</aspectratio>
-								<texture background="true">$INFO[ListItem.Property(Poster)]</texture>
-								<visible>Control.HasFocus(18004)</visible>
-							</control>
-							<control type="progress">
-								<bottom>0</bottom>
-								<height>8</height>
-								<info>ListItem.PercentPlayed</info>
-								<overlaytexture>-</overlaytexture>
-								<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
-								<lefttexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</lefttexture>
-								<midtexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</midtexture>
-								<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
-								<visible>ListItem.IsResumable</visible>
-							</control>
-						</control>
-					</focusedlayout>
-					<content>
-						<item>
-							<icon>$INFO[Container(18001).ListItemPosition(2).Icon]</icon>
-							<label>$INFO[Container(18001).ListItemPosition(2).Label]</label>
-							<label2>Label 2</label2>
-							<thumb>thumb1.png</thumb>
-							<property name="Poster">$INFO[Container(18001).ListItemPosition(2).Icon]</property>
-							<property name="Year">$INFO[Container(18001).ListItemPosition(2).Year]</property>
-							<property name="Rating">$INFO[Container(18001).ListItemPosition(2).Rating]</property>
-							<property name="Votes">$INFO[Container(18001).ListItemPosition(2).Votes]</property>
-							<onclick>ActivateWindow(Videos,TVShowTitles,return)</onclick>
-						</item>
-					</content>
-				</control>
-
-				<control type="list" id="18005">
-					<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
-					<left>3273</left>
-					<top>330</top>
-					<width>235</width>
-					<height>352.5</height>
-					<onright>300</onright>
-					<onleft>18003</onleft>
-					<ondown>18006</ondown>
-					<onup>300</onup>
-					<onback>300</onback>
-					<oninfo>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(18005).ListItem.Label])</oninfo>
-					<itemlayout width="235" height="352.5">
-						<control type="image">
-							<aspectratio>stretch</aspectratio>
-							<texture background="true">$INFO[ListItem.Property(Poster)]</texture>
-						</control>
-						<control type="progress">
-							<bottom>5</bottom>
-							<height>8</height>
-							<info>ListItem.PercentPlayed</info>
-							<overlaytexture>-</overlaytexture>
-							<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
-							<lefttexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</lefttexture>
-							<midtexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</midtexture>
-							<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
-							<visible>ListItem.IsResumable</visible>
-						</control>
-					</itemlayout>
-					<focusedlayout width="235" height="352.5">
-						<control type="group">
-							<animation effect="zoom" start="100" end="102" time="100" reversible="false" center="auto">Focus</animation>
-							<control type="image">
-								<aspectratio>stretch</aspectratio>
-								<texture colordiffuse="$INFO[Window(home).Property(HomeInfo.ImageColor)]" background="true">$INFO[ListItem.Property(Poster)]</texture>
-								<visible>!Control.HasFocus(18005)</visible>
-							</control>
-							<control type="image">
-								<aspectratio>stretch</aspectratio>
-								<texture background="true">$INFO[ListItem.Property(Poster)]</texture>
-								<visible>Control.HasFocus(18005)</visible>
-							</control>
-							<control type="progress">
-								<bottom>0</bottom>
-								<height>8</height>
-								<info>ListItem.PercentPlayed</info>
-								<overlaytexture>-</overlaytexture>
-								<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
-								<lefttexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</lefttexture>
-								<midtexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</midtexture>
-								<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
-								<visible>ListItem.IsResumable</visible>
-							</control>
-						</control>
-					</focusedlayout>
-					<content>
-						<item>
-							<icon>$INFO[Container(18001).ListItemPosition(3).Icon]</icon>
-							<label>$INFO[Container(18001).ListItemPosition(3).Label]</label>
-							<label2>Label 2</label2>
-							<thumb>thumb1.png</thumb>
-							<property name="Poster">$INFO[Container(18001).ListItemPosition(3).Icon]</property>
-							<property name="Year">$INFO[Container(18001).ListItemPosition(3).Year]</property>
-							<property name="Rating">$INFO[Container(18001).ListItemPosition(3).Rating]</property>
-							<property name="Votes">$INFO[Container(18001).ListItemPosition(3).Votes]</property>
-							<onclick>ActivateWindow(Videos,TVShowTitles,return)</onclick>
-						</item>
-					</content>
-				</control>
-
-				<control type="list" id="18006">
-					<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
-					<left>3273</left>
-					<top>682.5</top>
-					<width>235</width>
-					<height>352.5</height>
-					<onright>300</onright>
-					<onleft>18004</onleft>
-					<onup>18005</onup>
-					<onback>300</onback>
-					<oninfo>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(18006).ListItem.Label])</oninfo>
-					<itemlayout width="235" height="352.5">
-						<control type="image">
-							<aspectratio>stretch</aspectratio>
-							<texture background="true">$INFO[ListItem.Property(Poster)]</texture>
-						</control>
-						<control type="progress">
-							<bottom>5</bottom>
-							<height>8</height>
-							<info>ListItem.PercentPlayed</info>
-							<overlaytexture>-</overlaytexture>
-							<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
-							<lefttexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</lefttexture>
-							<midtexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</midtexture>
-							<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
-							<visible>ListItem.IsResumable</visible>
-						</control>
-					</itemlayout>
-					<focusedlayout width="235" height="352.5">
-						<control type="group">
-							<animation effect="zoom" start="100" end="102" time="100" reversible="false" center="auto">Focus</animation>
-							<control type="image">
-								<aspectratio>stretch</aspectratio>
-								<texture colordiffuse="$INFO[Window(home).Property(HomeInfo.ImageColor)]" background="true">$INFO[ListItem.Property(Poster)]</texture>
-								<visible>!Control.HasFocus(18006)</visible>
-							</control>
-							<control type="image">
-								<aspectratio>stretch</aspectratio>
-								<texture background="true">$INFO[ListItem.Property(Poster)]</texture>
-								<visible>Control.HasFocus(18006)</visible>
-							</control>
-							<control type="progress">
-								<bottom>0</bottom>
-								<height>8</height>
-								<info>ListItem.PercentPlayed</info>
-								<overlaytexture>-</overlaytexture>
-								<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
-								<lefttexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</lefttexture>
-								<midtexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</midtexture>
-								<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
-								<visible>ListItem.IsResumable</visible>
-							</control>
-						</control>
-					</focusedlayout>
-					<content>
-						<item>
-							<icon>$INFO[Container(18001).ListItemPosition(4).Icon]</icon>
-							<label>$INFO[Container(18001).ListItemPosition(4).Label]</label>
-							<label2>Label 2</label2>
-							<thumb>thumb1.png</thumb>
-							<property name="Poster">$INFO[Container(18001).ListItemPosition(4).Icon]</property>
-							<property name="Year">$INFO[Container(18001).ListItemPosition(4).Year]</property>
-							<property name="Rating">$INFO[Container(18001).ListItemPosition(4).Rating]</property>
-							<property name="Votes">$INFO[Container(18001).ListItemPosition(4).Votes]</property>
-							<onclick>ActivateWindow(Videos,TVShowTitles,return)</onclick>
-						</item>
-					</content>
 				</control>
 
 				<!-- Music menu item -->
@@ -5171,23 +4703,6 @@
 						</control>
 					</itemlayout>
 					<focusedlayout width="820" height="460">
-						<control type="button">
-							<onfocus>Skin.SetString(widget.helper,music1)</onfocus>
-						</control>
-						<control type="image">
-							<left>0</left>
-							<width>50%</width>
-							<height>100%</height>
-							<aspectratio scalediffuse="false">scale</aspectratio>
-							<texture colordiffuse="$VAR[BorderHighlight]">$VAR[FocusedBorderImage]</texture>
-						</control>
-						<control type="image">
-							<left>50%</left>
-							<width>50%</width>
-							<height>100%</height>
-							<aspectratio scalediffuse="false">scale</aspectratio>
-							<texture colordiffuse="$VAR[BorderHighlight]" flipx="true">$VAR[FocusedBorderImage]</texture>
-						</control>
 						<control type="image">
 							<aspectratio>scale</aspectratio>
 							<texture background="true">$VAR[FanartImage]</texture>
@@ -5708,7 +5223,7 @@
 						<control type="image">
 							<top>0</top>
 							<aspectratio>stretch</aspectratio>
-							<texture colordiffuse="$INFO[Window(home).Property(HomeInfo.ImageColor)]" background="true">$VAR[PosterImage]</texture>
+							<texture background="true">$VAR[PosterImage]</texture>
 							<visible>!Stringcompare(Skin.String(widget13),PopularArtists)</visible>
 							<visible>!Stringcompare(Skin.String(widget13),HypedArtists)</visible>
 						</control>
@@ -5726,7 +5241,7 @@
 							<control type="image">
 								<align>center</align>
 								<aspectratio>scale</aspectratio>
-								<texture colordiffuse="$INFO[Window(home).Property(HomeInfo.ImageColor)]" background="true">$INFO[Listitem.Thumb]</texture>
+								<texture background="true">$INFO[Listitem.Thumb]</texture>
 							</control>
 							<visible>Stringcompare(Skin.String(widget13),PopularArtists) | Stringcompare(Skin.String(widget13),HypedArtists)</visible>
 						</control>
@@ -5820,7 +5335,7 @@
 						<control type="image">
 							<top>0</top>
 							<aspectratio>stretch</aspectratio>
-							<texture colordiffuse="$INFO[Window(home).Property(HomeInfo.ImageColor)]" background="true">$VAR[PosterImage]</texture>
+							<texture background="true">$VAR[PosterImage]</texture>
 							<visible>!Stringcompare(Skin.String(widget14),PopularArtists)</visible>
 							<visible>!Stringcompare(Skin.String(widget14),HypedArtists)</visible>
 						</control>
@@ -5838,7 +5353,7 @@
 							<control type="image">
 								<align>center</align>
 								<aspectratio>scale</aspectratio>
-								<texture colordiffuse="$INFO[Window(home).Property(HomeInfo.ImageColor)]" background="true">$INFO[Listitem.Thumb]</texture>
+								<texture background="true">$INFO[Listitem.Thumb]</texture>
 							</control>
 							<visible>Stringcompare(Skin.String(widget14),PopularArtists) | Stringcompare(Skin.String(widget14),HypedArtists)</visible>
 						</control>
@@ -5909,7 +5424,7 @@
 				<control type="group">
 					<left>1865</left>
 					<top>285</top>
-					<width>688</width>
+					<width>632</width>
 					<height>45</height>
 					<control type="button" id="150171">
 						<animation effect="slide" end="0,755" condition="Control.HasFocus(15017)" time="00">Conditional</animation>
@@ -5957,14 +5472,14 @@
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
 					<top>330</top>
 					<left>1865</left>
-					<width>688</width>
+					<width>632</width>
 					<height>705</height>
 					<control type="image">
 						<left>316</left>
 						<top>0</top>
 						<width>158</width>
 						<height>235</height>
-						<texture colordiffuse="$INFO[Window(home).Property(HomeInfo.ImageColor)]" fallback="empty.png">$INFO[Container(15017).Listitem(1).Icon]</texture>
+						<texture fallback="empty.png">$INFO[Container(15017).Listitem(1).Icon]</texture>
 						<aspectratio>scale</aspectratio>
 						<fadetime>100</fadetime>
 					</control>
@@ -5973,7 +5488,7 @@
 						<top>0</top>
 						<width>158</width>
 						<height>235</height>
-						<texture colordiffuse="$INFO[Window(home).Property(HomeInfo.ImageColor)]" fallback="empty.png">$INFO[Container(15017).Listitem(2).Icon]</texture>
+						<texture fallback="empty.png">$INFO[Container(15017).Listitem(2).Icon]</texture>
 						<aspectratio>scale</aspectratio>
 						<fadetime>100</fadetime>
 					</control>
@@ -5982,7 +5497,7 @@
 						<top>235</top>
 						<width>158</width>
 						<height>235</height>
-						<texture colordiffuse="$INFO[Window(home).Property(HomeInfo.ImageColor)]" fallback="empty.png">$INFO[Container(15017).Listitem(3).Icon]</texture>
+						<texture fallback="empty.png">$INFO[Container(15017).Listitem(3).Icon]</texture>
 						<aspectratio>scale</aspectratio>
 						<fadetime>100</fadetime>
 					</control>
@@ -5991,7 +5506,7 @@
 						<top>235</top>
 						<width>158</width>
 						<height>235</height>
-						<texture colordiffuse="$INFO[Window(home).Property(HomeInfo.ImageColor)]" fallback="empty.png">$INFO[Container(15017).Listitem(4).Icon]</texture>
+						<texture fallback="empty.png">$INFO[Container(15017).Listitem(4).Icon]</texture>
 						<aspectratio>scale</aspectratio>
 						<fadetime>100</fadetime>
 					</control>
@@ -6000,7 +5515,7 @@
 						<top>470</top>
 						<width>158</width>
 						<height>235</height>
-						<texture colordiffuse="$INFO[Window(home).Property(HomeInfo.ImageColor)]" fallback="empty.png">$INFO[Container(15017).Listitem(5).Icon]</texture>
+						<texture fallback="empty.png">$INFO[Container(15017).Listitem(5).Icon]</texture>
 						<aspectratio>scale</aspectratio>
 						<fadetime>100</fadetime>
 					</control>
@@ -6009,7 +5524,7 @@
 						<top>470</top>
 						<width>158</width>
 						<height>235</height>
-						<texture colordiffuse="$INFO[Window(home).Property(HomeInfo.ImageColor)]" fallback="empty.png">$INFO[Container(15017).Listitem(6).Icon]</texture>
+						<texture fallback="empty.png">$INFO[Container(15017).Listitem(6).Icon]</texture>
 						<aspectratio>scale</aspectratio>
 						<fadetime>100</fadetime>
 					</control>
@@ -6018,7 +5533,7 @@
 						<top>470</top>
 						<width>158</width>
 						<height>235</height>
-						<texture colordiffuse="$INFO[Window(home).Property(HomeInfo.ImageColor)]" fallback="empty.png">$INFO[Container(15017).Listitem(7).Icon]</texture>
+						<texture fallback="empty.png">$INFO[Container(15017).Listitem(7).Icon]</texture>
 						<aspectratio>scale</aspectratio>
 						<fadetime>100</fadetime>
 					</control>
@@ -6027,7 +5542,7 @@
 						<top>470</top>
 						<width>158</width>
 						<height>235</height>
-						<texture colordiffuse="$INFO[Window(home).Property(HomeInfo.ImageColor)]" fallback="empty.png">$INFO[Container(15017).Listitem(8).Icon]</texture>
+						<texture fallback="empty.png">$INFO[Container(15017).Listitem(8).Icon]</texture>
 						<aspectratio>scale</aspectratio>
 						<fadetime>100</fadetime>
 					</control>
@@ -6098,23 +5613,6 @@
 						</control>
 					</itemlayout>
 					<focusedlayout width="820" height="460">
-						<control type="button">
-							<onfocus>Skin.SetString(widget.helper,videoinfo1)</onfocus>
-						</control>
-						<control type="image">
-							<left>0</left>
-							<width>50%</width>
-							<height>100%</height>
-							<aspectratio scalediffuse="false">scale</aspectratio>
-							<texture colordiffuse="$VAR[BorderHighlight]">$VAR[FocusedBorderImage]</texture>
-						</control>
-						<control type="image">
-							<left>50%</left>
-							<width>50%</width>
-							<height>100%</height>
-							<aspectratio scalediffuse="false">scale</aspectratio>
-							<texture colordiffuse="$VAR[BorderHighlight]" flipx="true">$VAR[FocusedBorderImage]</texture>
-						</control>
 						<control type="image">
 							<aspectratio>scale</aspectratio>
 							<texture background="true">$VAR[FanartImage]</texture>
