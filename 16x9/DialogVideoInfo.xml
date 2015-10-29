@@ -510,7 +510,6 @@
 					<label fallback="19055">$INFO[Window(Home).Property(SkinHelper.ListItemCast)]</label>
 					<autoscroll delay="8000" time="1200" repeat="1000"/>
 					<fadetime>500</fadetime>
-					<visible>!Control.HasFocus(90902)</visible>
 				</control>
 			</control>
 			<!-- Button grouplist -->
@@ -924,7 +923,6 @@
 					<height>34</height>
 					<aligny>center</aligny>
 					<align>left</align>
-					<height>34</height>
 					<font>Small</font>
 					<textcolor>white2</textcolor>
 					<label>$VAR[VideoInfoWidgetLabel]$INFO[Container(9500).ListItem(0).Label,: ]$INFO[Container(9500).ListItem(0).Label2, $LOCALIZE[20347] ]</label>
@@ -1767,7 +1765,6 @@
 				<height>34</height>
 				<aligny>center</aligny>
 				<align>left</align>
-				<height>34</height>
 				<font>Small</font>
 				<textcolor>white2</textcolor>
 				<label>$VAR[VideoInfoCastWidgetLabel]$INFO[Container(9501).ListItem(0).Label,: ,]$INFO[Container(9501).ListItem(0).Label2, $LOCALIZE[20347] ]</label>
@@ -1794,7 +1791,7 @@
 				<pagecontrol>60</pagecontrol>
 				<viewtype label="536">list</viewtype>
 				<scrolltime tween="quadratic">400</scrolltime>
-				<autoscroll time="3000">![Control.HasFocus(9501) |Control.HasFocus(95005)]</autoscroll>
+				<autoscroll time="3000">!Control.HasFocus(9501)</autoscroll>
 				<focusposition>0</focusposition>
 				<itemlayout height="210" width="140">
 					<control type="label">
@@ -1829,14 +1826,14 @@
 							<label></label>
 							<textcolor>white</textcolor>
 							<fadetime>300</fadetime>
-							<animation type="Conditional" reversible="true" condition="Control.HasFocus(95005) + Stringcompare(Skin.String(widgetvideoinfo),ShowCast)">
+							<animation type="Conditional" reversible="true" condition=" Stringcompare(Skin.String(widgetvideoinfo),ShowCast)">
 								<effect type="zoom" start="100" end="110" time="200" center="auto" tween="quadratic" easing="out"/>
 							</animation>
 						</control>
 						<control type="image">
 							<aspectratio scalediffuse="false">stretch</aspectratio>
 							<texture background="true">$VAR[PosterImage]</texture>
-							<animation type="Conditional" reversible="true" condition="Control.HasFocus(95005) + Stringcompare(Skin.String(widgetvideoinfo),ShowCast)">
+							<animation type="Conditional" reversible="true" condition="Stringcompare(Skin.String(widgetvideoinfo),ShowCast)">
 								<effect type="zoom" start="100" end="110" time="200" center="auto" tween="quadratic" easing="out"/>
 							</animation>
 						</control>

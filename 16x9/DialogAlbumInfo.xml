@@ -307,7 +307,6 @@
 					<textcolor>white2</textcolor>
 					<height>38</height>
 					<label>31832</label>
-					<visible>!Control.HasFocus(90902)</visible>
 					<visible>Container.Content(albums)</visible>
 				</control>
 				<control type="textbox">
@@ -320,7 +319,6 @@
 					<label fallback="19055">$INFO[Window(Home).Property(SkinHelper.Music.TrackList)]</label>
 					<autoscroll delay="8000" time="1200" repeat="1000"/>
 					<fadetime>500</fadetime>
-					<visible>!Control.HasFocus(90902)</visible>
 					<visible>Container.Content(albums)</visible>
 				</control>
 			</control>
@@ -567,7 +565,6 @@
 					<height>34</height>
 					<aligny>center</aligny>
 					<align>left</align>
-					<height>34</height>
 					<font>Small</font>
 					<textcolor>white2</textcolor>
 					<label>$VAR[MusicInfoWidgetLabel]$INFO[Container(9500).ListItem(0).Label,: ]</label>
@@ -1081,7 +1078,6 @@
 				<height>34</height>
 				<aligny>center</aligny>
 				<align>left</align>
-				<height>34</height>
 				<font>Small</font>
 				<textcolor>white2</textcolor>
 				<label>$VAR[MusicInfoCastWidgetLabel]$INFO[Container(9501).ListItem(0).Label,: ,]</label>
@@ -1460,7 +1456,6 @@
 						<angle>0</angle>
 						<align>left</align>
 						<scrollspeed>80</scrollspeed>
-						<pauseatend>0</pauseatend>
 						<scrollsuffix/>
 					</control>
 					<control type="label">
