@@ -27,7 +27,7 @@
 					<height>392</height>
 					<animation effect="fade" time="320" delay="200">Visible</animation>
 					<animation effect="fade" time="200">Hidden</animation>
-					<texture colordiffuse="$VAR[ColourHighlight]">common/selectbox.png</texture>
+					<texture colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
 					<animation effect="slide" end="0,380" time="300" tween="cubic" easing="inout" condition="Container(450).Row(1)">Conditional</animation>
 					<animation effect="slide" end="380,0" time="300" tween="cubic" easing="inout" condition="Container(450).Column(3)">Conditional</animation>
 					<animation effect="slide" end="380,0" time="300" tween="cubic" easing="inout" condition="Container(450).Column(3) | Container(450).Column(2)">Conditional</animation>
@@ -59,7 +59,6 @@
 				</itemlayout>
 				<focusedlayout height="380" width="380">
 					<control type="group">
-						<include>PanelFocusedItemZoom</include>
 						<control type="image">
 							<top>6</top>
 							<left>6</left>

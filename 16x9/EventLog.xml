@@ -5,36 +5,19 @@
 	<allowoverlay>no</allowoverlay>
 	<views>570</views>
 	<controls>
-		<include>Furniture_NowPlaying</include>
-		<include>Furniture_HeaderEmby</include>
-		<include>Furniture_EmbyClock</include>
 		<control type="group">
-			<include>Animation.FadeIn</include>
-			<include>Animation.FadeOut</include>
-			<include>GlobalOverlay</include>
+			<include>Animation.Common.Killer</include>
+			<include>Furniture_EmbyClock</include>
+			<include>Furniture_HeaderEmby</include>
+			<include>Furniture_NowPlaying</include>
 		</control>
 		<control type="group">
 			<visible>Control.IsVisible(570)</visible>
-			<include>VisibleFadeEffect</include>
-			<control type="image">
-				<left>75</left>
-				<top>60</top>
-				<width>1130</width>
-				<height>600</height>
-				<texture>ContentPanel.png</texture>
-			</control>
-			<control type="image">
-				<left>75</left>
-				<top>652</top>
-				<width>1130</width>
-				<height>64</height>
-				<texture>ContentPanelMirror.png</texture>
-			</control>
 			<control type="list" id="570">
-				<left>95</left>
-				<top>78</top>
-				<width>1080</width>
-				<height>561</height>
+				<left>NewSidePad</left>
+				<right>NewSidePad</right>
+				<top>TopPad</top>
+				<height>680</height>
 				<onleft>9000</onleft>
 				<onright>60</onright>
 				<onup>570</onup>
@@ -42,7 +25,7 @@
 				<viewtype label="535">list</viewtype>
 				<pagecontrol>60</pagecontrol>
 				<scrolltime>200</scrolltime>
-				<itemlayout height="85" width="1080">
+				<itemlayout height="85" width="1900">
 					<control type="image">
 						<left>8</left>
 						<top>2</top>
@@ -54,7 +37,7 @@
 					<control type="label">
 						<left>90</left>
 						<top>0</top>
-						<width>870</width>
+						<right>NewSidePad</right>
 						<height>30</height>
 						<font>SmallBold</font>
 						<textcolor>Dark1</textcolor>
@@ -65,7 +48,7 @@
 					<control type="textbox">
 						<left>90</left>
 						<top>32</top>
-						<width>870</width>
+						<right>NewSidePad</right>
 						<height>48</height>
 						<font>SmallBold</font>
 						<textcolor>Dark1</textcolor>
@@ -75,28 +58,44 @@
 					<control type="label">
 						<left>90</left>
 						<top>0</top>
-						<width>970</width>
+						<right>NewSidePad</right>
 						<height>30</height>
 						<font>Small</font>
-						<textcolor>grey2</textcolor>
+						<textcolor>Dark2</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label2]</label>
 					</control>
 				</itemlayout>
-				<focusedlayout height="85" width="1080">
+				<focusedlayout height="85" width="1900">
 					<control type="image">
-						<width>100%</width>
+						<left>0</left>
+						<width>25%</width>
 						<height>100%</height>
-						<texture colordiffuse="Dark1">common/box.png</texture>
-						<bordertexture colordiffuse="$VAR[ColourHighlight]">common/white.png</bordertexture>
-						<bordersize>6,0,0,0</bordersize>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<texture colordiffuse="$VAR[BorderHighlight]" flipy="true">$VAR[FocusedBorderImage]</texture>
 					</control>
 					<control type="image">
-						<left>6</left>
-						<width>1</width>
-						<texture colordiffuse="black">common/white.png</texture>
+						<left>25%</left>
+						<width>25%</width>
+						<height>100%</height>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<texture colordiffuse="$VAR[BorderHighlight]">$VAR[FocusedBorderImage]</texture>
+					</control>
+					<control type="image">
+						<left>50%</left>
+						<width>25%</width>
+						<height>100%</height>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<texture colordiffuse="$VAR[BorderHighlight]" flipy="true">$VAR[FocusedBorderImage]</texture>
+					</control>
+					<control type="image">
+						<left>75%</left>
+						<width>25%</width>
+						<height>100%</height>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<texture colordiffuse="$VAR[BorderHighlight]">$VAR[FocusedBorderImage]</texture>
 					</control>
 					<control type="image">
 						<left>8</left>
@@ -109,10 +108,10 @@
 					<control type="label">
 						<left>90</left>
 						<top>0</top>
-						<width>870</width>
+						<right>NewSidePad</right>
 						<height>30</height>
 						<font>SmallBold</font>
-						<textcolor>black</textcolor>
+						<textcolor>$VAR[ColourSelected]</textcolor>
 						<align>left</align>
 						<aligny>center</aligny>
 						<label>[B]$INFO[ListItem.Label][/B]</label>
@@ -120,20 +119,20 @@
 					<control type="textbox">
 						<left>90</left>
 						<top>32</top>
-						<width>870</width>
+						<right>NewSidePad</right>
 						<height>48</height>
 						<font>Small</font>
-						<textcolor>black</textcolor>
+						<textcolor>$VAR[ColourSelected]</textcolor>
 						<align>left</align>
 						<label>$INFO[ListItem.Property(Event.Description)]</label>
 					</control>
 					<control type="label">
 						<left>90</left>
 						<top>0</top>
-						<width>970</width>
+						<right>NewSidePad</right>
 						<height>30</height>
 						<font>Small</font>
-						<textcolor>black</textcolor>
+						<textcolor>$VAR[ColourSelected]</textcolor>
 						<align>right</align>
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label2]</label>
@@ -142,21 +141,13 @@
 			</control>
 			<include>Furniture_Scrollbar_Horizontal</include>
 		</control>
-		<control type="grouplist">
-			<left>65</left>
-			<top>5</top>
-			<width>1000</width>
-			<height>30</height>
-			<orientation>horizontal</orientation>
-			<align>left</align>
-			<itemgap>5</itemgap>
-			<control type="label">
-				<include>WindowTitleCommons</include>
-				<label>$LOCALIZE[14111]</label>
-			</control>
+		<control type="group">
+			<include>Animation.FadeIn</include>
+			<include>Animation.FadeOut</include>
+			<visible>ControlGroup(9000).HasFocus()</visible>
+			<include>GlobalOverlay</include>
 		</control>
 		<control type="group">
-			<left>-250</left>
 			<include>Def9000SideBladeLeft</include>
 			<control type="grouplist" id="9000">
 				<left>10</left>
@@ -170,43 +161,19 @@
 				<onright>570</onright>
 				<itemgap>0</itemgap>
 				<animation effect="slide" start="-440,0" end="0,0" time="400" tween="quadratic" easing="out">Visible</animation>
-				<control type="label" id="200">
-					<height>42</height>
-					<textoffsetx>5</textoffsetx>
-					<font>settingsheader</font>
-					<label>31006</label>
-					<textcolor>white</textcolor>
-					<aligny>center</aligny>
-				</control>
-				<control type="togglebutton" id="4">
-					<description>Sort asc</description>
-					<include>DefContextButton2</include>
-					<align>left</align>
-					<label>31051</label>
-					<altlabel>31050</altlabel>
-					<usealttexture>Container.SortDirection(Ascending)</usealttexture>
-				</control>
-				<control type="label" id="201">
-					<height>42</height>
-					<textoffsetx>5</textoffsetx>
-					<font>settingsheader</font>
-					<label>31026</label>
-					<textcolor>white</textcolor>
-					<aligny>center</aligny>
-				</control>
 				<control type="button" id="21">
 					<description>Level button</description>
-					<include>DefContextButton2</include>
+					<include>DefContextButtonBlade</include>
 					<align>left</align>
 				</control>
 				<control type="radiobutton" id="22">
 					<description>Only show current level</description>
 					<align>left</align>
-					<include>DefContextButton2</include>
+					<include>DefContextButtonBlade</include>
 				</control>
 				<control type="button" id="20">
 					<description>Clear button</description>
-					<include>DefContextButton2</include>
+					<include>DefContextButtonBlade</include>
 					<align>left</align>
 					<label>192</label>
 				</control>

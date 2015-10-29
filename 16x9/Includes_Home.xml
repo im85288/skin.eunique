@@ -37,7 +37,6 @@
 			<visible>!ControlGroup(303).HasFocus(101)</visible>
 			<visible>!Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)</visible>
 			<include condition="!Window.IsVisible(script-ExtendedInfo Script-VideoList.xml)">Animation.FurnitureFadeInOut</include>
-			<include condition="Window.IsVisible(script-ExtendedInfo Script-VideoList.xml)">FurnitureFadeInOutExtended</include>
 			<orientation>horizontal</orientation>
 			<itemgap>24</itemgap>
 			<control type="group" description="iconbox">
@@ -75,7 +74,6 @@
 			<visible>!ControlGroup(303).HasFocus(101)</visible>
 			<visible>!Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)</visible>
 			<include condition="!Window.IsVisible(script-ExtendedInfo Script-VideoList.xml)">Animation.FurnitureFadeInOut</include>
-			<include condition="Window.IsVisible(script-ExtendedInfo Script-VideoList.xml)">FurnitureFadeInOutExtended</include>
 			<orientation>horizontal</orientation>
 			<itemgap>24</itemgap>
 			<control type="group" description="iconbox">
@@ -720,7 +718,6 @@
 			<visible>!ControlGroup(303).HasFocus()</visible>
 			<visible>!Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)</visible>
 			<include condition="!Window.IsVisible(script-ExtendedInfo Script-VideoList.xml)">Animation.FurnitureFadeInOut</include>
-			<include condition="Window.IsVisible(script-ExtendedInfo Script-VideoList.xml)">FurnitureFadeInOutExtended</include>
 			<orientation>horizontal</orientation>
 			<itemgap>24</itemgap>
 			<control type="group" description="iconbox">
@@ -7467,7 +7464,7 @@
 									<include>WidgetPosterItemLayout</include>
 								</itemlayout>
 								<itemlayout width="577" height="325" condition="StringCompare(Skin.String(music2widget.aspectratio),LANDSCAPE)">
-									<include>WidgetSquareItemLayoutWidgetLandscapeItemLayout</include>
+									<include>WidgetLandscapeItemLayout</include>
 								</itemlayout>
 								<focusedlayout width="325" height="325" condition="!StringCompare(Skin.String(music2widget.aspectratio),POSTER) + !StringCompare(Skin.String(music2widget.aspectratio),LANDSCAPE)">
 									<include>WidgetSquareFocusedItemLayout</include>
