@@ -508,7 +508,7 @@
 			<height>130</height>
 			<texture colordiffuse="$INFO[Window(home).Property(HomeInfo.ImageColor)]" background="true">common/white.png</texture>
 			<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
-			<visible>Skin.HasSetting(home.blur) + [Skin.String(home.vertical,1) | Skin.String(home.vertical,2)]</visible>
+			<visible>Skin.HasSetting(home.blur) + [Skin.String(home.vertical,1) | Skin.String(home.vertical,2)] + Window.IsVisible(Home.xml)</visible>
 		</control>
 	</include>
 </includes>
