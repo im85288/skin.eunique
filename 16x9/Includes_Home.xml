@@ -645,7 +645,7 @@
                 <textcolor>$VAR[RottenTomatoesIconColour]</textcolor>
                 <height>34</height>
                 <width>auto</width>
-                <label>$VAR[RottenTomatoesIcon]</label>
+                <label>$VAR[RottenTomatoesIcon, ]</label>
                 <visible>!IsEmpty(Window(Home).Property(SkinHelper.RottenTomatoesRating))</visible>
                 <visible>!StringCompare(Window(Home).Property(SkinHelper.RottenTomatoesRating),n/a)</visible>
             </control>
@@ -666,7 +666,7 @@
                 <font>MediumSmallBold</font>
                 <textcolor>Dark1</textcolor>
                 <height>34</height>
-                <width>10</width>
+                <width>5</width>
                 <label>-</label>
                 <visible>!IsEmpty(Window(Home).Property(SkinHelper.RottenTomatoesAudienceRating))</visible>
                 <visible>!StringCompare(Window(Home).Property(SkinHelper.RottenTomatoesAudienceRating),n/a)</visible>
@@ -706,7 +706,7 @@
                 <visible>!IsEmpty(ListItem.Top250)</visible>
             </control>
             <control type="image">
-                <width>70</width>
+                <width>60</width>
                 <height>40</height>
                 <texture>$VAR[LanguageFlagsIcon]$INFO[Window(Home).Property(SkinHelper.ListItemAudioStreams.0.Language),,.png]</texture>
                 <aspectratio scalediffuse="false">keep</aspectratio>
