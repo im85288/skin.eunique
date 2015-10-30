@@ -1216,7 +1216,7 @@
                 <left>NewSidePad</left>
                 <right>NewSidePad</right>
                 <ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">3012</ondown>
-                <ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows">4012</ondown>
+                <ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">4012</ondown>
                 <ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),music)">5012</ondown>
                 <ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv)">7012</ondown>
                 <ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),Weather)">3444</ondown>
@@ -1244,7 +1244,7 @@
                 <left>NewSidePad</left>
                 <right>NewSidePad</right>
                 <onright condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">3012</onright>
-                <onright condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows">4012</onright>
+                <onright condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">4012</onright>
                 <onright condition="StringCompare(Container(300).ListItem.Property(defaultID),music)">5012</onright>
                 <onright condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv)">7012</onright>
                 <onright condition="StringCompare(Container(300).ListItem.Property(defaultID),Weather)">3444</onright>
@@ -2762,7 +2762,7 @@
                             <property name="LowTemp">$INFO[Window(weather).Property(Day10.LowTemp)]$INFO[System.TemperatureUnits]</property>
                             <property name="Fanart">$VAR[WeatherFanart]$INFO[Window(Weather).Property(Day10.FanartCode)]$VAR[DefWeatherFanart]</property>
                             <onclick>noop</onclick>
-                            <visible>!IsEmpty(Window(weather).Property(Day10.Title)) !IsEmpty(Window(weather).Property(Day11.Title))</visible>
+                            <visible>!IsEmpty(Window(weather).Property(Day10.Title)) + !IsEmpty(Window(weather).Property(Day11.Title))</visible>
                         </item>
                         <item>
                             <label>$INFO[Window(weather).Property(Day11.Title)]</label>
@@ -4957,13 +4957,14 @@
                         </control>
                     </itemlayout>
                     <focusedlayout width="820" height="460">
+                        <control type="button">
+                            <onfocus>SetProperty(SkinHelper.WidgetContainer,5012)</onfocus>
+                        </control>
                         <control type="image">
                             <aspectratio>scale</aspectratio>
                             <texture background="true">$VAR[FanartImage]</texture>
                             <animation type="Focus" reversible="false">
                                 <effect type="zoom" start="105" end="90" time="200" center="auto" tween="quadratic" easing="out"/>
-
-
                             </animation>
                             <visible>!Stringcompare(Skin.String(widget12),PopularArtists)</visible>
                             <visible>!Stringcompare(Skin.String(widget12),HypedArtists)</visible>
@@ -5505,6 +5506,7 @@
                             <animation effect="zoom" start="100" end="127" time="100" reversible="false" center="auto">Focus</animation>
                             <control type="button">
                                 <onfocus>Skin.SetString(widget.helper,music2)</onfocus>
+                                <onfocus>SetProperty(SkinHelper.WidgetContainer,5016)</onfocus>
                                 <!-- <onfocus>AlarmClock(musicScroll,Control.Move(5017,6),00:10,silent,loop)</onfocus> -->
                             </control>
                             <control type="image">
@@ -5627,6 +5629,7 @@
                     <focusedlayout width="235" height="235">
                         <control type="button">
                             <onfocus>Skin.SetString(widget.helper,music3)</onfocus>
+                            <onfocus>SetProperty(SkinHelper.WidgetContainer,5017)</onfocus>
                         </control>
                         <control type="button" id="50171">
                             <onfocus>CancelAlarm(musicscroll,true)</onfocus>
@@ -5719,6 +5722,7 @@
                     <focusedlayout width="158" height="235">
                         <control type="button">
                             <onfocus>Skin.SetString(widget.helper,music4)</onfocus>
+                            <onfocus>SetProperty(SkinHelper.WidgetContainer,15017)</onfocus>
                         </control>
                     </focusedlayout>
                     <content target="$VAR[DefWidget17Target]">$VAR[DefWidget17Content]</content>
@@ -6321,6 +6325,7 @@
                             <onfocus>CancelAlarm(livetvscroll,true)</onfocus>
                             <onunfocus>AlarmClock(livetvscroll,Control.Move(7016,1),00:10,silent,loop)</onunfocus>
                             <onfocus>Skin.SetString(widget.helper,videoinfo2)</onfocus>
+                            <onfocus>SetProperty(SkinHelper.WidgetContainer,7016)</onfocus>
                         </control>
                         <control type="image">
                             <width>100%</width>
@@ -8131,7 +8136,7 @@
                                             <property name="LowTemp">$INFO[Window(weather).Property(Day10.LowTemp)]$INFO[System.TemperatureUnits]</property>
                                             <property name="Fanart">$VAR[WeatherFanart]$INFO[Window(Weather).Property(Day10.FanartCode)]$VAR[DefWeatherFanart]</property>
                                             <onclick>noop</onclick>
-                                            <visible>!IsEmpty(Window(weather).Property(Day10.Title)) !IsEmpty(Window(weather).Property(Day11.Title))</visible>
+                                            <visible>!IsEmpty(Window(weather).Property(Day10.Title)) + !IsEmpty(Window(weather).Property(Day11.Title))</visible>
                                         </item>
                                         <item>
                                             <label>$INFO[Window(weather).Property(Day11.Title)]</label>
@@ -8151,7 +8156,7 @@
                                             <property name="LowTemp">$INFO[Window(weather).Property(Day12.LowTemp)]$INFO[System.TemperatureUnits]</property>
                                             <property name="Fanart">$VAR[WeatherFanart]$INFO[Window(Weather).Property(Day12.FanartCode)]$VAR[DefWeatherFanart]</property>
                                             <onclick>noop</onclick>
-                                            <visible>!IsEmpty(Window(weather).Property(Day12.Title)) !IsEmpty(Window(weather).Property(Day13.Title))</visible>
+                                            <visible>!IsEmpty(Window(weather).Property(Day12.Title)) + !IsEmpty(Window(weather).Property(Day13.Title))</visible>
                                         </item>
                                         <item>
                                             <label>$INFO[Window(weather).Property(Day13.Title)]</label>
