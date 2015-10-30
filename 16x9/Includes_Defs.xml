@@ -134,51 +134,51 @@
 		<value>video</value>
 	</variable>
 	<variable name="DefWidget6Content">
-		<value condition="!IsEmpty(Skin.String(movies1widget.path))">$INFO[Skin.String(movies1widget.path)]</value>
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.movies1))">$INFO[Container(300).ListItem.Property(widgetPath.movies1)]</value>
 		<value>plugin://service.library.data.provider?type=recentmovies&amp;reload=$INFO[Window.Property(recentmovies)]</value>
 	</variable>
 	<variable name="DefWidget6Target">
-		<value condition="!IsEmpty(Skin.String(movies1widget.target))">$INFO[Skin.String(movies1widget.target)]</value>
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetTarget.movies1))">$INFO[Container(300).ListItem.Property(widgetTarget.movies1)]</value>
 		<value>video</value>
 	</variable>
 	<variable name="DefWidget7Content">
-		<value condition="!IsEmpty(Skin.String(movies2widget.path))">$INFO[Skin.String(movies2widget.path)]</value>
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.movies2))">$INFO[Container(300).ListItem.Property(widgetPath.movies2)]</value>
 		<value>plugin://script.skin.helper.service/?action=recommendedmovies&amp;limit=27&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
 	</variable>
 	<variable name="DefWidget7Target">
-		<value condition="!IsEmpty(Skin.String(movies2widget.target))">$INFO[Skin.String(movies2widget.target)]</value>
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetTarget.movies2))">$INFO[Container(300).ListItem.Property(widgetTarget.movies2)]</value>
 		<value>video</value>
 	</variable>
 	<variable name="DefWidget8Content">
-		<value condition="!IsEmpty(Skin.String(movies3widget.path))">$INFO[Skin.String(movies3widget.path)]</value>
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.movies3))">$INFO[Container(300).ListItem.Property(widgetPath.movies3)]</value>
 		<value>plugin://service.library.data.provider?type=randommovies&amp;reload=$INFO[Window.Property(randommovies)]</value>
 	</variable>
 	<variable name="DefWidget8Target">
-		<value condition="!IsEmpty(Skin.String(movies3widget.target))">$INFO[Skin.String(movies3widget.target)]</value>
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetTarget.movies3))">$INFO[Container(300).ListItem.Property(widgetTarget.movies3)]</value>
 		<value>video</value>
 	</variable>
 	<variable name="DefWidget9Content">
-		<value condition="!IsEmpty(Skin.String(tvshows1widget.path))">$INFO[Skin.String(tvshows1widget.path)]</value>
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.tvshows1))">$INFO[Container(300).ListItem.Property(widgetPath.tvshows1)]</value>
 		<value>plugin://service.library.data.provider?type=recentepisodes&amp;reload=$INFO[Window.Property(recentepisodes)]</value>
 	</variable>
 	<variable name="DefWidget9Target">
-		<value condition="!IsEmpty(Skin.String(tvshows1widget.target))">$INFO[Skin.String(tvshows1widget.target)]</value>
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetTarget.tvshows1))">$INFO[Container(300).ListItem.Property(widgetTarget.tvshows1)]</value>
 		<value>video</value>
 	</variable>
 	<variable name="DefWidget10Content">
-		<value condition="!IsEmpty(Skin.String(tvshows2widget.path))">$INFO[Skin.String(tvshows2widget.path)]</value>
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.tvshows2))">$INFO[Container(300).ListItem.Property(widgetPath.tvshows2)]</value>
 		<value>plugin://service.library.data.provider?type=recommendedepisodes&amp;reload=$INFO[Window.Property(recommendedepisodes)]</value>
 	</variable>
 	<variable name="DefWidget10Target">
-		<value condition="!IsEmpty(Skin.String(tvshows2widget.target))">$INFO[Skin.String(tvshows2widget.target)]</value>
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetTarget.tvshows2))">$INFO[Container(300).ListItem.Property(widgetTarget.tvshows2)]</value>
 		<value>video</value>
 	</variable>
 	<variable name="DefWidget11Content">
-		<value condition="!IsEmpty(Skin.String(tvshows3widget.path))">$INFO[Skin.String(tvshows3widget.path)]</value>
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.tvshows3))">$INFO[Container(300).ListItem.Property(widgetPath.tvshows3)]</value>
 		<value>plugin://service.library.data.provider?type=randomepisodes&amp;reload=$INFO[Window.Property(randomepisodes)]</value>
 	</variable>
 	<variable name="DefWidget11Target">
-		<value condition="!IsEmpty(Skin.String(tvshows3widget.target))">$INFO[Skin.String(tvshows3widget.target)]</value>
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetTarget.tvshows3))">$INFO[Container(300).ListItem.Property(widgetTarget.tvshows3)]</value>
 		<value>video</value>
 	</variable>
 	<variable name="DefWidget12Content">
@@ -214,11 +214,11 @@
 		<value>video</value>
 	</variable>
 	<variable name="DefWidget16Content">
-		<value condition="!IsEmpty(Skin.String(movies4widget.path))">$INFO[Skin.String(movies4widget.path)]</value>
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.movies4))">$INFO[Container(300).ListItem.Property(widgetPath.movies4)]</value>
 		<value>plugin://script.skin.helper.service/?action=similarmovies&amp;limit=27&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
 	</variable>
 	<variable name="DefWidget16Target">
-		<value condition="!IsEmpty(Skin.String(movies4widget.target))">$INFO[Skin.String(movies4widget.target)]</value>
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetTarget.movies4))">$INFO[Container(300).ListItem.Property(widgetTarget.movies4)]</value>
 		<value>video</value>
 	</variable>
 	<variable name="DefWidget17Content">
@@ -230,43 +230,43 @@
 		<value>video</value>
 	</variable>
 	<variable name="DefWidget18Content">
-		<value condition="!IsEmpty(Skin.String(tvshows4widget.path))">$INFO[Skin.String(tvshows4widget.path)]</value>
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.tvshows4))">$INFO[SContainer(300).ListItem.Property(widgetPath.tvshows4)]</value>
 		<value>plugin://script.extendedinfo?info=populartvshows</value>
 	</variable>
 	<variable name="DefWidget18Target">
-		<value condition="!IsEmpty(Skin.String(tvshows4widget.target))">$INFO[Skin.String(tvshows4widget.target)]</value>
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetTarget.tvshows4))">$INFO[Container(300).ListItem.Property(widgetTarget.tvshows4)]</value>
 		<value>video</value>
 	</variable>
 	<variable name="DefWidget19Content">
-		<value condition="!IsEmpty(Skin.String(movies5widget.path))">$INFO[Skin.String(movies5widget.path)]</value>
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.movies5))">$INFO[Container(300).ListItem.Property(widgetPath.movies5)]</value>
 		<value>plugin://script.skin.helper.service/?action=similarmovies&amp;limit=5&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
 	</variable>
 	<variable name="DefWidget19Target">
-		<value condition="!IsEmpty(Skin.String(movies5widget.target))">$INFO[Skin.String(movies5widget.target)]</value>
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetTarget.movies5))">$INFO[Container(300).ListItem.Property(widgetTarget.movies5)]</value>
 		<value>video</value>
 	</variable>
 	<variable name="DefWidget20Content">
-		<value condition="!IsEmpty(Skin.String(tvshows5widget.path))">$INFO[Skin.String(tvshows5widget.path)]</value>
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.tvshows5))">$INFO[Container(300).ListItem.Property(widgetPath.tvshows5)]</value>
 		<value>plugin://script.skin.helper.service/?action=similarshows&amp;limit=5&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
 	</variable>
 	<variable name="DefWidget20Target">
-		<value condition="!IsEmpty(Skin.String(tvshows5widget.target))">$INFO[Skin.String(tvshows5widget.target)]</value>
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetTarget.tvshows5))">$INFO[Container(300).ListItem.Property(widgetTarget.tvshows5)]</value>
 		<value>video</value>
 	</variable>
 	<variable name="DefWidget21Content">
-		<value condition="!IsEmpty(Skin.String(movies6widget.path))">$INFO[Skin.String(movies6widget.path)]</value>
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.movies6))">$INFO[Container(300).ListItem.Property(widgetPath.movies6)]</value>
 		<value>plugin://script.skin.helper.service/?action=moviesforgenre&amp;limit=5&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
 	</variable>
 	<variable name="DefWidget21Target">
-		<value condition="!IsEmpty(Skin.String(movies6widget.target))">$INFO[Skin.String(movies6widget.target)]</value>
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetTarget.movies6))">$INFO[Container(300).ListItem.Property(widgetTarget.movies6)]</value>
 		<value>video</value>
 	</variable>
 	<variable name="DefWidget22Content">
-		<value condition="!IsEmpty(Skin.String(tvshows6widget.path))">$INFO[Skin.String(tvshows6widget.path)]</value>
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.tvshows6))">$INFO[Container(300).ListItem.Property(widgetPath.tvshows6)]</value>
 		<value>plugin://script.skin.helper.service/?action=showsforgenre&amp;limit=5&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
 	</variable>
 	<variable name="DefWidget22Target">
-		<value condition="!IsEmpty(Skin.String(tvshows6widget.target))">$INFO[Skin.String(tvshows6widget.target)]</value>
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetTarget.tvshows6))">$INFO[Container(300).ListItem.Property(widgetTarget.tvshows6)]</value>
 		<value>video</value>
 	</variable>
 	<variable name="DefWidgetContentVideoInfo">

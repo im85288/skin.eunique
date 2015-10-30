@@ -69,38 +69,6 @@
     <widgetdefaultnode defaultID="livetv" group="mainmenu" label="31737" type="pvr" path="plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=Engadget" target="video">engadget</widgetdefaultnode>
 
     <!-- secondary widgets -->
-    <propertydefault defaultID="movies" property="widget.1">recommendedmovies</propertydefault>
-    <propertydefault defaultID="movies" property="widgetTarget.1">video</propertydefault>
-    <propertydefault defaultID="movies" property="widgetType.1">movies</propertydefault>
-    <propertydefault defaultID="movies" property="widgetPath.1">plugin://script.skin.helper.service/?action=recommendedmovies&amp;limit=27&amp;reload=$INFO[Window(Home).Property(widgetreload)]</propertydefault>
-    <propertydefault defaultID="movies" property="widgetName.1">31794</propertydefault>
-    <propertydefault defaultID="movies" property="widget.2">randommovies</propertydefault>
-    <propertydefault defaultID="movies" property="widgetTarget.2">video</propertydefault>
-    <propertydefault defaultID="movies" property="widgetType.2">movies</propertydefault>
-    <propertydefault defaultID="movies" property="widgetPath.2">plugin://service.library.data.provider?type=randommovies&amp;reload=$INFO[Window.Property(randommovies)]</propertydefault>
-    <propertydefault defaultID="movies" property="widgetName.2">31954</propertydefault>
-    <propertydefault defaultID="movies" property="widget.3">similarmovies</propertydefault>
-    <propertydefault defaultID="movies" property="widgetTarget.3">video</propertydefault>
-    <propertydefault defaultID="movies" property="widgetType.3">movies</propertydefault>
-    <propertydefault defaultID="movies" property="widgetPath.3">plugin://script.skin.helper.service/?action=similarmovies&amp;limit=27&amp;reload=$INFO[Window(Home).Property(widgetreload)]</propertydefault>
-    <propertydefault defaultID="movies" property="widgetName.3">$INFO[Container(10017).ListItem.Property(similartitle),Because you watched ","]</propertydefault>
-
-    <propertydefault defaultID="tvshows" property="widget.1">recommendedepisodes</propertydefault>
-    <propertydefault defaultID="tvshows" property="widgetTarget.1">video</propertydefault>
-    <propertydefault defaultID="tvshows" property="widgetType.1">episodes</propertydefault>
-    <propertydefault defaultID="tvshows" property="widgetPath.1">plugin://service.library.data.provider?type=recommendedepisodes&amp;reload=$INFO[Window.Property(recommendedepisodes)]</propertydefault>
-    <propertydefault defaultID="tvshows" property="widgetName.1">31793</propertydefault>
-    <propertydefault defaultID="tvshows" property="widget.2">randomepisodes</propertydefault>
-    <propertydefault defaultID="tvshows" property="widgetTarget.2">video</propertydefault>
-    <propertydefault defaultID="tvshows" property="widgetType.2">episodes</propertydefault>
-    <propertydefault defaultID="tvshows" property="widgetPath.2">plugin://service.library.data.provider?type=randomepisodes&amp;reload=$INFO[Window.Property(randomepisodes)]</propertydefault>
-    <propertydefault defaultID="tvshows" property="widgetName.2">31126</propertydefault>
-    <propertydefault defaultID="tvshows" property="widget.3">populartvshows</propertydefault>
-    <propertydefault defaultID="tvshows" property="widgetTarget.3">video</propertydefault>
-    <propertydefault defaultID="tvshows" property="widgetType.3">episodes</propertydefault>
-    <propertydefault defaultID="tvshows" property="widgetPath.3">plugin://script.extendedinfo?info=populartvshows</propertydefault>
-    <propertydefault defaultID="tvshows" property="widgetName.3">31226</propertydefault>
-
     <propertydefault defaultID="music" property="widget.1">recentalbums</propertydefault>
     <propertydefault defaultID="music" property="widgetTarget.1">music</propertydefault>
     <propertydefault defaultID="music" property="widgetType.1">songs</propertydefault>
