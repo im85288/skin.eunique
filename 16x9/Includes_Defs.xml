@@ -2859,8 +2859,11 @@
 					<label>q</label>
 					<font>$PARAM[font]</font>
 					<textcolor>black</textcolor>
-					<animation effect="fade" start="100" end="0" time="500" tween="quadratic">WindowClose</animation>
 				</control>
+				<animation type="Conditional" reversible="true" condition="true" loop="true">
+					<effect type="slide" end="0,-25" tween="sine" delay="0" easing="out" time="1000" />
+					<effect type="slide" start="0,0" end="0,25" delay="1100" tween="bounce" easing="out" time="1100" />
+				</animation>
 			</control>
 			<control type="group">
 				<top>$PARAM[top]</top>
