@@ -2335,7 +2335,7 @@
                     <visible>StringCompare(Container(300).ListItem.Property(defaultID),Weather)</visible>
                     <visible>Weather.IsFetched</visible>
                     <visible>!Control.HasFocus(3439) + !Control.HasFocus(3442) + !Control.HasFocus(3443)</visible>
-                    <top>330</top>
+                    <top>320</top>
                     <left>70</left>
                     <width>1178</width>
                     <height>705</height>
@@ -2494,8 +2494,8 @@
                     <include>Animation.FadeIn</include>
                     <left>1250</left>
                     <top>330</top>
-                    <right>NewSidePad</right>
-                    <height>705</height>
+                    <width>660</width>
+                    <height>685</height>
                     <onup>300</onup>
                     <ondown>300</ondown>
                     <onleft>300</onleft>
@@ -2504,20 +2504,12 @@
                     <orientation>vertical</orientation>
                     <scrolltime tween="quadratic">500</scrolltime>
                     <autoscroll time="7000">!Control.HasFocus(3444)</autoscroll>
-                    <itemlayout height="352.5" width="365">
+                    <itemlayout height="342.5" width="330">
                         <control type="group">
                             <control type="image">
-                                <left>10</left>
-                                <top>10</top>
-                                <right>10</right>
-                                <bottom>10</bottom>
                                 <texture colordiffuse="Panel">common/box.png</texture>
                             </control>
                             <control type="multiimage" description="Fanart">
-                                <left>10</left>
-                                <top>10</top>
-                                <right>10</right>
-                                <bottom>10</bottom>
                                 <fadetime>600</fadetime>
                                 <timeperimage>12000</timeperimage>
                                 <randomize>true</randomize>
@@ -2564,33 +2556,21 @@
                             </control>
                         </control>
                     </itemlayout>
-                    <focusedlayout height="352.5" width="365">
+                    <focusedlayout height="342.5" width="330">
                         <control type="button" id="50171">
                             <onfocus>CancelAlarm(weatherscroll,true)</onfocus>
                             <onunfocus>AlarmClock(weatherscroll,Control.Move(3444,1),00:10,silent,loop)</onunfocus>
                         </control>
                         <control type="group">
                             <control type="image">
-                                <left>10</left>
-                                <top>10</top>
-                                <right>10</right>
-                                <bottom>10</bottom>
                                 <texture colordiffuse="panel">common/box.png</texture>
                                 <visible>!Control.HasFocus(3444)</visible>
                             </control>
                             <control type="image">
-                                <left>10</left>
-                                <top>10</top>
-                                <right>10</right>
-                                <bottom>10</bottom>
                                 <texture colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
                                 <visible>Control.HasFocus(3444)</visible>
                             </control>
                             <control type="multiimage" description="Fanart">
-                                <left>10</left>
-                                <top>10</top>
-                                <right>10</right>
-                                <bottom>10</bottom>
                                 <fadetime>600</fadetime>
                                 <timeperimage>12000</timeperimage>
                                 <randomize>true</randomize>
