@@ -2967,7 +2967,7 @@
                     <onleft>3013</onleft>
                     <onright>3016</onright>
                     <onback>300</onback>
-                    <oninfo>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(301).ListItem.Label])</oninfo>
+                    <oninfo>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(3012).ListItem.Label])</oninfo>
                     <preloaditems>2</preloaditems>
                     <orientation>vertical</orientation>
                     <autoscroll time="10000">!Control.HasFocus(3012)</autoscroll>
@@ -2981,6 +2981,9 @@
                         </control>
                     </itemlayout>
                     <focusedlayout width="820" height="460">
+                        <control type="button">
+                            <onfocus>SetProperty(SkinHelper.WidgetContainer,3012)</onfocus>
+                        </control>
                         <control type="image">
                             <aspectratio>scale</aspectratio>
                             <texture background="true">$VAR[LandscapeImage]</texture>
@@ -3355,7 +3358,7 @@
                     <onleft>3012</onleft>
                     <onright>3017</onright>
                     <onback>300</onback>
-                    <oninfo>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(301).ListItem.Label])</oninfo>
+                    <oninfo>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(3016).ListItem.Label])</oninfo>
                     <preloaditems>2</preloaditems>
                     <orientation>vertical</orientation>
                     <autoscroll time="3000">!Control.HasFocus(3016)</autoscroll>
@@ -3384,7 +3387,7 @@
                         <control type="group">
                             <animation effect="zoom" start="100" end="127" time="100" reversible="false" center="auto">Focus</animation>
                             <control type="button">
-                                <onfocus>Skin.SetString(widget.helper,movies2)</onfocus>
+                                <onfocus>SetProperty(SkinHelper.WidgetContainer,3016)</onfocus>
                             </control>
                             <control type="image">
                                 <aspectratio>scale</aspectratio>
@@ -3441,7 +3444,7 @@
                     <onleft condition="Control.IsVisible(3016)">3016</onleft>
                     <onleft condition="!Control.IsVisible(3016)">3012</onleft>
                     <onback>300</onback>
-                    <oninfo>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(301).ListItem.Label])</oninfo>
+                    <oninfo>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(3017).ListItem.Label])</oninfo>
                     <preloaditems>2</preloaditems>
                     <scrolltime tween="quadratic">100</scrolltime>
                     <include>Animation.FadeIn</include>
@@ -3465,7 +3468,7 @@
                     </itemlayout>
                     <focusedlayout width="158" height="235">
                         <control type="button">
-                            <onfocus>Skin.SetString(widget.helper,movies3)</onfocus>
+                            <onfocus>SetProperty(SkinHelper.WidgetContainer,3017)</onfocus>
                         </control>
                         <control type="group">
                             <animation effect="zoom" start="100" end="127" time="100" reversible="false" center="auto">Focus</animation>
@@ -3533,7 +3536,7 @@
                     <itemlayout width="158" height="235"/>
                     <focusedlayout width="158" height="235">
                         <control type="button">
-                            <onfocus>Skin.SetString(widget.helper,movies4)</onfocus>
+                            <onfocus>SetProperty(SkinHelper.WidgetContainer,10017)</onfocus>
                         </control>
                     </focusedlayout>
                     <content target="$VAR[DefWidget16Target]">$VAR[DefWidget16Content]</content>
@@ -3684,15 +3687,12 @@
                         <focusedlayout width="473" height="705">
                             <control type="group">
                                 <animation effect="zoom" start="105" end="90" time="200" tween="quadratic" reversible="false" center="auto">Focus</animation>
-                                <control type="image">
-                                    <aspectratio>stretch</aspectratio>
-                                    <texture background="true">$VAR[PosterImage]</texture>
-                                    <visible>Control.HasFocus(18002)</visible>
+                                <control type="button">
+                                    <onfocus>SetProperty(SkinHelper.WidgetContainer,18002)</onfocus>
                                 </control>
                                 <control type="image">
                                     <aspectratio>stretch</aspectratio>
                                     <texture background="true">$VAR[PosterImage]</texture>
-                                    <visible>!Control.HasFocus(18002)</visible>
                                 </control>
                                 <control type="progress">
                                     <bottom>0</bottom>
@@ -3742,15 +3742,12 @@
                         <focusedlayout width="235" height="352.5">
                             <control type="group">
                                 <animation effect="zoom" start="105" end="90" time="200" tween="quadratic" reversible="false" center="auto">Focus</animation>
-                                <control type="image">
-                                    <aspectratio>stretch</aspectratio>
-                                    <texture background="true">$VAR[PosterImage]</texture>
-                                    <visible>Control.HasFocus(18003)</visible>
+                                <control type="button">
+                                    <onfocus>SetProperty(SkinHelper.WidgetContainer,18003)</onfocus>
                                 </control>
                                 <control type="image">
                                     <aspectratio>stretch</aspectratio>
                                     <texture background="true">$VAR[PosterImage]</texture>
-                                    <visible>!Control.HasFocus(18003)</visible>
                                 </control>
                                 <control type="progress">
                                     <bottom>0</bottom>
@@ -3826,6 +3823,9 @@
                         <focusedlayout width="473" height="705">
                             <control type="group">
                                 <animation effect="zoom" start="105" end="90" time="200" tween="quadratic" reversible="false" center="auto">Focus</animation>
+                                <control type="button">
+                                    <onfocus>SetProperty(SkinHelper.WidgetContainer,19002)</onfocus>
+                                </control>
                                 <control type="image">
                                     <aspectratio>stretch</aspectratio>
                                     <texture background="true">$VAR[PosterImage]</texture>
@@ -3878,6 +3878,9 @@
                         <focusedlayout width="235" height="352.5">
                             <control type="group">
                                 <animation effect="zoom" start="105" end="90" time="200" tween="quadratic" reversible="false" center="auto">Focus</animation>
+                                <control type="button">
+                                    <onfocus>SetProperty(SkinHelper.WidgetContainer,19003)</onfocus>
+                                </control>
                                 <control type="image">
                                     <aspectratio>stretch</aspectratio>
                                     <texture background="true">$VAR[PosterImage]</texture>
@@ -3944,13 +3947,14 @@
                         </control>
                     </itemlayout>
                     <focusedlayout width="820" height="460">
+                        <control type="button">
+                            <onfocus>SetProperty(SkinHelper.WidgetContainer,4012)</onfocus>
+                        </control>
                         <control type="image">
                             <aspectratio>scale</aspectratio>
                             <texture background="true">$VAR[LandscapeImage]</texture>
                             <animation type="Focus" reversible="false">
                                 <effect type="zoom" start="105" end="90" time="200" center="auto" tween="quadratic" easing="out"/>
-
-
                             </animation>
                         </control>
                     </focusedlayout>
@@ -4406,7 +4410,7 @@
                         <control type="group">
                             <animation effect="zoom" start="100" end="127" time="100" reversible="false" center="auto">Focus</animation>
                             <control type="button">
-                                <onfocus>Skin.SetString(widget.helper,tv2)</onfocus>
+                                <onfocus>SetProperty(SkinHelper.WidgetContainer,4016)</onfocus>
                             </control>
                             <control type="image">
                                 <aspectratio>stretch</aspectratio>
@@ -4476,7 +4480,7 @@
                     </itemlayout>
                     <focusedlayout width="158" height="235">
                         <control type="button">
-                            <onfocus>Skin.SetString(widget.helper,tv3)</onfocus>
+                            <onfocus>SetProperty(SkinHelper.WidgetContainer,4017)</onfocus>
                         </control>
                         <control type="group">
                             <animation effect="zoom" start="100" end="127" time="100" reversible="false" center="auto">Focus</animation>
@@ -4531,7 +4535,7 @@
                     <itemlayout width="158" height="235"/>
                     <focusedlayout width="158" height="235">
                         <control type="button">
-                            <onfocus>Skin.SetString(widget.helper,tv4)</onfocus>
+                            <onfocus>SetProperty(SkinHelper.WidgetContainer,14017)</onfocus>
                         </control>
                     </focusedlayout>
                     <content target="$VAR[DefWidget18Target]">$VAR[DefWidget18Content]</content>
@@ -4667,6 +4671,7 @@
                         <onback>300</onback>
                         <texturefocus>-</texturefocus>
                         <texturenofocus>-</texturenofocus>
+                        <onfocus>SetProperty(SkinHelper.WidgetContainer,18002)</onfocus>
                         <onup>setfocus(18003,0)</onup>
                         <ondown>setfocus(18003,3)</ondown>
                         <oninfo>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(18001).ListItem(4).Label])</oninfo>
@@ -4712,6 +4717,9 @@
                         <focusedlayout width="235" height="352.5">
                             <control type="group">
                                 <animation effect="zoom" start="105" end="90" time="200" tween="quadratic" reversible="false" center="auto">Focus</animation>
+                                <control type="button">
+                                    <onfocus>SetProperty(SkinHelper.WidgetContainer,18003)</onfocus>
+                                </control>
                                 <control type="image">
                                     <aspectratio>stretch</aspectratio>
                                     <texture background="true">$VAR[PosterImage]</texture>
@@ -4780,6 +4788,7 @@
                         <onback>300</onback>
                         <texturefocus>-</texturefocus>
                         <texturenofocus>-</texturenofocus>
+                        <onfocus>SetProperty(SkinHelper.WidgetContainer,19002)</onfocus>
                         <onup>setfocus(19003,0)</onup>
                         <ondown>setfocus(19003,3)</ondown>
                         <oninfo>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(19001).ListItem(4).Label])</oninfo>
@@ -4825,6 +4834,9 @@
                         <focusedlayout width="235" height="352.5">
                             <control type="group">
                                 <animation effect="zoom" start="105" end="90" time="200" tween="quadratic" reversible="false" center="auto">Focus</animation>
+                                <control type="button">
+                                    <onfocus>SetProperty(SkinHelper.WidgetContainer,19003)</onfocus>
+                                </control>
                                 <control type="image">
                                     <aspectratio>stretch</aspectratio>
                                     <texture background="true">$VAR[PosterImage]</texture>

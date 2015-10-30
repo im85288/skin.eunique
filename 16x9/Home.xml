@@ -15,6 +15,7 @@
 	<onload condition="!Skin.HasSetting(startup.init) + System.HasAddon(plugin.video.plexbmc)">Skin.SetBool(SmartShortcuts.plex)</onload>
 	<onload condition="!Skin.HasSetting(startup.init) + System.HasAddon(plugin.video.netflix)">Skin.SetBool(SmartShortcuts.netflix)</onload>
 	<onload condition="!Skin.HasSetting(startup.init)">Skin.SetBool(SkinHelper.EnableExtraFanart)</onload>
+	<onload condition="!Skin.HasSetting(startup.init)">Skin.SetBool(home.blur)</onload>
 	<onload>Skin.SetBool(SkinHelper.EnablePVRThumbs)</onload>
 	<onload condition="IsEmpty(Skin.String(RatingCountry))">Skin.SetString(RatingCountry,UK)</onload>
 	<onload condition="!Skin.HasSetting(startup.init)">Skin.SetBool(startup.init)</onload>
