@@ -12,7 +12,7 @@
 				<effect type="zoom" end="1000,7" time="200" center="auto" tween="quadratic" easing="out" />
 			</animation>
 			<control type="group">
-				<!--<control type="image"><height>740</height><top>TopPad</top><left>10</left><width>1325</width><fadetime>200</fadetime><aspectratio align="right" aligny="center" scalediffuse="false">scale</aspectratio><texture background="true" diffuse="diffuse/extraposter-ref.png">$VAR[LandscapeImage]</texture></control>--><control type="image">
+				<control type="image">
 					<height>740</height>
 					<top>TopPad</top>
 					<left>10</left>
@@ -32,10 +32,10 @@
 				</control>
 				<control type="list" id="57">
 					<visible>Container.Content(musicvideos) | Container.Content(artists) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(actors) | Container.Content(sets) | Container.Content(seasons)</visible>
-					<top>156</top>
-					<height>760</height>
-					<right>-220</right>
-					<width>1160</width>
+					<top>150</top>
+					<height>740</height>
+					<left>970</left>
+					<width>940</width>
 					<onleft condition="!Skin.HasSetting(global.kioskmode)">9000</onleft>
 					<onright condition="!Skin.HasSetting(global.kioskmode) + !Control.IsVisible(60)">9000</onright>
 					<onright>60</onright>
@@ -46,10 +46,10 @@
 					<pagecontrol>60</pagecontrol>
 					<viewtype label="31147">list</viewtype>
 					<scrolltime tween="quadratic">400</scrolltime>
-					<itemlayout width="920" height="66">
+					<itemlayout width="940" height="67.27272727272727">
 						<include>50itemlayout</include>
 					</itemlayout>
-					<focusedlayout width="920" height="128" condition="[Skin.HasSetting(movies.57list.showplot) + Container.Content(movies)] | [Skin.HasSetting(tvshows.57list.showplot) + Container.Content(tvshows)] | [Skin.HasSetting(seasons.57list.showplot) + Container.Content(seasons)] | [Skin.HasSetting(episodes.57list.showplot) + Container.Content(episodes)] | [Skin.HasSetting(artists.57list.showplot) + Container.Content(artists)] | [Skin.HasSetting(albums.57list.showplot) + Container.Content(albums)] | [Skin.HasSetting(songs.57list.showplot) + Container.Content(songs)] | [Skin.HasSetting(general.57list.showplot) + !Container.Content(songs) + !Container.Content(albums) + !Container.Content(artists) + !Container.Content(episodes) + !Container.Content(seasons) + !Container.Content(tvshows) + !Container.Content(movies)]">
+					<focusedlayout width="940" height="134.5454545454545" condition="[Skin.HasSetting(movies.57list.showplot) + Container.Content(movies)] | [Skin.HasSetting(tvshows.57list.showplot) + Container.Content(tvshows)] | [Skin.HasSetting(seasons.57list.showplot) + Container.Content(seasons)] | [Skin.HasSetting(episodes.57list.showplot) + Container.Content(episodes)] | [Skin.HasSetting(artists.57list.showplot) + Container.Content(artists)] | [Skin.HasSetting(albums.57list.showplot) + Container.Content(albums)] | [Skin.HasSetting(songs.57list.showplot) + Container.Content(songs)] | [Skin.HasSetting(general.57list.showplot) + !Container.Content(songs) + !Container.Content(albums) + !Container.Content(artists) + !Container.Content(episodes) + !Container.Content(seasons) + !Container.Content(tvshows) + !Container.Content(movies)]">
 						<control type="button">
 							<texturefocus>-</texturefocus>
 							<texturenofocus>-</texturenofocus>
@@ -71,7 +71,7 @@
 							</control>
 						</control>
 					</focusedlayout>
-					<focusedlayout width="920" height="66" condition="!IsEmpty(ListItem.Property(Addon.Name)) | [!Skin.HasSetting(movies.57list.showplot) + Container.Content(movies)] | [!Skin.HasSetting(tvshows.57list.showplot) + Container.Content(tvshows)] | [!Skin.HasSetting(seasons.57list.showplot) + Container.Content(seasons)] | [!Skin.HasSetting(episodes.57list.showplot) + Container.Content(episodes)] | [!Skin.HasSetting(artists.57list.showplot) + Container.Content(artists)] | [!Skin.HasSetting(albums.57list.showplot) + Container.Content(albums)] | [!Skin.HasSetting(songs.57list.showplot) + Container.Content(songs)] | [!Skin.HasSetting(general.57list.showplot) + !Container.Content(songs) + !Container.Content(albums) + !Container.Content(artists) + !Container.Content(episodes) + !Container.Content(seasons) + !Container.Content(tvshows) + !Container.Content(movies)]">
+					<focusedlayout width="940" height="67.27272727272727" condition="!IsEmpty(ListItem.Property(Addon.Name)) | [!Skin.HasSetting(movies.57list.showplot) + Container.Content(movies)] | [!Skin.HasSetting(tvshows.57list.showplot) + Container.Content(tvshows)] | [!Skin.HasSetting(seasons.57list.showplot) + Container.Content(seasons)] | [!Skin.HasSetting(episodes.57list.showplot) + Container.Content(episodes)] | [!Skin.HasSetting(artists.57list.showplot) + Container.Content(artists)] | [!Skin.HasSetting(albums.57list.showplot) + Container.Content(albums)] | [!Skin.HasSetting(songs.57list.showplot) + Container.Content(songs)] | [!Skin.HasSetting(general.57list.showplot) + !Container.Content(songs) + !Container.Content(albums) + !Container.Content(artists) + !Container.Content(episodes) + !Container.Content(seasons) + !Container.Content(tvshows) + !Container.Content(movies)]">
 						<control type="button">
 							<texturefocus>-</texturefocus>
 							<texturenofocus>-</texturenofocus>
@@ -133,38 +133,38 @@
 			<control type="image">
 				<description>Title overlay</description>
 				<left>0</left>
-				<posy>660</posy>
+				<posy>672.7272727272727</posy>
 				<width>960</width>
-				<height>80</height>
+				<height>67.27272727272727</height>
 				<texture colordiffuse="af000000">common/white.png</texture>
 			</control>
 			<control type="group">
-				<posy>570</posy>
-				<height>80</height>
+				<posy>582.7272727272727</posy>
+				<height>67.27272727272727</height>
 				<control type="label">
 					<left>5</left>
 					<top>59</top>
 					<aligny>center</aligny>
 					<height>100</height>
 					<width>125%</width>
-					<font>MediumBold</font>
+					<font>SmallBold</font>
 					<textcolor>Dark1</textcolor>
 					<selectedcolor>Dark1</selectedcolor>
 					<label>$VAR[LabelDirector]</label>
 				</control>
 				<control type="label">
 					<left>5</left>
-					<top>116</top>
+					<top>104</top>
 					<height>64</height>
 					<align>right</align>
 					<aligny>center</aligny>
-					<font>MediumBold</font>
+					<font>SmallBold</font>
 					<width>950</width>
 					<textcolor>Dark1</textcolor>
 					<selectedcolor>Dark1</selectedcolor>
 					<label>$VAR[LabelGenre]</label>
 				</control>
-				<!--<control type="textbox"><top>116</top><bottom>19</bottom><align>justify</align><font>Tiny</font><textcolor>Dark1</textcolor><selectedcolor>Dark1</selectedcolor><label>$VAR[LabelPlotBox]</label></control>--></control>
+				</control>
 		</control>
 	</include>
 </includes>
