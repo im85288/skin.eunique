@@ -654,6 +654,26 @@
 				<visible>!IsEmpty(Window(Home).Property(SkinHelper.RottenTomatoesRating))</visible>
 				<visible>!StringCompare(Window(Home).Property(SkinHelper.RottenTomatoesRating),n/a)</visible>
 			</control>
+            <control type="label">
+                <aligny>center</aligny>
+                <align>left</align>
+                <font>symbolview</font>
+                <label></label>
+                <textcolor>$VAR[EmbyLeftColourHighlight]</textcolor>
+                <height>34</height>
+                <width>auto</width>
+                <visible>!IsEmpty(ListItem.Userrating)</visible>
+            </control>
+            <control type="label">
+                <aligny>center</aligny>
+                <align>left</align>
+                <font>MediumSmallBold</font>
+                <textcolor>Dark1</textcolor>
+                <height>34</height>
+                <width>auto</width>
+                <label>$INFO[ListItem.Userrating,[UPPERCASE],[/UPPERCASE]]</label>
+                <visible>!IsEmpty(ListItem.Userrating)</visible>
+            </control>
 			<control type="label">
 				<aligny>center</aligny>
 				<align>left</align>
