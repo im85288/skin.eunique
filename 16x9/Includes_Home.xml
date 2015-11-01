@@ -4672,7 +4672,7 @@
 							<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
 						</control>
 					</control>
-					<control type="list" id="19001">
+					<control type="list" id="19011">
 						<itemlayout width="1" height="1"/>
 						<focusedlayout width="1" height="1"/>
 						<content limit="8" target="$VAR[DefWidget22Target]">$VAR[DefWidget22Content]</content>
@@ -4689,10 +4689,10 @@
                         <onup>300</onup>
 						<texturefocus>-</texturefocus>
 						<texturenofocus>-</texturenofocus>
-						<onfocus>SetProperty(SkinHelper.WidgetContainer,19001)</onfocus>
+						<onfocus>SetProperty(SkinHelper.WidgetContainer,19011)</onfocus>
 						<onup>setfocus(19003,0)</onup>
 						<ondown>setfocus(19003,3)</ondown>
-						<oninfo>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(19001).ListItem(4).Label])</oninfo>
+						<oninfo>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(19011).ListItem(4).Label])</oninfo>
 					</control>
 					<control type="image">
 						<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
@@ -4700,11 +4700,11 @@
 						<top>330</top>
 						<width>473</width>
 						<height>705</height>
-						<texture>$INFO[Container(19001).ListItem(4).icon]</texture>
+						<texture>$INFO[Container(19011).ListItem(4).icon]</texture>
 						<animation effect="zoom" start="105" end="90" time="200" tween="quadratic" reversible="false" center="auto" condition="Control.HasFocus(19002)">Conditional</animation>
 					</control>
 					<control type="panel" id="19003">
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + IntegerGreaterThan(Container(19001).NumItems,1)</visible>
+						<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + IntegerGreaterThan(Container(19011).NumItems,1)</visible>
 						<left>4031</left>
 						<top>330</top>
 						<width>470</width>
