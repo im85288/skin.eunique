@@ -1603,7 +1603,7 @@
 						<left>0</left>
 						<width>228</width>
 						<height>64</height>
-						<texture>$VAR[EmbyWidgetLogo]</texture>
+						<texture fallback="E.png">$VAR[EmbyWidgetLogo]</texture>
 						<aspectratio align="center" aligny="center">keep</aspectratio>
 						<fadetime>50</fadetime>
 						<visible>!Skin.String(home.vertical,1) + !IsEmpty(Control.GetLabel(91211))</visible>
