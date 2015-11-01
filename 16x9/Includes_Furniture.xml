@@ -999,10 +999,9 @@
 				<onright>noop</onright>
 				<onright condition="!Window.IsVisible(1103)">SetProperty(BounceRight,1,Home)</onright>
 				<onback>9000</onback>
-				<onfocus>CancelAlarm(castScroll,true)</onfocus>
-				<onunfocus>AlarmClock(castScroll,Control.Move(508923,-1),00:03,silent,loop)</onunfocus>
 				<preloaditems>8</preloaditems>
 				<focusposition>6</focusposition>
+				<autoscroll time="3000">!Control.HasFocus(508923)</autoscroll>
 				<viewtype label="">list</viewtype>
 				<orientation>horizontal</orientation>
 				<defaultcontrol always="true">0</defaultcontrol>
@@ -1119,7 +1118,7 @@
 	</include>
 	<include name="Furniture_Discography">
 		<control type="group">
-			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml) + !Control.IsVisible(500) + !Control.IsVisible(54) + !Control.IsVisible(52) + !Control.IsVisible(53) + !Control.IsVisible(515)</visible>
+			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml) + !Control.IsVisible(500) + !Control.IsVisible(54) + !Control.IsVisible(52) + !Control.IsVisible(53) + !Control.IsVisible(515) + !Control.IsVisible(601)</visible>
 			<visible>Container.Content(albums) | Container.Content(songs) | Container.Content(artists)</visible>
 			<top>696</top>
 			<include>Animation.FadeIn</include>
@@ -1142,6 +1141,7 @@
 				<onback>9000</onback>
 				<preloaditems>6</preloaditems>
 				<focusposition>4</focusposition>
+				<autoscroll time="3000">!Control.HasFocus(508923)</autoscroll>
 				<viewtype label="">list</viewtype>
 				<orientation>horizontal</orientation>
 				<defaultcontrol always="true">0</defaultcontrol>
@@ -1182,10 +1182,6 @@
 					</control>
 				</itemlayout>
 				<focusedlayout height="190" width="192">
-					<control type="button" id="50171">
-						<onfocus>CancelAlarm(castScroll,true)</onfocus>
-						<onunfocus>AlarmClock(castScroll,Control.Move(508923,-1),00:03,silent,loop)</onunfocus>
-					</control>
 					<control type="group">
 						<control type="label">
 							<left>0</left>

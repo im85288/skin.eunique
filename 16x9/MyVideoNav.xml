@@ -5,10 +5,6 @@
 	<allowoverlay>yes</allowoverlay>
 	<views>50,52,53,550,54,55,57,155,59,52,500,501,513,515,514,516</views>
 	<onload condition="System.HasAddon(script.tv.show.next.aired)">RunScript(script.tv.show.next.aired,backend=True)</onload>
-	<onload>AlarmClock(castScroll,Control.Move(508923,-1),00:03,silent,loop)</onload>
-	<onload>AlarmClock(castScroll2,Control.Move(508922,-1),00:03,silent,loop)</onload>
-	<onunload>CancelAlarm(castScroll,true)</onunload>
-	<onunload>CancelAlarm(castScroll2,true)</onunload>
 	<onunload>ClearProperty(SkinHelper.ListItemGenres,home)</onunload>
 	<onunload>ClearProperty(SkinHelper.ListItemStudios,home)</onunload>
 	<onunload>ClearProperty(SkinHelper.ListItemCast,home)</onunload>

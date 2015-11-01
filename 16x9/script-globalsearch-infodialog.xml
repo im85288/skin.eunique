@@ -13,7 +13,7 @@
 			<itemlayout width="1" height="1"/>
 			<focusedlayout width="1" height="1"/>
 		</control>
-		<!-- <control type="button" id="9401"><visible allowhiddenfocus="true">false</visible><onfocus>AlarmClock(blerg,SetFocus(9402),00:01,silent)</onfocus></control><control type="button" id="9402"><visible allowhiddenfocus="true">false</visible><onfocus>Action(Close)</onfocus><onfocus>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(100).ListItem.Label])</onfocus></control> --><control type="group">
+		<control type="group">
 			<animation type="Conditional" reversible="true" condition="Window.IsVisible(FileBrowser.xml) | Window.IsVisible(DialogProgress.xml) | Window.IsVisible(DialogYesNo.xml) | Window.IsVisible(DialogOK.xml) | Window.IsVisible(DialogSelect.xml) | Window.IsVisible(DialogContextMenu.xml) | Window.IsVisible(DialogButtonMenu.xml)">
 				<effect type="zoom" end="95" start="100" time="200" center="auto" tween="quadratic" easing="in" />
 			</animation>

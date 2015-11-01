@@ -306,15 +306,15 @@
 	</variable>
 	<variable name="EmbyWidget20Label">
 		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetName.tvshows5))">$INFO[Container(300).ListItem.Property(widgetName.tvshows5)]</value>
-		<value>$LOCALIZE[31782]$INFO[Container(18003).ListItem.Property(similartitle), ","]</value>
+		<value>$LOCALIZE[31782]$INFO[Container(18001).ListItem.Property(similartitle), ","]</value>
 	</variable>
 	<variable name="EmbyWidget21Label">
 		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetName.movies6))">$INFO[Container(300).ListItem.Property(widgetName.movies6)]</value>
-		<value>$LOCALIZE[31975]$INFO[Container(19002).ListItem.Property(genretitle), ,]</value>
+		<value>$LOCALIZE[31975]$INFO[Container(19001).ListItem.Property(genretitle), ,]</value>
 	</variable>
 	<variable name="EmbyWidget22Label">
 		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetName.tvshows6))">$INFO[Container(300).ListItem.Property(widgetName.tvshows6)]</value>
-		<value>$LOCALIZE[31976]$INFO[Container(19003).ListItem.Property(genretitle), ,]</value>
+		<value>$LOCALIZE[31976]$INFO[Container(19001).ListItem.Property(genretitle), ,]</value>
 	</variable>
 	<variable name="VideoInfoWidgetLabel">
 		<value condition="Stringcompare(Skin.String(widgetvideoinfo),SimilarVideos)">$LOCALIZE[31818]</value>
@@ -1154,6 +1154,42 @@
 	<variable name="ArtistLabel">
 		<value condition="Container.Content(albums) + !IsEmpty(ListItem.AlbumArtist)">$INFO[ListItem.AlbumArtist]</value>
 		<value>$INFO[ListItem.Artist]</value>
+	</variable>
+	<variable name="BloxTitle">
+		<value condition="Container.Content(songs) + Control.HasFocus(6011)">$INFO[Container(601).Listitem(0).Label]$INFO[Container(601).Listitem(0).Duration, / ] $LOCALIZE[31102]</value>
+		<value condition="Container.Content(songs) + Control.HasFocus(6012)">$INFO[Container(601).Listitem(1).Label]$INFO[Container(601).Listitem(1).Duration, / ] $LOCALIZE[31102]</value>
+		<value condition="Container.Content(songs) + Control.HasFocus(6013)">$INFO[Container(601).Listitem(2).Label]$INFO[Container(601).Listitem(2).Duration, / ] $LOCALIZE[31102]</value>
+		<value condition="Container.Content(songs) + Control.HasFocus(6014)">$INFO[Container(601).Listitem(3).Label]$INFO[Container(601).Listitem(3).Duration, / ] $LOCALIZE[31102]</value>
+		<value condition="Container.Content(songs) + Control.HasFocus(6015)">$INFO[Container(601).Listitem(4).Label]$INFO[Container(601).Listitem(4).Duration, / ] $LOCALIZE[31102]</value>
+		<value condition="Container.Content(songs) + Control.HasFocus(6016)">$INFO[Container(601).Listitem(5).Label]$INFO[Container(601).Listitem(5).Duration, / ] $LOCALIZE[31102]</value>
+		<value condition="Container.Content(songs) + Control.HasFocus(6017)">$INFO[Container(601).Listitem(6).Label]$INFO[Container(601).Listitem(6).Duration, / ] $LOCALIZE[31102]</value>
+		<value condition="Container.Content(songs) + Control.HasFocus(6018)">$INFO[Container(601).Listitem(7).Label]$INFO[Container(601).Listitem(7).Duration, / ] $LOCALIZE[31102]</value>
+		<value condition="Container.Content(songs) + Control.HasFocus(6019)">$INFO[Container(601).Listitem(8).Label]$INFO[Container(601).Listitem(8).Duration, / ] $LOCALIZE[31102]</value>
+		<value condition="Container.Content(songs) + Control.HasFocus(6020)">$INFO[Container(601).Listitem(9).Label]$INFO[Container(601).Listitem(9).Duration, / ] $LOCALIZE[31102]</value>
+		<value condition="Control.HasFocus(6011)">$INFO[Container(601).Listitem(0).Label]</value>
+		<value condition="Control.HasFocus(6012)">$INFO[Container(601).Listitem(1).Label]</value>
+		<value condition="Control.HasFocus(6013)">$INFO[Container(601).Listitem(2).Label]</value>
+		<value condition="Control.HasFocus(6014)">$INFO[Container(601).Listitem(3).Label]</value>
+		<value condition="Control.HasFocus(6015)">$INFO[Container(601).Listitem(4).Label]</value>
+		<value condition="Control.HasFocus(6016)">$INFO[Container(601).Listitem(5).Label]</value>
+		<value condition="Control.HasFocus(6017)">$INFO[Container(601).Listitem(6).Label]</value>
+		<value condition="Control.HasFocus(6018)">$INFO[Container(601).Listitem(7).Label]</value>
+		<value condition="Control.HasFocus(6019)">$INFO[Container(601).Listitem(8).Label]</value>
+		<value condition="Control.HasFocus(6020)">$INFO[Container(601).Listitem(9).Label]</value>
+		<value>err</value>
+	</variable>
+	<variable name="BloxSecondary">
+		<value condition="Control.HasFocus(6011)">$INFO[Container(601).Listitem(0).AlbumArtist]</value>
+		<value condition="Control.HasFocus(6012)">$INFO[Container(601).Listitem(1).AlbumArtist]</value>
+		<value condition="Control.HasFocus(6013)">$INFO[Container(601).Listitem(2).AlbumArtist]</value>
+		<value condition="Control.HasFocus(6014)">$INFO[Container(601).Listitem(3).AlbumArtist]</value>
+		<value condition="Control.HasFocus(6015)">$INFO[Container(601).Listitem(4).AlbumArtist]</value>
+		<value condition="Control.HasFocus(6016)">$INFO[Container(601).Listitem(5).AlbumArtist]</value>
+		<value condition="Control.HasFocus(6017)">$INFO[Container(601).Listitem(6).AlbumArtist]</value>
+		<value condition="Control.HasFocus(6018)">$INFO[Container(601).Listitem(7).AlbumArtist]</value>
+		<value condition="Control.HasFocus(6019)">$INFO[Container(601).Listitem(8).AlbumArtist]</value>
+		<value condition="Control.HasFocus(6020)">$INFO[Container(601).Listitem(9).AlbumArtist]</value>
+		<value>err</value>
 	</variable>
 	<variable name="LabelHomeStyle">
 		<value condition="Skin.String(home.vertical,)">$LOCALIZE[31248]</value>

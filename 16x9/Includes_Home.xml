@@ -501,7 +501,7 @@
 			</control>
 			<control type="group">
 				<visible>!IsEmpty(ListItem.Duration)</visible>
-				<visible>!IsEmpty(ListItem.Duration) + [Control.IsVisible(500) | Control.IsVisible(503) | Control.IsVisible(505) | Control.IsVisible(50) | Control.IsVisible(51) | Control.IsVisible(54) | Control.IsVisible(57) | Control.IsVisible(58) | Control.IsVisible(53) | Control.IsVisible(52) | Control.IsVisible(56) | Control.IsVisible(55) | Control.IsVisible(513) | Control.IsVisible(514) | Control.IsVisible(59) | Control.IsVisible(515) | Control.IsVisible(155) | Control.IsVisible(156) | Control.IsVisible(157) | Control.IsVisible(56)]</visible>
+				<visible>!IsEmpty(ListItem.Duration) + [Control.IsVisible(601) | Control.IsVisible(500) | Control.IsVisible(503) | Control.IsVisible(505) | Control.IsVisible(50) | Control.IsVisible(51) | Control.IsVisible(54) | Control.IsVisible(57) | Control.IsVisible(58) | Control.IsVisible(53) | Control.IsVisible(52) | Control.IsVisible(56) | Control.IsVisible(55) | Control.IsVisible(513) | Control.IsVisible(514) | Control.IsVisible(59) | Control.IsVisible(515) | Control.IsVisible(155) | Control.IsVisible(156) | Control.IsVisible(157) | Control.IsVisible(56)]</visible>
 				<width>274</width>
 				<height>64</height>
 				<control type="image">
@@ -528,7 +528,7 @@
 			</control>
 			<control type="group">
 				<visible>!IsEmpty(Window(home).Property(SkinHelper.MovieSet.Duration.Hours))</visible>
-				<visible>[Control.IsVisible(500) | Control.IsVisible(503) | Control.IsVisible(505) | Control.IsVisible(50) | Control.IsVisible(51) | Control.IsVisible(54) | Control.IsVisible(57) | Control.IsVisible(58) | Control.IsVisible(53) | Control.IsVisible(52) | Control.IsVisible(56) | Control.IsVisible(55) | Control.IsVisible(513) | Control.IsVisible(514) | Control.IsVisible(59) | Control.IsVisible(515) | Control.IsVisible(155) | Control.IsVisible(156) | Control.IsVisible(157) | Control.IsVisible(56)]</visible>
+				<visible>[Control.IsVisible(601) | Control.IsVisible(500) | Control.IsVisible(503) | Control.IsVisible(505) | Control.IsVisible(50) | Control.IsVisible(51) | Control.IsVisible(54) | Control.IsVisible(57) | Control.IsVisible(58) | Control.IsVisible(53) | Control.IsVisible(52) | Control.IsVisible(56) | Control.IsVisible(55) | Control.IsVisible(513) | Control.IsVisible(514) | Control.IsVisible(59) | Control.IsVisible(515) | Control.IsVisible(155) | Control.IsVisible(156) | Control.IsVisible(157) | Control.IsVisible(56)]</visible>
 				<width>274</width>
 				<height>64</height>
 				<control type="image">
@@ -725,6 +725,64 @@
 				<texture>$VAR[LanguageFlagsIcon]$INFO[Window(Home).Property(SkinHelper.ListItemAudioStreams.0.Language),,.png]</texture>
 				<aspectratio scalediffuse="false">keep</aspectratio>
 				<visible>!IsEmpty(Window(Home).Property(SkinHelper.ListItemAudioStreams.0.Language))</visible>
+			</control>
+		</control>
+		<control type="grouplist">
+			<visible>!Skin.HasSetting(furniture.flags)</visible>
+			<visible>!Window.IsVisible(DialogAlbumInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-VideoList.xml) + !Window.IsVisible(script-ExtendedInfo Script-YoutubeList.xml)</visible>
+			<visible>Container.Content(music) | Container.Content(artists) | Container.Content(albums) | Container.Content(songs)</visible>
+			<visible>!stringcompare(ListItem.Label,..)</visible>
+			<include>Animation.FadeIn</include>
+			<include>Animation.FadeOut</include>
+			<left>292</left>
+			<top>47</top>
+			<width>1626</width>
+			<height>34</height>
+			<orientation>horizontal</orientation>
+			<itemgap>6</itemgap>
+			<control type="label">
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>MediumSmallBold</font>
+				<textcolor>Dark1</textcolor>
+				<width>auto</width>
+				<height>34</height>
+				<selectedcolor>Dark1</selectedcolor>
+				<label>[UPPERCASE]$VAR[listTitle]$VAR[listSubTitle, / , items]$VAR[BloxSecondary, / ]$VAR[BloxTitle, / ][/UPPERCASE]</label>
+				<visible>[Container.Content(albums) | Container.Content(artists)] + Control.IsVisible(601)</visible>
+			</control>
+			<control type="label">
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>MediumSmallBold</font>
+				<textcolor>Dark1</textcolor>
+				<width>auto</width>
+				<height>34</height>
+				<selectedcolor>Dark1</selectedcolor>
+				<label>[UPPERCASE]$VAR[listTitle]$VAR[listSubTitle, / , items]$INFO[Lisitem.Label, / ][/UPPERCASE]</label>
+				<visible>[Container.Content(albums) | Container.Content(artists)] + !Control.IsVisible(601)</visible>
+			</control>
+			<control type="label">
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>MediumSmallBold</font>
+				<textcolor>Dark1</textcolor>
+				<width>auto</width>
+				<height>34</height>
+				<selectedcolor>Dark1</selectedcolor>
+				<label>[UPPERCASE] $VAR[HDSD]$VAR[AudioCodec, / ,]$VAR[BloxSecondary, / ]$VAR[BloxTitle, / ][/UPPERCASE]</label>
+				<visible>Container.Content(songs) + Control.IsVisible(601)</visible>
+			</control>
+			<control type="label">
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>MediumSmallBold</font>
+				<textcolor>Dark1</textcolor>
+				<width>auto</width>
+				<height>34</height>
+				<selectedcolor>Dark1</selectedcolor>
+				<label>[UPPERCASE] $VAR[HDSD]$INFO[ListItem.VideoResolution, ,P]$VAR[MPAA, / ]$VAR[VideoCodec, / ]$VAR[AudioCodec, / ,][/UPPERCASE]</label>
+				<visible>Container.Content(songs) + !Control.IsVisible(601)</visible>
 			</control>
 		</control>
 	</include>
@@ -2068,6 +2126,8 @@
 					<focusedlayout width="410" height="88.125">
 						<control type="group">
 							<control type="button">
+						<texturefocus>-</texturefocus>
+						<texturenofocus>-</texturenofocus>
 								<onfocus>Skin.SetString(widget.helper,videos2)</onfocus>
 							</control>
 							<animation effect="zoom" start="100" end="127" time="100" reversible="false" center="auto">Focus</animation>
@@ -2138,6 +2198,8 @@
 					</itemlayout>
 					<focusedlayout width="158" height="235">
 						<control type="button">
+						<texturefocus>-</texturefocus>
+						<texturenofocus>-</texturenofocus>
 							<onfocus>Skin.SetString(widget.helper,videos3)</onfocus>
 						</control>
 						<control type="group">
@@ -2193,6 +2255,8 @@
 					<itemlayout width="158" height="235"/>
 					<focusedlayout width="158" height="235">
 						<control type="button">
+						<texturefocus>-</texturefocus>
+						<texturenofocus>-</texturenofocus>
 							<onfocus>Skin.SetString(widget.helper,videos4)</onfocus>
 						</control>
 					</focusedlayout>
@@ -2512,10 +2576,6 @@
 						</control>
 					</itemlayout>
 					<focusedlayout height="342.5" width="330">
-						<control type="button" id="50171">
-							<onfocus>CancelAlarm(weatherscroll,true)</onfocus>
-							<onunfocus>AlarmClock(weatherscroll,Control.Move(3444,1),00:10,silent,loop)</onunfocus>
-						</control>
 						<control type="group">
 							<control type="image">
 								<texture colordiffuse="panel">common/box.png</texture>
@@ -3018,7 +3078,7 @@
 						<width>410</width>
 						<align>center</align>
 						<height>45</height>
-						<font>HeaderFont</font>
+						<font>Small</font>
 						<textcolor>white2</textcolor>
 						<selectedcolor>white2</selectedcolor>
 						<label>20342</label>
@@ -3168,7 +3228,7 @@
 						<align>center</align>
 						<height>45</height>
 						<align>right</align>
-						<font>HeaderFont</font>
+						<font>Small</font>
 						<textcolor>white2</textcolor>
 						<selectedcolor>white2</selectedcolor>
 						<label>135</label>
@@ -5405,6 +5465,7 @@
 					<scrolltime tween="quadratic">500</scrolltime>
 					<include>Animation.FadeIn</include>
 					<include>Animation.FadeOut</include>
+					<autoscroll time="2000">!Control.HasFocus(5017)</autoscroll>
 					<itemlayout width="235" height="235">
 						<control type="image">
 							<top>0</top>
@@ -5449,10 +5510,6 @@
 							<onfocus>SetProperty(SkinHelper.WidgetContainer,5017)</onfocus>
 							<texturenofocus>-</texturenofocus>
 							<texturefocus>-</texturefocus>
-						</control>
-						<control type="button" id="50171">
-							<onfocus>CancelAlarm(musicscroll,true)</onfocus>
-							<onunfocus>AlarmClock(musicscroll,Control.Move(5017,6),00:10,silent,loop)</onunfocus>
 						</control>
 						<control type="group">
 							<animation effect="zoom" start="100" end="127" time="100" reversible="false" center="auto">Focus</animation>
@@ -6136,8 +6193,6 @@
 					</itemlayout>
 					<focusedlayout height="46" width="410">
 						<control type="button" id="70171">
-							<onfocus>CancelAlarm(livetvscroll,true)</onfocus>
-							<onunfocus>AlarmClock(livetvscroll,Control.Move(7016,1),00:10,silent,loop)</onunfocus>
 							<onfocus>Skin.SetString(widget.helper,videoinfo2)</onfocus>
 							<onfocus>SetProperty(SkinHelper.WidgetContainer,7016)</onfocus>
 							<texturenofocus>-</texturenofocus>
@@ -7382,8 +7437,8 @@
 									</itemlayout>
 									<focusedlayout height="46" width="770">
 										<control type="button" id="70171">
-											<onfocus>CancelAlarm(livetvscroll,true)</onfocus>
-											<onunfocus>AlarmClock(livetvscroll,Control.Move(7016,1),00:10,silent,loop)</onunfocus>
+						<texturefocus>-</texturefocus>
+						<texturenofocus>-</texturenofocus>
 											<onfocus>Skin.SetString(widget.helper,videoinfo2)</onfocus>
 										</control>
 										<control type="image">
@@ -7747,10 +7802,6 @@
 										</control>
 									</itemlayout>
 									<focusedlayout height="452.5" width="365">
-										<control type="button" id="50171">
-											<onfocus>CancelAlarm(weatherscroll,true)</onfocus>
-											<onunfocus>AlarmClock(weatherscroll,Control.Move(3444,1),00:10,silent,loop)</onunfocus>
-										</control>
 										<control type="group">
 											<control type="image">
 												<left>10</left>

@@ -20,12 +20,7 @@
 	<onload condition="IsEmpty(Skin.String(RatingCountry))">Skin.SetString(RatingCountry,UK)</onload>
 	<onload condition="!Skin.HasSetting(startup.init)">Skin.SetBool(startup.init)</onload>
 	<onload condition="!Skin.String(SkinHelper.SpinnerTexturePath)">Skin.SetString(SkinHelper.SpinnerTexturePath,special://skin/extras/busy_spinners/eunique.gif)</onload>
-	<!--<onload>AlarmClock(livetvscroll,Control.Move(7016,1),00:10,silent,loop)</onload><onload>AlarmClock(musicScroll,Control.Move(5017,6),00:10,silent,loop)</onload>--><onload condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv)">AlarmClock(livetvscroll,Control.Move(7016,1),00:07,silent,loop)</onload>
-	<onload condition="StringCompare(Container(300).ListItem.Property(defaultID),music)">AlarmClock(musicscroll,Control.Move(5017,6),00:10,silent,loop)</onload>
-	<onload condition="StringCompare(Container(300).ListItem.Property(defaultID),weather)">AlarmClock(weatherscroll,Control.Move(3444,1),00:10,silent,loop)</onload>
 	<onload>ClearProperty(SkinHelper.ListItemThumb,home)</onload>
-	<onunload>CancelAlarm(livetvscroll,true)</onunload>
-	<onunload>CancelAlarm(musicscroll,true)</onunload>
 	<menucontrol>900</menucontrol>
 	<controls>
 		<include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
