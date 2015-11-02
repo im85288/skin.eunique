@@ -508,6 +508,7 @@
 			<font>LargeBold</font>
 			<textcolor>Dark1</textcolor>
 			<label>$INFO[ListItem.Label]</label>
+			<visible>IsEmpty(Window(Home).Property(SkinHelper.Music.Banner)) + IsEmpty(ListItem.Art(tvshow.banner)) + IsEmpty(ListItem.Art(banner)) + IsEmpty(ListItem.Property(banner))</visible>
 		</control>
 		<control type="label">
 			<left>130</left>
@@ -666,6 +667,7 @@
 			<font>LargeBold</font>
 			<textcolor>$VAR[ColourSelected]</textcolor>
 			<label>$INFO[ListItem.Label]</label>
+			<visible>IsEmpty(Window(Home).Property(SkinHelper.Music.Banner)) + IsEmpty(ListItem.Art(tvshow.banner)) + IsEmpty(ListItem.Art(banner)) + IsEmpty(ListItem.Property(banner))</visible>
 		</control>
 		<control type="label">
 			<left>130</left>
