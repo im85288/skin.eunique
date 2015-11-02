@@ -1789,11 +1789,6 @@
 							<animation type="Focus" reversible="false">
 								<effect type="slide" start="0" end="0,23" time="200" center="auto" tween="quadratic" easing="out"/>
 							</animation>
-							<control type="image">
-								<description>Title overlay</description>
-								<bottom>0</bottom>
-								<texture colordiffuse="af000000">common/white.png</texture>
-							</control>
 							<control type="label" id="13370">
 								<bottom>45</bottom>
 								<height>200</height>
@@ -1806,17 +1801,6 @@
 							<control type="image">
 								<aspectratio>stretch</aspectratio>
 								<texture background="true" colordiffuse="$VAR[EmbyLeftColourHighlight]">$VAR[LandscapeImage]</texture>
-							</control>
-							<control type="label">
-								<bottom>10</bottom>
-								<left>15</left>
-								<right>15</right>
-								<align>center</align>
-								<height>30</height>
-								<font>Tiny</font>
-								<textcolor>white2</textcolor>
-								<selectedcolor>white2</selectedcolor>
-								<label>$INFO[ListItem.Label]</label>
 							</control>
 						</control>
 					</focusedlayout>
@@ -1938,11 +1922,6 @@
 							<animation type="Focus" reversible="false">
 								<effect type="slide" start="0" end="0,23" time="200" center="auto" tween="quadratic" easing="out"/>
 							</animation>
-							<control type="image">
-								<description>Title overlay</description>
-								<bottom>0</bottom>
-								<texture colordiffuse="af000000">common/white.png</texture>
-							</control>
 							<control type="label" id="13370">
 								<bottom>45</bottom>
 								<height>200</height>
@@ -1955,17 +1934,6 @@
 							<control type="image">
 								<aspectratio>stretch</aspectratio>
 								<texture background="true" colordiffuse="$VAR[EmbyMiddleColourHighlight]">$VAR[PosterImage]</texture>
-							</control>
-							<control type="label">
-								<bottom>10</bottom>
-								<left>15</left>
-								<right>15</right>
-								<align>center</align>
-								<height>30</height>
-								<font>Tiny</font>
-								<textcolor>white2</textcolor>
-								<selectedcolor>white2</selectedcolor>
-								<label>$INFO[ListItem.Label]</label>
 							</control>
 						</control>
 					</focusedlayout>
@@ -2090,11 +2058,6 @@
 							<animation type="Focus" reversible="false">
 								<effect type="slide" start="0" end="0,23" time="200" center="auto" tween="quadratic" easing="out"/>
 							</animation>
-							<control type="image">
-								<description>Title overlay</description>
-								<bottom>0</bottom>
-								<texture colordiffuse="af000000">common/white.png</texture>
-							</control>
 							<control type="label" id="13370">
 								<bottom>45</bottom>
 								<height>200</height>
@@ -2107,17 +2070,6 @@
 							<control type="image">
 								<aspectratio>stretch</aspectratio>
 								<texture background="true" colordiffuse="$VAR[EmbyRightColourHighlight]">$VAR[LandscapeImage]</texture>
-							</control>
-							<control type="label">
-								<bottom>10</bottom>
-								<left>15</left>
-								<right>15</right>
-								<align>center</align>
-								<height>30</height>
-								<font>Tiny</font>
-								<textcolor>white2</textcolor>
-								<selectedcolor>white2</selectedcolor>
-								<label>$INFO[ListItem.Label]</label>
 							</control>
 						</control>
 					</focusedlayout>
@@ -3195,10 +3147,10 @@
 							<animation type="Focus" reversible="false">
 								<effect type="slide" start="0" end="0,23" time="200" center="auto" tween="quadratic" easing="out"/>
 							</animation>
-							<control type="image">
-								<description>Title overlay</description>
-								<bottom>0</bottom>
-								<texture colordiffuse="af000000">common/white.png</texture>
+							<control type="button">
+								<onfocus>SetProperty(SkinHelper.WidgetContainer,30133)</onfocus>
+								<texturenofocus>-</texturenofocus>
+								<texturefocus>-</texturefocus>
 							</control>
 							<control type="label" id="13370">
 								<bottom>45</bottom>
@@ -3212,17 +3164,6 @@
 							<control type="image">
 								<aspectratio>stretch</aspectratio>
 								<texture background="true" colordiffuse="$VAR[EmbyLeftColourHighlight]">$VAR[LandscapeImage]</texture>
-							</control>
-							<control type="label">
-								<bottom>10</bottom>
-								<left>15</left>
-								<right>15</right>
-								<align>left</align>
-								<height>30</height>
-								<font>Small</font>
-								<textcolor>white2</textcolor>
-								<selectedcolor>white2</selectedcolor>
-								<label>$INFO[ListItem.Title]</label>
 							</control>
 						</control>
 					</focusedlayout>
@@ -3323,11 +3264,6 @@
 							<animation type="Focus" reversible="false">
 								<effect type="slide" start="0" end="0,23" time="200" center="auto" tween="quadratic" easing="out"/>
 							</animation>
-							<control type="image">
-								<description>Title overlay</description>
-								<bottom>0</bottom>
-								<texture colordiffuse="af000000">common/white.png</texture>
-							</control>
 							<control type="label" id="13370">
 								<bottom>45</bottom>
 								<height>200</height>
@@ -3339,18 +3275,7 @@
 							</control>
 							<control type="image">
 								<aspectratio>keep</aspectratio>
-								<texture background="true" colordiffuse="$VAR[EmbyRightColourHighlight]">http://localhost:52307/getvarimage&amp;title=$VAR[MovieGenres]</texture>
-							</control>
-							<control type="label">
-								<bottom>10</bottom>
-								<left>15</left>
-								<right>15</right>
-								<align>center</align>
-								<height>30</height>
-								<font>Small</font>
-								<textcolor>white2</textcolor>
-								<selectedcolor>white2</selectedcolor>
-								<label>$INFO[ListItem.Label]</label>
+								<texture background="true" colordiffuse="$VAR[EmbyRightColourHighlight]">$VAR[MovieGenres]</texture>
 							</control>
 						</control>
 					</focusedlayout>
@@ -4108,10 +4033,10 @@
 							<animation type="Focus" reversible="false">
 								<effect type="slide" start="0" end="0,23" time="200" center="auto" tween="quadratic" easing="out"/>
 							</animation>
-							<control type="image">
-								<description>Title overlay</description>
-								<bottom>0</bottom>
-								<texture colordiffuse="af000000">common/white.png</texture>
+							<control type="button">
+								<onfocus>SetProperty(SkinHelper.WidgetContainer,40133)</onfocus>
+								<texturenofocus>-</texturenofocus>
+								<texturefocus>-</texturefocus>
 							</control>
 							<control type="label" id="13370">
 								<bottom>45</bottom>
@@ -4268,10 +4193,10 @@
 							<animation type="Focus" reversible="false">
 								<effect type="slide" start="0" end="0,23" time="200" center="auto" tween="quadratic" easing="out"/>
 							</animation>
-							<control type="image">
-								<description>Title overlay</description>
-								<bottom>0</bottom>
-								<texture colordiffuse="af000000">common/white.png</texture>
+							<control type="button">
+								<onfocus>SetProperty(SkinHelper.WidgetContainer,40155)</onfocus>
+								<texturenofocus>-</texturenofocus>
+								<texturefocus>-</texturefocus>
 							</control>
 							<control type="label" id="13370">
 								<bottom>45</bottom>
@@ -4285,17 +4210,6 @@
 							<control type="image">
 								<aspectratio>stretch</aspectratio>
 								<texture background="true" colordiffuse="$VAR[EmbyRightColourHighlight]">$VAR[LandscapeImage]</texture>
-							</control>
-							<control type="label">
-								<bottom>10</bottom>
-								<left>15</left>
-								<right>15</right>
-								<align>left</align>
-								<height>30</height>
-								<font>Small</font>
-								<textcolor>white2</textcolor>
-								<selectedcolor>white2</selectedcolor>
-								<label>$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Title]</label>
 							</control>
 						</control>
 					</focusedlayout>
@@ -5077,10 +4991,10 @@
 							<animation type="Focus" reversible="false">
 								<effect type="slide" start="0" end="0,23" time="200" center="auto" tween="quadratic" easing="out"/>
 							</animation>
-							<control type="image">
-								<description>Title overlay</description>
-								<bottom>0</bottom>
-								<texture colordiffuse="af000000">common/white.png</texture>
+							<control type="button">
+								<onfocus>SetProperty(SkinHelper.WidgetContainer,50133)</onfocus>
+								<texturenofocus>-</texturenofocus>
+								<texturefocus>-</texturefocus>
 							</control>
 							<control type="label" id="13370">
 								<bottom>45</bottom>
@@ -5094,17 +5008,6 @@
 							<control type="image">
 								<aspectratio>scale</aspectratio>
 								<texture background="true" colordiffuse="$VAR[EmbyLeftColourHighlight]">$VAR[PosterImage]</texture>
-							</control>
-							<control type="label">
-								<bottom>10</bottom>
-								<left>15</left>
-								<right>15</right>
-								<align>center</align>
-								<height>30</height>
-								<font>Tiny</font>
-								<textcolor>white2</textcolor>
-								<selectedcolor>white2</selectedcolor>
-								<label>$INFO[ListItem.Title]</label>
 							</control>
 						</control>
 					</focusedlayout>
@@ -5238,10 +5141,10 @@
 							<animation type="Focus" reversible="false">
 								<effect type="slide" start="0" end="0,23" time="200" center="auto" tween="quadratic" easing="out"/>
 							</animation>
-							<control type="image">
-								<description>Title overlay</description>
-								<bottom>0</bottom>
-								<texture colordiffuse="af000000">common/white.png</texture>
+							<control type="button">
+								<onfocus>SetProperty(SkinHelper.WidgetContainer,50155)</onfocus>
+								<texturenofocus>-</texturenofocus>
+								<texturefocus>-</texturefocus>
 							</control>
 							<control type="label" id="13370">
 								<bottom>45</bottom>
@@ -5255,17 +5158,6 @@
 							<control type="image">
 								<aspectratio>scale</aspectratio>
 								<texture background="true" colordiffuse="$VAR[EmbyMiddleColourHighlight]">$VAR[PosterImage]</texture>
-							</control>
-							<control type="label">
-								<bottom>10</bottom>
-								<left>15</left>
-								<right>15</right>
-								<align>center</align>
-								<height>30</height>
-								<font>Tiny</font>
-								<textcolor>white2</textcolor>
-								<selectedcolor>white2</selectedcolor>
-								<label>$INFO[ListItem.Artist]</label>
 							</control>
 						</control>
 					</focusedlayout>
@@ -5364,11 +5256,6 @@
 							<animation type="Focus" reversible="false">
 								<effect type="slide" start="0" end="0,23" time="200" center="auto" tween="quadratic" easing="out"/>
 							</animation>
-							<control type="image">
-								<description>Title overlay</description>
-								<bottom>0</bottom>
-								<texture colordiffuse="af000000">common/white.png</texture>
-							</control>
 							<control type="label" id="13370">
 								<bottom>45</bottom>
 								<height>200</height>
@@ -5381,17 +5268,6 @@
 							<control type="image">
 								<aspectratio>scale</aspectratio>
 								<texture background="true" colordiffuse="$VAR[EmbyRightColourHighlight]">$VAR[MusicGenres]</texture>
-							</control>
-							<control type="label">
-								<bottom>10</bottom>
-								<left>15</left>
-								<right>15</right>
-								<align>center</align>
-								<height>30</height>
-								<font>Tiny</font>
-								<textcolor>white2</textcolor>
-								<selectedcolor>white2</selectedcolor>
-								<label>$INFO[ListItem.Label]</label>
 							</control>
 						</control>
 					</focusedlayout>
