@@ -4546,7 +4546,7 @@
 						<onup>setfocus(18003,0)</onup>
 						<ondown>setfocus(18003,3)</ondown>
 						<oninfo>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(18001).ListItem(4).Label])</oninfo>
-						<onclick>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(18001).ListItem(4).Label])</onclick>
+						<onclick>ActivateWindow(10025,videodb://tvshows/titles/$INFO[Container(18001).ListItem(4).Property(DBID)]/,return)</onclick>
 					</control>
 					<control type="image">
 						<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
@@ -4666,7 +4666,7 @@
 						<onup>setfocus(19003,0)</onup>
 						<ondown>setfocus(19003,3)</ondown>
 						<oninfo>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(19011).ListItem(4).Label])</oninfo>
-						<onclick>PlayMedia($INFO[Container(19011).ListItem(4).DBID])</onclick>
+						<onclick>ActivateWindow(10025,videodb://tvshows/titles/$INFO[Container(19011).ListItem(4).Property(DBID)]/,return)</onclick>
 					</control>
 					<control type="image">
 						<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
