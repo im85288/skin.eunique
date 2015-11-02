@@ -23,7 +23,7 @@
 			<height>50</height>
 			<font>MediumLarge</font>
 			<textcolor>white</textcolor>
-			<scroll>true<scroll>
+			<scroll>true</scroll>
 			<label>$VAR[PlayerBigTitle]</label>
 		</control>
 		<control type="progress" description="cache">
@@ -73,17 +73,6 @@
 			<align>left</align>
 			<textcolor>white2</textcolor>
 			<label>$VAR[PlayerLiveTVNextTitle]</label>
-			<visible>VideoPlayer.Content(LiveTV)</visible>
-		</control>
-		<control type="label" description="Duration">
-			<width>300</width>
-			<top>170</top>
-			<height>40</height>
-			<right>0</right>
-			<align>right</align>
-			<font>Small</font>
-			<textcolor>white2</textcolor>
-			<label>$INFO[VideoPlayer.NextDuration,, mins]</label>
 			<visible>VideoPlayer.Content(LiveTV)</visible>
 		</control>
 		<!--
