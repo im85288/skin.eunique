@@ -18,16 +18,17 @@
 			<label>$VAR[PlayerTitle]</label>
 		</control>
 		<control type="label" description="Show">
-			<width>100%</width>
+			<width>50%</width>
 			<top>110</top>
 			<height>50</height>
 			<font>MediumLarge</font>
 			<textcolor>white</textcolor>
+			<scroll>true<scroll>
 			<label>$VAR[PlayerBigTitle]</label>
 		</control>
 		<control type="progress" description="cache">
 			<description>Progress Bar</description>
-			<width>100%</width>
+			<width>50%</width>
 			<top>164</top>
 			<height>8</height>
 			<info>Player.ProgressCache</info>
@@ -39,7 +40,7 @@
 		</control>
 		<control type="progress" id="23">
 			<description>Progress Bar</description>
-			<width>100%</width>
+			<width>50%</width>
 			<top>164</top>
 			<height>8</height>
 			<info>Player.Progress</info>
@@ -54,7 +55,7 @@
 			<visible>!VideoPlayer.Content(LiveTV)</visible>
 		</control>
 		<control type="label" description="Total Time">
-			<right>0</right>
+			<right>50%</right>
 			<align>right</align>
 			<width>400</width>
 			<top>168</top>
@@ -85,9 +86,11 @@
 			<label>$INFO[VideoPlayer.NextDuration,, mins]</label>
 			<visible>VideoPlayer.Content(LiveTV)</visible>
 		</control>
+		<!--
 		<control type="label" description="Genre">
-			<width>1920</width>
-			<top>173</top>
+			<left>50%</left>
+			<width>50%</width>
+			<top>168</top>
 			<height>30</height>
 			<font>Small</font>
 			<align>center</align>
@@ -96,10 +99,12 @@
 			<label>$VAR[PlayerAdditionalInfo]</label>
 			<visible>!VideoPlayer.Content(LiveTV)</visible>
 		</control>
+		-->
 		<control type="textbox" description="Plot">
-			<width>100%</width>
-			<top>203</top>
-			<height>77</height>
+			<left>52%</left>
+			<width>48%</width>
+			<top>110</top>
+			<bottom>10</bottom>
 			<font>SmallBold</font>
 			<align>justify</align>
 			<textcolor>white</textcolor>

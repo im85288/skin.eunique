@@ -1181,6 +1181,16 @@
 		<value>$INFO[ListItem.Artist]</value>
 	</variable>
 	<variable name="BloxTitle">
+		<value condition="Container.Content(artists) + Control.HasFocus(6011)">$INFO[Container(601).Listitem(0).Property(Artist_Genre)]</value>
+		<value condition="Container.Content(artists) + Control.HasFocus(6012)">$INFO[Container(601).Listitem(1).Property(Artist_Genre)]</value>
+		<value condition="Container.Content(artists) + Control.HasFocus(6013)">$INFO[Container(601).Listitem(2).Property(Artist_Genre)]</value>
+		<value condition="Container.Content(artists) + Control.HasFocus(6014)">$INFO[Container(601).Listitem(3).Property(Artist_Genre)]</value>
+		<value condition="Container.Content(artists) + Control.HasFocus(6015)">$INFO[Container(601).Listitem(4).Property(Artist_Genre)]</value>
+		<value condition="Container.Content(artists) + Control.HasFocus(6016)">$INFO[Container(601).Listitem(5).Property(Artist_Genre)]</value>
+		<value condition="Container.Content(artists) + Control.HasFocus(6017)">$INFO[Container(601).Listitem(6).Property(Artist_Genre)]</value>
+		<value condition="Container.Content(artists) + Control.HasFocus(6018)">$INFO[Container(601).Listitem(7).Property(Artist_Genre)]</value>
+		<value condition="Container.Content(artists) + Control.HasFocus(6019)">$INFO[Container(601).Listitem(8).Property(Artist_Genre)]</value>
+		<value condition="Container.Content(artists) + Control.HasFocus(6020)">$INFO[Container(601).Listitem(9).Property(Artist_Genre)]</value>
 		<value condition="Container.Content(songs) + Control.HasFocus(6011)">$INFO[Container(601).Listitem(0).Label]$INFO[Container(601).Listitem(0).Duration, / ] $LOCALIZE[31102]</value>
 		<value condition="Container.Content(songs) + Control.HasFocus(6012)">$INFO[Container(601).Listitem(1).Label]$INFO[Container(601).Listitem(1).Duration, / ] $LOCALIZE[31102]</value>
 		<value condition="Container.Content(songs) + Control.HasFocus(6013)">$INFO[Container(601).Listitem(2).Label]$INFO[Container(601).Listitem(2).Duration, / ] $LOCALIZE[31102]</value>

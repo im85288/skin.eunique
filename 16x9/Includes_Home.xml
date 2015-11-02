@@ -893,8 +893,8 @@
 				<animation effect="slide" end="0,1" condition="true" time="200">Conditional</animation>
 				<width>44</width>
 				<control type="label">
-					<top>-1</top>
-					<left>-24</left>
+					<top>0</top>
+					<left>-19</left>
 					<height>46</height>
 					<font>symbolview</font>
 					<textcolor>Dark1</textcolor>
@@ -905,7 +905,7 @@
 				<width min="0" max="1500">auto</width>
 				<animation effect="slide" end="0,-3" condition="true" time="200">Conditional</animation>
 				<control type="label">
-					<top>-1</top>
+					<top>1</top>
 					<left>-56</left>
 					<height>52</height>
 					<font>SmallBold</font>
@@ -1201,7 +1201,7 @@
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
 			<left>408</left>
-			<top>40</top>
+			<top>41</top>
 			<width>1626</width>
 			<height>64</height>
 			<orientation>horizontal</orientation>
@@ -1265,6 +1265,15 @@
 				<width>auto</width>
 				<label>$INFO[VideoPlayer.Top250,#,]</label>
 				<visible>!IsEmpty(VideoPlayer.Top250)</visible>
+			</control>
+			<control type="label">
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>MediumSmallBold</font>
+				<width>auto</width>
+				<textcolor>Dark1</textcolor>
+				<selectedcolor>Dark1</selectedcolor>
+				<label>$VAR[PlayerAdditionalInfo,/ ]</label>
 			</control>
 		</control>
 	</include>
@@ -3796,6 +3805,7 @@
 						<onup>setfocus(19003,0)</onup>
 						<ondown>setfocus(19003,3)</ondown>
 						<oninfo>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(19001).ListItem(4).Label])</oninfo>
+						<onclick>sendclick(19001)</onclick>
 					</control>
 					<control type="image">
 						<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
@@ -4574,6 +4584,7 @@
 						<onup>setfocus(18003,0)</onup>
 						<ondown>setfocus(18003,3)</ondown>
 						<oninfo>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(18001).ListItem(4).Label])</oninfo>
+						<onclick>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(18001).ListItem(4).Label])</onclick>
 					</control>
 					<control type="image">
 						<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
@@ -4693,6 +4704,7 @@
 						<onup>setfocus(19003,0)</onup>
 						<ondown>setfocus(19003,3)</ondown>
 						<oninfo>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(19011).ListItem(4).Label])</oninfo>
+						<onclick>PlayMedia($INFO[Container(19011).ListItem(4).DBID])</onclick>
 					</control>
 					<control type="image">
 						<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
