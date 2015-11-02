@@ -1736,6 +1736,30 @@
 						<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 						<visible>!Control.HasFocus(60133)</visible>
 					</control>
+					<control type="label">
+						<left>296</left>
+						<top>798</top>
+						<width>50</width>
+						<height>50</height>
+						<font>symbolmenu</font>
+						<label></label>
+						<textcolor>white2</textcolor>
+						<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
+						<visible>!Control.HasFocus(60133)</visible>
+					</control>
+					<control type="label">
+						<left>296</left>
+						<top>805</top>
+						<width>50</width>
+						<height>40</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$INFO[Window(Home).Property(SkinHelper.TotalVideoAddons)]</label>
+						<font>minisymbol</font>
+						<textcolor>black</textcolor>
+						<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
+						<visible>!Control.HasFocus(60133)</visible>
+					</control>
 				</control>
 				<control type="list" id="60133">
 					<description>Widget</description>
@@ -2008,6 +2032,30 @@
 						<textcolor>white2</textcolor>
 						<selectedcolor>white2</selectedcolor>
 						<label>1038</label>
+						<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
+						<visible>!Control.HasFocus(60144)</visible>
+					</control>
+					<control type="label">
+						<left>843</left>
+						<top>798</top>
+						<width>50</width>
+						<height>50</height>
+						<font>symbolmenu</font>
+						<label></label>
+						<textcolor>white2</textcolor>
+						<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
+						<visible>!Control.HasFocus(60144)</visible>
+					</control>
+					<control type="label">
+						<left>843</left>
+						<top>805</top>
+						<width>50</width>
+						<height>40</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$INFO[Window(Home).Property(SkinHelper.TotalAudioAddons)]</label>
+						<font>minisymbol</font>
+						<textcolor>black</textcolor>
 						<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 						<visible>!Control.HasFocus(60144)</visible>
 					</control>
@@ -3957,7 +4005,7 @@
 						<width>410</width>
 						<height>245</height>
 						<texture colordiffuse="$VAR[EmbyLeftColourHighlight]">common/white.png</texture>
-						<visible>!Control.HasFocus(40133) + IsEmpty(Window(Home).Property(SkinHelper.AllTvShowsBackground))</visible>
+						<visible>!Control.HasFocus(40133) + IsEmpty(Window(Home).Property(SkinHelper.AllTvShowsBackground.Wall)</visible>
 					</control>
 					<control type="multiimage">
 						<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
@@ -3968,8 +4016,8 @@
 						<timeperimage>20000</timeperimage>
 						<randomize>true</randomize>
 						<aspectratio scalediffuse="false">scale</aspectratio>
-						<imagepath colordiffuse="$VAR[EmbyLeftColourHighlight]" background="true">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground)]</imagepath>
-						<visible>!Control.HasFocus(40133) + !IsEmpty(Window(Home).Property(SkinHelper.AllTvShowsBackground))</visible>
+						<imagepath colordiffuse="$VAR[EmbyLeftColourHighlight]" background="true">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground.Wall)]</imagepath>
+						<visible>!Control.HasFocus(40133) + !IsEmpty(Window(Home).Property(SkinHelper.AllTvShowsBackground.Wall))</visible>
 					</control>
 					<control type="label">
 						<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
@@ -4925,8 +4973,21 @@
 						<width>273</width>
 						<height>245</height>
 						<texture colordiffuse="$VAR[EmbyLeftColourHighlight]">common/white.png</texture>
-						<visible>!Control.HasFocus(50133)</visible>
+						<visible>!Control.HasFocus(50133) + IsEmpty(Window(Home).Property(SkinHelper.AllMusicSongsBackground.Wall)</visible>
 					</control>
+					<control type="multiimage">
+						<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+						<left>SidePad</left>
+						<posy>790</posy>
+						<width>273</width>
+						<height>245</height>
+						<timeperimage>20000</timeperimage>
+						<randomize>true</randomize>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<imagepath colordiffuse="$VAR[EmbyLeftColourHighlight]" background="true">$INFO[Window(Home).Property(SkinHelper.AllMusicSongsBackground.Wall)]</imagepath>
+						<visible>!Control.HasFocus(50133) + !IsEmpty(Window(Home).Property(SkinHelper.AllMusicSongsBackground.Wall))</visible>
+					</control>
+
 					<control type="label">
 						<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
 						<description>All music</description>
@@ -5067,13 +5128,25 @@
 					</control>
 					<control type="image">
 						<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
-						<description>music artists</description>
+						<description>All music</description>
 						<left>353</left>
 						<posy>790</posy>
 						<width>274</width>
 						<height>245</height>
 						<texture colordiffuse="$VAR[EmbyMiddleColourHighlight]">common/white.png</texture>
-						<visible>!Control.HasFocus(50155)</visible>
+						<visible>!Control.HasFocus(50155) + IsEmpty(Window(Home).Property(SkinHelper.AllMusicBackground.Wall)</visible>
+					</control>
+					<control type="multiimage">
+						<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+						<left>353</left>
+						<posy>790</posy>
+						<width>274</width>
+						<height>245</height>
+						<timeperimage>20000</timeperimage>
+						<randomize>true</randomize>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<imagepath colordiffuse="$VAR[EmbyMiddleColourHighlight]" background="true">$INFO[Window(Home).Property(SkinHelper.AllMusicBackground.Wall)]</imagepath>
+						<visible>!Control.HasFocus(50155) + !IsEmpty(Window(Home).Property(SkinHelper.AllMusicBackground.Wall))</visible>
 					</control>
 					<control type="label">
 						<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
