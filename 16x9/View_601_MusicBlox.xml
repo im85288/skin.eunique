@@ -22,7 +22,7 @@
 				<ondown>601</ondown>
 				<preloaditems>2</preloaditems>
 				<pagecontrol>60</pagecontrol>
-				<viewtype label="31741">list</viewtype>
+				<viewtype label="31981">list</viewtype>
 				<scrolltime tween="quadratic">400</scrolltime>
 				<itemlayout height="1" width="1" />
 				<focusedlayout height="1" width="1">
@@ -37,6 +37,7 @@
 		</control>
 
 				<control type="group">
+			<include>Animation.Common</include>
 					<visible>Control.IsVisible(601)</visible>
 					<top>110</top>
 					<left>00</left>
@@ -144,7 +145,9 @@
 						<onright>6012</onright>
 						<ondown>Control.Move(601,10)</ondown>
 						<onleft>60</onleft>
-						<onclick>-</onclick>
+						<onclick condition="Container.Content(songs)">PlayMedia($INFO[Container(601).ListItem(0).FileNameAndPath])</onclick>
+						<onclick condition="Container.Content(albums)">ActivateWindow(10502,musicdb://albums/$INFO[Container(601).ListItem(0).DBID]/,return)</onclick>
+						<onclick condition="Container.Content(artists)">ActivateWindow(10502,musicdb://artists/$INFO[Container(601).ListItem(0).DBID]/?albumartistsonly=false,return)</onclick>
 						<onback>setfocus(601)</onback>
 						<width>0</width>
 						<height>0</height>
@@ -159,7 +162,9 @@
 						<onright>6013</onright>
 						<ondown>6016</ondown>
 						<onleft>6011</onleft>
-						<onclick>-</onclick>
+						<onclick condition="Container.Content(songs)">PlayMedia($INFO[Container(601).ListItem(1).FileNameAndPath])</onclick>
+						<onclick condition="Container.Content(albums)">ActivateWindow(10502,musicdb://albums/$INFO[Container(601).ListItem(1).DBID]/,return)</onclick>
+						<onclick condition="Container.Content(artists)">ActivateWindow(10502,musicdb://artists/$INFO[Container(601).ListItem(1).DBID]/?albumartistsonly=false,return)</onclick>
 						<onback>setfocus(601)</onback>
 						<width>0</width>
 						<height>0</height>
@@ -174,7 +179,9 @@
 						<onright>6014</onright>
 						<ondown>6017</ondown>
 						<onleft>6012</onleft>
-						<onclick>-</onclick>
+						<onclick condition="Container.Content(songs)">PlayMedia($INFO[Container(601).ListItem(2).FileNameAndPath])</onclick>
+						<onclick condition="Container.Content(albums)">ActivateWindow(10502,musicdb://albums/$INFO[Container(601).ListItem(2).DBID]/,return)</onclick>
+						<onclick condition="Container.Content(artists)">ActivateWindow(10502,musicdb://artists/$INFO[Container(601).ListItem(2).DBID]/?albumartistsonly=false,return)</onclick>
 						<onback>setfocus(601)</onback>
 						<width>0</width>
 						<height>0</height>
@@ -189,7 +196,9 @@
 						<onright>6015</onright>
 						<ondown>6018</ondown>
 						<onleft>6013</onleft>
-						<onclick>-</onclick>
+						<onclick condition="Container.Content(songs)">PlayMedia($INFO[Container(601).ListItem(3).FileNameAndPath])</onclick>
+						<onclick condition="Container.Content(albums)">ActivateWindow(10502,musicdb://albums/$INFO[Container(601).ListItem(3).DBID]/,return)</onclick>
+						<onclick condition="Container.Content(artists)">ActivateWindow(10502,musicdb://artists/$INFO[Container(601).ListItem(3).DBID]/?albumartistsonly=false,return)</onclick>
 						<onback>setfocus(601)</onback>
 						<width>0</width>
 						<height>0</height>
@@ -204,7 +213,9 @@
 						<onright>6011</onright>
 						<ondown>6018</ondown>
 						<onleft>6014</onleft>
-						<onclick>-</onclick>
+						<onclick condition="Container.Content(songs)">PlayMedia($INFO[Container(601).ListItem(4).FileNameAndPath])</onclick>
+						<onclick condition="Container.Content(albums)">ActivateWindow(10502,musicdb://albums/$INFO[Container(601).ListItem(4).DBID]/,return)</onclick>
+						<onclick condition="Container.Content(artists)">ActivateWindow(10502,musicdb://artists/$INFO[Container(601).ListItem(4).DBID]/?albumartistsonly=false,return)</onclick>
 						<onback>setfocus(601)</onback>
 						<width>0</width>
 						<height>0</height>
@@ -219,7 +230,9 @@
 						<onright>6017</onright>
 						<ondown>6019</ondown>
 						<onleft>6011</onleft>
-						<onclick>-</onclick>
+						<onclick condition="Container.Content(songs)">PlayMedia($INFO[Container(601).ListItem(5).FileNameAndPath])</onclick>
+						<onclick condition="Container.Content(albums)">ActivateWindow(10502,musicdb://albums/$INFO[Container(601).ListItem(5).DBID]/,return)</onclick>
+						<onclick condition="Container.Content(artists)">ActivateWindow(10502,musicdb://artists/$INFO[Container(601).ListItem(5).DBID]/?albumartistsonly=false,return)</onclick>
 						<onback>setfocus(601)</onback>
 						<width>0</width>
 						<height>0</height>
@@ -234,7 +247,9 @@
 						<onright>6018</onright>
 						<ondown>6020</ondown>
 						<onleft>6016</onleft>
-						<onclick>-</onclick>
+						<onclick condition="Container.Content(songs)">PlayMedia($INFO[Container(601).ListItem(6).FileNameAndPath])</onclick>
+						<onclick condition="Container.Content(albums)">ActivateWindow(10502,musicdb://albums/$INFO[Container(601).ListItem(6).DBID]/,return)</onclick>
+						<onclick condition="Container.Content(artists)">ActivateWindow(10502,musicdb://artists/$INFO[Container(601).ListItem(6).DBID]/?albumartistsonly=false,return)</onclick>
 						<onback>setfocus(601)</onback>
 						<width>0</width>
 						<height>0</height>
@@ -249,7 +264,9 @@
 						<onright>6011</onright>
 						<ondown>Control.Move(601,3)</ondown>
 						<onleft>6017</onleft>
-						<onclick>-</onclick>
+						<onclick condition="Container.Content(songs)">PlayMedia($INFO[Container(601).ListItem(7).FileNameAndPath])</onclick>
+						<onclick condition="Container.Content(albums)">ActivateWindow(10502,musicdb://albums/$INFO[Container(601).ListItem(7).DBID]/,return)</onclick>
+						<onclick condition="Container.Content(artists)">ActivateWindow(10502,musicdb://artists/$INFO[Container(601).ListItem(7).DBID]/?albumartistsonly=false,return)</onclick>
 						<onback>setfocus(601)</onback>
 						<width>0</width>
 						<height>0</height>
@@ -264,7 +281,9 @@
 						<onright>6020</onright>
 						<ondown>Control.Move(601,3)</ondown>
 						<onleft>6011</onleft>
-						<onclick>RunScript(script.playalbum,albumid=$INFO[Container(601).ListItem(8).DBID])</onclick>
+						<onclick condition="Container.Content(songs)">PlayMedia($INFO[Container(601).ListItem(8).FileNameAndPath])</onclick>
+						<onclick condition="Container.Content(albums)">ActivateWindow(10502,musicdb://albums/$INFO[Container(601).ListItem(8).DBID]/,return)</onclick>
+						<onclick condition="Container.Content(artists)">ActivateWindow(10502,musicdb://artists/$INFO[Container(601).ListItem(8).DBID]/?albumartistsonly=false,return)</onclick>
 						<onback>setfocus(601)</onback>
 						<width>0</width>
 						<height>0</height>
@@ -279,7 +298,9 @@
 						<onright>6018</onright>
 						<ondown>Control.Move(601,3)</ondown>
 						<onleft>6019</onleft>
-						<onclick>RunScript(script.playalbum,albumid=$INFO[Container(601).ListItem(9).DBID])</onclick>
+						<onclick condition="Container.Content(songs)">PlayMedia($INFO[Container(601).ListItem(9).FileNameAndPath])</onclick>
+						<onclick condition="Container.Content(albums)">ActivateWindow(10502,musicdb://albums/$INFO[Container(601).ListItem(9).DBID]/,return)</onclick>
+						<onclick condition="Container.Content(artists)">ActivateWindow(10502,musicdb://artists/$INFO[Container(601).ListItem(9).DBID]/?albumartistsonly=false,return)</onclick>
 						<onback>setfocus(601)</onback>
 						<width>0</width>
 						<height>0</height>
