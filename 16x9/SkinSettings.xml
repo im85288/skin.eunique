@@ -503,13 +503,6 @@
 						<onclick>Skin.ToggleSetting(ArtistSlideshow.Animate)</onclick>
 						<enable>!Skin.HasSetting(ArtistSlideShow.Disabled) + System.HasAddon(script.artistslideshow)</enable>
 					</control>
-					<control type="radiobutton" id="9236" description="Show detailed info on pause">
-						<width>1410</width>
-						<include>DefSettingsButton2</include>
-						<label>31201</label>
-						<selected>Skin.HasSetting(osd.showinfoonpause)</selected>
-						<onclick>Skin.ToggleSetting(osd.showinfoonpause)</onclick>
-					</control>
 					<control type="button" id="92366">
 						<width>1410</width>
 						<include>DefSettingsButton2</include>
@@ -635,13 +628,6 @@
 						<label2>[COLOR=$VAR[ColourHighlight]]$INFO[Skin.String(focuscolor.name)][/COLOR]</label2>
 						<visible>Skin.HasSetting(ColourHighlight)</visible>
 					</control>
-					<control type="button" id="9283">
-						<width>1410</width>
-						<include>DefSettingsButton2</include>
-						<onclick>Skin.SetString(focuscolor.name,Highlight)</onclick>
-						<label> - $LOCALIZE[409]</label>
-						<visible>Skin.HasSetting(ColourHighlight)</visible>
-					</control>
 					<control type="radiobutton" id="9284">
 						<width>1410</width>
 						<textureradiofocus colordiffuse="$VAR[ColourHighlight2]">buttons/radio-on.png</textureradiofocus>
@@ -659,13 +645,6 @@
 						<label2>[COLOR=$VAR[ColourHighlight2]]$INFO[Skin.String(focuscolor2.name)][/COLOR]</label2>
 						<visible>Skin.HasSetting(ColourHighlight2)</visible>
 					</control>
-					<control type="button" id="9286">
-						<width>1410</width>
-						<include>DefSettingsButton2</include>
-						<onclick>Skin.SetString(focuscolor2.name,Highlight2)</onclick>
-						<label> - $LOCALIZE[409]</label>
-						<visible>Skin.HasSetting(ColourHighlight2)</visible>
-					</control>
 					<control type="radiobutton" id="9287">
 						<width>1410</width>
 						<textureradiofocus colordiffuse="$VAR[ColourSelected]">buttons/radio-on.png</textureradiofocus>
@@ -681,13 +660,6 @@
 						<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=selectedcolor.name)</onclick>
 						<label>31905</label>
 						<label2>[COLOR=$VAR[ColourSelected]]$INFO[Skin.String(selectedcolor.name)][/COLOR]</label2>
-						<visible>Skin.HasSetting(ColourSelected)</visible>
-					</control>
-					<control type="button" id="9289">
-						<width>1410</width>
-						<include>DefSettingsButton2</include>
-						<onclick>Skin.SetString(selectedcolor.name,Selected)</onclick>
-						<label> - $LOCALIZE[409]</label>
 						<visible>Skin.HasSetting(ColourSelected)</visible>
 					</control>
 					<control type="radiobutton" id="92800">
@@ -982,7 +954,7 @@
 					<onup>9008</onup>
 					<ondown>9008</ondown>
 					<visible>Container(9000).HasFocus(9)</visible>
-					<control type="button" id="9291">
+					<control type="button" id="92911">
 						<width>1410</width>
 						<include>DefSettingsButton2</include>
 						<label>31814</label>
