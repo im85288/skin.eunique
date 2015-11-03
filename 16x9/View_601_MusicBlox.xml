@@ -2,6 +2,41 @@
 <!-- Foundation -->
 <includes>
 	<include name="View_601_MusicBlox">
+				<control type="group">
+					<include>Animation.Common</include>
+					<visible>Control.IsVisible(601)</visible>
+					<top>110</top>
+					<left>10</left>
+					<width>1920</width>
+					<bottom>10</bottom>
+					<control type="image">
+						<right>960</right>
+						<top>0</top>
+						<height>960</height>
+						<texture fallback="E.png">$INFO[Container(601).Listitem(0).Icon]</texture>
+				<aspectratio align="center" aligny="center">scale</aspectratio>
+					</control>
+			<control type="label">
+						<height>260</height>
+					<right>970</right>
+					<width>260</width>
+					<bottom>20</bottom>
+				<font>symbolbiggerest</font>
+				<label>$VAR[PercentWatchedBack]</label>
+				<textcolor>white2</textcolor>
+			</control>
+
+			<control type="image">
+						<height>260</height>
+					<right>970</right>
+					<width>260</width>
+					<bottom>30</bottom>
+				<texture>$VAR[ClearLogo]</texture>
+				<aspectratio align="center" aligny="center">keep</aspectratio>
+				<fadetime>50</fadetime>
+			</control>
+
+					</control>
 		<control type="group">
 			<include>Animation.Common</include>
 			<visible>Control.IsVisible(601)</visible>
@@ -10,11 +45,10 @@
 				<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out" />
 				<effect type="zoom" end="1000,7" time="200" center="auto" tween="quadratic" easing="out" />
 			</animation>
-			<control type="wraplist" id="601">
-				<visible>Container.Content(music) | Container.Content(artists) | Container.Content(songs) | Container.Content(albums)</visible>
+			<control type="panel" id="601">
 				<top>110</top>
-				<right>960</right>
-				<left>0</left>
+				<width>720</width>
+				<left>970</left>
 				<height>960</height>
 				<onleft>60</onleft>
 				<onright>60</onright>
@@ -24,13 +58,13 @@
 				<pagecontrol>60</pagecontrol>
 				<viewtype label="31981">list</viewtype>
 				<scrolltime tween="quadratic">400</scrolltime>
-				<itemlayout height="960" width="960">
+				<itemlayout height="240" width="240">
 					<control type="image">
 						<texture fallback="E.png">$INFO[Listitem.Icon]</texture>
-						<fadetime>100</fadetime>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
 					</control>
 				</itemlayout>
-				<focusedlayout height="960" width="960">
+				<focusedlayout height="240" width="240">
 					<control type="button" id="6020">
 						<onfocus>RunScript(script.toolbox,info=blur,id='"$INFO[ListItem.Icon]"',radius=44,prefix=VideoInfo)</onfocus>
 						<label>-</label>
@@ -39,115 +73,16 @@
 						<texturenofocus>-</texturenofocus>
 					</control>
 					<control type="image">
-						<animation effect="zoom" start="100" end="95" time="200" tween="quadratic" reversible="false" center="auto">Focus</animation>
+					<animation type="Focus" reversible="false">
+						<effect type="zoom" start="100" end="110" delay="0" time="50" tween="bounce" easing="out" reversible="false" center="auto" />
+					</animation>
 						<texture fallback="E.png">$INFO[Listitem.Icon]</texture>
-						<fadetime>100</fadetime>
+				<aspectratio align="center" aligny="center">scale</aspectratio>
 					</control>
 				</focusedlayout>
 			</control>
 			<include>Furniture_ScrollbarBannerPlex</include>
 		</control>
-				<control type="group">
-					<include>Animation.Common</include>
-					<visible>Control.IsVisible(601)</visible>
-					<top>110</top>
-					<left>00</left>
-					<width>1920</width>
-					<bottom>10</bottom>
-					<control type="image">
-							<animation effect="zoom" start="100" end="95" time="200" tween="quadratic" reversible="false" condition="Control.HasFocus(6012)" center="auto">conditional</animation>
-						<left>960</left>
-						<top>0</top>
-						<width>240</width>
-						<height>240</height>
-						<texture fallback="E.png">$INFO[Container(601).Listitem(1).Icon]</texture>
-						<fadetime>100</fadetime>
-					</control>
-					<control type="image">
-							<animation effect="zoom" start="100" end="95" time="200" tween="quadratic" reversible="false" condition="Control.HasFocus(6013)" center="auto">conditional</animation>
-						<left>1200</left>
-						<top>0</top>
-						<width>240</width>
-						<height>240</height>
-						<texture fallback="E.png">$INFO[Container(601).Listitem(2).Icon]</texture>
-						<fadetime>100</fadetime>
-					</control>
-					<control type="image">
-							<animation effect="zoom" start="100" end="95" time="200" tween="quadratic" reversible="false" condition="Control.HasFocus(6014)" center="auto">conditional</animation>
-						<left>1440</left>
-						<top>0</top>
-						<width>240</width>
-						<height>240</height>
-						<texture fallback="E.png">$INFO[Container(601).Listitem(3).Icon]</texture>
-						<fadetime>100</fadetime>
-					</control>
-					<control type="image">
-							<animation effect="zoom" start="100" end="95" time="200" tween="quadratic" reversible="false" condition="Control.HasFocus(6015)" center="auto">conditional</animation>
-						<left>1680</left>
-						<top>0</top>
-						<width>240</width>
-						<height>240</height>
-						<texture fallback="E.png">$INFO[Container(601).Listitem(4).Icon]</texture>
-						<fadetime>100</fadetime>
-					</control>
-					<control type="image">
-							<animation effect="zoom" start="100" end="95" time="200" tween="quadratic" reversible="false" condition="Control.HasFocus(6016)" center="auto">conditional</animation>
-						<left>960</left>
-						<top>240</top>
-						<width>240</width>
-						<height>240</height>
-						<texture fallback="E.png">$INFO[Container(601).Listitem(5).Icon]</texture>
-						<fadetime>100</fadetime>
-					</control>
-					<control type="image">
-							<animation effect="zoom" start="100" end="95" time="200" tween="quadratic" reversible="false" condition="Control.HasFocus(6017)" center="auto">conditional</animation>
-						<left>1200</left>
-						<top>240</top>
-						<width>240</width>
-						<height>240</height>
-						<texture fallback="E.png">$INFO[Container(601).Listitem(6).Icon]</texture>
-						<fadetime>100</fadetime>
-					</control>
-					<control type="image">
-							<animation effect="zoom" start="100" end="95" time="200" tween="quadratic" reversible="false" condition="Control.HasFocus(6018)" center="auto">conditional</animation>
-						<left>1440</left>
-						<top>240</top>
-						<width>480</width>
-						<height>480</height>
-						<texture fallback="E.png">$INFO[Container(601).Listitem(7).Icon]</texture>
-						<fadetime>100</fadetime>
-					</control>
-					<control type="image">
-							<animation effect="zoom" start="100" end="95" time="200" tween="quadratic" reversible="false" condition="Control.HasFocus(6019)" center="auto">conditional</animation>
-						<left>960</left>
-						<top>480</top>
-						<width>240</width>
-						<height>240</height>
-						<texture fallback="E.png">$INFO[Container(601).Listitem(8).Icon]</texture>
-						<fadetime>100</fadetime>
-					</control>
-					<control type="image">
-							<animation effect="zoom" start="100" end="95" time="200" tween="quadratic" reversible="false" condition="Control.HasFocus(6020)" center="auto">conditional</animation>
-						<left>1200</left>
-						<top>480</top>
-						<width>240</width>
-						<height>240</height>
-						<texture fallback="E.png">$INFO[Container(601).Listitem(9).Icon]</texture>
-						<fadetime>100</fadetime>
-					</control>
-				</control>
-					<control type="label">
-						<right>720</right>
-						<bottom>40</bottom>
-						<width>0</width>
-						<height>40</height>
-						<label>$VAR[BloxTitle]</label>
-						<font>Small</font>
-						<visible>Control.IsVisible(601)</visible>
-					</control>
-
-
-
 
 	</include>
 </includes>

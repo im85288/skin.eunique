@@ -113,7 +113,7 @@
 					<label fallback="19055">$INFO[Window(Home).Property(SkinHelper.Music.TrackList)]</label>
 					<font>DurationFontSmall</font>
 					<textcolor>$VAR[ColourTextFlags]</textcolor>
-					<visible>Container.Content(albums) | Container.Content(songs)</visible>
+					<visible>Container.Content(albums)</visible>
 				</control>
 			</control>
 			<control type="image">
@@ -354,6 +354,8 @@
 			<label>$VAR[LabelDuration]</label>
 		</control>
 		<control type="group">
+			<animation effect="slide" end="-15,0" center="auto" time="0" condition="Container.Content(songs)">Conditional</animation>
+		<control type="group">
 			<control type="label">
 				<centerright>112</centerright>
 				<centertop>32</centertop>
@@ -450,6 +452,7 @@
 				<textcolor>$VAR[ResumeColourHighlight]</textcolor>
 			</control>
 			<visible>!stringcompare(ListItem.Label,..) + ListItem.IsResumable</visible>
+		</control>
 		</control>
 		<control type="label">
 			<right>30</right>
@@ -524,6 +527,8 @@
 			<label>$VAR[LabelDuration]</label>
 		</control>
 		<control type="group">
+			<animation effect="slide" end="-15,0" center="auto" time="0" condition="Container.Content(songs)">Conditional</animation>
+		<control type="group">
 			<control type="label">
 				<centerright>112</centerright>
 				<centertop>32</centertop>
@@ -620,6 +625,7 @@
 				<textcolor>$VAR[ResumeColourHighlight]</textcolor>
 			</control>
 			<visible>!stringcompare(ListItem.Label,..) + ListItem.IsResumable</visible>
+		</control>
 		</control>
 		<control type="label">
 			<right>30</right>
