@@ -2751,7 +2751,7 @@
 							<property name="LowTemp">$INFO[Window(weather).Property(Day12.LowTemp)]$INFO[System.TemperatureUnits]</property>
 							<property name="Fanart">$VAR[WeatherFanart]$INFO[Window(Weather).Property(Day12.FanartCode)]$VAR[DefWeatherFanart]</property>
 							<onclick>noop</onclick>
-							<visible>!IsEmpty(Window(weather).Property(Day12.Title)) !IsEmpty(Window(weather).Property(Day13.Title))</visible>
+							<visible>!IsEmpty(Window(weather).Property(Day12.Title)) + !IsEmpty(Window(weather).Property(Day13.Title))</visible>
 						</item>
 						<item>
 							<label>$INFO[Window(weather).Property(Day13.Title)]</label>
@@ -3908,7 +3908,7 @@
 						<width>410</width>
 						<height>245</height>
 						<texture colordiffuse="$VAR[EmbyLeftColourHighlight]">common/white.png</texture>
-						<visible>!Control.HasFocus(40133) + IsEmpty(Window(Home).Property(SkinHelper.AllTvShowsBackground.Wall)</visible>
+						<visible>!Control.HasFocus(40133) + IsEmpty(Window(Home).Property(SkinHelper.AllTvShowsBackground.Wall))</visible>
 					</control>
 					<control type="multiimage">
 						<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
@@ -4865,7 +4865,7 @@
 						<width>273</width>
 						<height>245</height>
 						<texture colordiffuse="$VAR[EmbyLeftColourHighlight]">common/white.png</texture>
-						<visible>!Control.HasFocus(50133) + IsEmpty(Window(Home).Property(SkinHelper.AllMusicSongsBackground.Wall)</visible>
+						<visible>!Control.HasFocus(50133) + IsEmpty(Window(Home).Property(SkinHelper.AllMusicSongsBackground.Wall))</visible>
 					</control>
 					<control type="multiimage">
 						<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
@@ -5015,7 +5015,7 @@
 						<width>274</width>
 						<height>245</height>
 						<texture colordiffuse="$VAR[EmbyMiddleColourHighlight]">common/white.png</texture>
-						<visible>!Control.HasFocus(50155) + IsEmpty(Window(Home).Property(SkinHelper.AllMusicBackground.Wall)</visible>
+						<visible>!Control.HasFocus(50155) + IsEmpty(Window(Home).Property(SkinHelper.AllMusicBackground.Wall))</visible>
 					</control>
 					<control type="multiimage">
 						<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
