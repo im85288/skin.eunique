@@ -33,7 +33,7 @@
 							<texturenofocus>-</texturenofocus>
 							<onfocus condition="Container.Content(movies)">ClearProperty(TVShowID,home)</onfocus>
 							<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
-							<onfocus condition="!Container.Scrolling">RunScript(script.toolbox,info=blur,id='"$VAR[PosterImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfo)</onfocus>
+							<onfocus condition="!Container.Scrolling + !Container.Content(songs)">RunScript(script.toolbox,info=blur,id='"$VAR[PosterImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfo)</onfocus>
 						</control>
 						<control type="group">
 							<include>50focuslayout</include>
@@ -55,7 +55,7 @@
 							<texturenofocus>-</texturenofocus>
 							<onfocus condition="Container.Content(movies)">ClearProperty(TVShowID,home)</onfocus>
 							<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
-							<onfocus condition="!Container.Scrolling">RunScript(script.toolbox,info=blur,id='"$VAR[PosterImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfo)</onfocus>
+							<onfocus condition="!Container.Scrolling + !Container.Content(songs)">RunScript(script.toolbox,info=blur,id='"$VAR[PosterImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfo)</onfocus>
 						</control>
 						<control type="group">
 							<include>50focuslayout</include>
@@ -122,24 +122,24 @@
 				<fadetime>100</fadetime>
 				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 				<texture background="true">$VAR[PosterImage]</texture>
-				<visible>!Container.Content(albums)</visible>
+				<visible>!Container.Content(albums) + !Container.Content(songs) + !Container.Content(artists) + !Container.Content(singles)</visible>
 			</control>
 			<control type="image">
-				<left>602</left>
-				<right>10</right>
+				<left>-960</left>
+				<right>950</right>
 				<height>879</height>
 				<fadetime>1000</fadetime>
 				<aspectratio align="left" aligny="center" scalediffuse="false">scale</aspectratio>
 				<texture flipx="true" background="true" diffuse="diffuse/listposter-ref.png">$INFO[Window(home).Property(VideoInfo.ImageFilter)]</texture>
-				<visible>Container.Content(albums)</visible>
+				<visible>Container.Content(albums) | Container.Content(songs) | Container.Content(artists) | Container.Content(singles)</visible>
 			</control>
 			<control type="image">
-				<width>879</width>
+				<right>10</right>
 				<height>879</height>
 				<fadetime>100</fadetime>
 				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 				<texture background="true">$VAR[PosterImage]</texture>
-				<visible>Container.Content(albums)</visible>
+				<visible>Container.Content(albums) | Container.Content(songs) | Container.Content(artists) | Container.Content(singles)</visible>
 			</control>
 			<control type="image">
 				<left>602</left>
@@ -148,7 +148,7 @@
 				<fadetime>1000</fadetime>
 				<aspectratio align="left" aligny="center" scalediffuse="false">scale</aspectratio>
 				<texture flipx="true" background="true" diffuse="diffuse/listposter-ref.png">$INFO[Window(home).Property(VideoInfo.ImageFilter)]</texture>
-				<visible>!Container.Content(albums)</visible>
+				<visible>!Container.Content(albums) + !Container.Content(songs) + !Container.Content(artists) + !Container.Content(singles)</visible>
 			</control>
 			<control type="textbox">
 				<left>607</left>
@@ -160,6 +160,7 @@
 				<scroll>true</scroll>
 				<textcolor>white</textcolor>
 				<label>$VAR[LabelDirector]</label>
+				<visible>!Container.Content(albums) + !Container.Content(songs) + !Container.Content(artists) + !Container.Content(singles)</visible>
 			</control>
 			<control type="label">
 				<left>607</left>
@@ -170,6 +171,7 @@
 				<font>MediumSmallBold</font>
 				<textcolor>white</textcolor>
 				<label>$VAR[LabelDuration]</label>
+				<visible>!Container.Content(albums) + !Container.Content(songs) + !Container.Content(artists) + !Container.Content(singles)</visible>
 			</control>
 			<control type="textbox">
 				<left>607</left>
@@ -181,6 +183,7 @@
 				<textcolor>white</textcolor>
 				<label>$VAR[LabelGenreList]</label>
 				<autoscroll delay="500" time="1000" repeat="500"/>
+				<visible>!Container.Content(albums) + !Container.Content(songs) + !Container.Content(artists) + !Container.Content(singles)</visible>
 			</control>
 			<control type="textbox">
 				<left>607</left>
@@ -192,7 +195,7 @@
 				<textcolor>white</textcolor>
 				<label>$INFO[Window(Home).Property(SkinHelper.ListItemStudios)]</label>
 				<autoscroll delay="500" time="3000" repeat="500"/>
-				<visible>!Container.Content(albums)</visible>
+				<visible>!Container.Content(albums) + !Container.Content(songs) + !Container.Content(artists) + !Container.Content(singles)</visible>
 			</control>
 			<control type="textbox">
 				<description>textarea</description>
@@ -204,7 +207,7 @@
 				<font>MediumLargeBold</font>
 				<textcolor>white</textcolor>
 				<label>$VAR[PlotList]</label>
-				<visible>!Container.Content(albums)</visible>
+				<visible>!Container.Content(albums) + !Container.Content(songs) + !Container.Content(artists) + !Container.Content(singles)</visible>
 			</control>
 			<control type="textbox">
 				<description>textarea</description>
@@ -216,7 +219,7 @@
 				<font>MediumLargeBold</font>
 				<textcolor>white</textcolor>
 				<label>$INFO[Window(Home).Property(SkinHelper.Music.Info)]</label>
-				<visible>Container.Content(albums)</visible>
+				<visible>!Container.Content(albums) + !Container.Content(songs) + !Container.Content(artists) + !Container.Content(singles)</visible>
 			</control>
 		</control>
 	</include>

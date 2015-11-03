@@ -12,10 +12,10 @@
 			</animation>
 			<control type="wraplist" id="601">
 				<visible>Container.Content(music) | Container.Content(artists) | Container.Content(songs) | Container.Content(albums)</visible>
-				<top>TopPad</top>
-				<right>1910</right>
+				<top>110</top>
+				<right>960</right>
 				<left>0</left>
-				<height>1</height>
+				<height>960</height>
 				<onleft>60</onleft>
 				<onright>60</onright>
 				<onup>601</onup>
@@ -24,20 +24,31 @@
 				<pagecontrol>60</pagecontrol>
 				<viewtype label="31981">list</viewtype>
 				<scrolltime tween="quadratic">400</scrolltime>
-				<itemlayout height="1" width="1" />
-				<focusedlayout height="1" width="1">
-					<control type="button">
+				<itemlayout height="960" width="960">
+					<control type="image">
+						<texture fallback="E.png">$INFO[Listitem.Icon]</texture>
+						<fadetime>100</fadetime>
+					</control>
+				</itemlayout>
+				<focusedlayout height="960" width="960">
+					<control type="button" id="6020">
+						<onfocus>RunScript(script.toolbox,info=blur,id='"$INFO[ListItem.Icon]"',radius=44,prefix=VideoInfo)</onfocus>
+						<label>-</label>
+						<focusedcolor>-</focusedcolor>
 						<texturefocus>-</texturefocus>
 						<texturenofocus>-</texturenofocus>
-						<onfocus>SetFocus(6011)</onfocus>
+					</control>
+					<control type="image">
+						<animation effect="zoom" start="100" end="95" time="200" tween="quadratic" reversible="false" center="auto">Focus</animation>
+						<texture fallback="E.png">$INFO[Listitem.Icon]</texture>
+						<fadetime>100</fadetime>
 					</control>
 				</focusedlayout>
 			</control>
 			<include>Furniture_ScrollbarBannerPlex</include>
 		</control>
-
 				<control type="group">
-			<include>Animation.Common</include>
+					<include>Animation.Common</include>
 					<visible>Control.IsVisible(601)</visible>
 					<top>110</top>
 					<left>00</left>
@@ -124,191 +135,7 @@
 						<texture fallback="E.png">$INFO[Container(601).Listitem(9).Icon]</texture>
 						<fadetime>100</fadetime>
 					</control>
-					<!-- main box -->
-					<control type="group">
-						<left>0</left>
-						<top>0</top>
-						<width>960</width>
-						<height>960</height>
-						<control type="image">
-							<animation effect="zoom" start="100" end="95" time="200" tween="quadratic" reversible="false" condition="Control.HasFocus(6011)" center="auto">conditional</animation>
-							<width>960</width>
-							<height>960</height>
-							<texture fallback="E.png">$INFO[Container(601).Listitem(0).Icon]</texture>
-							<fadetime>100</fadetime>
-						</control>
-					</control>
 				</control>
-					<!-- BB1 -->
-					<control type="button" id="6011">
-						<onup>Control.Move(601,-10)</onup>
-						<onright>6012</onright>
-						<ondown>Control.Move(601,10)</ondown>
-						<onleft>60</onleft>
-						<onclick condition="Container.Content(songs)">PlayMedia($INFO[Container(601).ListItem(0).FileNameAndPath])</onclick>
-						<onclick condition="Container.Content(albums)">ActivateWindow(10502,musicdb://albums/$INFO[Container(601).ListItem(0).DBID]/,return)</onclick>
-						<onclick condition="Container.Content(artists)">ActivateWindow(10502,musicdb://artists/$INFO[Container(601).ListItem(0).DBID]/?albumartistsonly=false,return)</onclick>
-						<onback>setfocus(601)</onback>
-						<width>0</width>
-						<height>0</height>
-						<label>-</label>
-						<focusedcolor>-</focusedcolor>
-						<texturefocus>-</texturefocus>
-						<texturenofocus>-</texturenofocus>
-					</control>
-					<!-- BB2 -->
-					<control type="button" id="6012">
-						<onup>Control.Move(601,-3)</onup>
-						<onright>6013</onright>
-						<ondown>6016</ondown>
-						<onleft>6011</onleft>
-						<onclick condition="Container.Content(songs)">PlayMedia($INFO[Container(601).ListItem(1).FileNameAndPath])</onclick>
-						<onclick condition="Container.Content(albums)">ActivateWindow(10502,musicdb://albums/$INFO[Container(601).ListItem(1).DBID]/,return)</onclick>
-						<onclick condition="Container.Content(artists)">ActivateWindow(10502,musicdb://artists/$INFO[Container(601).ListItem(1).DBID]/?albumartistsonly=false,return)</onclick>
-						<onback>setfocus(601)</onback>
-						<width>0</width>
-						<height>0</height>
-						<label>-</label>
-						<focusedcolor>-</focusedcolor>
-						<texturefocus>-</texturefocus>
-						<texturenofocus>-</texturenofocus>
-					</control>
-					<!-- BB3 -->
-					<control type="button" id="6013">
-						<onup>Control.Move(601,-3)</onup>
-						<onright>6014</onright>
-						<ondown>6017</ondown>
-						<onleft>6012</onleft>
-						<onclick condition="Container.Content(songs)">PlayMedia($INFO[Container(601).ListItem(2).FileNameAndPath])</onclick>
-						<onclick condition="Container.Content(albums)">ActivateWindow(10502,musicdb://albums/$INFO[Container(601).ListItem(2).DBID]/,return)</onclick>
-						<onclick condition="Container.Content(artists)">ActivateWindow(10502,musicdb://artists/$INFO[Container(601).ListItem(2).DBID]/?albumartistsonly=false,return)</onclick>
-						<onback>setfocus(601)</onback>
-						<width>0</width>
-						<height>0</height>
-						<label>-</label>
-						<focusedcolor>-</focusedcolor>
-						<texturefocus>-</texturefocus>
-						<texturenofocus>-</texturenofocus>
-					</control>
-					<!-- BB4 -->
-					<control type="button" id="6014">
-						<onup>Control.Move(601,-3)</onup>
-						<onright>6015</onright>
-						<ondown>6018</ondown>
-						<onleft>6013</onleft>
-						<onclick condition="Container.Content(songs)">PlayMedia($INFO[Container(601).ListItem(3).FileNameAndPath])</onclick>
-						<onclick condition="Container.Content(albums)">ActivateWindow(10502,musicdb://albums/$INFO[Container(601).ListItem(3).DBID]/,return)</onclick>
-						<onclick condition="Container.Content(artists)">ActivateWindow(10502,musicdb://artists/$INFO[Container(601).ListItem(3).DBID]/?albumartistsonly=false,return)</onclick>
-						<onback>setfocus(601)</onback>
-						<width>0</width>
-						<height>0</height>
-						<label>-</label>
-						<focusedcolor>-</focusedcolor>
-						<texturefocus>-</texturefocus>
-						<texturenofocus>-</texturenofocus>
-					</control>
-					<!-- BB5 -->
-					<control type="button" id="6015">
-						<onup>Control.Move(601,-3)</onup>
-						<onright>6011</onright>
-						<ondown>6018</ondown>
-						<onleft>6014</onleft>
-						<onclick condition="Container.Content(songs)">PlayMedia($INFO[Container(601).ListItem(4).FileNameAndPath])</onclick>
-						<onclick condition="Container.Content(albums)">ActivateWindow(10502,musicdb://albums/$INFO[Container(601).ListItem(4).DBID]/,return)</onclick>
-						<onclick condition="Container.Content(artists)">ActivateWindow(10502,musicdb://artists/$INFO[Container(601).ListItem(4).DBID]/?albumartistsonly=false,return)</onclick>
-						<onback>setfocus(601)</onback>
-						<width>0</width>
-						<height>0</height>
-						<label>-</label>
-						<focusedcolor>-</focusedcolor>
-						<texturefocus>-</texturefocus>
-						<texturenofocus>-</texturenofocus>
-					</control>
-					<!-- BB6 -->
-					<control type="button" id="6016">
-						<onup>6012</onup>
-						<onright>6017</onright>
-						<ondown>6019</ondown>
-						<onleft>6011</onleft>
-						<onclick condition="Container.Content(songs)">PlayMedia($INFO[Container(601).ListItem(5).FileNameAndPath])</onclick>
-						<onclick condition="Container.Content(albums)">ActivateWindow(10502,musicdb://albums/$INFO[Container(601).ListItem(5).DBID]/,return)</onclick>
-						<onclick condition="Container.Content(artists)">ActivateWindow(10502,musicdb://artists/$INFO[Container(601).ListItem(5).DBID]/?albumartistsonly=false,return)</onclick>
-						<onback>setfocus(601)</onback>
-						<width>0</width>
-						<height>0</height>
-						<label>-</label>
-						<focusedcolor>-</focusedcolor>
-						<texturefocus>-</texturefocus>
-						<texturenofocus>-</texturenofocus>
-					</control>
-					<!-- BB7 -->
-					<control type="button" id="6017">
-						<onup>6013</onup>
-						<onright>6018</onright>
-						<ondown>6020</ondown>
-						<onleft>6016</onleft>
-						<onclick condition="Container.Content(songs)">PlayMedia($INFO[Container(601).ListItem(6).FileNameAndPath])</onclick>
-						<onclick condition="Container.Content(albums)">ActivateWindow(10502,musicdb://albums/$INFO[Container(601).ListItem(6).DBID]/,return)</onclick>
-						<onclick condition="Container.Content(artists)">ActivateWindow(10502,musicdb://artists/$INFO[Container(601).ListItem(6).DBID]/?albumartistsonly=false,return)</onclick>
-						<onback>setfocus(601)</onback>
-						<width>0</width>
-						<height>0</height>
-						<label>-</label>
-						<focusedcolor>-</focusedcolor>
-						<texturefocus>-</texturefocus>
-						<texturenofocus>-</texturenofocus>
-					</control>
-					<!-- BB8 -->
-					<control type="button" id="6018">
-						<onup>6014</onup>
-						<onright>6011</onright>
-						<ondown>Control.Move(601,3)</ondown>
-						<onleft>6017</onleft>
-						<onclick condition="Container.Content(songs)">PlayMedia($INFO[Container(601).ListItem(7).FileNameAndPath])</onclick>
-						<onclick condition="Container.Content(albums)">ActivateWindow(10502,musicdb://albums/$INFO[Container(601).ListItem(7).DBID]/,return)</onclick>
-						<onclick condition="Container.Content(artists)">ActivateWindow(10502,musicdb://artists/$INFO[Container(601).ListItem(7).DBID]/?albumartistsonly=false,return)</onclick>
-						<onback>setfocus(601)</onback>
-						<width>0</width>
-						<height>0</height>
-						<label>-</label>
-						<focusedcolor>-</focusedcolor>
-						<texturefocus>-</texturefocus>
-						<texturenofocus>-</texturenofocus>
-					</control>
-					<!-- BB9 -->
-					<control type="button" id="6019">
-						<onup>6016</onup>
-						<onright>6020</onright>
-						<ondown>Control.Move(601,3)</ondown>
-						<onleft>6011</onleft>
-						<onclick condition="Container.Content(songs)">PlayMedia($INFO[Container(601).ListItem(8).FileNameAndPath])</onclick>
-						<onclick condition="Container.Content(albums)">ActivateWindow(10502,musicdb://albums/$INFO[Container(601).ListItem(8).DBID]/,return)</onclick>
-						<onclick condition="Container.Content(artists)">ActivateWindow(10502,musicdb://artists/$INFO[Container(601).ListItem(8).DBID]/?albumartistsonly=false,return)</onclick>
-						<onback>setfocus(601)</onback>
-						<width>0</width>
-						<height>0</height>
-						<label>-</label>
-						<focusedcolor>-</focusedcolor>
-						<texturefocus>-</texturefocus>
-						<texturenofocus>-</texturenofocus>
-					</control>
-					<!-- BB10 -->
-					<control type="button" id="6020">
-						<onup>6017</onup>
-						<onright>6018</onright>
-						<ondown>Control.Move(601,3)</ondown>
-						<onleft>6019</onleft>
-						<onclick condition="Container.Content(songs)">PlayMedia($INFO[Container(601).ListItem(9).FileNameAndPath])</onclick>
-						<onclick condition="Container.Content(albums)">ActivateWindow(10502,musicdb://albums/$INFO[Container(601).ListItem(9).DBID]/,return)</onclick>
-						<onclick condition="Container.Content(artists)">ActivateWindow(10502,musicdb://artists/$INFO[Container(601).ListItem(9).DBID]/?albumartistsonly=false,return)</onclick>
-						<onback>setfocus(601)</onback>
-						<width>0</width>
-						<height>0</height>
-						<label>-</label>
-						<focusedcolor>-</focusedcolor>
-						<texturefocus>-</texturefocus>
-						<texturenofocus>-</texturenofocus>
-					</control>
 					<control type="label">
 						<right>720</right>
 						<bottom>40</bottom>
