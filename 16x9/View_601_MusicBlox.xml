@@ -51,20 +51,33 @@
 				<left>970</left>
 				<height>960</height>
 				<onleft>60</onleft>
-				<onright>60</onright>
+				<onright condition="!IsEmpty(Container(508923).ListItem(0).Label)">508923</onright>
+				<onright condition="IsEmpty(Container(508923).ListItem(0).Label)">60</onright>
 				<onup>601</onup>
 				<ondown>601</ondown>
 				<preloaditems>2</preloaditems>
 				<pagecontrol>60</pagecontrol>
 				<viewtype label="31981">list</viewtype>
 				<scrolltime tween="quadratic">400</scrolltime>
-				<itemlayout height="240" width="240">
+				<itemlayout height="120" width="720">
 					<control type="image">
+						<texture colordiffuse="$VAR[EmbyLeftColourHighlight]">common/box.png</texture>
+					</control>
+					<control type="image">
+						<left>120</left>
+						<top>0</top>
+						<right>0</right>
+						<height>120</height>
+						<texture diffuse="diffuse/extraposter-ref-blur-rev.png" background="true">$VAR[BannerImage]</texture>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+					</control>
+					<control type="image">
+						<right>600</right>
 						<texture fallback="E.png">$INFO[Listitem.Icon]</texture>
 						<aspectratio align="center" aligny="center">scale</aspectratio>
 					</control>
 				</itemlayout>
-				<focusedlayout height="240" width="240">
+				<focusedlayout height="120" width="720">
 					<control type="button" id="6020">
 						<onfocus>RunScript(script.toolbox,info=blur,id='"$INFO[ListItem.Icon]"',radius=44,prefix=VideoInfo)</onfocus>
 						<label>-</label>
@@ -72,17 +85,124 @@
 						<texturefocus>-</texturefocus>
 						<texturenofocus>-</texturenofocus>
 					</control>
+		<control type="group">
 					<control type="image">
-					<animation type="Focus" reversible="false">
-						<effect type="zoom" start="100" end="110" delay="0" time="50" tween="bounce" easing="out" reversible="false" center="auto" />
-					</animation>
-						<texture fallback="E.png">$INFO[Listitem.Icon]</texture>
-				<aspectratio align="center" aligny="center">scale</aspectratio>
+						<texture colordiffuse="$VAR[EmbyLeftColourHighlight]">common/box.png</texture>
 					</control>
+					<control type="image">
+						<left>120</left>
+						<top>0</top>
+						<right>0</right>
+						<height>120</height>
+						<texture diffuse="diffuse/extraposter-ref-blur-rev.png" background="true">$VAR[BannerImage]</texture>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+					</control>
+					<control type="image">
+						<right>600</right>
+						<texture fallback="E.png">$INFO[Listitem.Icon]</texture>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+					</control>
+						<animation type="Focus" reversible="false">
+							<effect type="slide" start="0" end="38,0" delay="0" time="150" tween="quadratic" easing="out" reversible="false" center="auto" />
+						</animation>
+					</control>
+				<control type="textbox">
+					<right>10</right>
+					<height>51</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<autoscroll delay="800" time="1200" repeat="800"/>
+					<label fallback="19055">$INFO[Window(Home).Property(SkinHelper.Music.TrackList)]</label>
+					<font>DurationFontSmall</font>
+					<textcolor>$VAR[ColourTextFlags]</textcolor>
+					<visible>Container.Content(albums)</visible>
+				</control>
 				</focusedlayout>
 			</control>
-			<include>Furniture_ScrollbarBannerPlex</include>
+			<include>Furniture_ScrollbarMusicBlox</include>
 		</control>
-
+			<control id="508923" type="wraplist">
+					<include>Animation.Common</include>
+			<visible>Control.IsVisible(601)</visible>
+				<right>0</right>
+				<top>110</top>
+				<width>192</width>
+				<height>960</height>
+				<onup>3634</onup>
+				<onleft>601</onleft>
+				<onright>50</onright>
+				<onback>601</onback>
+				<preloaditems>2</preloaditems>
+				<focusposition>2</focusposition>
+				<autoscroll time="3000">!Control.HasFocus(508923)</autoscroll>
+				<viewtype label="">list</viewtype>
+				<orientation>vertical</orientation>
+				<defaultcontrol always="true">0</defaultcontrol>
+				<scrolltime easing="inout" tween="sine">300</scrolltime>
+				<animation effect="fade" end="100" start="0" time="300">Visible</animation>
+				<animation effect="fade" end="0" start="100" time="300">Hidden</animation>
+				<itemlayout height="192" width="192">
+					<control type="group">
+						<control type="label">
+							<left>0</left>
+							<top>0</top>
+							<right>0</right>
+							<bottom>0</bottom>
+							<height>192</height>
+							<aligny>center</aligny>
+							<align>center</align>
+							<font>symbolbiggest</font>
+							<label></label>
+							<textcolor>white</textcolor>
+							<fadetime>300</fadetime>
+						</control>
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<right>0</right>
+							<bottom>0</bottom>
+							<aspectratio align="center" aligny="top">stretch</aspectratio>
+							<texture background="true">$INFO[ListItem.Icon]</texture>
+						</control>
+					<control type="image">
+						<texture colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</texture>
+						<animation effect="fade" end="50" start="50" time="0" condition="true">conditional</animation>
+					</control>
+					</control>
+				</itemlayout>
+				<focusedlayout height="192" width="192">
+					<control type="group">
+					<control type="image">
+						<texture colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</texture>
+						<animation effect="fade" end="100" start="0" time="0" condition="IsEmpty(ListItem.Icon)">conditional</animation>
+					</control>
+						<control type="label">
+							<left>0</left>
+							<top>0</top>
+							<right>0</right>
+							<bottom>0</bottom>
+							<height>192</height>
+							<aligny>center</aligny>
+							<align>center</align>
+							<font>symbolbiggest</font>
+							<label></label>
+							<textcolor>white</textcolor>
+							<fadetime>300</fadetime>
+						</control>
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<right>0</right>
+							<bottom>0</bottom>
+							<aspectratio align="center" aligny="top">stretch</aspectratio>
+							<texture background="true">$INFO[ListItem.Icon]</texture>
+						</control>
+						<animation type="Focus" reversible="false">
+							<effect type="slide" start="0" end="-38,0" delay="0" time="150" tween="quadratic" easing="out" reversible="false" center="auto" />
+						</animation>
+					</control>
+				</focusedlayout>
+				<content target="video">plugin://script.extendedinfo?info=discography&amp;&amp;artistname=$VAR[ArtistLabel]</content>
+			</control>
 	</include>
 </includes>
