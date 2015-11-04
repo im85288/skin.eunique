@@ -2588,7 +2588,7 @@
 								<font>Medium</font>
 								<align>center</align>
 								<textcolor>$VAR[ColourSelected]</textcolor>
-								<selectedcolor>$VAR[ColourSelected</selectedcolor>
+								<selectedcolor>$VAR[ColourSelected]</selectedcolor>
 								<label>$INFO[ListItem.Label]</label>
 								<textoffsetx>15</textoffsetx>
 							</control>
@@ -2683,7 +2683,7 @@
 							<property name="LowTemp">$INFO[Window(weather).Property(Day6.LowTemp)]$INFO[System.TemperatureUnits]</property>
 							<property name="Fanart">$VAR[WeatherFanart]$INFO[Window(Weather).Property(Day6.FanartCode)]$VAR[DefWeatherFanart]</property>
 							<onclick>noop</onclick>
-							<visible>!IsEmpty(Window(weather).Property(Day6.Title)) + !IsEmpty(Window(weather).Property(Day7.Title))</visible>
+							<visible>!IsEmpty(Window(weather).Property(Day6.Title)) + !IsEmpty(Window(weather).Property(Day7.Title)) + !IsEmpty(Window(weather).Property(Day8.Title))</visible>
 						</item>
 						<item>
 							<label>$INFO[Window(weather).Property(Day7.Title)]</label>
@@ -2693,7 +2693,7 @@
 							<property name="LowTemp">$INFO[Window(weather).Property(Day7.LowTemp)]$INFO[System.TemperatureUnits]</property>
 							<property name="Fanart">$VAR[WeatherFanart]$INFO[Window(Weather).Property(Day7.FanartCode)]$VAR[DefWeatherFanart]</property>
 							<onclick>noop</onclick>
-							<visible>!IsEmpty(Window(weather).Property(Day7.Title))</visible>
+							<visible>!IsEmpty(Window(weather).Property(Day6.Title)) + !IsEmpty(Window(weather).Property(Day7.Title)) + !IsEmpty(Window(weather).Property(Day8.Title))</visible>
 						</item>
 						<item>
 							<label>$INFO[Window(weather).Property(Day8.Title)]</label>
@@ -2703,7 +2703,7 @@
 							<property name="LowTemp">$INFO[Window(weather).Property(Day8.LowTemp)]$INFO[System.TemperatureUnits]</property>
 							<property name="Fanart">$VAR[WeatherFanart]$INFO[Window(Weather).Property(Day8.FanartCode)]$VAR[DefWeatherFanart]</property>
 							<onclick>noop</onclick>
-							<visible>!IsEmpty(Window(weather).Property(Day8.Title))</visible>
+							<visible>!IsEmpty(Window(weather).Property(Day6.Title)) + !IsEmpty(Window(weather).Property(Day7.Title)) + !IsEmpty(Window(weather).Property(Day8.Title))</visible>
 						</item>
 						<item>
 							<label>$INFO[Window(weather).Property(Day9.Title)]</label>
@@ -2713,7 +2713,7 @@
 							<property name="LowTemp">$INFO[Window(weather).Property(Day9.LowTemp)]$INFO[System.TemperatureUnits]</property>
 							<property name="Fanart">$VAR[WeatherFanart]$INFO[Window(Weather).Property(Day9.FanartCode)]$VAR[DefWeatherFanart]</property>
 							<onclick>noop</onclick>
-							<visible>!IsEmpty(Window(weather).Property(Day9.Title))</visible>
+							<visible>!IsEmpty(Window(weather).Property(Day9.Title)) + !IsEmpty(Window(weather).Property(Day10.Title)) + !IsEmpty(Window(weather).Property(Day11.Title))</visible>
 						</item>
 						<item>
 							<label>$INFO[Window(weather).Property(Day10.Title)]</label>
@@ -2723,7 +2723,7 @@
 							<property name="LowTemp">$INFO[Window(weather).Property(Day10.LowTemp)]$INFO[System.TemperatureUnits]</property>
 							<property name="Fanart">$VAR[WeatherFanart]$INFO[Window(Weather).Property(Day10.FanartCode)]$VAR[DefWeatherFanart]</property>
 							<onclick>noop</onclick>
-							<visible>!IsEmpty(Window(weather).Property(Day10.Title)) + !IsEmpty(Window(weather).Property(Day11.Title))</visible>
+							<visible>!IsEmpty(Window(weather).Property(Day9.Title)) + !IsEmpty(Window(weather).Property(Day10.Title)) + !IsEmpty(Window(weather).Property(Day11.Title))</visible>
 						</item>
 						<item>
 							<label>$INFO[Window(weather).Property(Day11.Title)]</label>
@@ -2733,27 +2733,7 @@
 							<property name="LowTemp">$INFO[Window(weather).Property(Day11.LowTemp)]$INFO[System.TemperatureUnits]</property>
 							<property name="Fanart">$VAR[WeatherFanart]$INFO[Window(Weather).Property(Day11.FanartCode)]$VAR[DefWeatherFanart]</property>
 							<onclick>noop</onclick>
-							<visible>!IsEmpty(Window(weather).Property(Day11.Title))</visible>
-						</item>
-						<item>
-							<label>$INFO[Window(weather).Property(Day12.Title)]</label>
-							<label2>$INFO[Window(weather).Property(Day12.Outlook)]</label2>
-							<icon>$VAR[WeatherIconVar]$INFO[Window(weather).Property(Day12.FanartCode),,.png]</icon>
-							<property name="HighTemp">$INFO[Window(weather).Property(Day12.HighTemp)]$INFO[System.TemperatureUnits]</property>
-							<property name="LowTemp">$INFO[Window(weather).Property(Day12.LowTemp)]$INFO[System.TemperatureUnits]</property>
-							<property name="Fanart">$VAR[WeatherFanart]$INFO[Window(Weather).Property(Day12.FanartCode)]$VAR[DefWeatherFanart]</property>
-							<onclick>noop</onclick>
-							<visible>!IsEmpty(Window(weather).Property(Day12.Title)) + !IsEmpty(Window(weather).Property(Day13.Title))</visible>
-						</item>
-						<item>
-							<label>$INFO[Window(weather).Property(Day13.Title)]</label>
-							<label2>$INFO[Window(weather).Property(Day13.Outlook)]</label2>
-							<icon>$VAR[WeatherIconVar]$INFO[Window(weather).Property(Day13.FanartCode),,.png]</icon>
-							<property name="HighTemp">$INFO[Window(weather).Property(Day13.HighTemp)]$INFO[System.TemperatureUnits]</property>
-							<property name="LowTemp">$INFO[Window(weather).Property(Day13.LowTemp)]$INFO[System.TemperatureUnits]</property>
-							<property name="Fanart">$VAR[WeatherFanart]$INFO[Window(Weather).Property(Day13.FanartCode)]$VAR[DefWeatherFanart]</property>
-							<onclick>noop</onclick>
-							<visible>!IsEmpty(Window(weather).Property(Day13.Title))</visible>
+							<visible>!IsEmpty(Window(weather).Property(Day9.Title)) + !IsEmpty(Window(weather).Property(Day10.Title)) + !IsEmpty(Window(weather).Property(Day11.Title))</visible>
 						</item>
 					</content>
 				</control>
