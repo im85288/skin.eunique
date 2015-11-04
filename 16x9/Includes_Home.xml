@@ -2498,9 +2498,9 @@
 					<visible>Weather.IsFetched</visible>
 					<visible>!Control.HasFocus(3439) + !Control.HasFocus(3442) + !Control.HasFocus(3443)</visible>
 					<include>Animation.FadeIn</include>
-					<left>1250</left>
+					<left>1238</left>
 					<top>330</top>
-					<width>660</width>
+					<width>743</width>
 					<height>685</height>
 					<onup>300</onup>
 					<ondown>300</ondown>
@@ -2510,14 +2510,14 @@
 					<orientation>vertical</orientation>
 					<scrolltime tween="quadratic">500</scrolltime>
 					<autoscroll time="7000">!Control.HasFocus(3444)</autoscroll>
-					<itemlayout height="342.5" width="330">
+					<itemlayout height="342.5" width="247.6666666666667">
 						<control type="group">
 							<control type="image">
 								<texture colordiffuse="Panel">common/box.png</texture>
 							</control>
 							<control type="multiimage" description="Fanart">
 								<fadetime>600</fadetime>
-								<timeperimage>12000</timeperimage>
+								<timeperimage>5000</timeperimage>
 								<randomize>true</randomize>
 								<aspectratio>scale</aspectratio>
 								<animation effect="fade" start="100" end="10" condition="true">Conditional</animation>
@@ -2526,13 +2526,11 @@
 							<control type="image">
 								<description>current weather icon</description>
 								<top>60</top>
-								<width>340</width>
 								<height>200</height>
 								<texture>$INFO[ListItem.Icon]</texture>
 								<aspectratio aligny="top">keep</aspectratio>
 							</control>
 							<control type="label">
-								<width>340</width>
 								<height>60</height>
 								<font>Medium</font>
 								<align>center</align>
@@ -2542,7 +2540,6 @@
 							</control>
 							<control type="label">
 								<bottom>50</bottom>
-								<width>340</width>
 								<height>60</height>
 								<font>Small</font>
 								<align>center</align>
@@ -2552,7 +2549,6 @@
 							</control>
 							<control type="label">
 								<bottom>10</bottom>
-								<width>340</width>
 								<height>60</height>
 								<font>Small</font>
 								<align>center</align>
@@ -2562,7 +2558,7 @@
 							</control>
 						</control>
 					</itemlayout>
-					<focusedlayout height="342.5" width="330">
+					<focusedlayout height="342.5" width="247.6666666666667">
 						<control type="group">
 							<control type="image">
 								<texture colordiffuse="panel">common/box.png</texture>
@@ -2574,7 +2570,7 @@
 							</control>
 							<control type="multiimage" description="Fanart">
 								<fadetime>600</fadetime>
-								<timeperimage>12000</timeperimage>
+								<timeperimage>5000</timeperimage>
 								<randomize>true</randomize>
 								<aspectratio>scale</aspectratio>
 								<animation effect="fade" start="100" end="10" condition="true">Conditional</animation>
@@ -2583,13 +2579,11 @@
 							<control type="image">
 								<description>current weather icon</description>
 								<top>60</top>
-								<width>340</width>
 								<height>200</height>
 								<texture>$INFO[ListItem.Icon]</texture>
 								<aspectratio aligny="top">keep</aspectratio>
 							</control>
 							<control type="label">
-								<width>340</width>
 								<height>60</height>
 								<font>Medium</font>
 								<align>center</align>
@@ -2600,7 +2594,6 @@
 							</control>
 							<control type="label">
 								<bottom>50</bottom>
-								<width>340</width>
 								<height>60</height>
 								<font>Small</font>
 								<align>center</align>
@@ -2611,7 +2604,6 @@
 							</control>
 							<control type="label">
 								<bottom>10</bottom>
-								<width>340</width>
 								<height>60</height>
 								<font>Small</font>
 								<align>center</align>
@@ -3103,6 +3095,7 @@
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
 					<onup>3012</onup>
 					<onright>3014</onright>
+					<onleft>300</onleft>
 					<onback>300</onback>
 					<left>SidePad</left>
 					<posy>790</posy>
@@ -3989,6 +3982,7 @@
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
 					<onup>4012</onup>
 					<onright>4015</onright>
+					<onleft>300</onleft>
 					<onback>300</onback>
 					<left>SidePad</left>
 					<posy>790</posy>
