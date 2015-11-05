@@ -153,6 +153,7 @@
 		<value condition="!IsEmpty(ListItem.Thumb)">$INFO[ListItem.Thumb]</value>
 		<value condition="Container.Content(genres) + Window.IsVisible(MyVideoNav.xml)">$VAR[MovieGenres]</value>
 		<value condition="Container.Content(genres) + Window.IsVisible(MyMusicNav.xml)">$VAR[MusicGenres]</value>
+		<value condition="Control.IsVisible(601)">music-banner.jpg</value>
 		<value>$INFO[ListItem.Icon]</value>
 	</variable>
 	<variable name="FanartImage">
