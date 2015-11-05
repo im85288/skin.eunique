@@ -562,4 +562,8 @@
 		<value condition="!IsEmpty(Player.Art(tvshow.clearlogo))">$INFO[Player.Art(tvshow.clearlogo)]</value>
 		<value condition="!IsEmpty(Player.Art(clearlogo))">$INFO[Player.Art(clearlogo)]</value>
 	</variable>
+<	<variable name="AlbumArtistIcon">
+		<value condition="!IsEmpty(Container.Art(artist.thumb))">$INFO[Container.Art(artist.thumb)]</value>
+		<value>$INFO[Listitem.Icon]</value>
+	</variable>
 </includes>
