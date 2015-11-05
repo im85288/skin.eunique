@@ -81,6 +81,7 @@
 					<right>10</right>
 					<height>51</height>
 					<texture colordiffuse="$VAR[ColourFlags]">common/white.png</texture>
+				<visible>!Container.Content(genres)</visible>
 				</control>
 				<control type="label">
 					<right>10</right>
@@ -102,7 +103,7 @@
 					<label fallback="19055">$INFO[ListItem.Year,, | ]$INFO[ListItem.RatingAndVotes]$INFO[ListItem.Country, | ]</label>
 					<font>DurationFontSmall</font>
 					<textcolor>$VAR[ColourTextFlags]</textcolor>
-					<visible>!Container.Content(seasons) + !Container.Content(tvshows) + !Container.Content(episodes) + !Container.Content(albums) + !Container.Content(songs)</visible>
+					<visible>!Container.Content(genres) + !Container.Content(seasons) + !Container.Content(tvshows) + !Container.Content(episodes) + !Container.Content(albums) + !Container.Content(songs)</visible>
 				</control>
 				<control type="textbox">
 					<right>10</right>
@@ -121,7 +122,7 @@
 				<height>879</height>
 				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 				<texture background="true">$VAR[PosterImage]</texture>
-				<visible>!Container.Content(albums) + !Container.Content(songs) + !Container.Content(artists) + !Container.Content(singles)</visible>
+				<visible>!Container.Content(genres) + !Container.Content(albums) + !Container.Content(songs) + !Container.Content(artists) + !Container.Content(singles)</visible>
 			</control>
 			<control type="image">
 				<left>-960</left>
@@ -130,14 +131,14 @@
 				<fadetime>1000</fadetime>
 				<aspectratio align="left" aligny="center" scalediffuse="false">scale</aspectratio>
 				<texture flipx="true" background="true" diffuse="diffuse/listposter-ref.png">$INFO[Window(home).Property(VideoInfo.ImageFilter)]</texture>
-				<visible>Container.Content(albums) | Container.Content(songs) | Container.Content(artists) | Container.Content(singles)</visible>
+				<visible>Container.Content(genres) | Container.Content(albums) | Container.Content(songs) | Container.Content(artists) | Container.Content(singles)</visible>
 			</control>
 			<control type="image">
 				<right>10</right>
 				<height>879</height>
 				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 				<texture background="true">$VAR[PosterImage]</texture>
-				<visible>Container.Content(albums) | Container.Content(songs) | Container.Content(artists) | Container.Content(singles)</visible>
+				<visible>Container.Content(genres) | Container.Content(albums) | Container.Content(songs) | Container.Content(artists) | Container.Content(singles)</visible>
 			</control>
 			<control type="image">
 				<left>602</left>
@@ -146,7 +147,7 @@
 				<fadetime>1000</fadetime>
 				<aspectratio align="left" aligny="center" scalediffuse="false">scale</aspectratio>
 				<texture flipx="true" background="true" diffuse="diffuse/listposter-ref.png">$INFO[Window(home).Property(VideoInfo.ImageFilter)]</texture>
-				<visible>!Container.Content(albums) + !Container.Content(songs) + !Container.Content(artists) + !Container.Content(singles)</visible>
+				<visible>!Container.Content(genres) + !Container.Content(albums) + !Container.Content(songs) + !Container.Content(artists) + !Container.Content(singles)</visible>
 			</control>
 			<control type="textbox">
 				<left>607</left>
@@ -158,7 +159,7 @@
 				<scroll>true</scroll>
 				<textcolor>white</textcolor>
 				<label>$VAR[LabelDirector]</label>
-				<visible>!Container.Content(albums) + !Container.Content(songs) + !Container.Content(artists) + !Container.Content(singles)</visible>
+				<visible>!Container.Content(genres) + !Container.Content(albums) + !Container.Content(songs) + !Container.Content(artists) + !Container.Content(singles)</visible>
 			</control>
 			<control type="label">
 				<left>607</left>
@@ -169,7 +170,7 @@
 				<font>MediumSmallBold</font>
 				<textcolor>white</textcolor>
 				<label>$VAR[LabelDuration]</label>
-				<visible>!Container.Content(albums) + !Container.Content(songs) + !Container.Content(artists) + !Container.Content(singles)</visible>
+				<visible>!Container.Content(genres) + !Container.Content(albums) + !Container.Content(songs) + !Container.Content(artists) + !Container.Content(singles)</visible>
 			</control>
 			<control type="textbox">
 				<left>607</left>
@@ -181,7 +182,7 @@
 				<textcolor>white</textcolor>
 				<label>$VAR[LabelGenreList]</label>
 				<autoscroll delay="500" time="1000" repeat="500"/>
-				<visible>!Container.Content(albums) + !Container.Content(songs) + !Container.Content(artists) + !Container.Content(singles)</visible>
+				<visible>!Container.Content(genres) + !Container.Content(albums) + !Container.Content(songs) + !Container.Content(artists) + !Container.Content(singles)</visible>
 			</control>
 			<control type="textbox">
 				<left>607</left>
@@ -193,7 +194,7 @@
 				<textcolor>white</textcolor>
 				<label>$INFO[Window(Home).Property(SkinHelper.ListItemStudios)]</label>
 				<autoscroll delay="500" time="3000" repeat="500"/>
-				<visible>!Container.Content(albums) + !Container.Content(songs) + !Container.Content(artists) + !Container.Content(singles)</visible>
+				<visible>!Container.Content(genres) + !Container.Content(albums) + !Container.Content(songs) + !Container.Content(artists) + !Container.Content(singles)</visible>
 			</control>
 			<control type="textbox">
 				<description>textarea</description>
@@ -205,7 +206,7 @@
 				<font>MediumLargeBold</font>
 				<textcolor>white</textcolor>
 				<label>$VAR[PlotList]</label>
-				<visible>!Container.Content(albums) + !Container.Content(songs) + !Container.Content(artists) + !Container.Content(singles)</visible>
+				<visible>!Container.Content(genres) + !Container.Content(albums) + !Container.Content(songs) + !Container.Content(artists) + !Container.Content(singles)</visible>
 			</control>
 			<control type="textbox">
 				<description>textarea</description>
@@ -217,7 +218,7 @@
 				<font>MediumLargeBold</font>
 				<textcolor>white</textcolor>
 				<label>$INFO[Window(Home).Property(SkinHelper.Music.Info)]</label>
-				<visible>!Container.Content(albums) + !Container.Content(songs) + !Container.Content(artists) + !Container.Content(singles)</visible>
+				<visible>!Container.Content(genres) + !Container.Content(albums) + !Container.Content(songs) + !Container.Content(artists) + !Container.Content(singles)</visible>
 			</control>
 		</control>
 	</include>
