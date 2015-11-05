@@ -107,6 +107,14 @@
 					<control type="image">
 						<texture colordiffuse="$VAR[EmbyLeftColourHighlight]">common/box.png</texture>
 					</control>
+					<control type="image">
+						<left>120</left>
+						<top>0</top>
+						<right>0</right>
+						<height>120</height>
+						<texture colordiffuse="$VAR[EmbyLeftColourHighlight]" diffuse="diffuse/extraposter-ref-blur-rev.png" background="true">$VAR[BannerImage]</texture>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+					</control>
 						<control type="label" id="13370">
 							<right>600</right>
 							<height>120</height>
@@ -116,14 +124,6 @@
 							<label>$VAR[SwapDefaultImage]</label>
 							<textcolor>$VAR[ColourSelected]</textcolor>
 						</control>
-					<control type="image">
-						<left>120</left>
-						<top>0</top>
-						<right>0</right>
-						<height>120</height>
-						<texture colordiffuse="$VAR[EmbyLeftColourHighlight]" diffuse="diffuse/extraposter-ref-blur-rev.png" background="true">$VAR[BannerImage]</texture>
-						<aspectratio scalediffuse="false">scale</aspectratio>
-					</control>
 					<control type="image">
 						<right>600</right>
 						<texture fallback="E.png">$VAR[AlbumArtistIcon]</texture>
