@@ -60,8 +60,8 @@
 				<left>970</left>
 				<height>960</height>
 				<onleft>60</onleft>
-				<onright condition="!IsEmpty(Container(508923).ListItem(0).Label)">508923</onright>
-				<onright condition="IsEmpty(Container(508923).ListItem(0).Label)">60</onright>
+				<onright condition="!IsEmpty(Container(408923).ListItem(0).Label)">408923</onright>
+				<onright condition="IsEmpty(Container(408923).ListItem(0).Label)">60</onright>
 				<onup>601</onup>
 				<ondown>601</ondown>
 				<preloaditems>2</preloaditems>
@@ -136,9 +136,9 @@
                     <control type="textbox">
                         <left>158</left>
                         <right>10</right>
-                        <top>10</top>
-                        <bottom>10</bottom>
-                        <height>100</height>
+                        <top>15</top>
+                        <bottom>15</bottom>
+                        <height>90</height>
                         <align>right</align>
                         <aligny>center</aligny>
                         <autoscroll delay="800" time="1200" repeat="800"/>
@@ -160,7 +160,7 @@
 			</control>
 			<include>Furniture_ScrollbarMusicBlox</include>
 		</control>
-			<control id="508923" type="wraplist">
+			<control id="408923" type="wraplist">
 				<right>0</right>
 				<top>110</top>
 				<width>192</width>
@@ -171,7 +171,7 @@
 				<onback>601</onback>
 				<preloaditems>2</preloaditems>
 				<focusposition>4</focusposition>
-				<autoscroll time="3000">!Control.HasFocus(508923)</autoscroll>
+				<autoscroll time="3000">!Control.HasFocus(408923)</autoscroll>
 				<viewtype label="">list</viewtype>
 				<orientation>vertical</orientation>
 				<defaultcontrol always="true">0</defaultcontrol>
@@ -251,10 +251,10 @@
                         <align>left</align>
                         <aligny>center</aligny>
 						<angle>90</angle>
-                        <label>$INFO[Container(508923).ListItem(4).label]</label>
+                        <label>$INFO[Container(408923).ListItem(4).label]</label>
                         <font>DurationFontSmall</font>
                         <textcolor>$VAR[ColourTextFlags]</textcolor>
-						<animation effect="slide" end="0,-192" start="0" time="0" condition="Control.HasFocus(508923)">conditional</animation>
+						<animation effect="slide" end="0,-192" start="0" time="0" condition="Control.HasFocus(408923)">conditional</animation>
                     </control>
 				</control>
 			</control>
