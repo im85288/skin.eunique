@@ -122,6 +122,7 @@
 				<height>879</height>
 				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 				<texture background="true">$VAR[PosterImage]</texture>
+				<fadetime>200</fadetime>
 				<visible>!Container.Content(genres) + !Container.Content(albums) + !Container.Content(songs) + !Container.Content(artists) + !Container.Content(singles)</visible>
 			</control>
 			<control type="image">
@@ -131,6 +132,7 @@
 				<fadetime>1000</fadetime>
 				<aspectratio align="left" aligny="center" scalediffuse="false">scale</aspectratio>
 				<texture flipx="true" background="true" diffuse="diffuse/listposter-ref.png">$INFO[Window(home).Property(VideoInfo.ImageFilter)]</texture>
+				<fadetime>200</fadetime>
 				<visible>Container.Content(genres) | Container.Content(albums) | Container.Content(songs) | Container.Content(artists) | Container.Content(singles)</visible>
 			</control>
 			<control type="image">
@@ -138,6 +140,7 @@
 				<height>879</height>
 				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 				<texture background="true">$VAR[PosterImage]</texture>
+				<fadetime>100</fadetime>
 				<visible>Container.Content(genres) | Container.Content(albums) | Container.Content(songs) | Container.Content(artists) | Container.Content(singles)</visible>
 			</control>
 			<control type="image">
