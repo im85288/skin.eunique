@@ -3,7 +3,7 @@
 <window id="2006">
 	<defaultcontrol always="true">-</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
-	<onload>RunScript(script.toolbox,info=blur,id='"$INFO[MusicPlayer.Cover]"',radius=$VAR[VideoInfoBlurLevel],prefix=MusicVisInfo)</onload>
+	<onload>RunScript(script.toolbox,info=blur,id='"$VAR[PlayerFanart]"',radius=$VAR[VideoInfoBlurLevel],prefix=MusicVisInfo)</onload>
 	<controls>
 		<control type="image">
 			<aspectratio>scale</aspectratio>
@@ -70,11 +70,11 @@
 					<right>SidePad</right>
 					<top>20</top>
 					<bottom>20</bottom>
-					<!--<control type="image"><bottom>-25</bottom><left>-30</left><width>520</width><height>520</height><texture colordiffuse="$INFO[Window(home).Property(MusicVisInfo.ImageColor)]">thumbs/cd_shadow_glow.png</texture></control>--><control type="image">
+					<control type="image">
 						<width>460</width>
 						<height>460</height>
 						<aspectratio scalediffuse="false">stretch</aspectratio>
-						<texture colordiffuse="$INFO[Window(home).Property(MusicPosterInfo.ImageColor)]" background="true">common/white.png</texture>
+						<texture colordiffuse="$INFO[Window(home).Property(MusicVisInfo.ImageColor)]" background="true">common/white.png</texture>
 						<animation type="conditional" condition="true" reversible="false">
 							<effect type="rotate" end="-1" time="200" center="auto" tween="quadratic" easing="out"/>
 							<effect type="zoom" start="100" end="108" time="200" center="auto" tween="quadratic" easing="out"/>
