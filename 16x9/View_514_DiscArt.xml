@@ -58,6 +58,7 @@
 							<label>$VAR[PercentWatchedBack]</label>
 							<textcolor>white2</textcolor>
 						</control>
+					<control type="group">
 						<control type="label">
 							<centerright>180</centerright>
 							<centertop>180</centertop>
@@ -84,15 +85,6 @@
 					</control>
 					<control type="group">
 						<control type="label">
-							<centerright>180</centerright>
-							<centertop>179</centertop>
-							<width>40</width>
-							<height>40</height>
-							<font>symbolback</font>
-							<label>$VAR[PercentWatchedBack]</label>
-							<textcolor>white2</textcolor>
-						</control>
-						<control type="label">
 							<centerright>178</centerright>
 							<centertop>179</centertop>
 							<width>32</width>
@@ -104,15 +96,6 @@
 						<visible>!stringcompare(ListItem.Label,..) + ListItem.IsPlaying</visible>
 					</control>
 					<control type="group">
-						<control type="label">
-							<centerright>180</centerright>
-							<centertop>179</centertop>
-							<width>40</width>
-							<height>40</height>
-							<font>symbolback</font>
-							<label>$VAR[PercentWatchedBack]</label>
-							<textcolor>white2</textcolor>
-						</control>
 						<control type="label">
 							<centerright>178</centerright>
 							<centertop>179</centertop>
@@ -126,15 +109,6 @@
 					</control>
 					<control type="group">
 						<control type="label">
-							<centerright>180</centerright>
-							<centertop>179</centertop>
-							<width>40</width>
-							<height>40</height>
-							<font>symbolback</font>
-							<label>$VAR[PercentWatchedBack]</label>
-							<textcolor>white2</textcolor>
-						</control>
-						<control type="label">
 							<centerright>178</centerright>
 							<centertop>179</centertop>
 							<width>32</width>
@@ -144,6 +118,7 @@
 							<textcolor>$VAR[ResumeColourHighlight]</textcolor>
 						</control>
 						<visible>!stringcompare(ListItem.Label,..) + ListItem.IsResumable</visible>
+					</control>
 					</control>
 				</itemlayout>
 				<focusedlayout width="360" height="360">
@@ -203,6 +178,7 @@
 								<label>$VAR[PercentWatchedBack]</label>
 								<textcolor>white2</textcolor>
 							</control>
+						<control type="group">
 							<control type="label">
 								<centerright>180</centerright>
 								<centertop>180</centertop>
@@ -229,15 +205,6 @@
 						</control>
 						<control type="group">
 							<control type="label">
-								<centerright>180</centerright>
-								<centertop>179</centertop>
-								<width>40</width>
-								<height>40</height>
-								<font>symbolback</font>
-								<label>$VAR[PercentWatchedBack]</label>
-								<textcolor>white2</textcolor>
-							</control>
-							<control type="label">
 								<centerright>178</centerright>
 								<centertop>179</centertop>
 								<width>32</width>
@@ -249,15 +216,6 @@
 							<visible>!stringcompare(ListItem.Label,..) + ListItem.IsPlaying</visible>
 						</control>
 						<control type="group">
-							<control type="label">
-								<centerright>180</centerright>
-								<centertop>179</centertop>
-								<width>40</width>
-								<height>40</height>
-								<font>symbolback</font>
-								<label>$VAR[PercentWatchedBack]</label>
-								<textcolor>white2</textcolor>
-							</control>
 							<control type="label">
 								<centerright>178</centerright>
 								<centertop>179</centertop>
@@ -271,15 +229,6 @@
 						</control>
 						<control type="group">
 							<control type="label">
-								<centerright>180</centerright>
-								<centertop>179</centertop>
-								<width>40</width>
-								<height>40</height>
-								<font>symbolback</font>
-								<label>$VAR[PercentWatchedBack]</label>
-								<textcolor>white2</textcolor>
-							</control>
-							<control type="label">
 								<centerright>178</centerright>
 								<centertop>179</centertop>
 								<width>32</width>
@@ -289,6 +238,7 @@
 								<textcolor>$VAR[ResumeColourHighlight]</textcolor>
 							</control>
 							<visible>!stringcompare(ListItem.Label,..) + ListItem.IsResumable</visible>
+						</control>
 						</control>
 						<control type="textbox">
 							<left>12</left>

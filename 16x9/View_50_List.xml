@@ -310,21 +310,23 @@
 			<texture colordiffuse="$VAR[BorderHighlight]">$VAR[FocusedBorderImage]</texture>
 		</control>
 		<control type="label">
+			<centertop>33.63636363636364</centertop>
 			<posx>30</posx>
 			<width>200</width>
 			<font>Small</font>
 			<aligny>center</aligny>
-			<height>100%</height>
+			<height>30</height>
 			<textcolor>$VAR[ColourSelected]</textcolor>
 			<selectedcolor>$VAR[ColourSelected]</selectedcolor>
 			<label>$VAR[LabelYear]</label>
 			<visible>Container.Content(movies)</visible>
 		</control>
 		<control type="label">
+			<centertop>33.63636363636364</centertop>
 			<posx>120</posx>
 			<width>auto</width>
 			<aligny>center</aligny>
-			<height>100%</height>
+			<height>31</height>
 			<font>SmallBold</font>
 			<textcolor>$VAR[ColourSelected]</textcolor>
 			<selectedcolor>$VAR[ColourSelected]</selectedcolor>
@@ -333,10 +335,11 @@
 			<visible>!Container.Content(episodes) + !Container.Content(tvshows)</visible>
 		</control>
 		<control type="label">
+			<centertop>33.63636363636364</centertop>
 			<posx>30</posx>
 			<width>auto</width>
 			<aligny>center</aligny>
-			<height>100%</height>
+			<height>31</height>
 			<font>SmallBold</font>
 			<textcolor>$VAR[ColourSelected]</textcolor>
 			<selectedcolor>$VAR[ColourSelected]</selectedcolor>
@@ -344,10 +347,11 @@
 			<visible>Container.Content(episodes) | Container.Content(tvshows)</visible>
 		</control>
 		<control type="label">
+			<centertop>33.63636363636364</centertop>
 			<right>154</right>
 			<width>500</width>
 			<aligny>center</aligny>
-			<height>100%</height>
+			<height>30</height>
 			<align>right</align>
 			<font>Small</font>
 			<textcolor>$VAR[ColourSelected]</textcolor>
@@ -355,20 +359,20 @@
 			<label>$VAR[LabelDuration]</label>
 		</control>
 		<control type="group">
-			<animation effect="slide" end="-16,0" center="auto" time="0" condition="Container.Content(songs)">Conditional</animation>
-		<control type="group">
+			<animation effect="slide" end="-15,0" center="auto" time="0" condition="Container.Content(songs)">Conditional</animation>
 			<control type="label">
 				<centerright>112</centerright>
-				<centertop>32</centertop>
+				<centertop>33.63636363636364</centertop>
 				<width>40</width>
 				<height>40</height>
 				<font>symbolback</font>
 				<label>$VAR[PercentWatchedBack]</label>
 				<textcolor>white2</textcolor>
 			</control>
+		<control type="group">
 			<control type="label">
 				<centerright>112</centerright>
-				<centertop>33</centertop>
+				<centertop>33.63636363636364</centertop>
 				<width>32</width>
 				<height>32</height>
 				<align>center</align>
@@ -380,7 +384,7 @@
 			</control>
 			<control type="label">
 				<centerright>110</centerright>
-				<centertop>32</centertop>
+				<centertop>33.63636363636364</centertop>
 				<width>32</width>
 				<height>32</height>
 				<font>symbolview</font>
@@ -393,16 +397,7 @@
 		<control type="group">
 			<control type="label">
 				<centerright>110</centerright>
-				<centertop>32</centertop>
-				<width>40</width>
-				<height>40</height>
-				<font>symbolback</font>
-				<label>$VAR[PercentWatchedBack]</label>
-				<textcolor>white2</textcolor>
-			</control>
-			<control type="label">
-				<centerright>110</centerright>
-				<centertop>32</centertop>
+				<centertop>33.63636363636364</centertop>
 				<width>32</width>
 				<height>32</height>
 				<font>symbolview</font>
@@ -413,17 +408,8 @@
 		</control>
 		<control type="group">
 			<control type="label">
-				<centerright>110</centerright>
-				<centertop>32</centertop>
-				<width>40</width>
-				<height>40</height>
-				<font>symbolback</font>
-				<label>$VAR[PercentWatchedBack]</label>
-				<textcolor>white2</textcolor>
-			</control>
-			<control type="label">
-				<centerright>110</centerright>
-				<centertop>33</centertop>
+				<centerright>112</centerright>
+				<centertop>33.63636363636364</centertop>
 				<width>32</width>
 				<height>32</height>
 				<align>center</align>
@@ -435,17 +421,8 @@
 		</control>
 		<control type="group">
 			<control type="label">
-				<centerright>112</centerright>
-				<centertop>32</centertop>
-				<width>40</width>
-				<height>40</height>
-				<font>symbolback</font>
-				<label>$VAR[PercentWatchedBack]</label>
-				<textcolor>white2</textcolor>
-			</control>
-			<control type="label">
 				<centerright>110</centerright>
-				<centertop>32</centertop>
+				<centertop>33.63636363636364</centertop>
 				<width>32</width>
 				<height>32</height>
 				<font>symbolview</font>
@@ -456,10 +433,11 @@
 		</control>
 		</control>
 		<control type="label">
+			<centertop>33.63636363636364</centertop>
 			<right>30</right>
 			<width>500</width>
 			<aligny>center</aligny>
-			<height>100%</height>
+			<height>30</height>
 			<align>right</align>
 			<font>Small</font>
 			<textcolor>$VAR[ColourSelected]</textcolor>
@@ -469,10 +447,11 @@
 			<visible>!Container.Content(seasons) + !Container.Content(albums) + !Container.Content(songs)</visible>
 		</control>
 		<control type="label">
+			<centertop>33.63636363636364</centertop>
 			<right>30</right>
 			<width>500</width>
 			<aligny>center</aligny>
-			<height>100%</height>
+			<height>30</height>
 			<align>right</align>
 			<font>Small</font>
 			<textcolor>$VAR[ColourSelected]</textcolor>
@@ -483,21 +462,23 @@
 	</include>
 	<include name="50itemlayout">
 		<control type="label">
+			<centertop>33.63636363636364</centertop>
 			<posx>30</posx>
 			<width>200</width>
 			<font>Small</font>
 			<aligny>center</aligny>
-			<height>100%</height>
+			<height>30</height>
 			<label>$VAR[LabelYear]</label>
 			<textcolor>Dark1</textcolor>
 			<selectedcolor>Dark1</selectedcolor>
 			<visible>Container.Content(movies)</visible>
 		</control>
 		<control type="label">
+			<centertop>33.63636363636364</centertop>
 			<posx>120</posx>
 			<width>auto</width>
 			<aligny>center</aligny>
-			<height>100%</height>
+			<height>31</height>
 			<font>SmallBold</font>
 			<label>$INFO[ListItem.Label]</label>
 			<textcolor>Dark1</textcolor>
@@ -506,10 +487,11 @@
 			<visible>!Container.Content(episodes) + !Container.Content(tvshows)</visible>
 		</control>
 		<control type="label">
+			<centertop>33.63636363636364</centertop>
 			<posx>30</posx>
 			<width>auto</width>
 			<aligny>center</aligny>
-			<height>100%</height>
+			<height>31</height>
 			<font>SmallBold</font>
 			<label>$INFO[ListItem.Label]</label>
 			<textcolor>Dark1</textcolor>
@@ -517,10 +499,11 @@
 			<visible>Container.Content(episodes) | Container.Content(tvshows)</visible>
 		</control>
 		<control type="label">
+			<centertop>33.63636363636364</centertop>
 			<right>154</right>
 			<width>500</width>
 			<aligny>center</aligny>
-			<height>100%</height>
+			<height>30</height>
 			<align>right</align>
 			<font>Small</font>
 			<textcolor>Dark1</textcolor>
@@ -528,20 +511,20 @@
 			<label>$VAR[LabelDuration]</label>
 		</control>
 		<control type="group">
-			<animation effect="slide" end="-16,0" center="auto" time="0" condition="Container.Content(songs)">Conditional</animation>
-		<control type="group">
+			<animation effect="slide" end="-15,0" center="auto" time="0" condition="Container.Content(songs)">Conditional</animation>
 			<control type="label">
 				<centerright>112</centerright>
-				<centertop>32</centertop>
+				<centertop>33.63636363636364</centertop>
 				<width>40</width>
 				<height>40</height>
 				<font>symbolback</font>
 				<label>$VAR[PercentWatchedBack]</label>
 				<textcolor>white2</textcolor>
 			</control>
+		<control type="group">
 			<control type="label">
 				<centerright>112</centerright>
-				<centertop>33</centertop>
+				<centertop>33.63636363636364</centertop>
 				<width>32</width>
 				<height>32</height>
 				<align>center</align>
@@ -553,7 +536,7 @@
 			</control>
 			<control type="label">
 				<centerright>110</centerright>
-				<centertop>32</centertop>
+				<centertop>33.63636363636364</centertop>
 				<width>32</width>
 				<height>32</height>
 				<font>symbolview</font>
@@ -566,16 +549,7 @@
 		<control type="group">
 			<control type="label">
 				<centerright>110</centerright>
-				<centertop>32</centertop>
-				<width>40</width>
-				<height>40</height>
-				<font>symbolback</font>
-				<label>$VAR[PercentWatchedBack]</label>
-				<textcolor>white2</textcolor>
-			</control>
-			<control type="label">
-				<centerright>110</centerright>
-				<centertop>32</centertop>
+				<centertop>33.63636363636364</centertop>
 				<width>32</width>
 				<height>32</height>
 				<font>symbolview</font>
@@ -586,17 +560,8 @@
 		</control>
 		<control type="group">
 			<control type="label">
-				<centerright>110</centerright>
-				<centertop>32</centertop>
-				<width>40</width>
-				<height>40</height>
-				<font>symbolback</font>
-				<label>$VAR[PercentWatchedBack]</label>
-				<textcolor>white2</textcolor>
-			</control>
-			<control type="label">
-				<centerright>110</centerright>
-				<centertop>33</centertop>
+				<centerright>112</centerright>
+				<centertop>33.63636363636364</centertop>
 				<width>32</width>
 				<height>32</height>
 				<align>center</align>
@@ -608,17 +573,8 @@
 		</control>
 		<control type="group">
 			<control type="label">
-				<centerright>112</centerright>
-				<centertop>32</centertop>
-				<width>40</width>
-				<height>40</height>
-				<font>symbolback</font>
-				<label>$VAR[PercentWatchedBack]</label>
-				<textcolor>white2</textcolor>
-			</control>
-			<control type="label">
 				<centerright>110</centerright>
-				<centertop>32</centertop>
+				<centertop>33.63636363636364</centertop>
 				<width>32</width>
 				<height>32</height>
 				<font>symbolview</font>
@@ -629,10 +585,11 @@
 		</control>
 		</control>
 		<control type="label">
+			<centertop>33.63636363636364</centertop>
 			<right>30</right>
 			<width>500</width>
 			<aligny>center</aligny>
-			<height>100%</height>
+			<height>30</height>
 			<align>right</align>
 			<font>Small</font>
 			<textcolor>Dark1</textcolor>
@@ -642,10 +599,11 @@
 			<visible>!Container.Content(seasons) + !Container.Content(albums) + !Container.Content(songs)</visible>
 		</control>
 		<control type="label">
+			<centertop>33.63636363636364</centertop>
 			<right>30</right>
 			<width>500</width>
 			<aligny>center</aligny>
-			<height>100%</height>
+			<height>30</height>
 			<align>right</align>
 			<font>Small</font>
 			<textcolor>Dark1</textcolor>
