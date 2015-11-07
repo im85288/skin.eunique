@@ -7,17 +7,13 @@
 	<controls>
 		<control type="image">
 			<include>Dimensions_Fullscreen</include>
+			<animation effect="fade" start="0" end="100" time="2300" tween="cubic" easing="inout">WindowOpen</animation>
 			<aspectratio align="center">scale</aspectratio>
-			<texture background="true">$INFO[Window(home).Property(YouTubeInfo.ImageFilter)]</texture>
+			<texture colordiffuse="$INFO[Window(home).Property(YouTubeInfo.ImageColor)]" background="true">$INFO[ListItem.Art(fanart)]</texture>
 		</control>
 		<control type="image">
 			<include>Dimensions_Fullscreen</include>
-			<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
-			<aspectratio align="center">scale</aspectratio>
-			<texture colordiffuse="$INFO[Window(home).Property(YouTubeInfo.ImageColor)]">$INFO[ListItem.Art(fanart)]</texture>
-		</control>
-		<control type="image">
-			<include>Dimensions_Fullscreen</include>
+			<animation effect="fade" start="0" end="100" time="2300" tween="cubic" easing="inout">WindowOpen</animation>
 			<aspectratio align="center">scale</aspectratio>
 			<texture colordiffuse="$INFO[Window(home).Property(YouTubeInfo.ImageColor)]" background="true" diffuse="diffuse/dv-mask.png">$INFO[Window(home).Property(YouTubeInfo.ImageFilter)]</texture>
 		</control>
@@ -31,6 +27,14 @@
 			<font>symbolbiggest</font>
 			<textcolor>$VAR[EmbyRightColourHighlight]</textcolor>
 			<label></label>
+			<animation type="WindowOpen" reversible="true">
+				<effect type="fade" start="00" end="100" time="2300" tween="quadratic" easing="out" delay="1000" />
+				<effect type="slide" start="0,500" end="0,0" time="1000" tween="cubic" easing="inout" delay="1000" />
+			</animation>
+			<animation type="WindowClose" reversible="true">
+				<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out" delay="0" />
+				<effect type="slide" start="0,0" end="0,500" time="200" tween="cubic" easing="inout" delay="0" />
+			</animation>
 		</control>
 		<include>Furniture_HeaderEmby</include>
 		<include>Furniture_EmbyClock</include>

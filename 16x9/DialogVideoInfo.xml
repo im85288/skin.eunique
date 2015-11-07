@@ -37,13 +37,6 @@
 			<alttexturefocus>-</alttexturefocus>
 			<alttexturenofocus>-</alttexturenofocus>
 		</control>
-		<control type="image">
-			<include>Dimensions_Fullscreen</include>
-			<aspectratio align="center">scale</aspectratio>
-			<texture colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" fallback="common/black.png" background="true" diffuse="diffuse/dv-mask.png">$INFO[Window(home).Property(VideoInfo.ImageFilter)]</texture>
-			<visible>!Skin.HasSetting(lights.out)</visible>
-			<visible>![[Skin.HasSetting(global.showvideo) + Player.HasVideo] | [Skin.HasSetting(global.showvisualisation) + Player.HasAudio]] + Window.IsVisible(DialogVideoInfo.xml) + Skin.HasSetting(toggled.dv.info)</visible>
-		</control>
 		<control type="group">
 			<visible>Skin.HasSetting(toggled.dv.info)</visible>
 			<visible>!Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml)</visible>
