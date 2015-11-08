@@ -1175,6 +1175,7 @@
 			</control>
 		</control>
 		<control type="grouplist">
+			<animation effect="slide" end="58" condition="[SubString(Player.FinishTime,am) | SubString(Player.FinishTime,pm)]" time="0">Conditional</animation>
 			<visible>!Skin.HasSetting(furniture.flags)</visible>
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
@@ -1231,7 +1232,7 @@
 				<textcolor>IMDB</textcolor>
 				<height>64</height>
 				<width>auto</width>
-				<label></label>
+				<label> </label>
 				<visible>!IsEmpty(VideoPlayer.Top250)</visible>
 			</control>
 			<control type="label">
