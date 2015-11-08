@@ -115,6 +115,18 @@
 				<animation effect="fade" start="100" end="70" condition="true">Conditional</animation>
 			</control>
 			<visible>Window.IsActive(MusicOSD.xml) | Player.ShowInfo | Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding | Window.IsVisible(script-cu-lrclyrics-main.xml) | Skin.HasSetting(osd.showmusicinfo)</visible>
+					<control type="group">
+						<top>25</top>
+						<left>820</left>
+							<control type="label" description="Other info">
+								<width>100%</width>
+								<height>120</height>
+								<angle>270</angle>
+								<font>HomeEmbySemi</font>
+								<textcolor>$VAR[OSDPanelWhite30]</textcolor>
+								<label>$INFO[musicplayer.Codec,$LOCALIZE[21446]: ,]$INFO[musicplayer.Bitrate, · $LOCALIZE[623]: ,kbps] $INFO[musicplayer.bitspersample,$LOCALIZE[612]: ,]$INFO[musicplayer.Samplerate, · $LOCALIZE[613]: ,kHz] $INFO[musicplayer.Channels, · $LOCALIZE[21444]: ]</label>
+							</control>
+							</control>
 			<control type="group">
 				<height>500</height>
 				<bottom>60</bottom>
@@ -162,10 +174,10 @@
 					</control>
 					<control type="group">
 						<top>5</top>
-						<left>730</left>
+						<left>760</left>
 						<right>0</right>
 						<control type="grouplist">
-							<top>0</top>
+							<top>110</top>
 							<bottom>0</bottom>
 							<width>100%</width>
 							<orientation>vertical</orientation>
@@ -188,7 +200,7 @@
 								<label>$VAR[PlayerTitle]</label>
 							</control>
 							<control type="grouplist">
-								<top>-12</top>
+								<top>12</top>
 								<width>100%</width>
 								<height>64</height>
 								<orientation>horizontal</orientation>
@@ -223,15 +235,6 @@
 								<font>SmallBold</font>
 								<textcolor>white2</textcolor>
 								<label>$VAR[PlayerPlotBox]</label>
-							</control>
-							<control type="label" description="Other info">
-								<top>20</top>
-								<width>100%</width>
-								<height>120</height>
-								<font>Tiny</font>
-								<align>left</align>
-								<textcolor>$VAR[OSDPanelWhite30]</textcolor>
-								<label>$INFO[musicplayer.Codec,$LOCALIZE[21446]: ,]$INFO[musicplayer.Bitrate, · $LOCALIZE[623]: ,kbps][CR]$INFO[musicplayer.bitspersample,$LOCALIZE[612]: ,]$INFO[musicplayer.Samplerate, · $LOCALIZE[613]: ,kHz][CR]$INFO[musicplayer.Channels,$LOCALIZE[21444]: ]</label>
 							</control>
 							<control type="label" description="NextUp">
 								<top>5</top>
