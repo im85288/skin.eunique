@@ -1013,7 +1013,7 @@
 				<onleft>7000</onleft>
 				<onright>noop</onright>
 				<onright condition="!Window.IsVisible(1103)">SetProperty(BounceRight,1,Home)</onright>
-				<onback>9000</onback>
+				<onback>50</onback>
 				<preloaditems>8</preloaditems>
 				<focusposition>6</focusposition>
 				<autoscroll time="3000">!Control.HasFocus(508923)</autoscroll>
@@ -1058,6 +1058,7 @@
 				</itemlayout>
 				<focusedlayout height="190" width="137.142">
 					<control type="group">
+						<animation effect="slide" end="0,-20" start="0" time="200">Focus</animation>
 						<control type="label">
 							<left>0</left>
 							<top>0</top>
