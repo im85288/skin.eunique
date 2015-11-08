@@ -900,9 +900,8 @@
 		<value condition="SubString(ListItem.mpaa,UK:12)">12</value>
 		<value condition="SubString(ListItem.mpaa,UK:15)">15</value>
 		<value condition="SubString(ListItem.mpaa,UK:18)">18</value>
-		<value condition="[SubString(ListItem.mpaa,18) | SubString(ListItem.mpaa,R)]">18</value>
-		<value condition="SubString(ListItem.mpaa,Rated R)">R18</value>
-		<value condition="SubString(ListItem.mpaa,US:R) | SubString(ListItem.mpaa,USA:R) | SubString(ListItem.mpaa,Rated R) | StringCompare(ListItem.mpaa,R) + Stringcompare(Skin.String(RatingCountry),UK)">R18</value>
+		<value condition="SubString(ListItem.mpaa,18)">18</value>
+		<value condition="SubString(ListItem.mpaa,US:R) | SubString(ListItem.mpaa,USA:R) | SubString(ListItem.mpaa,Rated R) | StringCompare(ListItem.mpaa,R)">R</value>
 		<value condition="SubString(ListItem.mpaa,US:NC-17)| SubString(ListItem.mpaa,USA:NC-17)| SubString(ListItem.mpaa,Rated NC-17)">US-17</value>
 		<value condition="SubString(ListItem.mpaa,Germany:16) | SubString(ListItem.mpaa,ab 16) | SubString(ListItem.mpaa,FSK 16)">FSK-16</value>
 		<value condition="SubString(ListItem.mpaa,Germany:6)| SubString(ListItem.mpaa,ab 6) | SubString(ListItem.mpaa,FSK 6)">FSK-6</value>
