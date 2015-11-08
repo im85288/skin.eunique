@@ -26,7 +26,6 @@
 				<pagecontrol>60</pagecontrol>
 				<scrolltime tween="cubic" easing="out">10</scrolltime>
 				<orientation>vertical</orientation>
-				<focusposition>1</focusposition>
 				<viewtype label="31942">list</viewtype>
 				<itemlayout width="360" height="360">
 					<control type="image">
@@ -34,7 +33,7 @@
 						<posx>10</posx>
 						<posy>166</posy>
 						<width>347</width>
-						<height>83</height>
+						<height>85</height>
 						<texture fallback="common/black-back.png" background="true">$INFO[ListItem.Art(banner)]</texture>
 						<aspectratio scalediffuse="false">stretch</aspectratio>
 						<camera x="180" y="180"/>
@@ -170,7 +169,7 @@
 						</control>
 						<control type="group">
 							<animation type="Focus">
-								<effect type="zoom" end="106" center="auto" time="100" delay="200" tween="quadratic" easing="out"/>
+								<effect type="zoom" end="106" center="auto" time="0" delay="0" tween="quadratic" easing="out"/>
 							</animation>
 							<control type="image">
 								<description>border</description>
@@ -181,17 +180,16 @@
 						</control>
 						<control type="group">
 							<animation type="Focus">
-								<effect type="rotate" end="-37" center="auto" time="100" delay="35" tween="quadratic" easing="out"/>
-								<effect type="rotate" end="37" center="auto" time="50" delay="125" tween="quadratic" easing="out"/>
-								<effect type="rotate" end="1" center="auto" time="100" delay="150" tween="quadratic" easing="out"/>
-								<effect type="zoom" end="102" center="auto" time="100" delay="200" tween="quadratic" easing="out"/>
+								<effect type="rotatey" end="-5" center="180,180" time="200" delay="0" tween="quadratic" easing="out"/>
+								<effect type="rotate" end="1" center="180,180" time="200" delay="0" tween="quadratic" easing="out"/>
+								<effect type="zoom" end="102" center="auto" time="100" delay="0" tween="quadratic" easing="out"/>
 							</animation>
 							<control type="image">
 								<description>Landscape</description>
 								<posx>10</posx>
 								<posy>166</posy>
 								<width>347</width>
-								<height>83</height>
+								<height>85</height>
 								<texture fallback="common/black-back.png" background="true">$INFO[ListItem.Art(banner)]</texture>
 								<aspectratio scalediffuse="false">stretch</aspectratio>
 								<camera x="180" y="180"/>

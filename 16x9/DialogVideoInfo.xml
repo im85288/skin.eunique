@@ -1396,20 +1396,6 @@
 					<texturefocus colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]">common/box.png</texturefocus>
 					<texturenofocus colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</texturenofocus>
 				</control>
-				<!-- Search YouTube-->
-				<control type="button" id="18">
-					<width>116</width>
-					<height>116</height>
-					<font>symbol</font>
-					<label></label>
-					<textcolor>white</textcolor>
-					<focusedcolor>$VAR[EmbyRightColourHighlight]</focusedcolor>
-					<texturefocus colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]">common/box.png</texturefocus>
-					<texturenofocus colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</texturenofocus>
-					<onclick condition="!IsEmpty(ListItem.TVShowTitle)">SetProperty(listcontent,$INFO[ListItem.TVShowTitle],home)</onclick>
-					<onclick condition="IsEmpty(ListItem.TVShowTitle)">SetProperty(listcontent,$INFO[ListItem.Title],home)</onclick>
-					<onclick>ActivateWindow(1168)</onclick>
-				</control>
 				<!-- Artwork Downloader Button -->
 				<control id="200" type="button">
 					<width>116</width>
@@ -1428,6 +1414,20 @@
 					<focusedcolor>$VAR[EmbyLeftColourHighlight]</focusedcolor>
 					<texturefocus colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]">common/box.png</texturefocus>
 					<texturenofocus colordiffuse="$VAR[EmbyLeftColourHighlight]">common/box.png</texturenofocus>
+				</control>
+				<!-- Search YouTube-->
+				<control type="button" id="18">
+					<width>116</width>
+					<height>116</height>
+					<font>symbol</font>
+					<label></label>
+					<textcolor>white</textcolor>
+					<focusedcolor>$VAR[EmbyRightColourHighlight]</focusedcolor>
+					<texturefocus colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]">common/box.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</texturenofocus>
+					<onclick condition="!IsEmpty(ListItem.TVShowTitle)">SetProperty(listcontent,$INFO[ListItem.TVShowTitle],home)</onclick>
+					<onclick condition="IsEmpty(ListItem.TVShowTitle)">SetProperty(listcontent,$INFO[ListItem.Title],home)</onclick>
+					<onclick>ActivateWindow(1168)</onclick>
 				</control>
 				<!-- User rating -->
 				<control id="7" type="button">
@@ -1504,16 +1504,6 @@
 					<animation condition="Control.HasFocus(1003)" effect="fade" end="100" start="0" time="10">Conditional</animation>
 					<animation condition="!Control.HasFocus(1003)" effect="fade" end="0" start="100" time="10">Conditional</animation>
 				</control>
-				<control id="18" type="button">
-					<width>116</width>
-					<height>116</height>
-					<textoffsetx>0</textoffsetx>
-					<textcolor>white</textcolor>
-					<font>StudioFont</font>
-					<label>31141</label>
-					<animation condition="Control.HasFocus(18)" effect="fade" end="100" start="0" time="10">Conditional</animation>
-					<animation condition="!Control.HasFocus(18)" effect="fade" end="0" start="100" time="10">Conditional</animation>
-				</control>
 				<!-- Artwork Downloader Button -->
 				<control id="200" type="button">
 					<width>116</width>
@@ -1524,6 +1514,16 @@
 					<label>31980</label>
 					<animation condition="Control.HasFocus(200)" effect="fade" end="100" start="0" time="10">Conditional</animation>
 					<animation condition="!Control.HasFocus(200)" effect="fade" end="0" start="100" time="10">Conditional</animation>
+				</control>
+				<control id="18" type="button">
+					<width>116</width>
+					<height>116</height>
+					<textoffsetx>0</textoffsetx>
+					<textcolor>white</textcolor>
+					<font>StudioFont</font>
+					<label>31141</label>
+					<animation condition="Control.HasFocus(18)" effect="fade" end="100" start="0" time="10">Conditional</animation>
+					<animation condition="!Control.HasFocus(18)" effect="fade" end="0" start="100" time="10">Conditional</animation>
 				</control>
 				<control id="7" type="button">
 					<width>116</width>
