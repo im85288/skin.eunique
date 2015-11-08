@@ -1269,4 +1269,8 @@
 		<value condition="Skin.String(home.vertical,1)">$LOCALIZE[31250]</value>
 		<value condition="Skin.String(home.vertical,2)">$LOCALIZE[31973]</value>
 	</variable>
+	<variable name="LabelUserRating">
+		<value condition="IntegerGreaterThan(ListItem.Userrating,5)"></value>
+		<value></value>
+	</variable>
 </includes>
