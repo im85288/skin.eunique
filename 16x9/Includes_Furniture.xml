@@ -1021,6 +1021,7 @@
 				<animation effect="fade" end="0" start="100" time="300">Hidden</animation>
 				<itemlayout height="190" width="137.142">
 					<control type="group">
+						<animation effect="zoom" end="80" start="100" time="200" center="auto" condition="Control.HasFocus(508923)">Conditional</animation>
 						<control type="label">
 							<left>0</left>
 							<top>0</top>
@@ -1054,7 +1055,6 @@
 				</itemlayout>
 				<focusedlayout height="190" width="137.142">
 					<control type="group">
-						<animation effect="slide" end="0,-20" start="0" time="200">Focus</animation>
 						<control type="label">
 							<left>0</left>
 							<top>0</top>
@@ -1147,10 +1147,8 @@
 				<width>960</width>
 				<height>190</height>
 				<onup>50</onup>
-				<onleft>7000</onleft>
-				<onright>noop</onright>
-				<onright condition="!Window.IsVisible(1103)">SetProperty(BounceRight,1,Home)</onright>
-				<onback>9000</onback>
+				<ondown>50</ondown>
+				<onback>50</onback>
 				<preloaditems>0</preloaditems>
 				<focusposition>4</focusposition>
 				<autoscroll time="3000">!Control.HasFocus(508923)</autoscroll>
@@ -1162,6 +1160,7 @@
 				<animation effect="fade" end="0" start="100" time="300">Hidden</animation>
 				<itemlayout height="190" width="192">
 					<control type="group">
+						<animation effect="zoom" end="80" start="100" time="200" center="auto" condition="Control.HasFocus(508923)">Conditional</animation>
 						<control type="label">
 							<left>0</left>
 							<top>0</top>

@@ -1247,4 +1247,8 @@
 		<value condition="IntegerGreaterThan(ListItem.Userrating,5)"></value>
 		<value></value>
 	</variable>
+	<variable name="LabelAlbumInfo">
+		<value condition="!IsEmpty(Window(Home).Property(SkinHelper.Music.Info))">$INFO[Window(Home).Property(SkinHelper.Music.Info)]</value>
+		<value>$INFO[Window(Home).Property(SkinHelper.Music.TrackList)]</value>
+	</variable>
 </includes>
