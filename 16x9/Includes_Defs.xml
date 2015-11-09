@@ -2683,7 +2683,7 @@
 	<include name="DefExtendedInfoItemContentGenre">
 		<control type="image">
 			<aspectratio scalediffuse="false">keep</aspectratio>
-			<texture colordiffuse="$INFO[Window(home).Property(ImageColor)]" background="true" fallback="DefaultPicture.png">http://localhost:52307/getvarimage&amp;title=$VAR[MovieGenres]</texture>
+			<texture colordiffuse="$INFO[Window(home).Property(ImageColor)]" background="true" fallback="DefaultPicture.png">$VAR[MovieGenres]</texture>
 		</control>
 	</include>
 	<include name="DefExtendedInfoFocusContentGenre">
@@ -2694,7 +2694,7 @@
 		</control>
 		<control type="image">
 			<aspectratio scalediffuse="false">keep</aspectratio>
-			<texture colordiffuse="$VAR[ColourHighlight]" background="true" fallback="DefaultPicture.png">http://localhost:52307/getvarimage&amp;title=$VAR[MovieGenres]</texture>
+			<texture colordiffuse="$VAR[ColourHighlight]" background="true" fallback="DefaultPicture.png">$VAR[MovieGenres]</texture>
 			<animation type="Conditional" reversible="true" condition="Control.HasFocus(850)">
 				<effect type="zoom" start="100" end="110" time="200" center="auto" tween="quadratic" easing="out"/>
 			</animation>
