@@ -10,6 +10,7 @@
 	<onunload>ClearProperty(SkinHelper.ListItemCast,home)</onunload>
 	<controls>
 		<include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
+		<include>Furniture_Cast</include>
 		<include >View_50_List</include>
 		<include >View_52_BigList</include>
 		<include >View_53_BigListInfo</include>
@@ -29,9 +30,8 @@
 			<include>Furniture_EmbyClock</include>
 			<include>Furniture_HeaderEmby</include>
 		</control>
-		<include>Furniture_OverlayInfo</include>
-		<include>Furniture_Cast</include>
 		<include>Furniture_Logo</include>
+		<include>Furniture_OverlayInfo</include>
 		<control type="group">
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
