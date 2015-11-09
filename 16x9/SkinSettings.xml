@@ -765,6 +765,23 @@
 						<visible>Skin.HasSetting(emby.middle.colour)</visible>
 					</control>
 					<!-- -->
+					<control type="radiobutton" id="92815">
+						<width>1410</width>
+						<textureradiofocus colordiffuse="$VAR[BackingColourHighlight]">buttons/radio-on.png</textureradiofocus>
+						<textureradionofocus colordiffuse="$VAR[BackingColourHighlight]">common/box.png</textureradionofocus>
+						<include>DefSettingsButton2</include>
+						<selected>Skin.HasSetting(BackingColour)</selected>
+						<onclick>Skin.ToggleSetting(BackingColour)</onclick>
+						<label>32063</label>
+					</control>
+					<control type="button" id="92816">
+						<width>1410</width>
+						<include>DefSettingsButton2</include>
+						<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=backing.colour.name)</onclick>
+						<label>31907</label>
+						<label2>[COLOR=$VAR[WatchedColourHighlight]]$INFO[Skin.String(backing.colour.name)][/COLOR]</label2>
+						<visible>Skin.HasSetting(BackingColour)</visible>
+					</control>
 					<control type="radiobutton" id="92817">
 						<width>1410</width>
 						<textureradiofocus colordiffuse="$VAR[WatchedColourHighlight]">buttons/radio-on.png</textureradiofocus>
@@ -799,6 +816,7 @@
 						<label2>[COLOR=$VAR[UnwatchedColourHighlight]]$INFO[Skin.String(unwatched.colour.name)][/COLOR]</label2>
 						<visible>Skin.HasSetting(UnwatchedColour)</visible>
 					</control>
+					<!--
 					<control type="radiobutton" id="92837">
 						<width>1410</width>
 						<textureradiofocus colordiffuse="$VAR[NewColourHighlight]">buttons/radio-on.png</textureradiofocus>
@@ -816,6 +834,7 @@
 						<label2>[COLOR=$VAR[NewColourHighlight]]$INFO[Skin.String(new.colour.name)][/COLOR]</label2>
 						<visible>Skin.HasSetting(NewColour)</visible>
 					</control>
+					-->
 					<control type="radiobutton" id="92847">
 						<width>1410</width>
 						<textureradiofocus colordiffuse="$VAR[ResumeColourHighlight]">buttons/radio-on.png</textureradiofocus>

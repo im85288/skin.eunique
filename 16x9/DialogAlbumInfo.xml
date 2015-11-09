@@ -297,7 +297,8 @@
 					<autoscroll delay="500" time="1000" repeat="500"/>
 					<fadetime>500</fadetime>
 				</control>
-				<!--<control type="label"><right>0</right><left>0</left><aligny>center</aligny><align>right</align><font>SmallBold</font><textcolor>white2</textcolor><height>38</height><animation type="conditional" condition="true" reversible="false"><effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" /></animation><label>31832</label><visible>Container.Content(albums)</visible></control><control type="textbox"><left>10</left><bottom>494</bottom><top>34</top><align>right</align><font>MiniBold</font><textcolor>white</textcolor><label fallback="19055">$INFO[Window(Home).Property(SkinHelper.Music.TrackList)]</label><autoscroll delay="8000" time="1200" repeat="1000"/><fadetime>500</fadetime><visible>!Control.HasFocus(90902)</visible><visible>Container.Content(albums)</visible></control>--><control type="label">
+				<!--<control type="label"><right>0</right><left>0</left><aligny>center</aligny><align>right</align><font>SmallBold</font><textcolor>white2</textcolor><height>38</height><animation type="conditional" condition="true" reversible="false"><effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" /></animation><label>31832</label><visible>Container.Content(albums)</visible></control><control type="textbox"><left>10</left><bottom>494</bottom><top>34</top><align>right</align><font>MiniBold</font><textcolor>white</textcolor><label fallback="19055">$INFO[Window(Home).Property(SkinHelper.Music.TrackList)]</label><autoscroll delay="8000" time="1200" repeat="1000"/><fadetime>500</fadetime><visible>!Control.HasFocus(90902)</visible><visible>Container.Content(albums)</visible></control>-->
+				<control type="label">
 					<right>0</right>
 					<left>0</left>
 					<top>143</top>
@@ -756,7 +757,8 @@
 					</animation>
 					<visible>!ControlGroup(9010).HasFocus</visible>
 				</control>
-				<!-- <control type="label"><right>16</right><top>1</top><width>76</width><height>76</height><font>symbolbackbig</font><label>$VAR[PercentWatchedBack]</label><textcolor>white2</textcolor><visible>ControlGroup(9010).HasFocus</visible></control><control type="label"><centerright>54</centerright><centertop>40</centertop><width>54</width><height>54</height><font>symbolbig</font><label>$VAR[PercentWatchedLabelInfo]</label><textcolor>$VAR[IndicatorColourHighlight]</textcolor><visible>!stringcompare(ListItem.Label,..)</visible><visible>ControlGroup(9010).HasFocus</visible></control> --><animation type="conditional" condition="true" reversible="false">
+				<!-- <control type="label"><right>16</right><top>1</top><width>76</width><height>76</height><font>symbolbackbig</font><label>$VAR[PercentWatchedBack]</label><textcolor>white2</textcolor><visible>ControlGroup(9010).HasFocus</visible></control><control type="label"><centerright>54</centerright><centertop>40</centertop><width>54</width><height>54</height><font>symbolbig</font><label>$VAR[PercentWatchedLabelInfo]</label><textcolor>$VAR[IndicatorColourHighlight]</textcolor><visible>!stringcompare(ListItem.Label,..)</visible><visible>ControlGroup(9010).HasFocus</visible></control> -->
+				<animation type="conditional" condition="true" reversible="false">
 					<effect type="zoom" start="100" end="94" time="200" center="auto" tween="quadratic" easing="out"/>
 					<effect type="rotate" end="-1" time="200" center="auto" tween="quadratic" easing="out"/>
 				</animation>
@@ -786,7 +788,8 @@
 				<top>340</top>
 				<animation effect="slide" start="0,0" end="-0,20" center="auto" time="200" condition="Container(54).OnScrollNext">Conditional</animation>
 				<animation effect="slide" start="0,0" end="0,20" center="auto" time="200" condition="Container(54).OnScrollPrevious">Conditional</animation>
-				<!--<control type="label"><left>643</left><width>246</width><top>-56</top><align>left</align><font>SmallBold</font><textcolor>white2</textcolor><label>31823</label><animation type="conditional" condition="true" reversible="false"><effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/></animation></control>--><control type="label">
+				<!--<control type="label"><left>643</left><width>246</width><top>-56</top><align>left</align><font>SmallBold</font><textcolor>white2</textcolor><label>31823</label><animation type="conditional" condition="true" reversible="false"><effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/></animation></control>-->
+				<control type="label">
 					<left>643</left>
 					<width>246</width>
 					<top>-56</top>
@@ -798,7 +801,8 @@
 						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
 					</animation>
 				</control>
-				<!--<control type="label"><left>1271</left><width>246</width><top>-56</top><align>left</align><font>SmallBold</font><textcolor>white2</textcolor><label>3-31819</label><animation type="conditional" condition="true" reversible="false"><effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/></animation></control><control type="label"><left>1585</left><width>246</width><top>-56</top><align>left</align><font>SmallBold</font><textcolor>white2</textcolor><label>572</label><fadetime>500</fadetime><animation type="conditional" condition="true" reversible="false"><effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/></animation></control>--><!--<control type="textbox"><left>643</left><width>246</width><height>92</height><align>left</align><font>TinyBold</font><textcolor>white</textcolor><label fallback="19055">$VAR[LabelDirector]</label><autoscroll delay="500" time="1000" repeat="500"/><fadetime>500</fadetime></control>--><control type="textbox">
+				<!--<control type="label"><left>1271</left><width>246</width><top>-56</top><align>left</align><font>SmallBold</font><textcolor>white2</textcolor><label>3-31819</label><animation type="conditional" condition="true" reversible="false"><effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/></animation></control><control type="label"><left>1585</left><width>246</width><top>-56</top><align>left</align><font>SmallBold</font><textcolor>white2</textcolor><label>572</label><fadetime>500</fadetime><animation type="conditional" condition="true" reversible="false"><effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/></animation></control>--><!--<control type="textbox"><left>643</left><width>246</width><height>92</height><align>left</align><font>TinyBold</font><textcolor>white</textcolor><label fallback="19055">$VAR[LabelDirector]</label><autoscroll delay="500" time="1000" repeat="500"/><fadetime>500</fadetime></control>-->
+				<control type="textbox">
 					<left>643</left>
 					<width>246</width>
 					<height>92</height>
@@ -809,7 +813,8 @@
 					<autoscroll delay="500" time="1000" repeat="500"/>
 					<fadetime>500</fadetime>
 				</control>
-				<!--<control type="textbox"><left>1271</left><width>246</width><height>92</height><align>left</align><font>TinyBold</font><textcolor>white</textcolor><label fallback="19055">$INFO[Window(Home).Property(SkinHelper.ListItemCast)]</label><autoscroll delay="500" time="1000" repeat="500"/><fadetime>500</fadetime></control><control type="textbox"><left>1585</left><width>246</width><height>92</height><align>left</align><font>TinyBold</font><textcolor>white</textcolor><label fallback="19055">$INFO[Window(Home).Property(SkinHelper.ListItemStudios)]</label><fadetime>500</fadetime></control>--><visible>!stringcompare(ListItem.Label,..) + !Container.Content(albums) + !Container.Content(songs)</visible>
+				<!--<control type="textbox"><left>1271</left><width>246</width><height>92</height><align>left</align><font>TinyBold</font><textcolor>white</textcolor><label fallback="19055">$INFO[Window(Home).Property(SkinHelper.ListItemCast)]</label><autoscroll delay="500" time="1000" repeat="500"/><fadetime>500</fadetime></control><control type="textbox"><left>1585</left><width>246</width><height>92</height><align>left</align><font>TinyBold</font><textcolor>white</textcolor><label fallback="19055">$INFO[Window(Home).Property(SkinHelper.ListItemStudios)]</label><fadetime>500</fadetime></control>-->
+				<visible>!stringcompare(ListItem.Label,..) + !Container.Content(albums) + !Container.Content(songs)</visible>
 			</control>
 			<!-- Button grouplist -->
 			<control id="9010" type="grouplist">

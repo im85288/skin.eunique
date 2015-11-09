@@ -703,8 +703,12 @@
 		<value condition="stringcompare(ListItem.Overlay,OverlayWatched.png) + Skin.HasSetting(WatchedColour)">$INFO[Skin.String(watched.colour.name)]</value>
 		<value condition="ListItem.IsPlaying + Skin.HasSetting(PlayingColour)">$INFO[Skin.String(playing.colour.name)]</value>
 		<value condition="stringcompare(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(UnwatchedColour)">$INFO[Skin.String(unwatched.colour.name)]</value>
-		<value condition="!ListItem.IsResumable + !stringcompare(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsPlaying + !stringcompare(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(NewColour)">$INFO[Skin.String(new.colour.name)]</value>
+		<value condition="!ListItem.IsResumable + !stringcompare(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsPlaying + !stringcompare(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(UnwatchedColour)">$INFO[Skin.String(unwatched.colour.name)]</value>
 		<value>white</value>
+	</variable>
+	<variable name="BackingColourHighlight">
+		<value condition="Skin.HasSetting(BackingColour) + !IsEmpty(Skin.String(backing.colour.name))">$INFO[Skin.String(backing.colour.name)]</value>
+		<value>white2</value>
 	</variable>
 	<variable name="ResumeColourHighlight">
 		<value condition="Skin.HasSetting(ResumeColour) + !IsEmpty(Skin.String(resume.colour.name))">$INFO[Skin.String(resume.colour.name)]</value>
