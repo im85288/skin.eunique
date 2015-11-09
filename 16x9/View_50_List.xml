@@ -18,14 +18,18 @@
 					<left>10</left>
 					<width>ListW</width>
 					<onright>508923</onright>
-					<onleft>60</onleft>
+					<onleft condition="Control.IsVisible(60)">60</onleft>
+					<onleft condition="!Control.IsVisible(60) + !Skin.HasSetting(global.kioskmode)">9000</onleft>
 					<onup>50</onup>
 					<ondown>50</ondown>
 					<pagecontrol>60</pagecontrol>
 					<viewtype label="535">list</viewtype>
 					<scrolltime tween="quadratic">400</scrolltime>
 					<itemlayout width="ListW" height="67.27272727272727">
-						<include>50itemlayout</include>
+						<control type="group">
+							<animation effect="fade" end="65" start="100" time="200" condition="Control.HasFocus(508923)">Conditional</animation>
+							<include>50itemlayout</include>
+						</control>
 					</itemlayout>
 					<focusedlayout width="ListW" height="134.5454545454545" condition="[Skin.HasSetting(movies.50list.showplot) + Container.Content(movies)] | [Skin.HasSetting(tvshows.50list.showplot) + Container.Content(tvshows)] | [Skin.HasSetting(seasons.50list.showplot) + Container.Content(seasons)] | [Skin.HasSetting(episodes.50list.showplot) + Container.Content(episodes)] | [Skin.HasSetting(artists.50list.showplot) + Container.Content(artists)] | [Skin.HasSetting(albums.50list.showplot) + Container.Content(albums)] | [Skin.HasSetting(songs.50list.showplot) + Container.Content(songs)] | [Skin.HasSetting(general.50list.showplot) + !Container.Content(songs) + !Container.Content(albums) + !Container.Content(artists) + !Container.Content(episodes) + !Container.Content(seasons) + !Container.Content(tvshows) + !Container.Content(movies)]">
 						<control type="button">
@@ -36,6 +40,7 @@
 							<onfocus condition="!Container.Scrolling + !Container.Content(songs)">RunScript(script.toolbox,info=blur,id='"$VAR[PosterImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfo)</onfocus>
 						</control>
 						<control type="group">
+							<animation effect="fade" end="65" start="100" time="200" condition="Control.HasFocus(508923)">Conditional</animation>
 							<include>50focuslayout</include>
 							<control type="textbox">
 								<height>68</height>
@@ -58,6 +63,7 @@
 							<onfocus condition="!Container.Scrolling + !Container.Content(songs)">RunScript(script.toolbox,info=blur,id='"$VAR[PosterImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfo)</onfocus>
 						</control>
 						<control type="group">
+							<animation effect="fade" end="65" start="100" time="200" condition="Control.HasFocus(508923)">Conditional</animation>
 							<include>50focuslayout</include>
 						</control>
 					</focusedlayout>
@@ -269,10 +275,12 @@
 					<focusedlayout width="1900" height="64">
 						<control type="group">
 							<visible>Control.HasFocus(50)</visible>
+							<animation effect="fade" end="65" start="100" time="200" condition="Control.HasFocus(508923)">Conditional</animation>
 							<include>50focuslayout_square</include>
 						</control>
 						<control type="group">
 							<visible>!Control.HasFocus(50)</visible>
+							<animation effect="fade" end="65" start="100" time="200" condition="Control.HasFocus(508923)">Conditional</animation>
 							<include>50itemlayout_square</include>
 						</control>
 					</focusedlayout>
