@@ -15,7 +15,6 @@
 				</control>
 			</control>
 			<control type="group">
-				<include>Animation.Common</include>
 				<top>110</top>
 				<left>10</left>
 				<width>1920</width>
@@ -23,7 +22,8 @@
 				<control type="image">
 					<right>960</right>
 					<top>0</top>
-					<height>960</height>
+					<width>720</width>
+					<height>720</height>
 					<texture>$INFO[Container(601).Listitem(0).Icon]</texture>
 					<aspectratio align="center" aligny="center">scale</aspectratio>
 				</control>
@@ -31,7 +31,7 @@
 					<height>220</height>
 					<left>10</left>
 					<width>220</width>
-					<bottom>250</bottom>
+					<top>0</top>
 					<font>symbolbiggerest</font>
 					<label></label>
 					<textcolor>$VAR[BackingColourHighlight]</textcolor>
@@ -40,9 +40,9 @@
 					<height>220</height>
 					<left>10</left>
 					<width>220</width>
-					<bottom>245</bottom>
-				<align>center</align>
-				<aligny>center</aligny>
+					<top>5</top>
+					<align>center</align>
+					<aligny>center</aligny>
 					<font>symbolbackbig</font>
 					<label>$INFO[Window(Home).Property(SkinHelper.Music.SongCount)]</label>
 					<textcolor>$INFO[Skin.String(unwatched.colour.name)]</textcolor>
@@ -51,17 +51,56 @@
 					<height>220</height>
 					<left>10</left>
 					<width>220</width>
-					<bottom>20</bottom>
+					<top>240</top>
 					<font>symbolbiggerest</font>
 					<label></label>
 					<textcolor>$VAR[BackingColourHighlight]</textcolor>
 				</control>
-
+				<control type="label">
+					<height>220</height>
+					<left>10</left>
+					<width>220</width>
+					<top>245</top>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>symbolbackbig</font>
+					<label>$INFO[Window(Home).Property(SkinHelper.Music.SongCount)]</label>
+					<textcolor>$INFO[Skin.String(unwatched.colour.name)]</textcolor>
+				</control>
+				<control type="label">
+					<height>220</height>
+					<left>10</left>
+					<width>220</width>
+					<top>480</top>
+					<font>symbolbiggerest</font>
+					<label></label>
+					<textcolor>$VAR[BackingColourHighlight]</textcolor>
+				</control>
+				<control type="label">
+					<height>220</height>
+					<left>10</left>
+					<width>220</width>
+					<top>485</top>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>symbolbackbig</font>
+					<label>$INFO[Window(Home).Property(SkinHelper.Music.SongCount)]</label>
+					<textcolor>$INFO[Skin.String(unwatched.colour.name)]</textcolor>
+				</control>
+				<control type="label">
+					<height>220</height>
+					<left>10</left>
+					<width>220</width>
+					<top>720</top>
+					<font>symbolbiggerest</font>
+					<label></label>
+					<textcolor>$VAR[BackingColourHighlight]</textcolor>
+				</control>
 				<control type="image">
 					<height>220</height>
 					<left>10</left>
 					<width>220</width>
-					<bottom>15</bottom>
+					<top>725</top>
 					<texture>$VAR[ClearLogo]</texture>
 					<aspectratio align="center" aligny="center">keep</aspectratio>
 					<fadetime>50</fadetime>
@@ -180,47 +219,39 @@
 				<include>Furniture_ScrollbarMusicBlox</include>
 			</control>
 			<control type="group">
-				<animation effect="slide" end="0,120" time="200" condition="Container(601).Position(1)">Conditonal</animation>
-				<animation effect="slide" end="0,240" time="200" condition="Container(601).Position(2)">Conditonal</animation>
-				<animation effect="slide" end="0,360" time="200" condition="Container(601).Position(3)">Conditonal</animation>
-				<animation effect="slide" end="0,480" time="200" condition="Container(601).Position(4)">Conditonal</animation>
-				<animation effect="slide" end="0,600" time="200" condition="Container(601).Position(5)">Conditonal</animation>
-				<animation effect="slide" end="0,720" time="200" condition="Container(601).Position(6)">Conditonal</animation>
-				<animation effect="slide" end="0,840" time="200" condition="Container(601).Position(7)">Conditonal</animation>
-			<control type="image">
-					<top>110</top>
+				<control type="image">
+					<top>830</top>
 					<width>720</width>
-					<left>250</left>
-					<height>120</height>
-								<texture colordiffuse="$VAR[EmbyMiddleColourHighlight]">common/box.png</texture>
-				<animation effect="fade" end="75" start="75" time="0" condition="true">Conditonal</animation>
-			</control>
-			<control type="textbox">
-				<top>112</top>
-				<width>710</width>
-				<left>255</left>
-				<height>116</height>
-				<align>left</align>
-				<font>SmallBold</font>
-				<textcolor>white</textcolor>
-				<label fallback="19055">$VAR[LabelAlbumInfo]</label>
-				<autoscroll delay="3000" time="3000" repeat="3000"/>
-				<fadetime>500</fadetime>
-				<visible>Container.Content(albums)</visible>
-			</control>
-			<control type="textbox">
-				<top>112</top>
-				<width>710</width>
-				<left>255</left>
-				<height>116</height>
-				<align>left</align>
-				<font>SmallBold</font>
-				<textcolor>white</textcolor>
-				<label fallback="19055">$INFO[Window(Home).Property(SkinHelper.Music.Albums)]</label>
-				<autoscroll delay="2000" time="1200" repeat="1000"/>
-				<fadetime>500</fadetime>
-				<visible>Container.Content(artists)</visible>
-			</control>
+					<right>950</right>
+					<height>240</height>
+					<texture colordiffuse="$VAR[EmbyMiddleColourHighlight]">common/box.png</texture>
+				</control>
+				<control type="textbox">
+					<right>950</right>
+					<top>837</top>
+					<width>700</width>
+					<height>230</height>
+					<align>left</align>
+					<font>SmallBold</font>
+					<textcolor>white</textcolor>
+					<label fallback="19055">$VAR[LabelAlbumInfo]</label>
+					<autoscroll delay="3000" time="3000" repeat="3000"/>
+					<fadetime>500</fadetime>
+					<visible>Container.Content(albums)</visible>
+				</control>
+				<control type="textbox">
+					<right>950</right>
+					<top>837</top>
+					<width>700</width>
+					<height>230</height>
+					<align>left</align>
+					<font>SmallBold</font>
+					<textcolor>white</textcolor>
+					<label fallback="19055">$INFO[Window(Home).Property(SkinHelper.Music.Albums)]</label>
+					<autoscroll delay="2000" time="1200" repeat="1000"/>
+					<fadetime>500</fadetime>
+					<visible>Container.Content(artists)</visible>
+				</control>
 			</control>
 			<control id="408923" type="wraplist">
 				<right>0</right>
