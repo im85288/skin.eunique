@@ -10,7 +10,7 @@
 			<include>Furniture_EmbyClock</include>
 		</control>
 		<!--Header -->
-		<control type="label">
+		<control type="label" id="1">
 			<posx>770</posx>
 			<posy>50</posy>
 			<width>auto</width>
@@ -19,42 +19,66 @@
 			<align>left</align>
 		</control>
 
+		<!-- choose color palette -->
+		<control type="button" id="3030">
+			<width>600</width>
+			<height>50</height>
+			<right>61</right>
+			<posy>85</posy>
+			<font>Medium</font>
+			<align>right</align>
+			<ondown>3110</ondown>
+			<label>$ADDON[script.skin.helper.service 32141]: $INFO[Window.Property(palettename)]</label>
+			<textoffsetx>10</textoffsetx>
+			<focusedcolor>$VAR[ColourHighlight]</focusedcolor>
+			<visible>!IsEmpty(Window.Property(palettename))</visible>
+		</control>
+
 		<control type="panel" id="3110">
 			<viewtype label="31438">icons</viewtype>
-			<left>300</left>
+			<left>NewSidePad</left>
+			<right>NewSidePad</right>
 			<top>TopPad</top>
-			<width>1302</width>
+			<width>1900</width>
 			<height>714</height>
 			<orientation>vertical</orientation>
 			<onleft>3110</onleft>
 			<onright>3110</onright>
-			<onup>3110</onup>
+			<onup>3030</onup>
 			<ondown>3010</ondown>
 			<preloaditems>4</preloaditems>
 			<pagecontrol>60</pagecontrol>
-			<itemlayout height="42" width="42">
+			<itemlayout height="45" width="59.375" condition="!StringCompare(Window.Property(palettename),basic)">
 				<control type="image">
-					<posx>2</posx>
-					<posy>2</posy>
-					<width>38</width>
-					<height>38</height>
+					<width>92%</width>
+					<height>92%</height>
 					<texture border="5">$INFO[ListItem.Icon]</texture>
 				</control>
 			</itemlayout>
-			<focusedlayout height="42" width="42">
+			<focusedlayout height="45" width="59.375" condition="!StringCompare(Window.Property(palettename),basic)">
 				<control type="group">
-					<animation effect="zoom" time="300" tween="sine" easing="inout" start="100" end="220" center="auto">Focus</animation>
+					<animation effect="zoom" time="200" tween="sine" easing="inout" start="100" end="300" center="auto">Focus</animation>
 					<control type="image">
-						<width>42</width>
-						<height>42</height>
-						<texture border="10">common/shadow-5.png</texture>
+						<width>92%</width>
+						<height>92%</height>
+						<texture diffuse="diffuse/color-picker.png" border="5">$INFO[ListItem.Icon]</texture>
 					</control>
+				</control>
+			</focusedlayout>
+			<itemlayout height="76" width="126.666667" condition="StringCompare(Window.Property(palettename),basic)">
+				<control type="image">
+					<width>92%</width>
+					<height>92%</height>
+					<texture border="5">$INFO[ListItem.Icon]</texture>
+				</control>
+			</itemlayout>
+			<focusedlayout height="76" width="126.66667" condition="StringCompare(Window.Property(palettename),basic)">
+				<control type="group">
+					<animation effect="zoom" time="200" tween="sine" easing="inout" start="100" end="164" center="auto">Focus</animation>
 					<control type="image">
-						<posx>5</posx>
-						<posy>5</posy>
-						<width>32</width>
-						<height>32</height>
-						<texture diffuse="diffuse/color-picker.png">$INFO[ListItem.Icon]</texture>
+						<width>92%</width>
+						<height>92%</height>
+						<texture diffuse="diffuse/color-picker.png"  border="5">$INFO[ListItem.Icon]</texture>
 					</control>
 				</control>
 			</focusedlayout>
@@ -75,9 +99,9 @@
 		<control type="grouplist">
 			<orientation>horizontal</orientation>
 			<itemgap>20</itemgap>
-			<left>300</left>
+			<left>NewSidePad</left>
 			<top>910</top>
-			<width>1302</width>
+			<width>1900</width>
 			<!-- color preview-->
 			<control type="image">
 				<width>68</width>
