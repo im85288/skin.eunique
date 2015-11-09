@@ -1301,12 +1301,20 @@
 				<description>Home Wraplist</description>
 				<left>NewSidePad</left>
 				<right>NewSidePad</right>
-				<onright condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">3012</onright>
-				<onright condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">4012</onright>
-				<onright condition="StringCompare(Container(300).ListItem.Property(defaultID),music)">5012</onright>
-				<onright condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv)">7012</onright>
-				<onright condition="StringCompare(Container(300).ListItem.Property(defaultID),Weather)">3444</onright>
-				<onright condition="!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather)">6012</onright>
+				<!-- Standard nav -->
+				<onright condition="!Skin.HasSetting(global.kioskmode) + StringCompare(Container(300).ListItem.Property(defaultID),movies)">3012</onright>
+				<onright condition="!Skin.HasSetting(global.kioskmode) + StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">4012</onright>
+				<onright condition="!Skin.HasSetting(global.kioskmode) + StringCompare(Container(300).ListItem.Property(defaultID),music)">5012</onright>
+				<onright condition="!Skin.HasSetting(global.kioskmode) + StringCompare(Container(300).ListItem.Property(defaultID),livetv)">7012</onright>
+				<onright condition="!Skin.HasSetting(global.kioskmode) + StringCompare(Container(300).ListItem.Property(defaultID),Weather)">3444</onright>
+				<onright condition="!Skin.HasSetting(global.kioskmode) + !StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather)">6012</onright>
+				<!-- Kiosk nav -->
+				<onright condition="Skin.HasSetting(global.kioskmode) + StringCompare(Container(300).ListItem.Property(defaultID),movies)">30121</onright>
+				<onright condition="Skin.HasSetting(global.kioskmode) + StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">40121</onright>
+				<onright condition="Skin.HasSetting(global.kioskmode) + StringCompare(Container(300).ListItem.Property(defaultID),music)">50121</onright>
+				<onright condition="Skin.HasSetting(global.kioskmode) + StringCompare(Container(300).ListItem.Property(defaultID),livetv)">70121</onright>
+				<onright condition="Skin.HasSetting(global.kioskmode) + StringCompare(Container(300).ListItem.Property(defaultID),Weather)">3444</onright>
+				<onright condition="Skin.HasSetting(global.kioskmode) + !StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather)">6012</onright>
 				<onleft condition="IntegerGreaterThan(Container(302).NumItems,0)">SetFocus(302,0)</onleft>
 				<onleft condition="!IntegerGreaterThan(Container(302).NumItems,0)">3634</onleft>
 				<onleft>300</onleft>
