@@ -1574,7 +1574,7 @@
 						<aligny>top</aligny>
 						<font>HomeWidgetLabelFont</font>
 						<onup>300</onup>
-						<ondown>6012</ondown>
+						<ondown>6013</ondown>
 						<onleft>300</onleft>
 						<onright>6016</onright>
 						<onback>300</onback>
@@ -1583,7 +1583,7 @@
 						<focusedcolor>$VAR[ColourHighlight]</focusedcolor>
 						<texturenofocus>-</texturenofocus>
 						<texturefocus>-</texturefocus>
-						<onclick>ActivateWindow(1112)</onclick>
+						<onclick>sendclick(6012)</onclick>
 						<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 					</control>
 					<control type="label" id="91211">
@@ -1660,6 +1660,9 @@
 							<aspectratio>scale</aspectratio>
 							<texture background="true">$VAR[LandscapeImage]</texture>
 							<animation type="Focus" reversible="false">
+								<effect type="zoom" start="105" end="90" time="200" center="auto" tween="quadratic" easing="out"/>
+							</animation>
+							<animation type="Conditional" reversible="false" condition="Control.HasFocus(60121)">
 								<effect type="zoom" start="105" end="90" time="200" center="auto" tween="quadratic" easing="out"/>
 							</animation>
 						</control>
@@ -1808,7 +1811,8 @@
 					<visible>Control.HasFocus(60133)</visible>
 					<visible allowhiddenfocus="true">IntegerGreaterThan(Container(60133).NumItems,0)</visible>
 					<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
-					<onup>6012</onup>
+					<onup condition="!Skin.HasSetting(global.kioskmode)">6012</onup>
+					<onup condition="Skin.HasSetting(global.kioskmode)">60121</onup>
 					<onright>6015</onright>
 					<onback>300</onback>
 					<left>SidePad</left>
@@ -2148,7 +2152,8 @@
 					<height>705</height>
 					<onup>300</onup>
 					<ondown>6016</ondown>
-					<onleft>6012</onleft>
+					<onleft condition="!Skin.HasSetting(global.kioskmode)">6012</onleft>
+					<onleft condition="Skin.HasSetting(global.kioskmode)">60121</onleft>
 					<onright>6017</onright>
 					<onback>300</onback>
 					<preloaditems>9</preloaditems>
