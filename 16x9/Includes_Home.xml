@@ -1324,19 +1324,12 @@
 				<left>NewSidePad</left>
 				<right>NewSidePad</right>
 				<!-- Standard nav -->
-				<onright condition="!Skin.HasSetting(global.kioskmode) + StringCompare(Container(300).ListItem.Property(defaultID),movies)">3012</onright>
-				<onright condition="!Skin.HasSetting(global.kioskmode) + StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">4012</onright>
-				<onright condition="!Skin.HasSetting(global.kioskmode) + StringCompare(Container(300).ListItem.Property(defaultID),music)">5012</onright>
-				<onright condition="!Skin.HasSetting(global.kioskmode) + StringCompare(Container(300).ListItem.Property(defaultID),livetv)">7012</onright>
-				<onright condition="!Skin.HasSetting(global.kioskmode) + StringCompare(Container(300).ListItem.Property(defaultID),Weather)">3444</onright>
-				<onright condition="!Skin.HasSetting(global.kioskmode) + !StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather)">6012</onright>
-				<!-- Kiosk nav -->
-				<onright condition="Skin.HasSetting(global.kioskmode) + StringCompare(Container(300).ListItem.Property(defaultID),movies)">30121</onright>
-				<onright condition="Skin.HasSetting(global.kioskmode) + StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">40121</onright>
-				<onright condition="Skin.HasSetting(global.kioskmode) + StringCompare(Container(300).ListItem.Property(defaultID),music)">50121</onright>
-				<onright condition="Skin.HasSetting(global.kioskmode) + StringCompare(Container(300).ListItem.Property(defaultID),livetv)">70121</onright>
-				<onright condition="Skin.HasSetting(global.kioskmode) + StringCompare(Container(300).ListItem.Property(defaultID),Weather)">3444</onright>
-				<onright condition="Skin.HasSetting(global.kioskmode) + !StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather)">60121</onright>
+				<onright condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">3012</onright>
+				<onright condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">4012</onright>
+				<onright condition="StringCompare(Container(300).ListItem.Property(defaultID),music)">5012</onright>
+				<onright condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv)">7012</onright>
+				<onright condition="StringCompare(Container(300).ListItem.Property(defaultID),Weather)">3444</onright>
+				<onright condition="!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather)">6012</onright>
 				<onleft condition="IntegerGreaterThan(Container(302).NumItems,0)">SetFocus(302,0)</onleft>
 				<onleft condition="!IntegerGreaterThan(Container(302).NumItems,0)">3634</onleft>
 				<onleft>300</onleft>
@@ -1591,21 +1584,12 @@
 					<top>285</top>
 					<width>820</width>
 					<height>45</height>
-					<control type="button" id="60121">
+					<control type="label" id="60121">
 						<align>left</align>
 						<aligny>top</aligny>
 						<font>HomeWidgetLabelFont</font>
-						<onup>300</onup>
-						<ondown>6013</ondown>
-						<onleft>300</onleft>
-						<onright>6016</onright>
-						<onback>300</onback>
 						<textoffsetx>0</textoffsetx>
 						<label>$VAR[EmbyWidget2Label]</label>
-						<focusedcolor>$VAR[ColourHighlight]</focusedcolor>
-						<texturenofocus>-</texturenofocus>
-						<texturefocus>-</texturefocus>
-						<onclick>sendclick(6012)</onclick>
 						<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 					</control>
 					<control type="label" id="91211">
@@ -1684,9 +1668,6 @@
 							<animation type="Focus" reversible="false">
 								<effect type="zoom" start="105" end="90" time="200" center="auto" tween="quadratic" easing="out"/>
 							</animation>
-							<animation type="Conditional" reversible="false" condition="Control.HasFocus(60121)">
-								<effect type="zoom" start="105" end="90" time="200" center="auto" tween="quadratic" easing="out"/>
-							</animation>
 						</control>
 					</focusedlayout>
 					<content target="$VAR[DefWidget2Target]">$VAR[DefWidget2Content]</content>
@@ -1751,8 +1732,7 @@
 						<texturefocus>-</texturefocus>
 						<texturenofocus>-</texturenofocus>
 						<onleft>300</onleft>
-						<onup condition="!Skin.HasSetting(global.kioskmode)">6012</onup>
-						<onup condition="Skin.HasSetting(global.kioskmode)">60121</onup>
+						<onup>6012</onup>
 						<onright>6015</onright>
 						<onclick>ActivateWindow(videos,addons,return)</onclick>
 						<ondown>60133</ondown>
@@ -1834,8 +1814,7 @@
 					<visible>Control.HasFocus(60133)</visible>
 					<visible allowhiddenfocus="true">IntegerGreaterThan(Container(60133).NumItems,0)</visible>
 					<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
-					<onup condition="!Skin.HasSetting(global.kioskmode)">6012</onup>
-					<onup condition="Skin.HasSetting(global.kioskmode)">60121</onup>
+					<onup>6012</onup>
 					<onright>6015</onright>
 					<onback>300</onback>
 					<left>SidePad</left>
@@ -1884,8 +1863,7 @@
 						<focusedcolor>-</focusedcolor>
 						<texturefocus>-</texturefocus>
 						<texturenofocus>-</texturenofocus>
-						<onup condition="!Skin.HasSetting(global.kioskmode)">6012</onup>
-						<onup condition="Skin.HasSetting(global.kioskmode)">60121</onup>
+						<onup>6012</onup>
 						<onleft>6013</onleft>
 						<onright>6014</onright>
 						<ondown>60155</ondown>
@@ -1968,8 +1946,7 @@
 					<visible>Control.HasFocus(60155)</visible>
 					<visible allowhiddenfocus="true">IntegerGreaterThan(Container(60155).NumItems,0)</visible>
 					<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
-					<onup condition="!Skin.HasSetting(global.kioskmode)">6012</onup>
-					<onup condition="Skin.HasSetting(global.kioskmode)">60121</onup>
+					<onup>6012</onup>
 					<onleft>6013</onleft>
 					<onright>6014</onright>
 					<onback>300</onback>
@@ -2019,8 +1996,7 @@
 						<focusedcolor>-</focusedcolor>
 						<texturefocus>-</texturefocus>
 						<texturenofocus>-</texturenofocus>
-						<onup condition="!Skin.HasSetting(global.kioskmode)">6012</onup>
-						<onup condition="Skin.HasSetting(global.kioskmode)">60121</onup>
+						<onup>6012</onup>
 						<onleft>6015</onleft>
 						<onback>300</onback>
 						<onright condition="Control.IsVisible(6016)">6016</onright>
@@ -2105,8 +2081,7 @@
 					<visible>Control.HasFocus(60144)</visible>
 					<visible allowhiddenfocus="true">IntegerGreaterThan(Container(60144).NumItems,0)</visible>
 					<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
-					<onup condition="!Skin.HasSetting(global.kioskmode)">6012</onup>
-					<onup condition="Skin.HasSetting(global.kioskmode)">60121</onup>
+					<onup>6012</onup>
 					<onleft>6015</onleft>
 					<onright condition="Control.IsVisible(6016)">6016</onright>
 					<onright condition="!Control.IsVisible(6016)">6017</onright>
@@ -2179,8 +2154,7 @@
 					<height>705</height>
 					<onup>300</onup>
 					<ondown>6016</ondown>
-					<onleft condition="!Skin.HasSetting(global.kioskmode)">6012</onleft>
-					<onleft condition="Skin.HasSetting(global.kioskmode)">60121</onleft>
+					<onleft>6012</onleft>
 					<onright>6017</onright>
 					<onback>300</onback>
 					<preloaditems>9</preloaditems>
@@ -3021,21 +2995,12 @@
 					<top>285</top>
 					<width>820</width>
 					<height>45</height>
-					<control type="button" id="30121">
+					<control type="label" id="30121">
 						<align>left</align>
 						<aligny>top</aligny>
 						<font>HomeWidgetLabelFont</font>
-						<onup>300</onup>
-						<onleft>300</onleft>
-						<onright>3016</onright>
-						<onback>300</onback>
-						<ondown>3012</ondown>
 						<textoffsetx>0</textoffsetx>
 						<label>$VAR[EmbyWidget6Label]</label>
-						<focusedcolor>$VAR[ColourHighlight]</focusedcolor>
-						<texturenofocus>-</texturenofocus>
-						<texturefocus>-</texturefocus>
-						<onclick>ActivateWindow(1112)</onclick>
 						<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
 					</control>
 				</control>
@@ -3911,21 +3876,12 @@
 					<top>285</top>
 					<width>820</width>
 					<height>45</height>
-					<control type="button" id="40121">
+					<control type="label" id="40121">
 						<align>left</align>
 						<aligny>top</aligny>
 						<font>HomeWidgetLabelFont</font>
-						<onup>300</onup>
-						<onleft>300</onleft>
-						<onright>4016</onright>
-						<ondown>4012</ondown>
-						<onback>300</onback>
 						<textoffsetx>0</textoffsetx>
 						<label>$VAR[EmbyWidget9Label]</label>
-						<focusedcolor>$VAR[ColourHighlight]</focusedcolor>
-						<texturenofocus>-</texturenofocus>
-						<texturefocus>-</texturefocus>
-						<onclick>ActivateWindow(1112)</onclick>
 						<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
 					</control>
 				</control>
@@ -4801,21 +4757,12 @@
 					<top>285</top>
 					<width>820</width>
 					<height>45</height>
-					<control type="button" id="50121">
+					<control type="label" id="50121">
 						<align>left</align>
 						<aligny>top</aligny>
 						<font>HomeWidgetLabelFont</font>
-						<onup>300</onup>
-						<onleft>300</onleft>
-						<onright>5016</onright>
-						<ondown>5012</ondown>
 						<textoffsetx>0</textoffsetx>
 						<label>$VAR[EmbyWidget12Label]</label>
-						<focusedcolor>$VAR[ColourHighlight]</focusedcolor>
-						<texturenofocus>-</texturenofocus>
-						<texturefocus>-</texturefocus>
-						<onclick>ActivateWindow(1112)</onclick>
-						<onback>300</onback>
 						<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
 					</control>
 				</control>
@@ -5736,23 +5683,12 @@
 					<top>285</top>
 					<width>810</width>
 					<height>45</height>
-					<control type="button" id="70121">
+					<control type="label" id="70121">
 						<align>left</align>
 						<aligny>top</aligny>
 						<font>HomeWidgetLabelFont</font>
-						<onup>300</onup>
-						<onleft>300</onleft>
-						<onright>7016</onright>
-						<ondown>7012</ondown>
-						<onright condition="IntegerGreaterThan(Container(7016).NumItems,0)">7016</onright>
-						<onright condition="!IntegerGreaterThan(Container(7016).NumItems,0)">70161</onright>
 						<textoffsetx>0</textoffsetx>
 						<label>$VAR[EmbyWidget4Label]</label>
-						<focusedcolor>$VAR[ColourHighlight]</focusedcolor>
-						<texturefocus>-</texturefocus>
-						<texturenofocus>-</texturenofocus>
-						<onback>300</onback>
-						<onclick>ActivateWindow(1112)</onclick>
 						<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 					</control>
 				</control>
@@ -5799,7 +5735,6 @@
 						<texturefocus>-</texturefocus>
 						<texturenofocus>-</texturenofocus>
 						<onup condition="IntegerGreaterThan(Container(7016).NumItems,0)">7012</onup>
-						<onup condition="!IntegerGreaterThan(Container(7016).NumItems,0)">70121</onup>
 						<onleft>300</onleft>
 						<onright>7015</onright>
 						<onback>300</onback>
@@ -5880,7 +5815,6 @@
 						<texturefocus>-</texturefocus>
 						<texturenofocus>-</texturenofocus>
 						<onup condition="IntegerGreaterThan(Container(7016).NumItems,0)">7012</onup>
-						<onup condition="!IntegerGreaterThan(Container(7016).NumItems,0)">70121</onup>
 						<onleft>7013</onleft>
 						<onright>7014</onright>
 						<onback>300</onback>
@@ -5939,7 +5873,6 @@
 						<texturefocus>-</texturefocus>
 						<texturenofocus>-</texturenofocus>
 						<onup condition="IntegerGreaterThan(Container(7016).NumItems,0)">7012</onup>
-						<onup condition="!IntegerGreaterThan(Container(7016).NumItems,0)">70121</onup>
 						<onleft>7015</onleft>
 						<onright>7018</onright>
 						<onback>300</onback>
@@ -6163,7 +6096,6 @@
 						<aligny>top</aligny>
 						<font>HomeWidgetLabelFont</font>
 						<onleft condition="IntegerGreaterThan(Container(7016).NumItems,0)">7012</onleft>
-						<onleft condition="!IntegerGreaterThan(Container(7016).NumItems,0)">70121</onleft>
 						<onup>300</onup>
 						<ondown>7016</ondown>
 						<onback>300</onback>
@@ -6186,7 +6118,6 @@
 					<onup>300</onup>
 					<ondown>7016</ondown>
 					<onleft condition="IntegerGreaterThan(Container(7016).NumItems,0)">7012</onleft>
-					<onleft condition="!IntegerGreaterThan(Container(7016).NumItems,0)">70121</onleft>
 					<onleft>ClearProperty(SkinHelper.ListItemThumb,home)</onleft>
 					<onright>7018</onright>
 					<onback>300</onback>
