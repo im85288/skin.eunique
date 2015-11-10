@@ -1729,7 +1729,8 @@
 						<texturefocus>-</texturefocus>
 						<texturenofocus>-</texturenofocus>
 						<onleft>300</onleft>
-						<onup>6012</onup>
+						<onup condition="!Skin.HasSetting(global.kioskmode)">6012</onup>
+						<onup condition="Skin.HasSetting(global.kioskmode)">60121</onup>
 						<onright>6015</onright>
 						<onclick>ActivateWindow(videos,addons,return)</onclick>
 						<ondown>60133</ondown>
@@ -1861,7 +1862,8 @@
 						<focusedcolor>-</focusedcolor>
 						<texturefocus>-</texturefocus>
 						<texturenofocus>-</texturenofocus>
-						<onup>6012</onup>
+						<onup condition="!Skin.HasSetting(global.kioskmode)">6012</onup>
+						<onup condition="Skin.HasSetting(global.kioskmode)">60121</onup>
 						<onleft>6013</onleft>
 						<onright>6014</onright>
 						<ondown>60155</ondown>
@@ -1944,7 +1946,8 @@
 					<visible>Control.HasFocus(60155)</visible>
 					<visible allowhiddenfocus="true">IntegerGreaterThan(Container(60155).NumItems,0)</visible>
 					<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
-					<onup>6012</onup>
+					<onup condition="!Skin.HasSetting(global.kioskmode)">6012</onup>
+					<onup condition="Skin.HasSetting(global.kioskmode)">60121</onup>
 					<onleft>6013</onleft>
 					<onright>6014</onright>
 					<onback>300</onback>
@@ -1994,7 +1997,8 @@
 						<focusedcolor>-</focusedcolor>
 						<texturefocus>-</texturefocus>
 						<texturenofocus>-</texturenofocus>
-						<onup>6012</onup>
+						<onup condition="!Skin.HasSetting(global.kioskmode)">6012</onup>
+						<onup condition="Skin.HasSetting(global.kioskmode)">60121</onup>
 						<onleft>6015</onleft>
 						<onback>300</onback>
 						<onright condition="Control.IsVisible(6016)">6016</onright>
@@ -2079,7 +2083,8 @@
 					<visible>Control.HasFocus(60144)</visible>
 					<visible allowhiddenfocus="true">IntegerGreaterThan(Container(60144).NumItems,0)</visible>
 					<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
-					<onup>6012</onup>
+					<onup condition="!Skin.HasSetting(global.kioskmode)">6012</onup>
+					<onup condition="Skin.HasSetting(global.kioskmode)">60121</onup>
 					<onleft>6015</onleft>
 					<onright condition="Control.IsVisible(6016)">6016</onright>
 					<onright condition="!Control.IsVisible(6016)">6017</onright>
