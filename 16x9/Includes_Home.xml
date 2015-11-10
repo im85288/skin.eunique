@@ -217,7 +217,7 @@
 			</control>
 		</control>
 		<control type="group">
-			<visible>Skin.String(home.vertical,1)</visible>
+			<visible>Skin.String(home.vertical,1) + Window.IsVisible(home)</visible>
 			<top>95</top>
 			<left>NewSidePad</left>
 			<control type="label">
@@ -228,7 +228,6 @@
 				<label>[COLOR=$VAR[ColourHighlight]]$INFO[Window(home).Property(Movies.Count)][/COLOR] $LOCALIZE[20342] • [COLOR=$VAR[ColourHighlight]]$INFO[Window(home).Property(TVShows.Count)][/COLOR] $LOCALIZE[20343] • [COLOR=$VAR[ColourHighlight]]$INFO[Window(home).Property(Music.AlbumsCount)][/COLOR] $LOCALIZE[132]</label>
 				<visible>IsEmpty(Pvr.BackendChannels)</visible>
 			</control>
-
 			<control type="label">
 				<top>2</top>
 				<height>26</height>
