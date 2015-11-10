@@ -1635,6 +1635,7 @@
 				<control type="wraplist" id="6012">
 					<description>Widget</description>
 					<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
+					<visible>!Skin.HasSetting(home.easynav)</visible>
 					<top>330</top>
 					<left>SidePad</left>
 					<width>820</width>
@@ -1659,6 +1660,56 @@
 							<aspectratio>scale</aspectratio>
 							<texture background="true">$VAR[LandscapeImage]</texture>
 							<animation type="Focus" reversible="false">
+								<effect type="zoom" start="105" end="90" time="200" center="auto" tween="quadratic" easing="out"/>
+							</animation>
+						</control>
+					</focusedlayout>
+					<content target="$VAR[DefWidget2Target]">$VAR[DefWidget2Content]</content>
+				</control>
+				<control type="button" id="6012">
+					<visible>Skin.HasSetting(home.easynav)</visible>
+					<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
+					<top>330</top>
+					<left>SidePad</left>
+					<width>820</width>
+					<height>460</height>
+					<onup>300</onup>
+					<ondown>6013</ondown>
+					<onleft>300</onleft>
+					<onright>6016</onright>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<onclick>PlayMedia($ESCINFO[Container(60122).ListItem.FileNameAndPath])</onclick>
+				</control>
+				<control type="list" id="60122">
+					<description>Widget</description>
+					<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
+					<visible>Skin.HasSetting(home.easynav)</visible>
+					<top>330</top>
+					<left>SidePad</left>
+					<width>820</width>
+					<height>460</height>
+					<onleft>6013</onleft>
+					<onright>6016</onright>
+					<ondown>60133</ondown>
+					<onback>300</onback>
+					<preloaditems>2</preloaditems>
+					<orientation>vertical</orientation>
+					<autoscroll time="10000">!Control.HasFocus(6012)</autoscroll>
+					<scrolltime tween="quadratic">100</scrolltime>
+					<include>Animation.FadeIn</include>
+					<include>Animation.FadeOut</include>
+					<itemlayout width="820" height="460">
+						<control type="image">
+							<aspectratio>scale</aspectratio>
+							<texture background="true">$VAR[LandscapeImage]</texture>
+						</control>
+					</itemlayout>
+					<focusedlayout width="820" height="460">
+						<control type="image">
+							<aspectratio>scale</aspectratio>
+							<texture background="true">$VAR[LandscapeImage]</texture>
+							<animation type="Conditional" reversible="false" condition="Control.HasFocus(6012)">
 								<effect type="zoom" start="105" end="90" time="200" center="auto" tween="quadratic" easing="out"/>
 							</animation>
 						</control>
