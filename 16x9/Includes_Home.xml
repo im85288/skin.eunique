@@ -206,7 +206,7 @@
 			<control type="group" description="timebox">
 				<visible>!Window.IsVisible(script-ExtendedInfo Script-VideoList.xml)</visible>
 				<width min="0" max="1500">auto</width>
-				<control type="label">
+				<control type="label" id="13371">
 					<top>-2</top>
 					<left>-56</left>
 					<height>52</height>
@@ -216,24 +216,96 @@
 				</control>
 			</control>
 		</control>
-		<control type="group">
+		<control type="grouplist">
 			<visible>Skin.String(home.vertical,1) + Window.IsVisible(home)</visible>
-			<top>95</top>
-			<left>NewSidePad</left>
+			<animation effect="slide" end="114" condition="!IsEmpty(Control.GetLabel(13371))" time="200">Conditional</animation>
+			<animation effect="slide" end="58" condition="[SubString(Control.GetLabel(13371),am) | SubString(Control.GetLabel(13371),pm)]" time="0">Conditional</animation>
+			<include>Animation.FadeIn</include>
+			<include>Animation.FadeOut</include>
+			<left>292</left>
+			<top>47</top>
+			<width>1626</width>
+			<height>34</height>
+			<orientation>horizontal</orientation>
+			<itemgap>6</itemgap>
 			<control type="label">
-				<top>2</top>
-				<height>26</height>
-				<font>TinyBold</font>
-				<textcolor>Dark1</textcolor>
-				<label>[COLOR=$VAR[ColourHighlight]]$INFO[Window(home).Property(Movies.Count)][/COLOR] $LOCALIZE[20342] • [COLOR=$VAR[ColourHighlight]]$INFO[Window(home).Property(TVShows.Count)][/COLOR] $LOCALIZE[20343] • [COLOR=$VAR[ColourHighlight]]$INFO[Window(home).Property(Music.AlbumsCount)][/COLOR] $LOCALIZE[132]</label>
-				<visible>IsEmpty(Pvr.BackendChannels)</visible>
+				<aligny>center</aligny>
+				<align>left</align>
+				<font>symbolview</font>
+				<textcolor>IMDB</textcolor>
+				<height>34</height>
+				<width>auto</width>
+				<label></label>
+				<visible>!IsEmpty(Window(home).Property(Movies.Count))</visible>
 			</control>
 			<control type="label">
-				<top>2</top>
-				<height>26</height>
-				<font>TinyBold</font>
+				<aligny>center</aligny>
+				<align>left</align>
+				<font>MediumSmallBold</font>
 				<textcolor>Dark1</textcolor>
-				<label>[COLOR=$VAR[ColourHighlight]]$INFO[Window(home).Property(Movies.Count)][/COLOR] $LOCALIZE[20342] • [COLOR=$VAR[ColourHighlight]]$INFO[Window(home).Property(TVShows.Count)][/COLOR] $LOCALIZE[20343] • [COLOR=$VAR[ColourHighlight]]$INFO[Window(home).Property(Music.AlbumsCount)][/COLOR] $LOCALIZE[132] • [COLOR=$VAR[ColourHighlight]]$INFO[Pvr.BackendChannels][/COLOR] $LOCALIZE[19019]</label>
+				<height>34</height>
+				<width>auto</width>
+				<label>$INFO[Window(home).Property(Movies.Count),[UPPERCASE],[/UPPERCASE]]</label>
+				<visible>!IsEmpty(Window(home).Property(Movies.Count))</visible>
+			</control>
+			<control type="label">
+				<aligny>center</aligny>
+				<align>left</align>
+				<font>symbolview</font>
+				<textcolor>IMDB</textcolor>
+				<height>34</height>
+				<width>auto</width>
+				<label></label>
+				<visible>!IsEmpty(Window(home).Property(TVShows.Count))</visible>
+			</control>
+			<control type="label">
+				<aligny>center</aligny>
+				<align>left</align>
+				<font>MediumSmallBold</font>
+				<textcolor>Dark1</textcolor>
+				<height>34</height>
+				<width>auto</width>
+				<label>$INFO[Window(home).Property(TVShows.Count),[UPPERCASE],[/UPPERCASE]]</label>
+				<visible>!IsEmpty(Window(home).Property(TVShows.Count))</visible>
+			</control>
+			<control type="label">
+				<aligny>center</aligny>
+				<align>left</align>
+				<font>symbolview</font>
+				<textcolor>IMDB</textcolor>
+				<height>34</height>
+				<width>auto</width>
+				<label></label>
+				<visible>!IsEmpty(Window(home).Property(Music.AlbumsCount))</visible>
+			</control>
+			<control type="label">
+				<aligny>center</aligny>
+				<align>left</align>
+				<font>MediumSmallBold</font>
+				<textcolor>Dark1</textcolor>
+				<height>34</height>
+				<width>auto</width>
+				<label>$INFO[Window(home).Property(Music.AlbumsCount),[UPPERCASE],[/UPPERCASE]]</label>
+				<visible>!IsEmpty(Window(home).Property(Music.AlbumsCount))</visible>
+			</control>
+			<control type="label">
+				<aligny>center</aligny>
+				<align>left</align>
+				<font>symbolview</font>
+				<textcolor>IMDB</textcolor>
+				<height>34</height>
+				<width>auto</width>
+				<label></label>
+				<visible>!IsEmpty(Pvr.BackendChannels)</visible>
+			</control>
+			<control type="label">
+				<aligny>center</aligny>
+				<align>left</align>
+				<font>MediumSmallBold</font>
+				<textcolor>Dark1</textcolor>
+				<height>34</height>
+				<width>auto</width>
+				<label>$INFO[Pvr.BackendChannels,[UPPERCASE],[/UPPERCASE]]</label>
 				<visible>!IsEmpty(Pvr.BackendChannels)</visible>
 			</control>
 		</control>
