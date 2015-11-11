@@ -217,8 +217,8 @@
 			</control>
 		</control>
 		<control type="grouplist">
-			<visible>Skin.String(home.vertical,1) + Window.IsVisible(home)</visible>
-			<animation effect="slide" end="114" condition="!IsEmpty(Control.GetLabel(13371))" time="200">Conditional</animation>
+			<visible>Window.IsVisible(home)</visible>
+			<animation effect="slide" end="126" condition="!IsEmpty(Control.GetLabel(13371))" time="200">Conditional</animation>
 			<animation effect="slide" end="58" condition="[SubString(Control.GetLabel(13371),am) | SubString(Control.GetLabel(13371),pm)]" time="0">Conditional</animation>
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
@@ -232,10 +232,10 @@
 				<aligny>center</aligny>
 				<align>left</align>
 				<font>symbolview</font>
-				<textcolor>IMDB</textcolor>
-				<height>34</height>
+				<textcolor>Dark1</textcolor>
+				<height>32</height>
 				<width>auto</width>
-				<label></label>
+				<label></label>
 				<visible>!IsEmpty(Window(home).Property(Movies.Count))</visible>
 			</control>
 			<control type="label">
@@ -252,10 +252,10 @@
 				<aligny>center</aligny>
 				<align>left</align>
 				<font>symbolview</font>
-				<textcolor>IMDB</textcolor>
-				<height>34</height>
+				<textcolor>Dark1</textcolor>
+				<height>32</height>
 				<width>auto</width>
-				<label></label>
+				<label></label>
 				<visible>!IsEmpty(Window(home).Property(TVShows.Count))</visible>
 			</control>
 			<control type="label">
@@ -272,10 +272,10 @@
 				<aligny>center</aligny>
 				<align>left</align>
 				<font>symbolview</font>
-				<textcolor>IMDB</textcolor>
+				<textcolor>Dark1</textcolor>
 				<height>34</height>
 				<width>auto</width>
-				<label></label>
+				<label></label>
 				<visible>!IsEmpty(Window(home).Property(Music.AlbumsCount))</visible>
 			</control>
 			<control type="label">
@@ -292,10 +292,10 @@
 				<aligny>center</aligny>
 				<align>left</align>
 				<font>symbolview</font>
-				<textcolor>IMDB</textcolor>
-				<height>34</height>
+				<textcolor>Dark1</textcolor>
+				<height>38</height>
 				<width>auto</width>
-				<label></label>
+				<label></label>
 				<visible>!IsEmpty(Pvr.BackendChannels)</visible>
 			</control>
 			<control type="label">
