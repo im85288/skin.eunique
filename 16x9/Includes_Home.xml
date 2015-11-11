@@ -236,7 +236,7 @@
 				<height>32</height>
 				<width>auto</width>
 				<label></label>
-				<visible>!IsEmpty(Window(home).Property(Movies.Count))</visible>
+				<visible>!IsEmpty(Window(home).Property(Movies.Count)) + !ControlGroup(301).HasFocus</visible>
 			</control>
 			<control type="label">
 				<aligny>center</aligny>
@@ -246,7 +246,7 @@
 				<height>34</height>
 				<width>auto</width>
 				<label>$INFO[Window(home).Property(Movies.Count),[UPPERCASE],[/UPPERCASE]]</label>
-				<visible>!IsEmpty(Window(home).Property(Movies.Count))</visible>
+				<visible>!IsEmpty(Window(home).Property(Movies.Count)) + !ControlGroup(301).HasFocus</visible>
 			</control>
 			<control type="label">
 				<aligny>center</aligny>
@@ -256,7 +256,7 @@
 				<height>32</height>
 				<width>auto</width>
 				<label></label>
-				<visible>!IsEmpty(Window(home).Property(TVShows.Count))</visible>
+				<visible>!IsEmpty(Window(home).Property(TVShows.Count)) + !ControlGroup(301).HasFocus</visible>
 			</control>
 			<control type="label">
 				<aligny>center</aligny>
@@ -266,7 +266,7 @@
 				<height>34</height>
 				<width>auto</width>
 				<label>$INFO[Window(home).Property(TVShows.Count),[UPPERCASE],[/UPPERCASE]]</label>
-				<visible>!IsEmpty(Window(home).Property(TVShows.Count))</visible>
+				<visible>!IsEmpty(Window(home).Property(TVShows.Count)) + !ControlGroup(301).HasFocus</visible>
 			</control>
 			<control type="label">
 				<aligny>center</aligny>
@@ -276,7 +276,7 @@
 				<height>34</height>
 				<width>auto</width>
 				<label></label>
-				<visible>!IsEmpty(Window(home).Property(Music.AlbumsCount))</visible>
+				<visible>!IsEmpty(Window(home).Property(Music.AlbumsCount)) + !ControlGroup(301).HasFocus</visible>
 			</control>
 			<control type="label">
 				<aligny>center</aligny>
@@ -286,7 +286,7 @@
 				<height>34</height>
 				<width>auto</width>
 				<label>$INFO[Window(home).Property(Music.AlbumsCount),[UPPERCASE],[/UPPERCASE]]</label>
-				<visible>!IsEmpty(Window(home).Property(Music.AlbumsCount))</visible>
+				<visible>!IsEmpty(Window(home).Property(Music.AlbumsCount)) + !ControlGroup(301).HasFocus</visible>
 			</control>
 			<control type="label">
 				<aligny>center</aligny>
@@ -296,7 +296,7 @@
 				<height>34</height>
 				<width>auto</width>
 				<label></label>
-				<visible>!IsEmpty(Pvr.BackendChannels)</visible>
+				<visible>!IsEmpty(Pvr.BackendChannels) + !ControlGroup(301).HasFocus</visible>
 			</control>
 			<control type="label">
 				<aligny>center</aligny>
@@ -306,8 +306,28 @@
 				<height>34</height>
 				<width>auto</width>
 				<label>$INFO[Pvr.BackendChannels,[UPPERCASE],[/UPPERCASE]]</label>
-				<visible>!IsEmpty(Pvr.BackendChannels)</visible>
+				<visible>!IsEmpty(Pvr.BackendChannels) + !ControlGroup(301).HasFocus</visible>
 			</control>
+
+					<control type="label">
+						<aligny>center</aligny>
+						<align>left</align>
+						<font>MediumSmallBold</font>
+						<textcolor>Dark1</textcolor>
+						<height>34</height>
+						<width>auto</width>
+						<label>$VAR[EmbyWidgetLabelVertical]</label>
+				<visible>ControlGroup(301).HasFocus</visible>
+					</control>
+					<control type="image" id="89122">
+						<width>228</width>
+						<height>34</height>
+						<texture>$VAR[EmbyWidgetLogo]</texture>
+						<aspectratio align="center" aligny="center">keep</aspectratio>
+				<visible>ControlGroup(301).HasFocus</visible>
+					</control>
+
+
 		</control>
 		<control type="grouplist">
 			<visible>Skin.HasSetting(furniture.flags)</visible>
@@ -6474,10 +6494,9 @@
 			<control type="group">
 				<!-- Home List -->
 				<control type="list" id="300">
-					<animation effect="fade" start="100" end="33" time="400" condition="ControlGroup(301).HasFocus()">Conditional</animation>
-					<animation effect="slide" start="0" end="-100" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(301).HasFocus()">Conditional</animation>
-					<animation effect="slide" start="0" end="-100" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(301).HasFocus()">Conditional</animation>
-					<animation effect="zoom" start="100" end="95" time="200" delay="100" center="auto" tween="quadratic" easing="out" condition="ControlGroup(301).HasFocus()">Conditional</animation>
+					<animation effect="fade" start="100" end="0" time="400" condition="ControlGroup(301).HasFocus()">Conditional</animation>
+					<animation effect="slide" start="0" end="-600" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(301).HasFocus()">Conditional</animation>
+					<animation effect="zoom" start="100" end="95" time="100" delay="100" center="auto" tween="quadratic" easing="out" condition="ControlGroup(301).HasFocus()">Conditional</animation>
 					<animation effect="slide" start="-500" end="0" time="200" delay="100" tween="quadratic" easing="out">Visible</animation>
 					<visible allowhiddenfocus="true">!Control.HasFocus(302)</visible>
 					<include>Animation.FadeIn</include>
@@ -6586,42 +6605,42 @@
 				</control>
 			</control>
 			<!-- RIGHT SIDE -->
+					<control type="group">
+						<left>NewSidePad</left>
+						<top>TopPad</top>
+						<width>720</width>
+						<height>960</height>
+						<control type="image">
+							<aspectratio>stretch</aspectratio>
+							<texture background="true">$INFO[Container(3012).ListItem.Icon]</texture>
+						</control>
+						<control type="progress">
+							<bottom>0</bottom>
+							<height>8</height>
+							<info>ListItem.PercentPlayed</info>
+							<overlaytexture>-</overlaytexture>
+							<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
+							<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
+							<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
+							<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+							<visible>ListItem.IsResumable</visible>
+						</control>
+							<visible>ControlGroup(301).HasFocus</visible>
+					</control>
+
 			<control type="group">
 				<top>-25</top>
 				<control type="group">
 					<animation effect="fade" start="100" end="0" time="0" delay="0" reversible="false" condition="![[!IsEmpty(Container(300).ListItem.Property(widget)) | [IsEmpty(Container(300).ListItem.Property(widget)) + [IsEmpty(Container(300).ListItem.Property(Background)) + [!Skin.HasSetting(home.dontshowfanart)]]]]] | !IntegerGreaterThan(Container(301).NumItems,0) | Container(301).IsUpdating | [!Weather.IsFetched + StringCompare(Container(300).ListItem.Property(widget),Weather)]">Conditional</animation>
 					<animation effect="fade" start="0" end="100" time="200" delay="200" reversible="false" condition="[!Container(301).IsUpdating + IntegerGreaterThan(Container(301).NumItems,0) + [!IsEmpty(Container(300).ListItem.Property(widget)) | [IsEmpty(Container(300).ListItem.Property(widget)) + [IsEmpty(Container(300).ListItem.Property(Background)) + [IsEmpty(Skin.String(home.slideshowpath))]]]]] | [Weather.IsFetched + StringCompare(Container(300).ListItem.Property(widget),Weather)]">Conditional</animation>
-					<animation effect="slide" start="0" end="-250" time="200" delay="100" tween="quadratic" easing="out">Focus</animation>
-					<animation effect="slide" start="-250" end="0" time="200" delay="100" tween="quadratic" easing="out">UnFocus</animation>
-
-					<control type="image" id="89122">
-						<top>80</top>
-						<right>-250</right>
-						<width>228</width>
-						<height>64</height>
-						<texture fallback="E.png">$VAR[EmbyWidgetLogo]</texture>
-						<aspectratio align="center" aligny="center">keep</aspectratio>
-						<fadetime>50</fadetime>
-					</control>
-					<control type="label">
-						<left>500</left>
-						<width>1430</width>
-						<top>80</top>
-						<align>right</align>
-						<aligny>top</aligny>
-						<font>HomeWidgetLabelFont</font>
-						<textoffsetx>0</textoffsetx>
-						<label>$VAR[EmbyWidgetLabel]</label>
-						<focusedcolor>$VAR[ColourHighlight]</focusedcolor>
-						<texturenofocus>-</texturenofocus>
-						<texturefocus>-</texturefocus>
-					</control>
+					<animation effect="slide" start="0" end="260" time="200" delay="100" tween="quadratic" easing="out">Focus</animation>
+					<animation effect="slide" start="260" end="0" time="200" delay="100" tween="quadratic" easing="out">UnFocus</animation>
 
 					<!-- Widgets -->
 					<control type="grouplist" id="301">
 						<top>TopPad</top>
 						<left>470</left>
-						<width>1854</width>
+						<width>1920</width>
 						<height>1480</height>
 						<orientation>vertical</orientation>
 						<onup>300</onup>
@@ -6646,7 +6665,7 @@
 								<description>Widget</description>
 								<top>40</top>
 								<height>325</height>
-								<width>1854</width>
+								<width>1920</width>
 								<onup>300</onup>
 								<ondown>3016</ondown>
 								<onback>300</onback>
@@ -6697,7 +6716,7 @@
 								<description>Widget</description>
 								<top>40</top>
 								<height>325</height>
-								<width>1854</width>
+								<width>1920</width>
 								<onup>3012</onup>
 								<ondown>3017</ondown>
 								<onback>300</onback>
@@ -6747,7 +6766,7 @@
 								<description>Widget</description>
 								<top>40</top>
 								<height>325</height>
-								<width>1854</width>
+								<width>1920</width>
 								<onup>3016</onup>
 								<ondown>10017</ondown>
 								<onback>300</onback>
@@ -6797,7 +6816,7 @@
 								<description>Widget</description>
 								<top>40</top>
 								<height>325</height>
-								<width>1854</width>
+								<width>1920</width>
 								<onup>3017</onup>
 								<ondown>300</ondown>
 								<onback>300</onback>
@@ -6848,7 +6867,7 @@
 								<description>Widget</description>
 								<top>40</top>
 								<height>325</height>
-								<width>1854</width>
+								<width>1920</width>
 								<onup>300</onup>
 								<ondown>4016</ondown>
 								<onback>300</onback>
@@ -6899,7 +6918,7 @@
 								<description>Widget</description>
 								<top>40</top>
 								<height>325</height>
-								<width>1854</width>
+								<width>1920</width>
 								<onup>4012</onup>
 								<ondown>4017</ondown>
 								<onback>300</onback>
@@ -6949,7 +6968,7 @@
 								<description>Widget</description>
 								<top>40</top>
 								<height>325</height>
-								<width>1854</width>
+								<width>1920</width>
 								<onup>4016</onup>
 								<ondown>14017</ondown>
 								<onback>300</onback>
@@ -6999,7 +7018,7 @@
 								<description>Widget</description>
 								<top>40</top>
 								<height>325</height>
-								<width>1854</width>
+								<width>1920</width>
 								<onup>4017</onup>
 								<ondown>300</ondown>
 								<onback>300</onback>
@@ -7050,7 +7069,7 @@
 								<description>Widget</description>
 								<top>40</top>
 								<height>325</height>
-								<width>1854</width>
+								<width>1920</width>
 								<onup>300</onup>
 								<ondown>5016</ondown>
 								<onback>300</onback>
@@ -7101,7 +7120,7 @@
 								<description>Widget</description>
 								<top>40</top>
 								<height>325</height>
-								<width>1854</width>
+								<width>1920</width>
 								<onup>5012</onup>
 								<ondown>5017</ondown>
 								<onback>300</onback>
@@ -7151,7 +7170,7 @@
 								<description>Widget</description>
 								<top>40</top>
 								<height>325</height>
-								<width>1854</width>
+								<width>1920</width>
 								<onup>5016</onup>
 								<ondown>15017</ondown>
 								<onback>300</onback>
@@ -7201,7 +7220,7 @@
 								<description>Widget</description>
 								<top>40</top>
 								<height>325</height>
-								<width>1854</width>
+								<width>1920</width>
 								<onup>5017</onup>
 								<ondown>300</ondown>
 								<onback>300</onback>
@@ -7252,7 +7271,7 @@
 								<description>Widget</description>
 								<top>40</top>
 								<height>325</height>
-								<width>1854</width>
+								<width>1920</width>
 								<onup>300</onup>
 								<ondown>6016</ondown>
 								<onback>300</onback>
@@ -7303,7 +7322,7 @@
 								<description>Widget</description>
 								<top>40</top>
 								<height>325</height>
-								<width>1854</width>
+								<width>1920</width>
 								<onup>6012</onup>
 								<ondown>6017</ondown>
 								<onback>300</onback>
@@ -7353,7 +7372,7 @@
 								<description>Widget</description>
 								<top>40</top>
 								<height>325</height>
-								<width>1854</width>
+								<width>1920</width>
 								<onup>6016</onup>
 								<ondown>9017</ondown>
 								<onback>300</onback>
@@ -7403,7 +7422,7 @@
 								<description>Widget</description>
 								<top>40</top>
 								<height>325</height>
-								<width>1854</width>
+								<width>1920</width>
 								<onup>6017</onup>
 								<ondown>300</ondown>
 								<onback>300</onback>
