@@ -3099,6 +3099,7 @@
 				<control type="wraplist" id="3012">
 					<description>Widget</description>
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
+					<visible>!Skin.HasSetting(home.easynav)</visible>
 					<top>330</top>
 					<left>SidePad</left>
 					<width>820</width>
@@ -3129,6 +3130,61 @@
 							<aspectratio>scale</aspectratio>
 							<texture background="true">$VAR[LandscapeImage]</texture>
 							<animation type="Focus" reversible="false">
+								<effect type="zoom" start="105" end="90" time="200" center="auto" tween="quadratic" easing="out"/>
+							</animation>
+						</control>
+					</focusedlayout>
+					<content target="$VAR[DefWidget6Target]">$VAR[DefWidget6Content]</content>
+				</control>
+				<control type="button" id="3012">
+					<visible>Skin.HasSetting(home.easynav)</visible>
+					<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
+					<top>330</top>
+					<left>SidePad</left>
+					<width>820</width>
+					<height>460</height>
+					<onup>300</onup>
+					<ondown>3013</ondown>
+					<onleft>300</onleft>
+					<onright>3016</onright>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<onclick>PlayMedia($ESCINFO[Container(30122).ListItem.FileNameAndPath])</onclick>
+				</control>
+				<control type="wraplist" id="30122">
+					<description>Widget</description>
+					<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
+					<visible>Skin.HasSetting(home.easynav)</visible>
+					<top>330</top>
+					<left>SidePad</left>
+					<width>820</width>
+					<height>460</height>
+					<onleft>3013</onleft>
+					<onright>3016</onright>
+					<onback>300</onback>
+					<oninfo>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(30122).ListItem.Label])</oninfo>
+					<preloaditems>2</preloaditems>
+					<orientation>vertical</orientation>
+					<autoscroll time="10000">!Control.HasFocus(3012)</autoscroll>
+					<scrolltime tween="quadratic">100</scrolltime>
+					<include>Animation.FadeIn</include>
+					<include>Animation.FadeOut</include>
+					<itemlayout width="820" height="460">
+						<control type="image">
+							<aspectratio>scale</aspectratio>
+							<texture background="true">$VAR[LandscapeImage]</texture>
+						</control>
+					</itemlayout>
+					<focusedlayout width="820" height="460">
+						<control type="button">
+							<onfocus>SetProperty(SkinHelper.WidgetContainer,30122)</onfocus>
+							<texturenofocus>-</texturenofocus>
+							<texturefocus>-</texturefocus>
+						</control>
+						<control type="image">
+							<aspectratio>scale</aspectratio>
+							<texture background="true">$VAR[LandscapeImage]</texture>
+							<animation type="Conditional" reversible="false" condition="Control.HasFocus(3012)">
 								<effect type="zoom" start="105" end="90" time="200" center="auto" tween="quadratic" easing="out"/>
 							</animation>
 						</control>
@@ -3980,6 +4036,7 @@
 				<control type="wraplist" id="4012">
 					<description>Widget</description>
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+					<visible>!Skin.HasSetting(home.easynav)</visible>
 					<top>330</top>
 					<left>SidePad</left>
 					<width>820</width>
@@ -4009,6 +4066,60 @@
 							<aspectratio>scale</aspectratio>
 							<texture background="true">$VAR[LandscapeImage]</texture>
 							<animation type="Focus" reversible="false">
+								<effect type="zoom" start="105" end="90" time="200" center="auto" tween="quadratic" easing="out"/>
+							</animation>
+						</control>
+					</focusedlayout>
+					<content target="$VAR[DefWidget9Target]">$VAR[DefWidget9Content]</content>
+				</control>
+				<control type="button" id="4012">
+					<visible>Skin.HasSetting(home.easynav)</visible>
+					<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+					<top>330</top>
+					<left>SidePad</left>
+					<width>820</width>
+					<height>460</height>
+					<onup>300</onup>
+					<ondown>4013</ondown>
+					<onleft>300</onleft>
+					<onright>4016</onright>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<onclick>PlayMedia($ESCINFO[Container(40122).ListItem.FileNameAndPath])</onclick>
+				</control>
+				<control type="wraplist" id="40122">
+					<description>Widget</description>
+					<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+					<visible>Skin.HasSetting(home.easynav)</visible>
+					<top>330</top>
+					<left>SidePad</left>
+					<width>820</width>
+					<height>460</height>
+					<onleft>4013</onleft>
+					<onright>4016</onright>
+					<onback>300</onback>
+					<preloaditems>2</preloaditems>
+					<orientation>vertical</orientation>
+					<autoscroll time="10000">!Control.HasFocus(4012)</autoscroll>
+					<scrolltime tween="quadratic">100</scrolltime>
+					<include>Animation.FadeIn</include>
+					<include>Animation.FadeOut</include>
+					<itemlayout width="820" height="460">
+						<control type="image">
+							<aspectratio>scale</aspectratio>
+							<texture background="true">$VAR[LandscapeImage]</texture>
+						</control>
+					</itemlayout>
+					<focusedlayout width="820" height="460">
+						<control type="button">
+							<onfocus>SetProperty(SkinHelper.WidgetContainer,40122)</onfocus>
+							<texturenofocus>-</texturenofocus>
+							<texturefocus>-</texturefocus>
+						</control>
+						<control type="image">
+							<aspectratio>scale</aspectratio>
+							<texture background="true">$VAR[LandscapeImage]</texture>
+							<animation type="Conditional" reversible="false" condition="Control.HasFocus(4012)">
 								<effect type="zoom" start="105" end="90" time="200" center="auto" tween="quadratic" easing="out"/>
 							</animation>
 						</control>
@@ -4861,6 +4972,7 @@
 				<control type="wraplist" id="5012">
 					<description>Widget</description>
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+					<visible>!Skin.HasSetting(home.easynav)</visible>
 					<top>330</top>
 					<left>SidePad</left>
 					<width>820</width>
@@ -4923,6 +5035,129 @@
 							<aspectratio>scale</aspectratio>
 							<texture background="true">$VAR[LandscapeImage]</texture>
 							<animation type="Focus" reversible="false">
+								<effect type="zoom" start="105" end="90" time="200" center="auto" tween="quadratic" easing="out"/>
+							</animation>
+							<visible>!Stringcompare(Skin.String(widget12),PopularArtists)</visible>
+							<visible>!Stringcompare(Skin.String(widget12),HypedArtists)</visible>
+						</control>
+						<control type="group">
+							<width>820</width>
+							<height>460</height>
+							<control type="image">
+								<width>1000</width>
+								<align>bottom</align>
+								<aspectratio>scale</aspectratio>
+								<texture background="true">$INFO[Listitem.Thumb]</texture>
+							</control>
+							<control type="image">
+								<left>0</left>
+								<width>500</width>
+								<height>245</height>
+								<aspectratio>center</aspectratio>
+								<texture background="true">$INFO[Listitem.Thumb]</texture>
+							</control>
+							<control type="image">
+								<left>0</left>
+								<top>130</top>
+								<width>295</width>
+								<height>330</height>
+								<aspectratio>center</aspectratio>
+								<texture background="true" flipx="true">$INFO[Listitem.Thumb]</texture>
+							</control>
+							<control type="image">
+								<align>right</align>
+								<aspectratio>keep</aspectratio>
+								<texture background="true">$INFO[Listitem.Thumb]</texture>
+							</control>
+							<visible>Stringcompare(Skin.String(widget12),PopularArtists) | Stringcompare(Skin.String(widget12),HypedArtists)</visible>
+							<animation type="Focus" reversible="false">
+								<effect type="zoom" start="105" end="90" time="200" center="auto" tween="quadratic" easing="out"/>
+							</animation>
+						</control>
+					</focusedlayout>
+					<content target="$VAR[DefWidget12Target]">$VAR[DefWidget12Content]</content>
+				</control>
+				<control type="button" id="5012">
+					<visible>Skin.HasSetting(home.easynav)</visible>
+					<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+					<top>330</top>
+					<left>SidePad</left>
+					<width>820</width>
+					<height>460</height>
+					<onup>300</onup>
+					<ondown>5013</ondown>
+					<onleft>300</onleft>
+					<onright>5016</onright>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<onclick>PlayMedia($ESCINFO[Container(50122).ListItem.FileNameAndPath])</onclick>
+				</control>
+				<control type="wraplist" id="50122">
+					<description>Widget</description>
+					<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+					<visible>Skin.HasSetting(home.easynav)</visible>
+					<top>330</top>
+					<left>SidePad</left>
+					<width>820</width>
+					<height>460</height>
+					<onleft>5013</onleft>
+					<onright>5016</onright>
+					<onback>300</onback>
+					<preloaditems>2</preloaditems>
+					<orientation>vertical</orientation>
+					<autoscroll time="10000">!Control.HasFocus(5012)</autoscroll>
+					<scrolltime tween="quadratic">100</scrolltime>
+					<include>Animation.FadeIn</include>
+					<include>Animation.FadeOut</include>
+					<itemlayout width="820" height="460">
+						<control type="image">
+							<aspectratio>scale</aspectratio>
+							<texture background="true">$VAR[LandscapeImage]</texture>
+							<visible>!Stringcompare(Skin.String(widget12),PopularArtists)</visible>
+							<visible>!Stringcompare(Skin.String(widget12),HypedArtists)</visible>
+						</control>
+						<control type="group">
+							<width>820</width>
+							<height>460</height>
+							<control type="image">
+								<width>1000</width>
+								<align>bottom</align>
+								<aspectratio>scale</aspectratio>
+								<texture background="true">$INFO[Listitem.Thumb]</texture>
+							</control>
+							<control type="image">
+								<left>0</left>
+								<width>500</width>
+								<height>245</height>
+								<aspectratio>center</aspectratio>
+								<texture background="true">$INFO[Listitem.Thumb]</texture>
+							</control>
+							<control type="image">
+								<left>0</left>
+								<top>130</top>
+								<width>295</width>
+								<height>330</height>
+								<aspectratio>center</aspectratio>
+								<texture background="true" flipx="true">$INFO[Listitem.Thumb]</texture>
+							</control>
+							<control type="image">
+								<align>right</align>
+								<aspectratio>keep</aspectratio>
+								<texture background="true">$INFO[Listitem.Thumb]</texture>
+							</control>
+							<visible>Stringcompare(Skin.String(widget12),PopularArtists) | Stringcompare(Skin.String(widget12),HypedArtists)</visible>
+						</control>
+					</itemlayout>
+					<focusedlayout width="820" height="460">
+						<control type="button">
+							<onfocus>SetProperty(SkinHelper.WidgetContainer,50122)</onfocus>
+							<texturenofocus>-</texturenofocus>
+							<texturefocus>-</texturefocus>
+						</control>
+						<control type="image">
+							<aspectratio>scale</aspectratio>
+							<texture background="true">$VAR[LandscapeImage]</texture>
+							<animation type="Conditional" reversible="false" condition="Control.HasFocus(5012)">
 								<effect type="zoom" start="105" end="90" time="200" center="auto" tween="quadratic" easing="out"/>
 							</animation>
 							<visible>!Stringcompare(Skin.String(widget12),PopularArtists)</visible>
@@ -5787,6 +6022,7 @@
 				<control type="wraplist" id="7012">
 					<description>Widget</description>
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
+					<visible>!Skin.HasSetting(home.easynav)</visible>
 					<top>330</top>
 					<left>SidePad</left>
 					<width>820</width>
@@ -5811,6 +6047,55 @@
 							<aspectratio>scale</aspectratio>
 							<texture background="true">$VAR[LandscapeImage]</texture>
 							<animation type="Focus" reversible="false">
+								<effect type="zoom" start="105" end="90" time="200" center="auto" tween="quadratic" easing="out"/>
+							</animation>
+						</control>
+					</focusedlayout>
+					<content target="$VAR[DefWidget4Target]">$VAR[DefWidget4Content]</content>
+				</control>
+				<control type="button" id="7012">
+					<visible>Skin.HasSetting(home.easynav)</visible>
+					<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
+					<top>330</top>
+					<left>SidePad</left>
+					<width>820</width>
+					<height>460</height>
+					<onup>300</onup>
+					<ondown>7013</ondown>
+					<onleft>300</onleft>
+					<onright>7016</onright>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<onclick>PlayMedia($ESCINFO[Container(70122).ListItem.FileNameAndPath])</onclick>
+				</control>
+				<control type="wraplist" id="70122">
+					<description>Widget</description>
+					<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
+					<visible>Skin.HasSetting(home.easynav)</visible>
+					<top>330</top>
+					<left>SidePad</left>
+					<width>820</width>
+					<height>460</height>
+					<onleft>7013</onleft>
+					<onback>300</onback>
+					<onright>7016</onright>
+					<preloaditems>2</preloaditems>
+					<orientation>vertical</orientation>
+					<autoscroll time="10000">!Control.HasFocus(7012)</autoscroll>
+					<scrolltime tween="quadratic">100</scrolltime>
+					<include>Animation.FadeIn</include>
+					<include>Animation.FadeOut</include>
+					<itemlayout width="820" height="460">
+						<control type="image">
+							<aspectratio>scale</aspectratio>
+							<texture background="true">$VAR[LandscapeImage]</texture>
+						</control>
+					</itemlayout>
+					<focusedlayout width="820" height="460">
+						<control type="image">
+							<aspectratio>scale</aspectratio>
+							<texture background="true">$VAR[LandscapeImage]</texture>
+							<animation type="Conditional" reversible="false" condition="Control.HasFocus(7012)">
 								<effect type="zoom" start="105" end="90" time="200" center="auto" tween="quadratic" easing="out"/>
 							</animation>
 						</control>
