@@ -236,7 +236,7 @@
 				<height>32</height>
 				<width>auto</width>
 				<label></label>
-				<visible>!IsEmpty(Window(home).Property(Movies.Count))</visible>
+				<visible>!IsEmpty(Window(home).Property(Movies.Count)) + !ControlGroup(301).HasFocus</visible>
 			</control>
 			<control type="label">
 				<aligny>center</aligny>
@@ -246,7 +246,7 @@
 				<height>34</height>
 				<width>auto</width>
 				<label>$INFO[Window(home).Property(Movies.Count),[UPPERCASE],[/UPPERCASE]]</label>
-				<visible>!IsEmpty(Window(home).Property(Movies.Count))</visible>
+				<visible>!IsEmpty(Window(home).Property(Movies.Count)) + !ControlGroup(301).HasFocus</visible>
 			</control>
 			<control type="label">
 				<aligny>center</aligny>
@@ -256,7 +256,7 @@
 				<height>32</height>
 				<width>auto</width>
 				<label></label>
-				<visible>!IsEmpty(Window(home).Property(TVShows.Count))</visible>
+				<visible>!IsEmpty(Window(home).Property(TVShows.Count)) + !ControlGroup(301).HasFocus</visible>
 			</control>
 			<control type="label">
 				<aligny>center</aligny>
@@ -266,7 +266,7 @@
 				<height>34</height>
 				<width>auto</width>
 				<label>$INFO[Window(home).Property(TVShows.Count),[UPPERCASE],[/UPPERCASE]]</label>
-				<visible>!IsEmpty(Window(home).Property(TVShows.Count))</visible>
+				<visible>!IsEmpty(Window(home).Property(TVShows.Count)) + !ControlGroup(301).HasFocus</visible>
 			</control>
 			<control type="label">
 				<aligny>center</aligny>
@@ -276,7 +276,7 @@
 				<height>34</height>
 				<width>auto</width>
 				<label></label>
-				<visible>!IsEmpty(Window(home).Property(Music.AlbumsCount))</visible>
+				<visible>!IsEmpty(Window(home).Property(Music.AlbumsCount)) + !ControlGroup(301).HasFocus</visible>
 			</control>
 			<control type="label">
 				<aligny>center</aligny>
@@ -286,7 +286,7 @@
 				<height>34</height>
 				<width>auto</width>
 				<label>$INFO[Window(home).Property(Music.AlbumsCount),[UPPERCASE],[/UPPERCASE]]</label>
-				<visible>!IsEmpty(Window(home).Property(Music.AlbumsCount))</visible>
+				<visible>!IsEmpty(Window(home).Property(Music.AlbumsCount)) + !ControlGroup(301).HasFocus</visible>
 			</control>
 			<control type="label">
 				<aligny>center</aligny>
@@ -296,7 +296,7 @@
 				<height>34</height>
 				<width>auto</width>
 				<label></label>
-				<visible>!IsEmpty(Pvr.BackendChannels)</visible>
+				<visible>!IsEmpty(Pvr.BackendChannels) + !ControlGroup(301).HasFocus</visible>
 			</control>
 			<control type="label">
 				<aligny>center</aligny>
@@ -306,9 +306,29 @@
 				<height>34</height>
 				<width>auto</width>
 				<label>$INFO[Pvr.BackendChannels,[UPPERCASE],[/UPPERCASE]]</label>
-				<visible>!IsEmpty(Pvr.BackendChannels)</visible>
+				<visible>!IsEmpty(Pvr.BackendChannels) + !ControlGroup(301).HasFocus</visible>
 			</control>
-		</control>
+
+					<control type="label">
+						<aligny>center</aligny>
+						<align>left</align>
+						<font>MediumSmallBold</font>
+						<textcolor>Dark1</textcolor>
+						<height>34</height>
+						<width>auto</width>
+						<label>$VAR[EmbyWidgetLabelVertical]</label>
+				<visible>ControlGroup(301).HasFocus</visible>
+					</control>
+					<control type="image" id="89122">
+						<width>228</width>
+						<height>34</height>
+						<texture>$VAR[EmbyWidgetLogo]</texture>
+						<aspectratio align="center" aligny="center">keep</aspectratio>
+				<visible>ControlGroup(301).HasFocus</visible>
+					</control>
+					</control>
+
+
 		<control type="grouplist">
 			<visible>Skin.HasSetting(furniture.flags)</visible>
 			<visible>!Window.IsVisible(DialogAlbumInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-VideoList.xml) + !Window.IsVisible(script-ExtendedInfo Script-YoutubeList.xml)</visible>
