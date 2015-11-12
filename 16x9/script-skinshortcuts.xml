@@ -169,7 +169,7 @@
 						<onclick>SetProperty(widgetID, movies5)</onclick>
 						<onclick>SendClick(312)</onclick>
 						<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
-						<visible>StringCompare(Container(211).ListItem.Property(defaultID),movies) + !Skin.String(home.vertical,1)</visible>
+						<visible>StringCompare(Container(211).ListItem.Property(defaultID),movies)</visible>
 					</control>
 					<control type="button" id="14552">
 						<width>1410</width>
@@ -179,7 +179,7 @@
 						<onclick>SetProperty(widgetID, movies6)</onclick>
 						<onclick>SendClick(312)</onclick>
 						<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
-						<visible>StringCompare(Container(211).ListItem.Property(defaultID),movies) + !Skin.String(home.vertical,1)</visible>
+						<visible>StringCompare(Container(211).ListItem.Property(defaultID),movies)</visible>
 					</control>
 					<control type="button" id="1456">
 						<width>1410</width>
@@ -229,7 +229,7 @@
 						<onclick>SetProperty(widgetID, tvshows5)</onclick>
 						<onclick>SendClick(312)</onclick>
 						<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
-						<visible>StringCompare(Container(211).ListItem.Property(defaultID),tvshows) + !Skin.String(home.vertical,1)</visible>
+						<visible>StringCompare(Container(211).ListItem.Property(defaultID),tvshows)</visible>
 					</control>
 					<control type="button" id="14592">
 						<width>1410</width>
@@ -239,7 +239,7 @@
 						<onclick>SetProperty(widgetID, tvshows6)</onclick>
 						<onclick>SendClick(312)</onclick>
 						<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
-						<visible>StringCompare(Container(211).ListItem.Property(defaultID),tvshows) + !Skin.String(home.vertical,1)</visible>
+						<visible>StringCompare(Container(211).ListItem.Property(defaultID),tvshows)</visible>
 					</control>
 					<control type="button" id="1460">
 						<width>1410</width>
@@ -384,6 +384,38 @@
 						<visible>StringCompare(Container(211).ListItem.Property(defaultID),movies) + Skin.String(home.vertical,1)</visible>
 						<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
 					</control>
+					<control type="button" id="5041" description="Widget 5 icon aspect ratio">
+						<width>1410</width>
+						<include>DefSettingsButton2</include>
+						<label>$ADDON[script.skinshortcuts 32044] 5 $LOCALIZE[31971]</label>
+						<label2 fallback="31968">$INFO[Skin.String(movies5widget.aspectratio)]</label2>
+						<onclick>SetProperty(Dialog.NumItems,3)</onclick>
+						<onclick>SetProperty(Dialog.1.Label,$LOCALIZE[31968])</onclick>
+						<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(movies5widget.aspectratio,LANDSCAPE))</onclick>
+						<onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31969])</onclick>
+						<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(movies5widget.aspectratio,POSTER))</onclick>
+						<onclick>SetProperty(Dialog.3.Label,$LOCALIZE[31970])</onclick>
+						<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(movies5widget.aspectratio,SQUARE))</onclick>
+						<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31967])</onclick>
+						<visible>StringCompare(Container(211).ListItem.Property(defaultID),movies) + Skin.String(home.vertical,1)</visible>
+						<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
+					</control>
+					<control type="button" id="5042" description="Widget 6 icon aspect ratio">
+						<width>1410</width>
+						<include>DefSettingsButton2</include>
+						<label>$ADDON[script.skinshortcuts 32044] 6 $LOCALIZE[31971]</label>
+						<label2 fallback="31968">$INFO[Skin.String(movies6widget.aspectratio)]</label2>
+						<onclick>SetProperty(Dialog.NumItems,3)</onclick>
+						<onclick>SetProperty(Dialog.1.Label,$LOCALIZE[31968])</onclick>
+						<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(movies6widget.aspectratio,LANDSCAPE))</onclick>
+						<onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31969])</onclick>
+						<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(movies6widget.aspectratio,POSTER))</onclick>
+						<onclick>SetProperty(Dialog.3.Label,$LOCALIZE[31970])</onclick>
+						<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(movies6widget.aspectratio,SQUARE))</onclick>
+						<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31967])</onclick>
+						<visible>StringCompare(Container(211).ListItem.Property(defaultID),movies) + Skin.String(home.vertical,1)</visible>
+						<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
+					</control>
 					<control type="button" id="505" description="Widget 1 icon aspect ratio">
 						<width>1410</width>
 						<include>DefSettingsButton2</include>
@@ -444,6 +476,38 @@
 						<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(tvshows4widget.aspectratio,POSTER))</onclick>
 						<onclick>SetProperty(Dialog.3.Label,$LOCALIZE[31970])</onclick>
 						<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(tvshows4widget.aspectratio,SQUARE))</onclick>
+						<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31967])</onclick>
+						<visible>StringCompare(Container(211).ListItem.Property(defaultID),tvshows) + Skin.String(home.vertical,1)</visible>
+						<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
+					</control>
+					<control type="button" id="5081" description="Widget 5 icon aspect ratio">
+						<width>1410</width>
+						<include>DefSettingsButton2</include>
+						<label>$ADDON[script.skinshortcuts 32044] 5 $LOCALIZE[31971]</label>
+						<label2 fallback="31968">$INFO[Skin.String(tvshows5widget.aspectratio)]</label2>
+						<onclick>SetProperty(Dialog.NumItems,3)</onclick>
+						<onclick>SetProperty(Dialog.1.Label,$LOCALIZE[31968])</onclick>
+						<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(tvshows5widget.aspectratio,LANDSCAPE))</onclick>
+						<onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31969])</onclick>
+						<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(tvshows5widget.aspectratio,POSTER))</onclick>
+						<onclick>SetProperty(Dialog.3.Label,$LOCALIZE[31970])</onclick>
+						<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(tvshows5widget.aspectratio,SQUARE))</onclick>
+						<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31967])</onclick>
+						<visible>StringCompare(Container(211).ListItem.Property(defaultID),tvshows) + Skin.String(home.vertical,1)</visible>
+						<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
+					</control>
+					<control type="button" id="5082" description="Widget 6 icon aspect ratio">
+						<width>1410</width>
+						<include>DefSettingsButton2</include>
+						<label>$ADDON[script.skinshortcuts 32044] 6 $LOCALIZE[31971]</label>
+						<label2 fallback="31968">$INFO[Skin.String(tvshows6widget.aspectratio)]</label2>
+						<onclick>SetProperty(Dialog.NumItems,3)</onclick>
+						<onclick>SetProperty(Dialog.1.Label,$LOCALIZE[31968])</onclick>
+						<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(tvshows6widget.aspectratio,LANDSCAPE))</onclick>
+						<onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31969])</onclick>
+						<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(tvshows6widget.aspectratio,POSTER))</onclick>
+						<onclick>SetProperty(Dialog.3.Label,$LOCALIZE[31970])</onclick>
+						<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(tvshows6widget.aspectratio,SQUARE))</onclick>
 						<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31967])</onclick>
 						<visible>StringCompare(Container(211).ListItem.Property(defaultID),tvshows) + Skin.String(home.vertical,1)</visible>
 						<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
