@@ -319,13 +319,6 @@
 						<label>$VAR[EmbyWidgetLabelVertical]</label>
 				<visible>ControlGroup(301).HasFocus</visible>
 					</control>
-					<control type="image" id="89122">
-						<width>228</width>
-						<height>34</height>
-						<texture>$VAR[EmbyWidgetLogo]</texture>
-						<aspectratio align="center" aligny="center">keep</aspectratio>
-				<visible>ControlGroup(301).HasFocus</visible>
-					</control>
 					</control>
 
 
@@ -6779,8 +6772,8 @@
 			<control type="group">
 				<!-- Home List -->
 				<control type="list" id="300">
-					<animation effect="fade" start="100" end="0" time="400" condition="ControlGroup(301).HasFocus()">Conditional</animation>
-					<animation effect="slide" start="0" end="-600" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(301).HasFocus()">Conditional</animation>
+					<animation effect="fade" start="100" end="0" time="100" condition="ControlGroup(301).HasFocus()">Conditional</animation>
+					<animation effect="slide" start="0" end="-200" time="200" delay="00" tween="quadratic" easing="out" condition="ControlGroup(301).HasFocus()">Conditional</animation>
 					<animation effect="zoom" start="100" end="95" time="100" delay="100" center="auto" tween="quadratic" easing="out" condition="ControlGroup(301).HasFocus()">Conditional</animation>
 					<animation effect="slide" start="-500" end="0" time="200" delay="100" tween="quadratic" easing="out">Visible</animation>
 					<visible allowhiddenfocus="true">!Control.HasFocus(302)</visible>
@@ -6788,7 +6781,7 @@
 					<include>Animation.FadeOut</include>
 					<description>Home Wraplist</description>
 					<left>NewSidePad</left>
-					<top>TopPad</top>
+					<top>155</top>
 					<width>PosterW</width>
 					<height>880</height>
 					<orientation>vertical</orientation>
@@ -6838,7 +6831,7 @@
 					<include>Animation.FadeOut</include>
 					<description>Home Wraplist</description>
 					<left>NewSidePad</left>
-					<top>TopPad</top>
+					<top>155</top>
 					<width>PosterW</width>
 					<height>880</height>
 					<orientation>vertical</orientation>
@@ -6890,9 +6883,28 @@
 				</control>
 			</control>
 			<!-- RIGHT SIDE -->
+					<control type="image" id="89122">
+						<right>NewSidePad</right>
+						<top>46</top>
+						<width>228</width>
+						<height>64</height>
+						<texture>$VAR[EmbyWidgetLogo]</texture>
+						<aspectratio align="center" aligny="center">keep</aspectratio>
+						<visible>ControlGroup(301).HasFocus</visible>
+					</control>
+					<control type="group">
+					<animation effect="fade" start="100" end="0" time="400" condition="!ControlGroup(301).HasFocus()">Conditional</animation>
+						<left>NewSidePad</left>
+						<top>179</top>
+						<width>594</width>
+						<height>891</height>
+						<control type="image">
+							<aspectratio>scale</aspectratio>
+							<texture background="true">$VAR[PosterImageVertical]</texture>
+						</control>
+					</control>
 
 			<control type="group">
-				<top>-25</top>
 				<control type="group">
 					<animation effect="fade" start="100" end="0" time="0" delay="0" reversible="false" condition="![[!IsEmpty(Container(300).ListItem.Property(widget)) | [IsEmpty(Container(300).ListItem.Property(widget)) + [IsEmpty(Container(300).ListItem.Property(Background)) + [!Skin.HasSetting(home.dontshowfanart)]]]]] | !IntegerGreaterThan(Container(301).NumItems,0) | Container(301).IsUpdating | [!Weather.IsFetched + StringCompare(Container(300).ListItem.Property(widget),Weather)]">Conditional</animation>
 					<animation effect="fade" start="0" end="100" time="200" delay="200" reversible="false" condition="[!Container(301).IsUpdating + IntegerGreaterThan(Container(301).NumItems,0) + [!IsEmpty(Container(300).ListItem.Property(widget)) | [IsEmpty(Container(300).ListItem.Property(widget)) + [IsEmpty(Container(300).ListItem.Property(Background)) + [IsEmpty(Skin.String(home.slideshowpath))]]]]] | [Weather.IsFetched + StringCompare(Container(300).ListItem.Property(widget),Weather)]">Conditional</animation>
@@ -6901,10 +6913,10 @@
 
 					<!-- Widgets -->
 					<control type="grouplist" id="301">
-						<top>164</top>
+						<top>179</top>
 						<left>470</left>
 						<width>1920</width>
-						<height>1480</height>
+						<height>891</height>
 						<orientation>vertical</orientation>
 						<onup>300</onup>
 						<ondown>300</ondown>
@@ -6915,21 +6927,18 @@
 							<height>370</height>
 							<control type="label">
 								<width>1200</width>
-								<height>34</height>
-								<aligny>center</aligny>
 								<align>left</align>
 								<height>34</height>
-								<font>Small</font>
 								<font>HomeWidgetLabelFont</font>
 								<label>$VAR[EmbyWidget6Label]</label>
 								<include>Animation.DelayFadeIn</include>
-					<animation effect="slide" start="0" end="-522" time="200" delay="100" tween="quadratic" easing="out" condition="Control.HasFocus(3012)">Conditional</animation>
-					<animation effect="zoom" start="100" end="112" time="200" delay="100" tween="quadratic" center="auto" easing="out" condition="Control.HasFocus(3012)">Conditional</animation>
+								<animation effect="slide" start="0" end="0,-40" time="2000" delay="100" tween="quadratic" easing="out" condition="true">Conditional</animation>
+								<animation effect="fade" start="100" end="10" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(301).HasFocus + !Control.HasFocus(3012)">Conditional</animation>
 							</control>
 							<control type="wraplist" id="3012">
 								<description>Widget</description>
-								<top>40</top>
-								<height>891</height>
+								
+								<height>325</height>
 								<width>1920</width>
 								<onup>300</onup>
 								<ondown>3016</ondown>
@@ -6941,10 +6950,7 @@
 								<include>Animation.FadeIn</include>
 								<include>Animation.FadeOut</include>
 								<itemlayout width="218" height="325" condition="!StringCompare(Skin.String(movies1widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(movies1widget.aspectratio),SQUARE)">
-		<control type="group">
-					<animation effect="slide" start="0" end="-594" time="0" delay="100" tween="quadratic" easing="out" condition="Control.HasFocus(3012)">Conditional</animation>
 									<include>WidgetPosterItemLayout</include>
-							</control>
 								</itemlayout>
 								<itemlayout width="577" height="325" condition="StringCompare(Skin.String(movies1widget.aspectratio),LANDSCAPE)">
 									<include>WidgetLandscapeItemLayout</include>
@@ -6952,14 +6958,8 @@
 								<itemlayout width="325" height="325" condition="StringCompare(Skin.String(movies1widget.aspectratio),SQUARE)">
 									<include>WidgetSquareItemLayout</include>
 								</itemlayout>
-								<focusedlayout width="218" height="325" condition="!Control.HasFocus(3012) + !StringCompare(Skin.String(movies1widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(movies1widget.aspectratio),SQUARE)">
+								<focusedlayout width="218" height="325" condition="!StringCompare(Skin.String(movies1widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(movies1widget.aspectratio),SQUARE)">
 									<include>WidgetPosterFocusedItemLayout</include>
-								</focusedlayout>
-								<focusedlayout width="594" height="891" condition="Control.HasFocus(3012) + !StringCompare(Skin.String(movies1widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(movies1widget.aspectratio),SQUARE)">
-		<control type="group">
-					<animation effect="slide" start="0" end="-594" time="0" delay="0" tween="quadratic" easing="out" condition="Control.HasFocus(3012)">Conditional</animation>
-									<include>WidgetPosterFocusedItemLayout</include>
-							</control>
 								</focusedlayout>
 								<focusedlayout width="577" height="325" condition="StringCompare(Skin.String(movies1widget.aspectratio),LANDSCAPE)">
 									<include>WidgetLandscapeFocusedItemLayout</include>
@@ -6980,15 +6980,15 @@
 								<height>34</height>
 								<aligny>center</aligny>
 								<align>left</align>
-								<height>34</height>
-								<font>Small</font>
 								<font>HomeWidgetLabelFont</font>
 								<label>$VAR[EmbyWidget7Label]</label>
 								<include>Animation.DelayFadeIn</include>
+								<animation effect="slide" start="0" end="0,-40" time="2000" delay="100" tween="quadratic" easing="out" condition="true">Conditional</animation>
+					<animation effect="fade" start="100" end="10" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(301).HasFocus + !Control.HasFocus(3016)">Conditional</animation>
 							</control>
 							<control type="wraplist" id="3016">
 								<description>Widget</description>
-								<top>40</top>
+								
 								<height>325</height>
 								<width>1920</width>
 								<onup>3012</onup>
@@ -7035,10 +7035,12 @@
 								<font>HomeWidgetLabelFont</font>
 								<label>$VAR[EmbyWidget8Label]</label>
 								<include>Animation.DelayFadeIn</include>
+								<animation effect="slide" start="0" end="0,-40" time="2000" delay="100" tween="quadratic" easing="out" condition="true">Conditional</animation>
+					<animation effect="fade" start="100" end="10" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(301).HasFocus + !Control.HasFocus(3017)">Conditional</animation>
 							</control>
 							<control type="wraplist" id="3017">
 								<description>Widget</description>
-								<top>40</top>
+								
 								<height>325</height>
 								<width>1920</width>
 								<onup>3016</onup>
@@ -7085,10 +7087,12 @@
 								<font>HomeWidgetLabelFont</font>
 								<label>$VAR[EmbyWidget16Label]</label>
 								<include>Animation.DelayFadeIn</include>
+								<animation effect="slide" start="0" end="0,-40" time="2000" delay="100" tween="quadratic" easing="out" condition="true">Conditional</animation>
+					<animation effect="fade" start="100" end="10" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(301).HasFocus + !Control.HasFocus(10017)">Conditional</animation>
 							</control>
 							<control type="wraplist" id="10017">
 								<description>Widget</description>
-								<top>40</top>
+								
 								<height>325</height>
 								<width>1920</width>
 								<onup>3017</onup>
@@ -7139,7 +7143,7 @@
 							</control>
 							<control type="wraplist" id="4012">
 								<description>Widget</description>
-								<top>40</top>
+								
 								<height>325</height>
 								<width>1920</width>
 								<onup>300</onup>
@@ -7190,7 +7194,7 @@
 							</control>
 							<control type="wraplist" id="4016">
 								<description>Widget</description>
-								<top>40</top>
+								
 								<height>325</height>
 								<width>1920</width>
 								<onup>4012</onup>
@@ -7240,7 +7244,7 @@
 							</control>
 							<control type="wraplist" id="4017">
 								<description>Widget</description>
-								<top>40</top>
+								
 								<height>325</height>
 								<width>1920</width>
 								<onup>4016</onup>
@@ -7290,7 +7294,7 @@
 							</control>
 							<control type="wraplist" id="14017">
 								<description>Widget</description>
-								<top>40</top>
+								
 								<height>325</height>
 								<width>1920</width>
 								<onup>4017</onup>
@@ -7341,7 +7345,7 @@
 							</control>
 							<control type="wraplist" id="5012">
 								<description>Widget</description>
-								<top>40</top>
+								
 								<height>325</height>
 								<width>1920</width>
 								<onup>300</onup>
@@ -7392,7 +7396,7 @@
 							</control>
 							<control type="wraplist" id="5016">
 								<description>Widget</description>
-								<top>40</top>
+								
 								<height>325</height>
 								<width>1920</width>
 								<onup>5012</onup>
@@ -7442,7 +7446,7 @@
 							</control>
 							<control type="wraplist" id="5017">
 								<description>Widget</description>
-								<top>40</top>
+								
 								<height>325</height>
 								<width>1920</width>
 								<onup>5016</onup>
@@ -7492,7 +7496,7 @@
 							</control>
 							<control type="wraplist" id="15017">
 								<description>Widget</description>
-								<top>40</top>
+								
 								<height>325</height>
 								<width>1920</width>
 								<onup>5017</onup>
@@ -7543,7 +7547,7 @@
 							</control>
 							<control type="wraplist" id="6012">
 								<description>Widget</description>
-								<top>40</top>
+								
 								<height>325</height>
 								<width>1920</width>
 								<onup>300</onup>
@@ -7594,7 +7598,7 @@
 							</control>
 							<control type="wraplist" id="6016">
 								<description>Widget</description>
-								<top>40</top>
+								
 								<height>325</height>
 								<width>1920</width>
 								<onup>6012</onup>
@@ -7644,7 +7648,7 @@
 							</control>
 							<control type="wraplist" id="6017">
 								<description>Widget</description>
-								<top>40</top>
+								
 								<height>325</height>
 								<width>1920</width>
 								<onup>6016</onup>
@@ -7694,7 +7698,7 @@
 							</control>
 							<control type="wraplist" id="9017">
 								<description>Widget</description>
-								<top>40</top>
+								
 								<height>325</height>
 								<width>1920</width>
 								<onup>6017</onup>
@@ -7748,7 +7752,7 @@
 									<description>Widget</description>
 									<width>770</width>
 									<height>368</height>
-									<top>40</top>
+									
 									<onup>300</onup>
 									<onleft>300</onleft>
 									<onleft>ClearProperty(SkinHelper.ListItemThumb,home)</onleft>
@@ -8052,7 +8056,7 @@
 							<control type="panel" id="7012">
 								<description>Widget</description>
 								<left>850</left>
-								<top>40</top>
+								
 								<height>920</height>
 								<width>820</width>
 								<onleft>7016</onleft>

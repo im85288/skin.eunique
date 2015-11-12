@@ -2930,27 +2930,8 @@
 	</include>
 	<include name="WidgetLandscapeFocusedItemLayout">
 		<control type="image">
-			<left>0</left>
-			<width>50%</width>
-			<height>100%</height>
-			<aspectratio scalediffuse="false">scale</aspectratio>
-			<texture colordiffuse="$VAR[BorderHighlight]">$VAR[FocusedBorderImage]</texture>
-		</control>
-		<control type="image">
-			<left>50%</left>
-			<width>50%</width>
-			<height>100%</height>
-			<aspectratio scalediffuse="false">scale</aspectratio>
-			<texture colordiffuse="$VAR[BorderHighlight]" flipx="true">$VAR[FocusedBorderImage]</texture>
-		</control>
-		<control type="image">
 			<aspectratio>keep</aspectratio>
 			<texture background="true">$VAR[LandscapeImage]</texture>
-			<animation type="Focus" reversible="false">
-				<effect type="zoom" end="96,93" time="200" center="auto" tween="quadratic" easing="out"/>
-				<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
-				<effect type="slide" end="3,0" time="200" center="auto" tween="quadratic" easing="out"/>
-			</animation>
 		</control>
 	</include>
 	<include name="WidgetPosterItemLayout">
