@@ -304,7 +304,10 @@
 		<value condition="Control.HasFocus(18002)">$INFO[Container(18002).ListItem.Label] [COLOR=whiteish]$INFO[Container(18002).ListItem.Year]$INFO[Container(18002).ListItem.Rating, • ]$INFO[Container(18002).ListItem.Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
 		<value condition="Control.HasFocus(18003)">$INFO[Container(18003).ListItem.Label] [COLOR=whiteish]$INFO[Container(18003).ListItem.Year]$INFO[Container(18003).ListItem.Rating, • ]$INFO[Container(18003).ListItem.Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
 		<value condition="Control.HasFocus(18003) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">$INFO[Container(18003).ListItem.Label] [COLOR=whiteish]$INFO[Container(18003).ListItem.Year]$INFO[Container(18003).ListItem.Rating, • ]$INFO[Container(18003).ListItem.Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + Control.HasFocus(19002)">$INFO[Container(19011).ListItem(4).Label] [COLOR=whiteish]$INFO[Container(19011).ListItem(4).Year]$INFO[Container(19011).ListItem(4).Rating, • ]$INFO[Container(19011).ListItem(4).Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + Control.HasFocus(19002) + Skin.String(home.vertical,1)">$INFO[Container(19002).ListItem.Label] [COLOR=whiteish]$INFO[Container(19002).ListItem.Year]$INFO[Container(19002).ListItem.Rating, • ]$INFO[Container(19002).ListItem.Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + Control.HasFocus(19002) + !Skin.String(home.vertical,1)">$INFO[Container(19011).ListItem(4).Label] [COLOR=whiteish]$INFO[Container(19011).ListItem(4).Year]$INFO[Container(19011).ListItem(4).Rating, • ]$INFO[Container(19011).ListItem(4).Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
+		<value condition="Control.HasFocus(18001)">$INFO[Container(18001).ListItem.Label] [COLOR=whiteish]$INFO[Container(18001).ListItem.Year]$INFO[Container(18001).ListItem.Rating, • ]$INFO[Container(18001).ListItem.Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
+		<value condition="Control.HasFocus(19001)">$INFO[Container(19001).ListItem.Label] [COLOR=whiteish]$INFO[Container(19001).ListItem.Year]$INFO[Container(19001).ListItem.Rating, • ]$INFO[Container(19001).ListItem.Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
 		<value condition="Control.HasFocus(19002)">$INFO[Container(19001).ListItem(4).Label] [COLOR=whiteish]$INFO[Container(19001).ListItem(4).Year]$INFO[Container(19001).ListItem(4).Rating, • ]$INFO[Container(19001).ListItem(4).Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
 		<value condition="Control.HasFocus(19003)">$INFO[Container(19003).ListItem.Label] [COLOR=whiteish]$INFO[Container(19003).ListItem.Year]$INFO[Container(19003).ListItem.Rating, • ]$INFO[Container(19003).ListItem.Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
 		<value condition="Control.HasFocus(19003) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">$INFO[Container(19003).ListItem.Label] [COLOR=whiteish]$INFO[Container(19003).ListItem.Year]$INFO[Container(19003).ListItem.Rating, • ]$INFO[Container(19003).ListItem.Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
@@ -396,6 +399,10 @@
 	<variable name="EmbyWidget22Label">
 		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetName.tvshows6))">$INFO[Container(300).ListItem.Property(widgetName.tvshows6)]</value>
 		<value>$LOCALIZE[31976]$INFO[Container(19001).ListItem.Property(genretitle), ,]</value>
+	</variable>
+	<variable name="EmbyWidget23Label">
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetName.tvshows6))">$INFO[Container(300).ListItem.Property(widgetName.tvshows6)]</value>
+		<value>$LOCALIZE[31976]$INFO[Container(19002).ListItem.Property(genretitle), ,]</value>
 	</variable>
 	<variable name="VideoInfoWidgetLabel">
 		<value condition="Stringcompare(Skin.String(widgetvideoinfo),SimilarVideos)">$LOCALIZE[31818]</value>

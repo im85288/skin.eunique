@@ -6910,7 +6910,6 @@
 					<animation effect="fade" start="0" end="100" time="200" delay="200" reversible="false" condition="[!Container(301).IsUpdating + IntegerGreaterThan(Container(301).NumItems,0) + [!IsEmpty(Container(300).ListItem.Property(widget)) | [IsEmpty(Container(300).ListItem.Property(widget)) + [IsEmpty(Container(300).ListItem.Property(Background)) + [IsEmpty(Skin.String(home.slideshowpath))]]]]] | [Weather.IsFetched + StringCompare(Container(300).ListItem.Property(widget),Weather)]">Conditional</animation>
 					<animation effect="slide" start="0" end="134" time="200" delay="100" tween="quadratic" easing="out">Focus</animation>
 					<animation effect="slide" start="134" end="0" time="200" delay="100" tween="quadratic" easing="out">UnFocus</animation>
-
 					<!-- Widgets -->
 					<control type="grouplist" id="301">
 						<top>179</top>
@@ -7206,7 +7205,6 @@
 							</control>
 							<control type="wraplist" id="18002">
 								<description>Widget</description>
-
 								<height>325</height>
 								<width>1920</width>
 								<onup>10017</onup>
@@ -7273,7 +7271,6 @@
 							</control>
 							<control type="wraplist" id="19001">
 								<description>Widget</description>
-
 								<height>325</height>
 								<width>1920</width>
 								<onup>18002</onup>
@@ -7324,22 +7321,20 @@
 						<!-- TV Shows -->
 						<control type="group">
 							<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
-							<visible>!Control.HasFocus(4017) + !Control.HasFocus(14017)</visible>
+							<visible>!Control.HasFocus(4017) + !Control.HasFocus(14017) + !Control.HasFocus(18001) + !Control.HasFocus(19002)</visible>
 							<height>370</height>
 							<control type="label">
 								<width>1200</width>
-								<height>34</height>
-								<aligny>center</aligny>
 								<align>left</align>
 								<height>34</height>
-								<font>Small</font>
 								<font>HomeWidgetLabelFont</font>
 								<label>$VAR[EmbyWidget9Label]</label>
 								<include>Animation.DelayFadeIn</include>
+								<animation effect="slide" start="0" end="0,-40" time="2000" delay="100" tween="quadratic" easing="out" condition="true">Conditional</animation>
+								<animation effect="fade" start="100" end="10" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(301).HasFocus + !Control.HasFocus(4012)">Conditional</animation>
 							</control>
 							<control type="wraplist" id="4012">
 								<description>Widget</description>
-								
 								<height>325</height>
 								<width>1920</width>
 								<onup>300</onup>
@@ -7361,12 +7356,27 @@
 									<include>WidgetSquareItemLayout</include>
 								</itemlayout>
 								<focusedlayout width="218" height="325" condition="!StringCompare(Skin.String(tvshows1widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(tvshows1widget.aspectratio),SQUARE)">
+									<control type="button">
+										<onfocus>SetProperty(SkinHelper.WidgetContainer,4012)</onfocus>
+										<texturenofocus>-</texturenofocus>
+										<texturefocus>-</texturefocus>
+									</control>
 									<include>WidgetPosterFocusedItemLayout</include>
 								</focusedlayout>
 								<focusedlayout width="577" height="325" condition="StringCompare(Skin.String(tvshows1widget.aspectratio),LANDSCAPE)">
+									<control type="button">
+										<onfocus>SetProperty(SkinHelper.WidgetContainer,4012)</onfocus>
+										<texturenofocus>-</texturenofocus>
+										<texturefocus>-</texturefocus>
+									</control>
 									<include>WidgetLandscapeFocusedItemLayout</include>
 								</focusedlayout>
 								<focusedlayout width="325" height="325" condition="StringCompare(Skin.String(tvshows1widget.aspectratio),SQUARE)">
+									<control type="button">
+										<onfocus>SetProperty(SkinHelper.WidgetContainer,4012)</onfocus>
+										<texturenofocus>-</texturenofocus>
+										<texturefocus>-</texturefocus>
+									</control>
 									<include>WidgetSquareFocusedItemLayout</include>
 								</focusedlayout>
 								<content target="$VAR[DefWidget9Target]">$VAR[DefWidget9Content]</content>
@@ -7374,19 +7384,18 @@
 						</control>
 						<control type="group">
 							<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
-							<visible>!Control.HasFocus(14017)</visible>
+							<visible>!Control.HasFocus(14017) + !Control.HasFocus(18001) + !Control.HasFocus(19002)</visible>
 							<top>370</top>
 							<height>370</height>
 							<control type="label">
 								<width>1200</width>
-								<height>34</height>
-								<aligny>center</aligny>
 								<align>left</align>
 								<height>34</height>
-								<font>Small</font>
 								<font>HomeWidgetLabelFont</font>
 								<label>$VAR[EmbyWidget10Label]</label>
 								<include>Animation.DelayFadeIn</include>
+								<animation effect="slide" start="0" end="0,-40" time="2000" delay="100" tween="quadratic" easing="out" condition="true">Conditional</animation>
+								<animation effect="fade" start="100" end="10" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(301).HasFocus + !Control.HasFocus(4016)">Conditional</animation>
 							</control>
 							<control type="wraplist" id="4016">
 								<description>Widget</description>
@@ -7412,12 +7421,27 @@
 									<include>WidgetSquareItemLayout</include>
 								</itemlayout>
 								<focusedlayout width="218" height="325" condition="!StringCompare(Skin.String(tvshows2widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(tvshows2widget.aspectratio),SQUARE)">
+									<control type="button">
+										<onfocus>SetProperty(SkinHelper.WidgetContainer,4016)</onfocus>
+										<texturenofocus>-</texturenofocus>
+										<texturefocus>-</texturefocus>
+									</control>
 									<include>WidgetPosterFocusedItemLayout</include>
 								</focusedlayout>
 								<focusedlayout width="577" height="325" condition="StringCompare(Skin.String(tvshows2widget.aspectratio),LANDSCAPE)">
+									<control type="button">
+										<onfocus>SetProperty(SkinHelper.WidgetContainer,4016)</onfocus>
+										<texturenofocus>-</texturenofocus>
+										<texturefocus>-</texturefocus>
+									</control>
 									<include>WidgetLandscapeFocusedItemLayout</include>
 								</focusedlayout>
 								<focusedlayout width="325" height="325" condition="StringCompare(Skin.String(tvshows2widget.aspectratio),SQUARE)">
+									<control type="button">
+										<onfocus>SetProperty(SkinHelper.WidgetContainer,4016)</onfocus>
+										<texturenofocus>-</texturenofocus>
+										<texturefocus>-</texturefocus>
+									</control>
 									<include>WidgetSquareFocusedItemLayout</include>
 								</focusedlayout>
 								<content target="$VAR[DefWidget10Target]">$VAR[DefWidget10Content]</content>
@@ -7425,22 +7449,21 @@
 						</control>
 						<control type="group">
 							<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+							<visible>!Control.HasFocus(18001) + !Control.HasFocus(19002)</visible>
 							<top>740</top>
 							<height>370</height>
 							<control type="label">
 								<width>1200</width>
-								<height>34</height>
-								<aligny>center</aligny>
 								<align>left</align>
 								<height>34</height>
-								<font>Small</font>
 								<font>HomeWidgetLabelFont</font>
 								<label>$VAR[EmbyWidget11Label]</label>
 								<include>Animation.DelayFadeIn</include>
+								<animation effect="slide" start="0" end="0,-40" time="2000" delay="100" tween="quadratic" easing="out" condition="true">Conditional</animation>
+								<animation effect="fade" start="100" end="10" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(301).HasFocus + !Control.HasFocus(4017)">Conditional</animation>
 							</control>
 							<control type="wraplist" id="4017">
 								<description>Widget</description>
-								
 								<height>325</height>
 								<width>1920</width>
 								<onup>4016</onup>
@@ -7462,12 +7485,27 @@
 									<include>WidgetSquareItemLayout</include>
 								</itemlayout>
 								<focusedlayout width="218" height="325" condition="!StringCompare(Skin.String(tvshows3widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(tvshows3widget.aspectratio),SQUARE)">
+									<control type="button">
+										<onfocus>SetProperty(SkinHelper.WidgetContainer,4017)</onfocus>
+										<texturenofocus>-</texturenofocus>
+										<texturefocus>-</texturefocus>
+									</control>
 									<include>WidgetPosterFocusedItemLayout</include>
 								</focusedlayout>
 								<focusedlayout width="577" height="325" condition="StringCompare(Skin.String(tvshows3widget.aspectratio),LANDSCAPE)">
+									<control type="button">
+										<onfocus>SetProperty(SkinHelper.WidgetContainer,4017)</onfocus>
+										<texturenofocus>-</texturenofocus>
+										<texturefocus>-</texturefocus>
+									</control>
 									<include>WidgetLandscapeFocusedItemLayout</include>
 								</focusedlayout>
 								<focusedlayout width="325" height="325" condition="StringCompare(Skin.String(tvshows3widget.aspectratio),SQUARE)">
+									<control type="button">
+										<onfocus>SetProperty(SkinHelper.WidgetContainer,4017)</onfocus>
+										<texturenofocus>-</texturenofocus>
+										<texturefocus>-</texturefocus>
+									</control>
 									<include>WidgetSquareFocusedItemLayout</include>
 								</focusedlayout>
 								<content target="$VAR[DefWidget11Target]">$VAR[DefWidget11Content]</content>
@@ -7475,26 +7513,25 @@
 						</control>
 						<control type="group">
 							<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+							<visible>!Control.HasFocus(19002)</visible>
 							<top>1110</top>
 							<height>370</height>
 							<control type="label">
 								<width>1200</width>
-								<height>34</height>
-								<aligny>center</aligny>
 								<align>left</align>
 								<height>34</height>
-								<font>Small</font>
 								<font>HomeWidgetLabelFont</font>
 								<label>$VAR[EmbyWidget18Label]</label>
 								<include>Animation.DelayFadeIn</include>
+								<animation effect="slide" start="0" end="0,-40" time="2000" delay="100" tween="quadratic" easing="out" condition="true">Conditional</animation>
+								<animation effect="fade" start="100" end="10" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(301).HasFocus + !Control.HasFocus(14017)">Conditional</animation>
 							</control>
 							<control type="wraplist" id="14017">
 								<description>Widget</description>
-								
 								<height>325</height>
 								<width>1920</width>
 								<onup>4017</onup>
-								<ondown>300</ondown>
+								<ondown>18001</ondown>
 								<onback>300</onback>
 								<preloaditems>2</preloaditems>
 								<orientation>horizontal</orientation>
@@ -7512,21 +7549,35 @@
 									<include>WidgetSquareItemLayout</include>
 								</itemlayout>
 								<focusedlayout width="218" height="325" condition="!StringCompare(Skin.String(tvshows4widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(tvshows4widget.aspectratio),SQUARE)">
+									<control type="button">
+										<onfocus>SetProperty(SkinHelper.WidgetContainer,14017)</onfocus>
+										<texturenofocus>-</texturenofocus>
+										<texturefocus>-</texturefocus>
+									</control>
 									<include>WidgetPosterFocusedItemLayout</include>
 								</focusedlayout>
 								<focusedlayout width="577" height="325" condition="StringCompare(Skin.String(tvshows4widget.aspectratio),LANDSCAPE)">
+									<control type="button">
+										<onfocus>SetProperty(SkinHelper.WidgetContainer,14017)</onfocus>
+										<texturenofocus>-</texturenofocus>
+										<texturefocus>-</texturefocus>
+									</control>
 									<include>WidgetLandscapeFocusedItemLayout</include>
 								</focusedlayout>
 								<focusedlayout width="325" height="325" condition="StringCompare(Skin.String(tvshows4widget.aspectratio),SQUARE)">
+									<control type="button">
+										<onfocus>SetProperty(SkinHelper.WidgetContainer,14017)</onfocus>
+										<texturenofocus>-</texturenofocus>
+										<texturefocus>-</texturefocus>
+									</control>
 									<include>WidgetSquareFocusedItemLayout</include>
 								</focusedlayout>
 								<content target="$VAR[DefWidget18Target]">$VAR[DefWidget18Content]</content>
 							</control>
 						</control>
-						<!-- Music -->
 						<control type="group">
-							<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
-							<visible>!Control.HasFocus(5017) + !Control.HasFocus(15017)</visible>
+							<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+							<top>1480</top>
 							<height>370</height>
 							<control type="label">
 								<width>1200</width>
@@ -7536,8 +7587,140 @@
 								<height>34</height>
 								<font>Small</font>
 								<font>HomeWidgetLabelFont</font>
+								<label>$VAR[EmbyWidget20Label]</label>
+								<include>Animation.DelayFadeIn</include>
+								<animation effect="slide" start="0" end="0,-40" time="2000" delay="100" tween="quadratic" easing="out" condition="true">Conditional</animation>
+								<animation effect="fade" start="100" end="10" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(301).HasFocus + !Control.HasFocus(18001)">Conditional</animation>
+							</control>
+							<control type="wraplist" id="18001">
+								<description>Widget</description>
+								<height>325</height>
+								<width>1920</width>
+								<onup>14017</onup>
+								<ondown>19002</ondown>
+								<onback>300</onback>
+								<preloaditems>2</preloaditems>
+								<orientation>horizontal</orientation>
+								<autoscroll time="10000">!Control.HasFocus(18001)</autoscroll>
+								<scrolltime tween="quadratic">100</scrolltime>
+								<include>Animation.FadeIn</include>
+								<include>Animation.FadeOut</include>
+								<itemlayout width="218" height="325" condition="!StringCompare(Skin.String(tvshows5widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(tvshows5widget.aspectratio),SQUARE)">
+									<include>WidgetPosterItemLayout</include>
+								</itemlayout>
+								<itemlayout width="577" height="325" condition="StringCompare(Skin.String(tvshows5widget.aspectratio),LANDSCAPE)">
+									<include>WidgetLandscapeItemLayout</include>
+								</itemlayout>
+								<itemlayout width="325" height="325" condition="StringCompare(Skin.String(tvshows5widget.aspectratio),SQUARE)">
+									<include>WidgetSquareItemLayout</include>
+								</itemlayout>
+								<focusedlayout width="218" height="325" condition="!StringCompare(Skin.String(tvshows5widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(tvshows5widget.aspectratio),SQUARE)">
+									<control type="button">
+										<onfocus>SetProperty(SkinHelper.WidgetContainer,18001)</onfocus>
+										<texturenofocus>-</texturenofocus>
+										<texturefocus>-</texturefocus>
+									</control>
+									<include>WidgetPosterFocusedItemLayout</include>
+								</focusedlayout>
+								<focusedlayout width="577" height="325" condition="StringCompare(Skin.String(tvshows5widget.aspectratio),LANDSCAPE)">
+									<control type="button">
+										<onfocus>SetProperty(SkinHelper.WidgetContainer,18001)</onfocus>
+										<texturenofocus>-</texturenofocus>
+										<texturefocus>-</texturefocus>
+									</control>
+									<include>WidgetLandscapeFocusedItemLayout</include>
+								</focusedlayout>
+								<focusedlayout width="325" height="325" condition="StringCompare(Skin.String(tvshows5widget.aspectratio),SQUARE)">
+									<control type="button">
+										<onfocus>SetProperty(SkinHelper.WidgetContainer,18001)</onfocus>
+										<texturenofocus>-</texturenofocus>
+										<texturefocus>-</texturefocus>
+									</control>
+									<include>WidgetSquareFocusedItemLayout</include>
+								</focusedlayout>
+								<content target="$VAR[DefWidget20Target]">$VAR[DefWidget20Content]</content>
+							</control>
+						</control>
+						<control type="group">
+							<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+							<top>1850</top>
+							<height>370</height>
+							<control type="label">
+								<width>1200</width>
+								<height>34</height>
+								<aligny>center</aligny>
+								<align>left</align>
+								<height>34</height>
+								<font>Small</font>
+								<font>HomeWidgetLabelFont</font>
+								<label>$VAR[EmbyWidget23Label]</label>
+								<include>Animation.DelayFadeIn</include>
+								<animation effect="slide" start="0" end="0,-40" time="2000" delay="100" tween="quadratic" easing="out" condition="true">Conditional</animation>
+								<animation effect="fade" start="100" end="10" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(301).HasFocus + !Control.HasFocus(19002)">Conditional</animation>
+							</control>
+							<control type="wraplist" id="19002">
+								<description>Widget</description>
+								<height>325</height>
+								<width>1920</width>
+								<onup>18001</onup>
+								<ondown>4012</ondown>
+								<onback>300</onback>
+								<preloaditems>2</preloaditems>
+								<orientation>horizontal</orientation>
+								<autoscroll time="10000">!Control.HasFocus(19002)</autoscroll>
+								<scrolltime tween="quadratic">100</scrolltime>
+								<include>Animation.FadeIn</include>
+								<include>Animation.FadeOut</include>
+								<itemlayout width="218" height="325" condition="!StringCompare(Skin.String(tvshows6widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(tvshows6widget.aspectratio),SQUARE)">
+									<include>WidgetPosterItemLayout</include>
+								</itemlayout>
+								<itemlayout width="577" height="325" condition="StringCompare(Skin.String(tvshows6widget.aspectratio),LANDSCAPE)">
+									<include>WidgetLandscapeItemLayout</include>
+								</itemlayout>
+								<itemlayout width="325" height="325" condition="StringCompare(Skin.String(tvshows6widget.aspectratio),SQUARE)">
+									<include>WidgetSquareItemLayout</include>
+								</itemlayout>
+								<focusedlayout width="218" height="325" condition="!StringCompare(Skin.String(tvshows6widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(tvshows6widget.aspectratio),SQUARE)">
+									<control type="button">
+										<onfocus>SetProperty(SkinHelper.WidgetContainer,19002)</onfocus>
+										<texturenofocus>-</texturenofocus>
+										<texturefocus>-</texturefocus>
+									</control>
+									<include>WidgetPosterFocusedItemLayout</include>
+								</focusedlayout>
+								<focusedlayout width="577" height="325" condition="StringCompare(Skin.String(tvshows6widget.aspectratio),LANDSCAPE)">
+									<control type="button">
+										<onfocus>SetProperty(SkinHelper.WidgetContainer,19002)</onfocus>
+										<texturenofocus>-</texturenofocus>
+										<texturefocus>-</texturefocus>
+									</control>
+									<include>WidgetLandscapeFocusedItemLayout</include>
+								</focusedlayout>
+								<focusedlayout width="325" height="325" condition="StringCompare(Skin.String(tvshows6widget.aspectratio),SQUARE)">
+									<control type="button">
+										<onfocus>SetProperty(SkinHelper.WidgetContainer,19002)</onfocus>
+										<texturenofocus>-</texturenofocus>
+										<texturefocus>-</texturefocus>
+									</control>
+									<include>WidgetSquareFocusedItemLayout</include>
+								</focusedlayout>
+								<content target="$VAR[DefWidget22Target]">$VAR[DefWidget22Content]</content>
+							</control>
+						</control>
+						<!-- Music -->
+						<control type="group">
+							<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+							<visible>!Control.HasFocus(5017) + !Control.HasFocus(15017)</visible>
+							<height>370</height>
+							<control type="label">
+								<width>1200</width>
+								<align>left</align>
+								<height>34</height>
+								<font>HomeWidgetLabelFont</font>
 								<label>$VAR[EmbyWidget12Label]</label>
 								<include>Animation.DelayFadeIn</include>
+								<animation effect="slide" start="0" end="0,-40" time="2000" delay="100" tween="quadratic" easing="out" condition="true">Conditional</animation>
+								<animation effect="fade" start="100" end="10" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(301).HasFocus + !Control.HasFocus(5012)">Conditional</animation>
 							</control>
 							<control type="wraplist" id="5012">
 								<description>Widget</description>
@@ -7563,12 +7746,27 @@
 									<include>WidgetLandscapeItemLayout</include>
 								</itemlayout>
 								<focusedlayout width="325" height="325" condition="!StringCompare(Skin.String(music1widget.aspectratio),POSTER) + !StringCompare(Skin.String(music1widget.aspectratio),LANDSCAPE)">
+									<control type="button">
+										<onfocus>SetProperty(SkinHelper.WidgetContainer,5012)</onfocus>
+										<texturenofocus>-</texturenofocus>
+										<texturefocus>-</texturefocus>
+									</control>
 									<include>WidgetSquareFocusedItemLayout</include>
 								</focusedlayout>
 								<focusedlayout width="218" height="325" condition="StringCompare(Skin.String(music1widget.aspectratio),POSTER)">
+									<control type="button">
+										<onfocus>SetProperty(SkinHelper.WidgetContainer,5012)</onfocus>
+										<texturenofocus>-</texturenofocus>
+										<texturefocus>-</texturefocus>
+									</control>
 									<include>WidgetPosterFocusedItemLayout</include>
 								</focusedlayout>
 								<focusedlayout width="577" height="325" condition="StringCompare(Skin.String(music1widget.aspectratio),LANDSCAPE)">
+									<control type="button">
+										<onfocus>SetProperty(SkinHelper.WidgetContainer,5012)</onfocus>
+										<texturenofocus>-</texturenofocus>
+										<texturefocus>-</texturefocus>
+									</control>
 									<include>WidgetLandscapeFocusedItemLayout</include>
 								</focusedlayout>
 								<content target="$VAR[DefWidget12Target]">$VAR[DefWidget12Content]</content>
@@ -7581,14 +7779,13 @@
 							<height>370</height>
 							<control type="label">
 								<width>1200</width>
-								<height>34</height>
-								<aligny>center</aligny>
 								<align>left</align>
 								<height>34</height>
-								<font>Small</font>
 								<font>HomeWidgetLabelFont</font>
 								<label>$VAR[EmbyWidget13Label]</label>
 								<include>Animation.DelayFadeIn</include>
+								<animation effect="slide" start="0" end="0,-40" time="2000" delay="100" tween="quadratic" easing="out" condition="true">Conditional</animation>
+								<animation effect="fade" start="100" end="10" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(301).HasFocus + !Control.HasFocus(5016)">Conditional</animation>
 							</control>
 							<control type="wraplist" id="5016">
 								<description>Widget</description>
@@ -7614,12 +7811,27 @@
 									<include>WidgetLandscapeItemLayout</include>
 								</itemlayout>
 								<focusedlayout width="325" height="325" condition="!StringCompare(Skin.String(music2widget.aspectratio),POSTER) + !StringCompare(Skin.String(music2widget.aspectratio),LANDSCAPE)">
+									<control type="button">
+										<onfocus>SetProperty(SkinHelper.WidgetContainer,5016)</onfocus>
+										<texturenofocus>-</texturenofocus>
+										<texturefocus>-</texturefocus>
+									</control>
 									<include>WidgetSquareFocusedItemLayout</include>
 								</focusedlayout>
 								<focusedlayout width="218" height="325" condition="StringCompare(Skin.String(music2widget.aspectratio),POSTER)">
+									<control type="button">
+										<onfocus>SetProperty(SkinHelper.WidgetContainer,5016)</onfocus>
+										<texturenofocus>-</texturenofocus>
+										<texturefocus>-</texturefocus>
+									</control>
 									<include>WidgetPosterFocusedItemLayout</include>
 								</focusedlayout>
 								<focusedlayout width="577" height="325" condition="StringCompare(Skin.String(music2widget.aspectratio),LANDSCAPE)">
+									<control type="button">
+										<onfocus>SetProperty(SkinHelper.WidgetContainer,5016)</onfocus>
+										<texturenofocus>-</texturenofocus>
+										<texturefocus>-</texturefocus>
+									</control>
 									<include>WidgetLandscapeFocusedItemLayout</include>
 								</focusedlayout>
 								<content target="$VAR[DefWidget13Target]">$VAR[DefWidget13Content]</content>
@@ -7631,14 +7843,13 @@
 							<height>370</height>
 							<control type="label">
 								<width>1200</width>
-								<height>34</height>
-								<aligny>center</aligny>
 								<align>left</align>
 								<height>34</height>
-								<font>Small</font>
 								<font>HomeWidgetLabelFont</font>
 								<label>$VAR[EmbyWidget14Label]</label>
 								<include>Animation.DelayFadeIn</include>
+								<animation effect="slide" start="0" end="0,-40" time="2000" delay="100" tween="quadratic" easing="out" condition="true">Conditional</animation>
+								<animation effect="fade" start="100" end="10" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(301).HasFocus + !Control.HasFocus(5017)">Conditional</animation>
 							</control>
 							<control type="wraplist" id="5017">
 								<description>Widget</description>
@@ -7664,12 +7875,27 @@
 									<include>WidgetLandscapeItemLayout</include>
 								</itemlayout>
 								<focusedlayout width="325" height="325" condition="!StringCompare(Skin.String(music3widget.aspectratio),POSTER) + !StringCompare(Skin.String(music3widget.aspectratio),LANDSCAPE)">
+									<control type="button">
+										<onfocus>SetProperty(SkinHelper.WidgetContainer,5017)</onfocus>
+										<texturenofocus>-</texturenofocus>
+										<texturefocus>-</texturefocus>
+									</control>
 									<include>WidgetLandscapeFocusedItemLayout</include>
 								</focusedlayout>
 								<focusedlayout width="218" height="325" condition="StringCompare(Skin.String(music3widget.aspectratio),POSTER)">
+									<control type="button">
+										<onfocus>SetProperty(SkinHelper.WidgetContainer,5017)</onfocus>
+										<texturenofocus>-</texturenofocus>
+										<texturefocus>-</texturefocus>
+									</control>
 									<include>WidgetPosterFocusedItemLayout</include>
 								</focusedlayout>
 								<focusedlayout width="577" height="325" condition="StringCompare(Skin.String(music3widget.aspectratio),LANDSCAPE)">
+									<control type="button">
+										<onfocus>SetProperty(SkinHelper.WidgetContainer,5017)</onfocus>
+										<texturenofocus>-</texturenofocus>
+										<texturefocus>-</texturefocus>
+									</control>
 									<include>WidgetSquareFocusedItemLayout</include>
 								</focusedlayout>
 								<content target="$VAR[DefWidget14Target]">$VAR[DefWidget14Content]</content>
@@ -7681,14 +7907,13 @@
 							<height>370</height>
 							<control type="label">
 								<width>1200</width>
-								<height>34</height>
-								<aligny>center</aligny>
 								<align>left</align>
 								<height>34</height>
-								<font>Small</font>
 								<font>HomeWidgetLabelFont</font>
 								<label>$VAR[EmbyWidget17Label]</label>
 								<include>Animation.DelayFadeIn</include>
+								<animation effect="slide" start="0" end="0,-40" time="2000" delay="100" tween="quadratic" easing="out" condition="true">Conditional</animation>
+								<animation effect="fade" start="100" end="10" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(301).HasFocus + !Control.HasFocus(15017)">Conditional</animation>
 							</control>
 							<control type="wraplist" id="15017">
 								<description>Widget</description>
@@ -7714,12 +7939,27 @@
 									<include>WidgetLandscapeItemLayout</include>
 								</itemlayout>
 								<focusedlayout width="325" height="325" condition="!StringCompare(Skin.String(music4widget.aspectratio),POSTER) + !StringCompare(Skin.String(music4widget.aspectratio),LANDSCAPE)">
+									<control type="button">
+										<onfocus>SetProperty(SkinHelper.WidgetContainer,15017)</onfocus>
+										<texturenofocus>-</texturenofocus>
+										<texturefocus>-</texturefocus>
+									</control>
 									<include>WidgetSquareFocusedItemLayout</include>
 								</focusedlayout>
 								<focusedlayout width="218" height="325" condition="StringCompare(Skin.String(music4widget.aspectratio),POSTER)">
+									<control type="button">
+										<onfocus>SetProperty(SkinHelper.WidgetContainer,15017)</onfocus>
+										<texturenofocus>-</texturenofocus>
+										<texturefocus>-</texturefocus>
+									</control>
 									<include>WidgetPosterFocusedItemLayout</include>
 								</focusedlayout>
 								<focusedlayout width="577" height="325" condition="StringCompare(Skin.String(music4widget.aspectratio),LANDSCAPE)">
+									<control type="button">
+										<onfocus>SetProperty(SkinHelper.WidgetContainer,15017)</onfocus>
+										<texturenofocus>-</texturenofocus>
+										<texturefocus>-</texturefocus>
+									</control>
 									<include>WidgetLandscapeFocusedItemLayout</include>
 								</focusedlayout>
 								<content target="$VAR[DefWidget17Target]">$VAR[DefWidget17Content]</content>
@@ -7732,14 +7972,13 @@
 							<height>370</height>
 							<control type="label">
 								<width>1200</width>
-								<height>34</height>
-								<aligny>center</aligny>
 								<align>left</align>
 								<height>34</height>
-								<font>Small</font>
 								<font>HomeWidgetLabelFont</font>
 								<label>$VAR[EmbyWidget2Label]</label>
 								<include>Animation.DelayFadeIn</include>
+								<animation effect="slide" start="0" end="0,-40" time="2000" delay="100" tween="quadratic" easing="out" condition="true">Conditional</animation>
+								<animation effect="fade" start="100" end="10" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(301).HasFocus + !Control.HasFocus(6012)">Conditional</animation>
 							</control>
 							<control type="wraplist" id="6012">
 								<description>Widget</description>
@@ -7765,12 +8004,27 @@
 									<include>WidgetSquareItemLayout</include>
 								</itemlayout>
 								<focusedlayout width="218" height="325" condition="!StringCompare(Container(300).ListItem.Property(widget1Icon),Landscape) + !StringCompare(Container(300).ListItem.Property(widget1Icon),Square)">
+									<control type="button">
+										<onfocus>SetProperty(SkinHelper.WidgetContainer,6012)</onfocus>
+										<texturenofocus>-</texturenofocus>
+										<texturefocus>-</texturefocus>
+									</control>
 									<include>WidgetPosterFocusedItemLayout</include>
 								</focusedlayout>
 								<focusedlayout width="577" height="325" condition="StringCompare(Container(300).ListItem.Property(widget1Icon),Landscape)">
+									<control type="button">
+										<onfocus>SetProperty(SkinHelper.WidgetContainer,6012)</onfocus>
+										<texturenofocus>-</texturenofocus>
+										<texturefocus>-</texturefocus>
+									</control>
 									<include>WidgetLandscapeFocusedItemLayout</include>
 								</focusedlayout>
 								<focusedlayout width="325" height="325" condition="StringCompare(Container(300).ListItem.Property(widget1Icon),Square)">
+									<control type="button">
+										<onfocus>SetProperty(SkinHelper.WidgetContainer,6012)</onfocus>
+										<texturenofocus>-</texturenofocus>
+										<texturefocus>-</texturefocus>
+									</control>
 									<include>WidgetSquareFocusedItemLayout</include>
 								</focusedlayout>
 								<content target="$VAR[DefWidget2Target]">$VAR[DefWidget2Content]</content>
@@ -7783,14 +8037,13 @@
 							<height>370</height>
 							<control type="label">
 								<width>1200</width>
-								<height>34</height>
-								<aligny>center</aligny>
 								<align>left</align>
 								<height>34</height>
-								<font>Small</font>
 								<font>HomeWidgetLabelFont</font>
 								<label>$VAR[EmbyWidget1Label]</label>
 								<include>Animation.DelayFadeIn</include>
+								<animation effect="slide" start="0" end="0,-40" time="2000" delay="100" tween="quadratic" easing="out" condition="true">Conditional</animation>
+								<animation effect="fade" start="100" end="10" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(301).HasFocus + !Control.HasFocus(6016)">Conditional</animation>
 							</control>
 							<control type="wraplist" id="6016">
 								<description>Widget</description>
@@ -7816,12 +8069,27 @@
 									<include>WidgetSquareItemLayout</include>
 								</itemlayout>
 								<focusedlayout width="218" height="325" condition="!StringCompare(Container(300).ListItem.Property(widget2Icon),Landscape) + !StringCompare(Container(300).ListItem.Property(widget2Icon),Square)">
+									<control type="button">
+										<onfocus>SetProperty(SkinHelper.WidgetContainer,6016)</onfocus>
+										<texturenofocus>-</texturenofocus>
+										<texturefocus>-</texturefocus>
+									</control>
 									<include>WidgetPosterFocusedItemLayout</include>
 								</focusedlayout>
 								<focusedlayout width="577" height="325" condition="StringCompare(Container(300).ListItem.Property(widget2Icon),Landscape)">
+									<control type="button">
+										<onfocus>SetProperty(SkinHelper.WidgetContainer,6016)</onfocus>
+										<texturenofocus>-</texturenofocus>
+										<texturefocus>-</texturefocus>
+									</control>
 									<include>WidgetLandscapeFocusedItemLayout</include>
 								</focusedlayout>
 								<focusedlayout width="325" height="325" condition="StringCompare(Container(300).ListItem.Property(widget2Icon),Square)">
+									<control type="button">
+										<onfocus>SetProperty(SkinHelper.WidgetContainer,6016)</onfocus>
+										<texturenofocus>-</texturenofocus>
+										<texturefocus>-</texturefocus>
+									</control>
 									<include>WidgetSquareFocusedItemLayout</include>
 								</focusedlayout>
 								<content target="$VAR[DefWidget1Target]">$VAR[DefWidget1Content]</content>
@@ -7833,14 +8101,13 @@
 							<height>370</height>
 							<control type="label">
 								<width>1200</width>
-								<height>34</height>
-								<aligny>center</aligny>
 								<align>left</align>
 								<height>34</height>
-								<font>Small</font>
 								<font>HomeWidgetLabelFont</font>
 								<label>$VAR[EmbyWidget3Label]</label>
 								<include>Animation.DelayFadeIn</include>
+								<animation effect="slide" start="0" end="0,-40" time="2000" delay="100" tween="quadratic" easing="out" condition="true">Conditional</animation>
+								<animation effect="fade" start="100" end="10" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(301).HasFocus + !Control.HasFocus(6017)">Conditional</animation>
 							</control>
 							<control type="wraplist" id="6017">
 								<description>Widget</description>
@@ -7866,12 +8133,27 @@
 									<include>WidgetSquareItemLayout</include>
 								</itemlayout>
 								<focusedlayout width="218" height="325" condition="!StringCompare(Container(300).ListItem.Property(widget3Icon),Landscape) + !StringCompare(Container(300).ListItem.Property(widget3Icon),Square)">
+									<control type="button">
+										<onfocus>SetProperty(SkinHelper.WidgetContainer,6017)</onfocus>
+										<texturenofocus>-</texturenofocus>
+										<texturefocus>-</texturefocus>
+									</control>
 									<include>WidgetPosterFocusedItemLayout</include>
 								</focusedlayout>
 								<focusedlayout width="577" height="325" condition="StringCompare(Container(300).ListItem.Property(widget3Icon),Landscape)">
+									<control type="button">
+										<onfocus>SetProperty(SkinHelper.WidgetContainer,6017)</onfocus>
+										<texturenofocus>-</texturenofocus>
+										<texturefocus>-</texturefocus>
+									</control>
 									<include>WidgetLandscapeFocusedItemLayout</include>
 								</focusedlayout>
 								<focusedlayout width="325" height="325" condition="StringCompare(Container(300).ListItem.Property(widget3Icon),Square)">
+									<control type="button">
+										<onfocus>SetProperty(SkinHelper.WidgetContainer,6017)</onfocus>
+										<texturenofocus>-</texturenofocus>
+										<texturefocus>-</texturefocus>
+									</control>
 									<include>WidgetSquareFocusedItemLayout</include>
 								</focusedlayout>
 								<content target="$VAR[DefWidget3Target]">$VAR[DefWidget3Content]</content>
@@ -7883,14 +8165,13 @@
 							<height>370</height>
 							<control type="label">
 								<width>1200</width>
-								<height>34</height>
-								<aligny>center</aligny>
 								<align>left</align>
 								<height>34</height>
-								<font>Small</font>
 								<font>HomeWidgetLabelFont</font>
 								<label>$VAR[EmbyWidget15Label]</label>
 								<include>Animation.DelayFadeIn</include>
+								<animation effect="slide" start="0" end="0,-40" time="2000" delay="100" tween="quadratic" easing="out" condition="true">Conditional</animation>
+								<animation effect="fade" start="100" end="10" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(301).HasFocus + !Control.HasFocus(9017)">Conditional</animation>
 							</control>
 							<control type="wraplist" id="9017">
 								<description>Widget</description>
@@ -7916,12 +8197,27 @@
 									<include>WidgetSquareItemLayout</include>
 								</itemlayout>
 								<focusedlayout width="218" height="325" condition="!StringCompare(Container(300).ListItem.Property(widget4Icon),Landscape) + !StringCompare(Container(300).ListItem.Property(widget4Icon),Square)">
+									<control type="button">
+										<onfocus>SetProperty(SkinHelper.WidgetContainer,9017)</onfocus>
+										<texturenofocus>-</texturenofocus>
+										<texturefocus>-</texturefocus>
+									</control>
 									<include>WidgetPosterFocusedItemLayout</include>
 								</focusedlayout>
 								<focusedlayout width="577" height="325" condition="StringCompare(Container(300).ListItem.Property(widget4Icon),Landscape)">
+									<control type="button">
+										<onfocus>SetProperty(SkinHelper.WidgetContainer,9017)</onfocus>
+										<texturenofocus>-</texturenofocus>
+										<texturefocus>-</texturefocus>
+									</control>
 									<include>WidgetLandscapeFocusedItemLayout</include>
 								</focusedlayout>
 								<focusedlayout width="325" height="325" condition="StringCompare(Container(300).ListItem.Property(widget4Icon),Square)">
+									<control type="button">
+										<onfocus>SetProperty(SkinHelper.WidgetContainer,9017)</onfocus>
+										<texturenofocus>-</texturenofocus>
+										<texturefocus>-</texturefocus>
+									</control>
 									<include>WidgetSquareFocusedItemLayout</include>
 								</focusedlayout>
 								<content target="$VAR[DefWidget15Target]">$VAR[DefWidget15Content]</content>
@@ -7930,19 +8226,20 @@
 						<!-- Live TV -->
 						<control type="group">
 							<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
+							<animation effect="slide" start="0" end="-500" time="200" delay="100" tween="quadratic" easing="out">Focus</animation>
+							<animation effect="slide" start="-500" end="0" time="200" delay="100" tween="quadratic" easing="out">UnFocus</animation>
 							<height>1340</height>
 							<control type="group">
 								<height>900</height>
 								<control type="label">
 									<width>770</width>
-									<height>34</height>
-									<aligny>center</aligny>
 									<align>left</align>
 									<height>34</height>
-									<font>Small</font>
 									<font>HomeWidgetLabelFont</font>
 									<label>$VAR[EmbyWidget5Label]</label>
 									<include>Animation.DelayFadeIn</include>
+									<animation effect="slide" start="0" end="0,-40" time="2000" delay="100" tween="quadratic" easing="out" condition="true">Conditional</animation>
+									<animation effect="fade" start="100" end="10" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(301).HasFocus + !Control.HasFocus(7016)">Conditional</animation>
 								</control>
 								<control type="list" id="7016">
 									<description>Widget</description>
@@ -7985,10 +8282,10 @@
 										</control>
 									</itemlayout>
 									<focusedlayout height="46" width="770">
-										<control type="button" id="70171">
-						<texturefocus>-</texturefocus>
-						<texturenofocus>-</texturenofocus>
-											<onfocus>Skin.SetString(widget.helper,videoinfo2)</onfocus>
+										<control type="button">
+											<onfocus>SetProperty(SkinHelper.WidgetContainer,7016)</onfocus>
+											<texturenofocus>-</texturenofocus>
+											<texturefocus>-</texturefocus>
 										</control>
 										<control type="image">
 											<width>100%</width>
@@ -8240,14 +8537,13 @@
 							<control type="label">
 								<left>850</left>
 								<width>577</width>
-								<height>34</height>
-								<aligny>center</aligny>
 								<align>left</align>
 								<height>34</height>
-								<font>Small</font>
 								<font>HomeWidgetLabelFont</font>
 								<label>$VAR[EmbyWidget4Label]</label>
 								<include>Animation.DelayFadeIn</include>
+								<animation effect="slide" start="0" end="0,-40" time="2000" delay="100" tween="quadratic" easing="out" condition="true">Conditional</animation>
+								<animation effect="fade" start="100" end="10" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(301).HasFocus + !Control.HasFocus(7012)">Conditional</animation>
 							</control>
 							<control type="panel" id="7012">
 								<description>Widget</description>
@@ -8268,7 +8564,12 @@
 									<include>WidgetLandscapeItemLayout</include>
 								</itemlayout>
 								<focusedlayout width="410" height="230">
-									<include>WidgetLandscapeFocusedItemLayout</include>
+									<control type="button">
+										<onfocus>SetProperty(SkinHelper.WidgetContainer,7012)</onfocus>
+										<texturenofocus>-</texturenofocus>
+										<texturefocus>-</texturefocus>
+									</control>
+									<include>WidgetLandscapeFocusedItemLayoutLiveTV</include>
 								</focusedlayout>
 								<content target="$VAR[DefWidget4Target]">$VAR[DefWidget4Content]</content>
 							</control>
@@ -8276,6 +8577,8 @@
 						<!-- Weather -->
 						<control type="group">
 							<visible>StringCompare(Container(300).ListItem.Property(defaultID),weather)</visible>
+							<animation effect="slide" start="0" end="-500" time="200" delay="100" tween="quadratic" easing="out">Focus</animation>
+							<animation effect="slide" start="-500" end="0" time="200" delay="100" tween="quadratic" easing="out">UnFocus</animation>
 							<height>705</height>
 							<control type="group">
 								<height>705</height>
