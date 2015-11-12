@@ -1269,110 +1269,47 @@
 	<include name="Furniture_NowPlaying">
 		<!-- Next Recording -->
 		<control type="group">
-			<top>7</top>
-			<left>680</left>
-			<width>660</width>
-			<height>100</height>
+			<top>0</top>
+			<left>0</left>
+			<width>1920</width>
+			<height>130</height>
 			<include>Animation.FadeIn.Slide</include>
 			<include>Animation.FadeOut</include>
 			<visible>Player.HasMedia</visible>
 			<visible>!Skin.HasSetting(furniture.nowplaying)</visible>
 			<visible>!SubString(Window(10025).Property(PlayingBackgroundMedia),True)</visible>
-			<animation effect="zoom" start="100" end="85" condition="true">Conditional</animation>
-			<control type="image">
-				<description>background image</description>
-				<posx>0</posx>
-				<posy>0</posy>
-				<width>660</width>
-				<height>100</height>
-				<texture colordiffuse="black">common/box.png</texture>
-				<animation effect="fade" start="100" end="85" condition="true">Conditional</animation>
-			</control>
+			<animation effect="slide" end="0,-105" condition="!Window.IsVisible(Home.xml) | [Window.IsVisible(Home.xml) + Skin.String(home.vertical,)]" time="200">Conditional</animation>
 			<control type="group">
 				<centertop>50%</centertop>
-				<centerleft>52</centerleft>
-				<height>100</height>
-				<width>100</width>
-				<control type="image" description="Back">
-					<left>0</left>
-					<centertop>50%</centertop>
-					<width>100</width>
-					<height>100</height>
-					<aspectratio align="center" aligny="center">keep</aspectratio>
-					<texture>progress/back.png</texture>
-					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
-				</control>
-				<control type="image" description="Play">
-					<left>0</left>
-					<centertop>50%</centertop>
-					<width>100</width>
-					<height>100</height>
-					<aspectratio align="center" aligny="center">keep</aspectratio>
-					<texture colordiffuse="Dark1">progress/play.png</texture>
-					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
-					<visible>!Player.Paused</visible>
-				</control>
 				<control type="image" description="Pause">
 					<left>0</left>
-					<centertop>50%</centertop>
+					<centertop>1%</centertop>
 					<width>100</width>
-					<height>100</height>
+					<height>130</height>
 					<aspectratio align="center" aligny="center">keep</aspectratio>
 					<texture colordiffuse="Dark1">progress/pause.png</texture>
 					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
 					<visible>Player.Paused</visible>
 				</control>
-				<control type="progress" id="9666">
-					<texturebg>-</texturebg>
-					<lefttexture>-</lefttexture>
-					<midtexture>-</midtexture>
-					<righttexture>-</righttexture>
-					<info>Player.Progress</info>
-					<visible>false</visible>
-				</control>
-				<control type="image">
-					<left>0</left>
-					<centertop>50%</centertop>
-					<width>100</width>
-					<height>100</height>
-					<texture colordiffuse="$VAR[EmbyLeftColourHighlight]">$VAR[ProgressPercent]</texture>
-					<aspectratio align="center">keep</aspectratio>
-					<visible>!IsEmpty(Player.Duration)</visible>
-				</control>
 			</control>
 			<control type="group">
-				<left>104</left>
-				<width>550</width>
-				<posy>10</posy>
+				<left>0</left>
+				<posy>0</posy>
+				<control type="progress" id="9666">
+							<texturebg colordiffuse="$VAR[ResumeColourHighlight]">osd/progress-bg.png</texturebg>
+							<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
+							<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
+							<righttexture colordiffuse="$VAR[BackingColourHighlight]">osd/progress-end.png</righttexture>
+					<info>Player.Progress</info>
+					<visible>true</visible>
+				</control>
 				<control type="label">
 					<centertop>24</centertop>
 					<width>auto</width>
-					<font>SmallBold</font>
+					<font>Flag</font>
 					<align>left</align>
 					<textcolor>white</textcolor>
-					<label>$INFO[Player.Title]</label>
-				</control>
-				<control type="label">
-					<centertop>58</centertop>
-					<align>left</align>
-					<font>Flag</font>
-					<width>auto</width>
-					<textcolor>white2</textcolor>
-					<label>$INFO[VideoPlayer.TvShowTitle,, ]$INFO[MusicPlayer.Artist,, ]$INFO[Player.Time]$INFO[Player.Duration, / ,]</label>
-				</control>
-				<control type="image">
-					<centertop>20</centertop>
-					<width>auto</width>
-					<height>auto</height>
-					<texture colordiffuse="$VAR[EmbyRightColourHighlight]">equaliser.gif</texture>
-					<visible>!Player.Paused</visible>
-				</control>
-				<control type="image">
-					<centertop>20</centertop>
-					<width>auto</width>
-					<height>auto</height>
-					<texture colordiffuse="$VAR[EmbyRightColourHighlight]">equaliser_stop.gif</texture>
-					<visible>Player.Paused</visible>
+					<label></label>
 				</control>
 			</control>
 		</control>

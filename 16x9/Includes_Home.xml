@@ -2,20 +2,19 @@
 <includes>
 	<include name="Furniture_EmbyClock">
 		<control type="group">
-			<top>-9</top>
 			<left>-14</left>
 			<width>1920</width>
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
 			<include>Animation.FurnitureFadeInOut</include>
-			<height>48</height>
+			<height>39</height>
 			<control type="label">
 				<right>15</right>
 				<align>right</align>
 				<bottom>-5</bottom>
 				<font>HomeEmbySemi</font>
 				<textcolor>white3</textcolor>
-				<label>$INFO[System.Date(DDD)]$COMMA $INFO[System.Date(d MMM yyyy)] $INFO[Weather.Temperature,[COLOR=white],[/COLOR]]$INFO[Weather.Conditions, ,]</label>
+				<label>[COLOR=white]$INFO[VideoPlayer.TvShowTitle,, ]$INFO[MusicPlayer.Artist,, ]$INFO[Player.Time]$INFO[Player.Duration, / ,] $INFO[Player.Title,[B],[/B] ][/COLOR]$INFO[System.Date(DDD)]$COMMA $INFO[System.Date(d MMM yyyy)] $INFO[Weather.Temperature,[COLOR=white],[/COLOR]]$INFO[Weather.Conditions, ,]</label>
 			</control>
 			<control type="image">
 				<align>right</align>
@@ -2258,7 +2257,7 @@
 							<height>5</height>
 							<info>ListItem.PercentPlayed</info>
 							<overlaytexture>-</overlaytexture>
-							<texturebg colordiffuse="$VAR[ResumeColourHighlight]">osd/progress-bg.png</texturebg>
+							<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
 							<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
 							<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
 							<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
@@ -2331,7 +2330,7 @@
 							<height>8</height>
 							<info>ListItem.PercentPlayed</info>
 							<overlaytexture>-</overlaytexture>
-							<texturebg colordiffuse="$VAR[ResumeColourHighlight]">osd/progress-bg.png</texturebg>
+							<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
 							<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
 							<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
 							<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
@@ -2355,7 +2354,7 @@
 							<height>8</height>
 							<info>ListItem.PercentPlayed</info>
 							<overlaytexture>-</overlaytexture>
-							<texturebg colordiffuse="$VAR[ResumeColourHighlight]">osd/progress-bg.png</texturebg>
+							<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
 							<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
 							<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
 							<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
