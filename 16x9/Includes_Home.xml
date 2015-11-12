@@ -7273,7 +7273,7 @@
 								<height>325</height>
 								<width>1920</width>
 								<onup>18002</onup>
-								<ondown>300</ondown>
+								<ondown>3012</ondown>
 								<onback>300</onback>
 								<preloaditems>2</preloaditems>
 								<orientation>horizontal</orientation>
@@ -7662,7 +7662,7 @@
 								<height>325</height>
 								<width>1920</width>
 								<onup>18001</onup>
-								<ondown>300</ondown>
+								<ondown>4012</ondown>
 								<onback>300</onback>
 								<preloaditems>2</preloaditems>
 								<orientation>horizontal</orientation>
@@ -9025,4 +9025,148 @@
 			</control>
 		</control>
 	</include>
+
+	<include name="test">
+			<control type="group">
+			<right>0</right>
+			<posy>30</posy>
+			<width>500</width>
+			<height>100</height>
+			<include>Animation.FadeIn.Slide</include>
+			<include>Animation.FadeOut</include>
+			<visible>!Window.IsVisible(fullscreenvideo)</visible>
+			<visible>!Window.IsVisible(visualisation)</visible>
+			<animation effect="slide" start="0" end="-500" condition="Window.IsActive(DialogKaiToast.xml)">Conditional</animation>
+			<control type="image">
+				<description>background image</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>500</width>
+				<height>100</height>
+				<animation effect="fade" start="100" end="80" condition="true">Conditional</animation>
+				<texture colordiffuse="$VAR[EmbyMenuColourHighlight]">common/white.png</texture>
+			</control>
+			<control type="group">
+				<control type="group">
+					<left>2</left>
+					<centertop>50%</centertop>
+					<width>100</width>
+					<height>100</height>
+					<control type="label">
+						<aligny>center</aligny>
+						<align>center</align>
+						<top>2</top>
+						<font>symbolosd</font>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+						<height>48</height>
+						<label></label>
+					</control>
+					<control type="label" id="9666">
+						<align>center</align>
+						<font>symbol</font>
+						<bottom>2</bottom>
+						<height>48</height>
+									<label>XX</label>
+					</control>
+				</control>
+				<control type="label" id="30">
+					<left>104</left>
+					<top>22</top>
+					<height>31</height>
+					<aligny>center</aligny>
+					<font>SmallBold</font>
+									<label>rrrrrrrrrrrrrrrrrrrrrrrrrr</label>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+				</control>
+				<control type="label" id="31">
+					<left>104</left>
+					<bottom>15</bottom>
+					<height>30</height>
+					<aligny>center</aligny>
+									<label>rrrrrrrrrrrrrrrrrrrrrrrrrr</label>
+					<font>Small</font>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+				</control>
+			</control>
+		</control>
+		<control type="group">
+			<right>500</right>
+			<posy>30</posy>
+			<width>500</width>
+			<height>100</height>
+			<include>Animation.FadeIn.Slide</include>
+			<include>Animation.FadeOut</include>
+			<control type="image">
+				<description>background image</description>
+				<width>500</width>
+				<height>100</height>
+				<animation effect="fade" start="100" end="90" condition="[!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)]">Conditional</animation>
+				<texture colordiffuse="black">common/box.png</texture>
+			</control>
+			<control type="group">
+				<control type="label">
+					<left>20</left>
+					<centertop>50%</centertop>
+					<width>64</width>
+					<height>64</height>
+					<aligny>center</aligny>
+					<align>center</align>
+					<font>symbol</font>
+					<label></label>
+					<textcolor>white</textcolor>
+					<visible>SubString(Control.GetLabel(401),error)</visible>
+				</control>
+				<control type="label">
+					<left>20</left>
+					<centertop>50%</centertop>
+					<width>64</width>
+					<height>64</height>
+					<aligny>center</aligny>
+					<align>center</align>
+					<font>symbol</font>
+					<label></label>
+					<textcolor>white</textcolor>
+					<visible>SubString(Control.GetLabel(400),info.png)</visible>
+				</control>
+				<control type="label">
+					<left>20</left>
+					<centertop>50%</centertop>
+					<width>64</width>
+					<height>64</height>
+					<aligny>center</aligny>
+					<align>center</align>
+					<font>symbol</font>
+					<label></label>
+					<textcolor>white</textcolor>
+					<visible>SubString(Control.GetLabel(400),warnning.png)</visible>
+				</control>
+				<control type="image" id="400">
+					<left>20</left>
+					<centertop>50%</centertop>
+					<width>64</width>
+					<height>64</height>
+					<aspectratio>keep</aspectratio>
+				</control>
+				<control type="label" id="401">
+					<left>104</left>
+					<width>536</width>
+					<top>22</top>
+					<height>24</height>
+					<aligny>center</aligny>
+					<font>TinyBold</font>
+					<textcolor>white</textcolor>
+				</control>
+				<control type="label" id="402">
+					<left>104</left>
+					<width>536</width>
+					<bottom>22</bottom>
+					<height>24</height>
+					<aligny>center</aligny>
+					<font>Tiny</font>
+					<textcolor>white2</textcolor>
+				</control>
+			</control>
+		</control>
+	</include>
+
 </includes>

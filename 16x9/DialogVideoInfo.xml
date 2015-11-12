@@ -1120,13 +1120,16 @@
 					<visible>ControlGroup(9010).HasFocus</visible>
 				</control>
 				<control type="label">
-					<centerright>54</centerright>
-					<centertop>40</centertop>
-					<width>54</width>
-					<height>54</height>
+					<right>16</right>
+					<top>1</top>
+						<aligny>center</aligny>
+						<align>center</align>
+					<width>76</width>
+					<height>76</height>
 					<font>symbolbig</font>
 					<label>$VAR[PercentWatchedLabelInfo]</label>
 					<textcolor>$VAR[IndicatorColourHighlight]</textcolor>
+			<animation effect="slide" start="0" end="6" condition="Player.HasMedia">Conditional</animation>
 					<visible>!stringcompare(ListItem.Label,..)</visible>
 					<visible>ControlGroup(9010).HasFocus</visible>
 				</control>
