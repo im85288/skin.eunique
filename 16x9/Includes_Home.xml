@@ -311,7 +311,7 @@
 					<control type="label">
 						<aligny>center</aligny>
 						<align>left</align>
-						<font>MediumSmallBold</font>
+						<font>SmallBold</font>
 						<textcolor>Dark1</textcolor>
 						<height>34</height>
 						<width>auto</width>
@@ -6900,6 +6900,12 @@
 						<control type="image">
 							<aspectratio>scale</aspectratio>
 							<texture background="true">$VAR[PosterImageVertical]</texture>
+							<visible>!StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+						</control>
+						<control type="image">
+							<aspectratio>keep</aspectratio>
+							<texture background="true">$VAR[PosterImageVertical]</texture>
+							<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
 						</control>
 					</control>
 
