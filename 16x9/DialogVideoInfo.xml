@@ -1129,7 +1129,9 @@
 					<font>symbolbig</font>
 					<label>$VAR[PercentWatchedLabelInfo]</label>
 					<textcolor>$VAR[IndicatorColourHighlight]</textcolor>
+					<!--
 			<animation effect="slide" start="0" end="6" condition="Player.HasMedia">Conditional</animation>
+			-->
 					<visible>!stringcompare(ListItem.Label,..)</visible>
 					<visible>ControlGroup(9010).HasFocus</visible>
 				</control>
