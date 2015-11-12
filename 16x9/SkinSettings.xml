@@ -5,9 +5,9 @@
 	<controls>
 		<!--background-->
 		<include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
+		<include>Furniture_NowPlaying</include>
 		<include>Furniture_EmbyClock</include>
 		<include>Furniture_HeaderEmby</include>
-		<include>Furniture_NowPlaying</include>
 		<control type="group">
 			<left>NewSidePad</left>
 			<right>NewSidePad</right>
@@ -926,6 +926,40 @@
 						<label>31933</label>
 						<label2>[COLOR=$VAR[ColourIconFlags]]$INFO[Skin.String(emby.flags.icon.colour.name)][/COLOR]</label2>
 						<visible>Skin.HasSetting(emby.flags.icon.colour)</visible>
+					</control>
+					<control type="radiobutton" id="928883">
+						<width>1410</width>
+						<textureradiofocus colordiffuse="$VAR[NowPlayingBackgroundColourHighlight]">buttons/radio-on.png</textureradiofocus>
+						<textureradionofocus colordiffuse="$VAR[NowPlayingBackgroundColourHighlight]">common/box.png</textureradionofocus>
+						<include>DefSettingsButton2</include>
+						<selected>Skin.HasSetting(now.playing.background.colour)</selected>
+						<onclick>Skin.ToggleSetting(now.playing.background.colour)</onclick>
+						<label>32070</label>
+					</control>
+					<control type="button" id="928884">
+						<width>1410</width>
+						<include>DefSettingsButton2</include>
+						<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=now.playing.background.colour.name)</onclick>
+						<label>32071</label>
+						<label2>[COLOR=$VAR[ColourIconFlags]]$INFO[Skin.String(now.playing.background.colour.name)][/COLOR]</label2>
+						<visible>Skin.HasSetting(now.playing.background.colour)</visible>
+					</control>
+					<control type="radiobutton" id="92885">
+						<width>1410</width>
+						<textureradiofocus colordiffuse="$VAR[NowPlayingProgressColourHighlight]">buttons/radio-on.png</textureradiofocus>
+						<textureradionofocus colordiffuse="$VAR[NowPlayingProgressColourHighlight]">common/box.png</textureradionofocus>
+						<include>DefSettingsButton2</include>
+						<selected>Skin.HasSetting(now.playing.progress.colour)</selected>
+						<onclick>Skin.ToggleSetting(now.playing.progress.colour)</onclick>
+						<label>32072</label>
+					</control>
+					<control type="button" id="92886">
+						<width>1410</width>
+						<include>DefSettingsButton2</include>
+						<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=now.playing.progress.colour.name)</onclick>
+						<label>32073</label>
+						<label2>[COLOR=$VAR[ColourIconFlags]]$INFO[Skin.String(now.playing.progress.colour.name)][/COLOR]</label2>
+						<visible>Skin.HasSetting(now.playing.progress.colour)</visible>
 					</control>
 				</control>
 				<control type="grouplist" id="9009">

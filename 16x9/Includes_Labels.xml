@@ -888,6 +888,14 @@
 		<value condition="Container(9000).Column(2)">$VAR[EmbyRightColourHighlight]</value>
 		<value>$VAR[ColourHighlight]</value>
 	</variable>
+	<variable name="NowPlayingBackgroundColourHighlight">
+		<value condition="Skin.HasSetting(now.playing.background.colour) + !IsEmpty(Skin.String(now.playing.background.colour.name))">$INFO[Skin.String(now.playing.background.colour.name)]</value>
+		<value>black2</value>
+	</variable>
+	<variable name="NowPlayingProgressColourHighlight">
+		<value condition="Skin.HasSetting(now.playing.progress.colour) + !IsEmpty(Skin.String(now.playing.progress.colour.name))">$INFO[Skin.String(now.playing.progress.colour.name)]</value>
+		<value>dark pastel red</value>
+	</variable>
 	<variable name="EmbyEndTimeSymbol">
 		<value condition="!Skin.HasSetting(furniture.hideendtime) + [[!IsEmpty(Container(3012).ListItem.EndTime) + Control.HasFocus(3012)] | [!IsEmpty(Container(3016).ListItem.EndTime) + Control.HasFocus(3016)] | [!IsEmpty(Container(3017).ListItem.EndTime) + Control.HasFocus(3017)] | [!IsEmpty(Container(4012).ListItem.EndTime) + Control.HasFocus(4012)] | [!IsEmpty(Container(4016).ListItem.EndTime) + Control.HasFocus(4016)] | [!IsEmpty(Container(4017).ListItem.EndTime) + Control.HasFocus(4017)] | [!IsEmpty(Container(9017).ListItem.EndTime) + Control.HasFocus(9017)] | [!IsEmpty(Container(10017).ListItem.EndTime) + Control.HasFocus(10017)] | [!IsEmpty(Container(14017).ListItem.EndTime) + Control.HasFocus(14017)] | [!IsEmpty(Container(15017).ListItem.EndTime) + Control.HasFocus(15017)]] | [!IsEmpty(Container(18002).ListItem.EndTime) + Control.HasFocus(18002)] | [!IsEmpty(Container(18003).ListItem.EndTime) + Control.HasFocus(18003)] | [!IsEmpty(Container(19003).ListItem.EndTime) + Control.HasFocus(19003)] | [!IsEmpty(Container(19001).ListItem(4).EndTime) + Control.HasFocus(19002)] | !IsEmpty(ListItem.EndTime) + [Container.Content(movies) | Container.Content(episodes)]"></value>
 	</variable>
@@ -1251,6 +1259,8 @@
 		<value condition="Control.HasFocus(92877) | Control.HasFocus(92878)">$LOCALIZE[32051]</value>
 		<value condition="Control.HasFocus(92879) | Control.HasFocus(92880)">$LOCALIZE[32052]</value>
 		<value condition="Control.HasFocus(92881) | Control.HasFocus(92882)">$LOCALIZE[32053]</value>
+		<value condition="Control.HasFocus(928883) | Control.HasFocus(928884)">$LOCALIZE[32068]</value>
+		<value condition="Control.HasFocus(92885) | Control.HasFocus(92886)">$LOCALIZE[32069]</value>
 		<value condition="Container(9000).HasFocus(7)">$LOCALIZE[32010]</value>
 		<value condition="Control.HasFocus(92991)">$LOCALIZE[32054]</value>
 		<value condition="Control.HasFocus(92992)">$LOCALIZE[32055]</value>
