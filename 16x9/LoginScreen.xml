@@ -9,9 +9,9 @@
 			<visible>!Player.HasVideo</visible>
 			<visible>!IsEmpty(Window(home).Property(SkinInitStarted))</visible>
 			<include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
+			<include>Furniture_NowPlaying</include>
 			<include>Furniture_HeaderEmby</include>
 			<include>Furniture_EmbyClock</include>
-			<include>Furniture_NowPlaying</include>
 			<control type="list" id="52">
 				<visible>!Window.IsVisible(ProfileSettings.xml)</visible>
 				<posx>635</posx>
