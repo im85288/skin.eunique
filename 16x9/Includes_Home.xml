@@ -6956,9 +6956,31 @@
 							<onright>Control.Move(10017,1)</onright>
 							<onleft>Control.Move(10017,-1)</onleft>
 							<onup>3016</onup>
-							<ondown>10017</ondown>
+							<ondown>4012</ondown>
 							<onback>300</onback>
 							<onclick>PlayMedia($ESCINFO[Container(3017).ListItem(-1).FileNameAndPath])</onclick>
+						</control>
+						<control type="button" id="180021">
+							<texturefocus>-</texturefocus>
+							<texturenofocus>-</texturenofocus>
+							<onfocus>Control.Move(18002,1)</onfocus>
+							<onright>Control.Move(18002,1)</onright>
+							<onleft>Control.Move(18002,-1)</onleft>
+							<onup>3016</onup>
+							<ondown>4012</ondown>
+							<onback>300</onback>
+							<onclick>PlayMedia($ESCINFO[Container(18002).ListItem(-1).FileNameAndPath])</onclick>
+						</control>
+						<control type="button" id="190011">
+							<texturefocus>-</texturefocus>
+							<texturenofocus>-</texturenofocus>
+							<onfocus>Control.Move(19001,1)</onfocus>
+							<onright>Control.Move(19001,1)</onright>
+							<onleft>Control.Move(19001,-1)</onleft>
+							<onup>3016</onup>
+							<ondown>3012</ondown>
+							<onback>300</onback>
+							<onclick>PlayMedia($ESCINFO[Container(19001).ListItem(-1).FileNameAndPath])</onclick>
 						</control>
 						</control>
 					<!-- Widgets -->
@@ -6966,8 +6988,9 @@
 						<top>179</top>
 						<left>470</left>
 						<width>1920</width>
-						<height>891</height>
+						<height>1891</height>
 						<orientation>vertical</orientation>
+						<itemgap>-200</itemgap>
 						<onup>300</onup>
 						<ondown>300</ondown>
 						<!-- Movies -->
@@ -6975,7 +6998,7 @@
 							<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
 							<visible>!Control.HasFocus(3017) + !Control.HasFocus(10017) + !Control.HasFocus(18002) + !Control.HasFocus(19001)</visible>
 							<height>370</height>
-								<animation effect="fade" start="100" end="10" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(303).HasFocus + !Control.HasFocus(30121)">Conditional</animation>
+								<animation effect="slide" start="0" end="0,370" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(303).HasFocus + !Control.HasFocus(30121)">Conditional</animation>
 							<control type="label">
 								<width>1200</width>
 								<align>left</align>
@@ -7041,9 +7064,12 @@
 						<control type="group">
 							<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
 							<visible>!Control.HasFocus(10017) + !Control.HasFocus(18002) + !Control.HasFocus(19001)</visible>
-							<top>370</top>
 							<height>370</height>
-					<animation effect="fade" start="100" end="10" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(303).HasFocus + !Control.HasFocus(30161)">Conditional</animation>
+								<animation effect="slide" start="0" end="0,170" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(303).HasFocus + !Control.HasFocus(30161) + Control.HasFocus(180021)">Conditional</animation>
+								<animation effect="slide" start="0" end="0,170" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(303).HasFocus + !Control.HasFocus(30161) + Control.HasFocus(100171)">Conditional</animation>
+								<animation effect="slide" start="0" end="0,170" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(303).HasFocus + !Control.HasFocus(30161) + Control.HasFocus(30171)">Conditional</animation>
+								<animation effect="slide" start="0" end="0,200" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(303).HasFocus + !Control.HasFocus(30161)">Conditional</animation>
+								<animation effect="slide" start="0" end="0,-170" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(303).HasFocus + Control.HasFocus(30161)">Conditional</animation>
 							<control type="label">
 								<width>1200</width>
 								<height>34</height>
@@ -7110,9 +7136,11 @@
 						<control type="group">
 							<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
 							<visible>!Control.HasFocus(18002) + !Control.HasFocus(19001)</visible>
-							<top>740</top>
 							<height>370</height>
-								<animation effect="fade" start="100" end="10" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(303).HasFocus + !Control.HasFocus(30171)">Conditional</animation>
+								<animation effect="slide" start="0" end="0,170" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(303).HasFocus + !Control.HasFocus(30161) + Control.HasFocus(190011)">Conditional</animation>
+								<animation effect="slide" start="0" end="0,170" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(303).HasFocus + !Control.HasFocus(30171) + Control.HasFocus(100171)">Conditional</animation>
+								<animation effect="slide" start="0" end="0,200" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(303).HasFocus + !Control.HasFocus(30171)">Conditional</animation>
+								<animation effect="slide" start="0" end="0,-340" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(303).HasFocus + Control.HasFocus(30171)">Conditional</animation>
 							<control type="label">
 								<width>1200</width>
 								<height>34</height>
@@ -7181,9 +7209,9 @@
 						<control type="group">
 							<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
 							<visible>!Control.HasFocus(19001)</visible>
-							<top>1110</top>
 							<height>370</height>
-								<animation effect="fade" start="100" end="10" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(301).HasFocus + !Control.HasFocus(10017)">Conditional</animation>
+								<animation effect="slide" start="0" end="0,200" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(303).HasFocus + !Control.HasFocus(100171)">Conditional</animation>
+								<animation effect="slide" start="0" end="0,-510" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(303).HasFocus + Control.HasFocus(100171)">Conditional</animation>
 							<control type="label">
 								<width>1200</width>
 								<height>34</height>
@@ -7251,9 +7279,9 @@
 						</control>
 						<control type="group">
 							<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
-							<top>1480</top>
 							<height>370</height>
-								<animation effect="fade" start="100" end="10" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(301).HasFocus + !Control.HasFocus(18002)">Conditional</animation>
+								<animation effect="slide" start="0" end="0,200" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(303).HasFocus + !Control.HasFocus(180021)">Conditional</animation>
+								<animation effect="slide" start="0" end="0,-680" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(303).HasFocus + Control.HasFocus(180021)">Conditional</animation>
 							<control type="label">
 								<width>1200</width>
 								<height>34</height>
@@ -7275,7 +7303,7 @@
 								<onback>300</onback>
 								<preloaditems>2</preloaditems>
 								<orientation>horizontal</orientation>
-								<autoscroll time="10000">!Control.HasFocus(18002)</autoscroll>
+								<autoscroll time="10000">!Control.HasFocus(180021)</autoscroll>
 								<scrolltime tween="quadratic">100</scrolltime>
 								<include>Animation.FadeIn</include>
 								<include>Animation.FadeOut</include>
@@ -7291,6 +7319,7 @@
 								<focusedlayout width="218" height="325" condition="!StringCompare(Skin.String(movies5widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(movies5widget.aspectratio),SQUARE)">
 									<control type="button">
 										<onfocus>SetProperty(SkinHelper.WidgetContainer,18002)</onfocus>
+										<onfocus>SetFocus(180021)</onfocus>
 										<texturenofocus>-</texturenofocus>
 										<texturefocus>-</texturefocus>
 									</control>
@@ -7299,6 +7328,7 @@
 								<focusedlayout width="577" height="325" condition="StringCompare(Skin.String(movies5widget.aspectratio),LANDSCAPE)">
 									<control type="button">
 										<onfocus>SetProperty(SkinHelper.WidgetContainer,18002)</onfocus>
+										<onfocus>SetFocus(180021)</onfocus>
 										<texturenofocus>-</texturenofocus>
 										<texturefocus>-</texturefocus>
 									</control>
@@ -7307,6 +7337,7 @@
 								<focusedlayout width="325" height="325" condition="StringCompare(Skin.String(movies5widget.aspectratio),SQUARE)">
 									<control type="button">
 										<onfocus>SetProperty(SkinHelper.WidgetContainer,18002)</onfocus>
+										<onfocus>SetFocus(180021)</onfocus>
 										<texturenofocus>-</texturenofocus>
 										<texturefocus>-</texturefocus>
 									</control>
@@ -7317,9 +7348,9 @@
 						</control>
 						<control type="group">
 							<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
-							<top>1850</top>
 							<height>370</height>
-								<animation effect="fade" start="100" end="10" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(301).HasFocus + !Control.HasFocus(19001)">Conditional</animation>
+								<animation effect="slide" start="0" end="0,200" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(303).HasFocus + !Control.HasFocus(190011)">Conditional</animation>
+								<animation effect="slide" start="0" end="0,-850" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(303).HasFocus + Control.HasFocus(190011)">Conditional</animation>
 							<control type="label">
 								<width>1200</width>
 								<height>34</height>
@@ -7341,7 +7372,7 @@
 								<onback>300</onback>
 								<preloaditems>2</preloaditems>
 								<orientation>horizontal</orientation>
-								<autoscroll time="10000">!Control.HasFocus(19001)</autoscroll>
+								<autoscroll time="10000">!Control.HasFocus(190011)</autoscroll>
 								<scrolltime tween="quadratic">100</scrolltime>
 								<include>Animation.FadeIn</include>
 								<include>Animation.FadeOut</include>
@@ -7357,6 +7388,7 @@
 								<focusedlayout width="218" height="325" condition="!StringCompare(Skin.String(movies6widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(movies6widget.aspectratio),SQUARE)">
 									<control type="button">
 										<onfocus>SetProperty(SkinHelper.WidgetContainer,19001)</onfocus>
+										<onfocus>SetFocus(190011)</onfocus>
 										<texturenofocus>-</texturenofocus>
 										<texturefocus>-</texturefocus>
 									</control>
@@ -7365,6 +7397,7 @@
 								<focusedlayout width="577" height="325" condition="StringCompare(Skin.String(movies6widget.aspectratio),LANDSCAPE)">
 									<control type="button">
 										<onfocus>SetProperty(SkinHelper.WidgetContainer,19001)</onfocus>
+										<onfocus>SetFocus(190011)</onfocus>
 										<texturenofocus>-</texturenofocus>
 										<texturefocus>-</texturefocus>
 									</control>
@@ -7373,6 +7406,7 @@
 								<focusedlayout width="325" height="325" condition="StringCompare(Skin.String(movies6widget.aspectratio),SQUARE)">
 									<control type="button">
 										<onfocus>SetProperty(SkinHelper.WidgetContainer,19001)</onfocus>
+										<onfocus>SetFocus(190011)</onfocus>
 										<texturenofocus>-</texturenofocus>
 										<texturefocus>-</texturefocus>
 									</control>
