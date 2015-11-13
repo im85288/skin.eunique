@@ -6889,10 +6889,10 @@
 						<height>64</height>
 						<texture>$VAR[EmbyWidgetLogo]</texture>
 						<aspectratio align="center" aligny="center">keep</aspectratio>
-						<visible>ControlGroup(301).HasFocus</visible>
+						<visible>ControlGroup(303).HasFocus</visible>
 					</control>
 					<control type="group">
-					<animation effect="fade" start="100" end="0" time="400" condition="!ControlGroup(301).HasFocus()">Conditional</animation>
+					<animation effect="fade" start="100" end="0" time="400" condition="!ControlGroup(303).HasFocus">Conditional</animation>
 						<left>NewSidePad</left>
 						<top>179</top>
 						<width>594</width>
@@ -6915,6 +6915,52 @@
 					<animation effect="fade" start="0" end="100" time="200" delay="200" reversible="false" condition="[!Container(301).IsUpdating + IntegerGreaterThan(Container(301).NumItems,0) + [!IsEmpty(Container(300).ListItem.Property(widget)) | [IsEmpty(Container(300).ListItem.Property(widget)) + [IsEmpty(Container(300).ListItem.Property(Background)) + [IsEmpty(Skin.String(home.slideshowpath))]]]]] | [Weather.IsFetched + StringCompare(Container(300).ListItem.Property(widget),Weather)]">Conditional</animation>
 					<animation effect="slide" start="0" end="134" time="200" delay="100" tween="quadratic" easing="out">Focus</animation>
 					<animation effect="slide" start="134" end="0" time="200" delay="100" tween="quadratic" easing="out">UnFocus</animation>
+					<control type="grouplist" id="303">
+						<control type="button" id="30121">
+							<texturefocus>-</texturefocus>
+							<texturenofocus>-</texturenofocus>
+							<onfocus>Control.Move(3012,1)</onfocus>
+							<onright>Control.Move(3012,1)</onright>
+							<onleft>Control.Move(3012,-1)</onleft>
+							<onup>300</onup>
+							<ondown>3016</ondown>
+							<onback>300</onback>
+							<onclick>PlayMedia($ESCINFO[Container(3012).ListItem(-1).FileNameAndPath])</onclick>
+						</control>
+						<control type="button" id="30161">
+							<texturefocus>-</texturefocus>
+							<texturenofocus>-</texturenofocus>
+							<onfocus>Control.Move(3016,1)</onfocus>
+							<onright>Control.Move(3016,1)</onright>
+							<onleft>Control.Move(3016,-1)</onleft>
+							<onup>3012</onup>
+							<ondown>3017</ondown>
+							<onback>300</onback>
+							<onclick>PlayMedia($ESCINFO[Container(3016).ListItem(-1).FileNameAndPath])</onclick>
+						</control>
+						<control type="button" id="30171">
+							<texturefocus>-</texturefocus>
+							<texturenofocus>-</texturenofocus>
+							<onfocus>Control.Move(3017,1)</onfocus>
+							<onright>Control.Move(3017,1)</onright>
+							<onleft>Control.Move(3017,-1)</onleft>
+							<onup>3016</onup>
+							<ondown>10017</ondown>
+							<onback>300</onback>
+							<onclick>PlayMedia($ESCINFO[Container(3017).ListItem(-1).FileNameAndPath])</onclick>
+						</control>
+						<control type="button" id="100171">
+							<texturefocus>-</texturefocus>
+							<texturenofocus>-</texturenofocus>
+							<onfocus>Control.Move(10017,1)</onfocus>
+							<onright>Control.Move(10017,1)</onright>
+							<onleft>Control.Move(10017,-1)</onleft>
+							<onup>3016</onup>
+							<ondown>10017</ondown>
+							<onback>300</onback>
+							<onclick>PlayMedia($ESCINFO[Container(3017).ListItem(-1).FileNameAndPath])</onclick>
+						</control>
+						</control>
 					<!-- Widgets -->
 					<control type="grouplist" id="301">
 						<top>179</top>
@@ -6929,7 +6975,7 @@
 							<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
 							<visible>!Control.HasFocus(3017) + !Control.HasFocus(10017) + !Control.HasFocus(18002) + !Control.HasFocus(19001)</visible>
 							<height>370</height>
-								<animation effect="fade" start="100" end="10" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(301).HasFocus + !Control.HasFocus(3012)">Conditional</animation>
+								<animation effect="fade" start="100" end="10" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(303).HasFocus + !Control.HasFocus(30121)">Conditional</animation>
 							<control type="label">
 								<width>1200</width>
 								<align>left</align>
@@ -6949,7 +6995,7 @@
 								<onback>300</onback>
 								<preloaditems>2</preloaditems>
 								<orientation>horizontal</orientation>
-								<autoscroll time="10000">!Control.HasFocus(3012)</autoscroll>
+								<autoscroll time="10000">!Control.HasFocus(30121)</autoscroll>
 								<scrolltime tween="quadratic">100</scrolltime>
 								<include>Animation.FadeIn</include>
 								<include>Animation.FadeOut</include>
@@ -6965,6 +7011,7 @@
 								<focusedlayout width="218" height="325" condition="!StringCompare(Skin.String(movies1widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(movies1widget.aspectratio),SQUARE)">
 									<control type="button">
 										<onfocus>SetProperty(SkinHelper.WidgetContainer,3012)</onfocus>
+										<onfocus>SetFocus(30121)</onfocus>
 										<texturenofocus>-</texturenofocus>
 										<texturefocus>-</texturefocus>
 									</control>
@@ -6973,6 +7020,7 @@
 								<focusedlayout width="577" height="325" condition="StringCompare(Skin.String(movies1widget.aspectratio),LANDSCAPE)">
 									<control type="button">
 										<onfocus>SetProperty(SkinHelper.WidgetContainer,3012)</onfocus>
+										<onfocus>SetFocus(30121)</onfocus>
 										<texturenofocus>-</texturenofocus>
 										<texturefocus>-</texturefocus>
 									</control>
@@ -6981,6 +7029,7 @@
 								<focusedlayout width="325" height="325" condition="StringCompare(Skin.String(movies1widget.aspectratio),SQUARE)">
 									<control type="button">
 										<onfocus>SetProperty(SkinHelper.WidgetContainer,3012)</onfocus>
+										<onfocus>SetFocus(30121)</onfocus>
 										<texturenofocus>-</texturenofocus>
 										<texturefocus>-</texturefocus>
 									</control>
@@ -6994,7 +7043,7 @@
 							<visible>!Control.HasFocus(10017) + !Control.HasFocus(18002) + !Control.HasFocus(19001)</visible>
 							<top>370</top>
 							<height>370</height>
-					<animation effect="fade" start="100" end="10" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(301).HasFocus + !Control.HasFocus(3016)">Conditional</animation>
+					<animation effect="fade" start="100" end="10" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(303).HasFocus + !Control.HasFocus(30161)">Conditional</animation>
 							<control type="label">
 								<width>1200</width>
 								<height>34</height>
@@ -7015,7 +7064,7 @@
 								<onback>300</onback>
 								<preloaditems>2</preloaditems>
 								<orientation>horizontal</orientation>
-								<autoscroll time="10000">!Control.HasFocus(3016)</autoscroll>
+								<autoscroll time="10000">!Control.HasFocus(30161)</autoscroll>
 								<scrolltime tween="quadratic">100</scrolltime>
 								<include>Animation.FadeIn</include>
 								<include>Animation.FadeOut</include>
@@ -7031,6 +7080,7 @@
 								<focusedlayout width="218" height="325" condition="!StringCompare(Skin.String(movies2widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(movies2widget.aspectratio),SQUARE)">
 									<control type="button">
 										<onfocus>SetProperty(SkinHelper.WidgetContainer,3016)</onfocus>
+										<onfocus>SetFocus(30161)</onfocus>
 										<texturenofocus>-</texturenofocus>
 										<texturefocus>-</texturefocus>
 									</control>
@@ -7039,6 +7089,7 @@
 								<focusedlayout width="577" height="325" condition="StringCompare(Skin.String(movies2widget.aspectratio),LANDSCAPE)">
 									<control type="button">
 										<onfocus>SetProperty(SkinHelper.WidgetContainer,3016)</onfocus>
+										<onfocus>SetFocus(30161)</onfocus>
 										<texturenofocus>-</texturenofocus>
 										<texturefocus>-</texturefocus>
 									</control>
@@ -7047,6 +7098,7 @@
 								<focusedlayout width="325" height="325" condition="StringCompare(Skin.String(movies2widget.aspectratio),SQUARE)">
 									<control type="button">
 										<onfocus>SetProperty(SkinHelper.WidgetContainer,3016)</onfocus>
+										<onfocus>SetFocus(30161)</onfocus>
 										<texturenofocus>-</texturenofocus>
 										<texturefocus>-</texturefocus>
 									</control>
@@ -7060,7 +7112,7 @@
 							<visible>!Control.HasFocus(18002) + !Control.HasFocus(19001)</visible>
 							<top>740</top>
 							<height>370</height>
-								<animation effect="fade" start="100" end="10" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(301).HasFocus + !Control.HasFocus(3017)">Conditional</animation>
+								<animation effect="fade" start="100" end="10" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(303).HasFocus + !Control.HasFocus(30171)">Conditional</animation>
 							<control type="label">
 								<width>1200</width>
 								<height>34</height>
@@ -7083,7 +7135,7 @@
 								<onback>300</onback>
 								<preloaditems>2</preloaditems>
 								<orientation>horizontal</orientation>
-								<autoscroll time="10000">!Control.HasFocus(3017)</autoscroll>
+								<autoscroll time="10000">!Control.HasFocus(30171)</autoscroll>
 								<scrolltime tween="quadratic">100</scrolltime>
 								<include>Animation.FadeIn</include>
 								<include>Animation.FadeOut</include>
@@ -7099,6 +7151,7 @@
 								<focusedlayout width="218" height="325" condition="!StringCompare(Skin.String(movies3widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(movies3widget.aspectratio),SQUARE)">
 									<control type="button">
 										<onfocus>SetProperty(SkinHelper.WidgetContainer,3017)</onfocus>
+										<onfocus>SetFocus(30171)</onfocus>
 										<texturenofocus>-</texturenofocus>
 										<texturefocus>-</texturefocus>
 									</control>
@@ -7107,6 +7160,7 @@
 								<focusedlayout width="577" height="325" condition="StringCompare(Skin.String(movies3widget.aspectratio),LANDSCAPE)">
 									<control type="button">
 										<onfocus>SetProperty(SkinHelper.WidgetContainer,3017)</onfocus>
+										<onfocus>SetFocus(30171)</onfocus>
 										<texturenofocus>-</texturenofocus>
 										<texturefocus>-</texturefocus>
 									</control>
@@ -7115,6 +7169,7 @@
 								<focusedlayout width="325" height="325" condition="StringCompare(Skin.String(movies3widget.aspectratio),SQUARE)">
 									<control type="button">
 										<onfocus>SetProperty(SkinHelper.WidgetContainer,3017)</onfocus>
+										<onfocus>SetFocus(30171)</onfocus>
 										<texturenofocus>-</texturenofocus>
 										<texturefocus>-</texturefocus>
 									</control>
@@ -7151,7 +7206,7 @@
 								<onback>300</onback>
 								<preloaditems>2</preloaditems>
 								<orientation>horizontal</orientation>
-								<autoscroll time="10000">!Control.HasFocus(10017)</autoscroll>
+								<autoscroll time="10000">!Control.HasFocus(100171)</autoscroll>
 								<scrolltime tween="quadratic">100</scrolltime>
 								<include>Animation.FadeIn</include>
 								<include>Animation.FadeOut</include>
@@ -7167,6 +7222,7 @@
 								<focusedlayout width="218" height="325" condition="!StringCompare(Skin.String(movies4widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(movies4widget.aspectratio),SQUARE)">
 									<control type="button">
 										<onfocus>SetProperty(SkinHelper.WidgetContainer,10017)</onfocus>
+										<onfocus>SetFocus(100171)</onfocus>
 										<texturenofocus>-</texturenofocus>
 										<texturefocus>-</texturefocus>
 									</control>
@@ -7175,6 +7231,7 @@
 								<focusedlayout width="577" height="325" condition="StringCompare(Skin.String(movies4widget.aspectratio),LANDSCAPE)">
 									<control type="button">
 										<onfocus>SetProperty(SkinHelper.WidgetContainer,10017)</onfocus>
+										<onfocus>SetFocus(100171)</onfocus>
 										<texturenofocus>-</texturenofocus>
 										<texturefocus>-</texturefocus>
 									</control>
@@ -7183,6 +7240,7 @@
 								<focusedlayout width="325" height="325" condition="StringCompare(Skin.String(movies4widget.aspectratio),SQUARE)">
 									<control type="button">
 										<onfocus>SetProperty(SkinHelper.WidgetContainer,10017)</onfocus>
+										<onfocus>SetFocus(100171)</onfocus>
 										<texturenofocus>-</texturenofocus>
 										<texturefocus>-</texturefocus>
 									</control>
