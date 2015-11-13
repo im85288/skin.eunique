@@ -549,6 +549,28 @@
 		<value condition="!IsEmpty(ListItem.Art(tvshow.landscape))">$INFO[ListItem.Art(tvshow.landscape)]</value>
 		<value>$INFO[ListItem.Icon]</value>
 	</variable>
+	<variable name="EmbyWidgetLogoVertical">
+		<value condition="Control.HasFocus(30121) + !IsEmpty(Container(3012).ListItem(-1).Art(tvshow.clearlogo))">$INFO[Container(3012).ListItem(-1).Art(tvshow.clearlogo)]</value>
+		<value condition="Control.HasFocus(30121) + !IsEmpty(Container(3012).ListItem(-1).Art(clearlogo))">$INFO[Container(3012).ListItem(-1).Art(clearlogo)]</value>
+		<value condition="Control.HasFocus(30121) + IsEmpty(Container(3012).ListItem(-1).Art(clearlogo)) + IsEmpty(Container(3012).ListItem(-1).Art(tvshow.clearlogo))">http://localhost:52307/getpvrthumb&amp;title=$INFO[Container(3012).Listitem(-1).Title]&amp;type=clearlogo</value>
+		<value condition="Control.HasFocus(30161) + !IsEmpty(Container(3016).ListItem(-1).Art(tvshow.clearlogo))">$INFO[Container(3016).ListItem(-1).Art(tvshow.clearlogo)]</value>
+		<value condition="Control.HasFocus(30161) + !IsEmpty(Container(3016).ListItem(-1).Art(clearlogo))">$INFO[Container(3016).ListItem(-1).Art(clearlogo)]</value>
+		<value condition="Control.HasFocus(30161) + IsEmpty(Container(3016).ListItem(-1).Art(clearlogo)) + IsEmpty(Container(3016).ListItem(-1).Art(tvshow.clearlogo))">http://localhost:52307/getpvrthumb&amp;title=$INFO[Container(3016).ListItem(-1).Title]&amp;type=clearlogo</value>
+		<value condition="Control.HasFocus(30171) + !IsEmpty(Container(3017).ListItem(-1).Art(tvshow.clearlogo))">$INFO[Container(3017).ListItem(-1).Art(tvshow.clearlogo)]</value>
+		<value condition="Control.HasFocus(30171) + !IsEmpty(Container(3017).ListItem(-1).Art(clearlogo))">$INFO[Container(3017).ListItem(-1).Art(clearlogo)]</value>
+		<value condition="Control.HasFocus(30171) + IsEmpty(Container(3017).ListItem(-1).Art(clearlogo)) + IsEmpty(Container(3017).ListItem(-1).Art(tvshow.clearlogo))">http://localhost:52307/getpvrthumb&amp;title=$INFO[Container(3017).ListItem(-1).Title]&amp;type=clearlogo</value>
+		<value condition="Control.HasFocus(100171) + !IsEmpty(Container(10017).ListItem(-1).Art(tvshow.clearlogo))">$INFO[Container(10017).ListItem(-1).Art(tvshow.clearlogo)]</value>
+		<value condition="Control.HasFocus(100171) + !IsEmpty(Container(10017).ListItem(-1).Art(clearlogo))">$INFO[Container(10017).ListItem(-1).Art(clearlogo)]</value>
+		<value condition="Control.HasFocus(100171) + IsEmpty(Container(10017).ListItem(-1).Art(clearlogo)) + IsEmpty(Container(10017).ListItem(-1).Art(tvshow.clearlogo))">http://localhost:52307/getpvrthumb&amp;title=$INFO[Container(10017).ListItem(-1).Title]&amp;type=clearlogo</value>
+		<value condition="Control.HasFocus(180021) + !IsEmpty(Container(18002).ListItem(-1).Art(tvshow.clearlogo))">$INFO[Container(18002).ListItem(-1).Art(tvshow.clearlogo)]</value>
+		<value condition="Control.HasFocus(180021) + !IsEmpty(Container(18002).ListItem(-1).Art(clearlogo))">$INFO[Container(18002).ListItem(-1).Art(clearlogo)]</value>
+		<value condition="Control.HasFocus(180021) + IsEmpty(Container(18001).ListItem(-1).Art(clearlogo)) + IsEmpty(Container(18001).ListItem(-1).Art(tvshow.clearlogo))">http://localhost:52307/getpvrthumb&amp;title=$INFO[Container(18001).ListItem(-1).Title]&amp;type=clearlogo</value>
+		<value condition="Control.HasFocus(190011) + !IsEmpty(Container(19001).ListItem(-1).Art(tvshow.clearlogo))">$INFO[Container(19001).ListItem(-1).Art(tvshow.clearlogo)]</value>
+		<value condition="Control.HasFocus(190011) + !IsEmpty(Container(19001).ListItem(-1).Art(clearlogo))">$INFO[Container(19001).ListItem(-1).Art(clearlogo)]</value>
+		<value condition="Control.HasFocus(190011) + IsEmpty(Container(19001).ListItem(-1).Art(clearlogo)) + IsEmpty(Container(19001).ListItem(-1).Art(tvshow.clearlogo))">http://localhost:52307/getpvrthumb&amp;title=$INFO[Container(19001).ListItem(-1).Title]&amp;type=clearlogo</value>
+
+		<value>E.png</value>
+	</variable>
 	<variable name="EmbyWidgetLogo">
 		<value condition="Control.HasFocus(3444) + !IsEmpty(Window(Weather).Property(WeatherProviderLogo))">$INFO[Window(Weather).Property(WeatherProviderLogo)]</value>
 		<value condition="Control.HasFocus(30133) + !IsEmpty(Container(30133).ListItem.Art(tvshow.clearlogo))">$INFO[Container(30133).ListItem.Art(tvshow.clearlogo)]</value>

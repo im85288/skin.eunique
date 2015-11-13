@@ -316,7 +316,7 @@
 						<height>34</height>
 						<width>auto</width>
 						<label>$VAR[EmbyWidgetLabelVertical2]</label>
-				<visible>ControlGroup(301).HasFocus</visible>
+						<visible>ControlGroup(303).HasFocus</visible>
 					</control>
 					</control>
 
@@ -6771,9 +6771,9 @@
 			<control type="group">
 				<!-- Home List -->
 				<control type="list" id="300">
-					<animation effect="fade" start="100" end="0" time="100" condition="ControlGroup(301).HasFocus()">Conditional</animation>
-					<animation effect="slide" start="0" end="-200" time="200" delay="00" tween="quadratic" easing="out" condition="ControlGroup(301).HasFocus()">Conditional</animation>
-					<animation effect="zoom" start="100" end="95" time="100" delay="100" center="auto" tween="quadratic" easing="out" condition="ControlGroup(301).HasFocus()">Conditional</animation>
+					<animation effect="fade" start="100" end="0" time="100" condition="ControlGroup(303).HasFocus()">Conditional</animation>
+					<animation effect="slide" start="0" end="-200" time="200" delay="00" tween="quadratic" easing="out" condition="ControlGroup(303).HasFocus()">Conditional</animation>
+					<animation effect="zoom" start="100" end="95" time="100" delay="100" center="auto" tween="quadratic" easing="out" condition="ControlGroup(303).HasFocus()">Conditional</animation>
 					<animation effect="slide" start="-500" end="0" time="200" delay="100" tween="quadratic" easing="out">Visible</animation>
 					<visible allowhiddenfocus="true">!Control.HasFocus(302)</visible>
 					<include>Animation.FadeIn</include>
@@ -6882,12 +6882,23 @@
 				</control>
 			</control>
 			<!-- RIGHT SIDE -->
+					<!--
+					<control type="image" id="89122">
+						<left>NewSidePad</left>
+						<top>105</top>
+						<width>228</width>
+						<height>64</height>
+						<texture>$VAR[EmbyWidgetLogoVertical]</texture>
+						<aspectratio align="center" aligny="center">keep</aspectratio>
+						<visible>ControlGroup(303).HasFocus</visible>
+					</control>
+					-->
 					<control type="image" id="89122">
 						<right>NewSidePad</right>
 						<top>46</top>
 						<width>228</width>
 						<height>64</height>
-						<texture>$VAR[EmbyWidgetLogo]</texture>
+						<texture>$VAR[EmbyWidgetLogoVertical]</texture>
 						<aspectratio align="center" aligny="center">keep</aspectratio>
 						<visible>ControlGroup(303).HasFocus</visible>
 					</control>
