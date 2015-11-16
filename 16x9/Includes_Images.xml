@@ -661,4 +661,9 @@
 		<value condition="!IsEmpty(Container.Art(artist.thumb))">$INFO[Container.Art(artist.thumb)]</value>
 		<value>$INFO[Listitem.Icon]</value>
 	</variable>
+
+	<variable name="Container518Logo">
+		<value condition="!IsEmpty(Container(518).ListItem.Art(tvshow.clearlogo))">$INFO[Container(518).ListItem.Art(tvshow.clearlogo)]</value>
+		<value condition="!IsEmpty(Container(518).ListItem.Art(clearlogo))">$INFO[Container(518).ListItem.Art(clearlogo)]</value>
+	</variable>
 </includes>
