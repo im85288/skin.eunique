@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<includes>
+	<include name="View_518_Netflix">
+		<control type="group">
+			<include>Animation.Common</include>
+			<visible>Control.IsVisible(518)</visible>
+			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml)</visible>
+			<control type="image">
+				<left>NewSidePad</left>
+				<top>105</top>
+				<width>387</width>
+				<height>150</height>
+				<aspectratio align="left" aligny="top">keep</aspectratio>
+				<texture>$VAR[Container518Logo]</texture>
+				<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
+				<visible allowhiddenfocus="true">Control.HasFocus(518)</visible>
+			</control>
+			<!-- New Plot Info -->
+			<control type="group">
+				<left>NewSidePad</left>
+				<top>265</top>
+				<width>1050</width>
+				<height>130</height>
+				<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
+				<textcolor>$VAR[ColourHighlight]</textcolor>
+				<control type="grouplist">
+					<visible>Container.Content(movies) + ![SubString(ListItem.Path,videodb://movies/sets) + !Stringcompare(ListItem.Label,..)]</visible>
+					<control type="label">
+						<label>[COLOR $VAR[ColourHighlight]]Directed by: [/COLOR]$INFO[ListItem.Director]</label>
+						<width>980</width>
+						<textcolor>White</textcolor>
+						<include>KodiFlixButtonsValues</include>
+						<visible>!IsEmpty(ListItem.Director)</visible>
+					</control>
+					<control type="label">
+						<label>[COLOR $VAR[ColourHighlight]]$LOCALIZE[515]: [/COLOR][COLOR White]$INFO[ListItem.Genre][/COLOR]</label>
+						<width>980</width>
+						<include>KodiFlixButtonsValues</include>
+						<visible>!IsEmpty(ListItem.Genre)</visible>
+					</control>
+					<control type="label">
+						<label>[COLOR $VAR[ColourHighlight]]$LOCALIZE[2050]: [/COLOR][COLOR White]$VAR[Duration][/COLOR]</label>
+						<width>650</width>
+						<include>KodiFlixButtonsValues</include>
+						<visible>!IsEmpty(ListItem.Duration)</visible>
+					</control>
+				</control>
+				<control type="grouplist">
+					<visible>[SubString(ListItem.Path,videodb://movies/sets) + !Stringcompare(ListItem.Label,..)]</visible>
+					<control type="label">
+						<label>[COLOR $VAR[ColourHighlight]]Directed by: [/COLOR][COLOR White]$INFO[Window(home).Property(Set.Movies.Director)][/COLOR]</label>
+						<width>980</width>
+						<include>KodiFlixButtonsValues</include>
+						<visible>!IsEmpty(Window(home).Property(Set.Movies.Director)) + [Container.Content(movies) | Container.Content(sets)]</visible>
+					</control>
+					<control type="label">
+						<label>[COLOR $VAR[ColourHighlight]]$LOCALIZE[515]: [/COLOR][COLOR White]$INFO[Window(home).Property(Set.Movies.Genre)][/COLOR]</label>
+						<width>980</width>
+						<include>KodiFlixButtonsValues</include>
+						<visible>!IsEmpty(Window(home).Property(Set.Movies.Genre)) + [Container.Content(movies) | Container.Content(sets)]</visible>
+					</control>
+				</control>
+				<control type="grouplist">
+					<visible>!Container.Content(episodes) + [Container.Content(tvshows) | Container.Content(seasons)]</visible>
+					<control type="label">
+						<label>[COLOR $VAR[ColourHighlight]]Next Episode: [/COLOR][COLOR White]$INFO[Window(Home).Property(NextAired.NextTitle)][/COLOR]</label>
+						<width>980</width>
+						<include>KodiFlixButtonsValues</include>
+						<visible>!IsEmpty(Window(Home).Property(NextAired.NextDate))</visible>
+						<visible>!Container.Content(episodes) + [Container.Content(tvshows) | Container.Content(seasons)]</visible>
+					</control>
+					<control type="label">
+						<label>[COLOR $VAR[ColourHighlight]]Next Aired: [/COLOR][COLOR white]$INFO[Window(Home).Property(NextAired.NextDate),,][/COLOR]</label>
+						<width>980</width>
+						<include>KodiFlixButtonsValues</include>
+						<visible>!IsEmpty(Window(Home).Property(NextAired.NextDate)) + !Skin.HasSetting(Disable.NextAired)</visible>
+						<visible>!Container.Content(episodes) + [Container.Content(tvshows) | Container.Content(seasons)]</visible>
+					</control>
+					<control type="label">
+						<label>[COLOR $VAR[ColourHighlight]]$LOCALIZE[126]: [/COLOR][COLOR White]$INFO[Window(Home).Property(NextAired.Status)][/COLOR]</label>
+						<width>980</width>
+						<include>KodiFlixButtonsValues</include>
+						<visible>[Container.Content(tvshows) | Container.Content(seasons)] + [!IsEmpty(Window(Home).Property(NextAired.Status)) + IsEmpty(Window(Home).Property(NextAired.NextDate))]</visible>
+					</control>
+					<control type="label">
+						<label>[COLOR $VAR[ColourHighlight]]$LOCALIZE[515]: [/COLOR][COLOR White]$INFO[ListItem.Genre][/COLOR]</label>
+						<width>980</width>
+						<include>KodiFlixButtonsValues</include>
+						<visible>!Container.Content(episodes) + [Container.Content(tvshows) | Container.Content(seasons)] + !IsEmpty(ListItem.Genre)</visible>
+					</control>
+				</control>
+				<control type="grouplist">
+					<visible>Container.Content(episodes)</visible>
+					<control type="label">
+						<label>[COLOR $VAR[ColourHighlight]]Title: [/COLOR][COLOR White]$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Title][/COLOR]</label>
+						<width>980</width>
+						<include>KodiFlixButtonsValues</include>
+						<visible>!IsEmpty(ListItem.Title)</visible>
+					</control>
+					<control type="label">
+						<label>[COLOR $VAR[ColourHighlight]]$LOCALIZE[20416]: [/COLOR][COLOR White]$INFO[ListItem.Premiered][/COLOR]</label>
+						<width>980</width>
+						<include>KodiFlixButtonsValues</include>
+						<visible>!IsEmpty(ListItem.Premiered)</visible>
+					</control>
+					<control type="label">
+						<label>[COLOR $VAR[ColourHighlight]]$LOCALIZE[2050]: [/COLOR][COLOR White]$INFO[ListItem.Duration,, $LOCALIZE[12391][/COLOR]]</label>
+						<width>980</width>
+						<include>KodiFlixButtonsValues</include>
+						<visible>!IsEmpty(ListItem.Duration)</visible>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<left>70</left>
+				<top>205</top>
+				<visible>[Container.Content(movies) | Container.Content(sets)]| Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)</visible>
+				<control type="textbox" id="70">
+					<label>$VAR[LabelPlotBox]</label>
+					<left>15</left>
+					<top>110</top>
+					<width>730</width>
+					<height>177</height>
+					<textcolor>White</textcolor>
+					<font>Small</font>
+					<align>justify</align>
+					<autoscroll time="3000" delay="4000" repeat="5000"></autoscroll>
+				</control>
+			</control>
+			<control type="wraplist" id="518">
+				<visible>[Container.Content(movies) | Container.Content(sets)]| Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)</visible>
+				<top>500</top>
+				<right>NewSidePad</right>
+				<left>NewSidePad</left>
+				<onup condition="!Skin.HasSetting(global.kioskmode)">9000</onup>
+				<ondown>60</ondown>
+				<preloaditems>2</preloaditems>
+				<pagecontrol>60</pagecontrol>
+				<height>337</height>
+				<scrolltime tween="cubic" easing="out">500</scrolltime>
+				<orientation>horizontal</orientation>
+				<focusposition>1</focusposition>
+				<viewtype label="31758">list</viewtype>
+				<scrolltime tween="quadratic">400</scrolltime>
+				<itemlayout height="337" width="222">
+					<control type="image">
+						<left>5</left>
+						<top>0</top>
+						<right>5</right>
+						<bottom>0</bottom>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<texture diffuse="diffuse/wall.png" background="true" fallback="DefaultMovies.png">$VAR[PosterImage]</texture>
+					</control>
+					<control type="label">
+						<centerright>32</centerright>
+						<centertop>35</centertop>
+						<width>32</width>
+						<height>32</height>
+						<font>symbolview</font>
+						<label>$VAR[PercentWatchedLabel]</label>
+						<textcolor>$VAR[UnwatchedColourHighlight]</textcolor>
+						<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched) + !ListItem.IsResumable</visible>
+					</control>
+					<control type="label">
+						<centerright>32</centerright>
+						<centertop>35</centertop>
+						<width>32</width>
+						<height>32</height>
+						<font>symbolview</font>
+						<label>$VAR[PercentWatchedLabel]</label>
+						<textcolor>$VAR[PlayingColourHighlight]</textcolor>
+						<visible>!stringcompare(ListItem.Label,..) + ListItem.IsPlaying</visible>
+					</control>
+					<control type="label">
+						<centerright>32</centerright>
+						<centertop>35</centertop>
+						<width>32</width>
+						<height>32</height>
+						<font>symbolview</font>
+						<label>$VAR[PercentWatchedLabel]</label>
+						<textcolor>$VAR[WatchedColourHighlight]</textcolor>
+						<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(furniture.unwatched)</visible>
+					</control>
+					<control type="label">
+						<centerright>32</centerright>
+						<centertop>35</centertop>
+						<width>32</width>
+						<height>32</height>
+						<font>symbolview</font>
+						<label>$VAR[PercentWatchedLabel]</label>
+						<textcolor>$VAR[ResumeColourHighlight]</textcolor>
+						<visible>!stringcompare(ListItem.Label,..) + ListItem.IsResumable</visible>
+					</control>
+					<control type="label">
+						<centerright>32</centerright>
+						<centertop>35</centertop>
+						<width>32</width>
+						<height>32</height>
+						<font>symbolview</font>
+						<label>$VAR[PercentWatchedLabel]</label>
+						<textcolor>$VAR[NewColourHighlight]</textcolor>
+						<visible>!stringcompare(ListItem.Label,..) + [SubString(ListItem.Overlay,OverlayUnwatched.png) + [[Container.Content(movies) + [StringCompare(Window(Home).Property(LatestMovie.1.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.2.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.3.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.4.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.5.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.6.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.7.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.8.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.9.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.10.Title),ListItem.Label)]] | [[Container.Content(tvshows)] + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem.TvShowTitle)]] | [Container.Content(episodes) + [StringCompare(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem.Title)]]]]</visible>
+					</control>
+				</itemlayout>
+				<focusedlayout height="337" width="222">
+					<control type="image">
+						<left>5</left>
+						<top>2</top>
+						<right>5</right>
+						<bottom>2</bottom>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<texture background="true" colordiffuse="$VAR[BorderHighlight]">$VAR[FocusedBorderImage]</texture>
+						<animation effect="zoom" end="107" time="0" center="auto">Focus</animation>
+					</control>
+					<control type="image">
+						<left>5</left>
+						<top>0</top>
+						<right>5</right>
+						<bottom>0</bottom>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<texture diffuse="diffuse/wall.png" background="true" fallback="DefaultMovies.png">$VAR[PosterImage]</texture>
+						<animation type="Focus" reversible="false">
+							<effect type="rotate" end="1" start="0" time="200" center="auto" tween="quadratic" easing="out"/>
+						</animation>
+					</control>
+					<control type="label">
+						<centerright>32</centerright>
+						<centertop>35</centertop>
+						<width>32</width>
+						<height>32</height>
+						<font>symbolview</font>
+						<label>$VAR[PercentWatchedLabel]</label>
+						<textcolor>$VAR[UnwatchedColourHighlight]</textcolor>
+						<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched) + !ListItem.IsResumable</visible>
+					</control>
+					<control type="label">
+						<centerright>32</centerright>
+						<centertop>35</centertop>
+						<width>32</width>
+						<height>32</height>
+						<font>symbolview</font>
+						<label>$VAR[PercentWatchedLabel]</label>
+						<textcolor>$VAR[PlayingColourHighlight]</textcolor>
+						<visible>!stringcompare(ListItem.Label,..) + ListItem.IsPlaying</visible>
+					</control>
+					<control type="label">
+						<centerright>32</centerright>
+						<centertop>35</centertop>
+						<width>32</width>
+						<height>32</height>
+						<font>symbolview</font>
+						<label>$VAR[PercentWatchedLabel]</label>
+						<textcolor>$VAR[WatchedColourHighlight]</textcolor>
+						<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(furniture.unwatched)</visible>
+					</control>
+					<control type="label">
+						<centerright>32</centerright>
+						<centertop>35</centertop>
+						<width>32</width>
+						<height>32</height>
+						<font>symbolview</font>
+						<label>$VAR[PercentWatchedLabel]</label>
+						<textcolor>$VAR[ResumeColourHighlight]</textcolor>
+						<visible>!stringcompare(ListItem.Label,..) + ListItem.IsResumable</visible>
+					</control>
+					<control type="label">
+						<centerright>32</centerright>
+						<centertop>35</centertop>
+						<width>32</width>
+						<height>32</height>
+						<font>symbolview</font>
+						<label>$VAR[PercentWatchedLabel]</label>
+						<textcolor>$VAR[NewColourHighlight]</textcolor>
+						<visible>!stringcompare(ListItem.Label,..) + [SubString(ListItem.Overlay,OverlayUnwatched.png) + [[Container.Content(movies) + [StringCompare(Window(Home).Property(LatestMovie.1.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.2.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.3.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.4.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.5.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.6.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.7.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.8.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.9.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.10.Title),ListItem.Label)]] | [[Container.Content(tvshows)] + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem.TvShowTitle)]] | [Container.Content(episodes) + [StringCompare(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem.Title)]]]]</visible>
+					</control>
+				</focusedlayout>
+			</control>
+			<control type="scrollbar" id="60">
+				<onback>50</onback>
+				<left>70</left>
+				<width>1780</width>
+				<bottom>160</bottom>
+				<orientation>horizontal</orientation>
+				<height>8</height>
+				<onup>50</onup>
+				<ondown condition="!Skin.HasSetting(global.kioskmode)">9000</ondown>
+				<texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
+				<texturesliderbar border="4" colordiffuse="Dark3">scrollbar/scrollv.png</texturesliderbar>
+				<texturesliderbarfocus border="4" colordiffuse="Dark2">scrollbar/scrollv.png</texturesliderbarfocus>
+				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
+			</control>
+		</control>
+	</include>
+</includes>
