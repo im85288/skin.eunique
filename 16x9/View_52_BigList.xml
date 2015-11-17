@@ -521,6 +521,7 @@
 				<font>symbolback</font>
 				<label>$VAR[PercentWatchedBack]</label>
 				<textcolor>$VAR[BackingColourHighlight]</textcolor>
+								<selectedcolor>$VAR[BackingColourHighlight]</selectedcolor>
 			</control>
 		<control type="group">
 			<control type="label">
@@ -532,6 +533,7 @@
 				<font>minisymbol</font>
 				<label>$VAR[PercentWatchedLabel]</label>
 				<textcolor>$VAR[UnwatchedColourHighlight]</textcolor>
+								<selectedcolor>$VAR[UnwatchedColourHighlight]</selectedcolor>
 				<scroll>true</scroll>
 				<visible>[Container.Content(tvshows) | Container.Content(seasons)]</visible>
 			</control>
@@ -543,6 +545,7 @@
 				<font>symbolview</font>
 				<label>$VAR[PercentWatchedLabel]</label>
 				<textcolor>$VAR[UnwatchedColourHighlight]</textcolor>
+								<selectedcolor>$VAR[UnwatchedColourHighlight]</selectedcolor>
 				<visible>![Container.Content(tvshows) | Container.Content(seasons)]</visible>
 			</control>
 			<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched) + !ListItem.IsResumable</visible>
@@ -556,6 +559,7 @@
 				<font>symbolview</font>
 				<label>$VAR[PercentWatchedLabel]</label>
 				<textcolor>$VAR[PlayingColourHighlight]</textcolor>
+								<selectedcolor>$VAR[PlayingColourHighlight]</selectedcolor>
 			</control>
 			<visible>!stringcompare(ListItem.Label,..) + ListItem.IsPlaying</visible>
 		</control>
@@ -568,6 +572,7 @@
 				<font>symbolview</font>
 				<label>$VAR[PercentWatchedLabel]</label>
 				<textcolor>$VAR[WatchedColourHighlight]</textcolor>
+								<selectedcolor>$VAR[WatchedColourHighlight]</selectedcolor>
 			</control>
 			<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(furniture.unwatched)</visible>
 		</control>
@@ -580,6 +585,7 @@
 				<font>symbolview</font>
 				<label>$VAR[PercentWatchedLabel]</label>
 				<textcolor>$VAR[ResumeColourHighlight]</textcolor>
+								<selectedcolor>$VAR[ResumeColourHighlight]</selectedcolor>
 			</control>
 			<visible>!stringcompare(ListItem.Label,..) + ListItem.IsResumable</visible>
 		</control>
@@ -646,6 +652,7 @@
 				<font>symbolback</font>
 				<label>$VAR[PercentWatchedBack]</label>
 				<textcolor>$VAR[BackingColourHighlight]</textcolor>
+								<selectedcolor>$VAR[BackingColourHighlight]</selectedcolor>
 			</control>
 		<control type="group">
 			<control type="label">
@@ -657,6 +664,7 @@
 				<font>minisymbol</font>
 				<label>$VAR[PercentWatchedLabel]</label>
 				<textcolor>$VAR[UnwatchedColourHighlight]</textcolor>
+								<selectedcolor>$VAR[UnwatchedColourHighlight]</selectedcolor>
 				<scroll>true</scroll>
 				<visible>[Container.Content(tvshows) | Container.Content(seasons)]</visible>
 			</control>
@@ -668,6 +676,7 @@
 				<font>symbolview</font>
 				<label>$VAR[PercentWatchedLabel]</label>
 				<textcolor>$VAR[UnwatchedColourHighlight]</textcolor>
+								<selectedcolor>$VAR[UnwatchedColourHighlight]</selectedcolor>
 				<visible>![Container.Content(tvshows) | Container.Content(seasons)]</visible>
 			</control>
 			<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched) + !ListItem.IsResumable</visible>
@@ -681,6 +690,7 @@
 				<font>symbolview</font>
 				<label>$VAR[PercentWatchedLabel]</label>
 				<textcolor>$VAR[PlayingColourHighlight]</textcolor>
+								<selectedcolor>$VAR[PlayingColourHighlight]</selectedcolor>
 			</control>
 			<visible>!stringcompare(ListItem.Label,..) + ListItem.IsPlaying</visible>
 		</control>
@@ -693,6 +703,7 @@
 				<font>symbolview</font>
 				<label>$VAR[PercentWatchedLabel]</label>
 				<textcolor>$VAR[WatchedColourHighlight]</textcolor>
+								<selectedcolor>$VAR[WatchedColourHighlight]</selectedcolor>
 			</control>
 			<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(furniture.unwatched)</visible>
 		</control>
@@ -705,6 +716,7 @@
 				<font>symbolview</font>
 				<label>$VAR[PercentWatchedLabel]</label>
 				<textcolor>$VAR[ResumeColourHighlight]</textcolor>
+								<selectedcolor>$VAR[ResumeColourHighlight]</selectedcolor>
 			</control>
 			<visible>!stringcompare(ListItem.Label,..) + ListItem.IsResumable</visible>
 		</control>

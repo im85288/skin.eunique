@@ -754,7 +754,8 @@
 	<variable name="CommunityRatingColour">
 		<value condition="IntegerGreaterThan(Window(Home).Property(SkinHelper.RottenTomatoesAudienceRating),59)">Green</value>
 		<value condition="[IntegerGreaterThan(Window(Home).Property(SkinHelper.RottenTomatoesAudienceRating),39) + !IntegerGreaterThan(Window(Home).Property(SkinHelper.RottenTomatoesAudienceRating),59)]">SelectedOrange</value>
-		<value condition="!IntegerGreaterThan(Window(Home).Property(SkinHelper.RottenTomatoesAudienceRating),39)">SelectedRed</value>
+		<value condition="IntegerGreaterThan(Window(Home).Property(SkinHelper.RottenTomatoesAudienceRating),0) + !IntegerGreaterThan(Window(Home).Property(SkinHelper.RottenTomatoesAudienceRating),39)">SelectedRed</value>
+		<value>$VAR[ColourFlags]</value>
 	</variable>
 	<variable name="FanartFadeLabel">
 		<value condition="Stringcompare(Skin.String(FanartFade),Darkest)">FanartFade6</value>
@@ -839,13 +840,13 @@
 	</variable>
 	<variable name="SelectionColourHighlight">
 		<value condition="Control.HasFocus(8) | Control.HasFocus(1)">$VAR[EmbyMiddleColourHighlight]</value>
-		<value condition="Control.HasFocus(1003)">$VAR[EmbyRightColourHighlight]</value>
+		<value condition="Control.HasFocus(1003) | Control.HasFocus(210)">$VAR[EmbyRightColourHighlight]</value>
 		<value condition="Control.HasFocus(7) | Control.HasFocus(10) | Control.HasFocus(6)">$VAR[EmbyLeftColourHighlight]</value>
 		<value condition="Control.HasFocus(200)">$VAR[EmbyLeftColourHighlight]</value>
 		<value condition="Control.HasFocus(18)">$VAR[EmbyRightColourHighlight]</value>
 		<value condition="Control.HasFocus(3443)">$VAR[EmbyLeftColourHighlight]</value>
 		<value condition="Control.HasFocus(19)">$VAR[EmbyLeftColourHighlight]</value>
-		<value>dark pastel red</value>
+		<value>$VAR[EmbyMiddleColourHighlight]</value>
 	</variable>
 	<variable name="ExtendedDVInfoSelectionColourHighlight">
 		<value condition="Control.HasFocus(1) | Control.HasFocus(120)">$VAR[EmbyMiddleColourHighlight]</value>
