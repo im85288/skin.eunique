@@ -177,6 +177,13 @@
 						<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(home.vertical,2))</onclick>
 						<onclick>RunScript(script.toolbox,info=selectdialog,header=Select Home Layout)</onclick>
 					</control>
+					<control type="radiobutton" id="92154" description="easy nav">
+						<width>1410</width>
+						<include>DefSettingsButton2</include>
+						<label>32074</label>
+						<selected>Skin.HasSetting(home.vertical.widgets)</selected>
+						<onclick>Skin.ToggleSetting(home.vertical.widgets)</onclick>
+					</control>
 					<control type="radiobutton" id="92155" description="easy nav">
 						<width>1410</width>
 						<include>DefSettingsButton2</include>

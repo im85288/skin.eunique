@@ -36,7 +36,8 @@
 			<include condition="Skin.String(home.vertical,2)">HomeEmbyColumn</include>
 			<include>Furniture_NowPlaying</include>
 			<include condition="!Skin.String(home.vertical,1) + !Skin.String(home.vertical,2)">HomeEmbyRow</include>
-			<include condition="!Skin.String(home.vertical,1)">HomeEmbyWidgetInfo</include>
+			<include condition="!Skin.String(home.vertical,1) + !Skin.HasSetting(home.vertical.widgets)">HomeEmbyWidgetInfo</include>
+			<include condition="!Skin.String(home.vertical,1) + Skin.HasSetting(home.vertical.widgets)">HomeVerticalWidgets</include>
 			<include condition="!Skin.String(home.vertical,1)">HomeEmbySubMenu</include>
 			<include>Furniture_EmbyClock</include>
 			<include>Furniture_HeaderEmby</include>

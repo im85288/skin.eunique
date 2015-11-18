@@ -50,35 +50,28 @@
 			<pagecontrol>60</pagecontrol>
 			<itemlayout height="45" width="59.375" condition="!StringCompare(Window.Property(palettename),basic)">
 				<control type="image">
-					<width>92%</width>
-					<height>92%</height>
 					<texture border="5">$INFO[ListItem.Icon]</texture>
 				</control>
 			</itemlayout>
 			<focusedlayout height="45" width="59.375" condition="!StringCompare(Window.Property(palettename),basic)">
 				<control type="group">
-					<animation effect="zoom" time="200" tween="sine" easing="inout" start="100" end="300" center="auto">Focus</animation>
+					<animation effect="zoom" time="00" tween="sine" easing="inout" start="100" end="300" center="auto">Focus</animation>
 					<control type="image">
-						<width>92%</width>
-						<height>92%</height>
-						<texture diffuse="diffuse/color-picker.png" border="5">$INFO[ListItem.Icon]</texture>
+						<texture>$INFO[ListItem.Icon]</texture>
+						<bordertexture border="5">common/black-back.png</bordertexture>
 					</control>
 				</control>
 			</focusedlayout>
 			<itemlayout height="76" width="126.666667" condition="StringCompare(Window.Property(palettename),basic)">
 				<control type="image">
-					<width>92%</width>
-					<height>92%</height>
 					<texture border="5">$INFO[ListItem.Icon]</texture>
 				</control>
 			</itemlayout>
 			<focusedlayout height="76" width="126.66667" condition="StringCompare(Window.Property(palettename),basic)">
 				<control type="group">
-					<animation effect="zoom" time="200" tween="sine" easing="inout" start="100" end="164" center="auto">Focus</animation>
+					<animation effect="zoom" time="00" tween="sine" easing="inout" start="100" end="164" center="auto">Focus</animation>
 					<control type="image">
-						<width>92%</width>
-						<height>92%</height>
-						<texture diffuse="diffuse/color-picker.png"  border="5">$INFO[ListItem.Icon]</texture>
+						<texture border="5">$INFO[ListItem.Icon]</texture>
 					</control>
 				</control>
 			</focusedlayout>

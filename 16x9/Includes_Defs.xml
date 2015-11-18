@@ -771,7 +771,7 @@
 	<include name="DefContextButtonBlade">
 		<textoffsetx>5</textoffsetx>
 		<radioposx>400</radioposx>
-		<width>433</width>
+		<width>435</width>
 		<height>55</height>
 		<font>MiniSystem</font>
 		<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
@@ -932,7 +932,7 @@
 	<include name="DefSideBladeLeft">
 		<include>Animation.SideSlideRight</include>
 		<control type="image">
-			<left>12</left>
+			<left>10</left>
 			<top>-12</top>
 			<width>455</width>
 			<height>1104</height>
@@ -1241,7 +1241,8 @@
 			<visible>Window.IsVisible(MyMusicSongs.xml)</visible>
 			<visible>!stringcompare(Container.FolderPath,special://musicplaylists/)</visible>
 		</control>
-		<!--<control type="button" id="334"><description>widget</description><include>DefContextButtonBlade</include><align>left</align><label>$LOCALIZE[31951]: $VAR[FurnitureWidgetLabel]</label><onclick>ActivateWindow(1113)</onclick><visible>!Control.IsVisible(52) + !Control.IsVisible(54) + !Control.IsVisible(515) + !Control.IsVisible(53) + !Control.IsVisible(500)</visible></control>--><control type="button" id="9005">
+		<!--<control type="button" id="334"><description>widget</description><include>DefContextButtonBlade</include><align>left</align><label>$LOCALIZE[31951]: $VAR[FurnitureWidgetLabel]</label><onclick>ActivateWindow(1113)</onclick><visible>!Control.IsVisible(52) + !Control.IsVisible(54) + !Control.IsVisible(515) + !Control.IsVisible(53) + !Control.IsVisible(500)</visible></control>-->
+		<control type="button" id="9005">
 			<description>widget</description>
 			<include>DefContextButtonBlade</include>
 			<align>left</align>
