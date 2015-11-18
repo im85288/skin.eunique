@@ -9072,7 +9072,8 @@
 				<control type="group">
 					<animation effect="fade" start="100" end="0" time="0" delay="0" reversible="false" condition="![[!IsEmpty(Container(300).ListItem.Property(widget)) | [IsEmpty(Container(300).ListItem.Property(widget)) + [IsEmpty(Container(300).ListItem.Property(Background)) + [!Skin.HasSetting(home.dontshowfanart)]]]]] | !IntegerGreaterThan(Container(301).NumItems,0) | Container(301).IsUpdating | [!Weather.IsFetched + StringCompare(Container(300).ListItem.Property(widget),Weather)]">Conditional</animation>
 					<animation effect="fade" start="0" end="100" time="200" delay="200" reversible="false" condition="[!Container(301).IsUpdating + IntegerGreaterThan(Container(301).NumItems,0) + [!IsEmpty(Container(300).ListItem.Property(widget)) | [IsEmpty(Container(300).ListItem.Property(widget)) + [IsEmpty(Container(300).ListItem.Property(Background)) + [IsEmpty(Skin.String(home.slideshowpath))]]]]] | [Weather.IsFetched + StringCompare(Container(300).ListItem.Property(widget),Weather)]">Conditional</animation>
-					<animation effect="slide" start="0" end="0,76" time="200" delay="100" tween="quadratic" easing="out" condition="Control.HasFocus(302)">Conditional</animation>
+					<animation effect="slide" start="0" end="-220,93" time="200" delay="100" tween="quadratic" easing="out" condition="!Skin.String(home.vertical,1) + !Skin.String(home.vertical,2) + !ControlGroup(303).HasFocus">Conditional</animation>
+					<animation effect="slide" start="0" end="0,76" time="200" delay="100" tween="quadratic" easing="out" condition="Control.HasFocus(302) + Skin.String(home.vertical,2)">Conditional</animation>
 					<animation effect="slide" start="0" end="369,-0" time="200" delay="100" tween="quadratic" easing="out">Focus</animation>
 					<animation effect="slide" start="369" end="0" time="200" delay="100" tween="quadratic" easing="out">UnFocus</animation>
 					<control type="grouplist" id="303">
@@ -9226,7 +9227,7 @@
 								<content target="$VAR[DefWidget6Target]">$VAR[DefWidget6Content]</content>
 							</control>
 							<control type="image">
-								<width>1200</width>
+								<width>1689</width>
 								<align>left</align>
 								<height>325</height>
 								<texture colordiffuse="$VAR[EmbyMenuColourHighlight]">diffuse/widget-shadow.png</texture>
@@ -9306,7 +9307,7 @@
 								<content target="$VAR[DefWidget7Target]">$VAR[DefWidget7Content]</content>
 							</control>
 							<control type="image">
-								<width>1200</width>
+								<width>1689</width>
 								<align>left</align>
 								<height>325</height>
 								<texture colordiffuse="$VAR[EmbyMenuColourHighlight]">diffuse/widget-shadow.png</texture>
@@ -9387,7 +9388,7 @@
 								<content target="$VAR[DefWidget8Target]">$VAR[DefWidget8Content]</content>
 							</control>
 							<control type="image">
-								<width>1200</width>
+								<width>1689</width>
 								<align>left</align>
 								<height>325</height>
 								<texture colordiffuse="$VAR[EmbyMenuColourHighlight]">diffuse/widget-shadow.png</texture>
@@ -9467,7 +9468,7 @@
 								<content target="$VAR[DefWidget16Target]">$VAR[DefWidget16Content]</content>
 							</control>
 							<control type="image">
-								<width>1200</width>
+								<width>1689</width>
 								<align>left</align>
 								<height>325</height>
 								<texture colordiffuse="$VAR[EmbyMenuColourHighlight]">diffuse/widget-shadow.png</texture>
@@ -9545,7 +9546,7 @@
 								<content target="$VAR[DefWidget19Target]">$VAR[DefWidget19Content]</content>
 							</control>
 							<control type="image">
-								<width>1200</width>
+								<width>1689</width>
 								<align>left</align>
 								<height>325</height>
 								<texture colordiffuse="$VAR[EmbyMenuColourHighlight]">diffuse/widget-shadow.png</texture>
@@ -9622,7 +9623,7 @@
 								<content target="$VAR[DefWidget21Target]">$VAR[DefWidget21Content]</content>
 							</control>
 							<control type="image">
-								<width>1200</width>
+								<width>1689</width>
 								<align>left</align>
 								<height>325</height>
 								<texture colordiffuse="$VAR[EmbyMenuColourHighlight]">diffuse/widget-shadow.png</texture>
