@@ -440,6 +440,7 @@
 			<visible>!Window.IsVisible(DialogVideoInfo.xml)</visible>
 			<visible>!Window.IsVisible(DialogPVRInfo.xml)</visible>
 			<visible>![Window.IsVisible(home) + Skin.HasSetting(home.blur)]</visible>
+			<visible>!Control.IsVisible(518)</visible>
 			<include>Dimensions_Fullscreen</include>
 			<include>Animation.FadeFromHome</include>
 			<animation effect="fade" end="0" start="100" time="350" tween="cubic" easing="inout" condition="Window.IsVisible(home)">WindowClose</animation>
@@ -477,6 +478,46 @@
 			<texture colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" fallback="common/black.png" background="true" diffuse="diffuse/dv-mask.png">$INFO[Window(home).Property(VideoInfo.ImageFilter)]</texture>
 			<visible>!Skin.HasSetting(lights.out)</visible>
 			<visible>![[Skin.HasSetting(global.showvideo) + Player.HasVideo] | [Skin.HasSetting(global.showvisualisation) + Player.HasAudio]] + Window.IsVisible(DialogVideoInfo.xml) + Skin.HasSetting(toggled.dv.info)</visible>
+		</control>
+		<control type="image">
+			<include>Dimensions_Fullscreen</include>
+			<animation type="Visible" reversible="true">
+				<effect type="fade" start="00" end="100" time="2600" tween="quadratic" easing="out" />
+			</animation>
+			<animation type="WindowOpen" reversible="true">
+				<effect type="fade" start="00" end="100" time="2600" tween="quadratic" easing="out" delay="1000" />
+			</animation>
+			<animation type="WindowClose" reversible="true">
+				<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out" />
+			</animation>
+			<animation type="Hidden" reversible="true">
+				<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out" />
+			</animation>
+			<aspectratio align="center">scale</aspectratio>
+			<texture fallback="common/black.png" background="true">$INFO[ListItem.Art(fanart)]</texture>
+			<visible>Control.IsVisible(518)</visible>
+			<visible>!Skin.HasSetting(lights.out)</visible>
+			<visible>![[Skin.HasSetting(global.showvideo) + Player.HasVideo] | [Skin.HasSetting(global.showvisualisation) + Player.HasAudio]] + !Window.IsVisible(DialogVideoInfo.xml)</visible>
+		</control>
+		<control type="image">
+			<include>Dimensions_Fullscreen</include>
+			<animation type="Visible" reversible="true">
+				<effect type="fade" start="00" end="100" time="2600" tween="quadratic" easing="out" />
+			</animation>
+			<animation type="WindowOpen" reversible="true">
+				<effect type="fade" start="00" end="100" time="2600" tween="quadratic" easing="out" delay="1000" />
+			</animation>
+			<animation type="WindowClose" reversible="true">
+				<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out" />
+			</animation>
+			<animation type="Hidden" reversible="true">
+				<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out" />
+			</animation>
+			<aspectratio align="center">scale</aspectratio>
+			<texture colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" fallback="common/black.png" background="true" diffuse="special://skin/extras/backgrounds/black_content.png">$INFO[Window(home).Property(VideoInfo.ImageFilter)]</texture>
+			<visible>Control.IsVisible(518)</visible>
+			<visible>!Skin.HasSetting(lights.out)</visible>
+			<visible>![[Skin.HasSetting(global.showvideo) + Player.HasVideo] | [Skin.HasSetting(global.showvisualisation) + Player.HasAudio]] + !Window.IsVisible(DialogVideoInfo.xml)</visible>
 		</control>
 		<control type="image">
 			<visible>![[Skin.HasSetting(global.showvideo) + Player.HasVideo] | [Skin.HasSetting(global.showvisualisation) + Player.HasAudio]] + Window.IsVisible(DialogAlbumInfo.xml) + Skin.HasSetting(toggled.ai.info)</visible>
@@ -520,6 +561,7 @@
 			<visible>!Skin.HasSetting(furniture.info.fanart)</visible>
 			<visible>Control.HasFocus(4000)</visible>
 		</control>
+		<!--
 		<control type="image">
 			<posx>0</posx>
 			<posy>0</posy>
@@ -527,8 +569,9 @@
 			<height>1080</height>
 			<aspectratio>stretch</aspectratio>
 			<texture background="true">special://skin/extras/backgrounds/black_content.png</texture>
-			<visible>Control.HasFocus(518)</visible>
+			<visible>Control.IsVisible(518)</visible>
 		</control>
+		-->
 		<!--
 		<control type="multiimage">
 			<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
