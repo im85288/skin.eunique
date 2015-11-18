@@ -16,116 +16,139 @@
 				<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
 				<visible allowhiddenfocus="true">Control.HasFocus(518)</visible>
 			</control>
-			<!-- New Plot Info -->
 			<control type="group">
 				<left>NewSidePad</left>
 				<top>265</top>
 				<width>1050</width>
-				<height>130</height>
-				<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
-				<textcolor>$VAR[ColourHighlight]</textcolor>
-				<control type="grouplist">
-					<visible>Container.Content(movies) + ![SubString(ListItem.Path,videodb://movies/sets) + !Stringcompare(ListItem.Label,..)]</visible>
-					<control type="label">
-						<label>[COLOR $VAR[ColourHighlight]]Directed by: [/COLOR]$INFO[ListItem.Director]</label>
-						<width>980</width>
-						<textcolor>White</textcolor>
-						<include>KodiFlixButtonsValues</include>
-						<visible>!IsEmpty(ListItem.Director)</visible>
-					</control>
-					<control type="label">
-						<label>[COLOR $VAR[ColourHighlight]]$LOCALIZE[515]: [/COLOR][COLOR White]$INFO[ListItem.Genre][/COLOR]</label>
-						<width>980</width>
-						<include>KodiFlixButtonsValues</include>
-						<visible>!IsEmpty(ListItem.Genre)</visible>
-					</control>
-					<control type="label">
-						<label>[COLOR $VAR[ColourHighlight]]$LOCALIZE[2050]: [/COLOR][COLOR White]$VAR[Duration][/COLOR]</label>
-						<width>650</width>
-						<include>KodiFlixButtonsValues</include>
-						<visible>!IsEmpty(ListItem.Duration)</visible>
-					</control>
+				<height>225</height>
+				<control type="label">
+					<right>0</right>
+					<left>0</left>
+					<aligny>center</aligny>
+					<align>left</align>
+					<font>SmallBold</font>
+					<textcolor>white2</textcolor>
+					<height>38</height>
+					<animation type="conditional" condition="true" reversible="false">
+						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
+					</animation>
+					<label>31823</label>
+					<visible>!Container.Content(tvshows) + !Container.Content(episodes) + !Container.Content(seasons)</visible>
 				</control>
-				<control type="grouplist">
-					<visible>[SubString(ListItem.Path,videodb://movies/sets) + !Stringcompare(ListItem.Label,..)]</visible>
-					<control type="label">
-						<label>[COLOR $VAR[ColourHighlight]]Directed by: [/COLOR][COLOR White]$INFO[Window(home).Property(Set.Movies.Director)][/COLOR]</label>
-						<width>980</width>
-						<include>KodiFlixButtonsValues</include>
-						<visible>!IsEmpty(Window(home).Property(Set.Movies.Director)) + [Container.Content(movies) | Container.Content(sets)]</visible>
-					</control>
-					<control type="label">
-						<label>[COLOR $VAR[ColourHighlight]]$LOCALIZE[515]: [/COLOR][COLOR White]$INFO[Window(home).Property(Set.Movies.Genre)][/COLOR]</label>
-						<width>980</width>
-						<include>KodiFlixButtonsValues</include>
-						<visible>!IsEmpty(Window(home).Property(Set.Movies.Genre)) + [Container.Content(movies) | Container.Content(sets)]</visible>
-					</control>
+				<control type="label">
+					<right>0</right>
+					<left>0</left>
+					<aligny>center</aligny>
+					<align>left</align>
+					<font>SmallBold</font>
+					<textcolor>white2</textcolor>
+					<height>38</height>
+					<animation type="conditional" condition="true" reversible="false">
+						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
+					</animation>
+					<label>33054</label>
+					<visible>Container.Content(tvshows)</visible>
 				</control>
-				<control type="grouplist">
-					<visible>!Container.Content(episodes) + [Container.Content(tvshows) | Container.Content(seasons)]</visible>
-					<control type="label">
-						<label>[COLOR $VAR[ColourHighlight]]Next Episode: [/COLOR][COLOR White]$INFO[Window(Home).Property(NextAired.NextTitle)][/COLOR]</label>
-						<width>980</width>
-						<include>KodiFlixButtonsValues</include>
-						<visible>!IsEmpty(Window(Home).Property(NextAired.NextDate))</visible>
-						<visible>!Container.Content(episodes) + [Container.Content(tvshows) | Container.Content(seasons)]</visible>
-					</control>
-					<control type="label">
-						<label>[COLOR $VAR[ColourHighlight]]Next Aired: [/COLOR][COLOR white]$INFO[Window(Home).Property(NextAired.NextDate),,][/COLOR]</label>
-						<width>980</width>
-						<include>KodiFlixButtonsValues</include>
-						<visible>!IsEmpty(Window(Home).Property(NextAired.NextDate)) + !Skin.HasSetting(Disable.NextAired)</visible>
-						<visible>!Container.Content(episodes) + [Container.Content(tvshows) | Container.Content(seasons)]</visible>
-					</control>
-					<control type="label">
-						<label>[COLOR $VAR[ColourHighlight]]$LOCALIZE[126]: [/COLOR][COLOR White]$INFO[Window(Home).Property(NextAired.Status)][/COLOR]</label>
-						<width>980</width>
-						<include>KodiFlixButtonsValues</include>
-						<visible>[Container.Content(tvshows) | Container.Content(seasons)] + [!IsEmpty(Window(Home).Property(NextAired.Status)) + IsEmpty(Window(Home).Property(NextAired.NextDate))]</visible>
-					</control>
-					<control type="label">
-						<label>[COLOR $VAR[ColourHighlight]]$LOCALIZE[515]: [/COLOR][COLOR White]$INFO[ListItem.Genre][/COLOR]</label>
-						<width>980</width>
-						<include>KodiFlixButtonsValues</include>
-						<visible>!Container.Content(episodes) + [Container.Content(tvshows) | Container.Content(seasons)] + !IsEmpty(ListItem.Genre)</visible>
-					</control>
+				<control type="label">
+					<right>0</right>
+					<left>0</left>
+					<aligny>center</aligny>
+					<align>left</align>
+					<font>SmallBold</font>
+					<textcolor>white2</textcolor>
+					<height>38</height>
+					<animation type="conditional" condition="true" reversible="false">
+						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
+					</animation>
+					<label>$INFO[ListItem.Label]</label>
+					<visible>Container.Content(seasons)</visible>
 				</control>
-				<control type="grouplist">
+				<control type="label">
+					<right>0</right>
+					<left>0</left>
+					<aligny>center</aligny>
+					<align>left</align>
+					<font>SmallBold</font>
+					<textcolor>white2</textcolor>
+					<height>38</height>
+					<animation type="conditional" condition="true" reversible="false">
+						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
+					</animation>
+					<label>31824</label>
 					<visible>Container.Content(episodes)</visible>
-					<control type="label">
-						<label>[COLOR $VAR[ColourHighlight]]Title: [/COLOR][COLOR White]$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Title][/COLOR]</label>
-						<width>980</width>
-						<include>KodiFlixButtonsValues</include>
-						<visible>!IsEmpty(ListItem.Title)</visible>
-					</control>
-					<control type="label">
-						<label>[COLOR $VAR[ColourHighlight]]$LOCALIZE[20416]: [/COLOR][COLOR White]$INFO[ListItem.Premiered][/COLOR]</label>
-						<width>980</width>
-						<include>KodiFlixButtonsValues</include>
-						<visible>!IsEmpty(ListItem.Premiered)</visible>
-					</control>
-					<control type="label">
-						<label>[COLOR $VAR[ColourHighlight]]$LOCALIZE[2050]: [/COLOR][COLOR White]$INFO[ListItem.Duration,, $LOCALIZE[12391][/COLOR]]</label>
-						<width>980</width>
-						<include>KodiFlixButtonsValues</include>
-						<visible>!IsEmpty(ListItem.Duration)</visible>
-					</control>
 				</control>
-			</control>
-			<control type="group">
-				<left>70</left>
-				<top>205</top>
-				<visible>[Container.Content(movies) | Container.Content(sets)]| Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)</visible>
-				<control type="textbox" id="70">
-					<label>$VAR[LabelPlotBox]</label>
-					<left>15</left>
-					<top>110</top>
-					<width>730</width>
-					<height>177</height>
-					<textcolor>White</textcolor>
-					<font>Small</font>
-					<align>justify</align>
-					<autoscroll time="3000" delay="4000" repeat="5000"></autoscroll>
+				<control type="label">
+					<right>0</right>
+					<left>0</left>
+					<top>38</top>
+					<aligny>center</aligny>
+					<align>left</align>
+					<font>SmallBold</font>
+					<textcolor>white2</textcolor>
+					<height>38</height>
+					<animation type="conditional" condition="true" reversible="false">
+						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
+					</animation>
+					<label fallback="19055">$INFO[ListItem.Season]</label>
+					<visible>Container.Content(tvshows)</visible>
+				</control>
+				<control type="textbox">
+					<right>0</right>
+					<left>0</left>
+					<height>52</height>
+					<top>44</top>
+					<align>left</align>
+					<font>TinyBold</font>
+					<textcolor>white</textcolor>
+					<label fallback="19055">$INFO[ListItem.Director]</label>
+					<autoscroll delay="500" time="1000" repeat="500"/>
+					<fadetime>500</fadetime>
+					<visible>!Container.Content(seasons) + !Container.Content(tvshows) + !Container.Content(episodes)</visible>
+				</control>
+				<control type="label">
+					<right>0</right>
+					<left>0</left>
+					<height>38</height>
+					<top>38</top>
+					<aligny>center</aligny>
+					<align>left</align>
+					<font>TinyBold</font>
+					<textcolor>white</textcolor>
+					<label fallback="19055">$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20360]]</label>
+					<visible>Container.Content(seasons)</visible>
+				</control>
+				<control type="label">
+					<right>0</right>
+					<left>0</left>
+					<height>38</height>
+					<top>38</top>
+					<aligny>center</aligny>
+					<align>left</align>
+					<font>TinyBold</font>
+					<textcolor>white</textcolor>
+					<label fallback="19055">$INFO[ListItem.Premiered]</label>
+					<visible>Container.Content(episodes)</visible>
+				</control>
+				<control type="label">
+					<right>0</right>
+					<left>0</left>
+					<top>100</top>
+					<aligny>center</aligny>
+					<align>left</align>
+					<font>SmallBold</font>
+					<textcolor>white2</textcolor>
+					<height>38</height>
+					<label>135</label>
+				</control>
+				<control type="textbox">
+					<left>0</left>
+					<top>138</top>
+					<height>90</height>
+					<align>left</align>
+					<font>TinyBold</font>
+					<textcolor>white</textcolor>
+					<label fallback="19055">$VAR[3Genres]</label>
+					<fadetime>500</fadetime>
 				</control>
 			</control>
 			<control type="wraplist" id="518">

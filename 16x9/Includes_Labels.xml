@@ -1322,6 +1322,11 @@
 		<value condition="!IsEmpty(Window(Home).Property(SkinHelper.ListItemGenre.1)) + IsEmpty(Window(Home).Property(SkinHelper.ListItemGenre.2))">$INFO[Window(Home).Property(SkinHelper.ListItemGenre.0)][COLOR=$VAR[ColourHighlight]] • [/COLOR]$INFO[Window(Home).Property(SkinHelper.ListItemGenre.1)]</value>
 		<value condition="!IsEmpty(Window(Home).Property(SkinHelper.ListItemGenre.1)) + !IsEmpty(Window(Home).Property(SkinHelper.ListItemGenre.2))">$INFO[Window(Home).Property(SkinHelper.ListItemGenre.0)][COLOR=$VAR[ColourHighlight]] • [/COLOR]$INFO[Window(Home).Property(SkinHelper.ListItemGenre.1)][COLOR=$VAR[ColourHighlight]] • [/COLOR]$INFO[Window(Home).Property(SkinHelper.ListItemGenre.2)]</value>
 	</variable>
+	<variable name="3Genres">
+		<value condition="IsEmpty(Window(Home).Property(SkinHelper.ListItemGenre.1))">$INFO[Window(Home).Property(SkinHelper.ListItemGenre.0)]</value>
+		<value condition="!IsEmpty(Window(Home).Property(SkinHelper.ListItemGenre.1)) + IsEmpty(Window(Home).Property(SkinHelper.ListItemGenre.2))">$INFO[Window(Home).Property(SkinHelper.ListItemGenre.0)][CR]$INFO[Window(Home).Property(SkinHelper.ListItemGenre.1)]</value>
+		<value condition="!IsEmpty(Window(Home).Property(SkinHelper.ListItemGenre.1)) + !IsEmpty(Window(Home).Property(SkinHelper.ListItemGenre.2))">$INFO[Window(Home).Property(SkinHelper.ListItemGenre.0)][CR]$INFO[Window(Home).Property(SkinHelper.ListItemGenre.1)][CR]$INFO[Window(Home).Property(SkinHelper.ListItemGenre.2)]</value>
+	</variable>
 	<variable name="FurnitureWidgetLabel">
 		<value condition="!IsEmpty(Skin.String(furniturewidget.name))">$INFO[Skin.String(furniturewidget.name)]</value>
 		<value>$LOCALIZE[31819]</value>
