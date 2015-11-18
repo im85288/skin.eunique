@@ -494,7 +494,7 @@
 				<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out" />
 			</animation>
 			<aspectratio align="center">scale</aspectratio>
-			<texture fallback="common/black.png" background="true">$INFO[ListItem.Art(fanart)]</texture>
+			<texture fallback="common/black.png" background="true">$VAR[FanartImage]</texture>
 			<visible>Control.IsVisible(518)</visible>
 			<visible>!Skin.HasSetting(lights.out)</visible>
 			<visible>![[Skin.HasSetting(global.showvideo) + Player.HasVideo] | [Skin.HasSetting(global.showvisualisation) + Player.HasAudio]] + !Window.IsVisible(DialogVideoInfo.xml)</visible>
