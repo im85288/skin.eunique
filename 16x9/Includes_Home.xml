@@ -9163,7 +9163,12 @@
 						<!-- Movies -->
 						<control type="group">
 							<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
+<!-- experiment shrink
+							<visible>!StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv</visible>
+-->
+<!-- dead code?
 							<visible>!Control.HasFocus(3017) + !Control.HasFocus(10017) + !Control.HasFocus(18002) + !Control.HasFocus(19001)</visible>
+							-->
 							<height>370</height>
 							<animation effect="slide" start="0" end="0,373" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(303).HasFocus + !Control.HasFocus(30121)">Conditional</animation>
 							<control type="label">
@@ -9224,6 +9229,9 @@
 									</control>
 									<include>WidgetSquareFocusedItemLayout</include>
 								</focusedlayout>
+<!-- experimental shrink widgets code
+								<content target="$VAR[DefWidget_1_Target]">$VAR[DefWidget_1_Content]</content>
+-->
 								<content target="$VAR[DefWidget6Target]">$VAR[DefWidget6Content]</content>
 							</control>
 							<control type="image">
