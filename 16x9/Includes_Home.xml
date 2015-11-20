@@ -9193,6 +9193,15 @@
 								<scrolltime tween="quadratic">100</scrolltime>
 								<include>Animation.FadeIn</include>
 								<include>Animation.FadeOut</include>
+
+<!-- test shrink
+								<itemlayout width="218" height="325" condition="[!StringCompare(Skin.String(movies1widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(movies1widget.aspectratio),SQUARE) + StringCompare(Container(300).ListItem.Property(defaultID),movies)] |[!StringCompare(Skin.String(tvshows1widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(tvshows1widget.aspectratio),SQUARE) + StringCompare(Container(300).ListItem.Property(defaultID),tvshows)] |[!StringCompare(Skin.String(music1widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(music1widget.aspectratio),SQUARE) + StringCompare(Container(300).ListItem.Property(defaultID),music)] |[!StringCompare(Skin.String(widget1Icon),LANDSCAPE) + !StringCompare(Skin.String(widget1Icon),SQUARE) + !IsEmpty(Container(300).ListItem.Property(widgetPath)) + !StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)]">
+									<include>WidgetPosterItemLayout</include>
+								</itemlayout>
+
+-->
+								
+								
 								<itemlayout width="218" height="325" condition="!StringCompare(Skin.String(movies1widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(movies1widget.aspectratio),SQUARE)">
 									<include>WidgetPosterItemLayout</include>
 								</itemlayout>
