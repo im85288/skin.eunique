@@ -3008,6 +3008,49 @@
 		<value>plugin://service.library.data.provider?type=recentmovies&amp;reload=$INFO[Window.Property(recentmovies)]</value>
 	</variable>
 
+	<variable name="DefWidget_2_Content">
+
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.movies2)) + StringCompare(Container(300).ListItem.Property(defaultID),movies)">$INFO[Container(300).ListItem.Property(widgetPath.movies2)]</value>
+
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.tvshows2)) + StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">$INFO[Container(300).ListItem.Property(widgetPath.tvshows2)]</value>
+
+		<value condition="!IsEmpty(Skin.String(music2widget.path)) + StringCompare(Container(300).ListItem.Property(defaultID),music)">$INFO[Skin.String(music2widget.path)]</value>
+
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.1)) + !StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)">$INFO[Container(300).ListItem.Property(widgetPath.1)]</value>
+
+		<value>plugin://service.library.data.provider?type=recentmovies&amp;reload=$INFO[Window.Property(recentmovies)]</value>
+	</variable>
+
+	<variable name="DefWidget_3_Content">
+
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.movies3)) + StringCompare(Container(300).ListItem.Property(defaultID),movies)">$INFO[Container(300).ListItem.Property(widgetPath.movies3)]</value>
+
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.tvshows3)) + StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">$INFO[Container(300).ListItem.Property(widgetPath.tvshows3)]</value>
+
+		<value condition="!IsEmpty(Skin.String(music3widget.path)) + StringCompare(Container(300).ListItem.Property(defaultID),music)">$INFO[Skin.String(music3widget.path)]</value>
+
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.2)) + !StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)">$INFO[Container(300).ListItem.Property(widgetPath.2)]</value>
+
+		<value>plugin://service.library.data.provider?type=recentmovies&amp;reload=$INFO[Window.Property(recentmovies)]</value>
+	</variable>
+
+	<variable name="DefWidget_4_Content">
+
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.movies4)) + StringCompare(Container(300).ListItem.Property(defaultID),movies)">$INFO[Container(300).ListItem.Property(widgetPath.movies4)]</value>
+
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.tvshows4)) + StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">$INFO[Container(300).ListItem.Property(widgetPath.tvshows4)]</value>
+
+		<value condition="!IsEmpty(Skin.String(music4widget.path)) + StringCompare(Container(300).ListItem.Property(defaultID),music)">$INFO[Skin.String(music4widget.path)]</value>
+
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.3)) + !StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)">$INFO[Container(300).ListItem.Property(widgetPath.3)]</value>
+
+		<value>plugin://service.library.data.provider?type=recentmovies&amp;reload=$INFO[Window.Property(recentmovies)]</value>
+	</variable>
+
+<!-- 2,1,3,15 [defs] -->
+
+
+
 	<variable name="DefWidget_1_Target">
 
 		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetTarget.movies1)) + StringCompare(Container(300).ListItem.Property(defaultID),movies)">$INFO[Container(300).ListItem.Property(widgetTarget.movies1)]</value>
@@ -3020,6 +3063,47 @@
 
 		<value>video</value>
 	</variable>
+
+	<variable name="DefWidget_2_Target">
+
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetTarget.movies2)) + StringCompare(Container(300).ListItem.Property(defaultID),movies)">$INFO[Container(300).ListItem.Property(widgetTarget.movies2)]</value>
+
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetTarget.tvshows2)) + StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">$INFO[Container(300).ListItem.Property(widgetTarget.tvshows2)]</value>
+
+		<value condition="!IsEmpty(Skin.String(music2widget.target)) + StringCompare(Container(300).ListItem.Property(defaultID),music)">$INFO[Skin.String(music2widget.target)]</value>
+
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetTarget.1)) + !StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)">$INFO[Container(300).ListItem.Property(widgetTarget.1)]</value>
+
+		<value>video</value>
+	</variable>
+
+	<variable name="DefWidget_3_Target">
+
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetTarget.movies3)) + StringCompare(Container(300).ListItem.Property(defaultID),movies)">$INFO[Container(300).ListItem.Property(widgetTarget.movies3)]</value>
+
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetTarget.tvshows3)) + StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">$INFO[Container(300).ListItem.Property(widgetTarget.tvshows3)]</value>
+
+		<value condition="!IsEmpty(Skin.String(music3widget.target)) + StringCompare(Container(300).ListItem.Property(defaultID),music)">$INFO[Skin.String(music3widget.target)]</value>
+
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetTarget.2)) + !StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)">$INFO[Container(300).ListItem.Property(widgetTarget.2)]</value>
+
+		<value>video</value>
+	</variable>
+
+	<variable name="DefWidget_4_Target">
+
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetTarget.movies4)) + StringCompare(Container(300).ListItem.Property(defaultID),movies)">$INFO[Container(300).ListItem.Property(widgetTarget.movies4)]</value>
+
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetTarget.tvshows4)) + StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">$INFO[Container(300).ListItem.Property(widgetTarget.tvshows4)]</value>
+
+		<value condition="!IsEmpty(Skin.String(music4widget.target)) + StringCompare(Container(300).ListItem.Property(defaultID),music)">$INFO[Skin.String(music4widget.target)]</value>
+
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetTarget.3)) + !StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)">$INFO[Container(300).ListItem.Property(widgetTarget.3)]</value>
+
+		<value>video</value>
+	</variable>
+
+
 
 	
 	
