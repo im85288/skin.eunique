@@ -9067,6 +9067,50 @@
 					<texture background="true">$VAR[PosterImageVerticalHome]</texture>
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
 				</control>
+				<control type="progress">
+					<bottom>0</bottom>
+					<height>8</height>
+					<info>Container(3012).ListItem.PercentPlayed</info>
+					<overlaytexture>-</overlaytexture>
+					<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
+					<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
+					<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
+					<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+					<visible>Control.HasFocus(30121) + Container(3012).ListItem.IsResumable</visible>
+				</control>
+				<control type="progress">
+					<bottom>0</bottom>
+					<height>8</height>
+					<info>Container(3016).ListItem.PercentPlayed</info>
+					<overlaytexture>-</overlaytexture>
+					<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
+					<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
+					<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
+					<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+					<visible>Control.HasFocus(30161) + Container(3016).ListItem.IsResumable</visible>
+				</control>
+				<control type="progress">
+					<bottom>0</bottom>
+					<height>8</height>
+					<info>Container(3017).ListItem.PercentPlayed</info>
+					<overlaytexture>-</overlaytexture>
+					<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
+					<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
+					<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
+					<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+					<visible>Control.HasFocus(30171) + Container(3017).ListItem.IsResumable</visible>
+				</control>
+				<control type="progress">
+					<bottom>0</bottom>
+					<height>8</height>
+					<info>Container(10017).ListItem.PercentPlayed</info>
+					<overlaytexture>-</overlaytexture>
+					<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
+					<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
+					<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
+					<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+					<visible>Control.HasFocus(100171) + Container(10017).ListItem.IsResumable</visible>
+				</control>
 			</control>
 			<control type="group">
 				<control type="group">
@@ -9077,6 +9121,8 @@
 					<animation effect="slide" start="0" end="369,-0" time="200" delay="100" tween="quadratic" easing="out">Focus</animation>
 					<animation effect="slide" start="369" end="0" time="200" delay="100" tween="quadratic" easing="out">UnFocus</animation>
 					<control type="grouplist" id="303">
+							<onup>300</onup>
+							<ondown>300</ondown>
 						<control type="button" id="30121">
 							<texturefocus>-</texturefocus>
 							<texturenofocus>-</texturenofocus>
@@ -9121,33 +9167,9 @@
 							<onright>Control.Move(10017,1)</onright>
 							<onleft>Control.Move(10017,-1)</onleft>
 							<onup>3016</onup>
-							<ondown>4012</ondown>
+							<ondown>300</ondown>
 							<onback>300</onback>
-							<onclick>PlayMedia($ESCINFO[Container(3017).ListItem(-1).FileNameAndPath])</onclick>
-						</control>
-						<control type="button" id="180021">
-							<texturefocus>-</texturefocus>
-							<texturenofocus>-</texturenofocus>
-							<onfocus>Control.Move(18002,1)</onfocus>
-							<onunfocus>Control.Move(18002,-1)</onunfocus>
-							<onright>Control.Move(18002,1)</onright>
-							<onleft>Control.Move(18002,-1)</onleft>
-							<onup>3016</onup>
-							<ondown>4012</ondown>
-							<onback>300</onback>
-							<onclick>PlayMedia($ESCINFO[Container(18002).ListItem(-1).FileNameAndPath])</onclick>
-						</control>
-						<control type="button" id="190011">
-							<texturefocus>-</texturefocus>
-							<texturenofocus>-</texturenofocus>
-							<onfocus>Control.Move(19001,1)</onfocus>
-							<onunfocus>Control.Move(19001,-1)</onunfocus>
-							<onright>Control.Move(19001,1)</onright>
-							<onleft>Control.Move(19001,-1)</onleft>
-							<onup>3016</onup>
-							<ondown>3012</ondown>
-							<onback>300</onback>
-							<onclick>PlayMedia($ESCINFO[Container(19001).ListItem(-1).FileNameAndPath])</onclick>
+							<onclick>PlayMedia($ESCINFO[Container(10017).ListItem(-1).FileNameAndPath])</onclick>
 						</control>
 					</control>
 					<!-- Widgets -->
@@ -9170,7 +9192,7 @@
 								<align>left</align>
 								<height>34</height>
 								<font>HomeWidgetLabelFont</font>
-								<label>$VAR[EmbyWidget6Label]</label>
+								<label>$VAR[EmbyWidget_1_Label]</label>
 								<include>Animation.DelayFadeIn</include>
 								<animation effect="slide" start="0" end="0,-40" time="500" delay="100" tween="quadratic" easing="out" condition="true">Conditional</animation>
 							</control>
@@ -9194,10 +9216,10 @@
 
 								
 								
-								<itemlayout width="577" height="325" condition="StringCompare(Skin.String(movies1widget.aspectratio),LANDSCAPE)">
+								<itemlayout width="577" height="325" condition="[StringCompare(Skin.String(movies1widget.aspectratio),LANDSCAPE) + StringCompare(Container(300).ListItem.Property(defaultID),movies)] |[StringCompare(Skin.String(tvshows1widget.aspectratio),LANDSCAPE) + StringCompare(Container(300).ListItem.Property(defaultID),tvshows)] |[StringCompare(Skin.String(music1widget.aspectratio),LANDSCAPE) + StringCompare(Container(300).ListItem.Property(defaultID),music)] |[!StringCompare(Skin.String(widget1Icon),LANDSCAPE) + !StringCompare(Skin.String(widget1Icon),SQUARE) + !IsEmpty(Container(300).ListItem.Property(widgetPath)) + !StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)]">
 									<include>WidgetLandscapeItemLayout</include>
 								</itemlayout>
-								<itemlayout width="325" height="325" condition="StringCompare(Skin.String(movies1widget.aspectratio),SQUARE)">
+								<itemlayout width="325" height="325" condition="[StringCompare(Skin.String(movies1widget.aspectratio),SQUARE) + StringCompare(Container(300).ListItem.Property(defaultID),movies)] |[StringCompare(Skin.String(tvshows1widget.aspectratio),SQUARE) + StringCompare(Container(300).ListItem.Property(defaultID),tvshows)] |[StringCompare(Skin.String(music1widget.aspectratio),SQUARE) + StringCompare(Container(300).ListItem.Property(defaultID),music)] |[StringCompare(Skin.String(widget1Icon),SQUARE) + !IsEmpty(Container(300).ListItem.Property(widgetPath)) + !StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)]">
 									<include>WidgetSquareItemLayout</include>
 								</itemlayout>
 								<focusedlayout width="218" height="325" condition="[!StringCompare(Skin.String(movies1widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(movies1widget.aspectratio),SQUARE) + StringCompare(Container(300).ListItem.Property(defaultID),movies)] |[!StringCompare(Skin.String(tvshows1widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(tvshows1widget.aspectratio),SQUARE) + StringCompare(Container(300).ListItem.Property(defaultID),tvshows)] |[!StringCompare(Skin.String(music1widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(music1widget.aspectratio),SQUARE) + StringCompare(Container(300).ListItem.Property(defaultID),music)] |[!StringCompare(Skin.String(widget1Icon),LANDSCAPE) + !StringCompare(Skin.String(widget1Icon),SQUARE) + !IsEmpty(Container(300).ListItem.Property(widgetPath)) + !StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)]">
@@ -9209,7 +9231,7 @@
 									</control>
 									<include>WidgetPosterFocusedItemLayout</include>
 								</focusedlayout>
-								<focusedlayout width="577" height="325" condition="StringCompare(Skin.String(movies1widget.aspectratio),LANDSCAPE)">
+								<focusedlayout width="577" height="325" condition="[StringCompare(Skin.String(movies1widget.aspectratio),LANDSCAPE) + StringCompare(Container(300).ListItem.Property(defaultID),movies)] |[StringCompare(Skin.String(tvshows1widget.aspectratio),LANDSCAPE) + StringCompare(Container(300).ListItem.Property(defaultID),tvshows)] |[StringCompare(Skin.String(music1widget.aspectratio),LANDSCAPE) + StringCompare(Container(300).ListItem.Property(defaultID),music)] |[!StringCompare(Skin.String(widget1Icon),LANDSCAPE) + !StringCompare(Skin.String(widget1Icon),SQUARE) + !IsEmpty(Container(300).ListItem.Property(widgetPath)) + !StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)]">
 									<control type="button">
 										<onfocus>SetProperty(SkinHelper.WidgetContainer,3012)</onfocus>
 										<onfocus>SetFocus(30121)</onfocus>
@@ -9218,7 +9240,7 @@
 									</control>
 									<include>WidgetLandscapeFocusedItemLayout</include>
 								</focusedlayout>
-								<focusedlayout width="325" height="325" condition="StringCompare(Skin.String(movies1widget.aspectratio),SQUARE)">
+								<focusedlayout width="325" height="325" condition="[StringCompare(Skin.String(movies1widget.aspectratio),SQUARE) + StringCompare(Container(300).ListItem.Property(defaultID),movies)] |[StringCompare(Skin.String(tvshows1widget.aspectratio),SQUARE) + StringCompare(Container(300).ListItem.Property(defaultID),tvshows)] |[StringCompare(Skin.String(music1widget.aspectratio),SQUARE) + StringCompare(Container(300).ListItem.Property(defaultID),music)] |[StringCompare(Skin.String(widget1Icon),SQUARE) + !IsEmpty(Container(300).ListItem.Property(widgetPath)) + !StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)]">
 									<control type="button">
 										<onfocus>SetProperty(SkinHelper.WidgetContainer,3012)</onfocus>
 										<onfocus>SetFocus(30121)</onfocus>
@@ -9239,8 +9261,7 @@
 							</control>
 						</control>
 						<control type="group">
-							<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
-							<visible>!Control.HasFocus(10017) + !Control.HasFocus(18002) + !Control.HasFocus(19001)</visible>
+							<visible>!StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv</visible>
 							<height>370</height>
 							<animation effect="slide" start="0" end="0,170" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(303).HasFocus + !Control.HasFocus(30161) + Control.HasFocus(190011)">Conditional</animation>
 							<animation effect="slide" start="0" end="0,170" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(303).HasFocus + !Control.HasFocus(30161) + Control.HasFocus(180021)">Conditional</animation>
@@ -9254,7 +9275,7 @@
 								<aligny>center</aligny>
 								<align>left</align>
 								<font>HomeWidgetLabelFont</font>
-								<label>$VAR[EmbyWidget7Label]</label>
+								<label>$VAR[EmbyWidget_2_Label]</label>
 								<include>Animation.DelayFadeIn</include>
 								<animation effect="slide" start="0" end="0,-40" time="500" delay="100" tween="quadratic" easing="out" condition="true">Conditional</animation>
 							</control>
@@ -9271,16 +9292,16 @@
 								<scrolltime tween="quadratic">100</scrolltime>
 								<include>Animation.FadeIn</include>
 								<include>Animation.FadeOut</include>
-								<itemlayout width="218" height="325" condition="!StringCompare(Skin.String(movies2widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(movies2widget.aspectratio),SQUARE)">
+								<itemlayout width="218" height="325" condition="[!StringCompare(Skin.String(movies2widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(movies2widget.aspectratio),SQUARE) + StringCompare(Container(300).ListItem.Property(defaultID),movies)] |[!StringCompare(Skin.String(tvshows2widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(tvshows2widget.aspectratio),SQUARE) + StringCompare(Container(300).ListItem.Property(defaultID),tvshows)] |[!StringCompare(Skin.String(music2widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(music2widget.aspectratio),SQUARE) + StringCompare(Container(300).ListItem.Property(defaultID),music)] |[!StringCompare(Skin.String(widget2Icon),LANDSCAPE) + !StringCompare(Skin.String(widget2Icon),SQUARE) + !IsEmpty(Container(300).ListItem.Property(widgetPath.1)) + !StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)]">
 									<include>WidgetPosterItemLayout</include>
 								</itemlayout>
-								<itemlayout width="577" height="325" condition="StringCompare(Skin.String(movies2widget.aspectratio),LANDSCAPE)">
+								<itemlayout width="577" height="325" condition="[StringCompare(Skin.String(movies2widget.aspectratio),LANDSCAPE) + StringCompare(Container(300).ListItem.Property(defaultID),movies)] |[StringCompare(Skin.String(tvshows2widget.aspectratio),LANDSCAPE) + StringCompare(Container(300).ListItem.Property(defaultID),tvshows)] |[StringCompare(Skin.String(music2widget.aspectratio),LANDSCAPE) + StringCompare(Container(300).ListItem.Property(defaultID),music)] |[!StringCompare(Skin.String(widget2Icon),LANDSCAPE) + !StringCompare(Skin.String(widget2Icon),SQUARE) + !IsEmpty(Container(300).ListItem.Property(widgetPath.1)) + !StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)]">
 									<include>WidgetLandscapeItemLayout</include>
 								</itemlayout>
-								<itemlayout width="325" height="325" condition="StringCompare(Skin.String(movies2widget.aspectratio),SQUARE)">
+								<itemlayout width="325" height="325" condition="[StringCompare(Skin.String(movies2widget.aspectratio),SQUARE) + StringCompare(Container(300).ListItem.Property(defaultID),movies)] |[StringCompare(Skin.String(tvshows2widget.aspectratio),SQUARE) + StringCompare(Container(300).ListItem.Property(defaultID),tvshows)] |[StringCompare(Skin.String(music2widget.aspectratio),SQUARE) + StringCompare(Container(300).ListItem.Property(defaultID),music)] |[StringCompare(Skin.String(widget2Icon),SQUARE) + !IsEmpty(Container(300).ListItem.Property(widgetPath.1)) + !StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)]">
 									<include>WidgetSquareItemLayout</include>
 								</itemlayout>
-								<focusedlayout width="218" height="325" condition="!StringCompare(Skin.String(movies2widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(movies2widget.aspectratio),SQUARE)">
+								<focusedlayout width="218" height="325" condition="[!StringCompare(Skin.String(movies2widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(movies2widget.aspectratio),SQUARE) + StringCompare(Container(300).ListItem.Property(defaultID),movies)] |[!StringCompare(Skin.String(tvshows2widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(tvshows2widget.aspectratio),SQUARE) + StringCompare(Container(300).ListItem.Property(defaultID),tvshows)] |[!StringCompare(Skin.String(music2widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(music2widget.aspectratio),SQUARE) + StringCompare(Container(300).ListItem.Property(defaultID),music)] |[!StringCompare(Skin.String(widget2Icon),LANDSCAPE) + !StringCompare(Skin.String(widget2Icon),SQUARE) + !IsEmpty(Container(300).ListItem.Property(widgetPath.1)) + !StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)]">
 									<control type="button">
 										<onfocus>SetProperty(SkinHelper.WidgetContainer,3016)</onfocus>
 										<onfocus>SetFocus(30161)</onfocus>
@@ -9289,7 +9310,7 @@
 									</control>
 									<include>WidgetPosterFocusedItemLayout</include>
 								</focusedlayout>
-								<focusedlayout width="577" height="325" condition="StringCompare(Skin.String(movies2widget.aspectratio),LANDSCAPE)">
+								<focusedlayout width="577" height="325" condition="[StringCompare(Skin.String(movies2widget.aspectratio),LANDSCAPE) + StringCompare(Container(300).ListItem.Property(defaultID),movies)] |[StringCompare(Skin.String(tvshows2widget.aspectratio),LANDSCAPE) + StringCompare(Container(300).ListItem.Property(defaultID),tvshows)] |[StringCompare(Skin.String(music2widget.aspectratio),LANDSCAPE) + StringCompare(Container(300).ListItem.Property(defaultID),music)] |[!StringCompare(Skin.String(widget2Icon),LANDSCAPE) + !StringCompare(Skin.String(widget2Icon),SQUARE) + !IsEmpty(Container(300).ListItem.Property(widgetPath.1)) + !StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)]">
 									<control type="button">
 										<onfocus>SetProperty(SkinHelper.WidgetContainer,3016)</onfocus>
 										<onfocus>SetFocus(30161)</onfocus>
@@ -9298,7 +9319,7 @@
 									</control>
 									<include>WidgetLandscapeFocusedItemLayout</include>
 								</focusedlayout>
-								<focusedlayout width="325" height="325" condition="StringCompare(Skin.String(movies2widget.aspectratio),SQUARE)">
+								<focusedlayout width="325" height="325" condition="[StringCompare(Skin.String(movies2widget.aspectratio),SQUARE) + StringCompare(Container(300).ListItem.Property(defaultID),movies)] |[StringCompare(Skin.String(tvshows2widget.aspectratio),SQUARE) + StringCompare(Container(300).ListItem.Property(defaultID),tvshows)] |[StringCompare(Skin.String(music2widget.aspectratio),SQUARE) + StringCompare(Container(300).ListItem.Property(defaultID),music)] |[StringCompare(Skin.String(widget2Icon),SQUARE) + !IsEmpty(Container(300).ListItem.Property(widgetPath.1)) + !StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)]">
 									<control type="button">
 										<onfocus>SetProperty(SkinHelper.WidgetContainer,3016)</onfocus>
 										<onfocus>SetFocus(30161)</onfocus>
@@ -9307,7 +9328,7 @@
 									</control>
 									<include>WidgetSquareFocusedItemLayout</include>
 								</focusedlayout>
-								<content target="$VAR[DefWidget7Target]">$VAR[DefWidget7Content]</content>
+								<content target="$VAR[DefWidget_2_Target]">$VAR[DefWidget_2_Content]</content>
 							</control>
 							<control type="image">
 								<width>1689</width>
@@ -9319,8 +9340,7 @@
 							</control>
 						</control>
 						<control type="group">
-							<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
-							<visible>!Control.HasFocus(18002) + !Control.HasFocus(19001)</visible>
+							<visible>!StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv</visible>
 							<height>370</height>
 							<animation effect="slide" start="0" end="0,170" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(303).HasFocus + !Control.HasFocus(30171) + Control.HasFocus(190011)">Conditional</animation>
 							<animation effect="slide" start="0" end="0,170" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(303).HasFocus + !Control.HasFocus(30171) + Control.HasFocus(180021)">Conditional</animation>
@@ -9335,7 +9355,7 @@
 								<height>34</height>
 								<font>Small</font>
 								<font>HomeWidgetLabelFont</font>
-								<label>$VAR[EmbyWidget8Label]</label>
+								<label>$VAR[EmbyWidget_3_Label]</label>
 								<include>Animation.DelayFadeIn</include>
 								<animation effect="slide" start="0" end="0,-40" time="500" delay="100" tween="quadratic" easing="out" condition="true">Conditional</animation>
 							</control>
@@ -9352,16 +9372,16 @@
 								<scrolltime tween="quadratic">100</scrolltime>
 								<include>Animation.FadeIn</include>
 								<include>Animation.FadeOut</include>
-								<itemlayout width="218" height="325" condition="!StringCompare(Skin.String(movies3widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(movies3widget.aspectratio),SQUARE)">
+								<itemlayout width="218" height="325" condition="[!StringCompare(Skin.String(movies3widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(movies3widget.aspectratio),SQUARE) + StringCompare(Container(300).ListItem.Property(defaultID),movies)] |[!StringCompare(Skin.String(tvshows3widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(tvshows3widget.aspectratio),SQUARE) + StringCompare(Container(300).ListItem.Property(defaultID),tvshows)] |[!StringCompare(Skin.String(music3widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(music3widget.aspectratio),SQUARE) + StringCompare(Container(300).ListItem.Property(defaultID),music)] |[!StringCompare(Skin.String(widget3Icon),LANDSCAPE) + !StringCompare(Skin.String(widget3Icon),SQUARE) + !IsEmpty(Container(300).ListItem.Property(widgetPath.2)) + !StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)]">
 									<include>WidgetPosterItemLayout</include>
 								</itemlayout>
-								<itemlayout width="577" height="325" condition="StringCompare(Skin.String(movies3widget.aspectratio),LANDSCAPE)">
+								<itemlayout width="577" height="325" condition="[StringCompare(Skin.String(movies3widget.aspectratio),LANDSCAPE) + StringCompare(Container(300).ListItem.Property(defaultID),movies)] |[StringCompare(Skin.String(tvshows3widget.aspectratio),LANDSCAPE) + StringCompare(Container(300).ListItem.Property(defaultID),tvshows)] |[StringCompare(Skin.String(music3widget.aspectratio),LANDSCAPE) + StringCompare(Container(300).ListItem.Property(defaultID),music)] |[!StringCompare(Skin.String(widget3Icon),LANDSCAPE) + !StringCompare(Skin.String(widget1Icon),SQUARE) + !IsEmpty(Container(300).ListItem.Property(widgetPath.2)) + !StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)]">
 									<include>WidgetLandscapeItemLayout</include>
 								</itemlayout>
-								<itemlayout width="325" height="325" condition="StringCompare(Skin.String(movies3widget.aspectratio),SQUARE)">
+								<itemlayout width="325" height="325" condition="[StringCompare(Skin.String(movies3widget.aspectratio),SQUARE) + StringCompare(Container(300).ListItem.Property(defaultID),movies)] |[StringCompare(Skin.String(tvshows3widget.aspectratio),SQUARE) + StringCompare(Container(300).ListItem.Property(defaultID),tvshows)] |[StringCompare(Skin.String(music3widget.aspectratio),SQUARE) + StringCompare(Container(300).ListItem.Property(defaultID),music)] |[StringCompare(Skin.String(widget3Icon),SQUARE) + !IsEmpty(Container(300).ListItem.Property(widgetPath.2)) + !StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)]">
 									<include>WidgetSquareItemLayout</include>
 								</itemlayout>
-								<focusedlayout width="218" height="325" condition="!StringCompare(Skin.String(movies3widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(movies3widget.aspectratio),SQUARE)">
+								<focusedlayout width="218" height="325" condition="[!StringCompare(Skin.String(movies3widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(movies3widget.aspectratio),SQUARE) + StringCompare(Container(300).ListItem.Property(defaultID),movies)] |[!StringCompare(Skin.String(tvshows3widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(tvshows3widget.aspectratio),SQUARE) + StringCompare(Container(300).ListItem.Property(defaultID),tvshows)] |[!StringCompare(Skin.String(music3widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(music3widget.aspectratio),SQUARE) + StringCompare(Container(300).ListItem.Property(defaultID),music)] |[!StringCompare(Skin.String(widget3Icon),LANDSCAPE) + !StringCompare(Skin.String(widget3Icon),SQUARE) + !IsEmpty(Container(300).ListItem.Property(widgetPath.2)) + !StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)]">
 									<control type="button">
 										<onfocus>SetProperty(SkinHelper.WidgetContainer,3017)</onfocus>
 										<onfocus>SetFocus(30171)</onfocus>
@@ -9370,7 +9390,7 @@
 									</control>
 									<include>WidgetPosterFocusedItemLayout</include>
 								</focusedlayout>
-								<focusedlayout width="577" height="325" condition="StringCompare(Skin.String(movies3widget.aspectratio),LANDSCAPE)">
+								<focusedlayout width="577" height="325" condition="[StringCompare(Skin.String(movies3widget.aspectratio),LANDSCAPE) + StringCompare(Container(300).ListItem.Property(defaultID),movies)] |[StringCompare(Skin.String(tvshows3widget.aspectratio),LANDSCAPE) + StringCompare(Container(300).ListItem.Property(defaultID),tvshows)] |[StringCompare(Skin.String(music3widget.aspectratio),LANDSCAPE) + StringCompare(Container(300).ListItem.Property(defaultID),music)] |[!StringCompare(Skin.String(widget3Icon),LANDSCAPE) + !StringCompare(Skin.String(widget1Icon),SQUARE) + !IsEmpty(Container(300).ListItem.Property(widgetPath.2)) + !StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)]">
 									<control type="button">
 										<onfocus>SetProperty(SkinHelper.WidgetContainer,3017)</onfocus>
 										<onfocus>SetFocus(30171)</onfocus>
@@ -9379,7 +9399,7 @@
 									</control>
 									<include>WidgetLandscapeFocusedItemLayout</include>
 								</focusedlayout>
-								<focusedlayout width="325" height="325" condition="StringCompare(Skin.String(movies3widget.aspectratio),SQUARE)">
+								<focusedlayout width="325" height="325" condition="[StringCompare(Skin.String(movies3widget.aspectratio),SQUARE) + StringCompare(Container(300).ListItem.Property(defaultID),movies)] |[StringCompare(Skin.String(tvshows3widget.aspectratio),SQUARE) + StringCompare(Container(300).ListItem.Property(defaultID),tvshows)] |[StringCompare(Skin.String(music3widget.aspectratio),SQUARE) + StringCompare(Container(300).ListItem.Property(defaultID),music)] |[StringCompare(Skin.String(widget3Icon),SQUARE) + !IsEmpty(Container(300).ListItem.Property(widgetPath.2)) + !StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)]">
 									<control type="button">
 										<onfocus>SetProperty(SkinHelper.WidgetContainer,3017)</onfocus>
 										<onfocus>SetFocus(30171)</onfocus>
@@ -9388,7 +9408,7 @@
 									</control>
 									<include>WidgetSquareFocusedItemLayout</include>
 								</focusedlayout>
-								<content target="$VAR[DefWidget8Target]">$VAR[DefWidget8Content]</content>
+								<content target="$VAR[DefWidget_3_Target]">$VAR[DefWidget_3_Content]</content>
 							</control>
 							<control type="image">
 								<width>1689</width>
@@ -9400,8 +9420,7 @@
 							</control>
 						</control>
 						<control type="group">
-							<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
-							<visible>!Control.HasFocus(19001)</visible>
+							<visible>!StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv</visible>
 							<height>370</height>
 							<animation effect="slide" start="0" end="0,170" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(303).HasFocus + !Control.HasFocus(100171) + Control.HasFocus(190011)">Conditional</animation>
 							<animation effect="slide" start="0" end="0,170" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(303).HasFocus + !Control.HasFocus(100171) + Control.HasFocus(180021)">Conditional</animation>
@@ -9415,7 +9434,7 @@
 								<height>34</height>
 								<font>Small</font>
 								<font>HomeWidgetLabelFont</font>
-								<label>$VAR[EmbyWidget16Label]</label>
+								<label>$VAR[EmbyWidget_4_Label]</label>
 								<include>Animation.DelayFadeIn</include>
 								<animation effect="slide" start="0" end="0,-40" time="500" delay="100" tween="quadratic" easing="out" condition="true">Conditional</animation>
 							</control>
@@ -9432,16 +9451,16 @@
 								<scrolltime tween="quadratic">100</scrolltime>
 								<include>Animation.FadeIn</include>
 								<include>Animation.FadeOut</include>
-								<itemlayout width="218" height="325" condition="!StringCompare(Skin.String(movies4widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(movies4widget.aspectratio),SQUARE)">
+								<itemlayout width="218" height="325" condition="[!StringCompare(Skin.String(movies4widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(movies4widget.aspectratio),SQUARE) + StringCompare(Container(300).ListItem.Property(defaultID),movies)] |[!StringCompare(Skin.String(tvshows4widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(tvshows4widget.aspectratio),SQUARE) + StringCompare(Container(300).ListItem.Property(defaultID),tvshows)] |[!StringCompare(Skin.String(music4widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(music4widget.aspectratio),SQUARE) + StringCompare(Container(300).ListItem.Property(defaultID),music)] |[!StringCompare(Skin.String(widget4Icon),LANDSCAPE) + !StringCompare(Skin.String(widget4Icon),SQUARE) + !IsEmpty(Container(300).ListItem.Property(widgetPath.3)) + !StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)]">
 									<include>WidgetPosterItemLayout</include>
 								</itemlayout>
-								<itemlayout width="577" height="325" condition="StringCompare(Skin.String(movies4widget.aspectratio),LANDSCAPE)">
+								<itemlayout width="577" height="325" condition="[StringCompare(Skin.String(movies4widget.aspectratio),LANDSCAPE) + StringCompare(Container(300).ListItem.Property(defaultID),movies)] |[StringCompare(Skin.String(tvshows4widget.aspectratio),LANDSCAPE) + StringCompare(Container(300).ListItem.Property(defaultID),tvshows)] |[StringCompare(Skin.String(music4widget.aspectratio),LANDSCAPE) + StringCompare(Container(300).ListItem.Property(defaultID),music)] |[!StringCompare(Skin.String(widget4Icon),LANDSCAPE) + !StringCompare(Skin.String(widget4Icon),SQUARE) + !IsEmpty(Container(300).ListItem.Property(widgetPath.3)) + !StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)]">
 									<include>WidgetLandscapeItemLayout</include>
 								</itemlayout>
-								<itemlayout width="325" height="325" condition="StringCompare(Skin.String(movies4widget.aspectratio),SQUARE)">
+								<itemlayout width="325" height="325" condition="[StringCompare(Skin.String(movies4widget.aspectratio),SQUARE) + StringCompare(Container(300).ListItem.Property(defaultID),movies)] |[StringCompare(Skin.String(tvshows4widget.aspectratio),SQUARE) + StringCompare(Container(300).ListItem.Property(defaultID),tvshows)] |[StringCompare(Skin.String(music4widget.aspectratio),SQUARE) + StringCompare(Container(300).ListItem.Property(defaultID),music)] |[StringCompare(Skin.String(widget4Icon),SQUARE) + !IsEmpty(Container(300).ListItem.Property(widgetPath.3)) + !StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)]">
 									<include>WidgetSquareItemLayout</include>
 								</itemlayout>
-								<focusedlayout width="218" height="325" condition="!StringCompare(Skin.String(movies4widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(movies4widget.aspectratio),SQUARE)">
+								<focusedlayout width="218" height="325" condition="[!StringCompare(Skin.String(movies4widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(movies4widget.aspectratio),SQUARE) + StringCompare(Container(300).ListItem.Property(defaultID),movies)] |[!StringCompare(Skin.String(tvshows4widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(tvshows4widget.aspectratio),SQUARE) + StringCompare(Container(300).ListItem.Property(defaultID),tvshows)] |[!StringCompare(Skin.String(music4widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(music4widget.aspectratio),SQUARE) + StringCompare(Container(300).ListItem.Property(defaultID),music)] |[!StringCompare(Skin.String(widget4Icon),LANDSCAPE) + !StringCompare(Skin.String(widget4Icon),SQUARE) + !IsEmpty(Container(300).ListItem.Property(widgetPath.3)) + !StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)]">
 									<control type="button">
 										<onfocus>SetProperty(SkinHelper.WidgetContainer,10017)</onfocus>
 										<onfocus>SetFocus(100171)</onfocus>
@@ -9450,7 +9469,7 @@
 									</control>
 									<include>WidgetPosterFocusedItemLayout</include>
 								</focusedlayout>
-								<focusedlayout width="577" height="325" condition="StringCompare(Skin.String(movies4widget.aspectratio),LANDSCAPE)">
+								<focusedlayout width="577" height="325" condition="[StringCompare(Skin.String(movies4widget.aspectratio),LANDSCAPE) + StringCompare(Container(300).ListItem.Property(defaultID),movies)] |[StringCompare(Skin.String(tvshows4widget.aspectratio),LANDSCAPE) + StringCompare(Container(300).ListItem.Property(defaultID),tvshows)] |[StringCompare(Skin.String(music4widget.aspectratio),LANDSCAPE) + StringCompare(Container(300).ListItem.Property(defaultID),music)] |[!StringCompare(Skin.String(widget4Icon),LANDSCAPE) + !StringCompare(Skin.String(widget4Icon),SQUARE) + !IsEmpty(Container(300).ListItem.Property(widgetPath.3)) + !StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)]">
 									<control type="button">
 										<onfocus>SetProperty(SkinHelper.WidgetContainer,10017)</onfocus>
 										<onfocus>SetFocus(100171)</onfocus>
@@ -9459,7 +9478,7 @@
 									</control>
 									<include>WidgetLandscapeFocusedItemLayout</include>
 								</focusedlayout>
-								<focusedlayout width="325" height="325" condition="StringCompare(Skin.String(movies4widget.aspectratio),SQUARE)">
+								<focusedlayout width="325" height="325" condition="[StringCompare(Skin.String(movies4widget.aspectratio),SQUARE) + StringCompare(Container(300).ListItem.Property(defaultID),movies)] |[StringCompare(Skin.String(tvshows4widget.aspectratio),SQUARE) + StringCompare(Container(300).ListItem.Property(defaultID),tvshows)] |[StringCompare(Skin.String(music4widget.aspectratio),SQUARE) + StringCompare(Container(300).ListItem.Property(defaultID),music)] |[StringCompare(Skin.String(widget4Icon),SQUARE) + !IsEmpty(Container(300).ListItem.Property(widgetPath.3)) + !StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)]">
 									<control type="button">
 										<onfocus>SetProperty(SkinHelper.WidgetContainer,10017)</onfocus>
 										<onfocus>SetFocus(100171)</onfocus>
@@ -9468,170 +9487,7 @@
 									</control>
 									<include>WidgetSquareFocusedItemLayout</include>
 								</focusedlayout>
-								<content target="$VAR[DefWidget16Target]">$VAR[DefWidget16Content]</content>
-							</control>
-							<control type="image">
-								<width>1689</width>
-								<align>left</align>
-								<height>325</height>
-								<texture colordiffuse="$VAR[EmbyMenuColourHighlight]">diffuse/widget-shadow.png</texture>
-								<include>Animation.DelayFadeIn</include>
-								<animation effect="fade" start="100" end="0" time="500" delay="100" tween="quadratic" easing="out" condition="Control.HasFocus(100171)">Conditional</animation>
-							</control>
-						</control>
-						<control type="group">
-							<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
-							<height>370</height>
-							<animation effect="slide" start="0" end="0,170" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(303).HasFocus + Control.HasFocus(190011)">Conditional</animation>
-							<animation effect="slide" start="0" end="0,200" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(303).HasFocus + !Control.HasFocus(180021)">Conditional</animation>
-							<animation effect="slide" start="0" end="0,-680" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(303).HasFocus + Control.HasFocus(180021)">Conditional</animation>
-							<control type="label">
-								<width>1200</width>
-								<height>34</height>
-								<aligny>center</aligny>
-								<align>left</align>
-								<height>34</height>
-								<font>Small</font>
-								<font>HomeWidgetLabelFont</font>
-								<label>$VAR[EmbyWidget19Label]</label>
-								<include>Animation.DelayFadeIn</include>
-								<animation effect="slide" start="0" end="0,-40" time="500" delay="100" tween="quadratic" easing="out" condition="true">Conditional</animation>
-							</control>
-							<control type="wraplist" id="18002">
-								<description>Widget</description>
-								<height>325</height>
-								<width>1920</width>
-								<onup>10017</onup>
-								<ondown>19001</ondown>
-								<onback>300</onback>
-								<preloaditems>2</preloaditems>
-								<orientation>horizontal</orientation>
-								<autoscroll time="10000">!Control.HasFocus(180021)</autoscroll>
-								<scrolltime tween="quadratic">100</scrolltime>
-								<include>Animation.FadeIn</include>
-								<include>Animation.FadeOut</include>
-								<itemlayout width="218" height="325" condition="!StringCompare(Skin.String(movies5widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(movies5widget.aspectratio),SQUARE)">
-									<include>WidgetPosterItemLayout</include>
-								</itemlayout>
-								<itemlayout width="577" height="325" condition="StringCompare(Skin.String(movies5widget.aspectratio),LANDSCAPE)">
-									<include>WidgetLandscapeItemLayout</include>
-								</itemlayout>
-								<itemlayout width="325" height="325" condition="StringCompare(Skin.String(movies5widget.aspectratio),SQUARE)">
-									<include>WidgetSquareItemLayout</include>
-								</itemlayout>
-								<focusedlayout width="218" height="325" condition="!StringCompare(Skin.String(movies5widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(movies5widget.aspectratio),SQUARE)">
-									<control type="button">
-										<onfocus>SetProperty(SkinHelper.WidgetContainer,18002)</onfocus>
-										<onfocus>SetFocus(180021)</onfocus>
-										<texturenofocus>-</texturenofocus>
-										<texturefocus>-</texturefocus>
-									</control>
-									<include>WidgetPosterFocusedItemLayout</include>
-								</focusedlayout>
-								<focusedlayout width="577" height="325" condition="StringCompare(Skin.String(movies5widget.aspectratio),LANDSCAPE)">
-									<control type="button">
-										<onfocus>SetProperty(SkinHelper.WidgetContainer,18002)</onfocus>
-										<onfocus>SetFocus(180021)</onfocus>
-										<texturenofocus>-</texturenofocus>
-										<texturefocus>-</texturefocus>
-									</control>
-									<include>WidgetLandscapeFocusedItemLayout</include>
-								</focusedlayout>
-								<focusedlayout width="325" height="325" condition="StringCompare(Skin.String(movies5widget.aspectratio),SQUARE)">
-									<control type="button">
-										<onfocus>SetProperty(SkinHelper.WidgetContainer,18002)</onfocus>
-										<onfocus>SetFocus(180021)</onfocus>
-										<texturenofocus>-</texturenofocus>
-										<texturefocus>-</texturefocus>
-									</control>
-									<include>WidgetSquareFocusedItemLayout</include>
-								</focusedlayout>
-								<content target="$VAR[DefWidget19Target]">$VAR[DefWidget19Content]</content>
-							</control>
-							<control type="image">
-								<width>1689</width>
-								<align>left</align>
-								<height>325</height>
-								<texture colordiffuse="$VAR[EmbyMenuColourHighlight]">diffuse/widget-shadow.png</texture>
-								<include>Animation.DelayFadeIn</include>
-								<animation effect="fade" start="100" end="0" time="500" delay="100" tween="quadratic" easing="out" condition="Control.HasFocus(180021)">Conditional</animation>
-							</control>
-						</control>
-						<control type="group">
-							<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
-							<height>370</height>
-							<animation effect="slide" start="0" end="0,200" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(303).HasFocus + !Control.HasFocus(190011)">Conditional</animation>
-							<animation effect="slide" start="0" end="0,-850" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(303).HasFocus + Control.HasFocus(190011)">Conditional</animation>
-							<control type="label">
-								<width>1200</width>
-								<height>34</height>
-								<aligny>center</aligny>
-								<align>left</align>
-								<height>34</height>
-								<font>Small</font>
-								<font>HomeWidgetLabelFont</font>
-								<label>$VAR[EmbyWidget21Label]</label>
-								<include>Animation.DelayFadeIn</include>
-								<animation effect="slide" start="0" end="0,-40" time="500" delay="100" tween="quadratic" easing="out" condition="true">Conditional</animation>
-							</control>
-							<control type="wraplist" id="19001">
-								<description>Widget</description>
-								<height>325</height>
-								<width>1920</width>
-								<onup>18002</onup>
-								<ondown>300</ondown>
-								<onback>300</onback>
-								<preloaditems>2</preloaditems>
-								<orientation>horizontal</orientation>
-								<autoscroll time="10000">!Control.HasFocus(190011)</autoscroll>
-								<scrolltime tween="quadratic">100</scrolltime>
-								<include>Animation.FadeIn</include>
-								<include>Animation.FadeOut</include>
-								<itemlayout width="218" height="325" condition="!StringCompare(Skin.String(movies6widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(movies6widget.aspectratio),SQUARE)">
-									<include>WidgetPosterItemLayout</include>
-								</itemlayout>
-								<itemlayout width="577" height="325" condition="StringCompare(Skin.String(movies6widget.aspectratio),LANDSCAPE)">
-									<include>WidgetLandscapeItemLayout</include>
-								</itemlayout>
-								<itemlayout width="325" height="325" condition="StringCompare(Skin.String(movies6widget.aspectratio),SQUARE)">
-									<include>WidgetSquareItemLayout</include>
-								</itemlayout>
-								<focusedlayout width="218" height="325" condition="!StringCompare(Skin.String(movies6widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(movies6widget.aspectratio),SQUARE)">
-									<control type="button">
-										<onfocus>SetProperty(SkinHelper.WidgetContainer,19001)</onfocus>
-										<onfocus>SetFocus(190011)</onfocus>
-										<texturenofocus>-</texturenofocus>
-										<texturefocus>-</texturefocus>
-									</control>
-									<include>WidgetPosterFocusedItemLayout</include>
-								</focusedlayout>
-								<focusedlayout width="577" height="325" condition="StringCompare(Skin.String(movies6widget.aspectratio),LANDSCAPE)">
-									<control type="button">
-										<onfocus>SetProperty(SkinHelper.WidgetContainer,19001)</onfocus>
-										<onfocus>SetFocus(190011)</onfocus>
-										<texturenofocus>-</texturenofocus>
-										<texturefocus>-</texturefocus>
-									</control>
-									<include>WidgetLandscapeFocusedItemLayout</include>
-								</focusedlayout>
-								<focusedlayout width="325" height="325" condition="StringCompare(Skin.String(movies6widget.aspectratio),SQUARE)">
-									<control type="button">
-										<onfocus>SetProperty(SkinHelper.WidgetContainer,19001)</onfocus>
-										<onfocus>SetFocus(190011)</onfocus>
-										<texturenofocus>-</texturenofocus>
-										<texturefocus>-</texturefocus>
-									</control>
-									<include>WidgetSquareFocusedItemLayout</include>
-								</focusedlayout>
-								<content target="$VAR[DefWidget21Target]">$VAR[DefWidget21Content]</content>
-							</control>
-							<control type="image">
-								<width>1689</width>
-								<align>left</align>
-								<height>325</height>
-								<texture colordiffuse="$VAR[EmbyMenuColourHighlight]">diffuse/widget-shadow.png</texture>
-								<include>Animation.DelayFadeIn</include>
-								<animation effect="fade" start="100" end="0" time="500" delay="100" tween="quadratic" easing="out" condition="Control.HasFocus(190011)">Conditional</animation>
+								<content target="$VAR[DefWidget_4_Target]">$VAR[DefWidget_4_Content]</content>
 							</control>
 						</control>
 						<!-- Live TV -->
