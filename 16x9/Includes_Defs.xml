@@ -2994,4 +2994,33 @@
 			</control>
 		</control>
 	</include>
+	
+	<variable name="DefWidget_1_Content">
+
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.movies1)) + StringCompare(Container(300).ListItem.Property(defaultID),movies)">$INFO[Container(300).ListItem.Property(widgetPath.movies1)]</value>
+
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.tvshows1)) + StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">$INFO[Container(300).ListItem.Property(widgetPath.tvshows1)]</value>
+
+		<value condition="!IsEmpty(Skin.String(music1widget.path)) + StringCompare(Container(300).ListItem.Property(defaultID),music)">$INFO[Skin.String(music1widget.path)]</value>
+
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath)) + !StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)">$INFO[Container(300).ListItem.Property(widgetPath)]</value>
+
+		<value>plugin://service.library.data.provider?type=recentmovies&amp;reload=$INFO[Window.Property(recentmovies)]</value>
+	</variable>
+
+	<variable name="DefWidget_1_Target">
+
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetTarget.movies1)) + StringCompare(Container(300).ListItem.Property(defaultID),movies)">$INFO[Container(300).ListItem.Property(widgetTarget.movies1)]</value>
+
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetTarget.tvshows1)) + StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">$INFO[Container(300).ListItem.Property(widgetTarget.tvshows1)]</value>
+
+		<value condition="!IsEmpty(Skin.String(music1widget.target)) + StringCompare(Container(300).ListItem.Property(defaultID),music)">$INFO[Skin.String(music1widget.target)]</value>
+
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetTarget)) + !StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)">$INFO[Container(300).ListItem.Property(widgetTarget)]</value>
+
+		<value>video</value>
+	</variable>
+
+	
+	
 </includes>
