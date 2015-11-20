@@ -336,6 +336,7 @@
 			<visible>!Window.IsVisible(DialogAlbumInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-VideoList.xml) + !Window.IsVisible(script-ExtendedInfo Script-YoutubeList.xml)</visible>
 			<visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)</visible>
 			<visible>!stringcompare(ListItem.Label,..)</visible>
+			<visible>!Control.IsVisible(518)</visible>
 			<animation effect="slide" end="124" condition="!Window.IsVisible(Home) + [container.Content(movies) | Container.Content(episodes)]" time="200">Conditional</animation>
 			<animation effect="slide" end="58" condition="[SubString(ListItem.EndTime,am) | SubString(ListItem.EndTime,pm)] + [container.Content(movies) | Container.Content(episodes)]" time="0">Conditional</animation>
 			<include>Animation.FadeIn</include>
@@ -676,6 +677,7 @@
 			<visible>!Window.IsVisible(DialogAlbumInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-VideoList.xml) + !Window.IsVisible(script-ExtendedInfo Script-YoutubeList.xml)</visible>
 			<visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)</visible>
 			<visible>!stringcompare(ListItem.Label,..)</visible>
+			<visible>!Control.IsVisible(518)</visible>
 			<animation effect="slide" end="114" condition="!Window.IsVisible(Home) + [container.Content(movies) | Container.Content(episodes)]" time="200">Conditional</animation>
 			<animation effect="slide" end="58" condition="[SubString(ListItem.EndTime,am) | SubString(ListItem.EndTime,pm)] + [container.Content(movies) | Container.Content(episodes)]" time="0">Conditional</animation>
 			<include>Animation.FadeIn</include>

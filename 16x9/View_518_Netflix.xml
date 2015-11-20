@@ -6,26 +6,28 @@
 			<include>Animation.Common</include>
 			<visible>Control.IsVisible(518)</visible>
 			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml)</visible>
-			<control type="image">
-				<left>NewSidePad</left>
-				<top>105</top>
-				<width>387</width>
-				<height>150</height>
-				<aspectratio align="left" aligny="top">keep</aspectratio>
-				<texture>$VAR[Container518Logo]</texture>
-				<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
-				<visible allowhiddenfocus="true">Control.HasFocus(518)</visible>
+			<control type="group">
+				<top>TopPad</top>
+				<left>270</left>
+				<control type="image">
+					<top>-5</top>
+					<width>800</width>
+					<height>210</height>
+					<texture>$VAR[Container518Logo]</texture>
+					<aspectratio align="left" aligny="bottom">keep</aspectratio>
+					<fadetime>50</fadetime>
+				</control>
 			</control>
 			<control type="group">
-				<left>NewSidePad</left>
-				<top>265</top>
-				<width>1050</width>
-				<height>225</height>
+				<top>220</top>
+				<left>10</left>
+				<width>250</width>
+				<height>920</height>
 				<control type="label">
 					<right>0</right>
 					<left>0</left>
 					<aligny>center</aligny>
-					<align>left</align>
+					<align>right</align>
 					<font>SmallBold</font>
 					<textcolor>white2</textcolor>
 					<height>38</height>
@@ -39,7 +41,7 @@
 					<right>0</right>
 					<left>0</left>
 					<aligny>center</aligny>
-					<align>left</align>
+					<align>right</align>
 					<font>SmallBold</font>
 					<textcolor>white2</textcolor>
 					<height>38</height>
@@ -53,7 +55,7 @@
 					<right>0</right>
 					<left>0</left>
 					<aligny>center</aligny>
-					<align>left</align>
+					<align>right</align>
 					<font>SmallBold</font>
 					<textcolor>white2</textcolor>
 					<height>38</height>
@@ -67,7 +69,7 @@
 					<right>0</right>
 					<left>0</left>
 					<aligny>center</aligny>
-					<align>left</align>
+					<align>right</align>
 					<font>SmallBold</font>
 					<textcolor>white2</textcolor>
 					<height>38</height>
@@ -82,7 +84,7 @@
 					<left>0</left>
 					<top>38</top>
 					<aligny>center</aligny>
-					<align>left</align>
+					<align>right</align>
 					<font>SmallBold</font>
 					<textcolor>white2</textcolor>
 					<height>38</height>
@@ -95,12 +97,12 @@
 				<control type="textbox">
 					<right>0</right>
 					<left>0</left>
-					<height>52</height>
-					<top>44</top>
-					<align>left</align>
+					<height>100</height>
+					<top>38</top>
+					<align>right</align>
 					<font>TinyBold</font>
 					<textcolor>white</textcolor>
-					<label fallback="19055">$INFO[ListItem.Director]</label>
+					<label fallback="19055">$VAR[LabelDirector]</label>
 					<autoscroll delay="500" time="1000" repeat="500"/>
 					<fadetime>500</fadetime>
 					<visible>!Container.Content(seasons) + !Container.Content(tvshows) + !Container.Content(episodes)</visible>
@@ -111,7 +113,7 @@
 					<height>38</height>
 					<top>38</top>
 					<aligny>center</aligny>
-					<align>left</align>
+					<align>right</align>
 					<font>TinyBold</font>
 					<textcolor>white</textcolor>
 					<label fallback="19055">$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20360]]</label>
@@ -123,7 +125,7 @@
 					<height>38</height>
 					<top>38</top>
 					<aligny>center</aligny>
-					<align>left</align>
+					<align>right</align>
 					<font>TinyBold</font>
 					<textcolor>white</textcolor>
 					<label fallback="19055">$INFO[ListItem.Premiered]</label>
@@ -132,28 +134,187 @@
 				<control type="label">
 					<right>0</right>
 					<left>0</left>
-					<top>100</top>
+					<top>143</top>
 					<aligny>center</aligny>
-					<align>left</align>
+					<align>right</align>
 					<font>SmallBold</font>
 					<textcolor>white2</textcolor>
 					<height>38</height>
-					<label>135</label>
+					<label>31819</label>
 				</control>
 				<control type="textbox">
-					<left>0</left>
-					<top>138</top>
-					<height>90</height>
-					<align>left</align>
+					<left>10</left>
+					<bottom>400</bottom>
+					<top>184</top>
+					<align>right</align>
 					<font>TinyBold</font>
 					<textcolor>white</textcolor>
-					<label fallback="19055">$VAR[3Genres]</label>
+					<label fallback="19055">$INFO[Window(Home).Property(SkinHelper.ListItemCast)]</label>
+					<autoscroll delay="8000" time="1200" repeat="1000"/>
 					<fadetime>500</fadetime>
 				</control>
 			</control>
+			<control type="grouplist">
+				<top>368</top>
+				<height>42</height>
+				<left>270</left>
+				<right>10</right>
+				<orientation>horizontal</orientation>
+				<itemgap>10</itemgap>
+				<control type="label">
+					<aligny>center</aligny>
+					<align>left</align>
+					<font>symbol</font>
+					<height>38</height>
+					<textcolor>$VAR[ColourHighlight]</textcolor>
+					<width>auto</width>
+					<label></label>
+					<visible>Container.Content(movies) + !IsEmpty(ListItem.PlayCount)</visible>
+				</control>
+				<control type="label">
+					<aligny>center</aligny>
+					<align>left</align>
+					<font>Medium</font>
+					<textcolor>white</textcolor>
+					<height>38</height>
+					<width>auto</width>
+					<label fallback="-  ">$INFO[ListItem.PlayCount,,  ]</label>
+					<visible>Container.Content(movies) + !IsEmpty(ListItem.PlayCount)</visible>
+				</control>
+				<control type="label">
+					<aligny>center</aligny>
+					<align>left</align>
+					<font>symbol</font>
+					<textcolor>selective yellow</textcolor>
+					<height>38</height>
+					<width>auto</width>
+					<label></label>
+					<visible>!IsEmpty(ListItem.Rating)</visible>
+				</control>
+				<control type="label">
+					<aligny>center</aligny>
+					<align>left</align>
+					<font>Medium</font>
+					<textcolor>white</textcolor>
+					<height>38</height>
+					<width>auto</width>
+					<label fallback="-  ">$INFO[ListItem.Rating,,  ]</label>
+					<visible>!IsEmpty(ListItem.Rating)</visible>
+				</control>
+				<control type="label">
+					<aligny>center</aligny>
+					<align>left</align>
+					<font>symbol</font>
+					<textcolor>$VAR[RottenTomatoesIconColour]</textcolor>
+					<height>38</height>
+					<width>auto</width>
+					<label>$VAR[RottenTomatoesIcon]</label>
+					<visible>!StringCompare(Window(Home).Property(SkinHelper.RottenTomatoesAudienceRating),n/a)</visible>
+					<visible>Container.Content(movies)</visible>
+				</control>
+				<control type="label">
+					<aligny>center</aligny>
+					<align>left</align>
+					<font>Medium</font>
+					<textcolor>white</textcolor>
+					<height>38</height>
+					<width>auto</width>
+					<label fallback="-  ">$INFO[Window(Home).Property(SkinHelper.RottenTomatoesRating),,%  ]</label>
+					<visible>!StringCompare(Window(Home).Property(SkinHelper.RottenTomatoesAudienceRating),n/a)</visible>
+					<visible>Container.Content(movies)</visible>
+				</control>
+				<control type="button">
+					<width>34</width>
+					<height>37</height>
+					<textcolor>black</textcolor>
+					<textoffsetx>0</textoffsetx>
+					<label>$INFO[Window(Home).Property(SkinHelper.RottenTomatoesAudienceRating)]</label>
+					<font>TinyBold</font>
+					<aligny>center</aligny>
+					<align>center</align>
+					<texturefocus colordiffuse="$VAR[CommunityRatingColour]">common/white.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[CommunityRatingColour]">common/white.png</texturenofocus>
+					<visible>!IsEmpty(Window(Home).Property(SkinHelper.RottenTomatoesAudienceRating))</visible>
+					<visible>!StringCompare(Window(Home).Property(SkinHelper.RottenTomatoesAudienceRating),n/a)</visible>
+					<visible>Container.Content(movies)</visible>
+				</control>
+				<control type="label">
+					<aligny>center</aligny>
+					<align>left</align>
+					<font>Medium</font>
+					<textcolor>white</textcolor>
+					<height>38</height>
+					<width>auto</width>
+					<label fallback="-">$VAR[GenreFormatted,,  ]</label>
+					<visible>StringCompare(Window(Home).Property(SkinHelper.RottenTomatoesAudienceRating),n/a)</visible>
+					<visible>Container.Content(movies)</visible>
+				</control>
+				<control type="label">
+					<aligny>center</aligny>
+					<align>left</align>
+					<font>Medium</font>
+					<textcolor>white</textcolor>
+					<height>38</height>
+					<width>auto</width>
+					<label fallback="-">$VAR[GenreFormatted,  ,  ]</label>
+					<visible>!StringCompare(Window(Home).Property(SkinHelper.RottenTomatoesAudienceRating),n/a)</visible>
+					<visible>Container.Content(movies)</visible>
+				</control>
+				<control type="label">
+					<aligny>center</aligny>
+					<align>left</align>
+					<font>Medium</font>
+					<textcolor>white</textcolor>
+					<height>38</height>
+					<width>auto</width>
+					<label fallback="  -  ">$INFO[ListItem.Year,,  ]</label>
+					<visible>Container.Content(movies)</visible>
+				</control>
+				<control type="label">
+					<aligny>center</aligny>
+					<align>left</align>
+					<font>Medium</font>
+					<textcolor>white</textcolor>
+					<height>38</height>
+					<width>auto</width>
+					<label fallback="">$INFO[Window(Home).Property(SkinHelper.RottenTomatoesBoxOffice),,  ]</label>
+					<visible>Container.Content(movies) + !StringCompare(Window(Home).Property(SkinHelper.RottenTomatoesBoxOffice),N/A)</visible>
+				</control>
+				<control type="label">
+					<aligny>center</aligny>
+					<align>left</align>
+					<font>Medium</font>
+					<textcolor>white</textcolor>
+					<height>38</height>
+					<width>auto</width>
+					<label>$INFO[ListItem.Title]$INFO[ListItem.Season,   ,]$INFO[ListItem.Episode,x]$VAR[LabelDuration,   ,]</label>
+					<visible>!Container.Content(movies) + !Container.Content(TVShows)</visible>
+				</control>
+				<control type="label">
+					<aligny>center</aligny>
+					<align>left</align>
+					<font>Medium</font>
+					<textcolor>white</textcolor>
+					<height>38</height>
+					<width>auto</width>
+					<label>$INFO[ListItem.Studio,,   ]$INFO[ListItem.Season]$INFO[ListItem.Episode,x]$VAR[LabelDuration,   ,]</label>
+					<visible>Container.Content(TVShows)</visible>
+				</control>
+			</control>
+			<control type="textbox">
+				<description>textarea</description>
+				<left>270</left>
+				<right>10</right>
+				<top>425</top>
+				<height>268</height>
+				<align>justify</align>
+				<font>Medium</font>
+				<textcolor>white</textcolor>
+				<label>$VAR[PlotCritic]</label>
+			</control>
 			<control type="list" id="518">
 				<visible>[Container.Content(movies) | Container.Content(sets)]| Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)</visible>
-				<top>500</top>
+				<top>743</top>
 				<right>NewSidePad</right>
 				<left>NewSidePad</left>
 				<onup condition="!Skin.HasSetting(global.kioskmode)">9000</onup>
@@ -484,6 +645,18 @@
 						<visible>!stringcompare(ListItem.Label,..) + [SubString(ListItem.Overlay,OverlayUnwatched.png) + [[Container.Content(movies) + [StringCompare(Window(Home).Property(LatestMovie.1.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.2.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.3.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.4.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.5.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.6.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.7.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.8.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.9.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.10.Title),ListItem.Label)]] | [[Container.Content(tvshows)] + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem.TvShowTitle)]] | [Container.Content(episodes) + [StringCompare(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem.Title)]]]]</visible>
 					</control>
 				</focusedlayout>
+			</control>
+
+			<control id="123231" type="wraplist">
+				<left>-100</left>
+				<bottom>-100</bottom>
+				<width>1</width>
+				<height>1</height>
+				<itemlayout height="1" width="1">
+				</itemlayout>
+				<focusedlayout height="1" width="1">
+				</focusedlayout>
+				<content target="video">$VAR[DefWidgetCast]</content>
 			</control>
 			<control type="scrollbar" id="60">
 				<onback>50</onback>
