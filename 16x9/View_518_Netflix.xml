@@ -19,9 +19,9 @@
 				</control>
 			</control>
 			<control type="group">
-				<top>220</top>
+				<top>368</top>
 				<left>10</left>
-				<width>250</width>
+				<width>220</width>
 				<height>920</height>
 				<control type="label">
 					<right>0</right>
@@ -144,7 +144,7 @@
 				</control>
 				<control type="textbox">
 					<left>10</left>
-					<bottom>400</bottom>
+				<height>180</height>
 					<top>184</top>
 					<align>right</align>
 					<font>TinyBold</font>
@@ -304,19 +304,19 @@
 			<control type="textbox">
 				<description>textarea</description>
 				<left>270</left>
-				<right>10</right>
+					<width>1200</width>
 				<top>425</top>
-				<height>268</height>
-				<align>justify</align>
+				<height>276</height>
+				<align>left</align>
 				<font>Medium</font>
 				<textcolor>white</textcolor>
 				<label>$VAR[PlotCritic]</label>
 			</control>
-			<control type="list" id="518">
+			<control type="fixedlist" id="518">
 				<visible>[Container.Content(movies) | Container.Content(sets)]| Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)</visible>
-				<top>743</top>
-				<right>NewSidePad</right>
-				<left>NewSidePad</left>
+				<bottom>0</bottom>
+				<right>-20</right>
+				<left>-40</left>
 				<onup condition="!Skin.HasSetting(global.kioskmode)">9000</onup>
 				<ondown>60</ondown>
 				<preloaditems>2</preloaditems>
@@ -324,15 +324,14 @@
 				<height>337</height>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
 				<orientation>horizontal</orientation>
-				<focusposition>1</focusposition>
+				<focusposition>4</focusposition>
 				<viewtype label="31758">list</viewtype>
 				<scrolltime tween="quadratic">400</scrolltime>
 				<itemlayout height="337" width="222" condition="!Container.Content(episodes)">
+					<control type="group">
+						<animation effect="zoom" end="90" start="100" time="200" center="auto" condition="Control.HasFocus(518)">Conditional</animation>
+						<animation effect="fade" end="75" start="100" time="200" center="auto" condition="Control.HasFocus(518)">Conditional</animation>
 					<control type="image">
-						<left>5</left>
-						<top>0</top>
-						<right>5</right>
-						<bottom>0</bottom>
 						<aspectratio scalediffuse="false">scale</aspectratio>
 						<texture diffuse="diffuse/wall.png" background="true" fallback="DefaultMovies.png">$VAR[PosterImage]</texture>
 					</control>
@@ -391,14 +390,14 @@
 								<selectedcolor>$VAR[NewColourHighlight]</selectedcolor>
 						<visible>!stringcompare(ListItem.Label,..) + [SubString(ListItem.Overlay,OverlayUnwatched.png) + [[Container.Content(movies) + [StringCompare(Window(Home).Property(LatestMovie.1.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.2.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.3.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.4.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.5.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.6.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.7.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.8.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.9.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.10.Title),ListItem.Label)]] | [[Container.Content(tvshows)] + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem.TvShowTitle)]] | [Container.Content(episodes) + [StringCompare(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem.Title)]]]]</visible>
 					</control>
+					</control>
 				</itemlayout>
 				<itemlayout height="337" width="600" condition="Container.Content(episodes)">
+					<control type="group">
+						<animation effect="zoom" end="90" start="100" time="200" center="auto" condition="Control.HasFocus(518)">Conditional</animation>
+						<animation effect="fade" end="75" start="100" time="200" center="auto" condition="Control.HasFocus(518)">Conditional</animation>
 					<control type="image">
-						<left>5</left>
-						<top>0</top>
-						<right>5</right>
-						<bottom>30</bottom>
-						<aspectratio scalediffuse="false">keep</aspectratio>
+						<aspectratio scalediffuse="false">scale</aspectratio>
 						<texture diffuse="diffuse/wall.png" background="true" fallback="DefaultMovies.png">$VAR[FanartImage]</texture>
 					</control>
 					<control type="label">
@@ -466,6 +465,7 @@
 						<selectedcolor>$VAR[NewColourHighlight]</selectedcolor>
 						<visible>!stringcompare(ListItem.Label,..) + [SubString(ListItem.Overlay,OverlayUnwatched.png) + [[Container.Content(movies) + [StringCompare(Window(Home).Property(LatestMovie.1.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.2.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.3.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.4.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.5.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.6.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.7.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.8.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.9.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.10.Title),ListItem.Label)]] | [[Container.Content(tvshows)] + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem.TvShowTitle)]] | [Container.Content(episodes) + [StringCompare(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem.Title)]]]]</visible>
 					</control>
+					</control>
 				</itemlayout>
 				<focusedlayout height="337" width="222" condition="!Container.Content(episodes)">
 					<control type="button">
@@ -473,27 +473,14 @@
 						<texturenofocus>-</texturenofocus>
 						<onfocus condition="Container.Content(movies)">ClearProperty(TVShowID,home)</onfocus>
 						<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
-						<onfocus condition="!Container.Scrolling">RunScript(script.toolbox,info=blur,id='"$VAR[RealFanartImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfo)</onfocus>
+						<onfocus condition="!Container.Scrolling">RunScript(script.toolbox,info=pixel,id='"$VAR[RealFanartImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=Pixelated)</onfocus>
 					</control>
+					<control type="group">
+						<animation effect="zoom" end="110" start="100" time="200" center="auto">Focus</animation>
+						<animation effect="slide" end="0,-20" start="0" time="200" center="auto" condition="Control.HasFocus(518)">Conditional</animation>
 					<control type="image">
-						<left>5</left>
-						<top>2</top>
-						<right>5</right>
-						<bottom>2</bottom>
-						<aspectratio scalediffuse="false">scale</aspectratio>
-						<texture background="true" colordiffuse="$VAR[BorderHighlight]">$VAR[FocusedBorderImage]</texture>
-						<animation effect="zoom" end="107" time="0" center="auto">Focus</animation>
-					</control>
-					<control type="image">
-						<left>5</left>
-						<top>0</top>
-						<right>5</right>
-						<bottom>0</bottom>
 						<aspectratio scalediffuse="false">scale</aspectratio>
 						<texture diffuse="diffuse/wall.png" background="true" fallback="DefaultMovies.png">$VAR[PosterImage]</texture>
-						<animation type="Focus" reversible="false">
-							<effect type="rotate" end="1" start="0" time="200" center="auto" tween="quadratic" easing="out"/>
-						</animation>
 					</control>
 					<control type="label">
 						<centerright>32</centerright>
@@ -550,6 +537,7 @@
 								<selectedcolor>$VAR[NewColourHighlight]</selectedcolor>
 						<visible>!stringcompare(ListItem.Label,..) + [SubString(ListItem.Overlay,OverlayUnwatched.png) + [[Container.Content(movies) + [StringCompare(Window(Home).Property(LatestMovie.1.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.2.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.3.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.4.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.5.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.6.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.7.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.8.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.9.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.10.Title),ListItem.Label)]] | [[Container.Content(tvshows)] + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem.TvShowTitle)]] | [Container.Content(episodes) + [StringCompare(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem.Title)]]]]</visible>
 					</control>
+					</control>
 				</focusedlayout>
 				<focusedlayout height="337" width="600" condition="Container.Content(episodes)">
 					<control type="button">
@@ -557,27 +545,11 @@
 						<texturenofocus>-</texturenofocus>
 						<onfocus condition="Container.Content(movies)">ClearProperty(TVShowID,home)</onfocus>
 						<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
-						<onfocus condition="!Container.Scrolling">RunScript(script.toolbox,info=blur,id='"$VAR[RealFanartImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfo)</onfocus>
+						<onfocus condition="!Container.Scrolling">RunScript(script.toolbox,info=pixel,id='"$VAR[RealFanartImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=Pixelated)</onfocus>
 					</control>
 					<control type="image">
-						<left>5</left>
-						<top>2</top>
-						<right>5</right>
-						<bottom>2</bottom>
 						<aspectratio scalediffuse="false">scale</aspectratio>
-						<texture background="true" colordiffuse="$VAR[BorderHighlight]">$VAR[FocusedBorderImage]</texture>
-						<animation effect="zoom" end="107" time="0" center="auto">Focus</animation>
-					</control>
-					<control type="image">
-						<left>5</left>
-						<top>0</top>
-						<right>5</right>
-						<bottom>30</bottom>
-						<aspectratio scalediffuse="false">keep</aspectratio>
 						<texture diffuse="diffuse/wall.png" background="true" fallback="DefaultMovies.png">$VAR[FanartImage]</texture>
-						<animation type="Focus" reversible="false">
-							<effect type="rotate" end="1" start="0" time="200" center="auto" tween="quadratic" easing="out"/>
-						</animation>
 					</control>
 					<control type="label">
 						<font>SmallBold</font>

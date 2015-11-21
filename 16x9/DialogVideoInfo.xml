@@ -7,8 +7,10 @@
 	<onload condition="!Skin.HasSetting(toggled.dv.info)">SetFocus(9010)</onload>
 	<onload>Skin.SetString(widget.helper,videoinfo)</onload>
 	<onunload>ClearProperty(Similar,home)</onunload>
+	<!--
 	<onunload>ClearProperty(VideoInfo.ImageColor,home)</onunload>
 	<onunload>ClearProperty(VideoInfo.ImageFilter,home)</onunload>
+	-->
 	<controls>
 		<control type="button" id="10">
 			<include>HiddenControl</include>
@@ -57,7 +59,7 @@
 					<fadetime>50</fadetime>
 				</control>
 			</control>
-			<!-- wip / tmi?<control type="group"><left>203</left><top>84</top><control type="image"><width>206</width><height>116</height><texture>$VAR[ClearArtOnly]</texture><aspectratio align="right" aligny="bottom">stetch</aspectratio><fadetime>50</fadetime></control></control>--><control type="group">
+			<control type="group">
 				<left>1654</left>
 				<top>530</top>
 				<control type="image">
