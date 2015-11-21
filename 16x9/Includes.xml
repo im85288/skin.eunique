@@ -494,7 +494,8 @@
 				<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out" />
 			</animation>
 			<aspectratio align="center">scale</aspectratio>
-			<texture colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" fallback="common/black.png" background="true">$INFO[Window(home).Property(Pixelated.ImageFilter)]</texture>
+			<texture colordiffuse="$INFO[Window(home).Property(Pixelated.ImageColor)]" fallback="common/black.png" background="true">$INFO[Window(home).Property(Pixelated.ImageFilter)]</texture>
+			<animation effect="fade" start="0" end="100" time="2300" tween="cubic" easing="inout" condition="Container(518).UpDating">Conditional</animation>
 			<visible>Control.IsVisible(518)</visible>
 			<visible>!Skin.HasSetting(lights.out)</visible>
 			<visible>![[Skin.HasSetting(global.showvideo) + Player.HasVideo] | [Skin.HasSetting(global.showvisualisation) + Player.HasAudio]] + !Window.IsVisible(DialogVideoInfo.xml)</visible>
@@ -514,7 +515,7 @@
 				<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out" />
 			</animation>
 			<aspectratio align="center">scale</aspectratio>
-			<texture colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]">special://skin/extras/backgrounds/pixel.jpg</texture>
+			<texture colordiffuse="$INFO[Window(home).Property(Pixelated.ImageColor)]">special://skin/extras/backgrounds/pixel.jpg</texture>
 			<animation effect="fade" start="100" end="25" time="0" condition="true">Conditional</animation>
 			<visible>Control.IsVisible(518)</visible>
 			<visible>!Skin.HasSetting(lights.out)</visible>

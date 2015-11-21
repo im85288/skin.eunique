@@ -473,7 +473,7 @@
 						<texturenofocus>-</texturenofocus>
 						<onfocus condition="Container.Content(movies)">ClearProperty(TVShowID,home)</onfocus>
 						<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
-						<onfocus condition="!Container.Scrolling">RunScript(script.toolbox,info=pixel,id='"$VAR[RealFanartImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=Pixelated)</onfocus>
+						<onfocus condition="!Container.Scrolling">RunScript(script.toolbox,info=pixelate,id='"$VAR[RealFanartImage]"',pixels=$VAR[VideoInfoBlurLevel],prefix=Pixelated)</onfocus>
 					</control>
 					<control type="group">
 						<animation effect="zoom" end="110" start="100" time="200" center="auto">Focus</animation>
@@ -545,7 +545,7 @@
 						<texturenofocus>-</texturenofocus>
 						<onfocus condition="Container.Content(movies)">ClearProperty(TVShowID,home)</onfocus>
 						<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
-						<onfocus condition="!Container.Scrolling">RunScript(script.toolbox,info=pixel,id='"$VAR[RealFanartImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=Pixelated)</onfocus>
+						<onfocus condition="!Container.Scrolling">RunScript(script.toolbox,info=pixelate,id='"$VAR[RealFanartImage]"',pixels=$VAR[VideoInfoBlurLevel],prefix=Pixelated)</onfocus>
 					</control>
 					<control type="group">
 						<animation effect="zoom" end="110" start="100" time="200" center="auto">Focus</animation>
