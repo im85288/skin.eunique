@@ -186,7 +186,7 @@
 				</control>
 				<control type="textbox">
 					<left>10</left>
-				<height>180</height>
+				<height>148</height>
 					<top>184</top>
 					<align>right</align>
 					<font>TinyBold</font>
@@ -366,7 +366,7 @@
 				<height>337</height>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
 				<orientation>horizontal</orientation>
-				<focusposition>4</focusposition>
+				<focusposition>1</focusposition>
 				<viewtype label="31758">list</viewtype>
 				<scrolltime tween="quadratic">400</scrolltime>
 				<itemlayout height="337" width="222" condition="!Container.Content(episodes)">
@@ -586,6 +586,7 @@
 					<control type="button">
 						<texturefocus>-</texturefocus>
 						<texturenofocus>-</texturenofocus>
+						<onfocus>ClearProperty(Pixelated.ImageUpdating,home)</onfocus>
 						<onfocus condition="Container.Content(movies)">ClearProperty(TVShowID,home)</onfocus>
 						<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
 						<onfocus condition="!Container.Scrolling">RunScript(script.toolbox,info=pixelate,id='"$VAR[RealFanartImage]"',pixels=$VAR[VideoInfoBlurLevel],prefix=Pixelated)</onfocus>
