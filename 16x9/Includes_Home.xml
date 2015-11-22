@@ -9040,6 +9040,7 @@
 	</include>
 	<include name="HomeVerticalWidgets">
 							<control type="group">
+				<animation effect="fade" start="100" end="0" time="50" condition="Container(3012).IsUpdating | Container(3016).IsUpdating | Container(3017).IsUpdating | Container(10017).IsUpdating">Conditional</animation>
 			<!-- RIGHT SIDE -->
 			<!--
 			<control type="image" id="89122"><left>NewSidePad</left><top>105</top><width>228</width><height>64</height><texture>$VAR[EmbyWidgetLogoVertical]</texture><aspectratio align="center" aligny="center">keep</aspectratio><visible>ControlGroup(303).HasFocus</visible></control>
