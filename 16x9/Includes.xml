@@ -480,48 +480,6 @@
 			<visible>![[Skin.HasSetting(global.showvideo) + Player.HasVideo] | [Skin.HasSetting(global.showvisualisation) + Player.HasAudio]] + Window.IsVisible(DialogVideoInfo.xml) + Skin.HasSetting(toggled.dv.info)</visible>
 		</control>
 		<control type="image">
-			<include>Dimensions_Fullscreen</include>
-			<animation type="Visible" reversible="true">
-				<effect type="fade" start="00" end="100" time="2600" tween="quadratic" easing="out" />
-			</animation>
-			<animation type="WindowOpen" reversible="true">
-				<effect type="fade" start="00" end="100" time="2600" tween="quadratic" easing="out" delay="1000" />
-			</animation>
-			<animation type="WindowClose" reversible="true">
-				<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out" />
-			</animation>
-			<animation type="Hidden" reversible="true">
-				<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out" />
-			</animation>
-			<aspectratio align="center">scale</aspectratio>
-			<texture colordiffuse="$INFO[Window(home).Property(Pixelated.ImageColor)]" fallback="common/black.png" background="true">$INFO[Window(home).Property(Pixelated.ImageFilter)]</texture>
-			<animation effect="fade" start="0" end="100" time="2300" tween="cubic" easing="inout" condition="!IsEmpty(Window(home).Property(Pixelated.Image))">Conditional</animation>
-			<visible>Control.IsVisible(518)</visible>
-			<visible>!Skin.HasSetting(lights.out)</visible>
-			<visible>![[Skin.HasSetting(global.showvideo) + Player.HasVideo] | [Skin.HasSetting(global.showvisualisation) + Player.HasAudio]] + !Window.IsVisible(DialogVideoInfo.xml)</visible>
-		</control>
-		<control type="image">
-			<include>Dimensions_Fullscreen</include>
-			<animation type="Visible" reversible="true">
-				<effect type="fade" start="00" end="100" time="2600" tween="quadratic" easing="out" />
-			</animation>
-			<animation type="WindowOpen" reversible="true">
-				<effect type="fade" start="00" end="100" time="2600" tween="quadratic" easing="out" delay="1000" />
-			</animation>
-			<animation type="WindowClose" reversible="true">
-				<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out" />
-			</animation>
-			<animation type="Hidden" reversible="true">
-				<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out" />
-			</animation>
-			<aspectratio align="center">scale</aspectratio>
-			<texture colordiffuse="$INFO[Window(home).Property(Pixelated.ImageColor)]">special://skin/extras/backgrounds/pixel.jpg</texture>
-			<animation effect="fade" start="100" end="25" time="0" condition="!IsEmpty(Window(home).Property(Pixelated.ImageColor))">Conditional</animation>
-			<visible>Control.IsVisible(518)</visible>
-			<visible>!Skin.HasSetting(lights.out)</visible>
-			<visible>![[Skin.HasSetting(global.showvideo) + Player.HasVideo] | [Skin.HasSetting(global.showvisualisation) + Player.HasAudio]] + !Window.IsVisible(DialogVideoInfo.xml)</visible>
-		</control>
-		<control type="image">
 			<visible>![[Skin.HasSetting(global.showvideo) + Player.HasVideo] | [Skin.HasSetting(global.showvisualisation) + Player.HasAudio]] + Window.IsVisible(DialogAlbumInfo.xml) + Skin.HasSetting(toggled.ai.info)</visible>
 			<include>Dimensions_Fullscreen</include>
 			<aspectratio align="center">scale</aspectratio>

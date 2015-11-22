@@ -2,6 +2,48 @@
 <!-- Foundation -->
 <includes>
 	<include name="View_518_Netflix">
+		<control type="image">
+			<include>Dimensions_Fullscreen</include>
+			<animation type="Visible" reversible="false">
+				<effect type="fade" start="00" end="100" time="500" tween="quadratic" easing="out" />
+			</animation>
+			<animation type="WindowOpen" reversible="true">
+				<effect type="fade" start="00" end="100" time="2600" tween="quadratic" easing="out" delay="1000" />
+			</animation>
+			<animation type="WindowClose" reversible="true">
+				<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out" />
+			</animation>
+			<animation type="Hidden" reversible="true">
+				<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out" />
+			</animation>
+			<aspectratio align="center">scale</aspectratio>
+			<texture colordiffuse="$INFO[Window(home).Property(Pixelated.ImageColor)]" fallback="common/black.png" background="true">$INFO[Window(home).Property(Pixelated.ImageFilter)]</texture>
+			<visible>StringCompare(Window(home).Property(Pixelated.ImageUpdating),1)</visible>
+			<visible>Control.IsVisible(518)</visible>
+			<visible>!Skin.HasSetting(lights.out)</visible>
+			<visible>![[Skin.HasSetting(global.showvideo) + Player.HasVideo] | [Skin.HasSetting(global.showvisualisation) + Player.HasAudio]] + !Window.IsVisible(DialogVideoInfo.xml)</visible>
+		</control>
+		<control type="image">
+			<include>Dimensions_Fullscreen</include>
+			<animation type="Visible" reversible="false">
+				<effect type="fade" start="00" end="25" time="500" tween="quadratic" easing="out" />
+			</animation>
+			<animation type="WindowOpen" reversible="true">
+				<effect type="fade" start="00" end="25" time="2600" tween="quadratic" easing="out" delay="1000" />
+			</animation>
+			<animation type="WindowClose" reversible="true">
+				<effect type="fade" start="25" end="00" time="200" tween="quadratic" easing="out" />
+			</animation>
+			<animation type="Hidden" reversible="true">
+				<effect type="fade" start="25" end="00" time="200" tween="quadratic" easing="out" />
+			</animation>
+			<aspectratio align="center">scale</aspectratio>
+			<texture colordiffuse="$INFO[Window(home).Property(Pixelated.ImageColor)]">special://skin/extras/backgrounds/pixel.jpg</texture>
+			<visible>StringCompare(Window(home).Property(Pixelated.ImageUpdating),1)</visible>
+			<visible>Control.IsVisible(518)</visible>
+			<visible>!Skin.HasSetting(lights.out)</visible>
+			<visible>![[Skin.HasSetting(global.showvideo) + Player.HasVideo] | [Skin.HasSetting(global.showvisualisation) + Player.HasAudio]] + !Window.IsVisible(DialogVideoInfo.xml)</visible>
+		</control>
 		<control type="group">
 			<include>Animation.Common</include>
 			<visible>Control.IsVisible(518)</visible>
@@ -397,8 +439,7 @@
 						<animation effect="zoom" end="90" start="100" time="200" center="auto" condition="Control.HasFocus(518)">Conditional</animation>
 						<animation effect="fade" end="75" start="100" time="200" center="auto" condition="Control.HasFocus(518)">Conditional</animation>
 					<control type="image">
-						<aspectratio scalediffuse="false">keep</aspectratio>
-                        <bottom>30</bottom>
+						<aspectratio scalediffuse="false">scale</aspectratio>
 						<texture diffuse="diffuse/wall.png" background="true" fallback="DefaultMovies.png">$VAR[FanartImage]</texture>
 					</control>
 					<control type="label">
@@ -472,6 +513,7 @@
 					<control type="button">
 						<texturefocus>-</texturefocus>
 						<texturenofocus>-</texturenofocus>
+						<onfocus>ClearProperty(Pixelated.ImageUpdating,home)</onfocus>
 						<onfocus condition="Container.Content(movies)">ClearProperty(TVShowID,home)</onfocus>
 						<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
 						<onfocus condition="!Container.Scrolling">RunScript(script.toolbox,info=pixelate,id='"$VAR[RealFanartImage]"',pixels=$VAR[VideoInfoBlurLevel],prefix=Pixelated)</onfocus>
@@ -551,14 +593,8 @@
 					<control type="group">
 						<animation effect="zoom" end="110" start="100" time="200" center="auto">Focus</animation>
 						<animation effect="slide" end="0,-20" start="0" time="200" center="auto" condition="Control.HasFocus(518)">Conditional</animation>
-                        <control type="image">
-                            <aspectratio scalediffuse="false">scale</aspectratio>
-                            <texture background="true" colordiffuse="$VAR[BorderHighlight]">$VAR[FocusedBorderImage]</texture>
-                            <animation effect="zoom" end="107" time="0" center="auto">Focus</animation>
-                        </control>
-                        <control type="image">
-						<aspectratio scalediffuse="false">keep</aspectratio>
-                            <bottom>30</bottom>
+					<control type="image">
+						<aspectratio scalediffuse="false">scale</aspectratio>
 						<texture diffuse="diffuse/wall.png" background="true" fallback="DefaultMovies.png">$VAR[FanartImage]</texture>
 					</control>
 					<control type="label">
@@ -641,20 +677,7 @@
 				</focusedlayout>
 				<content target="video">$VAR[DefWidgetCast]</content>
 			</control>
-			<control type="scrollbar" id="60">
-				<onback>50</onback>
-				<left>70</left>
-				<width>1780</width>
-				<bottom>160</bottom>
-				<orientation>horizontal</orientation>
-				<height>8</height>
-				<onup>50</onup>
-				<ondown condition="!Skin.HasSetting(global.kioskmode)">9000</ondown>
-				<texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
-				<texturesliderbar border="4" colordiffuse="Dark3">scrollbar/scrollv.png</texturesliderbar>
-				<texturesliderbarfocus border="4" colordiffuse="Dark2">scrollbar/scrollv.png</texturesliderbarfocus>
-				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
-			</control>
+				<include>Furniture_ScrollbarNF</include>
 		</control>
 	</include>
 </includes>
