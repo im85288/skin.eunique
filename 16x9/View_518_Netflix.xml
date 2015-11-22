@@ -346,7 +346,7 @@
 			<control type="textbox">
 				<description>textarea</description>
 				<left>270</left>
-					<width>1200</width>
+				<width>1100</width>
 				<top>425</top>
 				<height>276</height>
 				<align>left</align>
@@ -366,7 +366,7 @@
 				<height>337</height>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
 				<orientation>horizontal</orientation>
-				<focusposition>1</focusposition>
+				<focusposition>7</focusposition>
 				<viewtype label="31758">list</viewtype>
 				<scrolltime tween="quadratic">400</scrolltime>
 				<itemlayout height="337" width="222" condition="!Container.Content(episodes)">
@@ -519,8 +519,8 @@
 						<onfocus condition="!Container.Scrolling">RunScript(script.toolbox,info=pixelate,id='"$VAR[RealFanartImage]"',pixels=$VAR[VideoInfoBlurLevel],prefix=Pixelated)</onfocus>
 					</control>
 					<control type="group">
-						<animation effect="zoom" end="110" start="100" time="200" center="auto">Focus</animation>
-						<animation effect="slide" end="0,-20" start="0" time="200" center="auto" condition="Control.HasFocus(518)">Conditional</animation>
+						<animation effect="zoom" end="180" start="100" time="100" center="auto">Focus</animation>
+						<animation effect="slide" end="0,-84" start="0" time="0" center="auto" condition="Control.HasFocus(518)">Conditional</animation>
 					<control type="image">
 						<aspectratio scalediffuse="false">scale</aspectratio>
 						<texture diffuse="diffuse/wall.png" background="true" fallback="DefaultMovies.png">$VAR[PosterImage]</texture>
