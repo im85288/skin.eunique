@@ -2525,22 +2525,14 @@
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),Weather)</visible>
 					<visible>Weather.IsFetched</visible>
 					<visible>!Control.HasFocus(3439) + !Control.HasFocus(3442) + !Control.HasFocus(3443)</visible>
-					<top>320</top>
-					<left>70</left>
-					<width>1178</width>
+					<top>330</top>
+					<left>823</left>
+					<width>1157</width>
 					<height>705</height>
 					<control type="image">
-						<left>10</left>
-						<top>10</top>
-						<right>10</right>
-						<bottom>10</bottom>
 						<texture colordiffuse="Panel">common/box.png</texture>
 					</control>
 					<control type="multiimage" description="Fanart">
-						<left>10</left>
-						<top>10</top>
-						<right>10</right>
-						<bottom>10</bottom>
 						<fadetime>600</fadetime>
 						<timeperimage>12000</timeperimage>
 						<randomize>true</randomize>
@@ -2680,10 +2672,10 @@
 					<visible>Weather.IsFetched</visible>
 					<visible>!Control.HasFocus(3439) + !Control.HasFocus(3442) + !Control.HasFocus(3443)</visible>
 					<include>Animation.FadeIn</include>
-					<left>1238</left>
+					<left>80</left>
 					<top>330</top>
 					<width>743</width>
-					<height>685</height>
+					<height>705</height>
 					<onup>300</onup>
 					<ondown>300</ondown>
 					<onleft>300</onleft>
@@ -2692,7 +2684,7 @@
 					<orientation>vertical</orientation>
 					<scrolltime tween="quadratic">500</scrolltime>
 					<autoscroll time="7000">!Control.HasFocus(3444)</autoscroll>
-					<itemlayout height="342.5" width="247.6666666666667">
+					<itemlayout height="352.5" width="247.6666666666667">
 						<control type="group">
 							<control type="image">
 								<texture colordiffuse="Panel">common/box.png</texture>
@@ -2740,7 +2732,7 @@
 							</control>
 						</control>
 					</itemlayout>
-					<focusedlayout height="342.5" width="247.6666666666667">
+					<focusedlayout height="352.5" width="247.6666666666667">
 						<control type="group">
 							<control type="image">
 								<texture colordiffuse="panel">common/box.png</texture>
@@ -8592,11 +8584,11 @@
 						<!-- Weather  -->
 						<control type="group">
 							<visible>StringCompare(Container(300).ListItem.Property(defaultID),weather)</visible>
-							<animation effect="slide" start="0" end="-590" time="200" delay="100" tween="quadratic" easing="out">Focus</animation>
+							<animation effect="slide" start="0" end="-594" time="200" delay="100" tween="quadratic" easing="out">Focus</animation>
 							<animation effect="slide" start="-500" end="0" time="200" delay="100" tween="quadratic" easing="out">UnFocus</animation>
-							<height>705</height>
+							<height>891</height>
 							<control type="group">
-								<height>905</height>
+								<height>891</height>
 								<control type="panel" id="3444">
 									<visible>Weather.IsFetched</visible>
 									<include>Animation.FadeIn</include>
@@ -8607,7 +8599,7 @@
 									<orientation>vertical</orientation>
 									<scrolltime tween="quadratic">500</scrolltime>
 									<autoscroll time="7000">!Control.HasFocus(3444)</autoscroll>
-									<itemlayout height="442.5" width="247.6666666666667">
+									<itemlayout height="445.5" width="247.6666666666667">
 										<control type="group">
 											<control type="image">
 												<texture colordiffuse="Panel">common/box.png</texture>
@@ -8655,7 +8647,7 @@
 											</control>
 										</control>
 									</itemlayout>
-									<focusedlayout height="442.5" width="247.6666666666667">
+									<focusedlayout height="445.5" width="247.6666666666667">
 										<control type="group">
 											<control type="image">
 												<texture colordiffuse="panel">common/box.png</texture>
@@ -8857,22 +8849,14 @@
 							</control>
 							<control type="group">
 								<visible>Weather.IsFetched</visible>
-								<left>750</left>
+								<left>743</left>
 								<top>-10</top>
-								<width>1158</width>
+								<width>1157</width>
 								<height>905</height>
 								<control type="image">
-									<left>10</left>
-									<top>10</top>
-									<right>10</right>
-									<bottom>10</bottom>
 									<texture colordiffuse="Panel">common/box.png</texture>
 								</control>
 								<control type="multiimage" description="Fanart">
-									<left>10</left>
-									<top>10</top>
-									<right>10</right>
-									<bottom>10</bottom>
 									<fadetime>600</fadetime>
 									<timeperimage>12000</timeperimage>
 									<randomize>true</randomize>
