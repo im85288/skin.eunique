@@ -9080,8 +9080,8 @@
 					<animation effect="fade" start="0" end="100" time="200" delay="200" reversible="false" condition="[!Container(301).IsUpdating + IntegerGreaterThan(Container(301).NumItems,0) + [!IsEmpty(Container(300).ListItem.Property(widget)) | [IsEmpty(Container(300).ListItem.Property(widget)) + [IsEmpty(Container(300).ListItem.Property(Background)) + [IsEmpty(Skin.String(home.slideshowpath))]]]]] | [Weather.IsFetched + StringCompare(Container(300).ListItem.Property(widget),Weather)]">Conditional</animation>
 					<animation effect="slide" start="0" end="-220,93" time="200" delay="100" tween="quadratic" easing="out" condition="!Skin.String(home.vertical,1) + !Skin.String(home.vertical,2) + !ControlGroup(303).HasFocus">Conditional</animation>
 					<animation effect="slide" start="0" end="0,76" time="200" delay="100" tween="quadratic" easing="out" condition="Control.HasFocus(302) + Skin.String(home.vertical,2)">Conditional</animation>
-					<animation effect="slide" start="0" end="369,-0" time="200" delay="100" tween="quadratic" easing="out">Focus</animation>
-					<animation effect="slide" start="369" end="0" time="200" delay="100" tween="quadratic" easing="out">UnFocus</animation>
+					<animation effect="slide" start="0" end="369,-0" time="200" delay="100" tween="quadratic" easing="out" condition="!StringCompare(Container(300).ListItem.Property(defaultID),weather)">Focus</animation>
+					<animation effect="slide" start="369" end="0" time="200" delay="100" tween="quadratic" easing="out" condition="!StringCompare(Container(300).ListItem.Property(defaultID),weather)">UnFocus</animation>
 					<control type="grouplist" id="303">
 							<onup>300</onup>
 							<ondown>300</ondown>
@@ -9793,9 +9793,9 @@
 						</control>
 						<!-- Weather -->
 						<control type="group">
+							<animation effect="slide" start="0" end="-221,-0" time="200" delay="0" tween="quadratic" easing="out">Focus</animation>
+							<animation effect="slide" start="-221" end="0,-0" time="200" delay="0" tween="quadratic" easing="out">UnFocus</animation>
 							<visible>StringCompare(Container(300).ListItem.Property(defaultID),weather)</visible>
-							<animation effect="slide" start="0" end="-590" time="200" delay="100" tween="quadratic" easing="out">Focus</animation>
-							<animation effect="slide" start="-500" end="0" time="200" delay="100" tween="quadratic" easing="out">UnFocus</animation>
 							<height>835</height>
 							<control type="group">
 								<height>835</height>
