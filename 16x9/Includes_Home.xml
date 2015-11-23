@@ -8589,38 +8589,29 @@
 						<!-- Weather -->
 						<control type="group">
 							<visible>StringCompare(Container(300).ListItem.Property(defaultID),weather)</visible>
-							<animation effect="slide" start="0" end="-500" time="200" delay="100" tween="quadratic" easing="out">Focus</animation>
+							<animation effect="slide" start="0" end="-590" time="200" delay="100" tween="quadratic" easing="out">Focus</animation>
 							<animation effect="slide" start="-500" end="0" time="200" delay="100" tween="quadratic" easing="out">UnFocus</animation>
 							<height>705</height>
 							<control type="group">
-								<height>705</height>
+								<height>905</height>
 								<control type="panel" id="3444">
 									<visible>Weather.IsFetched</visible>
 									<include>Animation.FadeIn</include>
-									<width>730</width>
-									<height>905</height>
+									<width>743</width>
 									<onup>300</onup>
 									<onleft>300</onleft>
 									<onback>300</onback>
 									<orientation>vertical</orientation>
 									<scrolltime tween="quadratic">500</scrolltime>
 									<autoscroll time="7000">!Control.HasFocus(3444)</autoscroll>
-									<itemlayout height="452.5" width="365">
+									<itemlayout height="442.5" width="247.6666666666667">
 										<control type="group">
 											<control type="image">
-												<left>10</left>
-												<top>10</top>
-												<right>10</right>
-												<bottom>10</bottom>
 												<texture colordiffuse="Panel">common/box.png</texture>
 											</control>
 											<control type="multiimage" description="Fanart">
-												<left>10</left>
-												<top>10</top>
-												<right>10</right>
-												<bottom>10</bottom>
 												<fadetime>600</fadetime>
-												<timeperimage>12000</timeperimage>
+												<timeperimage>5000</timeperimage>
 												<randomize>true</randomize>
 												<aspectratio>scale</aspectratio>
 												<animation effect="fade" start="100" end="10" condition="true">Conditional</animation>
@@ -8628,14 +8619,12 @@
 											</control>
 											<control type="image">
 												<description>current weather icon</description>
-												<top>80</top>
-												<width>340</width>
-												<height>280</height>
+												<top>110</top>
+												<height>200</height>
 												<texture>$INFO[ListItem.Icon]</texture>
 												<aspectratio aligny="top">keep</aspectratio>
 											</control>
 											<control type="label">
-												<width>340</width>
 												<height>60</height>
 												<font>Medium</font>
 												<align>center</align>
@@ -8645,7 +8634,6 @@
 											</control>
 											<control type="label">
 												<bottom>50</bottom>
-												<width>340</width>
 												<height>60</height>
 												<font>Small</font>
 												<align>center</align>
@@ -8655,7 +8643,6 @@
 											</control>
 											<control type="label">
 												<bottom>10</bottom>
-												<width>340</width>
 												<height>60</height>
 												<font>Small</font>
 												<align>center</align>
@@ -8665,31 +8652,19 @@
 											</control>
 										</control>
 									</itemlayout>
-									<focusedlayout height="452.5" width="365">
+									<focusedlayout height="442.5" width="247.6666666666667">
 										<control type="group">
 											<control type="image">
-												<left>10</left>
-												<top>10</top>
-												<right>10</right>
-												<bottom>10</bottom>
 												<texture colordiffuse="panel">common/box.png</texture>
 												<visible>!Control.HasFocus(3444)</visible>
 											</control>
 											<control type="image">
-												<left>10</left>
-												<top>10</top>
-												<right>10</right>
-												<bottom>10</bottom>
 												<texture colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
 												<visible>Control.HasFocus(3444)</visible>
 											</control>
 											<control type="multiimage" description="Fanart">
-												<left>10</left>
-												<top>10</top>
-												<right>10</right>
-												<bottom>10</bottom>
 												<fadetime>600</fadetime>
-												<timeperimage>12000</timeperimage>
+												<timeperimage>5000</timeperimage>
 												<randomize>true</randomize>
 												<aspectratio>scale</aspectratio>
 												<animation effect="fade" start="100" end="10" condition="true">Conditional</animation>
@@ -8697,25 +8672,22 @@
 											</control>
 											<control type="image">
 												<description>current weather icon</description>
-												<top>80</top>
-												<width>340</width>
-												<height>280</height>
+												<top>110</top>
+												<height>200</height>
 												<texture>$INFO[ListItem.Icon]</texture>
 												<aspectratio aligny="top">keep</aspectratio>
 											</control>
 											<control type="label">
-												<width>340</width>
 												<height>60</height>
 												<font>Medium</font>
 												<align>center</align>
 												<textcolor>$VAR[ColourSelected]</textcolor>
-												<selectedcolor>$VAR[ColourSelected</selectedcolor>
+												<selectedcolor>$VAR[ColourSelected]</selectedcolor>
 												<label>$INFO[ListItem.Label]</label>
 												<textoffsetx>15</textoffsetx>
 											</control>
 											<control type="label">
 												<bottom>50</bottom>
-												<width>340</width>
 												<height>60</height>
 												<font>Small</font>
 												<align>center</align>
@@ -8726,7 +8698,6 @@
 											</control>
 											<control type="label">
 												<bottom>10</bottom>
-												<width>340</width>
 												<height>60</height>
 												<font>Small</font>
 												<align>center</align>
@@ -8884,7 +8855,8 @@
 							<control type="group">
 								<visible>Weather.IsFetched</visible>
 								<left>750</left>
-								<width>950</width>
+								<top>-10</top>
+								<width>1158</width>
 								<height>905</height>
 								<control type="image">
 									<left>10</left>
