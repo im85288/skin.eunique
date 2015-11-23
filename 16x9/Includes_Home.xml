@@ -1391,12 +1391,15 @@
 				<description>Home Wraplist</description>
 				<left>NewSidePad</left>
 				<right>NewSidePad</right>
-				<ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">3012</ondown>
-				<ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">4012</ondown>
-				<ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),music)">5012</ondown>
-				<ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv)">7012</ondown>
-				<ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),Weather)">3444</ondown>
-				<ondown condition="!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather)">6012</ondown>
+
+				<ondown condition="Skin.HasSetting(home.vertical.widgets)">301</ondown>
+				<ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),movies) + !Skin.HasSetting(home.vertical.widgets)">3012</ondown>
+				<ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !Skin.HasSetting(home.vertical.widgets)">4012</ondown>
+				<ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),music) + !Skin.HasSetting(home.vertical.widgets)">5012</ondown>
+				<ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv) + !Skin.HasSetting(home.vertical.widgets)">7012</ondown>
+				<ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !Skin.HasSetting(home.vertical.widgets)">3444</ondown>
+				<ondown condition="!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !Skin.HasSetting(home.vertical.widgets)">6012</ondown>
+
 				<onup condition="IntegerGreaterThan(Container(302).NumItems,0)">SetFocus(302,0)</onup>
 				<onup condition="!IntegerGreaterThan(Container(302).NumItems,0)">3634</onup>
 				<onleft>300</onleft>
