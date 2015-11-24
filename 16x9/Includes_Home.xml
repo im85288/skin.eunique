@@ -6486,6 +6486,14 @@
 						<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 					</control>
 				</control>
+				<control type="image">
+					<top>330</top>
+					<left>980</left>
+					<width>410</width>
+					<height>460</height>
+					<texture colordiffuse="black">common/box.png</texture>
+					<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
+				</control>
 				<control type="list" id="7016">
 					<description>Widget</description>
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
@@ -8248,11 +8256,15 @@
 									<include>Animation.DelayFadeIn</include>
 									<animation effect="slide" start="0" end="0,-40" time="500" delay="100" tween="quadratic" easing="out" condition="true">Conditional</animation>
 								</control>
+								<control type="image">
+									<width>770</width>
+									<height>414</height>
+									<texture colordiffuse="black">common/box.png</texture>
+								</control>
 								<control type="list" id="7016">
 									<description>Widget</description>
 									<width>770</width>
-									<height>368</height>
-									
+									<height>414</height>
 									<onup>300</onup>
 									<onleft>300</onleft>
 									<onleft>ClearProperty(SkinHelper.ListItemThumb,home)</onleft>
