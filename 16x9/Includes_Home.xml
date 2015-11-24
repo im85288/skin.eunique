@@ -9793,8 +9793,9 @@
 						</control>
 						<!-- Weather -->
 						<control type="group">
-							<animation effect="slide" start="0" end="-221,-0" time="200" delay="0" tween="quadratic" easing="out">Focus</animation>
-							<animation effect="slide" start="-221" end="0,-0" time="200" delay="0" tween="quadratic" easing="out">UnFocus</animation>
+							<animation effect="slide" start="0" end="-221,-0" time="200" delay="0" tween="quadratic" easing="out" condition="!Skin.String(home.vertical,)">Focus</animation>
+							<animation effect="slide" start="-221" end="0,-0" time="200" delay="0" tween="quadratic" easing="out" condition="!Skin.String(home.vertical,)">UnFocus</animation>
+					<animation effect="slide" start="0" end="0,-93" time="200" delay="0" tween="quadratic" easing="out" condition="Skin.String(home.vertical,) + Control.HasFocus(3444)">Conditional</animation>
 							<visible>StringCompare(Container(300).ListItem.Property(defaultID),weather)</visible>
 							<height>835</height>
 							<control type="group">
