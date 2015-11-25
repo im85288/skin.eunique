@@ -40,7 +40,7 @@
                             <texturenofocus>-</texturenofocus>
                             <onfocus condition="Container.Content(movies)">ClearProperty(TVShowID,home)</onfocus>
                             <onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
-                            <onfocus condition="!Container.Scrolling + !Container.Content(songs)">RunScript(script.toolbox,info=blur,id='"$VAR[PosterImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfo)</onfocus>
+                            <onfocus condition="!Container.Scrolling + !Container.Content(songs)">RunScript(script.colorbox,info=blur,id='"$VAR[PosterImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfo)</onfocus>
                         </control>
                         <control type="group">
                             <animation effect="fade" end="65" start="100" time="200" condition="Control.HasFocus(508923)">Conditional</animation>
@@ -64,7 +64,7 @@
                             <texturenofocus>-</texturenofocus>
                             <onfocus condition="Container.Content(movies)">ClearProperty(TVShowID,home)</onfocus>
                             <onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
-                            <onfocus condition="!Container.Scrolling + !Container.Content(songs)">RunScript(script.toolbox,info=blur,id='"$VAR[PosterImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfo)</onfocus>
+                            <onfocus condition="!Container.Scrolling + !Container.Content(songs)">RunScript(script.colorbox,info=blur,id='"$VAR[PosterImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfo)</onfocus>
                         </control>
                         <control type="group">
                             <animation effect="fade" end="65" start="100" time="200" condition="Control.HasFocus(508923)">Conditional</animation>

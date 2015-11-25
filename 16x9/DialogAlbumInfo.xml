@@ -11,8 +11,8 @@
 	<onload>ClearProperty(Born,home)</onload>
 	<onload>ClearProperty(Died,home)</onload>
 	<onload>ClearProperty(Description,home)</onload>
-	<onload>RunScript(script.toolbox,info=blur,id='"$VAR[MusicFanart]"',radius=$VAR[VideoInfoBlurLevel],prefix=MusicInfo)</onload>
-	<onload>RunScript(script.toolbox,info=blur,id='"$VAR[PosterImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=MusicPosterInfo)</onload>
+	<onload>RunScript(script.colorbox,info=blur,id='"$VAR[MusicFanart]"',radius=$VAR[VideoInfoBlurLevel],prefix=MusicInfo)</onload>
+	<onload>RunScript(script.colorbox,info=blur,id='"$VAR[PosterImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=MusicPosterInfo)</onload>
 	<onload condition="Skin.HasSetting(toggled.ai.info)">SetFocus(9000)</onload>
 	<onload condition="!Skin.HasSetting(toggled.ai.info)">SetFocus(9010)</onload>
 	<onunload>ClearProperty(AlbumDetails,home)</onunload>

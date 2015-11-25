@@ -53,7 +53,7 @@
 						<texturenofocus>-</texturenofocus>
 						<onfocus condition="Container.Content(movies)">ClearProperty(TVShowID,home)</onfocus>
 						<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
-						<onfocus condition="!Container.Scrolling">RunScript(script.toolbox,info=blur,id='"$VAR[PosterImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfo)</onfocus>
+						<onfocus condition="!Container.Scrolling">RunScript(script.colorbox,info=blur,id='"$VAR[PosterImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfo)</onfocus>
 					</control>
 					<control type="image">
 						<left>0</left>
@@ -196,8 +196,8 @@
 						<texturenofocus>-</texturenofocus>
 						<onfocus condition="Container.Content(movies)">ClearProperty(TVShowID,home)</onfocus>
 						<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
-						<onfocus condition="!Container.Scrolling">RunScript(script.toolbox,info=blur,id='"$VAR[PosterImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfo)</onfocus>
-						<onfocus condition="!Container.Scrolling">RunScript(script.toolbox,info=blur,id='"$VAR[LandscapeImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=BigListInfoExtra)</onfocus>
+						<onfocus condition="!Container.Scrolling">RunScript(script.colorbox,info=blur,id='"$VAR[PosterImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfo)</onfocus>
+						<onfocus condition="!Container.Scrolling">RunScript(script.colorbox,info=blur,id='"$VAR[LandscapeImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=BigListInfoExtra)</onfocus>
 					</control>
 					<control type="image">
 						<left>0</left>

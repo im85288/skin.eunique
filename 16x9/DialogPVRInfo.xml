@@ -2,8 +2,8 @@
 <!-- Foundation -->
 <window id="2003">
 	<defaultcontrol always="true">9000</defaultcontrol>
-	<onload>RunScript(script.toolbox,info=blur,id='"$VAR[PVRFanart]"',radius=$VAR[VideoInfoBlurLevel],prefix=PVRInfo)</onload>
-	<onload>RunScript(script.toolbox,info=blur,id='"$INFO[Window(home).Property(SkinHelper.PVR.Thumb)]"',radius=$VAR[VideoInfoBlurLevel],prefix=PVRThumbInfo)</onload>
+	<onload>RunScript(script.colorbox,info=blur,id='"$VAR[PVRFanart]"',radius=$VAR[VideoInfoBlurLevel],prefix=PVRInfo)</onload>
+	<onload>RunScript(script.colorbox,info=blur,id='"$INFO[Window(home).Property(SkinHelper.PVR.Thumb)]"',radius=$VAR[VideoInfoBlurLevel],prefix=PVRThumbInfo)</onload>
 	<controls>
 		<include>GlobalBackground</include>
 		<control type="group">

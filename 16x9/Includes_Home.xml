@@ -1520,7 +1520,7 @@
 			<control type="button">
 				<texturefocus>-</texturefocus>
 				<texturenofocus>-</texturenofocus>
-				<onfocus condition="!Container.Scrolling + Skin.HasSetting(home.blur)">RunScript(script.toolbox,info=blur,id='"$VAR[GlobalFanart]"',radius=$VAR[VideoInfoBlurLevel],prefix=HomeInfo)</onfocus>
+				<onfocus condition="!Container.Scrolling + Skin.HasSetting(home.blur)">RunScript(script.colorbox,info=blur,id='"$VAR[GlobalFanart]"',radius=$VAR[VideoInfoBlurLevel],prefix=HomeInfo)</onfocus>
 			</control>
 			<control type="image">
 				<left>0</left>
@@ -1582,7 +1582,7 @@
 			<control type="button">
 				<texturefocus>-</texturefocus>
 				<texturenofocus>-</texturenofocus>
-				<onfocus condition="!Container.Scrolling + Skin.HasSetting(home.blur)">RunScript(script.toolbox,info=blur,id='"$VAR[GlobalFanart]"',radius=$VAR[VideoInfoBlurLevel],prefix=HomeInfo)</onfocus>
+				<onfocus condition="!Container.Scrolling + Skin.HasSetting(home.blur)">RunScript(script.colorbox,info=blur,id='"$VAR[GlobalFanart]"',radius=$VAR[VideoInfoBlurLevel],prefix=HomeInfo)</onfocus>
 			</control>
 			<control type="group">
 				<animation effect="slide" start="0,0" end="-10,0" time="0" reversible="true" center="auto" condition="control.hasfocus(302)">Conditional</animation>
@@ -6803,7 +6803,7 @@
 						<control type="button">
 							<texturefocus>-</texturefocus>
 							<texturenofocus>-</texturenofocus>
-							<onfocus condition="!Container.Scrolling + Skin.HasSetting(home.blur)">RunScript(script.toolbox,info=blur,id='"$VAR[GlobalFanart]"',radius=$VAR[VideoInfoBlurLevel],prefix=HomeInfo)</onfocus>
+							<onfocus condition="!Container.Scrolling + Skin.HasSetting(home.blur)">RunScript(script.colorbox,info=blur,id='"$VAR[GlobalFanart]"',radius=$VAR[VideoInfoBlurLevel],prefix=HomeInfo)</onfocus>
 						</control>
 						<control type="label">
 							<right>30</right>

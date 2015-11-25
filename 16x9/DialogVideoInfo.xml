@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
 	<onload condition="System.HasAddon(script.videoextras)">RunScript(script.videoextras,check,"$INFO[ListItem.FilenameAndPath]")</onload>
-	<onload>RunScript(script.toolbox,info=blur,id='"$INFO[ListItem.Art(fanart)]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfo)</onload>
-	<onload>RunScript(script.toolbox,info=blur,id='"$VAR[PosterImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoPosterInfo)</onload>
+	<onload>RunScript(script.colorbox,info=blur,id='"$INFO[ListItem.Art(fanart)]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfo)</onload>
+	<onload>RunScript(script.colorbox,info=blur,id='"$VAR[PosterImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoPosterInfo)</onload>
 	<onload condition="Skin.HasSetting(toggled.dv.info)">SetFocus(9000)</onload>
 	<onload condition="!Skin.HasSetting(toggled.dv.info)">SetFocus(9010)</onload>
 	<onload>Skin.SetString(widget.helper,videoinfo)</onload>
