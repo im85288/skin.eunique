@@ -1620,6 +1620,7 @@
 	<include name="HomeEmbyWidgetInfo">
 		<!-- Widget Info -->
 		<control type="group">
+			<animation effect="fade" start="100" end="0" time="50" condition="!StringCompare(Container(300).ListItem.Property(defaultID),livetv) + !StringCompare(Container(300).ListItem.Property(defaultID),weather) + [[StringCompare(Container(300).ListItem.Property(defaultID),movies) + [Container(3012).IsUpdating | Container(3016).IsUpdating | Container(3017).IsUpdating | Container(10017).IsUpdating | Container(18003).IsUpdating | Container(19003).IsUpdating]] | [StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + [Container(4012).IsUpdating | Container(4016).IsUpdating | Container(4017).IsUpdating | Container(14017).IsUpdating | Container(18003).IsUpdating | Container(19003).IsUpdating]] | [StringCompare(Container(300).ListItem.Property(defaultID),music) + [Container(5012).IsUpdating | Container(5016).IsUpdating | Container(5017).IsUpdating | Container(15017).IsUpdating]] | [!StringCompare(Container(300).ListItem.Property(defaultID),livetv) + !StringCompare(Container(300).ListItem.Property(defaultID),weather) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),movies) + [Container(6012).IsUpdating | Container(6016).IsUpdating | Container(6017).IsUpdating | Container(9017).IsUpdating]]]">Conditional</animation>
 			<animation effect="slide" end="221,-75" condition="Skin.String(home.vertical,2)" time="00">Conditional</animation>
 			<animation effect="slide" end="0,-75" condition="Skin.String(home.vertical,) + !Control.HasFocus(3634) + !Control.HasFocus(3635) + !Control.HasFocus(300) + !control.hasfocus(302)" time="200">Conditional</animation>
 			<animation effect="fade" start="100" end="00" condition="Skin.HasSetting(widgets.dim) + [Control.HasFocus(300) | Control.HasFocus(301) | Control.HasFocus(302) | Control.HasFocus(8308)  | Control.HasFocus(3634)  | Control.HasFocus(3635)]" time="200">Conditional</animation>
@@ -1681,6 +1682,7 @@
 				</control>
 				<!-- Default Widget -->
 				<control type="group">
+					<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 					<left>SidePad</left>
 					<top>285</top>
 					<width>820</width>
@@ -1691,7 +1693,6 @@
 						<font>HomeWidgetLabelFont</font>
 						<textoffsetx>0</textoffsetx>
 						<label>$VAR[EmbyWidget2Label]</label>
-						<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 					</control>
 					<control type="label" id="91211">
 						<label>$VAR[EmbyWidgetLabel]</label>
@@ -1741,7 +1742,6 @@
 				</control>
 				<control type="wraplist" id="6012">
 					<description>Widget</description>
-					<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 					<visible>!Skin.HasSetting(home.easynav)</visible>
 					<top>330</top>
 					<left>SidePad</left>
@@ -1775,7 +1775,6 @@
 				</control>
 				<control type="button" id="6012">
 					<visible>Skin.HasSetting(home.easynav)</visible>
-					<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 					<top>330</top>
 					<left>SidePad</left>
 					<width>820</width>
@@ -1790,7 +1789,6 @@
 				</control>
 				<control type="list" id="60122">
 					<description>Widget</description>
-					<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 					<visible>Skin.HasSetting(home.easynav)</visible>
 					<top>330</top>
 					<left>SidePad</left>
@@ -1840,7 +1838,6 @@
 						<onback>300</onback>
 					</control>
 					<control type="image">
-						<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 						<description>All Movies</description>
 						<left>SidePad</left>
 						<posy>790</posy>
@@ -1850,7 +1847,6 @@
 						<visible>!Control.HasFocus(60133)</visible>
 					</control>
 					<control type="label">
-						<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 						<description>Video Addons</description>
 						<left>SidePad</left>
 						<posy>790</posy>
@@ -1863,7 +1859,6 @@
 						<visible>!Control.HasFocus(60133)</visible>
 					</control>
 					<control type="image">
-						<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 						<description>Title overlay</description>
 						<left>SidePad</left>
 						<posy>990</posy>
@@ -1882,7 +1877,6 @@
 						<textcolor>white2</textcolor>
 						<selectedcolor>white2</selectedcolor>
 						<label>1037</label>
-						<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 						<visible>!Control.HasFocus(60133)</visible>
 					</control>
 					<control type="label">
@@ -1893,7 +1887,6 @@
 						<font>symbolmenu</font>
 						<label></label>
 						<textcolor>$VAR[BackingColourHighlight]</textcolor>
-						<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 						<visible>!Control.HasFocus(60133)</visible>
 					</control>
 					<control type="label">
@@ -1906,7 +1899,6 @@
 						<label>$INFO[Window(Home).Property(SkinHelper.TotalVideoAddons)]</label>
 						<font>minisymbol</font>
 						<textcolor>black</textcolor>
-						<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 						<visible>!Control.HasFocus(60133)</visible>
 					</control>
 				</control>
@@ -1914,7 +1906,6 @@
 					<description>Widget</description>
 					<visible>Control.HasFocus(60133)</visible>
 					<visible allowhiddenfocus="true">IntegerGreaterThan(Container(60133).NumItems,0)</visible>
-					<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 					<onup>6012</onup>
 					<onright>6015</onright>
 					<onback>300</onback>
@@ -1972,7 +1963,6 @@
 						<onback>300</onback>
 					</control>
 					<control type="image">
-						<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 						<description>music artists</description>
 						<left>353</left>
 						<posy>790</posy>
@@ -1982,7 +1972,6 @@
 						<visible>!Control.HasFocus(60155)</visible>
 					</control>
 					<control type="label">
-						<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 						<description>All music</description>
 						<left>353</left>
 						<posy>790</posy>
@@ -1995,7 +1984,6 @@
 						<visible>!Control.HasFocus(60155)</visible>
 					</control>
 					<control type="image">
-						<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 						<description>Title overlay</description>
 						<left>353</left>
 						<posy>990</posy>
@@ -2014,7 +2002,6 @@
 						<textcolor>white2</textcolor>
 						<selectedcolor>white2</selectedcolor>
 						<label>1036</label>
-						<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 						<visible>!Control.HasFocus(60155)</visible>
 					</control>
 					<control type="label">
@@ -2025,7 +2012,6 @@
 						<font>symbolmenu</font>
 						<label></label>
 						<textcolor>$VAR[BackingColourHighlight]</textcolor>
-						<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 						<visible>!Control.HasFocus(60155)</visible>
 					</control>
 					<control type="label">
@@ -2038,7 +2024,6 @@
 						<label>$INFO[Window(Home).Property(SkinHelper.TotalFavourites)]</label>
 						<font>minisymbol</font>
 						<textcolor>black</textcolor>
-						<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 						<visible>!Control.HasFocus(60155)</visible>
 					</control>
 				</control>
@@ -2046,7 +2031,6 @@
 					<description>Widget</description>
 					<visible>Control.HasFocus(60155)</visible>
 					<visible allowhiddenfocus="true">IntegerGreaterThan(Container(60155).NumItems,0)</visible>
-					<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 					<onup>6012</onup>
 					<onleft>6013</onleft>
 					<onright>6014</onright>
@@ -2106,7 +2090,6 @@
 						<onclick>ActivateWindow(music,addons,return)</onclick>
 					</control>
 					<control type="image">
-						<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 						<description>Genres</description>
 						<left>627</left>
 						<posy>790</posy>
@@ -2116,7 +2099,6 @@
 						<visible>!Control.HasFocus(60144)</visible>
 					</control>
 					<control type="label">
-						<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 						<description>Genres</description>
 						<left>627</left>
 						<posy>790</posy>
@@ -2129,7 +2111,6 @@
 						<visible>!Control.HasFocus(60144)</visible>
 					</control>
 					<control type="image">
-						<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 						<description>Title overlay</description>
 						<left>627</left>
 						<posy>990</posy>
@@ -2149,7 +2130,6 @@
 						<textcolor>white2</textcolor>
 						<selectedcolor>white2</selectedcolor>
 						<label>1038</label>
-						<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 						<visible>!Control.HasFocus(60144)</visible>
 					</control>
 					<control type="label">
@@ -2160,7 +2140,6 @@
 						<font>symbolmenu</font>
 						<label></label>
 						<textcolor>$VAR[BackingColourHighlight]</textcolor>
-						<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 						<visible>!Control.HasFocus(60144)</visible>
 					</control>
 					<control type="label">
@@ -2173,7 +2152,6 @@
 						<label>$INFO[Window(Home).Property(SkinHelper.TotalAudioAddons)]</label>
 						<font>minisymbol</font>
 						<textcolor>black</textcolor>
-						<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 						<visible>!Control.HasFocus(60144)</visible>
 					</control>
 				</control>
@@ -2181,7 +2159,6 @@
 					<description>Widget</description>
 					<visible>Control.HasFocus(60144)</visible>
 					<visible allowhiddenfocus="true">IntegerGreaterThan(Container(60144).NumItems,0)</visible>
-					<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 					<onup>6012</onup>
 					<onleft>6015</onleft>
 					<onright condition="Control.IsVisible(6016)">6016</onright>
@@ -2243,12 +2220,10 @@
 						<texturenofocus>-</texturenofocus>
 						<texturefocus>-</texturefocus>
 						<onclick>ActivateWindow(1112)</onclick>
-						<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 					</control>
 				</control>
 				<control type="list" id="6016">
 					<description>Widget</description>
-					<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 					<top>330</top>
 					<left>980</left>
 					<width>410</width>
@@ -2317,12 +2292,10 @@
 						<texturenofocus>-</texturenofocus>
 						<texturefocus>-</texturefocus>
 						<onclick>ActivateWindow(1112)</onclick>
-						<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 					</control>
 				</control>
 				<control type="panel" id="6017">
 					<description>Widget</description>
-					<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 					<top>330</top>
 					<left>1470</left>
 					<width>316</width>
@@ -2401,14 +2374,12 @@
 						<texturenofocus>-</texturenofocus>
 						<texturefocus>-</texturefocus>
 						<onclick>ActivateWindow(1112)</onclick>
-						<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 					</control>
 				</control>
 				<control type="wraplist" id="9017">
 					<focusposition>0</focusposition>
 					<orientation>vertical</orientation>
 					<description>Widget</description>
-					<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 					<top>-330</top>
 					<left>1860</left>
 					<width>491</width>
@@ -2432,7 +2403,6 @@
 					<content target="$VAR[DefWidget15Target]">$VAR[DefWidget15Content]</content>
 				</control>
 				<control type="group">
-					<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 					<top>330</top>
 					<left>1865</left>
 					<width>632</width>
