@@ -1682,18 +1682,10 @@
 				</control>
 				<!-- Default Widget -->
 				<control type="group">
-					<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 					<left>SidePad</left>
 					<top>285</top>
 					<width>820</width>
 					<height>45</height>
-					<control type="label" id="60121">
-						<align>left</align>
-						<aligny>top</aligny>
-						<font>HomeWidgetLabelFont</font>
-						<textoffsetx>0</textoffsetx>
-						<label>$VAR[EmbyWidget2Label]</label>
-					</control>
 					<control type="label" id="91211">
 						<label>$VAR[EmbyWidgetLabel]</label>
 						<width>1</width>
@@ -1740,6 +1732,19 @@
 						<onclick>ActivateWindow(1112)</onclick>
 					</control>
 				</control>
+				<control type="group">
+					<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
+					<control type="label" id="60121">
+						<left>SidePad</left>
+						<top>285</top>
+						<width>820</width>
+						<height>45</height>
+						<align>left</align>
+						<aligny>top</aligny>
+						<font>HomeWidgetLabelFont</font>
+						<textoffsetx>0</textoffsetx>
+						<label>$VAR[EmbyWidget2Label]</label>
+					</control>
 				<control type="wraplist" id="6012">
 					<description>Widget</description>
 					<visible>!Skin.HasSetting(home.easynav)</visible>
@@ -2490,6 +2495,7 @@
 						</control>
 					</control>
 				</control>
+				</control>
 				<!-- Weather menu left side -->
 				<control type="group">
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),Weather)</visible>
@@ -3054,6 +3060,8 @@
 				</control>
 				<!-- Movies menu item -->
 				<control type="group">
+					<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
+				<control type="group">
 					<left>SidePad</left>
 					<top>285</top>
 					<width>820</width>
@@ -3064,12 +3072,10 @@
 						<font>HomeWidgetLabelFont</font>
 						<textoffsetx>0</textoffsetx>
 						<label>$VAR[EmbyWidget6Label]</label>
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
 					</control>
 				</control>
 				<control type="wraplist" id="3012">
 					<description>Widget</description>
-					<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
 					<visible>!Skin.HasSetting(home.easynav)</visible>
 					<top>330</top>
 					<left>SidePad</left>
@@ -3109,7 +3115,7 @@
 				</control>
 				<control type="button" id="3012">
 					<visible>Skin.HasSetting(home.easynav)</visible>
-					<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
+					
 					<top>330</top>
 					<left>SidePad</left>
 					<width>820</width>
@@ -3124,7 +3130,7 @@
 				</control>
 				<control type="wraplist" id="30122">
 					<description>Widget</description>
-					<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
+					
 					<visible>Skin.HasSetting(home.easynav)</visible>
 					<top>330</top>
 					<left>SidePad</left>
@@ -3179,7 +3185,7 @@
 						<texturenofocus>-</texturenofocus>
 					</control>
 					<control type="image">
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
+						
 						<description>All Movies</description>
 						<left>SidePad</left>
 						<posy>790</posy>
@@ -3189,7 +3195,7 @@
 						<visible>!Control.HasFocus(30133) + IsEmpty(Window(Home).Property(SkinHelper.UnwatchedMoviesBackground))</visible>
 					</control>
 					<control type="multiimage">
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
+						
 						<left>SidePad</left>
 						<posy>790</posy>
 						<width>410</width>
@@ -3201,7 +3207,7 @@
 						<visible>!Control.HasFocus(30133) + !IsEmpty(Window(Home).Property(SkinHelper.AllMoviesBackground.Wall))</visible>
 					</control>
 					<control type="label">
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
+						
 						<description>All music</description>
 						<left>SidePad</left>
 						<posy>790</posy>
@@ -3214,7 +3220,7 @@
 						<visible>!Control.HasFocus(30133)</visible>
 					</control>
 					<control type="image">
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
+						
 						<description>Title overlay</description>
 						<left>SidePad</left>
 						<posy>990</posy>
@@ -3233,7 +3239,7 @@
 						<textcolor>white2</textcolor>
 						<selectedcolor>white2</selectedcolor>
 						<label>20342</label>
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
+						
 						<visible>!Control.HasFocus(30133)</visible>
 					</control>
 					<control type="label">
@@ -3244,7 +3250,7 @@
 						<font>symbolmenu</font>
 						<label></label>
 						<textcolor>$VAR[BackingColourHighlight]</textcolor>
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
+						
 						<visible>!Control.HasFocus(30133)</visible>
 					</control>
 					<control type="label">
@@ -3257,7 +3263,7 @@
 						<font>minisymbol</font>
 						<textcolor>black</textcolor>
 						<label>$INFO[Window(Home).Property(Movies.Count)]</label>
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
+						
 						<visible>!Control.HasFocus(30133)</visible>
 					</control>
 				</control>
@@ -3265,7 +3271,7 @@
 					<description>Widget</description>
 					<visible>Control.HasFocus(30133)</visible>
 					<visible allowhiddenfocus="true">IntegerGreaterThan(Container(30133).NumItems,0)</visible>
-					<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
+					
 					<onup>3012</onup>
 					<onright>3014</onright>
 					<onleft>300</onleft>
@@ -3330,7 +3336,7 @@
 						<onback>300</onback>
 					</control>
 					<control type="image">
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
+						
 						<description>Genres</description>
 						<left>490</left>
 						<posy>790</posy>
@@ -3340,7 +3346,7 @@
 						<visible>!Control.HasFocus(30143)</visible>
 					</control>
 					<control type="label">
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
+						
 						<description>All music</description>
 						<left>490</left>
 						<posy>790</posy>
@@ -3353,7 +3359,7 @@
 						<visible>!Control.HasFocus(30143)</visible>
 					</control>
 					<control type="image">
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
+						
 						<description>Title overlay</description>
 						<left>490</left>
 						<posy>990</posy>
@@ -3373,7 +3379,7 @@
 						<textcolor>white2</textcolor>
 						<selectedcolor>white2</selectedcolor>
 						<label>135</label>
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
+						
 						<visible>!Control.HasFocus(30143)</visible>
 					</control>
 				</control>
@@ -3381,7 +3387,7 @@
 					<description>Widget</description>
 					<visible>Control.HasFocus(30143)</visible>
 					<visible allowhiddenfocus="true">IntegerGreaterThan(Container(30143).NumItems,0)</visible>
-					<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
+					
 					<onup>3012</onup>
 					<onleft>3013</onleft>
 					<onright condition="Control.IsVisible(3016)">3016</onright>
@@ -3444,12 +3450,12 @@
 						<texturenofocus>-</texturenofocus>
 						<texturefocus>-</texturefocus>
 						<onclick>ActivateWindow(1112)</onclick>
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
+						
 					</control>
 				</control>
 				<control type="list" id="3016">
 					<description>Widget</description>
-					<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
+					
 					<top>330</top>
 					<left>980</left>
 					<width>410</width>
@@ -3531,12 +3537,12 @@
 						<texturenofocus>-</texturenofocus>
 						<texturefocus>-</texturefocus>
 						<onclick>ActivateWindow(1112)</onclick>
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
+						
 					</control>
 				</control>
 				<control type="panel" id="3017">
 					<description>Widget</description>
-					<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
+					
 					<top>330</top>
 					<left>1470</left>
 					<width>316</width>
@@ -3616,14 +3622,14 @@
 						<texturenofocus>-</texturenofocus>
 						<texturefocus>-</texturefocus>
 						<onclick>ActivateWindow(1112)</onclick>
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
+						
 					</control>
 				</control>
 				<control type="wraplist" id="10017">
 					<focusposition>0</focusposition>
 					<orientation>vertical</orientation>
 					<description>Widget</description>
-					<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
+					
 					<top>-330</top>
 					<left>1860</left>
 					<width>491</width>
@@ -3649,7 +3655,7 @@
 					<content target="$VAR[DefWidget16Target]">$VAR[DefWidget16Content]</content>
 				</control>
 				<control type="group">
-					<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
+					
 					<top>330</top>
 					<left>1865</left>
 					<width>632</width>
@@ -3759,11 +3765,11 @@
 							<texturenofocus>-</texturenofocus>
 							<texturefocus>-</texturefocus>
 							<onclick>ActivateWindow(1112)</onclick>
-							<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
+							
 						</control>
 					</control>
 					<control type="list" id="18002">
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
+						
 						<left>2565</left>
 						<top>330</top>
 						<width>473</width>
@@ -3819,7 +3825,7 @@
 						<content limit="8" target="$VAR[DefWidget19Target]">$VAR[DefWidget19Content]</content>
 					</control>
 					<control type="panel" id="18003">
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
+						
 						<left>3038</left>
 						<top>330</top>
 						<width>470</width>
@@ -3897,7 +3903,7 @@
 							<texturenofocus>-</texturenofocus>
 							<texturefocus>-</texturefocus>
 							<onclick>ActivateWindow(1112)</onclick>
-							<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
+							
 						</control>
 					</control>
 					<control type="list" id="19001">
@@ -3906,7 +3912,7 @@
 						<content limit="8" target="$VAR[DefWidget21Target]">$VAR[DefWidget21Content]</content>
 					</control>
 					<control type="button" id="19002">
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
+						
 						<left>3558</left>
 						<top>330</top>
 						<width>473</width>
@@ -3924,7 +3930,7 @@
 						<onclick>sendclick(19001)</onclick>
 					</control>
 					<control type="image">
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
+						
 						<left>3558</left>
 						<top>330</top>
 						<width>473</width>
@@ -3989,7 +3995,10 @@
 						<content limit="4" target="$VAR[DefWidget21Target]">$VAR[DefWidget21Content]</content>
 					</control>
 				</control>
+				</control>
 				<!-- TV menu item -->
+				<control type="group">
+									<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
 				<control type="group">
 					<left>SidePad</left>
 					<top>285</top>
@@ -4001,12 +4010,12 @@
 						<font>HomeWidgetLabelFont</font>
 						<textoffsetx>0</textoffsetx>
 						<label>$VAR[EmbyWidget9Label]</label>
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+						
 					</control>
 				</control>
 				<control type="wraplist" id="4012">
 					<description>Widget</description>
-					<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+					
 					<visible>!Skin.HasSetting(home.easynav)</visible>
 					<top>330</top>
 					<left>SidePad</left>
@@ -4045,7 +4054,7 @@
 				</control>
 				<control type="button" id="4012">
 					<visible>Skin.HasSetting(home.easynav)</visible>
-					<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+					
 					<top>330</top>
 					<left>SidePad</left>
 					<width>820</width>
@@ -4060,7 +4069,7 @@
 				</control>
 				<control type="wraplist" id="40122">
 					<description>Widget</description>
-					<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+					
 					<visible>Skin.HasSetting(home.easynav)</visible>
 					<top>330</top>
 					<left>SidePad</left>
@@ -4114,7 +4123,7 @@
 						<onback>300</onback>
 					</control>
 					<control type="image">
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+						
 						<description>All music</description>
 						<left>SidePad</left>
 						<posy>790</posy>
@@ -4124,7 +4133,7 @@
 						<visible>!Control.HasFocus(40133) + IsEmpty(Window(Home).Property(SkinHelper.AllTvShowsBackground.Wall))</visible>
 					</control>
 					<control type="multiimage">
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+						
 						<left>SidePad</left>
 						<posy>790</posy>
 						<width>410</width>
@@ -4136,7 +4145,7 @@
 						<visible>!Control.HasFocus(40133) + !IsEmpty(Window(Home).Property(SkinHelper.AllTvShowsBackground.Wall))</visible>
 					</control>
 					<control type="label">
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+						
 						<description>All music</description>
 						<left>SidePad</left>
 						<posy>790</posy>
@@ -4149,7 +4158,7 @@
 						<visible>!Control.HasFocus(40133)</visible>
 					</control>
 					<control type="image">
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+						
 						<description>Title overlay</description>
 						<left>SidePad</left>
 						<posy>990</posy>
@@ -4168,7 +4177,7 @@
 						<textcolor>white2</textcolor>
 						<selectedcolor>white2</selectedcolor>
 						<label>20343</label>
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+						
 						<visible>!Control.HasFocus(40133)</visible>
 					</control>
 					<control type="label">
@@ -4179,7 +4188,7 @@
 						<font>symbolmenu</font>
 						<label></label>
 						<textcolor>$VAR[BackingColourHighlight]</textcolor>
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+						
 						<visible>!Control.HasFocus(40133)</visible>
 					</control>
 					<control type="label">
@@ -4192,7 +4201,7 @@
 						<font>minisymbol</font>
 						<textcolor>black</textcolor>
 						<label>$INFO[Window(Home).Property(TVShows.Count)]</label>
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+						
 						<visible>!Control.HasFocus(40133)</visible>
 					</control>
 				</control>
@@ -4200,7 +4209,7 @@
 					<description>Widget</description>
 					<visible>Control.HasFocus(40133)</visible>
 					<visible allowhiddenfocus="true">IntegerGreaterThan(Container(40133).NumItems,0)</visible>
-					<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+					
 					<onup>4012</onup>
 					<onright>4015</onright>
 					<onleft>300</onleft>
@@ -4286,7 +4295,7 @@
 						<onback>300</onback>
 					</control>
 					<control type="image">
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+						
 						<description>music artists</description>
 						<left>490</left>
 						<posy>790</posy>
@@ -4296,7 +4305,7 @@
 						<visible>!Control.HasFocus(40155)</visible>
 					</control>
 					<control type="label">
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+						
 						<description>All music</description>
 						<left>490</left>
 						<posy>810</posy>
@@ -4309,7 +4318,7 @@
 						<visible>!Control.HasFocus(40155)</visible>
 					</control>
 					<control type="image">
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+						
 						<description>Title overlay</description>
 						<left>490</left>
 						<posy>990</posy>
@@ -4328,7 +4337,7 @@
 						<textcolor>white2</textcolor>
 						<selectedcolor>white2</selectedcolor>
 						<label>31220</label>
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+						
 						<visible>!Control.HasFocus(40155)</visible>
 					</control>
 					<control type="label">
@@ -4339,7 +4348,7 @@
 						<font>symbolmenu</font>
 						<label></label>
 						<textcolor>$VAR[BackingColourHighlight]</textcolor>
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+						
 						<visible>!Control.HasFocus(40155)</visible>
 					</control>
 					<control type="label">
@@ -4352,7 +4361,7 @@
 						<font>minisymbol</font>
 						<textcolor>black</textcolor>
 						<label>$INFO[Window.Property(NextAired.TodayTotal)]</label>
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+						
 						<visible>!Control.HasFocus(40155)</visible>
 					</control>
 				</control>
@@ -4360,7 +4369,7 @@
 					<description>Widget</description>
 					<visible>Control.HasFocus(40155)</visible>
 					<visible allowhiddenfocus="true">IntegerGreaterThan(Container(40155).NumItems,0)</visible>
-					<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+					
 					<onleft>4013</onleft>
 					<onup>4012</onup>
 					<onback>300</onback>
@@ -4426,12 +4435,12 @@
 						<texturenofocus>-</texturenofocus>
 						<texturefocus>-</texturefocus>
 						<onclick>ActivateWindow(1112)</onclick>
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+						
 					</control>
 				</control>
 				<control type="list" id="4016">
 					<description>Widget</description>
-					<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+					
 					<top>330</top>
 					<left>980</left>
 					<width>410</width>
@@ -4511,12 +4520,12 @@
 						<texturenofocus>-</texturenofocus>
 						<texturefocus>-</texturefocus>
 						<onclick>ActivateWindow(1112)</onclick>
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+						
 					</control>
 				</control>
 				<control type="panel" id="4017">
 					<description>Widget</description>
-					<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+					
 					<top>330</top>
 					<left>1470</left>
 					<width>316</width>
@@ -4572,14 +4581,14 @@
 						<texturenofocus>-</texturenofocus>
 						<texturefocus>-</texturefocus>
 						<onclick>ActivateWindow(1112)</onclick>
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+						
 					</control>
 				</control>
 				<control type="wraplist" id="14017">
 					<focusposition>0</focusposition>
 					<orientation>vertical</orientation>
 					<description>Widget</description>
-					<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+					
 					<top>-330</top>
 					<left>1860</left>
 					<width>491</width>
@@ -4603,7 +4612,7 @@
 					<content target="$VAR[DefWidget18Target]">$VAR[DefWidget18Content]</content>
 				</control>
 				<control type="group">
-					<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+					
 					<top>330</top>
 					<left>1865</left>
 					<width>632</width>
@@ -4713,7 +4722,7 @@
 							<texturenofocus>-</texturenofocus>
 							<texturefocus>-</texturefocus>
 							<onclick>ActivateWindow(1112)</onclick>
-							<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+							
 						</control>
 					</control>
 					<control type="list" id="18001">
@@ -4722,7 +4731,7 @@
 						<content limit="8" target="$VAR[DefWidget20Target]">$VAR[DefWidget20Content]</content>
 					</control>
 					<control type="button" id="18002">
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+						
 						<left>2565</left>
 						<top>330</top>
 						<width>473</width>
@@ -4740,7 +4749,7 @@
 						<onclick>ActivateWindow(10025,videodb://tvshows/titles/$INFO[Container(18001).ListItem(4).Property(DBID)]/,return)</onclick>
 					</control>
 					<control type="image">
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+						
 						<left>2565</left>
 						<top>330</top>
 						<width>473</width>
@@ -4833,7 +4842,7 @@
 							<texturenofocus>-</texturenofocus>
 							<texturefocus>-</texturefocus>
 							<onclick>ActivateWindow(1112)</onclick>
-							<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+							
 						</control>
 					</control>
 					<control type="list" id="19011">
@@ -4842,7 +4851,7 @@
 						<content limit="8" target="$VAR[DefWidget22Target]">$VAR[DefWidget22Content]</content>
 					</control>
 					<control type="button" id="19002">
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+						
 						<left>3558</left>
 						<top>330</top>
 						<width>473</width>
@@ -4860,7 +4869,7 @@
 						<onclick>ActivateWindow(10025,videodb://tvshows/titles/$INFO[Container(19011).ListItem(4).Property(DBID)]/,return)</onclick>
 					</control>
 					<control type="image">
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+						
 						<left>3558</left>
 						<top>330</top>
 						<width>473</width>
@@ -4869,7 +4878,7 @@
 						<animation effect="zoom" start="105" end="90" time="200" tween="quadratic" reversible="false" center="auto" condition="Control.HasFocus(19002)">Conditional</animation>
 					</control>
 					<control type="panel" id="19003">
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + IntegerGreaterThan(Container(19011).NumItems,1)</visible>
+						<visible>IntegerGreaterThan(Container(19011).NumItems,1)</visible>
 						<left>4031</left>
 						<top>330</top>
 						<width>470</width>
@@ -4925,7 +4934,10 @@
 						<content limit="4" target="$VAR[DefWidget22Target]">$VAR[DefWidget22Content]</content>
 					</control>
 				</control>
+				</control>
 				<!-- Music menu item -->
+				<control type="group">
+						<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
 				<control type="group">
 					<left>SidePad</left>
 					<top>285</top>
@@ -4937,12 +4949,11 @@
 						<font>HomeWidgetLabelFont</font>
 						<textoffsetx>0</textoffsetx>
 						<label>$VAR[EmbyWidget12Label]</label>
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
 					</control>
 				</control>
 				<control type="wraplist" id="5012">
 					<description>Widget</description>
-					<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+					
 					<visible>!Skin.HasSetting(home.easynav)</visible>
 					<top>330</top>
 					<left>SidePad</left>
@@ -5050,7 +5061,7 @@
 				</control>
 				<control type="button" id="5012">
 					<visible>Skin.HasSetting(home.easynav)</visible>
-					<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+					
 					<top>330</top>
 					<left>SidePad</left>
 					<width>820</width>
@@ -5065,7 +5076,7 @@
 				</control>
 				<control type="wraplist" id="50122">
 					<description>Widget</description>
-					<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+					
 					<visible>Skin.HasSetting(home.easynav)</visible>
 					<top>330</top>
 					<left>SidePad</left>
@@ -5188,7 +5199,7 @@
 						<onback>300</onback>
 					</control>
 					<control type="image">
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+						
 						<description>All music</description>
 						<left>SidePad</left>
 						<posy>790</posy>
@@ -5198,7 +5209,7 @@
 						<visible>!Control.HasFocus(50133) + IsEmpty(Window(Home).Property(SkinHelper.AllMusicSongsBackground.Wall))</visible>
 					</control>
 					<control type="multiimage">
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+						
 						<left>SidePad</left>
 						<posy>790</posy>
 						<width>273</width>
@@ -5211,7 +5222,7 @@
 					</control>
 
 					<control type="label">
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+						
 						<description>All music</description>
 						<left>SidePad</left>
 						<posy>790</posy>
@@ -5224,7 +5235,7 @@
 						<visible>!Control.HasFocus(50133)</visible>
 					</control>
 					<control type="image">
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+						
 						<description>Title overlay</description>
 						<left>SidePad</left>
 						<posy>990</posy>
@@ -5243,7 +5254,7 @@
 						<textcolor>white2</textcolor>
 						<selectedcolor>white2</selectedcolor>
 						<label>132</label>
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+						
 						<visible>!Control.HasFocus(50133)</visible>
 					</control>
 					<control type="label">
@@ -5254,7 +5265,7 @@
 						<font>symbolmenu</font>
 						<label></label>
 						<textcolor>$VAR[BackingColourHighlight]</textcolor>
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+						
 						<visible>!Control.HasFocus(50133)</visible>
 					</control>
 					<control type="label">
@@ -5267,7 +5278,7 @@
 						<label>$INFO[Window(Home).Property(Music.AlbumsCount)]</label>
 						<font>minisymbol</font>
 						<textcolor>black</textcolor>
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+						
 						<visible>!Control.HasFocus(50133)</visible>
 					</control>
 				</control>
@@ -5275,7 +5286,7 @@
 					<description>Widget</description>
 					<visible>Control.HasFocus(50133)</visible>
 					<visible allowhiddenfocus="true">IntegerGreaterThan(Container(50133).NumItems,0)</visible>
-					<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+					
 					<onup>5012</onup>
 					<onright>5015</onright>
 					<onback>300</onback>
@@ -5338,7 +5349,7 @@
 						<onback>300</onback>
 					</control>
 					<control type="image">
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+						
 						<description>All music</description>
 						<left>353</left>
 						<posy>790</posy>
@@ -5348,7 +5359,7 @@
 						<visible>!Control.HasFocus(50155) + IsEmpty(Window(Home).Property(SkinHelper.AllMusicBackground.Wall))</visible>
 					</control>
 					<control type="multiimage">
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+						
 						<left>353</left>
 						<posy>790</posy>
 						<width>274</width>
@@ -5360,7 +5371,7 @@
 						<visible>!Control.HasFocus(50155) + !IsEmpty(Window(Home).Property(SkinHelper.AllMusicBackground.Wall))</visible>
 					</control>
 					<control type="label">
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+						
 						<description>All music</description>
 						<left>353</left>
 						<posy>790</posy>
@@ -5373,7 +5384,7 @@
 						<visible>!Control.HasFocus(50155)</visible>
 					</control>
 					<control type="image">
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+						
 						<description>Title overlay</description>
 						<left>353</left>
 						<posy>990</posy>
@@ -5392,7 +5403,7 @@
 						<textcolor>white2</textcolor>
 						<selectedcolor>white2</selectedcolor>
 						<label>133</label>
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+						
 						<visible>!Control.HasFocus(50155)</visible>
 					</control>
 					<control type="label">
@@ -5403,7 +5414,7 @@
 						<font>symbolmenu</font>
 						<label></label>
 						<textcolor>$VAR[BackingColourHighlight]</textcolor>
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+						
 						<visible>!Control.HasFocus(50155)</visible>
 					</control>
 					<control type="label">
@@ -5416,7 +5427,7 @@
 						<label>$INFO[Window(Home).Property(Music.ArtistsCount)]</label>
 						<font>minisymbol</font>
 						<textcolor>black</textcolor>
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+						
 						<visible>!Control.HasFocus(50155)</visible>
 					</control>
 				</control>
@@ -5424,7 +5435,7 @@
 					<description>Widget</description>
 					<visible>Control.HasFocus(50155)</visible>
 					<visible allowhiddenfocus="true">IntegerGreaterThan(Container(50155).NumItems,0)</visible>
-					<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+					
 					<onup>5012</onup>
 					<onleft>5013</onleft>
 					<onright>5014</onright>
@@ -5488,7 +5499,7 @@
 						<onback>300</onback>
 					</control>
 					<control type="image">
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+						
 						<description>Genres</description>
 						<left>627</left>
 						<posy>790</posy>
@@ -5498,7 +5509,7 @@
 						<visible>!Control.HasFocus(50144)</visible>
 					</control>
 					<control type="label">
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+						
 						<description>All music</description>
 						<left>627</left>
 						<posy>790</posy>
@@ -5511,7 +5522,7 @@
 						<visible>!Control.HasFocus(50144)</visible>
 					</control>
 					<control type="image">
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+						
 						<description>Title overlay</description>
 						<left>627</left>
 						<posy>990</posy>
@@ -5531,7 +5542,7 @@
 						<textcolor>white2</textcolor>
 						<selectedcolor>white2</selectedcolor>
 						<label>135</label>
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+						
 						<visible>!Control.HasFocus(50144)</visible>
 					</control>
 				</control>
@@ -5539,7 +5550,7 @@
 					<description>Widget</description>
 					<visible>Control.HasFocus(50144)</visible>
 					<visible allowhiddenfocus="true">IntegerGreaterThan(Container(50144).NumItems,0)</visible>
-					<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+					
 					<onup>5012</onup>
 					<onleft>5015</onleft>
 					<onright>5016</onright>
@@ -5601,12 +5612,12 @@
 						<texturenofocus>-</texturenofocus>
 						<texturefocus>-</texturefocus>
 						<onclick>ActivateWindow(1112)</onclick>
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+						
 					</control>
 				</control>
 				<control type="list" id="5016">
 					<description>Widget</description>
-					<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+					
 					<top>330</top>
 					<left>980</left>
 					<width>235</width>
@@ -5718,12 +5729,12 @@
 						<texturenofocus>-</texturenofocus>
 						<texturefocus>-</texturefocus>
 						<onclick>ActivateWindow(1112)</onclick>
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+						
 					</control>
 				</control>
 				<control type="panel" id="5017">
 					<description>Widget</description>
-					<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+					
 					<top>330</top>
 					<left>1290</left>
 					<width>470</width>
@@ -5846,14 +5857,14 @@
 						<texturefocus>-</texturefocus>
 						<onclick>ActivateWindow(1112)</onclick>
 						<onback>300</onback>
-						<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+						
 					</control>
 				</control>
 				<control type="wraplist" id="15017">
 					<focusposition>0</focusposition>
 					<orientation>vertical</orientation>
 					<description>Widget</description>
-					<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+					
 					<top>-330</top>
 					<left>1860</left>
 					<width>491</width>
@@ -5878,7 +5889,7 @@
 					<content target="$VAR[DefWidget17Target]">$VAR[DefWidget17Content]</content>
 				</control>
 				<control type="group">
-					<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+					
 					<top>330</top>
 					<left>1865</left>
 					<width>632</width>
@@ -5974,6 +5985,7 @@
 							<fadetime>100</fadetime>
 						</control>
 					</control>
+				</control>
 				</control>
 				<!-- Live TV menu item -->
 				<control type="group">
