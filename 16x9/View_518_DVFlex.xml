@@ -16,6 +16,10 @@
 			<animation type="Hidden" reversible="true">
 				<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out" />
 			</animation>
+			<animation type="Conditional" reversible="true" condition="![Skin.HasSetting(osd.hidespoilers) + Container.Content(episodes) + [stringcompare(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]] + [Container.Content(musicvideos) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets) | Container.Content(episodes)] + !System.IdleTime(26) + System.IdleTime(5) + Skin.HasSetting(furniture.overlayinfo) + ![ControlGroup(9000).HasFocus() | Window.IsVisible(DialogContextMenu.xml)]">
+				<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out"/>
+				<effect type="zoom" end="1000,7" time="200" center="auto" tween="quadratic" easing="out"/>
+			</animation>
 			<aspectratio align="center">scale</aspectratio>
 			<texture colordiffuse="$INFO[Window(home).Property(Pixelated.ImageColor)]" fallback="common/black.png" background="true">$INFO[Window(home).Property(Pixelated.ImageFilter)]</texture>
 			<visible>StringCompare(Window(home).Property(Pixelated.ImageUpdating),1)</visible>
