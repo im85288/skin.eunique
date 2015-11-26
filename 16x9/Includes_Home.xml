@@ -1629,8 +1629,8 @@
 				<animation effect="slide" start="0" end="-517,0" condition="Control.HasFocus(9017) | Control.HasFocus(90171) | Control.HasFocus(15017) | Control.HasFocus(150171)" time="200">Conditional</animation>
 				<animation effect="slide" start="0" end="-717,0" condition="Control.HasFocus(10017) | Control.HasFocus(100171) | Control.HasFocus(14017) | Control.HasFocus(140171)" time="200">Conditional</animation>
 				<animation effect="slide" start="0" end="-1537,0" condition="Control.HasFocus(18002)" time="200">Conditional</animation>
-				<animation effect="slide" start="0" end="-1937,0" condition="Control.HasFocus(18003)" time="200">Conditional</animation>
-				<animation effect="slide" start="0" end="-2561,0" condition="Control.HasFocus(19002) | Control.HasFocus(19003)" time="200">Conditional</animation>
+				<animation effect="slide" start="0" end="-1937,0" condition="Control.HasFocus(18003) | Control.HasFocus(18004)" time="200">Conditional</animation>
+				<animation effect="slide" start="0" end="-2561,0" condition="Control.HasFocus(19002) | Control.HasFocus(19003) | Control.HasFocus(19004)" time="200">Conditional</animation>
 				<animation effect="slide" start="0" end="-221,0" condition="Skin.String(home.vertical,2) + !Control.HasFocus(3634) + !Control.HasFocus(3635) + !Control.HasFocus(300) + !control.hasfocus(302)" time="200">Conditional</animation>
 				<animation type="WindowClose">
 					<effect type="fade" start="100" end="0" time="150"/>
@@ -1696,8 +1696,8 @@
 						<animation effect="slide" start="0" end="517,0" condition="Control.HasFocus(9017) | Control.HasFocus(90171) | Control.HasFocus(15017) | Control.HasFocus(150171)" time="200">Conditional</animation>
 						<animation effect="slide" start="0" end="717,0" condition="Control.HasFocus(10017) | Control.HasFocus(100171) | Control.HasFocus(14017) | Control.HasFocus(140171)" time="200">Conditional</animation>
 						<animation effect="slide" start="0" end="1537,0" condition="Control.HasFocus(18002)" time="200">Conditional</animation>
-						<animation effect="slide" start="0" end="1937,0" condition="Control.HasFocus(18003)" time="200">Conditional</animation>
-						<animation effect="slide" start="0" end="2561,0" condition="Control.HasFocus(19002) | Control.HasFocus(19003)" time="200">Conditional</animation>
+						<animation effect="slide" start="0" end="1937,0" condition="Control.HasFocus(18003) | Control.HasFocus(18004)" time="200">Conditional</animation>
+						<animation effect="slide" start="0" end="2561,0" condition="Control.HasFocus(19002) | Control.HasFocus(19003) | Control.HasFocus(19004)" time="200">Conditional</animation>
 						<top>781</top>
 						<left>0</left>
 						<width>228</width>
@@ -1712,8 +1712,8 @@
 						<animation effect="slide" start="0" end="517,0" condition="Control.HasFocus(9017) | Control.HasFocus(90171) | Control.HasFocus(15017) | Control.HasFocus(150171)" time="200">Conditional</animation>
 						<animation effect="slide" start="0" end="717,0" condition="Control.HasFocus(10017) | Control.HasFocus(100171) | Control.HasFocus(14017) | Control.HasFocus(140171)" time="200">Conditional</animation>
 						<animation effect="slide" start="0" end="1537,0" condition="Control.HasFocus(18002)" time="200">Conditional</animation>
-						<animation effect="slide" start="0" end="1937,0" condition="Control.HasFocus(18003)" time="200">Conditional</animation>
-						<animation effect="slide" start="0" end="2561,0" condition="Control.HasFocus(19002) | Control.HasFocus(19003)" time="200">Conditional</animation>
+						<animation effect="slide" start="0" end="1937,0" condition="Control.HasFocus(18003) | Control.HasFocus(18004)" time="200">Conditional</animation>
+						<animation effect="slide" start="0" end="2561,0" condition="Control.HasFocus(19002) | Control.HasFocus(19003) | Control.HasFocus(19004)" time="200">Conditional</animation>
 						<left>238</left>
 						<width>1000</width>
 						<top>773</top>
@@ -3999,7 +3999,7 @@
 				</control>
 				<!-- TV menu item -->
 				<control type="group">
-					<animation effect="fade" start="100" end="0" time="50" condition="[StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + [Container(4012).IsUpdating | Container(4016).IsUpdating | Container(4017).IsUpdating | Container(14017).IsUpdating | Container(18003).IsUpdating | Container(19003).IsUpdating]]">Conditional</animation>
+					<animation effect="fade" start="100" end="0" time="50" condition="[StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + [Container(4012).IsUpdating | Container(4016).IsUpdating | Container(4017).IsUpdating | Container(14017).IsUpdating | Container(18004).IsUpdating | Container(19004).IsUpdating]]">Conditional</animation>
 									<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
 				<control type="group">
 					<left>SidePad</left>
@@ -4738,15 +4738,15 @@
 						<top>330</top>
 						<width>473</width>
 						<height>705</height>
-						<onright>18003</onright>
+						<onright>18004</onright>
 						<onleft>14017</onleft>
 						<onback>300</onback>
                         <onup>300</onup>
 						<texturefocus>-</texturefocus>
 						<texturenofocus>-</texturenofocus>
 						<onfocus>SetProperty(SkinHelper.WidgetContainer,18002)</onfocus>
-						<onup>setfocus(18003,0)</onup>
-						<ondown>setfocus(18003,3)</ondown>
+						<onup>setfocus(18004,0)</onup>
+						<ondown>setfocus(18004,3)</ondown>
 						<oninfo>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(18001).ListItem(4).Label])</oninfo>
 						<onclick>ActivateWindow(10025,videodb://tvshows/titles/$INFO[Container(18001).ListItem(4).Property(DBID)]/,return)</onclick>
 					</control>
@@ -4759,7 +4759,7 @@
 						<texture>$INFO[Container(18001).ListItem(4).icon]</texture>
 						<animation effect="zoom" start="105" end="90" time="200" tween="quadratic" reversible="false" center="auto" condition="Control.HasFocus(18002)">Conditional</animation>
 					</control>
-					<control type="panel" id="18003">
+					<control type="panel" id="18004">
 						<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + IntegerGreaterThan(Container(18001).NumItems,1)</visible>
 						<left>3038</left>
 						<top>330</top>
@@ -4770,7 +4770,7 @@
 						<onup>300</onup>
 						<ondown>setfocus(18002,3)</ondown>
 						<onback>300</onback>
-						<oninfo>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(18003).ListItem.Label])</oninfo>
+						<oninfo>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(18004).ListItem.Label])</oninfo>
 						<itemlayout width="235" height="352.5">
 							<control type="image">
 								<aspectratio>stretch</aspectratio>
@@ -4792,19 +4792,19 @@
 							<control type="group">
 								<animation effect="zoom" start="105" end="90" time="200" tween="quadratic" reversible="false" center="auto">Focus</animation>
 								<control type="button">
-									<onfocus>SetProperty(SkinHelper.WidgetContainer,18003)</onfocus>
+									<onfocus>SetProperty(SkinHelper.WidgetContainer,18004)</onfocus>
 									<texturenofocus>-</texturenofocus>
 									<texturefocus>-</texturefocus>
 								</control>
 								<control type="image">
 									<aspectratio>stretch</aspectratio>
 									<texture background="true">$VAR[PosterImage]</texture>
-									<visible>Control.HasFocus(18003)</visible>
+									<visible>Control.HasFocus(18004)</visible>
 								</control>
 								<control type="image">
 									<aspectratio>stretch</aspectratio>
 									<texture background="true">$VAR[PosterImage]</texture>
-									<visible>!Control.HasFocus(18003)</visible>
+									<visible>!Control.HasFocus(18004)</visible>
 								</control>
 								<control type="progress">
 									<bottom>0</bottom>
@@ -4858,8 +4858,8 @@
 						<top>330</top>
 						<width>473</width>
 						<height>705</height>
-						<onright>19003</onright>
-						<onleft>18003</onleft>
+						<onright>19004</onright>
+						<onleft>18004</onleft>
 						<onback>300</onback>
                         <onup>300</onup>
 						<texturefocus>-</texturefocus>
@@ -4879,7 +4879,7 @@
 						<texture>$INFO[Container(19011).ListItem(4).icon]</texture>
 						<animation effect="zoom" start="105" end="90" time="200" tween="quadratic" reversible="false" center="auto" condition="Control.HasFocus(19002)">Conditional</animation>
 					</control>
-					<control type="panel" id="19003">
+					<control type="panel" id="19004">
 						<visible>IntegerGreaterThan(Container(19011).NumItems,1)</visible>
 						<left>4031</left>
 						<top>330</top>
@@ -4890,7 +4890,7 @@
 						<onup>300</onup>
 						<ondown>setfocus(19002,3)</ondown>
 						<onback>300</onback>
-						<oninfo>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(19003).ListItem.Label])</oninfo>
+						<oninfo>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(19004).ListItem.Label])</oninfo>
 						<itemlayout width="235" height="352.5">
 							<control type="image">
 								<aspectratio>stretch</aspectratio>
@@ -4912,7 +4912,7 @@
 							<control type="group">
 								<animation effect="zoom" start="105" end="90" time="200" tween="quadratic" reversible="false" center="auto">Focus</animation>
 								<control type="button">
-									<onfocus>SetProperty(SkinHelper.WidgetContainer,19003)</onfocus>
+									<onfocus>SetProperty(SkinHelper.WidgetContainer,19004)</onfocus>
 									<texturenofocus>-</texturenofocus>
 									<texturefocus>-</texturefocus>
 								</control>

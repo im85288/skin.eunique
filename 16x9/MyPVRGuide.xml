@@ -83,7 +83,7 @@
 						<font>MediumBold</font>
 						<textcolor>white</textcolor>
 						<selectedcolor>white</selectedcolor>
-						<label>$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Label]$INFO[ListItem.EpisodeName, (,)]</label>
+						<label>$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Label]$INFO[ListItem.EpisodeName, (,)]$INFO[ListItem.ChannelNumber, - ,]</label>
 					</control>
 					<control type="label">
 						<top>10</top>
@@ -136,20 +136,6 @@
 						<texture background="true" fallback="pvr/background.jpg">$INFO[Container(10).ListItem.Icon]</texture>
 						<aspectratio>keep</aspectratio>
 					</control>
-					<control type="button" id="85">
-						<top>205</top>
-						<left>10</left>
-						<width>200</width>
-						<height>75</height>
-						<align>center</align>
-						<label>$INFO[Control.GetLabel(30)]</label>
-						<onclick>NextChannelGroup</onclick>
-						<ondown>10</ondown>
-						<onup>10</onup>
-						<onleft>10</onleft>
-						<onright>10</onright>
-						<textcolor>white</textcolor>
-					</control>
 				</control>
 				<control type="image">
 					<left>-8</left>
@@ -163,8 +149,6 @@
 					<right>10</right>
 					<top>322</top>
 					<height>600</height>
-					<onup>85</onup>
-					<ondown>10</ondown>
 					<onback>28</onback>
 					<viewtype label="19069">list</viewtype>
 					<progresstexture colordiffuse="Highlight" border="0,62,18,14">pvr/progressindicator.png</progresstexture>
@@ -184,25 +168,25 @@
 							<label>$INFO[ListItem.Label]</label>
 						</control>
 					</rulerlayout>
-					<channellayout height="70" width="357">
+					<channellayout height="70" width="460">
 						<control type="image">
 							<left>57</left>
 							<top>0</top>
-							<width>357</width>
+							<width>100%</width>
 							<height>1</height>
 							<texture colordiffuse="white2">common/white.png</texture>
 						</control>
 						<control type="image">
 							<left>57</left>
 							<bottom>0</bottom>
-							<width>357</width>
+							<width>100%</width>
 							<height>1</height>
 							<texture colordiffuse="white2">common/white.png</texture>
 						</control>
 						<control type="image">
 							<top>1</top>
 							<left>57</left>
-							<width>357</width>
+							<width>100%</width>
 							<height>67</height>
 							<texture colordiffuse="selective yellow">common/white.png</texture>
 							<visible>ListItem.IsPlaying</visible>
@@ -237,25 +221,25 @@
 							<animation effect="fade" start="100" end="64" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(10) + ![ListItem.IsSelected | ListItem.IsPlaying]">Conditional</animation>
 						</control>
 					</channellayout>
-					<focusedchannellayout height="70" width="357">
+					<focusedchannellayout height="70" width="460">
 						<control type="image">
 							<left>57</left>
 							<top>0</top>
-							<width>357</width>
+							<width>100%</width>
 							<height>1</height>
 							<texture colordiffuse="white2">common/white.png</texture>
 						</control>
 						<control type="image">
 							<left>57</left>
 							<bottom>0</bottom>
-							<width>357</width>
+							<width>100%</width>
 							<height>1</height>
 							<texture colordiffuse="white2">common/white.png</texture>
 						</control>
 						<control type="image">
 							<top>1</top>
 							<left>57</left>
-							<width>357</width>
+							<width>100%</width>
 							<height>67</height>
 							<texture colordiffuse="white">common/white.png</texture>
 							<visible>Control.HasFocus(10) + !ListItem.IsPlaying</visible>
@@ -263,7 +247,7 @@
 						<control type="image">
 							<top>1</top>
 							<left>57</left>
-							<width>357</width>
+							<width>100%</width>
 							<height>67</height>
 							<texture colordiffuse="selective yellow">common/white.png</texture>
 							<visible>Control.HasFocus(10) + ListItem.IsPlaying</visible>
