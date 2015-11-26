@@ -375,16 +375,25 @@
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
 				<orientation>horizontal</orientation>
 				<focusposition>7</focusposition>
-				<viewtype label="31758">list</viewtype>
+				<viewtype label="32076">list</viewtype>
 				<scrolltime tween="quadratic">400</scrolltime>
 				<itemlayout height="337" width="222" condition="!Container.Content(episodes)">
 					<control type="group">
-						<animation effect="zoom" end="90" start="100" time="200" center="auto" condition="Control.HasFocus(518)">Conditional</animation>
 						<animation effect="fade" end="75" start="100" time="200" center="auto" condition="Control.HasFocus(518)">Conditional</animation>
 					<control type="image">
 						<aspectratio scalediffuse="false">scale</aspectratio>
 						<texture diffuse="diffuse/wall.png" background="true" fallback="DefaultMovies.png">$VAR[PosterImage]</texture>
 					</control>
+			<control type="label">
+						<centerright>34</centerright>
+						<centertop>35</centertop>
+				<width>40</width>
+				<height>40</height>
+				<font>symbolback</font>
+				<label>$VAR[PercentWatchedBack]</label>
+				<textcolor>$VAR[BackingColourHighlight]</textcolor>
+								<selectedcolor>$VAR[BackingColourHighlight]</selectedcolor>
+			</control>
 					<control type="label">
 						<centerright>32</centerright>
 						<centertop>35</centertop>
@@ -444,7 +453,6 @@
 				</itemlayout>
 				<itemlayout height="337" width="600" condition="Container.Content(episodes)">
 					<control type="group">
-						<animation effect="zoom" end="90" start="100" time="200" center="auto" condition="Control.HasFocus(518)">Conditional</animation>
 						<animation effect="fade" end="75" start="100" time="200" center="auto" condition="Control.HasFocus(518)">Conditional</animation>
 					<control type="image">
 						<bottom>30</bottom>
@@ -461,6 +469,16 @@
 						<align>center</align>
 						<label>$INFO[ListItem.Label]</label>
 					</control>
+			<control type="label">
+						<centerright>92</centerright>
+						<centertop>35</centertop>
+				<width>40</width>
+				<height>40</height>
+				<font>symbolback</font>
+				<label>$VAR[PercentWatchedBack]</label>
+				<textcolor>$VAR[BackingColourHighlight]</textcolor>
+								<selectedcolor>$VAR[BackingColourHighlight]</selectedcolor>
+			</control>
 					<control type="label">
 						<centerright>90</centerright>
 						<centertop>35</centertop>
@@ -533,11 +551,21 @@
 					</control>
 					<control type="group">
 						<animation effect="zoom" end="180" start="100" time="100" center="auto">Focus</animation>
-						<animation effect="slide" end="0,-84" start="0" time="0" center="auto" condition="Control.HasFocus(518)">Conditional</animation>
+						<animation effect="slide" end="0,-73" start="0" time="0" center="auto" condition="Control.HasFocus(518)">Conditional</animation>
 					<control type="image">
 						<aspectratio scalediffuse="false">scale</aspectratio>
 						<texture diffuse="diffuse/wall.png" background="true" fallback="DefaultMovies.png">$VAR[PosterImage]</texture>
 					</control>
+			<control type="label">
+						<centerright>34</centerright>
+						<centertop>34</centertop>
+				<width>40</width>
+				<height>40</height>
+				<font>symbolback</font>
+				<label>$VAR[PercentWatchedBack]</label>
+				<textcolor>$VAR[BackingColourHighlight]</textcolor>
+								<selectedcolor>$VAR[BackingColourHighlight]</selectedcolor>
+			</control>
 					<control type="label">
 						<centerright>32</centerright>
 						<centertop>35</centertop>
@@ -627,6 +655,16 @@
 						<align>center</align>
 						<label>$INFO[ListItem.Label]</label>
 					</control>
+			<control type="label">
+						<centerright>33</centerright>
+						<centertop>35</centertop>
+				<width>40</width>
+				<height>40</height>
+				<font>symbolback</font>
+				<label>$VAR[PercentWatchedBack]</label>
+				<textcolor>$VAR[BackingColourHighlight]</textcolor>
+								<selectedcolor>$VAR[BackingColourHighlight]</selectedcolor>
+			</control>
 					<control type="label">
 						<centerright>90</centerright>
 						<centertop>35</centertop>
