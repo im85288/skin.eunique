@@ -362,14 +362,13 @@
 				<textcolor>white</textcolor>
 				<label>$VAR[PlotCritic]</label>
 			</control>
-			<control type="fixedlist" id="518">
+			<control type="wraplist" id="518">
 				<visible>[Container.Content(movies) | Container.Content(sets)]| Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)</visible>
 				<bottom>0</bottom>
 				<right>-20</right>
 				<left>-40</left>
 				<onup condition="!Skin.HasSetting(global.kioskmode)">9000</onup>
 				<ondown>60</ondown>
-				<preloaditems>2</preloaditems>
 				<pagecontrol>60</pagecontrol>
 				<height>337</height>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
