@@ -245,7 +245,7 @@
 	</variable>
 	<variable name="DefWidget18Content">
 		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.tvshows4))">$INFO[Container(300).ListItem.Property(widgetPath.tvshows4)]</value>
-		<value>plugin://script.extendedinfo?info=populartvshows</value>
+		<value>plugin://script.skin.helper.service/?action=similarshows&amp;limit=27&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
 	</variable>
 	<variable name="DefWidget18Target">
 		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetTarget.tvshows4))">$INFO[Container(300).ListItem.Property(widgetTarget.tvshows4)]</value>
