@@ -791,51 +791,51 @@
 		<value condition="!IsEmpty(ListItem.Tagline)">$INFO[ListItem.Tagline]</value>
 	</variable>
 	<variable name="IndicatorColourHighlight">
-		<value condition="ListItem.IsResumable + Skin.HasSetting(ResumeColour)">$INFO[Skin.String(resume.colour.name)]</value>
-		<value condition="stringcompare(ListItem.Overlay,OverlayWatched.png) + Skin.HasSetting(WatchedColour)">$INFO[Skin.String(watched.colour.name)]</value>
-		<value condition="ListItem.IsPlaying + Skin.HasSetting(PlayingColour)">$INFO[Skin.String(playing.colour.name)]</value>
-		<value condition="stringcompare(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(UnwatchedColour)">$INFO[Skin.String(unwatched.colour.name)]</value>
-		<value condition="!ListItem.IsResumable + !stringcompare(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsPlaying + !stringcompare(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(UnwatchedColour)">$INFO[Skin.String(unwatched.colour.name)]</value>
+		<value condition="ListItem.IsResumable + Skin.HasSetting(ResumeColour)">$INFO[Skin.String(resume.color.name)]</value>
+		<value condition="stringcompare(ListItem.Overlay,OverlayWatched.png) + Skin.HasSetting(WatchedColour)">$INFO[Skin.String(watched.color.name)]</value>
+		<value condition="ListItem.IsPlaying + Skin.HasSetting(PlayingColour)">$INFO[Skin.String(playing.color.name)]</value>
+		<value condition="stringcompare(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(UnwatchedColour)">$INFO[Skin.String(unwatched.color.name)]</value>
+		<value condition="!ListItem.IsResumable + !stringcompare(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsPlaying + !stringcompare(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(UnwatchedColour)">$INFO[Skin.String(unwatched.color.name)]</value>
 		<value>white</value>
 	</variable>
 	<variable name="BackingColourHighlight">
-		<value condition="Skin.HasSetting(BackingColour) + !IsEmpty(Skin.String(backing.colour.name))">$INFO[Skin.String(backing.colour.name)]</value>
+		<value condition="Skin.HasSetting(BackingColour) + !IsEmpty(Skin.String(backing.color.name))">$INFO[Skin.String(backing.color.name)]</value>
 		<value>white2</value>
 	</variable>
 	<variable name="ResumeColourHighlight">
-		<value condition="Skin.HasSetting(ResumeColour) + !IsEmpty(Skin.String(resume.colour.name))">$INFO[Skin.String(resume.colour.name)]</value>
+		<value condition="Skin.HasSetting(ResumeColour) + !IsEmpty(Skin.String(resume.color.name))">$INFO[Skin.String(resume.color.name)]</value>
 		<value>Highlight2</value>
 	</variable>
 	<variable name="PlayingColourHighlight">
-		<value condition="Skin.HasSetting(PlayingColour) + !IsEmpty(Skin.String(playing.colour.name))">$INFO[Skin.String(playing.colour.name)]</value>
+		<value condition="Skin.HasSetting(PlayingColour) + !IsEmpty(Skin.String(playing.color.name))">$INFO[Skin.String(playing.color.name)]</value>
 		<value>Highlight2</value>
 	</variable>
 	<variable name="NewColourHighlight">
-		<value condition="Skin.HasSetting(NewColour) + !IsEmpty(Skin.String(new.colour.name))">$INFO[Skin.String(new.colour.name)]</value>
+		<value condition="Skin.HasSetting(NewColour) + !IsEmpty(Skin.String(new.color.name))">$INFO[Skin.String(new.color.name)]</value>
 		<value>Highlight2</value>
 	</variable>
 	<variable name="WatchedColourHighlight">
-		<value condition="Skin.HasSetting(WatchedColour) + !IsEmpty(Skin.String(watched.colour.name))">$INFO[Skin.String(watched.colour.name)]</value>
+		<value condition="Skin.HasSetting(WatchedColour) + !IsEmpty(Skin.String(watched.color.name))">$INFO[Skin.String(watched.color.name)]</value>
 		<value>Highlight2</value>
 	</variable>
 	<variable name="UnwatchedColourHighlight">
-		<value condition="Skin.HasSetting(UnwatchedColour) + !IsEmpty(Skin.String(unwatched.colour.name))">$INFO[Skin.String(unwatched.colour.name)]</value>
+		<value condition="Skin.HasSetting(UnwatchedColour) + !IsEmpty(Skin.String(unwatched.color.name))">$INFO[Skin.String(unwatched.color.name)]</value>
 		<value>Highlight2</value>
 	</variable>
 	<variable name="PercentColourHighlight">
-		<value condition="Skin.HasSetting(PosterBackingColour) + !IsEmpty(Skin.String(posterbacking.colour.name))">$INFO[Skin.String(posterbacking.colour.name)]</value>
+		<value condition="Skin.HasSetting(PosterBackingColour) + !IsEmpty(Skin.String(posterbacking.color.name))">$INFO[Skin.String(posterbacking.color.name)]</value>
 		<value>Highlight</value>
 	</variable>
 	<variable name="EmbyLeftColourHighlight">
-		<value condition="Skin.HasSetting(emby.left.colour) + !IsEmpty(Skin.String(emby.left.colour.name))">$INFO[Skin.String(emby.left.colour.name)]</value>
+		<value condition="Skin.HasSetting(emby.left.color) + !IsEmpty(Skin.String(emby.left.color.name))">$INFO[Skin.String(emby.left.color.name)]</value>
 		<value>dark pastel blue</value>
 	</variable>
 	<variable name="EmbyRightColourHighlight">
-		<value condition="Skin.HasSetting(emby.right.colour) + !IsEmpty(Skin.String(emby.right.colour.name))">$INFO[Skin.String(emby.right.colour.name)]</value>
+		<value condition="Skin.HasSetting(emby.right.color) + !IsEmpty(Skin.String(emby.right.color.name))">$INFO[Skin.String(emby.right.color.name)]</value>
 		<value>dark pastel green</value>
 	</variable>
 	<variable name="EmbyMiddleColourHighlight">
-		<value condition="Skin.HasSetting(emby.middle.colour) + !IsEmpty(Skin.String(emby.middle.colour.name))">$INFO[Skin.String(emby.middle.colour.name)]</value>
+		<value condition="Skin.HasSetting(emby.middle.color) + !IsEmpty(Skin.String(emby.middle.color.name))">$INFO[Skin.String(emby.middle.color.name)]</value>
 		<value>dark pastel red</value>
 	</variable>
 	<variable name="SelectionColourHighlight">
@@ -864,23 +864,23 @@
 		<value>dark pastel red</value>
 	</variable>
 	<variable name="EmbyMenuColourHighlight">
-		<value condition="Skin.HasSetting(emby.menu.colour) + !IsEmpty(Skin.String(emby.menu.colour.name))">$INFO[Skin.String(emby.menu.colour.name)]</value>
+		<value condition="Skin.HasSetting(emby.menu.color) + !IsEmpty(Skin.String(emby.menu.color.name))">$INFO[Skin.String(emby.menu.color.name)]</value>
 		<value>white</value>
 	</variable>
 	<variable name="EmbyMenuTextColourHighlight">
-		<value condition="Skin.HasSetting(emby.menu.text.colour) + !IsEmpty(Skin.String(emby.menu.text.colour.name))">$INFO[Skin.String(emby.menu.text.colour.name)]</value>
+		<value condition="Skin.HasSetting(emby.menu.text.color) + !IsEmpty(Skin.String(emby.menu.text.color.name))">$INFO[Skin.String(emby.menu.text.color.name)]</value>
 		<value>black2</value>
 	</variable>
 	<variable name="ColourFlags">
-		<value condition="Skin.HasSetting(emby.flags.colour) + !IsEmpty(Skin.String(emby.flags.colour.name))">$INFO[Skin.String(emby.flags.colour.name)]</value>
+		<value condition="Skin.HasSetting(emby.flags.color) + !IsEmpty(Skin.String(emby.flags.color.name))">$INFO[Skin.String(emby.flags.color.name)]</value>
 		<value>north texas green</value>
 	</variable>
 	<variable name="ColourTextFlags">
-		<value condition="Skin.HasSetting(emby.flags.text.colour) + !IsEmpty(Skin.String(emby.flags.text.colour.name))">$INFO[Skin.String(emby.flags.text.colour.name)]</value>
+		<value condition="Skin.HasSetting(emby.flags.text.color) + !IsEmpty(Skin.String(emby.flags.text.color.name))">$INFO[Skin.String(emby.flags.text.color.name)]</value>
 		<value>black</value>
 	</variable>
 	<variable name="ColourIconFlags">
-		<value condition="Skin.HasSetting(emby.flags.icon.colour) + !IsEmpty(Skin.String(emby.flags.icon.colour.name))">$INFO[Skin.String(emby.flags.icon.colour.name)]</value>
+		<value condition="Skin.HasSetting(emby.flags.icon.color) + !IsEmpty(Skin.String(emby.flags.icon.color.name))">$INFO[Skin.String(emby.flags.icon.color.name)]</value>
 		<value>black</value>
 	</variable>
 	<variable name="3ColumnHighlight">
@@ -890,11 +890,11 @@
 		<value>$VAR[ColourHighlight]</value>
 	</variable>
 	<variable name="NowPlayingBackgroundColourHighlight">
-		<value condition="Skin.HasSetting(now.playing.background.colour) + !IsEmpty(Skin.String(now.playing.background.colour.name))">$INFO[Skin.String(now.playing.background.colour.name)]</value>
+		<value condition="Skin.HasSetting(now.playing.background.color) + !IsEmpty(Skin.String(now.playing.background.color.name))">$INFO[Skin.String(now.playing.background.color.name)]</value>
 		<value>black2</value>
 	</variable>
 	<variable name="NowPlayingProgressColourHighlight">
-		<value condition="Skin.HasSetting(now.playing.progress.colour) + !IsEmpty(Skin.String(now.playing.progress.colour.name))">$INFO[Skin.String(now.playing.progress.colour.name)]</value>
+		<value condition="Skin.HasSetting(now.playing.progress.color) + !IsEmpty(Skin.String(now.playing.progress.color.name))">$INFO[Skin.String(now.playing.progress.color.name)]</value>
 		<value>dark pastel red</value>
 	</variable>
 	<variable name="EmbyEndTimeSymbol">
