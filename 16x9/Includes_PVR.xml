@@ -79,36 +79,11 @@
 					<aligny>center</aligny>
 					<visible>Control.IsVisible(10)</visible>
 				</control>
-				<control type="radiobutton" id="123">
-					<include>DefContextButtonBlade</include>
-					<label>31739</label>
-					<selected>Skin.HasSetting(ShowIconViewEpg)</selected>
-					<onclick>Skin.ToggleSetting(ShowIconViewEpg)</onclick>
-					<onclick>ReloadSkin()</onclick>
-					<align>left</align>
-					<visible>Control.IsVisible(10)</visible>
-				</control>
 				<control type="radiobutton" id="124">
 					<include>DefContextButtonBlade</include>
 					<label>31740</label>
 					<selected>Skin.HasSetting(EPGGenreColors.Enabled)</selected>
 					<onclick>Skin.ToggleSetting(EPGGenreColors.Enabled)</onclick>
-					<align>left</align>
-					<visible>Control.IsVisible(10)</visible>
-				</control>
-				<control type="radiobutton" id="125">
-					<include>DefContextButtonBlade</include>
-					<label> -- $LOCALIZE[31844] $LOCALIZE[31824]</label>
-					<selected>Skin.HasSetting(Airdate.Enabled)</selected>
-					<onclick>Skin.ToggleSetting(Airdate.Enabled)</onclick>
-					<align>left</align>
-					<visible>Control.IsVisible(10)</visible>
-				</control>
-				<control type="radiobutton" id="126">
-					<include>DefContextButtonBlade</include>
-					<label> -- $LOCALIZE[31844] $LOCALIZE[31849]</label>
-					<selected>Skin.HasSetting(EPGArt.Enabled)</selected>
-					<onclick>Skin.ToggleSetting(EPGArt.Enabled)</onclick>
 					<align>left</align>
 					<visible>Control.IsVisible(10)</visible>
 				</control>
@@ -134,6 +109,16 @@
 					<description>Sort</description>
 					<include>DefContextButtonBlade</include>
 					<align>left</align>
+					<visible>false</visible>
+				</control>
+				<control type="button" id="1803">
+					<description>Sort by button</description>
+					<include>DefContextButtonBlade</include>
+					<align>left</align>
+					<label>32078</label>
+					<label2>$INFO[Container.SortMethod]</label2>
+					<onclick>Container.NextSortMethod</onclick>
+					<enable>Control.IsEnabled(3)</enable>
 				</control>
 				<control type="togglebutton" id="4">
 					<description>Ascending</description>
