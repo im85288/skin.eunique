@@ -489,7 +489,15 @@
 			<visible>Window.IsVisible(DialogPVRInfo.xml)</visible>
 			<include>Dimensions_Fullscreen</include>
 			<aspectratio align="center">scale</aspectratio>
+			<texture colordiffuse="$INFO[Window(home).Property(PVRInfo.ImageColor)]" background="true">special://skin/extras/backgrounds/Channels.jpg</texture>
+			<visible>IsEmpty(Window(home).Property(PVRInfo.ImageFilter))</visible>
+		</control>
+		<control type="image">
+			<visible>Window.IsVisible(DialogPVRInfo.xml)</visible>
+			<include>Dimensions_Fullscreen</include>
+			<aspectratio align="center">scale</aspectratio>
 			<texture colordiffuse="$INFO[Window(home).Property(PVRInfo.ImageColor)]" background="true">$INFO[Window(home).Property(PVRInfo.ImageFilter)]</texture>
+			<visible>!IsEmpty(Window(home).Property(PVRInfo.ImageFilter))</visible>
 		</control>
 		<control id="8328" type="image">
 			<include>Dimensions_Fullscreen</include>
