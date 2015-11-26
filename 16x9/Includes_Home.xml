@@ -22,7 +22,7 @@
                 <bottom>5</bottom>
                 <width>40</width>
                 <height>45</height>
-                <fadetime>350</fadetime>
+                
                 <aspectratio aligny="bottom" align="left">keep</aspectratio>
                 <texture colordiffuse="$VAR[EmbyRightColourHighlight]">$INFO[Weather.FanartCode,weather/small/,.png]</texture>
             </control>
@@ -1650,8 +1650,8 @@
                     <preloaditems>2</preloaditems>
                     <orientation>horizontal</orientation>
                     <scrolltime tween="quadratic">100</scrolltime>
-                    <include>Animation.FadeIn</include>
-                    <include>Animation.FadeOut</include>
+                    
+                    
                     <itemlayout width="1" height="1"/>
                     <focusedlayout width="1" height="1"/>
                     <content target="video">$VAR[DefWidgetContent]</content>
@@ -1670,8 +1670,8 @@
                     <preloaditems>2</preloaditems>
                     <orientation>horizontal</orientation>
                     <scrolltime tween="quadratic">100</scrolltime>
-                    <include>Animation.FadeIn</include>
-                    <include>Animation.FadeOut</include>
+                    
+                    
                     <itemlayout width="1" height="1"/>
                     <focusedlayout width="1" height="1"/>
                     <content target="video">
@@ -1704,7 +1704,7 @@
                         <height>64</height>
                         <texture fallback="E.png">$VAR[EmbyWidgetLogo]</texture>
                         <aspectratio align="center" aligny="center">keep</aspectratio>
-                        <fadetime>50</fadetime>
+                        
                         <visible>!Skin.String(home.vertical,1) + !IsEmpty(Control.GetLabel(91211))</visible>
                     </control>
                     <control type="button">
@@ -1759,8 +1759,8 @@
                         <orientation>vertical</orientation>
                         <autoscroll time="10000">!Control.HasFocus(6012)</autoscroll>
                         <scrolltime tween="quadratic">100</scrolltime>
-                        <include>Animation.FadeIn</include>
-                        <include>Animation.FadeOut</include>
+                        
+                        
                         <itemlayout width="820" height="460">
                             <control type="image">
                                 <aspectratio>scale</aspectratio>
@@ -1807,8 +1807,8 @@
                         <orientation>vertical</orientation>
                         <autoscroll time="10000">!Control.HasFocus(6012)</autoscroll>
                         <scrolltime tween="quadratic">100</scrolltime>
-                        <include>Animation.FadeIn</include>
-                        <include>Animation.FadeOut</include>
+                        
+                        
                         <itemlayout width="820" height="460">
                             <control type="image">
                                 <aspectratio>scale</aspectratio>
@@ -1921,8 +1921,8 @@
                         <preloaditems>2</preloaditems>
                         <orientation>vertical</orientation>
                         <scrolltime tween="quadratic">100</scrolltime>
-                        <include>Animation.FadeIn</include>
-                        <include>Animation.FadeOut</include>
+                        
+                        
                         <itemlayout width="273" height="245">
                             <control type="image">
                                 <aspectratio>stretch</aspectratio>
@@ -2047,8 +2047,8 @@
                         <preloaditems>2</preloaditems>
                         <orientation>vertical</orientation>
                         <scrolltime tween="quadratic">100</scrolltime>
-                        <include>Animation.FadeIn</include>
-                        <include>Animation.FadeOut</include>
+                        
+                        
                         <itemlayout width="274" height="245">
                             <control type="image">
                                 <aspectratio>stretch</aspectratio>
@@ -2176,8 +2176,8 @@
                         <preloaditems>2</preloaditems>
                         <orientation>vertical</orientation>
                         <scrolltime tween="quadratic">100</scrolltime>
-                        <include>Animation.FadeIn</include>
-                        <include>Animation.FadeOut</include>
+                        
+                        
                         <itemlayout width="273" height="245">
                             <control type="image">
                                 <aspectratio>stretch</aspectratio>
@@ -2242,8 +2242,8 @@
                         <orientation>vertical</orientation>
                         <autoscroll time="1000">!Control.HasFocus(6016)</autoscroll>
                         <scrolltime tween="quadratic">100</scrolltime>
-                        <include>Animation.FadeIn</include>
-                        <include>Animation.FadeOut</include>
+                        
+                        
                         <itemlayout width="410" height="88.125">
                             <control type="image">
                                 <aspectratio scalediffuse="false">stretch</aspectratio>
@@ -2313,8 +2313,8 @@
                         <onback>300</onback>
                         <preloaditems>2</preloaditems>
                         <scrolltime tween="quadratic">100</scrolltime>
-                        <include>Animation.FadeIn</include>
-                        <include>Animation.FadeOut</include>
+                        
+                        
                         <itemlayout width="158" height="235">
                             <control type="image">
                                 <aspectratio>stretch</aspectratio>
@@ -2395,8 +2395,8 @@
                         <preloaditems>9</preloaditems>
                         <scrolltime tween="quadratic">100</scrolltime>
                         <autoscroll time="5000">!Control.HasFocus(9017)</autoscroll>
-                        <include>Animation.FadeIn</include>
-                        <include>Animation.FadeOut</include>
+                        
+                        
                         <itemlayout width="158" height="235"/>
                         <focusedlayout width="158" height="235">
                             <control type="button">
@@ -2418,7 +2418,7 @@
                             <width>158</width>
                             <height>235</height>
                             <texture fallback="empty.png">$INFO[Container(9017).Listitem(1).Icon]</texture>
-                            <fadetime>100</fadetime>
+                            
                         </control>
                         <control type="image">
                             <left>474</left>
@@ -2426,7 +2426,7 @@
                             <width>158</width>
                             <height>235</height>
                             <texture fallback="empty.png">$INFO[Container(9017).Listitem(2).Icon]</texture>
-                            <fadetime>100</fadetime>
+                            
                         </control>
                         <control type="image">
                             <left>316</left>
@@ -2434,7 +2434,7 @@
                             <width>158</width>
                             <height>235</height>
                             <texture fallback="empty.png">$INFO[Container(9017).Listitem(3).Icon]</texture>
-                            <fadetime>100</fadetime>
+                            
                         </control>
                         <control type="image">
                             <left>474</left>
@@ -2442,7 +2442,7 @@
                             <width>158</width>
                             <height>235</height>
                             <texture fallback="empty.png">$INFO[Container(9017).Listitem(4).Icon]</texture>
-                            <fadetime>100</fadetime>
+                            
                         </control>
                         <control type="image">
                             <left>0</left>
@@ -2450,7 +2450,7 @@
                             <width>158</width>
                             <height>235</height>
                             <texture fallback="empty.png">$INFO[Container(9017).Listitem(5).Icon]</texture>
-                            <fadetime>100</fadetime>
+                            
                         </control>
                         <control type="image">
                             <left>158</left>
@@ -2458,7 +2458,7 @@
                             <width>158</width>
                             <height>235</height>
                             <texture fallback="empty.png">$INFO[Container(9017).Listitem(6).Icon]</texture>
-                            <fadetime>100</fadetime>
+                            
                         </control>
                         <control type="image">
                             <left>316</left>
@@ -2466,7 +2466,7 @@
                             <width>158</width>
                             <height>235</height>
                             <texture fallback="empty.png">$INFO[Container(9017).Listitem(7).Icon]</texture>
-                            <fadetime>100</fadetime>
+                            
                         </control>
                         <control type="image">
                             <left>474</left>
@@ -2474,7 +2474,7 @@
                             <width>158</width>
                             <height>235</height>
                             <texture fallback="empty.png">$INFO[Container(9017).Listitem(8).Icon]</texture>
-                            <fadetime>100</fadetime>
+                            
                         </control>
                         <!-- main box -->
                         <control type="group">
@@ -2491,7 +2491,7 @@
                                 <width>316</width>
                                 <height>470</height>
                                 <texture fallback="empty.png">$INFO[Container(9017).Listitem(0).Icon]</texture>
-                                <fadetime>100</fadetime>
+                                
                             </control>
                         </control>
                     </control>
@@ -2509,7 +2509,7 @@
                         <texture colordiffuse="Panel">common/box.png</texture>
                     </control>
                     <control type="multiimage" description="Fanart">
-                        <fadetime>100</fadetime>
+                        
                         <timeperimage>12000</timeperimage>
                         <randomize>true</randomize>
                         <aspectratio>scale</aspectratio>
@@ -2649,8 +2649,8 @@
                     <visible>StringCompare(Container(300).ListItem.Property(defaultID),Weather)</visible>
                     <visible>Weather.IsFetched</visible>
                     <visible>!Control.HasFocus(3439) + !Control.HasFocus(3442) + !Control.HasFocus(3443)</visible>
-					<include>Animation.FadeIn</include>
-					<include>Animation.FadeOut</include>
+					
+					
                     <left>80</left>
                     <top>330</top>
                     <width>743</width>
@@ -2669,7 +2669,7 @@
                                 <texture colordiffuse="Panel">common/box.png</texture>
                             </control>
                             <control type="multiimage" description="Fanart">
-                                <fadetime>100</fadetime>
+                                
                                 <timeperimage>5000</timeperimage>
                                 <randomize>true</randomize>
                                 <aspectratio>scale</aspectratio>
@@ -2722,7 +2722,7 @@
                                 <visible>Control.HasFocus(3444)</visible>
                             </control>
                             <control type="multiimage" description="Fanart">
-                                <fadetime>100</fadetime>
+                                
                                 <timeperimage>5000</timeperimage>
                                 <randomize>true</randomize>
                                 <aspectratio>scale</aspectratio>
@@ -2895,7 +2895,7 @@
                     <visible>false</visible>
                     <visible>StringCompare(Container(300).ListItem.Property(defaultID),Weather)</visible>
                     <visible allowhiddenfocus="true">Control.HasFocus(3439)</visible>
-                    <include>Animation.FadeIn</include>
+                    
                     <autoscroll time="10000">Control.HasFocus(3439)</autoscroll>
                     <top>340</top>
                     <left>SidePad</left>
@@ -3093,8 +3093,8 @@
                         <orientation>vertical</orientation>
                         <autoscroll time="10000">!Control.HasFocus(3012)</autoscroll>
                         <scrolltime tween="quadratic">100</scrolltime>
-                        <include>Animation.FadeIn</include>
-                        <include>Animation.FadeOut</include>
+                        
+                        
                         <itemlayout width="820" height="460">
                             <control type="image">
                                 <aspectratio>scale</aspectratio>
@@ -3148,8 +3148,8 @@
                         <orientation>vertical</orientation>
                         <autoscroll time="10000">!Control.HasFocus(3012)</autoscroll>
                         <scrolltime tween="quadratic">100</scrolltime>
-                        <include>Animation.FadeIn</include>
-                        <include>Animation.FadeOut</include>
+                        
+                        
                         <itemlayout width="820" height="460">
                             <control type="image">
                                 <aspectratio>scale</aspectratio>
@@ -3287,8 +3287,8 @@
                         <preloaditems>2</preloaditems>
                         <orientation>vertical</orientation>
                         <scrolltime tween="quadratic">100</scrolltime>
-                        <include>Animation.FadeIn</include>
-                        <include>Animation.FadeOut</include>
+                        
+                        
                         <itemlayout width="410" height="245">
                             <control type="image">
                                 <aspectratio>stretch</aspectratio>
@@ -3404,8 +3404,8 @@
                         <preloaditems>2</preloaditems>
                         <orientation>vertical</orientation>
                         <scrolltime tween="quadratic">100</scrolltime>
-                        <include>Animation.FadeIn</include>
-                        <include>Animation.FadeOut</include>
+                        
+                        
                         <itemlayout width="410" height="245">
                             <control type="image">
                                 <aspectratio>keep</aspectratio>
@@ -3474,8 +3474,8 @@
                         <orientation>vertical</orientation>
                         <autoscroll time="3000">!Control.HasFocus(3016)</autoscroll>
                         <scrolltime tween="quadratic">100</scrolltime>
-                        <include>Animation.FadeIn</include>
-                        <include>Animation.FadeOut</include>
+                        
+                        
                         <autoscroll time="3000">!Control.HasFocus(3016)</autoscroll>
                         <itemlayout width="410" height="235">
                             <control type="image">
@@ -3560,8 +3560,8 @@
                         <oninfo>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(3017).ListItem.Label])</oninfo>
                         <preloaditems>2</preloaditems>
                         <scrolltime tween="quadratic">100</scrolltime>
-                        <include>Animation.FadeIn</include>
-                        <include>Animation.FadeOut</include>
+                        
+                        
                         <itemlayout width="158" height="235">
                             <control type="image">
                                 <aspectratio>stretch</aspectratio>
@@ -3646,8 +3646,8 @@
                         <preloaditems>9</preloaditems>
                         <scrolltime tween="quadratic">100</scrolltime>
                         <autoscroll time="5000">!Control.HasFocus(10017)</autoscroll>
-                        <include>Animation.FadeIn</include>
-                        <include>Animation.FadeOut</include>
+                        
+                        
                         <itemlayout width="158" height="235"/>
                         <focusedlayout width="158" height="235">
                             <control type="button">
@@ -3670,7 +3670,7 @@
                             <width>158</width>
                             <height>235</height>
                             <texture fallback="empty.png">$INFO[Container(10017).Listitem(1).Icon]</texture>
-                            <fadetime>100</fadetime>
+                            
                         </control>
                         <control type="image">
                             <left>474</left>
@@ -3678,7 +3678,7 @@
                             <width>158</width>
                             <height>235</height>
                             <texture fallback="empty.png">$INFO[Container(10017).Listitem(2).Icon]</texture>
-                            <fadetime>100</fadetime>
+                            
                         </control>
                         <control type="image">
                             <left>316</left>
@@ -3686,7 +3686,7 @@
                             <width>158</width>
                             <height>235</height>
                             <texture fallback="empty.png">$INFO[Container(10017).Listitem(3).Icon]</texture>
-                            <fadetime>100</fadetime>
+                            
                         </control>
                         <control type="image">
                             <left>474</left>
@@ -3694,7 +3694,7 @@
                             <width>158</width>
                             <height>235</height>
                             <texture fallback="empty.png">$INFO[Container(10017).Listitem(4).Icon]</texture>
-                            <fadetime>100</fadetime>
+                            
                         </control>
                         <control type="image">
                             <left>0</left>
@@ -3702,7 +3702,7 @@
                             <width>158</width>
                             <height>235</height>
                             <texture fallback="empty.png">$INFO[Container(10017).Listitem(5).Icon]</texture>
-                            <fadetime>100</fadetime>
+                            
                         </control>
                         <control type="image">
                             <left>158</left>
@@ -3710,7 +3710,7 @@
                             <width>158</width>
                             <height>235</height>
                             <texture fallback="empty.png">$INFO[Container(10017).Listitem(6).Icon]</texture>
-                            <fadetime>100</fadetime>
+                            
                         </control>
                         <control type="image">
                             <left>316</left>
@@ -3718,7 +3718,7 @@
                             <width>158</width>
                             <height>235</height>
                             <texture fallback="empty.png">$INFO[Container(10017).Listitem(7).Icon]</texture>
-                            <fadetime>100</fadetime>
+                            
                         </control>
                         <control type="image">
                             <left>474</left>
@@ -3726,7 +3726,7 @@
                             <width>158</width>
                             <height>235</height>
                             <texture fallback="empty.png">$INFO[Container(10017).Listitem(8).Icon]</texture>
-                            <fadetime>100</fadetime>
+                            
                         </control>
                         <!-- main box -->
                         <control type="group">
@@ -3743,7 +3743,7 @@
                                 <width>316</width>
                                 <height>470</height>
                                 <texture fallback="empty.png">$INFO[Container(10017).Listitem(0).Icon]</texture>
-                                <fadetime>100</fadetime>
+                                
                             </control>
                         </control>
                     </control>
@@ -4033,8 +4033,8 @@
                         <orientation>vertical</orientation>
                         <autoscroll time="10000">!Control.HasFocus(4012)</autoscroll>
                         <scrolltime tween="quadratic">100</scrolltime>
-                        <include>Animation.FadeIn</include>
-                        <include>Animation.FadeOut</include>
+                        
+                        
                         <itemlayout width="820" height="460">
                             <control type="image">
                                 <aspectratio>scale</aspectratio>
@@ -4087,8 +4087,8 @@
                         <orientation>vertical</orientation>
                         <autoscroll time="10000">!Control.HasFocus(4012)</autoscroll>
                         <scrolltime tween="quadratic">100</scrolltime>
-                        <include>Animation.FadeIn</include>
-                        <include>Animation.FadeOut</include>
+                        
+                        
                         <itemlayout width="820" height="460">
                             <control type="image">
                                 <aspectratio>scale</aspectratio>
@@ -4226,8 +4226,8 @@
                         <preloaditems>2</preloaditems>
                         <orientation>vertical</orientation>
                         <scrolltime tween="quadratic">100</scrolltime>
-                        <include>Animation.FadeIn</include>
-                        <include>Animation.FadeOut</include>
+                        
+                        
                         <itemlayout width="410" height="245">
                             <control type="image">
                                 <aspectratio>stretch</aspectratio>
@@ -4386,8 +4386,8 @@
                         <preloaditems>2</preloaditems>
                         <orientation>vertical</orientation>
                         <scrolltime tween="quadratic">100</scrolltime>
-                        <include>Animation.FadeIn</include>
-                        <include>Animation.FadeOut</include>
+                        
+                        
                         <itemlayout width="410" height="245">
                             <control type="image">
                                 <aspectratio>stretch</aspectratio>
@@ -4459,8 +4459,8 @@
                         <orientation>vertical</orientation>
                         <scrolltime tween="quadratic">100</scrolltime>
                         <autoscroll time="3000">!Control.HasFocus(4016)</autoscroll>
-                        <include>Animation.FadeIn</include>
-                        <include>Animation.FadeOut</include>
+                        
+                        
                         <itemlayout width="410" height="235">
                             <control type="image">
                                 <aspectratio>stretch</aspectratio>
@@ -4542,8 +4542,8 @@
                         <onback>300</onback>
                         <preloaditems>2</preloaditems>
                         <scrolltime tween="quadratic">100</scrolltime>
-                        <include>Animation.FadeIn</include>
-                        <include>Animation.FadeOut</include>
+                        
+                        
                         <itemlayout width="158" height="235">
                             <control type="image">
                                 <aspectratio>stretch</aspectratio>
@@ -4604,8 +4604,8 @@
                         <preloaditems>9</preloaditems>
                         <scrolltime tween="quadratic">100</scrolltime>
                         <autoscroll time="5000">!Control.HasFocus(14017)</autoscroll>
-                        <include>Animation.FadeIn</include>
-                        <include>Animation.FadeOut</include>
+                        
+                        
                         <itemlayout width="158" height="235"/>
                         <focusedlayout width="158" height="235">
                             <control type="button">
@@ -4628,7 +4628,7 @@
                             <width>158</width>
                             <height>235</height>
                             <texture fallback="empty.png">$INFO[Container(14017).Listitem(1).Icon]</texture>
-                            <fadetime>100</fadetime>
+                            
                         </control>
                         <control type="image">
                             <left>474</left>
@@ -4636,7 +4636,7 @@
                             <width>158</width>
                             <height>235</height>
                             <texture fallback="empty.png">$INFO[Container(14017).Listitem(2).Icon]</texture>
-                            <fadetime>100</fadetime>
+                            
                         </control>
                         <control type="image">
                             <left>316</left>
@@ -4644,7 +4644,7 @@
                             <width>158</width>
                             <height>235</height>
                             <texture fallback="empty.png">$INFO[Container(14017).Listitem(3).Icon]</texture>
-                            <fadetime>100</fadetime>
+                            
                         </control>
                         <control type="image">
                             <left>474</left>
@@ -4652,7 +4652,7 @@
                             <width>158</width>
                             <height>235</height>
                             <texture fallback="empty.png">$INFO[Container(14017).Listitem(4).Icon]</texture>
-                            <fadetime>100</fadetime>
+                            
                         </control>
                         <control type="image">
                             <left>0</left>
@@ -4660,7 +4660,7 @@
                             <width>158</width>
                             <height>235</height>
                             <texture fallback="empty.png">$INFO[Container(14017).Listitem(5).Icon]</texture>
-                            <fadetime>100</fadetime>
+                            
                         </control>
                         <control type="image">
                             <left>158</left>
@@ -4668,7 +4668,7 @@
                             <width>158</width>
                             <height>235</height>
                             <texture fallback="empty.png">$INFO[Container(14017).Listitem(6).Icon]</texture>
-                            <fadetime>100</fadetime>
+                            
                         </control>
                         <control type="image">
                             <left>316</left>
@@ -4676,7 +4676,7 @@
                             <width>158</width>
                             <height>235</height>
                             <texture fallback="empty.png">$INFO[Container(14017).Listitem(7).Icon]</texture>
-                            <fadetime>100</fadetime>
+                            
                         </control>
                         <control type="image">
                             <left>474</left>
@@ -4684,7 +4684,7 @@
                             <width>158</width>
                             <height>235</height>
                             <texture fallback="empty.png">$INFO[Container(14017).Listitem(8).Icon]</texture>
-                            <fadetime>100</fadetime>
+                            
                         </control>
                         <!-- main box -->
                         <control type="group">
@@ -4701,7 +4701,7 @@
                                 <width>316</width>
                                 <height>470</height>
                                 <texture fallback="empty.png">$INFO[Container(14017).Listitem(0).Icon]</texture>
-                                <fadetime>100</fadetime>
+                                
                             </control>
                         </control>
                     </control>
@@ -4972,8 +4972,8 @@
                         <orientation>vertical</orientation>
                         <autoscroll time="10000">!Control.HasFocus(5012)</autoscroll>
                         <scrolltime tween="quadratic">100</scrolltime>
-                        <include>Animation.FadeIn</include>
-                        <include>Animation.FadeOut</include>
+                        
+                        
                         <itemlayout width="820" height="460">
                             <control type="image">
                                 <aspectratio>scale</aspectratio>
@@ -5095,8 +5095,8 @@
                         <orientation>vertical</orientation>
                         <autoscroll time="10000">!Control.HasFocus(5012)</autoscroll>
                         <scrolltime tween="quadratic">100</scrolltime>
-                        <include>Animation.FadeIn</include>
-                        <include>Animation.FadeOut</include>
+                        
+                        
                         <itemlayout width="820" height="460">
                             <control type="image">
                                 <aspectratio>scale</aspectratio>
@@ -5303,8 +5303,8 @@
                         <preloaditems>2</preloaditems>
                         <orientation>vertical</orientation>
                         <scrolltime tween="quadratic">100</scrolltime>
-                        <include>Animation.FadeIn</include>
-                        <include>Animation.FadeOut</include>
+                        
+                        
                         <itemlayout width="273" height="245">
                             <control type="image">
                                 <aspectratio>scale</aspectratio>
@@ -5453,8 +5453,8 @@
                         <preloaditems>2</preloaditems>
                         <orientation>vertical</orientation>
                         <scrolltime tween="quadratic">100</scrolltime>
-                        <include>Animation.FadeIn</include>
-                        <include>Animation.FadeOut</include>
+                        
+                        
                         <itemlayout width="274" height="245">
                             <control type="image">
                                 <aspectratio>scale</aspectratio>
@@ -5568,8 +5568,8 @@
                         <preloaditems>2</preloaditems>
                         <orientation>vertical</orientation>
                         <scrolltime tween="quadratic">100</scrolltime>
-                        <include>Animation.FadeIn</include>
-                        <include>Animation.FadeOut</include>
+                        
+                        
                         <itemlayout width="273" height="245">
                             <control type="image">
                                 <aspectratio>scale</aspectratio>
@@ -5637,8 +5637,8 @@
                         <orientation>vertical</orientation>
                         <autoscroll time="3000">!Control.HasFocus(5016)</autoscroll>
                         <scrolltime tween="quadratic">100</scrolltime>
-                        <include>Animation.FadeIn</include>
-                        <include>Animation.FadeOut</include>
+                        
+                        
                         <itemlayout width="235" height="235">
                             <control type="image">
                                 <top>0</top>
@@ -5752,8 +5752,8 @@
                         <onback>300</onback>
                         <preloaditems>2</preloaditems>
                         <scrolltime tween="quadratic">500</scrolltime>
-                        <include>Animation.FadeIn</include>
-                        <include>Animation.FadeOut</include>
+                        
+                        
                         <autoscroll time="2000">!Control.HasFocus(5017)</autoscroll>
                         <itemlayout width="235" height="235">
                             <control type="image">
@@ -5881,8 +5881,8 @@
                         <preloaditems>9</preloaditems>
                         <scrolltime tween="quadratic">100</scrolltime>
                         <autoscroll time="5000">!Control.HasFocus(15017)</autoscroll>
-                        <include>Animation.FadeIn</include>
-                        <include>Animation.FadeOut</include>
+                        
+                        
                         <itemlayout width="158" height="235"/>
                         <focusedlayout width="158" height="235">
                             <control type="button">
@@ -5907,7 +5907,7 @@
                             <height>235</height>
                             <texture fallback="empty.png">$INFO[Container(15017).Listitem(1).Icon]</texture>
                             <aspectratio>scale</aspectratio>
-                            <fadetime>100</fadetime>
+                            
                         </control>
                         <control type="image">
                             <left>474</left>
@@ -5916,7 +5916,7 @@
                             <height>235</height>
                             <texture fallback="empty.png">$INFO[Container(15017).Listitem(2).Icon]</texture>
                             <aspectratio>scale</aspectratio>
-                            <fadetime>100</fadetime>
+                            
                         </control>
                         <control type="image">
                             <left>316</left>
@@ -5925,7 +5925,7 @@
                             <height>235</height>
                             <texture fallback="empty.png">$INFO[Container(15017).Listitem(3).Icon]</texture>
                             <aspectratio>scale</aspectratio>
-                            <fadetime>100</fadetime>
+                            
                         </control>
                         <control type="image">
                             <left>474</left>
@@ -5934,7 +5934,7 @@
                             <height>235</height>
                             <texture fallback="empty.png">$INFO[Container(15017).Listitem(4).Icon]</texture>
                             <aspectratio>scale</aspectratio>
-                            <fadetime>100</fadetime>
+                            
                         </control>
                         <control type="image">
                             <left>0</left>
@@ -5943,7 +5943,7 @@
                             <height>235</height>
                             <texture fallback="empty.png">$INFO[Container(15017).Listitem(5).Icon]</texture>
                             <aspectratio>scale</aspectratio>
-                            <fadetime>100</fadetime>
+                            
                         </control>
                         <control type="image">
                             <left>158</left>
@@ -5952,7 +5952,7 @@
                             <height>235</height>
                             <texture fallback="empty.png">$INFO[Container(15017).Listitem(6).Icon]</texture>
                             <aspectratio>scale</aspectratio>
-                            <fadetime>100</fadetime>
+                            
                         </control>
                         <control type="image">
                             <left>316</left>
@@ -5961,7 +5961,7 @@
                             <height>235</height>
                             <texture fallback="empty.png">$INFO[Container(15017).Listitem(7).Icon]</texture>
                             <aspectratio>scale</aspectratio>
-                            <fadetime>100</fadetime>
+                            
                         </control>
                         <control type="image">
                             <left>474</left>
@@ -5970,7 +5970,7 @@
                             <height>235</height>
                             <texture fallback="empty.png">$INFO[Container(15017).Listitem(8).Icon]</texture>
                             <aspectratio>scale</aspectratio>
-                            <fadetime>100</fadetime>
+                            
                         </control>
                         <!-- main box -->
                         <control type="group">
@@ -5988,7 +5988,7 @@
                                 <height>470</height>
                                 <texture fallback="empty.png">$INFO[Container(15017).Listitem(0).Icon]</texture>
                                 <aspectratio>scale</aspectratio>
-                                <fadetime>100</fadetime>
+                                
                             </control>
                         </control>
                     </control>
@@ -6023,8 +6023,6 @@
                     <orientation>vertical</orientation>
                     <autoscroll time="10000">!Control.HasFocus(7012)</autoscroll>
                     <scrolltime tween="quadratic">100</scrolltime>
-                    <include>Animation.FadeIn</include>
-                    <include>Animation.FadeOut</include>
                     <itemlayout width="820" height="460">
                         <control type="image">
                             <aspectratio>scale</aspectratio>
@@ -6072,8 +6070,8 @@
                     <orientation>vertical</orientation>
                     <autoscroll time="10000">!Control.HasFocus(7012)</autoscroll>
                     <scrolltime tween="quadratic">100</scrolltime>
-                    <include>Animation.FadeIn</include>
-                    <include>Animation.FadeOut</include>
+                    
+                    
                     <itemlayout width="820" height="460">
                         <control type="image">
                             <aspectratio>scale</aspectratio>
@@ -6499,8 +6497,8 @@
                     <orientation>vertical</orientation>
                     <autoscroll time="7000">!Control.HasFocus(7016)</autoscroll>
                     <scrolltime tween="quadratic">100</scrolltime>
-                    <include>Animation.FadeIn</include>
-                    <include>Animation.FadeOut</include>
+                    
+                    
                     <itemlayout height="46" width="410">
                         <control type="label">
                             <left>5</left>
@@ -6586,13 +6584,13 @@
                         <control type="group">
                             <height>317</height>
                             <control type="image">
-                                <fadetime>200</fadetime>
+                                
                                 <aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
                                 <texture diffuse="common/box.png" background="true" fallback="pvr/background.jpg">$INFO[Container(7016).ListItem.Thumb]</texture>
                                 <visible>IsEmpty(Window(home).Property(SkinHelper.PVR.Landscape)) + IsEmpty(Window(home).Property(SkinHelper.PVR.FanArt)) + IsEmpty(Window(home).Property(SkinHelper.PVR.Thumb)) + IsEmpty(Window(home).Property(SkinHelper.PVR.ChannelLogo))</visible>
                             </control>
                             <control type="image">
-                                <fadetime>200</fadetime>
+                                
                                 <aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
                                 <texture diffuse="common/box.png" background="true" fallback="pvr/background.jpg">$VAR[PVRLandscape]</texture>
                                 <visible>!IsEmpty(Window(home).Property(SkinHelper.PVR.Landscape)) | !IsEmpty(Window(home).Property(SkinHelper.PVR.FanArt)) | !IsEmpty(Window(home).Property(SkinHelper.PVR.Thumb)) | !IsEmpty(Window(home).Property(SkinHelper.PVR.ChannelLogo))</visible>
@@ -6607,7 +6605,7 @@
                                 <right>0</right>
                                 <height>130</height>
                                 <width>130</width>
-                                <fadetime>200</fadetime>
+                                
                                 <aspectratio align="right" aligny="bottom" scalediffuse="false">keep</aspectratio>
                                 <texture diffuse="common/box.png" background="true">$INFO[Container(7016).ListItem.Thumb]</texture>
                                 <visible>[!IsEmpty(Window(home).Property(SkinHelper.PVR.Landscape)) | !IsEmpty(Window(home).Property(SkinHelper.PVR.FanArt)) | !IsEmpty(Window(home).Property(SkinHelper.PVR.Thumb))] + IsEmpty(Window(home).Property(SkinHelper.PVR.ChannelLogo))</visible>
@@ -6617,7 +6615,7 @@
                                 <right>0</right>
                                 <height>130</height>
                                 <width>130</width>
-                                <fadetime>200</fadetime>
+                                
                                 <aspectratio align="left" aligny="bottom" scalediffuse="false">keep</aspectratio>
                                 <texture diffuse="common/box.png" background="true">$INFO[Window(home).Property(SkinHelper.PVR.CharacterArt)]</texture>
                                 <visible>!IsEmpty(Window(home).Property(SkinHelper.PVR.CharacterArt))</visible>
@@ -6652,7 +6650,7 @@
                                 <height>40</height>
                                 <texture>$INFO[Window(home).Property(SkinHelper.PVR.Logo)]</texture>
                                 <aspectratio align="center" aligny="bottom">keep</aspectratio>
-                                <fadetime>50</fadetime>
+                                
                                 <visible>!IsEmpty(Window(home).Property(SkinHelper.PVR.Logo))</visible>
                             </control>
                             <control type="label">
@@ -6713,7 +6711,7 @@
                                 <height>40</height>
                                 <texture>$INFO[Window(home).Property(SkinHelper.PVR.Logo)]</texture>
                                 <aspectratio align="center" aligny="bottom">keep</aspectratio>
-                                <fadetime>50</fadetime>
+                                
                                 <visible>!IsEmpty(Window(home).Property(SkinHelper.PVR.Logo))</visible>
                             </control>
                             <control type="label">
@@ -6954,8 +6952,8 @@
                                 <orientation>horizontal</orientation>
                                 <autoscroll time="10000">!Control.HasFocus(3012)</autoscroll>
                                 <scrolltime tween="quadratic">100</scrolltime>
-                                <include>Animation.FadeIn</include>
-                                <include>Animation.FadeOut</include>
+                                
+                                
                                 <itemlayout width="218" height="325" condition="!StringCompare(Skin.String(movies1widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(movies1widget.aspectratio),SQUARE)">
                                     <include>WidgetPosterItemLayout</include>
                                 </itemlayout>
@@ -7020,8 +7018,8 @@
                                 <orientation>horizontal</orientation>
                                 <autoscroll time="10000">!Control.HasFocus(3016)</autoscroll>
                                 <scrolltime tween="quadratic">100</scrolltime>
-                                <include>Animation.FadeIn</include>
-                                <include>Animation.FadeOut</include>
+                                
+                                
                                 <itemlayout width="218" height="325" condition="!StringCompare(Skin.String(movies2widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(movies2widget.aspectratio),SQUARE)">
                                     <include>WidgetPosterItemLayout</include>
                                 </itemlayout>
@@ -7088,8 +7086,8 @@
                                 <orientation>horizontal</orientation>
                                 <autoscroll time="10000">!Control.HasFocus(3017)</autoscroll>
                                 <scrolltime tween="quadratic">100</scrolltime>
-                                <include>Animation.FadeIn</include>
-                                <include>Animation.FadeOut</include>
+                                
+                                
                                 <itemlayout width="218" height="325" condition="!StringCompare(Skin.String(movies3widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(movies3widget.aspectratio),SQUARE)">
                                     <include>WidgetPosterItemLayout</include>
                                 </itemlayout>
@@ -7156,8 +7154,8 @@
                                 <orientation>horizontal</orientation>
                                 <autoscroll time="10000">!Control.HasFocus(10017)</autoscroll>
                                 <scrolltime tween="quadratic">100</scrolltime>
-                                <include>Animation.FadeIn</include>
-                                <include>Animation.FadeOut</include>
+                                
+                                
                                 <itemlayout width="218" height="325" condition="!StringCompare(Skin.String(movies4widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(movies4widget.aspectratio),SQUARE)">
                                     <include>WidgetPosterItemLayout</include>
                                 </itemlayout>
@@ -7222,8 +7220,8 @@
                                 <orientation>horizontal</orientation>
                                 <autoscroll time="10000">!Control.HasFocus(18002)</autoscroll>
                                 <scrolltime tween="quadratic">100</scrolltime>
-                                <include>Animation.FadeIn</include>
-                                <include>Animation.FadeOut</include>
+                                
+                                
                                 <itemlayout width="218" height="325" condition="!StringCompare(Skin.String(movies5widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(movies5widget.aspectratio),SQUARE)">
                                     <include>WidgetPosterItemLayout</include>
                                 </itemlayout>
@@ -7288,8 +7286,8 @@
                                 <orientation>horizontal</orientation>
                                 <autoscroll time="10000">!Control.HasFocus(19001)</autoscroll>
                                 <scrolltime tween="quadratic">100</scrolltime>
-                                <include>Animation.FadeIn</include>
-                                <include>Animation.FadeOut</include>
+                                
+                                
                                 <itemlayout width="218" height="325" condition="!StringCompare(Skin.String(movies6widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(movies6widget.aspectratio),SQUARE)">
                                     <include>WidgetPosterItemLayout</include>
                                 </itemlayout>
@@ -7352,8 +7350,8 @@
                                 <orientation>horizontal</orientation>
                                 <autoscroll time="10000">!Control.HasFocus(4012)</autoscroll>
                                 <scrolltime tween="quadratic">100</scrolltime>
-                                <include>Animation.FadeIn</include>
-                                <include>Animation.FadeOut</include>
+                                
+                                
                                 <itemlayout width="218" height="325" condition="!StringCompare(Skin.String(tvshows1widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(tvshows1widget.aspectratio),SQUARE)">
                                     <include>WidgetPosterItemLayout</include>
                                 </itemlayout>
@@ -7417,8 +7415,8 @@
                                 <orientation>horizontal</orientation>
                                 <autoscroll time="10000">!Control.HasFocus(4016)</autoscroll>
                                 <scrolltime tween="quadratic">100</scrolltime>
-                                <include>Animation.FadeIn</include>
-                                <include>Animation.FadeOut</include>
+                                
+                                
                                 <itemlayout width="218" height="325" condition="!StringCompare(Skin.String(tvshows2widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(tvshows2widget.aspectratio),SQUARE)">
                                     <include>WidgetPosterItemLayout</include>
                                 </itemlayout>
@@ -7481,8 +7479,8 @@
                                 <orientation>horizontal</orientation>
                                 <autoscroll time="10000">!Control.HasFocus(4017)</autoscroll>
                                 <scrolltime tween="quadratic">100</scrolltime>
-                                <include>Animation.FadeIn</include>
-                                <include>Animation.FadeOut</include>
+                                
+                                
                                 <itemlayout width="218" height="325" condition="!StringCompare(Skin.String(tvshows3widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(tvshows3widget.aspectratio),SQUARE)">
                                     <include>WidgetPosterItemLayout</include>
                                 </itemlayout>
@@ -7545,8 +7543,8 @@
                                 <orientation>horizontal</orientation>
                                 <autoscroll time="10000">!Control.HasFocus(14017)</autoscroll>
                                 <scrolltime tween="quadratic">100</scrolltime>
-                                <include>Animation.FadeIn</include>
-                                <include>Animation.FadeOut</include>
+                                
+                                
                                 <itemlayout width="218" height="325" condition="!StringCompare(Skin.String(tvshows4widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(tvshows4widget.aspectratio),SQUARE)">
                                     <include>WidgetPosterItemLayout</include>
                                 </itemlayout>
@@ -7611,8 +7609,8 @@
                                 <orientation>horizontal</orientation>
                                 <autoscroll time="10000">!Control.HasFocus(18001)</autoscroll>
                                 <scrolltime tween="quadratic">100</scrolltime>
-                                <include>Animation.FadeIn</include>
-                                <include>Animation.FadeOut</include>
+                                
+                                
                                 <itemlayout width="218" height="325" condition="!StringCompare(Skin.String(tvshows5widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(tvshows5widget.aspectratio),SQUARE)">
                                     <include>WidgetPosterItemLayout</include>
                                 </itemlayout>
@@ -7677,8 +7675,8 @@
                                 <orientation>horizontal</orientation>
                                 <autoscroll time="10000">!Control.HasFocus(19002)</autoscroll>
                                 <scrolltime tween="quadratic">100</scrolltime>
-                                <include>Animation.FadeIn</include>
-                                <include>Animation.FadeOut</include>
+                                
+                                
                                 <itemlayout width="218" height="325" condition="!StringCompare(Skin.String(tvshows6widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(tvshows6widget.aspectratio),SQUARE)">
                                     <include>WidgetPosterItemLayout</include>
                                 </itemlayout>
@@ -7741,8 +7739,8 @@
                                 <orientation>horizontal</orientation>
                                 <autoscroll time="10000">!Control.HasFocus(5012)</autoscroll>
                                 <scrolltime tween="quadratic">100</scrolltime>
-                                <include>Animation.FadeIn</include>
-                                <include>Animation.FadeOut</include>
+                                
+                                
                                 <itemlayout width="325" height="325" condition="!StringCompare(Skin.String(music1widget.aspectratio),POSTER) + !StringCompare(Skin.String(music1widget.aspectratio),LANDSCAPE)">
                                     <include>WidgetSquareItemLayout</include>
                                 </itemlayout>
@@ -7806,8 +7804,8 @@
                                 <orientation>horizontal</orientation>
                                 <autoscroll time="10000">!Control.HasFocus(5016)</autoscroll>
                                 <scrolltime tween="quadratic">100</scrolltime>
-                                <include>Animation.FadeIn</include>
-                                <include>Animation.FadeOut</include>
+                                
+                                
                                 <itemlayout width="325" height="325" condition="!StringCompare(Skin.String(music2widget.aspectratio),POSTER) + !StringCompare(Skin.String(music2widget.aspectratio),LANDSCAPE)">
                                     <include>WidgetSquareItemLayout</include>
                                 </itemlayout>
@@ -7870,8 +7868,8 @@
                                 <orientation>horizontal</orientation>
                                 <autoscroll time="10000">!Control.HasFocus(5017)</autoscroll>
                                 <scrolltime tween="quadratic">100</scrolltime>
-                                <include>Animation.FadeIn</include>
-                                <include>Animation.FadeOut</include>
+                                
+                                
                                 <itemlayout width="325" height="325" condition="!StringCompare(Skin.String(music3widget.aspectratio),POSTER) + !StringCompare(Skin.String(music3widget.aspectratio),LANDSCAPE)">
                                     <include>WidgetSquareItemLayout</include>
                                 </itemlayout>
@@ -7934,8 +7932,8 @@
                                 <orientation>horizontal</orientation>
                                 <autoscroll time="10000">!Control.HasFocus(15017)</autoscroll>
                                 <scrolltime tween="quadratic">100</scrolltime>
-                                <include>Animation.FadeIn</include>
-                                <include>Animation.FadeOut</include>
+                                
+                                
                                 <itemlayout width="325" height="325" condition="!StringCompare(Skin.String(music4widget.aspectratio),POSTER) + !StringCompare(Skin.String(music4widget.aspectratio),LANDSCAPE)">
                                     <include>WidgetSquareItemLayout</include>
                                 </itemlayout>
@@ -7999,8 +7997,8 @@
                                 <orientation>horizontal</orientation>
                                 <autoscroll time="10000">!Control.HasFocus(6012)</autoscroll>
                                 <scrolltime tween="quadratic">100</scrolltime>
-                                <include>Animation.FadeIn</include>
-                                <include>Animation.FadeOut</include>
+                                
+                                
                                 <itemlayout width="218" height="325" condition="!StringCompare(Container(300).ListItem.Property(widget1Icon),Landscape)  + !StringCompare(Container(300).ListItem.Property(widget1Icon),Square)">
                                     <include>WidgetPosterItemLayout</include>
                                 </itemlayout>
@@ -8064,8 +8062,8 @@
                                 <orientation>horizontal</orientation>
                                 <autoscroll time="10000">!Control.HasFocus(6016)</autoscroll>
                                 <scrolltime tween="quadratic">100</scrolltime>
-                                <include>Animation.FadeIn</include>
-                                <include>Animation.FadeOut</include>
+                                
+                                
                                 <itemlayout width="218" height="325" condition="!StringCompare(Container(300).ListItem.Property(widget2Icon),Landscape) + !StringCompare(Container(300).ListItem.Property(widget2Icon),Square)">
                                     <include>WidgetPosterItemLayout</include>
                                 </itemlayout>
@@ -8128,8 +8126,8 @@
                                 <orientation>horizontal</orientation>
                                 <autoscroll time="10000">!Control.HasFocus(6017)</autoscroll>
                                 <scrolltime tween="quadratic">100</scrolltime>
-                                <include>Animation.FadeIn</include>
-                                <include>Animation.FadeOut</include>
+                                
+                                
                                 <itemlayout width="218" height="325" condition="!StringCompare(Container(300).ListItem.Property(widget3Icon),Landscape) + !StringCompare(Container(300).ListItem.Property(widget3Icon),Square)">
                                     <include>WidgetPosterItemLayout</include>
                                 </itemlayout>
@@ -8192,8 +8190,8 @@
                                 <orientation>horizontal</orientation>
                                 <autoscroll time="10000">!Control.HasFocus(9017)</autoscroll>
                                 <scrolltime tween="quadratic">100</scrolltime>
-                                <include>Animation.FadeIn</include>
-                                <include>Animation.FadeOut</include>
+                                
+                                
                                 <itemlayout width="218" height="325" condition="!StringCompare(Container(300).ListItem.Property(widget4Icon),Landscape) + !StringCompare(Container(300).ListItem.Property(widget4Icon),Square)">
                                     <include>WidgetPosterItemLayout</include>
                                 </itemlayout>
@@ -8266,8 +8264,8 @@
                                     <orientation>vertical</orientation>
                                     <autoscroll time="7000">!Control.HasFocus(7016)</autoscroll>
                                     <scrolltime tween="quadratic">100</scrolltime>
-                                    <include>Animation.FadeIn</include>
-                                    <include>Animation.FadeOut</include>
+                                    
+                                    
                                     <itemlayout height="46" width="770">
                                         <control type="label">
                                             <left>5</left>
@@ -8350,13 +8348,13 @@
                                         <control type="group">
                                             <height>317</height>
                                             <control type="image">
-                                                <fadetime>200</fadetime>
+                                                
                                                 <aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
                                                 <texture diffuse="common/box.png" background="true" fallback="pvr/background.jpg">$INFO[Container(7016).ListItem.Thumb]</texture>
                                                 <visible>IsEmpty(Window(home).Property(SkinHelper.PVR.Landscape)) + IsEmpty(Window(home).Property(SkinHelper.PVR.FanArt)) + IsEmpty(Window(home).Property(SkinHelper.PVR.Thumb)) + IsEmpty(Window(home).Property(SkinHelper.PVR.ChannelLogo))</visible>
                                             </control>
                                             <control type="image">
-                                                <fadetime>200</fadetime>
+                                                
                                                 <aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
                                                 <texture diffuse="common/box.png" background="true" fallback="pvr/background.jpg">$VAR[PVRLandscape]</texture>
                                                 <visible>!IsEmpty(Window(home).Property(SkinHelper.PVR.Landscape)) | !IsEmpty(Window(home).Property(SkinHelper.PVR.FanArt)) | !IsEmpty(Window(home).Property(SkinHelper.PVR.Thumb)) | !IsEmpty(Window(home).Property(SkinHelper.PVR.ChannelLogo))</visible>
@@ -8371,7 +8369,7 @@
                                                 <right>0</right>
                                                 <height>130</height>
                                                 <width>130</width>
-                                                <fadetime>200</fadetime>
+                                                
                                                 <aspectratio align="right" aligny="bottom" scalediffuse="false">keep</aspectratio>
                                                 <texture diffuse="common/box.png" background="true">$INFO[Container(7016).ListItem.Thumb]</texture>
                                                 <visible>[!IsEmpty(Window(home).Property(SkinHelper.PVR.Landscape)) | !IsEmpty(Window(home).Property(SkinHelper.PVR.FanArt)) | !IsEmpty(Window(home).Property(SkinHelper.PVR.Thumb))] + IsEmpty(Window(home).Property(SkinHelper.PVR.ChannelLogo))</visible>
@@ -8381,7 +8379,7 @@
                                                 <left>0</left>
                                                 <height>130</height>
                                                 <width>130</width>
-                                                <fadetime>200</fadetime>
+                                                
                                                 <aspectratio align="left" aligny="bottom" scalediffuse="false">keep</aspectratio>
                                                 <texture diffuse="common/box.png" background="true">$INFO[Window(home).Property(SkinHelper.PVR.CharacterArt)]</texture>
                                                 <visible>!IsEmpty(Window(home).Property(SkinHelper.PVR.CharacterArt))</visible>
@@ -8416,7 +8414,7 @@
                                                 <height>40</height>
                                                 <texture>$INFO[Window(home).Property(SkinHelper.PVR.Logo)]</texture>
                                                 <aspectratio align="center" aligny="bottom">keep</aspectratio>
-                                                <fadetime>50</fadetime>
+                                                
                                                 <visible>!IsEmpty(Window(home).Property(SkinHelper.PVR.Logo))</visible>
                                             </control>
                                             <control type="label">
@@ -8477,7 +8475,7 @@
                                                 <height>40</height>
                                                 <texture>$INFO[Window(home).Property(SkinHelper.PVR.Logo)]</texture>
                                                 <aspectratio align="center" aligny="bottom">keep</aspectratio>
-                                                <fadetime>50</fadetime>
+                                                
                                                 <visible>!IsEmpty(Window(home).Property(SkinHelper.PVR.Logo))</visible>
                                             </control>
                                             <control type="label">
@@ -8568,8 +8566,8 @@
                                 <orientation>vertical</orientation>
                                 <autoscroll time="10000">!Control.HasFocus(7012)</autoscroll>
                                 <scrolltime tween="quadratic">100</scrolltime>
-                                <include>Animation.FadeIn</include>
-                                <include>Animation.FadeOut</include>
+                                
+                                
                                 <animation effect="fade" start="100" end="10" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(301).HasFocus + !Control.HasFocus(7012)">Conditional</animation>
                                 <itemlayout width="410" height="230">
                                     <include>WidgetLandscapeItemLayout</include>
@@ -8595,8 +8593,8 @@
                                 <height>891</height>
                                 <control type="panel" id="3444">
                                     <visible>Weather.IsFetched</visible>
-                                <include>Animation.FadeIn</include>
-                                <include>Animation.FadeOut</include>
+                                
+                                
                                     <width>743</width>
                                     <onup>300</onup>
                                     <onleft>300</onleft>
@@ -8610,7 +8608,7 @@
                                                 <texture colordiffuse="Panel">common/box.png</texture>
                                             </control>
                                             <control type="multiimage" description="Fanart">
-                                                <fadetime>100</fadetime>
+                                                
                                                 <timeperimage>5000</timeperimage>
                                                 <randomize>true</randomize>
                                                 <aspectratio>scale</aspectratio>
@@ -8663,7 +8661,7 @@
                                                 <visible>Control.HasFocus(3444)</visible>
                                             </control>
                                             <control type="multiimage" description="Fanart">
-                                                <fadetime>100</fadetime>
+                                                
                                                 <timeperimage>5000</timeperimage>
                                                 <randomize>true</randomize>
                                                 <aspectratio>scale</aspectratio>
@@ -8862,7 +8860,7 @@
                                     <texture colordiffuse="Panel">common/box.png</texture>
                                 </control>
                                 <control type="multiimage" description="Fanart">
-                                    <fadetime>100</fadetime>
+                                    
                                     <timeperimage>12000</timeperimage>
                                     <randomize>true</randomize>
                                     <aspectratio>scale</aspectratio>
@@ -9592,13 +9590,13 @@
                                         <control type="group">
                                             <height>317</height>
                                             <control type="image">
-                                                <fadetime>200</fadetime>
+                                                
                                                 <aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
                                                 <texture diffuse="common/box.png" background="true" fallback="pvr/background.jpg">$INFO[Container(7016).ListItem.Thumb]</texture>
                                                 <visible>IsEmpty(Window(home).Property(SkinHelper.PVR.Landscape)) + IsEmpty(Window(home).Property(SkinHelper.PVR.FanArt)) + IsEmpty(Window(home).Property(SkinHelper.PVR.Thumb)) + IsEmpty(Window(home).Property(SkinHelper.PVR.ChannelLogo))</visible>
                                             </control>
                                             <control type="image">
-                                                <fadetime>200</fadetime>
+                                                
                                                 <aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
                                                 <texture diffuse="common/box.png" background="true" fallback="pvr/background.jpg">$VAR[PVRLandscape]</texture>
                                                 <visible>!IsEmpty(Window(home).Property(SkinHelper.PVR.Landscape)) | !IsEmpty(Window(home).Property(SkinHelper.PVR.FanArt)) | !IsEmpty(Window(home).Property(SkinHelper.PVR.Thumb)) | !IsEmpty(Window(home).Property(SkinHelper.PVR.ChannelLogo))</visible>
@@ -9613,7 +9611,7 @@
                                                 <right>0</right>
                                                 <height>130</height>
                                                 <width>130</width>
-                                                <fadetime>200</fadetime>
+                                                
                                                 <aspectratio align="right" aligny="bottom" scalediffuse="false">keep</aspectratio>
                                                 <texture diffuse="common/box.png" background="true">$INFO[Container(7016).ListItem.Thumb]</texture>
                                                 <visible>[!IsEmpty(Window(home).Property(SkinHelper.PVR.Landscape)) | !IsEmpty(Window(home).Property(SkinHelper.PVR.FanArt)) | !IsEmpty(Window(home).Property(SkinHelper.PVR.Thumb))] + IsEmpty(Window(home).Property(SkinHelper.PVR.ChannelLogo))</visible>
@@ -9623,7 +9621,7 @@
                                                 <left>0</left>
                                                 <height>130</height>
                                                 <width>130</width>
-                                                <fadetime>200</fadetime>
+                                                
                                                 <aspectratio align="left" aligny="bottom" scalediffuse="false">keep</aspectratio>
                                                 <texture diffuse="common/box.png" background="true">$INFO[Window(home).Property(SkinHelper.PVR.CharacterArt)]</texture>
                                                 <visible>!IsEmpty(Window(home).Property(SkinHelper.PVR.CharacterArt))</visible>
@@ -9658,7 +9656,7 @@
                                                 <height>40</height>
                                                 <texture>$INFO[Window(home).Property(SkinHelper.PVR.Logo)]</texture>
                                                 <aspectratio align="center" aligny="bottom">keep</aspectratio>
-                                                <fadetime>50</fadetime>
+                                                
                                                 <visible>!IsEmpty(Window(home).Property(SkinHelper.PVR.Logo))</visible>
                                             </control>
                                             <control type="label">
@@ -9719,7 +9717,7 @@
                                                 <height>40</height>
                                                 <texture>$INFO[Window(home).Property(SkinHelper.PVR.Logo)]</texture>
                                                 <aspectratio align="center" aligny="bottom">keep</aspectratio>
-                                                <fadetime>50</fadetime>
+                                                
                                                 <visible>!IsEmpty(Window(home).Property(SkinHelper.PVR.Logo))</visible>
                                             </control>
                                             <control type="label">
@@ -9836,8 +9834,8 @@
                                 <height>835</height>
                                 <control type="panel" id="3444">
                                     <visible>Weather.IsFetched</visible>
-                                <include>Animation.FadeIn</include>
-                                <include>Animation.FadeOut</include>
+                                
+                                
                                     <width>743</width>
                                     <onup>300</onup>
                                     <onleft>300</onleft>
@@ -9851,7 +9849,7 @@
                                                 <texture colordiffuse="Panel">common/box.png</texture>
                                             </control>
                                             <control type="multiimage" description="Fanart">
-                                                <fadetime>100</fadetime>
+                                                
                                                 <timeperimage>5000</timeperimage>
                                                 <randomize>true</randomize>
                                                 <aspectratio>scale</aspectratio>
@@ -9904,7 +9902,7 @@
                                                 <visible>Control.HasFocus(3444)</visible>
                                             </control>
                                             <control type="multiimage" description="Fanart">
-                                                <fadetime>100</fadetime>
+                                                
                                                 <timeperimage>5000</timeperimage>
                                                 <randomize>true</randomize>
                                                 <aspectratio>scale</aspectratio>
@@ -10103,7 +10101,7 @@
                                     <texture colordiffuse="Panel">common/box.png</texture>
                                 </control>
                                 <control type="multiimage" description="Fanart">
-                                    <fadetime>100</fadetime>
+                                    
                                     <timeperimage>12000</timeperimage>
                                     <randomize>true</randomize>
                                     <aspectratio>scale</aspectratio>
