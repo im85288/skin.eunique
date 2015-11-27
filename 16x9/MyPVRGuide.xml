@@ -14,16 +14,6 @@
 		</control>
 		<control type="group" id="50">
 			<control type="group">
-				<control type="multiimage">
-					<top>-100</top>
-					<left>-100</left>
-					<width>1</width>
-					<height>1</height>
-					<imagepath>plugin://script.skin.helper.service/?action=getthumb&amp;path=$INFO[ListItem.Title] $INFO[ListItem.ChannelName]</imagepath>
-					<aspectratio>keep</aspectratio>
-					<aspectratio align="right" aligny="center" scalediffuse="false">scale</aspectratio>
-					<visible>!Player.HasVideo + !IsEmpty(ListItem.Title)</visible>
-				</control>
 				<visible>Control.IsVisible(10)</visible>
 				<include>Animation.Common</include>
 				<left>0</left>
@@ -34,7 +24,7 @@
 					<left>-8</left>
 					<right>-8</right>
 					<height>310</height>
-					<texture colordiffuse="black">common/box.png</texture>
+					<texture colordiffuse="bluetv">common/box.png</texture>
 				</control>
 				<control type="group">
 					<top>10</top>
@@ -49,21 +39,9 @@
 						<height>280</height>
 						<align>right</align>
 						<aligny>center</aligny>
-						<texture background="true" fallback="pvr/background.jpg">$INFO[Window(Home).Property(SkinHelper.ListItemThumb)]</texture>
+						<texture background="true" fallback="pvr/background.jpg">http://localhost:52307/getpvrthumb&amp;title=$INFO[ListItem.Title]&amp;channel=$INFO[ListItem.ChannelName]&amp;type=poster,landscape,fanart,thumb</texture>
 						<aspectratio>keep</aspectratio>
-						<visible>!Player.HasVideo + !IsEmpty(Window(Home).Property(SkinHelper.ListItemThumb))</visible>
-					</control>
-					<control type="image">
-						<top>10</top>
-						<right>10</right>
-						<bottom>10</bottom>
-						<width>280</width>
-						<height>280</height>
-						<align>right</align>
-						<aligny>center</aligny>
-						<texture background="true" fallback="pvr/background.jpg">$INFO[Container(10).ListItem.Icon]</texture>
-						<aspectratio>keep</aspectratio>
-						<visible>!Player.HasVideo + IsEmpty(Window(Home).Property(SkinHelper.ListItemThumb))</visible>
+						<visible>!Player.HasVideo</visible>
 					</control>
 					<control type="videowindow">
 						<top>10</top>
@@ -83,7 +61,7 @@
 						<font>MediumBold</font>
 						<textcolor>white</textcolor>
 						<selectedcolor>white</selectedcolor>
-						<label>$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Label]$INFO[ListItem.EpisodeName, (,)]$INFO[ListItem.ChannelNumber, - ,]</label>
+						<label>$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Label]$INFO[ListItem.EpisodeName, (,)]</label>
 					</control>
 					<control type="label">
 						<top>10</top>
@@ -142,7 +120,7 @@
 					<right>-8</right>
 					<top>310</top>
 					<height>620</height>
-					<texture colordiffuse="black">common/box.png</texture>
+					<texture colordiffuse="bluetv">common/box.png</texture>
 				</control>
 				<control type="epggrid" id="10">
 					<left>-50</left>
@@ -198,9 +176,9 @@
 							<height>70</height>
 							<align>left</align>
 							<aligny>center</aligny>
-							<label>$INFO[ListItem.ChannelName]</label>
+							<label>$INFO[ListItem.ChannelNumber,,  ]$INFO[ListItem.ChannelName]</label>
 							<textcolor>white</textcolor>
-							<font>MediumSmall</font>
+							<font>Small</font>
 							<scroll>false</scroll>
 							<visible>!ListItem.IsPlaying</visible>
 							<animation effect="fade" start="100" end="64" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(10) + ![ListItem.IsSelected | ListItem.IsPlaying]">Conditional</animation>
@@ -212,10 +190,10 @@
 							<height>70</height>
 							<align>left</align>
 							<aligny>center</aligny>
-							<label>$INFO[ListItem.ChannelName]</label>
+							<label>$INFO[ListItem.ChannelNumber,,  ]$INFO[ListItem.ChannelName]</label>
 							<textcolor>black</textcolor>
 							<selectedcolor>black</selectedcolor>
-							<font>MediumSmall</font>
+							<font>Small</font>
 							<scroll>false</scroll>
 							<visible>ListItem.IsPlaying</visible>
 							<animation effect="fade" start="100" end="64" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(10) + ![ListItem.IsSelected | ListItem.IsPlaying]">Conditional</animation>
@@ -241,16 +219,8 @@
 							<left>57</left>
 							<width>100%</width>
 							<height>67</height>
-							<texture colordiffuse="white">common/white.png</texture>
-							<visible>Control.HasFocus(10) + !ListItem.IsPlaying</visible>
-						</control>
-						<control type="image">
-							<top>1</top>
-							<left>57</left>
-							<width>100%</width>
-							<height>67</height>
 							<texture colordiffuse="selective yellow">common/white.png</texture>
-							<visible>Control.HasFocus(10) + ListItem.IsPlaying</visible>
+							<visible>Control.HasFocus(10)</visible>
 						</control>
 						<control type="label">
 							<description>Label</description>
@@ -259,18 +229,18 @@
 							<height>70</height>
 							<align>left</align>
 							<aligny>center</aligny>
-							<label>$INFO[ListItem.ChannelName]</label>
+							<label>$INFO[ListItem.ChannelNumber,,  ]$INFO[ListItem.ChannelName]</label>
 							<textcolor>black</textcolor>
-							<selectedcolor>black</selectedcolor>
-							<font>MediumSmallBold</font>
+							<selectedcolor>bluetv</selectedcolor>
+							<font>SmallBold</font>
 							<scroll>false</scroll>
 							<animation effect="fade" start="100" end="64" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(10) + ![ListItem.IsSelected | ListItem.IsPlaying]">Conditional</animation>
 						</control>
 					</focusedchannellayout>
-					<itemlayout height="70" width="100">
+					<itemlayout height="70" width="132">
 						<control type="image" id="2">
 							<texture>common/white.png</texture>
-							<colordiffuse>black</colordiffuse>
+							<colordiffuse>bluetv</colordiffuse>
 							<visible>!Skin.HasSetting(EPGGenreColors.Enabled)</visible>
 							<bordertexture colordiffuse="white2">common/white.png</bordertexture>
 							<bordersize>1</bordersize>
@@ -278,95 +248,96 @@
 						<control type="image" id="2">
 							<posx>2</posx>
 							<posy>2</posy>
-							<width>98</width>
+							<width>130</width>
 							<height>66</height>
 							<texture>pvrgenre/$INFO[ListItem.Property(GenreType)].png</texture>
 							<aspectratio>scale</aspectratio>
 							<colordiffuse>5fffffff</colordiffuse>
 							<visible>Skin.HasSetting(EPGGenreColors.Enabled)</visible>
 						</control>
-						<control type="label" id="1">
-							<posx>22</posx>
-							<posy>0</posy>
-							<width>56</width>
-							<height>68</height>
-							<aligny>center</aligny>
-							<textcolor>white</textcolor>
-							<align>left</align>
-							<label>$INFO[ListItem.Label]</label>
-							<scroll>false</scroll>
-							<visible>!ListItem.IsRecording + !ListItem.HasTimer</visible>
+						<control type="group">
+							<visible>[ListItem.HasTimer | ListItem.IsRecording]</visible>
+							<control type="label">
+								<posy>0</posy>
+								<width>120</width>
+								<height>68</height>
+								<font>symbol24</font>
+								<textcolor>white</textcolor>
+								<textoffsetx>5</textoffsetx>
+								<label></label>
+								<align>left</align>
+								<visible>ListItem.HasTimer</visible>
+							</control>
+							<control type="label">
+								<posy>0</posy>
+								<width>120</width>
+								<height>68</height>
+								<font>symbol24</font>
+								<textcolor>SelectedRed</textcolor>
+								<selectedcolor>SelectedRed</selectedcolor>
+								<textoffsetx>5</textoffsetx>
+								<label></label>
+								<visible>ListItem.IsRecording</visible>
+								<align>left</align>
+							</control>
 						</control>
 						<control type="label" id="1">
-							<posx>53</posx>
-							<posy>0</posy>
-							<width>0</width>
+							<width>120</width>
 							<height>68</height>
-							<aligny>center</aligny>
+							<textoffsetx>15</textoffsetx>
 							<textcolor>white</textcolor>
-							<align>left</align>
 							<label>$INFO[ListItem.Label]</label>
-							<scroll>false</scroll>
-							<visible>ListItem.IsRecording | ListItem.HasTimer</visible>
-						</control>
-						<control type="image">
-							<posx>2</posx>
-							<posy>0</posy>
-							<width>66</width>
-							<height>70</height>
-							<texture>special://skin/extras/icons/timer.png</texture>
-							<colordiffuse>white2</colordiffuse>
-							<visible>ListItem.HasTimer | ListItem.IsRecording</visible>
+							<animation effect="slide" start="0,0" end="20,0" time="100" tween="sine" easing="in" condition="[ListItem.HasTimer | ListItem.IsRecording]">Conditional</animation>
 						</control>
 					</itemlayout>
-					<focusedlayout height="70" width="100">
+					<focusedlayout height="70" width="132">
 						<control type="image" id="2">
-							<texture colordiffuse="$VAR[ColourHighlight]">common/white.png</texture>
-							<bordertexture colordiffuse="black">common/white.png</bordertexture>
+							<texture colordiffuse="selective yellow">common/white.png</texture>
+							<bordertexture colordiffuse="bluetv">common/white.png</bordertexture>
 							<bordersize>1</bordersize>
 							<visible>!Skin.HasSetting(EPGGenreColors.Enabled)</visible>
 						</control>
 						<control type="image" id="2">
-							<width>97</width>
+							<width>129</width>
 							<left>2</left>
 							<top>2</top>
 							<height>66</height>
 							<texture colordiffuse="white">common/white.png</texture>
 							<visible>Skin.HasSetting(EPGGenreColors.Enabled)</visible>
 						</control>
-						<control type="label" id="1">
-							<posx>22</posx>
-							<posy>0</posy>
-							<width>56</width>
-							<height>68</height>
-							<aligny>center</aligny>
-							<textcolor>$VAR[ColourSelected]</textcolor>
-							<align>left</align>
-							<label>$INFO[ListItem.Label]</label>
-							<scroll>false</scroll>
-							<visible>!ListItem.IsRecording + !ListItem.HasTimer</visible>
+						<control type="group">
+							<visible>[ListItem.HasTimer | ListItem.IsRecording]</visible>
+							<control type="label">
+								<posy>0</posy>
+								<width>120</width>
+								<height>68</height>
+								<font>symbol24</font>
+								<textcolor>$VAR[ColourSelected]</textcolor>
+								<textoffsetx>5</textoffsetx>
+								<label></label>
+								<align>left</align>
+								<visible>ListItem.HasTimer</visible>
+							</control>
+							<control type="label">
+								<posy>0</posy>
+								<width>120</width>
+								<height>68</height>
+								<font>symbol24</font>
+								<textcolor>SelectedRed</textcolor>
+								<selectedcolor>SelectedRed</selectedcolor>
+								<textoffsetx>5</textoffsetx>
+								<label></label>
+								<visible>ListItem.IsRecording</visible>
+								<align>left</align>
+							</control>
 						</control>
 						<control type="label" id="1">
-							<posx>53</posx>
-							<posy>0</posy>
-							<width>0</width>
+							<width>120</width>
 							<height>68</height>
-							<aligny>center</aligny>
-							<textoffsetx>11</textoffsetx>
+							<textoffsetx>15</textoffsetx>
 							<textcolor>$VAR[ColourSelected]</textcolor>
-							<align>left</align>
 							<label>$INFO[ListItem.Label]</label>
-							<scroll>false</scroll>
-							<visible>ListItem.IsRecording | ListItem.HasTimer</visible>
-						</control>
-						<control type="image">
-							<posx>2</posx>
-							<posy>0</posy>
-							<width>66</width>
-							<height>70</height>
-							<texture>special://skin/extras/icons/timer.png</texture>
-							<colordiffuse>$VAR[ColourSelected]</colordiffuse>
-							<visible>ListItem.HasTimer | ListItem.IsRecording</visible>
+							<animation effect="slide" start="0,0" end="20,0" time="100" tween="sine" easing="in" condition="[ListItem.HasTimer | ListItem.IsRecording]">Conditional</animation>
 						</control>
 					</focusedlayout>
 				</control>
