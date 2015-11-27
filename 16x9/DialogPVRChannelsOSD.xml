@@ -28,7 +28,7 @@
 				<width>900</width>
 				<top>TopPad</top>
 				<height>920</height>
-				<colordiffuse>black</colordiffuse>
+				<colordiffuse>bluetv</colordiffuse>
 				<animation effect="fade" start="100" end="90" condition="true">Conditional</animation>
 				<texture>common/box.png</texture>
 			</control>
@@ -37,7 +37,7 @@
 				<width>900</width>
 				<top>TopPad</top>
 				<height>920</height>
-				<colordiffuse>black</colordiffuse>
+				<colordiffuse>bluetv</colordiffuse>
 				<animation effect="fade" start="100" end="90" condition="true">Conditional</animation>
 				<texture>common/box.png</texture>
 			</control>
@@ -214,7 +214,7 @@
 						<control type="image">
 							<width>100%</width>
 							<height>100%</height>
-							<texture colordiffuse="selective yellow">common/box.png</texture>
+							<texture colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
 							<visible>ListItem.IsPlaying</visible>
 						</control>
 						<control type="progress">
@@ -256,8 +256,8 @@
 							<aligny>center</aligny>
 							<height>50</height>
 							<font>SmallBold</font>
-							<textcolor>black</textcolor>
-							<selectedcolor>black</selectedcolor>
+							<textcolor>$VAR[ColourSelected]</textcolor>
+							<selectedcolor>$VAR[ColourSelected]</selectedcolor>
 							<label>$INFO[ListItem.ChannelNumberLabel,,  ]$INFO[ListItem.ChannelName]$INFO[ListItem.Title,  [I],[/I]]</label>
 							<visible>ListItem.IsPlaying</visible>
 						</control>
@@ -268,14 +268,7 @@
 						<control type="image">
 							<width>100%</width>
 							<height>100%</height>
-							<texture colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
-							<visible>!ListItem.IsPlaying</visible>
-						</control>
-						<control type="image">
-							<width>100%</width>
-							<height>100%</height>
 							<texture colordiffuse="selective yellow">common/box.png</texture>
-							<visible>ListItem.IsPlaying</visible>
 						</control>
 						<control type="group">
 							<control type="progress">

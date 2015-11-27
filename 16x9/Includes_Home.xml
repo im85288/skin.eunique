@@ -6504,6 +6504,12 @@
                     
                     
                     <itemlayout height="46" width="410">
+                        <control type="image">
+                            <width>100%</width>
+                            <height>100%</height>
+                            <texture colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
+                            <visible>ListItem.IsPlaying</visible>
+                        </control>
                         <control type="label">
                             <left>5</left>
                             <align>left</align>
@@ -6514,6 +6520,7 @@
                             <textcolor>white</textcolor>
                             <selectedcolor>white</selectedcolor>
                             <label>$INFO[ListItem.ChannelNumberLabel]</label>
+                            <visible>!ListItem.IsPlaying</visible>
                         </control>
                         <control type="label">
                             <left>50</left>
@@ -6525,6 +6532,31 @@
                             <textcolor>white</textcolor>
                             <selectedcolor>white</selectedcolor>
                             <label>$INFO[ListItem.ChannelName]$INFO[ListItem.Title, [I],[/I]]</label>
+                            <visible>!ListItem.IsPlaying</visible>
+                        </control>
+                        <control type="label">
+                            <left>5</left>
+                            <align>left</align>
+                            <aligny>center</aligny>
+                            <height>46</height>
+                            <width>48</width>
+                            <font>MiniBold</font>
+                            <textcolor>$VAR[ColourSelected]</textcolor>
+                            <selectedcolor>$VAR[ColourSelected]</selectedcolor>
+                            <label>$INFO[ListItem.ChannelNumberLabel]</label>
+                            <visible>ListItem.IsPlaying</visible>
+                        </control>
+                        <control type="label">
+                            <left>50</left>
+                            <right>5</right>
+                            <align>left</align>
+                            <aligny>center</aligny>
+                            <height>46</height>
+                            <font>MiniBold</font>
+                            <textcolor>$VAR[ColourSelected]</textcolor>
+                            <selectedcolor>$VAR[ColourSelected]</selectedcolor>
+                            <label>$INFO[ListItem.ChannelName]$INFO[ListItem.Title, [I],[/I]]</label>
+                            <visible>ListItem.IsPlaying</visible>
                         </control>
                     </itemlayout>
                     <focusedlayout height="46" width="410">
@@ -6537,14 +6569,7 @@
                         <control type="image">
                             <width>100%</width>
                             <height>100%</height>
-                            <texture colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
-                            <visible>Control.HasFocus(7016)</visible>
-                        </control>
-                        <control type="image">
-                            <width>100%</width>
-                            <height>100%</height>
                             <texture colordiffuse="selective yellow">common/box.png</texture>
-                            <visible>!Control.HasFocus(7016)</visible>
                         </control>
                         <control type="label">
                             <left>5</left>
@@ -8271,6 +8296,12 @@
                                     
                                     
                                     <itemlayout height="46" width="770">
+                                        <control type="image">
+                                            <width>100%</width>
+                                            <height>100%</height>
+                                            <texture colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
+                                            <visible>ListItem.IsPlaying</visible>
+                                        </control>
                                         <control type="label">
                                             <left>5</left>
                                             <align>left</align>
@@ -8281,6 +8312,7 @@
                                             <textcolor>white</textcolor>
                                             <selectedcolor>white</selectedcolor>
                                             <label>$INFO[ListItem.ChannelNumberLabel]</label>
+                                            <visible>!ListItem.IsPlaying</visible>
                                         </control>
                                         <control type="label">
                                             <left>80</left>
@@ -8292,6 +8324,31 @@
                                             <textcolor>white</textcolor>
                                             <selectedcolor>white</selectedcolor>
                                             <label>$INFO[ListItem.ChannelName]$INFO[ListItem.Title, [I],[/I]]</label>
+                                            <visible>!ListItem.IsPlaying</visible>
+                                        </control>
+                                        <control type="label">
+                                            <left>5</left>
+                                            <align>left</align>
+                                            <aligny>center</aligny>
+                                            <height>46</height>
+                                            <width>48</width>
+                                            <font>MiniBold</font>
+                                            <textcolor>$VAR[ColourSelected]</textcolor>
+                                            <selectedcolor>$VAR[ColourSelected]</selectedcolor>
+                                            <label>$INFO[ListItem.ChannelNumberLabel]</label>
+                                            <visible>ListItem.IsPlaying</visible>
+                                        </control>
+                                        <control type="label">
+                                            <left>80</left>
+                                            <right>5</right>
+                                            <align>left</align>
+                                            <aligny>center</aligny>
+                                            <height>46</height>
+                                            <font>MiniBold</font>
+                                            <textcolor>$VAR[ColourSelected]</textcolor>
+                                            <selectedcolor>$VAR[ColourSelected]</selectedcolor>
+                                            <label>$INFO[ListItem.ChannelName]$INFO[ListItem.Title, [I],[/I]]</label>
+                                            <visible>ListItem.IsPlaying</visible>
                                         </control>
                                     </itemlayout>
                                     <focusedlayout height="46" width="770">
@@ -8303,14 +8360,7 @@
                                         <control type="image">
                                             <width>100%</width>
                                             <height>100%</height>
-                                            <texture colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
-                                            <visible>Control.HasFocus(7016)</visible>
-                                        </control>
-                                        <control type="image">
-                                            <width>100%</width>
-                                            <height>100%</height>
                                             <texture colordiffuse="selective yellow">common/box.png</texture>
-                                            <visible>!Control.HasFocus(7016)</visible>
                                         </control>
                                         <control type="label">
                                             <left>5</left>
