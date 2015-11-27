@@ -14,7 +14,7 @@
 				<posy>10</posy>
 				<width>668</width>
 				<height>1000</height>
-				<colordiffuse>bluetv</colordiffuse>
+				<colordiffuse>$VAR[PVRBackgroundColour]</colordiffuse>
 				<texture>common/white.png</texture>
 				<animation effect="fade" start="100" end="95" condition="true">Conditional</animation>
 			</control>
@@ -25,14 +25,6 @@
 				<height>64</height>
 				<aspectratio align="right">keep</aspectratio>
 				<texture>http://localhost:52307/getpvrthumb&amp;title=$INFO[VideoPlayer.Title]&amp;channel=$INFO[VideoPlayer.ChannelName]&amp;type=landscape,fanart,thumb,poster</texture>
-			</control>
-			<control type="image">
-				<posx>498</posx>
-				<posy>28</posy>
-				<width>128</width>
-				<height>64</height>
-				<aspectratio align="right">keep</aspectratio>
-				<texture>$INFO[Player.Art(thumb)]</texture>
 			</control>
 			<control type="label">
 				<posx>33</posx>
