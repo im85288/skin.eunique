@@ -53,7 +53,7 @@
                     <top>100r</top>
                     <width>100%</width>
                     <height>374</height>
-                    <colordiffuse>bluetv</colordiffuse>
+                    <colordiffuse>$VAR[PVRBackgroundColour]</colordiffuse>
                     <animation effect="fade" start="100" end="90" condition="[!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)]">Conditional</animation>
                     <texture>common/box.png</texture>
                     <visible>VideoPlayer.Content(LiveTV)</visible>
@@ -62,7 +62,7 @@
                     <top>-100r</top>
                     <width>100%</width>
                     <height>100</height>
-                    <colordiffuse>bluetv</colordiffuse>
+                    <colordiffuse>$VAR[PVRBackgroundColour]</colordiffuse>
                     <animation effect="fade" start="100" end="90" condition="[!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)]">Conditional</animation>
                     <texture>common/white.png</texture>
                     <visible>Window.IsVisible(fullscreeninfo) | Player.ShowInfo | !IsEmpty(Window(home).Property(osdshowinfo)) | [Player.Paused + Skin.HasSetting(osd.showinfoonpause)]</visible>

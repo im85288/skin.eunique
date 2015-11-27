@@ -171,7 +171,7 @@
 				<right>-8</right>
 				<top>-2</top>
 				<bottom>-8</bottom>
-				<texture colordiffuse="bluetv">common/box.png</texture>
+				<texture colordiffuse="$VAR[PVRBackgroundColour]">common/box.png</texture>
 				<animation effect="fade" start="100" end="90" condition="true">Conditional</animation>
 			</control>
 			<control type="group">
@@ -182,7 +182,7 @@
 					<right>10</right>
 					<bottom>10</bottom>
 					<fadetime>200</fadetime>
-					<texture colordiffuse="bluetv">diffuse/pvrinfo.png</texture>
+					<texture colordiffuse="$VAR[PVRBackgroundColour]">diffuse/pvrinfo.png</texture>
 					<visible>Player.HasVideo</visible>
 				</control>
 				<control type="videowindow">
@@ -330,7 +330,7 @@
 				<top>TopPad</top>
 				<height>920</height>
 				<control type="image">
-					<texture colordiffuse="bluetv">common/box.png</texture>
+					<texture colordiffuse="$VAR[PVRBackgroundColour]">common/box.png</texture>
 					<animation effect="fade" start="100" end="90" condition="true">Conditional</animation>
 				</control>
 				<control type="label">
@@ -538,7 +538,7 @@
 									<height>50</height>
 									<font>SmallBold</font>
 									<textcolor>$VAR[ColourSelected]</textcolor>
-									<selectedcolor>bluetv</selectedcolor>
+									<selectedcolor>$VAR[PVRBackgroundColour]</selectedcolor>
 									<label>$INFO[ListItem.ChannelNumberLabel]</label>
 								</control>
 								<control type="label">
@@ -549,7 +549,7 @@
 									<height>50</height>
 									<font>SmallBold</font>
 									<textcolor>$VAR[ColourSelected]</textcolor>
-									<selectedcolor>bluetv</selectedcolor>
+									<selectedcolor>$VAR[PVRBackgroundColour]</selectedcolor>
 									<label>$INFO[ListItem.ChannelName]</label>
 								</control>
 								<control type="label">
@@ -560,7 +560,7 @@
 									<height>50</height>
 									<font>SmallBold</font>
 									<textcolor>$VAR[ColourSelected]</textcolor>
-									<selectedcolor>bluetv</selectedcolor>
+									<selectedcolor>$VAR[PVRBackgroundColour]</selectedcolor>
 									<label>$INFO[ListItem.Title]</label>
 								</control>
 							</control>
@@ -574,7 +574,7 @@
 									<height>64</height>
 									<font>SmallBold</font>
 									<textcolor>$VAR[ColourSelected]</textcolor>
-									<selectedcolor>bluetv</selectedcolor>
+									<selectedcolor>$VAR[PVRBackgroundColour]</selectedcolor>
 									<label>$INFO[ListItem.Label]</label>
 								</control>
 								<control type="label">
@@ -585,7 +585,7 @@
 									<height>64</height>
 									<font>Small</font>
 									<textcolor>$VAR[ColourSelected]</textcolor>
-									<selectedcolor>bluetv</selectedcolor>
+									<selectedcolor>$VAR[PVRBackgroundColour]</selectedcolor>
 									<label>$INFO[ListItem.StartDate]$INFO[ListItem.StartTime,$COMMA ,]</label>
 								</control>
 								<control type="label">
@@ -596,7 +596,7 @@
 									<align>right</align>
 									<font>Small</font>
 									<textcolor>$VAR[ColourSelected]</textcolor>
-									<selectedcolor>bluetv</selectedcolor>
+									<selectedcolor>$VAR[PVRBackgroundColour]</selectedcolor>
 									<label>$INFO[ListItem.ChannelName]</label>
 								</control>
 							</control>
@@ -615,7 +615,7 @@
 			<control type="group">
 				<top>TopPad</top>
 				<control type="image">
-					<texture colordiffuse="bluetv">common/box.png</texture>
+					<texture colordiffuse="$VAR[PVRBackgroundColour]">common/box.png</texture>
 				</control>
 				<control type="panel" id="51" description="TV CHANNELS">
 					<top>0</top>
@@ -636,7 +636,7 @@
 							<top>10</top>
 							<right>10</right>
 							<bottom>10</bottom>
-							<texture colordiffuse="bluetv">common/box.png</texture>
+							<texture colordiffuse="$VAR[PVRBackgroundColour]">common/box.png</texture>
 						</control>
 						<control type="group">
 							<visible>Window.IsVisible(MyPVRChannels.xml)</visible>
@@ -1041,7 +1041,7 @@
 			<include>Animation.Common</include>
 			<top>TopPad</top>
 			<control type="image">
-				<texture colordiffuse="bluetv">common/box.png</texture>
+				<texture colordiffuse="$VAR[PVRBackgroundColour]">common/box.png</texture>
 			</control>
 			<control type="panel" id="52" description="TV CHANNELS">
 				<top>20</top>
@@ -1315,7 +1315,7 @@
 					<top>10</top>
 					<right>10</right>
 					<bottom>10</bottom>
-					<texture colordiffuse="bluetv">common/box.png</texture>
+					<texture colordiffuse="$VAR[PVRBackgroundColour]">common/box.png</texture>
 				</control>
 				<control type="image" id="126777">
 					<right>20</right>

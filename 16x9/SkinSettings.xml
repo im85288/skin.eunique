@@ -952,7 +952,7 @@
 						<include>DefSettingsButton2</include>
 						<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=now.playing.background.color.name)</onclick>
 						<label>32071</label>
-						<label2>[COLOR=$VAR[ColourIconFlags]]$INFO[Skin.String(now.playing.background.color.name)][/COLOR]</label2>
+						<label2>[COLOR=$VAR[NowPlayingBackgroundColourHighlight]]$INFO[Skin.String(now.playing.background.color.name)][/COLOR]</label2>
 						<visible>Skin.HasSetting(now.playing.background.color)</visible>
 					</control>
 					<control type="radiobutton" id="92885">
@@ -969,8 +969,25 @@
 						<include>DefSettingsButton2</include>
 						<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=now.playing.progress.color.name)</onclick>
 						<label>32073</label>
-						<label2>[COLOR=$VAR[ColourIconFlags]]$INFO[Skin.String(now.playing.progress.color.name)][/COLOR]</label2>
+						<label2>[COLOR=$VAR[NowPlayingProgressColourHighlight]]$INFO[Skin.String(now.playing.progress.color.name)][/COLOR]</label2>
 						<visible>Skin.HasSetting(now.playing.progress.color)</visible>
+					</control>
+					<control type="radiobutton" id="92887">
+						<width>1410</width>
+						<textureradiofocus colordiffuse="$VAR[PVRBackgroundColour]">buttons/radio-on.png</textureradiofocus>
+						<textureradionofocus colordiffuse="$VAR[PVRBackgroundColour]">common/box.png</textureradionofocus>
+						<include>DefSettingsButton2</include>
+						<selected>Skin.HasSetting(pvr.background.color)</selected>
+						<onclick>Skin.ToggleSetting(pvr.background.color)</onclick>
+						<label>32079</label>
+					</control>
+					<control type="button" id="92888">
+						<width>1410</width>
+						<include>DefSettingsButton2</include>
+						<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=pvr.background.color.name)</onclick>
+						<label>32080</label>
+						<label2>[COLOR=$VAR[PVRBackgroundColour]]$INFO[Skin.String(pvr.background.color.name)][/COLOR]</label2>
+						<visible>Skin.HasSetting(pvr.background.color)</visible>
 					</control>
 				</control>
 				<control type="grouplist" id="9009">

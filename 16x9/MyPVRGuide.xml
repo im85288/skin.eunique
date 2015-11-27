@@ -24,7 +24,7 @@
 					<left>-8</left>
 					<right>-8</right>
 					<height>310</height>
-					<texture colordiffuse="bluetv">common/box.png</texture>
+					<texture colordiffuse="$VAR[PVRBackgroundColour]">common/box.png</texture>
 				</control>
 				<control type="group">
 					<top>10</top>
@@ -120,7 +120,7 @@
 					<right>-8</right>
 					<top>310</top>
 					<height>620</height>
-					<texture colordiffuse="bluetv">common/box.png</texture>
+					<texture colordiffuse="$VAR[PVRBackgroundColour]">common/box.png</texture>
 				</control>
 				<control type="epggrid" id="10">
 					<left>-50</left>
@@ -231,7 +231,7 @@
 							<aligny>center</aligny>
 							<label>$INFO[ListItem.ChannelNumber,,  ]$INFO[ListItem.ChannelName]</label>
 							<textcolor>black</textcolor>
-							<selectedcolor>bluetv</selectedcolor>
+							<selectedcolor>$VAR[PVRBackgroundColour]</selectedcolor>
 							<font>SmallBold</font>
 							<scroll>false</scroll>
 							<animation effect="fade" start="100" end="64" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(10) + ![ListItem.IsSelected | ListItem.IsPlaying]">Conditional</animation>
@@ -240,7 +240,7 @@
 					<itemlayout height="70" width="132">
 						<control type="image" id="2">
 							<texture>common/white.png</texture>
-							<colordiffuse>bluetv</colordiffuse>
+							<colordiffuse>$VAR[PVRBackgroundColour]</colordiffuse>
 							<visible>!Skin.HasSetting(EPGGenreColors.Enabled)</visible>
 							<bordertexture colordiffuse="white2">common/white.png</bordertexture>
 							<bordersize>1</bordersize>
@@ -293,7 +293,7 @@
 					<focusedlayout height="70" width="132">
 						<control type="image" id="2">
 							<texture colordiffuse="selective yellow">common/white.png</texture>
-							<bordertexture colordiffuse="bluetv">common/white.png</bordertexture>
+							<bordertexture colordiffuse="$VAR[PVRBackgroundColour]">common/white.png</bordertexture>
 							<bordersize>1</bordersize>
 							<visible>!Skin.HasSetting(EPGGenreColors.Enabled)</visible>
 						</control>
@@ -351,7 +351,7 @@
 					<top>TopPad</top>
 					<height>920</height>
 					<control type="image">
-						<texture colordiffuse="bluetv">common/box.png</texture>
+						<texture colordiffuse="$VAR[PVRBackgroundColour]">common/box.png</texture>
 						<animation effect="fade" start="100" end="90" condition="true">Conditional</animation>
 					</control>
 					<control type="list" id="11" description="Now">
@@ -673,7 +673,7 @@
 					<top>TopPad</top>
 					<height>920</height>
 					<control type="image">
-						<texture colordiffuse="bluetv">common/box.png</texture>
+						<texture colordiffuse="$VAR[PVRBackgroundColour]">common/box.png</texture>
 						<animation effect="fade" start="100" end="90" condition="true">Conditional</animation>
 					</control>
 					<control type="list" id="12" description="Next">
@@ -996,7 +996,7 @@
 					<top>TopPad</top>
 					<height>920</height>
 					<control type="image">
-						<texture colordiffuse="bluetv">common/box.png</texture>
+						<texture colordiffuse="$VAR[PVRBackgroundColour]">common/box.png</texture>
 						<animation effect="fade" start="100" end="90" condition="true">Conditional</animation>
 					</control>
 					<control type="list" id="13" description="Channel">
