@@ -3063,8 +3063,25 @@
                     <animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(3442)">Conditional</animation>
                 </control>
                 <!-- Movies menu item -->
-                <control type="group">
-                    <!-- <animation effect="fade" start="100" end="0" time="50" condition="[StringCompare(Container(300).ListItem.Property(defaultID),movies) + [Container(3012).IsUpdating | Container(3016).IsUpdating | Container(3017).IsUpdating | Container(10017).IsUpdating | Container(18003).IsUpdating | Container(19003).IsUpdating]]">Conditional</animation> -->
+                    <!--
+				<control type="multiimage">
+					<top>330</top>
+					<left>SidePad</left>
+					<right>0</right>
+					<height>705</height>
+					<timeperimage>100</timeperimage>
+					<randomize>true</randomize>
+					<fadetime>100</fadetime>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<imagepath background="true">$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground.Wall)]</imagepath>
+					<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies) + [Container(3012).IsUpdating | Container(3016).IsUpdating | Container(3017).IsUpdating] + !IsEmpty(Window(Home).Property(SkinHelper.AllMoviesBackground.Wall))</visible>
+					<animation effect="fade" start="00" end="60" time="0">Visible</animation>
+				</control>
+					-->
+               <control type="group">
+                    <!--
+					<animation effect="fade" start="100" end="0" time="50" condition="[StringCompare(Container(300).ListItem.Property(defaultID),movies) + [Container(3012).IsUpdating | Container(3016).IsUpdating | Container(3017).IsUpdating | Container(10017).IsUpdating | Container(18003).IsUpdating | Container(19003).IsUpdating]]">Conditional</animation> 
+					-->
                     <animation effect="fade" start="100" end="0" time="0" condition="[StringCompare(Container(300).ListItem.Property(defaultID),movies) + [Container(3012).IsUpdating | Container(3016).IsUpdating | Container(3017).IsUpdating]]">Conditional</animation>
                     <visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
                     <control type="group">
@@ -4871,8 +4888,8 @@
                             <texturefocus>-</texturefocus>
                             <texturenofocus>-</texturenofocus>
                             <onfocus>SetProperty(SkinHelper.WidgetContainer,19011)</onfocus>
-                            <onup>setfocus(19003,0)</onup>
-                            <ondown>setfocus(19003,3)</ondown>
+                            <onup>setfocus(19004,0)</onup>
+                            <ondown>setfocus(19004,3)</ondown>
                             <oninfo>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(19011).ListItem(4).Label])</oninfo>
                             <onclick>ActivateWindow(10025,videodb://tvshows/titles/$INFO[Container(19011).ListItem(4).Property(DBID)]/,return)</onclick>
                         </control>
@@ -4886,7 +4903,6 @@
                             <animation effect="zoom" start="105" end="90" time="200" tween="quadratic" reversible="false" center="auto" condition="Control.HasFocus(19022)">Conditional</animation>
                         </control>
                         <control type="panel" id="19004">
-                            <visible>IntegerGreaterThan(Container(19011).NumItems,1)</visible>
                             <left>4031</left>
                             <top>330</top>
                             <width>470</width>

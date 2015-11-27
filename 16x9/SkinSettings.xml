@@ -989,6 +989,23 @@
 						<label2>[COLOR=$VAR[PVRBackgroundColour]]$INFO[Skin.String(pvr.background.color.name)][/COLOR]</label2>
 						<visible>Skin.HasSetting(pvr.background.color)</visible>
 					</control>
+					<control type="radiobutton" id="92889">
+						<width>1410</width>
+						<textureradiofocus colordiffuse="$VAR[BottomBarColour]">buttons/radio-on.png</textureradiofocus>
+						<textureradionofocus colordiffuse="$VAR[BottomBarColour]">common/box.png</textureradionofocus>
+						<include>DefSettingsButton2</include>
+						<selected>Skin.HasSetting(bottom.bar.color)</selected>
+						<onclick>Skin.ToggleSetting(bottom.bar.color)</onclick>
+						<label>32082</label>
+					</control>
+					<control type="button" id="92890">
+						<width>1410</width>
+						<include>DefSettingsButton2</include>
+						<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=bottom.bar.color.name)</onclick>
+						<label>32083</label>
+						<label2>[COLOR=$VAR[BottomBarColour]]$INFO[Skin.String(bottom.bar.color.name)][/COLOR]</label2>
+						<visible>Skin.HasSetting(bottom.bar.color)</visible>
+					</control>
 				</control>
 				<control type="grouplist" id="9009">
 					<description>Themes</description>
