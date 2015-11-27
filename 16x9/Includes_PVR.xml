@@ -8,7 +8,7 @@
 			<include>GlobalOverlay</include>
 		</control>
 		<control type="group">
-			<include>Def9000SideBladeLeft</include>
+			<include>Def9000SideBladeLeftTV</include>
 			<control type="grouplist" id="9000">
 				<onback condition="Window.IsVisible(MyPVRGuide.xml) + Control.IsVisible(10)">ActivateWindow(home)</onback>
 				<left>10</left>
@@ -171,7 +171,7 @@
 				<right>-8</right>
 				<top>-2</top>
 				<bottom>-8</bottom>
-				<texture colordiffuse="black">common/box.png</texture>
+				<texture colordiffuse="bluetv">common/box.png</texture>
 				<animation effect="fade" start="100" end="90" condition="true">Conditional</animation>
 			</control>
 			<control type="group">
@@ -182,7 +182,7 @@
 					<right>10</right>
 					<bottom>10</bottom>
 					<fadetime>200</fadetime>
-					<texture colordiffuse="black">diffuse/pvrinfo.png</texture>
+					<texture colordiffuse="bluetv">diffuse/pvrinfo.png</texture>
 					<visible>Player.HasVideo</visible>
 				</control>
 				<control type="videowindow">
@@ -330,7 +330,7 @@
 				<top>TopPad</top>
 				<height>920</height>
 				<control type="image">
-					<texture colordiffuse="black">common/box.png</texture>
+					<texture colordiffuse="bluetv">common/box.png</texture>
 					<animation effect="fade" start="100" end="90" condition="true">Conditional</animation>
 				</control>
 				<control type="label">
@@ -372,7 +372,7 @@
 							<control type="image">
 								<width>100%</width>
 								<height>100%</height>
-								<texture colordiffuse="selective yellow">common/box.png</texture>
+								<texture colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
 								<visible>ListItem.IsPlaying</visible>
 							</control>
 							<control type="progress">
@@ -442,8 +442,8 @@
 								<aligny>center</aligny>
 								<height>50</height>
 								<font>SmallBold</font>
-								<textcolor>black</textcolor>
-								<selectedcolor>black</selectedcolor>
+								<textcolor>$VAR[ColourSelected]</textcolor>
+								<selectedcolor>$VAR[ColourSelected]</selectedcolor>
 								<label>$INFO[ListItem.ChannelNumberLabel]</label>
 								<visible>ListItem.IsPlaying</visible>
 							</control>
@@ -454,8 +454,8 @@
 								<aligny>center</aligny>
 								<height>50</height>
 								<font>SmallBold</font>
-								<textcolor>black</textcolor>
-								<selectedcolor>black</selectedcolor>
+								<textcolor>$VAR[ColourSelected]</textcolor>
+								<selectedcolor>$VAR[ColourSelected]</selectedcolor>
 								<label>$INFO[ListItem.ChannelName]</label>
 								<visible>ListItem.IsPlaying</visible>
 							</control>
@@ -466,8 +466,8 @@
 								<aligny>center</aligny>
 								<height>50</height>
 								<font>SmallBold</font>
-								<textcolor>black</textcolor>
-								<selectedcolor>black</selectedcolor>
+								<textcolor>$VAR[ColourSelected]</textcolor>
+								<selectedcolor>$VAR[ColourSelected]</selectedcolor>
 								<label>$INFO[ListItem.Title]</label>
 								<visible>ListItem.IsPlaying</visible>
 							</control>
@@ -507,56 +507,6 @@
 								<selectedcolor>white</selectedcolor>
 								<label>$INFO[ListItem.ChannelName]</label>
 							</control>
-							<control type="label">
-								<centerright>30</centerright>
-								<centertop>68</centertop>
-								<width>32</width>
-								<height>32</height>
-								<font>symbolview</font>
-								<label>$VAR[PercentWatchedLabel]</label>
-								<textcolor>$VAR[UnwatchedColourHighlight]</textcolor>
-								<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched) + !ListItem.IsResumable</visible>
-							</control>
-							<control type="label">
-								<centerright>30</centerright>
-								<centertop>68</centertop>
-								<width>32</width>
-								<height>32</height>
-								<font>symbolview</font>
-								<label>$VAR[PercentWatchedLabel]</label>
-								<textcolor>$VAR[PlayingColourHighlight]</textcolor>
-								<visible>!stringcompare(ListItem.Label,..) + ListItem.IsPlaying</visible>
-							</control>
-							<control type="label">
-								<centerright>30</centerright>
-								<centertop>68</centertop>
-								<width>32</width>
-								<height>32</height>
-								<font>symbolview</font>
-								<label>$VAR[PercentWatchedLabel]</label>
-								<textcolor>$VAR[WatchedColourHighlight]</textcolor>
-								<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(furniture.unwatched)</visible>
-							</control>
-							<control type="label">
-								<centerright>30</centerright>
-								<centertop>68</centertop>
-								<width>32</width>
-								<height>32</height>
-								<font>symbolview</font>
-								<label>$VAR[PercentWatchedLabel]</label>
-								<textcolor>$VAR[ResumeColourHighlight]</textcolor>
-								<visible>!stringcompare(ListItem.Label,..) + ListItem.IsResumable</visible>
-							</control>
-							<control type="label">
-								<centerright>30</centerright>
-								<centertop>68</centertop>
-								<width>32</width>
-								<height>32</height>
-								<font>symbolview</font>
-								<label>$VAR[PercentWatchedLabel]</label>
-								<textcolor>$VAR[NewColourHighlight]</textcolor>
-								<visible>!stringcompare(ListItem.Label,..) + [SubString(ListItem.Overlay,OverlayUnwatched.png) + [[Container.Content(movies) + [StringCompare(Window(Home).Property(LatestMovie.1.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.2.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.3.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.4.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.5.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.6.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.7.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.8.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.9.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.10.Title),ListItem.Label)]] | [[Container.Content(tvshows)] + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem.TvShowTitle)]] | [Container.Content(episodes) + [StringCompare(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem.Title)]]]]</visible>
-							</control>
 						</control>
 					</itemlayout>
 					<focusedlayout height="50" width="900">
@@ -565,18 +515,7 @@
 							<control type="image">
 								<width>100%</width>
 								<height>100%</height>
-								<texture colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
-								<bordertexture colordiffuse="$VAR[ColourSelected]">common/white.png</bordertexture>
-								<bordersize>20,0,0,0</bordersize>
-								<visible>!ListItem.IsPlaying</visible>
-							</control>
-							<control type="image">
-								<width>100%</width>
-								<height>100%</height>
-								<texture colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
-								<bordertexture colordiffuse="selective yellow">common/white.png</bordertexture>
-								<bordersize>20,0,0,0</bordersize>
-								<visible>ListItem.IsPlaying</visible>
+								<texture colordiffuse="selective yellow">common/box.png</texture>
 							</control>
 							<control type="group">
 								<visible>Window.IsVisible(MyPVRChannels.xml)</visible>
@@ -599,7 +538,7 @@
 									<height>50</height>
 									<font>SmallBold</font>
 									<textcolor>$VAR[ColourSelected]</textcolor>
-									<selectedcolor>$VAR[ColourSelected]</selectedcolor>
+									<selectedcolor>bluetv</selectedcolor>
 									<label>$INFO[ListItem.ChannelNumberLabel]</label>
 								</control>
 								<control type="label">
@@ -610,7 +549,7 @@
 									<height>50</height>
 									<font>SmallBold</font>
 									<textcolor>$VAR[ColourSelected]</textcolor>
-									<selectedcolor>$VAR[ColourSelected]</selectedcolor>
+									<selectedcolor>bluetv</selectedcolor>
 									<label>$INFO[ListItem.ChannelName]</label>
 								</control>
 								<control type="label">
@@ -621,7 +560,7 @@
 									<height>50</height>
 									<font>SmallBold</font>
 									<textcolor>$VAR[ColourSelected]</textcolor>
-									<selectedcolor>$VAR[ColourSelected]</selectedcolor>
+									<selectedcolor>bluetv</selectedcolor>
 									<label>$INFO[ListItem.Title]</label>
 								</control>
 							</control>
@@ -635,7 +574,7 @@
 									<height>64</height>
 									<font>SmallBold</font>
 									<textcolor>$VAR[ColourSelected]</textcolor>
-									<selectedcolor>$VAR[ColourSelected]</selectedcolor>
+									<selectedcolor>bluetv</selectedcolor>
 									<label>$INFO[ListItem.Label]</label>
 								</control>
 								<control type="label">
@@ -646,7 +585,7 @@
 									<height>64</height>
 									<font>Small</font>
 									<textcolor>$VAR[ColourSelected]</textcolor>
-									<selectedcolor>$VAR[ColourSelected]</selectedcolor>
+									<selectedcolor>bluetv</selectedcolor>
 									<label>$INFO[ListItem.StartDate]$INFO[ListItem.StartTime,$COMMA ,]</label>
 								</control>
 								<control type="label">
@@ -657,7 +596,7 @@
 									<align>right</align>
 									<font>Small</font>
 									<textcolor>$VAR[ColourSelected]</textcolor>
-									<selectedcolor>$VAR[ColourSelected]</selectedcolor>
+									<selectedcolor>bluetv</selectedcolor>
 									<label>$INFO[ListItem.ChannelName]</label>
 								</control>
 								<control type="label">
@@ -712,125 +651,6 @@
 								</control>
 							</control>
 						</control>
-						<control type="group">
-							<visible>!Control.HasFocus(50)</visible>
-							<control type="image">
-								<left>10</left>
-								<centertop>50%</centertop>
-								<width>111</width>
-								<height>111</height>
-								<aspectratio align="left">keep</aspectratio>
-								<texture fallback="DefaultAddonNone.png">$INFO[Listitem.Icon]</texture>
-							</control>
-							<control type="group">
-								<visible>Window.IsVisible(MyPVRChannels.xml)</visible>
-								<control type="progress">
-									<posx>150</posx>
-									<bottom>14</bottom>
-									<width>920</width>
-									<height>6</height>
-									<reveal>true</reveal>
-									<info>ListItem.Progress</info>
-									<lefttexture colordiffuse="$VAR[ColourSelected]">osd/progress-end.png</lefttexture>
-									<midtexture colordiffuse="$VAR[ColourSelected]">osd/progress-end.png</midtexture>
-								</control>
-								<control type="label">
-									<posx>150</posx>
-									<right>100</right>
-									<top>4</top>
-									<aligny>center</aligny>
-									<height>64</height>
-									<font>SmallBold</font>
-									<textcolor>$VAR[ColourSelected]</textcolor>
-									<selectedcolor>$VAR[ColourSelected]</selectedcolor>
-									<label>$INFO[ListItem.ChannelNumberLabel,,  ]$INFO[ListItem.ChannelName]</label>
-								</control>
-								<control type="label">
-									<posx>150</posx>
-									<bottom>20</bottom>
-									<right>100</right>
-									<aligny>center</aligny>
-									<height>64</height>
-									<font>Small</font>
-									<textcolor>$VAR[ColourSelected]</textcolor>
-									<selectedcolor>$VAR[ColourSelected]</selectedcolor>
-									<label>$INFO[ListItem.Title]</label>
-								</control>
-								<control type="label">
-									<right>30</right>
-									<width>500</width>
-									<top>4</top>
-									<aligny>center</aligny>
-									<height>64</height>
-									<align>right</align>
-									<font>Tiny</font>
-									<textcolor>$VAR[ColourSelected]</textcolor>
-									<selectedcolor>$VAR[ColourSelected]</selectedcolor>
-									<label>$INFO[ListItem.EndTime,$LOCALIZE[31106] ,]</label>
-									<visible>!IsEmpty(ListItem.NextTitle)</visible>
-								</control>
-								<control type="label">
-									<right>30</right>
-									<width>500</width>
-									<aligny>center</aligny>
-									<height>100%</height>
-									<align>right</align>
-									<font>Tiny</font>
-									<textcolor>$VAR[ColourSelected]</textcolor>
-									<selectedcolor>$VAR[ColourSelected]</selectedcolor>
-									<label>$INFO[ListItem.EndTime,$LOCALIZE[31106] ,]</label>
-									<visible>IsEmpty(ListItem.NextTitle)</visible>
-								</control>
-								<control type="label">
-									<right>30</right>
-									<width>500</width>
-									<bottom>20</bottom>
-									<aligny>center</aligny>
-									<height>64</height>
-									<align>right</align>
-									<font>Tiny</font>
-									<textcolor>$VAR[ColourSelected]</textcolor>
-									<selectedcolor>$VAR[ColourSelected]</selectedcolor>
-									<label>$INFO[ListItem.NextTitle,[B],[/B] $LOCALIZE[19031]]</label>
-								</control>
-							</control>
-							<control type="group">
-								<visible>Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRSearch.xml)</visible>
-								<control type="label">
-									<posx>130</posx>
-									<right>100</right>
-									<top>12</top>
-									<aligny>center</aligny>
-									<height>64</height>
-									<font>SmallBold</font>
-									<textcolor>$VAR[ColourSelected]</textcolor>
-									<selectedcolor>$VAR[ColourSelected]</selectedcolor>
-									<label>$INFO[ListItem.Label]</label>
-								</control>
-								<control type="label">
-									<posx>130</posx>
-									<bottom>8</bottom>
-									<right>100</right>
-									<aligny>center</aligny>
-									<height>64</height>
-									<font>Small</font>
-									<textcolor>$VAR[ColourSelected]</textcolor>
-									<selectedcolor>$VAR[ColourSelected]</selectedcolor>
-									<label>$INFO[ListItem.StartDate]$INFO[ListItem.StartTime,$COMMA ,]</label>
-								</control>
-								<control type="label">
-									<right>30</right>
-									<width>500</width>
-									<aligny>center</aligny>
-									<height>100%</height>
-									<align>right</align>
-									<font>Small</font>
-									<textcolor>$VAR[ColourSelected]</textcolor>
-									<selectedcolor>$VAR[ColourSelected]</selectedcolor>
-									<label>$INFO[ListItem.ChannelName]</label>
-								</control>
-							</control>
-						</control>
 					</focusedlayout>
 				</control>
 			</control>
@@ -845,7 +665,7 @@
 			<control type="group">
 				<top>TopPad</top>
 				<control type="image">
-					<texture colordiffuse="black">common/box.png</texture>
+					<texture colordiffuse="bluetv">common/box.png</texture>
 				</control>
 				<control type="panel" id="51" description="TV CHANNELS">
 					<top>0</top>
@@ -866,29 +686,38 @@
 							<top>10</top>
 							<right>10</right>
 							<bottom>10</bottom>
-							<texture colordiffuse="black2">common/box.png</texture>
+							<texture colordiffuse="bluetv2">common/box.png</texture>
 						</control>
 						<control type="group">
 							<visible>Window.IsVisible(MyPVRChannels.xml)</visible>
+							<control type="image">
+								<left>10</left>
+								<top>10</top>
+								<right>10</right>
+								<bottom>10</bottom>
+								<texture colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
+								<visible>ListItem.IsPlaying</visible>
+							</control>
 							<control type="image">
 								<left>20</left>
 								<top>20</top>
 								<width>220</width>
 								<height>220</height>
 								<aspectratio align="left" aligny="top">keep</aspectratio>
-								<texture fallback="DefaultAddonNone.png">$INFO[Listitem.Icon]</texture>
+								<texture fallback="pvr/background.jpg">http://localhost:52307/getpvrthumb&amp;title=$INFO[ListItem.Title]&amp;channel=$INFO[ListItem.ChannelName]&amp;type=poster,landscape,fanart,thumb</texture>
 							</control>
 							<control type="label">
 								<left>20</left>
-								<width>220</width>
+								<width>300</width>
 								<bottom>30</bottom>
 								<height>24</height>
 								<aligny>center</aligny>
-								<align>center</align>
+								<align>left</align>
 								<font>SmallBold</font>
 								<textcolor>white</textcolor>
 								<selectedcolor>white</selectedcolor>
 								<label>$INFO[ListItem.ChannelName]</label>
+								<visible>!ListItem.IsPlaying</visible>
 							</control>
 							<control type="label">
 								<left>260</left>
@@ -900,6 +729,7 @@
 								<textcolor>white</textcolor>
 								<selectedcolor>white</selectedcolor>
 								<label>$INFO[ListItem.StartTime,,  ]$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]</label>
+								<visible>!ListItem.IsPlaying</visible>
 							</control>
 							<control type="progress">
 								<left>260</left>
@@ -908,6 +738,9 @@
 								<height>6</height>
 								<reveal>true</reveal>
 								<info>ListItem.Progress</info>
+								<lefttexture colordiffuse="$VAR[EmbyLeftColourHighlight]">osd/progress-end.png</lefttexture>
+								<midtexture colordiffuse="$VAR[EmbyLeftColourHighlight]">osd/progress-end.png</midtexture>
+								<visible>!ListItem.IsPlaying</visible>
 							</control>
 							<control type="textbox">
 								<left>260</left>
@@ -920,6 +753,7 @@
 								<selectedcolor>white</selectedcolor>
 								<label>$INFO[ListItem.Plot]</label>
 								<autoscroll>false</autoscroll>
+								<visible>!ListItem.IsPlaying</visible>
 							</control>
 							<control type="label">
 								<left>260</left>
@@ -932,17 +766,93 @@
 								<textcolor>white</textcolor>
 								<selectedcolor>white</selectedcolor>
 								<label>$INFO[ListItem.NextStartTime,[B]$LOCALIZE[31801][/B], ]$INFO[ListItem.NextTitle]</label>
+								<visible>!ListItem.IsPlaying</visible>
 							</control>
 							<control type="label">
 								<right>30</right>
-								<width>300</width>
+								<width>310</width>
 								<bottom>32</bottom>
 								<aligny>center</aligny>
 								<align>right</align>
-								<font>EpisodeNumber</font>
+								<font>TitleHeader</font>
 								<textcolor>white</textcolor>
 								<selectedcolor>white</selectedcolor>
 								<label>$INFO[ListItem.ChannelNumberLabel]</label>
+								<visible>!ListItem.IsPlaying</visible>
+							</control>
+							<control type="label">
+								<left>20</left>
+								<width>300</width>
+								<bottom>30</bottom>
+								<height>24</height>
+								<aligny>center</aligny>
+								<align>left</align>
+								<font>SmallBold</font>
+								<textcolor>$VAR[ColourSelected]</textcolor>
+								<selectedcolor>$VAR[ColourSelected]</selectedcolor>
+								<label>$INFO[ListItem.ChannelName]</label>
+								<visible>ListItem.IsPlaying</visible>
+							</control>
+							<control type="label">
+								<left>260</left>
+								<right>30</right>
+								<top>14</top>
+								<height>50</height>
+								<align>left</align>
+								<font>SmallBold</font>
+								<textcolor>$VAR[ColourSelected]</textcolor>
+								<selectedcolor>$VAR[ColourSelected]</selectedcolor>
+								<label>$INFO[ListItem.StartTime,,  ]$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]</label>
+								<visible>ListItem.IsPlaying</visible>
+							</control>
+							<control type="progress">
+								<left>260</left>
+								<right>30</right>
+								<top>60</top>
+								<height>6</height>
+								<reveal>true</reveal>
+								<info>ListItem.Progress</info>
+								<lefttexture colordiffuse="$VAR[ColourSelected]">osd/progress-end.png</lefttexture>
+								<midtexture colordiffuse="$VAR[ColourSelected]">osd/progress-end.png</midtexture>
+								<visible>ListItem.IsPlaying</visible>
+							</control>
+							<control type="textbox">
+								<left>260</left>
+								<right>30</right>
+								<top>70</top>
+								<height>128</height>
+								<align>justify</align>
+								<font>Tiny</font>
+								<textcolor>$VAR[ColourSelected]</textcolor>
+								<selectedcolor>$VAR[ColourSelected]</selectedcolor>
+								<label>$INFO[ListItem.Plot]</label>
+								<autoscroll>false</autoscroll>
+								<visible>ListItem.IsPlaying</visible>
+							</control>
+							<control type="label">
+								<left>260</left>
+								<right>30</right>
+								<bottom>80</bottom>
+								<aligny>center</aligny>
+								<height>38</height>
+								<align>left</align>
+								<font>Tiny</font>
+								<textcolor>$VAR[ColourSelected]</textcolor>
+								<selectedcolor>$VAR[ColourSelected]</selectedcolor>
+								<label>$INFO[ListItem.NextStartTime,[B]$LOCALIZE[31801][/B], ]$INFO[ListItem.NextTitle]</label>
+								<visible>ListItem.IsPlaying</visible>
+							</control>
+							<control type="label">
+								<right>30</right>
+								<width>310</width>
+								<bottom>32</bottom>
+								<aligny>center</aligny>
+								<align>right</align>
+								<font>TitleHeader</font>
+								<textcolor>$VAR[ColourSelected]</textcolor>
+								<selectedcolor>$VAR[ColourSelected]</selectedcolor>
+								<label>$INFO[ListItem.ChannelNumberLabel]</label>
+								<visible>ListItem.IsPlaying</visible>
 							</control>
 						</control>
 						<control type="group">
@@ -1010,7 +920,7 @@
 							<top>10</top>
 							<right>10</right>
 							<bottom>10</bottom>
-							<texture colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
+							<texture colordiffuse="selective yellow">common/box.png</texture>
 						</control>
 						<control type="group">
 							<visible>Window.IsVisible(MyPVRChannels.xml)</visible>
@@ -1020,15 +930,15 @@
 								<width>220</width>
 								<height>220</height>
 								<aspectratio align="left" aligny="top">keep</aspectratio>
-								<texture fallback="DefaultAddonNone.png">$INFO[Listitem.Icon]</texture>
+								<texture fallback="pvr/background.jpg">http://localhost:52307/getpvrthumb&amp;title=$INFO[ListItem.Title]&amp;channel=$INFO[ListItem.ChannelName]&amp;type=poster,landscape,fanart,thumb</texture>
 							</control>
 							<control type="label">
 								<left>20</left>
-								<width>220</width>
+								<width>300</width>
 								<bottom>30</bottom>
 								<height>24</height>
 								<aligny>center</aligny>
-								<align>center</align>
+								<align>left</align>
 								<font>SmallBold</font>
 								<textcolor>$VAR[ColourSelected]</textcolor>
 								<selectedcolor>$VAR[ColourSelected]</selectedcolor>
@@ -1080,11 +990,11 @@
 							</control>
 							<control type="label">
 								<right>30</right>
-								<width>300</width>
+								<width>310</width>
 								<bottom>32</bottom>
 								<aligny>center</aligny>
 								<align>right</align>
-								<font>EpisodeNumber</font>
+								<font>TitleHeader</font>
 								<textcolor>$VAR[ColourSelected]</textcolor>
 								<selectedcolor>$VAR[ColourSelected]</selectedcolor>
 								<label>$INFO[ListItem.ChannelNumberLabel]</label>
