@@ -1733,6 +1733,7 @@
                 </control>
                 <control type="group">
                     <!-- <animation effect="fade" start="100" end="0" time="50" condition="[!StringCompare(Container(300).ListItem.Property(defaultID),livetv) + !StringCompare(Container(300).ListItem.Property(defaultID),weather) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),movies) + [Container(6012).IsUpdating | Container(6016).IsUpdating | Container(6017).IsUpdating | Container(9017).IsUpdating]]">Conditional</animation> -->
+                    <animation effect="fade" start="100" end="0" time="50" condition="[!StringCompare(Container(300).ListItem.Property(defaultID),livetv) + !StringCompare(Container(300).ListItem.Property(defaultID),weather) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),movies) + [Container(6012).IsUpdating | Container(6016).IsUpdating | Container(6017).IsUpdating]]">Conditional</animation>
                     <visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
                     <control type="label" id="60121">
                         <left>SidePad</left>
@@ -3064,6 +3065,7 @@
                 <!-- Movies menu item -->
                 <control type="group">
                     <!-- <animation effect="fade" start="100" end="0" time="50" condition="[StringCompare(Container(300).ListItem.Property(defaultID),movies) + [Container(3012).IsUpdating | Container(3016).IsUpdating | Container(3017).IsUpdating | Container(10017).IsUpdating | Container(18003).IsUpdating | Container(19003).IsUpdating]]">Conditional</animation> -->
+                    <animation effect="fade" start="100" end="0" time="50" condition="[StringCompare(Container(300).ListItem.Property(defaultID),movies) + [Container(3012).IsUpdating | Container(3016).IsUpdating | Container(3017).IsUpdating]]">Conditional</animation>
                     <visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
                     <control type="group">
                         <left>SidePad</left>
@@ -4003,6 +4005,7 @@
                 <!-- TV menu item -->
                 <control type="group">
                     <!-- <animation effect="fade" start="100" end="0" time="50" condition="[StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + [Container(4012).IsUpdating | Container(4016).IsUpdating | Container(4017).IsUpdating | Container(14017).IsUpdating | Container(18004).IsUpdating | Container(19004).IsUpdating]]">Conditional</animation> -->
+                    <animation effect="fade" start="100" end="0" time="50" condition="[StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + [Container(4012).IsUpdating | Container(4016).IsUpdating | Container(4017).IsUpdating]]">Conditional</animation>
                     <visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
                     <control type="group">
                         <left>SidePad</left>
@@ -4943,6 +4946,7 @@
                 <!-- Music menu item -->
                 <control type="group">
                    <!-- <animation effect="fade" start="100" end="0" time="50" condition="[StringCompare(Container(300).ListItem.Property(defaultID),music) + [Container(5012).IsUpdating | Container(5016).IsUpdating | Container(5017).IsUpdating | Container(15017).IsUpdating]]">Conditional</animation> -->
+                   <animation effect="fade" start="100" end="0" time="50" condition="[StringCompare(Container(300).ListItem.Property(defaultID),music) + [Container(5012).IsUpdating | Container(5016).IsUpdating | Container(5017).IsUpdating]]">Conditional</animation>
                     <visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
                     <control type="group">
                         <left>SidePad</left>
