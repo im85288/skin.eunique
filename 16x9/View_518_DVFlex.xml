@@ -259,7 +259,7 @@
 					<height>38</height>
 					<width>auto</width>
 					<label>$VAR[RottenTomatoesIcon]</label>
-					<visible>!StringCompare(Window(Home).Property(SkinHelper.RottenTomatoesAudienceRating),n/a)</visible>
+					<visible>!StringCompare(Window(Home).Property(SkinHelper.RottenTomatoesRating),n/a)</visible>
 					<visible>Container.Content(movies)</visible>
 				</control>
 				<control type="label">
@@ -269,13 +269,13 @@
 					<textcolor>white</textcolor>
 					<height>38</height>
 					<width>auto</width>
-					<label fallback="-  ">$INFO[Window(Home).Property(SkinHelper.RottenTomatoesRating),,%  ]</label>
-					<visible>!StringCompare(Window(Home).Property(SkinHelper.RottenTomatoesAudienceRating),n/a)</visible>
+					<label>$INFO[Window(Home).Property(SkinHelper.RottenTomatoesRating),,%  ]</label>
+					<visible>!StringCompare(Window(Home).Property(SkinHelper.RottenTomatoesRating),n/a)</visible>
 					<visible>Container.Content(movies)</visible>
 				</control>
 				<control type="button">
-					<width>34</width>
-					<height>37</height>
+					<width>39</width>
+					<height>39</height>
 					<textcolor>black</textcolor>
 					<textoffsetx>0</textoffsetx>
 					<label>$INFO[Window(Home).Property(SkinHelper.RottenTomatoesAudienceRating)]</label>
