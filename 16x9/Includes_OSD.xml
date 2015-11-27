@@ -109,7 +109,7 @@
 		<textcolor>white</textcolor>
 		<focusedcolor>$VAR[ColourHighlight]</focusedcolor>
 		<texturefocus>noop</texturefocus>
-		<width>226</width>
+		<width>100</width>
 	</include>
 	<include name="DefOSDUpDown">
 		<onup condition="IsEmpty(Window(home).Property(osdshowinfo)) + !Window.IsVisible(MusicOSD.xml)">SetProperty(osdshowinfo,1,home)</onup>
@@ -157,6 +157,7 @@
 			<align>right</align>
 			<include>DefOSDButtons</include>
 			<label></label>
+			<onclick>close</onclick>
 			<onclick>ActivateWindow(tvguide,,return)</onclick>
 		</control>
 	</include>
