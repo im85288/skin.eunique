@@ -37,6 +37,7 @@
                     <colordiffuse>black</colordiffuse>
                     <animation effect="fade" start="100" end="90" condition="[!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)]">Conditional</animation>
                     <texture>common/box.png</texture>
+                    <visible>!VideoPlayer.Content(LiveTV)</visible>
                 </control>
                 <control type="image">
                     <top>-100r</top>
@@ -46,6 +47,26 @@
                     <animation effect="fade" start="100" end="90" condition="[!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)]">Conditional</animation>
                     <texture>common/white.png</texture>
                     <visible>Window.IsVisible(fullscreeninfo) | Player.ShowInfo | !IsEmpty(Window(home).Property(osdshowinfo)) | [Player.Paused + Skin.HasSetting(osd.showinfoonpause)]</visible>
+                    <visible>!VideoPlayer.Content(LiveTV)</visible>
+                </control>
+                <control type="image">
+                    <top>100r</top>
+                    <width>100%</width>
+                    <height>374</height>
+                    <colordiffuse>bluetv</colordiffuse>
+                    <animation effect="fade" start="100" end="90" condition="[!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)]">Conditional</animation>
+                    <texture>common/box.png</texture>
+                    <visible>VideoPlayer.Content(LiveTV)</visible>
+                </control>
+                <control type="image">
+                    <top>-100r</top>
+                    <width>100%</width>
+                    <height>100</height>
+                    <colordiffuse>bluetv</colordiffuse>
+                    <animation effect="fade" start="100" end="90" condition="[!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)]">Conditional</animation>
+                    <texture>common/white.png</texture>
+                    <visible>Window.IsVisible(fullscreeninfo) | Player.ShowInfo | !IsEmpty(Window(home).Property(osdshowinfo)) | [Player.Paused + Skin.HasSetting(osd.showinfoonpause)]</visible>
+                    <visible>VideoPlayer.Content(LiveTV)</visible>
                 </control>
             </control>
             <control type="group">
@@ -88,7 +109,7 @@
                         <width>280</width>
                         <height>280</height>
                         <aspectratio align="center" aligny="center">keep</aspectratio>
-                        <texture>$INFO[Player.Art(thumb)]</texture>
+                        <texture>http://localhost:52307/getpvrthumb&amp;title=$INFO[VideoPlayer.Title]&amp;channel=$INFO[VideoPlayer.ChannelName]&amp;type=landscape,fanart,thumb</texture>
                         <animation type="Conditional" reversible="false" condition="true">
                             <effect type="zoom" start="100" end="92" time="0" center="auto" tween="quadratic" easing="out"/>
                             <effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
@@ -105,6 +126,7 @@
                             <effect type="zoom" start="100" end="92" time="0" center="auto" tween="quadratic" easing="out"/>
                             <effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
                         </animation>
+                        <aspectratio align="center" aligny="center">keep</aspectratio>
                         <visible>VideoPlayer.Content(LiveTV)</visible>
                     </control>
                     <control type="group">
