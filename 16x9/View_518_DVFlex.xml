@@ -361,11 +361,25 @@
 				<font>Medium</font>
 				<textcolor>white</textcolor>
 				<label>$VAR[PlotCritic]</label>
+				<visible>!Container.Content(episodes)</visible>
+			</control>
+			<control type="textbox">
+				<description>textarea</description>
+				<left>270</left>
+				<width>720</width>
+				<top>425</top>
+				<height>276</height>
+				<align>left</align>
+				<font>Medium</font>
+				<textcolor>white</textcolor>
+				<label>$VAR[PlotCritic]</label>
+				<visible>Container.Content(episodes)</visible>
 			</control>
 			<control type="wraplist" id="518">
 				<visible>[Container.Content(movies) | Container.Content(sets)]| Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)</visible>
+						<animation effect="slide" end="-3000,0" start="0" time="0" condition="Container.Content(episodes)">Conditional</animation>
 				<bottom>0</bottom>
-				<right>-20</right>
+				<right>-4000</right>
 				<left>-40</left>
 				<onup condition="!Skin.HasSetting(global.kioskmode)">9000</onup>
 				<ondown>60</ondown>
@@ -373,15 +387,14 @@
 				<height>337</height>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
 				<orientation>horizontal</orientation>
-				<focusposition>7</focusposition>
+				<focusposition >7</focusposition>
 				<viewtype label="32076">list</viewtype>
 				<scrolltime tween="quadratic">400</scrolltime>
 				<itemlayout height="337" width="222" condition="!Container.Content(episodes)">
 					<control type="group">
-						<animation effect="fade" end="75" start="100" time="200" center="auto" condition="Control.HasFocus(518)">Conditional</animation>
 					<control type="image">
 						<aspectratio scalediffuse="false">scale</aspectratio>
-						<texture diffuse="diffuse/wall.png" background="true" fallback="DefaultMovies.png">$VAR[PosterImage]</texture>
+						<texture background="true" fallback="DefaultMovies.png">$VAR[PosterImage]</texture>
 					</control>
 			<control type="label">
 						<centerright>34</centerright>
@@ -452,24 +465,13 @@
 				</itemlayout>
 				<itemlayout height="337" width="600" condition="Container.Content(episodes)">
 					<control type="group">
-						<animation effect="fade" end="75" start="100" time="200" center="auto" condition="Control.HasFocus(518)">Conditional</animation>
 					<control type="image">
 						<bottom>30</bottom>
-						<aspectratio scalediffuse="false">keep</aspectratio>
-						<texture diffuse="diffuse/wall.png" background="true" fallback="DefaultMovies.png">$VAR[FanartImage]</texture>
-					</control>
-					<control type="label">
-						<font>SmallBold</font>
-						<textcolor>white2</textcolor>
-						<height>30</height>
-						<bottom>0</bottom>
-						<left>0</left>
-						<right>0</right>
-						<align>center</align>
-						<label>$INFO[ListItem.Label]</label>
+					<aspectratio align="left" aligny="center" scalediffuse="false">scale</aspectratio>
+						<texture background="true" fallback="DefaultMovies.png">$VAR[FanartImage]</texture>
 					</control>
 			<control type="label">
-						<centerright>92</centerright>
+						<centerright>34</centerright>
 						<centertop>35</centertop>
 				<width>40</width>
 				<height>40</height>
@@ -479,58 +481,58 @@
 								<selectedcolor>$VAR[BackingColourHighlight]</selectedcolor>
 			</control>
 					<control type="label">
-						<centerright>90</centerright>
+						<centerright>32</centerright>
 						<centertop>35</centertop>
 						<width>32</width>
 						<height>32</height>
 						<font>symbolview</font>
 						<label>$VAR[PercentWatchedLabel]</label>
 						<textcolor>$VAR[UnwatchedColourHighlight]</textcolor>
-						<selectedcolor>$VAR[UnwatchedColourHighlight]</selectedcolor>
+								<selectedcolor>$VAR[UnwatchedColourHighlight]</selectedcolor>
 						<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched) + !ListItem.IsResumable</visible>
 					</control>
 					<control type="label">
-						<centerright>90</centerright>
+						<centerright>32</centerright>
 						<centertop>35</centertop>
 						<width>32</width>
 						<height>32</height>
 						<font>symbolview</font>
 						<label>$VAR[PercentWatchedLabel]</label>
 						<textcolor>$VAR[PlayingColourHighlight]</textcolor>
-						<selectedcolor>$VAR[PlayingColourHighlight]</selectedcolor>
+								<selectedcolor>$VAR[PlayingColourHighlight]</selectedcolor>
 						<visible>!stringcompare(ListItem.Label,..) + ListItem.IsPlaying</visible>
 					</control>
 					<control type="label">
-						<centerright>90</centerright>
+						<centerright>32</centerright>
 						<centertop>35</centertop>
 						<width>32</width>
 						<height>32</height>
 						<font>symbolview</font>
 						<label>$VAR[PercentWatchedLabel]</label>
 						<textcolor>$VAR[WatchedColourHighlight]</textcolor>
-						<selectedcolor>$VAR[WatchedColourHighlight]</selectedcolor>
+								<selectedcolor>$VAR[WatchedColourHighlight]</selectedcolor>
 						<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(furniture.unwatched)</visible>
 					</control>
 					<control type="label">
-						<centerright>90</centerright>
+						<centerright>32</centerright>
 						<centertop>35</centertop>
 						<width>32</width>
 						<height>32</height>
 						<font>symbolview</font>
 						<label>$VAR[PercentWatchedLabel]</label>
 						<textcolor>$VAR[ResumeColourHighlight]</textcolor>
-						<selectedcolor>$VAR[ResumeColourHighlight]</selectedcolor>
+								<selectedcolor>$VAR[ResumeColourHighlight]</selectedcolor>
 						<visible>!stringcompare(ListItem.Label,..) + ListItem.IsResumable</visible>
 					</control>
 					<control type="label">
-						<centerright>90</centerright>
+						<centerright>32</centerright>
 						<centertop>35</centertop>
 						<width>32</width>
 						<height>32</height>
 						<font>symbolview</font>
 						<label>$VAR[PercentWatchedLabel]</label>
 						<textcolor>$VAR[NewColourHighlight]</textcolor>
-						<selectedcolor>$VAR[NewColourHighlight]</selectedcolor>
+								<selectedcolor>$VAR[NewColourHighlight]</selectedcolor>
 						<visible>!stringcompare(ListItem.Label,..) + [SubString(ListItem.Overlay,OverlayUnwatched.png) + [[Container.Content(movies) + [StringCompare(Window(Home).Property(LatestMovie.1.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.2.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.3.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.4.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.5.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.6.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.7.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.8.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.9.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.10.Title),ListItem.Label)]] | [[Container.Content(tvshows)] + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem.TvShowTitle)]] | [Container.Content(episodes) + [StringCompare(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem.Title)]]]]</visible>
 					</control>
 					</control>
@@ -554,7 +556,7 @@
 						<animation effect="slide" end="0,-73" start="0" time="0" center="auto" condition="Control.HasFocus(518)">Conditional</animation>
 					<control type="image">
 						<aspectratio scalediffuse="false">scale</aspectratio>
-						<texture diffuse="diffuse/wall.png" background="true" fallback="DefaultMovies.png">$VAR[PosterImage]</texture>
+						<texture background="true" fallback="DefaultMovies.png">$VAR[PosterImage]</texture>
 					</control>
 			<control type="label">
 						<centerright>34</centerright>
@@ -634,30 +636,34 @@
 						<onfocus>RunScript(script.colorbox,info=pixelate,id='"$VAR[RealFanartImage]"',pixels=$VAR[VideoInfoBlurLevel],prefix=Pixelated)</onfocus>
 					</control>
 					<control type="group">
-						<animation effect="zoom" end="110" start="100" time="200" center="auto">Focus</animation>
-						<animation effect="slide" end="0,-20" start="0" time="200" center="auto" condition="Control.HasFocus(518)">Conditional</animation>
+						<animation effect="zoom" end="140" start="100" time="200" center="auto">Focus</animation>
+						<animation effect="slide" end="0,-42" start="0" time="200" center="auto" condition="Control.HasFocus(518)">Conditional</animation>
 						<control type="image">
 							<aspectratio scalediffuse="false">scale</aspectratio>
 							<texture background="true" colordiffuse="$VAR[BorderHighlight]">$VAR[FocusedBorderImage]</texture>
-							<animation effect="zoom" end="107" time="0" center="auto">Focus</animation>
+							<animation effect="zoom" end="106" time="0" center="auto">Focus</animation>
 						</control>
 					<control type="image">
+						<animation effect="slide" end="0,-10" start="0" time="200" center="auto" condition="Control.HasFocus(518)">Conditional</animation>
 						<bottom>30</bottom>
 						<aspectratio scalediffuse="false">keep</aspectratio>
-						<texture diffuse="diffuse/wall.png" background="true" fallback="DefaultMovies.png">$VAR[FanartImage]</texture>
+						<texture background="true" fallback="DefaultMovies.png">$VAR[FanartImage]</texture>
 					</control>
 					<control type="label">
 						<font>SmallBold</font>
 						<textcolor>$VAR[ColourSelected]</textcolor>
-						<height>30</height>
-						<bottom>0</bottom>
+						<height>60</height>
+						<bottom>-12</bottom>
 						<left>0</left>
 						<right>0</right>
 						<align>center</align>
 						<label>$INFO[ListItem.Label]</label>
 					</control>
+						<animation effect="slide" end="0,-10" start="0" time="200" center="auto" condition="Control.HasFocus(518)">Conditional</animation>
+					<control type="group">
+						<animation effect="slide" end="0,-10" start="0" time="200" center="auto" condition="Control.HasFocus(518)">Conditional</animation>
 			<control type="label">
-						<centerright>33</centerright>
+						<centerright>62</centerright>
 						<centertop>35</centertop>
 				<width>40</width>
 				<height>40</height>
@@ -667,59 +673,60 @@
 								<selectedcolor>$VAR[BackingColourHighlight]</selectedcolor>
 			</control>
 					<control type="label">
-						<centerright>90</centerright>
-						<centertop>35</centertop>
+						<centerright>61</centerright>
+						<centertop>36</centertop>
 						<width>32</width>
 						<height>32</height>
 						<font>symbolview</font>
 						<label>$VAR[PercentWatchedLabel]</label>
 						<textcolor>$VAR[UnwatchedColourHighlight]</textcolor>
-						<selectedcolor>$VAR[UnwatchedColourHighlight]</selectedcolor>
+								<selectedcolor>$VAR[UnwatchedColourHighlight]</selectedcolor>
 						<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched) + !ListItem.IsResumable</visible>
 					</control>
 					<control type="label">
-						<centerright>90</centerright>
-						<centertop>35</centertop>
+						<centerright>67</centerright>
+						<centertop>36</centertop>
 						<width>32</width>
 						<height>32</height>
 						<font>symbolview</font>
 						<label>$VAR[PercentWatchedLabel]</label>
 						<textcolor>$VAR[PlayingColourHighlight]</textcolor>
-						<selectedcolor>$VAR[PlayingColourHighlight]</selectedcolor>
+								<selectedcolor>$VAR[PlayingColourHighlight]</selectedcolor>
 						<visible>!stringcompare(ListItem.Label,..) + ListItem.IsPlaying</visible>
 					</control>
 					<control type="label">
-						<centerright>90</centerright>
-						<centertop>35</centertop>
+						<centerright>67</centerright>
+						<centertop>36</centertop>
 						<width>32</width>
 						<height>32</height>
 						<font>symbolview</font>
 						<label>$VAR[PercentWatchedLabel]</label>
 						<textcolor>$VAR[WatchedColourHighlight]</textcolor>
-						<selectedcolor>$VAR[WatchedColourHighlight]</selectedcolor>
+								<selectedcolor>$VAR[WatchedColourHighlight]</selectedcolor>
 						<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(furniture.unwatched)</visible>
 					</control>
 					<control type="label">
-						<centerright>90</centerright>
-						<centertop>35</centertop>
+						<centerright>67</centerright>
+						<centertop>36</centertop>
 						<width>32</width>
 						<height>32</height>
 						<font>symbolview</font>
 						<label>$VAR[PercentWatchedLabel]</label>
 						<textcolor>$VAR[ResumeColourHighlight]</textcolor>
-						<selectedcolor>$VAR[ResumeColourHighlight]</selectedcolor>
+								<selectedcolor>$VAR[ResumeColourHighlight]</selectedcolor>
 						<visible>!stringcompare(ListItem.Label,..) + ListItem.IsResumable</visible>
 					</control>
 					<control type="label">
-						<centerright>90</centerright>
-						<centertop>35</centertop>
+						<centerright>67</centerright>
+						<centertop>36</centertop>
 						<width>32</width>
 						<height>32</height>
 						<font>symbolview</font>
 						<label>$VAR[PercentWatchedLabel]</label>
 						<textcolor>$VAR[NewColourHighlight]</textcolor>
-						<selectedcolor>$VAR[NewColourHighlight]</selectedcolor>
+								<selectedcolor>$VAR[NewColourHighlight]</selectedcolor>
 						<visible>!stringcompare(ListItem.Label,..) + [SubString(ListItem.Overlay,OverlayUnwatched.png) + [[Container.Content(movies) + [StringCompare(Window(Home).Property(LatestMovie.1.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.2.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.3.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.4.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.5.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.6.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.7.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.8.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.9.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.10.Title),ListItem.Label)]] | [[Container.Content(tvshows)] + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem.TvShowTitle)]] | [Container.Content(episodes) + [StringCompare(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem.Title)]]]]</visible>
+					</control>
 					</control>
 					</control>
 				</focusedlayout>
