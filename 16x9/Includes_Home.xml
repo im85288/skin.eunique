@@ -336,6 +336,7 @@
             <visible>!Window.IsVisible(DialogAlbumInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-VideoList.xml) + !Window.IsVisible(script-ExtendedInfo Script-YoutubeList.xml)</visible>
             <visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)</visible>
             <visible>!stringcompare(ListItem.Label,..)</visible>
+            <visible>!Control.IsVisible(518)</visible>
             <animation effect="slide" end="124" condition="!Window.IsVisible(Home) + [container.Content(movies) | Container.Content(episodes)]" time="200">Conditional</animation>
             <animation effect="slide" end="58" condition="[SubString(ListItem.EndTime,am) | SubString(ListItem.EndTime,pm)] + [container.Content(movies) | Container.Content(episodes)]" time="0">Conditional</animation>
             <include>Animation.FadeIn</include>
@@ -6480,7 +6481,7 @@
                     <left>980</left>
                     <width>410</width>
                     <height>460</height>
-                    <texture colordiffuse="bluetv">common/box.png</texture>
+                    <texture colordiffuse="$VAR[PVRBackgroundColour]">common/box.png</texture>
                     <visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
                 </control>
                 <control type="list" id="7016">
@@ -6607,7 +6608,7 @@
                             <right>0</right>
                             <top>0</top>
                             <bottom>0</bottom>
-                            <texture colordiffuse="bluetv">common/box.png</texture>
+                            <texture colordiffuse="$VAR[PVRBackgroundColour]">common/box.png</texture>
                         </control>
                         <control type="group">
                             <height>317</height>
@@ -8277,7 +8278,7 @@
                                 <control type="image">
                                     <width>770</width>
                                     <height>414</height>
-                                    <texture colordiffuse="bluetv">common/box.png</texture>
+                                    <texture colordiffuse="$VAR[PVRBackgroundColour]">common/box.png</texture>
                                 </control>
                                 <control type="list" id="7016">
                                     <description>Widget</description>
@@ -8396,7 +8397,7 @@
                                             <right>0</right>
                                             <top>0</top>
                                             <bottom>0</bottom>
-                                            <texture colordiffuse="bluetv">common/box.png</texture>
+                                            <texture colordiffuse="$VAR[PVRBackgroundColour]">common/box.png</texture>
                                         </control>
                                         <control type="group">
                                             <height>317</height>

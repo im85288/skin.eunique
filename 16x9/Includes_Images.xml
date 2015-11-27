@@ -65,14 +65,6 @@
 		<value condition="Substring(ListItem.Icon,Default,left) | [IsEmpty(ListItem.Title) + IsEmpty(ListItem.Icon)]">Default.png</value>
 		<value>$INFO[ListItem.Icon]</value>
 	</variable>
-	<variable name="PosterImage518">
-		<value condition="!IsEmpty(Container(518).ListItem.Art(season.poster))">$INFO[Container(518).ListItem.Art(season.poster)]</value>
-		<value condition="Container(518).Content(seasons)">$INFO[Container(518).ListItem.Icon]</value>
-		<value condition="!IsEmpty(Container(518).ListItem.Art(tvshow.poster))">$INFO[Container(518).ListItem.Art(tvshow.poster)]</value>
-		<value condition="!IsEmpty(Container(518).ListItem.Art(poster))">$INFO[Container(518).ListItem.Art(poster)]</value>
-		<value condition="!IsEmpty(Container(518).ListItem.Art(thumb))">$INFO[Container(518).ListItem.Art(thumb)]</value>
-		<value>$INFO[Container(518).ListItem.Icon]</value>
-	</variable>
 	<variable name="PosterImageVertical">
 		<!--	<value condition="!IsEmpty(Container(3012).ListItem(0).Art(landscape)) + Control.HasFocus(3012) + ControlGroup(301).HasFocus + !StringCompare(Skin.String(movies1widget.aspectratio),LANDSCAPE) + !StringCompare(Skin.String(movies1widget.aspectratio),SQUARE)">$INFO[Container(3012).ListItem(0).Art(landscape)]</value>
 		<value condition="Control.HasFocus(3012) + ControlGroup(301).HasFocus">$INFO[Container(3012).ListItem(0).Icon]</value>
