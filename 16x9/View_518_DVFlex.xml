@@ -5,6 +5,26 @@
 		<control type="image">
 			<include>Dimensions_Fullscreen</include>
 			<animation type="Visible" reversible="false">
+				<effect type="fade" start="00" end="35" time="10" tween="quadratic" easing="out" />
+			</animation>
+			<animation type="WindowOpen" reversible="true">
+				<effect type="fade" start="00" end="35" time="100" tween="quadratic" easing="out" delay="1000" />
+			</animation>
+			<animation type="WindowClose" reversible="true">
+				<effect type="fade" start="35" end="00" time="200" tween="quadratic" easing="out" />
+			</animation>
+			<animation type="Hidden" reversible="true">
+				<effect type="fade" start="35" end="00" time="200" tween="quadratic" easing="out" />
+			</animation>
+			<aspectratio align="center">scale</aspectratio>
+			<texture colordiffuse="$INFO[Window(home).Property(Pixelated.ImageColor)]">special://skin/extras/backgrounds/pixel.jpg</texture>
+			<visible>Control.IsVisible(518)</visible>
+			<visible>!Skin.HasSetting(lights.out)</visible>
+			<visible>![[Skin.HasSetting(global.showvideo) + Player.HasVideo] | [Skin.HasSetting(global.showvisualisation) + Player.HasAudio]] + !Window.IsVisible(DialogVideoInfo.xml)</visible>
+		</control>
+		<control type="image">
+			<include>Dimensions_Fullscreen</include>
+			<animation type="Visible" reversible="false">
 				<effect type="fade" start="00" end="100" time="100" tween="quadratic" easing="out" />
 			</animation>
 			<animation type="WindowOpen" reversible="true">
@@ -16,11 +36,11 @@
 			<animation type="Hidden" reversible="true">
 				<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out" />
 			</animation>
+			<animation type="Conditional" reversible="true" condition="StringCompare(Window(home).Property(Pixelated.ImageUpdating),1)">
+				<effect type="fade" start="0" end="100" time="200" tween="quadratic" easing="out"/>
+			</animation>
 			<aspectratio align="center">scale</aspectratio>
 			<texture colordiffuse="$INFO[Window(home).Property(Pixelated.ImageColor)]" background="true">$INFO[Window(home).Property(Pixelated.ImageFilter)]</texture>
-<!--
-			<visible>StringCompare(Window(home).Property(Pixelated.ImageUpdating),1)</visible>
--->
 			<visible>Control.IsVisible(518)</visible>
 			<visible>!Skin.HasSetting(lights.out)</visible>
 			<visible>![[Skin.HasSetting(global.showvideo) + Player.HasVideo] | [Skin.HasSetting(global.showvisualisation) + Player.HasAudio]] + !Window.IsVisible(DialogVideoInfo.xml)</visible>
@@ -541,7 +561,6 @@
 					<control type="button">
 						<texturefocus>-</texturefocus>
 						<texturenofocus>-</texturenofocus>
-						<onfocus>ClearProperty(Pixelated.ImageUpdating,home)</onfocus>
 						<onfocus condition="Container.Content(movies)">ClearProperty(TVShowID,home)</onfocus>
 						<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
 						<!--
@@ -549,6 +568,7 @@
 <onfocus>RunScript(script.colorbox,info=posterize,id='"$VAR[RealFanartImage]"',bits=2,prefix=Pixelated)</onfocus>
 -->
 						<onfocus>StopScript(script.colorbox)</onfocus>
+						<onfocus>ClearProperty(Pixelated.ImageUpdating,home)</onfocus>
 						<onfocus>RunScript(script.colorbox,info=pixelate,id='"$VAR[RealFanartImage]"',pixels=$VAR[VideoInfoBlurLevel],prefix=Pixelated)</onfocus>
 					</control>
 				</focusedlayout>
