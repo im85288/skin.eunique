@@ -6499,6 +6499,7 @@
                     <height>460</height>
                     <texture colordiffuse="$VAR[PVRBackgroundColour]">common/box.png</texture>
                     <visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
+                    <visible>IntegerGreaterThan(Container(7016).NumItems,0)</visible>
                 </control>
                 <control type="list" id="7016">
                     <description>Widget</description>
@@ -6614,6 +6615,7 @@
                 </control>
                 <control type="group">
                     <visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
+                    <visible>IntegerGreaterThan(Container(7016).NumItems,0)</visible>
                     <control type="group">
                         <top>330</top>
                         <left>1390</left>
@@ -8295,6 +8297,7 @@
                                     <width>770</width>
                                     <height>414</height>
                                     <texture colordiffuse="$VAR[PVRBackgroundColour]">common/box.png</texture>
+                                    <visible>IntegerGreaterThan(Container(7016).NumItems,0)</visible>
                                 </control>
                                 <control type="list" id="7016">
                                     <description>Widget</description>
@@ -8404,6 +8407,7 @@
                                     <content target="$VAR[DefWidget5Target]">$VAR[DefWidget5Content]</content>
                                 </control>
                                 <control type="group">
+                                    <visible>IntegerGreaterThan(Container(7016).NumItems,0)</visible>
                                     <control type="group">
                                         <top>460</top>
                                         <width>770</width>
