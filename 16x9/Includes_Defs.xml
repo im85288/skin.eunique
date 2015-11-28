@@ -864,6 +864,24 @@
 		<alttexturefocus colordiffuse="$VAR[EmbyMenuTextColourHighlight]">common/white.png</alttexturefocus>
 		<alttexturenofocus colordiffuse="$VAR[ColourHighlight]">common/white.png</alttexturenofocus>
 	</include>
+	<include name="DefPVRChannelsButton">
+		<radioposx>550</radioposx>
+		<align>left</align>
+		<font>Small</font>
+		<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+		<disabledcolor>black3</disabledcolor>
+		<height>64</height>
+		<textureup flipy="true" colordiffuse="$VAR[EmbyMenuTextColourHighlight]">buttons/spin-down.png</textureup>
+		<texturedown colordiffuse="$VAR[EmbyMenuTextColourHighlight]">buttons/spin-down.png</texturedown>
+		<textureupfocus flipy="true" colordiffuse="$VAR[ColourSelected]">buttons/spin-down.png</textureupfocus>
+		<texturedownfocus colordiffuse="$VAR[EmbyMenuTextColourHighlight]">buttons/spin-down.png</texturedownfocus>
+		<textureradiofocus colordiffuse="$VAR[ColourSelected]">buttons/radio-on.png</textureradiofocus>
+		<textureradionofocus colordiffuse="$VAR[EmbyMenuTextColourHighlight]">buttons/radio-off.png</textureradionofocus>
+		<texturefocus colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</texturefocus>
+		<texturenofocus colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texturenofocus>
+		<alttexturefocus colordiffuse="$VAR[EmbyMenuTextColourHighlight]">common/white.png</alttexturefocus>
+		<alttexturenofocus colordiffuse="$VAR[ColourHighlight]">common/white.png</alttexturenofocus>
+	</include>
 	<include name="Def9000SettingsMenu">
 		<control type="group">
 			<visible>ControlGroup(9000).HasFocus()</visible>
