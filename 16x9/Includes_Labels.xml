@@ -1419,4 +1419,10 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !IsEmpty(Container(300).ListItem.Property(widgetName.tvshows4))">$INFO[Container(300).ListItem.Property(widgetName.tvshows4)]</value>
 		<value>$LOCALIZE[31124]</value>
 	</variable>
+
+	<variable name="CustomSearchLabel">
+		<value condition="Control.HasFocus(3110)">$INFO[Container(3110).ListItem.Label][CR][COLOR=whiteish]$INFO[Container(3110).ListItem.Year]$INFO[Container(3110).ListItem.Rating, • ]$INFO[Container(3110).ListItem.Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
+		<value condition="Control.HasFocus(3111)">$INFO[Container(3111).ListItem.TvShowTitle,,[CR]][COLOR=whiteish]$INFO[Container(3111).ListItem.Year]$INFO[Container(3111).ListItem.Rating, • ,]$INFO[Container(3111).ListItem.Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
+		<value condition="Control.HasFocus(3112)">$INFO[Container(3112).ListItem.TvShowTitle,,[CR]][COLOR=whiteish]$INFO[Container(3112).ListItem.Season,,x]$INFO[Container(3112).ListItem.Episode,,. ]$INFO[Container(3112).ListItem.Title]$INFO[Container(3112).ListItem.Year, • ,]$INFO[Container(3112).ListItem.Rating, • ,]$INFO[Container(3112).ListItem.Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
+	</variable>
 </includes>

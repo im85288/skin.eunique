@@ -771,4 +771,22 @@
 		<value condition="Control.HasFocus(5017)">$INFO[Container(5017).ListItem(0).Icon]</value>
 		<value condition="Control.HasFocus(15017)">$INFO[Container(15017).ListItem(0).Icon]</value>
 	</variable>
+
+	<variable name="CustomSearchLogo">
+		<value condition="Control.HasFocus(3110) + !IsEmpty(Container(3110).ListItem.Art(tvshow.clearlogo))">$INFO[Container(3110).ListItem.Art(tvshow.clearlogo)]</value>
+		<value condition="Control.HasFocus(3110) + !IsEmpty(Container(3110).ListItem.Art(clearlogo))">$INFO[Container(3110).ListItem.Art(clearlogo)]</value>
+		<value condition="Control.HasFocus(3110) + IsEmpty(Container(3110).ListItem.Art(clearlogo)) + IsEmpty(Container(3110).ListItem.Art(tvshow.clearlogo))">http://localhost:52307/getpvrthumb&amp;title=$INFO[Container(3110).Listitem.Title]&amp;type=clearlogo</value>
+		<value condition="Control.HasFocus(3111) + !IsEmpty(Container(3111).ListItem.Art(tvshow.clearlogo))">$INFO[Container(3111).ListItem.Art(tvshow.clearlogo)]</value>
+		<value condition="Control.HasFocus(3111) + !IsEmpty(Container(3111).ListItem.Art(clearlogo))">$INFO[Container(3111).ListItem.Art(clearlogo)]</value>
+		<value condition="Control.HasFocus(3111) + IsEmpty(Container(3111).ListItem.Art(clearlogo)) + IsEmpty(Container(3111).ListItem.Art(tvshow.clearlogo))">http://localhost:52307/getpvrthumb&amp;title=$INFO[Container(3111).Listitem.Title]&amp;type=clearlogo</value>
+		<value condition="Control.HasFocus(3112) + !IsEmpty(Container(3112).ListItem.Art(tvshow.clearlogo))">$INFO[Container(3112).ListItem.Art(tvshow.clearlogo)]</value>
+		<value condition="Control.HasFocus(3112) + !IsEmpty(Container(3112).ListItem.Art(clearlogo))">$INFO[Container(3112).ListItem.Art(clearlogo)]</value>
+		<value condition="Control.HasFocus(3112) + IsEmpty(Container(3112).ListItem.Art(clearlogo)) + IsEmpty(Container(3112).ListItem.Art(tvshow.clearlogo))">http://localhost:52307/getpvrthumb&amp;title=$INFO[Container(3112).Listitem.Title]&amp;type=clearlogo</value>
+		<value>E.png</value>
+	</variable>
+
+	<variable name="AllMoviesBackgroundLogo">
+		<value condition="!IsEmpty(Window(Home).Property(SkinHelper.AllMoviesBackground.clearlogo))">$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground.clearlogo)]</value>
+		<value condition="IsEmpty(Window(Home).Property(SkinHelper.AllMoviesBackground.clearlogo))">http://localhost:52307/getpvrthumb&amp;title=$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground.title)]&amp;type=clearlogo</value>
+	</variable>
 </includes>
