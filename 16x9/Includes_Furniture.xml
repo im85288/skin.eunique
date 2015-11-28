@@ -1121,12 +1121,13 @@
 				<label>$VAR[PlotFurniture]</label>
 				<visible>!Control.IsVisible(50)</visible>
 			</control>
-			<!--<control type="textbox"><description>textarea</description><left>975</left><top>194</top><right>140</right><height>129</height><align>justify</align><font>MediumSmallBold</font><textcolor>white</textcolor><label>$VAR[Plot]</label><visible>Control.IsVisible(516)</visible></control>--><control type="image">
+			<control type="image">
 				<left>970</left>
 				<top>333</top>
 				<right>10</right>
 				<height>51</height>
 				<texture colordiffuse="$VAR[BottomBarColour]">common/white.png</texture>
+				<visible>IntegerGreaterThan(Container(508923).NumItems,0)</visible>
 			</control>
 			<control type="label">
 				<left>975</left>
