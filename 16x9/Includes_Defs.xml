@@ -3092,6 +3092,10 @@
 					<font>$PARAM[font]</font>
 					<textcolor>$PARAM[textcolor]</textcolor>
 					<animation effect="fade" start="100" end="0" time="500" tween="quadratic">Hidden</animation>
+					<animation type="Conditional" reversible="false" condition="true">
+						<effect type="rotate" end="360" center="auto" tween="sine" delay="0" easing="out" time="500" loop="true" />
+						<effect type="rotatex" end="360" center="auto" tween="sine" delay="0" easing="out" time="1000" loop="true" />
+					</animation>
 				</control>
 			</control>
 		</definition>
