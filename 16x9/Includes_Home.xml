@@ -6324,6 +6324,20 @@
                     </focusedlayout>
                     <content target="$VAR[DefWidget4Target]">$VAR[DefWidget4Content]</content>
                 </control>
+                    <control type="group">
+			<include name="WidgetLoading">
+				<param name="top" value="330"/>
+				<param name="left" value="SidePad"/>
+				<param name="width" value="820"/>
+				<param name="height" value="460"/>
+				<param name="font" value="symbolbiggerest"/>
+				<param name="symbol" value=""/>
+				<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground.Wall)]"/>
+				<param name="textcolor" value="$VAR[ColourTextFlags]"/>
+			</include>
+			<visible>Container(7012).IsUpdating</visible>
+                   </control>
+                    <!-- end of ltv box 1 -->
                 <control type="group">
                     <animation effect="slide" start="0,0" end="0,23" time="200" center="auto" condition="Control.HasFocus(7013)">Conditional</animation>
                     <control type="button" id="7013">
@@ -7026,6 +7040,20 @@
                         </control>
                     </control>
                 </control>
+	            <control type="group">
+			<include name="WidgetLoading">
+				<param name="top" value="330"/>
+				<param name="left" value="980"/>
+				<param name="width" value="970"/>
+				<param name="height" value="460"/>
+				<param name="font" value="symbolbiggerest"/>
+				<param name="symbol" value=""/>
+				<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground.Wall)]"/>
+				<param name="textcolor" value="$VAR[ColourTextFlags]"/>
+			</include>
+			<visible>Container(7016).IsUpdating</visible>
+	           </control>
+	            <!-- end of ltv box 1 -->
             </control>
         </control>
     </include>
