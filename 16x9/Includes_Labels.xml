@@ -292,6 +292,12 @@
 		<value condition="Control.HasFocus(100171)">$INFO[Container(10017).ListItem(-1).Label] [COLOR=whiteish]$INFO[Container(10017).ListItem(-1).Year]$INFO[Container(10017).ListItem(-1).Rating, • ]$INFO[Container(10017).ListItem(-1).Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
 		<value condition="Control.HasFocus(180021)">$INFO[Container(18002).ListItem(-1).Label] [COLOR=whiteish]$INFO[Container(18002).ListItem(-1).Year]$INFO[Container(18002).ListItem(-1).Rating, • ]$INFO[Container(18002).ListItem(-1).Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
 		<value condition="Control.HasFocus(190011)">$INFO[Container(19001).ListItem(-1).Label] [COLOR=whiteish]$INFO[Container(19001).ListItem(-1).Year]$INFO[Container(19001).ListItem(-1).Rating, • ]$INFO[Container(19001).ListItem(-1).Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
+		<value condition="Control.HasFocus(3012)">$INFO[Container(3012).ListItem.Label] [COLOR=whiteish]$INFO[Container(3012).ListItem.Year]$INFO[Container(3012).ListItem.Rating, • ]$INFO[Container(3012).ListItem.Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
+		<value condition="Control.HasFocus(3016)">$INFO[Container(3016).ListItem.Label] [COLOR=whiteish]$INFO[Container(3016).ListItem.Year]$INFO[Container(3016).ListItem.Rating, • ]$INFO[Container(3016).ListItem.Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
+		<value condition="Control.HasFocus(3017)">$INFO[Container(3017).ListItem.Label] [COLOR=whiteish]$INFO[Container(3017).ListItem.Year]$INFO[Container(3017).ListItem.Rating, • ]$INFO[Container(3017).ListItem.Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
+		<value condition="Control.HasFocus(10017)">$INFO[Container(10017).ListItem.Label] [COLOR=whiteish]$INFO[Container(10017).ListItem.Year]$INFO[Container(10017).ListItem.Rating, • ]$INFO[Container(10017).ListItem.Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
+		<value condition="Control.HasFocus(18002)">$INFO[Container(18002).ListItem.Label] [COLOR=whiteish]$INFO[Container(18002).ListItem.Year]$INFO[Container(18002).ListItem.Rating, • ]$INFO[Container(18002).ListItem.Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
+		<value condition="Control.HasFocus(19001)">$INFO[Container(19001).ListItem.Label] [COLOR=whiteish]$INFO[Container(19001).ListItem.Year]$INFO[Container(19001).ListItem.Rating, • ]$INFO[Container(19001).ListItem.Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
 		<value condition="Control.HasFocus(4012)">$INFO[Container(4012).ListItem.TvShowTitle,, ][COLOR=whiteish]$INFO[Container(4012).ListItem.Season,,x]$INFO[Container(4012).ListItem.Episode,,. ]$INFO[Container(4012).ListItem.Title]$INFO[Container(4012).ListItem.Year, • ,]$INFO[Container(4012).ListItem.Rating, • ,]$INFO[Container(4012).ListItem.Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
 		<value condition="Control.HasFocus(4016)">$INFO[Container(4016).ListItem.TvShowTitle,, ][COLOR=whiteish]$INFO[Container(4016).ListItem.Season,,x]$INFO[Container(4016).ListItem.Episode,,. ]$INFO[Container(4016).ListItem.Title]$INFO[Container(4016).ListItem.Year, • ,]$INFO[Container(4016).ListItem.Rating, • ,]$INFO[Container(4016).ListItem.Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
 		<value condition="Control.HasFocus(4017)">$INFO[Container(4017).ListItem.TvShowTitle,, ][COLOR=whiteish]$INFO[Container(4017).ListItem.Season,,x]$INFO[Container(4017).ListItem.Episode,,. ]$INFO[Container(4017).ListItem.Title]$INFO[Container(4017).ListItem.Year, • ,]$INFO[Container(4017).ListItem.Rating, • ,]$INFO[Container(4017).ListItem.Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
@@ -386,18 +392,22 @@
 	</variable>
 	<variable name="EmbyWidget19Label">
 		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetName.movies5))">$INFO[Container(300).ListItem.Property(widgetName.movies5)]</value>
+		<value condition="Skin.String(home.vertical,1)">$LOCALIZE[31782]$INFO[Container(18002).ListItem.Property(similartitle), ","]</value>
 		<value>$LOCALIZE[31782]$INFO[Container(18003).ListItem.Property(similartitle), ","]</value>
 	</variable>
 	<variable name="EmbyWidget20Label">
 		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetName.tvshows5))">$INFO[Container(300).ListItem.Property(widgetName.tvshows5)]</value>
+		<value condition="Skin.String(home.vertical,1)">$LOCALIZE[31782]$INFO[Container(18001).ListItem.Property(similartitle), ","]</value>
 		<value>$LOCALIZE[31782]$INFO[Container(18004).ListItem.Property(similartitle), ","]</value>
 	</variable>
 	<variable name="EmbyWidget21Label">
 		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetName.movies6))">$INFO[Container(300).ListItem.Property(widgetName.movies6)]</value>
+		<value condition="Skin.String(home.vertical,1)">$LOCALIZE[31975]$INFO[Container(19001).ListItem.Property(genretitle), ,]</value>
 		<value>$LOCALIZE[31975]$INFO[Container(19003).ListItem.Property(genretitle), ,]</value>
 	</variable>
 	<variable name="EmbyWidget22Label">
 		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetName.tvshows6))">$INFO[Container(300).ListItem.Property(widgetName.tvshows6)]</value>
+		<value condition="Skin.String(home.vertical,1)">$LOCALIZE[31976]$INFO[Container(19002).ListItem.Property(genretitle), ,]</value>
 		<value>$LOCALIZE[31976]$INFO[Container(19004).ListItem.Property(genretitle), ,]</value>
 	</variable>
 	<variable name="EmbyWidget23Label">

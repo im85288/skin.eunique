@@ -1621,6 +1621,45 @@
     </include>
     <include name="HomeEmbyWidgetInfo">
         <!-- Widget Info -->
+                <control type="group">
+                    <left>40</left>
+                    <top>210</top>
+                    <width>820</width>
+                    <height>45</height>
+                    <control type="label" id="91211">
+                        <label>$VAR[EmbyWidgetLabel]</label>
+                        <width>1</width>
+                        <height>1</height>
+                        <left>-1000</left>
+                    </control>
+                    <control type="image" id="89122">
+                        <top>781</top>
+                        <left>0</left>
+                        <width>228</width>
+                        <height>64</height>
+                        <texture fallback="E.png">$VAR[EmbyWidgetLogo]</texture>
+                        <aspectratio align="center" aligny="center">keep</aspectratio>
+                        
+                        <visible>!Skin.String(home.vertical,1) + !IsEmpty(Control.GetLabel(91211))</visible>
+                    </control>
+                    <control type="button">
+                        <left>238</left>
+                        <width>1000</width>
+                        <top>773</top>
+                        <align>left</align>
+                        <aligny>top</aligny>
+                        <font>HomeWidgetLabelFont</font>
+                        <onup>300</onup>
+                        <ondown>6012</ondown>
+                        <onback>300</onback>
+                        <textoffsetx>0</textoffsetx>
+                        <label>$VAR[EmbyWidgetLabel]</label>
+                        <focusedcolor>$VAR[ColourHighlight]</focusedcolor>
+                        <texturenofocus>-</texturenofocus>
+                        <texturefocus>-</texturefocus>
+                        <onclick>ActivateWindow(1112)</onclick>
+                    </control>
+                </control>
         <control type="group">
             <animation effect="slide" end="221,-75" condition="Skin.String(home.vertical,2)" time="00">Conditional</animation>
             <animation effect="slide" end="0,-75" condition="Skin.String(home.vertical,) + !Control.HasFocus(3634) + !Control.HasFocus(3635) + !Control.HasFocus(300) + !control.hasfocus(302)" time="200">Conditional</animation>
@@ -1682,57 +1721,6 @@
                     </content>
                 </control>
                 <!-- Default Widget -->
-                <control type="group">
-                    <left>SidePad</left>
-                    <top>285</top>
-                    <width>820</width>
-                    <height>45</height>
-                    <control type="label" id="91211">
-                        <label>$VAR[EmbyWidgetLabel]</label>
-                        <width>1</width>
-                        <height>1</height>
-                        <left>-1000</left>
-                    </control>
-                    <control type="image" id="89122">
-                        <animation effect="slide" start="0" end="221,0" condition="!Skin.String(home.vertical,1)  + [Control.HasFocus(6017) | Control.HasFocus(60171) | Control.HasFocus(3017) | Control.HasFocus(30171)  | Control.HasFocus(5017) | Control.HasFocus(50171) | Control.HasFocus(4017) | Control.HasFocus(40171)]" time="200">Conditional</animation>
-                        <animation effect="slide" start="0" end="517,0" condition="Control.HasFocus(9017) | Control.HasFocus(90171) | Control.HasFocus(15017) | Control.HasFocus(150171)" time="200">Conditional</animation>
-                        <animation effect="slide" start="0" end="717,0" condition="Control.HasFocus(10017) | Control.HasFocus(100171) | Control.HasFocus(14017) | Control.HasFocus(140171)" time="200">Conditional</animation>
-                        <animation effect="slide" start="0" end="1537,0" condition="Control.HasFocus(18002) | Control.HasFocus(18022)" time="200">Conditional</animation>
-                        <animation effect="slide" start="0" end="1937,0" condition="Control.HasFocus(18003) | Control.HasFocus(18004)" time="200">Conditional</animation>
-                        <animation effect="slide" start="0" end="2561,0" condition="Control.HasFocus(19002) | Control.HasFocus(19003) | Control.HasFocus(19004) | Control.HasFocus(19022)" time="200">Conditional</animation>
-                        <top>781</top>
-                        <left>0</left>
-                        <width>228</width>
-                        <height>64</height>
-                        <texture fallback="E.png">$VAR[EmbyWidgetLogo]</texture>
-                        <aspectratio align="center" aligny="center">keep</aspectratio>
-                        
-                        <visible>!Skin.String(home.vertical,1) + !IsEmpty(Control.GetLabel(91211))</visible>
-                    </control>
-                    <control type="button">
-                        <animation effect="slide" start="0" end="221,0" condition="!Skin.String(home.vertical,1)  + [Control.HasFocus(6017) | Control.HasFocus(60171) | Control.HasFocus(3017) | Control.HasFocus(30171)  | Control.HasFocus(5017) | Control.HasFocus(50171) | Control.HasFocus(4017) | Control.HasFocus(40171)]" time="200">Conditional</animation>
-                        <animation effect="slide" start="0" end="517,0" condition="Control.HasFocus(9017) | Control.HasFocus(90171) | Control.HasFocus(15017) | Control.HasFocus(150171)" time="200">Conditional</animation>
-                        <animation effect="slide" start="0" end="717,0" condition="Control.HasFocus(10017) | Control.HasFocus(100171) | Control.HasFocus(14017) | Control.HasFocus(140171)" time="200">Conditional</animation>
-                        <animation effect="slide" start="0" end="1537,0" condition="Control.HasFocus(18002) | Control.HasFocus(18022)" time="200">Conditional</animation>
-                        <animation effect="slide" start="0" end="1937,0" condition="Control.HasFocus(18003) | Control.HasFocus(18004)" time="200">Conditional</animation>
-                        <animation effect="slide" start="0" end="2561,0" condition="Control.HasFocus(19002) | Control.HasFocus(19003) | Control.HasFocus(19004) | Control.HasFocus(19022)" time="200">Conditional</animation>
-                        <left>238</left>
-                        <width>1000</width>
-                        <top>773</top>
-                        <align>left</align>
-                        <aligny>top</aligny>
-                        <font>HomeWidgetLabelFont</font>
-                        <onup>300</onup>
-                        <ondown>6012</ondown>
-                        <onback>300</onback>
-                        <textoffsetx>0</textoffsetx>
-                        <label>$VAR[EmbyWidgetLabel]</label>
-                        <focusedcolor>$VAR[ColourHighlight]</focusedcolor>
-                        <texturenofocus>-</texturenofocus>
-                        <texturefocus>-</texturefocus>
-                        <onclick>ActivateWindow(1112)</onclick>
-                    </control>
-                </control>
                 <control type="group">
                     <!-- <animation effect="fade" start="100" end="0" time="50" condition="[!StringCompare(Container(300).ListItem.Property(defaultID),livetv) + !StringCompare(Container(300).ListItem.Property(defaultID),weather) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),movies) + [Container(6012).IsUpdating | Container(6016).IsUpdating | Container(6017).IsUpdating | Container(9017).IsUpdating]]">Conditional</animation> -->
                     <visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
@@ -9307,9 +9295,6 @@
         <control type="group">
             <animation effect="fade" start="100" end="0" time="50" condition="!StringCompare(Container(300).ListItem.Property(defaultID),livetv) + !StringCompare(Container(300).ListItem.Property(defaultID),weather) + [Container(3012).IsUpdating | Container(3016).IsUpdating | Container(3017).IsUpdating | Container(10017).IsUpdating]">Conditional</animation>
             <!-- RIGHT SIDE -->
-            <!--
-			<control type="image" id="89122"><left>NewSidePad</left><top>105</top><width>228</width><height>64</height><texture>$VAR[EmbyWidgetLogoVertical]</texture><aspectratio align="center" aligny="center">keep</aspectratio><visible>ControlGroup(303).HasFocus</visible></control>
-			-->
             <control type="image" id="89122">
                 <right>NewSidePad</right>
                 <top>46</top>
