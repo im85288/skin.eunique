@@ -3064,6 +3064,38 @@
 			</control>
 		</definition>
 	</include>
+	<include name="WidgetLoading">
+		<param name="left" default="-50"/>
+		<param name="top" default="-50"/>
+		<param name="width" default="50"/>
+		<param name="height" default="50"/>
+		<param name="font" default="symbolbiggerest"/>
+		<param name="symbol" default=""/>
+		<param name="textcolor" default="black"/>
+		<param name="imagepath" default="$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground.Wall)]"/>
+		<definition>
+			<control type="group">
+				<top>$PARAM[top]</top>
+				<left>$PARAM[left]</left>
+				<control type="multiimage">
+					<timeperimage>100</timeperimage>
+					<randomize>true</randomize>
+					<fadetime>100</fadetime>
+					<aspectratio scalediffuse="false">keep</aspectratio>
+					<imagepath background="true">$PARAM[imagepath]</imagepath>
+				</control>
+				<control type="label">
+					<description>Loading symbol</description>
+					<label>$PARAM[symbol]</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>$PARAM[font]</font>
+					<textcolor>$PARAM[textcolor]</textcolor>
+					<animation effect="fade" start="100" end="0" time="500" tween="quadratic">Hidden</animation>
+				</control>
+			</control>
+		</definition>
+	</include>
 	<include name="WidgetLandscapeItemLayout">
 		<control type="image">
 			<aspectratio>keep</aspectratio>
