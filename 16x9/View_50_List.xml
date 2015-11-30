@@ -136,6 +136,18 @@
                 <fadetime>200</fadetime>
                 <visible>!Container.Content(genres) + !Container.Content(albums) + !Container.Content(songs) + !Container.Content(artists) + !Container.Content(singles)</visible>
             </control>
+			<control type="progress">
+                <top>871</top>
+                <width>602</width>
+				<height>8</height>
+				<info>ListItem.PercentPlayed</info>
+				<overlaytexture>-</overlaytexture>
+				<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
+				<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
+				<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
+				<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+				<visible>ListItem.IsResumable</visible>
+			</control>
             <control type="image">
                 <left>-960</left>
                 <right>950</right>

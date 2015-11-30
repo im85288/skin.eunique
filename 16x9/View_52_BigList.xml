@@ -261,6 +261,19 @@
 				<aspectratio align="left" aligny="center" scalediffuse="false">stretch</aspectratio>
 				<texture background="true">$VAR[LandscapeImage]</texture>
 			</control>
+			<control type="progress">
+				<left>965</left>
+                <top>675</top>
+                <width>945</width>
+				<height>8</height>
+				<info>ListItem.PercentPlayed</info>
+				<overlaytexture>-</overlaytexture>
+				<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
+				<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
+				<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
+				<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+				<visible>ListItem.IsResumable</visible>
+			</control>
 			<control type="image">
 				<top>683</top>
 				<left>965</left>
