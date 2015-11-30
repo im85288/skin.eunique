@@ -1735,7 +1735,7 @@
                 </control>
                 <control type="group">
                     <!-- <animation effect="fade" start="100" end="0" time="50" condition="[!StringCompare(Container(300).ListItem.Property(defaultID),livetv) + !StringCompare(Container(300).ListItem.Property(defaultID),weather) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),movies) + [Container(6012).IsUpdating | Container(6016).IsUpdating | Container(6017).IsUpdating | Container(9017).IsUpdating]]">Conditional</animation> -->
-                   <visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
+                    <visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
                     <control type="label" id="60121">
                         <left>SidePad</left>
                         <top>285</top>
@@ -1747,7 +1747,6 @@
                         <textoffsetx>0</textoffsetx>
                         <label>$VAR[EmbyWidget2Label]</label>
                     </control>
-                    <!-- start of def box 1 -->
                     <control type="wraplist" id="6012">
                         <description>Widget</description>
                         <visible>!Skin.HasSetting(home.easynav)</visible>
@@ -1762,6 +1761,8 @@
                         <orientation>vertical</orientation>
                         <autoscroll time="10000">!Control.HasFocus(6012)</autoscroll>
                         <scrolltime tween="quadratic">100</scrolltime>
+                        
+                        
                         <itemlayout width="820" height="460">
                             <control type="image">
                                 <aspectratio>scale</aspectratio>
@@ -1808,6 +1809,8 @@
                         <orientation>vertical</orientation>
                         <autoscroll time="10000">!Control.HasFocus(6012)</autoscroll>
                         <scrolltime tween="quadratic">100</scrolltime>
+                        
+                        
                         <itemlayout width="820" height="460">
                             <control type="image">
                                 <aspectratio>scale</aspectratio>
@@ -1825,17 +1828,19 @@
                         </focusedlayout>
                         <content target="$VAR[DefWidget2Target]">$VAR[DefWidget2Content]</content>
                     </control>
-			<include name="WidgetLoading">
-				<param name="top" value="330"/>
-				<param name="left" value="SidePad"/>
-				<param name="width" value="820"/>
-				<param name="height" value="460"/>
-				<param name="font" value="symbolbiggerest"/>
-				<param name="symbol" value=""/>
-				<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground.Wall)]"/>
-				<param name="textcolor" value="black"/>
-				<visible>Container(6012).IsUpdating</visible>
-			</include>
+                    <control type="group">
+						<include name="WidgetLoading">
+							<param name="top" value="330"/>
+							<param name="left" value="SidePad"/>
+							<param name="width" value="820"/>
+							<param name="height" value="460"/>
+							<param name="font" value="symbolbiggerest"/>
+							<param name="symbol" value=""/>
+							<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground.Wall)]"/>
+							<param name="textcolor" value="$VAR[ColourTextFlags]"/>
+						</include>
+						<visible>Container(6012).IsUpdating</visible>
+                   </control>
                     <!-- end of def box 1 -->
                     <control type="group">
                         <animation effect="slide" start="0,0" end="0,23" time="200" center="auto" condition="Control.HasFocus(6013)">Conditional</animation>
@@ -1932,6 +1937,8 @@
                         <preloaditems>2</preloaditems>
                         <orientation>vertical</orientation>
                         <scrolltime tween="quadratic">100</scrolltime>
+                        
+                        
                         <itemlayout width="273" height="245">
                             <control type="image">
                                 <aspectratio>stretch</aspectratio>
@@ -2056,6 +2063,8 @@
                         <preloaditems>2</preloaditems>
                         <orientation>vertical</orientation>
                         <scrolltime tween="quadratic">100</scrolltime>
+                        
+                        
                         <itemlayout width="274" height="245">
                             <control type="image">
                                 <aspectratio>stretch</aspectratio>
@@ -2183,6 +2192,8 @@
                         <preloaditems>2</preloaditems>
                         <orientation>vertical</orientation>
                         <scrolltime tween="quadratic">100</scrolltime>
+                        
+                        
                         <itemlayout width="273" height="245">
                             <control type="image">
                                 <aspectratio>stretch</aspectratio>
@@ -2211,9 +2222,6 @@
                         </focusedlayout>
                         <content target="music">addons://sources/audio</content>
                     </control>
-                    <!-- 
-                    2nd default widget label
-                    -->
                     <control type="group">
                         <left>980</left>
                         <top>285</top>
@@ -2235,9 +2243,6 @@
                             <onclick>ActivateWindow(1112)</onclick>
                         </control>
                     </control>
-                    <!-- 
-                    2nd default widget box
-                    -->
                     <control type="list" id="6016">
                         <description>Widget</description>
                         <top>330</top>
@@ -2253,6 +2258,8 @@
                         <orientation>vertical</orientation>
                         <autoscroll time="1000">!Control.HasFocus(6016)</autoscroll>
                         <scrolltime tween="quadratic">100</scrolltime>
+                        
+                        
                         <itemlayout width="410" height="88.125">
                             <control type="image">
                                 <aspectratio scalediffuse="false">stretch</aspectratio>
@@ -2286,18 +2293,20 @@
                         </focusedlayout>
                         <content target="$VAR[DefWidget1Target]">$VAR[DefWidget1Content]</content>
                     </control>
-			<include name="WidgetLoading">
+                    <control type="group">
+						<include name="WidgetLoading">
 				<param name="top" value="330"/>
 				<param name="left" value="980"/>
 				<param name="width" value="410"/>
 				<param name="height" value="705"/>
-				<param name="font" value="symbolbiggerest"/>
-				<param name="symbol" value=""/>
-				<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground.Wall)]"/>
-				<param name="textcolor" value="black"/>
-				<visible>Container(6016).IsUpdating</visible>
-			</include>
-                    <!-- end of def box 2 -->
+							<param name="font" value="symbolbiggerest"/>
+							<param name="symbol" value=""/>
+							<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground.Wall)]"/>
+							<param name="textcolor" value="$VAR[ColourTextFlags]"/>
+						</include>
+						<visible>Container(6016).IsUpdating</visible>
+                   </control>
+                    <!-- end of def box 1 -->
                     <!-- Latest Movies -->
                     <control type="group">
                         <left>1470</left>
@@ -2334,6 +2343,8 @@
                         <onback>300</onback>
                         <preloaditems>2</preloaditems>
                         <scrolltime tween="quadratic">100</scrolltime>
+                        
+                        
                         <itemlayout width="158" height="235">
                             <control type="image">
                                 <aspectratio>stretch</aspectratio>
@@ -2378,18 +2389,20 @@
                         </focusedlayout>
                         <content target="$VAR[DefWidget3Target]">$VAR[DefWidget3Content]</content>
                     </control>
-			<include name="WidgetLoading">
+                    <control type="group">
+						<include name="WidgetLoading">
 				<param name="top" value="330"/>
 				<param name="left" value="1470"/>
 				<param name="width" value="316"/>
 				<param name="height" value="705"/>
-				<param name="font" value="symbolbiggerest"/>
-				<param name="symbol" value=""/>
-				<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground.Wall)]"/>
-				<param name="textcolor" value="black"/>
-				<visible>Container(6017).IsUpdating</visible>
-			</include>
-                    <!-- end of def box 3 -->
+							<param name="font" value="symbolbiggerest"/>
+							<param name="symbol" value=""/>
+							<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground.Wall)]"/>
+							<param name="textcolor" value="$VAR[ColourTextFlags]"/>
+						</include>
+						<visible>Container(6017).IsUpdating</visible>
+                   </control>
+                    <!-- end of def box 1 -->
                     <!-- Latest XBMC -->
                     <control type="group">
                         <left>1865</left>
@@ -2526,18 +2539,20 @@
                             </control>
                         </control>
                     </control>
-			<include name="WidgetLoading">
+                    <control type="group">
+						<include name="WidgetLoading">
 				<param name="top" value="330"/>
 				<param name="left" value="1865"/>
 				<param name="width" value="632"/>
 				<param name="height" value="705"/>
-				<param name="font" value="symbolbiggerest"/>
-				<param name="symbol" value=""/>
-				<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground.Wall)]"/>
-				<param name="textcolor" value="black"/>
-				<visible>Container(9017).IsUpdating</visible>
-			</include>
-                    <!-- end of def box 4 -->
+							<param name="font" value="symbolbiggerest"/>
+							<param name="symbol" value=""/>
+							<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground.Wall)]"/>
+							<param name="textcolor" value="$VAR[ColourTextFlags]"/>
+						</include>
+						<visible>Container(9017).IsUpdating</visible>
+                   </control>
+                    <!-- end of def box 1 -->
                 </control>
                 <!-- Weather menu left side -->
                 <control type="group">
@@ -3121,10 +3136,6 @@
 				</control>
 					-->
                <control type="group">
-                    <!--
-					<animation effect="fade" start="100" end="0" time="50" condition="[StringCompare(Container(300).ListItem.Property(defaultID),movies) + [Container(3012).IsUpdating | Container(3016).IsUpdating | Container(3017).IsUpdating | Container(10017).IsUpdating | Container(18003).IsUpdating | Container(19003).IsUpdating]]">Conditional</animation> 
-					-->
-                    <animation effect="fade" start="100" end="0" time="0" condition="[StringCompare(Container(300).ListItem.Property(defaultID),movies) + [Container(3012).IsUpdating | Container(3016).IsUpdating | Container(3017).IsUpdating]]">Conditional</animation>
                     <visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
                     <control type="group">
                         <left>SidePad</left>
@@ -3154,6 +3165,8 @@
                         <orientation>vertical</orientation>
                         <autoscroll time="10000">!Control.HasFocus(3012)</autoscroll>
                         <scrolltime tween="quadratic">100</scrolltime>
+                        
+                        
                         <itemlayout width="820" height="460">
                             <control type="image">
                                 <aspectratio>scale</aspectratio>
@@ -3178,6 +3191,7 @@
                     </control>
                     <control type="button" id="3012">
                         <visible>Skin.HasSetting(home.easynav)</visible>
+
                         <top>330</top>
                         <left>SidePad</left>
                         <width>820</width>
@@ -3192,6 +3206,7 @@
                     </control>
                     <control type="wraplist" id="30122">
                         <description>Widget</description>
+
                         <visible>Skin.HasSetting(home.easynav)</visible>
                         <top>330</top>
                         <left>SidePad</left>
@@ -3205,6 +3220,8 @@
                         <orientation>vertical</orientation>
                         <autoscroll time="10000">!Control.HasFocus(3012)</autoscroll>
                         <scrolltime tween="quadratic">100</scrolltime>
+                        
+                        
                         <itemlayout width="820" height="460">
                             <control type="image">
                                 <aspectratio>scale</aspectratio>
@@ -3395,6 +3412,7 @@
                             <onback>300</onback>
                         </control>
                         <control type="image">
+
                             <description>Genres</description>
                             <left>490</left>
                             <posy>790</posy>
@@ -3404,6 +3422,7 @@
                             <visible>!Control.HasFocus(30143)</visible>
                         </control>
                         <control type="label">
+
                             <description>All music</description>
                             <left>490</left>
                             <posy>790</posy>
@@ -3416,6 +3435,7 @@
                             <visible>!Control.HasFocus(30143)</visible>
                         </control>
                         <control type="image">
+
                             <description>Title overlay</description>
                             <left>490</left>
                             <posy>990</posy>
@@ -3435,6 +3455,7 @@
                             <textcolor>white2</textcolor>
                             <selectedcolor>white2</selectedcolor>
                             <label>135</label>
+
                             <visible>!Control.HasFocus(30143)</visible>
                         </control>
                     </control>
@@ -3442,6 +3463,7 @@
                         <description>Widget</description>
                         <visible>Control.HasFocus(30143)</visible>
                         <visible allowhiddenfocus="true">IntegerGreaterThan(Container(30143).NumItems,0)</visible>
+
                         <onup>3012</onup>
                         <onleft>3013</onleft>
                         <onright condition="Control.IsVisible(3016)">3016</onright>
@@ -3454,6 +3476,8 @@
                         <preloaditems>2</preloaditems>
                         <orientation>vertical</orientation>
                         <scrolltime tween="quadratic">100</scrolltime>
+                        
+                        
                         <itemlayout width="410" height="245">
                             <control type="image">
                                 <aspectratio>keep</aspectratio>
@@ -3505,18 +3529,20 @@
 
                         </control>
                     </control>
-			<include name="WidgetLoading">
+                    <control type="group">
+						<include name="WidgetLoading">
 				<param name="top" value="330"/>
 				<param name="left" value="SidePad"/>
 				<param name="width" value="820"/>
 				<param name="height" value="460"/>
-				<param name="font" value="symbolbiggerest"/>
-				<param name="symbol" value=""/>
-				<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground.Wall)]"/>
-				<param name="textcolor" value="black"/>
-				<visible>Container(6012).IsUpdating</visible>
-			</include>
-                    <!-- end of mv box 1 -->
+							<param name="font" value="symbolbiggerest"/>
+							<param name="symbol" value=""/>
+							<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground.Wall)]"/>
+							<param name="textcolor" value="$VAR[ColourTextFlags]"/>
+						</include>
+						<visible>Container(3012).IsUpdating</visible>
+                   </control>
+                    <!-- end of def box 1 -->
                     <control type="list" id="3016">
                         <description>Widget</description>
 
@@ -3581,19 +3607,21 @@
                         </focusedlayout>
                         <content target="$VAR[DefWidget7Target]">$VAR[DefWidget7Content]</content>
                     </control>
-                    <!-- Latest Movies -->
-			<include name="WidgetLoading">
+                    <control type="group">
+						<include name="WidgetLoading">
 				<param name="top" value="330"/>
 				<param name="left" value="980"/>
 				<param name="width" value="410"/>
 				<param name="height" value="705"/>
-				<param name="font" value="symbolbiggerest"/>
-				<param name="symbol" value=""/>
-				<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground.Wall)]"/>
-				<param name="textcolor" value="black"/>
-				<visible>Container(3016).IsUpdating</visible>
-			</include>
-                    <!-- end of mv box 2 -->
+							<param name="font" value="symbolbiggerest"/>
+							<param name="symbol" value=""/>
+							<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground.Wall)]"/>
+							<param name="textcolor" value="$VAR[ColourTextFlags]"/>
+						</include>
+						<visible>Container(3016).IsUpdating</visible>
+                   </control>
+                    <!-- end of def box 1 -->
+                    <!-- Latest Movies -->
                     <control type="group">
                         <left>1470</left>
                         <top>285</top>
@@ -3678,18 +3706,20 @@
                         </focusedlayout>
                         <content target="$VAR[DefWidget8Target]">$VAR[DefWidget8Content]</content>
                     </control>
-			<include name="WidgetLoading">
+                    <control type="group">
+						<include name="WidgetLoading">
 				<param name="top" value="330"/>
 				<param name="left" value="1470"/>
 				<param name="width" value="316"/>
 				<param name="height" value="705"/>
-				<param name="font" value="symbolbiggerest"/>
-				<param name="symbol" value=""/>
-				<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground.Wall)]"/>
-				<param name="textcolor" value="black"/>
-				<visible>Container(3017).IsUpdating</visible>
-			</include>
-                    <!-- end of mv box 3 -->
+							<param name="font" value="symbolbiggerest"/>
+							<param name="symbol" value=""/>
+							<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground.Wall)]"/>
+							<param name="textcolor" value="$VAR[ColourTextFlags]"/>
+						</include>
+						<visible>Container(3017).IsUpdating</visible>
+                   </control>
+                    <!-- end of def box 1 -->
                     <!-- Latest Similar XBMC -->
                     <control type="group">
                         <left>1865</left>
@@ -3717,6 +3747,7 @@
                         <focusposition>0</focusposition>
                         <orientation>vertical</orientation>
                         <description>Widget</description>
+
                         <top>-330</top>
                         <left>1860</left>
                         <width>491</width>
@@ -3729,6 +3760,8 @@
                         <preloaditems>9</preloaditems>
                         <scrolltime tween="quadratic">100</scrolltime>
                         <autoscroll time="5000">!Control.HasFocus(10017)</autoscroll>
+                        
+                        
                         <itemlayout width="158" height="235"/>
                         <focusedlayout width="158" height="235">
                             <control type="button">
@@ -3740,6 +3773,7 @@
                         <content target="$VAR[DefWidget16Target]">$VAR[DefWidget16Content]</content>
                     </control>
                     <control type="group">
+
                         <top>330</top>
                         <left>1865</left>
                         <width>632</width>
@@ -3750,6 +3784,7 @@
                             <width>158</width>
                             <height>235</height>
                             <texture fallback="empty.png">$INFO[Container(10017).Listitem(1).Icon]</texture>
+                            
                         </control>
                         <control type="image">
                             <left>474</left>
@@ -3822,21 +3857,24 @@
                                 <width>316</width>
                                 <height>470</height>
                                 <texture fallback="empty.png">$INFO[Container(10017).Listitem(0).Icon]</texture>
+                                
                             </control>
                         </control>
                     </control>
-			<include name="WidgetLoading">
+                    <control type="group">
+						<include name="WidgetLoading">
 				<param name="top" value="330"/>
 				<param name="left" value="1865"/>
 				<param name="width" value="632"/>
 				<param name="height" value="705"/>
-				<param name="font" value="symbolbiggerest"/>
-				<param name="symbol" value=""/>
-				<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground.Wall)]"/>
-				<param name="textcolor" value="black"/>
-				<visible>Container(10017).IsUpdating</visible>
-			</include>
-                    <!-- end of mv box 4 -->
+							<param name="font" value="symbolbiggerest"/>
+							<param name="symbol" value=""/>
+							<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground.Wall)]"/>
+							<param name="textcolor" value="$VAR[ColourTextFlags]"/>
+						</include>
+						<visible>Container(10017).IsUpdating</visible>
+                   </control>
+                    <!-- end of def box 1 -->
                     <!--  5th widget  -->
                     <control type="group">
                         <left>11</left>
@@ -3862,9 +3900,9 @@
 
                             </control>
                         </control>
-                        <control type="list" id="18002">
+                        <control type="button" id="18002">
 
-                            <left>2565</left>
+                            <left>3558</left>
                             <top>330</top>
                             <width>473</width>
                             <height>705</height>
@@ -3872,53 +3910,25 @@
                             <onleft>10017</onleft>
                             <onback>300</onback>
                             <onup>300</onup>
+                            <texturefocus>-</texturefocus>
+                            <texturenofocus>-</texturenofocus>
+                            <onfocus>SetProperty(SkinHelper.WidgetContainer,18003)</onfocus>
+                            <onup>setfocus(18003,0)</onup>
                             <ondown>setfocus(18003,3)</ondown>
-                            <oninfo>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(18002).ListItem.Label])</oninfo>
-                            <itemlayout width="473" height="705">
-                                <control type="image">
-                                    <aspectratio>stretch</aspectratio>
-                                    <texture background="true">$VAR[PosterImage]</texture>
-                                </control>
-                                <control type="progress">
-                                    <bottom>0</bottom>
-                                    <height>8</height>
-                                    <info>ListItem.PercentPlayed</info>
-                                    <overlaytexture>-</overlaytexture>
-                                    <texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
-                                    <lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
-                                    <midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
-                                    <righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
-                                    <visible>ListItem.IsResumable</visible>
-                                </control>
-                            </itemlayout>
-                            <focusedlayout width="473" height="705">
-                                <control type="group">
-                                    <animation effect="zoom" start="105" end="90" time="200" tween="quadratic" reversible="false" center="auto">Focus</animation>
-                                    <control type="button">
-                                        <onfocus>SetProperty(SkinHelper.WidgetContainer,18002)</onfocus>
-                                        <texturenofocus>-</texturenofocus>
-                                        <texturefocus>-</texturefocus>
-                                    </control>
-                                    <control type="image">
-                                        <aspectratio>stretch</aspectratio>
-                                        <texture background="true">$VAR[PosterImage]</texture>
-                                    </control>
-                                    <control type="progress">
-                                        <bottom>0</bottom>
-                                        <height>8</height>
-                                        <info>ListItem.PercentPlayed</info>
-                                        <overlaytexture>-</overlaytexture>
-                                        <texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
-                                        <lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
-                                        <midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
-                                        <righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
-                                        <visible>ListItem.IsResumable</visible>
-                                    </control>
-                                </control>
-                            </focusedlayout>
-                            <content limit="8" target="$VAR[DefWidget19Target]">$VAR[DefWidget19Content]</content>
+                            <oninfo>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(18003).ListItem(4).Label])</oninfo>
+                            <onclick>sendclick(18003)</onclick>
+                        </control>
+                        <control type="image">
+
+                            <left>2565</left>
+                            <top>330</top>
+                            <width>473</width>
+                            <height>705</height>
+                            <texture>$INFO[Container(18003).ListItem(4).icon]</texture>
+                            <animation effect="zoom" start="105" end="90" time="200" tween="quadratic" reversible="false" center="auto" condition="Control.HasFocus(18002)">Conditional</animation>
                         </control>
                         <control type="panel" id="18003">
+
                             <left>3038</left>
                             <top>330</top>
                             <width>470</width>
@@ -3973,18 +3983,20 @@
                             </focusedlayout>
                             <content limit="4" target="$VAR[DefWidget19Target]">$VAR[DefWidget19Content]</content>
                         </control>
-			<include name="WidgetLoading">
-				<param name="top" value="330"/>
-				<param name="left" value="2565"/>
-				<param name="width" value="943"/>
-				<param name="height" value="705"/>
-				<param name="font" value="symbolbiggerest"/>
-				<param name="symbol" value=""/>
-				<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground.Wall)]"/>
-				<param name="textcolor" value="black"/>
-				<visible>Container(18002).IsUpdating | Container(18003).IsUpdating</visible>
-			</include>
-                    <!-- end of mv box 5 -->
+                    <control type="group">
+						<include name="WidgetLoading">
+							<param name="top" value="330"/>
+							<param name="left" value="2565"/>
+							<param name="width" value="943"/>
+							<param name="height" value="705"/>
+							<param name="font" value="symbolbiggerest"/>
+							<param name="symbol" value=""/>
+							<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground.Wall)]"/>
+							<param name="textcolor" value="$VAR[ColourTextFlags]"/>
+						</include>
+						<visible>Container(18003).IsUpdating</visible>
+                   </control>
+                    <!-- end of def box 1 -->
                     </control>
                     <!-- 6th widget -->
                     <control type="group">
@@ -4011,12 +4023,8 @@
 
                             </control>
                         </control>
-                        <control type="list" id="19001">
-                            <itemlayout width="1" height="1"/>
-                            <focusedlayout width="1" height="1"/>
-                            <content limit="8" target="$VAR[DefWidget21Target]">$VAR[DefWidget21Content]</content>
-                        </control>
                         <control type="button" id="19002">
+
                             <left>3558</left>
                             <top>330</top>
                             <width>473</width>
@@ -4027,22 +4035,22 @@
                             <onup>300</onup>
                             <texturefocus>-</texturefocus>
                             <texturenofocus>-</texturenofocus>
-                            <onfocus>SetProperty(SkinHelper.WidgetContainer,19001)</onfocus>
+                            <onfocus>SetProperty(SkinHelper.WidgetContainer,19003)</onfocus>
                             <onup>setfocus(19003,0)</onup>
                             <ondown>setfocus(19003,3)</ondown>
-                            <oninfo>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(19001).ListItem(4).Label])</oninfo>
-                            <onclick>sendclick(19001)</onclick>
+                            <oninfo>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(19003).ListItem(4).Label])</oninfo>
+                            <onclick>sendclick(19003)</onclick>
                         </control>
                         <control type="image">
+
                             <left>3558</left>
                             <top>330</top>
                             <width>473</width>
                             <height>705</height>
-                            <texture>$INFO[Container(19001).ListItem(4).icon]</texture>
+                            <texture>$INFO[Container(19003).ListItem(4).icon]</texture>
                             <animation effect="zoom" start="105" end="90" time="200" tween="quadratic" reversible="false" center="auto" condition="Control.HasFocus(19002)">Conditional</animation>
                         </control>
                         <control type="panel" id="19003">
-                            <visible>StringCompare(Container(300).ListItem.Property(defaultID),movies) + IntegerGreaterThan(Container(19001).NumItems,1)</visible>
                             <left>4031</left>
                             <top>330</top>
                             <width>470</width>
@@ -4095,26 +4103,26 @@
                                     </control>
                                 </control>
                             </focusedlayout>
-                            <content limit="4" target="$VAR[DefWidget21Target]">$VAR[DefWidget21Content]</content>
+                            <content limit="8" target="$VAR[DefWidget21Target]">$VAR[DefWidget21Content]</content>
                         </control>
-			<include name="WidgetLoading">
-				<param name="top" value="330"/>
-				<param name="left" value="3558"/>
-				<param name="width" value="943"/>
-				<param name="height" value="705"/>
-				<param name="font" value="symbolbiggerest"/>
-				<param name="symbol" value=""/>
-				<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground.Wall)]"/>
-				<param name="textcolor" value="black"/>
-				<visible>Container(19002).IsUpdating | Container(19003).IsUpdating</visible>
-			</include>
-                    <!-- end of mv box 6 -->
-                    </control>
+                    <control type="group">
+						<include name="WidgetLoading">
+							<param name="top" value="330"/>
+							<param name="left" value="3558"/>
+							<param name="width" value="943"/>
+							<param name="height" value="705"/>
+							<param name="font" value="symbolbiggerest"/>
+							<param name="symbol" value=""/>
+							<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground.Wall)]"/>
+							<param name="textcolor" value="$VAR[ColourTextFlags]"/>
+						</include>
+						<visible>Container(19003).IsUpdating</visible>
+                   </control>
+                    <!-- end of def box 1 -->
                     </control>
                 </control>
                 <!-- TV menu item -->
                 <control type="group">
-                    <!-- <animation effect="fade" start="100" end="0" time="50" condition="[StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + [Container(4012).IsUpdating | Container(4016).IsUpdating | Container(4017).IsUpdating | Container(14017).IsUpdating | Container(18004).IsUpdating | Container(19004).IsUpdating]]">Conditional</animation> -->
                     <visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
                     <control type="group">
                         <left>SidePad</left>
@@ -4132,6 +4140,7 @@
                     </control>
                     <control type="wraplist" id="4012">
                         <description>Widget</description>
+
                         <visible>!Skin.HasSetting(home.easynav)</visible>
                         <top>330</top>
                         <left>SidePad</left>
@@ -4144,6 +4153,8 @@
                         <orientation>vertical</orientation>
                         <autoscroll time="10000">!Control.HasFocus(4012)</autoscroll>
                         <scrolltime tween="quadratic">100</scrolltime>
+                        
+                        
                         <itemlayout width="820" height="460">
                             <control type="image">
                                 <aspectratio>scale</aspectratio>
@@ -4168,6 +4179,7 @@
                     </control>
                     <control type="button" id="4012">
                         <visible>Skin.HasSetting(home.easynav)</visible>
+
                         <top>330</top>
                         <left>SidePad</left>
                         <width>820</width>
@@ -4182,6 +4194,7 @@
                     </control>
                     <control type="wraplist" id="40122">
                         <description>Widget</description>
+
                         <visible>Skin.HasSetting(home.easynav)</visible>
                         <top>330</top>
                         <left>SidePad</left>
@@ -4194,6 +4207,8 @@
                         <orientation>vertical</orientation>
                         <autoscroll time="10000">!Control.HasFocus(4012)</autoscroll>
                         <scrolltime tween="quadratic">100</scrolltime>
+                        
+                        
                         <itemlayout width="820" height="460">
                             <control type="image">
                                 <aspectratio>scale</aspectratio>
@@ -4526,18 +4541,6 @@
                         </focusedlayout>
                         <content target="video">plugin://script.skin.helper.service/?action=nextairedtvshows</content>
                     </control>
-			<include name="WidgetLoading">
-				<param name="top" value="330"/>
-				<param name="left" value="SidePad"/>
-				<param name="width" value="820"/>
-				<param name="height" value="460"/>
-				<param name="font" value="symbolbiggerest"/>
-				<param name="symbol" value=""/>
-				<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground.Wall)]"/>
-				<param name="textcolor" value="black"/>
-				<visible>Container(4012).IsUpdating</visible>
-			</include>
-                    <!-- end of tv box 1 -->
                     <control type="group">
                         <left>980</left>
                         <top>285</top>
@@ -4560,8 +4563,23 @@
 
                         </control>
                     </control>
+                    <control type="group">
+						<include name="WidgetLoading">
+				<param name="top" value="330"/>
+				<param name="left" value="SidePad"/>
+				<param name="width" value="820"/>
+				<param name="height" value="460"/>
+							<param name="font" value="symbolbiggerest"/>
+							<param name="symbol" value=""/>
+							<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground.Wall)]"/>
+							<param name="textcolor" value="$VAR[ColourTextFlags]"/>
+						</include>
+						<visible>Container(4012).IsUpdating</visible>
+                   </control>
+                    <!-- end of def box 1 -->
                     <control type="list" id="4016">
                         <description>Widget</description>
+
                         <top>330</top>
                         <left>980</left>
                         <width>410</width>
@@ -4575,6 +4593,8 @@
                         <orientation>vertical</orientation>
                         <scrolltime tween="quadratic">100</scrolltime>
                         <autoscroll time="3000">!Control.HasFocus(4016)</autoscroll>
+                        
+                        
                         <itemlayout width="410" height="235">
                             <control type="image">
                                 <aspectratio>stretch</aspectratio>
@@ -4619,18 +4639,20 @@
                         </focusedlayout>
                         <content target="$VAR[DefWidget10Target]">$VAR[DefWidget10Content]</content>
                     </control>
-			<include name="WidgetLoading">
+                    <control type="group">
+						<include name="WidgetLoading">
 				<param name="top" value="330"/>
 				<param name="left" value="980"/>
 				<param name="width" value="410"/>
 				<param name="height" value="705"/>
-				<param name="font" value="symbolbiggerest"/>
-				<param name="symbol" value=""/>
-				<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground.Wall)]"/>
-				<param name="textcolor" value="black"/>
-				<visible>Container(4016).IsUpdating</visible>
-			</include>
-                    <!-- end of tv box 2 -->
+							<param name="font" value="symbolbiggerest"/>
+							<param name="symbol" value=""/>
+							<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground.Wall)]"/>
+							<param name="textcolor" value="$VAR[ColourTextFlags]"/>
+						</include>
+						<visible>Container(4016).IsUpdating</visible>
+                   </control>
+                    <!-- end of def box 1 -->
                     <!-- Latest Tv -->
                     <control type="group">
                         <left>1470</left>
@@ -4692,18 +4714,20 @@
                         </focusedlayout>
                         <content target="$VAR[DefWidget11Target]">$VAR[DefWidget11Content]</content>
                     </control>
-			<include name="WidgetLoading">
+                    <control type="group">
+						<include name="WidgetLoading">
 				<param name="top" value="330"/>
 				<param name="left" value="1470"/>
 				<param name="width" value="316"/>
 				<param name="height" value="705"/>
-				<param name="font" value="symbolbiggerest"/>
-				<param name="symbol" value=""/>
-				<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground.Wall)]"/>
-				<param name="textcolor" value="black"/>
-				<visible>Container(4017).IsUpdating</visible>
-			</include>
-                    <!-- end of tv box 3 -->
+							<param name="font" value="symbolbiggerest"/>
+							<param name="symbol" value=""/>
+							<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground.Wall)]"/>
+							<param name="textcolor" value="$VAR[ColourTextFlags]"/>
+						</include>
+						<visible>Container(4017).IsUpdating</visible>
+                   </control>
+                    <!-- end of def box 1 -->
                     <!-- Latest TV XBMC -->
                     <control type="group">
                         <left>1865</left>
@@ -4843,18 +4867,20 @@
                             </control>
                         </control>
                     </control>
-			<include name="WidgetLoading">
+                    <control type="group">
+						<include name="WidgetLoading">
 				<param name="top" value="330"/>
 				<param name="left" value="1865"/>
 				<param name="width" value="632"/>
 				<param name="height" value="705"/>
-				<param name="font" value="symbolbiggerest"/>
-				<param name="symbol" value=""/>
-				<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground.Wall)]"/>
-				<param name="textcolor" value="black"/>
-				<visible>Container(14017).IsUpdating</visible>
-			</include>
-                    <!-- end of tv box 4 -->
+							<param name="font" value="symbolbiggerest"/>
+							<param name="symbol" value=""/>
+							<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground.Wall)]"/>
+							<param name="textcolor" value="$VAR[ColourTextFlags]"/>
+						</include>
+						<visible>Container(14017).IsUpdating</visible>
+                   </control>
+                    <!-- end of def box 1 -->
                     <!-- 5th tv widget -->
                     <control type="group">
                         <left>11</left>
@@ -4880,12 +4906,8 @@
 
                             </control>
                         </control>
-                        <control type="list" id="18011">
-                            <itemlayout width="1" height="1"/>
-                            <focusedlayout width="1" height="1"/>
-                            <content limit="8" target="$VAR[DefWidget20Target]">$VAR[DefWidget20Content]</content>
-                        </control>
                         <control type="button" id="18022">
+
                             <left>2565</left>
                             <top>330</top>
                             <width>473</width>
@@ -4896,22 +4918,22 @@
                             <onup>300</onup>
                             <texturefocus>-</texturefocus>
                             <texturenofocus>-</texturenofocus>
-                            <onfocus>SetProperty(SkinHelper.WidgetContainer,18011)</onfocus>
+                            <onfocus>SetProperty(SkinHelper.WidgetContainer,18004)</onfocus>
                             <onup>setfocus(18004,0)</onup>
                             <ondown>setfocus(18004,3)</ondown>
-                            <oninfo>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(18011).ListItem(4).Label])</oninfo>
-                            <onclick>ActivateWindow(10025,videodb://tvshows/titles/$INFO[Container(18011).ListItem(4).Property(DBID)]/,return)</onclick>
+                            <oninfo>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(18004).ListItem(4).Label])</oninfo>
+                            <onclick>ActivateWindow(10025,videodb://tvshows/titles/$INFO[Container(18004).ListItem(4).Property(DBID)]/,return)</onclick>
                         </control>
                         <control type="image">
+
                             <left>2565</left>
                             <top>330</top>
                             <width>473</width>
                             <height>705</height>
-                            <texture>$INFO[Container(18011).ListItem(4).icon]</texture>
+                            <texture>$INFO[Container(18004).ListItem(4).icon]</texture>
                             <animation effect="zoom" start="105" end="90" time="200" tween="quadratic" reversible="false" center="auto" condition="Control.HasFocus(18022)">Conditional</animation>
                         </control>
                         <control type="panel" id="18004">
-                            <visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + IntegerGreaterThan(Container(18011).NumItems,1)</visible>
                             <left>3038</left>
                             <top>330</top>
                             <width>470</width>
@@ -4972,19 +4994,21 @@
                             </focusedlayout>
                             <content limit="4" target="$VAR[DefWidget20Target]">$VAR[DefWidget20Content]</content>
                         </control>
-			<include name="WidgetLoading">
+                     <control type="group">
+						<include name="WidgetLoading">
 				<param name="top" value="330"/>
 				<param name="left" value="2565"/>
 				<param name="width" value="943"/>
 				<param name="height" value="705"/>
-				<param name="font" value="symbolbiggerest"/>
-				<param name="symbol" value=""/>
-				<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground.Wall)]"/>
-				<param name="textcolor" value="black"/>
-				<visible>Container(18011).IsUpdating | Container(18004).IsUpdating</visible>
-			</include>
-                    <!-- end of tv box 5 -->
-                    </control>
+							<param name="font" value="symbolbiggerest"/>
+							<param name="symbol" value=""/>
+							<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground.Wall)]"/>
+							<param name="textcolor" value="$VAR[ColourTextFlags]"/>
+						</include>
+						<visible>Container(18004).IsUpdating</visible>
+                   </control>
+                    <!-- end of def box 1 -->
+                   </control>
                     <!-- 6th widget -->
                     <control type="group">
                         <left>40</left>
@@ -5007,14 +5031,11 @@
                                 <texturenofocus>-</texturenofocus>
                                 <texturefocus>-</texturefocus>
                                 <onclick>ActivateWindow(1112)</onclick>
+
                             </control>
                         </control>
-                        <control type="list" id="19011">
-                            <itemlayout width="1" height="1"/>
-                            <focusedlayout width="1" height="1"/>
-                            <content limit="8" target="$VAR[DefWidget22Target]">$VAR[DefWidget22Content]</content>
-                        </control>
                         <control type="button" id="19022">
+
                             <left>3558</left>
                             <top>330</top>
                             <width>473</width>
@@ -5025,18 +5046,19 @@
                             <onup>300</onup>
                             <texturefocus>-</texturefocus>
                             <texturenofocus>-</texturenofocus>
-                            <onfocus>SetProperty(SkinHelper.WidgetContainer,19011)</onfocus>
+                            <onfocus>SetProperty(SkinHelper.WidgetContainer,19004)</onfocus>
                             <onup>setfocus(19004,0)</onup>
                             <ondown>setfocus(19004,3)</ondown>
-                            <oninfo>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(19011).ListItem(4).Label])</oninfo>
-                            <onclick>ActivateWindow(10025,videodb://tvshows/titles/$INFO[Container(19011).ListItem(4).Property(DBID)]/,return)</onclick>
+                            <oninfo>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(19004).ListItem(4).Label])</oninfo>
+                            <onclick>ActivateWindow(10025,videodb://tvshows/titles/$INFO[Container(19004).ListItem(4).Property(DBID)]/,return)</onclick>
                         </control>
                         <control type="image">
+
                             <left>3558</left>
                             <top>330</top>
                             <width>473</width>
                             <height>705</height>
-                            <texture>$INFO[Container(19011).ListItem(4).icon]</texture>
+                            <texture>$INFO[Container(19004).ListItem(4).icon]</texture>
                             <animation effect="zoom" start="105" end="90" time="200" tween="quadratic" reversible="false" center="auto" condition="Control.HasFocus(19022)">Conditional</animation>
                         </control>
                         <control type="panel" id="19004">
@@ -5094,23 +5116,24 @@
                             </focusedlayout>
                             <content limit="4" target="$VAR[DefWidget22Target]">$VAR[DefWidget22Content]</content>
                         </control>
-			<include name="WidgetLoading">
+                     <control type="group">
+						<include name="WidgetLoading">
 				<param name="top" value="330"/>
 				<param name="left" value="3558"/>
 				<param name="width" value="943"/>
 				<param name="height" value="705"/>
-				<param name="font" value="symbolbiggerest"/>
-				<param name="symbol" value=""/>
-				<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground.Wall)]"/>
-				<param name="textcolor" value="black"/>
-				<visible>Container(19011).IsUpdating | Container(19004).IsUpdating</visible>
-			</include>
-                    <!-- end of mv box 6 -->
+							<param name="font" value="symbolbiggerest"/>
+							<param name="symbol" value=""/>
+							<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground.Wall)]"/>
+							<param name="textcolor" value="$VAR[ColourTextFlags]"/>
+						</include>
+						<visible>Container(19004).IsUpdating</visible>
+                   </control>
+                    <!-- end of def box 1 -->
                     </control>
                 </control>
                 <!-- Music menu item -->
                 <control type="group">
-                   <!-- <animation effect="fade" start="100" end="0" time="50" condition="[StringCompare(Container(300).ListItem.Property(defaultID),music) + [Container(5012).IsUpdating | Container(5016).IsUpdating | Container(5017).IsUpdating | Container(15017).IsUpdating]]">Conditional</animation> -->
                     <visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
                     <control type="group">
                         <left>SidePad</left>
@@ -5127,6 +5150,7 @@
                     </control>
                     <control type="wraplist" id="5012">
                         <description>Widget</description>
+
                         <visible>!Skin.HasSetting(home.easynav)</visible>
                         <top>330</top>
                         <left>SidePad</left>
@@ -5139,6 +5163,8 @@
                         <orientation>vertical</orientation>
                         <autoscroll time="10000">!Control.HasFocus(5012)</autoscroll>
                         <scrolltime tween="quadratic">100</scrolltime>
+                        
+                        
                         <itemlayout width="820" height="460">
                             <control type="image">
                                 <aspectratio>scale</aspectratio>
@@ -5232,6 +5258,7 @@
                     </control>
                     <control type="button" id="5012">
                         <visible>Skin.HasSetting(home.easynav)</visible>
+
                         <top>330</top>
                         <left>SidePad</left>
                         <width>820</width>
@@ -5259,6 +5286,8 @@
                         <orientation>vertical</orientation>
                         <autoscroll time="10000">!Control.HasFocus(5012)</autoscroll>
                         <scrolltime tween="quadratic">100</scrolltime>
+                        
+                        
                         <itemlayout width="820" height="460">
                             <control type="image">
                                 <aspectratio>scale</aspectratio>
@@ -5760,18 +5789,6 @@
                         </focusedlayout>
                         <content target="music">musicdb://genres/</content>
                     </control>
-			<include name="WidgetLoading">
-				<param name="top" value="330"/>
-				<param name="left" value="SidePad"/>
-				<param name="width" value="820"/>
-				<param name="height" value="460"/>
-				<param name="font" value="symbolbiggerest"/>
-				<param name="symbol" value=""/>
-				<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllMusicBackground.Wall)]"/>
-				<param name="textcolor" value="black"/>
-				<visible>Container(5012).IsUpdating</visible>
-			</include>
-                    <!-- end of msc box 1 -->
                     <!-- recommended music -->
                     <control type="group">
                         <left>980</left>
@@ -5795,7 +5812,21 @@
 
                         </control>
                     </control>
-                    <control type="list" id="5016">
+                      <control type="group">
+						<include name="WidgetLoading">
+				<param name="top" value="330"/>
+				<param name="left" value="SidePad"/>
+				<param name="width" value="820"/>
+				<param name="height" value="460"/>
+							<param name="font" value="symbolbiggerest"/>
+							<param name="symbol" value=""/>
+							<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllMusicBackground.Wall)]"/>
+							<param name="textcolor" value="$VAR[ColourTextFlags]"/>
+						</include>
+						<visible>Container(5012).IsUpdating</visible>
+                   </control>
+                    <!-- end of def box 1 -->
+                   <control type="list" id="5016">
                         <description>Widget</description>
 
                         <top>330</top>
@@ -5889,18 +5920,20 @@
                         </focusedlayout>
                         <content target="$VAR[DefWidget13Target]">$VAR[DefWidget13Content]</content>
                     </control>
-			<include name="WidgetLoading">
+                      <control type="group">
+						<include name="WidgetLoading">
 				<param name="top" value="330"/>
 				<param name="left" value="980"/>
 				<param name="width" value="235"/>
 				<param name="height" value="705"/>
-				<param name="font" value="symbolbiggerest"/>
-				<param name="symbol" value=""/>
-				<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllMusicBackground.Wall)]"/>
-				<param name="textcolor" value="black"/>
-				<visible>Container(5016).IsUpdating</visible>
-			</include>
-                    <!-- end of msc box 2 -->
+							<param name="font" value="symbolbiggerest"/>
+							<param name="symbol" value=""/>
+							<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllMusicBackground.Wall)]"/>
+							<param name="textcolor" value="$VAR[ColourTextFlags]"/>
+						</include>
+						<visible>Container(5016).IsUpdating</visible>
+                   </control>
+                    <!-- end of def box 1 -->
                     <!-- Latest Albums -->
                     <control type="group">
                         <left>1290</left>
@@ -5926,6 +5959,7 @@
                     </control>
                     <control type="panel" id="5017">
                         <description>Widget</description>
+
                         <top>330</top>
                         <left>1290</left>
                         <width>470</width>
@@ -5937,6 +5971,8 @@
                         <onback>300</onback>
                         <preloaditems>2</preloaditems>
                         <scrolltime tween="quadratic">500</scrolltime>
+                        
+                        
                         <autoscroll time="2000">!Control.HasFocus(5017)</autoscroll>
                         <itemlayout width="235" height="235">
                             <control type="image">
@@ -6026,18 +6062,20 @@
                         </focusedlayout>
                         <content target="$VAR[DefWidget14Target]">$VAR[DefWidget14Content]</content>
                     </control>
-			<include name="WidgetLoading">
+                      <control type="group">
+						<include name="WidgetLoading">
 				<param name="top" value="330"/>
 				<param name="left" value="1290"/>
 				<param name="width" value="470"/>
 				<param name="height" value="705"/>
-				<param name="font" value="symbolbiggerest"/>
-				<param name="symbol" value=""/>
-				<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllMusicBackground.Wall)]"/>
-				<param name="textcolor" value="black"/>
-				<visible>Container(5017).IsUpdating</visible>
-			</include>
-                    <!-- end of msc box 3 -->
+							<param name="font" value="symbolbiggerest"/>
+							<param name="symbol" value=""/>
+							<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllMusicBackground.Wall)]"/>
+							<param name="textcolor" value="$VAR[ColourTextFlags]"/>
+						</include>
+						<visible>Container(5017).IsUpdating</visible>
+                   </control>
+                    <!-- end of def box 1 -->
                     <!-- Latest Music XBMC -->
                     <control type="group">
                         <left>1865</left>
@@ -6187,18 +6225,20 @@
                             </control>
                         </control>
                     </control>
-			<include name="WidgetLoading">
+                      <control type="group">
+						<include name="WidgetLoading">
 				<param name="top" value="330"/>
 				<param name="left" value="1865"/>
 				<param name="width" value="632"/>
 				<param name="height" value="705"/>
-				<param name="font" value="symbolbiggerest"/>
-				<param name="symbol" value=""/>
-				<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllMusicBackground.Wall)]"/>
-				<param name="textcolor" value="black"/>
-				<visible>Container(15017).IsUpdating</visible>
-			</include>
-                    <!-- end of msc box 4 -->
+							<param name="font" value="symbolbiggerest"/>
+							<param name="symbol" value=""/>
+							<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllMusicBackground.Wall)]"/>
+							<param name="textcolor" value="$VAR[ColourTextFlags]"/>
+						</include>
+						<visible>Container(15017).IsUpdating</visible>
+                   </control>
+                    <!-- end of def box 1 -->
                 </control>
                 <!-- Live TV menu item -->
                 <control type="group">

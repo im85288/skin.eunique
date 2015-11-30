@@ -3077,25 +3077,25 @@
 			<control type="group">
 				<top>$PARAM[top]</top>
 				<left>$PARAM[left]</left>
+				<width>$PARAM[width]</width>
+				<height>$PARAM[height]</height>
 				<control type="multiimage">
 					<timeperimage>100</timeperimage>
 					<randomize>true</randomize>
 					<fadetime>100</fadetime>
-					<aspectratio scalediffuse="false">keep</aspectratio>
+					<aspectratio scalediffuse="false">scale</aspectratio>
 					<imagepath background="true">$PARAM[imagepath]</imagepath>
 				</control>
 				<control type="label">
 					<description>Loading symbol</description>
+					<width>$PARAM[width]</width>
+					<height>$PARAM[height]</height>
 					<label>$PARAM[symbol]</label>
 					<align>center</align>
 					<aligny>center</aligny>
 					<font>$PARAM[font]</font>
 					<textcolor>$PARAM[textcolor]</textcolor>
-					<animation effect="fade" start="100" end="0" time="500" tween="quadratic">Hidden</animation>
-					<animation type="Conditional" reversible="false" condition="true">
-						<effect type="rotate" end="360" center="auto" tween="sine" delay="0" easing="out" time="500" loop="true" />
-						<effect type="rotatex" end="360" center="auto" tween="sine" delay="0" easing="out" time="1000" loop="true" />
-					</animation>
+                    <animation effect="rotate" start="00" end="360" center="auto" delay="0" time="1500" loop="true" condition="true">Conditional</animation>
 				</control>
 			</control>
 		</definition>
