@@ -39,7 +39,7 @@
 					<top>TopPad</top>
 					<left>970</left>
 					<width>365</width>
-					<fadetime>1000</fadetime>
+					<fadetime>200</fadetime>
 					<aspectratio align="right" aligny="center" scalediffuse="false">scale</aspectratio>
 					<texture background="true" diffuse="diffuse/extraposter-ref-blur.png">$INFO[Window(home).Property(VideoInfoExtra.ImageFilter)]</texture>
 				</control>
@@ -69,9 +69,10 @@
 						<control type="button">
 							<texturefocus>-</texturefocus>
 							<texturenofocus>-</texturenofocus>
+							<onfocus>StopScript(script.colorbox)</onfocus>
 							<onfocus condition="Container.Content(movies)">ClearProperty(TVShowID,home)</onfocus>
 							<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
-							<onfocus condition="!Container.Scrolling">RunScript(script.colorbox,info=blur,id='"$VAR[LandscapeImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfoExtra)</onfocus>
+							<onfocus condition="!Container.Scrolling">RunScript(script.colorbox,info=bluronly,id='"$VAR[LandscapeImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfoExtra)</onfocus>
 						</control>
 						<control type="group">
 							<animation effect="fade" end="65" start="100" time="200" condition="Control.HasFocus(508923)">Conditional</animation>
@@ -92,9 +93,10 @@
 						<control type="button">
 							<texturefocus>-</texturefocus>
 							<texturenofocus>-</texturenofocus>
+							<onfocus>StopScript(script.colorbox)</onfocus>
 							<onfocus condition="Container.Content(movies)">ClearProperty(TVShowID,home)</onfocus>
 							<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
-							<onfocus condition="!Container.Scrolling">RunScript(script.colorbox,info=blur,id='"$VAR[LandscapeImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfoExtra)</onfocus>
+							<onfocus condition="!Container.Scrolling">RunScript(script.colorbox,info=bluronly,id='"$VAR[LandscapeImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfoExtra)</onfocus>
 						</control>
 						<control type="group">
 							<animation effect="fade" end="65" start="100" time="200" condition="Control.HasFocus(508923)">Conditional</animation>
