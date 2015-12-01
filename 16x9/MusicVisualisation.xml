@@ -37,8 +37,10 @@
 			<include>Dimensions_Fullscreen</include>
 			<visible>Skin.HasSetting(global.showvisualisation)</visible>
 		</control>
+		<!--
 		<include>Furniture_HeaderEmby</include>
 		<include>Furniture_EmbyClock</include>
+		-->
 		<control type="group">
 			<top>-100</top>
 			<control type="group">
@@ -54,7 +56,7 @@
 					<scroll>true</scroll>
 					<pauseatend>0</pauseatend>
 					<font>Font-MusicVis-Artist</font>
-					<textcolor>$VAR[EmbyMiddleColourHighlight]</textcolor>
+					<textcolor>$VAR[ColourFlags]</textcolor>
 					<angle>02</angle>
 					<align>left</align>
 					<scrollspeed>44</scrollspeed>
@@ -69,7 +71,7 @@
 					<scroll>true</scroll>
 					<pauseatend>0</pauseatend>
 					<font>musicvibeslarge</font>
-					<textcolor>$VAR[EmbyLeftColourHighlight]</textcolor>
+					<textcolor>$VAR[ColourTextFlags]</textcolor>
 					<angle>-1</angle>
 					<align>left</align>
 					<scrollspeed>80</scrollspeed>
@@ -87,7 +89,7 @@
 					<font>Font-MusicVis-Title</font>
 						<scrollspeed>26</scrollspeed>
 				<pauseatend>0</pauseatend>
-					<textcolor>$VAR[EmbyRightColourHighlight]</textcolor>
+					<textcolor>$VAR[ColourIconFlags]</textcolor>
 					<angle>-1</angle>
 					<align>left</align>
 					<scrollsuffix/>
