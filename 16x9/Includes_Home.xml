@@ -1774,6 +1774,17 @@
                                 <aspectratio>scale</aspectratio>
                                 <texture background="true">$VAR[LandscapeImage]</texture>
                             </control>
+                            <control type="progress">
+                                <bottom>0</bottom>
+                                <height>8</height>
+                                <info>ListItem.PercentPlayed</info>
+                                <overlaytexture>-</overlaytexture>
+                                <texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
+                                <lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
+                                <midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
+                                <righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+                                <visible>ListItem.IsResumable</visible>
+                            </control>
                         </itemlayout>
                         <focusedlayout width="820" height="460">
                             <control type="image">
@@ -1782,6 +1793,17 @@
                                 <animation type="Focus" reversible="false">
                                     <effect type="zoom" start="105" end="90" time="200" center="auto" tween="quadratic" easing="out"/>
                                 </animation>
+                            </control>
+                            <control type="progress">
+                                <bottom>0</bottom>
+                                <height>8</height>
+                                <info>ListItem.PercentPlayed</info>
+                                <overlaytexture>-</overlaytexture>
+                                <texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
+                                <lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
+                                <midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
+                                <righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+                                <visible>ListItem.IsResumable</visible>
                             </control>
                         </focusedlayout>
                         <content target="$VAR[DefWidget2Target]">$VAR[DefWidget2Content]</content>
@@ -1822,6 +1844,17 @@
                                 <aspectratio>scale</aspectratio>
                                 <texture background="true">$VAR[LandscapeImage]</texture>
                             </control>
+                            <control type="progress">
+                                <bottom>0</bottom>
+                                <height>8</height>
+                                <info>ListItem.PercentPlayed</info>
+                                <overlaytexture>-</overlaytexture>
+                                <texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
+                                <lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
+                                <midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
+                                <righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+                                <visible>ListItem.IsResumable</visible>
+                            </control>
                         </itemlayout>
                         <focusedlayout width="820" height="460">
                             <control type="image">
@@ -1830,6 +1863,17 @@
                                 <animation type="Conditional" reversible="false" condition="Control.HasFocus(6012)">
                                     <effect type="zoom" start="105" end="90" time="200" center="auto" tween="quadratic" easing="out"/>
                                 </animation>
+                            </control>
+                            <control type="progress">
+                                <bottom>0</bottom>
+                                <height>8</height>
+                                <info>ListItem.PercentPlayed</info>
+                                <overlaytexture>-</overlaytexture>
+                                <texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
+                                <lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
+                                <midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
+                                <righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+                                <visible>ListItem.IsResumable</visible>
                             </control>
                         </focusedlayout>
                         <content target="$VAR[DefWidget2Target]">$VAR[DefWidget2Content]</content>
@@ -2295,6 +2339,17 @@
                                     <aspectratio scalediffuse="false">stretch</aspectratio>
                                     <texture fallback="empty.png" background="true">$VAR[BannerImage]</texture>
                                 </control>
+	                            <control type="progress">
+	                                <bottom>0</bottom>
+	                                <height>8</height>
+	                                <info>ListItem.PercentPlayed</info>
+	                                <overlaytexture>-</overlaytexture>
+	                                <texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
+	                                <lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
+	                                <midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
+	                                <righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+	                                <visible>ListItem.IsResumable</visible>
+	                            </control>
                             </control>
                         </focusedlayout>
                         <content target="$VAR[DefWidget1Target]">$VAR[DefWidget1Content]</content>
@@ -2542,6 +2597,17 @@
                                 <height>470</height>
                                 <texture fallback="empty.png">$INFO[Container(9017).Listitem(0).Icon]</texture>
                                 
+                            </control>
+                            <control type="progress">
+                                <bottom>0</bottom>
+                                <height>8</height>
+                                <info>Container(9017).ListItem.PercentPlayed</info>
+                                <overlaytexture>-</overlaytexture>
+                                <texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
+                                <lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
+                                <midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
+                                <righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+                                <visible>Container(9017).ListItem.IsResumable</visible>
                             </control>
                         </control>
                     </control>
@@ -3178,6 +3244,17 @@
                                 <aspectratio>scale</aspectratio>
                                 <texture background="true">$VAR[LandscapeImage]</texture>
                             </control>
+                            <control type="progress">
+                                <bottom>0</bottom>
+                                <height>8</height>
+                                <info>ListItem.PercentPlayed</info>
+                                <overlaytexture>-</overlaytexture>
+                                <texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
+                                <lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
+                                <midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
+                                <righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+                                <visible>ListItem.IsResumable</visible>
+                            </control>
                         </itemlayout>
                         <focusedlayout width="820" height="460">
                             <control type="button">
@@ -3185,14 +3262,27 @@
                                 <texturenofocus>-</texturenofocus>
                                 <texturefocus>-</texturefocus>
                             </control>
-                            <control type="image">
-                                <aspectratio>scale</aspectratio>
-                                <texture background="true">$VAR[LandscapeImage]</texture>
+        		    <control type="group">
+	                            <control type="image">
+	                                <aspectratio>scale</aspectratio>
+	                                <texture background="true">$VAR[LandscapeImage]</texture>
+	                            </control>
+	                            <control type="progress">
+	                                <bottom>0</bottom>
+	                                <height>8</height>
+	                                <info>ListItem.PercentPlayed</info>
+	                                <overlaytexture>-</overlaytexture>
+	                                <texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
+	                                <lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
+	                                <midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
+	                                <righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+	                                <visible>ListItem.IsResumable</visible>
+	                            </control>
                                 <animation type="Focus" reversible="false">
                                     <effect type="zoom" start="105" end="90" time="200" center="auto" tween="quadratic" easing="out"/>
                                 </animation>
                             </control>
-                        </focusedlayout>
+                         </focusedlayout>
                         <content target="$VAR[DefWidget6Target]">$VAR[DefWidget6Content]</content>
                     </control>
                     <control type="button" id="3012">
@@ -3233,6 +3323,17 @@
                                 <aspectratio>scale</aspectratio>
                                 <texture background="true">$VAR[LandscapeImage]</texture>
                             </control>
+                            <control type="progress">
+                                <bottom>0</bottom>
+                                <height>8</height>
+                                <info>ListItem.PercentPlayed</info>
+                                <overlaytexture>-</overlaytexture>
+                                <texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
+                                <lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
+                                <midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
+                                <righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+                                <visible>ListItem.IsResumable</visible>
+                            </control>
                         </itemlayout>
                         <focusedlayout width="820" height="460">
                             <control type="button">
@@ -3240,9 +3341,22 @@
                                 <texturenofocus>-</texturenofocus>
                                 <texturefocus>-</texturefocus>
                             </control>
-                            <control type="image">
-                                <aspectratio>scale</aspectratio>
-                                <texture background="true">$VAR[LandscapeImage]</texture>
+                            <control type="group">
+	                            <control type="image">
+	                                <aspectratio>scale</aspectratio>
+	                                <texture background="true">$VAR[LandscapeImage]</texture>
+	                            </control>
+	                            <control type="progress">
+	                                <bottom>0</bottom>
+	                                <height>8</height>
+	                                <info>ListItem.PercentPlayed</info>
+	                                <overlaytexture>-</overlaytexture>
+	                                <texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
+	                                <lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
+	                                <midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
+	                                <righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+	                                <visible>ListItem.IsResumable</visible>
+	                            </control>
                                 <animation type="Conditional" reversible="false" condition="Control.HasFocus(3012)">
                                     <effect type="zoom" start="105" end="90" time="200" center="auto" tween="quadratic" easing="out"/>
                                 </animation>
@@ -3925,6 +4039,7 @@
                             <onclick>sendclick(18003)</onclick>
                         </control>
                         <!-- test 5th/6th param widget
+                    <control type="group">
 						<include name="WidgetNumberEvil">
 				<param name="top" value="330"/>
 				<param name="left" value="2565"/>
@@ -3937,7 +4052,6 @@
 				<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground.Wall)]"/>
 				<param name="textcolor" value="$VAR[ColourTextFlags]"/>
 						</include>
-						<visible>Container(10017).IsUpdating</visible>
                    </control>
                     <!-- end of 5th movie box -->
                         
@@ -4184,6 +4298,17 @@
                                 <aspectratio>scale</aspectratio>
                                 <texture background="true">$VAR[LandscapeImage]</texture>
                             </control>
+	                            <control type="progress">
+	                                <bottom>0</bottom>
+	                                <height>8</height>
+	                                <info>ListItem.PercentPlayed</info>
+	                                <overlaytexture>-</overlaytexture>
+	                                <texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
+	                                <lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
+	                                <midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
+	                                <righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+	                                <visible>ListItem.IsResumable</visible>
+	                            </control>
                         </itemlayout>
                         <focusedlayout width="820" height="460">
                             <control type="button">
@@ -4191,9 +4316,22 @@
                                 <texturenofocus>-</texturenofocus>
                                 <texturefocus>-</texturefocus>
                             </control>
+                            <control type="group">
                             <control type="image">
                                 <aspectratio>scale</aspectratio>
                                 <texture background="true">$VAR[LandscapeImage]</texture>
+                            </control>
+	                            <control type="progress">
+	                                <bottom>0</bottom>
+	                                <height>8</height>
+	                                <info>ListItem.PercentPlayed</info>
+	                                <overlaytexture>-</overlaytexture>
+	                                <texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
+	                                <lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
+	                                <midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
+	                                <righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+	                                <visible>ListItem.IsResumable</visible>
+	                            </control>
                                 <animation type="Focus" reversible="false">
                                     <effect type="zoom" start="105" end="90" time="200" center="auto" tween="quadratic" easing="out"/>
                                 </animation>
@@ -4238,17 +4376,41 @@
                                 <aspectratio>scale</aspectratio>
                                 <texture background="true">$VAR[LandscapeImage]</texture>
                             </control>
+	                            <control type="progress">
+	                                <bottom>0</bottom>
+	                                <height>8</height>
+	                                <info>ListItem.PercentPlayed</info>
+	                                <overlaytexture>-</overlaytexture>
+	                                <texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
+	                                <lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
+	                                <midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
+	                                <righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+	                                <visible>ListItem.IsResumable</visible>
+	                            </control>
                         </itemlayout>
                         <focusedlayout width="820" height="460">
                             <control type="button">
-                                <onfocus>SetProperty(SkinHelper.WidgetContainer,40122)</onfocus>
+                                <onfocus>SetProperty(SkinHelper.WidgetContainer,4012)</onfocus>
                                 <texturenofocus>-</texturenofocus>
                                 <texturefocus>-</texturefocus>
                             </control>
+                            <control type="group">
                             <control type="image">
                                 <aspectratio>scale</aspectratio>
                                 <texture background="true">$VAR[LandscapeImage]</texture>
-                                <animation type="Conditional" reversible="false" condition="Control.HasFocus(4012)">
+                            </control>
+	                            <control type="progress">
+	                                <bottom>0</bottom>
+	                                <height>8</height>
+	                                <info>ListItem.PercentPlayed</info>
+	                                <overlaytexture>-</overlaytexture>
+	                                <texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
+	                                <lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
+	                                <midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
+	                                <righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+	                                <visible>ListItem.IsResumable</visible>
+	                            </control>
+                                <animation type="Focus" reversible="false">
                                     <effect type="zoom" start="105" end="90" time="200" center="auto" tween="quadratic" easing="out"/>
                                 </animation>
                             </control>
@@ -4721,7 +4883,18 @@
                                 <aspectratio>stretch</aspectratio>
                                 <texture background="true">$VAR[PosterImage]</texture>
                             </control>
-                        </itemlayout>
+                            <control type="progress">
+                                <bottom>0</bottom>
+                                <height>8</height>
+                                <info>ListItem.PercentPlayed</info>
+                                <overlaytexture>-</overlaytexture>
+                                <texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
+                                <lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
+                                <midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
+                                <righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+                                <visible>ListItem.IsResumable</visible>
+                            </control>
+                          </itemlayout>
                         <focusedlayout width="158" height="235">
                             <control type="button">
                                 <onfocus>SetProperty(SkinHelper.WidgetContainer,4017)</onfocus>
@@ -4734,7 +4907,18 @@
                                     <aspectratio>stretch</aspectratio>
                                     <texture background="true">$VAR[PosterImage]</texture>
                                 </control>
-                            </control>
+	                            <control type="progress">
+	                                <bottom>0</bottom>
+	                                <height>8</height>
+	                                <info>ListItem.PercentPlayed</info>
+	                                <overlaytexture>-</overlaytexture>
+	                                <texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
+	                                <lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
+	                                <midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
+	                                <righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+	                                <visible>ListItem.IsResumable</visible>
+	                            </control>
+                              </control>
                         </focusedlayout>
                         <content target="$VAR[DefWidget11Target]">$VAR[DefWidget11Content]</content>
                     </control>
@@ -6299,16 +6483,40 @@
                             <aspectratio>scale</aspectratio>
                             <texture background="true">$VAR[LandscapeImage]</texture>
                         </control>
-                    </itemlayout>
+                            <control type="progress">
+                                <bottom>0</bottom>
+                                <height>8</height>
+                                <info>ListItem.PercentPlayed</info>
+                                <overlaytexture>-</overlaytexture>
+                                <texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
+                                <lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
+                                <midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
+                                <righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+                                <visible>ListItem.IsResumable</visible>
+                            </control>
+                      </itemlayout>
                     <focusedlayout width="820" height="460">
+                        <control type="group">
                         <control type="image">
                             <aspectratio>scale</aspectratio>
                             <texture background="true">$VAR[LandscapeImage]</texture>
+                        </control>
+                            <control type="progress">
+                                <bottom>0</bottom>
+                                <height>8</height>
+                                <info>ListItem.PercentPlayed</info>
+                                <overlaytexture>-</overlaytexture>
+                                <texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
+                                <lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
+                                <midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
+                                <righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+                                <visible>ListItem.IsResumable</visible>
+                            </control>
                             <animation type="Focus" reversible="false">
                                 <effect type="zoom" start="105" end="90" time="200" center="auto" tween="quadratic" easing="out"/>
                             </animation>
                         </control>
-                    </focusedlayout>
+                      </focusedlayout>
                     <content target="$VAR[DefWidget4Target]">$VAR[DefWidget4Content]</content>
                 </control>
                 <control type="button" id="7012">
@@ -6348,16 +6556,40 @@
                             <aspectratio>scale</aspectratio>
                             <texture background="true">$VAR[LandscapeImage]</texture>
                         </control>
-                    </itemlayout>
+                            <control type="progress">
+                                <bottom>0</bottom>
+                                <height>8</height>
+                                <info>ListItem.PercentPlayed</info>
+                                <overlaytexture>-</overlaytexture>
+                                <texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
+                                <lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
+                                <midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
+                                <righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+                                <visible>ListItem.IsResumable</visible>
+                            </control>
+                      </itemlayout>
                     <focusedlayout width="820" height="460">
+                        <control type="group">
                         <control type="image">
                             <aspectratio>scale</aspectratio>
                             <texture background="true">$VAR[LandscapeImage]</texture>
-                            <animation type="Conditional" reversible="false" condition="Control.HasFocus(7012)">
+                        </control>
+                            <control type="progress">
+                                <bottom>0</bottom>
+                                <height>8</height>
+                                <info>ListItem.PercentPlayed</info>
+                                <overlaytexture>-</overlaytexture>
+                                <texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
+                                <lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
+                                <midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
+                                <righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+                                <visible>ListItem.IsResumable</visible>
+                            </control>
+                            <animation type="Focus" reversible="false">
                                 <effect type="zoom" start="105" end="90" time="200" center="auto" tween="quadratic" easing="out"/>
                             </animation>
                         </control>
-                    </focusedlayout>
+                      </focusedlayout>
                     <content target="$VAR[DefWidget4Target]">$VAR[DefWidget4Content]</content>
                 </control>
                     <control type="group">
