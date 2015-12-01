@@ -5,16 +5,21 @@
 	<controls>
 		<control type="group">
 			<right>0</right>
-			<posy>30</posy>
+			<posy>25</posy>
 			<width>500</width>
-			<height>100</height>
-			<include>Animation.FadeIn.Slide</include>
-			<include>Animation.FadeOut</include>
-			<animation effect="slide" start="0" end="0,-30" condition="!Window.IsVisible(home)">Conditional</animation>
+			<height>85</height>
+		<animation type="Visible" reversible="false">
+			<effect type="slide" start="500" end="0" center="auto" tween="back" easing="out" time="450" delay="150" />
+		</animation>
+		<animation type="WindowOpen" reversible="false">
+			<effect type="slide" start="500" end="0" center="auto" tween="back" easing="out" time="450" delay="150" />
+		</animation>
+		<animation effect="fade" end="0" start="100" time="150">Hidden</animation>
+		<animation effect="fade" end="0" start="100" time="150">WindowClose</animation>
 			<control type="image">
 				<description>background image</description>
 				<width>500</width>
-				<height>100</height>
+				<height>85</height>
 				<animation effect="fade" start="100" end="90" condition="[!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)]">Conditional</animation>
 				<texture colordiffuse="black">common/box.png</texture>
 			</control>
@@ -65,7 +70,7 @@
 				<control type="label" id="401">
 					<left>104</left>
 					<width>536</width>
-					<top>22</top>
+					<top>12</top>
 					<height>24</height>
 					<aligny>center</aligny>
 					<font>TinyBold</font>
@@ -74,7 +79,7 @@
 				<control type="label" id="402">
 					<left>104</left>
 					<width>536</width>
-					<bottom>22</bottom>
+					<bottom>12</bottom>
 					<height>24</height>
 					<aligny>center</aligny>
 					<font>Tiny</font>
