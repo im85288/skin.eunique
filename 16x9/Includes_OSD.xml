@@ -111,6 +111,17 @@
 		<texturefocus>noop</texturefocus>
 		<width>100</width>
 	</include>
+	<include name="DefOSDButtonsMusic">
+		<aligny>center</aligny>
+		<align>center</align>
+		<height>48</height>
+		<font>symbolback</font>
+		<disabledcolor>white3</disabledcolor>
+		<textcolor>white</textcolor>
+		<focusedcolor>$VAR[ColourHighlight]</focusedcolor>
+		<texturefocus>noop</texturefocus>
+		<width>120</width>
+	</include>
 	<include name="DefOSDUpDown">
 		<onup condition="IsEmpty(Window(home).Property(osdshowinfo)) + !Window.IsVisible(MusicOSD.xml)">SetProperty(osdshowinfo,1,home)</onup>
 		<onup condition="!IsEmpty(Window(home).Property(osdshowinfo)) + !Window.IsVisible(MusicOSD.xml)">ClearProperty(osdshowinfo,home)</onup>
