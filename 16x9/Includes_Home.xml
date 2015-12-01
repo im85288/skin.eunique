@@ -6603,7 +6603,7 @@
 				<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground.Wall)]"/>
 				<param name="textcolor" value="$VAR[ColourTextFlags]"/>
 			</include>
-			<visible>Container(7012).IsUpdating</visible>
+			<visible>Container(7012).IsUpdating + StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
                    </control>
                     <!-- end of ltv box 1 -->
                 <control type="group">
@@ -7112,7 +7112,6 @@
                 </control>
                 <control type="group">
                     <visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
-                    <visible>IntegerGreaterThan(Container(7016).NumItems,0)</visible>
                     <control type="group">
                         <top>330</top>
                         <left>1390</left>
@@ -7307,7 +7306,6 @@
                             </control>
                         </control>
                     </control>
-                </control>
 	            <control type="group">
 			<include name="WidgetLoading">
 				<param name="top" value="330"/>
@@ -7319,9 +7317,10 @@
 				<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground.Wall)]"/>
 				<param name="textcolor" value="$VAR[ColourTextFlags]"/>
 			</include>
-			<visible>Container(7016).IsUpdating</visible>
+			<visible>Container(7016).IsUpdating + StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 	           </control>
 	            <!-- end of ltv box 1 -->
+                </control>
             </control>
         </control>
     </include>
