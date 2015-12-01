@@ -1639,7 +1639,6 @@
                         <height>64</height>
                         <texture fallback="E.png">$VAR[EmbyWidgetLogo]</texture>
                         <aspectratio align="center" aligny="center">keep</aspectratio>
-                        
                         <visible>!Skin.String(home.vertical,1) + !IsEmpty(Control.GetLabel(91211))</visible>
                     </control>
                     <control type="button">
@@ -1658,6 +1657,25 @@
                         <texturenofocus>-</texturenofocus>
                         <texturefocus>-</texturefocus>
                         <onclick>ActivateWindow(1112)</onclick>
+                        <visible>IsEmpty(Skin.String(EvilWidgetLabel))</visible>
+                    </control>
+                    <control type="button">
+                        <left>238</left>
+                        <width>1000</width>
+                        <top>773</top>
+                        <align>left</align>
+                        <aligny>top</aligny>
+                        <font>HomeWidgetLabelFont</font>
+                        <onup>300</onup>
+                        <ondown>6012</ondown>
+                        <onback>300</onback>
+                        <textoffsetx>0</textoffsetx>
+                        <label>$INFO[Skin.String(EvilWidgetLabel)]</label>
+                        <focusedcolor>$VAR[ColourHighlight]</focusedcolor>
+                        <texturenofocus>-</texturenofocus>
+                        <texturefocus>-</texturefocus>
+                        <onclick>ActivateWindow(1112)</onclick>
+                        <visible>!IsEmpty(Skin.String(EvilWidgetLabel))</visible>
                     </control>
                 </control>
         <control type="group">
@@ -3906,6 +3924,10 @@
                             <oninfo>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(18003).ListItem(4).Label])</oninfo>
                             <onclick>sendclick(18003)</onclick>
                         </control>
+                        <!-- test 5th/6th param widget
+                        
+                        
+                        -->
                         <control type="image">
 
                             <left>2565</left>
