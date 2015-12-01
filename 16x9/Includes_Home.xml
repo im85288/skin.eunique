@@ -3925,7 +3925,21 @@
                             <onclick>sendclick(18003)</onclick>
                         </control>
                         <!-- test 5th/6th param widget
-                        
+						<include name="WidgetNumberEvil">
+				<param name="top" value="330"/>
+				<param name="left" value="2565"/>
+		<param name="onleft" default="10017"/>
+		<param name="onright" default="19002"/>
+		<param name="button" default="18002"/>
+		<param name="container" default="18003"/>
+				<param name="font" value="symbolbiggerest"/>
+				<param name="symbol" value=""/>
+				<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground.Wall)]"/>
+				<param name="textcolor" value="$VAR[ColourTextFlags]"/>
+						</include>
+						<visible>Container(10017).IsUpdating</visible>
+                   </control>
+                    <!-- end of 5th movie box -->
                         
                         -->
                         <control type="image">
