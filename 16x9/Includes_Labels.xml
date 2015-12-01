@@ -1404,6 +1404,7 @@
 	<variable name="BloxFocusedLabel">
 		<value condition="Container.Content(albums)">$INFO[ListItem.Artist][CR]$INFO[ListItem.Label]</value>
 		<value condition="Container.Content(artists)">$INFO[ListItem.Artist]</value>
+		<value condition="Container.Content(songs)">$INFO[ListItem.Artist][CR]$INFO[ListItem.Title]</value>
 	</variable>
 	<variable name="ArtistLabel">
 		<value condition="Container.Content(albums) + !IsEmpty(ListItem.AlbumArtist)">$INFO[ListItem.AlbumArtist]</value>

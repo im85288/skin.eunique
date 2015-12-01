@@ -24,7 +24,7 @@
 					<top>0</top>
 					<width>720</width>
 					<height>720</height>
-					<texture>$INFO[Container(601).Listitem(0).Icon]</texture>
+					<texture>$VAR[MusicBlockImage601]</texture>
 					<aspectratio align="center" aligny="center">scale</aspectratio>
 				</control>
 				<control type="label">
@@ -149,13 +149,13 @@
 						</control>
 						<control type="image">
 							<right>600</right>
-							<texture>$INFO[Listitem.Icon]</texture>
+							<texture>$VAR[MusicBlockImage]</texture>
 							<aspectratio align="center" aligny="center">scale</aspectratio>
 						</control>
 					</itemlayout>
 					<focusedlayout height="120" width="720">
 						<control type="button" id="6020">
-							<onfocus>RunScript(script.colorbox,info=blur,id='"$INFO[ListItem.Icon]"',radius=44,prefix=VideoInfo)</onfocus>
+							<onfocus>RunScript(script.colorbox,info=bluronly,id='"$INFO[ListItem.Icon]"',radius=44,prefix=VideoInfo)</onfocus>
 							<label>-</label>
 							<focusedcolor>-</focusedcolor>
 							<texturefocus>-</texturefocus>

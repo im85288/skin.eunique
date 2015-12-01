@@ -62,7 +62,7 @@
 		<value condition="!IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>
 		<value condition="!IsEmpty(Container.Art(artist.thumb))">$INFO[Container.Art(artist.thumb)]</value>
 		<value condition="!IsEmpty(Container.Art(artist.fanart))">$INFO[Container.Art(artist.fanart)]</value>
-		<value condition="Substring(ListItem.Icon,Default,left) | [IsEmpty(ListItem.Title) + IsEmpty(ListItem.Icon)]">Default.png</value>
+		<value condition="SubString(ListItem.Icon,Default,left) + SubString(ListItem.Icon,.png,right)">http://localhost:52307/getthumb&amp;title=$INFO[Listitem.Label]</value>
 		<value>$INFO[ListItem.Icon]</value>
 	</variable>
 	<variable name="PosterImage518">
@@ -269,12 +269,24 @@
 		<value condition="!IsEmpty(ListItem.Thumb) + !Container.Content(episodes)">$INFO[ListItem.Thumb]</value>
 		<value condition="Container.Content(genres) + Window.IsVisible(MyVideoNav.xml)">$VAR[MovieGenres]</value>
 		<value condition="Container.Content(genres) + Window.IsVisible(MyMusicNav.xml)">$VAR[MusicGenres]</value>
+		<value condition="SubString(ListItem.Icon,Default,left) + SubString(ListItem.Icon,.png,right)">http://localhost:52307/getthumb&amp;title=$INFO[Listitem.Label]</value>
 		<value>$INFO[ListItem.Icon]</value>
 	</variable>
 	<variable name="MusicImage">
 		<value condition="!IsEmpty(ListItem.Thumb)">$INFO[ListItem.Thumb]</value>
 		<value condition="!IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
+		<value condition="SubString(ListItem.Icon,Default,left) + SubString(ListItem.Icon,.png,right)">http://localhost:52307/getthumb&amp;title=$INFO[Listitem.Label]</value>
 		<value>$INFO[ListItem.Icon]</value>
+	</variable>
+	<variable name="MusicBlockImage">
+		<value condition="!IsEmpty(ListItem.Thumb)">$INFO[ListItem.Thumb]</value>
+		<value condition="SubString(ListItem.Icon,Default,left) + SubString(ListItem.Icon,.png,right)">http://localhost:52307/getthumb&amp;title=$INFO[Listitem.Label]</value>
+		<value>$INFO[ListItem.Icon]</value>
+	</variable>
+	<variable name="MusicBlockImage601">
+		<value condition="!IsEmpty(Container(601).ListItem.Thumb)">$INFO[Container(601).ListItem.Thumb]</value>
+		<value condition="SubString(Container(601).ListItem.Icon,Default,left) + SubString(Container(601).ListItem.Icon,.png,right)">http://localhost:52307/getthumb&amp;title=$INFO[Container(601).Listitem.Label]</value>
+		<value>$INFO[Container(601).ListItem.Icon]</value>
 	</variable>
 	<variable name="MusicPlayerClearLogo">
 		<value condition="!IsEmpty(MusicPlayer.AlbumArtist)">$INFO[Skin.String(cdartlocation)]$INFO[MusicPlayer.AlbumArtist]/logo.png</value>
@@ -720,7 +732,7 @@
 	</variable>
 	<variable name="AlbumArtistIcon">
 		<value condition="!IsEmpty(Container.Art(artist.thumb))">$INFO[Container.Art(artist.thumb)]</value>
-		<value>$INFO[Listitem.Icon]</value>
+		<value>http://localhost:52307/getthumb&amp;title=$INFO[Listitem.artist]</value>
 	</variable>
 
 	<variable name="Container518Logo">
