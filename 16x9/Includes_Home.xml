@@ -10821,13 +10821,19 @@
 		</control>
 	</include>
 	<include name="test">
-		<control type="group">
+			<control type="group">
 			<right>0</right>
-			<posy>30</posy>
+			<posy>25</posy>
 			<width>500</width>
-			<height>100</height>
-			<include>Animation.FadeIn.Slide</include>
-			<include>Animation.FadeOut</include>
+			<height>85</height>
+			<animation type="Visible" reversible="false">
+				<effect type="slide" start="500" end="0" center="auto" tween="back" easing="out" time="450" delay="150" />
+			</animation>
+			<animation type="WindowOpen" reversible="false">
+				<effect type="slide" start="500" end="0" center="auto" tween="back" easing="out" time="450" delay="150" />
+			</animation>
+			<animation effect="fade" end="0" start="100" time="150">Hidden</animation>
+			<animation effect="fade" end="0" start="100" time="150">WindowClose</animation>
 			<visible>!Window.IsVisible(fullscreenvideo)</visible>
 			<visible>!Window.IsVisible(visualisation)</visible>
 			<animation effect="slide" start="0" end="-500" condition="Window.IsActive(DialogKaiToast.xml)">Conditional</animation>
@@ -10836,7 +10842,7 @@
 				<posx>0</posx>
 				<posy>0</posy>
 				<width>500</width>
-				<height>100</height>
+				<height>85</height>
 				<animation effect="fade" start="100" end="80" condition="true">Conditional</animation>
 				<texture colordiffuse="$VAR[EmbyMenuColourHighlight]">common/white.png</texture>
 			</control>
@@ -10844,8 +10850,8 @@
 				<control type="group">
 					<left>2</left>
 					<centertop>50%</centertop>
-					<width>100</width>
-					<height>100</height>
+					<width>85</width>
+					<height>85</height>
 					<control type="label">
 						<aligny>center</aligny>
 						<align>center</align>
@@ -10855,29 +10861,27 @@
 						<height>48</height>
 						<label></label>
 					</control>
-					<control type="label" id="9666">
+					<control type="label">
 						<align>center</align>
 						<font>symbol</font>
 						<bottom>2</bottom>
 						<height>48</height>
-						<label>XX</label>
+						<label>$INFO[Control.GetLabel(9666)]</label>
 					</control>
 				</control>
 				<control type="label" id="30">
 					<left>104</left>
-					<top>22</top>
+					<top>12</top>
 					<height>31</height>
 					<aligny>center</aligny>
 					<font>SmallBold</font>
-					<label>rrrrrrrrrrrrrrrrrrrrrrrrrr</label>
 					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 				</control>
 				<control type="label" id="31">
 					<left>104</left>
-					<bottom>15</bottom>
+					<bottom>12</bottom>
 					<height>30</height>
 					<aligny>center</aligny>
-					<label>rrrrrrrrrrrrrrrrrrrrrrrrrr</label>
 					<font>Small</font>
 					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 				</control>
