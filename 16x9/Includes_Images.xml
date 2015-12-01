@@ -731,8 +731,10 @@
 		<value condition="!IsEmpty(Player.Art(clearlogo))">$INFO[Player.Art(clearlogo)]</value>
 	</variable>
 	<variable name="AlbumArtistIcon">
+		<value condition="Container.Content(artists) + !IsEmpty(Listitem.artist)">http://localhost:52307/getthumb&amp;title=$INFO[Listitem.artist]</value>
 		<value condition="!IsEmpty(Container.Art(artist.thumb))">$INFO[Container.Art(artist.thumb)]</value>
-		<value>http://localhost:52307/getthumb&amp;title=$INFO[Listitem.artist]</value>
+		<value condition="!IsEmpty(Listitem.artist)">http://localhost:52307/getthumb&amp;title=$INFO[Listitem.artist]</value>
+		<value condition="IsEmpty(Listitem.artist)">http://localhost:52307/getthumb&amp;title=Various Artists</value>
 	</variable>
 
 	<variable name="Container518Logo">
