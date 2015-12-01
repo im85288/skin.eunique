@@ -1028,7 +1028,6 @@
 				<ondown>50</ondown>
 				<onleft>7000</onleft>
 				<onright>noop</onright>
-				<onright condition="!Window.IsVisible(1103)">SetProperty(BounceRight,1,Home)</onright>
 				<onback>50</onback>
 				<preloaditems>8</preloaditems>
 				<focusposition>6</focusposition>
@@ -1219,7 +1218,16 @@
 							<right>0</right>
 							<bottom>0</bottom>
 							<aspectratio align="center" aligny="top">stretch</aspectratio>
-							<texture background="true">$INFO[ListItem.Icon]</texture>
+							<texture background="true">http://localhost:52307/getthumb&amp;title=$INFO[Listitem.Label]</texture>
+							<fadetime>00</fadetime>
+						</control>
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<right>0</right>
+							<bottom>0</bottom>
+							<aspectratio align="center" aligny="top">stretch</aspectratio>
+							<texture background="true">$VAR[PosterImage]</texture>
 							<fadetime>200</fadetime>
 						</control>
 						<control type="image">
@@ -1252,7 +1260,16 @@
 							<right>0</right>
 							<bottom>0</bottom>
 							<aspectratio align="center" aligny="top">stretch</aspectratio>
-							<texture background="true">$INFO[ListItem.Icon]</texture>
+							<texture background="true">http://localhost:52307/getthumb&amp;title=$INFO[Listitem.Label]</texture>
+							<fadetime>00</fadetime>
+						</control>
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<right>0</right>
+							<bottom>0</bottom>
+							<aspectratio align="center" aligny="top">stretch</aspectratio>
+							<texture background="true">$VAR[PosterImage]</texture>
 							<fadetime>00</fadetime>
 						</control>
 					</control>
