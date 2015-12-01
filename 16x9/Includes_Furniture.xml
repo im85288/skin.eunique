@@ -1061,6 +1061,15 @@
 							<right>0</right>
 							<bottom>0</bottom>
 							<aspectratio align="center" aligny="top">scale</aspectratio>
+							<texture background="true">http://localhost:52307/getthumb&amp;title=$INFO[Listitem.Label]</texture>
+							<fadetime>00</fadetime>
+						</control>
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<right>0</right>
+							<bottom>0</bottom>
+							<aspectratio align="center" aligny="top">scale</aspectratio>
 							<texture background="true">$VAR[PosterImage]</texture>
 							<fadetime>200</fadetime>
 						</control>
@@ -1094,7 +1103,16 @@
 							<right>0</right>
 							<bottom>0</bottom>
 							<aspectratio align="center" aligny="top">scale</aspectratio>
-							<texture background="true" fallback="DefaultActor.png">$VAR[PosterImage]</texture>
+							<texture background="true">http://localhost:52307/getthumb&amp;title=$INFO[Listitem.Label]</texture>
+							<fadetime>00</fadetime>
+						</control>
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<right>0</right>
+							<bottom>0</bottom>
+							<aspectratio align="center" aligny="top">scale</aspectratio>
+							<texture background="true">$VAR[PosterImage]</texture>
 							<fadetime>00</fadetime>
 						</control>
 					</control>
