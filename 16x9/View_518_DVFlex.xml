@@ -68,6 +68,7 @@
 			<visible>!Skin.HasSetting(lights.out)</visible>
 			<visible>![[Skin.HasSetting(global.showvideo) + Player.HasVideo] | [Skin.HasSetting(global.showvisualisation) + Player.HasAudio]] + !Window.IsVisible(DialogVideoInfo.xml)</visible>
 		</control>
+		<include>Furniture_NowPlaying</include>
 		<control type="group">
 			<animation type="Conditional" reversible="true" condition="![Skin.HasSetting(osd.hidespoilers) + Container.Content(episodes) + [stringcompare(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]] + [Container.Content(musicvideos) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets) | Container.Content(episodes)] + !System.IdleTime(26) + System.IdleTime(5) + Skin.HasSetting(furniture.overlayinfo) + ![ControlGroup(9000).HasFocus() | Window.IsVisible(DialogContextMenu.xml)]">
 				<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out"/>
