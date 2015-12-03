@@ -314,7 +314,11 @@
 		<value condition="!IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
 		<value condition="!IsEmpty(Container(9500).ListItem.Art(fanart))">$INFO[Container(9500).ListItem.Art(fanart)]</value>
 		<value condition="!IsEmpty(ListItem.Property(Fanart_Image))">$INFO[ListItem.Property(Fanart_Image)]</value>
-		<!--<value condition="!IsEmpty(Container.Art(artist.fanart))">$INFO[Container.Art(artist.fanart)]</value>--><value condition="!IsEmpty(Skin.String(fanart.fallback))">$INFO[Skin.String(fanart.fallback)]</value>
+		<value condition="!IsEmpty(ListItem.Label) + Container.Content(albums)">http://localhost:52307/getthumb&amp;title=$INFO[Listitem.Label]</value>
+		<value condition="!IsEmpty(ListItem.Artist) + Container.Content(songs)">http://localhost:52307/getthumb&amp;title=$INFO[Listitem.Artist]</value>
+		<value condition="!IsEmpty(ListItem.Artiist) + [Container.Content(artists)]">http://localhost:52307/getthumb&amp;title=$INFO[Listitem.Artist] MUSICBRAAINZ</value>
+		<value condition="!IsEmpty(ListItem.Label) + [Container.Content(albums) | Container.Content(artists) | Container.Content(songs)]">http://localhost:52307/getthumb&amp;title=$INFO[Listitem.Label]</value>
+		<value condition="!IsEmpty(Skin.String(fanart.fallback))">$INFO[Skin.String(fanart.fallback)]</value>
 		<value>special://skin/extras/backgrounds/Eyes.jpg</value>
 	</variable>
 	<include name="GlobalVideoWindow">

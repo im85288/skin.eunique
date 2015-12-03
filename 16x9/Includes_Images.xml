@@ -62,7 +62,7 @@
 		<value condition="!IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>
 		<value condition="!IsEmpty(Container.Art(artist.thumb))">$INFO[Container.Art(artist.thumb)]</value>
 		<value condition="!IsEmpty(Container.Art(artist.fanart))">$INFO[Container.Art(artist.fanart)]</value>
-		<value condition="SubString(ListItem.Icon,Default,left) + SubString(ListItem.Icon,.png,right)">http://localhost:52307/getthumb&amp;title=$INFO[Listitem.Label]</value>
+		<value condition="IsEmpty(ListItem.Icon) | SubString(ListItem.Icon,Default,left) + SubString(ListItem.Icon,.png,right)">http://localhost:52307/getthumb&amp;title=$INFO[Listitem.Label]</value>
 		<value>$INFO[ListItem.Icon]</value>
 	</variable>
 	<variable name="PosterImage518">
@@ -318,6 +318,9 @@
 		<value condition="!IsEmpty(Container.Art(artist.fanart))">$INFO[Container.Art(artist.fanart)]</value>
 		<value condition="!IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
 		<value condition="!IsEmpty(Container.Art(artist.fanart))">$INFO[Container.Art(artist.fanart)]</value>
+		<value condition="!IsEmpty(ListItem.Label) + Container.Content(albums)">http://localhost:52307/getthumb&amp;title=$INFO[Listitem.Label]</value>
+		<value condition="!IsEmpty(ListItem.Artiist) + [Container.Content(artists)]">http://localhost:52307/getthumb&amp;title=$INFO[Listitem.Artist]</value>
+		<value condition="!IsEmpty(ListItem.Label) + [Container.Content(albums) | Container.Content(artists) | Container.Content(songs)]">http://localhost:52307/getthumb&amp;title=$INFO[Listitem.Artist]$INFO[Listitem.Label]</value>
 		<value>special://skin/extras/backgrounds/headphones.jpg</value>
 	</variable>
 	<variable name="ProgressPercent">
@@ -731,9 +734,9 @@
 		<value condition="!IsEmpty(Player.Art(clearlogo))">$INFO[Player.Art(clearlogo)]</value>
 	</variable>
 	<variable name="AlbumArtistIcon">
-		<value condition="Container.Content(artists) + !IsEmpty(Listitem.artist)">http://localhost:52307/getthumb&amp;title=$INFO[Listitem.artist]</value>
+		<value condition="SubString(Listitem.Artists,various artist,left) | StringCompare(Listitem,various)">http://localhost:52307/getthumb&amp;title=Various Artists</value>
 		<value condition="!IsEmpty(Container.Art(artist.thumb))">$INFO[Container.Art(artist.thumb)]</value>
-		<value condition="!IsEmpty(Listitem.artist)">http://localhost:52307/getthumb&amp;title=$INFO[Listitem.artist]</value>
+		<value condition="!IsEmpty(Listitem.artist)">http://localhost:52307/getthumb&amp;title=$INFO[Listitem.Artist]</value>
 		<value condition="IsEmpty(Listitem.artist)">http://localhost:52307/getthumb&amp;title=Various Artists</value>
 	</variable>
 

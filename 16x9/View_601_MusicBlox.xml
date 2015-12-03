@@ -152,6 +152,20 @@
 							<texture>$VAR[MusicBlockImage]</texture>
 							<aspectratio align="center" aligny="center">scale</aspectratio>
 						</control>
+						<control type="textbox">
+							<left>158</left>
+							<right>10</right>
+							<top>12</top>
+							<bottom>15</bottom>
+							<height>90</height>
+							<align>right</align>
+							<aligny>center</aligny>
+							<autoscroll delay="800" time="1200" repeat="800"/>
+							<label fallback="19055">$VAR[BloxFocusedLabel]</label>
+							<font>SmallBold</font>
+							<textcolor>$VAR[ColourSelected]</textcolor>
+							<visible>Container.Content(songs)</visible>
+						</control>
 					</itemlayout>
 					<focusedlayout height="120" width="720">
 						<control type="button" id="6020">

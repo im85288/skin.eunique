@@ -6174,30 +6174,20 @@
 						<scrolltime tween="quadratic">500</scrolltime>
 						<autoscroll time="2000">!Control.HasFocus(5017)</autoscroll>
 						<itemlayout width="235" height="235">
-							<control type="image">
-								<top>0</top>
-								<aspectratio>stretch</aspectratio>
-								<texture background="true">$VAR[PosterImage]</texture>
-								<visible>!Stringcompare(Skin.String(widget14),PopularArtists)</visible>
-								<visible>!Stringcompare(Skin.String(widget14),HypedArtists)</visible>
-							</control>
 							<control type="label">
 								<height>235</height>
 								<aligny>center</aligny>
 								<align>center</align>
 								<font>symbolbiggest</font>
 								<label>$VAR[SwapDefaultImage]</label>
-								<visible>!Stringcompare(Skin.String(widget14),PopularArtists)</visible>
-								<visible>!Stringcompare(Skin.String(widget14),HypedArtists)</visible>
-								<visible>IsEmpty(ListItem.Title) | substring(ListItem.Icon,Default,left)</visible>
+								<visible>substring(ListItem.Icon,Default,left)</visible>
 							</control>
 							<control type="group">
 								<control type="image">
 									<align>center</align>
 									<aspectratio>scale</aspectratio>
-									<texture background="true">$INFO[Listitem.Thumb]</texture>
+									<texture background="true">$VAR[PosterImage]</texture>
 								</control>
-								<visible>Stringcompare(Skin.String(widget14),PopularArtists) | Stringcompare(Skin.String(widget14),HypedArtists)</visible>
 							</control>
 							<control type="progress">
 								<bottom>0</bottom>
@@ -6220,31 +6210,21 @@
 							</control>
 							<control type="group">
 								<animation effect="zoom" start="100" end="127" time="100" reversible="false" center="auto">Focus</animation>
-								<control type="image">
-									<aspectratio>stretch</aspectratio>
-									<top>0</top>
-									<texture background="true">$VAR[PosterImage]</texture>
-									<visible>!Stringcompare(Skin.String(widget14),PopularArtists)</visible>
-									<visible>!Stringcompare(Skin.String(widget14),HypedArtists)</visible>
-								</control>
 								<control type="label">
 									<height>235</height>
 									<aligny>center</aligny>
 									<align>center</align>
 									<font>symbolbiggest</font>
 									<label>$VAR[SwapDefaultImage]</label>
-									<visible>!Stringcompare(Skin.String(widget14),PopularArtists)</visible>
-									<visible>!Stringcompare(Skin.String(widget14),HypedArtists)</visible>
-									<visible>IsEmpty(ListItem.Title) | substring(ListItem.Icon,Default,left)</visible>
+									<visible>substring(ListItem.Icon,Default,left)</visible>
 								</control>
 								<control type="group">
 									<control type="image">
 										<align>center</align>
 										<aspectratio>scale</aspectratio>
-										<texture background="true">$INFO[Listitem.Thumb]</texture>
+										<texture background="true">$VAR[PosterImage]</texture>
 										<animation effect="zoom" start="100" end="96" time="100" reversible="false" center="auto">Focus</animation>
 									</control>
-									<visible>Stringcompare(Skin.String(widget14),PopularArtists) | Stringcompare(Skin.String(widget14),HypedArtists)</visible>
 								</control>
 								<control type="progress">
 									<bottom>0</bottom>

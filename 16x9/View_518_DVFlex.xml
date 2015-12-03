@@ -396,7 +396,7 @@
 				<visible>Container.Content(episodes)</visible>
 			</control>
 			<control type="wraplist" id="518">
-				<visible>[Container.Content(movies) | Container.Content(sets)]| Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)</visible>
+				<visible>[Container.Content(movies) | Container.Content(sets)] | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)</visible>
 				<animation effect="slide" end="-3000,0" start="0" time="0" condition="Container.Content(episodes)">Conditional</animation>
 				<bottom>22</bottom>
 				<right>-4000</right>
@@ -772,17 +772,17 @@
 						</control>
 						</control>
 						</control>
-			<control id="123231" type="wraplist">
-				<left>-100</left>
-				<bottom>-100</bottom>
-				<width>1</width>
-				<height>1</height>
-				<itemlayout height="1" width="1">
-				</itemlayout>
-				<focusedlayout height="1" width="1">
-				</focusedlayout>
-				<content target="video">$VAR[DefWidgetCast]</content>
-			</control>
+				<control id="123231" type="wraplist">
+					<left>-100</left>
+					<bottom>-100</bottom>
+					<width>1</width>
+					<height>1</height>
+					<itemlayout height="1" width="1">
+					</itemlayout>
+					<focusedlayout height="1" width="1">
+					</focusedlayout>
+					<content target="video">$VAR[DefWidgetCast]</content>
+				</control>
 			<include>Furniture_ScrollbarNF</include>
 		</control>
 	</include>

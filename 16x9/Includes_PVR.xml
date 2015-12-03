@@ -15,7 +15,7 @@
 				<top>115</top>
 				<width>435</width>
 				<height>1080</height>
-				<onleft>9000</onleft>
+				<onleft>50</onleft>
 				<onright>ClearProperty(MediaMenu,Home)</onright>
 				<onright condition="![Window.IsVisible(tvguide) | Window.IsActive(SettingsCategory.xml)]">50</onright>
 				<onright condition="Window.IsVisible(tvguide)">10</onright>
@@ -156,6 +156,13 @@
 					<include>DefContextButtonBlade</include>
 					<align>left</align>
 					<visible>Window.IsVisible(MyPVRChannels.xml)</visible>
+				</control>
+				<control type="button" id="2099">
+					<description>Update</description>
+					<align>left</align>
+					<label>31114</label>
+					<include>DefContextButtonBlade</include>
+					<onclick>FullScreen</onclick>
 				</control>
 			</control>
 		</control>

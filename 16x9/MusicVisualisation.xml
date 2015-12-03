@@ -14,7 +14,7 @@
 		<control type="image">
 			<aspectratio>scale</aspectratio>
 			<include>Dimensions_Fullscreen</include>
-			<texture colordiffuse="$INFO[Window(home).Property(MusicVisInfo.ImageColor)]" background="true">$VAR[PlayerFanart]</texture>
+			<texture colordiffuse="$INFO[Window(home).Property(MusicVisInfo.ImageColor1)]" background="true">$VAR[PlayerFanart]</texture>
 			<visible>!System.HasAddon(script.artistslideshow) | Skin.HasSetting(ArtistSlideShow.Disabled)</visible>
 			<animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
 			<animation effect="slide" start="-30,-30" end="30,30" time="6000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
@@ -22,10 +22,10 @@
 		<control type="image">
 			<include>Dimensions_Fullscreen</include>
 			<aspectratio aligny="bottom">scale</aspectratio>
-<texture background="true">http://localhost:52307/getthumb&amp;title=$INFO[MusicPlayer.Artist]-$INFO[MusicPlayer.Title]</texture>
+			<texture background="true">http://localhost:52307/getthumb&amp;title=$INFO[MusicPlayer.Artist]-$INFO[MusicPlayer.Title]</texture>
 			<animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
 			<animation effect="slide" start="-30,-30" end="30,30" time="6000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
-</control>
+		</control>
 		<control type="multiimage">
 			<aspectratio>scale</aspectratio>
 			<include>Dimensions_Fullscreen</include>
@@ -33,7 +33,7 @@
 			<randomize>true</randomize>
 			<fadetime>600</fadetime>
 			<loop>yes</loop>
-			<imagepath colordiffuse="$INFO[Window(home).Property(MusicVisInfo.ImageColor)]" background="true">$INFO[Window(Visualisation).Property(ArtistSlideshow)]</imagepath>
+			<imagepath colordiffuse="$INFO[Window(home).Property(ImageColor2)]" background="true">$INFO[Window(Visualisation).Property(ArtistSlideshow)]</imagepath>
 			<visible>System.HasAddon(script.artistslideshow) + !Skin.HasSetting(ArtistSlideShow.Disabled)</visible>
 			<animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
 			<animation effect="slide" start="-30,-30" end="30,30" time="6000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
@@ -47,30 +47,30 @@
 		<include>Furniture_HeaderEmby</include>
 		<include>Furniture_EmbyClock</include>
 		-->
-				<control type="label">
-				<visible>Skin.HasSetting(osd.showvisualtext) + !Window.IsVisible(script-cu-lrclyrics-main.xml)</visible>
-					<description>Now Playing</description>
-					<posx>0</posx>
-					<posy>270</posy>
-					<width>2070</width>
-					<label>$INFO[MusicPlayer.Artist, ,]$INFO[MusicPlayer.Artist, ,]$INFO[MusicPlayer.Artist,,]$INFO[MusicPlayer.Artist,,]$INFO[MusicPlayer.Artist, ,]</label>
-					<scroll>true</scroll>
-					<pauseatend>0</pauseatend>
-					<font>symbolbackbig</font>
-					<textcolor>$VAR[ColourIconFlags]</textcolor>
-					<angle>02</angle>
-					<align>left</align>
-					<scrollspeed>111</scrollspeed>
-					<scrollsuffix/>
-				</control>
+		<control type="label">
+			<visible>Skin.HasSetting(osd.showvisualtext) + !Window.IsVisible(script-cu-lrclyrics-main.xml)</visible>
+			<description>Now Playing</description>
+			<posx>0</posx>
+			<posy>270</posy>
+			<width>2070</width>
+			<label>$INFO[MusicPlayer.Artist, ,]$INFO[MusicPlayer.Artist, ,]$INFO[MusicPlayer.Artist, ,]$INFO[MusicPlayer.Artist, ,]$INFO[MusicPlayer.Artist, ,]$INFO[MusicPlayer.Artist, ,]$INFO[MusicPlayer.Artist, ,]$INFO[MusicPlayer.Artist, ,]$INFO[MusicPlayer.Artist,,]$INFO[MusicPlayer.Artist,,]$INFO[MusicPlayer.Artist, ,]</label>
+			<scroll>true</scroll>
+			<pauseatend>0</pauseatend>
+			<font>playermusictitle</font>
+			<textcolor>$VAR[ColourIconFlags]</textcolor>
+			<angle>02</angle>
+			<align>left</align>
+			<scrollspeed>111</scrollspeed>
+			<scrollsuffix/>
+		</control>
 		<control type="image">
 			<left>840</left>
 			<bottom>90</bottom>
 			<width>1000</width>
 			<height>1000</height>
 			<aspectratio aligny="bottom">scale</aspectratio>
-<texture background="true">http://localhost:52307/getthumb&amp;title=$INFO[MusicPlayer.Artist]-$INFO[MusicPlayer.Title]</texture>
-</control>
+			<texture colordiffuse="$INFO[Window(home).Property(ImageColor1)]" background="true">$INFO[Window(home).Property(ImageFilter3)]</texture>
+		</control>
 		<control type="group">
 			<top>-100</top>
 			<control type="group">
@@ -102,8 +102,8 @@
 					<label>$INFO[MusicPlayer.Title, ,]$INFO[MusicPlayer.Title, ,]$INFO[MusicPlayer.Title, ,]$INFO[MusicPlayer.Title, ,]$INFO[MusicPlayer.Title, ,]</label>
 					<scroll>true</scroll>
 					<font>Font-MusicVis-Title</font>
-						<scrollspeed>26</scrollspeed>
-				<pauseatend>0</pauseatend>
+					<scrollspeed>26</scrollspeed>
+					<pauseatend>0</pauseatend>
 					<textcolor>$VAR[ColourFlags]</textcolor>
 					<angle>-1</angle>
 					<align>left</align>
@@ -132,19 +132,31 @@
 				<texture colordiffuse="$VAR[OSDPanel]">common/white.png</texture>
 				<animation effect="fade" start="100" end="70" condition="true">Conditional</animation>
 			</control>
+			<control type="textbox">
+				<left>840</left>
+				<top>100</top>
+				<width>1000</width>
+				<height>550</height>
+				<align>justify</align>
+				<font>musicbio</font>
+				<textcolor>$VAR[ColourIconFlags]</textcolor>
+				<label>$INFO[Window.Property(ArtistSlideshow.ArtistBiography)]</label>
+				<autoscroll delay="3000" time="3000" repeat="3000"/>
+				<fadetime>500</fadetime>
+			</control>
 			<visible>Window.IsActive(MusicOSD.xml) | Player.ShowInfo | Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding | Window.IsVisible(script-cu-lrclyrics-main.xml) | Skin.HasSetting(osd.showmusicinfo)</visible>
-					<control type="group">
-						<top>25</top>
-						<left>820</left>
-							<control type="label" description="Other info">
-								<width>100%</width>
-								<height>120</height>
-								<angle>270</angle>
-								<font>HomeEmbySemi</font>
-								<textcolor>$VAR[OSDPanelWhite30]</textcolor>
-								<label>$INFO[musicplayer.Codec,$LOCALIZE[21446]: ,]$INFO[musicplayer.Bitrate, · $LOCALIZE[623]: ,kbps] $INFO[musicplayer.bitspersample,$LOCALIZE[612]: ,]$INFO[musicplayer.Samplerate, · $LOCALIZE[613]: ,kHz] $INFO[musicplayer.Channels, · $LOCALIZE[21444]: ]</label>
-							</control>
-							</control>
+			<control type="group">
+				<top>25</top>
+				<left>820</left>
+				<control type="label" description="Other info">
+					<width>100%</width>
+					<height>120</height>
+					<angle>270</angle>
+					<font>HomeEmbySemi</font>
+					<textcolor>$VAR[OSDPanelWhite30]</textcolor>
+					<label>$INFO[musicplayer.Codec,$LOCALIZE[21446]: ,]$INFO[musicplayer.Bitrate, · $LOCALIZE[623]: ,kbps] $INFO[musicplayer.bitspersample,$LOCALIZE[612]: ,]$INFO[musicplayer.Samplerate, · $LOCALIZE[613]: ,kHz] $INFO[musicplayer.Channels, · $LOCALIZE[21444]: ]</label>
+				</control>
+			</control>
 			<control type="group">
 				<height>500</height>
 				<bottom>60</bottom>
@@ -203,10 +215,10 @@
 							<visible>true</visible>
 							<usecontrolcoords>true</usecontrolcoords>
 							<control type="label" description="Artist">
-								<top>0</top>
+								<top>20</top>
 								<width>100%</width>
 								<height>78</height>
-								<font>LargeHeaderFont</font>
+								<font>musictitle</font>
 								<textcolor>white2</textcolor>
 								<label>$VAR[PlayerBigTitle]</label>
 							</control>
@@ -249,10 +261,11 @@
 							</control>
 							<control type="label" description="AlbumYear">
 								<width>100%</width>
-								<height>40</height>
-								<font>SmallBold</font>
+								<height>42</height>
+								<font>musicalbum</font>
 								<textcolor>white2</textcolor>
 								<label>$VAR[PlayerPlotBox]</label>
+								<scroll>true</scroll>
 							</control>
 							<control type="label" description="NextUp">
 								<top>5</top>
