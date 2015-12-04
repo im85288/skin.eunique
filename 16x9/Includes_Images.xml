@@ -207,8 +207,8 @@
 		<value>$INFO[Player.Art(thumb)]</value>
 	</variable>
 	<variable name="PlayerFanart">
-		<value condition="!IsEmpty(Player.Art(fanart))">$INFO[Player.Art(fanart)]</value>
-		<value condition="IsEmpty(Player.Art(fanart))">special://skin/extras/backgrounds/headphones.jpg</value>
+		<value condition="!IsEmpty(MusicPlayer.Property(Fanart_Image))">$INFO[MusicPlayer.Property(Fanart_Image)]</value>
+		<value condition="IsEmpty(MusicPlayer.Property(Fanart_Image))">special://skin/extras/backgrounds/headphones.jpg</value>
 	</variable>
 	<variable name="BannerOnly">
 		<value condition="!IsEmpty(Window(Home).Property(SkinHelper.Music.Banner))">$INFO[Window(Home).Property(SkinHelper.Music.Banner)]</value>

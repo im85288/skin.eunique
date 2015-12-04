@@ -11,13 +11,52 @@
 			<animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
 			<animation effect="slide" start="-30,-30" end="30,30" time="6000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
 		</control>
-		<control type="image">
-			<aspectratio>scale</aspectratio>
-			<include>Dimensions_Fullscreen</include>
-			<texture colordiffuse="$INFO[Window(home).Property(MusicVisInfo.ImageColor1)]" background="true">$VAR[PlayerFanart]</texture>
+		<control type="group">
+			<control type="image">
+				<aspectratio>scale</aspectratio>
+				<left>0</left>
+				<top>0</top>
+				<width>960</width>
+				<height>540</height>
+				<fadetime>600</fadetime>
+				<texture colordiffuse="$INFO[Window(home).Property(ImageColor1fa)]" background="true">$INFO[Window(home).Property(ImageFilter1fa)]</texture>
+				<animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
+				<animation effect="slide" start="-30,-30" end="30,30" time="6000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
+			</control>
+			<control type="image">
+				<aspectratio>scale</aspectratio>
+				<left>960</left>
+				<top>0</top>
+				<width>960</width>
+				<height>540</height>
+				<fadetime>600</fadetime>
+				<texture colordiffuse="$INFO[Window(home).Property(ImageColor2fa)]" background="true">$INFO[Window(home).Property(ImageFilter2fa)]</texture>
+				<animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
+				<animation effect="slide" start="-30,-30" end="30,30" time="6000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
+			</control>
+			<control type="image">
+				<aspectratio>scale</aspectratio>
+				<left>0</left>
+				<top>540</top>
+				<width>960</width>
+				<height>540</height>
+				<fadetime>600</fadetime>
+				<texture colordiffuse="$INFO[Window(home).Property(ImageColor1)]" background="true">$VAR[PlayerFanart]</texture>
+				<animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
+				<animation effect="slide" start="-30,-30" end="30,30" time="6000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
+			</control>
+			<control type="image">
+				<aspectratio>scale</aspectratio>
+				<left>960</left>
+				<top>540</top>
+				<width>960</width>
+				<height>540</height>
+				<fadetime>600</fadetime>
+				<texture colordiffuse="$INFO[Window(home).Property(ImageColor1fa)]" background="true">$INFO[Window(home).Property(ImageFilter3fa)]</texture>
+				<animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
+				<animation effect="slide" start="-30,-30" end="30,30" time="6000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
+			</control>
 			<visible>!System.HasAddon(script.artistslideshow) | Skin.HasSetting(ArtistSlideShow.Disabled)</visible>
-			<animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
-			<animation effect="slide" start="-30,-30" end="30,30" time="6000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
 		</control>
 		<control type="image">
 			<include>Dimensions_Fullscreen</include>
@@ -141,7 +180,7 @@
 				<width>1000</width>
 				<height>1000</height>
 				<aspectratio aligny="bottom">scale</aspectratio>
-				<texture colordiffuse="$INFO[Window(home).Property(ImageColor3)]" background="true">$INFO[Window(home).Property(ImageFilter3)]</texture>
+				<texture colordiffuse="$INFO[Window(home).Property(ImageColor1)]" background="true">$INFO[Window(home).Property(ImageFilter3)]</texture>
 			</control>
 			<control type="group">
 				<top>-100</top>
@@ -222,7 +261,7 @@
 						<height>120</height>
 						<angle>270</angle>
 						<font>HomeEmbySemi</font>
-						<textcolor>$INFO[Window(home).Property(ImageColor2)]</textcolor>
+						<textcolor>$INFO[Window(home).Property(ImageColor1)]</textcolor>
 						<label>$INFO[musicplayer.Codec,$LOCALIZE[21446]: ,]$INFO[musicplayer.Bitrate, · $LOCALIZE[623]: ,kbps] $INFO[musicplayer.bitspersample,$LOCALIZE[612]: ,]$INFO[musicplayer.Samplerate, · $LOCALIZE[613]: ,kHz] $INFO[musicplayer.Channels, · $LOCALIZE[21444]: ]</label>
 					</control>
 				</control>
@@ -331,10 +370,10 @@
 								<height>8</height>
 								<info>Player.ProgressCache</info>
 								<visible>true</visible>
-								<texturebg colordiffuse="$INFO[Window(home).Property(ImageColor3)]">osd/progress-bg.png</texturebg>
-								<lefttexture colordiffuse="$INFO[Window(home).Property(ImageColor1)]">osd/progress-end.png</lefttexture>
-								<midtexture colordiffuse="$INFO[Window(home).Property(ImageColor1)]">osd/progress-end.png</midtexture>
-								<righttexture colordiffuse="$INFO[Window(home).Property(ImageColor1)]">osd/progress-end.png</righttexture>
+								<texturebg colordiffuse="$INFO[Window(home).Property(ImageColor2)]">osd/progress-bg.png</texturebg>
+								<lefttexture colordiffuse="$INFO[Window(home).Property(ImageColor3)]">osd/progress-end.png</lefttexture>
+								<midtexture colordiffuse="$INFO[Window(home).Property(ImageColor3)]">osd/progress-end.png</midtexture>
+								<righttexture colordiffuse="$INFO[Window(home).Property(ImageColor3)]">osd/progress-end.png</righttexture>
 							</control>
 							<control type="progress" id="23">
 								<description>Progress Bar</description>
