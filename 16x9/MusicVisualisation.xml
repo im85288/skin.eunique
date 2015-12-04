@@ -28,8 +28,56 @@
 		</control>
 		<control type="multiimage">
 			<aspectratio>scale</aspectratio>
-			<include>Dimensions_Fullscreen</include>
+			<left>0</left>
+			<top>0</top>
+			<width>960</width>
+			<height>540</height>
+			<timeperimage>2000</timeperimage>
+			<randomize>true</randomize>
+			<fadetime>600</fadetime>
+			<loop>yes</loop>
+			<imagepath colordiffuse="$INFO[Window(home).Property(ImageColor1)]" background="true">$INFO[Window(Visualisation).Property(ArtistSlideshow)]</imagepath>
+			<visible>System.HasAddon(script.artistslideshow) + !Skin.HasSetting(ArtistSlideShow.Disabled)</visible>
+			<animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
+			<animation effect="slide" start="-30,-30" end="30,30" time="6000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
+		</control>
+		<control type="multiimage">
+			<aspectratio>scale</aspectratio>
+			<left>960</left>
+			<top>0</top>
+			<width>960</width>
+			<height>540</height>
+			<timeperimage>5000</timeperimage>
+			<randomize>true</randomize>
+			<fadetime>600</fadetime>
+			<loop>yes</loop>
+			<imagepath colordiffuse="$INFO[Window(home).Property(ImageColor1)]" background="true">$INFO[Window(Visualisation).Property(ArtistSlideshow)]</imagepath>
+			<visible>System.HasAddon(script.artistslideshow) + !Skin.HasSetting(ArtistSlideShow.Disabled)</visible>
+			<animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
+			<animation effect="slide" start="-30,-30" end="30,30" time="6000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
+		</control>
+		<control type="multiimage">
+			<aspectratio>scale</aspectratio>
+			<left>0</left>
+			<top>540</top>
+			<width>960</width>
+			<height>540</height>
 			<timeperimage>10000</timeperimage>
+			<randomize>true</randomize>
+			<fadetime>600</fadetime>
+			<loop>yes</loop>
+			<imagepath colordiffuse="$INFO[Window(home).Property(ImageColor1)]" background="true">$INFO[Window(Visualisation).Property(ArtistSlideshow)]</imagepath>
+			<visible>System.HasAddon(script.artistslideshow) + !Skin.HasSetting(ArtistSlideShow.Disabled)</visible>
+			<animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
+			<animation effect="slide" start="-30,-30" end="30,30" time="6000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
+		</control>
+		<control type="multiimage">
+			<aspectratio>scale</aspectratio>
+			<left>960</left>
+			<top>540</top>
+			<width>960</width>
+			<height>540</height>
+			<timeperimage>7000</timeperimage>
 			<randomize>true</randomize>
 			<fadetime>600</fadetime>
 			<loop>yes</loop>
@@ -41,7 +89,6 @@
 		<control type="visualisation" id="2">
 			<description>visualisation</description>
 			<include>Dimensions_Fullscreen</include>
-			<visible>Skin.HasSetting(global.showvisualisation)</visible>
 		</control>
 		<!--
 		<include>Furniture_HeaderEmby</include>
@@ -64,6 +111,29 @@
 				<align>left</align>
 				<scrollspeed>111</scrollspeed>
 				<scrollsuffix/>
+			</control>
+				<control type="image">
+					<include>Dimensions_Fullscreen</include>
+					<texture colordiffuse="$INFO[Window(home).Property(ImageColor1)]">common/white.png</texture>
+					<animation effect="fade" start="100" end="70" condition="true">Conditional</animation>
+				</control>
+			<control type="image">
+				<left>570</left>
+				<top>-300</top>
+				<width>1540</width>
+				<height>1540</height>
+				<aspectratio>keep</aspectratio>
+				<fadetime>400</fadetime>
+				<animation type="WindowOpen">
+					<effect type="fade" start="0" end="100" time="200" delay="0" />
+					<effect type="zoom" start="1330" end="110" center="auto" time="200" delay="320" />
+				</animation>
+				<animation type="WindowClose">
+					<effect type="fade" start="100" end="0" time="200" delay="320" />
+					<effect type="zoom" start="110" end="1330" center="auto" time="200" delay="0" />
+				</animation>
+				<animation effect="rotate" end="-360" center="auto" time="4800" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
+				<texture background="true" fallback="cdart/default.png">$INFO[Player.FolderPath]cdart.png</texture>
 			</control>
 			<control type="image">
 				<left>840</left>
@@ -129,22 +199,19 @@
 			<control type="group">
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
-				<control type="image">
-					<include>Dimensions_Fullscreen</include>
-					<texture colordiffuse="$VAR[OSDPanel]">common/white.png</texture>
-					<animation effect="fade" start="100" end="70" condition="true">Conditional</animation>
-				</control>
 				<control type="textbox">
 					<left>840</left>
-					<top>100</top>
+					<top>103</top>
 					<width>1000</width>
 					<height>550</height>
 					<align>justify</align>
 					<font>musicbio</font>
 					<textcolor>$VAR[ColourIconFlags]</textcolor>
 					<label>$INFO[Window.Property(ArtistSlideshow.ArtistBiography)]</label>
-					<autoscroll delay="3000" time="3000" repeat="3000"/>
+					<autoscroll delay="3000" time="2500" repeat="3000"/>
 					<fadetime>500</fadetime>
+					<animation effect="slide" start="0" end="0,-84" time="200" condition="Window.IsActive(MusicOSD)">Conditional</animation>
+					<visible>Skin.HasSetting(osd.showvisualtext) + !Window.IsVisible(script-cu-lrclyrics-main.xml)</visible>
 				</control>
 				<visible>Window.IsActive(MusicOSD.xml) | Player.ShowInfo | Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding | Window.IsVisible(script-cu-lrclyrics-main.xml) | Skin.HasSetting(osd.showmusicinfo)</visible>
 				<control type="group">
@@ -155,7 +222,7 @@
 						<height>120</height>
 						<angle>270</angle>
 						<font>HomeEmbySemi</font>
-						<textcolor>$VAR[OSDPanelWhite30]</textcolor>
+						<textcolor>$INFO[Window(home).Property(ImageColor2)]</textcolor>
 						<label>$INFO[musicplayer.Codec,$LOCALIZE[21446]: ,]$INFO[musicplayer.Bitrate, · $LOCALIZE[623]: ,kbps] $INFO[musicplayer.bitspersample,$LOCALIZE[612]: ,]$INFO[musicplayer.Samplerate, · $LOCALIZE[613]: ,kHz] $INFO[musicplayer.Channels, · $LOCALIZE[21444]: ]</label>
 					</control>
 				</control>
@@ -167,43 +234,6 @@
 						<left>SidePad</left>
 						<right>SidePad</right>
 						<bottom>20</bottom>
-						<control type="image">
-							<top>10</top>
-							<width>460</width>
-							<height>460</height>
-							<aspectratio scalediffuse="false">stretch</aspectratio>
-							<texture colordiffuse="$VAR[BorderHighlight]" background="true">common/white.png</texture>
-							<animation type="conditional" condition="true" reversible="false">
-								<effect type="rotate" end="-1" time="200" center="auto" tween="quadratic" easing="out"/>
-								<effect type="zoom" start="100" end="108" time="200" center="auto" tween="quadratic" easing="out"/>
-							</animation>
-						</control>
-						<control type="image">
-							<left>280</left>
-							<top>20</top>
-							<width>440</width>
-							<height>440</height>
-							<aspectratio>keep</aspectratio>
-							<fadetime>400</fadetime>
-							<animation effect="slide" start="-180" end="0" time="560" tween="cubic" delay="600">Visible</animation>
-							<animation effect="slide" end="-180" time="320" tween="cubic">Hidden</animation>
-							<animation effect="slide" start="-180" end="0" time="560" tween="cubic" delay="320">WindowOpen</animation>
-							<animation type="WindowClose">
-								<effect type="slide" end="-180" time="320" tween="cubic" easing="in" />
-								<effect type="fade" start="100" end="0" time="0" delay="320" />
-								<condition type="!Player.Playing" />
-							</animation>
-							<animation effect="rotate" end="-360" center="auto" time="4800" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
-							<texture background="true" fallback="cdart/default.png">$INFO[Player.FolderPath]cdart.png</texture>
-						</control>
-						<control type="image">
-							<bottom>10</bottom>
-							<width>460</width>
-							<height>460</height>
-							<fadetime>400</fadetime>
-							<texture fallback="DefaultAlbumCover.png">$INFO[MusicPlayer.Cover]</texture>
-							<aspectratio aligny="center" align="center">scale</aspectratio>
-						</control>
 						<control type="group">
 							<top>5</top>
 							<left>760</left>
@@ -217,7 +247,7 @@
 								<visible>true</visible>
 								<usecontrolcoords>true</usecontrolcoords>
 								<control type="label" description="Artist">
-									<top>20</top>
+									<top>23</top>
 									<width>100%</width>
 									<height>78</height>
 									<font>musictitle</font>
@@ -242,9 +272,9 @@
 									<visible>true</visible>
 									<control type="image">
 										<centertop>14</centertop>
-										<width>120</width>
+										<width>1000</width>
 										<height>64</height>
-										<texture colordiffuse="$INFO[Window(home).Property(MusicVisInfo.ImageColor)]">equaliser.gif</texture>
+										<texture colordiffuse="$INFO[Window(home).Property(ImageColor3)]">equaliser.gif</texture>
 										<visible>!Player.Paused</visible>
 									</control>
 									<control type="image">
@@ -301,10 +331,10 @@
 								<height>8</height>
 								<info>Player.ProgressCache</info>
 								<visible>true</visible>
-								<texturebg colordiffuse="00ffffff">osd/progress-bg.png</texturebg>
-								<lefttexture colordiffuse="$VAR[ColourHighlight2]">osd/progress-end.png</lefttexture>
-								<midtexture colordiffuse="$VAR[ColourHighlight2]">osd/progress-end.png</midtexture>
-								<righttexture colordiffuse="$VAR[ColourHighlight2]">osd/progress-end.png</righttexture>
+								<texturebg colordiffuse="$INFO[Window(home).Property(ImageColor3)]">osd/progress-bg.png</texturebg>
+								<lefttexture colordiffuse="$INFO[Window(home).Property(ImageColor1)]">osd/progress-end.png</lefttexture>
+								<midtexture colordiffuse="$INFO[Window(home).Property(ImageColor1)]">osd/progress-end.png</midtexture>
+								<righttexture colordiffuse="$INFO[Window(home).Property(ImageColor1)]">osd/progress-end.png</righttexture>
 							</control>
 							<control type="progress" id="23">
 								<description>Progress Bar</description>
@@ -312,10 +342,10 @@
 								<bottom>10</bottom>
 								<height>8</height>
 								<info>Player.Progress</info>
-								<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
-								<lefttexture colordiffuse="$VAR[ColourHighlight]">osd/progress-end.png</lefttexture>
-								<midtexture colordiffuse="$VAR[ColourHighlight]">osd/progress-end.png</midtexture>
-								<righttexture colordiffuse="$VAR[ColourHighlight]">osd/progress-end.png</righttexture>
+								<texturebg colordiffuse="$INFO[Window(home).Property(ImageColor1)]">osd/progress-bg.png</texturebg>
+								<lefttexture colordiffuse="$INFO[Window(home).Property(ImageColor2)]">osd/progress-end.png</lefttexture>
+								<midtexture colordiffuse="$INFO[Window(home).Property(ImageColor2)]">osd/progress-end.png</midtexture>
+								<righttexture colordiffuse="$INFO[Window(home).Property(ImageColor2)]">osd/progress-end.png</righttexture>
 							</control>
 						</control>
 					</control>
