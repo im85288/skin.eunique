@@ -725,7 +725,7 @@
 				<height>34</height>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>/</label>
-				<visible>![Control.IsVisible(518) + !Window.IsVisible(DialogVideoInfo.xml) + IsEmpty(ListItem.Userrating)]</visible>
+				<visible>![Control.IsVisible(518) + !Window.IsVisible(DialogVideoInfo.xml) + IsEmpty(ListItem.Userrating) + IsEmpty(ListItem.Top250)]</visible>
 				<visible>![IsEmpty(ListItem.Rating) + IsEmpty(Window(Home).Property(EmbySkinHelper.ListItemRottenTomatoes)) + IsEmpty(Window(Home).Property(EmbySkinHelper.ListItemMetaScore))] + [Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows)] + !Container.Content(seasons)</visible>
 			</control>
 			<control type="label">
@@ -828,7 +828,7 @@
 				<textcolor>IMDB</textcolor>
 				<height>34</height>
 				<width>auto</width>
-				<label></label>
+				<label> </label>
 				<visible>!IsEmpty(ListItem.Top250)</visible>
 			</control>
 			<control type="label">
