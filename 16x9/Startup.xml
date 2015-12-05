@@ -3,8 +3,7 @@
 <window>
 	<defaultcontrol always="true">9315</defaultcontrol>
 	<onload>SetProperty(SkinInitStarted,1,home)</onload>
-	<onload condition="System.HasAddon(script.colorbox)">RunScript(script.colorbox,info=firstrun)</onload>
-	<onload condition="System.HasAddon(script.colorbox)">RunScript(script.colorbox,daemon=True,pixels=20)</onload>
+	<onload condition="System.HasAddon(script.colorbox)">RunScript(script.colorbox,daemon=True,pixels=20,bits=2,radius=20)</onload>
 	<controls>
 		<control type="image" description="Background">
 			<include>Dimensions_Fullscreen</include>
