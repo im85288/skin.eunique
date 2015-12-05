@@ -19,7 +19,7 @@
 				<width>960</width>
 				<height>540</height>
 				<fadetime>600</fadetime>
-				<texture colordiffuse="$INFO[Window(home).Property(ImageColor1fa)]" background="true">$INFO[Window(home).Property(ImageFilter1fa)]</texture>
+				<texture colordiffuse="$INFO[Window(home).Property(ImageColorfa1)]" background="true">$INFO[Window(home).Property(ImageFilterfa1)]</texture>
 				<animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
 				<animation effect="slide" start="-30,-30" end="30,30" time="6000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
 			</control>
@@ -30,7 +30,7 @@
 				<width>960</width>
 				<height>540</height>
 				<fadetime>600</fadetime>
-				<texture colordiffuse="$INFO[Window(home).Property(ImageColor2fa)]" background="true">$INFO[Window(home).Property(ImageFilter2fa)]</texture>
+				<texture colordiffuse="$INFO[Window(home).Property(ImageColorfa2)]" background="true">$INFO[Window(home).Property(ImageFilterfa2)]</texture>
 				<animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
 				<animation effect="slide" start="-30,-30" end="30,30" time="6000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
 			</control>
@@ -52,7 +52,7 @@
 				<width>960</width>
 				<height>540</height>
 				<fadetime>600</fadetime>
-				<texture colordiffuse="$INFO[Window(home).Property(ImageColor1fa)]" background="true">$INFO[Window(home).Property(ImageFilter3fa)]</texture>
+				<texture colordiffuse="$INFO[Window(home).Property(ImageColorfa1)]" background="true">$INFO[Window(home).Property(ImageFilterfa3)]</texture>
 				<animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
 				<animation effect="slide" start="-30,-30" end="30,30" time="6000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
 			</control>
@@ -164,7 +164,7 @@
 				<aspectratio>keep</aspectratio>
 				<fadetime>400</fadetime>
 				<animation type="WindowOpen">
-					<effect type="fade" start="0" end="100" time="200" delay="0" />
+					<effect type="fade" start="0" end="100" time="200" delay="320" />
 					<effect type="zoom" start="1330" end="110" center="auto" time="200" delay="320" />
 				</animation>
 				<animation type="WindowClose">
@@ -180,6 +180,29 @@
 				<width>1000</width>
 				<height>1000</height>
 				<aspectratio aligny="bottom">scale</aspectratio>
+				<animation type="WindowClose">
+					<effect type="zoom" start="100" end="10" center="auto" time="200" delay="0" />
+					<effect type="rotate" start="0" end="1000" center="auto" time="200" delay="0" />
+					<effect type="fade" start="100" end="0" time="400" delay="200" />
+					<effect type="zoom" start="10" end="2660" center="auto" time="100" delay="200" />
+					<effect type="slide" start="0" end="0,200" center="auto" time="400" delay="200" />
+				</animation>
+				<texture colordiffuse="$INFO[Window(home).Property(ImageColor1)]" background="true">$INFO[Window(home).Property(ImageFilter1)]</texture>
+			</control>
+			<control type="image">
+				<left>840</left>
+				<bottom>90</bottom>
+				<width>1000</width>
+				<height>1000</height>
+				<aspectratio aligny="bottom">scale</aspectratio>
+				<animation type="WindowOpen">
+					<effect type="fade" start="0" end="100" time="2000" delay="0" />
+				</animation>
+				<animation type="WindowClose">
+					<effect type="fade" start="100" end="0" time="200" delay="0" />
+					<effect type="zoom" start="100" end="10" center="auto" time="200" delay="0" />
+					<effect type="rotate" start="0" end="100" center="auto" time="200" delay="0" />
+				</animation>
 				<texture colordiffuse="$INFO[Window(home).Property(ImageColor1)]" background="true">$INFO[Window(home).Property(ImageFilter3)]</texture>
 			</control>
 			<control type="group">
@@ -318,9 +341,9 @@
 									</control>
 									<control type="image">
 										<centertop>14</centertop>
-										<width>120</width>
+										<width>1000</width>
 										<height>64</height>
-										<texture colordiffuse="$INFO[Window(home).Property(MusicVisInfo.ImageColor)]">equaliser_stop.gif</texture>
+										<texture colordiffuse="$INFO[Window(home).Property(ImageColor3)]">equaliser_stop.gif</texture>
 										<visible>Player.Paused</visible>
 									</control>
 									<control type="image">
