@@ -854,4 +854,8 @@
 		<value condition="!IsEmpty(Window(Home).Property(SkinHelper.AllMoviesBackground.clearlogo))">$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground.clearlogo)]</value>
 		<value condition="IsEmpty(Window(Home).Property(SkinHelper.AllMoviesBackground.clearlogo))">http://localhost:52307/getpvrthumb&amp;title=$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground.title)]&amp;type=clearlogo</value>
 	</variable>
+	<variable name="ColorboxPowerModeImage">
+		<value condition="Control.IsVisible(518) + !Skin.HasSetting(low.power)">$INFO[Window(home).Property(Pixelated.ImageFilter)]</value>
+		<value>default.png</value>
+	</variable>
 </includes>
