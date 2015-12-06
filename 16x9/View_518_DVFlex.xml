@@ -17,7 +17,7 @@
 				<effect type="fade" start="35" end="00" time="200" tween="quadratic" easing="out" />
 			</animation>
 			<aspectratio align="center">scale</aspectratio>
-			<texture colordiffuse="$INFO[Window(home).Property(Pixelated.ImageColor)]">special://skin/extras/backgrounds/pixel.jpg</texture>
+			<texture colordiffuse="$VAR[ColorboxPowerModeColor]">special://skin/extras/backgrounds/pixel.jpg</texture>
 			<visible>Control.IsVisible(518)</visible>
 			<visible>!Skin.HasSetting(lights.out)</visible>
 			<visible>![[Skin.HasSetting(global.showvideo) + Player.HasVideo] | [Skin.HasSetting(global.showvisualisation) + Player.HasAudio]] + !Window.IsVisible(DialogVideoInfo.xml)</visible>
@@ -40,7 +40,7 @@
 				<effect type="fade" start="0" end="100" time="200" tween="quadratic" easing="out"/>
 			</animation>
 			<aspectratio align="center">scale</aspectratio>
-			<texture colordiffuse="$INFO[Window(home).Property(Pixelated.ImageColor)]" background="true">$INFO[Window(home).Property(Pixelated.ImageFilter)]</texture>
+			<texture colordiffuse="$VAR[ColorboxPowerModeColor]" background="true">$VAR[ColorboxPowerModeImage]</texture>
 			<visible>Control.IsVisible(518)</visible>
 			<visible>!Skin.HasSetting(lights.out)</visible>
 			<visible>![[Skin.HasSetting(global.showvideo) + Player.HasVideo] | [Skin.HasSetting(global.showvisualisation) + Player.HasAudio]] + !Window.IsVisible(DialogVideoInfo.xml)</visible>
@@ -60,7 +60,7 @@
 				<effect type="fade" start="35" end="00" time="200" tween="quadratic" easing="out" />
 			</animation>
 			<aspectratio align="center">scale</aspectratio>
-			<texture colordiffuse="$INFO[Window(home).Property(Pixelated.ImageColor)]">special://skin/extras/backgrounds/pixel.jpg</texture>
+			<texture colordiffuse="$VAR[ColorboxPowerModeColor]">special://skin/extras/backgrounds/pixel.jpg</texture>
 <!--
 			<visible>StringCompare(Window(home).Property(Pixelated.ImageUpdating),1)</visible>
 -->
