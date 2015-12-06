@@ -23,7 +23,7 @@
 		<control type="image">
 			<include>Dimensions_Fullscreen</include>
 			<aspectratio align="center">scale</aspectratio>
-			<texture colordiffuse="$INFO[Window(home).Property(actor.ImageColor)]" fallback="common/black.png" background="true" diffuse="diffuse/dv-mask.png">$INFO[Window.Property(actor.ImageFilter)]</texture>
+			<texture colordiffuse="$INFO[Window(home).Property(ImageColor)]" fallback="common/black.png" background="true" diffuse="diffuse/dv-mask.png">$INFO[Window.Property(actor.ImageFilter)]</texture>
 			<visible>!Skin.HasSetting(lights.out)</visible>
 		</control>
 		<control type="group">
@@ -170,14 +170,14 @@
 								<width>50%</width>
 								<height>50%</height>
 								<aspectratio scalediffuse="false">scale</aspectratio>
-								<texture colordiffuse="$INFO[Window(home).Property(actor.ImageColor)]" background="true">$VAR[FocusedBorderImage]</texture>
+								<texture colordiffuse="$INFO[Window(home).Property(ImageColor)]" background="true">$VAR[FocusedBorderImage]</texture>
 							</control>
 							<control type="image">
 								<left>50%</left>
 								<width>50%</width>
 								<height>50%</height>
 								<aspectratio scalediffuse="false">scale</aspectratio>
-								<texture colordiffuse="$INFO[Window(home).Property(actor.ImageColor)]" background="true">$VAR[FocusedBorderImage]</texture>
+								<texture colordiffuse="$INFO[Window(home).Property(ImageColor)]" background="true">$VAR[FocusedBorderImage]</texture>
 							</control>
 							<control type="image">
 								<left>0</left>
@@ -185,7 +185,7 @@
 								<width>50%</width>
 								<height>50%</height>
 								<aspectratio scalediffuse="false">scale</aspectratio>
-								<texture colordiffuse="$INFO[Window(home).Property(actor.ImageColor)]" background="true" flipy="true">$VAR[FocusedBorderImage]</texture>
+								<texture colordiffuse="$INFO[Window(home).Property(ImageColor)]" background="true" flipy="true">$VAR[FocusedBorderImage]</texture>
 							</control>
 							<control type="image">
 								<left>50%</left>
@@ -193,7 +193,7 @@
 								<width>50%</width>
 								<height>50%</height>
 								<aspectratio scalediffuse="false">scale</aspectratio>
-								<texture colordiffuse="$INFO[Window(home).Property(actor.ImageColor)]" background="true" flipy="true">$VAR[FocusedBorderImage]</texture>
+								<texture colordiffuse="$INFO[Window(home).Property(ImageColor)]" background="true" flipy="true">$VAR[FocusedBorderImage]</texture>
 							</control>
 							<animation type="conditional" condition="true" reversible="false">
 								<effect type="zoom" start="100" end="108" time="200" center="auto" tween="quadratic" easing="out"/>
@@ -289,9 +289,9 @@
 						<textoffsetx>20</textoffsetx>
 						<textcolor>white</textcolor>
 						<focusedcolor>$VAR[EmbyMiddleColourHighlight]</focusedcolor>
-						<texturefocus colordiffuse="$INFO[Window(home).Property(actor.ImageColor)]">common/box.png</texturefocus>
+						<texturefocus colordiffuse="$INFO[Window(home).Property(ImageColor)]">common/box.png</texturefocus>
 						<texturenofocus colordiffuse="$VAR[EmbyMiddleColourHighlight]">common/box.png</texturenofocus>
-						<alttexturefocus colordiffuse="$INFO[Window(home).Property(actor.ImageColor)]">common/box.png</alttexturefocus>
+						<alttexturefocus colordiffuse="$INFO[Window(home).Property(ImageColor)]">common/box.png</alttexturefocus>
 						<alttexturenofocus colordiffuse="$VAR[EmbyMiddleColourHighlight]">common/box.png</alttexturenofocus>
 					</control>
 				</control>
