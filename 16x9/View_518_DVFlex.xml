@@ -439,14 +439,14 @@
 							<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched) + !ListItem.IsResumable</visible>
 						</control>
 						<control type="label">
-							<centerright>32</centerright>
+							<centerright>29</centerright>
 							<centertop>35</centertop>
 							<width>32</width>
 							<height>32</height>
 							<font>symbolview</font>
-							<label>$VAR[PercentWatchedLabel]</label>
-							<textcolor>$VAR[PlayingColourHighlight]</textcolor>
-							<selectedcolor>$VAR[PlayingColourHighlight]</selectedcolor>
+                    <label>$VAR[ItemsPlayingIcon]</label>
+                    <textcolor>$VAR[PlayingColourHighlight]</textcolor>
+                    <selectedcolor>$VAR[PlayingColourHighlight]</selectedcolor>
 							<visible>!stringcompare(ListItem.Label,..) + ListItem.IsPlaying</visible>
 						</control>
 						<control type="label">
@@ -513,14 +513,14 @@
 							<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched) + !ListItem.IsResumable</visible>
 						</control>
 						<control type="label">
-							<centerright>32</centerright>
+							<centerright>29</centerright>
 							<centertop>35</centertop>
 							<width>32</width>
 							<height>32</height>
 							<font>symbolview</font>
-							<label>$VAR[PercentWatchedLabel]</label>
-							<textcolor>$VAR[PlayingColourHighlight]</textcolor>
-							<selectedcolor>$VAR[PlayingColourHighlight]</selectedcolor>
+                    <label>$VAR[ItemsPlayingIcon]</label>
+                    <textcolor>$VAR[PlayingColourHighlight]</textcolor>
+                    <selectedcolor>$VAR[PlayingColourHighlight]</selectedcolor>
 							<visible>!stringcompare(ListItem.Label,..) + ListItem.IsPlaying</visible>
 						</control>
 						<control type="label">
@@ -632,14 +632,14 @@
 								<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched) + !ListItem.IsResumable</visible>
 							</control>
 							<control type="label">
-								<centerright>67</centerright>
+								<centerright>64</centerright>
 								<centertop>36</centertop>
 								<width>32</width>
 								<height>32</height>
 								<font>symbolview</font>
-								<label>$VAR[PercentWatchedLabel]</label>
-								<textcolor>$VAR[PlayingColourHighlight]</textcolor>
-								<selectedcolor>$VAR[PlayingColourHighlight]</selectedcolor>
+                    <label>$VAR[ItemsPlayingIcon]</label>
+                    <textcolor>$VAR[PlayingColourHighlight]</textcolor>
+                    <selectedcolor>$VAR[PlayingColourHighlight]</selectedcolor>
 								<visible>!stringcompare(ListItem.Label,..) + ListItem.IsPlaying</visible>
 							</control>
 							<control type="label">
@@ -725,7 +725,7 @@
 						</control>
 						<control type="label">
 							<animation effect="zoom" end="180" start="100" time="0" center="auto" condition="true">Conditional</animation>
-							<centerright>156</centerright>
+							<centerright>151</centerright>
 							<centertop>35</centertop>
 							<width>32</width>
 							<height>32</height>
