@@ -188,6 +188,9 @@
 				<width>1000</width>
 				<height>1000</height>
 				<aspectratio aligny="bottom">scale</aspectratio>
+				<animation type="WindowOpen" reversible="true">
+					<effect type="zoom" start="110" end="100" center="auto" time="200" delay="0" />
+				</animation>
 				<animation type="WindowClose">
 					<effect type="zoom" start="100" end="10" center="auto" time="200" delay="0" />
 					<effect type="rotate" start="0" end="1000" center="auto" time="200" delay="0" />
@@ -203,8 +206,9 @@
 				<width>1000</width>
 				<height>1000</height>
 				<aspectratio aligny="bottom">scale</aspectratio>
-				<animation type="WindowOpen">
-					<effect type="fade" start="0" end="100" time="2000" delay="0" />
+				<animation type="WindowOpen" reversible="true">
+					<effect type="fade" start="0" end="100" time="500" delay="0" />
+					<effect type="zoom" start="110" end="100" center="auto" time="200" delay="0" />
 				</animation>
 				<animation type="WindowClose">
 					<effect type="fade" start="100" end="0" time="200" delay="0" />
