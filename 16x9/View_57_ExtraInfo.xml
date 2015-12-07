@@ -69,9 +69,10 @@
 						<control type="button">
 							<texturefocus>-</texturefocus>
 							<texturenofocus>-</texturenofocus>
-							<onfocus>StopScript(script.colorbox)</onfocus>
+							
 							<onfocus condition="Container.Content(movies)">ClearProperty(TVShowID,home)</onfocus>
 							<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
+							<onfocus>SetProperty(cfa_ignore_set,True,home)</onfocus>
 							<onfocus condition="!Container.Scrolling">RunScript(script.colorbox,info=bluronly,id='"$VAR[LandscapeImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfoExtra)</onfocus>
 						</control>
 						<control type="group">
@@ -93,9 +94,10 @@
 						<control type="button">
 							<texturefocus>-</texturefocus>
 							<texturenofocus>-</texturenofocus>
-							<onfocus>StopScript(script.colorbox)</onfocus>
+							
 							<onfocus condition="Container.Content(movies)">ClearProperty(TVShowID,home)</onfocus>
 							<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
+							<onfocus>SetProperty(cfa_ignore_set,True,home)</onfocus>
 							<onfocus condition="!Container.Scrolling">RunScript(script.colorbox,info=bluronly,id='"$VAR[LandscapeImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfoExtra)</onfocus>
 						</control>
 						<control type="group">

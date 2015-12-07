@@ -152,6 +152,29 @@
 							<texture>$VAR[MusicBlockImage]</texture>
 							<aspectratio align="center" aligny="center">scale</aspectratio>
 						</control>
+					<control type="group">
+						<control type="label">
+							<centerleft>60</centerleft>
+							<centertop>60</centertop>
+							<width>76</width>
+							<height>76</height>
+							<font>symbolbackbig</font>
+							<label>$VAR[PercentWatchedBack]</label>
+							<textcolor>$VAR[BackingColourHighlight]</textcolor>
+								<selectedcolor>$VAR[BackingColourHighlight]</selectedcolor>
+						</control>
+						<control type="label">
+							<centerleft>65</centerleft>
+							<centertop>62</centertop>
+							<width>32</width>
+							<height>32</height>
+							<font>symbolview</font>
+                    <label>$VAR[ItemsPlayingIcon]</label>
+                    <textcolor>$VAR[PlayingColourHighlight]</textcolor>
+                    <selectedcolor>$VAR[PlayingColourHighlight]</selectedcolor>
+						</control>
+						<visible>!stringcompare(ListItem.Label,..) + ListItem.IsPlaying</visible>
+					</control>
 						<control type="textbox">
 							<left>158</left>
 							<right>10</right>
@@ -169,6 +192,7 @@
 					</itemlayout>
 					<focusedlayout height="120" width="720">
 						<control type="button" id="6020">
+							<onfocus>SetProperty(cfa_ignore_set,True,home)</onfocus>
 							<onfocus>RunScript(script.colorbox,info=bluronly,id='"$INFO[ListItem.Icon]"',radius=44,prefix=VideoInfo)</onfocus>
 							<label>-</label>
 							<focusedcolor>-</focusedcolor>
@@ -201,6 +225,29 @@
 								<texture>$VAR[AlbumArtistIcon]</texture>
 								<aspectratio align="center" aligny="center">scale</aspectratio>
 							</control>
+					<control type="group">
+						<control type="label">
+							<centerleft>60</centerleft>
+							<centertop>60</centertop>
+							<width>76</width>
+							<height>76</height>
+							<font>symbolbackbig</font>
+							<label>$VAR[PercentWatchedBack]</label>
+							<textcolor>$VAR[BackingColourHighlight]</textcolor>
+								<selectedcolor>$VAR[BackingColourHighlight]</selectedcolor>
+						</control>
+						<control type="label">
+							<centerleft>65</centerleft>
+							<centertop>62</centertop>
+							<width>32</width>
+							<height>32</height>
+							<font>symbolview</font>
+                    <label>$VAR[ItemsPlayingIcon]</label>
+                    <textcolor>$VAR[PlayingColourHighlight]</textcolor>
+                    <selectedcolor>$VAR[PlayingColourHighlight]</selectedcolor>
+						</control>
+						<visible>!stringcompare(ListItem.Label,..) + ListItem.IsPlaying</visible>
+					</control>
 							<animation type="Focus" reversible="false">
 								<effect type="slide" start="0" end="38,0" delay="0" time="150" tween="quadratic" easing="out" reversible="false" center="auto" />
 							</animation>

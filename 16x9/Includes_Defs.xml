@@ -1078,6 +1078,22 @@
 			<align>left</align>
 			<label>$LOCALIZE[31946]: $INFO[Skin.String(border.image)]</label>
 			<onclick>ActivateWindow(1114)</onclick>
+			<visible>!Control.IsVisible(518)</visible>
+		</control>
+		<control type="button" id="336">
+			<description>widget</description>
+			<include>DefContextButtonBlade</include>
+			<align>left</align>
+			<label>$LOCALIZE[32089]: $INFO[Skin.String(background.effect)]</label>
+			<onclick>SetProperty(Dialog.NumItems,3)</onclick>
+			<onclick>SetProperty(Dialog.1.Label,Blur)</onclick>
+			<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(background.effect,Blur))</onclick>
+			<onclick>SetProperty(Dialog.2.Label,Pixelate)</onclick>
+			<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(background.effect,Pixelate))</onclick>
+			<onclick>SetProperty(Dialog.3.Label,Posterize)</onclick>
+			<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(background.effect,Posterize))</onclick>
+			<onclick>RunScript(script.toolbox,info=selectdialog,header=Select Background Effect)</onclick>
+			<visible>Control.IsVisible(518)</visible>
 		</control>
 		<control type="radiobutton" id="9001" description="Plot Overlay">
 			<include>DefContextButtonBlade</include>
@@ -1313,7 +1329,7 @@
 		<control type="radiobutton" id="9038" description="Show Tick (155)">
 			<include>DefContextButtonBlade</include>
 			<align>left</align>
-			<label>$LOCALIZE[31133]/$LOCALIZE[16101] $LOCALIZE[536]</label>
+			<label>$LOCALIZE[32090]</label>
 			<selected>Skin.HasSetting(views.155.showtick)</selected>
 			<onclick>Skin.ToggleSetting(views.155.showtick)</onclick>
 			<visible>Control.IsVisible(155)</visible>

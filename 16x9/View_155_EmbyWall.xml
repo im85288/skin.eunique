@@ -32,6 +32,8 @@
 				<scrolltime tween="quadratic">400</scrolltime>
 				<itemlayout width="240" height="360">
 					<control type="group">
+							<animation effect="zoom" end="85" start="100" time="200" center="auto" condition="System.IdleTime(3)">Conditional</animation>
+					<control type="group">
 						<control type="image">
 							<left>10</left>
 							<top>10</top>
@@ -55,6 +57,7 @@
 								<label>$VAR[PercentWatchedBack]</label>
 								<textcolor>$VAR[BackingColourHighlight]</textcolor>
 								<selectedcolor>$VAR[BackingColourHighlight]</selectedcolor>
+								<visible>!Skin.HasSetting(views.155.showtick) | Skin.HasSetting(views.155.showtick) + ListItem.IsResumable</visible>
 							</control>
 						<control type="group">
 							<control type="label">
@@ -95,7 +98,6 @@
                     <textcolor>$VAR[PlayingColourHighlight]</textcolor>
                     <selectedcolor>$VAR[PlayingColourHighlight]</selectedcolor>
 							</control>
-							<visible>!Skin.HasSetting(views.155.showtick)</visible>
 							<visible>!stringcompare(ListItem.Label,..) + ListItem.IsPlaying</visible>
 						</control>
 						<control type="group">
@@ -123,10 +125,10 @@
 								<textcolor>$VAR[ResumeColourHighlight]</textcolor>
 								<selectedcolor>$VAR[ResumeColourHighlight]</selectedcolor>
 							</control>
-							<visible>!Skin.HasSetting(views.155.showtick)</visible>
 							<visible>!stringcompare(ListItem.Label,..) + ListItem.IsResumable</visible>
 						</control>
 						</control>
+					</control>
 					</control>
 				</itemlayout>
 				<focusedlayout width="240" height="360">
@@ -135,6 +137,7 @@
 						<texturenofocus>-</texturenofocus>
 						<onfocus condition="Container.Content(movies)">ClearProperty(TVShowID,home)</onfocus>
 						<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
+						<onfocus>SetProperty(cfa_ignore_set,True,home)</onfocus>
 						<onfocus condition="!Container.Scrolling">RunScript(script.colorbox,info=blur,id='"$VAR[PosterImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfo)</onfocus>
 					</control>
 					<control type="group">
@@ -146,9 +149,13 @@
 							<aspectratio scalediffuse="false">scale</aspectratio>
 							<texture background="true" colordiffuse="$VAR[BorderHighlight]">$VAR[FocusedBorderImage]</texture>
 							<animation type="Focus" reversible="false">
-								<effect type="zoom" start="108,112" end="108" time="200" center="auto" tween="quadratic" easing="out"/>
+								<effect type="zoom" start="108" end="120" time="200" center="auto" tween="quadratic" easing="out"/>
 							</animation>
 						</control>
+					<control type="group">
+							<animation type="Focus" reversible="false">
+								<effect type="zoom" start="100" end="118" time="200" center="auto" tween="quadratic" easing="out"/>
+							</animation>
 						<control type="image">
 							<left>10</left>
 							<top>10</top>
@@ -156,10 +163,6 @@
 							<bottom>10</bottom>
 							<aspectratio scalediffuse="false">stretch</aspectratio>
 							<texture background="true">$VAR[PosterImage]</texture>
-							<animation type="Focus" reversible="false">
-								<effect type="zoom" start="100" end="105" time="200" center="auto" tween="quadratic" easing="out"/>
-								<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
-							</animation>
 						</control>
 						<control type="group">
 							<control type="label">
@@ -170,6 +173,8 @@
 								<font>symbolback</font>
 								<label>$VAR[PercentWatchedBack]</label>
 								<textcolor>$VAR[BackingColourHighlight]</textcolor>
+								<selectedcolor>$VAR[BackingColourHighlight]</selectedcolor>
+								<visible>!Skin.HasSetting(views.155.showtick) | Skin.HasSetting(views.155.showtick) + ListItem.IsResumable</visible>
 							</control>
 						<control type="group">
 							<control type="label">
@@ -210,7 +215,6 @@
                     <textcolor>$VAR[PlayingColourHighlight]</textcolor>
                     <selectedcolor>$VAR[PlayingColourHighlight]</selectedcolor>
 							</control>
-							<visible>!Skin.HasSetting(views.155.showtick)</visible>
 							<visible>!stringcompare(ListItem.Label,..) + ListItem.IsPlaying</visible>
 						</control>
 						<control type="group">
@@ -238,10 +242,10 @@
 								<textcolor>$VAR[ResumeColourHighlight]</textcolor>
 								<selectedcolor>$VAR[ResumeColourHighlight]</selectedcolor>
 							</control>
-							<visible>!Skin.HasSetting(views.155.showtick)</visible>
 							<visible>!stringcompare(ListItem.Label,..) + ListItem.IsResumable</visible>
 						</control>
 						</control>
+					</control>
 					</control>
 				</focusedlayout>
 			</control>

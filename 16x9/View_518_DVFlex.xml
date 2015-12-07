@@ -18,7 +18,7 @@
 			</animation>
 			<aspectratio align="center">scale</aspectratio>
 			<texture colordiffuse="$VAR[ColorboxPowerModeColor]">special://skin/extras/backgrounds/pixel.jpg</texture>
-			<visible>Control.IsVisible(518)</visible>
+			<visible>Control.IsVisible(518)  + !Skin.HasSetting(low.power)</visible>
 			<visible>!Skin.HasSetting(lights.out)</visible>
 			<visible>![[Skin.HasSetting(global.showvideo) + Player.HasVideo] | [Skin.HasSetting(global.showvisualisation) + Player.HasAudio]] + !Window.IsVisible(DialogVideoInfo.xml)</visible>
 		</control>
@@ -36,12 +36,15 @@
 			<animation type="Hidden" reversible="true">
 				<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out" />
 			</animation>
-			<animation type="Conditional" reversible="true" condition="StringCompare(Window(home).Property(Pixelated.ImageUpdating),1)">
+			<animation type="Conditional" reversible="true" condition="StringCompare(Window(home).Property(ImageUpdating),1)">
 				<effect type="fade" start="0" end="100" time="200" tween="quadratic" easing="out"/>
+			</animation>
+			<animation type="Conditional" reversible="true" condition="StringCompare(Window(home).Property(ImageUpdating),0)">
+				<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out"/>
 			</animation>
 			<aspectratio align="center">scale</aspectratio>
 			<texture colordiffuse="$VAR[ColorboxPowerModeColor]" background="true">$VAR[ColorboxPowerModeImage]</texture>
-			<visible>Control.IsVisible(518)</visible>
+			<visible>Control.IsVisible(518) + !Skin.HasSetting(low.power)</visible>
 			<visible>!Skin.HasSetting(lights.out)</visible>
 			<visible>![[Skin.HasSetting(global.showvideo) + Player.HasVideo] | [Skin.HasSetting(global.showvisualisation) + Player.HasAudio]] + !Window.IsVisible(DialogVideoInfo.xml)</visible>
 		</control>
@@ -64,7 +67,7 @@
 <!--
 			<visible>StringCompare(Window(home).Property(Pixelated.ImageUpdating),1)</visible>
 -->
-			<visible>Control.IsVisible(518)</visible>
+			<visible>Control.IsVisible(518) + !Skin.HasSetting(low.power)</visible>
 			<visible>!Skin.HasSetting(lights.out)</visible>
 			<visible>![[Skin.HasSetting(global.showvideo) + Player.HasVideo] | [Skin.HasSetting(global.showvisualisation) + Player.HasAudio]] + !Window.IsVisible(DialogVideoInfo.xml)</visible>
 		</control>
@@ -471,17 +474,6 @@
 							<selectedcolor>$VAR[ResumeColourHighlight]</selectedcolor>
 							<visible>!stringcompare(ListItem.Label,..) + ListItem.IsResumable</visible>
 						</control>
-						<control type="label">
-							<centerright>32</centerright>
-							<centertop>35</centertop>
-							<width>32</width>
-							<height>32</height>
-							<font>symbolview</font>
-							<label>$VAR[PercentWatchedLabel]</label>
-							<textcolor>$VAR[NewColourHighlight]</textcolor>
-							<selectedcolor>$VAR[NewColourHighlight]</selectedcolor>
-							<visible>!stringcompare(ListItem.Label,..) + [SubString(ListItem.Overlay,OverlayUnwatched.png) + [[Container.Content(movies) + [StringCompare(Window(Home).Property(LatestMovie.1.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.2.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.3.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.4.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.5.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.6.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.7.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.8.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.9.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.10.Title),ListItem.Label)]] | [[Container.Content(tvshows)] + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem.TvShowTitle)]] | [Container.Content(episodes) + [StringCompare(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem.Title)]]]]</visible>
-						</control>
 					</control>
 				</itemlayout>
 				<itemlayout height="337" width="600" condition="Container.Content(episodes)">
@@ -545,17 +537,6 @@
 							<selectedcolor>$VAR[ResumeColourHighlight]</selectedcolor>
 							<visible>!stringcompare(ListItem.Label,..) + ListItem.IsResumable</visible>
 						</control>
-						<control type="label">
-							<centerright>32</centerright>
-							<centertop>35</centertop>
-							<width>32</width>
-							<height>32</height>
-							<font>symbolview</font>
-							<label>$VAR[PercentWatchedLabel]</label>
-							<textcolor>$VAR[NewColourHighlight]</textcolor>
-							<selectedcolor>$VAR[NewColourHighlight]</selectedcolor>
-							<visible>!stringcompare(ListItem.Label,..) + [SubString(ListItem.Overlay,OverlayUnwatched.png) + [[Container.Content(movies) + [StringCompare(Window(Home).Property(LatestMovie.1.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.2.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.3.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.4.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.5.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.6.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.7.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.8.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.9.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.10.Title),ListItem.Label)]] | [[Container.Content(tvshows)] + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem.TvShowTitle)]] | [Container.Content(episodes) + [StringCompare(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem.Title)]]]]</visible>
-						</control>
 					</control>
 				</itemlayout>
 				<focusedlayout height="337" width="222" condition="!Container.Content(episodes)">
@@ -564,24 +545,20 @@
 						<texturenofocus>-</texturenofocus>
 						<onfocus condition="Container.Content(movies)">ClearProperty(TVShowID,home)</onfocus>
 						<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
+						<onfocus>ClearProperty(cfa_ignore_set,home)</onfocus>
 						<!--
 <onfocus>RunScript(script.colorbox,info=twotone,id='"$VAR[RealFanartImage]"',black='"#000022"',white='"#990000"',prefix=Pixelated)</onfocus>
 <onfocus>RunScript(script.colorbox,info=posterize,id='"$VAR[RealFanartImage]"',bits=2,prefix=Pixelated)</onfocus>
 -->
-						<onfocus>StopScript(script.colorbox)</onfocus>
-						<onfocus>ClearProperty(Pixelated.ImageUpdating,home)</onfocus>
-						<onfocus>RunScript(script.colorbox,info=pixelate,id='"$VAR[RealFanartImage]"',pixels=$VAR[VideoInfoBlurLevel],prefix=Pixelated)</onfocus>
 					</control>
 				</focusedlayout>
 				<focusedlayout height="337" width="600" condition="Container.Content(episodes)">
 					<control type="button">
 						<texturefocus>-</texturefocus>
 						<texturenofocus>-</texturenofocus>
-						<onfocus>ClearProperty(Pixelated.ImageUpdating,home)</onfocus>
 						<onfocus condition="Container.Content(movies)">ClearProperty(TVShowID,home)</onfocus>
 						<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
-						<onfocus>StopScript(script.colorbox)</onfocus>
-						<onfocus>RunScript(script.colorbox,info=pixelate,id='"$VAR[RealFanartImage]"',pixels=$VAR[VideoInfoBlurLevel],prefix=Pixelated)</onfocus>
+						<onfocus>ClearProperty(cfa_ignore_set,home)</onfocus>
 					</control>
 					<control type="group">
 						<animation effect="zoom" end="140" start="100" time="200" center="auto">Focus</animation>
@@ -663,17 +640,6 @@
 								<textcolor>$VAR[ResumeColourHighlight]</textcolor>
 								<selectedcolor>$VAR[ResumeColourHighlight]</selectedcolor>
 								<visible>!stringcompare(ListItem.Label,..) + ListItem.IsResumable</visible>
-							</control>
-							<control type="label">
-								<centerright>67</centerright>
-								<centertop>36</centertop>
-								<width>32</width>
-								<height>32</height>
-								<font>symbolview</font>
-								<label>$VAR[PercentWatchedLabel]</label>
-								<textcolor>$VAR[NewColourHighlight]</textcolor>
-								<selectedcolor>$VAR[NewColourHighlight]</selectedcolor>
-								<visible>!stringcompare(ListItem.Label,..) + [SubString(ListItem.Overlay,OverlayUnwatched.png) + [[Container.Content(movies) + [StringCompare(Window(Home).Property(LatestMovie.1.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.2.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.3.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.4.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.5.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.6.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.7.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.8.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.9.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.10.Title),ListItem.Label)]] | [[Container.Content(tvshows)] + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem.TvShowTitle)]] | [Container.Content(episodes) + [StringCompare(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem.Title)]]]]</visible>
 							</control>
 						</control>
 					</control>
@@ -758,18 +724,6 @@
 							<textcolor>$VAR[ResumeColourHighlight]</textcolor>
 							<selectedcolor>$VAR[ResumeColourHighlight]</selectedcolor>
 							<visible>!stringcompare(Container(518).ListItem.Label,..) + Container(518).ListItem.IsResumable</visible>
-						</control>
-						<control type="label">
-							<animation effect="zoom" end="180" start="100" time="0" center="auto" condition="true">Conditional</animation>
-							<centerright>156</centerright>
-							<centertop>35</centertop>
-							<width>32</width>
-							<height>32</height>
-							<font>symbolview</font>
-							<label>$VAR[PercentWatchedLabel518]</label>
-							<textcolor>$VAR[NewColourHighlight]</textcolor>
-							<selectedcolor>$VAR[NewColourHighlight]</selectedcolor>
-							<visible>!stringcompare(Container(518).ListItem.Label,..) + [SubString(Container(518).ListItem.Overlay,OverlayUnwatched.png) + [[Container.Content(movies) + [StringCompare(Window(Home).Property(LatestMovie.1.Title),Container(518).ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.2.Title),Container(518).ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.3.Title),Container(518).ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.4.Title),Container(518).ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.5.Title),Container(518).ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.6.Title),Container(518).ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.7.Title),Container(518).ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.8.Title),Container(518).ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.9.Title),Container(518).ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.10.Title),Container(518).ListItem.Label)]] | [[Container.Content(tvshows)] + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),Container(518).ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),Container(518).ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),Container(518).ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),Container(518).ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),Container(518).ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),Container(518).ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),Container(518).ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),Container(518).ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),Container(518).ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),Container(518).ListItem.TvShowTitle)]] | [Container.Content(episodes) + [StringCompare(Window(Home).Property(LatestEpisode.1.EpisodeTitle),Container(518).ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.2.EpisodeTitle),Container(518).ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.3.EpisodeTitle),Container(518).ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.4.EpisodeTitle),Container(518).ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.5.EpisodeTitle),Container(518).ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.6.EpisodeTitle),Container(518).ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.7.EpisodeTitle),Container(518).ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.8.EpisodeTitle),Container(518).ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.9.EpisodeTitle),Container(518).ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.10.EpisodeTitle),Container(518).ListItem.Title)]]]]</visible>
 						</control>
 						</control>
 						</control>

@@ -855,7 +855,10 @@
 		<value condition="IsEmpty(Window(Home).Property(SkinHelper.AllMoviesBackground.clearlogo))">http://localhost:52307/getpvrthumb&amp;title=$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground.title)]&amp;type=clearlogo</value>
 	</variable>
 	<variable name="ColorboxPowerModeImage">
-		<value condition="Control.IsVisible(518) + !Skin.HasSetting(low.power)">$INFO[Window(home).Property(Pixelated.ImageFilter)]</value>
+		<value condition="Control.IsVisible(518) + !Skin.HasSetting(low.power) + Skin.String(background.effect,Blur)">$INFO[Window(home).Property(ImageFiltercfa1)]</value>
+		<value condition="Control.IsVisible(518) + !Skin.HasSetting(low.power) + Skin.String(background.effect,Pixelate)">$INFO[Window(home).Property(ImageFiltercfa2)]</value>
+		<value condition="Control.IsVisible(518) + !Skin.HasSetting(low.power) + Skin.String(background.effect,Posterize)">$INFO[Window(home).Property(ImageFiltercfa3)]</value>
+		<value condition="Control.IsVisible(518) + !Skin.HasSetting(low.power) + Skin.String(background.effect,Twotone)">$INFO[Window(home).Property(ImageFiltercfa4)]</value>
 		<value>diffuse/listposter-ref.png</value>
 	</variable>
 </includes>

@@ -169,6 +169,7 @@
 						<control type="button">
 							<texturefocus>-</texturefocus>
 							<texturenofocus>-</texturenofocus>
+							<onfocus>SetProperty(cfa_ignore_set,True,home)</onfocus>
 							<onfocus condition="Container.Content(movies) | Container.Content(sets)">ClearProperty(TVShowID,home)</onfocus>
 							<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
 							<onfocus condition="!Container.Scrolling">RunScript(script.colorbox,info=blur,id='"$VAR[PosterImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfo)</onfocus>
