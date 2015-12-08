@@ -5,7 +5,7 @@
 		<control type="group">
 			<include>Animation.Common</include>
 			<visible>Control.IsVisible(516)</visible>
-			<visible>!Window.IsVisible(DialogVideoInfo.xml)</visible>
+			<visible>!Window.IsVisible(Dialogxml)</visible>
 			<animation effect="slide" end="20,0" center="auto" time="200" condition="Control.HasFocus(60)">Conditional</animation>
 			<animation type="Conditional" reversible="true" condition="![Skin.HasSetting(osd.hidespoilers) + Container.Content(episodes) + [stringcompare(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]] + [Container.Content(musicvideos) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets) | Container.Content(episodes)] + !System.IdleTime(26) + System.IdleTime(5) + Skin.HasSetting(furniture.overlayinfo) + ![ControlGroup(9000).HasFocus() | Window.IsVisible(DialogContextMenu.xml)]">
 				<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out"/>
@@ -31,13 +31,21 @@
 					<viewtype label="31850">list</viewtype>
 					<scrolltime tween="quadratic">400</scrolltime>
 					<itemlayout width="1900" height="66">
-						<control type="label">
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<right>0</right>
 							<height>66</height>
-							<align>center</align>
-							<aligny>center</aligny>
-							<label>$INFO[ListItem.Label]</label>
-							<font>SmallBold</font>
-							<textcolor>white</textcolor>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<texture background="true" colordiffuse="$VAR[ColorboxPowerModeColor]">$VAR[RealFanartImage]</texture>
+							<fadetime>200</fadetime>
+						</control>
+						<control type="image">
+							<top>5</top>
+							<height>56</height>
+							<texture>$VAR[ClearLogo]</texture>
+							<aspectratio align="center" aligny="center">keep</aspectratio>
+							<fadetime>50</fadetime>
 						</control>
 						<control type="label" id="13370">
 							<left>15</left>
@@ -52,8 +60,7 @@
 							<textcolor>white</textcolor>
 						</control>
 						<control type="group">
-							<top>8</top>
-							<right>-8</right>
+							<top>6</top>
 							<control type="group">
 								<control type="label">
 									<right>8</right>
@@ -138,50 +145,23 @@
 						<control type="button">
 							<texturefocus>-</texturefocus>
 							<texturenofocus>-</texturenofocus>
-							<onfocus>SetProperty(cfa_ignore_set,True,home)</onfocus>
+							<onfocus>ClearProperty(cfa_ignore_set,home)</onfocus>
 							<onfocus condition="Container.Content(movies)">ClearProperty(TVShowID,home)</onfocus>
 							<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
-							<onfocus condition="!Container.Scrolling">RunScript(script.colorbox,info=blur,id='"$VAR[PosterImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfo)</onfocus>
 						</control>
 						<control type="image">
-							<left>0</left>
-							<top>0</top>
-							<right>1425</right>
 							<height>90</height>
 							<aspectratio scalediffuse="false">scale</aspectratio>
-							<texture background="true" colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]">$VAR[FocusedBorderImage]</texture>
-						</control>
-						<control type="image">
-							<left>475</left>
-							<top>0</top>
-							<right>950</right>
-							<height>90</height>
-							<aspectratio scalediffuse="false">scale</aspectratio>
-							<texture background="true" colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]">$VAR[FocusedBorderImage]</texture>
-						</control>
-						<control type="image">
-							<left>950</left>
-							<top>0</top>
-							<right>475</right>
-							<height>90</height>
-							<aspectratio scalediffuse="false">scale</aspectratio>
-							<texture background="true" colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]">$VAR[FocusedBorderImage]</texture>
-						</control>
-						<control type="image">
-							<left>1425</left>
-							<top>0</top>
-							<right>0</right>
-							<height>90</height>
-							<aspectratio scalediffuse="false">scale</aspectratio>
-							<texture background="true" colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]">$VAR[FocusedBorderImage]</texture>
+							<texture background="true" colordiffuse="$VAR[ColorboxPowerModeColor]">$VAR[FocusedBorderImage]</texture>
+							<fadetime>500</fadetime>
 						</control>
 						<control type="image">
 							<left>0</left>
 							<top>0</top>
 							<right>0</right>
 							<bottom>0</bottom>
-							<texture colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]">diffuse/extraposter-ref-blur-rev.png</texture>
-							<fadetime>200</fadetime>
+							<texture colordiffuse="$VAR[ColorboxPowerModeColor]">diffuse/extraposter-ref-blur-rev.png</texture>
+							
 						</control>
 						<control type="image">
 							<description>Landscape</description>
@@ -190,7 +170,7 @@
 							<height>510</height>
 							<texture background="true">$VAR[LandscapeImage]</texture>
 							<aspectratio scalediffuse="false">stretch</aspectratio>
-							<fadetime>200</fadetime>
+							
 						</control>
 						<control type="image">
 							<right>0</right>
@@ -199,7 +179,7 @@
 							<height>203</height>
 							<aspectratio scalediffuse="false">stretch</aspectratio>
 							<texture background="true">$VAR[BannerImage]</texture>
-							<fadetime>200</fadetime>
+							
 						</control>
 						<control type="image">
 							<description>Landscape</description>
@@ -209,7 +189,7 @@
 							<height>307</height>
 							<texture background="true">$VAR[RealFanartImage]</texture>
 							<aspectratio scalediffuse="false">stretch</aspectratio>
-							<fadetime>200</fadetime>
+							
 						</control>
 						<control type="image">
 							<left>1429</left>
@@ -218,7 +198,7 @@
 							<height>307</height>
 							<aspectratio scalediffuse="false">stretch</aspectratio>
 							<texture background="true">$VAR[PosterImage]</texture>
-							<fadetime>200</fadetime>
+							
 							<visible>[!IsEmpty(ListItem.Art(tvshow.clearart)) + [Container.Content(seasons) | Container.Content(episodes)]] | [!IsEmpty(ListItem.Art(clearart)) +  [Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows)]]</visible>
 						</control>
 						<control type="image">
@@ -228,7 +208,7 @@
 							<height>133</height>
 							<aspectratio scalediffuse="false">keep</aspectratio>
 							<texture background="true">$VAR[ClearArtOnly]</texture>
-							<fadetime>200</fadetime>
+							
 						</control>
 						<control type="image">
 							<bottom>18</bottom>
@@ -237,7 +217,7 @@
 							<height>133</height>
 							<aspectratio scalediffuse="false">keep</aspectratio>
 							<texture diffuse="diffuse/extraposter-ref-blur-rev.png" flipy="true" background="true">$VAR[ClearArtOnly]</texture>
-							<fadetime>200</fadetime>
+							
 						</control>
 						<control type="group">
 							<left>1429</left>
@@ -288,8 +268,7 @@
 							</animation>
 						</control>
 						<control type="group">
-							<top>8</top>
-							<right>-8</right>
+							<top>6</top>
 							<control type="group">
 								<control type="label">
 									<right>8</right>
@@ -370,27 +349,15 @@
 							</control>
 						</control>
 						<control type="image">
-							<left>0</left>
 							<top>5</top>
-							<width>206</width>
 							<height>80</height>
 							<texture>$VAR[ClearLogo]</texture>
-							<aspectratio align="left" aligny="center">keep</aspectratio>
+							<aspectratio align="center" aligny="center">keep</aspectratio>
 							<fadetime>50</fadetime>
 						</control>
 						<control type="label">
-							<left>300</left>
-							<right>300</right>
-							<height>90</height>
-							<align>center</align>
-							<aligny>center</aligny>
-							<font>MediumLargeBold</font>
-							<textcolor>white</textcolor>
-							<label>$VAR[ShortVideoInfoLabel]</label>
-						</control>
-						<control type="label">
 							<left>337</left>
-							<right>0</right>
+							<right>10</right>
 							<top>59</top>
 							<aligny>center</aligny>
 							<height>26</height>

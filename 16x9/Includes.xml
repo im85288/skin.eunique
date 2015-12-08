@@ -324,7 +324,7 @@
 	<include name="GlobalVideoWindow">
 		<control type="image" description="Background">
 			<include>Dimensions_Fullscreen</include>
-			<texture colordiffuse="Black">common/white.png</texture>
+			<texture colordiffuse="$VAR[EmbyMenuColourHighlight]">common/white.png</texture>
 			<visible>Player.HasVideo + Skin.HasSetting(global.showvideo)</visible>
 		</control>
 		<control type="videowindow">

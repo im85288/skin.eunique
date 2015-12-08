@@ -798,8 +798,8 @@
 	</include>
 	<include name="DefContextButtonBlade">
 		<textoffsetx>5</textoffsetx>
-		<radioposx>400</radioposx>
-		<width>435</width>
+		<radioposx>415</radioposx>
+		<width>455</width>
 		<height>55</height>
 		<font>MiniSystem</font>
 		<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
@@ -890,9 +890,9 @@
 		<control type="group">
 			<include>Def9000SideBladeLeft</include>
 			<control type="grouplist" id="9000">
-				<left>10</left>
+				<left>0</left>
 				<top>115</top>
-				<width>435</width>
+				<width>455</width>
 				<height>1080</height>
 				<onright condition="Window.IsVisible(SettingsCategory.xml)">3</onright>
 				<onright condition="!Window.IsVisible(SettingsCategory.xml)">9101</onright>
@@ -903,7 +903,7 @@
 				<onback>ClearProperty(MediaMenu,Home)</onback>
 				<onback>50</onback>
 				<itemgap>0</itemgap>
-				<animation effect="slide" start="-440,0" end="0,0" time="400" tween="quadratic" easing="out">Visible</animation>
+				<animation effect="slide" start="-455,0" end="0,0" time="400" tween="quadratic" easing="out">Visible</animation>
 				<control type="label" id="200">
 					<height>42</height>
 					<textoffsetx>5</textoffsetx>
@@ -984,44 +984,78 @@
 		<visible allowhiddenfocus="true">ControlGroup(9000).HasFocus()</visible>
 		<include>Animation.SideSlide</include>
 		<control type="image">
-			<left>-12</left>
-			<top>-12</top>
+			<left>0</left>
+			<top>0</top>
 			<width>455</width>
 			<height>1104</height>
-			<texture colordiffuse="black">common/box.png</texture>
+			<texture colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
 		</control>
-		<left>-10</left>
-		<include>EuniqueLogoHorizontal</include>
+		<include name="EuniqueLogoHorizontal">
+			<param name="left" value="0"/>
+			<param name="left2" value="65"/>
+			<param name="left3" value="130"/>
+			<param name="left4" value="195"/>
+			<param name="left5" value="260"/>
+			<param name="left6" value="325"/>
+			<param name="left7" value="390"/>
+			<param name="top" value="0"/>
+			<param name="top2" value="25"/>
+			<param name="width" value="65"/>
+			<param name="height" value="65"/>
+			<param name="font" value="LargeBoldReg"/>
+		</include>
 	</include>
 	<include name="Def9000SideBladeLeftTV">
 		<visible allowhiddenfocus="true">ControlGroup(9000).HasFocus()</visible>
 		<include>Animation.SideSlide</include>
 		<control type="image">
-			<left>-12</left>
-			<top>-12</top>
 			<width>455</width>
 			<height>1104</height>
-			<texture colordiffuse="$VAR[PVRBackgroundColour]">common/box.png</texture>
+			<texture colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
 		</control>
-		<left>-10</left>
-		<include>EuniqueLogoHorizontal</include>
+		<include name="EuniqueLogoHorizontal">
+			<param name="left" value="0"/>
+			<param name="left2" value="65"/>
+			<param name="left3" value="130"/>
+			<param name="left4" value="195"/>
+			<param name="left5" value="260"/>
+			<param name="left6" value="325"/>
+			<param name="left7" value="390"/>
+			<param name="top" value="0"/>
+			<param name="top2" value="25"/>
+			<param name="width" value="65"/>
+			<param name="height" value="65"/>
+			<param name="font" value="LargeBoldReg"/>
+		</include>
 	</include>
 	<include name="DefSideBladeLeft">
 		<include>Animation.SideSlideRight</include>
 		<control type="image">
-			<left>10</left>
-			<top>-12</top>
+			<left>0</left>
 			<width>455</width>
 			<height>1104</height>
-			<texture colordiffuse="black">common/box.png</texture>
+			<texture colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
 		</control>
 		<left>1920</left>
-		<include>EuniqueLogoHorizontal</include>
+		<include name="EuniqueLogoHorizontal">
+			<param name="left" value="0"/>
+			<param name="left2" value="65"/>
+			<param name="left3" value="130"/>
+			<param name="left4" value="195"/>
+			<param name="left5" value="260"/>
+			<param name="left6" value="325"/>
+			<param name="left7" value="390"/>
+			<param name="top" value="0"/>
+			<param name="top2" value="25"/>
+			<param name="width" value="65"/>
+			<param name="height" value="65"/>
+			<param name="font" value="LargeBoldReg"/>
+		</include>
 	</include>
 	<include name="Def9000MediaMenuTop">
-		<left>10</left>
+		<left>0</left>
 		<top>115</top>
-		<width>435</width>
+		<width>455</width>
 		<height>1080</height>
 		<onright>ClearProperty(MediaMenu,Home)</onright>
 		<onright condition="![Window.IsVisible(tvguide) | Window.IsActive(SettingsCategory.xml)]">50</onright>
@@ -1036,7 +1070,7 @@
 		<onback>ClearProperty(MediaMenu,Home)</onback>
 		<onback>50</onback>
 		<itemgap>0</itemgap>
-		<animation effect="slide" start="-440,0" end="0,0" time="400" tween="quadratic" easing="out">Visible</animation>
+		<animation effect="slide" start="-455,0" end="0,0" time="400" tween="quadratic" easing="out">Visible</animation>
 		<control type="label" id="200">
 			<height>42</height>
 			<textoffsetx>5</textoffsetx>
@@ -1336,9 +1370,9 @@
 		</control>
 	</include>
 	<include name="Def9000MusicSide">
-		<left>10</left>
+		<left>0</left>
 		<top>115</top>
-		<width>435</width>
+		<width>455</width>
 		<height>1080</height>
 		<onright>ClearProperty(MediaMenu,Home)</onright>
 		<onright condition="![Window.IsVisible(tvguide) | Window.IsActive(SettingsCategory.xml)]">50</onright>
@@ -1353,7 +1387,7 @@
 		<onback>ClearProperty(MediaMenu,Home)</onback>
 		<onback>50</onback>
 		<itemgap>0</itemgap>
-		<animation effect="slide" start="-440,0" end="0,0" time="400" tween="quadratic" easing="out">Visible</animation>
+		<animation effect="slide" start="-455,0" end="0,0" time="400" tween="quadratic" easing="out">Visible</animation>
 		<control type="label" id="200">
 			<height>42</height>
 			<textoffsetx>5</textoffsetx>
@@ -1550,7 +1584,7 @@
 				<posx>20</posx>
 				<posy>242</posy>
 				<height>104</height>
-				<width>435</width>
+				<width>455</width>
 				<label>$INFO[ListItem.Label]</label>
 				<align>center</align>
 				<font>Small</font>
@@ -1606,7 +1640,7 @@
 				<posx>20</posx>
 				<posy>242</posy>
 				<height>104</height>
-				<width>435</width>
+				<width>455</width>
 				<align>center</align>
 				<label>$INFO[ListItem.Label]</label>
 				<animation effect="fade" time="300" start="70" end="100" delay="100" reversible="false">Focus</animation>
@@ -1617,7 +1651,7 @@
 			<control type="label">
 				<posx>30</posx>
 				<posy>-15</posy>
-				<width>435</width>
+				<width>455</width>
 				<height>5</height>
 				<align>center</align>
 				<label>$INFO[ListItem.Date]</label>
@@ -3087,7 +3121,7 @@
 		<param name="height" default="50"/>
 		<param name="font" default="symbolbiggerest"/>
 		<param name="symbol" default=""/>
-		<param name="textcolor" default="black"/>
+		<param name="textcolor" default="$VAR[EmbyMenuColourHighlight]"/>
 		<param name="imagepath" default="$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground.Wall)]"/>
 		<definition>
 			<control type="group">

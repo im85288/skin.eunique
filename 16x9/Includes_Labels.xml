@@ -679,7 +679,7 @@
 	</variable>
 	<variable name="PlayerPlotBox">
 		<value condition="!Player.HasVideo">$INFO[MusicPlayer.Album,, ]$INFO[MusicPlayer.Year,(,)]</value>
-		<value condition="Player.HasVideo + Skin.HasSetting(osd.hidespoilers) + VideoPlayer.Content(episodes) + !IntegerGreaterThan(VideoPlayer.PlayCount,0)">$LOCALIZE[20370]</value>
+		<value condition="Player.HasVideo + Skin.HasSetting(osd.hidespoilers) + VideoPlayer.Content(episodes)">$LOCALIZE[20370]</value>
 		<value>$INFO[VideoPlayer.Plot]</value>
 	</variable>
 	<variable name="LabelNextAiredDetails">
@@ -1471,6 +1471,7 @@
 	</variable>
 	<variable name="ColorboxPowerModeColor">
 		<value condition="Control.IsVisible(518) + !Skin.HasSetting(low.power)">$INFO[Window(home).Property(ImageColorcfa1)]</value>
+		<value condition="!Skin.HasSetting(low.power)">$INFO[Window(home).Property(ImageColorcfa1)]</value>
 		<value>$VAR[ColourFlags]</value>
 	</variable>
 </includes>
