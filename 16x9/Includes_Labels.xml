@@ -679,7 +679,7 @@
 	</variable>
 	<variable name="PlayerPlotBox">
 		<value condition="!Player.HasVideo">$INFO[MusicPlayer.Album,, ]$INFO[MusicPlayer.Year,(,)]</value>
-		<value condition="Player.HasVideo + Skin.HasSetting(osd.hidespoilers) + VideoPlayer.Content(episodes)">$LOCALIZE[20370]</value>
+		<value condition="Player.HasVideo + Skin.HasSetting(osd.hidespoilers) + [!IsEmpty(VideoPlayer.Episode) + IsEmpty(VideoPlayer.EpisodeName)]">$LOCALIZE[20370]</value>
 		<value>$INFO[VideoPlayer.Plot]</value>
 	</variable>
 	<variable name="LabelNextAiredDetails">
@@ -690,21 +690,103 @@
 		<value condition="Container.Content(Seasons)">$INFO[ListItem.TVShowTitle]</value>
 		<value>$INFO[ListItem.Label]</value>
 	</variable>
-	<variable name="BorderHighlight">
-		<value condition="Skin.HasSetting(BorderHighlight)">$INFO[Skin.String(bordercolor.name)]</value>
-		<value condition="!Skin.HasSetting(BorderHighlight)">HighlightB</value>
+	<variable name="BorderHighlightColour">
+		<value condition="!IsEmpty(Skin.String(border.color.name))">$INFO[Skin.String(border.color.name)]</value>
+		<value>HighlightB</value>
 	</variable>
 	<variable name="ColourHighlight">
-		<value condition="Skin.HasSetting(ColourHighlight)">$INFO[Skin.String(focuscolor.name)]</value>
-		<value condition="!Skin.HasSetting(ColourHighlight)">Highlight</value>
+		<value condition="!IsEmpty(Skin.String(focus.color.name))">$INFO[Skin.String(focus.color.name)]</value>
+		<value>Highlight</value>
 	</variable>
 	<variable name="ColourHighlight2">
-		<value condition="Skin.HasSetting(ColourHighlight2)">$INFO[Skin.String(focuscolor2.name)]</value>
-		<value condition="!Skin.HasSetting(ColourHighlight2)">Highlight2</value>
+		<value condition="!IsEmpty(Skin.String(altfocus.color.name))">$INFO[Skin.String(altfocus.color.name)]</value>
+		<value>Highlight2</value>
 	</variable>
 	<variable name="ColourSelected">
-		<value condition="Skin.HasSetting(ColourSelected)">$INFO[Skin.String(selectedcolor.name)]</value>
-		<value condition="!Skin.HasSetting(ColourSelected)">Selected</value>
+		<value condition="!IsEmpty(Skin.String(selected.color.name))">$INFO[Skin.String(selected.color.name)]</value>
+		<value>Selected</value>
+	</variable>
+	<variable name="BackingColourHighlight">
+		<value condition="!IsEmpty(Skin.String(backing.color.name))">$INFO[Skin.String(backing.color.name)]</value>
+		<value>white2</value>
+	</variable>
+	<variable name="ResumeColourHighlight">
+		<value condition="!IsEmpty(Skin.String(resume.color.name))">$INFO[Skin.String(resume.color.name)]</value>
+		<value>Highlight2</value>
+	</variable>
+	<variable name="PlayingColourHighlight">
+		<value condition="!IsEmpty(Skin.String(playing.color.name))">$INFO[Skin.String(playing.color.name)]</value>
+		<value>Highlight2</value>
+	</variable>
+	<variable name="NewColourHighlight">
+		<value condition="!IsEmpty(Skin.String(new.color.name))">$INFO[Skin.String(new.color.name)]</value>
+		<value>Highlight2</value>
+	</variable>
+	<variable name="WatchedColourHighlight">
+		<value condition="!IsEmpty(Skin.String(watched.color.name))">$INFO[Skin.String(watched.color.name)]</value>
+		<value>Highlight2</value>
+	</variable>
+	<variable name="UnwatchedColourHighlight">
+		<value condition="!IsEmpty(Skin.String(unwatched.color.name))">$INFO[Skin.String(unwatched.color.name)]</value>
+		<value>Highlight2</value>
+	</variable>
+	<variable name="PercentColourHighlight">
+		<value condition="!IsEmpty(Skin.String(posterbacking.color.name))">$INFO[Skin.String(posterbacking.color.name)]</value>
+		<value>Highlight</value>
+	</variable>
+	<variable name="EmbyLeftColourHighlight">
+		<value condition="!IsEmpty(Skin.String(emby.left.color.name))">$INFO[Skin.String(emby.left.color.name)]</value>
+		<value>dark pastel blue</value>
+	</variable>
+	<variable name="EmbyRightColourHighlight">
+		<value condition="!IsEmpty(Skin.String(emby.right.color.name))">$INFO[Skin.String(emby.right.color.name)]</value>
+		<value>dark pastel green</value>
+	</variable>
+	<variable name="EmbyMiddleColourHighlight">
+		<value condition="!IsEmpty(Skin.String(emby.middle.color.name))">$INFO[Skin.String(emby.middle.color.name)]</value>
+		<value>dark pastel red</value>
+	</variable>
+	<variable name="EmbyMenuColourHighlight">
+		<value condition="!IsEmpty(Skin.String(emby.menu.color.name))">$INFO[Skin.String(emby.menu.color.name)]</value>
+		<value>white</value>
+	</variable>
+	<variable name="EmbyMenuTextColourHighlight">
+		<value condition="!IsEmpty(Skin.String(emby.menu.text.color.name))">$INFO[Skin.String(emby.menu.text.color.name)]</value>
+		<value>black2</value>
+	</variable>
+	<variable name="ColourFlags">
+		<value condition="!IsEmpty(Skin.String(emby.flags.color.name))">$INFO[Skin.String(emby.flags.color.name)]</value>
+		<value>north texas green</value>
+	</variable>
+	<variable name="ColourTextFlags">
+		<value condition="!IsEmpty(Skin.String(emby.flags.text.color.name))">$INFO[Skin.String(emby.flags.text.color.name)]</value>
+		<value>black</value>
+	</variable>
+	<variable name="ColourIconFlags">
+		<value condition="!IsEmpty(Skin.String(emby.flags.icon.color.name))">$INFO[Skin.String(emby.flags.icon.color.name)]</value>
+		<value>black</value>
+	</variable>
+	<variable name="3ColumnHighlight">
+		<value condition="Container(9000).Column(0)">$VAR[EmbyLeftColourHighlight]</value>
+		<value condition="Container(9000).Column(1)">$VAR[EmbyMiddleColourHighlight]</value>
+		<value condition="Container(9000).Column(2)">$VAR[EmbyRightColourHighlight]</value>
+		<value>$VAR[ColourHighlight]</value>
+	</variable>
+	<variable name="NowPlayingBackgroundColourHighlight">
+		<value condition="!IsEmpty(Skin.String(now.playing.background.color.name))">$INFO[Skin.String(now.playing.background.color.name)]</value>
+		<value>black2</value>
+	</variable>
+	<variable name="NowPlayingProgressColourHighlight">
+		<value condition="!IsEmpty(Skin.String(now.playing.progress.color.name))">$INFO[Skin.String(now.playing.progress.color.name)]</value>
+		<value>dark pastel red</value>
+	</variable>
+	<variable name="PVRBackgroundColour">
+		<value condition="!IsEmpty(Skin.String(pvr.background.color.name))">$INFO[Skin.String(pvr.background.color.name)]</value>
+		<value>bluetv</value>
+	</variable>
+	<variable name="BottomBarColour">
+		<value condition="!IsEmpty(Skin.String(bottom.bar.color.name))">$INFO[Skin.String(bottom.bar.color.name)]</value>
+		<value>cadmium orange</value>
 	</variable>
 	<variable name="Plot">
 		<value condition="!IsEmpty(Window(home).Property(SkinHelper.MovieSet.ExtendedPlot)) + [Container.Content(Sets) | substring(ListItem.Path,videodb://movies/sets,left)]">$INFO[Window(home).Property(SkinHelper.MovieSet.ExtendedPlot)]</value>
@@ -824,46 +906,6 @@
 		<value condition="!ListItem.IsResumable + !stringcompare(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsPlaying + !stringcompare(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(UnwatchedColour)">$INFO[Skin.String(unwatched.color.name)]</value>
 		<value>white</value>
 	</variable>
-	<variable name="BackingColourHighlight">
-		<value condition="Skin.HasSetting(BackingColour) + !IsEmpty(Skin.String(backing.color.name))">$INFO[Skin.String(backing.color.name)]</value>
-		<value>white2</value>
-	</variable>
-	<variable name="ResumeColourHighlight">
-		<value condition="Skin.HasSetting(ResumeColour) + !IsEmpty(Skin.String(resume.color.name))">$INFO[Skin.String(resume.color.name)]</value>
-		<value>Highlight2</value>
-	</variable>
-	<variable name="PlayingColourHighlight">
-		<value condition="Skin.HasSetting(PlayingColour) + !IsEmpty(Skin.String(playing.color.name))">$INFO[Skin.String(playing.color.name)]</value>
-		<value>Highlight2</value>
-	</variable>
-	<variable name="NewColourHighlight">
-		<value condition="Skin.HasSetting(NewColour) + !IsEmpty(Skin.String(new.color.name))">$INFO[Skin.String(new.color.name)]</value>
-		<value>Highlight2</value>
-	</variable>
-	<variable name="WatchedColourHighlight">
-		<value condition="Skin.HasSetting(WatchedColour) + !IsEmpty(Skin.String(watched.color.name))">$INFO[Skin.String(watched.color.name)]</value>
-		<value>Highlight2</value>
-	</variable>
-	<variable name="UnwatchedColourHighlight">
-		<value condition="Skin.HasSetting(UnwatchedColour) + !IsEmpty(Skin.String(unwatched.color.name))">$INFO[Skin.String(unwatched.color.name)]</value>
-		<value>Highlight2</value>
-	</variable>
-	<variable name="PercentColourHighlight">
-		<value condition="Skin.HasSetting(PosterBackingColour) + !IsEmpty(Skin.String(posterbacking.color.name))">$INFO[Skin.String(posterbacking.color.name)]</value>
-		<value>Highlight</value>
-	</variable>
-	<variable name="EmbyLeftColourHighlight">
-		<value condition="Skin.HasSetting(emby.left.color) + !IsEmpty(Skin.String(emby.left.color.name))">$INFO[Skin.String(emby.left.color.name)]</value>
-		<value>dark pastel blue</value>
-	</variable>
-	<variable name="EmbyRightColourHighlight">
-		<value condition="Skin.HasSetting(emby.right.color) + !IsEmpty(Skin.String(emby.right.color.name))">$INFO[Skin.String(emby.right.color.name)]</value>
-		<value>dark pastel green</value>
-	</variable>
-	<variable name="EmbyMiddleColourHighlight">
-		<value condition="Skin.HasSetting(emby.middle.color) + !IsEmpty(Skin.String(emby.middle.color.name))">$INFO[Skin.String(emby.middle.color.name)]</value>
-		<value>dark pastel red</value>
-	</variable>
 	<variable name="SelectionColourHighlight">
 		<value condition="Control.HasFocus(8) | Control.HasFocus(1)">$VAR[EmbyMiddleColourHighlight]</value>
 		<value condition="Control.HasFocus(1003) | Control.HasFocus(210)">$VAR[EmbyRightColourHighlight]</value>
@@ -888,48 +930,6 @@
 		<value condition="!ControlGroup(9000).HasFocus() + Control.HasFocus(150)">$VAR[EmbyRightColourHighlight]</value>
 		<value condition="!ControlGroup(9000).HasFocus() + !Control.HasFocus(150)">$VAR[EmbyLeftColourHighlight]</value>
 		<value>dark pastel red</value>
-	</variable>
-	<variable name="EmbyMenuColourHighlight">
-		<value condition="Skin.HasSetting(emby.menu.color) + !IsEmpty(Skin.String(emby.menu.color.name))">$INFO[Skin.String(emby.menu.color.name)]</value>
-		<value>white</value>
-	</variable>
-	<variable name="EmbyMenuTextColourHighlight">
-		<value condition="Skin.HasSetting(emby.menu.text.color) + !IsEmpty(Skin.String(emby.menu.text.color.name))">$INFO[Skin.String(emby.menu.text.color.name)]</value>
-		<value>black2</value>
-	</variable>
-	<variable name="ColourFlags">
-		<value condition="Skin.HasSetting(emby.flags.color) + !IsEmpty(Skin.String(emby.flags.color.name))">$INFO[Skin.String(emby.flags.color.name)]</value>
-		<value>north texas green</value>
-	</variable>
-	<variable name="ColourTextFlags">
-		<value condition="Skin.HasSetting(emby.flags.text.color) + !IsEmpty(Skin.String(emby.flags.text.color.name))">$INFO[Skin.String(emby.flags.text.color.name)]</value>
-		<value>black</value>
-	</variable>
-	<variable name="ColourIconFlags">
-		<value condition="Skin.HasSetting(emby.flags.icon.color) + !IsEmpty(Skin.String(emby.flags.icon.color.name))">$INFO[Skin.String(emby.flags.icon.color.name)]</value>
-		<value>black</value>
-	</variable>
-	<variable name="3ColumnHighlight">
-		<value condition="Container(9000).Column(0)">$VAR[EmbyLeftColourHighlight]</value>
-		<value condition="Container(9000).Column(1)">$VAR[EmbyMiddleColourHighlight]</value>
-		<value condition="Container(9000).Column(2)">$VAR[EmbyRightColourHighlight]</value>
-		<value>$VAR[ColourHighlight]</value>
-	</variable>
-	<variable name="NowPlayingBackgroundColourHighlight">
-		<value condition="Skin.HasSetting(now.playing.background.color) + !IsEmpty(Skin.String(now.playing.background.color.name))">$INFO[Skin.String(now.playing.background.color.name)]</value>
-		<value>black2</value>
-	</variable>
-	<variable name="NowPlayingProgressColourHighlight">
-		<value condition="Skin.HasSetting(now.playing.progress.color) + !IsEmpty(Skin.String(now.playing.progress.color.name))">$INFO[Skin.String(now.playing.progress.color.name)]</value>
-		<value>dark pastel red</value>
-	</variable>
-	<variable name="PVRBackgroundColour">
-		<value condition="Skin.HasSetting(pvr.background.color) + !IsEmpty(Skin.String(pvr.background.color.name))">$INFO[Skin.String(pvr.background.color.name)]</value>
-		<value>bluetv</value>
-	</variable>
-	<variable name="BottomBarColour">
-		<value condition="Skin.HasSetting(bottom.bar.color) + !IsEmpty(Skin.String(bottom.bar.color.name))">$INFO[Skin.String(bottom.bar.color.name)]</value>
-		<value>cadmium orange</value>
 	</variable>
 	<variable name="EmbyEndTimeLabel">
 		<value condition="!Skin.HasSetting(furniture.hideendtime) + !IsEmpty(ListItem.EndTime) + [Container.Content(episodes) + Window.IsVisible(DialogVideoInfo.xml)]">$INFO[ListItem.EndTime(hh:mm)]</value>

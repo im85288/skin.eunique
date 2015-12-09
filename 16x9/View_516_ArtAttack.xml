@@ -142,13 +142,32 @@
 						</control>
 					</itemlayout>
 					<focusedlayout width="1900" height="600">
-						<control type="button">
-							<texturefocus>-</texturefocus>
-							<texturenofocus>-</texturenofocus>
-							<onfocus>ClearProperty(cfa_ignore_set,home)</onfocus>
-							<onfocus condition="Container.Content(movies)">ClearProperty(TVShowID,home)</onfocus>
-							<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
+					<control type="button">
+						<texturefocus>-</texturefocus>
+						<texturenofocus>-</texturenofocus>
+						<onfocus>ClearProperty(cfa_ignore_set,home)</onfocus>
+						<onfocus condition="Container.Content(movies)">ClearProperty(TVShowID,home)</onfocus>
+						<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
+					</control>
+					<control type="group">
+						<animation type="Focus" reversible="false">
+							<effect type="fade" end="0" start="100" time="500" delay="1000" tween="quadratic" easing="out"/>
+						</animation>
+						<control type="image">
+							<description>Landscape</description>
+							<texture colordiffuse="$VAR[ColorboxPowerModeColor]" background="true">$VAR[ColorboxPowerModeImage]</texture>
+							<aspectratio scalediffuse="false">scale</aspectratio>
 						</control>
+						<control type="image">
+							<texture>$VAR[ClearLogo]</texture>
+							<aspectratio align="center" aligny="center">keep</aspectratio>
+							<fadetime>50</fadetime>
+						</control>
+					</control>
+					<control type="group">
+							<animation type="Focus" reversible="false">
+								<effect type="fade" end="100" start="0" time="500" delay="1000" tween="quadratic" easing="out"/>
+							</animation>
 						<control type="image">
 							<height>90</height>
 							<aspectratio scalediffuse="false">scale</aspectratio>
@@ -365,6 +384,7 @@
 							<font>Tiny</font>
 							<textcolor>white</textcolor>
 							<label fallback="19055">$VAR[Label516]</label>
+						</control>
 						</control>
 					</focusedlayout>
 				</control>
