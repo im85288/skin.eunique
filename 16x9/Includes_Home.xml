@@ -1466,11 +1466,12 @@
 				<control type="image">
 					<left>0</left>
 					<right>0</right>
-					<texture colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
+					<texture colordiffuse="$VAR[EmbyMenuColourHighlight]">$VAR[MenuBackground]</texture>
 				</control>
 				<control type="label">
 					<align>center</align>
 					<aligny>center</aligny>
+					<height>64</height>
 					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<font>HomeEmbySub</font>
 					<label>$INFO[ListItem.Label]</label>
@@ -1480,15 +1481,30 @@
 				<control type="image">
 					<left>0</left>
 					<right>0</right>
-					<texture colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
+					<texture colordiffuse="$VAR[ColourHighlight]">$VAR[MenuBackground]</texture>
 				</control>
 				<control type="label">
 					<align>center</align>
 					<aligny>center</aligny>
+					<height>64</height>
 					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<font>HomeEmbySub</font>
 					<label>$INFO[ListItem.Label]</label>
 				</control>
+			<control type="label">
+				<top>-24</top>
+				<left>5</left>
+				<right>5</right>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+				<font>minisymbol</font>
+				<label></label>
+				<visible>Control.HasFocus(302)</visible>
+				<!--
+				<visible>IntegerGreaterThan(Container(302).NumItems,0)</visible>
+				-->
+			</control>
 			</focusedlayout>
 			<content>
 				<include>skinshortcuts-submenu</include>
@@ -1505,11 +1521,12 @@
 			<control type="image">
 				<left>0</left>
 				<right>0</right>
-				<texture colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
+				<texture colordiffuse="$VAR[EmbyMenuColourHighlight]">$VAR[MenuBackground]</texture>
 			</control>
 			<control type="label">
 				<left>5</left>
 				<right>5</right>
+				<height>74</height>
 				<align>center</align>
 				<aligny>center</aligny>
 				<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
@@ -1527,7 +1544,21 @@
 			<control type="image">
 				<left>0</left>
 				<right>0</right>
-				<texture colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
+				<texture colordiffuse="$VAR[ColourHighlight]">$VAR[MenuBackground]</texture>
+				<animation effect="slide" start="0,0" end="0,-20" time="0" reversible="true" center="auto">Focus</animation>
+				<animation effect="slide" start="0,0" end="0,20" time="0" reversible="true" center="auto" condition="!ControlGroup.HasFocus(300) + !control.hasfocus(302)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,-20" time="0" reversible="true" center="auto" condition="control.hasfocus(302)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,-40" time="0" reversible="true" center="auto" condition="control.hasfocus(8308) | control.hasfocus(3634) | control.hasfocus(3635)">Conditional</animation>
+			</control>
+			<control type="label">
+				<left>5</left>
+				<right>5</right>
+				<height>74</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+				<font>HomeEmby</font>
+				<label>$INFO[ListItem.Label]</label>
 				<animation effect="slide" start="0,0" end="0,-20" time="0" reversible="true" center="auto">Focus</animation>
 				<animation effect="slide" start="0,0" end="0,20" time="0" reversible="true" center="auto" condition="!ControlGroup.HasFocus(300) + !control.hasfocus(302)">Conditional</animation>
 				<animation effect="slide" start="0,0" end="0,-20" time="0" reversible="true" center="auto" condition="control.hasfocus(302)">Conditional</animation>
@@ -1539,21 +1570,12 @@
 				<align>center</align>
 				<aligny>center</aligny>
 				<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
-				<font>HomeEmby</font>
-				<label>$INFO[ListItem.Label]</label>
-				<animation effect="slide" start="0,0" end="0,-20" time="0" reversible="true" center="auto">Focus</animation>
-				<animation effect="slide" start="0,0" end="0,20" time="0" reversible="true" center="auto" condition="!ControlGroup.HasFocus(300) + !control.hasfocus(302)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="0,-20" time="0" reversible="true" center="auto" condition="control.hasfocus(302)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="0,-40" time="0" reversible="true" center="auto" condition="control.hasfocus(8308) | control.hasfocus(3634) | control.hasfocus(3635)">Conditional</animation>
-			</control>
-			<control type="image">
-				<top>0</top>
-				<centerleft>50%</centerleft>
-				<width>16</width>
-				<height>16</height>
-				<texture flipy="true" colordiffuse="$VAR[ColourHighlight]">common/arrow-small.png</texture>
+				<font>minisymbol</font>
+				<label></label>
 				<visible>Control.HasFocus(300)</visible>
+				<!--
 				<visible>IntegerGreaterThan(Container(302).NumItems,0)</visible>
+				-->
 				<animation effect="slide" start="0,0" end="0,-20" time="0" reversible="true" center="auto" condition="control.hasfocus(300)">Conditional</animation>
 			</control>
 		</focusedlayout>
@@ -1567,17 +1589,18 @@
 			<control type="image">
 				<left>0</left>
 				<right>0</right>
-				<texture colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
+				<texture colordiffuse="$VAR[EmbyMenuColourHighlight]">$VAR[MenuBackground]</texture>
 			</control>
 			<control type="label">
 				<left>5</left>
 				<right>5</right>
+				<height>74</height>
 				<align>center</align>
 				<aligny>center</aligny>
 				<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 				<font>HomeEmby</font>
 				<label>$INFO[ListItem.Label]</label>
-				<animation effect="fade" start="100" end="25" condition="control.hasfocus(302)" time="200">Conditional</animation>
+				<animation effect="fade" start="100" end="25" condition="control.hasfocus(302) | control.hasfocus(3634) | control.hasfocus(3635)" time="200">Conditional</animation>
 			</control>
 		</itemlayout>
 		<focusedlayout width="211.1" height="74">
@@ -1587,31 +1610,37 @@
 				<onfocus condition="!Container.Scrolling + Skin.HasSetting(home.blur)">RunScript(script.colorbox,info=blur,id='"$VAR[GlobalFanart]"',radius=$VAR[VideoInfoBlurLevel],prefix=HomeInfo)</onfocus>
 			</control>
 			<control type="group">
-				<animation effect="slide" start="0,0" end="-10,0" time="0" reversible="true" center="auto" condition="control.hasfocus(302)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="-10,0" time="0" reversible="true" center="auto" condition="control.hasfocus(8308) | control.hasfocus(3634) | control.hasfocus(3635)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="-10,0" time="0" reversible="true" center="auto" condition="!Skin.HasSetting(home.minimal.menu) + control.hasfocus(302)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="-10,0" time="0" reversible="true" center="auto" condition="!Skin.HasSetting(home.minimal.menu) + [control.hasfocus(8308) | control.hasfocus(3634) | control.hasfocus(3635)]">Conditional</animation>
 				<control type="image">
 					<left>0</left>
 					<right>0</right>
-					<texture colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
+					<texture colordiffuse="$VAR[ColourHighlight]">$VAR[MenuBackground]</texture>
 				</control>
 				<control type="label">
 					<left>5</left>
 					<right>5</right>
+					<height>74</height>
 					<align>center</align>
 					<aligny>center</aligny>
 					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<font>HomeEmby</font>
 					<label>$INFO[ListItem.Label]</label>
 				</control>
-				<control type="image">
-					<top>0</top>
-					<centerleft>50%</centerleft>
-					<width>16</width>
-					<height>16</height>
-					<texture flipy="true" colordiffuse="$VAR[ColourHighlight]">common/arrow-small.png</texture>
+				<control type="label">
+					<top>24</top>
+					<left>5</left>
+					<right>5</right>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+					<font>minisymbol</font>
+					<label></label>
 					<visible>Control.HasFocus(300)</visible>
+					<!--
 					<visible>IntegerGreaterThan(Container(302).NumItems,0)</visible>
-					<animation effect="slide" start="0,0" end="-10,0" time="0" reversible="true" center="auto" condition="control.hasfocus(300)">Conditional</animation>
+					-->
+					<animation effect="slide" start="0,0" end="0,-20" time="0" reversible="true" center="auto" condition="control.hasfocus(300)">Conditional</animation>
 				</control>
 			</control>
 		</focusedlayout>
