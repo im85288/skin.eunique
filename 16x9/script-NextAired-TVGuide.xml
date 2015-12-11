@@ -2,10 +2,27 @@
 	<defaultcontrol always="true">9500</defaultcontrol>
 	<backgroundcolor>0</backgroundcolor>
 	<controls>
+		<control type="image">
+			<include>Dimensions_Fullscreen</include>
+			<aspectratio align="center">scale</aspectratio>
+			<texture fallback="common/black.png" background="true">$INFO[Window(home).Property(NextAiredInfo.ImageFilter)]</texture>
+			<visible>Skin.HasSetting(home.blur)</visible>
+			<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
+			<fadetime>600</fadetime>
+		</control>
+		<control type="image">
+			<include>Dimensions_Fullscreen</include>
+			<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
+			<aspectratio align="center">scale</aspectratio>
+			<texture colordiffuse="$INFO[Window(home).Property(NextAiredInfo.ImageColor)]">common/screen-overlay-shard.png</texture>
+			<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
+			<visible>Skin.HasSetting(home.blur)</visible>
+		</control>
 		<control id="8308" type="image">
 			<include>Dimensions_Fullscreen</include>
 			<colordiffuse>DialogFanartFade</colordiffuse>
-			<texture fallback="empty.png" background="true">$INFO[Container(200).ListItem.Property(Fanart)]</texture>
+			<texture fallback="empty.png" background="true">$VAR[NextAiredFanart]</texture>
+			<visible>!Skin.HasSetting(home.blur)</visible>
 		</control>
 		<control type="image">
 			<include>Dimensions_Fullscreen</include>
@@ -13,80 +30,14 @@
 			<texture background="true">special://skin/extras/backgrounds/kodi.jpg</texture>
 			<visible>Substring(Control.GetLabel(8308),empty.png)</visible>
 		</control>
-		<control id="8309" type="image">
-			<include>Dimensions_Fullscreen</include>
-			<colordiffuse>DialogFanartFade</colordiffuse>
-			<texture fallback="empty.png" background="true">$INFO[Container(201).ListItem.Property(Fanart)]</texture>
-		</control>
-		<control type="image">
-			<include>Dimensions_Fullscreen</include>
-			<colordiffuse>DialogFanartFade</colordiffuse>
-			<texture background="true">gspecial://skin/extras/backgrounds/kodi.jpg</texture>
-			<visible>Substring(Control.GetLabel(8309),empty.png)</visible>
-		</control>
-		<control id="8310" type="image">
-			<include>Dimensions_Fullscreen</include>
-			<colordiffuse>DialogFanartFade</colordiffuse>
-			<texture fallback="empty.png" background="true">$INFO[Container(202).ListItem.Property(Fanart)]</texture>
-		</control>
-		<control type="image">
-			<include>Dimensions_Fullscreen</include>
-			<colordiffuse>DialogFanartFade</colordiffuse>
-			<texture background="true">special://skin/extras/backgrounds/kodi.jpg</texture>
-			<visible>Substring(Control.GetLabel(8310),empty.png)</visible>
-		</control>
-		<control id="8311" type="image">
-			<include>Dimensions_Fullscreen</include>
-			<colordiffuse>DialogFanartFade</colordiffuse>
-			<texture fallback="empty.png" background="true">$INFO[Container(203).ListItem.Property(Fanart)]</texture>
-		</control>
-		<control type="image">
-			<include>Dimensions_Fullscreen</include>
-			<colordiffuse>DialogFanartFade</colordiffuse>
-			<texture background="true">special://skin/extras/backgrounds/kodi.jpg</texture>
-			<visible>Substring(Control.GetLabel(8311),empty.png)</visible>
-		</control>
-		<control id="8312" type="image">
-			<include>Dimensions_Fullscreen</include>
-			<colordiffuse>DialogFanartFade</colordiffuse>
-			<texture fallback="empty.png" background="true">$INFO[Container(204).ListItem.Property(Fanart)]</texture>
-		</control>
-		<control type="image">
-			<include>Dimensions_Fullscreen</include>
-			<colordiffuse>DialogFanartFade</colordiffuse>
-			<texture background="true">special://skin/extras/backgrounds/kodi.jpg</texture>
-			<visible>Substring(Control.GetLabel(8312),empty.png)</visible>
-		</control>
-		<control id="8313" type="image">
-			<include>Dimensions_Fullscreen</include>
-			<colordiffuse>DialogFanartFade</colordiffuse>
-			<texture fallback="empty.png" background="true">$INFO[Container(205).ListItem.Property(Fanart)]</texture>
-		</control>
-		<control type="image">
-			<include>Dimensions_Fullscreen</include>
-			<colordiffuse>DialogFanartFade</colordiffuse>
-			<texture background="true">special://skin/extras/backgrounds/kodi.jpg</texture>
-			<visible>Substring(Control.GetLabel(8313),empty.png)</visible>
-		</control>
-		<control id="8314" type="image">
-			<include>Dimensions_Fullscreen</include>
-			<colordiffuse>DialogFanartFade</colordiffuse>
-			<texture fallback="empty.png" background="true">$INFO[Container(206).ListItem.Property(Fanart)]</texture>
-		</control>
-		<control type="image">
-			<include>Dimensions_Fullscreen</include>
-			<colordiffuse>DialogFanartFade</colordiffuse>
-			<texture background="true">special://skin/extras/backgrounds/kodi.jpg</texture>
-			<visible>Substring(Control.GetLabel(8314),empty.png)</visible>
-		</control>
 		<include>Furniture_NowPlaying</include>
 		<include>Furniture_HeaderEmby</include>
 		<include>Furniture_EmbyClock</include>
 		<control type="grouplist">
 			<left>NewSidePad</left>
 			<right>NewSidePad</right>
-			<top>TopPad</top>
-			<height>896</height>
+			<top>190</top>
+			<height>760</height>
 			<itemgap>0</itemgap>
 			<orientation>horizontal</orientation>
 			<include name="NextAiredListGroupParam">
@@ -124,6 +75,105 @@
 				<param name="onleft" value="205" />
 				<param name="onright" value="200" />
 			</include>
+		</control>
+		<control type="grouplist">
+			<description>Weekday labels</description>
+			<left>NewSidePad</left>
+			<posy>TopPad</posy>
+			<itemgap>10</itemgap>
+			<orientation>Horizontal</orientation>
+			<control type="button">
+				<label>[B]$VAR[TVDayLabelMon][/B]</label>
+				<label2>[COLOR=99FFFFFF]$INFO[Window(Home).Property(NextAired.1.Date)][/COLOR]</label2>
+				<include>TVGuideWeekdayButton</include>
+				<animation effect="fade" start="100" end="65" time="0" condition="!StringCompare(System.Date(ddd),$LOCALIZE[41])">Conditional</animation>
+				<enable>IntegerGreaterThan(Container(200).NumItems,0)</enable>
+			</control>
+			<control type="button">
+				<label>[B]$VAR[TVDayLabelTue][/B]</label>
+				<label2>[COLOR=99FFFFFF]$INFO[Window(Home).Property(NextAired.2.Date)][/COLOR]</label2>
+				<include>TVGuideWeekdayButton</include>
+				<animation effect="fade" start="100" end="65" time="0" condition="!StringCompare(System.Date(ddd),$LOCALIZE[42])">Conditional</animation>
+				<enable>IntegerGreaterThan(Container(201).NumItems,0)</enable>
+			</control>
+			<control type="button">
+				<label>[B]$VAR[TVDayLabelWed][/B]</label>
+				<label2>[COLOR=99FFFFFF]$INFO[Window(Home).Property(NextAired.3.Date)][/COLOR]</label2>
+				<include>TVGuideWeekdayButton</include>
+				<animation effect="fade" start="100" end="65" time="0" condition="!StringCompare(System.Date(ddd),$LOCALIZE[43])">Conditional</animation>
+				<enable>IntegerGreaterThan(Container(202).NumItems,0)</enable>
+			</control>
+			<control type="button">
+				<label>[B]$VAR[TVDayLabelThu][/B]</label>
+				<label2>[COLOR=99FFFFFF]$INFO[Window(Home).Property(NextAired.4.Date)][/COLOR]</label2>
+				<include>TVGuideWeekdayButton</include>
+				<animation effect="fade" start="100" end="65" time="0" condition="!StringCompare(System.Date(ddd),$LOCALIZE[44])">Conditional</animation>
+				<enable>IntegerGreaterThan(Container(203).NumItems,0)</enable>
+			</control>
+			<control type="button">
+				<label>[B]$VAR[TVDayLabelFri][/B]</label>
+				<label2>[COLOR=99FFFFFF]$INFO[Window(Home).Property(NextAired.5.Date)][/COLOR]</label2>
+				<include>TVGuideWeekdayButton</include>
+				<animation effect="fade" start="100" end="65" time="0" condition="!StringCompare(System.Date(ddd),$LOCALIZE[45])">Conditional</animation>
+				<enable>IntegerGreaterThan(Container(204).NumItems,0)</enable>
+			</control>
+			<control type="button">
+				<label>[B]$VAR[TVDayLabelSat][/B]</label>
+				<label2>[COLOR=99FFFFFF]$INFO[Window(Home).Property(NextAired.6.Date)][/COLOR]</label2>
+				<include>TVGuideWeekdayButton</include>
+				<animation effect="fade" start="100" end="65" time="0" condition="!StringCompare(System.Date(ddd),$LOCALIZE[46])">Conditional</animation>
+				<enable>IntegerGreaterThan(Container(205).NumItems,0)</enable>
+			</control>
+			<control type="button">
+				<label>[B]$VAR[TVDayLabelSun][/B]</label>
+				<label2>[COLOR=99FFFFFF]$INFO[Window(Home).Property(NextAired.7.Date)][/COLOR]</label2>
+				<include>TVGuideWeekdayButton</include>
+				<animation effect="fade" start="100" end="65" time="0" condition="!StringCompare(System.Date(ddd),$LOCALIZE[47])">Conditional</animation>
+				<enable>IntegerGreaterThan(Container(206).NumItems,0)</enable>
+			</control>
+		</control>
+		<control type="group">
+			<left>NewSidePad</left>
+			<top>210</top>
+			<width>1628</width>
+			<height>64</height>
+			<control type="label" id="91211">
+				<label>$VAR[NextAiredLabel]</label>
+				<width>1</width>
+				<height>1</height>
+				<left>-1000</left>
+			</control>
+			<control type="image" id="89122">
+				<top>781</top>
+				<left>0</left>
+				<width>228</width>
+				<height>88</height>
+				<texture fallback="E.png">$VAR[NextAiredLogo]</texture>
+				<aspectratio align="center" aligny="top">keep</aspectratio>
+				<visible>!IsEmpty(Control.GetLabel(91211))</visible>
+			</control>
+			<control type="image">
+				<top>781</top>
+				<left>1664</left>
+				<width>228</width>
+				<height>88</height>
+				<texture>$VAR[NextAiredStudio]</texture>
+				<aspectratio aligny="top" align="center">keep</aspectratio>
+				<visible>!IsEmpty(Control.GetLabel(91211))</visible>
+			</control>
+			<control type="button">
+				<left>238</left>
+				<width>1400</width>
+				<top>790</top>
+				<align>left</align>
+				<aligny>top</aligny>
+				<font>HomeWidgetLabelFont</font>
+				<textoffsetx>0</textoffsetx>
+				<label>$VAR[NextAiredLabel]</label>
+				<focusedcolor>$VAR[ColourHighlight]</focusedcolor>
+				<texturenofocus>-</texturenofocus>
+				<texturefocus>-</texturefocus>
+			</control>
 		</control>
 	</controls>
 </window>
