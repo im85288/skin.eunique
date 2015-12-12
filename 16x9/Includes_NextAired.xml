@@ -3,12 +3,15 @@
 	<include name="NextAiredGroup">
 		<width>270</width>
 	</include>
+	<include name="NextAiredGroup2">
+		<width>118.75</width>
+	</include>
 	<include name="NextAiredListGroupParam">
 		<control type="group">
 			<include>NextAiredGroup</include>
 			<control type="list" id="$PARAM[id]">
-				<height>896</height>
-				<width>475</width>
+				<height>760</height>
+				<width>270</width>
 				<onleft>$PARAM[onleft]</onleft>
 				<onright>$PARAM[onright]</onright>
 				<orientation>vertical</orientation>
@@ -16,6 +19,33 @@
 					<include>NextAiredListItem</include>
 				</itemlayout>
 				<focusedlayout height="152" width="270">
+					<control type="group">
+						<visible>!Control.HasFocus($PARAM[id])</visible>
+						<include>NextAiredListItem</include>
+					</control>
+					<control type="group">
+						<visible>Control.HasFocus($PARAM[id])</visible>
+						<include>NextAiredListFocus</include>
+					</control>
+				</focusedlayout>
+			</control>
+		</control>
+	</include>
+	<include name="NextAiredListGroup2Param">
+		<control type="group">
+			<include>NextAiredGroup2</include>
+			<control type="list" id="$PARAM[id]">
+				<height>781</height>
+				<width>118.75</width>
+				<onleft>$PARAM[onleft]</onleft>
+				<onright>$PARAM[onright]</onright>
+				<ondown>$PARAM[id]</ondown>
+				<onup>$PARAM[id]</onup>
+				<orientation>vertical</orientation>
+				<itemlayout height="71" width="118.75">
+					<include>NextAiredListItem</include>
+				</itemlayout>
+				<focusedlayout height="71" width="118.75">
 					<control type="group">
 						<visible>!Control.HasFocus($PARAM[id])</visible>
 						<include>NextAiredListItem</include>
