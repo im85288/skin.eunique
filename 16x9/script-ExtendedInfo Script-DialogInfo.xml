@@ -23,7 +23,7 @@
 		<control type="image">
 			<include>Dimensions_Fullscreen</include>
 			<aspectratio align="center">scale</aspectratio>
-			<texture colordiffuse="$INFO[Window(home).Property(ImageColor)]" fallback="common/black.png" background="true" diffuse="diffuse/dv-mask.png">$INFO[Window.Property(actor.ImageFilter)]</texture>
+			<texture colordiffuse="$INFO[Window(home).Property(ImageColor)]" fallback="common/black.png" background="true" diffuse="diffuse/dv-mask.png">$INFO[Window.Property(ImageFilter)]</texture>
 			<visible>!Skin.HasSetting(lights.out)</visible>
 		</control>
 		<control type="group">
@@ -201,7 +201,7 @@
 						</control>
 						<control type="image">
 							<aspectratio scalediffuse="false">stretch</aspectratio>
-							<texture background="true">$INFO[Window.Property(actor.thumb)]</texture>
+							<texture background="true">$INFO[Window.Property(thumb)]</texture>
 							<animation type="conditional" condition="true" reversible="false">
 								<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
 							</animation>
@@ -309,7 +309,7 @@
 							<font>ReallyLargeBold</font>
 							<textcolor>white</textcolor>
 							<height>60</height>
-							<label>$INFO[Window.Property(actor.title)]</label>
+							<label>$INFO[Window.Property(title)]</label>
 						</control>
 						<control type="group">
 							<height>50</height>
@@ -319,12 +319,12 @@
 								<height>36</height>
 								<font>Tiny</font>
 								<textcolor>white2</textcolor>
-								<label>$INFO[Window.Property(actor.AlsoKnownAs)]</label>
+								<label>$INFO[Window.Property(AlsoKnownAs)]</label>
 								<aligny>center</aligny>
 							</control>
 						</control>
 						<control type="group">
-							<visible>!IsEmpty(Window.Property(actor.Birthday))</visible>
+							<visible>!IsEmpty(Window.Property(Birthday))</visible>
 							<height>36</height>
 							<control type="label">
 								<width>100%</width>
@@ -340,12 +340,12 @@
 								<height>36</height>
 								<font>Tiny</font>
 								<textcolor>Dark2</textcolor>
-								<label fallback="19055">$INFO[Window.Property(actor.Birthday)]</label>
+								<label fallback="19055">$INFO[Window.Property(Birthday)]</label>
 								<aligny>center</aligny>
 							</control>
 						</control>
 						<control type="group">
-							<visible>!IsEmpty(Window.Property(actor.PlaceOfBirth))</visible>
+							<visible>!IsEmpty(Window.Property(PlaceOfBirth))</visible>
 							<height>36</height>
 							<control type="label">
 								<width>100%</width>
@@ -361,12 +361,12 @@
 								<height>36</height>
 								<font>Tiny</font>
 								<textcolor>Dark2</textcolor>
-								<label fallback="19055">$INFO[Window.Property(actor.PlaceOfBirth)]</label>
+								<label fallback="19055">$INFO[Window.Property(PlaceOfBirth)]</label>
 								<aligny>center</aligny>
 							</control>
 						</control>
 						<control type="group">
-							<visible>!IsEmpty(Window.Property(actor.DeathDay))</visible>
+							<visible>!IsEmpty(Window.Property(DeathDay))</visible>
 							<height>36</height>
 							<control type="label">
 								<width>100%</width>
@@ -382,12 +382,12 @@
 								<height>36</height>
 								<font>Tiny</font>
 								<textcolor>Dark2</textcolor>
-								<label fallback="19055">$INFO[Window.Property(actor.DeathDay)]</label>
+								<label fallback="19055">$INFO[Window.Property(DeathDay)]</label>
 								<aligny>center</aligny>
 							</control>
 						</control>
 						<control type="group">
-							<visible>!IsEmpty(Window.Property(actor.Age))</visible>
+							<visible>!IsEmpty(Window.Property(Age))</visible>
 							<height>36</height>
 							<control type="label">
 								<width>100%</width>
@@ -403,7 +403,7 @@
 								<height>36</height>
 								<font>Tiny</font>
 								<textcolor>Dark2</textcolor>
-								<label fallback="19055">$INFO[Window.Property(actor.Age)]</label>
+								<label fallback="19055">$INFO[Window.Property(Age)]</label>
 								<aligny>center</aligny>
 							</control>
 						</control>
@@ -420,7 +420,7 @@
 							<height>260</height>
 							<font>Small</font>
 							<textcolor>white2</textcolor>
-							<label>$INFO[Window.Property(actor.Biography)]</label>
+							<label>$INFO[Window.Property(Biography)]</label>
 						</control>
 					</control>
 				</control>
@@ -514,7 +514,7 @@
 							<textcolor>white</textcolor>
 							<description>Header Label</description>
 							<font>Small</font>
-							<label>$INFO[Window.Property(actor.title)] $ADDON[script.extendedinfo 32010]$INFO[Container(150).ListItem(0).Label,: ,]</label>
+							<label>$INFO[Window.Property(title)] $ADDON[script.extendedinfo 32010]$INFO[Container(150).ListItem(0).Label,: ,]</label>
 							<include>Animation.DelayFadeIn</include>
 						</control>
 						<control type="wraplist" id="150">
@@ -540,7 +540,7 @@
 							<textcolor>white</textcolor>
 							<description>Header Label</description>
 							<font>Small</font>
-							<label>$INFO[Window.Property(actor.title)] $ADDON[script.extendedinfo 32031]$INFO[Container(250).ListItem(0).Label,: ,]</label>
+							<label>$INFO[Window.Property(title)] $ADDON[script.extendedinfo 32031]$INFO[Container(250).ListItem(0).Label,: ,]</label>
 							<include>Animation.DelayFadeIn</include>
 						</control>
 						<control type="wraplist" id="250">
@@ -566,7 +566,7 @@
 							<textcolor>white</textcolor>
 							<description>Header Label</description>
 							<font>Small</font>
-							<label>$INFO[Window.Property(actor.title)] $ADDON[script.extendedinfo 32118]$INFO[Container(350).ListItem(0).Label,: ,]</label>
+							<label>$INFO[Window.Property(title)] $ADDON[script.extendedinfo 32118]$INFO[Container(350).ListItem(0).Label,: ,]</label>
 							<include>Animation.DelayFadeIn</include>
 						</control>
 						<control type="wraplist" id="350">
@@ -592,7 +592,7 @@
 							<textcolor>white</textcolor>
 							<description>Header Label</description>
 							<font>Small</font>
-							<label>$INFO[Window.Property(actor.title)] $ADDON[script.extendedinfo 32119]$INFO[Container(450).ListItem(0).Label,: ,]</label>
+							<label>$INFO[Window.Property(title)] $ADDON[script.extendedinfo 32119]$INFO[Container(450).ListItem(0).Label,: ,]</label>
 							<include>Animation.DelayFadeIn</include>
 						</control>
 						<control type="wraplist" id="450">
@@ -618,7 +618,7 @@
 							<textcolor>white</textcolor>
 							<description>Header Label</description>
 							<font>Small</font>
-							<label>$INFO[Window.Property(actor.title)] $ADDON[script.extendedinfo 32115]$INFO[Container(550).ListItem(0).Label,: ,]</label>
+							<label>$INFO[Window.Property(title)] $ADDON[script.extendedinfo 32115]$INFO[Container(550).ListItem(0).Label,: ,]</label>
 							<include>Animation.DelayFadeIn</include>
 						</control>
 						<control type="wraplist" id="550">
@@ -644,7 +644,7 @@
 							<textcolor>white</textcolor>
 							<description>Header Label</description>
 							<font>Small</font>
-							<label>$INFO[Window.Property(actor.title)] $LOCALIZE[31961]$INFO[Container(650).ListItem(0).Label,: ,]</label>
+							<label>$INFO[Window.Property(title)] $LOCALIZE[31961]$INFO[Container(650).ListItem(0).Label,: ,]</label>
 							<include>Animation.DelayFadeIn</include>
 						</control>
 						<control type="wraplist" id="650">
