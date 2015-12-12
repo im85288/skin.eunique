@@ -1521,4 +1521,14 @@
 		<value condition="!IntegerGreaterThan(Container(206).NumItems,0)">$LOCALIZE[17]</value>
 		<value>$LOCALIZE[17]$INFO[Container(206).NumItems, (,)]</value>
 	</variable>
+	<variable name="NextAiredDate">
+		<value condition="Control.HasFocus(200)">$INFO[Window(Home).Property(NextAired.1.Date)]</value>
+		<value condition="Control.HasFocus(201)">$INFO[Window(Home).Property(NextAired.2.Date)]</value>
+		<value condition="Control.HasFocus(202)">$INFO[Window(Home).Property(NextAired.3.Date)]</value>
+		<value condition="Control.HasFocus(203)">$INFO[Window(Home).Property(NextAired.4.Date)]</value>
+		<value condition="Control.HasFocus(204)">$INFO[Window(Home).Property(NextAired.5.Date)]</value>
+		<value condition="Control.HasFocus(205)">$INFO[Window(Home).Property(NextAired.6.Date)]</value>
+		<value condition="Control.HasFocus(206)">$INFO[Window(Home).Property(NextAired.7.Date)]</value>
+		<value>-</value>
+	</variable>
 </includes>
