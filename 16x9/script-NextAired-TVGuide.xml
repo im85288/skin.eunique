@@ -14,7 +14,7 @@
 			<include>Dimensions_Fullscreen</include>
 			<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
 			<aspectratio align="center">scale</aspectratio>
-			<texture colordiffuse="$INFO[Window(home).Property(NextAiredInfo.ImageColor)]">common/screen-overlay-shard.png</texture>
+			<texture colordiffuse="$VAR[ColourTextFlags]">common/screen-overlay-shard.png</texture>
 			<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
 			<visible>Skin.HasSetting(home.blur)</visible>
 		</control>
@@ -172,7 +172,7 @@
 			</control>
 			<control type="button">
 				<left>273</left>
-				<width>1000</width>
+				<width>1880</width>
 				<top>773</top>
 				<align>left</align>
 				<aligny>top</aligny>
