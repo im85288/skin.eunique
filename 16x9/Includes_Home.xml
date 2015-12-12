@@ -691,6 +691,17 @@
 				<width>auto</width>
 				<height>34</height>
 				<selectedcolor>Dark1</selectedcolor>
+				<label>$VAR[NextAiredDate]</label>
+				<visible>Window.IsVisible(script-NextAired-TVGuide.xml)</visible>
+			</control>
+			<control type="label">
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>MediumSmallBold</font>
+				<textcolor>Dark1</textcolor>
+				<width>auto</width>
+				<height>34</height>
+				<selectedcolor>Dark1</selectedcolor>
 				<label>[UPPERCASE]$VAR[listTitle]$VAR[listSubTitle, / , $LOCALIZE[31101]]$VAR[LabelNextAiredDetails, / ][/UPPERCASE]</label>
 				<visible>[Container.Content(tvshows) | Container.Content(seasons)] + !Control.IsVisible(50) + !Control.IsVisible(53) + !Control.IsVisible(57)</visible>
 			</control>
