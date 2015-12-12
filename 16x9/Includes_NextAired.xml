@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 	<include name="NextAiredGroup">
-		<width>270</width>
+		<width>271.4285714285714</width>
 	</include>
 	<include name="NextAiredGroup2">
 		<width>118.75</width>
@@ -11,14 +11,14 @@
 			<include>NextAiredGroup</include>
 			<control type="list" id="$PARAM[id]">
 				<height>760</height>
-				<width>270</width>
+				<width>271.4285714285714</width>
 				<onleft>$PARAM[onleft]</onleft>
 				<onright>$PARAM[onright]</onright>
 				<orientation>vertical</orientation>
-				<itemlayout height="152" width="270">
+				<itemlayout height="152" width="271.4285714285714">
 					<include>NextAiredListItem</include>
 				</itemlayout>
-				<focusedlayout height="152" width="270">
+				<focusedlayout height="152" width="271.4285714285714">
 					<control type="group">
 						<visible>!Control.HasFocus($PARAM[id])</visible>
 						<include>NextAiredListItem</include>
@@ -60,10 +60,6 @@
 	</include>
 	<include name="NextAiredListItem">
 		<control type="image">
-			<left>0</left>
-			<right>10</right>
-			<top>0</top>
-			<bottom>10</bottom>
 			<aspectratio>scale</aspectratio>
 			<texture fallback="pvr/background.jpg">$VAR[NextAiredArt]</texture>
 		</control>
@@ -77,23 +73,11 @@
 		<control type="image">
 			<aspectratio scalediffuse="false">scale</aspectratio>
 			<texture background="true" colordiffuse="$VAR[BorderHighlightColour]">$VAR[FocusedBorderImage]</texture>
-			<left>0</left>
-			<right>10</right>
-			<top>0</top>
-			<bottom>10</bottom>
-			<animation type="Focus" reversible="false">
-				<effect type="zoom" end="106" time="200" center="auto" tween="quadratic" easing="out"/>
-				<effect type="rotate" end="1.5" time="200" center="auto" tween="quadratic" easing="out"/>
-			</animation>
 		</control>
 		<control type="image">
-			<left>0</left>
-			<right>10</right>
-			<top>0</top>
-			<bottom>10</bottom>
 			<aspectratio>scale</aspectratio>
 			<texture fallback="pvr/background.jpg">$VAR[NextAiredArt]</texture>
-			<animation effect="zoom" end="101" time="0" center="auto">Focus</animation>
+			<animation effect="zoom" end="95" time="0" center="auto">Focus</animation>
 		</control>
 	</include>
 	<variable name="NextAiredArt">

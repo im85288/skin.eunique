@@ -33,10 +33,17 @@
 		<include>Furniture_NowPlaying</include>
 		<include>Furniture_HeaderEmby</include>
 		<include>Furniture_EmbyClock</include>
+				<control type="image">
+					<left>10</left>
+					<top>99</top>
+					<width>1900</width>
+					<height>51</height>
+					<texture colordiffuse="$VAR[CommunityRatingColour]">common/white.png</texture>
+				</control>
 		<control type="grouplist">
 			<left>NewSidePad</left>
 			<right>NewSidePad</right>
-			<top>190</top>
+			<top>150</top>
 			<height>760</height>
 			<itemgap>0</itemgap>
 			<orientation>horizontal</orientation>
@@ -78,9 +85,11 @@
 		</control>
 		<control type="grouplist">
 			<description>Weekday labels</description>
-			<left>NewSidePad</left>
-			<posy>TopPad</posy>
-			<itemgap>10</itemgap>
+					<left>10</left>
+					<top>98</top>
+					<width>1900</width>
+					<height>51</height>
+			<itemgap>0</itemgap>
 			<orientation>Horizontal</orientation>
 			<control type="button">
 				<label>[B]$VAR[TVDayLabelMon][/B]</label>
@@ -133,10 +142,10 @@
 			</control>
 		</control>
 		<control type="group">
-			<left>NewSidePad</left>
+			<left>40</left>
 			<top>210</top>
-			<width>1900</width>
-			<height>64</height>
+			<width>1880</width>
+			<height>45</height>
 			<control type="label" id="91211">
 				<label>$VAR[NextAiredLabel]</label>
 				<width>1</width>
@@ -147,24 +156,24 @@
 				<top>781</top>
 				<left>0</left>
 				<width>228</width>
-				<height>88</height>
+				<height>64</height>
 				<texture fallback="E.png">$VAR[NextAiredLogo]</texture>
 				<aspectratio align="center" aligny="center">keep</aspectratio>
 				<visible>!IsEmpty(Control.GetLabel(91211))</visible>
 			</control>
 			<control type="image">
 				<top>781</top>
-				<right>0</right>
+				<right>40</right>
 				<width>228</width>
-				<height>88</height>
+				<height>64</height>
 				<texture>$VAR[NextAiredStudio]</texture>
 				<aspectratio aligny="center" align="right">keep</aspectratio>
 				<visible>!IsEmpty(Control.GetLabel(91211))</visible>
 			</control>
 			<control type="button">
-				<left>238</left>
-				<width>1400</width>
-				<top>790</top>
+				<left>273</left>
+				<width>1000</width>
+				<top>773</top>
 				<align>left</align>
 				<aligny>top</aligny>
 				<font>HomeWidgetLabelFont</font>
