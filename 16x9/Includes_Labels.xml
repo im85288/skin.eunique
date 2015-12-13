@@ -1524,7 +1524,7 @@
 		<value>$LOCALIZE[17]$INFO[Container(206).NumItems, (,)]</value>
 	</variable>
 	<variable name="NextAiredDate">
-		<value condition="Control.HasFocus(200)">$INFO[Window(Home).Property(NextAired.1.Date)]</value>
+		<value condition="Control.HasFocus(200)">$INFO[Container(200).ListItem.Property(Started),$LOCALIZE[20416]: ,]$INFO[Container(200).ListItem.Property(Status), • ,]$INFO[Container(200).ListItem.Property(Country), • $LOCALIZE[21875]: ,]$INFO[Container(200).ListItem.Property(Genre), • ,]</value>
 		<value condition="Control.HasFocus(201)">$INFO[Window(Home).Property(NextAired.2.Date)]</value>
 		<value condition="Control.HasFocus(202)">$INFO[Window(Home).Property(NextAired.3.Date)]</value>
 		<value condition="Control.HasFocus(203)">$INFO[Window(Home).Property(NextAired.4.Date)]</value>
