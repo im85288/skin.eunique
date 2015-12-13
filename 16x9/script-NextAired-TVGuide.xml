@@ -92,43 +92,50 @@
 			<itemgap>0</itemgap>
 			<orientation>Horizontal</orientation>
 			<control type="button">
-				<label>[B]$VAR[TVDayLabelMon][/B]</label>
+				<label>[B]$INFO[Window(home).Property(NextAired.200.Wday)]$INFO[Container(200).NumItems, (,)][/B]</label>
+				<label2>[COLOR=white2]$INFO[Window(Home).Property(NextAired.200.Date)][/COLOR]</label2>
 				<include>TVGuideWeekdayButton</include>
 				<animation effect="fade" start="100" end="65" time="0" condition="!StringCompare(System.Date(ddd),$LOCALIZE[41])">Conditional</animation>
 				<enable>IntegerGreaterThan(Container(200).NumItems,0)</enable>
 			</control>
 			<control type="button">
-				<label>[B]$VAR[TVDayLabelTue][/B]</label>
+				<label>[B]$INFO[Window(home).Property(NextAired.201.Wday)]$INFO[Container(201).NumItems, (,)][/B]</label>
+				<label2>[COLOR=white2]$INFO[Window(Home).Property(NextAired.201.Date)][/COLOR]</label2>
 				<include>TVGuideWeekdayButton</include>
 				<animation effect="fade" start="100" end="65" time="0" condition="!StringCompare(System.Date(ddd),$LOCALIZE[42])">Conditional</animation>
 				<enable>IntegerGreaterThan(Container(201).NumItems,0)</enable>
 			</control>
 			<control type="button">
-				<label>[B]$VAR[TVDayLabelWed][/B]</label>
+				<label>[B]$INFO[Window(home).Property(NextAired.202.Wday)]$INFO[Container(202).NumItems, (,)][/B]</label>
+				<label2>[COLOR=white2]$INFO[Window(Home).Property(NextAired.202.Date)][/COLOR]</label2>
 				<include>TVGuideWeekdayButton</include>
 				<animation effect="fade" start="100" end="65" time="0" condition="!StringCompare(System.Date(ddd),$LOCALIZE[43])">Conditional</animation>
 				<enable>IntegerGreaterThan(Container(202).NumItems,0)</enable>
 			</control>
 			<control type="button">
-				<label>[B]$VAR[TVDayLabelThu][/B]</label>
+				<label>[B]$INFO[Window(home).Property(NextAired.203.Wday)]$INFO[Container(203).NumItems, (,)][/B]</label>
+				<label2>[COLOR=white2]$INFO[Window(Home).Property(NextAired.203.Date)][/COLOR]</label2>
 				<include>TVGuideWeekdayButton</include>
 				<animation effect="fade" start="100" end="65" time="0" condition="!StringCompare(System.Date(ddd),$LOCALIZE[44])">Conditional</animation>
 				<enable>IntegerGreaterThan(Container(203).NumItems,0)</enable>
 			</control>
 			<control type="button">
-				<label>[B]$VAR[TVDayLabelFri][/B]</label>
+				<label>[B]$INFO[Window(home).Property(NextAired.204.Wday)]$INFO[Container(204).NumItems, (,)][/B]</label>
+				<label2>[COLOR=white2]$INFO[Window(Home).Property(NextAired.204.Date)][/COLOR]</label2>
 				<include>TVGuideWeekdayButton</include>
 				<animation effect="fade" start="100" end="65" time="0" condition="!StringCompare(System.Date(ddd),$LOCALIZE[45])">Conditional</animation>
 				<enable>IntegerGreaterThan(Container(204).NumItems,0)</enable>
 			</control>
 			<control type="button">
-				<label>[B]$VAR[TVDayLabelSat][/B]</label>
+				<label>[B]$INFO[Window(home).Property(NextAired.205.Wday)]$INFO[Container(205).NumItems, (,)][/B]</label>
+				<label2>[COLOR=white2]$INFO[Window(Home).Property(NextAired.205.Date)][/COLOR]</label2>
 				<include>TVGuideWeekdayButton</include>
 				<animation effect="fade" start="100" end="65" time="0" condition="!StringCompare(System.Date(ddd),$LOCALIZE[46])">Conditional</animation>
 				<enable>IntegerGreaterThan(Container(205).NumItems,0)</enable>
 			</control>
 			<control type="button">
-				<label>[B]$VAR[TVDayLabelSun][/B]</label>
+				<label>[B]$INFO[Window(home).Property(NextAired.206.Wday)]$INFO[Container(206).NumItems, (,)][/B]</label>
+				<label2>[COLOR=white2]$INFO[Window(Home).Property(NextAired.206.Date)][/COLOR]</label2>
 				<include>TVGuideWeekdayButton</include>
 				<animation effect="fade" start="100" end="65" time="0" condition="!StringCompare(System.Date(ddd),$LOCALIZE[47])">Conditional</animation>
 				<enable>IntegerGreaterThan(Container(206).NumItems,0)</enable>
