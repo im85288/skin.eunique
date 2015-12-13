@@ -5,9 +5,8 @@
 		<control type="image">
 			<include>Dimensions_Fullscreen</include>
 			<aspectratio align="center">scale</aspectratio>
-			<texture fallback="common/black.png" background="true">$INFO[Window(home).Property(NextAiredInfo.ImageFilter)]</texture>
+			<texture colordiffuse="$INFO[Window(home).Property(NextAiredInfo.ImageColor)]" fallback="common/black.png" background="true">$INFO[Window(home).Property(NextAiredInfo.ImageFilter)]</texture>
 			<visible>Skin.HasSetting(home.blur)</visible>
-			<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
 			<fadetime>600</fadetime>
 		</control>
 		<control type="image">
