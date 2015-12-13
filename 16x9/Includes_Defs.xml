@@ -622,6 +622,25 @@
 			<aspectratio>stretch</aspectratio>
 		</control>
 	</include>
+	<include name="DefDialogAddonPanel">
+		<include>Animation.FadeIn.Slide</include>
+		<include>Animation.FadeOut</include>
+		<centerleft>50%</centerleft>
+		<top>TopPad</top>
+		<width>1820</width>
+		<height>860</height>
+		<control type="image">
+			<top>92</top>
+			<bottom>0</bottom>
+			<texture colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
+		</control>
+		<control type="image">
+			<height>92</height>
+			<texture>common/white.png</texture>
+			<colordiffuse>$VAR[EmbyMenuTextColourHighlight]</colordiffuse>
+			<aspectratio>stretch</aspectratio>
+		</control>
+	</include>
 	<include name="DefDialogInfoHeader">
 		<left>30</left>
 		<right>320</right>
