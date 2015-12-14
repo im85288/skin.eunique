@@ -211,7 +211,7 @@
 		</control>
 	</include>
 	<include name="Furniture_ScrollbarBigList">
-		<control type="scrollbar" id="60">
+		<control type="scrollbar" id="66">
 			<onback>50</onback>
 			<posx>0</posx>
 			<posy>TopPad</posy>
@@ -226,7 +226,7 @@
 			<animation effect="slide" end="-100,0" time="200" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
 			<visible>Container.Column(0)</visible>
 		</control>
-		<control type="scrollbar" id="60">
+		<control type="scrollbar" id="66">
 			<onback>50</onback>
 			<posx>1920</posx>
 			<posy>TopPad</posy>
@@ -239,7 +239,7 @@
 			<texturesliderbarfocus colordiffuse="$VAR[ColourHighlight]">common/box.png</texturesliderbarfocus>
 			<animation effect="fade" start="100" end="33" time="200" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
 			<animation effect="slide" end="100,0" time="200" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
-			<visible>!Container.Column(0)</visible>
+			<visible>Container.Column(1)</visible>
 		</control>
 	</include>
 	<include name="Furniture_ScrollbarM">

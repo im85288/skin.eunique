@@ -1502,20 +1502,20 @@
 					<font>HomeEmbySub</font>
 					<label>$INFO[ListItem.Label]</label>
 				</control>
-			<control type="label">
-				<top>-24</top>
-				<left>5</left>
-				<right>5</right>
-				<align>center</align>
-				<aligny>center</aligny>
-				<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
-				<font>minisymbol</font>
-				<label></label>
-				<visible>Control.HasFocus(302)</visible>
-				<!--
-				<visible>IntegerGreaterThan(Container(302).NumItems,0)</visible>
-				-->
-			</control>
+				<control type="label">
+					<top>-24</top>
+					<left>5</left>
+					<right>5</right>
+					<align>center</align>
+					<aligny>center</aligny>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+					<font>minisymbol</font>
+					<label></label>
+					<visible>Control.HasFocus(302)</visible>
+					<!--
+					<visible>IntegerGreaterThan(Container(302).NumItems,0)</visible>
+					-->
+				</control>
 			</focusedlayout>
 			<content>
 				<include>skinshortcuts-submenu</include>
