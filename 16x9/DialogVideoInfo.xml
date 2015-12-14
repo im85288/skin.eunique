@@ -62,12 +62,20 @@
 			<control type="group">
 				<left>1654</left>
 				<top>530</top>
-				<control type="image">
+				<control type="image" id="23370">
 					<width>206</width>
 					<height>116</height>
 					<texture>$VAR[ColourStudio]</texture>
 					<aspectratio align="center" aligny="center">keep</aspectratio>
 					<fadetime>50</fadetime>
+				</control>
+				<control type="image" id="23370">
+					<width>206</width>
+					<height>116</height>
+					<texture>$INFO[ListItem.Art(discart)]</texture>
+					<aspectratio align="center" aligny="center">keep</aspectratio>
+					<fadetime>50</fadetime>
+					<visible>IsEmpty(Control.GetLabel(23370))</visible>
 				</control>
 			</control>
 			<control type="group">
