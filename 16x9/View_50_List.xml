@@ -149,7 +149,7 @@
 				<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
 				<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
 				<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
-				<righttexture colordiffuse="$VAR[EmbyMenuColourHighlight]">osd/progress-end.png</righttexture>
+				<righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>
 				<visible>ListItem.IsResumable</visible>
 			</control>
             <control type="image">
@@ -187,7 +187,7 @@
                 <height>50</height>
                 <font>MediumBold</font>
                 <scroll>true</scroll>
-                <textcolor>$VAR[EmbyMenuColourHighlight]</textcolor>
+                <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
                 <label>$VAR[LabelDirector]</label>
                 <visible>!Container.Content(genres) + !Container.Content(albums) + !Container.Content(songs) + !Container.Content(artists) + !Container.Content(singles)</visible>
             </control>
@@ -198,7 +198,7 @@
                 <aligny>center</aligny>
                 <align>left</align>
                 <font>MediumSmallBold</font>
-                <textcolor>$VAR[EmbyMenuColourHighlight]</textcolor>
+                <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
                 <label>$VAR[LabelDuration]</label>
                 <visible>!Container.Content(genres) + !Container.Content(albums) + !Container.Content(songs) + !Container.Content(artists) + !Container.Content(singles)</visible>
             </control>
@@ -209,7 +209,7 @@
                 <height>34</height>
                 <align>left</align>
                 <font>TinyBold</font>
-                <textcolor>$VAR[EmbyMenuColourHighlight]</textcolor>
+                <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
                 <label>$VAR[LabelGenreList]</label>
                 <autoscroll delay="500" time="1000" repeat="500"/>
                 <visible>!Container.Content(genres) + !Container.Content(albums) + !Container.Content(songs) + !Container.Content(artists) + !Container.Content(singles)</visible>
@@ -221,7 +221,7 @@
                 <height>42</height>
                 <align>left</align>
                 <font>MediumSmallBold</font>
-                <textcolor>$VAR[EmbyMenuColourHighlight]</textcolor>
+                <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
                 <label>$INFO[Window(Home).Property(SkinHelper.ListItemStudios)]</label>
                 <autoscroll delay="500" time="3000" repeat="500"/>
                 <visible>!Container.Content(genres) + !Container.Content(albums) + !Container.Content(songs) + !Container.Content(artists) + !Container.Content(singles)</visible>
@@ -234,7 +234,7 @@
                 <bottom>65</bottom>
                 <align>right</align>
                 <font>MediumLargeBold</font>
-                <textcolor>$VAR[EmbyMenuColourHighlight]</textcolor>
+                <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
                 <label>$VAR[PlotList]</label>
                 <visible>!Container.Content(genres) + !Container.Content(albums) + !Container.Content(songs) + !Container.Content(artists) + !Container.Content(singles)</visible>
             </control>
@@ -246,7 +246,7 @@
                 <bottom>65</bottom>
                 <align>right</align>
                 <font>MediumLargeBold</font>
-                <textcolor>$VAR[EmbyMenuColourHighlight]</textcolor>
+                <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
                 <label>$INFO[Window(Home).Property(SkinHelper.Music.Info)]</label>
                 <visible>!Container.Content(genres) + !Container.Content(albums) + !Container.Content(songs) + !Container.Content(artists) + !Container.Content(singles)</visible>
             </control>
@@ -506,8 +506,8 @@
             <aligny>center</aligny>
             <height>30</height>
             <label>$VAR[LabelYear]</label>
-            <textcolor>$VAR[EmbyMenuColourHighlight]</textcolor>
-            <selectedcolor>$VAR[EmbyMenuColourHighlight]</selectedcolor>
+            <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+            <selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
             <visible>Container.Content(movies)</visible>
         </control>
         <control type="label">
@@ -518,8 +518,8 @@
             <height>31</height>
             <font>SmallBold</font>
             <label>$INFO[ListItem.Label]</label>
-            <textcolor>$VAR[EmbyMenuColourHighlight]</textcolor>
-            <selectedcolor>$VAR[EmbyMenuColourHighlight]</selectedcolor>
+            <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+            <selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
             <animation effect="slide" start="0" end="-90" time="0" condition="!Container.Content(movies)">Conditional</animation>
             <visible>!Container.Content(episodes) + !Container.Content(tvshows)</visible>
         </control>
@@ -531,8 +531,8 @@
             <height>31</height>
             <font>SmallBold</font>
             <label>$INFO[ListItem.Label]</label>
-            <textcolor>$VAR[EmbyMenuColourHighlight]</textcolor>
-            <selectedcolor>$VAR[EmbyMenuColourHighlight]</selectedcolor>
+            <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+            <selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
             <visible>Container.Content(episodes) | Container.Content(tvshows)</visible>
         </control>
         <control type="label">
@@ -543,8 +543,8 @@
             <height>30</height>
             <align>right</align>
             <font>Small</font>
-            <textcolor>$VAR[EmbyMenuColourHighlight]</textcolor>
-            <selectedcolor>$VAR[EmbyMenuColourHighlight]</selectedcolor>
+            <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+            <selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
             <label>$VAR[LabelDuration]</label>
         </control>
         <control type="group">
@@ -635,8 +635,8 @@
             <height>30</height>
             <align>right</align>
             <font>Small</font>
-            <textcolor>$VAR[EmbyMenuColourHighlight]</textcolor>
-            <selectedcolor>$VAR[EmbyMenuColourHighlight]</selectedcolor>
+            <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+            <selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
             <label>$INFO[ListItem.Rating]</label>
             <visible>!stringcompare(ListItem.Label,..)</visible>
             <visible>!Container.Content(seasons) + !Container.Content(albums) + !Container.Content(songs)</visible>
@@ -649,8 +649,8 @@
             <height>30</height>
             <align>right</align>
             <font>Small</font>
-            <textcolor>$VAR[EmbyMenuColourHighlight]</textcolor>
-            <selectedcolor>$VAR[EmbyMenuColourHighlight]</selectedcolor>
+            <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+            <selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
             <label>$INFO[ListItem.Year]</label>
             <visible>Container.Content(albums) | Container.Content(songs)</visible>
         </control>
@@ -669,8 +669,8 @@
             <height>100%</height>
             <font>SmallBold</font>
             <label>$INFO[ListItem.Label]</label>
-            <textcolor>$VAR[EmbyMenuColourHighlight]</textcolor>
-            <selectedcolor>$VAR[EmbyMenuColourHighlight]</selectedcolor>
+            <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+            <selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
         </control>
         <control type="label">
             <right>30</right>
@@ -679,8 +679,8 @@
             <height>100%</height>
             <align>right</align>
             <font>Small</font>
-            <textcolor>$VAR[EmbyMenuColourHighlight]</textcolor>
-            <selectedcolor>$VAR[EmbyMenuColourHighlight]</selectedcolor>
+            <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+            <selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
             <label>$INFO[ListItem.Label2]</label>
         </control>
     </include>
