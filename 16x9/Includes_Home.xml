@@ -77,10 +77,10 @@
 				<width>50</width>
 				<height>50</height>
 				<control type="image">
-					<texture diffuse="common/circle.png" colordiffuse="Panel">common/box.png</texture>
+					<texture diffuse="common/circle.png" colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
 				</control>
 				<control id="8308" type="image">
-					<texture colordiffuse="PanelWhite100">$VAR[HeaderIcon]</texture>
+					<texture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">$VAR[HeaderIcon]</texture>
 					<visible>false</visible>
 				</control>
 				<control type="image">
@@ -911,10 +911,10 @@
 				<width>50</width>
 				<height>50</height>
 				<control type="image">
-					<texture diffuse="common/circle.png" colordiffuse="Panel">common/box.png</texture>
+					<texture diffuse="common/circle.png" colordiffuse="$VAR[EmbyMenuTextColourHighlight]">common/box.png</texture>
 				</control>
 				<control id="8308" type="image">
-					<texture colordiffuse="PanelWhite100">$VAR[HeaderIcon]</texture>
+					<texture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">$VAR[HeaderIcon]</texture>
 					<visible>false</visible>
 				</control>
 				<control type="image">
@@ -2627,7 +2627,7 @@
 					<width>1157</width>
 					<height>705</height>
 					<control type="image">
-						<texture colordiffuse="Panel">common/box.png</texture>
+						<texture colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
 					</control>
 					<control type="multiimage" description="Fanart">
 						<timeperimage>12000</timeperimage>
@@ -2642,7 +2642,7 @@
 						<top>10</top>
 						<height>30</height>
 						<font>TinyBold</font>
-						<textcolor>PanelWhite100</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<scroll>false</scroll>
 						<align>left</align>
 						<aligny>center</aligny>
@@ -2666,7 +2666,7 @@
 						<font>MediumBold</font>
 						<align>center</align>
 						<aligny>center</aligny>
-						<textcolor>PanelWhite100</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<label fallback="161">$LOCALIZE[19030]</label>
 					</control>
 					<control type="image">
@@ -2683,7 +2683,7 @@
 						<font>EpisodeNumber</font>
 						<align>center</align>
 						<aligny>center</aligny>
-						<textcolor>PanelWhite100</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<label fallback="N/A">$INFO[Window(Weather).Property(Current.Temperature),[B],[/B]]$INFO[System.TemperatureUnits]</label>
 					</control>
 					<control type="label">
@@ -2695,7 +2695,7 @@
 						<autoscroll>false</autoscroll>
 						<align>center</align>
 						<font>TinyBold</font>
-						<textcolor>PanelWhite100</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<label fallback="161">$INFO[Window(Weather).Property(Current.Condition),,[CR]]$INFO[Window(Weather).Property(Current.FeelsLike),$LOCALIZE[402] ,]$INFO[System.TemperatureUnits,,[CR]]$INFO[Window(Weather).Property(Current.DewPoint),$LOCALIZE[405] ,]$INFO[System.TemperatureUnits,,[CR]]$INFO[Window(Weather).Property(Current.Humidity),, $LOCALIZE[406][CR]]$INFO[Window(Weather).Property(Current.UVIndex),$LOCALIZE[403] ,[CR]]$INFO[Window(Weather).Property(Current.Wind),$LOCALIZE[404] ,]</label>
 					</control>
 					<control type="image">
@@ -2711,7 +2711,7 @@
 						<bottom>10</bottom>
 						<height>46</height>
 						<font>SmallBold</font>
-						<textcolor>PanelWhite100</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<scroll>true</scroll>
 						<align>center</align>
 						<aligny>bottom</aligny>
@@ -2724,7 +2724,7 @@
 						<bottom>10</bottom>
 						<height>46</height>
 						<font>SmallBold</font>
-						<textcolor>PanelWhite100</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<scroll>true</scroll>
 						<align>left</align>
 						<aligny>bottom</aligny>
@@ -2737,7 +2737,7 @@
 						<bottom>10</bottom>
 						<height>46</height>
 						<font>SmallBold</font>
-						<textcolor>PanelWhite100</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<scroll>true</scroll>
 						<align>right</align>
 						<aligny>bottom</aligny>
@@ -2782,7 +2782,7 @@
 					<itemlayout height="352.5" width="247.6666666666667">
 						<control type="group">
 							<control type="image">
-								<texture colordiffuse="Panel">common/box.png</texture>
+								<texture colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
 							</control>
 							<control type="multiimage" description="Fanart">
 								<timeperimage>5000</timeperimage>
@@ -2829,7 +2829,7 @@
 					<focusedlayout height="352.5" width="247.6666666666667">
 						<control type="group">
 							<control type="image">
-								<texture colordiffuse="panel">common/box.png</texture>
+								<texture colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
 								<visible>!Control.HasFocus(3444)</visible>
 							</control>
 							<control type="image">
@@ -9112,7 +9112,7 @@
 									<itemlayout height="445.5" width="247.6666666666667">
 										<control type="group">
 											<control type="image">
-												<texture colordiffuse="Panel">common/box.png</texture>
+												<texture colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
 											</control>
 											<control type="multiimage" description="Fanart">
 												<timeperimage>5000</timeperimage>
@@ -9159,7 +9159,7 @@
 									<focusedlayout height="445.5" width="247.6666666666667">
 										<control type="group">
 											<control type="image">
-												<texture colordiffuse="panel">common/box.png</texture>
+												<texture colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
 												<visible>!Control.HasFocus(3444)</visible>
 											</control>
 											<control type="image">
@@ -9362,7 +9362,7 @@
 								<width>1157</width>
 								<height>905</height>
 								<control type="image">
-									<texture colordiffuse="Panel">common/box.png</texture>
+									<texture colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
 								</control>
 								<control type="multiimage" description="Fanart">
 									<timeperimage>12000</timeperimage>
@@ -9377,7 +9377,7 @@
 									<top>10</top>
 									<height>30</height>
 									<font>TinyBold</font>
-									<textcolor>PanelWhite100</textcolor>
+									<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 									<scroll>false</scroll>
 									<align>left</align>
 									<aligny>center</aligny>
@@ -9401,7 +9401,7 @@
 									<font>MediumBold</font>
 									<align>center</align>
 									<aligny>center</aligny>
-									<textcolor>PanelWhite100</textcolor>
+									<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 									<label fallback="161">$LOCALIZE[19030]</label>
 								</control>
 								<control type="image">
@@ -9418,7 +9418,7 @@
 									<font>EpisodeNumber</font>
 									<align>center</align>
 									<aligny>center</aligny>
-									<textcolor>PanelWhite100</textcolor>
+									<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 									<label fallback="N/A">$INFO[Window(Weather).Property(Current.Temperature),[B],[/B]]$INFO[System.TemperatureUnits]</label>
 								</control>
 								<control type="label">
@@ -9430,7 +9430,7 @@
 									<autoscroll>false</autoscroll>
 									<align>center</align>
 									<font>TinyBold</font>
-									<textcolor>PanelWhite100</textcolor>
+									<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 									<label fallback="161">$INFO[Window(Weather).Property(Current.Condition),,[CR]]$INFO[Window(Weather).Property(Current.FeelsLike),$LOCALIZE[402] ,]$INFO[System.TemperatureUnits,,[CR]]$INFO[Window(Weather).Property(Current.DewPoint),$LOCALIZE[405] ,]$INFO[System.TemperatureUnits,,[CR]]$INFO[Window(Weather).Property(Current.Humidity),, $LOCALIZE[406][CR]]$INFO[Window(Weather).Property(Current.UVIndex),$LOCALIZE[403] ,[CR]]$INFO[Window(Weather).Property(Current.Wind),$LOCALIZE[404] ,]</label>
 								</control>
 								<control type="image">
@@ -9446,7 +9446,7 @@
 									<bottom>10</bottom>
 									<height>46</height>
 									<font>SmallBold</font>
-									<textcolor>PanelWhite100</textcolor>
+									<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 									<scroll>true</scroll>
 									<align>center</align>
 									<aligny>bottom</aligny>
@@ -9459,7 +9459,7 @@
 									<bottom>10</bottom>
 									<height>46</height>
 									<font>SmallBold</font>
-									<textcolor>PanelWhite100</textcolor>
+									<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 									<scroll>true</scroll>
 									<align>left</align>
 									<aligny>bottom</aligny>
@@ -9472,7 +9472,7 @@
 									<bottom>10</bottom>
 									<height>46</height>
 									<font>SmallBold</font>
-									<textcolor>PanelWhite100</textcolor>
+									<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 									<scroll>true</scroll>
 									<align>right</align>
 									<aligny>bottom</aligny>
@@ -10307,7 +10307,7 @@
 									<itemlayout height="417.5" width="247.6666666666667">
 										<control type="group">
 											<control type="image">
-												<texture colordiffuse="Panel">common/box.png</texture>
+												<texture colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
 											</control>
 											<control type="multiimage" description="Fanart">
 												<timeperimage>5000</timeperimage>
@@ -10354,7 +10354,7 @@
 									<focusedlayout height="417.5" width="247.6666666666667">
 										<control type="group">
 											<control type="image">
-												<texture colordiffuse="panel">common/box.png</texture>
+												<texture colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
 												<visible>!Control.HasFocus(3444)</visible>
 											</control>
 											<control type="image">
@@ -10557,7 +10557,7 @@
 								<width>1157</width>
 								<height>845</height>
 								<control type="image">
-									<texture colordiffuse="Panel">common/box.png</texture>
+									<texture colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texture>
 								</control>
 								<control type="multiimage" description="Fanart">
 									<timeperimage>12000</timeperimage>
@@ -10572,7 +10572,7 @@
 									<top>10</top>
 									<height>30</height>
 									<font>TinyBold</font>
-									<textcolor>PanelWhite100</textcolor>
+									<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 									<scroll>false</scroll>
 									<align>left</align>
 									<aligny>center</aligny>
@@ -10596,7 +10596,7 @@
 									<font>MediumBold</font>
 									<align>center</align>
 									<aligny>center</aligny>
-									<textcolor>PanelWhite100</textcolor>
+									<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 									<label fallback="161">$LOCALIZE[19030]</label>
 								</control>
 								<control type="image">
@@ -10613,7 +10613,7 @@
 									<font>EpisodeNumber</font>
 									<align>center</align>
 									<aligny>center</aligny>
-									<textcolor>PanelWhite100</textcolor>
+									<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 									<label fallback="N/A">$INFO[Window(Weather).Property(Current.Temperature),[B],[/B]]$INFO[System.TemperatureUnits]</label>
 								</control>
 								<control type="label">
@@ -10625,7 +10625,7 @@
 									<autoscroll>false</autoscroll>
 									<align>center</align>
 									<font>TinyBold</font>
-									<textcolor>PanelWhite100</textcolor>
+									<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 									<label fallback="161">$INFO[Window(Weather).Property(Current.Condition),,[CR]]$INFO[Window(Weather).Property(Current.FeelsLike),$LOCALIZE[402] ,]$INFO[System.TemperatureUnits,,[CR]]$INFO[Window(Weather).Property(Current.DewPoint),$LOCALIZE[405] ,]$INFO[System.TemperatureUnits,,[CR]]$INFO[Window(Weather).Property(Current.Humidity),, $LOCALIZE[406][CR]]$INFO[Window(Weather).Property(Current.UVIndex),$LOCALIZE[403] ,[CR]]$INFO[Window(Weather).Property(Current.Wind),$LOCALIZE[404] ,]</label>
 								</control>
 								<control type="image">
@@ -10641,7 +10641,7 @@
 									<bottom>10</bottom>
 									<height>46</height>
 									<font>SmallBold</font>
-									<textcolor>PanelWhite100</textcolor>
+									<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 									<scroll>true</scroll>
 									<align>center</align>
 									<aligny>bottom</aligny>
@@ -10654,7 +10654,7 @@
 									<bottom>10</bottom>
 									<height>46</height>
 									<font>SmallBold</font>
-									<textcolor>PanelWhite100</textcolor>
+									<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 									<scroll>true</scroll>
 									<align>left</align>
 									<aligny>bottom</aligny>
@@ -10667,7 +10667,7 @@
 									<bottom>10</bottom>
 									<height>46</height>
 									<font>SmallBold</font>
-									<textcolor>PanelWhite100</textcolor>
+									<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 									<scroll>true</scroll>
 									<align>right</align>
 									<aligny>bottom</aligny>
