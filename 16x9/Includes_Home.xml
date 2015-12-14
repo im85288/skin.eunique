@@ -13,7 +13,7 @@
 				<align>right</align>
 				<bottom>-5</bottom>
 				<font>HomeEmbySemi</font>
-				<textcolor>white3</textcolor>
+				<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 				<label>[COLOR=white]$INFO[VideoPlayer.TvShowTitle,, ]$INFO[MusicPlayer.Artist,, ]$INFO[Player.Time]$INFO[Player.Duration, / ,] $INFO[Player.Title,[B],[/B] ][/COLOR]$INFO[System.Date(DDD)]$COMMA $INFO[System.Date(d MMM yyyy)] $INFO[Weather.Temperature,[COLOR=white],[/COLOR]]$INFO[Weather.Conditions, ,]</label>
 			</control>
 			<control type="image">
@@ -185,7 +185,7 @@
 				<control type="label">
 					<height>46</height>
 					<font>LargeBold</font>
-					<textcolor>Dark1</textcolor>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<label>$INFO[System.Time(hh:mm)]</label>
 				</control>
 			</control>
@@ -197,7 +197,7 @@
 					<left>-24</left>
 					<height>46</height>
 					<font>symbolview</font>
-					<textcolor>Dark1</textcolor>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<label> </label>
 					<visible>!IsEmpty(Control.GetLabel(13371))</visible>
 				</control>
@@ -210,7 +210,7 @@
 					<left>-56</left>
 					<height>52</height>
 					<font>SmallBold</font>
-					<textcolor>Dark1</textcolor>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<label>$VAR[EmbyEndTimeLabel, ]</label>
 				</control>
 			</control>
@@ -231,7 +231,7 @@
 				<aligny>center</aligny>
 				<align>left</align>
 				<font>symbolview</font>
-				<textcolor>Dark1</textcolor>
+				<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 				<height>32</height>
 				<width>auto</width>
 				<label></label>
@@ -241,7 +241,7 @@
 				<aligny>center</aligny>
 				<align>left</align>
 				<font>MediumSmallBold</font>
-				<textcolor>Dark1</textcolor>
+				<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 				<height>34</height>
 				<width>auto</width>
 				<label>$INFO[Window(home).Property(Movies.Count),[UPPERCASE],[/UPPERCASE]]</label>
@@ -251,7 +251,7 @@
 				<aligny>center</aligny>
 				<align>left</align>
 				<font>symbolview</font>
-				<textcolor>Dark1</textcolor>
+				<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 				<height>32</height>
 				<width>auto</width>
 				<label></label>
@@ -261,7 +261,7 @@
 				<aligny>center</aligny>
 				<align>left</align>
 				<font>MediumSmallBold</font>
-				<textcolor>Dark1</textcolor>
+				<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 				<height>34</height>
 				<width>auto</width>
 				<label>$INFO[Window(home).Property(TVShows.Count),[UPPERCASE],[/UPPERCASE]]</label>
@@ -271,7 +271,7 @@
 				<aligny>center</aligny>
 				<align>left</align>
 				<font>symbolview</font>
-				<textcolor>Dark1</textcolor>
+				<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 				<height>34</height>
 				<width>auto</width>
 				<label></label>
@@ -281,7 +281,7 @@
 				<aligny>center</aligny>
 				<align>left</align>
 				<font>MediumSmallBold</font>
-				<textcolor>Dark1</textcolor>
+				<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 				<height>34</height>
 				<width>auto</width>
 				<label>$INFO[Window(home).Property(Music.AlbumsCount),[UPPERCASE],[/UPPERCASE]]</label>
@@ -291,7 +291,7 @@
 				<aligny>center</aligny>
 				<align>left</align>
 				<font>symbolview</font>
-				<textcolor>Dark1</textcolor>
+				<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 				<height>34</height>
 				<width>auto</width>
 				<label></label>
@@ -301,7 +301,7 @@
 				<aligny>center</aligny>
 				<align>left</align>
 				<font>MediumSmallBold</font>
-				<textcolor>Dark1</textcolor>
+				<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 				<height>34</height>
 				<width>auto</width>
 				<label>$INFO[Pvr.BackendChannels,[UPPERCASE],[/UPPERCASE]]</label>
@@ -311,7 +311,7 @@
 				<aligny>center</aligny>
 				<align>left</align>
 				<font>MediumSmallBold</font>
-				<textcolor>Dark1</textcolor>
+				<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 				<height>34</height>
 				<width>auto</width>
 				<label>$VAR[EmbyWidgetLabelVertical2]</label>
@@ -321,7 +321,7 @@
 				<aligny>center</aligny>
 				<align>left</align>
 				<font>MediumSmallBold</font>
-				<textcolor>Dark1</textcolor>
+				<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 				<height>34</height>
 				<width>auto</width>
 				<label>$VAR[EmbyWidgetLabelVertical2]</label>
@@ -687,10 +687,10 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>MediumSmallBold</font>
-				<textcolor>Dark1</textcolor>
+				<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 				<width>auto</width>
 				<height>34</height>
-				<selectedcolor>Dark1</selectedcolor>
+				<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 				<label>$VAR[NextAiredDate, ]</label>
 				<visible>Window.IsVisible(script-NextAired-TVGuide.xml) | Window.IsVisible(script-NextAired-TVGuide2.xml)</visible>
 			</control>
@@ -698,10 +698,10 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>MediumSmallBold</font>
-				<textcolor>Dark1</textcolor>
+				<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 				<width>auto</width>
 				<height>34</height>
-				<selectedcolor>Dark1</selectedcolor>
+				<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 				<label>[UPPERCASE]$VAR[listTitle]$VAR[listSubTitle, / , $LOCALIZE[31101]]$VAR[LabelNextAiredDetails, / ][/UPPERCASE]</label>
 				<visible>[Container.Content(tvshows) | Container.Content(seasons)] + !Control.IsVisible(50) + !Control.IsVisible(53) + !Control.IsVisible(57)</visible>
 			</control>
@@ -709,10 +709,10 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>MediumSmallBold</font>
-				<textcolor>Dark1</textcolor>
+				<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 				<width>auto</width>
 				<height>34</height>
-				<selectedcolor>Dark1</selectedcolor>
+				<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 				<label>[UPPERCASE]$VAR[listTitle]$VAR[listSubTitle, / , $LOCALIZE[31101]][/UPPERCASE]</label>
 				<visible>[Container.Content(tvshows) | Container.Content(seasons)] + [Control.IsVisible(50) | Control.IsVisible(53) | Control.IsVisible(57)]</visible>
 			</control>
@@ -720,10 +720,10 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>MediumSmallBold</font>
-				<textcolor>Dark1</textcolor>
+				<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 				<width>auto</width>
 				<height>34</height>
-				<selectedcolor>Dark1</selectedcolor>
+				<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 				<label>[UPPERCASE] $VAR[HDSD]$INFO[ListItem.VideoResolution, ,P]$VAR[MPAA, / ]$VAR[VideoCodec, / ]$VAR[AudioCodec, / ,][/UPPERCASE]</label>
 				<visible>Container.Content(movies) | Container.Content(episodes)</visible>
 			</control>
@@ -731,10 +731,10 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>MediumSmallBold</font>
-				<textcolor>Dark1</textcolor>
+				<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 				<width>auto</width>
 				<height>34</height>
-				<selectedcolor>Dark1</selectedcolor>
+				<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 				<label>/</label>
 				<visible>![Control.IsVisible(518) + !Window.IsVisible(DialogVideoInfo.xml) + IsEmpty(ListItem.Userrating) + IsEmpty(ListItem.Top250)]</visible>
 				<visible>![IsEmpty(ListItem.Rating) + IsEmpty(Window(Home).Property(EmbySkinHelper.ListItemRottenTomatoes)) + IsEmpty(Window(Home).Property(EmbySkinHelper.ListItemMetaScore))] + [Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows)] + !Container.Content(seasons)</visible>
@@ -754,7 +754,7 @@
 				<aligny>center</aligny>
 				<align>left</align>
 				<font>MediumSmallBold</font>
-				<textcolor>Dark1</textcolor>
+				<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 				<height>34</height>
 				<width>auto</width>
 				<label>$INFO[ListItem.Rating,[UPPERCASE],[/UPPERCASE]]</label>
@@ -777,7 +777,7 @@
 				<aligny>center</aligny>
 				<align>left</align>
 				<font>MediumSmallBold</font>
-				<textcolor>Dark1</textcolor>
+				<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 				<height>34</height>
 				<width>auto</width>
 				<label>$INFO[Window(Home).Property(SkinHelper.RottenTomatoesRating),,%]</label>
@@ -799,7 +799,7 @@
 				<aligny>center</aligny>
 				<align>left</align>
 				<font>MediumSmallBold</font>
-				<textcolor>Dark1</textcolor>
+				<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 				<height>34</height>
 				<width>auto</width>
 				<label>$INFO[ListItem.Userrating,[UPPERCASE],[/UPPERCASE]]</label>
@@ -809,7 +809,7 @@
 				<aligny>center</aligny>
 				<align>left</align>
 				<font>MediumSmallBold</font>
-				<textcolor>Dark1</textcolor>
+				<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 				<height>34</height>
 				<width>1</width>
 				<label>-</label>
@@ -846,7 +846,7 @@
 				<aligny>center</aligny>
 				<align>left</align>
 				<font>MediumSmallBold</font>
-				<textcolor>Dark1</textcolor>
+				<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 				<height>34</height>
 				<width>auto</width>
 				<label>$INFO[ListItem.Top250,#,]</label>
@@ -877,10 +877,10 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>MediumSmallBold</font>
-				<textcolor>Dark1</textcolor>
+				<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 				<width>auto</width>
 				<height>34</height>
-				<selectedcolor>Dark1</selectedcolor>
+				<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 				<label>[UPPERCASE]$VAR[listSubTitle,, items]$VAR[BloxSecondary, / ]$VAR[BloxTitle, / ][/UPPERCASE]</label>
 				<visible>[Container.Content(albums) | Container.Content(artists)]</visible>
 			</control>
@@ -888,10 +888,10 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>MediumSmallBold</font>
-				<textcolor>Dark1</textcolor>
+				<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 				<width>auto</width>
 				<height>34</height>
-				<selectedcolor>Dark1</selectedcolor>
+				<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 				<label>[UPPERCASE]$VAR[AudioCodec]$VAR[BloxSecondary, / ]$VAR[BloxTitle, / ][/UPPERCASE]</label>
 				<visible>Container.Content(songs)</visible>
 			</control>
@@ -996,7 +996,7 @@
 				<control type="label">
 					<height>46</height>
 					<font>LargeBold</font>
-					<textcolor>Dark1</textcolor>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<label>$INFO[System.Time(hh:mm)]</label>
 				</control>
 			</control>
@@ -1008,7 +1008,7 @@
 					<left>-19</left>
 					<height>46</height>
 					<font>symbolview</font>
-					<textcolor>Dark1</textcolor>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<label></label>
 				</control>
 			</control>
@@ -1020,7 +1020,7 @@
 					<left>-56</left>
 					<height>52</height>
 					<font>SmallBold</font>
-					<textcolor>Dark1</textcolor>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<label>$INFO[Player.FinishTime(hh:mm), ]</label>
 				</control>
 			</control>
@@ -1323,18 +1323,18 @@
 				<aligny>center</aligny>
 				<font>MediumSmallBold</font>
 				<width>auto</width>
-				<textcolor>Dark1</textcolor>
-				<selectedcolor>Dark1</selectedcolor>
+				<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+				<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 				<label>[UPPERCASE] $VAR[HDSD]$INFO[VideoPlayer.VideoResolution, ,P]$VAR[MPAA, / ]$VAR[VideoCodec, / ]$VAR[AudioCodec, / ][/UPPERCASE]</label>
 			</control>
 			<control type="label">
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>MediumSmallBold</font>
-				<textcolor>Dark1</textcolor>
+				<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 				<width>auto</width>
 				<height>64</height>
-				<selectedcolor>Dark1</selectedcolor>
+				<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 				<label>/</label>
 				<visible>!IsEmpty(VideoPlayer.Rating)</visible>
 			</control>
@@ -1352,7 +1352,7 @@
 				<aligny>center</aligny>
 				<align>left</align>
 				<font>MediumSmallBold</font>
-				<textcolor>Dark1</textcolor>
+				<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 				<height>64</height>
 				<width>auto</width>
 				<label>$INFO[VideoPlayer.Rating,[UPPERCASE],[/UPPERCASE]]</label>
@@ -1372,7 +1372,7 @@
 				<aligny>center</aligny>
 				<align>left</align>
 				<font>MediumSmallBold</font>
-				<textcolor>Dark1</textcolor>
+				<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 				<height>64</height>
 				<width>auto</width>
 				<label>$INFO[VideoPlayer.Top250,#,]</label>
@@ -1383,8 +1383,8 @@
 				<aligny>center</aligny>
 				<font>MediumSmallBold</font>
 				<width>auto</width>
-				<textcolor>Dark1</textcolor>
-				<selectedcolor>Dark1</selectedcolor>
+				<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+				<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 				<label>$VAR[PlayerAdditionalInfo,/ ]</label>
 			</control>
 		</control>
@@ -1796,7 +1796,7 @@
 								<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
 								<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
 								<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
-								<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+								<righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>
 								<visible>ListItem.IsResumable</visible>
 							</control>
 						</itemlayout>
@@ -1816,7 +1816,7 @@
 								<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
 								<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
 								<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
-								<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+								<righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>
 								<visible>ListItem.IsResumable</visible>
 							</control>
 						</focusedlayout>
@@ -1864,7 +1864,7 @@
 								<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
 								<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
 								<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
-								<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+								<righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>
 								<visible>ListItem.IsResumable</visible>
 							</control>
 						</itemlayout>
@@ -1884,7 +1884,7 @@
 								<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
 								<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
 								<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
-								<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+								<righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>
 								<visible>ListItem.IsResumable</visible>
 							</control>
 						</focusedlayout>
@@ -1957,8 +1957,8 @@
 							<align>center</align>
 							<height>45</height>
 							<font>Small</font>
-							<textcolor>white2</textcolor>
-							<selectedcolor>white2</selectedcolor>
+							<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+							<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 							<label>1037</label>
 							<visible>!Control.HasFocus(60133)</visible>
 						</control>
@@ -2017,7 +2017,7 @@
 									<align>center</align>
 									<font>symbolbiggest</font>
 									<label>$VAR[SwapDefaultImage]</label>
-									<textcolor>white</textcolor>
+									<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 								</control>
 								<control type="image">
 									<aspectratio>stretch</aspectratio>
@@ -2080,8 +2080,8 @@
 							<align>center</align>
 							<height>45</height>
 							<font>Small</font>
-							<textcolor>white2</textcolor>
-							<selectedcolor>white2</selectedcolor>
+							<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+							<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 							<label>1036</label>
 							<visible>!Control.HasFocus(60155)</visible>
 						</control>
@@ -2141,7 +2141,7 @@
 									<align>center</align>
 									<font>symbolbiggest</font>
 									<label>$VAR[SwapDefaultImage]</label>
-									<textcolor>white</textcolor>
+									<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 								</control>
 								<control type="image">
 									<aspectratio>stretch</aspectratio>
@@ -2206,8 +2206,8 @@
 							<height>45</height>
 							<align>right</align>
 							<font>Small</font>
-							<textcolor>white2</textcolor>
-							<selectedcolor>white2</selectedcolor>
+							<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+							<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 							<label>1038</label>
 							<visible>!Control.HasFocus(60144)</visible>
 						</control>
@@ -2268,7 +2268,7 @@
 									<align>center</align>
 									<font>symbolbiggest</font>
 									<label>$VAR[SwapDefaultImage]</label>
-									<textcolor>white</textcolor>
+									<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 								</control>
 								<control type="image">
 									<aspectratio>stretch</aspectratio>
@@ -2327,7 +2327,7 @@
 								<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
 								<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
 								<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
-								<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+								<righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>
 								<visible>ListItem.IsResumable</visible>
 							</control>
 						</itemlayout>
@@ -2351,7 +2351,7 @@
 									<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
 									<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
 									<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
-									<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+									<righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>
 									<visible>ListItem.IsResumable</visible>
 								</control>
 							</control>
@@ -2421,7 +2421,7 @@
 								<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
 								<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
 								<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
-								<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+								<righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>
 								<visible>ListItem.IsResumable</visible>
 							</control>
 						</itemlayout>
@@ -2445,7 +2445,7 @@
 									<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
 									<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
 									<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
-									<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+									<righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>
 									<visible>ListItem.IsResumable</visible>
 								</control>
 							</control>
@@ -2597,7 +2597,7 @@
 								<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
 								<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
 								<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
-								<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+								<righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>
 								<visible>Container(9017).ListItem.IsResumable</visible>
 							</control>
 						</control>
@@ -2657,7 +2657,7 @@
 						<label>$LOCALIZE[31871] - $INFO[Window(Weather).Property(Updated)]</label>
 						<align>right</align>
 						<aligny>center</aligny>
-						<textcolor>PanelWhite70</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					</control>
 					<control type="label">
 						<left>0</left>
@@ -3094,8 +3094,8 @@
 						<aligny>center</aligny>
 						<height>78</height>
 						<font>HomeWidgetLabelFont</font>
-						<textcolor>white2</textcolor>
-						<selectedcolor>white2</selectedcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+						<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 						<label>[B]$INFO[Container(3441).ListItem.Label][/B][CR]$INFO[Window(Weather).Property(Location),, - ]$INFO[Window(Weather).Property(Current.Condition),, - ]$INFO[Window(Weather).Property(Today.Sunrise),$LOCALIZE[33027]: , - ]$INFO[Window(Weather).Property(Today.Sunset),$LOCALIZE[33028]: , - ][B]$INFO[Window(Weather).Property(Current.Temperature)]$INFO[System.TemperatureUnits][/B]</label>
 					</control>
 				</control>
@@ -3111,12 +3111,12 @@
 					<radioposy>12</radioposy>
 					<radiowidth>46</radiowidth>
 					<focusedcolor>fire engine red</focusedcolor>
-					<textureradioonfocus colordiffuse="White70">-</textureradioonfocus>
-					<textureradioonnofocus colordiffuse="Black100">-</textureradioonnofocus>
-					<textureradioofffocus colordiffuse="White70">-</textureradioofffocus>
-					<textureradiooffnofocus colordiffuse="Black100">-</textureradiooffnofocus>
-					<texturefocus colordiffuse="White70">common/box.png</texturefocus>
-					<texturenofocus colordiffuse="White70">common/box.png</texturenofocus>
+					<textureradioonfocus colordiffuse="$VAR[DisabledColour]">-</textureradioonfocus>
+					<textureradioonnofocus colordiffuse="$VAR[DisabledColour]">-</textureradioonnofocus>
+					<textureradioofffocus colordiffuse="$VAR[DisabledColour]">-</textureradioofffocus>
+					<textureradiooffnofocus colordiffuse="$VAR[DisabledColour]">-</textureradiooffnofocus>
+					<texturefocus colordiffuse="$VAR[DisabledColour]">common/box.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[DisabledColour]">common/box.png</texturenofocus>
 					<align>left</align>
 					<aligny>top</aligny>
 					<textoffsetx>6</textoffsetx>
@@ -3218,7 +3218,7 @@
 								<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
 								<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
 								<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
-								<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+								<righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>
 								<visible>ListItem.IsResumable</visible>
 							</control>
 						</itemlayout>
@@ -3241,7 +3241,7 @@
 									<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
 									<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
 									<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
-									<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+									<righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>
 									<visible>ListItem.IsResumable</visible>
 								</control>
 								<animation type="Focus" reversible="false">
@@ -3293,7 +3293,7 @@
 								<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
 								<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
 								<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
-								<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+								<righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>
 								<visible>ListItem.IsResumable</visible>
 							</control>
 						</itemlayout>
@@ -3316,7 +3316,7 @@
 									<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
 									<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
 									<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
-									<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+									<righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>
 									<visible>ListItem.IsResumable</visible>
 								</control>
 								<animation type="Conditional" reversible="false" condition="Control.HasFocus(3012)">
@@ -3390,8 +3390,8 @@
 							<align>center</align>
 							<height>45</height>
 							<font>Small</font>
-							<textcolor>white2</textcolor>
-							<selectedcolor>white2</selectedcolor>
+							<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+							<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 							<label>20342</label>
 							<visible>!Control.HasFocus(30133)</visible>
 						</control>
@@ -3456,7 +3456,7 @@
 									<align>center</align>
 									<font>symbolbiggest</font>
 									<label>$VAR[SwapDefaultImage]</label>
-									<textcolor>white</textcolor>
+									<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 								</control>
 								<control type="image">
 									<aspectratio>stretch</aspectratio>
@@ -3521,8 +3521,8 @@
 							<height>45</height>
 							<align>right</align>
 							<font>Small</font>
-							<textcolor>white2</textcolor>
-							<selectedcolor>white2</selectedcolor>
+							<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+							<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 							<label>135</label>
 							<visible>!Control.HasFocus(30143)</visible>
 						</control>
@@ -3561,7 +3561,7 @@
 									<align>center</align>
 									<font>symbolbiggest</font>
 									<label>$VAR[SwapDefaultImage]</label>
-									<textcolor>white</textcolor>
+									<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 								</control>
 								<control type="image">
 									<aspectratio>keep</aspectratio>
@@ -3637,7 +3637,7 @@
 								<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
 								<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
 								<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
-								<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+								<righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>
 								<visible>ListItem.IsResumable</visible>
 							</control>
 						</itemlayout>
@@ -3661,7 +3661,7 @@
 									<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
 									<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
 									<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
-									<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+									<righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>
 									<visible>ListItem.IsResumable</visible>
 								</control>
 							</control>
@@ -3732,7 +3732,7 @@
 								<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
 								<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
 								<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
-								<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+								<righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>
 								<visible>ListItem.IsResumable</visible>
 							</control>
 						</itemlayout>
@@ -3756,7 +3756,7 @@
 									<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
 									<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
 									<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
-									<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+									<righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>
 									<visible>ListItem.IsResumable</visible>
 								</control>
 							</control>
@@ -4325,7 +4325,7 @@
 								<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
 								<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
 								<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
-								<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+								<righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>
 								<visible>ListItem.IsResumable</visible>
 							</control>
 						</itemlayout>
@@ -4348,7 +4348,7 @@
 									<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
 									<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
 									<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
-									<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+									<righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>
 									<visible>ListItem.IsResumable</visible>
 								</control>
 								<animation type="Focus" reversible="false">
@@ -4399,7 +4399,7 @@
 								<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
 								<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
 								<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
-								<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+								<righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>
 								<visible>ListItem.IsResumable</visible>
 							</control>
 						</itemlayout>
@@ -4422,7 +4422,7 @@
 									<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
 									<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
 									<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
-									<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+									<righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>
 									<visible>ListItem.IsResumable</visible>
 								</control>
 								<animation type="Focus" reversible="false">
@@ -4496,8 +4496,8 @@
 							<align>center</align>
 							<height>45</height>
 							<font>Small</font>
-							<textcolor>white2</textcolor>
-							<selectedcolor>white2</selectedcolor>
+							<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+							<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 							<label>20343</label>
 							<visible>!Control.HasFocus(40133)</visible>
 						</control>
@@ -4562,7 +4562,7 @@
 									<align>center</align>
 									<font>symbolbiggest</font>
 									<label>$VAR[SwapDefaultImage]</label>
-									<textcolor>white</textcolor>
+									<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 								</control>
 								<control type="image">
 									<aspectratio>stretch</aspectratio>
@@ -4575,7 +4575,7 @@
 										<top>9</top>
 										<height>45</height>
 										<width>40</width>
-										<texture colordiffuse="Dark1">common/circle.png</texture>
+										<texture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">common/circle.png</texture>
 										<aspectratio align="center" aligny="center">keep</aspectratio>
 									</control>
 									<control type="label">
@@ -4647,8 +4647,8 @@
 							<align>center</align>
 							<height>45</height>
 							<font>Small</font>
-							<textcolor>white2</textcolor>
-							<selectedcolor>white2</selectedcolor>
+							<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+							<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 							<label>31220</label>
 							<visible>!Control.HasFocus(40155)</visible>
 						</control>
@@ -4713,7 +4713,7 @@
 									<align>center</align>
 									<font>symbolbiggest</font>
 									<label>$VAR[SwapDefaultImage]</label>
-									<textcolor>white</textcolor>
+									<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 								</control>
 								<control type="image">
 									<aspectratio>stretch</aspectratio>
@@ -4786,7 +4786,7 @@
 								<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
 								<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
 								<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
-								<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+								<righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>
 								<visible>ListItem.IsResumable</visible>
 							</control>
 						</itemlayout>
@@ -4810,7 +4810,7 @@
 									<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
 									<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
 									<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
-									<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+									<righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>
 									<visible>ListItem.IsResumable</visible>
 								</control>
 							</control>
@@ -4879,7 +4879,7 @@
 								<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
 								<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
 								<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
-								<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+								<righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>
 								<visible>ListItem.IsResumable</visible>
 							</control>
 						</itemlayout>
@@ -4903,7 +4903,7 @@
 									<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
 									<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
 									<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
-									<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+									<righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>
 									<visible>ListItem.IsResumable</visible>
 								</control>
 							</control>
@@ -5723,8 +5723,8 @@
 							<align>center</align>
 							<height>45</height>
 							<font>Small</font>
-							<textcolor>white2</textcolor>
-							<selectedcolor>white2</selectedcolor>
+							<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+							<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 							<label>132</label>
 							<visible>!Control.HasFocus(50133)</visible>
 						</control>
@@ -5788,7 +5788,7 @@
 									<align>center</align>
 									<font>symbolbiggest</font>
 									<label>$VAR[SwapDefaultImage]</label>
-									<textcolor>white</textcolor>
+									<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 								</control>
 								<control type="image">
 									<aspectratio>scale</aspectratio>
@@ -5862,8 +5862,8 @@
 							<align>center</align>
 							<height>45</height>
 							<font>Small</font>
-							<textcolor>white2</textcolor>
-							<selectedcolor>white2</selectedcolor>
+							<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+							<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 							<label>133</label>
 							<visible>!Control.HasFocus(50155)</visible>
 						</control>
@@ -5928,7 +5928,7 @@
 									<align>center</align>
 									<font>symbolbiggest</font>
 									<label>$VAR[SwapDefaultImage]</label>
-									<textcolor>white</textcolor>
+									<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 								</control>
 								<control type="image">
 									<aspectratio>scale</aspectratio>
@@ -5992,8 +5992,8 @@
 							<height>45</height>
 							<align>right</align>
 							<font>Small</font>
-							<textcolor>white2</textcolor>
-							<selectedcolor>white2</selectedcolor>
+							<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+							<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 							<label>135</label>
 							<visible>!Control.HasFocus(50144)</visible>
 						</control>
@@ -6031,7 +6031,7 @@
 									<align>center</align>
 									<font>symbolbiggest</font>
 									<label>$VAR[SwapDefaultImage]</label>
-									<textcolor>white</textcolor>
+									<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 								</control>
 								<control type="image">
 									<aspectratio>scale</aspectratio>
@@ -6161,7 +6161,7 @@
 									<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
 									<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
 									<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
-									<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+									<righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>
 									<visible>ListItem.IsResumable</visible>
 								</control>
 							</control>
@@ -6242,7 +6242,7 @@
 								<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
 								<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
 								<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
-								<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+								<righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>
 								<visible>ListItem.IsResumable</visible>
 							</control>
 						</itemlayout>
@@ -6279,7 +6279,7 @@
 									<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
 									<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
 									<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
-									<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+									<righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>
 									<visible>ListItem.IsResumable</visible>
 								</control>
 							</control>
@@ -6493,7 +6493,7 @@
 							<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
 							<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
 							<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
-							<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+							<righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>
 							<visible>ListItem.IsResumable</visible>
 						</control>
 					</itemlayout>
@@ -6511,7 +6511,7 @@
 								<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
 								<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
 								<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
-								<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+								<righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>
 								<visible>ListItem.IsResumable</visible>
 							</control>
 							<animation type="Focus" reversible="false">
@@ -6564,7 +6564,7 @@
 							<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
 							<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
 							<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
-							<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+							<righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>
 							<visible>ListItem.IsResumable</visible>
 						</control>
 					</itemlayout>
@@ -6582,7 +6582,7 @@
 								<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
 								<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
 								<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
-								<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+								<righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>
 								<visible>ListItem.IsResumable</visible>
 							</control>
 							<animation type="Focus" reversible="false">
@@ -6658,8 +6658,8 @@
 						<align>center</align>
 						<height>45</height>
 						<font>Small</font>
-						<textcolor>white2</textcolor>
-						<selectedcolor>white2</selectedcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+						<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 						<label>19040</label>
 						<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 					</control>
@@ -6738,8 +6738,8 @@
 						<align>center</align>
 						<height>45</height>
 						<font>Small</font>
-						<textcolor>white2</textcolor>
-						<selectedcolor>white2</selectedcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+						<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 						<label>137</label>
 						<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 					</control>
@@ -6797,8 +6797,8 @@
 						<height>45</height>
 						<align>right</align>
 						<font>Small</font>
-						<textcolor>white2</textcolor>
-						<selectedcolor>white2</selectedcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+						<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 						<label>19163</label>
 						<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 					</control>
@@ -6878,8 +6878,8 @@
 						<align>center</align>
 						<height>45</height>
 						<font>Small</font>
-						<textcolor>white2</textcolor>
-						<selectedcolor>white2</selectedcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+						<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 						<label>19069</label>
 						<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 					</control>
@@ -6938,8 +6938,8 @@
 						<height>45</height>
 						<align>right</align>
 						<font>Small</font>
-						<textcolor>white2</textcolor>
-						<selectedcolor>white2</selectedcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+						<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 						<label>19023</label>
 						<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 					</control>
@@ -7029,8 +7029,8 @@
 							<height>46</height>
 							<width>48</width>
 							<font>MiniBold</font>
-							<textcolor>white</textcolor>
-							<selectedcolor>white</selectedcolor>
+							<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+							<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 							<label>$INFO[ListItem.ChannelNumberLabel]</label>
 							<visible>!ListItem.IsPlaying</visible>
 						</control>
@@ -7041,8 +7041,8 @@
 							<aligny>center</aligny>
 							<height>46</height>
 							<font>MiniBold</font>
-							<textcolor>white</textcolor>
-							<selectedcolor>white</selectedcolor>
+							<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+							<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 							<label>$INFO[ListItem.ChannelName]$INFO[ListItem.Title, [I],[/I]]</label>
 							<visible>!ListItem.IsPlaying</visible>
 						</control>
@@ -7195,8 +7195,8 @@
 								<align>left</align>
 								<height>38</height>
 								<font>TinyBold</font>
-								<textcolor>white2</textcolor>
-								<selectedcolor>white2</selectedcolor>
+								<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+								<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 								<label>$INFO[Container(7016).ListItem.StartTime(hh:mm)]</label>
 							</control>
 							<control type="label">
@@ -7205,8 +7205,8 @@
 								<align>right</align>
 								<height>38</height>
 								<font>TinyBold</font>
-								<textcolor>white2</textcolor>
-								<selectedcolor>white2</selectedcolor>
+								<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+								<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 								<label>$INFO[Container(7016).ListItem.EndTime(hh:mm)]</label>
 							</control>
 							<control type="progress">
@@ -7222,8 +7222,8 @@
 								<height>30</height>
 								<aligny>center</aligny>
 								<font>Tiny</font>
-								<textcolor>white</textcolor>
-								<selectedcolor>white</selectedcolor>
+								<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+								<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 								<label fallback="19055">$INFO[Container(7016).ListItem.Genre]</label>
 							</control>
 							<control type="textbox">
@@ -7231,8 +7231,8 @@
 								<height>55</height>
 								<align>justify</align>
 								<font>MiniBold</font>
-								<textcolor>white</textcolor>
-								<selectedcolor>white</selectedcolor>
+								<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+								<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 								<label fallback="19055">$INFO[Container(7016).ListItem.Plot]$INFO[Container(7016).ListItem.NextStartTime,[CR][CR]$LOCALIZE[31801], ]$INFO[Container(7016).ListItem.NextTitle]</label>
 							</control>
 						</control>
@@ -7255,8 +7255,8 @@
 								<align>left</align>
 								<height>38</height>
 								<font>TinyBold</font>
-								<textcolor>white2</textcolor>
-								<selectedcolor>white2</selectedcolor>
+								<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+								<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 								<label>$INFO[Container(7016).ListItem.StartTime(hh:mm)]</label>
 							</control>
 							<control type="label">
@@ -7265,8 +7265,8 @@
 								<align>right</align>
 								<height>38</height>
 								<font>TinyBold</font>
-								<textcolor>white2</textcolor>
-								<selectedcolor>white2</selectedcolor>
+								<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+								<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 								<label>$INFO[Container(7016).ListItem.EndTime(hh:mm)]</label>
 							</control>
 							<control type="progress">
@@ -7283,8 +7283,8 @@
 								<align>left</align>
 								<height>38</height>
 								<font>TinyBold</font>
-								<textcolor>white2</textcolor>
-								<selectedcolor>white2</selectedcolor>
+								<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+								<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 								<label>$INFO[Container(7016).ListItem.NextStartTime,$LOCALIZE[31801], ]$INFO[Container(7016).ListItem.NextTitle]</label>
 							</control>
 							<control type="label">
@@ -7292,8 +7292,8 @@
 								<height>30</height>
 								<aligny>center</aligny>
 								<font>Tiny</font>
-								<textcolor>white2</textcolor>
-								<selectedcolor>white2</selectedcolor>
+								<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+								<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 								<label>$INFO[Container(7016).ListItem.NextGenre]</label>
 							</control>
 						</control>
@@ -7347,7 +7347,7 @@
 							<align>right</align>
 							<aligny>center</aligny>
 							<height>100%</height>
-							<textcolor>white</textcolor>
+							<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 							<font>Large</font>
 							<label>$INFO[ListItem.Label]</label>
 						</control>
@@ -7399,7 +7399,7 @@
 							<align>right</align>
 							<aligny>center</aligny>
 							<height>100%</height>
-							<textcolor>white</textcolor>
+							<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 							<font>MediumSmall</font>
 							<label>$INFO[ListItem.Label]</label>
 						</control>
@@ -7422,7 +7422,7 @@
 							<align>right</align>
 							<aligny>center</aligny>
 							<height>100%</height>
-							<textcolor>white</textcolor>
+							<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 							<font>MediumSmallBold</font>
 							<label>$INFO[ListItem.Label]</label>
 							<visible>!Control.HasFocus(302)</visible>
@@ -8771,8 +8771,8 @@
 											<height>46</height>
 											<width>48</width>
 											<font>MiniBold</font>
-											<textcolor>white</textcolor>
-											<selectedcolor>white</selectedcolor>
+											<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+											<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 											<label>$INFO[ListItem.ChannelNumberLabel]</label>
 											<visible>!ListItem.IsPlaying</visible>
 										</control>
@@ -8783,8 +8783,8 @@
 											<aligny>center</aligny>
 											<height>46</height>
 											<font>MiniBold</font>
-											<textcolor>white</textcolor>
-											<selectedcolor>white</selectedcolor>
+											<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+											<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 											<label>$INFO[ListItem.ChannelName]$INFO[ListItem.Title, [I],[/I]]</label>
 											<visible>!ListItem.IsPlaying</visible>
 										</control>
@@ -8935,8 +8935,8 @@
 												<align>left</align>
 												<height>38</height>
 												<font>TinyBold</font>
-												<textcolor>white2</textcolor>
-												<selectedcolor>white2</selectedcolor>
+												<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+												<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 												<label>$INFO[Container(7016).ListItem.StartTime(hh:mm)]</label>
 											</control>
 											<control type="label">
@@ -8945,8 +8945,8 @@
 												<align>right</align>
 												<height>38</height>
 												<font>TinyBold</font>
-												<textcolor>white2</textcolor>
-												<selectedcolor>white2</selectedcolor>
+												<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+												<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 												<label>$INFO[Container(7016).ListItem.EndTime(hh:mm)]</label>
 											</control>
 											<control type="progress">
@@ -8962,8 +8962,8 @@
 												<height>30</height>
 												<aligny>center</aligny>
 												<font>Tiny</font>
-												<textcolor>white</textcolor>
-												<selectedcolor>white</selectedcolor>
+												<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+												<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 												<label fallback="19055">$INFO[Container(7016).ListItem.Genre]</label>
 											</control>
 											<control type="textbox">
@@ -8971,8 +8971,8 @@
 												<height>55</height>
 												<align>justify</align>
 												<font>MiniBold</font>
-												<textcolor>white</textcolor>
-												<selectedcolor>white</selectedcolor>
+												<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+												<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 												<label fallback="19055">$INFO[Container(7016).ListItem.Plot]$INFO[Container(7016).ListItem.NextStartTime,[CR][CR]$LOCALIZE[31801], ]$INFO[Container(7016).ListItem.NextTitle]</label>
 											</control>
 										</control>
@@ -8995,8 +8995,8 @@
 												<align>left</align>
 												<height>38</height>
 												<font>TinyBold</font>
-												<textcolor>white2</textcolor>
-												<selectedcolor>white2</selectedcolor>
+												<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+												<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 												<label>$INFO[Container(7016).ListItem.StartTime(hh:mm)]</label>
 											</control>
 											<control type="label">
@@ -9005,8 +9005,8 @@
 												<align>right</align>
 												<height>38</height>
 												<font>TinyBold</font>
-												<textcolor>white2</textcolor>
-												<selectedcolor>white2</selectedcolor>
+												<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+												<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 												<label>$INFO[Container(7016).ListItem.EndTime(hh:mm)]</label>
 											</control>
 											<control type="progress">
@@ -9023,8 +9023,8 @@
 												<align>left</align>
 												<height>38</height>
 												<font>TinyBold</font>
-												<textcolor>white2</textcolor>
-												<selectedcolor>white2</selectedcolor>
+												<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+												<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 												<label>$INFO[Container(7016).ListItem.NextStartTime,$LOCALIZE[31801], ]$INFO[Container(7016).ListItem.NextTitle]</label>
 											</control>
 											<control type="textbox">
@@ -9032,8 +9032,8 @@
 												<height>55</height>
 												<align>justify</align>
 												<font>MiniBold</font>
-												<textcolor>white2</textcolor>
-												<selectedcolor>white2</selectedcolor>
+												<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+												<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 												<label>$INFO[Container(7016).ListItem.NextGenre]</label>
 											</control>
 										</control>
@@ -9047,8 +9047,8 @@
 											<align>left</align>
 											<height>38</height>
 											<font>HomeWidgetLabelFont</font>
-											<textcolor>white</textcolor>
-											<selectedcolor>white</selectedcolor>
+											<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+											<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 											<label>$INFO[Container(7016).ListItem.Season,,x]$INFO[Container(7016).ListItem.Episode,,. ]$INFO[Container(7016).ListItem.Title]$INFO[Container(7016).ListItem.EpisodeName, (,)]</label>
 										</control>
 									</control>
@@ -9392,7 +9392,7 @@
 									<label>$LOCALIZE[31871] - $INFO[Window(Weather).Property(Updated)]</label>
 									<align>right</align>
 									<aligny>center</aligny>
-									<textcolor>PanelWhite70</textcolor>
+									<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 								</control>
 								<control type="label">
 									<left>0</left>
@@ -9541,7 +9541,7 @@
 					<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
 					<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
 					<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
-					<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+					<righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>
 					<visible>Control.HasFocus(30121) + Container(3012).ListItem(-1).IsResumable</visible>
 				</control>
 				<control type="progress">
@@ -9552,7 +9552,7 @@
 					<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
 					<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
 					<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
-					<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+					<righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>
 					<visible>Control.HasFocus(30161) + Container(3016).ListItem(-1).IsResumable</visible>
 				</control>
 				<control type="progress">
@@ -9563,7 +9563,7 @@
 					<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
 					<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
 					<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
-					<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+					<righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>
 					<visible>Control.HasFocus(30171) + Container(3017).ListItem(-1).IsResumable</visible>
 				</control>
 				<control type="progress">
@@ -9574,7 +9574,7 @@
 					<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
 					<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
 					<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
-					<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+					<righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>
 					<visible>Control.HasFocus(100171) + Container(10017).ListItem(-1).IsResumable</visible>
 				</control>
 			</control>
@@ -9985,8 +9985,8 @@
 											<height>46</height>
 											<width>48</width>
 											<font>MiniBold</font>
-											<textcolor>white</textcolor>
-											<selectedcolor>white</selectedcolor>
+											<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+											<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 											<label>$INFO[ListItem.ChannelNumberLabel]</label>
 										</control>
 										<control type="label">
@@ -9996,8 +9996,8 @@
 											<aligny>center</aligny>
 											<height>46</height>
 											<font>MiniBold</font>
-											<textcolor>white</textcolor>
-											<selectedcolor>white</selectedcolor>
+											<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+											<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 											<label>$INFO[ListItem.ChannelName]$INFO[ListItem.Title, [I],[/I]]</label>
 										</control>
 									</itemlayout>
@@ -10129,8 +10129,8 @@
 												<align>left</align>
 												<height>38</height>
 												<font>TinyBold</font>
-												<textcolor>white2</textcolor>
-												<selectedcolor>white2</selectedcolor>
+												<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+												<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 												<label>$INFO[Container(7016).ListItem.StartTime(hh:mm)]</label>
 											</control>
 											<control type="label">
@@ -10139,8 +10139,8 @@
 												<align>right</align>
 												<height>38</height>
 												<font>TinyBold</font>
-												<textcolor>white2</textcolor>
-												<selectedcolor>white2</selectedcolor>
+												<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+												<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 												<label>$INFO[Container(7016).ListItem.EndTime(hh:mm)]</label>
 											</control>
 											<control type="progress">
@@ -10156,8 +10156,8 @@
 												<height>30</height>
 												<aligny>center</aligny>
 												<font>Tiny</font>
-												<textcolor>white</textcolor>
-												<selectedcolor>white</selectedcolor>
+												<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+												<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 												<label fallback="19055">$INFO[Container(7016).ListItem.Genre]</label>
 											</control>
 											<control type="textbox">
@@ -10165,8 +10165,8 @@
 												<height>55</height>
 												<align>justify</align>
 												<font>MiniBold</font>
-												<textcolor>white</textcolor>
-												<selectedcolor>white</selectedcolor>
+												<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+												<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 												<label fallback="19055">$INFO[Container(7016).ListItem.Plot]$INFO[Container(7016).ListItem.NextStartTime,[CR][CR]$LOCALIZE[31801], ]$INFO[Container(7016).ListItem.NextTitle]</label>
 											</control>
 										</control>
@@ -10189,8 +10189,8 @@
 												<align>left</align>
 												<height>38</height>
 												<font>TinyBold</font>
-												<textcolor>white2</textcolor>
-												<selectedcolor>white2</selectedcolor>
+												<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+												<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 												<label>$INFO[Container(7016).ListItem.StartTime(hh:mm)]</label>
 											</control>
 											<control type="label">
@@ -10199,8 +10199,8 @@
 												<align>right</align>
 												<height>38</height>
 												<font>TinyBold</font>
-												<textcolor>white2</textcolor>
-												<selectedcolor>white2</selectedcolor>
+												<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+												<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 												<label>$INFO[Container(7016).ListItem.EndTime(hh:mm)]</label>
 											</control>
 											<control type="progress">
@@ -10217,8 +10217,8 @@
 												<align>left</align>
 												<height>38</height>
 												<font>TinyBold</font>
-												<textcolor>white2</textcolor>
-												<selectedcolor>white2</selectedcolor>
+												<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+												<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 												<label>$INFO[Container(7016).ListItem.NextStartTime,$LOCALIZE[31801], ]$INFO[Container(7016).ListItem.NextTitle]</label>
 											</control>
 											<control type="label">
@@ -10226,8 +10226,8 @@
 												<height>30</height>
 												<aligny>center</aligny>
 												<font>Tiny</font>
-												<textcolor>white2</textcolor>
-												<selectedcolor>white2</selectedcolor>
+												<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+												<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 												<label>$INFO[Container(7016).ListItem.NextGenre]</label>
 											</control>
 										</control>
@@ -10241,8 +10241,8 @@
 											<align>left</align>
 											<height>38</height>
 											<font>HomeWidgetLabelFont</font>
-											<textcolor>white</textcolor>
-											<selectedcolor>white</selectedcolor>
+											<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+											<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 											<label>$INFO[Container(7016).ListItem.Season,,x]$INFO[Container(7016).ListItem.Episode,,. ]$INFO[Container(7016).ListItem.Title]$INFO[Container(7016).ListItem.EpisodeName, (,)]</label>
 										</control>
 									</control>
@@ -10587,7 +10587,7 @@
 									<label>$LOCALIZE[31871] - $INFO[Window(Weather).Property(Updated)]</label>
 									<align>right</align>
 									<aligny>center</aligny>
-									<textcolor>PanelWhite70</textcolor>
+									<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 								</control>
 								<control type="label">
 									<left>0</left>

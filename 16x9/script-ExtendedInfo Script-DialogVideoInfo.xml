@@ -144,7 +144,7 @@
 					<control type="label">
 						<height>46</height>
 						<font>LargeBold</font>
-						<textcolor>Dark1</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<label>$INFO[System.Time(hh:mm)]</label>
 					</control>
 				</control>
@@ -164,20 +164,20 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>MediumSmallBold</font>
-					<textcolor>Dark1</textcolor>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<width>auto</width>
 					<height>34</height>
-					<selectedcolor>Dark1</selectedcolor>
+					<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 					<label>[UPPERCASE]  $VAR[HDSD]$INFO[Window.Property(VideoResolution), ,P]$VAR[ExtendedInfoMPAA, / ]$VAR[VideoCodec, / ]$VAR[AudioCodec, / ,][/UPPERCASE]</label>
 				</control>
 				<control type="label">
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>MediumSmallBold</font>
-					<textcolor>Dark1</textcolor>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<width>auto</width>
 					<height>34</height>
-					<selectedcolor>Dark1</selectedcolor>
+					<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 					<label>/ </label>
 					<visible>!IsEmpty(Window.Property(Rating))</visible>
 				</control>
@@ -195,7 +195,7 @@
 					<aligny>center</aligny>
 					<align>left</align>
 					<font>MediumSmallBold</font>
-					<textcolor>Dark1</textcolor>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<height>34</height>
 					<width>auto</width>
 					<label>$INFO[Window.Property(Rating),[UPPERCASE],[/UPPERCASE]]</label>
@@ -215,7 +215,7 @@
 					<aligny>center</aligny>
 					<align>left</align>
 					<font>MediumSmallBold</font>
-					<textcolor>Dark1</textcolor>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<height>34</height>
 					<width>auto</width>
 					<label>$INFO[Window.Property(Top250),#,]</label>
@@ -253,7 +253,7 @@
 						<control type="label">
 							<description>Header Label</description>
 							<font>TitleHeader</font>
-							<textcolor>white</textcolor>
+							<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 							<top>-15</top>
 							<right>NewSidePad</right>
 							<height>80</height>
@@ -264,7 +264,7 @@
 						<control type="label">
 							<description>Header Label</description>
 							<font>Medium</font>
-							<textcolor>white2</textcolor>
+							<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 							<top>60</top>
 							<right>NewSidePad</right>
 							<height>40</height>
@@ -485,7 +485,7 @@
 						<width>240</width>
 						<height>116</height>
 						<textoffsetx>20</textoffsetx>
-						<textcolor>white</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<focusedcolor>$VAR[EmbyMiddleColourHighlight]</focusedcolor>
 						<texturefocus colordiffuse="$INFO[Window(home).Property(ImageColor)]">common/box.png</texturefocus>
 						<texturenofocus colordiffuse="$VAR[EmbyMiddleColourHighlight]">common/box.png</texturenofocus>
@@ -498,7 +498,7 @@
 						<width>240</width>
 						<height>116</height>
 						<textoffsetx>20</textoffsetx>
-						<textcolor>white</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<focusedcolor>$VAR[EmbyRightColourHighlight]</focusedcolor>
 						<texturefocus colordiffuse="$INFO[Window(home).Property(ImageColor)]">common/box.png</texturefocus>
 						<texturenofocus colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</texturenofocus>
@@ -511,7 +511,7 @@
 						<width>240</width>
 						<height>116</height>
 						<textoffsetx>20</textoffsetx>
-						<textcolor>white</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<focusedcolor>$VAR[EmbyRightColourHighlight]</focusedcolor>
 						<texturefocus colordiffuse="$INFO[Window(home).Property(ImageColor)]">common/box.png</texturefocus>
 						<texturenofocus colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</texturenofocus>
@@ -526,7 +526,7 @@
 						<width>240</width>
 						<height>116</height>
 						<textoffsetx>20</textoffsetx>
-						<textcolor>white</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<focusedcolor>$VAR[EmbyRightColourHighlight]</focusedcolor>
 						<texturefocus colordiffuse="$INFO[Window(home).Property(ImageColor)]">common/box.png</texturefocus>
 						<texturenofocus colordiffuse="$VAR[EmbyLeftColourHighlight]">common/box.png</texturenofocus>
@@ -559,7 +559,7 @@
 					<control id="8" type="button">
 						<width>240</width>
 						<height>116</height>
-						<textcolor>white</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<textoffsetx>0</textoffsetx>
 						<font>StudioFont</font>
 						<label>208</label>
@@ -574,7 +574,7 @@
 						<width>240</width>
 						<height>116</height>
 						<textoffsetx>0</textoffsetx>
-						<textcolor>white</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<font>StudioFont</font>
 						<visible>!IsEmpty(Window.Property(DBID)) + Stringcompare(Window.Property(Type),tvshow)</visible>
 						<visible>IsEmpty(Window(home).Property(globalsearch))</visible>
@@ -587,7 +587,7 @@
 						<width>240</width>
 						<height>116</height>
 						<textoffsetx>0</textoffsetx>
-						<textcolor>white</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<font>StudioFont</font>
 						<animation condition="Control.HasFocus(445)" effect="fade" end="100" start="0" time="10">Conditional</animation>
 						<animation condition="!Control.HasFocus(445)" effect="fade" end="0" start="100" time="10">Conditional</animation>
@@ -612,7 +612,7 @@
 						<top>8</top>
 						<aligny>center</aligny>
 						<align>center</align>
-						<textcolor>white2</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<font>symbol</font>
 						<label></label>
 					</control>
@@ -635,7 +635,7 @@
 						<top>8</top>
 						<aligny>center</aligny>
 						<align>center</align>
-						<textcolor>white2</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<font>symbol</font>
 						<label></label>
 					</control>
@@ -658,7 +658,7 @@
 						<top>8</top>
 						<aligny>center</aligny>
 						<align>center</align>
-						<textcolor>white2</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<font>symbol</font>
 						<label></label>
 					</control>
@@ -682,7 +682,7 @@
 						<top>-8</top>
 						<aligny>center</aligny>
 						<align>center</align>
-						<textcolor>white2</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<font>symbol</font>
 						<label></label>
 					</control>
@@ -705,7 +705,7 @@
 						<top>-8</top>
 						<aligny>center</aligny>
 						<align>center</align>
-						<textcolor>white2</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<font>symbol</font>
 						<label></label>
 					</control>
@@ -729,7 +729,7 @@
 						<left>-8</left>
 						<aligny>center</aligny>
 						<align>center</align>
-						<textcolor>white2</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<font>symbol</font>
 						<label></label>
 					</control>
@@ -752,7 +752,7 @@
 							<align>left</align>
 							<height>34</height>
 							<font>Small</font>
-							<textcolor>white2</textcolor>
+							<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 							<description>Header Label</description>
 							<textcolor>Dark2</textcolor>
 							<font>Small</font>
@@ -777,7 +777,7 @@
 							<align>left</align>
 							<height>34</height>
 							<font>Small</font>
-							<textcolor>white2</textcolor>
+							<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 							<description>Header Label</description>
 							<textcolor>Dark2</textcolor>
 							<font>Small</font>
@@ -804,7 +804,7 @@
 							<align>left</align>
 							<height>34</height>
 							<font>Small</font>
-							<textcolor>white2</textcolor>
+							<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 							<description>Header Label</description>
 							<textcolor>Dark2</textcolor>
 							<font>Small</font>
@@ -832,7 +832,7 @@
 							<align>left</align>
 							<height>34</height>
 							<font>Small</font>
-							<textcolor>white2</textcolor>
+							<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 							<description>Header Label</description>
 							<textcolor>Dark2</textcolor>
 							<font>Small</font>
@@ -859,7 +859,7 @@
 							<align>left</align>
 							<height>34</height>
 							<font>Small</font>
-							<textcolor>white2</textcolor>
+							<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 							<description>Header Label</description>
 							<textcolor>Dark2</textcolor>
 							<font>Small</font>
@@ -886,7 +886,7 @@
 							<align>left</align>
 							<height>34</height>
 							<font>Small</font>
-							<textcolor>white2</textcolor>
+							<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 							<description>Header Label</description>
 							<textcolor>Dark2</textcolor>
 							<font>Small</font>
@@ -913,7 +913,7 @@
 							<align>left</align>
 							<height>34</height>
 							<font>Small</font>
-							<textcolor>white2</textcolor>
+							<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 							<description>Header Label</description>
 							<textcolor>Dark2</textcolor>
 							<font>Small</font>
@@ -940,7 +940,7 @@
 							<align>left</align>
 							<height>34</height>
 							<font>Small</font>
-							<textcolor>white2</textcolor>
+							<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 							<description>Header Label</description>
 							<textcolor>Dark2</textcolor>
 							<font>Small</font>
@@ -967,7 +967,7 @@
 							<align>left</align>
 							<height>34</height>
 							<font>Small</font>
-							<textcolor>white2</textcolor>
+							<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 							<description>Header Label</description>
 							<textcolor>Dark2</textcolor>
 							<font>Small</font>
@@ -994,7 +994,7 @@
 							<align>left</align>
 							<height>34</height>
 							<font>Small</font>
-							<textcolor>white2</textcolor>
+							<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 							<description>Header Label</description>
 							<textcolor>Dark2</textcolor>
 							<font>Small</font>
@@ -1021,7 +1021,7 @@
 							<align>left</align>
 							<height>34</height>
 							<font>Small</font>
-							<textcolor>white2</textcolor>
+							<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 							<description>Header Label</description>
 							<textcolor>Dark2</textcolor>
 							<font>Small</font>
@@ -1095,7 +1095,7 @@
 						<right>-8</right>
 						<aligny>center</aligny>
 						<align>center</align>
-						<textcolor>white2</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<font>symbol</font>
 						<label></label>
 					</control>
@@ -1159,7 +1159,7 @@
 				<right>10</right>
 				<top>-20</top>
 				<font>EpisodeNumber</font>
-				<textcolor>white</textcolor>
+				<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 				<height>45</height>
 				<label>$INFO[Window.Property(Title)]</label>
 				<scroll>true</scroll>
@@ -1170,7 +1170,7 @@
 				<top>55</top>
 				<height>36</height>
 				<font>Small</font>
-				<textcolor>white2</textcolor>
+				<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 				<label>$INFO[Window.Property(Tagline),[I][COLOR=cadmium yellow]",[/I]"[/COLOR]]</label>
 				<aligny>center</aligny>
 			</control>
@@ -1190,7 +1190,7 @@
 							<width>100%</width>
 							<height>36</height>
 							<font>Tiny</font>
-							<textcolor>Dark1</textcolor>
+							<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 							<label>[B]$LOCALIZE[345][/B]</label>
 							<aligny>center</aligny>
 						</control>
@@ -1211,7 +1211,7 @@
 							<width>100%</width>
 							<height>36</height>
 							<font>Tiny</font>
-							<textcolor>Dark1</textcolor>
+							<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 							<label>[B]$LOCALIZE[563][/B]</label>
 							<aligny>center</aligny>
 						</control>
@@ -1232,7 +1232,7 @@
 							<width>100%</width>
 							<height>36</height>
 							<font>Tiny</font>
-							<textcolor>Dark1</textcolor>
+							<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 							<label>[B]$LOCALIZE[20453][/B]</label>
 							<aligny>center</aligny>
 						</control>
@@ -1253,7 +1253,7 @@
 							<width>100%</width>
 							<height>36</height>
 							<font>Tiny</font>
-							<textcolor>Dark1</textcolor>
+							<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 							<label>[B]$LOCALIZE[2050][/B]</label>
 							<aligny>center</aligny>
 						</control>
@@ -1274,7 +1274,7 @@
 							<width>100%</width>
 							<height>36</height>
 							<font>Tiny</font>
-							<textcolor>Dark1</textcolor>
+							<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 							<label>[B]$ADDON[script.extendedinfo 32109][/B]</label>
 							<aligny>center</aligny>
 						</control>
@@ -1295,7 +1295,7 @@
 							<width>100%</width>
 							<height>36</height>
 							<font>Tiny</font>
-							<textcolor>Dark1</textcolor>
+							<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 							<label>[B]$ADDON[script.extendedinfo 32108][/B]</label>
 							<aligny>center</aligny>
 						</control>
@@ -1316,7 +1316,7 @@
 							<width>100%</width>
 							<height>36</height>
 							<font>Tiny</font>
-							<textcolor>Dark1</textcolor>
+							<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 							<label>[B]$LOCALIZE[572][/B]</label>
 							<aligny>center</aligny>
 						</control>
@@ -1337,7 +1337,7 @@
 							<width>100%</width>
 							<height>36</height>
 							<font>Tiny</font>
-							<textcolor>Dark1</textcolor>
+							<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 							<label>[B]$LOCALIZE[515][/B]</label>
 							<aligny>center</aligny>
 						</control>
@@ -1358,7 +1358,7 @@
 							<width>100%</width>
 							<height>36</height>
 							<font>Tiny</font>
-							<textcolor>Dark1</textcolor>
+							<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 							<label>[B]$LOCALIZE[20339][/B]</label>
 							<aligny>center</aligny>
 						</control>
@@ -1376,7 +1376,7 @@
 						<width>100%</width>
 						<height>24</height>
 						<font>Tiny</font>
-						<textcolor>Dark1</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<label/>
 						<aligny>center</aligny>
 					</control>
@@ -1398,7 +1398,7 @@
 				<bottom>200</bottom>
 				<align>justify</align>
 				<font>Medium</font>
-				<textcolor>white2</textcolor>
+				<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 				<label>$INFO[Window.Property(Plot)]</label>
 			</control>
 		</control>

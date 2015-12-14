@@ -39,7 +39,7 @@
 				<right>NewSidePad</right>
 				<align>center</align>
 				<font>LargeHeaderFont</font>
-				<textcolor>white</textcolor>
+				<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 				<label>$INFO[Window.Property(Filter_Label)]</label>
 			</control>
 			<control type="panel" id="500">
@@ -249,7 +249,7 @@
 					<height>190</height>
 					<label>[B]$INFO[Container(500).ListItem.Label]$INFO[Container(500).ListItem.Premiered, ,]$INFO[Container(500).ListItem.Genre, ,][/B]$INFO[Container(500).ListItem.Rating, ,]$INFO[Container(500).ListItem.Votes, (, $LOCALIZE[20350])]$INFO[Container(500).ListItem.Plot,[CR],]</label>
 					<font>Small</font>
-					<textcolor>white2</textcolor>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 				</control>
 			</control>
 		</control>

@@ -148,7 +148,7 @@
 					<aligny>center</aligny>
 					<align>left</align>
 					<font>Medium</font>
-					<textcolor>white</textcolor>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<height>38</height>
 					<width>auto</width>
 					<label>$INFO[Window(Home).Property(Artist_Formed),,  ]</label>
@@ -168,13 +168,13 @@
 					<aligny>center</aligny>
 					<align>left</align>
 					<font>Medium</font>
-					<textcolor>white</textcolor>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<height>38</height>
 					<width>auto</width>
 					<label>$INFO[ListItem.Year,,  ]</label>
 					<visible>Container.Content(Albums) + !IsEmpty(ListItem.Year)</visible>
 				</control>
-				<!--<control type="label"><aligny>center</aligny><align>left</align><font>symbol</font><textcolor>$VAR[EmbyMiddleColourHighlight]</textcolor><height>38</height><width>auto</width><label></label><visible>!IsEmpty(ListItem.Genre)</visible></control><control type="label"><aligny>center</aligny><align>left</align><font>Medium</font><textcolor>white</textcolor><height>38</height><width>auto</width><label fallback="-  ">$INFO[ListItem.Genre,,  ]</label></control>--><control type="label">
+				<!--<control type="label"><aligny>center</aligny><align>left</align><font>symbol</font><textcolor>$VAR[EmbyMiddleColourHighlight]</textcolor><height>38</height><width>auto</width><label></label><visible>!IsEmpty(ListItem.Genre)</visible></control><control type="label"><aligny>center</aligny><align>left</align><font>Medium</font><textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor><height>38</height><width>auto</width><label fallback="-  ">$INFO[ListItem.Genre,,  ]</label></control>--><control type="label">
 					<aligny>center</aligny>
 					<align>left</align>
 					<font>symbol</font>
@@ -188,7 +188,7 @@
 					<aligny>center</aligny>
 					<align>left</align>
 					<font>Medium</font>
-					<textcolor>white</textcolor>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<height>38</height>
 					<width>auto</width>
 					<label fallback="-  ">$INFO[Window(Home).Property(Born),,  ]</label>
@@ -208,7 +208,7 @@
 					<aligny>center</aligny>
 					<align>left</align>
 					<font>Medium</font>
-					<textcolor>white</textcolor>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<height>38</height>
 					<width>auto</width>
 					<label>$INFO[ListItem.Artist,,  ]</label>
@@ -228,7 +228,7 @@
 					<aligny>center</aligny>
 					<align>left</align>
 					<font>Medium</font>
-					<textcolor>white</textcolor>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<height>38</height>
 					<width>auto</width>
 					<label>$INFO[ListItem.Property(Album_Style),,  ]</label>
@@ -248,7 +248,7 @@
 					<aligny>center</aligny>
 					<align>left</align>
 					<font>Medium</font>
-					<textcolor>white</textcolor>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<height>38</height>
 					<width>auto</width>
 					<label fallback="-  ">$INFO[Window(Home).Property(Artist_Disbanded),, ]$INFO[Window(Home).Property(Died),,  ]</label>
@@ -263,7 +263,7 @@
 				<height>228</height>
 				<align>justify</align>
 				<font>Medium</font>
-				<textcolor>white</textcolor>
+				<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 				<label>$INFO[Window(Home).Property(SkinHelper.Music.Info)]</label>
 			</control>
 			<control type="group">
@@ -278,7 +278,7 @@
 					<aligny>center</aligny>
 					<align>right</align>
 					<font>SmallBold</font>
-					<textcolor>white2</textcolor>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<height>38</height>
 					<animation type="conditional" condition="true" reversible="false">
 						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
@@ -292,12 +292,12 @@
 					<top>38</top>
 					<align>right</align>
 					<font>TinyBold</font>
-					<textcolor>white</textcolor>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<label fallback="19055">$INFO[Window(Home).Property(SkinHelper.ListItemGenres)]</label>
 					<autoscroll delay="500" time="1000" repeat="500"/>
 					<fadetime>500</fadetime>
 				</control>
-				<!--<control type="label"><right>0</right><left>0</left><aligny>center</aligny><align>right</align><font>SmallBold</font><textcolor>white2</textcolor><height>38</height><animation type="conditional" condition="true" reversible="false"><effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" /></animation><label>31832</label><visible>Container.Content(albums)</visible></control><control type="textbox"><left>10</left><bottom>494</bottom><top>34</top><align>right</align><font>MiniBold</font><textcolor>white</textcolor><label fallback="19055">$INFO[Window(Home).Property(SkinHelper.Music.TrackList)]</label><autoscroll delay="8000" time="1200" repeat="1000"/><fadetime>500</fadetime><visible>!Control.HasFocus(90902)</visible><visible>Container.Content(albums)</visible></control>-->
+				<!--<control type="label"><right>0</right><left>0</left><aligny>center</aligny><align>right</align><font>SmallBold</font><textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor><height>38</height><animation type="conditional" condition="true" reversible="false"><effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" /></animation><label>31832</label><visible>Container.Content(albums)</visible></control><control type="textbox"><left>10</left><bottom>494</bottom><top>34</top><align>right</align><font>MiniBold</font><textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor><label fallback="19055">$INFO[Window(Home).Property(SkinHelper.Music.TrackList)]</label><autoscroll delay="8000" time="1200" repeat="1000"/><fadetime>500</fadetime><visible>!Control.HasFocus(90902)</visible><visible>Container.Content(albums)</visible></control>-->
 				<control type="label">
 					<right>0</right>
 					<left>0</left>
@@ -305,7 +305,7 @@
 					<aligny>center</aligny>
 					<align>right</align>
 					<font>SmallBold</font>
-					<textcolor>white2</textcolor>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<height>38</height>
 					<label>31832</label>
 					<visible>Container.Content(albums)</visible>
@@ -316,7 +316,7 @@
 					<top>184</top>
 					<align>right</align>
 					<font>TinyBold</font>
-					<textcolor>white</textcolor>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<label fallback="19055">$INFO[Window(Home).Property(SkinHelper.Music.TrackList)]</label>
 					<autoscroll delay="8000" time="1200" repeat="1000"/>
 					<fadetime>500</fadetime>
@@ -350,7 +350,7 @@
 					<font>symbol</font>
 					<label></label>
 					<onclick>RunScript(script.playalbum,albumid=$INFO[ListItem.DBID])</onclick>
-					<textcolor>white</textcolor>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<focusedcolor>$VAR[EmbyMiddleColourHighlight]</focusedcolor>
 					<texturefocus colordiffuse="$INFO[Window(home).Property(MusicPosterInfo.ImageColor)]">common/box.png</texturefocus>
 					<texturenofocus colordiffuse="$VAR[EmbyMiddleColourHighlight]">common/box.png</texturenofocus>
@@ -362,7 +362,7 @@
 					<height>116</height>
 					<font>symbol</font>
 					<label></label>
-					<textcolor>white</textcolor>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<onclick condition="Container.Content(artists)">SetProperty(listcontent,$INFO[ListItem.Artist],home)</onclick>
 					<onclick condition="Container.Content(albums)">SetProperty(listcontent,$INFO[ListItem.Artist] $INFO[ListItem.Album],home)</onclick>
 					<onclick>ActivateWindow(1168)</onclick>
@@ -377,7 +377,7 @@
 					<height>116</height>
 					<font>symbol</font>
 					<label></label>
-					<textcolor>white</textcolor>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<focusedcolor>$VAR[EmbyLeftColourHighlight]</focusedcolor>
 					<texturefocus colordiffuse="$INFO[Window(home).Property(MusicPosterInfo.ImageColor)]">common/box.png</texturefocus>
 					<texturenofocus colordiffuse="$VAR[EmbyLeftColourHighlight]">common/box.png</texturenofocus>
@@ -389,7 +389,7 @@
 					<height>116</height>
 					<font>symbol</font>
 					<label></label>
-					<textcolor>white</textcolor>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<focusedcolor>$VAR[EmbyLeftColourHighlight]</focusedcolor>
 					<texturefocus colordiffuse="$INFO[Window(home).Property(MusicPosterInfo.ImageColor)]">common/box.png</texturefocus>
 					<texturenofocus colordiffuse="$VAR[EmbyLeftColourHighlight]">common/box.png</texturenofocus>
@@ -424,7 +424,7 @@
 				<control type="button" id="1">
 					<width>116</width>
 					<height>116</height>
-					<textcolor>White70</textcolor>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<textoffsetx>0</textoffsetx>
 					<font>EPGTimeline</font>
 					<label>31820</label>
@@ -437,7 +437,7 @@
 				<control type="button" id="2">
 					<width>116</width>
 					<height>116</height>
-					<textcolor>White70</textcolor>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<textoffsetx>0</textoffsetx>
 					<font>EPGTimeline</font>
 					<label>31141</label>
@@ -450,7 +450,7 @@
 					<width>116</width>
 					<height>116</height>
 					<label>184</label>
-					<textcolor>White70</textcolor>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<textoffsetx>0</textoffsetx>
 					<font>EPGTimeline</font>
 					<visible>Control.IsEnabled(6)</visible>
@@ -462,7 +462,7 @@
 					<width>116</width>
 					<height>116</height>
 					<label>31829</label>
-					<textcolor>White70</textcolor>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<textoffsetx>0</textoffsetx>
 					<font>EPGTimeline</font>
 					<visible>Control.IsEnabled(10)</visible>
@@ -567,7 +567,7 @@
 					<aligny>center</aligny>
 					<align>left</align>
 					<font>Small</font>
-					<textcolor>white2</textcolor>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<label>$VAR[MusicInfoWidgetLabel]$INFO[Container(9500).ListItem(0).Label,: ]</label>
 					<visible>!Control.HasFocus(9499)</visible>
 				</control>
@@ -598,7 +598,7 @@
 							<align>center</align>
 							<font>symbolbiggest</font>
 							<label></label>
-							<textcolor>white</textcolor>
+							<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 							<fadetime>300</fadetime>
 						</control>
 						<control type="image">
@@ -618,7 +618,7 @@
 								<align>center</align>
 								<font>symbolbiggest</font>
 								<label></label>
-								<textcolor>white</textcolor>
+								<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 								<fadetime>300</fadetime>
 							</control>
 							<control type="image">
@@ -642,8 +642,8 @@
 								<align>center</align>
 								<aligny>center</aligny>
 								<font>Tiny</font>
-								<textcolor>white2</textcolor>
-								<selectedcolor>white2</selectedcolor>
+								<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+								<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 								<label>$INFO[ListItem.Year]$INFO[ListItem.Property(Album_Type),[CR],]</label>
 								<visible>Control.HasFocus(9500)</visible>
 							</control>
@@ -757,7 +757,7 @@
 					</animation>
 					<visible>!ControlGroup(9010).HasFocus</visible>
 				</control>
-				<!-- <control type="label"><right>16</right><top>1</top><width>76</width><height>76</height><font>symbolbackbig</font><label>$VAR[PercentWatchedBack]</label><textcolor>white2</textcolor><visible>ControlGroup(9010).HasFocus</visible></control><control type="label"><centerright>54</centerright><centertop>40</centertop><width>54</width><height>54</height><font>symbolbig</font><label>$VAR[PercentWatchedLabelInfo]</label><textcolor>$VAR[IndicatorColourHighlight]</textcolor><visible>!stringcompare(ListItem.Label,..)</visible><visible>ControlGroup(9010).HasFocus</visible></control> -->
+				<!-- <control type="label"><right>16</right><top>1</top><width>76</width><height>76</height><font>symbolbackbig</font><label>$VAR[PercentWatchedBack]</label><textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor><visible>ControlGroup(9010).HasFocus</visible></control><control type="label"><centerright>54</centerright><centertop>40</centertop><width>54</width><height>54</height><font>symbolbig</font><label>$VAR[PercentWatchedLabelInfo]</label><textcolor>$VAR[IndicatorColourHighlight]</textcolor><visible>!stringcompare(ListItem.Label,..)</visible><visible>ControlGroup(9010).HasFocus</visible></control> -->
 				<animation type="conditional" condition="true" reversible="false">
 					<effect type="zoom" start="100" end="94" time="200" center="auto" tween="quadratic" easing="out"/>
 					<effect type="rotate" end="-1" time="200" center="auto" tween="quadratic" easing="out"/>
@@ -768,7 +768,7 @@
 				<left>643</left>
 				<right>10</right>
 				<font>EpisodeNumber</font>
-				<textcolor>white</textcolor>
+				<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 				<height>45</height>
 				<label>$VAR[MusicInfoLabel]</label>
 				<scroll>true</scroll>
@@ -781,39 +781,39 @@
 				<bottom>650</bottom>
 				<align>justify</align>
 				<font>Medium</font>
-				<textcolor>white2</textcolor>
+				<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 				<label>$INFO[Window(Home).Property(SkinHelper.Music.Info)]</label>
 			</control>
 			<control type="group">
 				<top>340</top>
 				<animation effect="slide" start="0,0" end="-0,20" center="auto" time="200" condition="Container(54).OnScrollNext">Conditional</animation>
 				<animation effect="slide" start="0,0" end="0,20" center="auto" time="200" condition="Container(54).OnScrollPrevious">Conditional</animation>
-				<!--<control type="label"><left>643</left><width>246</width><top>-56</top><align>left</align><font>SmallBold</font><textcolor>white2</textcolor><label>31823</label><animation type="conditional" condition="true" reversible="false"><effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/></animation></control>-->
+				<!--<control type="label"><left>643</left><width>246</width><top>-56</top><align>left</align><font>SmallBold</font><textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor><label>31823</label><animation type="conditional" condition="true" reversible="false"><effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/></animation></control>-->
 				<control type="label">
 					<left>643</left>
 					<width>246</width>
 					<top>-56</top>
 					<align>left</align>
 					<font>SmallBold</font>
-					<textcolor>white2</textcolor>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<label>135</label>
 					<animation type="conditional" condition="true" reversible="false">
 						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
 					</animation>
 				</control>
-				<!--<control type="label"><left>1271</left><width>246</width><top>-56</top><align>left</align><font>SmallBold</font><textcolor>white2</textcolor><label>3-31819</label><animation type="conditional" condition="true" reversible="false"><effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/></animation></control><control type="label"><left>1585</left><width>246</width><top>-56</top><align>left</align><font>SmallBold</font><textcolor>white2</textcolor><label>572</label><fadetime>500</fadetime><animation type="conditional" condition="true" reversible="false"><effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/></animation></control>--><!--<control type="textbox"><left>643</left><width>246</width><height>92</height><align>left</align><font>TinyBold</font><textcolor>white</textcolor><label fallback="19055">$VAR[LabelDirector]</label><autoscroll delay="500" time="1000" repeat="500"/><fadetime>500</fadetime></control>-->
+				<!--<control type="label"><left>1271</left><width>246</width><top>-56</top><align>left</align><font>SmallBold</font><textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor><label>3-31819</label><animation type="conditional" condition="true" reversible="false"><effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/></animation></control><control type="label"><left>1585</left><width>246</width><top>-56</top><align>left</align><font>SmallBold</font><textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor><label>572</label><fadetime>500</fadetime><animation type="conditional" condition="true" reversible="false"><effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/></animation></control>--><!--<control type="textbox"><left>643</left><width>246</width><height>92</height><align>left</align><font>TinyBold</font><textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor><label fallback="19055">$VAR[LabelDirector]</label><autoscroll delay="500" time="1000" repeat="500"/><fadetime>500</fadetime></control>-->
 				<control type="textbox">
 					<left>643</left>
 					<width>246</width>
 					<height>92</height>
 					<align>left</align>
 					<font>TinyBold</font>
-					<textcolor>white</textcolor>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<label fallback="19055">$VAR[LabelGenreList]</label>
 					<autoscroll delay="500" time="1000" repeat="500"/>
 					<fadetime>500</fadetime>
 				</control>
-				<!--<control type="textbox"><left>1271</left><width>246</width><height>92</height><align>left</align><font>TinyBold</font><textcolor>white</textcolor><label fallback="19055">$INFO[Window(Home).Property(SkinHelper.ListItemCast)]</label><autoscroll delay="500" time="1000" repeat="500"/><fadetime>500</fadetime></control><control type="textbox"><left>1585</left><width>246</width><height>92</height><align>left</align><font>TinyBold</font><textcolor>white</textcolor><label fallback="19055">$INFO[Window(Home).Property(SkinHelper.ListItemStudios)]</label><fadetime>500</fadetime></control>-->
+				<!--<control type="textbox"><left>1271</left><width>246</width><height>92</height><align>left</align><font>TinyBold</font><textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor><label fallback="19055">$INFO[Window(Home).Property(SkinHelper.ListItemCast)]</label><autoscroll delay="500" time="1000" repeat="500"/><fadetime>500</fadetime></control><control type="textbox"><left>1585</left><width>246</width><height>92</height><align>left</align><font>TinyBold</font><textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor><label fallback="19055">$INFO[Window(Home).Property(SkinHelper.ListItemStudios)]</label><fadetime>500</fadetime></control>-->
 				<visible>!stringcompare(ListItem.Label,..) + !Container.Content(albums) + !Container.Content(songs)</visible>
 			</control>
 			<!-- Button grouplist -->
@@ -842,7 +842,7 @@
 					<font>symbol</font>
 					<label></label>
 					<onclick>RunScript(script.playalbum,albumid=$INFO[ListItem.DBID])</onclick>
-					<textcolor>white</textcolor>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<focusedcolor>$VAR[EmbyMiddleColourHighlight]</focusedcolor>
 					<texturefocus colordiffuse="$INFO[Window(home).Property(MusicPosterInfo.ImageColor)]">common/box.png</texturefocus>
 					<texturenofocus colordiffuse="$VAR[EmbyMiddleColourHighlight]">common/box.png</texturenofocus>
@@ -854,7 +854,7 @@
 					<height>116</height>
 					<font>symbol</font>
 					<label></label>
-					<textcolor>white</textcolor>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<onclick condition="Container.Content(artists)">SetProperty(listcontent,$INFO[ListItem.Artist],home)</onclick>
 					<onclick condition="Container.Content(albums)">SetProperty(listcontent,$INFO[ListItem.Artist] $INFO[ListItem.Album],home)</onclick>
 					<onclick>ActivateWindow(1168)</onclick>
@@ -869,7 +869,7 @@
 					<height>116</height>
 					<font>symbol</font>
 					<label></label>
-					<textcolor>white</textcolor>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<focusedcolor>$VAR[EmbyLeftColourHighlight]</focusedcolor>
 					<texturefocus colordiffuse="$INFO[Window(home).Property(MusicPosterInfo.ImageColor)]">common/box.png</texturefocus>
 					<texturenofocus colordiffuse="$VAR[EmbyLeftColourHighlight]">common/box.png</texturenofocus>
@@ -881,7 +881,7 @@
 					<height>116</height>
 					<font>symbol</font>
 					<label></label>
-					<textcolor>white</textcolor>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<focusedcolor>$VAR[EmbyLeftColourHighlight]</focusedcolor>
 					<texturefocus colordiffuse="$INFO[Window(home).Property(MusicPosterInfo.ImageColor)]">common/box.png</texturefocus>
 					<texturenofocus colordiffuse="$VAR[EmbyLeftColourHighlight]">common/box.png</texturenofocus>
@@ -915,7 +915,7 @@
 				<control type="button" id="1">
 					<width>116</width>
 					<height>116</height>
-					<textcolor>White70</textcolor>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<textoffsetx>0</textoffsetx>
 					<font>EPGTimeline</font>
 					<label>31820</label>
@@ -928,7 +928,7 @@
 				<control type="button" id="2">
 					<width>116</width>
 					<height>116</height>
-					<textcolor>White70</textcolor>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<textoffsetx>0</textoffsetx>
 					<font>EPGTimeline</font>
 					<label>31141</label>
@@ -941,7 +941,7 @@
 					<width>116</width>
 					<height>116</height>
 					<label>184</label>
-					<textcolor>White70</textcolor>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<textoffsetx>0</textoffsetx>
 					<font>EPGTimeline</font>
 					<visible>Control.IsEnabled(6)</visible>
@@ -953,7 +953,7 @@
 					<width>116</width>
 					<height>116</height>
 					<label>31829</label>
-					<textcolor>White70</textcolor>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<textoffsetx>0</textoffsetx>
 					<font>EPGTimeline</font>
 					<visible>Control.IsEnabled(10)</visible>
@@ -978,7 +978,7 @@
 						<align>left</align>
 						<height>34</height>
 						<font>Small</font>
-						<textcolor>white2</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<label>$INFO[ListItem.Label]</label>
 						<visible>!Control.HasFocus(9498)</visible>
 					</control>
@@ -998,7 +998,7 @@
 						<align>left</align>
 						<height>34</height>
 						<font>Small</font>
-						<textcolor>white2</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<label>$INFO[ListItem.Label]</label>
 						<visible>!Control.HasFocus(9498)</visible>
 					</control>
@@ -1084,7 +1084,7 @@
 				<aligny>center</aligny>
 				<align>left</align>
 				<font>Small</font>
-				<textcolor>white2</textcolor>
+				<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 				<label>$VAR[MusicInfoCastWidgetLabel]$INFO[Container(9501).ListItem(0).Label,: ,]</label>
 				<visible>!Control.HasFocus(9498) + !Control.HasFocus(94988)</visible>
 			</control>
@@ -1122,7 +1122,7 @@
 						<align>center</align>
 						<font>symbolbiggest</font>
 						<label></label>
-						<textcolor>white</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<fadetime>300</fadetime>
 					</control>
 					<control type="image">
@@ -1142,7 +1142,7 @@
 							<align>center</align>
 							<font>symbolbiggest</font>
 							<label></label>
-							<textcolor>white</textcolor>
+							<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 							<fadetime>300</fadetime>
 						</control>
 						<control type="image">
@@ -1166,8 +1166,8 @@
 							<align>center</align>
 							<aligny>center</aligny>
 							<font>Tiny</font>
-							<textcolor>white2</textcolor>
-							<selectedcolor>white2</selectedcolor>
+							<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+							<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 							<label>$INFO[ListItem.Year]$INFO[ListItem.Property(Album_Type),[CR],]</label>
 							<visible>Control.HasFocus(9501)</visible>
 						</control>
@@ -1327,14 +1327,14 @@
 									<width>100%</width>
 									<height>78</height>
 									<font>ReallyLargeBold</font>
-									<textcolor>$VAR[OSDPanelWhite70]</textcolor>
+									<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 									<label>$VAR[PlayerBigTitle]</label>
 								</control>
 								<control type="label" description="Song">
 									<width>100%</width>
 									<height>60</height>
 									<font>MediumBold</font>
-									<textcolor>$VAR[OSDPanelWhite70]</textcolor>
+									<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 									<label>$VAR[PlayerTitle]</label>
 								</control>
 								<control type="grouplist">
@@ -1371,7 +1371,7 @@
 									<width>100%</width>
 									<height>40</height>
 									<font>SmallBold</font>
-									<textcolor>$VAR[OSDPanelWhite70]</textcolor>
+									<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 									<label>$VAR[PlayerPlotBox]</label>
 								</control>
 								<control type="label" description="Other info">
@@ -1388,7 +1388,7 @@
 									<width>100%</width>
 									<height>40</height>
 									<font>Tiny</font>
-									<textcolor>$VAR[OSDPanelWhite70]</textcolor>
+									<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 									<label>$VAR[PlayerStatus]</label>
 								</control>
 								<control type="label" description="Duration">
@@ -1397,7 +1397,7 @@
 									<height>40</height>
 									<font>Tiny</font>
 									<align>right</align>
-									<textcolor>$VAR[OSDPanelWhite70]</textcolor>
+									<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 									<label>$INFO[Player.Time]  /  $INFO[Player.Duration]</label>
 								</control>
 							</control>
@@ -1422,7 +1422,7 @@
 								<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
 								<lefttexture colordiffuse="$INFO[Window(home).Property(MusicPosterInfo.ImageColor)]">osd/progress-end.png</lefttexture>
 								<midtexture colordiffuse="$INFO[Window(home).Property(MusicPosterInfo.ImageColor)]">osd/progress-end.png</midtexture>
-								<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+								<righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>
 							</control>
 						</control>
 					</control>
@@ -1488,7 +1488,7 @@
 					<width>100</width>
 					<height>36</height>
 					<font>TinyBold</font>
-					<textcolor>Dark1</textcolor>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<label>31875</label>
 					<aligny>center</aligny>
 				</control>

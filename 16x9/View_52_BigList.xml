@@ -275,7 +275,7 @@
 				<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
 				<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
 				<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
-				<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+				<righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>
 				<visible>ListItem.IsResumable</visible>
 			</control>
 			<control type="image">
@@ -349,7 +349,7 @@
 							<align>center</align>
 							<font>symbolbiggest</font>
 							<label></label>
-							<textcolor>white</textcolor>
+							<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 							<fadetime>300</fadetime>
 						</control>
 						<control type="image">
@@ -383,7 +383,7 @@
 							<align>center</align>
 							<font>symbolbiggest</font>
 							<label></label>
-							<textcolor>white</textcolor>
+							<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 							<fadetime>300</fadetime>
 						</control>
 						<control type="image">
@@ -414,7 +414,7 @@
 				<height>163</height>
 				<align>justify</align>
 				<font>MediumSmallBold</font>
-				<textcolor>white</textcolor>
+				<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 				<label>$VAR[Plot]</label>
 			</control>
 			<control type="textbox">
@@ -425,7 +425,7 @@
 				<height>129</height>
 				<align>justify</align>
 				<font>MediumSmallBold</font>
-				<textcolor>white</textcolor>
+				<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 				<label fallback="19055">$INFO[Window(Home).Property(SkinHelper.ListItemCast)]</label>
 				<autoscroll delay="500" time="1000" repeat="500"/>
 				<fadetime>500</fadetime>
@@ -500,7 +500,7 @@
 			<align>center</align>
 			<font>symbolbig</font>
 			<label>$VAR[SwapDefaultImage]</label>
-			<textcolor>white</textcolor>
+			<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 		</control>
 		<control type="image">
 			<left>10</left>
@@ -517,7 +517,7 @@
 			<height>100</height>
 			<aligny>center</aligny>
 			<font>LargeBold</font>
-			<textcolor>Dark1</textcolor>
+			<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 			<label>$INFO[ListItem.Label]</label>
 		</control>
 		<control type="label">
@@ -530,7 +530,7 @@
 			<height>100</height>
 			<aligny>center</aligny>
 			<font>Tiny</font>
-			<textcolor>white</textcolor>
+			<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 			<label>$INFO[ListItem.Label2]</label>
 		</control>
 		<control type="group">

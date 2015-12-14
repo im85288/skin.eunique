@@ -813,6 +813,13 @@
 						<label>32083</label>
 						<label2>[COLOR=$VAR[BottomBarColour]]$INFO[Skin.String(bottom.bar.color.name)][/COLOR]</label2>
 					</control>
+					<control type="button" id="92891">
+						<width>1410</width>
+						<include>DefSettingsButton2</include>
+						<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=disabled.color.name)</onclick>
+						<label>32096</label>
+						<label2>[COLOR=$VAR[DisabledColour]]$INFO[Skin.String(disabled.color.name)][/COLOR]</label2>
+					</control>
 				</control>
 				<control type="grouplist" id="9009">
 					<description>Themes</description>

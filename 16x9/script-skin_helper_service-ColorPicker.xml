@@ -85,7 +85,7 @@
             <height>40</height>
             <label>$INFO[Window.Property(colorname)]</label>
             <align>left</align>
-            <textcolor>white</textcolor>
+            <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
             <shadowcolor>black</shadowcolor>
         </control>-->
 
@@ -112,11 +112,11 @@
 				<label>Color:</label>
 				<label2>$INFO[Window.Property(colorstring)]</label2>
 				<font>Button</font>
-				<textcolor>white</textcolor>
+				<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 				<width>290</width>
 				<height>68</height>
 				<texturefocus colordiffuse="$VAR[ColourHighlight]">common/box.png</texturefocus>
-				<texturenofocus colordiffuse="White70">common/box.png</texturenofocus>
+				<texturenofocus colordiffuse="$VAR[DisabledColour]">common/box.png</texturenofocus>
 			</control>
 
 			<!-- Save button -->
@@ -124,12 +124,12 @@
 				<onup>3110</onup>
 				<onleft>3010</onleft>
 				<label>190</label>
-				<textcolor>white</textcolor>
+				<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 				<font>Button</font>
 				<width>200</width>
 				<height>68</height>
 				<texturefocus colordiffuse="$VAR[ColourHighlight]">common/box.png</texturefocus>
-				<texturenofocus colordiffuse="White70">common/box.png</texturenofocus>
+				<texturenofocus colordiffuse="$VAR[DisabledColour]">common/box.png</texturenofocus>
 			</control>
 
 			<!-- Cancel -->
@@ -140,11 +140,11 @@
 				<onclick>Close</onclick>
 				<label>Cancel</label>
 				<font>Button</font>
-				<textcolor>white</textcolor>
+				<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 				<width>225</width>
 				<height>68</height>
 				<texturefocus colordiffuse="$VAR[ColourHighlight]">common/box.png</texturefocus>
-				<texturenofocus colordiffuse="White70">common/box.png</texturenofocus>
+				<texturenofocus colordiffuse="$VAR[DisabledColour]">common/box.png</texturenofocus>
 			</control>
 
 			<!-- None -->
@@ -154,9 +154,9 @@
 				<onleft>3010</onleft>
 				<ondown>SetFocus(3110)</ondown>
 				<label>$ADDON[script.skin.helper.service 32013]</label>
-				<textcolor>white</textcolor>
+				<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 				<texturefocus colordiffuse="$VAR[ColourHighlight]">common/box.png</texturefocus>
-				<texturenofocus colordiffuse="White70">common/box.png</texturenofocus>
+				<texturenofocus colordiffuse="$VAR[DisabledColour]">common/box.png</texturenofocus>
 			</control>
 
 			<control type="group" id="3020">
@@ -170,9 +170,9 @@
 					<align>left</align>
 					<onup>3110</onup>
 					<label>$ADDON[script.skin.helper.service 32049]:</label>
-					<textcolor>white</textcolor>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<texturefocus colordiffuse="$VAR[ColourHighlight]">common/box.png</texturefocus>
-					<texturenofocus colordiffuse="White70">common/box.png</texturenofocus>
+					<texturenofocus colordiffuse="$VAR[DisabledColour]">common/box.png</texturenofocus>
 				</control>
 				<control type="slider" id="3015">
 					<!-- opacity slider -->
@@ -182,7 +182,7 @@
 					<ondown>3012</ondown>
 					<onclick>3012</onclick>
 					<width>200</width>
-					<colordiffuse>Black70</colordiffuse>
+					<colordiffuse>$VAR[EmbyMenuTextColourHighlight]</colordiffuse>
 				</control>
 
 				<control type="label" id="3017">
@@ -195,9 +195,9 @@
 					<onup>3110</onup>
 					<onleft>3010</onleft>
 					<label>$INFO[Control.Getlabel(3015)]</label>
-					<textcolor>white</textcolor>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<texturefocus colordiffuse="$VAR[ColourHighlight]">common/box.png</texturefocus>
-					<texturenofocus colordiffuse="White70">common/box.png</texturenofocus>
+					<texturenofocus colordiffuse="$VAR[DisabledColour]">common/box.png</texturenofocus>
 				</control>
 			</control>
 		</control>

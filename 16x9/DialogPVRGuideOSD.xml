@@ -31,7 +31,7 @@
 				<posy>10</posy>
 				<width>400</width>
 				<align>left</align>
-				<textcolor>white</textcolor>
+				<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 				<font>MediumBold</font>
 				<label>$INFO[VideoPlayer.ChannelName]</label>
 			</control>
@@ -40,7 +40,7 @@
 				<posy>43</posy>
 				<width>400</width>
 				<align>left</align>
-				<textcolor>white2</textcolor>
+				<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 				<font>TinyBold</font>
 				<label>$INFO[Container(11).ListItem.StartDate]</label>
 			</control>
@@ -64,8 +64,8 @@
 						<right>22</right>
 						<posy>5</posy>
 						<align>left</align>
-						<textcolor>white</textcolor>
-						<selectedcolor>white</selectedcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+						<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 						<font>SmallBold</font>
 						<label>$INFO[ListItem.Title]</label>
 						<visible>!ListItem.IsPlaying</visible>
@@ -76,8 +76,8 @@
 						<right>22</right>
 						<align>left</align>
 						<font>Small</font>
-						<textcolor>white</textcolor>
-						<selectedcolor>white</selectedcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+						<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 						<label>$INFO[ListItem.StartTime,,   ]</label>
 						<visible>!ListItem.IsPlaying</visible>
 					</control>
@@ -111,7 +111,7 @@
 							<width>40</width>
 							<height>40</height>
 							<font>symbol24</font>
-							<textcolor>white</textcolor>
+							<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 							<textoffsetx>5</textoffsetx>
 							<label></label>
 							<align>right</align>

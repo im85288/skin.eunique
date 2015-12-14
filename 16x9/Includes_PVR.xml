@@ -30,7 +30,7 @@
 					<textoffsetx>5</textoffsetx>
 					<font>settingsheader</font>
 					<label>$LOCALIZE[31103] $LOCALIZE[31848]</label>
-					<textcolor>white</textcolor>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<aligny>center</aligny>
 				</control>
 				<control type="button" id="9001">
@@ -74,7 +74,7 @@
 					<textoffsetx>5</textoffsetx>
 					<font>settingsheader</font>
 					<label>14018</label>
-					<textcolor>white</textcolor>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<aligny>center</aligny>
 					<visible>Control.IsVisible(10)</visible>
 				</control>
@@ -91,7 +91,7 @@
 					<textoffsetx>5</textoffsetx>
 					<font>settingsheader</font>
 					<label>14018</label>
-					<textcolor>white</textcolor>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<aligny>center</aligny>
 				</control>
 				<control type="button" id="28">
@@ -131,7 +131,7 @@
 					<textoffsetx>5</textoffsetx>
 					<font>settingsheader</font>
 					<label>$LOCALIZE[33063] $LOCALIZE[15034]</label>
-					<textcolor>white</textcolor>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<aligny>center</aligny>
 					<visible>Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRRecordings.xml)</visible>
 				</control>
@@ -231,8 +231,8 @@
 					<align>center</align>
 					<height>38</height>
 					<font>SmallBold</font>
-					<textcolor>white</textcolor>
-					<selectedcolor>white</selectedcolor>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+					<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 					<label>$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]</label>
 					<visible>IsEmpty(Window(home).Property(SkinHelper.PVR.Logo))</visible>
 				</control>
@@ -244,8 +244,8 @@
 					<align>left</align>
 					<height>38</height>
 					<font>TinyBold</font>
-					<textcolor>white2</textcolor>
-					<selectedcolor>white2</selectedcolor>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+					<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 					<label>$INFO[ListItem.StartTime]</label>
 				</control>
 				<control type="label">
@@ -256,8 +256,8 @@
 					<align>right</align>
 					<height>38</height>
 					<font>TinyBold</font>
-					<textcolor>white2</textcolor>
-					<selectedcolor>white2</selectedcolor>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+					<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 					<label>$INFO[ListItem.EndTime]</label>
 				</control>
 				<control type="progress">
@@ -275,8 +275,8 @@
 					<height>40</height>
 					<aligny>center</aligny>
 					<font>Tiny</font>
-					<textcolor>white</textcolor>
-					<selectedcolor>white</selectedcolor>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+					<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 					<label fallback="19055">$INFO[ListItem.Genre]</label>
 				</control>
 				<control type="textbox">
@@ -284,8 +284,8 @@
 					<height>160</height>
 					<align>justify</align>
 					<font>SmallBold</font>
-					<textcolor>white</textcolor>
-					<selectedcolor>white</selectedcolor>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+					<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 					<label fallback="19055">$INFO[ListItem.Plot]</label>
 				</control>
 				<control type="label">
@@ -313,8 +313,8 @@
 					<height>40</height>
 					<aligny>center</aligny>
 					<font>Tiny</font>
-					<textcolor>white</textcolor>
-					<selectedcolor>white</selectedcolor>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+					<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 					<label fallback="19055">$INFO[ListItem.NextGenre]</label>
 				</control>
 				<control type="textbox">
@@ -322,8 +322,8 @@
 					<height>160</height>
 					<align>justify</align>
 					<font>MediumSmallBold</font>
-					<textcolor>white</textcolor>
-					<selectedcolor>white</selectedcolor>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+					<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 					<label fallback="19055">$INFO[ListItem.NextPlot]</label>
 				</control>
 			</control>
@@ -348,8 +348,8 @@
 					<aligny>center</aligny>
 					<align>left</align>
 					<font>LargeHeaderFont</font>
-					<textcolor>white2</textcolor>
-					<selectedcolor>white2</selectedcolor>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+					<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 					<label>$INFO[Control.GetLabel(28)]</label>
 				</control>
 				<control type="image">
@@ -414,8 +414,8 @@
 								<aligny>center</aligny>
 								<height>50</height>
 								<font>SmallBold</font>
-								<textcolor>white</textcolor>
-								<selectedcolor>white</selectedcolor>
+								<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+								<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 								<label>$INFO[ListItem.ChannelNumberLabel]</label>
 								<visible>!ListItem.IsPlaying</visible>
 							</control>
@@ -426,8 +426,8 @@
 								<aligny>center</aligny>
 								<height>50</height>
 								<font>SmallBold</font>
-								<textcolor>white</textcolor>
-								<selectedcolor>white</selectedcolor>
+								<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+								<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 								<label>$INFO[ListItem.ChannelName]</label>
 								<visible>!ListItem.IsPlaying</visible>
 							</control>
@@ -438,8 +438,8 @@
 								<aligny>center</aligny>
 								<height>50</height>
 								<font>SmallBold</font>
-								<textcolor>white</textcolor>
-								<selectedcolor>white</selectedcolor>
+								<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+								<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 								<label>$INFO[ListItem.Title]</label>
 								<visible>!ListItem.IsPlaying</visible>
 							</control>
@@ -490,8 +490,8 @@
 								<aligny>center</aligny>
 								<height>50</height>
 								<font>SmallBold</font>
-								<textcolor>white</textcolor>
-								<selectedcolor>white</selectedcolor>
+								<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+								<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 								<label>$INFO[ListItem.Label]</label>
 							</control>
 							<control type="label">
@@ -501,8 +501,8 @@
 								<aligny>center</aligny>
 								<height>64</height>
 								<font>Small</font>
-								<textcolor>white2</textcolor>
-								<selectedcolor>white2</selectedcolor>
+								<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+								<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 								<label>$INFO[ListItem.StartDate]$INFO[ListItem.StartTime,$COMMA ,]</label>
 							</control>
 							<control type="label">
@@ -512,8 +512,8 @@
 								<height>100%</height>
 								<align>right</align>
 								<font>Small</font>
-								<textcolor>white</textcolor>
-								<selectedcolor>white</selectedcolor>
+								<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+								<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 								<label>$INFO[ListItem.ChannelName]</label>
 							</control>
 						</control>
@@ -682,8 +682,8 @@
 								<aligny>center</aligny>
 								<align>left</align>
 								<font>SmallBold</font>
-								<textcolor>white</textcolor>
-								<selectedcolor>white</selectedcolor>
+								<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+								<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 								<label>$INFO[ListItem.ChannelName]</label>
 								<visible>!ListItem.IsPlaying</visible>
 							</control>
@@ -694,8 +694,8 @@
 								<height>50</height>
 								<align>left</align>
 								<font>SmallBold</font>
-								<textcolor>white</textcolor>
-								<selectedcolor>white</selectedcolor>
+								<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+								<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 								<label>$INFO[ListItem.StartTime,,  ]$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]</label>
 								<visible>!ListItem.IsPlaying</visible>
 							</control>
@@ -717,8 +717,8 @@
 								<height>128</height>
 								<align>justify</align>
 								<font>Tiny</font>
-								<textcolor>white</textcolor>
-								<selectedcolor>white</selectedcolor>
+								<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+								<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 								<label>$INFO[ListItem.Plot]</label>
 								<autoscroll>false</autoscroll>
 								<visible>!ListItem.IsPlaying</visible>
@@ -731,8 +731,8 @@
 								<height>38</height>
 								<align>left</align>
 								<font>Tiny</font>
-								<textcolor>white</textcolor>
-								<selectedcolor>white</selectedcolor>
+								<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+								<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 								<label>$INFO[ListItem.NextStartTime,[B]$LOCALIZE[31801][/B], ]$INFO[ListItem.NextTitle]</label>
 								<visible>!ListItem.IsPlaying</visible>
 							</control>
@@ -743,8 +743,8 @@
 								<aligny>center</aligny>
 								<align>right</align>
 								<font>TitleHeader</font>
-								<textcolor>white</textcolor>
-								<selectedcolor>white</selectedcolor>
+								<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+								<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 								<label>$INFO[ListItem.ChannelNumberLabel]</label>
 								<visible>!ListItem.IsPlaying</visible>
 							</control>
@@ -840,8 +840,8 @@
 								<height>50</height>
 								<align>left</align>
 								<font>SmallBold</font>
-								<textcolor>white</textcolor>
-								<selectedcolor>white</selectedcolor>
+								<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+								<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 								<label>$INFO[ListItem.Label]</label>
 							</control>
 							<control type="label">
@@ -852,8 +852,8 @@
 								<aligny>center</aligny>
 								<align>left</align>
 								<font>TinyBold</font>
-								<textcolor>white2</textcolor>
-								<selectedcolor>white2</selectedcolor>
+								<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+								<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 								<label>$INFO[ListItem.ChannelName]</label>
 							</control>
 							<control type="textbox">
@@ -863,8 +863,8 @@
 								<height>128</height>
 								<align>justify</align>
 								<font>Tiny</font>
-								<textcolor>white</textcolor>
-								<selectedcolor>white</selectedcolor>
+								<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+								<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 								<autoscroll>false</autoscroll>
 								<label>$INFO[ListItem.Plot]</label>
 							</control>
@@ -876,8 +876,8 @@
 								<height>38</height>
 								<align>left</align>
 								<font>Tiny</font>
-								<textcolor>white</textcolor>
-								<selectedcolor>white</selectedcolor>
+								<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+								<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 								<label>$INFO[ListItem.StartDate]$INFO[ListItem.StartTime,$COMMA ,]</label>
 							</control>
 						</control>
@@ -1089,8 +1089,8 @@
 						<align>left</align>
 						<aligny>top</aligny>
 						<font>SmallBold</font>
-						<textcolor>white</textcolor>
-						<selectedcolor>white</selectedcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+						<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 						<label>$VAR[PVRChannelZero]$INFO[ListItem.ChannelNumber,,. ]$INFO[ListItem.ChannelName]</label>
 						<visible>!ListItem.IsPlaying</visible>
 					</control>
@@ -1100,8 +1100,8 @@
 						<width>24</width>
 						<height>24</height>
 						<aspectratio>keep</aspectratio>
-						<colordiffuse>white</colordiffuse>
-						<textcolor>white</textcolor>
+						<colordiffuse>$VAR[EmbyMenuTextColourHighlight]</colordiffuse>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<font>symbol24</font>
 						<label></label>
 						<visible>!IsEmpty(ListItem.Title)</visible>
@@ -1115,8 +1115,8 @@
 						<align>left</align>
 						<aligny>center</aligny>
 						<font>Tiny</font>
-						<textcolor>white</textcolor>
-						<selectedcolor>white</selectedcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+						<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 						<label>$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]</label>
 						<visible>!ListItem.IsPlaying</visible>
 					</control>
@@ -1126,8 +1126,8 @@
 						<width>24</width>
 						<height>24</height>
 						<aspectratio>keep</aspectratio>
-						<colordiffuse>white</colordiffuse>
-						<textcolor>white</textcolor>
+						<colordiffuse>$VAR[EmbyMenuTextColourHighlight]</colordiffuse>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<font>symbol24</font>
 						<label></label>
 						<visible>!IsEmpty(ListItem.NextTitle)</visible>
@@ -1141,8 +1141,8 @@
 						<align>left</align>
 						<aligny>center</aligny>
 						<font>Tiny</font>
-						<textcolor>white</textcolor>
-						<selectedcolor>white</selectedcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+						<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 						<label>$INFO[ListItem.NextTitle]</label>
 						<visible>!ListItem.IsPlaying</visible>
 					</control>
@@ -1359,8 +1359,8 @@
 					<align>left</align>
 					<aligny>top</aligny>
 					<font>SmallBold</font>
-					<textcolor>white</textcolor>
-					<selectedcolor>white</selectedcolor>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+					<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 					<label>[COLOR=$VAR[ColourHighlight]]$INFO[ListItem.StartTime]$INFO[ListItem.EndTime, - ,][/COLOR]$INFO[ListItem.Season, ,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Title,  ,]$INFO[ListItem.EpisodeName, (,)][COLOR=$VAR[ColourHighlight]]  $LOCALIZE[515][/COLOR]$INFO[ListItem.Genre,  ,]</label>
 				</control>
 				<control type="textbox">
@@ -1371,8 +1371,8 @@
 					<align>left</align>
 					<aligny>top</aligny>
 					<font>Tiny</font>
-					<textcolor>white</textcolor>
-					<selectedcolor>white</selectedcolor>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+					<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 					<label>$INFO[ListItem.Plot]</label>
 				</control>
 			</control>
@@ -1402,7 +1402,7 @@
 						<aligny>center</aligny>
 						<align>left</align>
 						<font>SmallBold</font>
-						<textcolor>white</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<label>19029</label>
 					</control>
 					<control type="label">
@@ -1412,7 +1412,7 @@
 						<aligny>center</aligny>
 						<align>left</align>
 						<font>SmallBold</font>
-						<textcolor>white</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<label>369</label>
 					</control>
 					<control type="label">
@@ -1422,7 +1422,7 @@
 						<aligny>center</aligny>
 						<align>left</align>
 						<font>SmallBold</font>
-						<textcolor>white</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<label>32085</label>
 					</control>
 					<control type="label">
@@ -1432,7 +1432,7 @@
 						<aligny>center</aligny>
 						<align>left</align>
 						<font>SmallBold</font>
-						<textcolor>white</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<label>467</label>
 					</control>
 					<control type="label">
@@ -1442,7 +1442,7 @@
 						<aligny>center</aligny>
 						<align>left</align>
 						<font>SmallBold</font>
-						<textcolor>white</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<label>126</label>
 					</control>
 				</control>
@@ -1467,7 +1467,7 @@
 								<aligny>center</aligny>
 								<height>50</height>
 								<font>Small</font>
-								<textcolor>white</textcolor>
+								<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 								<label>$INFO[ListItem.Label]</label>
 							</control>
 						</control>
@@ -1487,7 +1487,7 @@
 								<aligny>center</aligny>
 								<height>50</height>
 								<font>Small</font>
-								<textcolor>white</textcolor>
+								<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 								<info>ListItem.ChannelName</info>
 							</control>
 							<control type="label">
@@ -1496,7 +1496,7 @@
 								<aligny>center</aligny>
 								<height>50</height>
 								<font>Small</font>
-								<textcolor>white</textcolor>
+								<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 								<info>ListItem.Label</info>
 							</control>
 							<control type="label">
@@ -1505,7 +1505,7 @@
 								<aligny>center</aligny>
 								<height>50</height>
 								<font>Small</font>
-								<textcolor>white</textcolor>
+								<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 								<info>ListItem.Date</info>
 							</control>
 							<control type="label">
@@ -1514,7 +1514,7 @@
 								<aligny>center</aligny>
 								<height>50</height>
 								<font>Small</font>
-								<textcolor>white</textcolor>
+								<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 								<info>ListItem.Timertype</info>
 							</control>
 							<control type="label">
@@ -1522,7 +1522,7 @@
 								<aligny>center</aligny>
 								<height>50</height>
 								<font>Small</font>
-								<textcolor>white</textcolor>
+								<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 								<info>ListItem.Comment</info>
 							</control>
 						</control>
@@ -1543,7 +1543,7 @@
 									<height>50</height>
 									<font>Small</font>
 									<textcolor>$VAR[ColourSelected]</textcolor>
-									<selectedcolor>white</selectedcolor>
+									<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 									<label>$INFO[ListItem.Label]</label>
 								</control>
 							</control>
@@ -1613,7 +1613,7 @@
 						<align>center</align>
 						<height>50</height>
 						<font>Small</font>
-						<textcolor>white</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<label>$LOCALIZE[19055]</label>
 					</control>
 				</control>
@@ -1635,7 +1635,7 @@
 						<width>1400</width>
 						<height>50</height>
 						<font>Small</font>
-						<textcolor>white</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<label>[B]$INFO[ListItem.EpgEventTitle]$INFO[ListItem.EpisodeName, (,)][/B]</label>
 					</control>
 					<control type="label">
@@ -1644,7 +1644,7 @@
 						<width>1400</width>
 						<height>50</height>
 						<font>Small</font>
-						<textcolor>white</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<label>$INFO[ListItem.StartTime]$INFO[ListItem.EndTime, - ]$INFO[ListItem.Season, • $LOCALIZE[20373] ]$INFO[ListItem.Episode, • $LOCALIZE[20359] ]$INFO[ListItem.Genre, • ]</label>
 					</control>
 					<control type="textbox">
@@ -1654,7 +1654,7 @@
 						<align>justify</align>
 						<height>100</height>
 						<font>Small</font>
-						<textcolor>white</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<autoscroll delay="10000" time="3000" repeat="6000">true</autoscroll>
 						<label>$INFO[ListItem.Plot]</label>
 					</control>
@@ -1686,7 +1686,7 @@
 						<aligny>center</aligny>
 						<align>left</align>
 						<font>SmallBold</font>
-						<textcolor>white</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<label>19148</label>
 					</control>
 					<control type="label">
@@ -1696,7 +1696,7 @@
 						<aligny>center</aligny>
 						<align>left</align>
 						<font>SmallBold</font>
-						<textcolor>white</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<label>369</label>
 					</control>
 					<control type="label">
@@ -1706,7 +1706,7 @@
 						<aligny>center</aligny>
 						<align>left</align>
 						<font>SmallBold</font>
-						<textcolor>white</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<label>21820</label>
 					</control>
 					<control type="label">
@@ -1716,7 +1716,7 @@
 						<aligny>center</aligny>
 						<align>left</align>
 						<font>SmallBold</font>
-						<textcolor>white</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<label>126</label>
 					</control>
 				</control>
@@ -1741,7 +1741,7 @@
 								<aligny>center</aligny>
 								<height>50</height>
 								<font>Small</font>
-								<textcolor>white</textcolor>
+								<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 								<label>$INFO[ListItem.Label]</label>
 							</control>
 						</control>
@@ -1761,7 +1761,7 @@
 								<aligny>center</aligny>
 								<height>50</height>
 								<font>Small</font>
-								<textcolor>white</textcolor>
+								<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 								<info>ListItem.ChannelName</info>
 							</control>
 							<control type="label">
@@ -1770,7 +1770,7 @@
 								<aligny>center</aligny>
 								<height>50</height>
 								<font>Small</font>
-								<textcolor>white</textcolor>
+								<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 								<label>$INFO[ListItem.Label]$INFO[ListItem.EpisodeName, (,)]</label>
 							</control>
 							<control type="label">
@@ -1779,7 +1779,7 @@
 								<aligny>center</aligny>
 								<height>50</height>
 								<font>Small</font>
-								<textcolor>white</textcolor>
+								<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 								<info>ListItem.Date</info>
 							</control>
 							<control type="label">
@@ -1787,7 +1787,7 @@
 								<aligny>center</aligny>
 								<height>50</height>
 								<font>Small</font>
-								<textcolor>white</textcolor>
+								<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 								<label>19043</label>
 								<visible>ListItem.IsRecording</visible>
 							</control>
@@ -1808,7 +1808,7 @@
 								<aligny>center</aligny>
 								<height>50</height>
 								<font>Small</font>
-								<textcolor>white</textcolor>
+								<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 								<label>32086</label>
 								<visible>ListItem.HasTimer + !ListItem.IsRecording</visible>
 							</control>
@@ -1817,7 +1817,7 @@
 								<width>50</width>
 								<height>50</height>
 								<font>symbol24</font>
-								<textcolor>white</textcolor>
+								<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 								<textoffsetx>5</textoffsetx>
 								<label></label>
 								<align>right</align>
@@ -1841,7 +1841,7 @@
 									<height>50</height>
 									<font>Small</font>
 									<textcolor>$VAR[ColourSelected]</textcolor>
-									<selectedcolor>white</selectedcolor>
+									<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 									<label>$INFO[ListItem.Label]</label>
 								</control>
 							</control>
@@ -1935,7 +1935,7 @@
 						<align>center</align>
 						<height>50</height>
 						<font>Small</font>
-						<textcolor>white</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<label>$LOCALIZE[19055]</label>
 					</control>
 				</control>
@@ -1957,7 +1957,7 @@
 						<width>1400</width>
 						<height>50</height>
 						<font>Small</font>
-						<textcolor>white</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<label>[B]$INFO[ListItem.EpgEventTitle]$INFO[ListItem.EpisodeName, (,)][/B]</label>
 					</control>
 					<control type="label">
@@ -1966,7 +1966,7 @@
 						<width>1400</width>
 						<height>50</height>
 						<font>Small</font>
-						<textcolor>white</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<label>$INFO[ListItem.StartTime]$INFO[ListItem.EndTime, - ]$INFO[ListItem.Season, • $LOCALIZE[20373] ]$INFO[ListItem.Episode, • $LOCALIZE[20359] ]$INFO[ListItem.Genre, • ]</label>
 					</control>
 					<control type="textbox">
@@ -1976,7 +1976,7 @@
 						<align>justify</align>
 						<height>100</height>
 						<font>Small</font>
-						<textcolor>white</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<autoscroll delay="10000" time="3000" repeat="6000">true</autoscroll>
 						<label>$INFO[ListItem.Plot]</label>
 					</control>
@@ -2007,7 +2007,7 @@
 						<aligny>center</aligny>
 						<align>left</align>
 						<font>SmallBold</font>
-						<textcolor>white</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<label>369</label>
 					</control>
 				</control>
@@ -2040,7 +2040,7 @@
 								<aligny>center</aligny>
 								<height>50</height>
 								<font>Small</font>
-								<textcolor>white</textcolor>
+								<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 								<label>$INFO[ListItem.Label]$INFO[ListItem.EpisodeName, (,)]</label>
 							</control>
 							<control type="label">
@@ -2049,7 +2049,7 @@
 								<aligny>center</aligny>
 								<height>50</height>
 								<font>Small</font>
-								<textcolor>white</textcolor>
+								<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 								<label>$INFO[ListItem.Date]</label>
 							</control>
 						</control>
@@ -2110,7 +2110,7 @@
 						<width>1400</width>
 						<height>50</height>
 						<font>Small</font>
-						<textcolor>white</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<label>$INFO[Container(50).ListItem.Title]$INFO[ListItem.EpisodeName, (,)]</label>
 					</control>
 					<control type="textbox">
@@ -2120,7 +2120,7 @@
 						<align>justify</align>
 						<height>100</height>
 						<font>Small</font>
-						<textcolor>white</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<autoscroll delay="10000" time="3000" repeat="6000">true</autoscroll>
 						<label>$INFO[Container(50).ListItem.Plot]</label>
 					</control>
@@ -2130,7 +2130,7 @@
 						<width>1400</width>
 						<height>35</height>
 						<font>Small</font>
-						<textcolor>white</textcolor>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<label>$INFO[PVR.backenddiskspace]</label>
 						<visible>!IntegerGreaterThan(PVR.backenddiskspaceprogr,100)</visible>
 					</control>

@@ -29,7 +29,7 @@
 					<viewtype label="539">list</viewtype>
 					<scrolltime tween="quadratic">400</scrolltime>
 					<itemlayout width="1900" height="66" condition="!Container.Content(episodes) + !Container.Content(albums) + !Container.Content(songs)">
-						<!--<control type="label"><right>10</right><height>66</height><align>left</align><aligny>center</aligny><label>$VAR[LabelYear,, • ]$VAR[LabelDuration,, • ]$INFO[ListItem.Rating]</label><font>Flag</font><textcolor>white</textcolor><visible>!Container.Content(seasons)</visible></control>--><control type="image">
+						<!--<control type="label"><right>10</right><height>66</height><align>left</align><aligny>center</aligny><label>$VAR[LabelYear,, • ]$VAR[LabelDuration,, • ]$INFO[ListItem.Rating]</label><font>Flag</font><textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor><visible>!Container.Content(seasons)</visible></control>--><control type="image">
 							<left>0</left>
 							<top>0</top>
 							<width>235</width>
@@ -47,7 +47,7 @@
 							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label]</label>
 							<font>SmallBold</font>
-							<textcolor>white</textcolor>
+							<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						</control>
 						<control type="label" id="13370">
 							<left>15</left>
@@ -59,15 +59,15 @@
 							<align>center</align>
 							<font>symbolbiggest</font>
 							<label>$VAR[SwapDefaultImage]</label>
-							<textcolor>white</textcolor>
+							<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						</control>
-						<!--<control type="label"><left>245</left><height>66</height><align>left</align><aligny>center</aligny><label>$INFO[ListItem.Property(UnWatchedEpisodes),, $LOCALIZE[31215]]</label><font>Flag</font><textcolor>white</textcolor><visible>Container.Content(seasons)</visible></control>--><control type="label">
+						<!--<control type="label"><left>245</left><height>66</height><align>left</align><aligny>center</aligny><label>$INFO[ListItem.Property(UnWatchedEpisodes),, $LOCALIZE[31215]]</label><font>Flag</font><textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor><visible>Container.Content(seasons)</visible></control>--><control type="label">
 							<left>865</left>
 							<width>246</width>
 							<height>66</height>
 							<align>left</align>
 							<font>TinyBold</font>
-							<textcolor>white</textcolor>
+							<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 							<label>$VAR[LabelDirector]</label>
 							<visible>!Container.Content(movies)</visible>
 						</control>
@@ -77,7 +77,7 @@
 							<height>66</height>
 							<align>left</align>
 							<font>TinyBold</font>
-							<textcolor>white</textcolor>
+							<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 							<label>$INFO[ListItem.Director]</label>
 							<visible>Container.Content(movies)</visible>
 						</control>
@@ -87,7 +87,7 @@
 							<height>66</height>
 							<align>left</align>
 							<font>TinyBold</font>
-							<textcolor>white</textcolor>
+							<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 							<label>$INFO[ListItem.Genre]</label>
 						</control>
 						<control type="label">
@@ -96,7 +96,7 @@
 							<height>66</height>
 							<align>left</align>
 							<font>TinyBold</font>
-							<textcolor>white</textcolor>
+							<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 							<label>$INFO[ListItem.Cast]</label>
 						</control>
 						<control type="label">
@@ -105,7 +105,7 @@
 							<align>left</align>
 							<height>66</height>
 							<font>TinyBold</font>
-							<textcolor>white</textcolor>
+							<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 							<label>$INFO[ListItem.Studio]</label>
 						</control>
 						<control type="group">
@@ -195,15 +195,15 @@
 							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label]</label>
 							<font>SmallBold</font>
-							<textcolor>white</textcolor>
+							<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						</control>
-						<!--<control type="label"><left>245</left><height>66</height><align>left</align><aligny>center</aligny><label>$INFO[ListItem.Property(UnWatchedEpisodes),, $LOCALIZE[31215]]</label><font>Flag</font><textcolor>white</textcolor><visible>Container.Content(seasons)</visible></control>--><control type="label">
+						<!--<control type="label"><left>245</left><height>66</height><align>left</align><aligny>center</aligny><label>$INFO[ListItem.Property(UnWatchedEpisodes),, $LOCALIZE[31215]]</label><font>Flag</font><textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor><visible>Container.Content(seasons)</visible></control>--><control type="label">
 							<left>865</left>
 							<width>246</width>
 							<height>66</height>
 							<align>left</align>
 							<font>TinyBold</font>
-							<textcolor>white</textcolor>
+							<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 							<label>$VAR[LabelDirector]</label>
 						</control>
 						<control type="label">
@@ -212,7 +212,7 @@
 							<height>66</height>
 							<align>left</align>
 							<font>TinyBold</font>
-							<textcolor>white</textcolor>
+							<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 							<label>$INFO[ListItem.Genre]</label>
 						</control>
 						<control type="label">
@@ -221,7 +221,7 @@
 							<height>66</height>
 							<align>left</align>
 							<font>TinyBold</font>
-							<textcolor>white</textcolor>
+							<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 							<label>$INFO[ListItem.Cast]</label>
 						</control>
 						<control type="label">
@@ -230,7 +230,7 @@
 							<align>left</align>
 							<height>66</height>
 							<font>TinyBold</font>
-							<textcolor>white</textcolor>
+							<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 							<label>$INFO[ListItem.Studio]</label>
 						</control>
 						<control type="group">
@@ -323,8 +323,8 @@
 								<aligny>top</aligny>
 								<label>$VAR[LabelTitle]</label>
 								<font>SmallBold</font>
-								<textcolor>Dark1</textcolor>
-								<selectedcolor>Dark1</selectedcolor>
+								<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+								<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 							</control>
 							<control type="label">
 								<top>32</top>
@@ -350,9 +350,9 @@
 							<aligny>center</aligny>
 							<label>$INFO[ListItem.TrackNumber]. $INFO[ListItem.Artist]$INFO[ListItem.Title, • ,]</label>
 							<font>SmallBold</font>
-							<textcolor>white</textcolor>
+							<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						</control>
-						<!--<control type="label"><top>32</top><left>340</left><right>50</right><height>40</height><align>left</align><aligny>top</aligny><label fallback="19055">$INFO[ListItem.TrackNumber]. $INFO[ListItem.Artist]$INFO[ListItem.Title, • ,]</label><font>Tiny</font><textcolor>white</textcolor></control>--></itemlayout>
+						<!--<control type="label"><top>32</top><left>340</left><right>50</right><height>40</height><align>left</align><aligny>top</aligny><label fallback="19055">$INFO[ListItem.TrackNumber]. $INFO[ListItem.Artist]$INFO[ListItem.Title, • ,]</label><font>Tiny</font><textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor></control>--></itemlayout>
 					<focusedlayout width="1900" height="330" condition="!Container.Content(episodes) + !Container.Content(albums) + !Container.Content(songs)">
 						<control type="button">
 							<texturefocus>-</texturefocus>
@@ -981,7 +981,7 @@
 					<label>$INFO[Window(Home).Property(SkinHelper.ListItemStudios)]</label>
 					<fadetime>500</fadetime>
 				</control>
-				<!--<control type="label"><left>337</left><right>10</right><top>303</top><aligny>center</aligny><height>26</height><align>right</align><font>Tiny</font><textcolor>white</textcolor><visible>!Container.Content(seasons)</visible><label fallback="19055">$VAR[LabelYear,, • ]$VAR[LabelDuration,, • ]$INFO[ListItem.Rating]</label></control>--><visible>!stringcompare(ListItem.Label,..) + !Container.Content(albums) + !Container.Content(songs)</visible>
+				<!--<control type="label"><left>337</left><right>10</right><top>303</top><aligny>center</aligny><height>26</height><align>right</align><font>Tiny</font><textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor><visible>!Container.Content(seasons)</visible><label fallback="19055">$VAR[LabelYear,, • ]$VAR[LabelDuration,, • ]$INFO[ListItem.Rating]</label></control>--><visible>!stringcompare(ListItem.Label,..) + !Container.Content(albums) + !Container.Content(songs)</visible>
 			</control>
 			<include>Furniture_ScrollbarT</include>
 		</control>

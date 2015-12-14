@@ -31,7 +31,7 @@
 				<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
 				<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
 				<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
-				<righttexture colordiffuse="white2">osd/progress-end.png</righttexture>
+				<righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>
 				<visible>ListItem.IsResumable</visible>
 			</control>
 				<control type="image">
@@ -170,8 +170,8 @@
 					<height>100</height>
 					<width>125%</width>
 					<font>SmallBold</font>
-					<textcolor>Dark1</textcolor>
-					<selectedcolor>Dark1</selectedcolor>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+					<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 					<label>$VAR[LabelDirector]</label>
 				</control>
 				<control type="label">
@@ -182,8 +182,8 @@
 					<aligny>center</aligny>
 					<font>Small</font>
 					<width>950</width>
-					<textcolor>Dark1</textcolor>
-					<selectedcolor>Dark1</selectedcolor>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+					<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 					<label>$VAR[LabelGenre]</label>
 				</control>
 				</control>
