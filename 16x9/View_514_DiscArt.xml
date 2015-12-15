@@ -132,10 +132,10 @@
 						<control type="button">
 							<texturefocus>-</texturefocus>
 							<texturenofocus>-</texturenofocus>
-							<onfocus>SetProperty(cfa_ignore_set,True,home)</onfocus>
+							<onfocus>ClearProperty(cfa_ignore_set,home)</onfocus>
 							<onfocus condition="Container.Content(movies)">ClearProperty(TVShowID,home)</onfocus>
 							<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
-							<onfocus condition="!Container.Scrolling">RunScript(script.colorbox,info=blur,id='"$INFO[ListItem.Art(fanart)]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfo)</onfocus>
+						<onfocus condition="!Container.Scrolling">RunScript(script.colorbox,info=blur,id='"$VAR[PosterImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfo)</onfocus>
 						</control>
 						<control type="image">
 							<aspectratio scalediffuse="false">scale</aspectratio>
@@ -261,7 +261,7 @@
 							<height>90</height>
 							<autoscroll>false</autoscroll>
 							<font>MediumBold</font>
-							<textcolor>$INFO[Window(home).Property(VideoInfo.ImageColor)]</textcolor>
+							<textcolor>$VAR[ColorboxPowerModeColor]</textcolor>
 							<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 							<label>$INFO[ListItem.Rating]$VAR[LabelDuration, ]$VAR[MPAA, ][CR]$VAR[HDSD, ]$VAR[LabelYear, ]</label>
 							<animation type="Focus">
@@ -277,7 +277,7 @@
 							<height>90</height>
 							<autoscroll>false</autoscroll>
 							<font>MediumBold</font>
-							<textcolor>$INFO[Window(home).Property(VideoInfo.ImageColor)]</textcolor>
+							<textcolor>$VAR[ColorboxPowerModeColor]</textcolor>
 							<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 							<label>$INFO[ListItem.Rating]$VAR[LabelDuration, ]$VAR[MPAA, ][CR]$INFO[ListItem.Studio, ]</label>
 							<animation type="Focus">

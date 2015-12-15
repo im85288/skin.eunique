@@ -11,6 +11,13 @@
 	<controls>
 		<include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
 		<include>Furniture_NowPlaying</include>
+		<control type="group">
+			<animation type="Conditional" reversible="true" condition="!Control.IsVisible(515) + !Control.IsVisible(500) + !Control.IsVisible(52) + !Control.IsVisible(53) + !Control.IsVisible(50) + !Control.IsVisible(518) + Skin.HasSetting(furniture.hidecastwidget) + !Control.HasFocus(508923)">
+				<effect type="slide" end="0,75" time="200" center="auto" tween="quadratic" easing="out" />
+			</animation>
+			<animation type="Conditional" reversible="true" condition="!Control.IsVisible(515) + !Control.IsVisible(500) + !Control.IsVisible(53) + !Control.IsVisible(52) + Control.IsVisible(50) + Skin.HasSetting(furniture.hidecastwidget) + !Control.HasFocus(508923)">
+				<effect type="slide" end="0,41" time="200" center="auto" tween="quadratic" easing="out" />
+			</animation>
 		<include>Furniture_Cast</include>
 		<include >View_50_List</include>
 		<include >View_52_BigList</include>
@@ -27,6 +34,7 @@
 		<include>View_516_ArtAttack</include>
 		<include>View_518_DVFlex</include>
 		<!--<include>Furniture_NowPlaying</include>-->
+		</control>
 		<control type="group">
 			<include>Animation.Common.Killer</include>
 			<include>Furniture_EmbyClock</include>

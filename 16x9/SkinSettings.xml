@@ -402,7 +402,14 @@
 					<onup>9002</onup>
 					<ondown>9002</ondown>
 					<visible>Container(9000).HasFocus(4)</visible>
-					<control type="radiobutton" id="92615" description="Hide indicators">
+					<control type="radiobutton" id="92609" description="Hide widget">
+						<width>1410</width>
+						<include>DefSettingsButton2</include>
+						<label>32098</label>
+						<selected>Skin.HasSetting(furniture.hidecastwidget)</selected>
+						<onclick>Skin.ToggleSetting(furniture.hidecastwidget)</onclick>
+					</control>
+					<control type="radiobutton" id="92610" description="Hide indicators">
 						<width>1410</width>
 						<include>DefSettingsButton2</include>
 						<label>31888</label>
@@ -635,7 +642,7 @@
 					</control>
 				</control>
 				<control type="grouplist" id="9004">
-					<description>Advanced control area</description>
+					<description>Advanced colour control area</description>
 					<left>500</left>
 					<top>72</top>
 					<height>721</height>
@@ -653,12 +660,24 @@
 						<label>31901</label>
 						<label2>[COLOR=$VAR[ColourHighlight]]$INFO[Skin.String(focus.color.name)][/COLOR]</label2>
 					</control>
+					<control type="button" id="9283">
+						<width>1410</width>
+						<include>DefSettingsButton2</include>
+						<onclick>Skin.Reset(focus.color.name)</onclick>
+						<label>32097</label>
+					</control>
 					<control type="button" id="9285">
 						<width>1410</width>
 						<include>DefSettingsButton2</include>
 						<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=altfocus.color.name)</onclick>
 						<label>31903</label>
 						<label2>[COLOR=$VAR[ColourHighlight2]]$INFO[Skin.String(altfocus.color.name)][/COLOR]</label2>
+					</control>
+					<control type="button" id="9286">
+						<width>1410</width>
+						<include>DefSettingsButton2</include>
+						<onclick>Skin.Reset(altfocus.color.name)</onclick>
+						<label>32097</label>
 					</control>
 					<control type="button" id="9288">
 						<width>1410</width>
@@ -667,12 +686,24 @@
 						<label>31905</label>
 						<label2>[COLOR=$VAR[ColourSelected]]$INFO[Skin.String(selected.color.name)][/COLOR]</label2>
 					</control>
+					<control type="button" id="9289">
+						<width>1410</width>
+						<include>DefSettingsButton2</include>
+						<onclick>Skin.Reset(selected.color.name)</onclick>
+						<label>32097</label>
+					</control>
 					<control type="button" id="92801">
 						<width>1410</width>
 						<include>DefSettingsButton2</include>
 						<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=border.color.name)</onclick>
 						<label> - $LOCALIZE[31129]</label>
 						<label2>[COLOR=$VAR[BorderHighlightColour]]$INFO[Skin.String(border.color.name)][/COLOR]</label2>
+					</control>
+					<control type="button" id="92802">
+						<width>1410</width>
+						<include>DefSettingsButton2</include>
+						<onclick>Skin.Reset(border.color.name)</onclick>
+						<label>32097</label>
 					</control>
 					<control type="button" id="92876">
 						<width>1410</width>
@@ -681,12 +712,24 @@
 						<label>31925</label>
 						<label2>[COLOR=$VAR[EmbyMenuColourHighlight]]$INFO[Skin.String(emby.menu.color.name)][/COLOR]</label2>
 					</control>
+					<control type="button" id="92877">
+						<width>1410</width>
+						<include>DefSettingsButton2</include>
+						<onclick>Skin.Reset(emby.menu.color.name)</onclick>
+						<label>32097</label>
+					</control>
 					<control type="button" id="92884">
 						<width>1410</width>
 						<include>DefSettingsButton2</include>
 						<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=emby.menu.text.color.name)</onclick>
 						<label>31927</label>
 						<label2>[COLOR=$VAR[EmbyMenuTextColourHighlight]]$INFO[Skin.String(emby.menu.text.color.name)][/COLOR]</label2>
+					</control>
+					<control type="button" id="92885">
+						<width>1410</width>
+						<include>DefSettingsButton2</include>
+						<onclick>Skin.Reset(emby.menu.text.color.name)</onclick>
+						<label>32097</label>
 					</control>
 					<control type="button" id="92870">
 						<width>1410</width>
@@ -695,12 +738,24 @@
 						<label>31919</label>
 						<label2>[COLOR=$VAR[EmbyLeftColourHighlight]]$INFO[Skin.String(emby.left.color.name)][/COLOR]</label2>
 					</control>
+					<control type="button" id="92871">
+						<width>1410</width>
+						<include>DefSettingsButton2</include>
+						<onclick>Skin.Reset(emby.left.color.name)</onclick>
+						<label>32097</label>
+					</control>
 					<control type="button" id="92872">
 						<width>1410</width>
 						<include>DefSettingsButton2</include>
 						<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=emby.right.color.name)</onclick>
 						<label>31921</label>
 						<label2>[COLOR=$VAR[EmbyRightColourHighlight]]$INFO[Skin.String(emby.right.color.name)][/COLOR]</label2>
+					</control>
+					<control type="button" id="92873">
+						<width>1410</width>
+						<include>DefSettingsButton2</include>
+						<onclick>Skin.Reset(emby.right.color.name)</onclick>
+						<label>32097</label>
 					</control>
 					<control type="button" id="92874">
 						<width>1410</width>
@@ -709,13 +764,24 @@
 						<label>31923</label>
 						<label2>[COLOR=$VAR[EmbyMiddleColourHighlight]]$INFO[Skin.String(emby.middle.color.name)][/COLOR]</label2>
 					</control>
-					<!-- -->
+					<control type="button" id="92875">
+						<width>1410</width>
+						<include>DefSettingsButton2</include>
+						<onclick>Skin.Reset(emby.middle.color.name)</onclick>
+						<label>32097</label>
+					</control>
 					<control type="button" id="92816">
 						<width>1410</width>
 						<include>DefSettingsButton2</include>
 						<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=backing.color.name)</onclick>
 						<label>32064</label>
 						<label2>[COLOR=$VAR[BackingColourHighlight]]$INFO[Skin.String(backing.color.name)][/COLOR]</label2>
+					</control>
+					<control type="button" id="92817">
+						<width>1410</width>
+						<include>DefSettingsButton2</include>
+						<onclick>Skin.Reset(backing.color.name)</onclick>
+						<label>32097</label>
 					</control>
 					<control type="button" id="92818">
 						<width>1410</width>
@@ -724,12 +790,24 @@
 						<label>31907</label>
 						<label2>[COLOR=$VAR[WatchedColourHighlight]]$INFO[Skin.String(watched.color.name)][/COLOR]</label2>
 					</control>
+					<control type="button" id="92819">
+						<width>1410</width>
+						<include>DefSettingsButton2</include>
+						<onclick>Skin.Reset(watched.color.name)</onclick>
+						<label>32097</label>
+					</control>
 					<control type="button" id="92828">
 						<width>1410</width>
 						<include>DefSettingsButton2</include>
 						<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=unwatched.color.name)</onclick>
 						<label>31909</label>
 						<label2>[COLOR=$VAR[UnwatchedColourHighlight]]$INFO[Skin.String(unwatched.color.name)][/COLOR]</label2>
+					</control>
+					<control type="button" id="92829">
+						<width>1410</width>
+						<include>DefSettingsButton2</include>
+						<onclick>Skin.Reset(unwatched.color.name)</onclick>
+						<label>32097</label>
 					</control>
 					<!--
 					<control type="radiobutton" id="92837">
@@ -757,12 +835,24 @@
 						<label>31913</label>
 						<label2>[COLOR=$VAR[ResumeColourHighlight]]$INFO[Skin.String(resume.color.name)][/COLOR]</label2>
 					</control>
+					<control type="button" id="92849">
+						<width>1410</width>
+						<include>DefSettingsButton2</include>
+						<onclick>Skin.Reset(resume.color.name)</onclick>
+						<label>32097</label>
+					</control>
 					<control type="button" id="92858">
 						<width>1410</width>
 						<include>DefSettingsButton2</include>
 						<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=playing.color.name)</onclick>
 						<label>31915</label>
 						<label2>[COLOR=$VAR[PlayingColourHighlight]]$INFO[Skin.String(playing.color.name)][/COLOR]</label2>
+					</control>
+					<control type="button" id="92859">
+						<width>1410</width>
+						<include>DefSettingsButton2</include>
+						<onclick>Skin.Reset(playing.color.name)</onclick>
+						<label>32097</label>
 					</control>
 					<control type="button" id="92878">
 						<width>1410</width>
@@ -771,12 +861,24 @@
 						<label>31929</label>
 						<label2>[COLOR=$VAR[ColourFlags]]$INFO[Skin.String(emby.flags.color.name)][/COLOR]</label2>
 					</control>
+					<control type="button" id="92879">
+						<width>1410</width>
+						<include>DefSettingsButton2</include>
+						<onclick>Skin.Reset(emby.flags.color.name)</onclick>
+						<label>32097</label>
+					</control>
 					<control type="button" id="92880">
 						<width>1410</width>
 						<include>DefSettingsButton2</include>
 						<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=emby.flags.text.color.name)</onclick>
 						<label>31931</label>
 						<label2>[COLOR=$VAR[ColourTextFlags]]$INFO[Skin.String(emby.flags.text.color.name)][/COLOR]</label2>
+					</control>
+					<control type="button" id="92881">
+						<width>1410</width>
+						<include>DefSettingsButton2</include>
+						<onclick>Skin.Reset(emby.flags.text.color.name)</onclick>
+						<label>32097</label>
 					</control>
 					<control type="button" id="92882">
 						<width>1410</width>
@@ -785,12 +887,24 @@
 						<label>31933</label>
 						<label2>[COLOR=$VAR[ColourIconFlags]]$INFO[Skin.String(emby.flags.icon.color.name)][/COLOR]</label2>
 					</control>
+					<control type="button" id="92883">
+						<width>1410</width>
+						<include>DefSettingsButton2</include>
+						<onclick>Skin.Reset(emby.flags.icon.color.name)</onclick>
+						<label>32097</label>
+					</control>
 					<control type="button" id="928884">
 						<width>1410</width>
 						<include>DefSettingsButton2</include>
 						<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=now.playing.background.color.name)</onclick>
 						<label>32071</label>
 						<label2>[COLOR=$VAR[NowPlayingBackgroundColourHighlight]]$INFO[Skin.String(now.playing.background.color.name)][/COLOR]</label2>
+					</control>
+					<control type="button" id="928885">
+						<width>1410</width>
+						<include>DefSettingsButton2</include>
+						<onclick>Skin.Reset(now.playing.background.color.name)</onclick>
+						<label>32097</label>
 					</control>
 					<control type="button" id="92886">
 						<width>1410</width>
@@ -799,12 +913,24 @@
 						<label>32073</label>
 						<label2>[COLOR=$VAR[NowPlayingProgressColourHighlight]]$INFO[Skin.String(now.playing.progress.color.name)][/COLOR]</label2>
 					</control>
+					<control type="button" id="92887">
+						<width>1410</width>
+						<include>DefSettingsButton2</include>
+						<onclick>Skin.Reset(now.playing.progress.color.name)</onclick>
+						<label>32097</label>
+					</control>
 					<control type="button" id="92888">
 						<width>1410</width>
 						<include>DefSettingsButton2</include>
 						<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=pvr.background.color.name)</onclick>
 						<label>32080</label>
 						<label2>[COLOR=$VAR[PVRBackgroundColour]]$INFO[Skin.String(pvr.background.color.name)][/COLOR]</label2>
+					</control>
+					<control type="button" id="92889">
+						<width>1410</width>
+						<include>DefSettingsButton2</include>
+						<onclick>Skin.Reset(pvr.background.color.name)</onclick>
+						<label>32097</label>
 					</control>
 					<control type="button" id="92890">
 						<width>1410</width>
@@ -816,9 +942,21 @@
 					<control type="button" id="92891">
 						<width>1410</width>
 						<include>DefSettingsButton2</include>
+						<onclick>Skin.Reset(bottom.bar.color.name)</onclick>
+						<label>32097</label>
+					</control>
+					<control type="button" id="92991">
+						<width>1410</width>
+						<include>DefSettingsButton2</include>
 						<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=disabled.color.name)</onclick>
 						<label>32096</label>
 						<label2>[COLOR=$VAR[DisabledColour]]$INFO[Skin.String(disabled.color.name)][/COLOR]</label2>
+					</control>
+					<control type="button" id="92992">
+						<width>1410</width>
+						<include>DefSettingsButton2</include>
+						<onclick>Skin.Reset(disabled.color.name)</onclick>
+						<label>32097</label>
 					</control>
 				</control>
 				<control type="grouplist" id="9009">

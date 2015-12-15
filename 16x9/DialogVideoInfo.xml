@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
+	<onload>ClearProperty(VideoInfo.ImageFilter,home)</onload>
 	<onload condition="System.HasAddon(script.videoextras)">RunScript(script.videoextras,check,"$INFO[ListItem.FilenameAndPath]")</onload>
 	<onload>RunScript(script.colorbox,info=blur,id='"$INFO[ListItem.Art(fanart)]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfo)</onload>
 	<onload>RunScript(script.colorbox,info=blur,id='"$VAR[PosterImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoPosterInfo)</onload>
@@ -385,6 +386,7 @@
 				<align>justify</align>
 				<font>Medium</font>
 				<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+				<shadowcolor>$VAR[EmbyMenuColourHighlight]</shadowcolor>
 				<label>$VAR[PlotCritic]</label>
 			</control>
 			<control type="group">
@@ -944,6 +946,7 @@
 					<autoscroll time="3000">!Control.HasFocus(9500) + !Control.HasFocus(95004)</autoscroll>
 					<focusposition>0</focusposition>
 					<itemlayout height="210" width="140">
+						<control type="group">
 						<control type="label">
 							<left>0</left>
 							<top>0</top>
@@ -961,6 +964,21 @@
 							<aspectratio scalediffuse="false">stretch</aspectratio>
 							<texture colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]" background="true">$VAR[PosterImage]</texture>
 						</control>
+						<control type="progress">
+							<bottom>0</bottom>
+							<height>8</height>
+							<info>ListItem.PercentPlayed</info>
+							<overlaytexture>-</overlaytexture>
+							<texturebg colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]">osd/progress-bg.png</texturebg>
+							<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
+							<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
+							<righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>
+							<visible>ListItem.IsResumable</visible>
+						</control>
+					<animation type="Conditional" reversible="true" condition="Control.HasFocus(9500)">
+							<effect type="zoom" start="100" end="85" time="200" center="auto" tween="quadratic" easing="out"/>
+						</animation>
+					</control>
 					</itemlayout>
 					<focusedlayout height="210" width="140">
 						<control type="group">
@@ -1009,9 +1027,17 @@
 								<label>$INFO[ListItem.Rating]$INFO[ListItem.Votes,[CR](, $LOCALIZE[20350])]</label>
 								<visible>Control.HasFocus(9500)</visible>
 							</control>
-							<animation type="Focus" reversible="false">
-								<effect type="zoom" start="100" end="110" time="200" center="auto" tween="quadratic" easing="out"/>
-							</animation>
+							<control type="progress">
+								<bottom>0</bottom>
+								<height>8</height>
+								<info>ListItem.PercentPlayed</info>
+								<overlaytexture>-</overlaytexture>
+								<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
+								<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
+								<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
+								<righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>
+								<visible>ListItem.IsResumable</visible>
+							</control>
 						</control>
 					</focusedlayout>
 					<content>$VAR[DefWidgetContentVideoInfo]</content>
@@ -1795,6 +1821,7 @@
 				<autoscroll time="3000">!Control.HasFocus(9501)</autoscroll>
 				<focusposition>0</focusposition>
 				<itemlayout height="210" width="140">
+					<control type="group">
 					<control type="label">
 						<left>0</left>
 						<top>0</top>
@@ -1811,6 +1838,21 @@
 					<control type="image">
 						<aspectratio scalediffuse="false">stretch</aspectratio>
 						<texture colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]" background="true">$VAR[PosterImage]</texture>
+					</control>
+					<control type="progress">
+						<bottom>0</bottom>
+						<height>8</height>
+						<info>ListItem.PercentPlayed</info>
+						<overlaytexture>-</overlaytexture>
+						<texturebg colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]">osd/progress-bg.png</texturebg>
+						<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
+						<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
+						<righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>
+						<visible>ListItem.IsResumable</visible>
+					</control>
+					<animation type="Conditional" reversible="true" condition="Control.HasFocus(9501)">
+							<effect type="zoom" start="100" end="85" time="200" center="auto" tween="quadratic" easing="out"/>
+						</animation>
 					</control>
 				</itemlayout>
 				<focusedlayout height="210" width="140">
@@ -1860,9 +1902,17 @@
 							<label>$INFO[ListItem.Rating]$INFO[ListItem.Votes,[CR](, $LOCALIZE[20350])]</label>
 							<visible>Control.HasFocus(9500)</visible>
 						</control>
-						<animation type="Focus" reversible="false">
-							<effect type="zoom" start="100" end="110" time="200" center="auto" tween="quadratic" easing="out"/>
-						</animation>
+						<control type="progress">
+							<bottom>0</bottom>
+							<height>8</height>
+							<info>ListItem.PercentPlayed</info>
+							<overlaytexture>-</overlaytexture>
+							<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
+							<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
+							<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
+							<righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>
+							<visible>ListItem.IsResumable</visible>
+						</control>
 					</control>
 				</focusedlayout>
 				<content>$VAR[DefWidgetContentVideoInfoCast]</content>

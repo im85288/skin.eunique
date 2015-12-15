@@ -903,12 +903,12 @@
 		<value condition="!IsEmpty(ListItem.Tagline)">$INFO[ListItem.Tagline]</value>
 	</variable>
 	<variable name="IndicatorColourHighlight">
-		<value condition="ListItem.IsResumable + Skin.HasSetting(ResumeColour)">$INFO[Skin.String(resume.color.name)]</value>
-		<value condition="stringcompare(ListItem.Overlay,OverlayWatched.png) + Skin.HasSetting(WatchedColour)">$INFO[Skin.String(watched.color.name)]</value>
-		<value condition="ListItem.IsPlaying + Skin.HasSetting(PlayingColour)">$INFO[Skin.String(playing.color.name)]</value>
-		<value condition="stringcompare(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(UnwatchedColour)">$INFO[Skin.String(unwatched.color.name)]</value>
-		<value condition="!ListItem.IsResumable + !stringcompare(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsPlaying + !stringcompare(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(UnwatchedColour)">$INFO[Skin.String(unwatched.color.name)]</value>
-		<value>$VAR[EmbyMenuTextColourHighlight]</value>
+		<value condition="ListItem.IsResumable">$VAR[ResumeColourHighlight]</value>
+		<value condition="stringcompare(ListItem.Overlay,OverlayWatched.png)">$VAR[WatchedColourHighlight]</value>
+		<value condition="ListItem.IsPlaying + Skin.HasSetting(PlayingColour)">$VAR[PlayingColourHighlight]</value>
+		<value condition="stringcompare(ListItem.Overlay,OverlayUnwatched.png)">$VAR[UnwatchedColourHighlight]</value>
+		<value condition="!ListItem.IsResumable + !stringcompare(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsPlaying + !stringcompare(ListItem.Overlay,OverlayUnwatched.png)">$VAR[UnwatchedColourHighlight]</value>
+		<value>$VAR[UnwatchedColourHighlight]</value>
 	</variable>
 	<variable name="SelectionColourHighlight">
 		<value condition="Control.HasFocus(8) | Control.HasFocus(1)">$VAR[EmbyMiddleColourHighlight]</value>
@@ -1290,7 +1290,8 @@
 		<value condition="Control.HasFocus(9221)">$LOCALIZE[32005]</value>
 		<value condition="Control.HasFocus(9222)">$LOCALIZE[32006]</value>
 		<value condition="Container(9000).HasFocus(3)">$LOCALIZE[31994]</value>
-		<value condition="Control.HasFocus(92615)">$LOCALIZE[32013]</value>
+		<value condition="Control.HasFocus(92609)">$LOCALIZE[32099]</value>
+		<value condition="Control.HasFocus(92610)">$LOCALIZE[32013]</value>
 		<value condition="Control.HasFocus(92611)">$LOCALIZE[32014]</value>
 		<value condition="Control.HasFocus(92612)">$LOCALIZE[32015]</value>
 		<value condition="Control.HasFocus(92613)">$LOCALIZE[32016]</value>
