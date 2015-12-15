@@ -2,6 +2,7 @@
 <!-- Foundation -->
 <window>
 	<defaultcontrol always="true">9315</defaultcontrol>
+	<onload>SetProperty(cfa_ignore_set,True,home)</onload>
 	<onload>SetProperty(SkinInitStarted,1,home)</onload>
 	<onload condition="System.HasAddon(script.colorbox)">RunScript(script.colorbox,daemon=True,pixels=$VAR[VideoInfoBlurLevel],bits=1,radius=$VAR[VideoInfoBlurLevel])</onload>
 	<controls>

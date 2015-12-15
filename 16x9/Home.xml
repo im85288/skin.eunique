@@ -3,6 +3,7 @@
 <window id="0">
 	<defaultcontrol always="true">300</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
+	<onload>SetProperty(cfa_ignore_set,True,home)</onload>
 	<onload>RunScript(script.favourites)</onload>
 	<onload condition="System.HasAddon(service.smartish.widgets)">Skin.SetBool(enable.smartish.widgets)</onload>
 	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=300&amp;group=mainmenu)</onload>
