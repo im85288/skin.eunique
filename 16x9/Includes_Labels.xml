@@ -1049,6 +1049,7 @@
 		<value>$INFO[ListItem.VideoCodec]</value>
 	</variable>
 	<variable name="DurationLong">
+		<value condition="Skin.HasSetting(home.vertical.widgets)">$INFO[ListItem.Duration,,$LOCALIZE[31102]]</value>
 		<value condition="!IsEmpty(Window(home).Property(SkinHelper.MovieSet.Duration.Hours))">$INFO[Window(Home).Property(SkinHelper.MovieSet.Duration.Hours),,h]$INFO[Window(Home).Property(SkinHelper.MovieSet.Duration.Minutes), ,min]</value>
 		<value condition="!IsEmpty(Window(home).Property(SkinHelper.ListItemDuration.Hours)) + IntegerGreaterThan(Window(Home).Property(SkinHelper.ListItemDuration.Hours),0)">$INFO[Window(Home).Property(SkinHelper.ListItemDuration.Hours),,h]$INFO[Window(Home).Property(SkinHelper.ListItemDuration.Minutes), ,min]</value>
 		<value condition="!IsEmpty(Window(home).Property(SkinHelper.ListItemDuration.Hours)) + !IntegerGreaterThan(Window(Home).Property(SkinHelper.ListItemDuration.Hours),0)">$INFO[Window(Home).Property(SkinHelper.ListItemDuration.Minutes), ,min]</value>
