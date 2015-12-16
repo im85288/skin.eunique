@@ -3,7 +3,10 @@
 <includes>
 	<include name="View_601_MusicBlox">
 		<control type="group">
-			<include>Animation.Common</include>
+			<include condition="!Skin.HasSetting(low.power)">Animation.Common</include>
+			<include condition="Skin.HasSetting(low.power)">Animation.Common.Lowpower</include>
+			<include condition="!Skin.HasSetting(low.power)">Animation.Common.Overlay</include>
+			<include condition="Skin.HasSetting(low.power)">Animation.Common.Overlay.Lowpower</include>
 			<visible>Control.IsVisible(601)</visible>
 			<control type="group">
 				<top>110</top>
