@@ -7,13 +7,12 @@
 	<include name="View_52_BigList_DoublePane">
 		<description>List View (id=52)</description>
 		<control type="group">
-			<include>Animation.Common</include>
+			<include condition="!Skin.HasSetting(low.power)">Animation.Common</include>
+			<include condition="Skin.HasSetting(low.power)">Animation.Common.Lowpower</include>
+			<include condition="!Skin.HasSetting(low.power)">Animation.Common.Overlay</include>
+			<include condition="Skin.HasSetting(low.power)">Animation.Common.Overlay.Lowpower</include>
 			<visible>Control.IsVisible(52)</visible>
 			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml)</visible>
-			<animation type="Conditional" reversible="true" condition="![Skin.HasSetting(osd.hidespoilers) + Container.Content(episodes) + [stringcompare(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]] + [Container.Content(musicvideos) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets) | Container.Content(episodes)] + !System.IdleTime(26) + System.IdleTime(5) + Skin.HasSetting(furniture.overlayinfo) + ![ControlGroup(9000).HasFocus() | Window.IsVisible(DialogContextMenu.xml)]">
-				<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out" />
-				<effect type="zoom" end="1000,7" time="200" center="auto" tween="quadratic" easing="out" />
-			</animation>
 			<control type="panel" id="52">
 				<top>TopPad</top>
 				<left>10</left>
@@ -148,13 +147,12 @@
 	<include name="View_53_BigListInfo">
 		<description>List View (id=53)</description>
 		<control type="group">
-			<include>Animation.Common</include>
+			<include condition="!Skin.HasSetting(low.power)">Animation.Common</include>
+			<include condition="Skin.HasSetting(low.power)">Animation.Common.Lowpower</include>
+			<include condition="!Skin.HasSetting(low.power)">Animation.Common.Overlay</include>
+			<include condition="Skin.HasSetting(low.power)">Animation.Common.Overlay.Lowpower</include>
 			<visible>Control.IsVisible(53)</visible>
 			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml)</visible>
-			<animation type="Conditional" reversible="true" condition="![Skin.HasSetting(osd.hidespoilers) + Container.Content(episodes) + [stringcompare(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]] + [Container.Content(musicvideos) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets) | Container.Content(episodes)] + !System.IdleTime(26) + System.IdleTime(5) + Skin.HasSetting(furniture.overlayinfo) + ![ControlGroup(9000).HasFocus() | Window.IsVisible(DialogContextMenu.xml)]">
-				<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out" />
-				<effect type="zoom" end="1000,7" time="200" center="auto" tween="quadratic" easing="out" />
-			</animation>
 			<control type="panel" id="53">
 				<top>TopPad</top>
 				<left>10</left>
