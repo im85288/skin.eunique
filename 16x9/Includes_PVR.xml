@@ -225,8 +225,8 @@
 				</control>
 				<control type="label">
 					<top>20</top>
-					<left>75</left>
-					<right>75</right>
+					<left>35</left>
+					<right>35</right>
 					<aligny>center</aligny>
 					<align>center</align>
 					<height>38</height>
@@ -332,7 +332,7 @@
 	<include name="PVRView_50">
 		<control type="group">
 			<visible>Control.IsVisible(50)</visible>
-			<include>Animation.Common</include>
+			<include condition="!Skin.HasSetting(low.power)">Animation.Common</include><include condition="Skin.HasSetting(low.power)">Animation.Common.Lowpower</include>
 			<control type="group">
 				<left>10</left>
 				<width>900</width>
@@ -620,7 +620,7 @@
 	<include name="PVRView_51">
 		<control type="group">
 			<visible>Control.IsVisible(51)</visible>
-			<include>Animation.Common</include>
+			<include condition="!Skin.HasSetting(low.power)">Animation.Common</include><include condition="Skin.HasSetting(low.power)">Animation.Common.Lowpower</include>
 			<control type="group">
 				<top>TopPad</top>
 				<control type="image">
@@ -1047,7 +1047,7 @@
 	<include name="PVRView_52">
 		<control type="group">
 			<visible>Control.IsVisible(52)</visible>
-			<include>Animation.Common</include>
+			<include condition="!Skin.HasSetting(low.power)">Animation.Common</include><include condition="Skin.HasSetting(low.power)">Animation.Common.Lowpower</include>
 			<top>TopPad</top>
 			<control type="image">
 				<texture colordiffuse="$VAR[PVRBackgroundColour]">common/box.png</texture>
@@ -1382,7 +1382,7 @@
 	<include name="PVRTimerView_50">
 		<control type="group">
 			<visible>Control.IsVisible(50)</visible>
-			<include>Animation.Common</include>
+			<include condition="!Skin.HasSetting(low.power)">Animation.Common</include><include condition="Skin.HasSetting(low.power)">Animation.Common.Lowpower</include>
 			<control type="group">
 				<left>NewSidePad</left>
 				<right>NewSidePad</right>
@@ -1666,7 +1666,7 @@
 	<include name="PVRSearchView_50">
 		<control type="group">
 			<visible>Control.IsVisible(50)</visible>
-			<include>Animation.Common</include>
+			<include condition="!Skin.HasSetting(low.power)">Animation.Common</include><include condition="Skin.HasSetting(low.power)">Animation.Common.Lowpower</include>
 			<control type="group">
 				<left>NewSidePad</left>
 				<right>NewSidePad</right>
@@ -1988,7 +1988,7 @@
 	<include name="PVRRecordingsView_50">
 		<control type="group">
 			<visible>Control.IsVisible(50)</visible>
-			<include>Animation.Common</include>
+			<include condition="!Skin.HasSetting(low.power)">Animation.Common</include><include condition="Skin.HasSetting(low.power)">Animation.Common.Lowpower</include>
 			<control type="group">
 				<left>NewSidePad</left>
 				<right>NewSidePad</right>

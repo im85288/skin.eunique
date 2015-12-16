@@ -14,7 +14,7 @@
 			<right>NewSidePad</right>
 			<top>TopPad</top>
 			<!--animations-->
-			<include>Animation.Common</include>
+			<include condition="!Skin.HasSetting(low.power)">Animation.Common</include><include condition="Skin.HasSetting(low.power)">Animation.Common.Lowpower</include>
 			<control type="image">
 				<height>72</height>
 				<texture>common/white.png</texture>

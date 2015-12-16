@@ -856,10 +856,14 @@
 	</variable>
 	<variable name="ColorboxPowerModeImage">
 		<value condition="Window.IsVisible(DialogVideoInfo.xml) + !Skin.HasSetting(low.power)">$INFO[Window(home).Property(VideoInfo.ImageFilter)]</value>
-		<value condition="Window.IsVisible(DialogVideoInfo.xml) + Skin.HasSetting(low.power) + Skin.HasSetting(toggled.dv.info)">common/box.png</value>
+		<value condition="Window.IsVisible(DialogVideoInfo.xml) + Skin.HasSetting(low.power) + Skin.HasSetting(toggled.dv.info)">diffuse/dv-mask.png</value>
 		<value condition="Window.IsVisible(DialogVideoInfo.xml) + Skin.HasSetting(low.power)">$INFO[ListItem.Art(fanart)]</value>
+		<value condition="Window.IsVisible(Home.xml) + !Skin.HasSetting(low.power)">$INFO[Window(home).Property(HomeInfo.ImageFilter)]</value>
+		<value condition="Window.IsVisible(Home.xml) + Skin.HasSetting(low.power)">$VAR[GlobalFanart]</value>
 		<value condition="Control.IsVisible(50) + !Skin.HasSetting(low.power)">$INFO[Window(home).Property(VideoInfo.ImageFilter)]</value>
-		<value condition="Control.IsVisible(50) + Skin.HasSetting(low.power)">common/box.png</value>
+		<value condition="Control.IsVisible(50) + Skin.HasSetting(low.power)">$VAR[PosterImage]</value>
+		<value condition="Control.IsVisible(57) + !Skin.HasSetting(low.power)">$INFO[Window(home).Property(VideoInfoExtra.ImageFilter)]</value>
+		<value condition="Control.IsVisible(57) + Skin.HasSetting(low.power)">$VAR[LandscapeImage]</value>
 		<value condition="Control.IsVisible(518) + !Skin.HasSetting(low.power) + Skin.String(background.effect,Blur)">$INFO[Window(home).Property(ImageFiltercfa1)]</value>
 		<value condition="Control.IsVisible(518) + !Skin.HasSetting(low.power) + Skin.String(background.effect,Pixelate)">$INFO[Window(home).Property(ImageFiltercfa2)]</value>
 		<value condition="Control.IsVisible(518) + !Skin.HasSetting(low.power) + Skin.String(background.effect,Posterize)">$INFO[Window(home).Property(ImageFiltercfa3)]</value>

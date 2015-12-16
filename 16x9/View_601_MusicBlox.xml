@@ -200,7 +200,7 @@
 					<focusedlayout height="120" width="720">
 						<control type="button" id="6020">
 							<onfocus>SetProperty(cfa_ignore_set,True,home)</onfocus>
-							<onfocus>RunScript(script.colorbox,info=bluronly,id='"$INFO[ListItem.Icon]"',radius=44,prefix=VideoInfo)</onfocus>
+							<onfocus condition="!Skin.HasSetting(low.power)">RunScript(script.colorbox,info=bluronly,id='"$INFO[ListItem.Icon]"',radius=44,prefix=VideoInfo)</onfocus>
 							<label>-</label>
 							<focusedcolor>-</focusedcolor>
 							<texturefocus>-</texturefocus>

@@ -14,7 +14,7 @@
 			<include>Furniture_HeaderEmby</include>
 		</control>
 		<control type="group">
-			<include>Animation.Common</include>
+			<include condition="!Skin.HasSetting(low.power)">Animation.Common</include><include condition="Skin.HasSetting(low.power)">Animation.Common.Lowpower</include>
 			<control type="grouplist">
 				<posy>PosterPad</posy>
 				<left>SidePad</left>

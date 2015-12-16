@@ -7,7 +7,8 @@
 	<controls>
 		<include>GlobalBackground</include>
 		<control type="group">
-			<include>Animation.DVInfo</include>
+			<include condition="!Skin.HasSetting(low.power)">Animation.DVInfo</include>
+			<include condition="Skin.HasSetting(low.power)">Animation.DVInfo.Lowpower</include>
 			<include>Furniture_EmbyClock</include>
 			<include>Furniture_HeaderEmby</include>
 			<control type="image">
@@ -28,7 +29,8 @@
 						<left>NewSidePad</left>
 						<right>NewSidePad</right>
 						<top>TopPad</top>
-						<include>Animation.DVInfo</include>
+						<include condition="!Skin.HasSetting(low.power)">Animation.DVInfo</include>
+						<include condition="Skin.HasSetting(low.power)">Animation.DVInfo.Lowpower</include>
 						<control type="group">
 							<left>1654</left>
 							<top>759</top>

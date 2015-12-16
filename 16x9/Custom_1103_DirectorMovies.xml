@@ -11,7 +11,7 @@
 		<include>Furniture_EmbyClock</include>
 		<control type="group">
 			<posy>40</posy>
-			<include>Animation.Common</include>
+			<include condition="!Skin.HasSetting(low.power)">Animation.Common</include><include condition="Skin.HasSetting(low.power)">Animation.Common.Lowpower</include>
 			<control type="grouplist" id="9510">
 				<top>206</top>
 				<height>100</height>

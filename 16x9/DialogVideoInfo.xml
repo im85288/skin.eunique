@@ -2,8 +2,8 @@
 <window>
 	<onload>ClearProperty(VideoInfo.ImageFilter,home)</onload>
 	<onload condition="System.HasAddon(script.videoextras)">RunScript(script.videoextras,check,"$INFO[ListItem.FilenameAndPath]")</onload>
-	<onload>RunScript(script.colorbox,info=blur,id='"$INFO[ListItem.Art(fanart)]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfo)</onload>
-	<onload>RunScript(script.colorbox,info=blur,id='"$VAR[PosterImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoPosterInfo)</onload>
+	<onload condition="!Skin.HasSetting(low.power)">RunScript(script.colorbox,info=blur,id='"$INFO[ListItem.Art(fanart)]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfo)</onload>
+	<onload condition="!Skin.HasSetting(low.power)">RunScript(script.colorbox,info=blur,id='"$VAR[PosterImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoPosterInfo)</onload>
 	<onload condition="Skin.HasSetting(toggled.dv.info)">SetFocus(9000)</onload>
 	<onload condition="!Skin.HasSetting(toggled.dv.info)">SetFocus(9010)</onload>
 	<onload>Skin.SetString(widget.helper,videoinfo)</onload>
@@ -48,7 +48,8 @@
 			<left>NewSidePad</left>
 			<right>NewSidePad</right>
 			<top>TopPad</top>
-			<include>Animation.DVInfo</include>
+			<include condition="!Skin.HasSetting(low.power)">Animation.DVInfo</include>
+			<include condition="Skin.HasSetting(low.power)">Animation.DVInfo.Lowpower</include>
 			<control type="group">
 				<left>450</left>
 				<control type="image">
@@ -92,14 +93,14 @@
 						<width>50%</width>
 						<height>50%</height>
 						<aspectratio scalediffuse="false">scale</aspectratio>
-						<texture colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]" background="true">$VAR[FocusedBorderImage]</texture>
+						<texture colordiffuse="$VAR[ColorboxPowerModeColor]" background="true">$VAR[FocusedBorderImage]</texture>
 					</control>
 					<control type="image">
 						<left>50%</left>
 						<width>50%</width>
 						<height>50%</height>
 						<aspectratio scalediffuse="false">scale</aspectratio>
-						<texture colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]" background="true">$VAR[FocusedBorderImage]</texture>
+						<texture colordiffuse="$VAR[ColorboxPowerModeColor]" background="true">$VAR[FocusedBorderImage]</texture>
 					</control>
 					<control type="image">
 						<left>0</left>
@@ -107,7 +108,7 @@
 						<width>50%</width>
 						<height>50%</height>
 						<aspectratio scalediffuse="false">scale</aspectratio>
-						<texture colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]" background="true" flipy="true">$VAR[FocusedBorderImage]</texture>
+						<texture colordiffuse="$VAR[ColorboxPowerModeColor]" background="true" flipy="true">$VAR[FocusedBorderImage]</texture>
 					</control>
 					<control type="image">
 						<left>50%</left>
@@ -115,7 +116,7 @@
 						<width>50%</width>
 						<height>50%</height>
 						<aspectratio scalediffuse="false">scale</aspectratio>
-						<texture colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]" background="true" flipy="true">$VAR[FocusedBorderImage]</texture>
+						<texture colordiffuse="$VAR[ColorboxPowerModeColor]" background="true" flipy="true">$VAR[FocusedBorderImage]</texture>
 					</control>
 					<animation type="conditional" condition="true" reversible="false">
 						<effect type="zoom" start="100" end="108" time="200" center="auto" tween="quadratic" easing="out"/>
@@ -558,9 +559,9 @@
 					<textoffsetx>20</textoffsetx>
 					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<focusedcolor>$VAR[EmbyMiddleColourHighlight]</focusedcolor>
-					<texturefocus colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]">common/box.png</texturefocus>
+					<texturefocus colordiffuse="$VAR[ColorboxPowerModeColor]">common/box.png</texturefocus>
 					<texturenofocus colordiffuse="$VAR[EmbyMiddleColourHighlight]">common/box.png</texturenofocus>
-					<alttexturefocus colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]">common/box.png</alttexturefocus>
+					<alttexturefocus colordiffuse="$VAR[ColorboxPowerModeColor]">common/box.png</alttexturefocus>
 					<alttexturenofocus colordiffuse="$VAR[EmbyMiddleColourHighlight]">common/box.png</alttexturenofocus>
 				</control>
 				<!-- Cinema Vision -->
@@ -573,7 +574,7 @@
 					<label></label>
 					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<focusedcolor>$VAR[EmbyRightColourHighlight]</focusedcolor>
-					<texturefocus colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]">common/box.png</texturefocus>
+					<texturefocus colordiffuse="$VAR[ColorboxPowerModeColor]">common/box.png</texturefocus>
 					<texturenofocus colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</texturenofocus>
 					<visible>System.HasAddon(script.cinemavision) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes)]</visible>
 				</control>
@@ -588,7 +589,7 @@
 					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<focusedcolor>$VAR[EmbyRightColourHighlight]</focusedcolor>
 					<visible>!IsEmpty(ListItem.Trailer)</visible>
-					<texturefocus colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]">common/box.png</texturefocus>
+					<texturefocus colordiffuse="$VAR[ColorboxPowerModeColor]">common/box.png</texturefocus>
 					<texturenofocus colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</texturenofocus>
 				</control>
 				<control type="button" id="3443">
@@ -598,7 +599,7 @@
 					<label></label>
 					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<focusedcolor>$VAR[EmbyLeftColourHighlight]</focusedcolor>
-					<texturefocus colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]">common/box.png</texturefocus>
+					<texturefocus colordiffuse="$VAR[ColorboxPowerModeColor]">common/box.png</texturefocus>
 					<texturenofocus colordiffuse="$VAR[EmbyLeftColourHighlight]">common/box.png</texturenofocus>
 					<onclick>SetProperty(Dialog.1.Label,$LOCALIZE[31147])</onclick>
 					<onclick>SetProperty(Dialog.1.BuiltIn,RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[ListItem.Director]))</onclick>
@@ -623,7 +624,7 @@
 					<textoffsetx>20</textoffsetx>
 					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<focusedcolor>$VAR[EmbyLeftColourHighlight]</focusedcolor>
-					<texturefocus colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]">common/box.png</texturefocus>
+					<texturefocus colordiffuse="$VAR[ColorboxPowerModeColor]">common/box.png</texturefocus>
 					<texturenofocus colordiffuse="$VAR[EmbyLeftColourHighlight]">common/box.png</texturenofocus>
 				</control>
 				<!-- User rating -->
@@ -634,7 +635,7 @@
 					<label></label>
 					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<focusedcolor>$VAR[EmbyLeftColourHighlight]</focusedcolor>
-					<texturefocus colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]">common/box.png</texturefocus>
+					<texturefocus colordiffuse="$VAR[ColorboxPowerModeColor]">common/box.png</texturefocus>
 					<texturenofocus colordiffuse="$VAR[EmbyLeftColourHighlight]">common/box.png</texturenofocus>
 				</control>
 				<!--Extended Info Button -->
@@ -645,7 +646,7 @@
 					<label></label>
 					<textcolor>$VAR[EmbyLeftColourHighlight]</textcolor>
 					<focusedcolor>$VAR[ColourHighlight]</focusedcolor>
-					<texturefocus colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]">-</texturefocus>
+					<texturefocus colordiffuse="$VAR[ColorboxPowerModeColor]">-</texturefocus>
 					<texturenofocus colordiffuse="$VAR[EmbyLeftColourHighlight]">-</texturenofocus>
 					<onclick condition="!System.HasAddon(script.extendedinfo)">ActivateWindow(Videos,plugin://script.extendedinfo)</onclick>
 					<onclick condition="IsEmpty(ListItem.TvShowTitle) + !Container.Content(tvshows)">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[ListItem.DBID],name=$INFO[ListItem.Title])</onclick>
@@ -962,14 +963,14 @@
 						</control>
 						<control type="image">
 							<aspectratio scalediffuse="false">stretch</aspectratio>
-							<texture colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]" background="true">$VAR[PosterImage]</texture>
+							<texture colordiffuse="$VAR[ColorboxPowerModeColor]" background="true">$VAR[PosterImage]</texture>
 						</control>
 						<control type="progress">
 							<bottom>0</bottom>
 							<height>8</height>
 							<info>ListItem.PercentPlayed</info>
 							<overlaytexture>-</overlaytexture>
-							<texturebg colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]">osd/progress-bg.png</texturebg>
+							<texturebg colordiffuse="$VAR[ColorboxPowerModeColor]">osd/progress-bg.png</texturebg>
 							<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
 							<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
 							<righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>
@@ -1053,7 +1054,8 @@
 			<left>NewSidePad</left>
 			<right>NewSidePad</right>
 			<top>TopPad</top>
-			<include>Animation.DVInfo</include>
+			<include condition="!Skin.HasSetting(low.power)">Animation.DVInfo</include>
+			<include condition="Skin.HasSetting(low.power)">Animation.DVInfo.Lowpower</include>
 			<control type="group">
 				<left>1654</left>
 				<top>759</top>
@@ -1076,14 +1078,14 @@
 						<width>50%</width>
 						<height>50%</height>
 						<aspectratio scalediffuse="false">scale</aspectratio>
-						<texture colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]" background="true">$VAR[FocusedBorderImage]</texture>
+						<texture colordiffuse="$VAR[ColorboxPowerModeColor]" background="true">$VAR[FocusedBorderImage]</texture>
 					</control>
 					<control type="image">
 						<left>50%</left>
 						<width>50%</width>
 						<height>50%</height>
 						<aspectratio scalediffuse="false">scale</aspectratio>
-						<texture colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]" background="true">$VAR[FocusedBorderImage]</texture>
+						<texture colordiffuse="$VAR[ColorboxPowerModeColor]" background="true">$VAR[FocusedBorderImage]</texture>
 					</control>
 					<control type="image">
 						<left>0</left>
@@ -1091,7 +1093,7 @@
 						<width>50%</width>
 						<height>50%</height>
 						<aspectratio scalediffuse="false">scale</aspectratio>
-						<texture colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]" background="true" flipy="true">$VAR[FocusedBorderImage]</texture>
+						<texture colordiffuse="$VAR[ColorboxPowerModeColor]" background="true" flipy="true">$VAR[FocusedBorderImage]</texture>
 					</control>
 					<control type="image">
 						<left>50%</left>
@@ -1099,7 +1101,7 @@
 						<width>50%</width>
 						<height>50%</height>
 						<aspectratio scalediffuse="false">scale</aspectratio>
-						<texture colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]" background="true" flipy="true">$VAR[FocusedBorderImage]</texture>
+						<texture colordiffuse="$VAR[ColorboxPowerModeColor]" background="true" flipy="true">$VAR[FocusedBorderImage]</texture>
 					</control>
 					<animation type="conditional" condition="true" reversible="false">
 						<effect type="zoom" start="100" end="108" time="200" center="auto" tween="quadratic" easing="out"/>
@@ -1404,9 +1406,9 @@
 					<textoffsetx>20</textoffsetx>
 					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<focusedcolor>$VAR[EmbyMiddleColourHighlight]</focusedcolor>
-					<texturefocus colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]">common/box.png</texturefocus>
+					<texturefocus colordiffuse="$VAR[ColorboxPowerModeColor]">common/box.png</texturefocus>
 					<texturenofocus colordiffuse="$VAR[EmbyMiddleColourHighlight]">common/box.png</texturenofocus>
-					<alttexturefocus colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]">common/box.png</alttexturefocus>
+					<alttexturefocus colordiffuse="$VAR[ColorboxPowerModeColor]">common/box.png</alttexturefocus>
 					<alttexturenofocus colordiffuse="$VAR[EmbyMiddleColourHighlight]">common/box.png</alttexturenofocus>
 				</control>
 				<!-- Cinema Vision -->
@@ -1419,7 +1421,7 @@
 					<label></label>
 					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<focusedcolor>$VAR[EmbyRightColourHighlight]</focusedcolor>
-					<texturefocus colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]">common/box.png</texturefocus>
+					<texturefocus colordiffuse="$VAR[ColorboxPowerModeColor]">common/box.png</texturefocus>
 					<texturenofocus colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</texturenofocus>
 					<visible>System.HasAddon(script.cinemavision) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes)]</visible>
 				</control>
@@ -1434,7 +1436,7 @@
 					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<focusedcolor>$VAR[EmbyRightColourHighlight]</focusedcolor>
 					<visible>!IsEmpty(ListItem.Trailer)</visible>
-					<texturefocus colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]">common/box.png</texturefocus>
+					<texturefocus colordiffuse="$VAR[ColorboxPowerModeColor]">common/box.png</texturefocus>
 					<texturenofocus colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</texturenofocus>
 				</control>
 				<!-- Artwork Downloader Button -->
@@ -1453,7 +1455,7 @@
 					<textoffsetx>20</textoffsetx>
 					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<focusedcolor>$VAR[EmbyLeftColourHighlight]</focusedcolor>
-					<texturefocus colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]">common/box.png</texturefocus>
+					<texturefocus colordiffuse="$VAR[ColorboxPowerModeColor]">common/box.png</texturefocus>
 					<texturenofocus colordiffuse="$VAR[EmbyLeftColourHighlight]">common/box.png</texturenofocus>
 				</control>
 				<!-- Search YouTube-->
@@ -1464,7 +1466,7 @@
 					<label></label>
 					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<focusedcolor>$VAR[EmbyRightColourHighlight]</focusedcolor>
-					<texturefocus colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]">common/box.png</texturefocus>
+					<texturefocus colordiffuse="$VAR[ColorboxPowerModeColor]">common/box.png</texturefocus>
 					<texturenofocus colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</texturenofocus>
 					<onclick condition="!IsEmpty(ListItem.TVShowTitle)">SetProperty(listcontent,$INFO[ListItem.TVShowTitle],home)</onclick>
 					<onclick condition="IsEmpty(ListItem.TVShowTitle)">SetProperty(listcontent,$INFO[ListItem.Title],home)</onclick>
@@ -1478,7 +1480,7 @@
 					<label></label>
 					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<focusedcolor>$VAR[EmbyLeftColourHighlight]</focusedcolor>
-					<texturefocus colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]">common/box.png</texturefocus>
+					<texturefocus colordiffuse="$VAR[ColorboxPowerModeColor]">common/box.png</texturefocus>
 					<texturenofocus colordiffuse="$VAR[EmbyLeftColourHighlight]">common/box.png</texturenofocus>
 				</control>
 				<!--Extended Info Button -->
@@ -1837,14 +1839,14 @@
 					</control>
 					<control type="image">
 						<aspectratio scalediffuse="false">stretch</aspectratio>
-						<texture colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]" background="true">$VAR[PosterImage]</texture>
+						<texture colordiffuse="$VAR[ColorboxPowerModeColor]" background="true">$VAR[PosterImage]</texture>
 					</control>
 					<control type="progress">
 						<bottom>0</bottom>
 						<height>8</height>
 						<info>ListItem.PercentPlayed</info>
 						<overlaytexture>-</overlaytexture>
-						<texturebg colordiffuse="$INFO[Window(home).Property(VideoPosterInfo.ImageColor)]">osd/progress-bg.png</texturebg>
+						<texturebg colordiffuse="$VAR[ColorboxPowerModeColor]">osd/progress-bg.png</texturebg>
 						<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
 						<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
 						<righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>

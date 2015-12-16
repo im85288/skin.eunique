@@ -40,7 +40,7 @@
 					<width>365</width>
 					<fadetime>200</fadetime>
 					<aspectratio align="right" aligny="center" scalediffuse="false">scale</aspectratio>
-					<texture background="true" diffuse="diffuse/extraposter-ref-blur.png">$INFO[Window(home).Property(VideoInfoExtra.ImageFilter)]</texture>
+					<texture background="true" diffuse="diffuse/extraposter-ref-blur.png">$VAR[ColorboxPowerModeImage]</texture>
 				</control>
 				<control type="list" id="57">
 					<visible>Container.Content(musicvideos) | Container.Content(artists) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(actors) | Container.Content(sets) | Container.Content(seasons)</visible>
@@ -72,7 +72,7 @@
 							<onfocus condition="Container.Content(movies)">ClearProperty(TVShowID,home)</onfocus>
 							<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
 							<onfocus>SetProperty(cfa_ignore_set,True,home)</onfocus>
-							<onfocus condition="!Container.Scrolling">RunScript(script.colorbox,info=bluronly,id='"$VAR[LandscapeImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfoExtra)</onfocus>
+							<onfocus condition="!Skin.HasSetting(low.power)">RunScript(script.colorbox,info=bluronly,id='"$VAR[LandscapeImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfoExtra)</onfocus>
 						</control>
 						<control type="group">
 							<animation effect="fade" end="65" start="100" time="200" condition="Control.HasFocus(508923)">Conditional</animation>
@@ -97,7 +97,7 @@
 							<onfocus condition="Container.Content(movies)">ClearProperty(TVShowID,home)</onfocus>
 							<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
 							<onfocus>SetProperty(cfa_ignore_set,True,home)</onfocus>
-							<onfocus condition="!Container.Scrolling">RunScript(script.colorbox,info=bluronly,id='"$VAR[LandscapeImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfoExtra)</onfocus>
+							<onfocus condition="!Skin.HasSetting(low.power)">RunScript(script.colorbox,info=bluronly,id='"$VAR[LandscapeImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfoExtra)</onfocus>
 						</control>
 						<control type="group">
 							<animation effect="fade" end="65" start="100" time="200" condition="Control.HasFocus(508923)">Conditional</animation>

@@ -420,7 +420,7 @@
 			<include condition="Skin.String(home.vertical,1) | Skin.String(home.vertical,2)">Dimensions_FullscreenMinusTop</include>
 			<include condition="!Skin.String(home.vertical,1) + !Skin.String(home.vertical,2)">Dimensions_Fullscreen</include>
 			<aspectratio align="center">scale</aspectratio>
-			<texture fallback="common/black.png" background="true">$INFO[Window(home).Property(HomeInfo.ImageFilter)]</texture>
+			<texture fallback="common/black.png" background="true">$VAR[ColorboxPowerModeImage]</texture>
 			<visible>Window.IsVisible(home) + Skin.HasSetting(home.blur)</visible>
 			<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
 			<fadetime>600</fadetime>
@@ -431,7 +431,7 @@
 			<include condition="!Skin.String(home.vertical,1) + !Skin.String(home.vertical,2)">Dimensions_Fullscreen</include>
 			<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
 			<aspectratio align="center">scale</aspectratio>
-			<texture colordiffuse="$INFO[Window(home).Property(HomeInfo.ImageColor)]">common/screen-overlay-shard.png</texture>
+			<texture colordiffuse="$VAR[ColorboxPowerModeColor]">common/screen-overlay-shard.png</texture>
 			<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
 			<visible>Window.IsVisible(home) + Skin.HasSetting(home.blur)</visible>
 			<visible>!Player.HasMedia | [!Skin.HasSetting(global.showvideo) + Player.HasVideo] | [!Skin.HasSetting(global.showvisualisation) + Player.HasAudio]</visible>
@@ -560,7 +560,7 @@
 		-->
 		<control type="image">
 			<height>130</height>
-			<texture colordiffuse="$INFO[Window(home).Property(HomeInfo.ImageColor)]" background="true">common/white.png</texture>
+			<texture colordiffuse="$VAR[ColorboxPowerModeColor]" background="true">common/white.png</texture>
 			<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
 			<visible>Skin.HasSetting(home.blur) + [Skin.String(home.vertical,1) | Skin.String(home.vertical,2)] + Window.IsVisible(Home.xml)</visible>
 			<visible>!Player.HasMedia | [!Skin.HasSetting(global.showvideo) + Player.HasVideo] | [!Skin.HasSetting(global.showvisualisation) + Player.HasAudio]</visible>

@@ -1479,6 +1479,7 @@
 		<value condition="Control.HasFocus(3112)">$INFO[Container(3112).ListItem.TvShowTitle,,[CR]][COLOR=$VAR[DisabledColour]]$INFO[Container(3112).ListItem.Season,,x]$INFO[Container(3112).ListItem.Episode,,. ]$INFO[Container(3112).ListItem.Title]$INFO[Container(3112).ListItem.Year, • ,]$INFO[Container(3112).ListItem.Rating, • ,]$INFO[Container(3112).ListItem.Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
 	</variable>
 	<variable name="ColorboxPowerModeColor">
+		<value condition="Window.IsVisible(Home.xml) + !Skin.HasSetting(low.power)">$INFO[Window(home).Property(HomeInfo.ImageColor)]</value>
 		<value condition="Window.IsVisible(DialogVideoInfo.xml) + !Skin.HasSetting(low.power)">$INFO[Window(home).Property(VideoInfo.ImageColor)]</value>
 		<value condition="Window.IsVisible(DialogVideoInfo.xml) + Skin.HasSetting(low.power)">$VAR[ColourFlags]</value>
 		<value condition="Control.IsVisible(518) + !Skin.HasSetting(low.power)">$INFO[Window(home).Property(ImageColorcfa1)]</value>

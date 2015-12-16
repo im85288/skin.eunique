@@ -6,7 +6,7 @@
 	<views>570</views>
 	<controls>
 		<control type="group">
-			<include>Animation.Common.Killer</include>
+			<include condition="!Skin.HasSetting(low.power)">Animation.Common.Killer</include><include condition="Skin.HasSetting(low.power)">Animation.Common.Killer.Lowpower</include>
 			<include>Furniture_NowPlaying</include>
 			<include>Furniture_EmbyClock</include>
 			<include>Furniture_HeaderEmby</include>

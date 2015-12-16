@@ -9,7 +9,7 @@
 		<include>Furniture_HeaderEmby</include>
 		<include>Furniture_EmbyClock</include>
 		<control type="group">
-			<include>Animation.Common</include>
+			<include condition="!Skin.HasSetting(low.power)">Animation.Common</include><include condition="Skin.HasSetting(low.power)">Animation.Common.Lowpower</include>
 			<control type="group">
 				<description>Left panel</description>
 				<left>NewSidePad</left>

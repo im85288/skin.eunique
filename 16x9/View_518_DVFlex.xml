@@ -550,8 +550,8 @@
 						<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
 						<onfocus>ClearProperty(cfa_ignore_set,home)</onfocus>
 						<!--
-<onfocus>RunScript(script.colorbox,info=twotone,id='"$VAR[RealFanartImage]"',black='"#000022"',white='"#990000"',prefix=Pixelated)</onfocus>
-<onfocus>RunScript(script.colorbox,info=posterize,id='"$VAR[RealFanartImage]"',bits=2,prefix=Pixelated)</onfocus>
+<onfocus condition="!Skin.HasSetting(low.power)">RunScript(script.colorbox,info=twotone,id='"$VAR[RealFanartImage]"',black='"#000022"',white='"#990000"',prefix=Pixelated)</onfocus>
+<onfocus condition="!Skin.HasSetting(low.power)">RunScript(script.colorbox,info=posterize,id='"$VAR[RealFanartImage]"',bits=2,prefix=Pixelated)</onfocus>
 -->
 					</control>
 				</focusedlayout>

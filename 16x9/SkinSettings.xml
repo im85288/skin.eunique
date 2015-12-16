@@ -578,6 +578,8 @@
 						<label>32088</label>
 						<selected>Skin.HasSetting(low.power)</selected>
 						<onclick>Skin.ToggleSetting(low.power)</onclick>
+						<onclick condition="Skin.HasSetting(low.power)">RunScript(script.colorbox,daemon=False)</onclick>
+						<onclick condition="!Skin.HasSetting(low.power)">RunScript(script.colorbox,daemon=True)</onclick>
 					</control>
 					<control type="radiobutton" id="92722" description="Next Up Poster">
 						<width>1410</width>

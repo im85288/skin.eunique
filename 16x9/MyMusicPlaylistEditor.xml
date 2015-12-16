@@ -18,7 +18,7 @@
 			<visible>false</visible>
 		</control>
 		<control type="group">
-			<include>Animation.Common</include>
+			<include condition="!Skin.HasSetting(low.power)">Animation.Common</include><include condition="Skin.HasSetting(low.power)">Animation.Common.Lowpower</include>
 			<control type="group">
 				<description>Left panel</description>
 				<left>SidePad</left>

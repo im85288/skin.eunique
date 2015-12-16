@@ -15,7 +15,7 @@
 		<control type="group" id="50">
 			<control type="group">
 				<visible>Control.IsVisible(10)</visible>
-				<include>Animation.Common</include>
+				<include condition="!Skin.HasSetting(low.power)">Animation.Common</include><include condition="Skin.HasSetting(low.power)">Animation.Common.Lowpower</include>
 				<left>0</left>
 				<right>0</right>
 				<top>TopPad</top>
@@ -344,7 +344,7 @@
 			</control>
 			<control type="group">
 				<visible>Control.IsVisible(11)</visible>
-				<include>Animation.Common</include>
+				<include condition="!Skin.HasSetting(low.power)">Animation.Common</include><include condition="Skin.HasSetting(low.power)">Animation.Common.Lowpower</include>
 				<control type="group">
 					<left>NewSidePad</left>
 					<width>900</width>
@@ -666,7 +666,7 @@
 			</control>
 			<control type="group">
 				<visible>Control.IsVisible(12)</visible>
-				<include>Animation.Common</include>
+				<include condition="!Skin.HasSetting(low.power)">Animation.Common</include><include condition="Skin.HasSetting(low.power)">Animation.Common.Lowpower</include>
 				<control type="group">
 					<left>NewSidePad</left>
 					<width>900</width>
@@ -989,7 +989,7 @@
 			</control>
 			<control type="group">
 				<visible>Control.IsVisible(13)</visible>
-				<include>Animation.Common</include>
+				<include condition="!Skin.HasSetting(low.power)">Animation.Common</include><include condition="Skin.HasSetting(low.power)">Animation.Common.Lowpower</include>
 				<control type="group">
 					<left>NewSidePad</left>
 					<width>900</width>

@@ -1550,7 +1550,7 @@
 			<control type="button">
 				<texturefocus>-</texturefocus>
 				<texturenofocus>-</texturenofocus>
-				<onfocus condition="!Container.Scrolling + Skin.HasSetting(home.blur)">RunScript(script.colorbox,info=blur,id='"$VAR[GlobalFanart]"',radius=$VAR[VideoInfoBlurLevel],prefix=HomeInfo)</onfocus>
+				<onfocus condition="!Skin.HasSetting(low.power) + Skin.HasSetting(home.blur)">RunScript(script.colorbox,info=blur,id='"$VAR[GlobalFanart]"',radius=$VAR[VideoInfoBlurLevel],prefix=HomeInfo)</onfocus>
 			</control>
 			<control type="image">
 				<left>0</left>
@@ -1618,7 +1618,7 @@
 			<control type="button">
 				<texturefocus>-</texturefocus>
 				<texturenofocus>-</texturenofocus>
-				<onfocus condition="!Container.Scrolling + Skin.HasSetting(home.blur)">RunScript(script.colorbox,info=blur,id='"$VAR[GlobalFanart]"',radius=$VAR[VideoInfoBlurLevel],prefix=HomeInfo)</onfocus>
+				<onfocus condition="!Skin.HasSetting(low.power) + Skin.HasSetting(home.blur)">RunScript(script.colorbox,info=blur,id='"$VAR[GlobalFanart]"',radius=$VAR[VideoInfoBlurLevel],prefix=HomeInfo)</onfocus>
 			</control>
 			<control type="group">
 				<animation effect="slide" start="0,0" end="-10,0" time="0" reversible="true" center="auto" condition="!Skin.HasSetting(home.minimal.menu) + control.hasfocus(302)">Conditional</animation>
@@ -7318,7 +7318,7 @@
 	</include>
 	<include name="HomeVerticalMenu">
 		<control type="group">
-			<include>Animation.Common</include>
+			<include condition="!Skin.HasSetting(low.power)">Animation.Common</include><include condition="Skin.HasSetting(low.power)">Animation.Common.Lowpower</include>
 			<!-- LEFT SIDE -->
 			<control type="group">
 				<!-- Home List -->
@@ -7356,7 +7356,7 @@
 						<control type="button">
 							<texturefocus>-</texturefocus>
 							<texturenofocus>-</texturenofocus>
-							<onfocus condition="!Container.Scrolling + Skin.HasSetting(home.blur)">RunScript(script.colorbox,info=blur,id='"$VAR[GlobalFanart]"',radius=$VAR[VideoInfoBlurLevel],prefix=HomeInfo)</onfocus>
+							<onfocus condition="!Skin.HasSetting(low.power) + Skin.HasSetting(home.blur)">RunScript(script.colorbox,info=blur,id='"$VAR[GlobalFanart]"',radius=$VAR[VideoInfoBlurLevel],prefix=HomeInfo)</onfocus>
 						</control>
 						<control type="label">
 							<right>30</right>

@@ -11,8 +11,8 @@
 	<onload>ClearProperty(Born,home)</onload>
 	<onload>ClearProperty(Died,home)</onload>
 	<onload>ClearProperty(Description,home)</onload>
-	<onload>RunScript(script.colorbox,info=blur,id='"$VAR[MusicFanart]"',radius=$VAR[VideoInfoBlurLevel],prefix=MusicInfo)</onload>
-	<onload>RunScript(script.colorbox,info=blur,id='"$VAR[PosterImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=MusicPosterInfo)</onload>
+	<onload condition="!Skin.HasSetting(low.power)">RunScript(script.colorbox,info=blur,id='"$VAR[MusicFanart]"',radius=$VAR[VideoInfoBlurLevel],prefix=MusicInfo)</onload>
+	<onload condition="!Skin.HasSetting(low.power)">RunScript(script.colorbox,info=blur,id='"$VAR[PosterImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=MusicPosterInfo)</onload>
 	<onload condition="Skin.HasSetting(toggled.ai.info)">SetFocus(9000)</onload>
 	<onload condition="!Skin.HasSetting(toggled.ai.info)">SetFocus(9010)</onload>
 	<onunload>ClearProperty(AlbumDetails,home)</onunload>
@@ -43,7 +43,8 @@
 			<left>NewSidePad</left>
 			<right>NewSidePad</right>
 			<top>TopPad</top>
-			<include>Animation.DVInfo</include>
+			<include condition="!Skin.HasSetting(low.power)">Animation.DVInfo</include>
+			<include condition="Skin.HasSetting(low.power)">Animation.DVInfo.Lowpower</include>
 			<control type="group">
 				<left>450</left>
 				<control type="image">
@@ -663,7 +664,8 @@
 			<left>NewSidePad</left>
 			<right>NewSidePad</right>
 			<top>TopPad</top>
-			<include>Animation.DVInfo</include>
+			<include condition="!Skin.HasSetting(low.power)">Animation.DVInfo</include>
+			<include condition="Skin.HasSetting(low.power)">Animation.DVInfo.Lowpower</include>
 			<control type="group">
 				<left>1654</left>
 				<top>759</top>
