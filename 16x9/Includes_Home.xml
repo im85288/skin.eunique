@@ -1757,7 +1757,7 @@
 				</control>
 				<!-- Default Widget -->
 				<control type="group">
-					<!-- <animation effect="fade" start="100" end="0" time="50" condition="[!StringCompare(Container(300).ListItem.Property(defaultID),livetv) + !StringCompare(Container(300).ListItem.Property(defaultID),weather) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),movies) + [Container(6012).IsUpdating | Container(6016).IsUpdating | Container(6017).IsUpdating | Container(9017).IsUpdating]]">Conditional</animation> --><visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
+					<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 					<control type="label" id="60121">
 						<left>SidePad</left>
 						<top>285</top>
@@ -9652,7 +9652,7 @@
 						<ondown>300</ondown>
 						<!-- Movies -->
 						<control type="group">
-							<visible>!StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv</visible>
+							<visible>!StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 							<height>370</height>
 							<animation effect="slide" start="0" end="0,373" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(303).HasFocus + !Control.HasFocus(30121)">Conditional</animation>
 							<control type="label">
@@ -9723,7 +9723,7 @@
 							</control>
 						</control>
 						<control type="group">
-							<visible>!StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv</visible>
+							<visible>!StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 							<height>370</height>
 							<animation effect="slide" start="0" end="0,170" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(303).HasFocus + !Control.HasFocus(30161) + Control.HasFocus(190011)">Conditional</animation>
 							<animation effect="slide" start="0" end="0,170" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(303).HasFocus + !Control.HasFocus(30161) + Control.HasFocus(180021)">Conditional</animation>
@@ -9800,7 +9800,7 @@
 							</control>
 						</control>
 						<control type="group">
-							<visible>!StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv</visible>
+							<visible>!StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 							<height>370</height>
 							<animation effect="slide" start="0" end="0,170" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(303).HasFocus + !Control.HasFocus(30171) + Control.HasFocus(190011)">Conditional</animation>
 							<animation effect="slide" start="0" end="0,170" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(303).HasFocus + !Control.HasFocus(30171) + Control.HasFocus(180021)">Conditional</animation>
@@ -9878,7 +9878,7 @@
 							</control>
 						</control>
 						<control type="group">
-							<visible>!StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv</visible>
+							<visible>!StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 							<height>370</height>
 							<animation effect="slide" start="0" end="0,170" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(303).HasFocus + !Control.HasFocus(100171) + Control.HasFocus(190011)">Conditional</animation>
 							<animation effect="slide" start="0" end="0,170" time="200" delay="100" tween="quadratic" easing="out" condition="ControlGroup(303).HasFocus + !Control.HasFocus(100171) + Control.HasFocus(180021)">Conditional</animation>
