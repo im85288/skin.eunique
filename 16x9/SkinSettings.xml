@@ -12,7 +12,8 @@
 			<left>NewSidePad</left>
 			<right>NewSidePad</right>
 			<top>TopPad</top>
-			<include>Animation.Common</include>
+			<include condition="!Skin.HasSetting(low.power)">Animation.Common</include>
+			<include condition="Skin.HasSetting(low.power)">Animation.Common.Lowpower</include>
 			<visible>!Window.IsVisible(script-skinshortcuts.xml) + !Window.IsVisible(script-skin_helper_service-ColorPicker.xml)</visible>
 			<control type="image">
 				<height>72</height>
