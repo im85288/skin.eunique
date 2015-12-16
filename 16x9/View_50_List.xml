@@ -138,45 +138,45 @@
                 <fadetime>200</fadetime>
                 <visible>!Container.Content(genres) + !Container.Content(albums) + !Container.Content(songs) + !Container.Content(artists) + !Container.Content(singles)</visible>
             </control>
-			<control type="progress">
-                <top>871</top>
-                <width>602</width>
-				<height>8</height>
-				<info>ListItem.PercentPlayed</info>
-				<overlaytexture>-</overlaytexture>
-				<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
-				<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
-				<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
-				<righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>
-				<visible>ListItem.IsResumable</visible>
-			</control>
-            <control type="image">
-                <left>-960</left>
-                <right>950</right>
-                <height>879</height>
-                <fadetime>1000</fadetime>
-                <aspectratio align="left" aligny="center" scalediffuse="false">scale</aspectratio>
-                <texture flipx="true" background="true" diffuse="diffuse/listposter-ref.png">$INFO[Window(home).Property(VideoInfo.ImageFilter)]</texture>
-                <fadetime>200</fadetime>
-                <visible>Container.Content(genres) | Container.Content(albums) | Container.Content(songs) | Container.Content(artists) | Container.Content(singles)</visible>
-            </control>
-            <control type="image">
-                <right>10</right>
-                <height>879</height>
-                <aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-                <texture background="true">$VAR[PosterImage]</texture>
-                <fadetime>200</fadetime>
-                <visible>Container.Content(genres) | Container.Content(albums) | Container.Content(songs) | Container.Content(artists) | Container.Content(singles)</visible>
-            </control>
-            <control type="image">
-                <left>602</left>
-                <right>10</right>
-                <height>879</height>
-                <fadetime>1000</fadetime>
-                <aspectratio align="left" aligny="center" scalediffuse="false">scale</aspectratio>
-                <texture flipx="true" background="true" diffuse="diffuse/listposter-ref.png">$INFO[Window(home).Property(VideoInfo.ImageFilter)]</texture>
-                <visible>!Container.Content(genres) + !Container.Content(albums) + !Container.Content(songs) + !Container.Content(artists) + !Container.Content(singles)</visible>
-            </control>
+		<control type="progress">
+	                <top>871</top>
+	                <width>602</width>
+			<height>8</height>
+			<info>ListItem.PercentPlayed</info>
+			<overlaytexture>-</overlaytexture>
+			<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
+			<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
+			<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
+			<righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>
+			<visible>ListItem.IsResumable</visible>
+		</control>
+		<control type="image">
+			<left>-960</left>
+			<right>950</right>
+			<height>879</height>
+			<fadetime>1000</fadetime>
+			<aspectratio align="left" aligny="center" scalediffuse="false">scale</aspectratio>
+			<texture colordiffuse="$VAR[ColorboxPowerModeColor]" flipx="true" background="true" diffuse="diffuse/listposter-ref.png">$VAR[ColorboxPowerModeImage]</texture>
+			<fadetime>200</fadetime>
+			<visible>Container.Content(genres) | Container.Content(albums) | Container.Content(songs) | Container.Content(artists) | Container.Content(singles)</visible>
+		</control>
+		<control type="image">
+	                <right>10</right>
+	                <height>879</height>
+	                <aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+	                <texture background="true">$VAR[PosterImage]</texture>
+	                <fadetime>200</fadetime>
+	                <visible>Container.Content(genres) | Container.Content(albums) | Container.Content(songs) | Container.Content(artists) | Container.Content(singles)</visible>
+		</control>
+		<control type="image">
+	                <left>602</left>
+	                <right>10</right>
+	                <height>879</height>
+	                <fadetime>1000</fadetime>
+	                <aspectratio align="left" aligny="center" scalediffuse="false">scale</aspectratio>
+			<texture colordiffuse="$VAR[ColorboxPowerModeColor]" flipx="true" background="true" diffuse="diffuse/listposter-ref.png">$VAR[ColorboxPowerModeImage]</texture>
+	                <visible>!Container.Content(genres) + !Container.Content(albums) + !Container.Content(songs) + !Container.Content(artists) + !Container.Content(singles)</visible>
+                </control>
             <control type="textbox">
                 <left>607</left>
                 <top>0</top>
