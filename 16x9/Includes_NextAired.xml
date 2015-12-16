@@ -68,8 +68,8 @@
 		<control type="button">
 			<texturefocus>-</texturefocus>
 			<texturenofocus>-</texturenofocus>
-			<onfocus condition="Skin.HasSetting(home.blur)">RunScript(script.colorbox,info=twotone,id='"$VAR[NextAiredFanart]"',black=#ffffff,white=#000000,prefix=NextAiredInfo)</onfocus>
-			<onfocus condition="Skin.HasSetting(home.blur)">RunScript(script.colorbox,info=randomcolor,prefix=NextAiredInfo)</onfocus>
+			<onfocus condition="!Skin.HasSetting(low.power) + Skin.HasSetting(home.blur)">RunScript(script.colorbox,info=twotone,id='"$VAR[NextAiredFanart]"',black=#ffffff,white=#000000,prefix=NextAiredInfo)</onfocus>
+			<onfocus condition="!Skin.HasSetting(low.power) + Skin.HasSetting(home.blur)">RunScript(script.colorbox,info=randomcolor,prefix=NextAiredInfo)</onfocus>
 		</control>
 		<control type="image">
 			<aspectratio scalediffuse="false">scale</aspectratio>

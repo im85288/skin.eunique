@@ -6,7 +6,7 @@
 			<include>Dimensions_Fullscreen</include>
 			<aspectratio align="center">scale</aspectratio>
 			<texture colordiffuse="$INFO[Window(home).Property(NextAiredInfo.ImageColor)]" fallback="common/black.png" background="true">$INFO[Window(home).Property(NextAiredInfo.ImageFilter)]</texture>
-			<visible>Skin.HasSetting(home.blur)</visible>
+			<visible>!Skin.HasSetting(low.power) + Skin.HasSetting(home.blur)</visible>
 			<fadetime>600</fadetime>
 		</control>
 		<control type="image">
@@ -15,13 +15,13 @@
 			<aspectratio align="center">scale</aspectratio>
 			<texture colordiffuse="$VAR[ColourTextFlags]">common/screen-overlay-shard.png</texture>
 			<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
-			<visible>Skin.HasSetting(home.blur)</visible>
+			<visible>!Skin.HasSetting(low.power) + Skin.HasSetting(home.blur)</visible>
 		</control>
 		<control id="8308" type="image">
 			<include>Dimensions_Fullscreen</include>
 			<colordiffuse>DialogFanartFade</colordiffuse>
 			<texture fallback="empty.png" background="true">$VAR[NextAiredFanart]</texture>
-			<visible>!Skin.HasSetting(home.blur)</visible>
+			<visible>!Skin.HasSetting(home.blur) | Skin.HasSetting(low.power)</visible>
 		</control>
 		<control type="image">
 			<include>Dimensions_Fullscreen</include>
