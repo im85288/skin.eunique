@@ -365,7 +365,7 @@
 			<animation effect="fade" start="0" end="100" time="2300" tween="cubic" easing="inout">VisibleChange</animation>
 			<include>Dimensions_Fullscreen</include>
 			<aspectratio align="center">scale</aspectratio>
-			<texture fallback="common/black.png" background="true">$INFO[Window(home).Property(VideoInfo.ImageFilter)]</texture>
+			<texture fallback="common/black.png" background="true">$VAR[ColorboxPowerModeImage]</texture>
 			<visible>![[Skin.HasSetting(global.showvideo) + Player.HasVideo] | [Skin.HasSetting(global.showvisualisation) + Player.HasAudio]] + Window.IsVisible(DialogVideoInfo.xml) + !Skin.HasSetting(toggled.dv.info)</visible>
 			<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
 		</control>
@@ -374,7 +374,7 @@
 			<include>Dimensions_Fullscreen</include>
 			<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
 			<aspectratio align="center">scale</aspectratio>
-			<texture colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]">common/screen-overlay-shard.png</texture>
+			<texture colordiffuse="$VAR[ColorboxPowerModeColor]">common/screen-overlay-shard.png</texture>
 			<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
 			<visible>Window.IsVisible(DialogVideoInfo.xml) + !Skin.HasSetting(toggled.dv.info)</visible>
 		</control>
@@ -461,7 +461,7 @@
 			<visible>![[Skin.HasSetting(global.showvideo) + Player.HasVideo] | [Skin.HasSetting(global.showvisualisation) + Player.HasAudio]] + Window.IsVisible(DialogVideoInfo.xml) + Skin.HasSetting(toggled.dv.info)</visible>
 			<include>Dimensions_Fullscreen</include>
 			<aspectratio align="center">scale</aspectratio>
-			<texture colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" fallback="empty.png" background="true">$INFO[ListItem.Art(fanart)]</texture>
+			<texture colordiffuse="$VAR[ColorboxPowerModeColor]" fallback="empty.png" background="true">$INFO[ListItem.Art(fanart)]</texture>
 			<animation effect="fade" start="0" end="100" time="2300" tween="cubic" easing="inout">VisibleChange</animation>
 		</control>
 		<control type="image">
@@ -479,7 +479,7 @@
 				<effect type="fade" start="100" end="00" time="200" tween="quadratic" easing="out" />
 			</animation>
 			<aspectratio align="center">scale</aspectratio>
-			<texture colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" fallback="common/black.png" background="true" diffuse="diffuse/dv-mask.png">$INFO[Window(home).Property(VideoInfo.ImageFilter)]</texture>
+			<texture colordiffuse="$VAR[ColorboxPowerModeColor]" fallback="common/black.png" background="true" diffuse="diffuse/dv-mask.png">$VAR[ColorboxPowerModeImage]</texture>
 			<visible>!Skin.HasSetting(lights.out)</visible>
 			<visible>![[Skin.HasSetting(global.showvideo) + Player.HasVideo] | [Skin.HasSetting(global.showvisualisation) + Player.HasAudio]] + Window.IsVisible(DialogVideoInfo.xml) + Skin.HasSetting(toggled.dv.info)</visible>
 		</control>
