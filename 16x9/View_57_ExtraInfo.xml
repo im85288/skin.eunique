@@ -20,19 +20,19 @@
 					<aspectratio align="left" aligny="center" scalediffuse="false">scale</aspectratio>
 					<texture background="true">$VAR[LandscapeImage]</texture>
 				</control>
-			<control type="progress">
-				<left>10</left>
-                <top>814.7272727272727</top>
-                <width>960</width>
-				<height>8</height>
-				<info>ListItem.PercentPlayed</info>
-				<overlaytexture>-</overlaytexture>
-				<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
-				<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
-				<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
-				<righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>
-				<visible>ListItem.IsResumable</visible>
-			</control>
+				<control type="progress">
+					<left>10</left>
+					<top>814.7272727272727</top>
+					<width>960</width>
+					<height>8</height>
+					<info>ListItem.PercentPlayed</info>
+					<overlaytexture>-</overlaytexture>
+					<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
+					<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
+					<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
+					<righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>
+					<visible>ListItem.IsResumable</visible>
+				</control>
 				<control type="image">
 					<height>740</height>
 					<top>TopPad</top>
@@ -68,7 +68,7 @@
 						<control type="button">
 							<texturefocus>-</texturefocus>
 							<texturenofocus>-</texturenofocus>
-							
+
 							<onfocus condition="Container.Content(movies)">ClearProperty(TVShowID,home)</onfocus>
 							<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
 							<onfocus>SetProperty(cfa_ignore_set,True,home)</onfocus>
@@ -93,7 +93,7 @@
 						<control type="button">
 							<texturefocus>-</texturefocus>
 							<texturenofocus>-</texturenofocus>
-							
+
 							<onfocus condition="Container.Content(movies)">ClearProperty(TVShowID,home)</onfocus>
 							<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
 							<onfocus>SetProperty(cfa_ignore_set,True,home)</onfocus>
@@ -185,7 +185,7 @@
 					<selectedcolor>$VAR[EmbyMenuTextColourHighlight]</selectedcolor>
 					<label>$VAR[LabelGenre]</label>
 				</control>
-				</control>
+			</control>
 		</control>
 	</include>
 </includes>
