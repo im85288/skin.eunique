@@ -757,9 +757,9 @@
 		<value condition="Control.HasFocus(100171) + !IsEmpty(Container(10017).ListItem(-1).Art(tvshow.clearlogo))">$INFO[Container(10017).ListItem(-1).Art(tvshow.clearlogo)]</value>
 		<value condition="Control.HasFocus(100171) + !IsEmpty(Container(10017).ListItem(-1).Art(clearlogo))">$INFO[Container(10017).ListItem(-1).Art(clearlogo)]</value>
 		<value condition="Control.HasFocus(100171) + IsEmpty(Container(10017).ListItem(-1).Art(clearlogo)) + IsEmpty(Container(10017).ListItem(-1).Art(tvshow.clearlogo))">http://localhost:52307/getpvrthumb&amp;title=$INFO[Container(10017).ListItem(-1).Title]&amp;type=clearlogo</value>
-		<value condition="Control.HasFocus(180021) + !IsEmpty(Container(18002).ListItem(-1).Art(tvshow.clearlogo))">$INFO[Container(18002).ListItem(-1).Art(tvshow.clearlogo)]</value>
-		<value condition="Control.HasFocus(180021) + !IsEmpty(Container(18002).ListItem(-1).Art(clearlogo))">$INFO[Container(18002).ListItem(-1).Art(clearlogo)]</value>
-		<value condition="Control.HasFocus(180021) + IsEmpty(Container(18001).ListItem(-1).Art(clearlogo)) + IsEmpty(Container(18001).ListItem(-1).Art(tvshow.clearlogo))">http://localhost:52307/getpvrthumb&amp;title=$INFO[Container(18001).ListItem(-1).Title]&amp;type=clearlogo</value>
+		<value condition="!IsEmpty(Container(18002).ListItem(-1).Art(tvshow.clearlogo))">$INFO[Container(18002).ListItem(-1).Art(tvshow.clearlogo)]</value>
+		<value condition="!IsEmpty(Container(18002).ListItem(-1).Art(clearlogo))">$INFO[Container(18002).ListItem(-1).Art(clearlogo)]</value>
+		<value condition="IsEmpty(Container(18001).ListItem(-1).Art(clearlogo)) + IsEmpty(Container(18001).ListItem(-1).Art(tvshow.clearlogo))">http://localhost:52307/getpvrthumb&amp;title=$INFO[Container(18001).ListItem(-1).Title]&amp;type=clearlogo</value>
 		<value condition="Control.HasFocus(190011) + !IsEmpty(Container(19001).ListItem(-1).Art(tvshow.clearlogo))">$INFO[Container(19001).ListItem(-1).Art(tvshow.clearlogo)]</value>
 		<value condition="Control.HasFocus(190011) + !IsEmpty(Container(19001).ListItem(-1).Art(clearlogo))">$INFO[Container(19001).ListItem(-1).Art(clearlogo)]</value>
 		<value condition="Control.HasFocus(190011) + IsEmpty(Container(19001).ListItem(-1).Art(clearlogo)) + IsEmpty(Container(19001).ListItem(-1).Art(tvshow.clearlogo))">http://localhost:52307/getpvrthumb&amp;title=$INFO[Container(19001).ListItem(-1).Title]&amp;type=clearlogo</value>
@@ -806,9 +806,8 @@
 		<value condition="Control.HasFocus(14017) + !IsEmpty(Container(14017).ListItem(0).Art(tvshow.poster))">$INFO[Container(14017).ListItem(0).Art(tvshow.poster)]</value>
 		<value condition="Control.HasFocus(14017) + !IsEmpty(Container(14017).ListItem(0).Art(poster))">$INFO[Container(14017).ListItem(0).Art(poster)]</value>
 		<value condition="Control.HasFocus(14017)">$INFO[Container(14017).ListItem(0).Icon]</value>
-		<value condition="Control.HasFocus(180021) + !IsEmpty(Container(18002).ListItem(-1).Art(tvshow.poster))">$INFO[Container(18002).ListItem(-1).Art(tvshow.poster)]</value>
-		<value condition="Control.HasFocus(180021) + !IsEmpty(Container(18002).ListItem(-1).Art(poster))">$INFO[Container(18002).ListItem(-1).Art(poster)]</value>
-		<value condition="Control.HasFocus(180021)">$INFO[Container(18002).ListItem(-1).Icon]</value>
+		<value condition="!IsEmpty(Container(18002).ListItem(-1).Art(tvshow.poster))">$INFO[Container(18002).ListItem(-1).Art(tvshow.poster)]</value>
+		<value condition="!IsEmpty(Container(18002).ListItem(-1).Art(poster))">$INFO[Container(18002).ListItem(-1).Art(poster)]</value>
 		<value condition="Control.HasFocus(18001) + !IsEmpty(Container(18001).ListItem(0).Art(tvshow.poster))">$INFO[Container(18001).ListItem(0).Art(tvshow.poster)]</value>
 		<value condition="Control.HasFocus(18001) + !IsEmpty(Container(18001).ListItem(0).Art(poster))">$INFO[Container(18001).ListItem(0).Art(poster)]</value>
 		<value condition="Control.HasFocus(18001)">$INFO[Container(18001).ListItem(0).Icon]</value>
