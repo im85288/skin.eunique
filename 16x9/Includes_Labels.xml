@@ -1480,7 +1480,8 @@
 	</variable>
 	<variable name="ColorboxPowerModeColor">
 		<value condition="Control.IsVisible(518) + !Skin.HasSetting(low.power)">$INFO[Window(home).Property(ImageColorcfa1)]</value>
-		<value condition="!Skin.HasSetting(low.power)">$INFO[Window(home).Property(ImageColorcfa1)]</value>
+		<value condition="Control.IsVisible(50) + !Skin.HasSetting(low.power)">-</value>
+		<value condition="!Control.IsVisible(50) + !Skin.HasSetting(low.power)">$INFO[Window(home).Property(ImageColorcfa1)]</value>
 		<value>$VAR[ColourFlags]</value>
 	</variable>
 	<variable name="NextAiredLabel">
