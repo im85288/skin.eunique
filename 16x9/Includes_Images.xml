@@ -855,6 +855,9 @@
 		<value condition="IsEmpty(Window(Home).Property(SkinHelper.AllMoviesBackground.clearlogo))">http://localhost:52307/getpvrthumb&amp;title=$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground.title)]&amp;type=clearlogo</value>
 	</variable>
 	<variable name="ColorboxPowerModeImage">
+		<value condition="Window.IsVisible(DialogVideoInfo.xml) + !Skin.HasSetting(low.power)">$INFO[Window(home).Property(VideoInfo.ImageFilter)]</value>
+		<value condition="Window.IsVisible(DialogVideoInfo.xml) + Skin.HasSetting(low.power) + Skin.HasSetting(toggled.dv.info)">common/box.png</value>
+		<value condition="Window.IsVisible(DialogVideoInfo.xml) + Skin.HasSetting(low.power)">$INFO[ListItem.Art(fanart)]</value>
 		<value condition="Control.IsVisible(50) + !Skin.HasSetting(low.power)">$INFO[Window(home).Property(VideoInfo.ImageFilter)]</value>
 		<value condition="Control.IsVisible(50) + Skin.HasSetting(low.power)">common/box.png</value>
 		<value condition="Control.IsVisible(518) + !Skin.HasSetting(low.power) + Skin.String(background.effect,Blur)">$INFO[Window(home).Property(ImageFiltercfa1)]</value>
