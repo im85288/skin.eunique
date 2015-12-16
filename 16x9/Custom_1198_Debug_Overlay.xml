@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window type="dialog" id="1198">
 	<zorder>2</zorder>
-	<visible>false</visible>
+	<visible>!Window.IsVisible(startup)</visible>
+	<visible>Skin.HasSetting(DebugInfo)</visible>
 	<controls>
 		<control type="group">
 			<!-- Window/Dialog debug -->
