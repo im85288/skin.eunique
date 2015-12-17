@@ -1105,37 +1105,38 @@
 					</control>
 					<animation type="conditional" condition="true" reversible="false">
 						<effect type="zoom" start="100" end="108" time="200" center="auto" tween="quadratic" easing="out"/>
+						<effect type="rotate" end="-1" time="200" center="auto" tween="quadratic" easing="out"/>
 					</animation>
 				</control>
 				<control type="image">
 					<aspectratio scalediffuse="false">stretch</aspectratio>
 					<texture background="true">$VAR[PosterImage]</texture>
-					<animation type="conditional" condition="true" reversible="false">
-						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
-					</animation>
 					<visible>!Container.Content(episodes) | [Skin.HasSetting(osd.hidespoilers) + Container.Content(episodes) + [stringcompare(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]]</visible>
+				</control>
+				<control type="progress">
+					<bottom>0</bottom>
+					<height>8</height>
+					<info>ListItem.PercentPlayed</info>
+					<overlaytexture>-</overlaytexture>
+					<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
+					<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
+					<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
+					<righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>
+					<visible>ListItem.IsResumable</visible>
 				</control>
 				<control type="group">
 					<control type="image">
-						<left>-3</left>
 						<width>613</width>
 						<height>450</height>
 						<aspectratio scalediffuse="false">scale</aspectratio>
 						<texture background="true">$INFO[ListItem.Icon]</texture>
-						<animation type="conditional" condition="true" reversible="false">
-							<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
-						</animation>
 					</control>
 					<control type="image">
-						<left>3</left>
 						<top>470</top>
 						<width>613</width>
 						<height>450</height>
 						<aspectratio scalediffuse="false">keep</aspectratio>
 						<texture background="true">$INFO[ListItem.Art(tvshow.landscape)]</texture>
-						<animation type="conditional" condition="true" reversible="false">
-							<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
-						</animation>
 					</control>
 					<visible>Container.Content(episodes) + ![Skin.HasSetting(osd.hidespoilers) + Container.Content(episodes) + [stringcompare(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]]</visible>
 				</control>
@@ -1148,8 +1149,8 @@
 					<visible>!ControlGroup(9010).HasFocus</visible>
 				</control>
 				<control type="label">
-					<right>16</right>
-					<top>1</top>
+					<right>11</right>
+					<top>11</top>
 					<width>76</width>
 					<height>76</height>
 					<font>symbolbackbig</font>
@@ -1158,8 +1159,8 @@
 					<visible>ControlGroup(9010).HasFocus</visible>
 				</control>
 				<control type="label">
-					<right>16</right>
-					<top>1</top>
+					<right>11</right>
+					<top>11</top>
 						<aligny>center</aligny>
 						<align>center</align>
 					<width>76</width>
@@ -1175,7 +1176,6 @@
 				</control>
 				<animation type="conditional" condition="true" reversible="false">
 					<effect type="zoom" start="100" end="94" time="200" center="auto" tween="quadratic" easing="out"/>
-					<effect type="rotate" end="-1" time="200" center="auto" tween="quadratic" easing="out"/>
 				</animation>
 			</control>
 			<control type="label">
