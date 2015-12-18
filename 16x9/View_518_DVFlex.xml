@@ -75,7 +75,6 @@
 			<visible>!Skin.HasSetting(lights.out)</visible>
 			<visible>![[Skin.HasSetting(global.showvideo) + Player.HasVideo] | [Skin.HasSetting(global.showvisualisation) + Player.HasAudio]] + !Window.IsVisible(DialogVideoInfo.xml)</visible>
 		</control>
-		<include>Furniture_NowPlaying</include>
 		<control type="group">
 			<include condition="!Skin.HasSetting(low.power)">Animation.Common</include>
 			<include condition="Skin.HasSetting(low.power)">Animation.Common.Lowpower</include>

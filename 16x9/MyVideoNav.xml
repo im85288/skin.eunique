@@ -11,7 +11,6 @@
 	<onunload>ClearProperty(SkinHelper.ListItemCast,home)</onunload>
 	<controls>
 		<include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
-		<include>Furniture_NowPlaying</include>
 		<control type="group">
 			<animation type="Conditional" reversible="true" condition="!Control.IsVisible(515) + !Control.IsVisible(500) + !Control.IsVisible(52) + !Control.IsVisible(53) + !Control.IsVisible(50) + !Control.IsVisible(54) + !Control.IsVisible(518) + Skin.HasSetting(furniture.hidecastwidget) + !Control.HasFocus(508923)">
 				<effect type="slide" end="0,75" time="200" center="auto" tween="quadratic" easing="out" />
@@ -39,6 +38,7 @@
 		</control>
 		<control type="group">
 			<include condition="!Skin.HasSetting(low.power)">Animation.Common.Killer</include><include condition="Skin.HasSetting(low.power)">Animation.Common.Killer.Lowpower</include>
+			<include>Furniture_NowPlaying</include>
 			<include>Furniture_EmbyClock</include>
 			<include>Furniture_HeaderEmby</include>
 		</control>
