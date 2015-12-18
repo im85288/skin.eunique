@@ -1487,6 +1487,20 @@
 		<value condition="!Control.IsVisible(50) + !Skin.HasSetting(low.power)">$INFO[Window(home).Property(ImageColorcfa1)]</value>
 		<value>$VAR[ColourFlags]</value>
 	</variable>
+	<variable name="HotometerColor">
+		<value condition="SubString(Listitem.Rating,0.,left)">boston university red</value>
+		<value condition="SubString(Listitem.Rating,1.,left)">bleu de france</value>
+		<value condition="SubString(Listitem.Rating,2.,left)">purple mountain majesty</value>
+		<value condition="SubString(Listitem.Rating,3.,left)">prune</value>
+		<value condition="SubString(Listitem.Rating,4.,left)">old lavender</value>
+		<value condition="SubString(Listitem.Rating,5.,left)">orange peel</value>
+		<value condition="SubString(Listitem.Rating,6.,left)">yellow (munsell)</value>
+		<value condition="SubString(Listitem.Rating,7.,left)">yellow-green</value>
+		<value condition="SubString(Listitem.Rating,8.,left)">green-yellow</value>
+		<value condition="SubString(Listitem.Rating,9.,left)">green (html/css green)</value>
+		<value condition="SubString(Listitem.Rating,10,left)">old gold</value>
+		<value>$VAR[ColourFlags]</value>
+	</variable>
 	<variable name="NextAiredLabel">
 		<value condition="Control.HasFocus(200)">$INFO[Container(200).ListItem.Label][CR][COLOR=$VAR[DisabledColour]]$INFO[Container(200).ListItem.Property(NextSeasonNumber),,x]$INFO[Container(200).ListItem.Property(NextEpisodeNumber),,. ]$INFO[Container(200).ListItem.Property(NextTitle)]$INFO[Container(200).ListItem.Property(Runtime), • ,$LOCALIZE[31102]]$INFO[Container(200).ListItem.Property(NextDay), • ,]$INFO[Container(200).ListItem.Property(ShortTime), @ ,][/COLOR]</value>
 		<value condition="Control.HasFocus(201)">$INFO[Container(201).ListItem.Label][CR][COLOR=$VAR[DisabledColour]]$INFO[Container(201).ListItem.Property(NextSeasonNumber),,x]$INFO[Container(201).ListItem.Property(NextEpisodeNumber),,. ]$INFO[Container(201).ListItem.Property(NextTitle)]$INFO[Container(201).ListItem.Property(Runtime), • ,$LOCALIZE[31102]]$INFO[Container(201).ListItem.Property(NextDay), • ,]$INFO[Container(201).ListItem.Property(ShortTime), @ ,][/COLOR]</value>
