@@ -334,11 +334,11 @@
 		<value condition="Control.HasFocus(19003)">$INFO[Container(19003).ListItem.Label] [COLOR=$VAR[DisabledColour]]$INFO[Container(19003).ListItem.Year]$INFO[Container(19003).ListItem.Rating, • ]$INFO[Container(19003).ListItem.Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
 	</variable>
 	<variable name="EmbyWidget1Label">
-		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetName.1))">$INFO[Container(300).ListItem.Property(widgetName.1)]</value>
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetName))">$INFO[Container(300).ListItem.Property(widgetName)]</value>
 		<value>$LOCALIZE[31135]</value>
 	</variable>
 	<variable name="EmbyWidget2Label">
-		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetName))">$INFO[Container(300).ListItem.Property(widgetName)]</value>
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetName.1))">$INFO[Container(300).ListItem.Property(widgetName.1)]</value>
 		<value>$LOCALIZE[31134]</value>
 	</variable>
 	<variable name="EmbyWidget3Label">
@@ -1443,14 +1443,14 @@
 		<value>$INFO[Window(Home).Property(SkinHelper.Music.TrackList)]</value>
 	</variable>
 	<variable name="EmbyWidget_1_Label">
-		<value condition="!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv) + !IsEmpty(Container(300).ListItem.Property(widgetName.1))">$INFO[Container(300).ListItem.Property(widgetName.1)]</value>
+		<value condition="!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv) + !IsEmpty(Container(300).ListItem.Property(widgetName))">$INFO[Container(300).ListItem.Property(widgetName)]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),music) + !IsEmpty(Skin.String(music1widget.name))">$INFO[Skin.String(music1widget.name)]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),movies) + !IsEmpty(Container(300).ListItem.Property(widgetName.movies1))">$INFO[Container(300).ListItem.Property(widgetName.movies1)]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !IsEmpty(Container(300).ListItem.Property(widgetName.tvshows1))">$INFO[Container(300).ListItem.Property(widgetName.tvshows1)]</value>
 		<value>$LOCALIZE[31124]</value>
 	</variable>
 	<variable name="EmbyWidget_2_Label">
-		<value condition="!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv) + !IsEmpty(Container(300).ListItem.Property(widgetName))">$INFO[Container(300).ListItem.Property(widgetName)]</value>
+		<value condition="!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv) + !IsEmpty(Container(300).ListItem.Property(widgetName.1))">$INFO[Container(300).ListItem.Property(widgetName.1)]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),music) + !IsEmpty(Skin.String(music2widget.name))">$INFO[Skin.String(music2widget.name)]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),movies) + !IsEmpty(Container(300).ListItem.Property(widgetName.movies2))">$INFO[Container(300).ListItem.Property(widgetName.movies2)]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !IsEmpty(Container(300).ListItem.Property(widgetName.tvshows2))">$INFO[Container(300).ListItem.Property(widgetName.tvshows2)]</value>
@@ -1485,20 +1485,6 @@
 		<value condition="Control.IsVisible(53) + Skin.HasSetting(low.power)">$VAR[ColourFlags]</value>
 		<value condition="Control.IsVisible(50) + !Skin.HasSetting(low.power)">-</value>
 		<value condition="!Control.IsVisible(50) + !Skin.HasSetting(low.power)">$INFO[Window(home).Property(ImageColorcfa1)]</value>
-		<value>$VAR[ColourFlags]</value>
-	</variable>
-	<variable name="HotometerColor">
-		<value condition="SubString(Listitem.Rating,0.,left)">boston university red</value>
-		<value condition="SubString(Listitem.Rating,1.,left)">bleu de france</value>
-		<value condition="SubString(Listitem.Rating,2.,left)">purple mountain majesty</value>
-		<value condition="SubString(Listitem.Rating,3.,left)">prune</value>
-		<value condition="SubString(Listitem.Rating,4.,left)">old lavender</value>
-		<value condition="SubString(Listitem.Rating,5.,left)">orange peel</value>
-		<value condition="SubString(Listitem.Rating,6.,left)">yellow (munsell)</value>
-		<value condition="SubString(Listitem.Rating,7.,left)">yellow-green</value>
-		<value condition="SubString(Listitem.Rating,8.,left)">green-yellow</value>
-		<value condition="SubString(Listitem.Rating,9.,left)">green (html/css green)</value>
-		<value condition="SubString(Listitem.Rating,10,left)">old gold</value>
 		<value>$VAR[ColourFlags]</value>
 	</variable>
 	<variable name="NextAiredLabel">
