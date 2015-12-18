@@ -692,15 +692,9 @@
 								<animation effect="fade" start="80" end="0" time="50" delay="0" tween="quadratic" easing="out" condition="System.IdleTime(2)">Conditional</animation>
                            </control>
 				<control id="123231" type="wraplist">
-							<animation effect="slide" end="0,-201" start="0" time="50" center="auto" condition="System.IdleTime(2)">Conditional</animation>
-					<top>455</top>
-					<width>400</width>
-					<right>95</right>
-					<height>603</height>
-					<align>left</align>
-				<orientation>horizontal</orientation>
-				<autoscroll time="3000">!Control.HasFocus(123231)</autoscroll>
+					<top>-455</top>
 					<itemlayout height="201" width="133.33333333">
+					<!--
 						<control type="label">
 							<left>0</left>
 							<top>0</top>
@@ -723,30 +717,9 @@
 							<texture colordiffuse="$VAR[ColorboxPowerModeColor]" background="true">$VAR[PosterImage]</texture>
 							<fadetime>200</fadetime>
 						</control>
+						-->
 					</itemlayout>
 					<focusedlayout height="201" width="133.33333333">
-						<control type="label">
-							<left>0</left>
-							<top>0</top>
-							<right>0</right>
-							<bottom>0</bottom>
-							<height>201</height>
-							<aligny>center</aligny>
-							<align>center</align>
-							<font>symbolbiggest</font>
-							<label></label>
-							<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
-							<fadetime>300</fadetime>
-						</control>
-						<control type="image">
-							<left>0</left>
-							<top>0</top>
-							<right>0</right>
-							<bottom>0</bottom>
-							<aspectratio align="center" aligny="top">scale</aspectratio>
-							<texture background="true">$VAR[PosterImage]</texture>
-							<fadetime>200</fadetime>
-						</control>
 					</focusedlayout>
 					<content target="video">$VAR[DefWidgetCast]</content>
 				</control>
