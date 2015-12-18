@@ -417,8 +417,10 @@
 				<focusposition >7</focusposition>
 				<viewtype label="32076">list</viewtype>
 				<scrolltime tween="quadratic">400</scrolltime>
-				<itemlayout height="337" width="222" condition="!Container.Content(episodes)">
+				<itemlayout height="347" width="222" condition="!Container.Content(episodes)">
+					<include>Furniture_Hotometer</include>
 					<control type="group">
+						<top>10</top>
 							<animation effect="zoom" end="85" start="100" time="200" center="auto" condition="System.IdleTime(3)">Conditional</animation>
 						<control type="image">
 							<aspectratio scalediffuse="false">scale</aspectratio>
@@ -691,6 +693,12 @@
                                 <animation effect="fade" start="80" end="80" time="0" delay="0" tween="quadratic" easing="out" condition="true">Conditional</animation>
 								<animation effect="fade" start="80" end="0" time="0" delay="0" tween="quadratic" easing="out" condition="System.IdleTime(3)">Conditional</animation>
                            </control>
+				<control type="group">
+					<top>445</top>
+					<width>400</width>
+					<right>95</right>
+					<include>Furniture_Hotometer</include>
+                           	</control>
 				<control type="image">
 					<top>455</top>
 					<width>400</width>
