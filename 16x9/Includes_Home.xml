@@ -9638,6 +9638,15 @@
 							<onclick>PlayMedia($ESCINFO[Container(10017).ListItem(-1).FileNameAndPath])</onclick>
 						</control>
 					</control>
+					<control type="label">
+						<top>139</top>
+						<left>-364</left>
+						<width>1200</width>
+						<align>left</align>
+						<height>34</height>
+						<font>HomeWidgetLabelFontBig</font>
+						<label>$VAR[EmbyWidget_Focus_Label]</label>
+					</control>
 					<!-- Widgets -->
 					<control type="grouplist" id="301">
 						<include>Animation.FadeIn</include>
@@ -9663,6 +9672,7 @@
 								<label>$VAR[EmbyWidget_1_Label]</label>
 								<include>Animation.DelayFadeIn</include>
 								<animation effect="slide" start="0" end="0,-40" time="500" delay="100" tween="quadratic" easing="out" condition="true">Conditional</animation>
+								<animation effect="fade" start="100" end="0" time="200" delay="0" tween="quadratic" easing="out" condition="ControlGroup(303).HasFocus + Control.HasFocus(30121)">Conditional</animation>
 							</control>
 							<control type="wraplist" id="3012">
 								<description>Widget</description>
@@ -9739,6 +9749,7 @@
 								<label>$VAR[EmbyWidget_2_Label]</label>
 								<include>Animation.DelayFadeIn</include>
 								<animation effect="slide" start="0" end="0,-40" time="500" delay="100" tween="quadratic" easing="out" condition="true">Conditional</animation>
+								<animation effect="fade" start="100" end="0" time="200" delay="0" tween="quadratic" easing="out" condition="ControlGroup(303).HasFocus + Control.HasFocus(30161)">Conditional</animation>
 							</control>
 							<control type="wraplist" id="3016">
 								<description>Widget</description>
@@ -9816,6 +9827,7 @@
 								<label>$VAR[EmbyWidget_3_Label]</label>
 								<include>Animation.DelayFadeIn</include>
 								<animation effect="slide" start="0" end="0,-40" time="500" delay="100" tween="quadratic" easing="out" condition="true">Conditional</animation>
+								<animation effect="fade" start="100" end="0" time="200" delay="0" tween="quadratic" easing="out" condition="ControlGroup(303).HasFocus + Control.HasFocus(30171)">Conditional</animation>
 							</control>
 							<control type="wraplist" id="3017">
 								<description>Widget</description>
@@ -9892,6 +9904,7 @@
 								<label>$VAR[EmbyWidget_4_Label]</label>
 								<include>Animation.DelayFadeIn</include>
 								<animation effect="slide" start="0" end="0,-40" time="500" delay="100" tween="quadratic" easing="out" condition="true">Conditional</animation>
+								<animation effect="fade" start="100" end="0" time="200" delay="0" tween="quadratic" easing="out" condition="ControlGroup(303).HasFocus + Control.HasFocus(100171)">Conditional</animation>
 							</control>
 							<control type="wraplist" id="10017">
 								<description>Widget</description>
