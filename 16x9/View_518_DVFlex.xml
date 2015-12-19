@@ -442,7 +442,7 @@
 							<label>$VAR[PercentWatchedLabel]</label>
 							<textcolor>$VAR[UnwatchedColourHighlight]</textcolor>
 							<selectedcolor>$VAR[UnwatchedColourHighlight]</selectedcolor>
-							<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched) + !ListItem.IsResumable</visible>
+							<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayUnwatched.png) + [!Skin.HasSetting(furniture.hidenew) | Skin.HasSetting(furniture.unwatched)] + !ListItem.IsResumable</visible>
 						</control>
 						<control type="label">
 							<centerright>29</centerright>
@@ -528,7 +528,7 @@
 							<label>$VAR[PercentWatchedLabel]</label>
 							<textcolor>$VAR[UnwatchedColourHighlight]</textcolor>
 							<selectedcolor>$VAR[UnwatchedColourHighlight]</selectedcolor>
-							<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched) + !ListItem.IsResumable</visible>
+							<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayUnwatched.png) + [!Skin.HasSetting(furniture.hidenew) | Skin.HasSetting(furniture.unwatched)] + !ListItem.IsResumable</visible>
 						</control>
 						<control type="label">
 							<centerright>29</centerright>
@@ -639,7 +639,7 @@
 								<label>$VAR[PercentWatchedLabel]</label>
 								<textcolor>$VAR[UnwatchedColourHighlight]</textcolor>
 								<selectedcolor>$VAR[UnwatchedColourHighlight]</selectedcolor>
-								<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched) + !ListItem.IsResumable</visible>
+								<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayUnwatched.png) + [!Skin.HasSetting(furniture.hidenew) | Skin.HasSetting(furniture.unwatched)] + !ListItem.IsResumable</visible>
 							</control>
 							<control type="label">
 								<centerright>38</centerright>
@@ -768,7 +768,7 @@
 							<label>$VAR[PercentWatchedLabel518]</label>
 							<textcolor>$VAR[UnwatchedColourHighlight]</textcolor>
 							<selectedcolor>$VAR[UnwatchedColourHighlight]</selectedcolor>
-							<visible>!stringcompare(Container(518).ListItem.Label,..) + stringcompare(Container(518).ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched) + !Container(518).ListItem.IsResumable</visible>
+							<visible>!stringcompare(Container(518).ListItem.Label,..) + stringcompare(Container(518).ListItem.Overlay,OverlayUnwatched.png) + [!Skin.HasSetting(furniture.hidenew) | Skin.HasSetting(furniture.unwatched)] + !Container(518).ListItem.IsResumable</visible>
 						</control>
 						<control type="label">
 							<animation effect="zoom" end="180" start="100" time="0" center="auto" condition="true">Conditional</animation>
