@@ -11,6 +11,17 @@
     <controls>
         <control type="group">
             <animation effect="slide" start="0" end="0,-74" time="150" condition="Window.IsVisible(videoosd)">Conditional</animation>
+            <control type="image">
+                <left>10</left>
+                <top>10</top>
+                <width>250</width>
+                <height>97</height>
+                <texture>$VAR[PlayerClearLogo]</texture>
+                <aspectratio align="left" aligny="top">keep</aspectratio>
+                <include>Animation.FadeIn</include>
+                <include>Animation.FadeOut</include>
+                <visible>Skin.HasSetting(ShowClearLogoOSD)</visible>
+            </control>
             <control type="group">
                 <animation effect="slide" start="0" end="0,-190" time="150" condition="Window.IsVisible(fullscreeninfo) | Player.ShowInfo | !IsEmpty(Window(home).Property(osdshowinfo)) | [Player.Paused + Skin.HasSetting(osd.showinfoonpause)]">Conditional</animation>
                 <animation effect="slide" start="0" end="0,110" time="150" condition="!Window.IsVisible(fullscreeninfo) + !Player.Seeking + !Player.DisplayAfterSeek + !Player.Paused + !Player.Forwarding + !Player.Rewinding + !Player.ShowInfo + IsEmpty(Window(home).Property(osdshowinfo))">Conditional</animation>

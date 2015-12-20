@@ -739,6 +739,11 @@
 		<value condition="!IsEmpty(Player.Art(clearart))">$INFO[Player.Art(clearart)]</value>
 		<value>http://localhost:52307/getpvrthumb&amp;title=$INFO[Player.Title]&amp;type=characterart,clearart</value>
 	</variable>
+	<variable name="PlayerClearLogo">
+		<value condition="!IsEmpty(Player.Art(tvshow.clearlogo))">$INFO[Player.Art(tvshow.clearlogo)]</value>
+		<value condition="!IsEmpty(Player.Art(clearlogo))">$INFO[Player.Art(clearlogo)]</value>
+		<value>http://localhost:52307/getpvrthumb&amp;title=$INFO[Player.Title]&amp;type=clearlogo</value>
+	</variable>
 	<variable name="AlbumArtistIcon">
 		<value condition="SubString(Listitem.Artists,various artist,left) | StringCompare(Listitem,various)">http://localhost:52307/getthumb&amp;title=Various Artists</value>
 		<value condition="!IsEmpty(Container.Art(artist.thumb))">$INFO[Container.Art(artist.thumb)]</value>
