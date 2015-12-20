@@ -304,6 +304,7 @@
 		<value condition="!IsEmpty(Window(Home).Property(logo))">$INFO[Window(Home).Property(logo)]</value>
 		<value condition="!IsEmpty(ListItem.Art(tvshow.clearlogo))">$INFO[ListItem.Art(tvshow.clearlogo)]</value>
 		<value condition="!IsEmpty(ListItem.Art(clearlogo))">$INFO[ListItem.Art(clearlogo)]</value>
+		<value condition="IsEmpty(ListItem.Art(tvshow.clearlogo)) + IsEmpty(ListItem.Art(clearlogo))">http://localhost:52307/getpvrthumb&amp;title=$INFO[ListItem.Title]&amp;type=clearlogo</value>
 		<value condition="!IsEmpty(ListItem.Art(discart))">$INFO[ListItem.Art(discart)]</value>
 	</variable>
 	<variable name="ClearArtOnly">
@@ -748,6 +749,7 @@
 	<variable name="Container518Logo">
 		<value condition="!IsEmpty(Container(518).ListItem.Art(tvshow.clearlogo))">$INFO[Container(518).ListItem.Art(tvshow.clearlogo)]</value>
 		<value condition="!IsEmpty(Container(518).ListItem.Art(clearlogo))">$INFO[Container(518).ListItem.Art(clearlogo)]</value>
+		<value>http://localhost:52307/getpvrthumb&amp;title=$INFO[Container(518).ListItem.Title]&amp;type=clearlogo</value>
 	</variable>
 	<variable name="EmbyWidgetLogoVertical">
 		<value condition="Control.HasFocus(30121) + !IsEmpty(Container(3012).ListItem(-1).Art(tvshow.clearlogo))">$INFO[Container(3012).ListItem(-1).Art(tvshow.clearlogo)]</value>
