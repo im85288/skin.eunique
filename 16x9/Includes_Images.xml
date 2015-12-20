@@ -210,6 +210,12 @@
 		<value condition="!IsEmpty(MusicPlayer.Property(Fanart_Image))">$INFO[MusicPlayer.Property(Fanart_Image)]</value>
 		<value condition="IsEmpty(MusicPlayer.Property(Fanart_Image))">special://skin/extras/backgrounds/headphones.jpg</value>
 	</variable>
+	<variable name="ArtistFanart">
+		<value condition="!IsEmpty(Window(Home).Property(SkinHelper.Player.Music.ExtraFanArt))">$INFO[Window(Home).Property(SkinHelper.Player.Music.ExtraFanArt)]</value>
+		<value condition="!IsEmpty(Window(Home).Property(SkinHelper.Player.Music.FanArt))">$INFO[Window(Home).Property(SkinHelper.Player.Music.FanArt)]</value>
+		<value condition="!IsEmpty(Player.Art(fanart))">$INFO[Player.Art(fanart)]</value>
+		<value>-</value>
+	</variable>
 	<variable name="BannerOnly">
 		<value condition="!IsEmpty(Window(Home).Property(SkinHelper.Music.Banner))">$INFO[Window(Home).Property(SkinHelper.Music.Banner)]</value>
 		<value condition="!IsEmpty(ListItem.Art(tvshow.banner))">$INFO[ListItem.Art(tvshow.banner)]</value>
