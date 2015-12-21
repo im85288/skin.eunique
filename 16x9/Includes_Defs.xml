@@ -1132,7 +1132,7 @@
 			<onclick>SetProperty(Dialog.3.Label,Posterize)</onclick>
 			<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(background.effect,Posterize))</onclick>
 			<onclick>RunScript(script.toolbox,info=selectdialog,header=Select Background Effect)</onclick>
-			<visible>Control.IsVisible(518)</visible>
+			<visible>Control.IsVisible(518) | Control.IsVisible(56)</visible>
 		</control>
 		<control type="radiobutton" id="9001" description="Plot Overlay">
 			<include>DefContextButtonBlade</include>
