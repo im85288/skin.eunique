@@ -105,7 +105,7 @@
 		<align>center</align>
 		<height>48</height>
 		<font>symbolback</font>
-		<disabledcolor>$VAR[EmbyMenuTextColourHighlight]</disabledcolor>
+		<disabledcolor>$VAR[DisabledColour]</disabledcolor>
 		<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 		<focusedcolor>$VAR[ColourHighlight]</focusedcolor>
 		<texturefocus>noop</texturefocus>
@@ -116,7 +116,7 @@
 		<align>center</align>
 		<height>48</height>
 		<font>symbolback</font>
-		<disabledcolor>$VAR[EmbyMenuTextColourHighlight]</disabledcolor>
+		<disabledcolor>$VAR[DisabledColour]</disabledcolor>
 		<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 		<focusedcolor>$VAR[ColourHighlight]</focusedcolor>
 		<texturefocus>noop</texturefocus>
@@ -138,7 +138,7 @@
 			<onclick>StereoMode</onclick>
 			<include>DefOSDButtons</include>
 			<enable>VideoPlayer.IsStereoscopic</enable>
-			<disabledcolor>$VAR[EmbyMenuTextColourHighlight]</disabledcolor>
+			<disabledcolor>$VAR[DisabledColour]</disabledcolor>
 		</control>
 		<control type="button" id="6">
 			<description>BookMarks</description>
@@ -180,7 +180,7 @@
 			<include>DefOSDButtons</include>
 			<onclick>PlayerControl(ShowVideoMenu)</onclick>
 			<enable>VideoPlayer.HasMenu</enable>
-			<disabledcolor>$VAR[EmbyMenuTextColourHighlight]</disabledcolor>
+			<disabledcolor>$VAR[DisabledColour]</disabledcolor>
 		</control>
 	</include>
 	<include name="OSDExtraInfoTV">
@@ -191,7 +191,7 @@
 			<include>DefOSDButtons</include>
 			<onclick>Close</onclick>
 			<onclick>RunScript(script.extendedinfo,info=extendedtvinfo,name=$INFO[VideoPlayer.TvShowTitle])</onclick>
-			<disabledcolor>$VAR[EmbyMenuTextColourHighlight]</disabledcolor>
+			<disabledcolor>$VAR[DisabledColour]</disabledcolor>
 		</control>
 	</include>
 	<include name="OSDExtraInfoMOVIES">
@@ -202,7 +202,7 @@
 			<include>DefOSDButtons</include>
 			<onclick>Close</onclick>
 			<onclick>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[VideoPlayer.Title])</onclick>
-			<disabledcolor>$VAR[EmbyMenuTextColourHighlight]</disabledcolor>
+			<disabledcolor>$VAR[DisabledColour]</disabledcolor>
 		</control>
 	</include>
 	<include name="OSDVideoControlsFlip">
