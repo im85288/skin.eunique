@@ -310,7 +310,7 @@
 		<value condition="Window.IsVisible(home) + !Container(301).IsUpdating + !IsEmpty(Skin.String(fanart.fallback))">$INFO[Skin.String(fanart.fallback)]</value>
 		<value condition="Window.IsVisible(home) + !Container(301).IsUpdating">pvr/background.jpg</value>
 		<value condition="[Window.IsActive(videolibrary) | Window.IsActive(movieinformation)]  +  substring(ListItem.Path,plugin://plugin.video.emby) + Skin.HasSetting(SkinHelper.EnableExtraFanart)">$INFO[ListItem.Path]extrafanart/</value>
-		<value condition="[Window.IsActive(videolibrary) | Window.IsActive(movieinformation)] + Skin.HasSetting(SkinHelper.EnableExtraFanart) + !IsEmpty(Window(Home).Property(SkinHelper.ExtraFanArtPath))">$INFO[Window(Home).Property(SkinHelper.ExtraFanArtPath)]</value>
+		<value condition="[Window.IsActive(videolibrary) | Window.IsActive(movieinformation)] + Skin.HasSetting(SkinHelper.EnableExtraFanart) + !IsEmpty(Window(Home).Property(SkinHelper.ExtraFanArtPath)) + !StringCompare(Window(Home).Property(SkinHelper.ExtraFanArtPath),N)">$INFO[Window(Home).Property(SkinHelper.ExtraFanArtPath)]</value>
 		<value condition="!IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
 		<value condition="!IsEmpty(Container(9500).ListItem.Art(fanart))">$INFO[Container(9500).ListItem.Art(fanart)]</value>
 		<value condition="!IsEmpty(ListItem.Property(Fanart_Image))">$INFO[ListItem.Property(Fanart_Image)]</value>
