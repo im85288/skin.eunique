@@ -1275,7 +1275,7 @@
 			<label>32075</label>
 			<selected>Skin.HasSetting(movies.53banner.hide)</selected>
 			<onclick>Skin.ToggleSetting(movies.53banner.hide)</onclick>
-			<visible>[Control.IsVisible(53) | Control.IsVisible(52) | Control.IsVisible(56)] + Container.Content(movies)</visible>
+			<visible>[Control.IsVisible(53) | Control.IsVisible(52) | Control.IsVisible(58)] + Container.Content(movies)</visible>
 		</control>
 		<control type="radiobutton" id="9021" description="Banner List (53)">
 			<include>DefContextButtonBlade</include>
@@ -1283,7 +1283,7 @@
 			<label>32075</label>
 			<selected>Skin.HasSetting(tvshows.53banner.hide)</selected>
 			<onclick>Skin.ToggleSetting(tvshows.53banner.hide)</onclick>
-			<visible>[Control.IsVisible(53) | Control.IsVisible(52) | Control.IsVisible(56)] + Container.Content(tvshows)</visible>
+			<visible>[Control.IsVisible(53) | Control.IsVisible(52) | Control.IsVisible(58)] + Container.Content(tvshows)</visible>
 		</control>
 		<control type="radiobutton" id="9022" description="Banner List (53)">
 			<include>DefContextButtonBlade</include>
@@ -1291,7 +1291,7 @@
 			<label>32075</label>
 			<selected>Skin.HasSetting(seasons.53banner.hide)</selected>
 			<onclick>Skin.ToggleSetting(seasons.53banner.hide)</onclick>
-			<visible>[Control.IsVisible(53) | Control.IsVisible(52) | Control.IsVisible(56)] + Container.Content(seasons)</visible>
+			<visible>[Control.IsVisible(53) | Control.IsVisible(52) | Control.IsVisible(58)] + Container.Content(seasons)</visible>
 		</control>
 		<control type="radiobutton" id="9023" description="Banner List (53)">
 			<include>DefContextButtonBlade</include>
@@ -1299,7 +1299,7 @@
 			<label>32075</label>
 			<selected>Skin.HasSetting(episodes.53banner.hide)</selected>
 			<onclick>Skin.ToggleSetting(episodes.53banner.hide)</onclick>
-			<visible>[Control.IsVisible(53) | Control.IsVisible(52) | Control.IsVisible(56)] + Container.Content(episodes)</visible>
+			<visible>[Control.IsVisible(53) | Control.IsVisible(52) | Control.IsVisible(58)] + Container.Content(episodes)</visible>
 		</control>
 		<control type="radiobutton" id="9024" description="Banner List (53)">
 			<include>DefContextButtonBlade</include>
@@ -1307,7 +1307,7 @@
 			<label>32075</label>
 			<selected>Skin.HasSetting(artists.53banner.hide)</selected>
 			<onclick>Skin.ToggleSetting(artists.53banner.hide)</onclick>
-			<visible>[Control.IsVisible(53) | Control.IsVisible(52) | Control.IsVisible(56)] + Container.Content(artists)</visible>
+			<visible>[Control.IsVisible(53) | Control.IsVisible(52) | Control.IsVisible(58)] + Container.Content(artists)</visible>
 		</control>
 		<control type="radiobutton" id="9025" description="Banner List (53)">
 			<include>DefContextButtonBlade</include>
@@ -1315,7 +1315,7 @@
 			<label>32075</label>
 			<selected>Skin.HasSetting(albums.53banner.hide)</selected>
 			<onclick>Skin.ToggleSetting(albums.53banner.hide)</onclick>
-			<visible>[Control.IsVisible(53) | Control.IsVisible(52) | Control.IsVisible(56)] + Container.Content(albums)</visible>
+			<visible>[Control.IsVisible(53) | Control.IsVisible(52) | Control.IsVisible(58)] + Container.Content(albums)</visible>
 		</control>
 		<control type="radiobutton" id="9026" description="Banner List (53)">
 			<include>DefContextButtonBlade</include>
@@ -1331,7 +1331,15 @@
 			<label>32075</label>
 			<selected>Skin.HasSetting(general.53banner.hide)</selected>
 			<onclick>Skin.ToggleSetting(general.53banner.hide)</onclick>
-			<visible>[Control.IsVisible(53) | Control.IsVisible(52) | Control.IsVisible(56)] + !Container.Content(songs) + !Container.Content(albums) + !Container.Content(artists) + !Container.Content(episodes) + !Container.Content(seasons) + !Container.Content(tvshows) + !Container.Content(movies)</visible>
+			<visible>[Control.IsVisible(53) | Control.IsVisible(52) | Control.IsVisible(58)] + !Container.Content(songs) + !Container.Content(albums) + !Container.Content(artists) + !Container.Content(episodes) + !Container.Content(seasons) + !Container.Content(tvshows) + !Container.Content(movies)</visible>
+		</control>
+		<control type="radiobutton" id="9028" description="Banner List (53)">
+			<include>DefContextButtonBlade</include>
+			<align>left</align>
+			<label>32104</label>
+			<selected>Skin.HasSetting(general.58logos.slide)</selected>
+			<onclick>Skin.ToggleSetting(general.58logos.slide)</onclick>
+			<visible>Control.IsVisible(58)</visible>
 		</control>
 		<control type="radiobutton" id="9031" description="Banner show poster (54)">
 			<include>DefContextButtonBlade</include>
@@ -1341,7 +1349,7 @@
 			<onclick>Skin.ToggleSetting(54banner.showinfo)</onclick>
 			<visible>Control.IsVisible(54) + !Container.Content(seasons)</visible>
 		</control>
-		<!--<control type="radiobutton" id="9017" description="Animate Discart (513,514)"><include>DefContextButtonBlade</include><align>left</align><label> - Rotate DiscArt</label><selected>Skin.HasSetting(AnimateDiscArt)</selected><onclick>Skin.ToggleSetting(AnimateDiscArt)</onclick><visible>Control.IsVisible(513) | Control.IsVisible(514)</visible><visible>Skin.HasSetting(views.discart)</visible></control><control type="radiobutton" id="9018" description="Cases (513,514,50,53,56)"><include>DefContextButtonBlade</include><align>left</align><label>Use Cases</label><selected>Skin.HasSetting(views.cases)</selected><onclick>Skin.ToggleSetting(views.cases)</onclick><visible>Control.IsVisible(513) | Control.IsVisible(514) | Control.IsVisible(50) | Control.IsVisible(53) | Control.IsVisible(56)</visible></control><control type="radiobutton" id="9019" description="Clear Cases (513,514,50,53,56)"><include>DefContextButtonBlade</include><align>left</align><label> - Clear Cases</label><selected>Skin.HasSetting(views.clearcases)</selected><onclick>Skin.Reset(views.bddvdcases)</onclick><onclick>Skin.Reset(views.colourcases)</onclick><onclick>Skin.ToggleSetting(views.clearcases)</onclick><visible>Control.IsVisible(513) | Control.IsVisible(514) | Control.IsVisible(50) | Control.IsVisible(53) | Control.IsVisible(56)</visible><visible>Skin.HasSetting(views.cases)</visible></control><control type="radiobutton" id="9020" description="Colour Cases (513,514,50,53,56)"><include>DefContextButtonBlade</include><align>left</align><label> - Colour Cases</label><selected>Skin.HasSetting(views.colourcases)</selected><onclick>Skin.Reset(views.bddvdcases)</onclick><onclick>Skin.Reset(views.clearcases)</onclick><onclick>Skin.ToggleSetting(views.colourcases)</onclick><visible>Control.IsVisible(513) | Control.IsVisible(514) | Control.IsVisible(50) | Control.IsVisible(53) | Control.IsVisible(56)</visible><visible>Skin.HasSetting(views.cases)</visible></control><control type="radiobutton" id="9021" description="BD/DVD Cases (513,514,50,53,56)"><include>DefContextButtonBlade</include><align>left</align><label> - BD/DVD Cases</label><selected>Skin.HasSetting(views.bddvdcases)</selected><onclick>Skin.Reset(views.colourcases)</onclick><onclick>Skin.Reset(views.clearcases)</onclick><onclick>Skin.ToggleSetting(views.bddvdcases)</onclick><visible>Control.IsVisible(513) | Control.IsVisible(514) | Control.IsVisible(50) | Control.IsVisible(53) | Control.IsVisible(56)</visible><visible>Skin.HasSetting(views.cases)</visible></control>--><control type="radiobutton" id="9032" description="Title Overlay (515)">
+		<!--<control type="radiobutton" id="9017" description="Animate Discart (513,514)"><include>DefContextButtonBlade</include><align>left</align><label> - Rotate DiscArt</label><selected>Skin.HasSetting(AnimateDiscArt)</selected><onclick>Skin.ToggleSetting(AnimateDiscArt)</onclick><visible>Control.IsVisible(513) | Control.IsVisible(514)</visible><visible>Skin.HasSetting(views.discart)</visible></control><control type="radiobutton" id="9018" description="Cases (513,514,50,53,56)"><include>DefContextButtonBlade</include><align>left</align><label>Use Cases</label><selected>Skin.HasSetting(views.cases)</selected><onclick>Skin.ToggleSetting(views.cases)</onclick><visible>Control.IsVisible(513) | Control.IsVisible(514) | Control.IsVisible(50) | Control.IsVisible(53) | Control.IsVisible(58)</visible></control><control type="radiobutton" id="9019" description="Clear Cases (513,514,50,53,56)"><include>DefContextButtonBlade</include><align>left</align><label> - Clear Cases</label><selected>Skin.HasSetting(views.clearcases)</selected><onclick>Skin.Reset(views.bddvdcases)</onclick><onclick>Skin.Reset(views.colourcases)</onclick><onclick>Skin.ToggleSetting(views.clearcases)</onclick><visible>Control.IsVisible(513) | Control.IsVisible(514) | Control.IsVisible(50) | Control.IsVisible(53) | Control.IsVisible(58)</visible><visible>Skin.HasSetting(views.cases)</visible></control><control type="radiobutton" id="9020" description="Colour Cases (513,514,50,53,56)"><include>DefContextButtonBlade</include><align>left</align><label> - Colour Cases</label><selected>Skin.HasSetting(views.colourcases)</selected><onclick>Skin.Reset(views.bddvdcases)</onclick><onclick>Skin.Reset(views.clearcases)</onclick><onclick>Skin.ToggleSetting(views.colourcases)</onclick><visible>Control.IsVisible(513) | Control.IsVisible(514) | Control.IsVisible(50) | Control.IsVisible(53) | Control.IsVisible(58)</visible><visible>Skin.HasSetting(views.cases)</visible></control><control type="radiobutton" id="9021" description="BD/DVD Cases (513,514,50,53,56)"><include>DefContextButtonBlade</include><align>left</align><label> - BD/DVD Cases</label><selected>Skin.HasSetting(views.bddvdcases)</selected><onclick>Skin.Reset(views.colourcases)</onclick><onclick>Skin.Reset(views.clearcases)</onclick><onclick>Skin.ToggleSetting(views.bddvdcases)</onclick><visible>Control.IsVisible(513) | Control.IsVisible(514) | Control.IsVisible(50) | Control.IsVisible(53) | Control.IsVisible(58)</visible><visible>Skin.HasSetting(views.cases)</visible></control>--><control type="radiobutton" id="9032" description="Title Overlay (515)">
 			<include>DefContextButtonBlade</include>
 			<align>left</align>
 			<label>$LOCALIZE[31844] $LOCALIZE[369] $LOCALIZE[31845]</label>

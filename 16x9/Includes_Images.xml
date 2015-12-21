@@ -763,10 +763,19 @@
 		<value condition="!IsEmpty(Container(518).ListItem.Art(clearlogo))">$INFO[Container(518).ListItem.Art(clearlogo)]</value>
 		<value>http://localhost:52307/getpvrthumb&amp;title=$INFO[Container(518).ListItem.Title]&amp;type=clearlogo</value>
 	</variable>
+	<variable name="Container58Logo">
+		<value condition="!IsEmpty(Container(58).ListItem.Art(tvshow.clearlogo))">$INFO[Container(58).ListItem.Art(tvshow.clearlogo)]</value>
+		<value condition="!IsEmpty(Container(58).ListItem.Art(clearlogo))">$INFO[Container(58).ListItem.Art(clearlogo)]</value>
+		<value>http://localhost:52307/getpvrthumb&amp;title=$INFO[Container(58).ListItem.Title]&amp;type=clearlogo</value>
+	</variable>
 	<variable name="Container56Logo">
 		<value condition="!IsEmpty(Container(56).ListItem.Art(tvshow.clearlogo))">$INFO[Container(56).ListItem.Art(tvshow.clearlogo)]</value>
 		<value condition="!IsEmpty(Container(56).ListItem.Art(clearlogo))">$INFO[Container(56).ListItem.Art(clearlogo)]</value>
 		<value>http://localhost:52307/getpvrthumb&amp;title=$INFO[Container(56).ListItem.Title]&amp;type=clearlogo</value>
+	</variable>
+	<variable name="Container58CharacterArt">
+		<value condition="Container.Content(episodes) | Container.Content(seasons)">http://localhost:52307/getpvrthumb&amp;title=$INFO[Container(58).ListItem.TVShowTitle]&amp;type=characterart</value>
+		<value>http://localhost:52307/getpvrthumb&amp;title=$INFO[Container(58).ListItem.Title]&amp;type=characterart</value>
 	</variable>
 	<variable name="Container56CharacterArt">
 		<value condition="Container.Content(episodes) | Container.Content(seasons)">http://localhost:52307/getpvrthumb&amp;title=$INFO[Container(56).ListItem.TVShowTitle]&amp;type=characterart</value>

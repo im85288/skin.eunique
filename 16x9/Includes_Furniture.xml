@@ -242,6 +242,38 @@
 			<visible>Container.Column(1)</visible>
 		</control>
 	</include>
+	<include name="Furniture_ScrollbarMiniList">
+		<control type="scrollbar" id="66">
+			<onback>50</onback>
+			<posx>0</posx>
+			<posy>415</posy>
+			<height>652</height>
+			<width>10</width>
+			<onleft condition="!Skin.HasSetting(global.kioskmode)">9000</onleft>
+			<onright>50</onright>
+			<texturesliderbackground colordiffuse="Dark4">common/box.png</texturesliderbackground>
+			<texturesliderbar colordiffuse="$VAR[ColourHighlight]">common/box.png</texturesliderbar>
+			<texturesliderbarfocus colordiffuse="$VAR[ColourHighlight]">common/box.png</texturesliderbarfocus>
+			<animation effect="fade" start="100" end="33" time="200" condition="!Control.HasFocus(66) + !Container.Scrolling">Conditional</animation>
+			<animation effect="slide" end="-100,0" time="200" condition="!Control.HasFocus(66) + !Container.Scrolling">Conditional</animation>
+			<visible>Container.Column(0)</visible>
+		</control>
+		<control type="scrollbar" id="66">
+			<onback>50</onback>
+			<posx>1910</posx>
+			<posy>415</posy>
+			<height>652</height>
+			<width>10</width>
+			<onleft>50</onleft>
+			<onright condition="!Skin.HasSetting(global.kioskmode)">9000</onright>
+			<texturesliderbackground colordiffuse="Dark4">common/box.png</texturesliderbackground>
+			<texturesliderbar colordiffuse="$VAR[ColourHighlight]">common/box.png</texturesliderbar>
+			<texturesliderbarfocus colordiffuse="$VAR[ColourHighlight]">common/box.png</texturesliderbarfocus>
+			<animation effect="fade" start="100" end="33" time="200" condition="!Control.HasFocus(66) + !Container.Scrolling">Conditional</animation>
+			<animation effect="slide" end="100,0" time="200" condition="!Control.HasFocus(66) + !Container.Scrolling">Conditional</animation>
+			<visible>Container.Column(1)</visible>
+		</control>
+	</include>
 	<include name="Furniture_ScrollbarM">
 		<control type="scrollbar" id="60">
 			<onback>50</onback>
@@ -337,7 +369,7 @@
 		<control type="group">
 			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-VideoList.xml) + !Control.IsVisible(500) + !Control.IsVisible(54) + !Control.IsVisible(601) + !Control.IsVisible(52) + !Control.IsVisible(515) + !ControlGroup(9000).HasFocus()</visible>
 			<visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(albums) | Container.Content(songs) | Container.Content(artists)</visible>
-			<visible>!Control.IsVisible(518) + !Control.IsVisible(56)</visible>
+			<visible>!Control.IsVisible(518) + !Control.IsVisible(58)</visible>
 			<left>1664</left>
 			<top>909</top>
 			<include>Animation.FadeIn</include>
@@ -1012,7 +1044,7 @@
 			</control>
 		</control>
 		<control type="group">
-			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-VideoList.xml) + !Control.IsVisible(500) + !Control.IsVisible(54) + !Control.IsVisible(52) + !Control.IsVisible(53) + !Control.IsVisible(56) + !Control.IsVisible(515)</visible>
+			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-VideoList.xml) + !Control.IsVisible(500) + !Control.IsVisible(54) + !Control.IsVisible(52) + !Control.IsVisible(53) + !Control.IsVisible(58) + !Control.IsVisible(515)</visible>
 			<visible>Container.Content(sets) | Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)</visible>
 			<visible>!Control.IsVisible(518)</visible>
 			<top>696</top>
@@ -1160,7 +1192,7 @@
 	</include>
 	<include name="Furniture_Discography">
 		<control type="group">
-			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml) + !Control.IsVisible(500) + !Control.IsVisible(54) + !Control.IsVisible(52) + !Control.IsVisible(53) + !Control.IsVisible(56) + !Control.IsVisible(515) + !Control.IsVisible(601)</visible>
+			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml) + !Control.IsVisible(500) + !Control.IsVisible(54) + !Control.IsVisible(52) + !Control.IsVisible(53) + !Control.IsVisible(58) + !Control.IsVisible(515) + !Control.IsVisible(601)</visible>
 			<visible>Container.Content(albums) | Container.Content(songs) | Container.Content(artists)</visible>
 			<top>696</top>
 			<include>Animation.FadeIn</include>

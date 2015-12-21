@@ -3,7 +3,7 @@
 <window id="6">
 	<defaultcontrol always="true">50</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
-	<views>50,52,53,550,54,55,56,57,155,59,52,500,501,513,515,514,516,518</views>
+	<views>50,52,53,550,54,55,56,57,58,155,59,52,500,501,513,515,514,516,518</views>
 	<onload>SetProperty(cfa_ignore_set,True,home)</onload>
 	<onload condition="System.HasAddon(script.tv.show.next.aired)">RunScript(script.tv.show.next.aired,backend=True)</onload>
 	<onunload>ClearProperty(SkinHelper.ListItemGenres,home)</onunload>
@@ -22,7 +22,7 @@
 			<include >View_50_List</include>
 			<include >View_52_BigList</include>
 			<include >View_53_BigListInfo</include>
-			<include>View_56_MiniListInfo</include>
+			<include>View_58_MiniListInfo</include>
 			<include >View_54_Banner</include>
 			<include>View_55_Wall</include>
 			<include>View_57_ExtraInfo</include>

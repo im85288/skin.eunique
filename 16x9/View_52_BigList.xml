@@ -616,7 +616,6 @@
 			<height>120</height>
 			<aspectratio scalediffuse="false">scale</aspectratio>
 			<texture background="true" colordiffuse="$VAR[BorderHighlightColour]">$VAR[FocusedBorderImage]</texture>
-			<visible>!Control.HasFocus(56)</visible>
 		</control>
 		<control type="label" id="13370">
 			<left>10</left>
@@ -743,46 +742,24 @@
 		</control>
 	</include>
 
-	<include name="View_56_MiniListInfo">
-		<description>List View (id=56)</description>
+	<include name="View_58_MiniListInfo">
+		<description>List View (id=58)</description>
 		<control type="group">
 			<include condition="!Skin.HasSetting(low.power)">Animation.Common</include>
 			<include condition="Skin.HasSetting(low.power)">Animation.Common.Lowpower</include>
 			<include condition="!Skin.HasSetting(low.power)">Animation.Common.Overlay</include>
 			<include condition="Skin.HasSetting(low.power)">Animation.Common.Overlay.Lowpower</include>
-			<visible>Control.IsVisible(56)</visible>
+			<visible>Control.IsVisible(58)</visible>
 			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml)</visible>
-			<control type="group">
-				<top>TopPad</top>
-				<left>10</left>
-				<control type="image">
-					<top>-5</top>
-					<width>800</width>
-					<height>210</height>
-					<texture>$VAR[Container56Logo]</texture>
-					<aspectratio align="left" aligny="bottom">keep</aspectratio>
-					<fadetime>50</fadetime>
-					<animation effect="slide" end="0,51" center="auto" time="200" condition="!Container.Content(movies)">Conditional</animation>
-				</control>
-				<control type="image">
-					<top>-40</top>
-					<right>10</right>
-					<width>210</width>
-					<height>210</height>
-					<texture>$VAR[Container56CharacterArt]</texture>
-					<aspectratio align="right" aligny="bottom">keep</aspectratio>
-					<fadetime>50</fadetime>
-				</control>
-			</control>
-			<control type="panel" id="56">
-				<top>425</top>
+			<control type="panel" id="58">
+				<top>415</top>
 				<left>10</left>
 				<width>960</width>
 				<height>665</height>
 				<onleft>66</onleft>
 				<onright>5089222</onright>
-				<ondown>56</ondown>
-				<onup>56</onup>
+				<ondown>58</ondown>
+				<onup>58</onup>
 				<preloaditems>2</preloaditems>
 				<pagecontrol>66</pagecontrol>
 				<orientation>vertical</orientation>
@@ -790,24 +767,24 @@
 				<scrolltime tween="quadratic">400</scrolltime>
 				<itemlayout height="133" width="955">
 					<control type="group">
-						<animation effect="fade" end="65" start="100" time="200" condition="Control.HasFocus(5089222)">Conditional</animation>
-						<control type="image">
-							<left>0</left>
-							<top>0</top>
-							<right>10</right>
-							<height>120</height>
-							<texture colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
-						</control>
-						<control type="image">
-							<left>120</left>
-							<top>0</top>
-							<right>130</right>
-							<height>120</height>
-							<texture diffuse="diffuse/extraposter-ref-blur-rev.png" background="true">$VAR[BannerImage]</texture>
-							<aspectratio scalediffuse="false">stretch</aspectratio>
-							<visible>![[Skin.HasSetting(movies.53banner.hide) + Container.Content(movies)] | [Skin.HasSetting(tvshows.53banner.hide) + Container.Content(tvshows)] | [Skin.HasSetting(seasons.53banner.hide) + Container.Content(seasons)] | [Skin.HasSetting(episodes.53banner.hide) + Container.Content(episodes)] | [Skin.HasSetting(artists.53banner.hide) + Container.Content(artists)] | [Skin.HasSetting(albums.53banner.hide) + Container.Content(albums)] | [Skin.HasSetting(songs.53banner.hide) + Container.Content(songs)] | [Skin.HasSetting(general.53banner.hide) + !Container.Content(songs) + !Container.Content(albums) + !Container.Content(artists) + !Container.Content(episodes) + !Container.Content(seasons) + !Container.Content(tvshows) + !Container.Content(movies)]]</visible>
-						</control>
-						<include>View_52_BigList_ItemLayout</include>
+						<animation effect="fade" end="65" start="100" time="200" condition="Control.HasFocus(508922)">Conditional</animation>
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<right>10</right>
+						<height>120</height>
+						<texture colordiffuse="$VAR[EmbyLeftColourHighlight]">common/box.png</texture>
+					</control>
+					<control type="image">
+						<left>120</left>
+						<top>0</top>
+						<right>130</right>
+						<height>120</height>
+						<texture diffuse="diffuse/extraposter-ref-blur-rev.png" background="true">$VAR[BannerImage]</texture>
+						<aspectratio scalediffuse="false">stretch</aspectratio>
+						<visible>![[Skin.HasSetting(movies.53banner.hide) + Container.Content(movies)] | [Skin.HasSetting(tvshows.53banner.hide) + Container.Content(tvshows)] | [Skin.HasSetting(seasons.53banner.hide) + Container.Content(seasons)] | [Skin.HasSetting(episodes.53banner.hide) + Container.Content(episodes)] | [Skin.HasSetting(artists.53banner.hide) + Container.Content(artists)] | [Skin.HasSetting(albums.53banner.hide) + Container.Content(albums)] | [Skin.HasSetting(songs.53banner.hide) + Container.Content(songs)] | [Skin.HasSetting(general.53banner.hide) + !Container.Content(songs) + !Container.Content(albums) + !Container.Content(artists) + !Container.Content(episodes) + !Container.Content(seasons) + !Container.Content(tvshows) + !Container.Content(movies)]]</visible>
+					</control>
+					<include>View_52_BigList_ItemLayout</include>
 					</control>
 				</itemlayout>
 				<focusedlayout height="133" width="955">
@@ -815,18 +792,18 @@
 						<texturefocus>-</texturefocus>
 						<texturenofocus>-</texturenofocus>
 						<onfocus>SetProperty(cfa_ignore_set,True,home)</onfocus>
-
+						
 						<onfocus condition="Container.Content(movies)">ClearProperty(TVShowID,home)</onfocus>
 						<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
 						<onfocus condition="!Skin.HasSetting(low.power)">RunScript(script.colorbox,info=bluronly,id='"$VAR[PosterImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfo)</onfocus>
-						<onfocus condition="!Skin.HasSetting(low.power)">RunScript(script.colorbox,info=bluronly,id='"$VAR[LandscapeImageOnly]"',radius=$VAR[VideoInfoBlurLevel],prefix=MiniListInfoExtra)</onfocus>
+						<onfocus condition="!Skin.HasSetting(low.power)">RunScript(script.colorbox,info=bluronly,id='"$VAR[LandscapeImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=BigListInfoExtra)</onfocus>
 					</control>
 					<control type="image">
 						<left>0</left>
 						<top>0</top>
 						<right>10</right>
 						<height>120</height>
-						<texture colordiffuse="$VAR[BorderHighlightColour]">common/box.png</texture>
+						<texture colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</texture>
 					</control>
 					<control type="image">
 						<left>120</left>
@@ -841,7 +818,7 @@
 				</focusedlayout>
 			</control>
 			<control type="group">
-				<include>Furniture_ScrollbarBigList</include>
+				<include>Furniture_ScrollbarMiniList</include>
 			</control>
 			<control type="group">
 				<include>Animation.FadeIn</include>
@@ -854,16 +831,15 @@
 				</animation>
 				<control type="image">
 					<left>10</left>
-					<top>374</top>
+					<top>364</top>
 					<width>945</width>
 					<height>51</height>
 					<texture colordiffuse="$VAR[CommunityRatingColour]">common/white.png</texture>
-					<visible>Container.Content(movies)</visible>
 				</control>
 				<control type="label">
 					<description>textarea</description>
 					<left>10</left>
-					<top>373</top>
+					<top>363</top>
 					<width>945</width>
 					<height>51</height>
 					<font>MediumSmallBold</font>
@@ -872,21 +848,21 @@
 					<scrollspeed>150</scrollspeed>
 					<scrollsuffix>   </scrollsuffix>
 					<label>$INFO[Window(Home).Property(SkinHelper.RottenTomatoesConsensus),[I]",[/I]"]</label>
-					<visible>Container.Content(movies)</visible>
+					<visible>!StringCompare(Window(Home).Property(SkinHelper.RottenTomatoesConsensus),N/A)</visible>
 				</control>
 			</control>
 			<control type="image">
-				<top>373</top>
+				<top>364</top>
 				<left>965</left>
 				<width>945</width>
-				<height>473</height>
+				<height>485</height>
 				<fadetime>100</fadetime>
 				<aspectratio align="left" aligny="center" scalediffuse="false">stretch</aspectratio>
-				<texture background="true">$VAR[LandscapeImage]</texture>
+				<texture background="true">$INFO[Container(58).ListItem.Art(fanart)]</texture>
 			</control>
 			<control type="progress">
 				<left>965</left>
-				<top>838</top>
+				<top>841</top>
 				<width>945</width>
 				<height>8</height>
 				<info>ListItem.PercentPlayed</info>
@@ -898,7 +874,30 @@
 				<visible>ListItem.IsResumable</visible>
 			</control>
 			<control type="group">
-				<top>322</top>
+				<top>TopPad</top>
+				<left>965</left>
+				<width>945</width>
+				<animation effect="slide" end="0,536" time="0" condition="Skin.HasSetting(general.58logos.slide)">Conditional</animation>
+				<control type="image">
+					<left>0</left>
+					<width>945</width>
+					<height>157</height>
+					<align>center</align>
+					<texture>$VAR[Container58Logo]</texture>
+					<aspectratio align="center" aligny="bottom">keep</aspectratio>
+					<fadetime>50</fadetime>
+				</control>
+				<control type="image">
+					<right>367</right>
+					<width>205</width>
+					<height>157</height>
+					<texture>$VAR[Container58CharacterArt]</texture>
+					<aspectratio align="center" aligny="bottom">keep</aspectratio>
+					<fadetime>50</fadetime>
+				</control>
+			</control>
+			<control type="group">
+				<top>313</top>
 				<left>965</left>
 				<width>955</width>
 				<height>51</height>
@@ -1016,7 +1015,7 @@
 				<height>139</height>
 				<fadetime>500</fadetime>
 				<aspectratio align="left" aligny="top" scalediffuse="false" flipy="true">scale</aspectratio>
-				<texture colordiffuse="$VAR[ColorboxPowerModeColor]" background="true" flipy="true">$VAR[ColorboxPowerModeImage]</texture>
+				<texture colordiffuse="$VAR[EmbyLeftColourHighlight]" background="true">common/white.png</texture>
 			</control>
 			<control type="textbox">
 				<description>textarea</description>
