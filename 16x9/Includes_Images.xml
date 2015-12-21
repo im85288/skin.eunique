@@ -283,7 +283,7 @@
 		<value condition="!IsEmpty(Container(58).ListItem.Icon) + substring(Container(58).FolderPath,plugin://,left)">$INFO[Container(58).ListItem.Icon]</value>
 		<value condition="!IsEmpty(Container(58).ListItem.Thumb) + substring(Container(58).FolderPath,plugin://,left)">$INFO[Container(58).ListItem.Thumb]</value>
 		<value condition="Container(58).Content(episodes) + [!Skin.HasSetting(osd.hidespoilers) | [Skin.HasSetting(osd.hidespoilers) + stringcompare(Container(58).ListItem.Overlay,OverlayWatched.png)]]">$INFO[Container(58).ListItem.Icon]</value>
-		<value condition="Skin.HasSetting(osd.hidespoilers) + Container(58).Content(episodes) + [stringcompare(Container(58).ListItem.Overlay,OverlayUnWatched.png) | Container(58).ListItem.IsResumable]">$INFO[Container(58).ListItem.Art(tvshow.landscape)]</value>
+		<value condition="Skin.HasSetting(osd.hidespoilers) + Container(58).Content(episodes) + [stringcompare(Container(58).ListItem.Overlay,OverlayUnWatched.png) | Container(58).ListItem.IsResumable]">$INFO[Container(58).ListItem.Art(fanart)]</value>
 		<value condition="Skin.HasSetting(osd.hidespoilers) + Container(58).Content(episodes) + ![stringcompare(Container(58).ListItem.Overlay,OverlayUnWatched.png) + Container(58).ListItem.IsResumable]">$INFO[Container(58).ListItem.Icon]</value>
 		<value condition="!IsEmpty(Container(58).ListItem.Art(fanart)) + !Container(58).Content(episodes)">$INFO[Container(58).ListItem.Art(fanart)]</value>
 		<value condition="!IsEmpty(Container(58).ListItem.Thumb) + !Container(58).Content(episodes)">$INFO[Container(58).ListItem.Thumb]</value>
