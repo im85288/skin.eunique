@@ -1275,7 +1275,7 @@
 			<label>32075</label>
 			<selected>Skin.HasSetting(movies.53banner.hide)</selected>
 			<onclick>Skin.ToggleSetting(movies.53banner.hide)</onclick>
-			<visible>[Control.IsVisible(53) | Control.IsVisible(52)] + Container.Content(movies)</visible>
+			<visible>[Control.IsVisible(53) | Control.IsVisible(52) | Control.IsVisible(56)] + Container.Content(movies)</visible>
 		</control>
 		<control type="radiobutton" id="9021" description="Banner List (53)">
 			<include>DefContextButtonBlade</include>
@@ -1283,7 +1283,7 @@
 			<label>32075</label>
 			<selected>Skin.HasSetting(tvshows.53banner.hide)</selected>
 			<onclick>Skin.ToggleSetting(tvshows.53banner.hide)</onclick>
-			<visible>[Control.IsVisible(53) | Control.IsVisible(52)] + Container.Content(tvshows)</visible>
+			<visible>[Control.IsVisible(53) | Control.IsVisible(52) | Control.IsVisible(56)] + Container.Content(tvshows)</visible>
 		</control>
 		<control type="radiobutton" id="9022" description="Banner List (53)">
 			<include>DefContextButtonBlade</include>
@@ -1291,7 +1291,7 @@
 			<label>32075</label>
 			<selected>Skin.HasSetting(seasons.53banner.hide)</selected>
 			<onclick>Skin.ToggleSetting(seasons.53banner.hide)</onclick>
-			<visible>[Control.IsVisible(53) | Control.IsVisible(52)] + Container.Content(seasons)</visible>
+			<visible>[Control.IsVisible(53) | Control.IsVisible(52) | Control.IsVisible(56)] + Container.Content(seasons)</visible>
 		</control>
 		<control type="radiobutton" id="9023" description="Banner List (53)">
 			<include>DefContextButtonBlade</include>
@@ -1299,7 +1299,7 @@
 			<label>32075</label>
 			<selected>Skin.HasSetting(episodes.53banner.hide)</selected>
 			<onclick>Skin.ToggleSetting(episodes.53banner.hide)</onclick>
-			<visible>[Control.IsVisible(53) | Control.IsVisible(52)] + Container.Content(episodes)</visible>
+			<visible>[Control.IsVisible(53) | Control.IsVisible(52) | Control.IsVisible(56)] + Container.Content(episodes)</visible>
 		</control>
 		<control type="radiobutton" id="9024" description="Banner List (53)">
 			<include>DefContextButtonBlade</include>
@@ -1307,7 +1307,7 @@
 			<label>32075</label>
 			<selected>Skin.HasSetting(artists.53banner.hide)</selected>
 			<onclick>Skin.ToggleSetting(artists.53banner.hide)</onclick>
-			<visible>[Control.IsVisible(53) | Control.IsVisible(52)] + Container.Content(artists)</visible>
+			<visible>[Control.IsVisible(53) | Control.IsVisible(52) | Control.IsVisible(56)] + Container.Content(artists)</visible>
 		</control>
 		<control type="radiobutton" id="9025" description="Banner List (53)">
 			<include>DefContextButtonBlade</include>
@@ -1315,7 +1315,7 @@
 			<label>32075</label>
 			<selected>Skin.HasSetting(albums.53banner.hide)</selected>
 			<onclick>Skin.ToggleSetting(albums.53banner.hide)</onclick>
-			<visible>[Control.IsVisible(53) | Control.IsVisible(52)] + Container.Content(albums)</visible>
+			<visible>[Control.IsVisible(53) | Control.IsVisible(52) | Control.IsVisible(56)] + Container.Content(albums)</visible>
 		</control>
 		<control type="radiobutton" id="9026" description="Banner List (53)">
 			<include>DefContextButtonBlade</include>
@@ -1331,7 +1331,7 @@
 			<label>32075</label>
 			<selected>Skin.HasSetting(general.53banner.hide)</selected>
 			<onclick>Skin.ToggleSetting(general.53banner.hide)</onclick>
-			<visible>[Control.IsVisible(53) | Control.IsVisible(52)] + !Container.Content(songs) + !Container.Content(albums) + !Container.Content(artists) + !Container.Content(episodes) + !Container.Content(seasons) + !Container.Content(tvshows) + !Container.Content(movies)</visible>
+			<visible>[Control.IsVisible(53) | Control.IsVisible(52) | Control.IsVisible(56)] + !Container.Content(songs) + !Container.Content(albums) + !Container.Content(artists) + !Container.Content(episodes) + !Container.Content(seasons) + !Container.Content(tvshows) + !Container.Content(movies)</visible>
 		</control>
 		<control type="radiobutton" id="9031" description="Banner show poster (54)">
 			<include>DefContextButtonBlade</include>
