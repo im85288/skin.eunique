@@ -1124,13 +1124,15 @@
 			<include>DefContextButtonBlade</include>
 			<align>left</align>
 			<label>$LOCALIZE[32089]: $INFO[Skin.String(background.effect)]</label>
-			<onclick>SetProperty(Dialog.NumItems,3)</onclick>
+			<onclick>SetProperty(Dialog.NumItems,4)</onclick>
 			<onclick>SetProperty(Dialog.1.Label,Blur)</onclick>
 			<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(background.effect,Blur))</onclick>
 			<onclick>SetProperty(Dialog.2.Label,Pixelate)</onclick>
 			<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(background.effect,Pixelate))</onclick>
 			<onclick>SetProperty(Dialog.3.Label,Posterize)</onclick>
 			<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(background.effect,Posterize))</onclick>
+			<onclick>SetProperty(Dialog.4.Label,None)</onclick>
+			<onclick>SetProperty(Dialog.4.BuiltIn,Skin.SetString(background.effect,None))</onclick>
 			<onclick>RunScript(script.toolbox,info=selectdialog,header=Select Background Effect)</onclick>
 			<visible>Control.IsVisible(518) | Control.IsVisible(56)</visible>
 		</control>

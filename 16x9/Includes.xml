@@ -445,7 +445,7 @@
 			<visible>!Window.IsVisible(DialogVideoInfo.xml)</visible>
 			<visible>!Window.IsVisible(DialogPVRInfo.xml)</visible>
 			<visible>![Window.IsVisible(home) + Skin.HasSetting(home.blur)]</visible>
-			<visible>![Control.IsVisible(518) + !Skin.HasSetting(low.power)]</visible>
+			<visible>![Control.IsVisible(518) + !Skin.HasSetting(low.power) + !StringCompare(Skin.String(background.effect),None)]</visible>
 			<include>Dimensions_Fullscreen</include>
 			<include>Animation.FadeFromHome</include>
 			<animation effect="fade" end="0" start="100" time="350" tween="cubic" easing="inout" condition="Window.IsVisible(home)">WindowClose</animation>
