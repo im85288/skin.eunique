@@ -616,6 +616,7 @@
 			<height>120</height>
 			<aspectratio scalediffuse="false">scale</aspectratio>
 			<texture background="true" colordiffuse="$VAR[BorderHighlightColour]">$VAR[FocusedBorderImage]</texture>
+			<visible>!Control.HasFocus(56)</visible>
 		</control>
 		<control type="label" id="13370">
 			<left>10</left>
@@ -795,7 +796,7 @@
 							<top>0</top>
 							<right>10</right>
 							<height>120</height>
-							<texture colordiffuse="$VAR[EmbyLeftColourHighlight]">common/box.png</texture>
+							<texture colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
 						</control>
 						<control type="image">
 							<left>120</left>
@@ -818,14 +819,14 @@
 						<onfocus condition="Container.Content(movies)">ClearProperty(TVShowID,home)</onfocus>
 						<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
 						<onfocus condition="!Skin.HasSetting(low.power)">RunScript(script.colorbox,info=bluronly,id='"$VAR[PosterImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfo)</onfocus>
-						<onfocus condition="!Skin.HasSetting(low.power)">RunScript(script.colorbox,info=bluronly,id='"$VAR[LandscapeImage]"',radius=$VAR[VideoInfoBlurLevel],prefix=MiniListInfoExtra)</onfocus>
+						<onfocus condition="!Skin.HasSetting(low.power)">RunScript(script.colorbox,info=bluronly,id='"$VAR[LandscapeImageOnly]"',radius=$VAR[VideoInfoBlurLevel],prefix=MiniListInfoExtra)</onfocus>
 					</control>
 					<control type="image">
 						<left>0</left>
 						<top>0</top>
 						<right>10</right>
 						<height>120</height>
-						<texture colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</texture>
+						<texture colordiffuse="$VAR[BorderHighlightColour]">common/box.png</texture>
 					</control>
 					<control type="image">
 						<left>120</left>

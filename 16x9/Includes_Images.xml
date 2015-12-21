@@ -223,6 +223,7 @@
 		<value condition="!IsEmpty(ListItem.Property(banner))">$INFO[ListItem.Property(banner)]</value>
 	</variable>
 	<variable name="BannerImage">
+		<value condition="!IsEmpty(ListItem.Art(season.banner))">$INFO[ListItem.Art(season.banner)]</value>
 		<value condition="!IsEmpty(ListItem.Art(tvshow.banner))">$INFO[ListItem.Art(tvshow.banner)]</value>
 		<value condition="!IsEmpty(ListItem.Art(banner))">$INFO[ListItem.Art(banner)]</value>
 		<value condition="!IsEmpty(ListItem.Property(banner))">$INFO[ListItem.Property(banner)]</value>
@@ -571,6 +572,12 @@
 		<value condition="!IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
 		<value condition="!IsEmpty(ListItem.Art(landscape))">$INFO[ListItem.Art(landscape)]</value>
 		<value condition="!IsEmpty(ListItem.Art(tvshow.landscape))">$INFO[ListItem.Art(tvshow.landscape)]</value>
+		<value>$INFO[ListItem.Icon]</value>
+	</variable>
+	<variable name="LandscapeImageOnly">
+		<value condition="!IsEmpty(ListItem.Art(landscape))">$INFO[ListItem.Art(landscape)]</value>
+		<value condition="!IsEmpty(ListItem.Art(tvshow.landscape))">$INFO[ListItem.Art(tvshow.landscape)]</value>
+		<value condition="!IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
 		<value>$INFO[ListItem.Icon]</value>
 	</variable>
 	<variable name="EmbyWidgetLogo">
