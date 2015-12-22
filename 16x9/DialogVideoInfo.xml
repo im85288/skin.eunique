@@ -45,6 +45,9 @@
 			<visible>!Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml)</visible>
 			<visible>!Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)</visible>
 			<animation effect="slide" end="195,0" center="auto" time="200" condition="Control.HasFocus(9500) | Control.HasFocus(95004)">Conditional</animation>
+			<animation type="Conditional" reversible="true" condition="Skin.HasSetting(furniture.hidecastwidget) + [!Control.HasFocus(9499) + !Control.HasFocus(9500)]">
+				<effect type="slide" end="0,150" time="200" center="auto" tween="quadratic" easing="out" />
+			</animation>
 			<left>NewSidePad</left>
 			<right>NewSidePad</right>
 			<top>TopPad</top>
@@ -739,6 +742,9 @@
 			</control>
 			<!-- Bottom Section -->
 			<control type="group">
+				<animation type="Conditional" reversible="true" condition="Skin.HasSetting(furniture.hidecastwidget) + [!Control.HasFocus(9499) + !Control.HasFocus(9500)]">
+					<effect type="slide" end="0,300" time="200" center="auto" tween="quadratic" easing="out" />
+				</animation>
 				<animation effect="slide" end="450,0" center="auto" time="200" condition="Control.HasFocus(9500) | Control.HasFocus(95004)">Conditional</animation>
 				<bottom>0</bottom>
 				<height>265</height>
@@ -1057,6 +1063,9 @@
 			<include condition="!Skin.HasSetting(low.power)">Animation.DVInfo</include>
 			<include condition="Skin.HasSetting(low.power)">Animation.DVInfo.Lowpower</include>
 			<control type="group">
+				<animation type="Conditional" reversible="true" condition="Skin.HasSetting(furniture.hidecastwidget) + [!Control.HasFocus(9498) + !Control.HasFocus(9501)]">
+					<effect type="slide" end="0,-71" time="200" center="auto" tween="quadratic" easing="out" />
+				</animation>
 				<left>1654</left>
 				<top>759</top>
 				<control type="image">
@@ -1376,6 +1385,9 @@
 			</control>
 			<!-- Button grouplist -->
 			<control id="9010" type="grouplist">
+				<animation type="Conditional" reversible="true" condition="Skin.HasSetting(furniture.hidecastwidget) + [!Control.HasFocus(9498) + !Control.HasFocus(9501)]">
+					<effect type="slide" end="0,-71" time="200" center="auto" tween="quadratic" easing="out" />
+				</animation>
 				<left>643</left>
 				<top>751</top>
 				<width>1267</width>
@@ -1501,6 +1513,9 @@
 				</control>
 			</control>
 			<control id="9002" type="grouplist">
+				<animation type="Conditional" reversible="true" condition="Skin.HasSetting(furniture.hidecastwidget) + [!Control.HasFocus(9498) + !Control.HasFocus(9501)]">
+					<effect type="slide" end="0,-71" time="200" center="auto" tween="quadratic" easing="out" />
+				</animation>
 				<left>643</left>
 				<top>786</top>
 				<width>1267</width>
@@ -1580,6 +1595,10 @@
 				</control>
 			</control>
 			<control type="list" id="9498">
+				<animation type="Conditional" reversible="true" condition="Skin.HasSetting(furniture.hidecastwidget) + [!Control.HasFocus(9498) + !Control.HasFocus(9501)]">
+					<effect type="slide" end="0,-150" time="200" center="auto" tween="quadratic" easing="out" />
+					<effect type="fade" end="0" start="100" time="200" center="auto" tween="quadratic" easing="out" />
+				</animation>
 				<left>643</left>
 				<top>460</top>
 				<width>400</width>
@@ -1788,6 +1807,10 @@
 				</content>
 			</control>
 			<control type="label">
+				<animation type="Conditional" reversible="true" condition="Skin.HasSetting(furniture.hidecastwidget) + [!Control.HasFocus(9498) + !Control.HasFocus(9501)]">
+					<effect type="slide" end="0,-150" time="200" center="auto" tween="quadratic" easing="out" />
+					<effect type="fade" end="0" start="100" time="200" center="auto" tween="quadratic" easing="out" />
+				</animation>
 				<left>643</left>
 				<top>460</top>
 				<width>1200</width>
@@ -1805,6 +1828,10 @@
 				<onfocus>setfocus(9498)</onfocus>
 			</control>
 			<control type="wraplist" id="9501">
+				<animation type="Conditional" reversible="true" condition="Skin.HasSetting(furniture.hidecastwidget) + [!Control.HasFocus(9498) + !Control.HasFocus(9501)]">
+					<effect type="slide" end="0,-150" time="200" center="auto" tween="quadratic" easing="out" />
+					<effect type="fade" end="0" start="100" time="200" center="auto" tween="quadratic" easing="out" />
+				</animation>
 				<visible allowhiddenfocus="true">!Container(9501).IsUpdating</visible>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
@@ -1919,7 +1946,12 @@
 				</focusedlayout>
 				<content>$VAR[DefWidgetContentVideoInfoCast]</content>
 			</control>
-			<include>ButtonControlWidget</include>
+			<control type="group">
+				<animation type="Conditional" reversible="true" condition="Skin.HasSetting(furniture.hidecastwidget) + [!Control.HasFocus(9498) + !Control.HasFocus(9501)]">
+					<effect type="slide" end="0,-71" time="200" center="auto" tween="quadratic" easing="out" />
+				</animation>
+				<include>ButtonControlWidget</include>
+			</control>
 			<animation effect="fade" start="100" end="0" time="200" delay="0" condition="Control.HasFocus(101)" reversible="true">Conditional</animation>
 		</control>
 		<control type="image">

@@ -1769,7 +1769,7 @@
 						<aligny>top</aligny>
 						<font>HomeWidgetLabelFont</font>
 						<textoffsetx>0</textoffsetx>
-						<label>$VAR[EmbyWidget2Label]</label>
+						<label>$VAR[EmbyWidget1Label]</label>
 					</control>
 					<control type="wraplist" id="6012">
 						<description>Widget</description>
@@ -1822,7 +1822,7 @@
 								<visible>ListItem.IsResumable</visible>
 							</control>
 						</focusedlayout>
-						<content target="$VAR[DefWidget2Target]">$VAR[DefWidget2Content]</content>
+						<content target="$VAR[DefWidget1Target]">$VAR[DefWidget1Content]</content>
 					</control>
 					<control type="button" id="6012">
 						<visible>Skin.HasSetting(home.easynav)</visible>
@@ -1890,7 +1890,7 @@
 								<visible>ListItem.IsResumable</visible>
 							</control>
 						</focusedlayout>
-						<content target="$VAR[DefWidget2Target]">$VAR[DefWidget2Content]</content>
+						<content target="$VAR[DefWidget1Target]">$VAR[DefWidget1Content]</content>
 					</control>
 					<control type="group">
 						<include name="WidgetLoading">
@@ -2294,14 +2294,14 @@
 							<ondown>6016</ondown>
 							<onback>300</onback>
 							<textoffsetx>0</textoffsetx>
-							<label>$VAR[EmbyWidget1Label]</label>
+							<label>$VAR[EmbyWidget2Label]</label>
 							<focusedcolor>$VAR[ColourHighlight]</focusedcolor>
 							<texturenofocus>-</texturenofocus>
 							<texturefocus>-</texturefocus>
 							<onclick>ActivateWindow(1112)</onclick>
 						</control>
 					</control>
-					<control type="list" id="6016">
+					<control type="wraplist" id="6016">
 						<description>Widget</description>
 						<top>330</top>
 						<left>980</left>
@@ -2314,7 +2314,7 @@
 						<onback>300</onback>
 						<preloaditems>9</preloaditems>
 						<orientation>vertical</orientation>
-						<autoscroll time="1000">!Control.HasFocus(6016)</autoscroll>
+						<autoscroll time="4000">!Control.HasFocus(6016)</autoscroll>
 						<scrolltime tween="quadratic">100</scrolltime>
 						<itemlayout width="410" height="88.125">
 							<control type="image">
@@ -2358,7 +2358,7 @@
 								</control>
 							</control>
 						</focusedlayout>
-						<content target="$VAR[DefWidget1Target]">$VAR[DefWidget1Content]</content>
+						<content target="$VAR[DefWidget2Target]">$VAR[DefWidget2Content]</content>
 					</control>
 					<control type="group">
 						<include name="WidgetLoading">
@@ -8487,7 +8487,7 @@
 								<align>left</align>
 								<height>34</height>
 								<font>HomeWidgetLabelFont</font>
-								<label>$VAR[EmbyWidget2Label]</label>
+								<label>$VAR[EmbyWidget1Label]</label>
 								<include>Animation.DelayFadeIn</include>
 								<animation effect="slide" start="0" end="0,-40" time="500" delay="100" tween="quadratic" easing="out" condition="true">Conditional</animation>
 							</control>
@@ -8535,7 +8535,7 @@
 									</control>
 									<include>WidgetSquareFocusedItemLayout</include>
 								</focusedlayout>
-								<content target="$VAR[DefWidget2Target]">$VAR[DefWidget2Content]</content>
+								<content target="$VAR[DefWidget1Target]">$VAR[DefWidget1Content]</content>
 							</control>
 						</control>
 						<control type="group">
@@ -8549,7 +8549,7 @@
 								<align>left</align>
 								<height>34</height>
 								<font>HomeWidgetLabelFont</font>
-								<label>$VAR[EmbyWidget1Label]</label>
+								<label>$VAR[EmbyWidget2Label]</label>
 								<include>Animation.DelayFadeIn</include>
 								<animation effect="slide" start="0" end="0,-40" time="500" delay="100" tween="quadratic" easing="out" condition="true">Conditional</animation>
 							</control>
@@ -8597,7 +8597,7 @@
 									</control>
 									<include>WidgetSquareFocusedItemLayout</include>
 								</focusedlayout>
-								<content target="$VAR[DefWidget1Target]">$VAR[DefWidget1Content]</content>
+								<content target="$VAR[DefWidget2Target]">$VAR[DefWidget2Content]</content>
 							</control>
 						</control>
 						<control type="group">
