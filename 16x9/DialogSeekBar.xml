@@ -20,6 +20,88 @@
 			<include>Animation.FadeOut</include>
 			<visible>Skin.HasSetting(ShowClearLogoOSD)</visible>
 		</control>
+        <control id="508993" type="wraplist">
+            <left>310</left>
+            <top>600</top>
+            <width>1610</width>
+            <height>190</height>
+            <onup>50</onup>
+            <ondown>50</ondown>
+            <onleft>7000</onleft>
+            <onright>noop</onright>
+            <onback>50</onback>
+            <preloaditems>8</preloaditems>
+            <focusposition>0</focusposition>
+            <autoscroll time="3000">!Control.HasFocus(508993)</autoscroll>
+            <viewtype label="">list</viewtype>
+            <orientation>horizontal</orientation>
+            <defaultcontrol always="true">0</defaultcontrol>
+            <scrolltime easing="inout" tween="sine">300</scrolltime>
+            <animation effect="fade" end="100" start="0" time="300">Visible</animation>
+            <animation effect="fade" end="0" start="100" time="300">Hidden</animation>
+            <itemlayout height="190" width="134.166667">
+                <control type="group">
+                    <animation effect="zoom" end="85" start="100" time="200" center="auto" condition="Control.HasFocus(508993)">Conditional</animation>
+                    <control type="label">
+                        <left>0</left>
+                        <top>0</top>
+                        <right>0</right>
+                        <bottom>0</bottom>
+                        <height>190</height>
+                        <aligny>center</aligny>
+                        <align>center</align>
+                        <font>symbolbiggest</font>
+                        <label></label>
+                        <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+                        <fadetime>300</fadetime>
+                    </control>
+                    <control type="image">
+                        <left>0</left>
+                        <top>0</top>
+                        <right>0</right>
+                        <bottom>0</bottom>
+                        <aspectratio align="center" aligny="top">scale</aspectratio>
+                        <texture background="true">$VAR[PosterImage]</texture>
+                        <fadetime>200</fadetime>
+                    </control>
+                    <control type="image">
+                        <left>0</left>
+                        <top>0</top>
+                        <right>0</right>
+                        <bottom>0</bottom>
+                        <texture colordiffuse="$VAR[DisabledColour]">common/white.png</texture>
+                        <animation effect="fade" end="45" start="45" time="0" condition="true">Conditional</animation>
+                    </control>
+                </control>
+            </itemlayout>
+            <focusedlayout height="190" width="134.166667">
+                <control type="group">
+                    <control type="label">
+                        <left>0</left>
+                        <top>0</top>
+                        <right>0</right>
+                        <bottom>0</bottom>
+                        <height>190</height>
+                        <aligny>center</aligny>
+                        <align>center</align>
+                        <font>symbolbiggest</font>
+                        <label></label>
+                        <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+                        <fadetime>300</fadetime>
+                    </control>
+                    <control type="image">
+                        <left>0</left>
+                        <top>0</top>
+                        <right>0</right>
+                        <bottom>0</bottom>
+                        <aspectratio align="center" aligny="top">scale</aspectratio>
+                        <texture background="true">$VAR[PosterImage]</texture>
+                        <fadetime>00</fadetime>
+                    </control>
+                </control>
+            </focusedlayout>
+            <content target="video">$VAR[DefOSDCast]</content>
+        </control>
         <control type="group">
             <animation effect="slide" start="0" end="0,-74" time="150" condition="Window.IsVisible(videoosd)">Conditional</animation>
             <control type="group">

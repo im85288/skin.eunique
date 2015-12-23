@@ -89,6 +89,10 @@
 		<value condition="[Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + !IsEmpty(Window(home).Property(TVShowID))">plugin://script.skin.helper.service/?action=getcast&amp;tvshow=$INFO[Window(home).Property(TVShowID)]</value>
 		<value>plugin://service.library.data.provider?type=randommovies&amp;reload=$INFO[Window.Property(randommovies)]</value>
 	</variable>
+	<variable name="DefOSDCast">
+		<value condition="!IsEmpty(Window(home).Property(NextUpNotification.NowPlaying.Type)) + StringCompare(Window(home).Property(NextUpNotification.NowPlaying.Type),movie) + IntegerGreaterThan(Window(home).Property(NextUpNotification.NowPlaying.DBID),-1)">plugin://script.skin.helper.service/?action=getcast&amp;movie=$INFO[Window(home).Property(NextUpNotification.NowPlaying.DBID)]</value>
+		<value condition="!IsEmpty(Window(home).Property(NextUpNotification.NowPlaying.Type)) + StringCompare(Window(home).Property(NextUpNotification.NowPlaying.Type),episode) + IntegerGreaterThan(Window(home).Property(NextUpNotification.NowPlaying.DBID),-1)">plugin://script.skin.helper.service/?action=getcast&amp;tvshow=$INFO[Window(home).Property(NextUpNotification.NowPlaying.DBID)]</value>
+	</variable>
 	<variable name="DefWidgetContent">
 		<!-- Individual Widget Paths -->
 		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath))">$INFO[Container(300).ListItem.Property(widgetPath)]</value>
