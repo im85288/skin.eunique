@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="603">
+	<defaultcontrol>29</defaultcontrol>
+	<controls>
+		<include>GlobalOverlay</include>
+		<control type="group">
+			<include>DefDialogBackground</include>
+			<control type="label">
+				<description>Header Label</description>
+				<left>5</left>
+				<right>5</right>
+				<posy>12</posy>
+				<font>settingsheader</font>
+				<align>center</align>
+				<textcolor>$VAR[EmbyMenuColourHighlight]</textcolor>
+				<label>$LOCALIZE[19065]</label>
+			</control>
+			<control type="grouplist" id="5">
+				<description>Control Area</description>
+				<left>38</left>
+				<right>38</right>
+				<posy>90</posy>
+				<height>690</height>
+				<itemgap>3</itemgap>
+				<onup>21</onup>
+				<ondown>28</ondown>
+				<onleft>4</onleft>
+				<onright>29</onright>
+				<orientation>vertical</orientation>
+				<texturefocus colordiffuse="$VAR[EmbyLeftColourHighlight]">common/box.png</texturefocus>
+				<texturenofocus colordiffuse="$VAR[EmbyLeftColourHighlight]">common/box.png</texturenofocus>
+			</control>
+			<control type="button" id="7">
+				<description>default</description>
+				<include>DefSettingsButton2</include>
+				<align>left</align>
+				<texturefocus colordiffuse="$VAR[ColourHighlight]">common/box.png</texturefocus>
+			</control>
+			<control type="label" id="14">
+				<description>default</description>
+				<align>left</align>
+				<include>DefSettingsButton2</include>
+			</control>
+			<control type="radiobutton" id="8">
+				<description>radioButton</description>
+				<radioposx>801</radioposx>
+				<include>DefSettingsButton2</include>
+				<align>left</align>
+				<texturefocus colordiffuse="$VAR[ColourHighlight]">common/box.png</texturefocus>
+			</control>
+			<control type="spincontrolex" id="9">
+				<description>radioButton</description>
+				<include>DefSettingsButton2</include>
+				<align>left</align>
+				<texturefocus colordiffuse="$VAR[ColourHighlight]">common/box.png</texturefocus>
+			</control>
+			<control type="image" id="11">
+				<height>66</height>
+			</control>
+			<control type="edit" id="12">
+				<description>radioButton</description>
+				<align>left</align>
+				<textcolor>$VAR[EmbyMenuColourHighlight]</textcolor>
+				<texturenofocus colordiffuse="$VAR[EmbyMenuTextColourHighlight]">common/box.png</texturenofocus>
+				<texturefocus colordiffuse="$VAR[ColourHighlight]">common/box.png</texturefocus>
+			</control>
+			<control type="sliderex" id="13">
+				<description>radioButton</description>
+				<include>DefSettingsButton2</include>
+				<texturefocus colordiffuse="$VAR[ColourHighlight]">common/box.png</texturefocus>
+				<align>left</align>
+			</control>
+			<control type="button" id="28">
+				<description>Ok</description>
+				<centerleft>33%</centerleft>
+				<bottom>5</bottom>
+				<width>300</width>
+				<label>186</label>
+				<onleft>22</onleft>
+				<onright>29</onright>
+				<onup>5</onup>
+				<ondown>20</ondown>
+				<texturefocus colordiffuse="$VAR[ColourHighlight]">common/box.png</texturefocus>
+				<texturenofocus colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texturenofocus>
+				<include>DefSettingsButton4</include>
+			</control>
+			<control type="button" id="29">
+				<description>Cancel</description>
+				<centerright>33%</centerright>
+				<bottom>5</bottom>
+				<width>300</width>
+				<label>222</label>
+				<onleft>28</onleft>
+				<onright>22</onright>
+				<onup>5</onup>
+				<ondown>20</ondown>
+				<texturefocus colordiffuse="$VAR[ColourHighlight]">common/box.png</texturefocus>
+				<texturenofocus colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texturenofocus>
+				<include>DefSettingsButton4</include>
+			</control>
+		</control>
+	</controls>
+</window>
