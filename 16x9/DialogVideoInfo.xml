@@ -531,6 +531,7 @@
 				<control id="8" type="togglebutton">
 					<width>116</width>
 					<height>116</height>
+					<onclick>Skin.SetString(my.dbid,$INFO[ListItem.DBID])</onclick>
 					<onclick>Dialog.Close(MovieInformation)</onclick>
 					<font>symbol</font>
 					<label>$VAR[VideoInfoButton8]</label>
@@ -1114,22 +1115,20 @@
 					<visible>!ControlGroup(9010).HasFocus</visible>
 				</control>
 				<control type="label">
-					<right>11</right>
-					<top>11</top>
-					<width>80</width>
-					<height>80</height>
+					<right>16</right>
+					<top>16</top>
+					<width>76</width>
+					<height>76</height>
 					<font>symbolbackbig</font>
 					<label>$VAR[PercentWatchedBack]</label>
 					<textcolor>$VAR[BackingColourHighlight]</textcolor>
 					<visible>ControlGroup(9010).HasFocus</visible>
 				</control>
 				<control type="label">
-					<right>11</right>
-					<top>11</top>
-						<aligny>center</aligny>
-						<align>center</align>
-					<width>80</width>
-					<height>80</height>
+					<centerright>54</centerright>
+					<centertop>55</centertop>
+					<width>54</width>
+					<height>54</height>
 					<font>symbolbig</font>
 					<label>$VAR[PercentWatchedLabelInfo]</label>
 					<textcolor>$VAR[IndicatorColourHighlight]</textcolor>
@@ -1366,7 +1365,8 @@
 				<control id="8" type="togglebutton">
 					<width>116</width>
 					<height>116</height>
-					<onclick>dialog.close(all,true)</onclick>
+					<onclick>Skin.SetString(my.dbid,$INFO[ListItem.DBID])</onclick>
+					<onclick>Dialog.Close(MovieInformation)</onclick>
 					<font>symbol</font>
 					<label>$VAR[VideoInfoButton8]</label>
 					<altlabel></altlabel>

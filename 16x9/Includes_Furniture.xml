@@ -688,44 +688,19 @@
 				<control type="group">
 					<control type="image">
 						<left>0</left>
-						<width>50%</width>
-						<height>50%</height>
+						<width>100%</width>
+						<height>100%</height>
 						<aspectratio scalediffuse="false">scale</aspectratio>
 						<texture colordiffuse="$VAR[BorderHighlightColour]" background="true">$VAR[FocusedBorderImage]</texture>
-					</control>
-					<control type="image">
-						<left>50%</left>
-						<width>50%</width>
-						<height>50%</height>
-						<aspectratio scalediffuse="false">scale</aspectratio>
-						<texture colordiffuse="$VAR[BorderHighlightColour]" background="true">$VAR[FocusedBorderImage]</texture>
-					</control>
-					<control type="image">
-						<left>0</left>
-						<top>50%</top>
-						<width>50%</width>
-						<height>50%</height>
-						<aspectratio scalediffuse="false">scale</aspectratio>
-						<texture colordiffuse="$VAR[BorderHighlightColour]" background="true" flipy="true">$VAR[FocusedBorderImage]</texture>
-					</control>
-					<control type="image">
-						<left>50%</left>
-						<top>50%</top>
-						<width>50%</width>
-						<height>50%</height>
-						<aspectratio scalediffuse="false">scale</aspectratio>
-						<texture colordiffuse="$VAR[BorderHighlightColour]" background="true" flipy="true">$VAR[FocusedBorderImage]</texture>
 					</control>
 					<animation type="conditional" condition="true" reversible="false">
 						<effect type="zoom" start="100" end="108" time="200" center="auto" tween="quadratic" easing="out"/>
+						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
 					</animation>
 				</control>
 				<control type="image">
 					<aspectratio scalediffuse="false">stretch</aspectratio>
 					<texture background="true">$VAR[PosterImage]</texture>
-					<animation type="conditional" condition="true" reversible="false">
-						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
-					</animation>
 					<visible>!Container.Content(episodes)</visible>
 				</control>
 				<control type="group">
@@ -734,9 +709,6 @@
 						<height>450</height>
 						<aspectratio scalediffuse="false">scale</aspectratio>
 						<texture background="true">$INFO[ListItem.Icon]</texture>
-						<animation type="conditional" condition="true" reversible="false">
-							<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
-						</animation>
 					</control>
 					<control type="image">
 						<top>470</top>
@@ -744,15 +716,12 @@
 						<height>450</height>
 						<aspectratio scalediffuse="false">keep</aspectratio>
 						<texture background="true">$INFO[ListItem.Art(tvshow.landscape)]</texture>
-						<animation type="conditional" condition="true" reversible="false">
-							<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out" />
-						</animation>
 					</control>
 					<visible>Container.Content(episodes)</visible>
 				</control>
 				<control type="label">
 					<right>16</right>
-					<top>1</top>
+					<top>16</top>
 					<width>76</width>
 					<height>76</height>
 					<font>symbolbackbig</font>
@@ -761,7 +730,7 @@
 				</control>
 				<control type="label">
 					<centerright>54</centerright>
-					<centertop>40</centertop>
+					<centertop>55</centertop>
 					<width>54</width>
 					<height>54</height>
 					<font>symbolbig</font>
@@ -771,7 +740,6 @@
 				</control>
 				<animation type="conditional" condition="true" reversible="false">
 					<effect type="zoom" start="100" end="94" time="200" center="auto" tween="quadratic" easing="out" />
-					<effect type="rotate" end="-1" time="200" center="auto" tween="quadratic" easing="out" />
 				</animation>
 			</control>
 			<control type="label">
