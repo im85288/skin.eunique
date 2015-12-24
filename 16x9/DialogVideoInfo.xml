@@ -1142,201 +1142,204 @@
 					<effect type="zoom" start="100" end="94" time="200" center="auto" tween="quadratic" easing="out"/>
 				</animation>
 			</control>
-			<control type="label">
-				<description>header label</description>
-				<left>643</left>
-				<right>10</right>
-				<font>ReallyLargeBold</font>
-				<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
-				<height>45</height>
-				<label>$VAR[LabelOverlayTitle]</label>
-				<scroll>true</scroll>
-			</control>
-			<control type="textbox">
-				<description>textarea</description>
-				<left>643</left>
-				<right>10</right>
-				<top>90</top>
-				<bottom>650</bottom>
-				<align>justify</align>
-				<font>Medium</font>
-				<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
-				<label>$VAR[Plot]</label>
-			</control>
 			<control type="group">
-				<top>340</top>
-				<animation effect="slide" start="0,0" end="-0,20" center="auto" time="200" condition="Container(54).OnScrollNext">Conditional</animation>
-				<animation effect="slide" start="0,0" end="0,20" center="auto" time="200" condition="Container(54).OnScrollPrevious">Conditional</animation>
+				<animation type="Conditional" reversible="true" condition="Skin.HasSetting(furniture.hidecastwidget) + [!Control.HasFocus(9498) + !Control.HasFocus(9501)]">
+					<effect type="slide" end="0,224" time="200" center="auto" tween="quadratic" easing="out" />
+				</animation>
 				<control type="label">
+					<description>header label</description>
 					<left>643</left>
-					<width>246</width>
-					<top>-56</top>
-					<align>left</align>
-					<font>SmallBold</font>
+					<right>10</right>
+					<font>ReallyLargeBold</font>
 					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
-					<label>31823</label>
-					<animation type="conditional" condition="true" reversible="false">
-						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
-					</animation>
-					<visible>!Container.Content(tvshows) + !Container.Content(episodes) + !Container.Content(seasons)</visible>
-				</control>
-				<control type="label">
-					<left>643</left>
-					<width>246</width>
-					<top>-56</top>
-					<align>left</align>
-					<font>SmallBold</font>
-					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
-					<label>33054</label>
-					<animation type="conditional" condition="true" reversible="false">
-						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
-					</animation>
-					<visible>Container.Content(tvshows)</visible>
-				</control>
-				<control type="label">
-					<left>643</left>
-					<width>246</width>
-					<top>-56</top>
-					<align>left</align>
-					<font>SmallBold</font>
-					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
-					<label>$INFO[ListItem.Label]</label>
-					<animation type="conditional" condition="true" reversible="false">
-						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
-					</animation>
-					<visible>Container.Content(seasons)</visible>
-				</control>
-				<control type="label">
-					<left>643</left>
-					<width>246</width>
-					<top>-56</top>
-					<align>left</align>
-					<font>SmallBold</font>
-					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
-					<label>31824</label>
-					<animation type="conditional" condition="true" reversible="false">
-						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
-					</animation>
-					<visible>Container.Content(episodes)</visible>
-				</control>
-				<control type="label">
-					<left>957</left>
-					<width>246</width>
-					<top>-56</top>
-					<align>left</align>
-					<font>SmallBold</font>
-					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
-					<label>135</label>
-					<animation type="conditional" condition="true" reversible="false">
-						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
-					</animation>
-				</control>
-				<control type="label">
-					<left>1271</left>
-					<width>246</width>
-					<top>-56</top>
-					<align>left</align>
-					<font>SmallBold</font>
-					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
-					<label>31819</label>
-					<animation type="conditional" condition="true" reversible="false">
-						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
-					</animation>
-				</control>
-				<control type="label">
-					<left>1585</left>
-					<width>246</width>
-					<top>-56</top>
-					<align>left</align>
-					<font>SmallBold</font>
-					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
-					<label>572</label>
-					<fadetime>500</fadetime>
-					<animation type="conditional" condition="true" reversible="false">
-						<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
-					</animation>
+					<height>45</height>
+					<label>$VAR[LabelOverlayTitle]</label>
+					<scroll>true</scroll>
 				</control>
 				<control type="textbox">
+					<description>textarea</description>
 					<left>643</left>
-					<width>246</width>
-					<height>92</height>
-					<align>left</align>
-					<font>TinyBold</font>
+					<right>10</right>
+					<top>90</top>
+					<bottom>650</bottom>
+					<align>justify</align>
+					<font>Medium</font>
 					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
-					<label fallback="19055">$INFO[ListItem.Season]</label>
-					<autoscroll delay="500" time="1000" repeat="500"/>
-					<fadetime>500</fadetime>
-					<visible>Container.Content(tvshows)</visible>
+					<label>$VAR[Plot]</label>
 				</control>
-				<control type="textbox">
-					<left>643</left>
-					<width>246</width>
-					<height>92</height>
-					<align>left</align>
-					<font>TinyBold</font>
-					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
-					<label fallback="19055">$VAR[LabelDirector]</label>
-					<autoscroll delay="500" time="1000" repeat="500"/>
-					<fadetime>500</fadetime>
-					<visible>!Container.Content(seasons) + !Container.Content(tvshows) + !Container.Content(episodes)</visible>
+				<control type="group">
+					<top>340</top>
+					<control type="label">
+						<left>643</left>
+						<width>246</width>
+						<top>-56</top>
+						<align>left</align>
+						<font>SmallBold</font>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+						<label>31823</label>
+						<animation type="conditional" condition="true" reversible="false">
+							<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
+						</animation>
+						<visible>!Container.Content(tvshows) + !Container.Content(episodes) + !Container.Content(seasons)</visible>
+					</control>
+					<control type="label">
+						<left>643</left>
+						<width>246</width>
+						<top>-56</top>
+						<align>left</align>
+						<font>SmallBold</font>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+						<label>33054</label>
+						<animation type="conditional" condition="true" reversible="false">
+							<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
+						</animation>
+						<visible>Container.Content(tvshows)</visible>
+					</control>
+					<control type="label">
+						<left>643</left>
+						<width>246</width>
+						<top>-56</top>
+						<align>left</align>
+						<font>SmallBold</font>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+						<animation type="conditional" condition="true" reversible="false">
+							<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
+						</animation>
+						<visible>Container.Content(seasons)</visible>
+					</control>
+					<control type="label">
+						<left>643</left>
+						<width>246</width>
+						<top>-56</top>
+						<align>left</align>
+						<font>SmallBold</font>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+						<label>31824</label>
+						<animation type="conditional" condition="true" reversible="false">
+							<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
+						</animation>
+						<visible>Container.Content(episodes)</visible>
+					</control>
+					<control type="label">
+						<left>957</left>
+						<width>246</width>
+						<top>-56</top>
+						<align>left</align>
+						<font>SmallBold</font>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+						<label>135</label>
+						<animation type="conditional" condition="true" reversible="false">
+							<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
+						</animation>
+					</control>
+					<control type="label">
+						<left>1271</left>
+						<width>246</width>
+						<top>-56</top>
+						<align>left</align>
+						<font>SmallBold</font>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+						<label>31819</label>
+						<animation type="conditional" condition="true" reversible="false">
+							<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
+						</animation>
+					</control>
+					<control type="label">
+						<left>1585</left>
+						<width>246</width>
+						<top>-56</top>
+						<align>left</align>
+						<font>SmallBold</font>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+						<label>572</label>
+						<fadetime>500</fadetime>
+						<animation type="conditional" condition="true" reversible="false">
+							<effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
+						</animation>
+					</control>
+					<control type="textbox">
+						<left>643</left>
+						<width>246</width>
+						<height>92</height>
+						<align>left</align>
+						<font>TinyBold</font>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+						<label fallback="19055">$INFO[ListItem.Season]</label>
+						<autoscroll delay="500" time="1000" repeat="500"/>
+						<fadetime>500</fadetime>
+						<visible>Container.Content(tvshows)</visible>
+					</control>
+					<control type="textbox">
+						<left>643</left>
+						<width>246</width>
+						<height>92</height>
+						<align>left</align>
+						<font>TinyBold</font>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+						<label fallback="19055">$VAR[LabelDirector]</label>
+						<autoscroll delay="500" time="1000" repeat="500"/>
+						<fadetime>500</fadetime>
+						<visible>!Container.Content(seasons) + !Container.Content(tvshows) + !Container.Content(episodes)</visible>
+					</control>
+					<control type="textbox">
+						<left>643</left>
+						<width>246</width>
+						<height>92</height>
+						<align>left</align>
+						<font>TinyBold</font>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+						<label fallback="19055">$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20360]]</label>
+						<autoscroll delay="500" time="1000" repeat="500"/>
+						<fadetime>500</fadetime>
+						<visible>Container.Content(seasons)</visible>
+					</control>
+					<control type="textbox">
+						<left>643</left>
+						<width>246</width>
+						<height>92</height>
+						<align>left</align>
+						<font>TinyBold</font>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+						<label fallback="19055">$INFO[ListItem.Premiered]</label>
+						<autoscroll delay="500" time="1000" repeat="500"/>
+						<fadetime>500</fadetime>
+						<visible>Container.Content(episodes)</visible>
+					</control>
+					<control type="textbox">
+						<left>957</left>
+						<width>246</width>
+						<height>92</height>
+						<align>left</align>
+						<font>TinyBold</font>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+						<label fallback="19055">$VAR[LabelGenreList]</label>
+						<autoscroll delay="500" time="1000" repeat="500"/>
+						<fadetime>500</fadetime>
+					</control>
+					<control type="textbox">
+						<left>1271</left>
+						<width>246</width>
+						<height>92</height>
+						<align>left</align>
+						<font>TinyBold</font>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+						<label fallback="19055">$INFO[Window(Home).Property(SkinHelper.ListItemCast)]</label>
+						<autoscroll delay="500" time="1000" repeat="500"/>
+						<fadetime>500</fadetime>
+					</control>
+					<control type="textbox">
+						<left>1585</left>
+						<width>246</width>
+						<height>92</height>
+						<align>left</align>
+						<font>TinyBold</font>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+						<label fallback="19055">$INFO[Window(Home).Property(SkinHelper.ListItemStudios)]</label>
+						<fadetime>500</fadetime>
+					</control>
+					<visible>!stringcompare(ListItem.Label,..) + !Container.Content(albums) + !Container.Content(songs)</visible>
 				</control>
-				<control type="textbox">
-					<left>643</left>
-					<width>246</width>
-					<height>92</height>
-					<align>left</align>
-					<font>TinyBold</font>
-					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
-					<label fallback="19055">$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20360]]</label>
-					<autoscroll delay="500" time="1000" repeat="500"/>
-					<fadetime>500</fadetime>
-					<visible>Container.Content(seasons)</visible>
-				</control>
-				<control type="textbox">
-					<left>643</left>
-					<width>246</width>
-					<height>92</height>
-					<align>left</align>
-					<font>TinyBold</font>
-					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
-					<label fallback="19055">$INFO[ListItem.Premiered]</label>
-					<autoscroll delay="500" time="1000" repeat="500"/>
-					<fadetime>500</fadetime>
-					<visible>Container.Content(episodes)</visible>
-				</control>
-				<control type="textbox">
-					<left>957</left>
-					<width>246</width>
-					<height>92</height>
-					<align>left</align>
-					<font>TinyBold</font>
-					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
-					<label fallback="19055">$VAR[LabelGenreList]</label>
-					<autoscroll delay="500" time="1000" repeat="500"/>
-					<fadetime>500</fadetime>
-				</control>
-				<control type="textbox">
-					<left>1271</left>
-					<width>246</width>
-					<height>92</height>
-					<align>left</align>
-					<font>TinyBold</font>
-					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
-					<label fallback="19055">$INFO[Window(Home).Property(SkinHelper.ListItemCast)]</label>
-					<autoscroll delay="500" time="1000" repeat="500"/>
-					<fadetime>500</fadetime>
-				</control>
-				<control type="textbox">
-					<left>1585</left>
-					<width>246</width>
-					<height>92</height>
-					<align>left</align>
-					<font>TinyBold</font>
-					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
-					<label fallback="19055">$INFO[Window(Home).Property(SkinHelper.ListItemStudios)]</label>
-					<fadetime>500</fadetime>
-				</control>
-				<visible>!stringcompare(ListItem.Label,..) + !Container.Content(albums) + !Container.Content(songs)</visible>
 			</control>
 			<!-- Button grouplist -->
 			<control id="9010" type="grouplist">
