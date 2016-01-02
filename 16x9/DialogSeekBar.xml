@@ -234,6 +234,19 @@
                             <effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
                         </animation>
                     </control>
+
+                    <control type="image">
+                        <left>NewSidePad</left>
+                        <width>280</width>
+                        <height>280</height>
+                        <aspectratio align="center" aligny="center">keep</aspectratio>
+                        <texture>$INFO[Player.Art(thumb)]</texture>
+                        <animation type="Conditional" reversible="false" condition="true">
+                            <effect type="zoom" start="100" end="92" time="0" center="auto" tween="quadratic" easing="out"/>
+                            <effect type="rotate" end="1" time="200" center="auto" tween="quadratic" easing="out"/>
+                        </animation>
+                        <visible>VideoPlayer.Content(LiveTV) + !IsEmpty(Player.Art(thumb))</visible>
+                    </control>
                     <control type="image">
                         <left>NewSidePad</left>
                         <width>280</width>
