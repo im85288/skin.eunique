@@ -358,7 +358,7 @@
                             <top>0</top>
                             <right>10</right>
                             <height>82</height>
-                            <texture colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
+                            <texture colordiffuse="$VAR[EmbyLeftColourHighlight]">common/box.png</texture>
                         </control>
                         <control type="image">
                             <left>120</left>
@@ -445,6 +445,9 @@
         </control>
     </include>
     <include name="View56details">
+       <!-- <animation type="Conditional" reversible="true" condition="Skin.HasSetting(furniture.hidecastwidget) + !Control.HasFocus(5089223)">
+            <effect type="slide" end="0,231" time="200" center="auto" tween="quadratic" easing="out" />
+        </animation> -->
         <control type="image">
             <top>320</top>
             <left>965</left>
@@ -468,6 +471,7 @@
             <visible>ListItem.IsResumable</visible>
         </control>
         <control id="5089223" type="wraplist">
+            <visible>!Skin.HasSetting(furniture.hidecastwidget)</visible>
             <left>965</left>
             <bottom>0</bottom>
             <width>170</width>
@@ -554,7 +558,18 @@
             <height>139</height>
             <fadetime>500</fadetime>
             <aspectratio align="left" aligny="top" scalediffuse="false" flipy="true">scale</aspectratio>
-            <texture colordiffuse="$VAR[ColourHighlight]" background="true" flipy="true">common/white.png</texture>
+            <texture colordiffuse="$VAR[EmbyLeftColourHighlight]" background="true" flipy="true">common/white.png</texture>
+            <visible>!Skin.HasSetting(furniture.hidecastwidget)</visible>
+        </control>
+        <control type="image">
+            <left>965</left>
+            <bottom>0</bottom>
+            <right>10</right>
+            <height>190</height>
+            <fadetime>500</fadetime>
+            <aspectratio align="left" aligny="top" scalediffuse="false" flipy="true">scale</aspectratio>
+            <texture colordiffuse="$VAR[EmbyLeftColourHighlight]" background="true" flipy="true">common/white.png</texture>
+            <visible>Skin.HasSetting(furniture.hidecastwidget)</visible>
         </control>
         <control type="textbox">
             <description>textarea</description>
@@ -568,6 +583,21 @@
             <label fallback="19055">$VAR[Plot]</label>
             <autoscroll delay="1000" time="1900" repeat="1000"/>
             <fadetime>500</fadetime>
+            <visible>!Skin.HasSetting(furniture.hidecastwidget)</visible>
+        </control>
+        <control type="textbox">
+            <description>textarea</description>
+            <left>970</left>
+            <bottom>1</bottom>
+            <right>10</right>
+            <height>170</height>
+            <align>justify</align>
+            <font>MediumSmallBold</font>
+            <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+            <label fallback="19055">$VAR[Plot]</label>
+            <autoscroll delay="1000" time="1900" repeat="1000"/>
+            <fadetime>500</fadetime>
+            <visible>Skin.HasSetting(furniture.hidecastwidget)</visible>
         </control>
         <control type="image">
             <left>1135</left>
@@ -575,6 +605,7 @@
             <right>10</right>
             <height>51</height>
             <texture colordiffuse="$VAR[BottomBarColour]">common/white.png</texture>
+            <visible>!Skin.HasSetting(furniture.hidecastwidget)</visible>
         </control>
         <control type="image">
             <left>1135</left>
@@ -582,6 +613,15 @@
             <right>10</right>
             <height>51</height>
             <texture colordiffuse="$VAR[ColourFlags]">common/white.png</texture>
+            <visible>!Skin.HasSetting(furniture.hidecastwidget)</visible>
+        </control>
+        <control type="image">
+            <left>965</left>
+            <bottom>180</bottom>
+            <right>10</right>
+            <height>51</height>
+            <texture colordiffuse="$VAR[ColourFlags]">common/white.png</texture>
+            <visible>Skin.HasSetting(furniture.hidecastwidget)</visible>
         </control>
         <control type="label">
             <left>1135</left>
@@ -595,6 +635,21 @@
             <font>DurationFontSmall</font>
             <textcolor>$VAR[ColourTextFlags]</textcolor>
             <visible>Container.Content(seasons) | Container.Content(tvshows) | Container.Content(episodes)</visible>
+            <visible>!Skin.HasSetting(furniture.hidecastwidget)</visible>
+        </control>
+        <control type="label">
+            <left>965</left>
+            <bottom>180</bottom>
+            <right>10</right>
+            <height>51</height>
+            <align>center</align>
+            <aligny>center</aligny>
+            <scroll>true</scroll>
+            <label fallback="19055">$INFO[ListItem.Director,, | ]$INFO[ListItem.Genre]$INFO[ListItem.Studio, | ]</label>
+            <font>DurationFontSmall</font>
+            <textcolor>$VAR[ColourTextFlags]</textcolor>
+            <visible>Container.Content(seasons) | Container.Content(tvshows) | Container.Content(episodes)</visible>
+            <visible>Skin.HasSetting(furniture.hidecastwidget)</visible>
         </control>
         <control type="label">
             <left>1135</left>
@@ -608,6 +663,21 @@
             <font>DurationFontSmall</font>
             <textcolor>$VAR[ColourTextFlags]</textcolor>
             <visible>!Container.Content(seasons) + !Container.Content(tvshows) + !Container.Content(episodes)</visible>
+            <visible>!Skin.HasSetting(furniture.hidecastwidget)</visible>
+        </control>
+        <control type="label">
+            <left>965</left>
+            <bottom>180</bottom>
+            <right>10</right>
+            <height>51</height>
+            <align>center</align>
+            <aligny>center</aligny>
+            <scroll>true</scroll>
+            <label fallback="19055">$INFO[ListItem.Director,, | ]$INFO[ListItem.Genre]$INFO[ListItem.Studio, | ]</label>
+            <font>DurationFontSmall</font>
+            <textcolor>$VAR[ColourTextFlags]</textcolor>
+            <visible>!Container.Content(seasons) + !Container.Content(tvshows) + !Container.Content(episodes)</visible>
+            <visible>Skin.HasSetting(furniture.hidecastwidget)</visible>
         </control>
         <control type="label">
             <left>1140</left>
@@ -618,6 +688,7 @@
             <textcolor>$VAR[ColourSelected]</textcolor>
             <scroll>true</scroll>
             <label>$INFO[Container(5089223).ListItem(0).Label]$INFO[Container(5089223).ListItem(0).Label2, $LOCALIZE[20347] ]</label>
+            <visible>!Skin.HasSetting(furniture.hidecastwidget)</visible>
         </control>
         <control type="image">
             <bottom>0</bottom>
@@ -626,6 +697,16 @@
             <height>51</height>
             <texture>$VAR[ColourStudio]</texture>
             <aspectratio aligny="center" align="center">keep</aspectratio>
+            <visible>!Skin.HasSetting(furniture.hidecastwidget)</visible>
+        </control>
+        <control type="image">
+            <bottom>180</bottom>
+            <right>10</right>
+            <width>228</width>
+            <height>51</height>
+            <texture>$VAR[ColourStudio]</texture>
+            <aspectratio aligny="center" align="right">keep</aspectratio>
+            <visible>Skin.HasSetting(furniture.hidecastwidget)</visible>
         </control>
     </include>
 </includes>
