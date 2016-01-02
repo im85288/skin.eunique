@@ -291,7 +291,19 @@
             <include condition="!Skin.HasSetting(low.power)">Animation.Common.Overlay</include>
             <include condition="Skin.HasSetting(low.power)">Animation.Common.Overlay.Lowpower</include>
             <visible>Control.IsVisible(56)</visible>
+            <include>View56details</include>
+        </control>
+        <control type="group">
+            <include condition="!Skin.HasSetting(low.power)">Animation.Common</include>
+            <include condition="Skin.HasSetting(low.power)">Animation.Common.Lowpower</include>
+            <include condition="!Skin.HasSetting(low.power)">Animation.Common.Overlay</include>
+            <include condition="Skin.HasSetting(low.power)">Animation.Common.Overlay.Lowpower</include>
+            <visible>Control.IsVisible(56)</visible>
             <visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml)</visible>
+            <animation effect="slide" end="0,95" time="200" condition="!IntegerGreaterThan(Container(56).NumItems,1)">Conditional</animation>
+            <animation effect="slide" end="0,95" time="200" condition="!IntegerGreaterThan(Container(56).NumItems,2)">Conditional</animation>
+            <animation effect="slide" end="0,95" time="200" condition="!IntegerGreaterThan(Container(56).NumItems,3)">Conditional</animation>
+            <animation effect="slide" end="0,95" time="200" condition="!IntegerGreaterThan(Container(56).NumItems,4)">Conditional</animation>
             <control type="group">
                 <top>TopPad</top>
                 <left>10</left>
@@ -430,188 +442,190 @@
                     <visible>Container.Content(movies)</visible>
                 </control>
             </control>
-            <control type="image">
-                <top>320</top>
-                <left>965</left>
-                <width>945</width>
-                <height>530</height>
-                <fadetime>100</fadetime>
-                <aspectratio align="left" aligny="center" scalediffuse="false">stretch</aspectratio>
-                <texture background="true">$VAR[LandscapeImage]</texture>
-            </control>
-            <control type="progress">
-                <left>965</left>
-                <top>842</top>
-                <width>945</width>
-                <height>8</height>
-                <info>ListItem.PercentPlayed</info>
-                <overlaytexture>-</overlaytexture>
-                <texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
-                <lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
-                <midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
-                <righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>
-                <visible>ListItem.IsResumable</visible>
-            </control>
-            <control id="5089223" type="wraplist">
-                <left>965</left>
-                <bottom>0</bottom>
-                <width>170</width>
-                <height>231</height>
-                <onleft>50</onleft>
-                <onright>50</onright>
-                <onback>50</onback>
-                <preloaditems>8</preloaditems>
-                <focusposition>0</focusposition>
-                <viewtype label="">list</viewtype>
-                <orientation>vertical</orientation>
-                <defaultcontrol always="true">0</defaultcontrol>
-                <autoscroll time="3000">!Control.HasFocus(5089223)</autoscroll>
-                <scrolltime easing="inout" tween="sine">300</scrolltime>
-                <animation effect="fade" end="100" start="0" time="300">Visible</animation>
-                <animation effect="fade" end="0" start="100" time="300">Hidden</animation>
-                <itemlayout height="231" width="170">
-                    <control type="group">
-                        <control type="label">
-                            <left>0</left>
-                            <top>0</top>
-                            <right>0</right>
-                            <bottom>0</bottom>
-                            <height>231</height>
-                            <aligny>center</aligny>
-                            <align>center</align>
-                            <font>symbolbiggest</font>
-                            <label></label>
-                            <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
-                            <fadetime>300</fadetime>
-                        </control>
-                        <control type="image">
-                            <left>0</left>
-                            <top>0</top>
-                            <right>0</right>
-                            <bottom>0</bottom>
-                            <aspectratio align="center" aligny="top">stretch</aspectratio>
-                            <texture background="true">$INFO[ListItem.Icon]</texture>
-                            <fadetime>200</fadetime>
-                        </control>
-                        <control type="image">
-                            <left>0</left>
-                            <top>0</top>
-                            <right>0</right>
-                            <bottom>0</bottom>
-							<texture colordiffuse="$VAR[DisabledColour]">common/white.png</texture>
-							<animation effect="fade" end="45" start="45" time="0" condition="true">Conditional</animation>
-                        </control>
+        </control>
+    </include>
+    <include name="View56details">
+        <control type="image">
+            <top>320</top>
+            <left>965</left>
+            <width>945</width>
+            <height>530</height>
+            <fadetime>100</fadetime>
+            <aspectratio align="left" aligny="center" scalediffuse="false">stretch</aspectratio>
+            <texture background="true">$VAR[LandscapeImage]</texture>
+        </control>
+        <control type="progress">
+            <left>965</left>
+            <top>842</top>
+            <width>945</width>
+            <height>8</height>
+            <info>ListItem.PercentPlayed</info>
+            <overlaytexture>-</overlaytexture>
+            <texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
+            <lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
+            <midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
+            <righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>
+            <visible>ListItem.IsResumable</visible>
+        </control>
+        <control id="5089223" type="wraplist">
+            <left>965</left>
+            <bottom>0</bottom>
+            <width>170</width>
+            <height>231</height>
+            <onleft>50</onleft>
+            <onright>50</onright>
+            <onback>50</onback>
+            <preloaditems>8</preloaditems>
+            <focusposition>0</focusposition>
+            <viewtype label="">list</viewtype>
+            <orientation>vertical</orientation>
+            <defaultcontrol always="true">0</defaultcontrol>
+            <autoscroll time="3000">!Control.HasFocus(5089223)</autoscroll>
+            <scrolltime easing="inout" tween="sine">300</scrolltime>
+            <animation effect="fade" end="100" start="0" time="300">Visible</animation>
+            <animation effect="fade" end="0" start="100" time="300">Hidden</animation>
+            <itemlayout height="231" width="170">
+                <control type="group">
+                    <control type="label">
+                        <left>0</left>
+                        <top>0</top>
+                        <right>0</right>
+                        <bottom>0</bottom>
+                        <height>231</height>
+                        <aligny>center</aligny>
+                        <align>center</align>
+                        <font>symbolbiggest</font>
+                        <label></label>
+                        <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+                        <fadetime>300</fadetime>
                     </control>
-                </itemlayout>
-                <focusedlayout height="231" width="170">
-                    <control type="group">
-                        <animation effect="zoom" end="85" start="100" time="200" center="auto" condition="Control.HasFocus(5089222)">Conditional</animation>
-                        <control type="label">
-                            <left>0</left>
-                            <top>0</top>
-                            <right>0</right>
-                            <bottom>0</bottom>
-                            <height>231</height>
-                            <aligny>center</aligny>
-                            <align>center</align>
-                            <font>symbolbiggest</font>
-                            <label></label>
-                            <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
-                            <fadetime>300</fadetime>
-                        </control>
-                        <control type="image">
-                            <left>0</left>
-                            <top>0</top>
-                            <right>0</right>
-                            <bottom>0</bottom>
-                            <aspectratio align="center" aligny="top">stretch</aspectratio>
-                            <texture background="true" fallback="DefaultActor.png">$INFO[ListItem.Icon]</texture>
-                            <fadetime>00</fadetime>
-                        </control>
+                    <control type="image">
+                        <left>0</left>
+                        <top>0</top>
+                        <right>0</right>
+                        <bottom>0</bottom>
+                        <aspectratio align="center" aligny="top">stretch</aspectratio>
+                        <texture background="true">$INFO[ListItem.Icon]</texture>
+                        <fadetime>200</fadetime>
                     </control>
-                </focusedlayout>
-                <content target="video">$VAR[DefWidgetCast]</content>
-            </control>
-            <control type="image">
-                <left>1135</left>
-                <bottom>51</bottom>
-                <right>10</right>
-                <height>139</height>
-                <fadetime>500</fadetime>
-                <aspectratio align="left" aligny="top" scalediffuse="false" flipy="true">scale</aspectratio>
-                <texture colordiffuse="$VAR[ColourHighlight]" background="true" flipy="true">common/white.png</texture>
-            </control>
-            <control type="textbox">
-                <description>textarea</description>
-                <left>1140</left>
-                <bottom>52</bottom>
-                <right>10</right>
-                <height>129</height>
-                <align>justify</align>
-                <font>MediumSmallBold</font>
-                <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
-                <label fallback="19055">$VAR[Plot]</label>
-                <autoscroll delay="1000" time="1900" repeat="1000"/>
-                <fadetime>500</fadetime>
-            </control>
-            <control type="image">
-                <left>1135</left>
-                <bottom>0</bottom>
-                <right>10</right>
-                <height>51</height>
-                <texture colordiffuse="$VAR[BottomBarColour]">common/white.png</texture>
-            </control>
-            <control type="image">
-                <left>1135</left>
-                <bottom>180</bottom>
-                <right>10</right>
-                <height>51</height>
-                <texture colordiffuse="$VAR[ColourFlags]">common/white.png</texture>
-            </control>
-            <control type="label">
-                <left>1135</left>
-                <bottom>180</bottom>
-                <right>10</right>
-                <height>51</height>
-                <align>center</align>
-                <aligny>center</aligny>
-                <scroll>true</scroll>
-                <label fallback="19055">$INFO[ListItem.Director,, | ]$INFO[ListItem.Genre]$INFO[ListItem.Studio, | ]</label>
-                <font>DurationFontSmall</font>
-                <textcolor>$VAR[ColourTextFlags]</textcolor>
-                <visible>Container.Content(seasons) | Container.Content(tvshows) | Container.Content(episodes)</visible>
-            </control>
-            <control type="label">
-                <left>1135</left>
-                <bottom>180</bottom>
-                <right>10</right>
-                <height>51</height>
-                <align>center</align>
-                <aligny>center</aligny>
-                <scroll>true</scroll>
-                <label fallback="19055">$INFO[ListItem.Director,, | ]$INFO[ListItem.Genre]$INFO[ListItem.Studio, | ]</label>
-                <font>DurationFontSmall</font>
-                <textcolor>$VAR[ColourTextFlags]</textcolor>
-                <visible>!Container.Content(seasons) + !Container.Content(tvshows) + !Container.Content(episodes)</visible>
-            </control>
-            <control type="label">
-                <left>1140</left>
-                <bottom>0</bottom>
-                <right>273</right>
-                <height>51</height>
-                <font>MediumBold</font>
-                <textcolor>$VAR[ColourSelected]</textcolor>
-                <scroll>true</scroll>
-                <label>$INFO[Container(5089223).ListItem(0).Label]$INFO[Container(5089223).ListItem(0).Label2, $LOCALIZE[20347] ]</label>
-            </control>
-            <control type="image">
-                <bottom>0</bottom>
-                <left>1664</left>
-                <width>228</width>
-                <height>51</height>
-                <texture>$VAR[ColourStudio]</texture>
-                <aspectratio aligny="center" align="center">keep</aspectratio>
-            </control>
+                    <control type="image">
+                        <left>0</left>
+                        <top>0</top>
+                        <right>0</right>
+                        <bottom>0</bottom>
+                        <texture colordiffuse="$VAR[DisabledColour]">common/white.png</texture>
+                        <animation effect="fade" end="45" start="45" time="0" condition="true">Conditional</animation>
+                    </control>
+                </control>
+            </itemlayout>
+            <focusedlayout height="231" width="170">
+                <control type="group">
+                    <animation effect="zoom" end="85" start="100" time="200" center="auto" condition="Control.HasFocus(5089222)">Conditional</animation>
+                    <control type="label">
+                        <left>0</left>
+                        <top>0</top>
+                        <right>0</right>
+                        <bottom>0</bottom>
+                        <height>231</height>
+                        <aligny>center</aligny>
+                        <align>center</align>
+                        <font>symbolbiggest</font>
+                        <label></label>
+                        <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+                        <fadetime>300</fadetime>
+                    </control>
+                    <control type="image">
+                        <left>0</left>
+                        <top>0</top>
+                        <right>0</right>
+                        <bottom>0</bottom>
+                        <aspectratio align="center" aligny="top">stretch</aspectratio>
+                        <texture background="true" fallback="DefaultActor.png">$INFO[ListItem.Icon]</texture>
+                        <fadetime>00</fadetime>
+                    </control>
+                </control>
+            </focusedlayout>
+            <content target="video">$VAR[DefWidgetCast]</content>
+        </control>
+        <control type="image">
+            <left>1135</left>
+            <bottom>51</bottom>
+            <right>10</right>
+            <height>139</height>
+            <fadetime>500</fadetime>
+            <aspectratio align="left" aligny="top" scalediffuse="false" flipy="true">scale</aspectratio>
+            <texture colordiffuse="$VAR[ColourHighlight]" background="true" flipy="true">common/white.png</texture>
+        </control>
+        <control type="textbox">
+            <description>textarea</description>
+            <left>1140</left>
+            <bottom>52</bottom>
+            <right>10</right>
+            <height>129</height>
+            <align>justify</align>
+            <font>MediumSmallBold</font>
+            <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+            <label fallback="19055">$VAR[Plot]</label>
+            <autoscroll delay="1000" time="1900" repeat="1000"/>
+            <fadetime>500</fadetime>
+        </control>
+        <control type="image">
+            <left>1135</left>
+            <bottom>0</bottom>
+            <right>10</right>
+            <height>51</height>
+            <texture colordiffuse="$VAR[BottomBarColour]">common/white.png</texture>
+        </control>
+        <control type="image">
+            <left>1135</left>
+            <bottom>180</bottom>
+            <right>10</right>
+            <height>51</height>
+            <texture colordiffuse="$VAR[ColourFlags]">common/white.png</texture>
+        </control>
+        <control type="label">
+            <left>1135</left>
+            <bottom>180</bottom>
+            <right>10</right>
+            <height>51</height>
+            <align>center</align>
+            <aligny>center</aligny>
+            <scroll>true</scroll>
+            <label fallback="19055">$INFO[ListItem.Director,, | ]$INFO[ListItem.Genre]$INFO[ListItem.Studio, | ]</label>
+            <font>DurationFontSmall</font>
+            <textcolor>$VAR[ColourTextFlags]</textcolor>
+            <visible>Container.Content(seasons) | Container.Content(tvshows) | Container.Content(episodes)</visible>
+        </control>
+        <control type="label">
+            <left>1135</left>
+            <bottom>180</bottom>
+            <right>10</right>
+            <height>51</height>
+            <align>center</align>
+            <aligny>center</aligny>
+            <scroll>true</scroll>
+            <label fallback="19055">$INFO[ListItem.Director,, | ]$INFO[ListItem.Genre]$INFO[ListItem.Studio, | ]</label>
+            <font>DurationFontSmall</font>
+            <textcolor>$VAR[ColourTextFlags]</textcolor>
+            <visible>!Container.Content(seasons) + !Container.Content(tvshows) + !Container.Content(episodes)</visible>
+        </control>
+        <control type="label">
+            <left>1140</left>
+            <bottom>0</bottom>
+            <right>273</right>
+            <height>51</height>
+            <font>MediumBold</font>
+            <textcolor>$VAR[ColourSelected]</textcolor>
+            <scroll>true</scroll>
+            <label>$INFO[Container(5089223).ListItem(0).Label]$INFO[Container(5089223).ListItem(0).Label2, $LOCALIZE[20347] ]</label>
+        </control>
+        <control type="image">
+            <bottom>0</bottom>
+            <left>1664</left>
+            <width>228</width>
+            <height>51</height>
+            <texture>$VAR[ColourStudio]</texture>
+            <aspectratio aligny="center" align="center">keep</aspectratio>
         </control>
     </include>
 </includes>
