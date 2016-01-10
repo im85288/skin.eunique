@@ -1576,4 +1576,12 @@
 		<value condition="Control.HasFocus(215)">[UPPERCASE]$INFO[Container(215).ListItem.Property(Started),$LOCALIZE[20416]: ,]$INFO[Container(215).ListItem.Property(Status), / ,]$INFO[Container(215).ListItem.Property(Country), / $LOCALIZE[21875]: ,]$INFO[Container(215).ListItem.Property(Genre), / ,][/UPPERCASE]</value>
 		<value>-</value>
 	</variable>
+	<variable name="StarRating">
+		<value condition="StringCompare(ListItem.StarRating,rating0.png)"></value>
+		<value condition="StringCompare(ListItem.StarRating,rating1.png)"></value>
+		<value condition="StringCompare(ListItem.StarRating,rating2.png)"></value>
+		<value condition="StringCompare(ListItem.StarRating,rating3.png)"></value>
+		<value condition="StringCompare(ListItem.StarRating,rating4.png)"></value>
+		<value condition="StringCompare(ListItem.StarRating,rating5.png)"></value>
+	</variable>
 </includes>
