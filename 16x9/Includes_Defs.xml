@@ -3161,9 +3161,11 @@
 		<param name="top" default="-50"/>
 		<param name="width" default="50"/>
 		<param name="height" default="50"/>
-		<param name="font" default="symbolbiggerest"/>
+		<param name="font" default="symbolbig"/>
+		<param name="fontsize" default="58"/>
 		<param name="symbol" default=""/>
 		<param name="textcolor" default="$VAR[EmbyMenuColourHighlight]"/>
+		<param name="id" default="-"/>
 		<param name="imagepath" default="$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground.Wall)]"/>
 		<definition>
 			<control type="group">
@@ -3177,17 +3179,24 @@
 					<fadetime>100</fadetime>
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<imagepath background="true">$PARAM[imagepath]</imagepath>
+					<animation effect="fade" start="30" end="30" time="0" condition="true">Conditional</animation>
+					<visible>!Control.HasFocus($PARAM[id])</visible>
+					<visible>!ControlGroup($PARAM[id]).HasFocus</visible>
 				</control>
-				<control type="label">
-					<description>Loading symbol</description>
-					<width>$PARAM[width]</width>
-					<height>$PARAM[height]</height>
-					<label>$PARAM[symbol]</label>
-					<align>center</align>
-					<aligny>center</aligny>
-					<font>$PARAM[font]</font>
-					<textcolor>$PARAM[textcolor]</textcolor>
-                    <animation effect="rotate" start="00" end="360" center="auto" delay="0" time="1500" loop="true" condition="true">Conditional</animation>
+				<control type="group">
+					<top>0</top>
+					<right>0</right>
+					<width>$PARAM[fontsize]</width>
+					<height>$PARAM[fontsize]</height>
+					<control type="label">
+						<description>Loading symbol</description>
+						<label>$PARAM[symbol]</label>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>$PARAM[font]</font>
+						<textcolor>$PARAM[textcolor]</textcolor>
+						<animation effect="rotate" start="00" end="-360" center="auto" delay="0" time="1500" loop="true" condition="true">Conditional</animation>
+					</control>
 				</control>
 			</control>
 		</definition>
