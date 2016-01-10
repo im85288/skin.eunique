@@ -86,12 +86,15 @@
 	<variable name="DefWidgetCast">
 		<value condition="Container.Content(sets) | substring(ListItem.Path,videodb://movies/sets,left)">plugin://script.skin.helper.service/?action=getcast&amp;movieset=$INFO[ListItem.DBID]</value>
 		<value condition="Container.Content(movies) + [!IsEmpty(ListItem.DBID) + IntegerGreaterThan(ListItem.DBID,-1)]">plugin://script.skin.helper.service/?action=getcast&amp;movie=$INFO[ListItem.DBID]</value>
-		<value condition="[Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + !IsEmpty(Window(home).Property(TVShowID))">plugin://script.skin.helper.service/?action=getcast&amp;tvshow=$INFO[Window(home).Property(TVShowID)]</value>
+		<value condition="[Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + !IsEmpty(Window(home).Property(TVShowID))">plugin://script.skin.helper.service/?action=getcast&amp;tvshow=$INFO[Window(home).Property(TVShowID)]</value><value condition="[Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]">plugin://script.skin.helper.service/?action=getcast&amp;tvshow=$INFO[ListItem.Title]</value>
 		<value>plugin://service.library.data.provider?type=randommovies&amp;reload=$INFO[Window.Property(randommovies)]</value>
 	</variable>
 	<variable name="DefOSDCast">
 		<value condition="!IsEmpty(Window(home).Property(NextUpNotification.NowPlaying.Type)) + StringCompare(Window(home).Property(NextUpNotification.NowPlaying.Type),movie) + IntegerGreaterThan(Window(home).Property(NextUpNotification.NowPlaying.DBID),-1)">plugin://script.skin.helper.service/?action=getcast&amp;movie=$INFO[Window(home).Property(NextUpNotification.NowPlaying.DBID)]</value>
 		<value condition="!IsEmpty(Window(home).Property(NextUpNotification.NowPlaying.Type)) + StringCompare(Window(home).Property(NextUpNotification.NowPlaying.Type),episode) + IntegerGreaterThan(Window(home).Property(NextUpNotification.NowPlaying.DBID),-1)">plugin://script.skin.helper.service/?action=getcast&amp;tvshow=$INFO[Window(home).Property(NextUpNotification.NowPlaying.DBID)]</value>
+		<value condition="VideoPlayer.Content(movies)">plugin://script.skin.helper.service/?action=getcast&amp;movie=$INFO[VideoPlayer.Title]</value>
+		<value condition="VideoPlayer.Content(episodes)">plugin://script.skin.helper.service/?action=getcast&amp;tvshow=$INFO[VideoPlayer.TvShowTitle]</value>
+		<value condition="VideoPlayer.Content(livetv)">plugin://script.skin.helper.service/?action=getcast&amp;movie=$INFO[VideoPlayer.Title]</value>
 	</variable>
 	<variable name="DefWidgetContent">
 		<!-- Individual Widget Paths -->
