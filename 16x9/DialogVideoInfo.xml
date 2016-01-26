@@ -13,6 +13,9 @@
 	<onunload>ClearProperty(VideoInfo.ImageFilter,home)</onunload>
 	-->
 	<controls>
+		<control type="button" id="7">
+			<include>HiddenControl</include>
+		</control>
 		<control type="button" id="10">
 			<include>HiddenControl</include>
 		</control>
@@ -609,7 +612,7 @@
 					<texturenofocus colordiffuse="$VAR[EmbyLeftColourHighlight]">common/box.png</texturenofocus>
 				</control>
 				<!-- User rating -->
-				<control id="7" type="button">
+				<control id="77" type="button">
 					<width>116</width>
 					<height>116</height>
 					<font>symbol</font>
@@ -618,6 +621,7 @@
 					<focusedcolor>$VAR[EmbyLeftColourHighlight]</focusedcolor>
 					<texturefocus colordiffuse="$VAR[ColorboxPowerModeColor]">common/box.png</texturefocus>
 					<texturenofocus colordiffuse="$VAR[EmbyLeftColourHighlight]">common/box.png</texturenofocus>
+					<onclick>SendClick(7)</onclick>
 				</control>
 				<!--Extended Info Button -->
 				<control type="button" id="19">
@@ -707,15 +711,15 @@
 					<animation condition="!Control.HasFocus(200)" effect="fade" end="0" start="100" time="10">Conditional</animation>
 				</control>
 				<!-- User rating -->
-				<control id="7" type="button">
+				<control id="77" type="button">
 					<width>116</width>
 					<height>116</height>
 					<textoffsetx>0</textoffsetx>
 					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<font>StudioFont</font>
 					<label>38023</label>
-					<animation condition="Control.HasFocus(7)" effect="fade" end="100" start="0" time="10">Conditional</animation>
-					<animation condition="!Control.HasFocus(7)" effect="fade" end="0" start="100" time="10">Conditional</animation>
+					<animation condition="Control.HasFocus(77)" effect="fade" end="100" start="0" time="10">Conditional</animation>
+					<animation condition="!Control.HasFocus(77)" effect="fade" end="0" start="100" time="10">Conditional</animation>
 				</control>
 			</control>
 			<!-- Bottom Section -->
@@ -1444,7 +1448,7 @@
 					<onclick>ActivateWindow(1168)</onclick>
 				</control>
 				<!-- User rating -->
-				<control id="7" type="button">
+				<control id="77" type="button">
 					<width>116</width>
 					<height>116</height>
 					<font>symbol</font>
@@ -1453,6 +1457,7 @@
 					<focusedcolor>$VAR[EmbyLeftColourHighlight]</focusedcolor>
 					<texturefocus colordiffuse="$VAR[ColorboxPowerModeColor]">common/box.png</texturefocus>
 					<texturenofocus colordiffuse="$VAR[EmbyLeftColourHighlight]">common/box.png</texturenofocus>
+					<onclick>SendClick(7)</onclick>
 				</control>
 				<!--Extended Info Button -->
 				<control type="button" id="19">
@@ -1542,15 +1547,15 @@
 					<animation condition="Control.HasFocus(18)" effect="fade" end="100" start="0" time="10">Conditional</animation>
 					<animation condition="!Control.HasFocus(18)" effect="fade" end="0" start="100" time="10">Conditional</animation>
 				</control>
-				<control id="7" type="button">
+				<control id="77" type="button">
 					<width>116</width>
 					<height>116</height>
 					<textoffsetx>0</textoffsetx>
 					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 					<font>StudioFont</font>
 					<label>38023</label>
-					<animation condition="Control.HasFocus(7)" effect="fade" end="100" start="0" time="10">Conditional</animation>
-					<animation condition="!Control.HasFocus(7)" effect="fade" end="0" start="100" time="10">Conditional</animation>
+					<animation condition="Control.HasFocus(77)" effect="fade" end="100" start="0" time="10">Conditional</animation>
+					<animation condition="!Control.HasFocus(77)" effect="fade" end="0" start="100" time="10">Conditional</animation>
 				</control>
 			</control>
 			<control type="list" id="9498">
