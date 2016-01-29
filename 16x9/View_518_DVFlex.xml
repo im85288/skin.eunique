@@ -3,9 +3,10 @@
 <includes>
 	<include name="View_518_DVFlex">
 		<control type="group">
-			<animation type="WindowOpen" reversible="true">
-				<effect type="fade" start="00" end="100" time="1000" tween="quadratic" easing="out" delay="500" />
-			</animation>
+			<include condition="!Skin.HasSetting(low.power)">Animation.Common</include>
+			<include condition="Skin.HasSetting(low.power)">Animation.Common.Lowpower</include>
+			<include condition="!Skin.HasSetting(low.power)">Animation.Common.Overlay</include>
+			<include condition="Skin.HasSetting(low.power)">Animation.Common.Overlay.Lowpower</include>
 			<control type="image">
 				<include>Dimensions_Fullscreen</include>
 				<animation type="Visible" reversible="false">
