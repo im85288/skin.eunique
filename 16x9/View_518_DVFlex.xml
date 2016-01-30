@@ -3,10 +3,6 @@
 <includes>
 	<include name="View_518_DVFlex">
 		<control type="group">
-			<include condition="!Skin.HasSetting(low.power)">Animation.Common</include>
-			<include condition="Skin.HasSetting(low.power)">Animation.Common.Lowpower</include>
-			<include condition="!Skin.HasSetting(low.power)">Animation.Common.Overlay</include>
-			<include condition="Skin.HasSetting(low.power)">Animation.Common.Overlay.Lowpower</include>
 			<control type="image">
 				<include>Dimensions_Fullscreen</include>
 				<animation type="Visible" reversible="false">
@@ -33,6 +29,13 @@
 				<visible>!Skin.HasSetting(lights.out)</visible>
 				<visible>![[Skin.HasSetting(global.showvideo) + Player.HasVideo] | [Skin.HasSetting(global.showvisualisation) + Player.HasAudio]] + !Window.IsVisible(DialogVideoInfo.xml)</visible>
 			</control>
+			</control>
+		<control type="group">
+			<include condition="!Skin.HasSetting(low.power)">Animation.Common</include>
+			<include condition="Skin.HasSetting(low.power)">Animation.Common.Lowpower</include>
+			<include condition="!Skin.HasSetting(low.power)">Animation.Common.Overlay</include>
+			<include condition="Skin.HasSetting(low.power)">Animation.Common.Overlay.Lowpower</include>
+			<!--
 			<control type="image">
 				<include>Dimensions_Fullscreen</include>
 				<animation type="Visible" reversible="false">
@@ -54,6 +57,7 @@
 				<visible>![[Skin.HasSetting(global.showvideo) + Player.HasVideo] | [Skin.HasSetting(global.showvisualisation) + Player.HasAudio]] + !Window.IsVisible(DialogVideoInfo.xml)</visible>
 				<visible>!StringCompare(Skin.String(background.effect),None)</visible>
 			</control>
+			-->
 			<control type="group">
 				<include condition="!Skin.HasSetting(low.power)">Animation.Common</include>
 				<include condition="Skin.HasSetting(low.power)">Animation.Common.Lowpower</include>
