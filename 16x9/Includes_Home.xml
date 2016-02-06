@@ -4546,6 +4546,54 @@
 							<visible>!Control.HasFocus(40133)</visible>
 						</control>
 					</control>
+					<control type="list" id="40133">
+						<description>Widget</description>
+						<visible>Control.HasFocus(40133)</visible>
+						<visible allowhiddenfocus="true">IntegerGreaterThan(Container(40133).NumItems,0)</visible>
+						<onleft>300</onleft>
+						<onup>4012</onup>
+						<onback>300</onback>
+						<onright>4015</onright>
+						<left>SidePad</left>
+						<posy>790</posy>
+						<width>410</width>
+						<height>245</height>
+						<preloaditems>2</preloaditems>
+						<orientation>vertical</orientation>
+						<scrolltime tween="quadratic">100</scrolltime>
+						<itemlayout width="410" height="245">
+							<control type="image">
+								<aspectratio>stretch</aspectratio>
+								<texture background="true" colordiffuse="$VAR[EmbyLeftColourHighlight]">$VAR[LandscapeImage]</texture>
+							</control>
+						</itemlayout>
+						<focusedlayout width="410" height="245">
+							<control type="group">
+								<animation type="Focus" reversible="false">
+									<effect type="slide" start="0" end="0,23" time="200" center="auto" tween="quadratic" easing="out"/>
+								</animation>
+								<control type="button">
+									<onfocus>SetProperty(SkinHelper.WidgetContainer,40133)</onfocus>
+									<texturenofocus>-</texturenofocus>
+									<texturefocus>-</texturefocus>
+								</control>
+								<control type="label" id="13370">
+									<bottom>45</bottom>
+									<height>200</height>
+									<aligny>center</aligny>
+									<align>center</align>
+									<font>symbolbiggest</font>
+									<label>$VAR[SwapDefaultImage]</label>
+									<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+								</control>
+								<control type="image">
+									<aspectratio>stretch</aspectratio>
+									<texture background="true" colordiffuse="$VAR[EmbyLeftColourHighlight]">$VAR[LandscapeImage]</texture>
+								</control>
+							</control>
+						</focusedlayout>
+						<content target="video">special://skin/extras/playlists/AllShows.xsp</content>
+					</control>
 					<control type="group">
 						<animation effect="slide" start="0,0" end="0,23" time="200" center="auto" condition="Control.HasFocus(4015)">Conditional</animation>
 						<control type="button" id="4015">
