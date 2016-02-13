@@ -3365,18 +3365,18 @@
 							<width>410</width>
 							<height>245</height>
 							<texture colordiffuse="$VAR[EmbyLeftColourHighlight]">common/white.png</texture>
-							<visible>!Control.HasFocus(30133) + IsEmpty(Window(Home).Property(SkinHelper.AllMoviesBackground.Wall))</visible>
+							<visible>!Control.HasFocus(30133)</visible>
 						</control>
 						<control type="multiimage">
 							<left>SidePad</left>
 							<posy>790</posy>
 							<width>410</width>
 							<height>245</height>
-							<timeperimage>20000</timeperimage>
+							<timeperimage>20000</timeperimage><fadetime>200</fadetime>
 							<randomize>true</randomize>
 							<aspectratio scalediffuse="false">scale</aspectratio>
 							<imagepath colordiffuse="$VAR[EmbyLeftColourHighlight]" background="true">$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground.Wall)]</imagepath>
-							<visible>!Control.HasFocus(30133) + !IsEmpty(Window(Home).Property(SkinHelper.AllMoviesBackground.Wall))</visible>
+							<visible>!Control.HasFocus(30133)</visible>
 						</control>
 						<control type="label">
 							<description>All music</description>
@@ -4477,18 +4477,18 @@
 							<width>410</width>
 							<height>245</height>
 							<texture colordiffuse="$VAR[EmbyLeftColourHighlight]">common/white.png</texture>
-							<visible>!Control.HasFocus(40133) + IsEmpty(Window(Home).Property(SkinHelper.AllTvShowsBackground.Wall))</visible>
+							<visible>!Control.HasFocus(40133)</visible>
 						</control>
 						<control type="multiimage">
 							<left>SidePad</left>
 							<posy>790</posy>
 							<width>410</width>
 							<height>245</height>
-							<timeperimage>20000</timeperimage>
+							<timeperimage>20000</timeperimage><fadetime>200</fadetime>
 							<randomize>true</randomize>
 							<aspectratio scalediffuse="false">scale</aspectratio>
 							<imagepath colordiffuse="$VAR[EmbyLeftColourHighlight]" background="true">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground.Wall)]</imagepath>
-							<visible>!Control.HasFocus(40133) + !IsEmpty(Window(Home).Property(SkinHelper.AllTvShowsBackground.Wall))</visible>
+							<visible>!Control.HasFocus(40133)</visible>
 						</control>
 						<control type="label">
 							<description>All music</description>
@@ -4545,6 +4545,54 @@
 							<label>$INFO[Window(Home).Property(TVShows.Count)]</label>
 							<visible>!Control.HasFocus(40133)</visible>
 						</control>
+					</control>
+					<control type="list" id="40133">
+						<description>Widget</description>
+						<visible>Control.HasFocus(40133)</visible>
+						<visible allowhiddenfocus="true">IntegerGreaterThan(Container(40133).NumItems,0)</visible>
+						<onleft>300</onleft>
+						<onup>4012</onup>
+						<onback>300</onback>
+						<onright>4015</onright>
+						<left>SidePad</left>
+						<posy>790</posy>
+						<width>410</width>
+						<height>245</height>
+						<preloaditems>2</preloaditems>
+						<orientation>vertical</orientation>
+						<scrolltime tween="quadratic">100</scrolltime>
+						<itemlayout width="410" height="245">
+							<control type="image">
+								<aspectratio>stretch</aspectratio>
+								<texture background="true" colordiffuse="$VAR[EmbyLeftColourHighlight]">$VAR[LandscapeImage]</texture>
+							</control>
+						</itemlayout>
+						<focusedlayout width="410" height="245">
+							<control type="group">
+								<animation type="Focus" reversible="false">
+									<effect type="slide" start="0" end="0,23" time="200" center="auto" tween="quadratic" easing="out"/>
+								</animation>
+								<control type="button">
+									<onfocus>SetProperty(SkinHelper.WidgetContainer,40133)</onfocus>
+									<texturenofocus>-</texturenofocus>
+									<texturefocus>-</texturefocus>
+								</control>
+								<control type="label" id="13370">
+									<bottom>45</bottom>
+									<height>200</height>
+									<aligny>center</aligny>
+									<align>center</align>
+									<font>symbolbiggest</font>
+									<label>$VAR[SwapDefaultImage]</label>
+									<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+								</control>
+								<control type="image">
+									<aspectratio>stretch</aspectratio>
+									<texture background="true" colordiffuse="$VAR[EmbyLeftColourHighlight]">$VAR[LandscapeImage]</texture>
+								</control>
+							</control>
+						</focusedlayout>
+						<content target="video">special://skin/extras/playlists/AllShows.xsp</content>
 					</control>
 					<control type="group">
 						<animation effect="slide" start="0,0" end="0,23" time="200" center="auto" condition="Control.HasFocus(4015)">Conditional</animation>
@@ -5640,7 +5688,7 @@
 							<width>273</width>
 							<height>245</height>
 							<texture colordiffuse="$VAR[EmbyLeftColourHighlight]">common/white.png</texture>
-							<visible>!Control.HasFocus(50133) + IsEmpty(Window(Home).Property(SkinHelper.AllMusicSongsBackground.Wall))</visible>
+							<visible>!Control.HasFocus(50133)</visible>
 						</control>
 						<control type="multiimage">
 							<left>SidePad</left>
@@ -5648,11 +5696,11 @@
 							<width>273</width>
 							<height>245</height>
 							<fadetime>100</fadetime>
-							<timeperimage>20000</timeperimage>
+							<timeperimage>20000</timeperimage><fadetime>200</fadetime>
 							<randomize>true</randomize>
 							<aspectratio scalediffuse="false">scale</aspectratio>
 							<imagepath colordiffuse="$VAR[EmbyLeftColourHighlight]" background="true">$INFO[Window(Home).Property(SkinHelper.AllMusicSongsBackground.Wall)]</imagepath>
-							<visible>!Control.HasFocus(50133) + !IsEmpty(Window(Home).Property(SkinHelper.AllMusicSongsBackground.Wall))</visible>
+							<visible>!Control.HasFocus(50133)</visible>
 						</control>
 						<control type="label">
 							<description>All music</description>
@@ -5780,19 +5828,19 @@
 							<width>274</width>
 							<height>245</height>
 							<texture colordiffuse="$VAR[EmbyMiddleColourHighlight]">common/white.png</texture>
-							<visible>!Control.HasFocus(50155) + IsEmpty(Window(Home).Property(SkinHelper.AllMusicBackground.Wall))</visible>
+							<visible>!Control.HasFocus(50155)</visible>
 						</control>
 						<control type="multiimage">
 							<left>353</left>
 							<posy>790</posy>
 							<width>274</width>
 							<height>245</height>
-							<timeperimage>20000</timeperimage>
+							<timeperimage>20000</timeperimage><fadetime>200</fadetime>
 							<fadetime>100</fadetime>
 							<randomize>true</randomize>
 							<aspectratio scalediffuse="false">scale</aspectratio>
 							<imagepath colordiffuse="$VAR[EmbyMiddleColourHighlight]" background="true">$INFO[Window(Home).Property(SkinHelper.AllMusicBackground.Wall)]</imagepath>
-							<visible>!Control.HasFocus(50155) + !IsEmpty(Window(Home).Property(SkinHelper.AllMusicBackground.Wall))</visible>
+							<visible>!Control.HasFocus(50155)</visible>
 						</control>
 						<control type="label">
 							<description>All music</description>
