@@ -1017,6 +1017,7 @@
 			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-VideoList.xml) + !Control.IsVisible(500) + !Control.IsVisible(54) + !Control.IsVisible(52) + !Control.IsVisible(53) + !Control.IsVisible(56) + !Control.IsVisible(58) + !Control.IsVisible(515)</visible>
 			<visible>Container.Content(sets) | Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)</visible>
 			<visible>!Control.IsVisible(518)</visible>
+			<visible>!StringCompare(ListItem.Label,..)</visible>
 			<top>696</top>
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
