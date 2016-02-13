@@ -44,11 +44,10 @@
 			<visible>ControlGroup(9000).HasFocus | ControlGroup(9010).HasFocus</visible>
 			<animation condition="!Control.HasFocus(8) + !Control.HasFocus(1)" effect="slide" end="-58" start="0,0" time="200">Conditional</animation>
 			<animation condition="ControlGroup(9010).HasFocus()" effect="slide" end="193,221" start="0,0" time="0">Conditional</animation>
-			<animation condition="Container.Content(albums)" effect="slide" end="-345" start="0,0" time="0">Conditional</animation>
-			<animation condition="Container.Content(artists)" effect="slide" end="-345" start="0,0" time="0">Conditional</animation>
-			<animation condition="Container.Content(episodes) + Skin.HasSetting(toggled.dv.info)" effect="slide" end="-116" start="0,0" time="0">Conditional</animation>
-			<animation condition="Container.Content(episodes) + !Skin.HasSetting(toggled.dv.info)" effect="slide" end="-116" start="0,0" time="0">Conditional</animation>
-			<animation condition="Container.Content(tvshows) | Container.Content(seasons)" effect="slide" end="-116" start="0,0" time="0">Conditional</animation>
+			<animation condition="[ControlGroup(9000).HasFocus() + StringCompare(Container(9000).NumItems,6)] | [ControlGroup(9010).HasFocus() + StringCompare(Container(9010).NumItems,6)]" effect="slide" end="-117" start="0,0" time="0">Conditional</animation>
+			<animation condition="[ControlGroup(9000).HasFocus() + StringCompare(Container(9000).NumItems,5)] | [ControlGroup(9010).HasFocus() + StringCompare(Container(9010).NumItems,5)]" effect="slide" end="-234" start="0,0" time="0">Conditional</animation>
+			<animation condition="[ControlGroup(9000).HasFocus() + StringCompare(Container(9000).NumItems,4)] | [ControlGroup(9010).HasFocus() + StringCompare(Container(9010).NumItems,4)]" effect="slide" end="-351" start="0,0" time="0">Conditional</animation>
+			<animation condition="[ControlGroup(9000).HasFocus() + StringCompare(Container(9000).NumItems,3)] | [ControlGroup(9010).HasFocus() + StringCompare(Container(9010).NumItems,3)]" effect="slide" end="-468" start="0,0" time="0">Conditional</animation>
 			<control type="group">
 				<visible>Control.HasFocus(8) | Control.HasFocus(1)</visible>
 				<left>1262</left>
