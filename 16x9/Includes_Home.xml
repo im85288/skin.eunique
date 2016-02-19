@@ -245,7 +245,7 @@
 				<height>32</height>
 				<width>auto</width>
 				<label></label>
-				<visible>!IsEmpty(Window(home).Property(Movies.Count))</visible>
+				<visible>IntegerGreaterThan(Window(home).Property(Movies.Count),0)</visible>
 			</control>
 			<control type="label">
 				<aligny>center</aligny>
@@ -255,7 +255,7 @@
 				<height>34</height>
 				<width>auto</width>
 				<label>$INFO[Window(home).Property(Movies.Count),[UPPERCASE],[/UPPERCASE]]</label>
-				<visible>!IsEmpty(Window(home).Property(Movies.Count))</visible>
+				<visible>IntegerGreaterThan(Window(home).Property(Movies.Count),0)</visible>
 			</control>
 			<control type="label">
 				<aligny>center</aligny>
@@ -265,7 +265,7 @@
 				<height>32</height>
 				<width>auto</width>
 				<label></label>
-				<visible>!IsEmpty(Window(home).Property(TVShows.Count))</visible>
+				<visible>IntegerGreaterThan(Window(home).Property(TVShows.Count),0)</visible>
 			</control>
 			<control type="label">
 				<aligny>center</aligny>
@@ -275,7 +275,7 @@
 				<height>34</height>
 				<width>auto</width>
 				<label>$INFO[Window(home).Property(TVShows.Count),[UPPERCASE],[/UPPERCASE]]</label>
-				<visible>!IsEmpty(Window(home).Property(TVShows.Count))</visible>
+				<visible>IntegerGreaterThan(Window(home).Property(TVShows.Count),0)</visible>
 			</control>
 			<control type="label">
 				<aligny>center</aligny>
@@ -285,7 +285,7 @@
 				<height>34</height>
 				<width>auto</width>
 				<label></label>
-				<visible>!IsEmpty(Window(home).Property(Music.AlbumsCount))</visible>
+				<visible>IntegerGreaterThan(Window(home).Property(Music.AlbumsCount),0)</visible>
 			</control>
 			<control type="label">
 				<aligny>center</aligny>
@@ -295,7 +295,7 @@
 				<height>34</height>
 				<width>auto</width>
 				<label>$INFO[Window(home).Property(Music.AlbumsCount),[UPPERCASE],[/UPPERCASE]]</label>
-				<visible>!IsEmpty(Window(home).Property(Music.AlbumsCount))</visible>
+				<visible>IntegerGreaterThan(Window(home).Property(Music.AlbumsCount),0)</visible>
 			</control>
 			<control type="label">
 				<aligny>center</aligny>
