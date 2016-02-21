@@ -421,7 +421,7 @@
 			<include condition="!Skin.String(home.vertical,1) + !Skin.String(home.vertical,2)">Dimensions_Fullscreen</include>
 			<aspectratio align="center">scale</aspectratio>
 			<texture background="true">$VAR[ColorboxPowerModeImage]</texture>
-			<visible>Window.IsVisible(home) + Skin.HasSetting(home.blur)</visible>
+			<visible>Window.IsVisible(home)  + Skin.HasSetting(home.blur)</visible>
 			<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
 			<fadetime>600</fadetime>
 			<visible>!Player.HasMedia | [!Skin.HasSetting(global.showvideo) + Player.HasVideo] | [!Skin.HasSetting(global.showvisualisation) + Player.HasAudio]</visible>
@@ -433,17 +433,17 @@
 			<aspectratio align="center">scale</aspectratio>
 			<texture colordiffuse="$VAR[ColorboxPowerModeColor]">common/screen-overlay-shard.png</texture>
 			<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
-			<visible>Window.IsVisible(home) + Skin.HasSetting(home.blur)</visible>
+			<visible>Window.IsVisible(home)  + Skin.HasSetting(home.blur)</visible>
 			<visible>!Player.HasMedia | [!Skin.HasSetting(global.showvideo) + Player.HasVideo] | [!Skin.HasSetting(global.showvisualisation) + Player.HasAudio]</visible>
 		</control>
 		<control type="multiimage" description="Fanart">
-			<include condition="[!Window.IsVisible(home)] | Skin.HasSetting(home.vertical,1)">GlobalBackgroundFade</include>
+			<include>GlobalBackgroundFade</include>
 			<visible>!Player.HasMedia | [!Skin.HasSetting(global.showvideo) + Player.HasVideo] | [!Skin.HasSetting(global.showvisualisation) + Player.HasAudio]</visible>
 			<visible>!Skin.HasSetting(global.hidefanart) | Window.IsVisible(home)</visible>
 			<visible>!Window.IsVisible(DialogAlbumInfo.xml)</visible>
 			<visible>!Window.IsVisible(DialogVideoInfo.xml)</visible>
 			<visible>!Window.IsVisible(DialogPVRInfo.xml)</visible>
-			<visible>![Window.IsVisible(home) + Skin.HasSetting(home.blur)]</visible>
+			<visible>![Window.IsVisible(home) + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + Skin.HasSetting(home.blur)]</visible>
 			<visible>![Control.IsVisible(518) + !Skin.HasSetting(low.power) + !StringCompare(Skin.String(background.effect),None)]</visible>
 			<include>Dimensions_Fullscreen</include>
 			<include>Animation.FadeFromHome</include>
@@ -562,7 +562,7 @@
 			<height>130</height>
 			<texture colordiffuse="$VAR[ColorboxPowerModeColor]" background="true">common/white.png</texture>
 			<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
-			<visible>Skin.HasSetting(home.blur) + [Skin.String(home.vertical,1) | Skin.String(home.vertical,2)] + Window.IsVisible(Home.xml)</visible>
+			<visible>Skin.HasSetting(home.blur) + [Skin.String(home.vertical,1) | Skin.String(home.vertical,2)] + !StringCompare(Container(300).ListItem.Property(defaultID),Weather) + Window.IsVisible(Home.xml)</visible>
 			<visible>!Player.HasMedia | [!Skin.HasSetting(global.showvideo) + Player.HasVideo] | [!Skin.HasSetting(global.showvisualisation) + Player.HasAudio]</visible>
 		</control>
 	</include>
