@@ -855,17 +855,17 @@
 		<value>UK</value>
 	</variable>
 	<variable name="RottenTomatoesIcon">
-		<value condition="IntegerGreaterThan(Window(Home).Property(SkinHelper.RottenTomatoesRating),59)"></value>
-		<value condition="!IntegerGreaterThan(Window(Home).Property(SkinHelper.RottenTomatoesRating),59)"></value>
+		<value condition="IntegerGreaterThan(Window(Home).Property(SkinHelper.RottenTomatoesMeter),59)"></value>
+		<value condition="!IntegerGreaterThan(Window(Home).Property(SkinHelper.RottenTomatoesMeter),59)"></value>
 	</variable>
 	<variable name="RottenTomatoesIconColour">
-		<value condition="IntegerGreaterThan(Window(Home).Property(SkinHelper.RottenTomatoesRating),59)">Red</value>
-		<value condition="!IntegerGreaterThan(Window(Home).Property(SkinHelper.RottenTomatoesRating),59)">Green</value>
+		<value condition="IntegerGreaterThan(Window(Home).Property(SkinHelper.RottenTomatoesMeter),59)">Red</value>
+		<value condition="!IntegerGreaterThan(Window(Home).Property(SkinHelper.RottenTomatoesMeter),59)">Green</value>
 	</variable>
 	<variable name="CommunityRatingColour">
-		<value condition="IntegerGreaterThan(Window(Home).Property(SkinHelper.RottenTomatoesAudienceRating),59)">Green</value>
-		<value condition="[IntegerGreaterThan(Window(Home).Property(SkinHelper.RottenTomatoesAudienceRating),39) + !IntegerGreaterThan(Window(Home).Property(SkinHelper.RottenTomatoesAudienceRating),59)]">SelectedOrange</value>
-		<value condition="IntegerGreaterThan(Window(Home).Property(SkinHelper.RottenTomatoesAudienceRating),0) + !IntegerGreaterThan(Window(Home).Property(SkinHelper.RottenTomatoesAudienceRating),39)">SelectedRed</value>
+		<value condition="IntegerGreaterThan(Window(Home).Property(SkinHelper.MetaCritic.Rating),59)">Green</value>
+		<value condition="[IntegerGreaterThan(Window(Home).Property(SkinHelper.MetaCritic.Rating),39) + !IntegerGreaterThan(Window(Home).Property(SkinHelper.MetaCritic.Rating),59)]">SelectedOrange</value>
+		<value condition="IntegerGreaterThan(Window(Home).Property(SkinHelper.MetaCritic.Rating),0) + !IntegerGreaterThan(Window(Home).Property(SkinHelper.MetaCritic.Rating),39)">SelectedRed</value>
 		<value>$VAR[ColourFlags]</value>
 	</variable>
 	<variable name="FanartFadeLabel">

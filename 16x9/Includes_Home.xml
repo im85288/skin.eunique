@@ -781,8 +781,8 @@
 				<height>34</height>
 				<width>auto</width>
 				<label>$VAR[RottenTomatoesIcon, ]</label>
-				<visible>!IsEmpty(Window(Home).Property(SkinHelper.RottenTomatoesRating))</visible>
-				<visible>!StringCompare(Window(Home).Property(SkinHelper.RottenTomatoesRating),n/a)</visible>
+				<visible>!IsEmpty(Window(Home).Property(SkinHelper.RottenTomatoesMeter))</visible>
+				<visible>!StringCompare(Window(Home).Property(SkinHelper.RottenTomatoesMeter),n/a)</visible>
 				<visible>![Control.IsVisible(518) + !Window.IsVisible(DialogVideoInfo.xml)]</visible>
 			</control>
 			<control type="label">
@@ -792,9 +792,9 @@
 				<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 				<height>34</height>
 				<width>auto</width>
-				<label>$INFO[Window(Home).Property(SkinHelper.RottenTomatoesRating),,%]</label>
-				<visible>!IsEmpty(Window(Home).Property(SkinHelper.RottenTomatoesRating))</visible>
-				<visible>!StringCompare(Window(Home).Property(SkinHelper.RottenTomatoesRating),n/a)</visible>
+				<label>$INFO[Window(Home).Property(SkinHelper.RottenTomatoesMeter),,%]</label>
+				<visible>!IsEmpty(Window(Home).Property(SkinHelper.RottenTomatoesMeter))</visible>
+				<visible>!StringCompare(Window(Home).Property(SkinHelper.RottenTomatoesMeter),n/a)</visible>
 				<visible>![Control.IsVisible(518) + !Window.IsVisible(DialogVideoInfo.xml)]</visible>
 			</control>
 			<control type="label">
@@ -825,8 +825,8 @@
 				<height>34</height>
 				<width>1</width>
 				<label>-</label>
-				<visible>!IsEmpty(Window(Home).Property(SkinHelper.RottenTomatoesAudienceRating))</visible>
-				<visible>!StringCompare(Window(Home).Property(SkinHelper.RottenTomatoesAudienceRating),n/a)</visible>
+				<visible>!IsEmpty(Window(Home).Property(SkinHelper.MetaCritic.Rating))</visible>
+				<visible>!StringCompare(Window(Home).Property(SkinHelper.MetaCritic.Rating),n/a)</visible>
 				<visible>![Control.IsVisible(518) + !Window.IsVisible(DialogVideoInfo.xml)]</visible>
 			</control>
 			<control type="button">
@@ -834,14 +834,14 @@
 				<height>34</height>
 				<textcolor>black</textcolor>
 				<textoffsetx>0</textoffsetx>
-				<label>$INFO[Window(Home).Property(SkinHelper.RottenTomatoesAudienceRating)]</label>
+				<label>$INFO[Window(Home).Property(SkinHelper.MetaCritic.Rating)]</label>
 				<font>TinyBold</font>
 				<aligny>center</aligny>
 				<align>center</align>
 				<texturefocus colordiffuse="$VAR[CommunityRatingColour]">common/white.png</texturefocus>
 				<texturenofocus colordiffuse="$VAR[CommunityRatingColour]">common/white.png</texturenofocus>
-				<visible>!IsEmpty(Window(Home).Property(SkinHelper.RottenTomatoesAudienceRating))</visible>
-				<visible>!StringCompare(Window(Home).Property(SkinHelper.RottenTomatoesAudienceRating),n/a)</visible>
+				<visible>!IsEmpty(Window(Home).Property(SkinHelper.MetaCritic.Rating))</visible>
+				<visible>!StringCompare(Window(Home).Property(SkinHelper.MetaCritic.Rating),n/a)</visible>
 				<visible>![Control.IsVisible(518) + !Window.IsVisible(DialogVideoInfo.xml)]</visible>
 			</control>
 			<control type="label">
