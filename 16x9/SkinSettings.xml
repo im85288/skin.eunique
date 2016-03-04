@@ -178,6 +178,14 @@
 						<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(home.vertical,2))</onclick>
 						<onclick>RunScript(script.toolbox,info=selectdialog,header=Select Home Layout)</onclick>
 					</control>
+					<control type="radiobutton" id="921533" description="3 widget vertical menu">
+						<width>1410</width>
+						<include>DefSettingsButton2</include>
+						<label>32091</label>
+						<selected>Skin.HasSetting(home.3widget.menu)</selected>
+						<onclick>Skin.ToggleSetting(home.3widget.menu)</onclick>
+						<visible>Skin.String(home.vertical,1)</visible>
+					</control>
 					<control type="radiobutton" id="92153" description="minimal menu">
 						<width>1410</width>
 						<include>DefSettingsButton2</include>
@@ -411,6 +419,13 @@
 						<label>32098</label>
 						<selected>Skin.HasSetting(furniture.hidecastwidget)</selected>
 						<onclick>Skin.ToggleSetting(furniture.hidecastwidget)</onclick>
+					</control>
+					<control type="radiobutton" id="926091" description="Animated Posters">
+						<width>1410</width>
+						<include>DefSettingsButton2</include>
+						<label>32106</label>
+						<onclick>Skin.ToggleSetting(SkinHelper.EnableAnimatedPosters)</onclick>
+						<selected>Skin.HasSetting(SkinHelper.EnableAnimatedPosters)</selected>
 					</control>
 					<control type="radiobutton" id="92610" description="Hide indicators">
 						<width>1410</width>

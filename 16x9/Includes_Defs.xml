@@ -3299,7 +3299,42 @@
 			</control>
 		</control>
 	</include>
-	
+	<include name="WidgetBannerItemLayout">
+		<control type="image">
+			<aspectratio>stretch</aspectratio>
+			<texture background="true">$VAR[BannerImage]</texture>
+		</control>
+		<control type="progress">
+			<bottom>0</bottom>
+			<height>8</height>
+			<info>ListItem.PercentPlayed</info>
+			<overlaytexture>-</overlaytexture>
+			<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
+			<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
+			<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
+			<righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>
+			<visible>ListItem.IsResumable</visible>
+		</control>
+	</include>
+	<include name="WidgetBannerFocusedItemLayout">
+		<control type="group">
+			<control type="image">
+				<aspectratio>stretch</aspectratio>
+				<texture background="true">$VAR[BannerImage]</texture>
+			</control>
+			<control type="progress">
+				<bottom>0</bottom>
+				<height>8</height>
+				<info>ListItem.PercentPlayed</info>
+				<overlaytexture>-</overlaytexture>
+				<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
+				<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
+				<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
+				<righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>
+				<visible>ListItem.IsResumable</visible>
+			</control>
+		</control>
+	</include>
 	<variable name="DefWidget_1_Content">
 
 		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.movies1)) + StringCompare(Container(300).ListItem.Property(defaultID),movies)">$INFO[Container(300).ListItem.Property(widgetPath.movies1)]</value>
