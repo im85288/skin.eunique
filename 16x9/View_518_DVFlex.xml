@@ -259,7 +259,7 @@
 						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						<height>38</height>
 						<width>auto</width>
-						<label fallback="-  ">$INFO[ListItem.Rating,,  ]</label>
+						<label fallback="-  ">$INFO[ListItem.Rating,, ]</label>
 						<visible>!stringcompare(ListItem.Label,..) + !IsEmpty(ListItem.Rating)</visible>
 					</control>
 					<control type="label">
@@ -269,8 +269,9 @@
 						<textcolor>$VAR[RottenTomatoesIconColour]</textcolor>
 						<height>38</height>
 						<width>auto</width>
-						<label>$VAR[RottenTomatoesIcon]</label>
+						<label>$VAR[RottenTomatoesIcon, ,]</label>
 						<visible>!stringcompare(ListItem.Label,..) + !StringCompare(Window(Home).Property(SkinHelper.RottenTomatoesMeter),n/a)</visible>
+						<visible>!stringcompare(ListItem.Label,..) + !StringCompare(Window(Home).Property(SkinHelper.RottenTomatoesMeter),)</visible>
 						<visible>!stringcompare(ListItem.Label,..) + Container.Content(movies)</visible>
 					</control>
 					<control type="label">
@@ -282,6 +283,7 @@
 						<width>auto</width>
 						<label>$INFO[Window(Home).Property(SkinHelper.RottenTomatoesMeter),,%  ]</label>
 						<visible>!stringcompare(ListItem.Label,..) + !StringCompare(Window(Home).Property(SkinHelper.RottenTomatoesMeter),n/a)</visible>
+						<visible>!stringcompare(ListItem.Label,..) + !StringCompare(Window(Home).Property(SkinHelper.RottenTomatoesMeter),)</visible>
 						<visible>!stringcompare(ListItem.Label,..) + Container.Content(movies)</visible>
 					</control>
 					<control type="button">
