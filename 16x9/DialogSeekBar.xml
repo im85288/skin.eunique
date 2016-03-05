@@ -23,14 +23,14 @@
         <control type="group">
             <animation effect="slide" start="0" end="0,-74" time="150" condition="Window.IsVisible(videoosd)">Conditional</animation>
             <control type="group">
-                <animation effect="slide" start="0" end="0,-190" time="150" condition="Window.IsVisible(fullscreeninfo) | Player.ShowInfo | !IsEmpty(Window(home).Property(osdshowinfo)) | [Player.Paused + Skin.HasSetting(osd.showinfoonpause)]">Conditional</animation>
+                <animation effect="slide" start="0" end="0,-277" time="150" condition="Window.IsVisible(fullscreeninfo) | Player.ShowInfo | !IsEmpty(Window(home).Property(osdshowinfo)) | [Player.Paused + Skin.HasSetting(osd.showinfoonpause)]">Conditional</animation>
                 <animation effect="slide" start="0" end="0,110" time="150" condition="!Window.IsVisible(fullscreeninfo) + !Player.Seeking + !Player.DisplayAfterSeek + !Player.Paused + !Player.Forwarding + !Player.Rewinding + !Player.ShowInfo + IsEmpty(Window(home).Property(osdshowinfo))">Conditional</animation>
                 <animation effect="slide" start="0,110" end="0" time="150">Visible</animation>
                 <animation effect="slide" start="0,110" end="0" time="150">WindowOpen</animation>
                 <right>0</right>
                 <left>0</left>
 				<control id="518995" type="wraplist">
-						<bottom>87</bottom>
+						<bottom>0</bottom>
 						<width>1920</width>
 						<height>190</height>
 						<onup>50</onup>
@@ -112,7 +112,7 @@
 				</control>
                 <control type="image">
                     <left>0</left>
-                    <bottom>277</bottom>
+                    <bottom>190</bottom>
                     <right>0</right>
                     <height>51</height>
                     <texture colordiffuse="$VAR[BottomBarColour]">common/white.png</texture>
@@ -120,7 +120,7 @@
                 </control>
                 <control type="image">
                     <right>0</right>
-                    <bottom>100</bottom>
+                    <bottom>25</bottom>
                     <width>900</width>
                     <height>481</height>
                     <texture>$VAR[PlayerClearart]</texture>
@@ -130,7 +130,7 @@
                     <visible>Skin.HasSetting(ShowClearArtOSD)</visible>
                 </control>
                 <control type="label">
-                    <bottom>278</bottom>
+                    <bottom>191</bottom>
                     <width>1920</width>
                     <align>center</align>
                     <height>51</height>
@@ -141,13 +141,14 @@
                     <visible>IntegerGreaterThan(Container(518995).NumItems,0)</visible>
                 </control>
                 <control type="image">
-                    <top>100r</top>
+                    <top>25r</top>
                     <width>100%</width>
                     <height>374</height>
                     <colordiffuse>$VAR[EmbyMenuColourHighlight]</colordiffuse>
                     <animation effect="fade" start="100" end="90" condition="[!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)]">Conditional</animation>
                     <texture>common/box.png</texture>
                     <visible>!VideoPlayer.Content(LiveTV)</visible>
+					<include>Animation.SlideUp</include>
                 </control>
                 <control type="image">
                     <top>-100r</top>
@@ -288,66 +289,72 @@
                 <bottom>0</bottom>
                 <width>100%</width>
                 <control type="group">
-                    <left>SidePad</left>
-                    <right>SidePad</right>
-                    <top>20</top>
-                    <bottom>20</bottom>
-                    <control type="label" description="Finishes Time">
-                        <width>400</width>
-                        <bottom>30</bottom>
-                        <height>40</height>
-                        <font>Tiny</font>
-                        <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
-                        <label>$VAR[PlayerStatus]</label>
-                    </control>
-                    <control type="label" description="Duration Total Time">
-                        <right>0</right>
-                        <align>right</align>
-                        <width>400</width>
-                        <bottom>30</bottom>
-                        <height>40</height>
-                        <font>Tiny</font>
-                        <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
-                        <label>$INFO[Player.Time]$INFO[Player.Duration, / ,]</label>
-                    </control>
+                    <bottom>0</bottom>
                     <control type="progress" description="cachelevel">
                         <description>Progress Bar</description>
                         <width>100%</width>
-                        <bottom>10</bottom>
-                        <height>8</height>
+                        <bottom>0</bottom>
+                        <height>25</height>
                         <info>Player.CacheLevel</info>
-                        <texturebg colordiffuse="00ffffff">osd/progress-bg.png</texturebg>
-                        <lefttexture colordiffuse="$VAR[ColourHighlight]">osd/progress-end.png</lefttexture>
-                        <midtexture colordiffuse="$VAR[ColourHighlight2]">osd/progress-end.png</midtexture>
-                        <righttexture colordiffuse="$VAR[ColourHighlight2]">osd/progress-end.png</righttexture>
+						<texturebg colordiffuse="$VAR[NowPlayingBackgroundColourHighlight]">osd/progress-bg.png</texturebg>
+						<lefttexture colordiffuse="$VAR[NowPlayingProgressColourHighlight]">osd/progress-end.png</lefttexture>
+						<midtexture colordiffuse="$VAR[NowPlayingProgressColourHighlight]">osd/progress-end.png</midtexture>
+						<righttexture colordiffuse="$VAR[BackingColourHighlight]">osd/progress-end.png</righttexture>
                         <visible>Player.Seeking</visible>
                     </control>
                     <control type="progress" description="cache">
                         <description>Progress Bar</description>
                         <width>100%</width>
-                        <bottom>10</bottom>
-                        <height>8</height>
+                        <bottom>0</bottom>
+                        <height>25</height>
                         <info>Player.ProgressCache</info>
                         <reveal>true</reveal>
-                        <texturebg colordiffuse="00ffffff">osd/progress-bg.png</texturebg>
-                        <lefttexture colordiffuse="$VAR[ColourHighlight2]">osd/progress-end.png</lefttexture>
-                        <midtexture colordiffuse="$VAR[ColourHighlight2]">osd/progress-end.png</midtexture>
-                        <righttexture colordiffuse="$VAR[ColourHighlight2]">osd/progress-end.png</righttexture>
+						<texturebg colordiffuse="$VAR[NowPlayingBackgroundColourHighlight]">osd/progress-bg.png</texturebg>
+						<lefttexture colordiffuse="$VAR[NowPlayingProgressColourHighlight]">osd/progress-end.png</lefttexture>
+						<midtexture colordiffuse="$VAR[NowPlayingProgressColourHighlight]">osd/progress-end.png</midtexture>
+						<righttexture colordiffuse="$VAR[BackingColourHighlight]">osd/progress-end.png</righttexture>
                     </control>
                     <control type="progress" id="23">
                         <description>Progress Bar</description>
                         <width>100%</width>
-                        <bottom>10</bottom>
-                        <height>8</height>
+                        <bottom>0</bottom>
+                        <height>25</height>
+						<texturebg colordiffuse="$VAR[NowPlayingBackgroundColourHighlight]">osd/progress-bg.png</texturebg>
+						<lefttexture colordiffuse="$VAR[NowPlayingProgressColourHighlight]">osd/progress-end.png</lefttexture>
+						<midtexture colordiffuse="$VAR[NowPlayingProgressColourHighlight]">osd/progress-end.png</midtexture>
+						<righttexture colordiffuse="$VAR[BackingColourHighlight]">osd/progress-end.png</righttexture>
                         <info>Player.Progress</info>
                         <visible>!Player.Seeking</visible>
                     </control>
                     <control type="progress" id="401">
                         <description>Progress Bar</description>
                         <width>100%</width>
-                        <bottom>10</bottom>
-                        <height>8</height>
+                        <bottom>0</bottom>
+                        <height>25</height>
+						<texturebg colordiffuse="$VAR[NowPlayingBackgroundColourHighlight]">osd/progress-bg.png</texturebg>
+						<lefttexture colordiffuse="$VAR[NowPlayingProgressColourHighlight]">osd/progress-end.png</lefttexture>
+						<midtexture colordiffuse="$VAR[NowPlayingProgressColourHighlight]">osd/progress-end.png</midtexture>
+						<righttexture colordiffuse="$VAR[BackingColourHighlight]">osd/progress-end.png</righttexture>
                         <visible>Player.Seeking</visible>
+                    </control>
+                    <control type="label" description="Finishes Time">
+	                    <left>0</left>
+                        <width>400</width>
+                        <bottom>2</bottom>
+                        <height>23</height>
+                        <font>MiniBoldProgress</font>
+                        <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+                        <label> $VAR[PlayerStatus]</label>
+                    </control>
+                    <control type="label" description="Duration Total Time">
+						<right>0</right>
+                        <align>right</align>
+                        <width>400</width>
+                        <bottom>2</bottom>
+                        <height>23</height>
+                        <font>MiniBoldProgress</font>
+                        <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+                        <label>$INFO[Player.Time]$INFO[Player.Duration, / ,] </label>
                     </control>
                 </control>
             </control>
@@ -364,54 +371,59 @@
                     <right>SidePad</right>
                     <top>20</top>
                     <bottom>20</bottom>
-                    <control type="label" description="Finishes Time">
-                        <width>400</width>
-                        <bottom>30</bottom>
-                        <height>40</height>
-                        <font>Tiny</font>
-                        <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
-                        <label>$INFO[PVR.TimeshiftEnd]</label>
-                    </control>
-                    <control type="label" description="Duration Total Time">
-                        <right>0</right>
-                        <align>right</align>
-                        <width>400</width>
-                        <bottom>30</bottom>
-                        <height>40</height>
-                        <font>Tiny</font>
-                        <textcolor>whitw</textcolor>
-                        <label>$INFO[PVR.TimeshiftStart]</label>
-                    </control>
                     <control type="progress" description="cachelevel">
                         <description>Progress Bar</description>
                         <width>100%</width>
-                        <bottom>10</bottom>
-                        <height>8</height>
+                        <bottom>0</bottom>
+                        <height>25</height>
                         <info>Player.CacheLevel</info>
-                        <texturebg colordiffuse="00ffffff">osd/progress-bg.png</texturebg>
-                        <lefttexture colordiffuse="$VAR[ColourHighlight]">osd/progress-end.png</lefttexture>
-                        <midtexture colordiffuse="$VAR[ColourHighlight2]">osd/progress-end.png</midtexture>
-                        <righttexture colordiffuse="$VAR[ColourHighlight2]">osd/progress-end.png</righttexture>
+						<texturebg colordiffuse="$VAR[NowPlayingBackgroundColourHighlight]">osd/progress-bg.png</texturebg>
+						<lefttexture colordiffuse="$VAR[NowPlayingProgressColourHighlight]">osd/progress-end.png</lefttexture>
+						<midtexture colordiffuse="$VAR[NowPlayingProgressColourHighlight]">osd/progress-end.png</midtexture>
+						<righttexture colordiffuse="$VAR[BackingColourHighlight]">osd/progress-end.png</righttexture>
                         <visible>Player.Seeking</visible>
                     </control>
                     <control type="progress" description="cache">
                         <description>Progress Bar</description>
                         <width>100%</width>
-                        <bottom>10</bottom>
-                        <height>8</height>
+                        <bottom>0</bottom>
+                        <height>25</height>
                         <info>PVR.TimeshiftCur</info>
                         <reveal>true</reveal>
-                        <texturebg colordiffuse="00ffffff">osd/progress-bg.png</texturebg>
-                        <lefttexture colordiffuse="$VAR[ColourHighlight2]">osd/progress-end.png</lefttexture>
-                        <midtexture colordiffuse="$VAR[ColourHighlight2]">osd/progress-end.png</midtexture>
-                        <righttexture colordiffuse="$VAR[ColourHighlight2]">osd/progress-end.png</righttexture>
+						<texturebg colordiffuse="$VAR[NowPlayingBackgroundColourHighlight]">osd/progress-bg.png</texturebg>
+						<lefttexture colordiffuse="$VAR[NowPlayingProgressColourHighlight]">osd/progress-end.png</lefttexture>
+						<midtexture colordiffuse="$VAR[NowPlayingProgressColourHighlight]">osd/progress-end.png</midtexture>
+						<righttexture colordiffuse="$VAR[BackingColourHighlight]">osd/progress-end.png</righttexture>
                     </control>
                     <control type="progress" id="23">
                         <description>Progress Bar</description>
                         <width>100%</width>
-                        <bottom>10</bottom>
-                        <height>8</height>
+                        <bottom>0</bottom>
+                        <height>25</height>
+						<texturebg colordiffuse="$VAR[NowPlayingBackgroundColourHighlight]">osd/progress-bg.png</texturebg>
+						<lefttexture colordiffuse="$VAR[NowPlayingProgressColourHighlight]">osd/progress-end.png</lefttexture>
+						<midtexture colordiffuse="$VAR[NowPlayingProgressColourHighlight]">osd/progress-end.png</midtexture>
+						<righttexture colordiffuse="$VAR[BackingColourHighlight]">osd/progress-end.png</righttexture>
                         <info>PVR.TimeshiftProgress</info>
+                    </control>
+                    <control type="label" description="Finishes Time">
+	                    <left>0</left>
+                        <width>400</width>
+                        <bottom>2</bottom>
+                        <height>23</height>
+                        <font>MiniBoldProgress</font>
+                        <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+                        <label> $INFO[PVR.TimeshiftEnd]</label>
+                    </control>
+                    <control type="label" description="Duration Total Time">
+						<right>0</right>
+                        <align>right</align>
+                        <width>400</width>
+                        <bottom>2</bottom>
+                        <height>23</height>
+                        <font>MiniBoldProgress</font>
+                        <textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+                        <label>$INFO[PVR.TimeshiftStart] </label>
                     </control>
                 </control>
             </control>
