@@ -378,6 +378,7 @@
 							<aspectratio scalediffuse="false">stretch</aspectratio>
 							<fadetime>200</fadetime>
 						</control>
+						<!--
 						<control type="image">
 							<left>0</left>
 							<top>0</top>
@@ -386,6 +387,7 @@
 							<aspectratio scalediffuse="false">stretch</aspectratio>
 							<texture background="true" colordiffuse="$VAR[BorderHighlightColour]">$VAR[FocusedBorderImage]</texture>
 						</control>
+						-->
 						<control type="image">
 							<left>0</left>
 							<top>0</top>
@@ -394,9 +396,11 @@
 							<aspectratio scalediffuse="false">stretch</aspectratio>
 							<texture background="true">$VAR[PosterImage]</texture>
 							<fadetime>200</fadetime>
+							<!--
 							<animation type="Focus" reversible="false">
 								<effect type="zoom" end="93" start="100" time="200" center="auto" tween="quadratic" easing="out"/>
 							</animation>
+							-->
 						</control>
 						<control type="label" id="13370">
 							<left>0</left>
@@ -554,6 +558,7 @@
 								<aspectratio scalediffuse="false">stretch</aspectratio>
 								<fadetime>200</fadetime>
 							</control>
+						<!--
 							<control type="image">
 								<left>0</left>
 								<top>0</top>
@@ -562,6 +567,7 @@
 								<aspectratio scalediffuse="false">stretch</aspectratio>
 								<texture background="true" colordiffuse="$VAR[BorderHighlightColour]">$VAR[FocusedBorderImage]</texture>
 							</control>
+							-->
 							<control type="image">
 								<left>0</left>
 								<top>0</top>
@@ -569,9 +575,11 @@
 								<height>330</height>
 								<texture align="left" background="true">$VAR[FanartImage]</texture>
 								<aspectratio scalediffuse="false">scale</aspectratio>
+						<!--
 								<animation type="Focus" reversible="false">
 									<effect type="zoom" end="93" start="100" time="0" center="auto" tween="quadratic" easing="out"/>
 								</animation>
+								-->
 							</control>
 							<control type="label" id="13370">
 								<left>0</left>
@@ -701,6 +709,7 @@
 					</focusedlayout>
 					<focusedlayout width="1900" height="330" condition="Container.Content(albums)">
 						<control type="group">
+						<!--
 							<control type="image">
 								<left>0</left>
 								<top>0</top>
@@ -709,6 +718,7 @@
 								<aspectratio scalediffuse="false">stretch</aspectratio>
 								<texture background="true" colordiffuse="$VAR[BorderHighlightColour]">$VAR[FocusedBorderImage]</texture>
 							</control>
+							-->
 							<control type="label" id="13370">
 								<left>0</left>
 								<top>0</top>
@@ -719,9 +729,11 @@
 								<font>symbolbiggest</font>
 								<label>$VAR[SwapDefaultImage]</label>
 								<textcolor>$VAR[ColourSelected]</textcolor>
+						<!--
 								<animation type="Focus" reversible="false">
 									<effect type="zoom" end="145" time="200" center="auto" tween="quadratic" easing="out"/>
 								</animation>
+								-->
 							</control>
 							<control type="image">
 								<left>330</left>
@@ -746,9 +758,11 @@
 								<height>330</height>
 								<texture background="true">$VAR[MusicImage]</texture>
 								<aspectratio scalediffuse="false">scale</aspectratio>
+						<!--
 								<animation type="Focus" reversible="false">
 									<effect type="zoom" end="93" start="100" time="0" center="auto" tween="quadratic" easing="out"/>
 								</animation>
+								-->
 							</control>
 							<control type="label">
 								<top>0</top>
@@ -788,6 +802,7 @@
 					</focusedlayout>
 					<focusedlayout width="1900" height="330" condition="Container.Content(songs)">
 						<control type="group">
+						<!--
 							<control type="image">
 								<left>0</left>
 								<top>0</top>
@@ -796,6 +811,7 @@
 								<aspectratio scalediffuse="false">stretch</aspectratio>
 								<texture background="true" colordiffuse="$VAR[BorderHighlightColour]">$VAR[FocusedBorderImage]</texture>
 							</control>
+							-->
 							<control type="label" id="13370">
 								<left>0</left>
 								<top>0</top>
@@ -806,10 +822,11 @@
 								<font>symbolbiggest</font>
 								<label>$VAR[SwapDefaultImage]</label>
 								<textcolor>$VAR[ColourSelected]</textcolor>
+						<!--
 								<animation type="Focus" reversible="false">
 									<effect type="zoom" end="145" time="200" center="auto" tween="quadratic" easing="out"/>
-									
 								</animation>
+								-->
 							</control>
 							<control type="image">
 								<left>330</left>
@@ -834,10 +851,12 @@
 								<height>330</height>
 								<texture background="true">$VAR[MusicImage]</texture>
 								<aspectratio scalediffuse="false">scale</aspectratio>
+						<!--
 								<animation type="Focus" reversible="false">
 									<effect type="zoom" end="93" start="100" time="0" center="auto" tween="quadratic" easing="out"/>
 									<effect type="rotate" end="1" start="200" time="0" center="auto" tween="quadratic" easing="out"/>
 								</animation>
+								-->
 							</control>
 							<control type="label">
 								<top>0</top>

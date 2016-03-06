@@ -367,7 +367,7 @@
 	</variable>
 	<include name="Furniture_Logo">
 		<control type="group">
-			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-VideoList.xml) + !Control.IsVisible(500) + !Control.IsVisible(54) + !Control.IsVisible(601) + !Control.IsVisible(52) + !Control.IsVisible(515) + !ControlGroup(9000).HasFocus()</visible>
+			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-VideoList.xml) + !Control.IsVisible(500) + !Control.IsVisible(54) + !Control.IsVisible(601) + !Control.IsVisible(52) + !Control.IsVisible(515) + !Control.IsVisible(517) + !ControlGroup(9000).HasFocus()</visible>
 			<visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(albums) | Container.Content(songs) | Container.Content(artists)</visible>
 			<visible>!Control.IsVisible(518) + !Control.IsVisible(56) + !Control.IsVisible(58)</visible>
 			<left>1664</left>
@@ -733,6 +733,19 @@
 					<centertop>55</centertop>
 					<width>54</width>
 					<height>54</height>
+					<align>center</align>
+					<font>symbol24</font>
+					<label>$VAR[PercentWatchedLabel]</label>
+					<textcolor>$VAR[UnwatchedColourHighlight]</textcolor>
+					<selectedcolor>$VAR[UnwatchedColourHighlight]</selectedcolor>
+					<scroll>true</scroll>
+					<visible>[Container.Content(tvshows) | Container.Content(seasons)]</visible>
+				</control>
+				<control type="label">
+					<centerright>54</centerright>
+					<centertop>55</centertop>
+					<width>54</width>
+					<height>54</height>
 					<font>symbolbig</font>
 					<label>$VAR[PercentWatchedLabel]</label>
 					<textcolor>$VAR[IndicatorColourHighlight]</textcolor>
@@ -1014,7 +1027,7 @@
 	</include>
 	<include name="Furniture_Cast">
 		<control type="group">
-			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-VideoList.xml) + !Control.IsVisible(500) + !Control.IsVisible(54) + !Control.IsVisible(52) + !Control.IsVisible(53) + !Control.IsVisible(56) + !Control.IsVisible(58) + !Control.IsVisible(515)</visible>
+			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-VideoList.xml) + !Control.IsVisible(500) + !Control.IsVisible(54) + !Control.IsVisible(52) + !Control.IsVisible(53) + !Control.IsVisible(56) + !Control.IsVisible(58) + !Control.IsVisible(515) + !Control.IsVisible(517)</visible>
 			<visible>Container.Content(sets) | Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)</visible>
 			<visible>!Control.IsVisible(518)</visible>
 			<visible>!StringCompare(ListItem.Label,..)</visible>
