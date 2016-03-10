@@ -3571,8 +3571,21 @@
 						<scrolltime tween="quadratic">100</scrolltime>
 						<itemlayout width="410" height="245">
 							<control type="image">
-								<aspectratio>keep</aspectratio>
-								<texture background="true" colordiffuse="$VAR[EmbyRightColourHighlight]">http://localhost:52307/getvarimage&amp;title=$VAR[MovieGenres]</texture>
+								<aspectratio>stretch</aspectratio>
+								<width>136.666667</width>
+								<texture background="true" colordiffuse="$VAR[EmbyLeftColourHighlight]">$INFO[ListItem.Art(poster.0)]</texture>
+							</control>
+							<control type="image">
+								<aspectratio>stretch</aspectratio>
+								<left>136.666667</left>
+								<width>136.666667</width>
+								<texture background="true" colordiffuse="$VAR[EmbyMiddleColourHighlight]">$INFO[ListItem.Art(poster.1)]</texture>
+							</control>
+							<control type="image">
+								<left>273.333333</left>
+								<width>136.666667</width>
+								<aspectratio>stretch</aspectratio>
+								<texture background="true" colordiffuse="$VAR[EmbyRightColourHighlight]">$INFO[ListItem.Art(poster.2)]</texture>
 							</control>
 						</itemlayout>
 						<focusedlayout width="410" height="245">
@@ -3580,22 +3593,26 @@
 								<animation type="Focus" reversible="false">
 									<effect type="slide" start="0" end="0,23" time="200" center="auto" tween="quadratic" easing="out"/>
 								</animation>
-								<control type="label" id="13370">
-									<bottom>45</bottom>
-									<height>200</height>
-									<aligny>center</aligny>
-									<align>center</align>
-									<font>symbolbiggest</font>
-									<label>$VAR[SwapDefaultImage]</label>
-									<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+								<control type="image">
+									<aspectratio>stretch</aspectratio>
+									<width>136.666667</width>
+									<texture background="true" colordiffuse="$VAR[EmbyLeftColourHighlight]">$INFO[ListItem.Art(poster.0)]</texture>
 								</control>
 								<control type="image">
-									<aspectratio>keep</aspectratio>
-									<texture background="true" colordiffuse="$VAR[EmbyRightColourHighlight]">$VAR[MovieGenres]</texture>
+									<aspectratio>stretch</aspectratio>
+									<left>136.666667</left>
+									<width>136.666667</width>
+									<texture background="true" colordiffuse="$VAR[EmbyMiddleColourHighlight]">$INFO[ListItem.Art(poster.1)]</texture>
+								</control>
+								<control type="image">
+									<left>273.333333</left>
+									<width>136.666667</width>
+									<aspectratio>stretch</aspectratio>
+									<texture background="true" colordiffuse="$VAR[EmbyRightColourHighlight]">$INFO[ListItem.Art(poster.2)]</texture>
 								</control>
 							</control>
 						</focusedlayout>
-						<content target="video">videodb://movies/genres/</content>
+						<content target="video">plugin://script.skin.helper.service/?action=browsegenres&amp;type=movie&amp;limit=1000</content>
 					</control>
 					<!-- In progress thumbs -->
 					<control type="group">
