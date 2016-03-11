@@ -23,8 +23,8 @@
         <control type="group">
             <animation effect="slide" start="0" end="0,-74" time="150" condition="Window.IsVisible(videoosd)">Conditional</animation>
             <control type="group">
-                <animation effect="slide" start="0" end="0,-277" time="150" condition="Window.IsVisible(fullscreeninfo) | Player.ShowInfo | !IsEmpty(Window(home).Property(osdshowinfo)) | [Player.Paused + Skin.HasSetting(osd.showinfoonpause)]">Conditional</animation>
-                <animation effect="slide" start="0" end="0,110" time="150" condition="!Window.IsVisible(fullscreeninfo) + !Player.Seeking + !Player.DisplayAfterSeek + !Player.Paused + !Player.Forwarding + !Player.Rewinding + !Player.ShowInfo + IsEmpty(Window(home).Property(osdshowinfo))">Conditional</animation>
+                <animation effect="slide" start="0" end="0,-270" time="150" condition="Window.IsVisible(fullscreeninfo) | Player.ShowInfo | !IsEmpty(Window(home).Property(osdshowinfo)) | [Player.Paused + Skin.HasSetting(osd.showinfoonpause)]">Conditional</animation>
+                <animation effect="slide" start="0" end="0,23" time="150" condition="!Window.IsVisible(fullscreeninfo) + !Player.Seeking + !Player.DisplayAfterSeek + !Player.Paused + !Player.Forwarding + !Player.Rewinding + !Player.ShowInfo + IsEmpty(Window(home).Property(osdshowinfo))">Conditional</animation>
                 <animation effect="slide" start="0,110" end="0" time="150">Visible</animation>
                 <animation effect="slide" start="0,110" end="0" time="150">WindowOpen</animation>
                 <right>0</right>
@@ -161,13 +161,14 @@
                     <visible>!VideoPlayer.Content(LiveTV)</visible>
                 </control>
                 <control type="image">
-                    <top>100r</top>
+                    <top>25r</top>
                     <width>100%</width>
                     <height>374</height>
                     <colordiffuse>$VAR[PVRBackgroundColour]</colordiffuse>
                     <animation effect="fade" start="100" end="90" condition="[!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)]">Conditional</animation>
                     <texture>common/box.png</texture>
                     <visible>VideoPlayer.Content(LiveTV)</visible>
+                    <include>Animation.SlideUp</include>
                 </control>
                 <control type="image">
                     <top>-100r</top>
