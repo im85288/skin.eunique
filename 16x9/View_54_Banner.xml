@@ -28,7 +28,7 @@
 					<viewtype label="539">list</viewtype>
 					<scrolltime tween="quadratic">400</scrolltime>
 					<itemlayout width="1900" height="66" condition="!Container.Content(episodes) + !Container.Content(albums) + !Container.Content(songs)">
-						<!--<control type="label"><right>10</right><height>66</height><align>left</align><aligny>center</aligny><label>$VAR[LabelYear,, • ]$VAR[LabelDuration,, • ]$INFO[ListItem.Rating]</label><font>Flag</font><textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor><visible>!Container.Content(seasons)</visible></control>--><control type="image">
+						<!--<control type="label"><right>10</right><height>66</height><align>left</align><aligny>center</aligny><label>$VAR[LabelYear,, · ]$VAR[LabelDuration,, · ]$INFO[ListItem.Rating]</label><font>Flag</font><textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor><visible>!Container.Content(seasons)</visible></control>--><control type="image">
 							<left>0</left>
 							<top>0</top>
 							<width>235</width>
@@ -332,7 +332,7 @@
 								<height>40</height>
 								<align>left</align>
 								<aligny>top</aligny>
-								<label fallback="19055">$INFO[ListItem.Artist]$INFO[ListItem.Year, • ,]</label>
+								<label fallback="19055">$INFO[ListItem.Artist]$INFO[ListItem.Year, · ,]</label>
 								<font>Tiny</font>
 								<textcolor>Dark2</textcolor>
 								<selectedcolor>Dark2</selectedcolor>
@@ -347,11 +347,11 @@
 							<height>66</height>
 							<align>left</align>
 							<aligny>center</aligny>
-							<label>$INFO[ListItem.TrackNumber]. $INFO[ListItem.Artist]$INFO[ListItem.Title, • ,]</label>
+							<label>$INFO[ListItem.TrackNumber]. $INFO[ListItem.Artist]$INFO[ListItem.Title, · ,]</label>
 							<font>SmallBold</font>
 							<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
 						</control>
-						<!--<control type="label"><top>32</top><left>340</left><right>50</right><height>40</height><align>left</align><aligny>top</aligny><label fallback="19055">$INFO[ListItem.TrackNumber]. $INFO[ListItem.Artist]$INFO[ListItem.Title, • ,]</label><font>Tiny</font><textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor></control>--></itemlayout>
+						<!--<control type="label"><top>32</top><left>340</left><right>50</right><height>40</height><align>left</align><aligny>top</aligny><label fallback="19055">$INFO[ListItem.TrackNumber]. $INFO[ListItem.Artist]$INFO[ListItem.Title, · ,]</label><font>Tiny</font><textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor></control>--></itemlayout>
 					<focusedlayout width="1900" height="330" condition="!Container.Content(episodes) + !Container.Content(albums) + !Container.Content(songs)">
 						<control type="button">
 							<texturefocus>-</texturefocus>
@@ -536,7 +536,7 @@
 							<font>Tiny</font>
 							<textcolor>$VAR[ColourSelected]</textcolor>
 							<visible>!Container.Content(seasons)</visible>
-							<label fallback="19055">$VAR[LabelYear]$VAR[LabelDuration, • ]$INFO[ListItem.Rating, • ]</label>
+							<label fallback="19055">$VAR[LabelYear]$VAR[LabelDuration, · ]$INFO[ListItem.Rating, · ]</label>
 						</control>
 					</focusedlayout>
 					<focusedlayout width="1900" height="330" condition="Container.Content(episodes)">
@@ -703,7 +703,7 @@
 								<font>Tiny</font>
 								<textcolor>$VAR[ColourSelected]</textcolor>
 								<visible>!Container.Content(seasons)</visible>
-								<label fallback="19055">$VAR[LabelYear]$VAR[LabelDuration, • ]$INFO[ListItem.Rating, • ]</label>
+								<label fallback="19055">$VAR[LabelYear]$VAR[LabelDuration, · ]$INFO[ListItem.Rating, · ]</label>
 							</control>
 						</control>
 					</focusedlayout>
@@ -782,7 +782,7 @@
 								<height>40</height>
 								<align>left</align>
 								<aligny>top</aligny>
-								<label fallback="19055">$INFO[ListItem.Artist]$INFO[ListItem.Year, • ,]</label>
+								<label fallback="19055">$INFO[ListItem.Artist]$INFO[ListItem.Year, · ,]</label>
 								<font>SmallBold</font>
 								<textcolor>$VAR[ColourSelected]</textcolor>
 								<visible>!stringcompare(ListItem.Label,..)</visible>
@@ -877,7 +877,7 @@
 								<height>40</height>
 								<align>left</align>
 								<aligny>top</aligny>
-								<label fallback="19055">$INFO[ListItem.TrackNumber]. $INFO[ListItem.Artist]$INFO[ListItem.Album, • ,]</label>
+								<label fallback="19055">$INFO[ListItem.TrackNumber]. $INFO[ListItem.Artist]$INFO[ListItem.Album, · ,]</label>
 								<font>SmallBold</font>
 								<textcolor>$VAR[ColourSelected]</textcolor>
 								<selectedcolor>$VAR[ColourSelected]</selectedcolor>
@@ -993,7 +993,7 @@
 					<label>$INFO[Window(Home).Property(SkinHelper.ListItemStudios)]</label>
 					<fadetime>500</fadetime>
 				</control>
-				<!--<control type="label"><left>337</left><right>10</right><top>303</top><aligny>center</aligny><height>26</height><align>right</align><font>Tiny</font><textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor><visible>!Container.Content(seasons)</visible><label fallback="19055">$VAR[LabelYear,, • ]$VAR[LabelDuration,, • ]$INFO[ListItem.Rating]</label></control>--><visible>!stringcompare(ListItem.Label,..) + !Container.Content(albums) + !Container.Content(songs)</visible>
+				<!--<control type="label"><left>337</left><right>10</right><top>303</top><aligny>center</aligny><height>26</height><align>right</align><font>Tiny</font><textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor><visible>!Container.Content(seasons)</visible><label fallback="19055">$VAR[LabelYear,, · ]$VAR[LabelDuration,, · ]$INFO[ListItem.Rating]</label></control>--><visible>!stringcompare(ListItem.Label,..) + !Container.Content(albums) + !Container.Content(songs)</visible>
 			</control>
 			<include>Furniture_ScrollbarT</include>
 		</control>

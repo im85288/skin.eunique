@@ -214,7 +214,7 @@
 							<font>TinyBold</font>
 							<textcolor>$VAR[ColourSelected]</textcolor>
 							<selectedcolor>$VAR[ColourSelected]</selectedcolor>
-							<label>$INFO[ListItem.Season,$LOCALIZE[20373] ,]$INFO[ListItem.Episode, • $LOCALIZE[20359] ,]$INFO[ListItem.Director,[CR],]$INFO[ListItem.Genre,[CR],[CR]]$INFO[ListItem.Premiered]$INFO[ListItem.Cast,[CR],[CR]]$INFO[ListItem.Studio,[CR],]</label>
+							<label>$INFO[ListItem.Season,$LOCALIZE[20373] ,]$INFO[ListItem.Episode, · $LOCALIZE[20359] ,]$INFO[ListItem.Director,[CR],]$INFO[ListItem.Genre,[CR],[CR]]$INFO[ListItem.Premiered]$INFO[ListItem.Cast,[CR],[CR]]$INFO[ListItem.Studio,[CR],]</label>
 							<visible>Container.Content(episodes) | Container.Content(movies)</visible>
 						</control>
 						<control type="textbox">
@@ -250,7 +250,7 @@
 							<font>TinyBold</font>
 							<textcolor>$VAR[ColourSelected]</textcolor>
 							<selectedcolor>$VAR[ColourSelected]</selectedcolor>
-							<label>$VAR[LabelTitle,,[CR][CR]]$INFO[ListItem.Artist]$INFO[ListItem.Year, • ,]</label>
+							<label>$VAR[LabelTitle,,[CR][CR]]$INFO[ListItem.Artist]$INFO[ListItem.Year, · ,]</label>
 							<visible>Container.Content(albums)</visible>
 						</control>
 						<control type="textbox">
@@ -263,7 +263,7 @@
 							<font>TinyBold</font>
 							<textcolor>$VAR[ColourSelected]</textcolor>
 							<selectedcolor>$VAR[ColourSelected]</selectedcolor>
-							<label>$VAR[LabelTitle,,[CR]]$INFO[ListItem.TrackNumber]. $INFO[ListItem.Artist]$INFO[ListItem.Album, • ,][CR]$INFO[ListItem.Genre,[B]$LOCALIZE[515] [/B],[CR]]$INFO[ListItem.Duration,[B]$LOCALIZE[180] [/B],[CR]]</label>
+							<label>$VAR[LabelTitle,,[CR]]$INFO[ListItem.TrackNumber]. $INFO[ListItem.Artist]$INFO[ListItem.Album, · ,][CR]$INFO[ListItem.Genre,[B]$LOCALIZE[515] [/B],[CR]]$INFO[ListItem.Duration,[B]$LOCALIZE[180] [/B],[CR]]</label>
 							<visible>Container.Content(songs)</visible>
 						</control>
 					</control>

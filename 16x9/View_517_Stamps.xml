@@ -240,7 +240,7 @@
 							<textcolor>$VAR[ColourSelected]</textcolor>
 							<shadowcolor>$VAR[ColourFlags]</shadowcolor>
 							<selectedcolor>$VAR[ColourSelected]</selectedcolor>
-							<label>$INFO[ListItem.Label]$INFO[ListItem.Genre, • ]</label>
+							<label>$INFO[ListItem.Label]$INFO[ListItem.Genre, · ]</label>
 							<visible>!Container.Content(episodes) + !Container.Content(albums) + !Container.Content(songs) + !Container.Content(movies) + !Container.Content(tvshows)</visible>
 						</control>
 						<control type="label">
@@ -260,7 +260,7 @@
 							<shadowcolor>$VAR[ColourFlags]</shadowcolor>
 							<textcolor>$VAR[ColourSelected]</textcolor>
 							<selectedcolor>$VAR[ColourSelected]</selectedcolor>
-							<label>$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20360]]$INFO[ListItem.Studio, • ]</label>
+							<label>$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20360]]$INFO[ListItem.Studio, · ]</label>
 							<visible>Container.Content(tvshows)</visible>
 						</control>
 						<control type="textbox">
@@ -275,7 +275,7 @@
 							<autoscroll delay="0" time="2000" repeat="0"/>
 							<textcolor>$VAR[ColourSelected]</textcolor>
 							<selectedcolor>$VAR[ColourSelected]</selectedcolor>
-							<label>$VAR[LabelTitle,,[CR][CR]]$INFO[ListItem.Artist]$INFO[ListItem.Year, • ,]</label>
+							<label>$VAR[LabelTitle,,[CR][CR]]$INFO[ListItem.Artist]$INFO[ListItem.Year, · ,]</label>
 							<visible>Container.Content(albums)</visible>
 						</control>
 						<control type="textbox">
@@ -290,7 +290,7 @@
 							<autoscroll delay="0" time="2000" repeat="0"/>
 							<textcolor>$VAR[ColourSelected]</textcolor>
 							<selectedcolor>$VAR[ColourSelected]</selectedcolor>
-							<label>$VAR[LabelTitle,,[CR]]$INFO[ListItem.TrackNumber]. $INFO[ListItem.Artist]$INFO[ListItem.Album, • ,][CR]$INFO[ListItem.Genre,[B]$LOCALIZE[515] [/B],[CR]]$INFO[ListItem.Duration,[B]$LOCALIZE[180] [/B],[CR]]</label>
+							<label>$VAR[LabelTitle,,[CR]]$INFO[ListItem.TrackNumber]. $INFO[ListItem.Artist]$INFO[ListItem.Album, · ,][CR]$INFO[ListItem.Genre,[B]$LOCALIZE[515] [/B],[CR]]$INFO[ListItem.Duration,[B]$LOCALIZE[180] [/B],[CR]]</label>
 							<visible>Container.Content(songs)</visible>
 						</control>
 						<control type="group">
