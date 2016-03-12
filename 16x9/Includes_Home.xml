@@ -2389,7 +2389,7 @@
 							<param name="height" value="705"/>
 							<param name="font" value="symbolbig"/>
 							<param name="symbol" value=""/>
-							<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground.Wall)]"/>
+							<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground.Wall.BW)]"/>
 							<param name="textcolor" value="$VAR[ColourTextFlags]"/>
 							<param name="id" value="6016"/>
 						</include>
@@ -2484,7 +2484,7 @@
 							<param name="height" value="705"/>
 							<param name="font" value="symbolbig"/>
 							<param name="symbol" value=""/>
-							<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground.Wall)]"/>
+							<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground.Poster.Wall)]"/>
 							<param name="textcolor" value="$VAR[ColourTextFlags]"/>
 							<param name="id" value="6017"/>
 						</include>
@@ -2635,7 +2635,7 @@
 							<param name="height" value="705"/>
 							<param name="font" value="symbolbig"/>
 							<param name="symbol" value=""/>
-							<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground.Wall)]"/>
+							<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground.Poster.Wall.BW)]"/>
 							<param name="textcolor" value="$VAR[ColourTextFlags]"/>
 							<param name="id" value="9017"/>
 						</include>
@@ -3518,6 +3518,17 @@
 							<texture colordiffuse="$VAR[EmbyRightColourHighlight]">common/white.png</texture>
 							<visible>!Control.HasFocus(30143)</visible>
 						</control>
+						<control type="multiimage">
+							<left>490</left>
+							<posy>790</posy>
+							<width>410</width>
+							<height>245</height>
+							<timeperimage>20000</timeperimage><fadetime>200</fadetime>
+							<randomize>true</randomize>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<imagepath colordiffuse="$VAR[EmbyRightColourHighlight]" background="true">$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground.Poster.Wall)]</imagepath>
+							<visible>!Control.HasFocus(30143)</visible>
+						</control>
 						<control type="label">
 							<description>All music</description>
 							<left>490</left>
@@ -3720,7 +3731,7 @@
 							<param name="height" value="705"/>
 							<param name="font" value="symbolbig"/>
 							<param name="symbol" value=""/>
-							<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground.Wall)]"/>
+							<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground.Wall.BW)]"/>
 							<param name="textcolor" value="$VAR[ColourTextFlags]"/>
 							<param name="id" value="3016"/>
 						</include>
@@ -3816,7 +3827,7 @@
 							<param name="height" value="705"/>
 							<param name="font" value="symbolbig"/>
 							<param name="symbol" value=""/>
-							<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground.Wall)]"/>
+							<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground.Poster.Wall)]"/>
 							<param name="textcolor" value="$VAR[ColourTextFlags]"/>
 							<param name="id" value="3017"/>
 						</include>
@@ -3958,7 +3969,7 @@
 							<param name="height" value="705"/>
 							<param name="font" value="symbolbig"/>
 							<param name="symbol" value=""/>
-							<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground.Wall)]"/>
+							<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground.Poster.Wall.BW)]"/>
 							<param name="textcolor" value="$VAR[ColourTextFlags]"/>
 							<param name="id" value="10017"/>
 						</include>
@@ -4322,7 +4333,7 @@
 								<param name="height" value="705"/>
 								<param name="font" value="symbolbig"/>
 								<param name="symbol" value=""/>
-								<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground.Wall)]"/>
+								<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground.Wall.BW)]"/>
 								<param name="textcolor" value="$VAR[ColourTextFlags]"/>
 								<param name="id" value="119003"/>
 							</include>
@@ -4646,6 +4657,17 @@
 							<texture colordiffuse="$VAR[EmbyRightColourHighlight]">common/white.png</texture>
 							<visible>!Control.HasFocus(40155)</visible>
 						</control>
+						<control type="multiimage">
+							<left>490</left>
+							<posy>790</posy>
+							<width>410</width>
+							<height>245</height>
+							<timeperimage>20000</timeperimage><fadetime>200</fadetime>
+							<randomize>true</randomize>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<imagepath colordiffuse="$VAR[EmbyRightColourHighlight]" background="true">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground.Poster.Wall)]</imagepath>
+							<visible>!Control.HasFocus(40155)</visible>
+						</control>
 						<control type="label">
 							<description>All music</description>
 							<left>490</left>
@@ -4853,7 +4875,7 @@
 							<param name="height" value="705"/>
 							<param name="font" value="symbolbig"/>
 							<param name="symbol" value=""/>
-							<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground.Wall)]"/>
+							<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground.Wall.BW)]"/>
 							<param name="textcolor" value="$VAR[ColourTextFlags]"/>
 							<param name="id" value="4016"/>
 						</include>
@@ -4947,7 +4969,7 @@
 							<param name="height" value="705"/>
 							<param name="font" value="symbolbig"/>
 							<param name="symbol" value=""/>
-							<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground.Wall)]"/>
+							<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground.Poster.Wall)]"/>
 							<param name="textcolor" value="$VAR[ColourTextFlags]"/>
 							<param name="id" value="4017"/>
 						</include>
@@ -5087,7 +5109,7 @@
 							<param name="height" value="705"/>
 							<param name="font" value="symbolbig"/>
 							<param name="symbol" value=""/>
-							<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground.Wall)]"/>
+							<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground.Poster.Wall.BW)]"/>
 							<param name="textcolor" value="$VAR[ColourTextFlags]"/>
 							<param name="id" value="14017"/>
 						</include>
@@ -5447,7 +5469,7 @@
 								<param name="height" value="705"/>
 								<param name="font" value="symbolbig"/>
 								<param name="symbol" value=""/>
-								<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground.Wall)]"/>
+								<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground.Wall.BW)]"/>
 								<param name="textcolor" value="$VAR[ColourTextFlags]"/>
 								<param name="id" value="119004"/>
 							</include>
@@ -6212,7 +6234,7 @@
 							<param name="height" value="705"/>
 							<param name="font" value="symbolbig"/>
 							<param name="symbol" value=""/>
-							<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllMusicBackground.Wall)]"/>
+							<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllMusicBackground.Wall.BW)]"/>
 							<param name="textcolor" value="$VAR[ColourTextFlags]"/>
 							<param name="id" value="5016"/>
 						</include>
@@ -6481,7 +6503,7 @@
 							<param name="height" value="705"/>
 							<param name="font" value="symbolbig"/>
 							<param name="symbol" value=""/>
-							<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllMusicBackground.Wall)]"/>
+							<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllMusicBackground.Wall.BW)]"/>
 							<param name="textcolor" value="$VAR[ColourTextFlags]"/>
 							<param name="id" value="15017"/>
 						</include>
@@ -7346,7 +7368,7 @@
 							<param name="height" value="460"/>
 							<param name="font" value="symbolbig"/>
 							<param name="symbol" value=""/>
-							<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground.Wall)]"/>
+							<param name="imagepath" value="$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground.Wall.BW)]"/>
 							<param name="textcolor" value="$VAR[ColourTextFlags]"/>
 							<param name="id" value="7016"/>
 						</include>
