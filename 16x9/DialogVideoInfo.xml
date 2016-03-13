@@ -732,7 +732,7 @@
 				<height>265</height>
 				<control type="list" id="9499">
 					<top>0</top>
-					<width>300</width>
+					<width>500</width>
 					<height>34</height>
 					<onup>9000</onup>
 					<ondown condition="Stringcompare(Skin.String(widgetvideoinfo),ShowCast)">95004</ondown>
@@ -740,7 +740,7 @@
 					<onback>9000</onback>
 					<orientation>horizontal</orientation>
 					<scrolltime tween="cubic" easing="out">500</scrolltime>
-					<itemlayout width="300" height="34">
+					<itemlayout width="500" height="34">
 						<control type="label">
 							<aligny>center</aligny>
 							<align>left</align>
@@ -751,7 +751,7 @@
 							<visible>Control.HasFocus(9499)</visible>
 						</control>
 					</itemlayout>
-					<focusedlayout width="300" height="34">
+					<focusedlayout width="500" height="34">
 						<control type="label">
 							<aligny>center</aligny>
 							<align>left</align>
@@ -972,7 +972,7 @@
 							<righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>
 							<visible>ListItem.IsResumable</visible>
 						</control>
-					<animation type="Conditional" reversible="true" condition="Control.HasFocus(9500)">
+						<animation type="Conditional" reversible="true" condition="Control.HasFocus(9500)">
 							<effect type="zoom" start="100" end="85" time="200" center="auto" tween="quadratic" easing="out"/>
 						</animation>
 					</control>
