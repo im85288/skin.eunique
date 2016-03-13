@@ -30,7 +30,7 @@
                 <right>0</right>
                 <left>0</left>
 				<control id="518995" type="wraplist">
-						<bottom>0</bottom>
+						<bottom>10</bottom>
 						<width>1920</width>
 						<height>190</height>
 						<onup>50</onup>
@@ -145,41 +145,23 @@
                     <width>100%</width>
                     <height>374</height>
                     <colordiffuse>$VAR[EmbyMenuColourHighlight]</colordiffuse>
-                    <animation effect="fade" start="100" end="90" condition="[!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)]">Conditional</animation>
+                    <animation effect="fade" start="100" end="90" condition="true">Conditional</animation>
                     <texture>common/box.png</texture>
                     <visible>!VideoPlayer.Content(LiveTV)</visible>
 					<include>Animation.SlideUp</include>
                 </control>
-                <control type="image">
-                    <top>-100r</top>
-                    <width>100%</width>
-                    <height>100</height>
-                    <colordiffuse>$VAR[EmbyMenuColourHighlight]</colordiffuse>
-                    <animation effect="fade" start="100" end="90" condition="[!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)]">Conditional</animation>
-                    <texture>common/white.png</texture>
-                    <visible>Window.IsVisible(fullscreeninfo) | Player.ShowInfo | !IsEmpty(Window(home).Property(osdshowinfo)) | [Player.Paused + Skin.HasSetting(osd.showinfoonpause)]</visible>
-                    <visible>!VideoPlayer.Content(LiveTV)</visible>
-                </control>
+
                 <control type="image">
                     <top>25r</top>
                     <width>100%</width>
                     <height>374</height>
                     <colordiffuse>$VAR[PVRBackgroundColour]</colordiffuse>
-                    <animation effect="fade" start="100" end="90" condition="[!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)]">Conditional</animation>
+                    <animation effect="fade" start="100" end="90" condition="true">Conditional</animation>
                     <texture>common/box.png</texture>
                     <visible>VideoPlayer.Content(LiveTV)</visible>
                     <include>Animation.SlideUp</include>
                 </control>
-                <control type="image">
-                    <top>-100r</top>
-                    <width>100%</width>
-                    <height>100</height>
-                    <colordiffuse>$VAR[PVRBackgroundColour]</colordiffuse>
-                    <animation effect="fade" start="100" end="90" condition="[!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)]">Conditional</animation>
-                    <texture>common/white.png</texture>
-                    <visible>Window.IsVisible(fullscreeninfo) | Player.ShowInfo | !IsEmpty(Window(home).Property(osdshowinfo)) | [Player.Paused + Skin.HasSetting(osd.showinfoonpause)]</visible>
-                    <visible>VideoPlayer.Content(LiveTV)</visible>
-                </control>
+
             </control>
             <control type="group">
                 <top>300r</top>
