@@ -787,6 +787,10 @@
 		<value condition="!IsEmpty(Skin.String(bottom.bar.color.name))">$INFO[Skin.String(bottom.bar.color.name)]</value>
 		<value>cadmium orange</value>
 	</variable>
+	<variable name="OSDBarColour">
+		<value condition="!IsEmpty(Skin.String(osd.bar.color.name))">$INFO[Skin.String(osd.bar.color.name)]</value>
+		<value>dark pastel green</value>
+	</variable>
 	<variable name="DisabledColour">
 		<value condition="!IsEmpty(Skin.String(disabled.color.name))">$INFO[Skin.String(disabled.color.name)]</value>
 		<value>99FFFFFF</value>
@@ -1322,6 +1326,7 @@
 		<value condition="Control.HasFocus(9278)">$LOCALIZE[32034]</value>
 		<value condition="Control.HasFocus(9279)">$LOCALIZE[32035]</value>
 		<value condition="Control.HasFocus(9291)">$LOCALIZE[32036]</value>
+		<value condition="Control.HasFocus(92377)">$LOCALIZE[32110]</value>
 		<value condition="Container(9000).HasFocus(6)">$LOCALIZE[32009]</value>
 		<value condition="Control.HasFocus(9282)">$LOCALIZE[32037]</value>
 		<value condition="Control.HasFocus(9285)">$LOCALIZE[32038]</value>
@@ -1343,7 +1348,8 @@
 		<value condition="Control.HasFocus(928884)">$LOCALIZE[32068]</value>
 		<value condition="Control.HasFocus(92885) | Control.HasFocus(92886)">$LOCALIZE[32069]</value>
 		<value condition="Control.HasFocus(92887) | Control.HasFocus(92888)">$LOCALIZE[32081]</value>
-		<value condition="Control.HasFocus(92889) | Control.HasFocus(92890)">$LOCALIZE[32084]</value>
+		<value condition="Control.HasFocus(92891) | Control.HasFocus(92890)">$LOCALIZE[32084]</value>
+		<value condition="Control.HasFocus(928902) | Control.HasFocus(928901)">$LOCALIZE[32112]</value>
 		<value condition="Control.HasFocus(92991)">$LOCALIZE[32095]</value>
 		<value condition="Container(9000).HasFocus(7)">$LOCALIZE[32010]</value>
 		<value condition="Control.HasFocus(92991)">$LOCALIZE[32054]</value>
