@@ -534,6 +534,13 @@
 					<onup>9005</onup>
 					<ondown>9005</ondown>
 					<visible>Container(9000).HasFocus(5)</visible>
+					<control type="radiobutton" id="92377" description="Alternate OSD">
+						<width>1410</width>
+						<include>DefSettingsButton2</include>
+						<label>32109</label>
+						<selected>Skin.HasSetting(ShowAlternateOSD)</selected>
+						<onclick>Skin.ToggleSetting(ShowAlternateOSD)</onclick>
+					</control>
 					<control type="radiobutton" id="9231" description="Show artist slideshow">
 						<width>1410</width>
 						<include>DefSettingsButton2</include>
@@ -988,6 +995,21 @@
 						<onclick>Skin.Reset(bottom.bar.color.name)</onclick>
 						<label>32097</label>
 						<visible>!IsEmpty(Skin.String(bottom.bar.color.name))</visible>
+					</control>
+					<control type="radiobutton" id="928901">
+						<width>1410</width>
+						<textureradiofocus colordiffuse="$VAR[OSDBarColour]">common/box.png</textureradiofocus>
+						<textureradionofocus colordiffuse="$VAR[OSDBarColour]">common/box.png</textureradionofocus>
+						<include>DefSettingsButton2</include>
+						<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=osd.bar.color.name)</onclick>
+						<label>32111</label>
+					</control>
+					<control type="button" id="928902">
+						<width>1410</width>
+						<include>DefSettingsButton2</include>
+						<onclick>Skin.Reset(osd.bar.color.name)</onclick>
+						<label>32097</label>
+						<visible>!IsEmpty(Skin.String(osd.bar.color.name))</visible>
 					</control>
 					<control type="radiobutton" id="92991">
 						<width>1410</width>

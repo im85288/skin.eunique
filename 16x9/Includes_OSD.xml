@@ -6,6 +6,63 @@
 	<include name="OSDFocusPause">
 		<defaultcontrol always="true">14</defaultcontrol>
 	</include>
+	<include name="AlternateOSDInfoContent">
+		<right>210</right>
+		<control type="label" description="Title">
+			<width>1000</width>
+			<top>0</top>
+			<height>40</height>
+			<font>SmallBold</font>
+			<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+			<label>$VAR[PlayerTitle]</label>
+		</control>
+
+
+		<control type="label" description="Next Title">
+			<width>980</width>
+			<top>210</top>
+			<height>23</height>
+			<font>MiniBoldProgress</font>
+			<align>left</align>
+			<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+			<label>$VAR[PlayerLiveTVNextTitle]</label>
+			<visible>VideoPlayer.Content(LiveTV)</visible>
+		</control>
+		<!--
+		<control type="label" description="Genre">
+			<left>50%</left>
+			<width>50%</width>
+			<top>168</top>
+			<height>30</height>
+			<font>Small</font>
+			<align>center</align>
+			<aligny>center</aligny>
+			<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+			<label>$VAR[PlayerAdditionalInfo]</label>
+			<visible>!VideoPlayer.Content(LiveTV)</visible>
+		</control>
+		-->
+		<control type="textbox" description="Plot">
+			<width>99%</width>
+			<top>110</top>
+			<bottom>70</bottom>
+			<font>SmallBold</font>
+			<align>justify</align>
+			<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+			<label>$VAR[PlayerPlotBox]</label>
+			<visible>!VideoPlayer.Content(LiveTV)</visible>
+		</control>
+		<control type="textbox" description="Plot">
+			<width>99%</width>
+			<top>110</top>
+			<bottom>110</bottom>
+			<font>SmallBold</font>
+			<align>justify</align>
+			<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+			<label>$VAR[PlayerPlotBox]</label>
+			<visible>VideoPlayer.Content(LiveTV)</visible>
+		</control>
+	</include>
 	<include name="OSDInfoContent">
 		<right>NewSidePad</right>
 		<top>NewSidePad</top>
