@@ -528,6 +528,11 @@
 		<value condition="Control.HasFocus(80177)">$INFO[Container(80177).ListItem.UserRating]</value>
 	</variable>
 
+	<variable name="EmbyLabelUserRatingVideoPlayer">
+		<value condition="IntegerGreaterThan(VideoPlayer.UserRating,5)"></value>
+		<value condition="!IntegerGreaterThan(VideoPlayer.Userrating,5)"></value>
+	</variable>
+
 	<variable name="EmbyLabelUserRating">
 		<value condition="Control.HasFocus(3444) + IntegerGreaterThan(Container(3444).ListItem.Userrating,5)"></value>
 		<value condition="Control.HasFocus(3444) + !IntegerGreaterThan(Container(3444).ListItem.Userrating,5)"></value>
