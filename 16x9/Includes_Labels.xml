@@ -231,7 +231,7 @@
 		<value condition="Control.HasFocus(30133)">$INFO[Container(30133).ListItem.Label][CR][COLOR=$VAR[DisabledColour]]$INFO[Container(30133).ListItem.Year]$INFO[Container(30133).ListItem.Rating, · ]$INFO[Container(30133).ListItem.Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
 		<value condition="Control.HasFocus(30143)">$INFO[Container(30143).ListItem.Label][CR]$INFO[Container(30143).ListItem.Label2]</value>
 		<value condition="Control.HasFocus(40133)">$INFO[Container(40133).ListItem.TvShowTitle,,[CR]][COLOR=$VAR[DisabledColour]]$INFO[Container(40133).ListItem.Year]$INFO[Container(40133).ListItem.Rating, · ,]$INFO[Container(40133).ListItem.Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
-		<value condition="Control.HasFocus(40155)">$INFO[Container(40155).ListItem.TvShowTitle,,[CR]][COLOR=$VAR[DisabledColour]]$INFO[Container(40155).ListItem.Season,,x]$INFO[Container(40155).ListItem.Episode,,. ]$INFO[Container(40155).ListItem.Title]$INFO[Container(40155).ListItem.Year, · ,]$INFO[Container(40155).ListItem.Rating, · ,]$INFO[Container(40155).ListItem.Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
+		<value condition="Control.HasFocus(40155)">$INFO[Container(40155).ListItem.TvShowTitle,,[CR]][COLOR=$VAR[DisabledColour]]$INFO[Container(40155).ListItem.Property(AirTime),, · ]$INFO[Container(40155).ListItem.Season,,x]$INFO[Container(40155).ListItem.Episode,,. ]$INFO[Container(40155).ListItem.Title]$INFO[Container(40155).ListItem.Year, · ,]$INFO[Container(40155).ListItem.Rating, · ,]$INFO[Container(40155).ListItem.Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
 		<value condition="Control.HasFocus(50133)">$INFO[Container(50133).ListItem.Artist][CR][COLOR=$VAR[DisabledColour]]$INFO[Container(50133).ListItem.Label]$INFO[Container(50133).ListItem.Year, · ][/COLOR]</value>
 		<value condition="Control.HasFocus(50155)">$INFO[Container(50155).ListItem.Artist][CR][COLOR=$VAR[DisabledColour]]$INFO[Container(50155).ListItem.Label]$INFO[Container(50155).ListItem.Year, · ][/COLOR]</value>
 		<value condition="Control.HasFocus(50144)">$INFO[Container(50144).ListItem.Label][CR]$INFO[Container(50144).ListItem.Label2]</value>
@@ -258,7 +258,7 @@
 		<value condition="Control.HasFocus(5016)">$INFO[Container(5016).ListItem.Artist][CR][COLOR=$VAR[DisabledColour]]$INFO[Container(5016).ListItem.Label]$INFO[Container(5016).ListItem.Year, · ][/COLOR]</value>
 		<value condition="Control.HasFocus(5017)">$INFO[Container(5017).ListItem.Artist][CR][COLOR=$VAR[DisabledColour]]$INFO[Container(5017).ListItem.Label]$INFO[Container(5017).ListItem.Year, · ][/COLOR]</value>
 		<value condition="Control.HasFocus(15017)">$INFO[Container(15017).ListItem.Artist][CR][COLOR=$VAR[DisabledColour]]$INFO[Container(15017).ListItem.Label]$INFO[Container(15017).ListItem.Year, · ][/COLOR]</value>
-		<value condition="Control.HasFocus(7016)">$INFO[Container(7016).ListItem.Label][CR][COLOR=$VAR[EmbyMenuTextColourHighlight]]$INFO[Container(7016).ListItem.StartTime]$INFO[Container(7016).ListItem.EndTime, - , ][/COLOR][COLOR=$VAR[DisabledColour]]$INFO[Container(7016).ListItem.Season,,x]$INFO[Container(7016).ListItem.Episode,,. ]$INFO[Container(7016).ListItem.Title][/COLOR]</value>
+		<value condition="Control.HasFocus(7016)">$LOCALIZE[32116] $INFO[Container(7016).ListItem.Season,,x]$INFO[Container(7016).ListItem.Episode,,. ]$INFO[Container(7016).ListItem.Title] $LOCALIZE[32113]$INFO[Container(7016).ListItem.Label, , ][CR]$LOCALIZE[32114][COLOR=$VAR[EmbyMenuTextColourHighlight]]$INFO[Container(7016).ListItem.StartTime, , ]$LOCALIZE[32115]$INFO[Container(7016).ListItem.EndTime, , ][/COLOR]</value>
 		<value condition="Control.HasFocus(7012) + !Skin.HasSetting(home.easynav)">$INFO[Container(7012).ListItem.Label][CR][COLOR=$VAR[DisabledColour]]$INFO[Container(7012).ListItem.Year]$INFO[Container(7012).ListItem.Rating, · ]$INFO[Container(7012).ListItem.Votes, (, $LOCALIZE[20350])][/COLOR]</value>
 		<value condition="Control.HasFocus(7012) + Skin.HasSetting(home.easynav)">$INFO[Container(70122).ListItem.Label][CR][COLOR=$VAR[DisabledColour]]$INFO[Container(70122).ListItem.Year]$INFO[Container(70122).ListItem.Rating, · ]$INFO[Container(70122).ListItem.Votes, (, $LOCALIZE[20350])][/COLOR]</value>
 		<value condition="Control.HasFocus(18022)">$INFO[Container(18004).ListItem(0).Label][CR][COLOR=$VAR[DisabledColour]]$INFO[Container(18004).ListItem(0).Year]$INFO[Container(18004).ListItem(0).Rating, · ]$INFO[Container(18004).ListItem(0).Votes, (, $LOCALIZE[20350])]$INFO[Container(18004).ListItem(0).Duration, ,$LOCALIZE[31102]][/COLOR]</value>
@@ -285,6 +285,79 @@
 		<value condition="Control.HasFocus(1900204)">$INFO[Container(19003).ListItem(4).Label][CR][COLOR=$VAR[DisabledColour]]$INFO[Container(19003).ListItem(4).Year]$INFO[Container(19003).ListItem(4).Rating, · ]$INFO[Container(19003).ListItem(4).Votes, (, $LOCALIZE[20350])]$INFO[Container(19003).ListItem(4).Duration, ,$LOCALIZE[31102]][/COLOR]</value>
 		<value condition="Control.HasFocus(19004)">$INFO[Container(19004).ListItem.Label][CR][COLOR=$VAR[DisabledColour]]$INFO[Container(19004).ListItem.Year]$INFO[Container(19004).ListItem.Rating, · ]$INFO[Container(19004).ListItem.Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
 		<value condition="Control.HasFocus(19003)">$INFO[Container(19003).ListItem.Label][CR][COLOR=$VAR[DisabledColour]]$INFO[Container(19003).ListItem.Year]$INFO[Container(19003).ListItem.Rating, · ]$INFO[Container(19003).ListItem.Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
+		<value condition="Control.HasFocus(8013)">$INFO[Container(8013).ListItem.TvShowTitle,,[CR]][COLOR=$VAR[DisabledColour]]$INFO[Container(8013).ListItem.Season,,x]$INFO[Container(8013).ListItem.Episode,,. ]$INFO[Container(8013).ListItem.Title]$INFO[Container(8013).ListItem.Year, · ,]$INFO[Container(8013).ListItem.Rating, · ,]$INFO[Container(8013).ListItem.Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
+		<value condition="Control.HasFocus(80133)">$INFO[Container(80133).ListItem.TvShowTitle,,[CR]][COLOR=$VAR[DisabledColour]]$INFO[Container(80133).ListItem.Season,,x]$INFO[Container(80133).ListItem.Episode,,. ]$INFO[Container(80133).ListItem.Title]$INFO[Container(80133).ListItem.Year, · ,]$INFO[Container(80133).ListItem.Rating, · ,]$INFO[Container(80133).ListItem.Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
+		<value condition="Control.HasFocus(80144)">$INFO[Container(80144).ListItem.TvShowTitle,,[CR]][COLOR=$VAR[DisabledColour]]$INFO[Container(80144).ListItem.Season,,x]$INFO[Container(80144).ListItem.Episode,,. ]$INFO[Container(80144).ListItem.Title]$INFO[Container(80144).ListItem.Year, · ,]$INFO[Container(80144).ListItem.Rating, · ,]$INFO[Container(80144).ListItem.Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
+		<value condition="Control.HasFocus(80155)">$INFO[Container(80155).ListItem.TvShowTitle,,[CR]][COLOR=$VAR[DisabledColour]]$INFO[Container(80155).ListItem.Season,,x]$INFO[Container(80155).ListItem.Episode,,. ]$INFO[Container(80155).ListItem.Title]$INFO[Container(80155).ListItem.Year, · ,]$INFO[Container(80155).ListItem.Rating, · ,]$INFO[Container(80155).ListItem.Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
+		<value condition="Control.HasFocus(80166)">$INFO[Container(80166).ListItem.TvShowTitle,,[CR]][COLOR=$VAR[DisabledColour]]$INFO[Container(80166).ListItem.Season,,x]$INFO[Container(80166).ListItem.Episode,,. ]$INFO[Container(80166).ListItem.Title]$INFO[Container(80166).ListItem.Year, · ,]$INFO[Container(80166).ListItem.Rating, · ,]$INFO[Container(80166).ListItem.Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
+		<value condition="Control.HasFocus(80177)">$INFO[Container(80177).ListItem.TvShowTitle,,[CR]][COLOR=$VAR[DisabledColour]]$INFO[Container(80177).ListItem.Season,,x]$INFO[Container(80177).ListItem.Episode,,. ]$INFO[Container(80177).ListItem.Title]$INFO[Container(80177).ListItem.Year, · ,]$INFO[Container(80177).ListItem.Rating, · ,]$INFO[Container(80177).ListItem.Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
+	</variable>
+	<variable name="EmbyWidgetLabelAltHome">
+		<value condition="Control.HasFocus(3444)">$INFO[Container(3444).ListItem.Label][CR][COLOR=$VAR[DisabledColour]]$INFO[Container(3444).ListItem.Label2]$INFO[Container(3444).ListItem.Property(HighTemp), [B],[/B]]$INFO[Container(3444).ListItem.Property(LowTemp), ][/COLOR]</value>
+		<value condition="Control.HasFocus(30133)">$INFO[Container(30133).ListItem.Label][CR][COLOR=$VAR[DisabledColour]]$INFO[Container(30133).ListItem.Year]$INFO[Container(30133).ListItem.Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
+		<value condition="Control.HasFocus(30143)">$INFO[Container(30143).ListItem.Label][CR]$INFO[Container(30143).ListItem.Label2]</value>
+		<value condition="Control.HasFocus(40133)">$INFO[Container(40133).ListItem.TvShowTitle,,[CR]][COLOR=$VAR[DisabledColour]]$INFO[Container(40133).ListItem.Year]$INFO[Container(40133).ListItem.Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
+		<value condition="Control.HasFocus(40155)">$INFO[Container(40155).ListItem.TvShowTitle,,[CR]][COLOR=$VAR[DisabledColour]]$INFO[Container(40155).ListItem.Property(AirTime),, · ]$INFO[Container(40155).ListItem.Season,,x]$INFO[Container(40155).ListItem.Episode,,. ]$INFO[Container(40155).ListItem.Title]$INFO[Container(40155).ListItem.Year, · ,]$INFO[Container(40155).ListItem.Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
+		<value condition="Control.HasFocus(50133)">$INFO[Container(50133).ListItem.Artist][CR][COLOR=$VAR[DisabledColour]]$INFO[Container(50133).ListItem.Label]$INFO[Container(50133).ListItem.Year, · ][/COLOR]</value>
+		<value condition="Control.HasFocus(50155)">$INFO[Container(50155).ListItem.Artist][CR][COLOR=$VAR[DisabledColour]]$INFO[Container(50155).ListItem.Label]$INFO[Container(50155).ListItem.Year, · ][/COLOR]</value>
+		<value condition="Control.HasFocus(50144)">$INFO[Container(50144).ListItem.Label][CR]$INFO[Container(50144).ListItem.Label2]</value>
+		<value condition="Control.HasFocus(60133)">$INFO[Container(60133).ListItem.Label][CR]$INFO[Container(60133).ListItem.Label2]</value>
+		<value condition="Control.HasFocus(60155)">$INFO[Container(60155).ListItem.Label][CR]$INFO[Container(60155).ListItem.Label2]</value>
+		<value condition="Control.HasFocus(60144)">$INFO[Container(60144).ListItem.Label][CR]$INFO[Container(60144).ListItem.Label2]</value>
+		<value condition="Control.HasFocus(6012) + !Skin.HasSetting(home.easynav)">$INFO[Container(6012).ListItem.Label][CR][COLOR=$VAR[DisabledColour]]$INFO[Container(6012).ListItem.Year]$INFO[Container(6012).ListItem.Votes, (, $LOCALIZE[20350])][/COLOR]</value>
+		<value condition="Control.HasFocus(6012) + Skin.HasSetting(home.easynav)">$INFO[Container(60122).ListItem.Label][CR][COLOR=$VAR[DisabledColour]]$INFO[Container(60122).ListItem.Year]$INFO[Container(60122).ListItem.Votes, (, $LOCALIZE[20350])][/COLOR]</value>
+		<value condition="Control.HasFocus(6016)">$INFO[Container(6016).ListItem.Label][CR][COLOR=$VAR[DisabledColour]]$INFO[Container(6016).ListItem.Year]$INFO[Container(6016).ListItem.Votes, (, $LOCALIZE[20350])][/COLOR]</value>
+		<value condition="Control.HasFocus(6017)">$INFO[Container(6017).ListItem.Label][CR][COLOR=$VAR[DisabledColour]]$INFO[Container(6017).ListItem.Year]$INFO[Container(6017).ListItem.Votes, (, $LOCALIZE[20350])][/COLOR]</value>
+		<value condition="Control.HasFocus(9017)">$INFO[Container(9017).ListItem.Label][CR][COLOR=$VAR[DisabledColour]]$INFO[Container(9017).ListItem.Year]$INFO[Container(9017).ListItem.Votes, (, $LOCALIZE[20350])][/COLOR]</value>
+		<value condition="Control.HasFocus(3012) + !Skin.HasSetting(home.easynav)">$INFO[Container(3012).ListItem.Label][CR][COLOR=$VAR[DisabledColour]]$INFO[Container(3012).ListItem.Year]$INFO[Container(3012).ListItem.Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
+		<value condition="Control.HasFocus(3012) + Skin.HasSetting(home.easynav)">$INFO[Container(30122).ListItem.Label][CR][COLOR=$VAR[DisabledColour]]$INFO[Container(30122).ListItem.Year]$INFO[Container(30122).ListItem.Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
+		<value condition="Control.HasFocus(3016)">$INFO[Container(3016).ListItem.Label][CR][COLOR=$VAR[DisabledColour]]$INFO[Container(3016).ListItem.Year]$INFO[Container(3016).ListItem.Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
+		<value condition="Control.HasFocus(3017)">$INFO[Container(3017).ListItem.Label][CR][COLOR=$VAR[DisabledColour]]$INFO[Container(3017).ListItem.Year]$INFO[Container(3017).ListItem.Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
+		<value condition="Control.HasFocus(10017)">$INFO[Container(10017).ListItem.Label][CR][COLOR=$VAR[DisabledColour]]$INFO[Container(10017).ListItem.Year]$INFO[Container(10017).ListItem.Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
+		<value condition="Control.HasFocus(4012) + !Skin.HasSetting(home.easynav)">$INFO[Container(4012).ListItem.TvShowTitle,,[CR]][COLOR=$VAR[DisabledColour]]$INFO[Container(4012).ListItem.Season,,x]$INFO[Container(4012).ListItem.Episode,,. ]$INFO[Container(4012).ListItem.Title]$INFO[Container(4012).ListItem.Year, · ,]$INFO[Container(4012).ListItem.Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
+		<value condition="Control.HasFocus(4012) + Skin.HasSetting(home.easynav)">$INFO[Container(40122).ListItem.TvShowTitle,,[CR]][COLOR=$VAR[DisabledColour]]$INFO[Container(40122).ListItem.Season,,x]$INFO[Container(40122).ListItem.Episode,,. ]$INFO[Container(40122).ListItem.Title]$INFO[Container(40122).ListItem.Year, · ,]$INFO[Container(40122).ListItem.Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
+		<value condition="Control.HasFocus(4016)">$INFO[Container(4016).ListItem.TvShowTitle,,[CR]][COLOR=$VAR[DisabledColour]]$INFO[Container(4016).ListItem.Season,,x]$INFO[Container(4016).ListItem.Episode,,. ]$INFO[Container(4016).ListItem.Title]$INFO[Container(4016).ListItem.Year, · ,]$INFO[Container(4016).ListItem.Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
+		<value condition="Control.HasFocus(4017)">$INFO[Container(4017).ListItem.TvShowTitle,,[CR]][COLOR=$VAR[DisabledColour]]$INFO[Container(4017).ListItem.Season,,x]$INFO[Container(4017).ListItem.Episode,,. ]$INFO[Container(4017).ListItem.Title]$INFO[Container(4017).ListItem.Year, · ,]$INFO[Container(4017).ListItem.Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
+		<value condition="Control.HasFocus(14017)">$INFO[Container(14017).ListItem.Season,,x]$INFO[Container(14017).ListItem.Episode,,. ]$INFO[Container(14017).ListItem.Title][CR][COLOR=$VAR[DisabledColour]]$INFO[Container(14017).ListItem.Year,, · ]$INFO[Container(14017).ListItem.Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
+		<value condition="Control.HasFocus(5012) + !Skin.HasSetting(home.easynav)">$INFO[Container(5012).ListItem.Artist][CR][COLOR=$VAR[DisabledColour]]$INFO[Container(5012).ListItem.Label]$INFO[Container(5012).ListItem.Year, · ][/COLOR]</value>
+		<value condition="Control.HasFocus(5012) + Skin.HasSetting(home.easynav)">$INFO[Container(50122).ListItem.Artist][CR][COLOR=$VAR[DisabledColour]]$INFO[Container(50122).ListItem.Label]$INFO[Container(50122).ListItem.Year, · ][/COLOR]</value>
+		<value condition="Control.HasFocus(5016)">$INFO[Container(5016).ListItem.Artist][CR][COLOR=$VAR[DisabledColour]]$INFO[Container(5016).ListItem.Label]$INFO[Container(5016).ListItem.Year, · ][/COLOR]</value>
+		<value condition="Control.HasFocus(5017)">$INFO[Container(5017).ListItem.Artist][CR][COLOR=$VAR[DisabledColour]]$INFO[Container(5017).ListItem.Label]$INFO[Container(5017).ListItem.Year, · ][/COLOR]</value>
+		<value condition="Control.HasFocus(15017)">$INFO[Container(15017).ListItem.Artist][CR][COLOR=$VAR[DisabledColour]]$INFO[Container(15017).ListItem.Label]$INFO[Container(15017).ListItem.Year, · ][/COLOR]</value>
+		<value condition="Control.HasFocus(7016)">$LOCALIZE[32116] $INFO[Container(7016).ListItem.Season,,x]$INFO[Container(7016).ListItem.Episode,,. ]$INFO[Container(7016).ListItem.Title] $LOCALIZE[32113]$INFO[Container(7016).ListItem.Label, , ][CR]$LOCALIZE[32114][COLOR=$VAR[EmbyMenuTextColourHighlight]]$INFO[Container(7016).ListItem.StartTime, , ]$LOCALIZE[32115]$INFO[Container(7016).ListItem.EndTime, , ][/COLOR]</value>
+		<value condition="Control.HasFocus(7012) + !Skin.HasSetting(home.easynav)">$INFO[Container(7012).ListItem.Label][CR][COLOR=$VAR[DisabledColour]]$INFO[Container(7012).ListItem.Year]$INFO[Container(7012).ListItem.Votes, (, $LOCALIZE[20350])][/COLOR]</value>
+		<value condition="Control.HasFocus(7012) + Skin.HasSetting(home.easynav)">$INFO[Container(70122).ListItem.Label][CR][COLOR=$VAR[DisabledColour]]$INFO[Container(70122).ListItem.Year]$INFO[Container(70122).ListItem.Votes, (, $LOCALIZE[20350])][/COLOR]</value>
+		<value condition="Control.HasFocus(18022)">$INFO[Container(18004).ListItem(0).Label][CR][COLOR=$VAR[DisabledColour]]$INFO[Container(18004).ListItem(0).Year]$INFO[Container(18004).ListItem(0).Rating, · ]$INFO[Container(18004).ListItem(0).Votes, (, $LOCALIZE[20350])]$INFO[Container(18004).ListItem(0).Duration, ,$LOCALIZE[31102]][/COLOR]</value>
+		<value condition="Control.HasFocus(1802201)">$INFO[Container(18004).ListItem(1).Label][CR][COLOR=$VAR[DisabledColour]]$INFO[Container(18004).ListItem(1).Year]$INFO[Container(18004).ListItem(1).Rating, · ]$INFO[Container(18004).ListItem(1).Votes, (, $LOCALIZE[20350])]$INFO[Container(18004).ListItem(1).Duration, ,$LOCALIZE[31102]][/COLOR]</value>
+		<value condition="Control.HasFocus(1802202)">$INFO[Container(18004).ListItem(2).Label][CR][COLOR=$VAR[DisabledColour]]$INFO[Container(18004).ListItem(2).Year]$INFO[Container(18004).ListItem(2).Rating, · ]$INFO[Container(18004).ListItem(2).Votes, (, $LOCALIZE[20350])]$INFO[Container(18004).ListItem(2).Duration, ,$LOCALIZE[31102]][/COLOR]</value>
+		<value condition="Control.HasFocus(1802203)">$INFO[Container(18004).ListItem(3).Label][CR][COLOR=$VAR[DisabledColour]]$INFO[Container(18004).ListItem(3).Year]$INFO[Container(18004).ListItem(3).Rating, · ]$INFO[Container(18004).ListItem(3).Votes, (, $LOCALIZE[20350])]$INFO[Container(18004).ListItem(3).Duration, ,$LOCALIZE[31102]][/COLOR]</value>
+		<value condition="Control.HasFocus(1802204)">$INFO[Container(18004).ListItem(4).Label][CR][COLOR=$VAR[DisabledColour]]$INFO[Container(18004).ListItem(4).Year]$INFO[Container(18004).ListItem(4).Rating, · ]$INFO[Container(18004).ListItem(4).Votes, (, $LOCALIZE[20350])]$INFO[Container(18004).ListItem(4).Duration, ,$LOCALIZE[31102]][/COLOR]</value>
+		<value condition="Control.HasFocus(18002)">$INFO[Container(18003).ListItem(0).Label][CR][COLOR=$VAR[DisabledColour]]$INFO[Container(18003).ListItem(0).Year]$INFO[Container(18003).ListItem(0).Rating, · ]$INFO[Container(18003).ListItem(0).Votes, (, $LOCALIZE[20350])]$INFO[Container(18003).ListItem(0).Duration, ,$LOCALIZE[31102]][/COLOR]</value>
+		<value condition="Control.HasFocus(1800201)">$INFO[Container(18003).ListItem(1).Label][CR][COLOR=$VAR[DisabledColour]]$INFO[Container(18003).ListItem(1).Year]$INFO[Container(18003).ListItem(1).Rating, · ]$INFO[Container(18003).ListItem(1).Votes, (, $LOCALIZE[20350])]$INFO[Container(18003).ListItem(1).Duration, ,$LOCALIZE[31102]][/COLOR]</value>
+		<value condition="Control.HasFocus(1800202)">$INFO[Container(18003).ListItem(2).Label][CR][COLOR=$VAR[DisabledColour]]$INFO[Container(18003).ListItem(2).Year]$INFO[Container(18003).ListItem(2).Rating, · ]$INFO[Container(18003).ListItem(2).Votes, (, $LOCALIZE[20350])]$INFO[Container(18003).ListItem(2).Duration, ,$LOCALIZE[31102]][/COLOR]</value>
+		<value condition="Control.HasFocus(1800203)">$INFO[Container(18003).ListItem(3).Label][CR][COLOR=$VAR[DisabledColour]]$INFO[Container(18003).ListItem(3).Year]$INFO[Container(18003).ListItem(3).Rating, · ]$INFO[Container(18003).ListItem(3).Votes, (, $LOCALIZE[20350])]$INFO[Container(18003).ListItem(3).Duration, ,$LOCALIZE[31102]][/COLOR]</value>
+		<value condition="Control.HasFocus(1800204)">$INFO[Container(18003).ListItem(4).Label][CR][COLOR=$VAR[DisabledColour]]$INFO[Container(18003).ListItem(4).Year]$INFO[Container(18003).ListItem(4).Rating, · ]$INFO[Container(18003).ListItem(4).Votes, (, $LOCALIZE[20350])]$INFO[Container(18003).ListItem(4).Duration, ,$LOCALIZE[31102]][/COLOR]</value>
+		<value condition="Control.HasFocus(18004)">$INFO[Container(18004).ListItem.Label][CR][COLOR=$VAR[DisabledColour]]$INFO[Container(18004).ListItem.Year]$INFO[Container(18004).ListItem.Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
+		<value condition="Control.HasFocus(18003)">$INFO[Container(18003).ListItem.Label][CR][COLOR=$VAR[DisabledColour]]$INFO[Container(18003).ListItem.Year]$INFO[Container(18003).ListItem.Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
+		<value condition="Control.HasFocus(19022)">$INFO[Container(19004).ListItem(0).Label][CR][COLOR=$VAR[DisabledColour]]$INFO[Container(19004).ListItem(0).Year]$INFO[Container(19004).ListItem(0).Rating, · ]$INFO[Container(19004).ListItem(0).Votes, (, $LOCALIZE[20350])]$INFO[Container(19004).ListItem(0).Duration, ,$LOCALIZE[31102]][/COLOR]</value>
+		<value condition="Control.HasFocus(1902201)">$INFO[Container(19004).ListItem(1).Label][CR][COLOR=$VAR[DisabledColour]]$INFO[Container(19004).ListItem(1).Year]$INFO[Container(19004).ListItem(1).Rating, · ]$INFO[Container(19004).ListItem(1).Votes, (, $LOCALIZE[20350])]$INFO[Container(19004).ListItem(1).Duration, ,$LOCALIZE[31102]][/COLOR]</value>
+		<value condition="Control.HasFocus(1902202)">$INFO[Container(19004).ListItem(2).Label][CR][COLOR=$VAR[DisabledColour]]$INFO[Container(19004).ListItem(2).Year]$INFO[Container(19004).ListItem(2).Rating, · ]$INFO[Container(19004).ListItem(2).Votes, (, $LOCALIZE[20350])]$INFO[Container(19004).ListItem(2).Duration, ,$LOCALIZE[31102]][/COLOR]</value>
+		<value condition="Control.HasFocus(1902203)">$INFO[Container(19004).ListItem(3).Label][CR][COLOR=$VAR[DisabledColour]]$INFO[Container(19004).ListItem(3).Year]$INFO[Container(19004).ListItem(3).Rating, · ]$INFO[Container(19004).ListItem(3).Votes, (, $LOCALIZE[20350])]$INFO[Container(19004).ListItem(3).Duration, ,$LOCALIZE[31102]][/COLOR]</value>
+		<value condition="Control.HasFocus(1902204)">$INFO[Container(19004).ListItem(4).Label][CR][COLOR=$VAR[DisabledColour]]$INFO[Container(19004).ListItem(4).Year]$INFO[Container(19004).ListItem(4).Rating, · ]$INFO[Container(19004).ListItem(4).Votes, (, $LOCALIZE[20350])]$INFO[Container(19004).ListItem(4).Duration, ,$LOCALIZE[31102]][/COLOR]</value>
+		<value condition="Control.HasFocus(19002)">$INFO[Container(19003).ListItem(0).Label][CR][COLOR=$VAR[DisabledColour]]$INFO[Container(19003).ListItem(0).Year]$INFO[Container(19003).ListItem(0).Rating, · ]$INFO[Container(19003).ListItem(0).Votes, (, $LOCALIZE[20350])]$INFO[Container(19003).ListItem(0).Duration, ,$LOCALIZE[31102]][/COLOR]</value>
+		<value condition="Control.HasFocus(1900201)">$INFO[Container(19003).ListItem(1).Label][CR][COLOR=$VAR[DisabledColour]]$INFO[Container(19003).ListItem(1).Year]$INFO[Container(19003).ListItem(1).Rating, · ]$INFO[Container(19003).ListItem(1).Votes, (, $LOCALIZE[20350])]$INFO[Container(19003).ListItem(1).Duration, ,$LOCALIZE[31102]][/COLOR]</value>
+		<value condition="Control.HasFocus(1900202)">$INFO[Container(19003).ListItem(2).Label][CR][COLOR=$VAR[DisabledColour]]$INFO[Container(19003).ListItem(2).Year]$INFO[Container(19003).ListItem(2).Rating, · ]$INFO[Container(19003).ListItem(2).Votes, (, $LOCALIZE[20350])]$INFO[Container(19003).ListItem(2).Duration, ,$LOCALIZE[31102]][/COLOR]</value>
+		<value condition="Control.HasFocus(1900203)">$INFO[Container(19003).ListItem(3).Label][CR][COLOR=$VAR[DisabledColour]]$INFO[Container(19003).ListItem(3).Year]$INFO[Container(19003).ListItem(3).Rating, · ]$INFO[Container(19003).ListItem(3).Votes, (, $LOCALIZE[20350])]$INFO[Container(19003).ListItem(3).Duration, ,$LOCALIZE[31102]][/COLOR]</value>
+		<value condition="Control.HasFocus(1900204)">$INFO[Container(19003).ListItem(4).Label][CR][COLOR=$VAR[DisabledColour]]$INFO[Container(19003).ListItem(4).Year]$INFO[Container(19003).ListItem(4).Rating, · ]$INFO[Container(19003).ListItem(4).Votes, (, $LOCALIZE[20350])]$INFO[Container(19003).ListItem(4).Duration, ,$LOCALIZE[31102]][/COLOR]</value>
+		<value condition="Control.HasFocus(19004)">$INFO[Container(19004).ListItem.Label][CR][COLOR=$VAR[DisabledColour]]$INFO[Container(19004).ListItem.Year]$INFO[Container(19004).ListItem.Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
+		<value condition="Control.HasFocus(19003)">$INFO[Container(19003).ListItem.Label][CR][COLOR=$VAR[DisabledColour]]$INFO[Container(19003).ListItem.Year]$INFO[Container(19003).ListItem.Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
+		<value condition="Control.HasFocus(8013) + StringCompare(Skin.String(althome.buttonid),8018) + IsEmpty(Container(300).ListItem.Property(widgetPath.home5))">$INFO[Container(8013).ListItem.Label,,[CR]][COLOR=$VAR[DisabledColour]]$INFO[Container(8013).ListItem.Label2][/COLOR]</value>
+		<value condition="Control.HasFocus(8013) + ![StringCompare(Skin.String(althome.buttonid),8018) + IsEmpty(Container(300).ListItem.Property(widgetPath.home5))]">$INFO[Container(8013).ListItem.TvShowTitle,,[CR]][COLOR=$VAR[DisabledColour]]$INFO[Container(8013).ListItem.Season,,x]$INFO[Container(8013).ListItem.Episode,,. ]$INFO[Container(8013).ListItem.Title]$INFO[Container(8013).ListItem.Year, · ,]$INFO[Container(8013).ListItem.Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
+		<value condition="Control.HasFocus(80133)">$INFO[Container(80133).ListItem.TvShowTitle,,[CR]][COLOR=$VAR[DisabledColour]]$INFO[Container(80133).ListItem.Season,,x]$INFO[Container(80133).ListItem.Episode,,. ]$INFO[Container(80133).ListItem.Title]$INFO[Container(80133).ListItem.Year, · ,]$INFO[Container(80133).ListItem.Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
+		<value condition="Control.HasFocus(80144)">$INFO[Container(80144).ListItem.TvShowTitle,,[CR]][COLOR=$VAR[DisabledColour]]$INFO[Container(80144).ListItem.Season,,x]$INFO[Container(80144).ListItem.Episode,,. ]$INFO[Container(80144).ListItem.Title]$INFO[Container(80144).ListItem.Year, · ,]$INFO[Container(80144).ListItem.Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
+		<value condition="Control.HasFocus(80155)">$INFO[Container(80155).ListItem.TvShowTitle,,[CR]][COLOR=$VAR[DisabledColour]]$INFO[Container(80155).ListItem.Season,,x]$INFO[Container(80155).ListItem.Episode,,. ]$INFO[Container(80155).ListItem.Title]$INFO[Container(80155).ListItem.Year, · ,]$INFO[Container(80155).ListItem.Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
+		<value condition="Control.HasFocus(80166)">$INFO[Container(80166).ListItem.TvShowTitle,,[CR]][COLOR=$VAR[DisabledColour]]$INFO[Container(80166).ListItem.Season,,x]$INFO[Container(80166).ListItem.Episode,,. ]$INFO[Container(80166).ListItem.Title]$INFO[Container(80166).ListItem.Year, · ,]$INFO[Container(80166).ListItem.Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
+		<value condition="Control.HasFocus(80177)">$INFO[Container(80177).ListItem.TvShowTitle,,[CR]][COLOR=$VAR[DisabledColour]]$INFO[Container(80177).ListItem.Season,,x]$INFO[Container(80177).ListItem.Episode,,. ]$INFO[Container(80177).ListItem.Title]$INFO[Container(80177).ListItem.Year, · ,]$INFO[Container(80177).ListItem.Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
 	</variable>
 	<variable name="EmbyWidgetLabelVertical2">
 		<value condition="Control.HasFocus(3444)">$INFO[Container(3444).ListItem.Label] [COLOR=$VAR[DisabledColour]]$INFO[Container(3444).ListItem.Label2]$INFO[Container(3444).ListItem.Property(HighTemp), [B],[/B]]$INFO[Container(3444).ListItem.Property(LowTemp), ][/COLOR]</value>
@@ -333,6 +406,303 @@
 		<value condition="Control.HasFocus(19004)">$INFO[Container(19004).ListItem.Label] [COLOR=$VAR[DisabledColour]]$INFO[Container(19004).ListItem.Year]$INFO[Container(19004).ListItem.Rating, · ]$INFO[Container(19004).ListItem.Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
 		<value condition="Control.HasFocus(19003)">$INFO[Container(19003).ListItem.Label] [COLOR=$VAR[DisabledColour]]$INFO[Container(19003).ListItem.Year]$INFO[Container(19003).ListItem.Rating, · ]$INFO[Container(19003).ListItem.Votes, (, $LOCALIZE[20350])]$VAR[DurationLong, ,][/COLOR]</value>
 	</variable>
+	<variable name="EmbyWidgetRatingLabel">
+		<value condition="Control.HasFocus(3444)">$INFO[Container(3444).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(30133)">$INFO[Container(30133).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(30143)">$INFO[Container(30143).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(40133)">$INFO[Container(40133).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(40155)">$INFO[Container(40155).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(50133)">$INFO[Container(50133).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(50155)">$INFO[Container(50155).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(50144)">$INFO[Container(50144).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(60133)">$INFO[Container(60133).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(60155)">$INFO[Container(60155).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(60144)">$INFO[Container(60144).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(6012)">$INFO[Container(6012).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(6016)">$INFO[Container(6016).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(6017)">$INFO[Container(6017).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(9017)">$INFO[Container(9017).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(3012)">$INFO[Container(3012).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(3016)">$INFO[Container(3016).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(3017)">$INFO[Container(3017).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(10017)">$INFO[Container(10017).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(4012)">$INFO[Container(4012).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(4016)">$INFO[Container(4016).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(4017)">$INFO[Container(4017).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(14017)">$INFO[Container(14017).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(5012)">$INFO[Container(5012).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(5016)">$INFO[Container(5016).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(5017)">$INFO[Container(5017).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(15017)">$INFO[Container(15017).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(7016)">$INFO[Container(7016).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(7012)">$INFO[Container(7012).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(18022)">$INFO[Container(18022).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(1802201)">$INFO[Container(1802201).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(1802202)">$INFO[Container(1802202).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(1802203)">$INFO[Container(1802203).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(18002)">$INFO[Container(18002).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(1800201)">$INFO[Container(1800201).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(1800202)">$INFO[Container(1800202).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(1800203)">$INFO[Container(1800203).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(1800204)">$INFO[Container(1800204).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(18004)">$INFO[Container(18004).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(18003)">$INFO[Container(18003).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(19022)">$INFO[Container(19022).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(1902201)">$INFO[Container(1902201).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(1902202)">$INFO[Container(1902202).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(1902203)">$INFO[Container(1902203).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(1902204)">$INFO[Container(1902204).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(19002)">$INFO[Container(19002).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(1900201)">$INFO[Container(1900201).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(1900202)">$INFO[Container(1900202).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(1900203)">$INFO[Container(1900203).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(1900204)">$INFO[Container(1900204).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(19004)">$INFO[Container(19004).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(19003)">$INFO[Container(19003).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(8013)">$INFO[Container(8013).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(80133)">$INFO[Container(80133).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(80144)">$INFO[Container(80144).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(80155)">$INFO[Container(80155).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(80166)">$INFO[Container(80166).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(80177)">$INFO[Container(80177).ListItem.Rating]</value>
+	</variable>
+
+	<variable name="EmbyWidgetUserRatingLabel">
+		<value condition="Control.HasFocus(3444)">$INFO[Container(3444).ListItem.UserRating]</value>
+		<value condition="Control.HasFocus(30133)">$INFO[Container(30133).ListItem.UserRating]</value>
+		<value condition="Control.HasFocus(30143)">$INFO[Container(30143).ListItem.UserRating]</value>
+		<value condition="Control.HasFocus(40133)">$INFO[Container(40133).ListItem.UserRating]</value>
+		<value condition="Control.HasFocus(40155)">$INFO[Container(40155).ListItem.UserRating]</value>
+		<value condition="Control.HasFocus(50133)">$INFO[Container(50133).ListItem.UserRating]</value>
+		<value condition="Control.HasFocus(50155)">$INFO[Container(50155).ListItem.UserRating]</value>
+		<value condition="Control.HasFocus(50144)">$INFO[Container(50144).ListItem.UserRating]</value>
+		<value condition="Control.HasFocus(60133)">$INFO[Container(60133).ListItem.UserRating]</value>
+		<value condition="Control.HasFocus(60155)">$INFO[Container(60155).ListItem.UserRating]</value>
+		<value condition="Control.HasFocus(60144)">$INFO[Container(60144).ListItem.UserRating]</value>
+		<value condition="Control.HasFocus(6012)">$INFO[Container(6012).ListItem.UserRating]</value>
+		<value condition="Control.HasFocus(6016)">$INFO[Container(6016).ListItem.UserRating]</value>
+		<value condition="Control.HasFocus(6017)">$INFO[Container(6017).ListItem.UserRating]</value>
+		<value condition="Control.HasFocus(9017)">$INFO[Container(9017).ListItem.UserRating]</value>
+		<value condition="Control.HasFocus(3012)">$INFO[Container(3012).ListItem.UserRating]</value>
+		<value condition="Control.HasFocus(3016)">$INFO[Container(3016).ListItem.UserRating]</value>
+		<value condition="Control.HasFocus(3017)">$INFO[Container(3017).ListItem.UserRating]</value>
+		<value condition="Control.HasFocus(10017)">$INFO[Container(10017).ListItem.UserRating]</value>
+		<value condition="Control.HasFocus(4012)">$INFO[Container(4012).ListItem.UserRating]</value>
+		<value condition="Control.HasFocus(4016)">$INFO[Container(4016).ListItem.UserRating]</value>
+		<value condition="Control.HasFocus(4017)">$INFO[Container(4017).ListItem.UserRating]</value>
+		<value condition="Control.HasFocus(14017)">$INFO[Container(14017).ListItem.UserRating]</value>
+		<value condition="Control.HasFocus(5012)">$INFO[Container(5012).ListItem.UserRating]</value>
+		<value condition="Control.HasFocus(5016)">$INFO[Container(5016).ListItem.UserRating]</value>
+		<value condition="Control.HasFocus(5017)">$INFO[Container(5017).ListItem.UserRating]</value>
+		<value condition="Control.HasFocus(15017)">$INFO[Container(15017).ListItem.UserRating]</value>
+		<value condition="Control.HasFocus(7016)">$INFO[Container(7016).ListItem.UserRating]</value>
+		<value condition="Control.HasFocus(7012)">$INFO[Container(7012).ListItem.UserRating]</value>
+		<value condition="Control.HasFocus(18022)">$INFO[Container(18022).ListItem.UserRating]</value>
+		<value condition="Control.HasFocus(1802201)">$INFO[Container(1802201).ListItem.UserRating]</value>
+		<value condition="Control.HasFocus(1802202)">$INFO[Container(1802202).ListItem.UserRating]</value>
+		<value condition="Control.HasFocus(1802203)">$INFO[Container(1802203).ListItem.UserRating]</value>
+		<value condition="Control.HasFocus(18002)">$INFO[Container(18002).ListItem.UserRating]</value>
+		<value condition="Control.HasFocus(1800201)">$INFO[Container(1800201).ListItem.UserRating]</value>
+		<value condition="Control.HasFocus(1800202)">$INFO[Container(1800202).ListItem.UserRating]</value>
+		<value condition="Control.HasFocus(1800203)">$INFO[Container(1800203).ListItem.UserRating]</value>
+		<value condition="Control.HasFocus(1800204)">$INFO[Container(1800204).ListItem.UserRating]</value>
+		<value condition="Control.HasFocus(18004)">$INFO[Container(18004).ListItem.UserRating]</value>
+		<value condition="Control.HasFocus(18003)">$INFO[Container(18003).ListItem.UserRating]</value>
+		<value condition="Control.HasFocus(19022)">$INFO[Container(19022).ListItem.UserRating]</value>
+		<value condition="Control.HasFocus(1902201)">$INFO[Container(1902201).ListItem.UserRating]</value>
+		<value condition="Control.HasFocus(1902202)">$INFO[Container(1902202).ListItem.UserRating]</value>
+		<value condition="Control.HasFocus(1902203)">$INFO[Container(1902203).ListItem.UserRating]</value>
+		<value condition="Control.HasFocus(1902204)">$INFO[Container(1902204).ListItem.UserRating]</value>
+		<value condition="Control.HasFocus(19002)">$INFO[Container(19002).ListItem.UserRating]</value>
+		<value condition="Control.HasFocus(1900201)">$INFO[Container(1900201).ListItem.UserRating]</value>
+		<value condition="Control.HasFocus(1900202)">$INFO[Container(1900202).ListItem.UserRating]</value>
+		<value condition="Control.HasFocus(1900203)">$INFO[Container(1900203).ListItem.UserRating]</value>
+		<value condition="Control.HasFocus(1900204)">$INFO[Container(1900204).ListItem.UserRating]</value>
+		<value condition="Control.HasFocus(19004)">$INFO[Container(19004).ListItem.UserRating]</value>
+		<value condition="Control.HasFocus(19003)">$INFO[Container(19003).ListItem.UserRating]</value>
+		<value condition="Control.HasFocus(8013)">$INFO[Container(8013).ListItem.UserRating]</value>
+		<value condition="Control.HasFocus(80133)">$INFO[Container(80133).ListItem.UserRating]</value>
+		<value condition="Control.HasFocus(80144)">$INFO[Container(80144).ListItem.UserRating]</value>
+		<value condition="Control.HasFocus(80155)">$INFO[Container(80155).ListItem.UserRating]</value>
+		<value condition="Control.HasFocus(80166)">$INFO[Container(80166).ListItem.UserRating]</value>
+		<value condition="Control.HasFocus(80177)">$INFO[Container(80177).ListItem.UserRating]</value>
+	</variable>
+
+	<variable name="EmbyLabelUserRating">
+		<value condition="Control.HasFocus(3444) + IntegerGreaterThan(Container(3444).ListItem.Userrating,5)"></value>
+		<value condition="Control.HasFocus(3444) + !IntegerGreaterThan(Container(3444).ListItem.Userrating,5)"></value>
+		<value condition="Control.HasFocus(30133) + IntegerGreaterThan(Container(30133).ListItem.Userrating,5)"></value>
+		<value condition="Control.HasFocus(30133) + !IntegerGreaterThan(Container(30133).ListItem.Userrating,5)"></value>
+		<value condition="Control.HasFocus(30143) + IntegerGreaterThan(Container(30143).ListItem.Userrating,5)"></value>
+
+		<value condition="Control.HasFocus(30143) + !IntegerGreaterThan(Container(30143).ListItem.Userrating,5)"></value>
+
+		<value condition="Control.HasFocus(40133) + IntegerGreaterThan(Container(40133).ListItem.Userrating,5)"></value>
+		<value condition="Control.HasFocus(40133) + !IntegerGreaterThan(Container(40133).ListItem.Userrating,5)"></value>
+
+		<value condition="Control.HasFocus(40155) + IntegerGreaterThan(Container(40155).ListItem.Userrating,5)"></value>
+		<value condition="Control.HasFocus(40155) + !IntegerGreaterThan(Container(40155).ListItem.Userrating,5)"></value>
+
+		<value condition="Control.HasFocus(50133) + IntegerGreaterThan(Container(50133).ListItem.Userrating,5)"></value>
+		<value condition="Control.HasFocus(50133) + !IntegerGreaterThan(Container(50133).ListItem.Userrating,5)"></value>
+
+		<value condition="Control.HasFocus(50155) + IntegerGreaterThan(Container(50155).ListItem.Userrating,5)"></value>
+		<value condition="Control.HasFocus(50155) + !IntegerGreaterThan(Container(50155).ListItem.Userrating,5)"></value>
+
+		<value condition="Control.HasFocus(50144) + IntegerGreaterThan(Container(50144).ListItem.Userrating,5)"></value>
+		<value condition="Control.HasFocus(50144) + !IntegerGreaterThan(Container(50144).ListItem.Userrating,5)"></value>
+
+		<value condition="Control.HasFocus(60133) + IntegerGreaterThan(Container(60133).ListItem.Userrating,5)"></value>
+		<value condition="Control.HasFocus(60133) + !IntegerGreaterThan(Container(60133).ListItem.Userrating,5)"></value>
+
+		<value condition="Control.HasFocus(60155) + IntegerGreaterThan(Container(60155).ListItem.Userrating,5)"></value>
+		<value condition="Control.HasFocus(60155) + !IntegerGreaterThan(Container(60155).ListItem.Userrating,5)"></value>
+
+		<value condition="Control.HasFocus(60144) + IntegerGreaterThan(Container(60144).ListItem.Userrating,5)"></value>
+		<value condition="Control.HasFocus(60144) + !IntegerGreaterThan(Container(60144).ListItem.Userrating,5)"></value>
+
+		<value condition="Control.HasFocus(6012) + IntegerGreaterThan(Container(6012).ListItem.Userrating,5)"></value>
+		<value condition="Control.HasFocus(6012) + !IntegerGreaterThan(Container(6012).ListItem.Userrating,5)"></value>
+
+		<value condition="Control.HasFocus(6016) + IntegerGreaterThan(Container(6016).ListItem.Userrating,5)"></value>
+		<value condition="Control.HasFocus(6016) + !IntegerGreaterThan(Container(6016).ListItem.Userrating,5)"></value>
+
+		<value condition="Control.HasFocus(6017) + IntegerGreaterThan(Container(6017).ListItem.Userrating,5)"></value>
+		<value condition="Control.HasFocus(6017) + !IntegerGreaterThan(Container(6017).ListItem.Userrating,5)"></value>
+
+		<value condition="Control.HasFocus(9017) + IntegerGreaterThan(Container(9017).ListItem.Userrating,5)"></value>
+		<value condition="Control.HasFocus(9017) + !IntegerGreaterThan(Container(9017).ListItem.Userrating,5)"></value>
+
+		<value condition="Control.HasFocus(3012) + IntegerGreaterThan(Container(3012).ListItem.Userrating,5)"></value>
+		<value condition="Control.HasFocus(3012) + !IntegerGreaterThan(Container(3012).ListItem.Userrating,5)"></value>
+
+		<value condition="Control.HasFocus(3016) + IntegerGreaterThan(Container(3016).ListItem.Userrating,5)"></value>
+		<value condition="Control.HasFocus(3016) + !IntegerGreaterThan(Container(3016).ListItem.Userrating,5)"></value>
+
+		<value condition="Control.HasFocus(3017) + IntegerGreaterThan(Container(3017).ListItem.Userrating,5)"></value>
+		<value condition="Control.HasFocus(3017) + !IntegerGreaterThan(Container(3017).ListItem.Userrating,5)"></value>
+
+		<value condition="Control.HasFocus(10017) + IntegerGreaterThan(Container(10017).ListItem.Userrating,5)"></value>
+		<value condition="Control.HasFocus(10017) + !IntegerGreaterThan(Container(10017).ListItem.Userrating,5)"></value>
+
+		<value condition="Control.HasFocus(4012) + IntegerGreaterThan(Container(4012).ListItem.Userrating,5)"></value>
+		<value condition="Control.HasFocus(4012) + !IntegerGreaterThan(Container(4012).ListItem.Userrating,5)"></value>
+
+		<value condition="Control.HasFocus(4016) + IntegerGreaterThan(Container(4016).ListItem.Userrating,5)"></value>
+		<value condition="Control.HasFocus(4016) + !IntegerGreaterThan(Container(4016).ListItem.Userrating,5)"></value>
+
+		<value condition="Control.HasFocus(4017) + IntegerGreaterThan(Container(4017).ListItem.Userrating,5)"></value>
+		<value condition="Control.HasFocus(4017) + !IntegerGreaterThan(Container(4017).ListItem.Userrating,5)"></value>
+
+		<value condition="Control.HasFocus(14017) + IntegerGreaterThan(Container(14017).ListItem.Userrating,5)"></value>
+		<value condition="Control.HasFocus(14017) + !IntegerGreaterThan(Container(14017).ListItem.Userrating,5)"></value>
+
+		<value condition="Control.HasFocus(5012) + IntegerGreaterThan(Container(5012).ListItem.Userrating,5)"></value>
+		<value condition="Control.HasFocus(5012) + !IntegerGreaterThan(Container(5012).ListItem.Userrating,5)"></value>
+
+		<value condition="Control.HasFocus(5016) + IntegerGreaterThan(Container(5016).ListItem.Userrating,5)"></value>
+		<value condition="Control.HasFocus(5016) + !IntegerGreaterThan(Container(5016).ListItem.Userrating,5)"></value>
+
+		<value condition="Control.HasFocus(5017) + IntegerGreaterThan(Container(5017).ListItem.Userrating,5)"></value>
+		<value condition="Control.HasFocus(5017) + !IntegerGreaterThan(Container(5017).ListItem.Userrating,5)"></value>
+
+		<value condition="Control.HasFocus(15017) + IntegerGreaterThan(Container(15017).ListItem.Userrating,5)"></value>
+		<value condition="Control.HasFocus(15017) + !IntegerGreaterThan(Container(15017).ListItem.Userrating,5)"></value>
+
+		<value condition="Control.HasFocus(7016) + IntegerGreaterThan(Container(7016).ListItem.Userrating,5)"></value>
+		<value condition="Control.HasFocus(7016) + !IntegerGreaterThan(Container(7016).ListItem.Userrating,5)"></value>
+
+		<value condition="Control.HasFocus(7012) + IntegerGreaterThan(Container(7012).ListItem.Userrating,5)"></value>
+		<value condition="Control.HasFocus(7012) + !IntegerGreaterThan(Container(7012).ListItem.Userrating,5)"></value>
+
+		<value condition="Control.HasFocus(18022) + IntegerGreaterThan(Container(18022).ListItem.Userrating,5)"></value>
+		<value condition="Control.HasFocus(18022) + !IntegerGreaterThan(Container(18022).ListItem.Userrating,5)"></value>
+
+		<value condition="Control.HasFocus(1802201) + IntegerGreaterThan(Container(1802201).ListItem.Userrating,5)"></value>
+		<value condition="Control.HasFocus(1802201) + !IntegerGreaterThan(Container(1802201).ListItem.Userrating,5)"></value>
+
+		<value condition="Control.HasFocus(1802202) + IntegerGreaterThan(Container(1802202).ListItem.Userrating,5)"></value>
+		<value condition="Control.HasFocus(1802202) + !IntegerGreaterThan(Container(1802202).ListItem.Userrating,5)"></value>
+
+		<value condition="Control.HasFocus(1802203) + IntegerGreaterThan(Container(1802203).ListItem.Userrating,5)"></value>
+		<value condition="Control.HasFocus(1802203) + !IntegerGreaterThan(Container(1802203).ListItem.Userrating,5)"></value>
+
+		<value condition="Control.HasFocus(18002) + IntegerGreaterThan(Container(18002).ListItem.Userrating,5)"></value>
+		<value condition="Control.HasFocus(18002) + !IntegerGreaterThan(Container(18002).ListItem.Userrating,5)"></value>
+
+		<value condition="Control.HasFocus(1800201) + IntegerGreaterThan(Container(1800201).ListItem.Userrating,5)"></value>
+		<value condition="Control.HasFocus(1800201) + !IntegerGreaterThan(Container(1800201).ListItem.Userrating,5)"></value>
+
+		<value condition="Control.HasFocus(1800202) + IntegerGreaterThan(Container(1800202).ListItem.Userrating,5)"></value>
+		<value condition="Control.HasFocus(1800202) + !IntegerGreaterThan(Container(1800202).ListItem.Userrating,5)"></value>
+
+		<value condition="Control.HasFocus(1800203) + IntegerGreaterThan(Container(1800203).ListItem.Userrating,5)"></value>
+		<value condition="Control.HasFocus(1800203) + !IntegerGreaterThan(Container(1800203).ListItem.Userrating,5)"></value>
+
+		<value condition="Control.HasFocus(1800204) + IntegerGreaterThan(Container(1800204).ListItem.Userrating,5)"></value>
+		<value condition="Control.HasFocus(1800204) + !IntegerGreaterThan(Container(1800204).ListItem.Userrating,5)"></value>
+
+		<value condition="Control.HasFocus(18004) + IntegerGreaterThan(Container(18004).ListItem.Userrating,5)"></value>
+		<value condition="Control.HasFocus(18004) + !IntegerGreaterThan(Container(18004).ListItem.Userrating,5)"></value>
+
+		<value condition="Control.HasFocus(18003) + IntegerGreaterThan(Container(18003).ListItem.Userrating,5)"></value>
+		<value condition="Control.HasFocus(18003) + !IntegerGreaterThan(Container(18003).ListItem.Userrating,5)"></value>
+
+		<value condition="Control.HasFocus(19022) + IntegerGreaterThan(Container(19022).ListItem.Userrating,5)"></value>
+		<value condition="Control.HasFocus(19022) + !IntegerGreaterThan(Container(19022).ListItem.Userrating,5)"></value>
+
+		<value condition="Control.HasFocus(1902201) + IntegerGreaterThan(Container(1902201).ListItem.Userrating,5)"></value>
+		<value condition="Control.HasFocus(1902201) + !IntegerGreaterThan(Container(1902201).ListItem.Userrating,5)"></value>
+
+		<value condition="Control.HasFocus(1902202) + IntegerGreaterThan(Container(1902202).ListItem.Userrating,5)"></value>
+		<value condition="Control.HasFocus(1902202) + !IntegerGreaterThan(Container(1902202).ListItem.Userrating,5)"></value>
+
+		<value condition="Control.HasFocus(1902203) + IntegerGreaterThan(Container(1902203).ListItem.Userrating,5)"></value>
+		<value condition="Control.HasFocus(1902203) + !IntegerGreaterThan(Container(1902203).ListItem.Userrating,5)"></value>
+
+		<value condition="Control.HasFocus(1902204) + IntegerGreaterThan(Container(1902204).ListItem.Userrating,5)"></value>
+		<value condition="Control.HasFocus(1902204) + !IntegerGreaterThan(Container(1902204).ListItem.Userrating,5)"></value>
+
+		<value condition="Control.HasFocus(19002) + IntegerGreaterThan(Container(19002).ListItem.Userrating,5)"></value>
+		<value condition="Control.HasFocus(19002) + !IntegerGreaterThan(Container(19002).ListItem.Userrating,5)"></value>
+
+		<value condition="Control.HasFocus(1900201) + IntegerGreaterThan(Container(1900201).ListItem.Userrating,5)"></value>
+		<value condition="Control.HasFocus(1900201) + !IntegerGreaterThan(Container(1900201).ListItem.Userrating,5)"></value>
+
+		<value condition="Control.HasFocus(1900202) + IntegerGreaterThan(Container(1900202).ListItem.Userrating,5)"></value>
+		<value condition="Control.HasFocus(1900202) + !IntegerGreaterThan(Container(1900202).ListItem.Userrating,5)"></value>
+
+		<value condition="Control.HasFocus(1900203) + IntegerGreaterThan(Container(1900203).ListItem.Userrating,5)"></value>
+		<value condition="Control.HasFocus(1900203) + !IntegerGreaterThan(Container(1900203).ListItem.Userrating,5)"></value>
+
+		<value condition="Control.HasFocus(1900204) + IntegerGreaterThan(Container(1900204).ListItem.Userrating,5)"></value>
+		<value condition="Control.HasFocus(1900204) + !IntegerGreaterThan(Container(1900204).ListItem.Userrating,5)"></value>
+
+		<value condition="Control.HasFocus(19004) + IntegerGreaterThan(Container(19004).ListItem.Userrating,5)"></value>
+		<value condition="Control.HasFocus(19004) + !IntegerGreaterThan(Container(19004).ListItem.Userrating,5)"></value>
+
+		<value condition="Control.HasFocus(19003) + IntegerGreaterThan(Container(19003).ListItem.Userrating,5)"></value>
+		<value condition="Control.HasFocus(19003) + !IntegerGreaterThan(Container(19003).ListItem.Userrating,5)"></value>
+
+		<value condition="Control.HasFocus(8013) + IntegerGreaterThan(Container(8013).ListItem.Userrating,5)"></value>
+		<value condition="Control.HasFocus(8013) + !IntegerGreaterThan(Container(8013).ListItem.Userrating,5)"></value>
+
+		<value condition="Control.HasFocus(80133) + IntegerGreaterThan(Container(80133).ListItem.Userrating,5)"></value>
+		<value condition="Control.HasFocus(80133) + !IntegerGreaterThan(Container(80133).ListItem.Userrating,5)"></value>
+
+		<value condition="Control.HasFocus(80144) + IntegerGreaterThan(Container(80144).ListItem.Userrating,5)"></value>
+		<value condition="Control.HasFocus(80144) + !IntegerGreaterThan(Container(80144).ListItem.Userrating,5)"></value>
+
+		<value condition="Control.HasFocus(80155) + IntegerGreaterThan(Container(80155).ListItem.Userrating,5)"></value>
+		<value condition="Control.HasFocus(80155) + !IntegerGreaterThan(Container(80155).ListItem.Userrating,5)"></value>
+
+		<value condition="Control.HasFocus(80166) + IntegerGreaterThan(Container(80166).ListItem.Userrating,5)"></value>
+		<value condition="Control.HasFocus(80166) + !IntegerGreaterThan(Container(80166).ListItem.Userrating,5)"></value>
+
+		<value condition="Control.HasFocus(80177) + IntegerGreaterThan(Container(80177).ListItem.Userrating,5)"></value>
+		<value condition="Control.HasFocus(80177) + !IntegerGreaterThan(Container(80177).ListItem.Userrating,5)"></value>
+	</variable>
+
 	<variable name="EmbyWidget1Label">
 		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetName))">$INFO[Container(300).ListItem.Property(widgetName)]</value>
 		<value>$LOCALIZE[31134]</value>
@@ -429,6 +799,46 @@
 		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetName.tvshows6))">$INFO[Container(300).ListItem.Property(widgetName.tvshows6)]</value>
 		<value>$LOCALIZE[31976]$INFO[Container(19002).ListItem.Property(genretitle), ,]</value>
 	</variable>
+
+	<variable name="EmbyWidgetDefWidgetAltHomeLabel">
+		<value condition="StringCompare(Skin.String(althome.buttonid),8014)">$VAR[DefWidgetAltHomeLabel8014]</value>
+		<value condition="StringCompare(Skin.String(althome.buttonid),8015)">$VAR[DefWidgetAltHomeLabel8015]</value>
+		<value condition="StringCompare(Skin.String(althome.buttonid),8016)">$VAR[DefWidgetAltHomeLabel8016]</value>
+		<value condition="StringCompare(Skin.String(althome.buttonid),8017)">$VAR[DefWidgetAltHomeLabel8017]</value>
+		<value condition="StringCompare(Skin.String(althome.buttonid),8018)">$VAR[DefWidgetAltHomeLabel8018]</value>
+		<value>$LOCALIZE[31793]</value>
+	</variable>
+	<variable name="DefWidgetAltHomeLabel8014">
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetName.home1))">$INFO[Container(300).ListItem.Property(widgetName.home1)]</value>
+		<value condition="Skin.String(althome.moviewidget,WIDGE1)">$LOCALIZE[31782]$INFO[Container(8013).ListItem.Property(similartitle), ","]</value>
+		<value condition="Skin.String(althome.moviewidget,WIDGE2)">$LOCALIZE[31975]$INFO[Container(8013).ListItem.Property(genretitle), ,]</value>
+		<value condition="Skin.String(althome.moviewidget,WIDGE3)">$LOCALIZE[31794]</value>
+		<value condition="Skin.String(althome.moviewidget,WIDGE4)">$LOCALIZE[135]</value>
+	</variable>
+	<variable name="DefWidgetAltHomeLabel8015">
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetName.home2))">$INFO[Container(300).ListItem.Property(widgetName.home2)]</value>
+		<value condition="Skin.String(althome.tvwidget,WIDGE1)">$LOCALIZE[31782]$INFO[Container(8013).ListItem.Property(similartitle), ","]</value>
+		<value condition="Skin.String(althome.tvwidget,WIDGE2)">$LOCALIZE[31976]$INFO[Container(8013).ListItem.Property(genretitle), ,]</value>
+		<value condition="Skin.String(althome.tvwidget,WIDGE3)">$LOCALIZE[31793]</value>
+		<value condition="Skin.String(althome.tvwidget,WIDGE4)">$LOCALIZE[32119]</value>
+	</variable>
+	<variable name="DefWidgetAltHomeLabel8016">
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetName.home3))">$INFO[Container(300).ListItem.Property(widgetName.home3)]</value>
+		<value condition="Skin.HasSetting(althome.musicwidget)">$LOCALIZE[31795]</value>
+		<value condition="!Skin.HasSetting(althome.musicwidget)">$LOCALIZE[31978]</value>
+	</variable>
+	<variable name="DefWidgetAltHomeLabel8017">
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetName.home4))">$INFO[Container(300).ListItem.Property(widgetName.home4)]</value>
+		<value>$LOCALIZE[31220]</value>
+	</variable>
+	<variable name="DefWidgetAltHomeLabel8018">
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetName.home5))">$INFO[Container(300).ListItem.Property(widgetName.home5)]</value>
+		<value condition="Skin.String(althome.searchwidget,WIDGE1)">$LOCALIZE[31134]</value>
+		<value condition="Skin.String(althome.searchwidget,WIDGE2)">$LOCALIZE[31135]</value>
+		<value condition="Skin.String(althome.searchwidget,WIDGE3)">$LOCALIZE[31224]</value>
+		<value condition="Skin.String(althome.searchwidget,WIDGE4)">$LOCALIZE[31227]</value>
+	</variable>
+
 	<variable name="VideoInfoWidgetLabel">
 		<value condition="Stringcompare(Skin.String(widgetvideoinfo),SimilarVideos)">$LOCALIZE[31818]</value>
 		<value condition="Stringcompare(Skin.String(widgetvideoinfo),ShowCast)">$LOCALIZE[31819]</value>
@@ -883,7 +1293,7 @@
 	</variable>
 	<variable name="VideoInfoBlurLevel">
 		<value condition="!IsEmpty(Skin.String(VideoInfoBlur))">$INFO[Skin.String(VideoInfoBlur)]</value>
-		<value>10</value>
+		<value>6</value>
 	</variable>
 	<variable name="MusicInfoLabel">
 		<value condition="Container.Content(albums)">$INFO[ListItem.Album]</value>
@@ -970,11 +1380,18 @@
 		<value condition="!Skin.HasSetting(furniture.hideendtime) + [!IsEmpty(Container18004.ListItem(3).EndTime) + Control.HasFocus(1802203)]">$INFO[Container18004.ListItem(3).EndTime(hh:mm)]</value>
 		<value condition="!Skin.HasSetting(furniture.hideendtime) + [!IsEmpty(Container18004.ListItem(4).EndTime) + Control.HasFocus(1802204)]">$INFO[Container18004.ListItem(4).EndTime(hh:mm)]</value>
 		<value condition="!Skin.HasSetting(furniture.hideendtime) + [!IsEmpty(Container(19003).ListItem.EndTime) + Control.HasFocus(19003)]">$INFO[Container(19003).ListItem.EndTime(hh:mm)]</value>
-		<value condition="!Skin.HasSetting(furniture.hideendtime) + [!IsEmpty(Container19004.ListItem(0).EndTime) + Control.HasFocus(19022)]">$INFO[Container19004.ListItem(0).EndTime(hh:mm)]</value>
-		<value condition="!Skin.HasSetting(furniture.hideendtime) + [!IsEmpty(Container19004.ListItem(1).EndTime) + Control.HasFocus(1902201)]">$INFO[Container19004.ListItem(1).EndTime(hh:mm)]</value>
-		<value condition="!Skin.HasSetting(furniture.hideendtime) + [!IsEmpty(Container19004.ListItem(2).EndTime) + Control.HasFocus(1902202)]">$INFO[Container19004.ListItem(2).EndTime(hh:mm)]</value>
-		<value condition="!Skin.HasSetting(furniture.hideendtime) + [!IsEmpty(Container19004.ListItem(3).EndTime) + Control.HasFocus(1902203)]">$INFO[Container19004.ListItem(3).EndTime(hh:mm)]</value>
-		<value condition="!Skin.HasSetting(furniture.hideendtime) + [!IsEmpty(Container19004.ListItem(4).EndTime) + Control.HasFocus(1902204)]">$INFO[Container19004.ListItem(4).EndTime(hh:mm)]</value>
+		<value condition="!Skin.HasSetting(furniture.hideendtime) + [!IsEmpty(Container(19004).ListItem(0).EndTime) + Control.HasFocus(19022)]">$INFO[Container19004.ListItem(0).EndTime(hh:mm)]</value>
+		<value condition="!Skin.HasSetting(furniture.hideendtime) + [!IsEmpty(Container(19004).ListItem(1).EndTime) + Control.HasFocus(1902201)]">$INFO[Container19004.ListItem(1).EndTime(hh:mm)]</value>
+		<value condition="!Skin.HasSetting(furniture.hideendtime) + [!IsEmpty(Container(19004).ListItem(2).EndTime) + Control.HasFocus(1902202)]">$INFO[Container19004.ListItem(2).EndTime(hh:mm)]</value>
+		<value condition="!Skin.HasSetting(furniture.hideendtime) + [!IsEmpty(Container(19004).ListItem(3).EndTime) + Control.HasFocus(1902203)]">$INFO[Container19004.ListItem(3).EndTime(hh:mm)]</value>
+		<value condition="!Skin.HasSetting(furniture.hideendtime) + [!IsEmpty(Container(19004).ListItem(4).EndTime) + Control.HasFocus(1902204)]">$INFO[Container19004.ListItem(4).EndTime(hh:mm)]</value>
+
+		<value condition="!Skin.HasSetting(furniture.hideendtime) + [!IsEmpty(Container(8013).ListItem.EndTime) + Control.HasFocus(8013)]">$INFO[Container(8013).ListItem.EndTime(hh:mm)]</value>
+		<value condition="!Skin.HasSetting(furniture.hideendtime) + [!IsEmpty(Container(80133).ListItem.EndTime) + Control.HasFocus(80133)]">$INFO[Container(80133).ListItem.EndTime(hh:mm)]</value>
+		<value condition="!Skin.HasSetting(furniture.hideendtime) + [!IsEmpty(Container(80144).ListItem.EndTime) + Control.HasFocus(80144)]">$INFO[Container(80144).ListItem.EndTime(hh:mm)]</value>
+		<value condition="!Skin.HasSetting(furniture.hideendtime) + [!IsEmpty(Container(80155).ListItem.EndTime) + Control.HasFocus(80155)]">$INFO[Container(80155).ListItem.EndTime(hh:mm)]</value>
+		<value condition="!Skin.HasSetting(furniture.hideendtime) + [!IsEmpty(Container(80166).ListItem.EndTime) + Control.HasFocus(8013)]">$INFO[Container(80166).ListItem.EndTime(hh:mm)]</value>
+		<value condition="!Skin.HasSetting(furniture.hideendtime) + [!IsEmpty(Container(80177).ListItem.EndTime) + Control.HasFocus(8013)]">$INFO[Container(80177).ListItem.EndTime(hh:mm)]</value>
 	</variable>
 	<variable name="PercentWatchedBack518">
 		<value condition="!Skin.HasSetting(furniture.hideindicators) + Container(518).ListItem.IsPlaying"></value>
@@ -1442,7 +1859,7 @@
 		<value condition="Skin.String(home.vertical,)">$LOCALIZE[31248]</value>
 		<value condition="Skin.String(home.vertical,1)">$LOCALIZE[31250]</value>
 		<value condition="Skin.String(home.vertical,2)">$LOCALIZE[31973]</value>
-		<value condition="Skin.String(home.vertical,3)">$LOCALIZE[32108]</value>
+		<value condition="Skin.String(home.vertical,3)">$LOCALIZE[32120]</value>
 	</variable>
 	<variable name="LabelUserRating">
 		<value condition="IntegerGreaterThan(ListItem.Userrating,5)"></value>

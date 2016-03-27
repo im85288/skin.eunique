@@ -7,6 +7,7 @@
 	<controls>
 		<include>GlobalOverlay</include>
 		<control type="group">
+			<visible>!Skin.String(home.vertical,3)</visible>
 			<include>DefSideBladeLeft</include>
 			<control type="grouplist" id="3110">
 				<onright>back</onright>
@@ -135,6 +136,195 @@
 					<onleft>back</onleft>
 					<onright>back</onright>
 				</control>
+			</control>
+		</control>
+		<control type="group">
+			<visible>Skin.String(home.vertical,3)</visible>
+			<include>DefSideBladeLeftAlt</include>
+			<control type="list" id="3110">
+				<onleft>back</onleft>
+				<onleft>300</onleft>
+				<top>205</top>
+				<width>382</width>
+				<height>756</height>
+				<animation effect="slide" start="-382,0" end="55,0" time="400" tween="quadratic" easing="out">Visible</animation>
+				<itemlayout height="84">
+
+					<control type="image">
+						<left>0</left>
+						<width>382</width>
+						<bottom>10</bottom>
+						<height>74</height>
+						<texture colordiffuse="$VAR[EmbyLeftColourHighlight]">$VAR[MenuBackground]</texture>
+						<animation effect="fade" start="100" end="27" time="400" condition="true">Conditional</animation>
+					</control>
+					<control type="textbox">
+						<left>70</left>
+						<top>-4</top>
+						<height>84</height>
+						<width>302</width>
+						<aligny>center</aligny>
+						<font>SmallBold</font>
+						<align>left</align>
+						<label>$INFO[ListItem.Label]</label>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+						<shadowcolor>text_shadow</shadowcolor>
+					</control>
+					<control type="image">
+						<left>-3</left>
+						<top>1</top>
+						<width>70</width>
+						<height>70</height>
+						<texture colordiffuse="$VAR[EmbyRightColourHighlight]">$INFO[ListItem.Icon]</texture>
+					</control>
+
+				</itemlayout>
+				<focusedlayout height="84">
+					<control type="image">
+						<left>0</left>
+						<width>382</width>
+						<bottom>5</bottom>
+						<height>79</height>
+						<texture colordiffuse="$VAR[EmbyLeftColourHighlight]">$VAR[MenuBackground]</texture>
+						<animation effect="fade" start="100" end="27" time="400" condition="true">Conditional</animation>
+					</control>
+					<control type="group">
+						<animation effect="fade" start="100" end="0" time="600">UnFocus</animation>
+						<animation effect="fade" start="0" end="100" time="400">Focus</animation>
+
+						<control type="image">
+							<left>0</left>
+							<width>382</width>
+							<bottom>5</bottom>
+							<height>79</height>
+							<texture colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</texture>
+							<animation effect="fade" start="100" end="33" time="0" condition="true">Conditional</animation>
+						</control>
+						<control type="image">
+							<left>-5</left>
+							<bottom>5</bottom>
+							<width>68</width>
+							<height>79</height>
+							<texture colordiffuse="51FFFFFF">common/black.png</texture>
+						</control>
+					</control>
+					<control type="label">
+						<left>70</left>
+						<top>0</top>
+						<height>70</height>
+						<width>302</width>
+						<aligny>center</aligny>
+						<font>TinyBold</font>
+						<label>$INFO[ListItem.Label]</label>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+						<shadowcolor>text_shadow</shadowcolor>
+					</control>
+					<control type="image">
+						<left>-3</left>
+						<bottom>10</bottom>
+						<width>70</width>
+						<height>70</height>
+						<texture colordiffuse="$VAR[EmbyLeftColourHighlight]">$INFO[ListItem.Icon]</texture>
+					</control>
+				</focusedlayout>
+				<content>
+					<item>
+						<label>$LOCALIZE[13012]</label>
+						<onclick>Quit()</onclick>
+						<visible>System.ShowExitButton</visible>
+						<icon>special://skin/extras/icons/download.png</icon>
+					</item>
+					<item>
+						<label>$LOCALIZE[13016]</label>
+						<onclick>Powerdown()</onclick>
+						<visible>System.CanPowerDown</visible>
+						<icon>special://skin/extras/icons/power.png</icon>
+					</item>
+					<item>
+						<label>$LOCALIZE[20150]</label>
+						<onclick>AlarmClock(shutdowntimer,Shutdown())</onclick>
+						<visible>!System.HasAlarm(shutdowntimer)</visible>
+						<visible>System.CanPowerDown | System.CanSuspend | System.CanHibernate</visible>
+						<icon>special://skin/extras/icons/timer.png</icon>
+					</item>
+					<item>
+						<label>$LOCALIZE[20151]</label>
+						<onclick>CancelAlarm(shutdowntimer)</onclick>
+						<visible>System.HasAlarm(shutdowntimer)</visible>
+						<icon>special://skin/extras/icons/timer.png</icon>
+					</item>
+					<item>
+						<label>$LOCALIZE[13011]</label>
+						<onclick>Suspend()</onclick>
+						<visible>System.CanSuspend</visible>
+						<icon>special://skin/extras/icons/swissarmy.png</icon>
+					</item>
+					<item>
+						<label>$LOCALIZE[13010]</label>
+						<onclick>Hibernate()</onclick>
+						<visible>System.CanHibernate</visible>
+						<icon>special://skin/extras/icons/cloud.png</icon>
+					</item>
+					<item>
+						<label>$LOCALIZE[13013]</label>
+						<onclick>Reset()</onclick>
+						<visible>System.CanReboot</visible>
+						<icon>special://skin/extras/icons/compass.png</icon>
+					</item>
+					<item>
+						<label>$LOCALIZE[20126] $INFO[system.profilename]</label>
+						<onclick>dialog.close(all,true)</onclick>
+						<onclick>System.LogOff</onclick>
+						<visible>System.HasLoginScreen | Integer.IsGreater(System.ProfileCount,1)</visible>
+						<visible>System.Loggedon</visible>
+						<icon>special://skin/extras/icons/logout.png</icon>
+					</item>
+					<item>
+						<label>$LOCALIZE[20046]</label>
+						<altlabel>$LOCALIZE[20045]</altlabel>
+						<usealttexture>!System.IsMaster</usealttexture>
+						<onclick>mastermode</onclick>
+						<visible>System.HasLocks</visible>
+						<icon>special://skin/extras/icons/actor.png</icon>
+					</item>
+					<item>
+						<label>$LOCALIZE[13017]</label>
+						<onclick>InhibitIdleShutdown(false)</onclick>
+						<visible>System.HasShutdown +!System.IsInhibit</visible>
+						<icon>special://skin/extras/icons/rocket.png</icon>
+					</item>
+					<item>
+						<label>$LOCALIZE[13018]</label>
+						<onclick>InhibitIdleShutdown(false)</onclick>
+						<visible>System.HasShutdown + System.IsInhibit</visible>
+						<icon>special://skin/extras/icons/warning.png</icon>
+					</item>
+					<item>
+						<label>$LOCALIZE[5]</label>
+						<onclick>ActivateWindow(settings)</onclick>
+						<icon>special://skin/extras/icons/settings.png</icon>
+					</item>
+					<item>
+						<label>$LOCALIZE[130]</label>
+						<onclick>ActivateWindow(systeminfo)</onclick>
+						<icon>special://skin/extras/icons/sysinfo.png</icon>
+					</item>
+					<item>
+						<label>$LOCALIZE[10003]</label>
+						<onclick>ActivateWindow(filemanager)</onclick>
+						<icon>special://skin/extras/icons/files.png</icon>
+					</item>
+					<item>
+						<label>$LOCALIZE[1036]</label>
+						<onclick>ActivateWindow(Favourites)</onclick>
+						<icon>special://skin/extras/icons/favourites.png</icon>
+					</item>
+					<item>
+						<label>$LOCALIZE[31195]</label>
+						<onclick>ReloadSkin()</onclick>
+						<icon>special://skin/extras/icons/update.png</icon>
+					</item>
+				</content>
 			</control>
 		</control>
 	</controls>

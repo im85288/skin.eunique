@@ -1359,7 +1359,7 @@
 			<visible>Player.HasMedia</visible>
 			<visible>!Skin.HasSetting(furniture.nowplaying)</visible>
 			<visible>!SubString(Window(10025).Property(PlayingBackgroundMedia),True)</visible>
-			<animation effect="slide" end="0,-105" condition="!Window.IsVisible(Home.xml) | [Window.IsVisible(Home.xml) + Skin.String(home.vertical,)]" time="200">Conditional</animation>
+			<animation effect="slide" end="0,-105" condition="!Window.IsVisible(Home.xml) | [Window.IsVisible(Home.xml) + Skin.String(home.vertical,)] | [Window.IsVisible(Home.xml) + Skin.String(home.vertical,3)]" time="200">Conditional</animation>
 			<control type="group">
 				<centertop>50%</centertop>
 				<control type="image" description="Pause">
@@ -1391,6 +1391,78 @@
 					<align>left</align>
 					<textcolor>$VAR[EmbyMenuColourHighlight]</textcolor>
 					<label></label>
+				</control>
+			</control>
+		</control>
+		<control type="group">
+			<visible>Skin.String(home.vertical,3)</visible>
+			<top>206</top>
+			<left>470</left>
+			<width>1327</width>
+			<height>747</height>
+			<include>Animation.FadeIn.Slide</include>
+			<include>Animation.FadeOut</include>
+			<visible>Window.IsVisible(home)</visible>
+			<visible>Player.HasVideo</visible>
+			<visible>!Skin.HasSetting(furniture.nowplaying)</visible>
+			<visible>!SubString(Window(10025).Property(PlayingBackgroundMedia),True)</visible>
+			<visible>!ControlGroup(301).HasFocus</visible>
+			<visible>!Skin.HasSetting(show.alt.widgets)</visible>
+			<control type="image">
+				<texture colordiffuse="black">common/white.png</texture>
+			</control>
+			<control type="videowindow">
+				<visible>Player.HasVideo</visible>
+			</control>
+			<control type="group">
+				<height>25</height>
+				<left>0</left>
+				<right>0</right>
+				<bottom>0</bottom>
+				<control type="progress" id="96666">
+					<texturebg colordiffuse="$VAR[NowPlayingBackgroundColourHighlight]">osd/progress-bg.png</texturebg>
+					<lefttexture colordiffuse="$VAR[NowPlayingProgressColourHighlight]">osd/progress-end.png</lefttexture>
+					<midtexture colordiffuse="$VAR[NowPlayingProgressColourHighlight]">osd/progress-end.png</midtexture>
+					<righttexture colordiffuse="$VAR[BackingColourHighlight]">osd/progress-end.png</righttexture>
+					<info>Player.Progress</info>
+					<visible>true</visible>
+				</control>
+				<control type="label" description="Elapsed Time">
+					<top>2</top>
+					<align>left</align>
+					<height>18</height>
+					<font>MinuteBoldProgress</font>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+					<label> $VAR[PlayerStatus]</label>
+				</control>
+				<control type="label" description="Total Time">
+					<top>2</top>
+					<align>right</align>
+					<height>18</height>
+					<font>MinuteBoldProgress</font>
+					<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+					<label>$INFO[Player.Time] / $INFO[Player.Duration]</label>
+				</control>
+			</control>
+			<control type="group">
+				<height>25</height>
+				<left>0</left>
+				<right>0</right>
+				<top>0</top>
+				<control type="image">
+					<width>100%</width>
+					<texture colordiffuse="$VAR[OSDBarColour]">common/white.png</texture>
+					<include>Animation.SlideUp</include>
+				</control>
+				<control type="label" description="Show">
+					<top>-22</top>
+					<width>100%</width>
+					<font>MiniBoldProgress</font>
+					<textcolor>$VAR[ColourSelected]</textcolor>
+					<scroll>true</scroll>
+					<align>center</align>
+					<label>$INFO[VideoPlayer.ChannelNumberLabel,, ]$INFO[VideoPlayer.ChannelName,, ]$VAR[PlayerBigTitle]</label>
+					<include>Animation.SlideUp</include>
 				</control>
 			</control>
 		</control>

@@ -160,7 +160,6 @@
 						<onclick>SendClick(312)</onclick>
 						<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
 						<visible>StringCompare(Container(211).ListItem.Property(defaultID),movies)</visible>
-						<visible>!Skin.String(home.vertical,3)</visible>
 					</control>
 					<control type="button" id="14551">
 						<width>1410</width>
@@ -171,7 +170,6 @@
 						<onclick>SendClick(312)</onclick>
 						<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
 						<visible>StringCompare(Container(211).ListItem.Property(defaultID),movies)</visible>
-						<visible>!Skin.String(home.vertical,3)</visible>
 					</control>
 					<control type="button" id="14552">
 						<width>1410</width>
@@ -182,7 +180,6 @@
 						<onclick>SendClick(312)</onclick>
 						<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
 						<visible>StringCompare(Container(211).ListItem.Property(defaultID),movies)</visible>
-						<visible>!Skin.String(home.vertical,3)</visible>
 					</control>
 					<control type="button" id="1456">
 						<width>1410</width>
@@ -223,7 +220,6 @@
 						<onclick>SendClick(312)</onclick>
 						<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
 						<visible>StringCompare(Container(211).ListItem.Property(defaultID),tvshows)</visible>
-						<visible>!Skin.String(home.vertical,3)</visible>
 					</control>
 					<control type="button" id="14591">
 						<width>1410</width>
@@ -234,7 +230,6 @@
 						<onclick>SendClick(312)</onclick>
 						<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
 						<visible>StringCompare(Container(211).ListItem.Property(defaultID),tvshows)</visible>
-						<visible>!Skin.String(home.vertical,3)</visible>
 					</control>
 					<control type="button" id="14592">
 						<width>1410</width>
@@ -245,7 +240,6 @@
 						<onclick>SendClick(312)</onclick>
 						<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
 						<visible>StringCompare(Container(211).ListItem.Property(defaultID),tvshows)</visible>
-						<visible>!Skin.String(home.vertical,3)</visible>
 					</control>
 					<control type="button" id="1460">
 						<width>1410</width>
@@ -282,7 +276,61 @@
 						<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=True&amp;skinWidgetName=music4widget.name&amp;skinWidgetTarget=music4widget.target&amp;skinWidgetPath=music4widget.path)</onclick>
 						<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
 						<visible>StringCompare(Container(211).ListItem.Property(defaultID),music)</visible>
-						<visible>!Skin.String(home.vertical,3)</visible>
+					</control>
+					<control type="button" id="1464">
+						<width>1410</width>
+						<include>DefSettingsButton2</include>
+						<label>$ADDON[script.skinshortcuts 32044] 1</label>
+						<label2 fallback="31135">$INFO[Container(211).Listitem.Property(widgetName.home1)]</label2>
+						<onclick>SetProperty(widgetID, home1)</onclick>
+						<onclick>SendClick(312)</onclick>
+						<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
+						<visible>StringCompare(Container(211).ListItem.Property(defaultID),home)</visible>
+						<visible>Skin.String(home.vertical,3)</visible>
+					</control>
+					<control type="button" id="1465">
+						<width>1410</width>
+						<include>DefSettingsButton2</include>
+						<label>$ADDON[script.skinshortcuts 32044] 2</label>
+						<label2 fallback="31135">$INFO[Container(211).Listitem.Property(widgetName.home2)]</label2>
+						<onclick>SetProperty(widgetID, home2)</onclick>
+						<onclick>SendClick(312)</onclick>
+						<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
+						<visible>StringCompare(Container(211).ListItem.Property(defaultID),home)</visible>
+						<visible>Skin.String(home.vertical,3)</visible>
+					</control>
+					<control type="button" id="1466">
+						<width>1410</width>
+						<include>DefSettingsButton2</include>
+						<label>$ADDON[script.skinshortcuts 32044] 3</label>
+						<label2 fallback="31135">$INFO[Container(211).Listitem.Property(widgetName.home3)]</label2>
+						<onclick>SetProperty(widgetID, home3)</onclick>
+						<onclick>SendClick(312)</onclick>
+						<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
+						<visible>StringCompare(Container(211).ListItem.Property(defaultID),home)</visible>
+						<visible>Skin.String(home.vertical,3)</visible>
+					</control>
+					<control type="button" id="1467">
+						<width>1410</width>
+						<include>DefSettingsButton2</include>
+						<label>$ADDON[script.skinshortcuts 32044] 4</label>
+						<label2 fallback="31135">$INFO[Container(211).Listitem.Property(widgetName.home4)]</label2>
+						<onclick>SetProperty(widgetID, home4)</onclick>
+						<onclick>SendClick(312)</onclick>
+						<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
+						<visible>StringCompare(Container(211).ListItem.Property(defaultID),home)</visible>
+						<visible>Skin.String(home.vertical,3)</visible>
+					</control>
+					<control type="button" id="1468">
+						<width>1410</width>
+						<include>DefSettingsButton2</include>
+						<label>$ADDON[script.skinshortcuts 32044] 5</label>
+						<label2 fallback="31135">$INFO[Container(211).Listitem.Property(widgetName.home5)]</label2>
+						<onclick>SetProperty(widgetID, home5)</onclick>
+						<onclick>SendClick(312)</onclick>
+						<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
+						<visible>StringCompare(Container(211).ListItem.Property(defaultID),home)</visible>
+						<visible>Skin.String(home.vertical,3)</visible>
 					</control>
 					<control type="button" id="312">
 						<!--set widget-->
@@ -292,7 +340,7 @@
 						<label2 fallback="31134">$INFO[Container(211).Listitem.Property(widgetName)]</label2>
 						<onclick>SetProperty(customWidget, normal, Home)</onclick>
 						<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
-						<visible>!StringCompare(Container(211).ListItem.Property(defaultID),livetv) + !StringCompare(Container(211).ListItem.Property(defaultID),movies) + !StringCompare(Container(211).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(211).ListItem.Property(defaultID),music) + !StringCompare(Container(211).ListItem.Property(defaultID),weather)</visible>
+						<visible>!StringCompare(Container(211).ListItem.Property(defaultID),home) + !StringCompare(Container(211).ListItem.Property(defaultID),livetv) + !StringCompare(Container(211).ListItem.Property(defaultID),movies) + !StringCompare(Container(211).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(211).ListItem.Property(defaultID),music) + !StringCompare(Container(211).ListItem.Property(defaultID),weather)</visible>
 					</control>
 					<control type="button" id="1407">
 						<!--set widget 2-->
@@ -303,7 +351,7 @@
 						<label>$ADDON[script.skinshortcuts 32044] 2</label>
 						<label2 fallback="31135">$INFO[Container(211).Listitem.Property(widgetName.1)]</label2>
 						<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
-						<visible>!StringCompare(Container(211).ListItem.Property(defaultID),livetv) + !StringCompare(Container(211).ListItem.Property(defaultID),movies) + !StringCompare(Container(211).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(211).ListItem.Property(defaultID),music) + !StringCompare(Container(211).ListItem.Property(defaultID),weather)</visible>
+						<visible>!StringCompare(Container(211).ListItem.Property(defaultID),home) + !StringCompare(Container(211).ListItem.Property(defaultID),livetv) + !StringCompare(Container(211).ListItem.Property(defaultID),movies) + !StringCompare(Container(211).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(211).ListItem.Property(defaultID),music) + !StringCompare(Container(211).ListItem.Property(defaultID),weather)</visible>
 					</control>
 					<control type="button" id="1408">
 						<!--set widget 3-->
@@ -314,7 +362,7 @@
 						<label>$ADDON[script.skinshortcuts 32044] 3</label>
 						<label2 fallback="31224">$INFO[Container(211).Listitem.Property(widgetName.2)]</label2>
 						<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
-						<visible>!StringCompare(Container(211).ListItem.Property(defaultID),livetv) + !StringCompare(Container(211).ListItem.Property(defaultID),movies) + !StringCompare(Container(211).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(211).ListItem.Property(defaultID),music) + !StringCompare(Container(211).ListItem.Property(defaultID),weather)</visible>
+						<visible>!StringCompare(Container(211).ListItem.Property(defaultID),home) + !StringCompare(Container(211).ListItem.Property(defaultID),livetv) + !StringCompare(Container(211).ListItem.Property(defaultID),movies) + !StringCompare(Container(211).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(211).ListItem.Property(defaultID),music) + !StringCompare(Container(211).ListItem.Property(defaultID),weather)</visible>
 					</control>
 					<control type="button" id="1409">
 						<!--set widget 4-->
@@ -325,8 +373,7 @@
 						<label>$ADDON[script.skinshortcuts 32044] 4</label>
 						<label2 fallback="31225">$INFO[Container(211).Listitem.Property(widgetName.3)]</label2>
 						<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
-						<visible>!Skin.String(home.vertical,3)</visible>
-						<visible>!StringCompare(Container(211).ListItem.Property(defaultID),livetv) + !StringCompare(Container(211).ListItem.Property(defaultID),movies) + !StringCompare(Container(211).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(211).ListItem.Property(defaultID),music) + !StringCompare(Container(211).ListItem.Property(defaultID),weather)</visible>
+						<visible>!StringCompare(Container(211).ListItem.Property(defaultID),home) + !StringCompare(Container(211).ListItem.Property(defaultID),livetv) + !StringCompare(Container(211).ListItem.Property(defaultID),movies) + !StringCompare(Container(211).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(211).ListItem.Property(defaultID),music) + !StringCompare(Container(211).ListItem.Property(defaultID),weather)</visible>
 					</control>
 					<control type="button" id="501" description="Widget 1 icon aspect ratio">
 						<width>1410</width>

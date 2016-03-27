@@ -164,7 +164,7 @@
 	</variable>
 	<variable name="DefWidget7Content">
 		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.movies2))">$INFO[Container(300).ListItem.Property(widgetPath.movies2)]</value>
-		<value>plugin://script.skin.helper.service/?action=recommendedmovies&amp;limit=12&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
+		<value>plugin://script.skin.helper.service/?action=inprogressandrecommendedmovies&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
 	</variable>
 	<variable name="DefWidget7Target">
 		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetTarget.movies2))">$INFO[Container(300).ListItem.Property(widgetTarget.movies2)]</value>
@@ -290,6 +290,53 @@
 		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetTarget.tvshows6))">$INFO[Container(300).ListItem.Property(widgetTarget.tvshows6)]</value>
 		<value>video</value>
 	</variable>
+
+	<variable name="DefWidgetAltHome">
+		<value condition="StringCompare(Skin.String(althome.buttonid),8014)">$VAR[DefWidgetAltHome8014]</value>
+		<value condition="StringCompare(Skin.String(althome.buttonid),8015)">$VAR[DefWidgetAltHome8015]</value>
+		<value condition="StringCompare(Skin.String(althome.buttonid),8016)">$VAR[DefWidgetAltHome8016]</value>
+		<value condition="StringCompare(Skin.String(althome.buttonid),8017)">$VAR[DefWidgetAltHome8017]</value>
+		<value condition="StringCompare(Skin.String(althome.buttonid),8018)">$VAR[DefWidgetAltHome8018]</value>
+		<value>plugin://script.skin.helper.service/?action=similarshows&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
+	</variable>
+	<variable name="DefWidgetAltHome8014">
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.home1))">$INFO[Container(300).ListItem.Property(widgetPath.home1)]</value>
+		<value condition="Skin.String(althome.moviewidget,WIDGE1)">plugin://script.skin.helper.service/?action=similarmovies&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
+		<value condition="Skin.String(althome.moviewidget,WIDGE2)">plugin://script.skin.helper.service/?action=moviesforgenre&amp;limit=5&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
+		<value condition="Skin.String(althome.moviewidget,WIDGE3)">plugin://script.skin.helper.service/?action=inprogressandrecommendedmovies&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
+		<value condition="Skin.String(althome.moviewidget,WIDGE4)">plugin://script.skin.helper.service/?action=browsegenres&amp;type=movie&amp;limit=1000</value>
+
+	</variable>
+	<variable name="DefWidgetAltHome8015">
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.home2))">$INFO[Container(300).ListItem.Property(widgetPath.home2)]</value>
+		<value condition="Skin.String(althome.tvwidget,WIDGE1)">plugin://script.skin.helper.service/?action=similarshows&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
+		<value condition="Skin.String(althome.tvwidget,WIDGE2)">plugin://script.skin.helper.service/?action=showsforgenre&amp;limit=5&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
+		<value condition="Skin.String(althome.tvwidget,WIDGE3)">plugin://service.library.data.provider?type=recommendedepisodes&amp;reload=$INFO[Window.Property(recommendedepisodes)]</value>
+		<value condition="Skin.String(althome.tvwidget,WIDGE4)">special://skin/extras/playlists/RecentShows.xsp</value>
+
+	</variable>
+
+	<variable name="DefWidgetAltHome8016">
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.home3))">$INFO[Container(300).ListItem.Property(widgetPath.home3)]</value>
+		<value condition="Skin.HasSetting(althome.musicwidget)">plugin://script.skin.helper.service/?action=recentalbums&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
+		<value condition="!Skin.HasSetting(althome.musicwidget)">plugin://script.skin.helper.service/?action=recommendedalbums&amp;limit=12&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
+	</variable>
+
+	<variable name="DefWidgetAltHome8017">
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.home4))">$INFO[Container(300).ListItem.Property(widgetPath.home4)]</value>
+		<value>plugin://script.skin.helper.service/?action=nextairedtvshows</value>
+	</variable>
+
+	<variable name="DefWidgetAltHome8018">
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.home5))">$INFO[Container(300).ListItem.Property(widgetPath.home5)]</value>
+		<value condition="Skin.String(althome.searchwidget,WIDGE1)">plugin://script.extendedinfo?info=trendingmovies</value>
+		<value condition="Skin.String(althome.searchwidget,WIDGE2)">plugin://script.extendedinfo?info=trendingshows</value>
+		<value condition="Skin.String(althome.searchwidget,WIDGE3)">plugin://script.extendedinfo?info=popularmovies</value>
+		<value condition="Skin.String(althome.searchwidget,WIDGE4)">plugin://script.extendedinfo?info=topratedtvshows</value>
+
+	</variable>
+
+
 	<variable name="DefWidgetContentVideoInfo">
 		<value condition="Stringcompare(Skin.String(widgetvideoinfo),SimilarVideos)">$VAR[SimilarVideos]</value>
 		<value condition="Stringcompare(Skin.String(widgetvideoinfo),ShowCast)">$VAR[DefWidgetCast]</value>
@@ -298,7 +345,7 @@
 		<value condition="Stringcompare(Skin.String(widgetvideoinfo),RecommendedEpisodes)">plugin://service.library.data.provider?type=recommendedepisodes&amp;reload=$INFO[Window.Property(recommendedepisodes)]</value>
 		<value condition="Stringcompare(Skin.String(widgetvideoinfo),RandomMovies)">plugin://service.library.data.provider?type=randommovies&amp;reload=$INFO[Window.Property(randommovies)]</value>
 		<value condition="Stringcompare(Skin.String(widgetvideoinfo),RecentMovies)">plugin://service.library.data.provider?type=recentmovies&amp;reload=$INFO[Window.Property(recentmovies)]</value>
-		<value condition="Stringcompare(Skin.String(widgetvideoinfo),RecommendedMovies)">plugin://script.skin.helper.service/?action=recommendedmovies&amp;limit=27&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
+		<value condition="Stringcompare(Skin.String(widgetvideoinfo),RecommendedMovies)">plugin://script.skin.helper.service/?action=inprogressandrecommendedmovies&amp;limit=27&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
 		<value condition="Stringcompare(Skin.String(widgetvideoinfo),SimilarMovies)">plugin://script.skin.helper.service/?action=similarmovies&amp;limit=2videoinfo&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
 		<value condition="Stringcompare(Skin.String(widgetvideoinfo),TrendingMovies)">plugin://script.extendedinfo?info=trendingmovies</value>
 		<value condition="Stringcompare(Skin.String(widgetvideoinfo),InCinemas)">plugin://script.extendedinfo?info=incinemamovies</value>
@@ -341,7 +388,7 @@
 		<value condition="Stringcompare(Skin.String(widgetvideoinfocast),RecommendedEpisodes)">plugin://service.library.data.provider?type=recommendedepisodes&amp;reload=$INFO[Window.Property(recommendedepisodes)]</value>
 		<value condition="Stringcompare(Skin.String(widgetvideoinfocast),RandomMovies)">plugin://service.library.data.provider?type=randommovies&amp;reload=$INFO[Window.Property(randommovies)]</value>
 		<value condition="Stringcompare(Skin.String(widgetvideoinfocast),RecentMovies)">plugin://service.library.data.provider?type=recentmovies&amp;reload=$INFO[Window.Property(recentmovies)]</value>
-		<value condition="Stringcompare(Skin.String(widgetvideoinfocast),RecommendedMovies)">plugin://script.skin.helper.service/?action=recommendedmovies&amp;limit=27&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
+		<value condition="Stringcompare(Skin.String(widgetvideoinfocast),RecommendedMovies)">plugin://script.skin.helper.service/?action=inprogressandrecommendedmovies&amp;limit=27&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
 		<value condition="Stringcompare(Skin.String(widgetvideoinfocast),SimilarMovies)">plugin://script.skin.helper.service/?action=similarmovies&amp;limit=2videoinfo&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
 		<value condition="Stringcompare(Skin.String(widgetvideoinfocast),TrendingMovies)">plugin://script.extendedinfo?info=trendingmovies</value>
 		<value condition="Stringcompare(Skin.String(widgetvideoinfocast),InCinemas)">plugin://script.extendedinfo?info=incinemamovies</value>
@@ -836,6 +883,19 @@
 		<texturenofocus colordiffuse="$VAR[EmbyMenuColourHighlight]">common/box.png</texturenofocus>
 		<texturefocus colordiffuse="$VAR[ColourHighlight]">common/white.png</texturefocus>
 	</include>
+	<include name="DefContextButtonBladeAlt">
+		<textoffsetx>5</textoffsetx>
+		<radioposx>415</radioposx>
+		<width>450</width>
+		<height>80</height>
+		<font>MiniSystem</font>
+		<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+		<textureradiofocus colordiffuse="$VAR[EmbyMiddleColourHighlight]">buttons/radio-on.png</textureradiofocus>
+		<textureradionofocus colordiffuse="$VAR[EmbyMiddleColourHighlight]">buttons/radio-off.png</textureradionofocus>
+		<focusedcolor>$VAR[EmbyMenuTextColourHighlight]</focusedcolor>
+		<texturenofocus colordiffuse="air force blue">common/box.png</texturenofocus>
+		<texturefocus colordiffuse="ff30BF8D">common/white.png</texturefocus>
+	</include>
 	<include name="DefSettingsButton2">
 		<radioposx>1330</radioposx>
 		<align>left</align>
@@ -1075,6 +1135,24 @@
 			<param name="top2" value="25"/>
 			<param name="width" value="65"/>
 			<param name="height" value="65"/>
+			<param name="font" value="LargeBoldReg"/>
+		</include>
+	</include>
+	<include name="DefSideBladeLeftAlt">
+		<include>Animation.SideSlide</include>
+		<left>55</left>
+		<include name="EuniqueLogoHorizontal">
+			<param name="left" value="0"/>
+			<param name="left2" value="54.5714286"/>
+			<param name="left3" value="109.1428572"/>
+			<param name="left4" value="163.7142858"/>
+			<param name="left5" value="218.2857144"/>
+			<param name="left6" value="272.857143"/>
+			<param name="left7" value="327.4285716"/>
+			<param name="top" value="135"/>
+			<param name="top2" value="160"/>
+			<param name="width" value="54.5714286"/>
+			<param name="height" value="54.5714286"/>
 			<param name="font" value="LargeBoldReg"/>
 		</include>
 	</include>
@@ -3223,6 +3301,19 @@
 				<visible>ListItem.IsResumable</visible>
 			</control>
 	</include>
+	<include name="WidgetLandscapeItemLayout2">
+		<control type="image">
+			<top>5</top>
+			<bottom>5</bottom>
+			<left>5</left>
+			<right>5</right>
+			<aspectratio>keep</aspectratio>
+			<texture colordiffuse="$VAR[DisabledColour]" background="true">$VAR[LandscapeImage]</texture>
+			<animation type="Conditional" reversible="false">
+				<effect condition="true" type="zoom" start="115" end="90" time="200" center="auto" tween="quadratic" easing="out"/>
+			</animation>
+		</control>
+	</include>
 	<include name="WidgetLandscapeFocusedItemLayout">
 		<control type="image">
 			<aspectratio>keep</aspectratio>
@@ -3240,12 +3331,69 @@
 				<visible>ListItem.IsResumable</visible>
 			</control>
 	</include>
+	<include name="WidgetLandscapeBorderItemLayout">
+		<control type="image">
+			<left>14</left>
+			<right>14</right>
+			<aspectratio>keep</aspectratio>
+			<texture background="true">$VAR[LandscapeImage]</texture>
+		</control>
+		<control type="progress">
+			<left>14</left>
+			<right>14</right>
+			<bottom>0</bottom>
+			<height>8</height>
+			<info>ListItem.PercentPlayed</info>
+			<overlaytexture>-</overlaytexture>
+			<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
+			<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
+			<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
+			<righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>
+			<visible>ListItem.IsResumable</visible>
+		</control>
+	</include>
+	<include name="WidgetLandscapeBorderFocusedItemLayout">
+		<control type="image">
+			<top>7</top>
+			<bottom>7</bottom>
+			<left>14</left>
+			<right>14</right>
+			<aspectratio>sretch</aspectratio>
+			<texture background="true">$VAR[LandscapeImage]</texture>
+		</control>
+		<control type="progress">
+			<left>14</left>
+			<right>14</right>
+			<bottom>7</bottom>
+			<height>8</height>
+			<info>ListItem.PercentPlayed</info>
+			<overlaytexture>-</overlaytexture>
+			<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
+			<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
+			<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
+			<righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>
+			<visible>ListItem.IsResumable</visible>
+		</control>
+	</include>
 	<include name="WidgetLandscapeFocusedItemLayoutLiveTV">
 		<control type="image">
 			<aspectratio>keep</aspectratio>
 			<texture background="true">$VAR[LandscapeImage]</texture>
 			<animation type="Focus" reversible="false">
 				<effect type="zoom" start="105" end="90" time="200" center="auto" tween="quadratic" easing="out"/>
+			</animation>
+		</control>
+	</include>
+	<include name="WidgetLandscapeFocusedItemLayoutLiveTV2">
+		<control type="image">
+			<top>5</top>
+			<bottom>5</bottom>
+			<left>5</left>
+			<right>5</right>
+			<aspectratio>keep</aspectratio>
+			<texture background="true">$VAR[LandscapeImage]</texture>
+			<animation type="Focus" reversible="false">
+				<effect type="zoom" start="90" end="115" time="200" center="auto" tween="quadratic" easing="out"/>
 			</animation>
 		</control>
 	</include>
@@ -3256,6 +3404,29 @@
 		</control>
 		<control type="progress">
 			<bottom>0</bottom>
+			<height>8</height>
+			<info>ListItem.PercentPlayed</info>
+			<overlaytexture>-</overlaytexture>
+			<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
+			<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
+			<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
+			<righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>
+			<visible>ListItem.IsResumable</visible>
+		</control>
+	</include>
+	<include name="WidgetPosterBorderItemLayout">
+		<control type="image">
+			<top>14</top>
+			<bottom>14</bottom>
+			<left>14</left>
+			<right>14</right>
+			<aspectratio>stretch</aspectratio>
+			<texture background="true">$VAR[PosterImage]</texture>
+		</control>
+		<control type="progress">
+			<left>14</left>
+			<right>14</right>
+			<bottom>14</bottom>
 			<height>8</height>
 			<info>ListItem.PercentPlayed</info>
 			<overlaytexture>-</overlaytexture>
@@ -3285,6 +3456,31 @@
 			</control>
 		</control>
 	</include>
+	<include name="WidgetPosterBorderFocusedItemLayout">
+		<control type="group">
+			<control type="image">
+				<top>14</top>
+				<bottom>14</bottom>
+				<left>14</left>
+				<right>14</right>
+				<aspectratio>stretch</aspectratio>
+				<texture background="true">$VAR[PosterImage]</texture>
+			</control>
+			<control type="progress">
+				<left>14</left>
+				<right>14</right>
+				<bottom>14</bottom>
+				<height>8</height>
+				<info>ListItem.PercentPlayed</info>
+				<overlaytexture>-</overlaytexture>
+				<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
+				<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
+				<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
+				<righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>
+				<visible>ListItem.IsResumable</visible>
+			</control>
+		</control>
+	</include>
 	<include name="WidgetSquareItemLayout">
 		<control type="image">
 			<aspectratio>stretch</aspectratio>
@@ -3294,6 +3490,26 @@
 	<include name="WidgetSquareFocusedItemLayout">
 		<control type="group">
 			<control type="image">
+				<aspectratio>stretch</aspectratio>
+				<texture background="true">$VAR[PosterImage]</texture>
+			</control>
+		</control>
+	</include>
+	<include name="WidgetSquareBorderItemLayout">
+		<control type="image">
+			<left>14</left>
+			<right>14</right>
+			<aspectratio>stretch</aspectratio>
+			<texture background="true">$VAR[PosterImage]</texture>
+		</control>
+	</include>
+	<include name="WidgetSquareBorderFocusedItemLayout">
+		<control type="group">
+			<control type="image">
+				<top>7</top>
+				<bottom>7</bottom>
+				<left>14</left>
+				<right>14</right>
 				<aspectratio>stretch</aspectratio>
 				<texture background="true">$VAR[PosterImage]</texture>
 			</control>
@@ -3323,6 +3539,50 @@
 				<texture background="true">$VAR[BannerImage]</texture>
 			</control>
 			<control type="progress">
+				<bottom>0</bottom>
+				<height>8</height>
+				<info>ListItem.PercentPlayed</info>
+				<overlaytexture>-</overlaytexture>
+				<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
+				<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
+				<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
+				<righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>
+				<visible>ListItem.IsResumable</visible>
+			</control>
+		</control>
+	</include>
+	<include name="WidgetBannerBorderItemLayout">
+		<control type="image">
+			<left>7</left>
+			<right>7</right>
+			<aspectratio>stretch</aspectratio>
+			<texture background="true">$VAR[BannerImage]</texture>
+		</control>
+		<control type="progress">
+			<left>7</left>
+			<right>7</right>
+			<bottom>0</bottom>
+			<height>8</height>
+			<info>ListItem.PercentPlayed</info>
+			<overlaytexture>-</overlaytexture>
+			<texturebg colordiffuse="$VAR[BackingColourHighlight]">osd/progress-bg.png</texturebg>
+			<lefttexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</lefttexture>
+			<midtexture colordiffuse="$VAR[UnwatchedColourHighlight]">osd/progress-end.png</midtexture>
+			<righttexture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">osd/progress-end.png</righttexture>
+			<visible>ListItem.IsResumable</visible>
+		</control>
+	</include>
+	<include name="WidgetBannerBorderFocusedItemLayout">
+		<control type="group">
+			<control type="image">
+				<left>7</left>
+				<right>7</right>
+				<aspectratio>stretch</aspectratio>
+				<texture background="true">$VAR[BannerImage]</texture>
+			</control>
+			<control type="progress">
+				<left>7</left>
+				<right>7</right>
 				<bottom>0</bottom>
 				<height>8</height>
 				<info>ListItem.PercentPlayed</info>

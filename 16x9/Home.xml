@@ -17,10 +17,26 @@
 	<onload condition="!Skin.HasSetting(startup.init)">Skin.SetBool(SkinHelper.EnableExtraFanart)</onload>
 	<onload condition="!Skin.HasSetting(startup.init)">Skin.SetBool(home.blur)</onload>
 	<onload>Skin.SetBool(SkinHelper.EnablePVRThumbs)</onload>
+	<onload>Skin.SetBool(SkinHelper.EnableAddonsLookups)</onload>
 	<onload condition="IsEmpty(Skin.String(RatingCountry))">Skin.SetString(RatingCountry,UK)</onload>
 	<onload condition="!Skin.HasSetting(startup.init)">Skin.SetBool(startup.init)</onload>
 	<onload condition="!Skin.String(SkinHelper.SpinnerTexturePath)">Skin.SetString(SkinHelper.SpinnerTexturePath,special://skin/extras/busy_spinners/eunique.gif)</onload>
 	<onload>ClearProperty(SkinHelper.ListItemThumb,home)</onload>
+	<onload condition="IsEmpty(Skin.String(althome.moviewidget)) | StringCompare(Skin.String(althome.moviewidget),WIDGE4)">Skin.SetString(althome.moviewidget,WIDGE1)</onload>
+	<onload condition="StringCompare(Skin.String(althome.moviewidget),WIDGE1)">Skin.SetString(althome.moviewidget,WIDGE2)</onload>
+	<onload condition="StringCompare(Skin.String(althome.moviewidget),WIDGE2)">Skin.SetString(althome.moviewidget,WIDGE3)</onload>
+	<onload condition="StringCompare(Skin.String(althome.moviewidget),WIDGE3)">Skin.SetString(althome.moviewidget,WIDGE4)</onload>
+	<onload condition="IsEmpty(Skin.String(althome.tvwidget)) | StringCompare(Skin.String(althome.tvwidget),WIDGE4)">Skin.SetString(althome.tvwidget,WIDGE1)</onload>
+	<onload condition="StringCompare(Skin.String(althome.tvwidget),WIDGE1)">Skin.SetString(althome.tvwidget,WIDGE2)</onload>
+	<onload condition="StringCompare(Skin.String(althome.tvwidget),WIDGE2)">Skin.SetString(althome.tvwidget,WIDGE3)</onload>
+	<onload condition="StringCompare(Skin.String(althome.tvwidget),WIDGE3)">Skin.SetString(althome.tvwidget,WIDGE4)</onload>
+	<onload condition="IsEmpty(Skin.String(althome.searchwidget)) | StringCompare(Skin.String(althome.searchwidget),WIDGE4)">Skin.SetString(althome.searchwidget,WIDGE1)</onload>
+	<onload condition="StringCompare(Skin.String(althome.searchwidget),WIDGE1)">Skin.SetString(althome.searchwidget,WIDGE2)</onload>
+	<onload condition="StringCompare(Skin.String(althome.searchwidget),WIDGE2)">Skin.SetString(althome.searchwidget,WIDGE3)</onload>
+	<onload condition="StringCompare(Skin.String(althome.searchwidget),WIDGE3)">Skin.SetString(althome.searchwidget,WIDGE4)</onload>
+
+	<onload>Skin.ToggleSetting(althome.musicwidget)</onload>
+	<onunload>ClearProperty(SkinHelper.WidgetContainer)</onunload>
 	<menucontrol>900</menucontrol>
 	<controls>
 		<include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
@@ -32,7 +48,7 @@
 				<effect type="zoom" start="100" end="90" time="750" tween="elastic"/>
 				<effect type="rotate" end="-1" time="1900" tween="elastic"/>
 			</animation>
-			<include condition="Skin.String(home.vertical,3)">HomeVerticalMenu3</include>
+			<include condition="Skin.String(home.vertical,3)">HomeVerticalMenu4</include>
 			<include condition="Skin.String(home.vertical,1)">HomeVerticalMenu</include>
 			<include condition="Skin.String(home.vertical,2)">HomeEmbyColumn</include>
 			<include>Furniture_NowPlaying</include>

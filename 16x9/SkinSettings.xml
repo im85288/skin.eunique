@@ -168,7 +168,7 @@
 						<width>1410</width>
 						<include>DefSettingsButton2</include>
 						<label>31247</label>
-						<label2>[COLOR=$VAR[ColourSelected]]$VAR[LabelHomeStyle][/COLOR]</label2>
+						<label2>[COLOR=$VAR[EmbyMenuTextColourHighlight]]$VAR[LabelHomeStyle][/COLOR]</label2>
 						<onclick>SetProperty(Dialog.NumItems,4)</onclick>
 						<onclick>SetProperty(Dialog.1.Label,Default - Horizontal)</onclick>
 						<onclick>SetProperty(Dialog.1.BuiltIn,Skin.Reset(home.vertical))</onclick>
@@ -176,7 +176,7 @@
 						<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(home.vertical,1))</onclick>
 						<onclick>SetProperty(Dialog.3.Label,Vertical Too)</onclick>
 						<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(home.vertical,2))</onclick>
-						<onclick>SetProperty(Dialog.4.Label,Vertical Three)</onclick>
+						<onclick>SetProperty(Dialog.4.Label,Vertical Light)</onclick>
 						<onclick>SetProperty(Dialog.4.BuiltIn,Skin.SetString(home.vertical,3))</onclick>
 						<onclick>RunScript(script.toolbox,info=selectdialog,header=Select Home Layout)</onclick>
 					</control>
@@ -215,7 +215,7 @@
 						<width>1410</width>
 						<include>DefSettingsButton2</include>
 						<label>31887</label>
-						<label2>[COLOR=$VAR[ColourSelected]]$INFO[Skin.String(cdartlocation)][/COLOR]</label2>
+						<label2>[COLOR=$VAR[EmbyMenuTextColourHighlight]]$INFO[Skin.String(cdartlocation)][/COLOR]</label2>
 						<onclick>Skin.SetPath(cdartlocation)</onclick>
 					</control>
 				</control>
@@ -375,7 +375,7 @@
 						<width>1410</width>
 						<include>DefSettingsButton2</include>
 						<label>31150</label>
-						<label2>[COLOR=$VAR[ColourSelected]]$INFO[Skin.String(fanart.fallback)][/COLOR]</label2>
+						<label2>[COLOR=$VAR[EmbyMenuTextColourHighlight]]$INFO[Skin.String(fanart.fallback)][/COLOR]</label2>
 						<onclick condition="IsEmpty(Skin.String(fanart.fallback))">Skin.SetImage(fanart.fallback)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(fanart.fallback))">Skin.Reset(fanart.fallback)</onclick>
 						<visible>!Skin.HasSetting(lights.out)</visible>
@@ -456,7 +456,7 @@
 						<width>1410</width>
 						<include>DefSettingsButton2</include>
 						<label>31946</label>
-						<label2>[COLOR=$VAR[ColourSelected]]$INFO[Skin.String(border.image)][/COLOR]    </label2>
+						<label2>[COLOR=$VAR[EmbyMenuTextColourHighlight]]$INFO[Skin.String(border.image)][/COLOR]    </label2>
 						<onclick>ActivateWindow(1114)</onclick>
 					</control>
 					<control type="radiobutton" id="9263" description="Flags">
@@ -491,15 +491,15 @@
 						<width>1410</width>
 						<include>DefSettingsButton2</include>
 						<label>31896</label>
-						<label2 fallback="2">[COLOR=$VAR[ColourSelected]]$VAR[VideoInfoBlurLevel][/COLOR]    </label2>
+						<label2 fallback="2">[COLOR=$VAR[EmbyMenuTextColourHighlight]]$VAR[VideoInfoBlurLevel][/COLOR]    </label2>
 						<onclick>SetProperty(Dialog.NumItems,13)</onclick>
 						<onclick>SetProperty(Dialog.1.Label,100)</onclick>
 						<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(VideoInfoBlur,100))</onclick>
-						<onclick>SetProperty(Dialog.2.Label,2 - Default)</onclick>
+						<onclick>SetProperty(Dialog.2.Label,2)</onclick>
 						<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(VideoInfoBlur,2))</onclick>
 						<onclick>SetProperty(Dialog.3.Label,4)</onclick>
 						<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(VideoInfoBlur,4))</onclick>
-						<onclick>SetProperty(Dialog.4.Label,6)</onclick>
+						<onclick>SetProperty(Dialog.4.Label,6 - Default)</onclick>
 						<onclick>SetProperty(Dialog.4.BuiltIn,Skin.SetString(VideoInfoBlur,6))</onclick>
 						<onclick>SetProperty(Dialog.5.Label,8)</onclick>
 						<onclick>SetProperty(Dialog.5.BuiltIn,Skin.SetString(VideoInfoBlur,8))</onclick>
@@ -617,7 +617,7 @@
 						<width>1410</width>
 						<include>DefSettingsButton2</include>
 						<label>31168</label>
-						<label2>[COLOR=$VAR[ColourSelected]]$INFO[Skin.String(StartupPlaylist)][/COLOR]</label2>
+						<label2>[COLOR=$VAR[EmbyMenuTextColourHighlight]]$INFO[Skin.String(StartupPlaylist)][/COLOR]</label2>
 						<onclick condition="IsEmpty(Skin.String(StartupPlaylist))">Skin.SetFile(StartupPlaylist,.mp4|.avi|.mkv|.xvid|.wmv|.mov)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(StartupPlaylist))">Skin.Reset(StartupPlaylist)</onclick>
 					</control>
@@ -1108,7 +1108,7 @@
 						<include>DefSettingsButton2</include>
 						<onclick>Skin.SetPath(weatherfanart)</onclick>
 						<label>$LOCALIZE[31143]</label>
-						<label2>[COLOR=$VAR[ColourSelected]]$INFO[Skin.String(weatherfanart)][/COLOR]</label2>
+						<label2>[COLOR=$VAR[EmbyMenuTextColourHighlight]]$INFO[Skin.String(weatherfanart)][/COLOR]</label2>
 					</control>
 					<control type="button" id="9294">
 						<width>1410</width>

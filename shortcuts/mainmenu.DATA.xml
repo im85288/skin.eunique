@@ -1,72 +1,87 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <shortcuts>
     <shortcut>
+        <label>31256</label>
+        <label2>$INFO[Window(home).Property(Movies.Count)]$INFO[Window(home).Property(TVShows.Count), / ]</label2>
+        <defaultID>home</defaultID>
+        <icon>special://skin/extras/icons/home.png</icon>
+        <thumb>$INFO[Window(Home).Property(SkinHelper.AllVideosBackground)]</thumb>
+        <action>RunScript(script.skin.helper.service,action=videosearch)</action>
+        <visible>Skin.String(home.vertical,3)</visible>
+    </shortcut>
+    <shortcut>
         <label>3</label>
-        <label2>Common Shortcut</label2>
+        <label2>$INFO[Window(Home).Property(SkinHelper.ContentHeader)]</label2>
         <defaultID>videos</defaultID>
         <icon>special://skin/extras/icons/video-addons.png</icon>
         <action>ActivateWindow(Videos,VideoLibrary)</action>
     </shortcut>
     <shortcut>
         <label>20342</label>
-        <label2>Common Shortcut</label2>
+        <label2>$INFO[Window(home).Property(Movies.watched)]$INFO[Window(home).Property(Movies.Count), / ]</label2>
         <defaultID>movies</defaultID>
         <icon>special://skin/extras/icons/film.png</icon>
+        <thumb>$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground)]</thumb>
         <action>ActivateWindow(Videos,MovieTitles,return)</action>
     </shortcut>
     <shortcut>
         <label>20343</label>
-        <label2>Common Shortcut</label2>
+        <label2>$INFO[Window(home).Property(Episodes.watched)]$INFO[Window(home).Property(Episodes.Count), / ]</label2>
         <defaultID>tvshows</defaultID>
         <icon>special://skin/extras/icons/tv.png</icon>
+        <thumb>$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground)]</thumb>
         <action>ActivateWindow(Videos,TVShowTitles,return)</action>
     </shortcut>
     <shortcut>
         <label>2</label>
-        <label2>Common Shortcut</label2>
+        <label2>$INFO[Window(Home).Property(Music.AlbumsCount)]$INFO[Window(home).Property(Music.SongsCount), / ]</label2>
         <defaultID>music</defaultID>
         <icon>special://skin/extras/icons/songs.png</icon>
+        <thumb>$INFO[Window(Home).Property(SkinHelper.AllMusicBackground)]</thumb>
         <action>ActivateWindow(Music)</action>
     </shortcut>
     <shortcut>
         <label>31103</label>
-        <label2>Common Shortcut</label2>
+        <label2>$INFO[Pvr.BackendChannels]</label2>
         <defaultID>livetv</defaultID>
         <icon>special://skin/extras/icons/livetv.png</icon>
+        <thumb>$INFO[Window(Home).Property(SkinHelper.PVR.ExtraFanArt)]</thumb>
         <action>ActivateWindow(MyPVR)</action>
         <visible>System.GetBool(pvrmanager.enabled)</visible>
     </shortcut>
     <shortcut>
         <label>1</label>
-        <label2>Common Shortcut</label2>
+        <label2>$INFO[Window(Home).Property(SkinHelper.TotalPicturesAddons)]</label2>
         <defaultID>pictures</defaultID>
         <icon>special://skin/extras/icons/pictures.png</icon>
+        <thumb>$INFO[Window(Home).Property(SkinHelper.PicturesBackground)]</thumb>
         <action>ActivateWindow(Pictures)</action>
     </shortcut>
     <shortcut>
         <label>0</label>
-        <label2>Common Shortcut</label2>
+        <label2></label2>
         <defaultID>programs</defaultID>
         <icon>special://skin/extras/icons/addons.png</icon>
         <action>ActivateWindow(Programs)</action>
     </shortcut>
     <shortcut>
         <label>10004</label>
-        <label2>Common Shortcut</label2>
+        <label2>$INFO[Window(Home).Property(SkinHelper.ContentHeader)]</label2>
         <defaultID>settings</defaultID>
         <icon>special://skin/extras/icons/settings.png</icon>
         <action>ActivateWindow(Settings)</action>
     </shortcut>
     <shortcut>
         <label>12600</label>
-        <label2>Common Shortcut</label2>
+        <label2>$INFO[Weather.Temperature,[COLOR=white],[/COLOR]]$INFO[Weather.Conditions, ,]</label2>
         <defaultID>weather</defaultID>
-        <icon>special://skin/extras/icons/weather.png</icon>
+        <icon>special://skin/extras/icons/sun.png</icon>
+        <thumb>special://skin/extras/icons/sun.png</thumb>
         <action>ActivateWindow(Weather)</action>
     </shortcut>
     <shortcut>
         <label>33060</label>
-        <label2>Common Shortcut</label2>
+        <label2>$INFO[Window(Home).Property(SkinHelper.ContentHeader)]</label2>
         <defaultID>power</defaultID>
         <icon>special://skin/extras/icons/power.png</icon>
         <action>ActivateWindow(shutdownmenu)</action>
