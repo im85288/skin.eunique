@@ -1024,8 +1024,9 @@
 		<value condition="Player.Rewinding4x">RW 4x</value>
 		<value condition="Player.Rewinding2x">RW 2x</value>
 		<value condition="Player.Rewinding">RW</value>
-		<value condition="[Player.Seeking | Player.DisplayAfterSeek] + !IsEmpty(Player.SeekOffset)">$LOCALIZE[773]$INFO[Player.SeekOffset, ,]</value>
-		<value condition="Player.Seeking + IsEmpty(Player.SeekOffset)">$LOCALIZE[773]$INFO[Player.SeekStepSize, ,]</value>
+		<value condition="!IsEmpty(Player.SeekStepSize) + ![player.forwarding | player.rewinding] + Player.seeking">$LOCALIZE[773]$INFO[Player.SeekStepSize, ,]</value>
+		<value condition="Player.DisplayAfterSeek  + ![player.forwarding | player.rewinding] + !IsEmpty(Player.SeekOffset)">$LOCALIZE[773]$INFO[Player.SeekOffset, ,]</value>
+		<value condition="Player.seeking">$LOCALIZE[773] $INFO[Player.SeekTime] - $INFO[Player.Duration]</value>
 		<value condition="Player.Paused">$LOCALIZE[112]</value>
 		<value condition="!Player.HasVideo + !IsEmpty(MusicPlayer.offset(1).Title)">[B]$INFO[MusicPlayer.TrackNumber][/B]$INFO[MusicPlayer.PlaylistLength,/] [B]$LOCALIZE[209] [/B][LIGHT]$INFO[MusicPlayer.offset(1).Title][/LIGHT]</value>
 		<value condition="Player.Playing">$LOCALIZE[31236]</value>
