@@ -173,7 +173,11 @@
 		<value condition="Control.HasFocus(5016) + ControlGroup(301).HasFocus">$INFO[Container(5016).ListItem(0).Icon]</value>
 		<value condition="Control.HasFocus(5017) + ControlGroup(301).HasFocus">$INFO[Container(5017).ListItem(0).Icon]</value>
 		<value condition="Control.HasFocus(15017) + ControlGroup(301).HasFocus">$INFO[Container(15017).ListItem(0).Icon]</value>
+		<value condition="Control.HasFocus(8013) + ControlGroup(301).HasFocus + !IsEmpty(Container(8013).ListItem.Art(tvshow.poster))">$INFO[Container(8013).ListItem.Art(tvshow.poster)]</value>
+		<value condition="Control.HasFocus(8013) + ControlGroup(301).HasFocus + !IsEmpty(Container(8013).ListItem.Art(poster))">$INFO[Container(8013).ListItem.Art(poster)]</value>
+
 	</variable>
+
 	<variable name="PosterImage9500">
 		<value condition="!IsEmpty(Container(9500).ListItem.Art(season.poster))">$INFO[Container(9500).ListItem.Art(season.poster)]</value>
 		<value condition="Container.Content(seasons)">$INFO[Container(9500).ListItem.Icon]</value>
@@ -649,6 +653,10 @@
 		<value condition="Control.HasFocus(8014) + !IsEmpty(Container(89100).ListItem.Art(landscape))">$INFO[Container(89100).ListItem.Art(landscape)]</value>
 		<value condition="Control.HasFocus(8014) + IsEmpty(Container(89100).ListItem.Art(landscape)) + !IsEmpty(Container(89100).ListItem.Art(tvshow.landscape))">$INFO[Container(89100).ListItem.Art(tvshow.landscape)]</value>
 		<value condition="Control.HasFocus(8014) + IsEmpty(Container(89100).ListItem.Art(landscape)) + IsEmpty(Container(89100).ListItem.Art(tvshow.landscape))">$INFO[Container(89100).ListItem.Art(fanart)]</value>
+
+		<value condition="Control.HasFocus(8013) + !IsEmpty(Container(8013).ListItem.Art(landscape))">$INFO[Container(8013).ListItem.Art(landscape)]</value>
+		<value condition="Control.HasFocus(8013) + IsEmpty(Container(8013).ListItem.Art(landscape)) + !IsEmpty(Container(8013).ListItem.Art(tvshow.landscape))">$INFO[Container(8013).ListItem.Art(tvshow.landscape)]</value>
+		<value condition="Control.HasFocus(8013) + IsEmpty(Container(8013).ListItem.Art(landscape)) + IsEmpty(Container(8013).ListItem.Art(tvshow.landscape))">$INFO[Container(8013).ListItem.Art(fanart)]</value>
 
 	</variable>
 	<variable name="EmbyWidgetLogo">
