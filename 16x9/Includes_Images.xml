@@ -831,6 +831,11 @@
 		<value>E.png</value>
 	</variable>
 
+	<variable name="EmbyWidgetStudio">
+		<value condition="Control.HasFocus(8013) + StringCompare(Skin.String(althome.buttonid),8017) + IsEmpty(Container(300).ListItem.Property(widgetPath.home4))">resource://resource.images.studios.coloured/$INFO[Container(8013).ListItem.Property(Network),,.png]</value>
+		<value>resource://resource.images.studios.coloured/$INFO[Window(home).Property(SkinHelper.ListItemStudio),,.png]</value>
+	</variable>
+
 	<variable name="PlayerClearart">
 		<value condition="!IsEmpty(Player.Art(tvshow.clearart))">$INFO[Player.Art(tvshow.clearart)]</value>
 		<value condition="!IsEmpty(Player.Art(clearart))">$INFO[Player.Art(clearart)]</value>

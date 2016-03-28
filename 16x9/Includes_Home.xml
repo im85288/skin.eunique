@@ -12818,7 +12818,7 @@
                 <animation effect="slide" end="0,20" time="400" condition="Control.HasFocus(80133)">Conditional</animation>
                 <left>66</left>
                 <top>210</top>
-                <width>820</width>
+                <width>1854</width>
                 <height>45</height>
                 <control type="label" id="91211">
                     <label>$VAR[EmbyWidgetLabelAltHome]</label>
@@ -12845,7 +12845,16 @@
                     <height>64</height>
                     <texture fallback="E.png">$VAR[EmbyWidgetLogo]</texture>
                     <aspectratio align="center" aligny="center">keep</aspectratio>
-                    <visible>!Skin.String(home.vertical,1) + !IsEmpty(Control.GetLabel(91211))</visible>
+                    <visible>!IsEmpty(Control.GetLabel(91211))</visible>
+                </control>
+                <control type="image">
+                    <top>781</top>
+                    <right>40</right>
+                    <width>228</width>
+                    <height>64</height>
+                    <texture>$VAR[EmbyWidgetStudio]</texture>
+                    <aspectratio aligny="center" align="right">keep</aspectratio>
+                    <visible>!IsEmpty(Control.GetLabel(91211))</visible>
                 </control>
                 <control type="button">
                     <left>395</left>
