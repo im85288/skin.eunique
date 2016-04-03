@@ -35,29 +35,6 @@
 			<include condition="Skin.HasSetting(low.power)">Animation.Common.Lowpower</include>
 			<include condition="!Skin.HasSetting(low.power)">Animation.Common.Overlay</include>
 			<include condition="Skin.HasSetting(low.power)">Animation.Common.Overlay.Lowpower</include>
-			<!--
-			<control type="image">
-				<include>Dimensions_Fullscreen</include>
-				<animation type="Visible" reversible="false">
-					<effect type="fade" start="00" end="35" time="100" tween="quadratic" easing="out" />
-				</animation>
-				<animation type="WindowOpen" reversible="true">
-					<effect type="fade" start="00" end="35" time="100" tween="quadratic" easing="out" delay="1000" />
-				</animation>
-				<animation type="WindowClose" reversible="true">
-					<effect type="fade" start="35" end="00" time="200" tween="quadratic" easing="out" />
-				</animation>
-				<animation type="Hidden" reversible="true">
-					<effect type="fade" start="35" end="00" time="200" tween="quadratic" easing="out" />
-				</animation>
-				<aspectratio align="center">scale</aspectratio>
-				<texture colordiffuse="$VAR[ColorboxPowerModeColor]">special://skin/extras/backgrounds/pixel.jpg</texture>
-				<visible>Control.IsVisible(518) + !Skin.HasSetting(low.power)</visible>
-				<visible>!Skin.HasSetting(lights.out)</visible>
-				<visible>![[Skin.HasSetting(global.showvideo) + Player.HasVideo] | [Skin.HasSetting(global.showvisualisation) + Player.HasAudio]] + !Window.IsVisible(DialogVideoInfo.xml)</visible>
-				<visible>!StringCompare(Skin.String(background.effect),None)</visible>
-			</control>
-			-->
 			<control type="group">
 				<include condition="!Skin.HasSetting(low.power)">Animation.Common</include>
 				<include condition="Skin.HasSetting(low.power)">Animation.Common.Lowpower</include>

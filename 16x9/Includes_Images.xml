@@ -173,11 +173,7 @@
 		<value condition="Control.HasFocus(5016) + ControlGroup(301).HasFocus">$INFO[Container(5016).ListItem(0).Icon]</value>
 		<value condition="Control.HasFocus(5017) + ControlGroup(301).HasFocus">$INFO[Container(5017).ListItem(0).Icon]</value>
 		<value condition="Control.HasFocus(15017) + ControlGroup(301).HasFocus">$INFO[Container(15017).ListItem(0).Icon]</value>
-		<value condition="Control.HasFocus(8013) + ControlGroup(301).HasFocus + !IsEmpty(Container(8013).ListItem.Art(tvshow.poster))">$INFO[Container(8013).ListItem.Art(tvshow.poster)]</value>
-		<value condition="Control.HasFocus(8013) + ControlGroup(301).HasFocus + !IsEmpty(Container(8013).ListItem.Art(poster))">$INFO[Container(8013).ListItem.Art(poster)]</value>
-
 	</variable>
-
 	<variable name="PosterImage9500">
 		<value condition="!IsEmpty(Container(9500).ListItem.Art(season.poster))">$INFO[Container(9500).ListItem.Art(season.poster)]</value>
 		<value condition="Container.Content(seasons)">$INFO[Container(9500).ListItem.Icon]</value>
@@ -654,10 +650,6 @@
 		<value condition="Control.HasFocus(8014) + IsEmpty(Container(89100).ListItem.Art(landscape)) + !IsEmpty(Container(89100).ListItem.Art(tvshow.landscape))">$INFO[Container(89100).ListItem.Art(tvshow.landscape)]</value>
 		<value condition="Control.HasFocus(8014) + IsEmpty(Container(89100).ListItem.Art(landscape)) + IsEmpty(Container(89100).ListItem.Art(tvshow.landscape))">$INFO[Container(89100).ListItem.Art(fanart)]</value>
 
-		<value condition="Control.HasFocus(8013) + !IsEmpty(Container(8013).ListItem.Art(landscape))">$INFO[Container(8013).ListItem.Art(landscape)]</value>
-		<value condition="Control.HasFocus(8013) + IsEmpty(Container(8013).ListItem.Art(landscape)) + !IsEmpty(Container(8013).ListItem.Art(tvshow.landscape))">$INFO[Container(8013).ListItem.Art(tvshow.landscape)]</value>
-		<value condition="Control.HasFocus(8013) + IsEmpty(Container(8013).ListItem.Art(landscape)) + IsEmpty(Container(8013).ListItem.Art(tvshow.landscape))">$INFO[Container(8013).ListItem.Art(fanart)]</value>
-
 	</variable>
 	<variable name="EmbyWidgetLogo">
 		<value condition="Control.HasFocus(3444) + !IsEmpty(Window(Weather).Property(WeatherProviderLogo))">$INFO[Window(Weather).Property(WeatherProviderLogo)]</value>
@@ -839,11 +831,6 @@
 		<value>E.png</value>
 	</variable>
 
-	<variable name="EmbyWidgetStudio">
-		<value condition="Control.HasFocus(8013) + StringCompare(Skin.String(althome.buttonid),8017) + IsEmpty(Container(300).ListItem.Property(widgetPath.home4))">resource://resource.images.studios.coloured/$INFO[Container(8013).ListItem.Property(Network),,.png]</value>
-		<value>resource://resource.images.studios.coloured/$INFO[Window(home).Property(SkinHelper.ListItemStudio),,.png]</value>
-	</variable>
-
 	<variable name="PlayerClearart">
 		<value condition="!IsEmpty(Player.Art(tvshow.clearart))">$INFO[Player.Art(tvshow.clearart)]</value>
 		<value condition="!IsEmpty(Player.Art(clearart))">$INFO[Player.Art(clearart)]</value>
@@ -1013,11 +1000,11 @@
 		<value condition="Control.IsVisible(518) + !Skin.HasSetting(low.power) + Skin.String(background.effect,Blur)">$INFO[Window(home).Property(ImageFiltercfa1)]</value>
 		<value condition="Control.IsVisible(518) + !Skin.HasSetting(low.power) + Skin.String(background.effect,Pixelate)">$INFO[Window(home).Property(ImageFiltercfa2)]</value>
 		<value condition="Control.IsVisible(518) + !Skin.HasSetting(low.power) + Skin.String(background.effect,Posterize)">$INFO[Window(home).Property(ImageFiltercfa3)]</value>
-		<value condition="Control.IsVisible(518) + !Skin.HasSetting(low.power) + Skin.String(background.effect,Twotone)">$INFO[Window(home).Property(ImageFiltercfa4)]</value>
+		<value condition="Control.IsVisible(518) + !Skin.HasSetting(low.power) + Skin.String(background.effect,Distort)">$INFO[Window(home).Property(ImageFiltercfa4)]</value>
 		<value condition="Control.IsVisible(56) + !Skin.HasSetting(low.power) + Skin.String(background.effect,Blur)">$INFO[Window(home).Property(ImageFiltercfa1)]</value>
 		<value condition="Control.IsVisible(56) + !Skin.HasSetting(low.power) + Skin.String(background.effect,Pixelate)">$INFO[Window(home).Property(ImageFiltercfa2)]</value>
 		<value condition="Control.IsVisible(56) + !Skin.HasSetting(low.power) + Skin.String(background.effect,Posterize)">$INFO[Window(home).Property(ImageFiltercfa3)]</value>
-		<value condition="Control.IsVisible(56) + !Skin.HasSetting(low.power) + Skin.String(background.effect,Twotone)">$INFO[Window(home).Property(ImageFiltercfa4)]</value>
+		<value condition="Control.IsVisible(56) + !Skin.HasSetting(low.power) + Skin.String(background.effect,Distort)">$INFO[Window(home).Property(ImageFiltercfa4)]</value>
 
 		<value condition="Control.IsVisible(516) + !Skin.HasSetting(low.power)">$INFO[Window(home).Property(ImageFiltercfa3)]</value>
 		<value>diffuse/listposter-ref.png</value>
