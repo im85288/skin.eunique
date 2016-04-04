@@ -587,18 +587,26 @@
 						<control type="button">
 							<texturefocus>-</texturefocus>
 							<texturenofocus>-</texturenofocus>
+							<onfocus>ClearProperty(cfa_ignore_set,home)</onfocus>
+							<onfocus condition="skin.string(background.effect,Blur)">SetProperty(cfa_daemon_set,Blur,home)</onfocus>
+							<onfocus condition="skin.string(background.effect,Pixelate)">SetProperty(cfa_daemon_set,Pixelate,home)</onfocus>
+							<onfocus condition="skin.string(background.effect,Posterize)">SetProperty(cfa_daemon_set,Posterize,home)</onfocus>
+							<onfocus condition="skin.string(background.effect,Distort)">SetProperty(cfa_daemon_set,Distort,home)</onfocus>
 							<onfocus condition="Container.Content(movies)">ClearProperty(TVShowID,home)</onfocus>
 							<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
-							<onfocus>ClearProperty(cfa_ignore_set,home)</onfocus>
 						</control>
 					</focusedlayout>
 					<focusedlayout height="337" width="600" condition="Container.Content(episodes)">
 						<control type="button">
 							<texturefocus>-</texturefocus>
 							<texturenofocus>-</texturenofocus>
+							<onfocus>ClearProperty(cfa_ignore_set,home)</onfocus>
+							<onfocus condition="skin.string(background.effect,Blur)">SetProperty(cfa_daemon_set,Blur,home)</onfocus>
+							<onfocus condition="skin.string(background.effect,Pixelate)">SetProperty(cfa_daemon_set,Pixelate,home)</onfocus>
+							<onfocus condition="skin.string(background.effect,Posterize)">SetProperty(cfa_daemon_set,Posterize,home)</onfocus>
+							<onfocus condition="skin.string(background.effect,Distort)">SetProperty(cfa_daemon_set,Distort,home)</onfocus>
 							<onfocus condition="Container.Content(movies)">ClearProperty(TVShowID,home)</onfocus>
 							<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
-							<onfocus>ClearProperty(cfa_ignore_set,home)</onfocus>
 						</control>
 						<control type="group">
 							<animation effect="zoom" end="140" start="100" time="200" center="auto">Focus</animation>
