@@ -102,8 +102,14 @@
                     <animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
                 </control>
                 <control type="image">
+                    <texture diffuse="common/circle.png">special://skin/extras/icons/plex.png</texture>
+                    <visible>[!Skin.HasSetting(hide.busydialog) | !Window.IsVisible(DialogBusy.xml)] + IsEmpty(Window(Home).Property(EmbyUserImage))</visible>
+                    <visible>System.HasAddon(plugin.video.plexkodiconnect)</visible>
+                    <animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
+                </control>
+                <control type="image">
                     <texture diffuse="common/circle.png">$INFO[Window(Home).Property(EmbyUserImage)]</texture>
-                    <visible>System.HasAddon(plugin.video.emby)</visible>
+                    <visible>System.HasAddon(plugin.video.emby) | System.HasAddon(plugin.video.plexkodiconnect)</visible>
                     <animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
                     <visible>!Control.HasFocus(3634)</visible>
                 </control>
@@ -134,7 +140,7 @@
                 </control>
                 <control type="image">
                     <texture diffuse="common/circle.png" fallback="special://skin/extras/icons/avatar.png">$INFO[System.ProfileThumb]</texture>
-                    <visible>!System.HasAddon(plugin.video.emby)</visible>
+                    <visible>!System.HasAddon(plugin.video.emby) + !System.HasAddon(plugin.video.plexkodiconnect)</visible>
                     <visible>[!Skin.HasSetting(hide.busydialog) | !Window.IsVisible(DialogBusy.xml)]</visible>
                     <animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
                 </control>
@@ -16799,13 +16805,6 @@
                                             <texturenofocus>-</texturenofocus>
                                             <texturefocus>-</texturefocus>
                                         </control>
-                                        <control type="image">
-                                            <top>2</top>
-                                            <bottom>2</bottom>
-                                            <texture colordiffuse="$VAR[EmbyLeftColourHighlight]">$VAR[MenuBackground]</texture>
-                                            <animation effect="fade" start="100" end="27" time="400" condition="true">Conditional</animation>
-
-                                        </control>
                                         <control type="group">
                                             <animation effect="fade" start="100" end="0" time="600">UnFocus</animation>
                                             <animation effect="fade" start="0" end="100" time="400">Focus</animation>
@@ -16816,16 +16815,7 @@
                                                 <bottom>2</bottom>
                                                 <texture colordiffuse="$VAR[EmbyRightColourHighlight]">common/box.png</texture>
                                                 <animation effect="fade" start="100" end="33" time="0" condition="true">Conditional</animation>
-                                                <visible>Control.HasFocus(7016)</visible>
-                                            </control>
-                                            <control type="image">
-                                                <left>0</left>
-                                                <top>2</top>
-                                                <bottom>2</bottom>
-                                                <texture colordiffuse="$VAR[EmbyLeftColourHighlight]">common/box.png</texture>
-                                                <animation effect="fade" start="100" end="33" time="0" condition="true">Conditional</animation>
-                                                <visible>!Control.HasFocus(7016)</visible>
-                                            </control>
+                                           s </control>
 
                                             <control type="image">
                                                 <top>2</top>
