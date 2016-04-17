@@ -47,10 +47,17 @@
 						<texture colordiffuse="$VAR[EmbyMenuTextColourHighlight]">$VAR[HeaderIcon]</texture>
 						<visible>false</visible>
 					</control>
+
 					<control type="image">
 						<texture diffuse="common/circle.png">special://skin/extras/icons/emby2.png</texture>
 						<visible>[!Skin.HasSetting(hide.busydialog) | !Window.IsVisible(DialogBusy.xml)] + IsEmpty(Window(Home).Property(EmbyUserImage))</visible>
 						<visible>System.HasAddon(plugin.video.emby)</visible>
+						<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
+					</control>
+					<control type="image">
+						<texture diffuse="common/circle.png">special://skin/extras/icons/plex2.png</texture>
+						<visible>[!Skin.HasSetting(hide.busydialog) | !Window.IsVisible(DialogBusy.xml)] + IsEmpty(Window(Home).Property(PlexUserImage))</visible>
+						<visible>System.HasAddon(plugin.video.plexkodiconnect)</visible>
 						<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
 					</control>
 					<control type="image">
@@ -59,6 +66,13 @@
 						<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
 						<visible>!Control.HasFocus(3634)</visible>
 					</control>
+					<control type="image">
+						<texture diffuse="common/circle.png">$INFO[Window(Home).Property(PlexUserImage)]</texture>
+						<visible>System.HasAddon(plugin.video.plexkodiconnect)</visible>
+						<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
+						<visible>!Control.HasFocus(3634)</visible>
+					</control>
+
 					<control type="button" id="3634">
 						<onleft>3635</onleft>
 						<onright>3635</onright>
