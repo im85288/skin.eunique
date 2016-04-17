@@ -1002,7 +1002,7 @@
                 </control>
                 <control type="image">
                     <texture diffuse="common/circle.png" fallback="special://skin/extras/icons/avatar.png">$INFO[System.ProfileThumb]</texture>
-                    <visible>!System.HasAddon(plugin.video.emby)</visible>
+                    <visible>!System.HasAddon(plugin.video.emby) + !System.HasAddon(plugin.video.plexkodiconnect)</visible>
                     <visible>[!Skin.HasSetting(hide.busydialog) | !Window.IsVisible(DialogBusy.xml)]</visible>
                     <animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
                 </control>
