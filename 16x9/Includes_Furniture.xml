@@ -64,6 +64,7 @@
 			<animation effect="slide" end="100,0" time="200" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
 		</control>
 	</include>
+
 	<include name="Furniture_ScrollbarL">
 		<control type="scrollbar" id="60">
 			<onback>50</onback>
@@ -78,6 +79,73 @@
 			<texturesliderbarfocus colordiffuse="$VAR[ColourHighlight]">common/box.png</texturesliderbarfocus>
 			<animation effect="fade" start="100" end="33" time="200" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
 			<animation effect="slide" end="0,1080" time="200" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
+		</control>
+	</include>
+
+	<include name="Furniture_AlphabetVertical">
+		<control type="group" id="6000">
+
+			<control type="image">
+				<texture>common/box.png</texture>
+				<colordiffuse>$VAR[ColourHighlight]</colordiffuse>
+				<width>40</width>
+				<right>0</right>
+				<visible>Control.IsVisible(6002)</visible>
+			</control>
+
+			<control type="panel" id="6002">
+				<width>40</width>
+				<right>0</right>
+				<bottom>0</bottom>
+				<height>100%</height>
+				<onleft>50</onleft>
+				<onright>508923</onright>
+				<onup>6000</onup>
+				<ondown>6000</ondown>
+				<onback>50</onback>
+				<orientation>vertical</orientation>
+				<itemlayout height="41" width="40">
+					<control type="label">
+						<width>100%</width>
+						<height>100%</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Label]</label>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+						<font>Tiny</font>
+						<animation effect="fade" start="100" end="20" time="0" condition="!IsEmpty(ListItem.Property(NotAvailable))">Conditional</animation>
+					</control>
+					<control type="label">
+						<width>100%</width>
+						<height>100%</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Label]</label>
+						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
+						<font>Tiny</font>
+						<visible>StringCompare(ListItem.Label,Container.ListItem.SortLetter)</visible>
+					</control>
+				</itemlayout>
+				<focusedlayout height="41" width="40">
+					<control type="image">
+						<texture>common/box.png</texture>
+						<colordiffuse>$VAR[BorderHighlightColour]</colordiffuse>
+						<animation effect="fade" start="100" end="20" time="0" condition="!IsEmpty(ListItem.Property(NotAvailable))">Conditional</animation>
+					</control>
+					<control type="label">
+						<width>100%</width>
+						<height>100%</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Label]</label>
+						<textcolor>$VAR[ColourSelected]</textcolor>
+						<animation effect="fade" start="100" end="20" time="0" condition="!IsEmpty(ListItem.Property(NotAvailable))">Conditional</animation>
+						<font>Tiny</font>
+					</control>
+				</focusedlayout>
+				<content>plugin://script.skin.helper.service/?action=alphabet&amp;reload=$INFO[Container.NumItems]</content>
+				<visible>IntegerGreaterThan(Container.NumPages,1) + Window.IsMedia + !StringCompare(Window(Home).Property(contenttype),tvchannels) + !StringCompare(Window(Home).Property(contenttype),tvrecordings)</visible>
+			</control>
 		</control>
 	</include>
 	<include name="Furniture_ScrollbarW">
