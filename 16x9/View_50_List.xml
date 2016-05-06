@@ -72,7 +72,7 @@
                         </control>
                     </focusedlayout>
                 </control>
-                <include>Furniture_AlphabetVertical</include>
+                <include>Furniture_AlphabetVerticalL</include>
 				<animation effect="slide" end="0,139" time="200" condition="!Control.HasFocus(508923) + Skin.HasSetting(furniture.hidecastwidget)">Conditional</animation>
 
 				<animation effect="slide" end="0,-67.27272727272727" time="200" condition="[[Skin.HasSetting(movies.50list.showplot) + Container(50).Content(movies)] | [Skin.HasSetting(tvshows.50list.showplot) + Container(50).Content(tvshows)] | [Skin.HasSetting(seasons.50list.showplot) + Container(50).Content(seasons)] | [Skin.HasSetting(episodes.50list.showplot) + Container(50).Content(episodes)] | [Skin.HasSetting(artists.50list.showplot) + Container(50).Content(artists)] | [Skin.HasSetting(albums.50list.showplot) + Container(50).Content(albums)] | [Skin.HasSetting(songs.50list.showplot) + Container(50).Content(songs)] | [Skin.HasSetting(general.50list.showplot) + !Container(50).Content(songs) + !Container(50).Content(albums) + !Container(50).Content(artists) + !Container(50).Content(episodes) + !Container(50).Content(seasons) + !Container(50).Content(tvshows) + !Container(50).Content(movies)]] + !IntegerGreaterThan(Container(50).NumItems,10)">Conditional</animation>

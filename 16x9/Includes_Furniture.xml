@@ -82,7 +82,7 @@
 		</control>
 	</include>
 
-	<include name="Furniture_AlphabetVertical">
+	<include name="Furniture_AlphabetVerticalL">
 		<control type="group" id="60">
 			<top>TopPad</top>
 			<height>740</height>
@@ -101,7 +101,7 @@
 				<top>16</top>
 				<bottom>0</bottom>
 				<height>100%</height>
-				<onleft>508923</onleft>
+				<onleft condition="!Skin.HasSetting(global.kioskmode)">9000</onleft>
 				<onright>50</onright>
 				<onup>60</onup>
 				<ondown>60</ondown>
