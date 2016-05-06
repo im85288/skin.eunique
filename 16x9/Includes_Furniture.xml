@@ -83,27 +83,31 @@
 	</include>
 
 	<include name="Furniture_AlphabetVertical">
-		<control type="group" id="6000">
+		<control type="group" id="60">
+			<top>TopPad</top>
+			<height>740</height>
+			<left>NewSidePad</left>
 			<control type="image">
 				<texture>common/box.png</texture>
-				<colordiffuse>$VAR[ColourHighlight]</colordiffuse>
-				<width>40</width>
-				<right>0</right>
-				<visible>Control.IsVisible(6002)</visible>
+				<colordiffuse>$VAR[EmbyMenuColourHighlight]</colordiffuse>
+				<width>25</width>
+				<left>0</left>
+				<visible>Control.IsVisible(6002) + IntegerGreaterThan(Container(6002).NumItems,0)</visible>
 			</control>
 
 			<control type="panel" id="6002">
-				<width>40</width>
-				<right>0</right>
+				<width>25</width>
+				<left>0</left>
+				<top>16</top>
 				<bottom>0</bottom>
 				<height>100%</height>
-				<onleft>50</onleft>
-				<onright>508923</onright>
-				<onup>6000</onup>
-				<ondown>6000</ondown>
+				<onleft>508923</onleft>
+				<onright>50</onright>
+				<onup>60</onup>
+				<ondown>60</ondown>
 				<onback>50</onback>
 				<orientation>vertical</orientation>
-				<itemlayout height="41" width="40">
+				<itemlayout height="26" width="25">
 					<control type="label">
 						<width>100%</width>
 						<height>100%</height>
@@ -111,21 +115,28 @@
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label]</label>
 						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
-						<font>Tiny</font>
+						<font>Mini</font>
 						<animation effect="fade" start="100" end="20" time="0" condition="!IsEmpty(ListItem.Property(NotAvailable))">Conditional</animation>
 					</control>
+					<control type="image">
+						<texture>common/box.png</texture>
+						<colordiffuse>$VAR[EmbyMenuTextColourHighlight]</colordiffuse>
+						<animation effect="fade" start="100" end="20" time="0" condition="!IsEmpty(ListItem.Property(NotAvailable))">Conditional</animation>
+						<visible>StringCompare(ListItem.Label,Container.ListItem.SortLetter)</visible>
+					</control>
 					<control type="label">
 						<width>100%</width>
 						<height>100%</height>
 						<align>center</align>
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label]</label>
-						<textcolor>$VAR[EmbyMenuTextColourHighlight]</textcolor>
-						<font>Tiny</font>
+						<textcolor>$VAR[EmbyMenuColourHighlight]</textcolor>
+						<font>Mini</font>
 						<visible>StringCompare(ListItem.Label,Container.ListItem.SortLetter)</visible>
 					</control>
+
 				</itemlayout>
-				<focusedlayout height="41" width="40">
+				<focusedlayout height="26" width="25">
 					<control type="image">
 						<texture>common/box.png</texture>
 						<colordiffuse>$VAR[BorderHighlightColour]</colordiffuse>
@@ -139,11 +150,12 @@
 						<label>$INFO[ListItem.Label]</label>
 						<textcolor>$VAR[ColourSelected]</textcolor>
 						<animation effect="fade" start="100" end="20" time="0" condition="!IsEmpty(ListItem.Property(NotAvailable))">Conditional</animation>
-						<font>Tiny</font>
+						<font>Mini</font>
 					</control>
 				</focusedlayout>
 				<content>plugin://script.skin.helper.service/?action=alphabet&amp;reload=$INFO[Container.NumItems]</content>
-				<visible>IntegerGreaterThan(Container.NumPages,1) + Window.IsMedia + !StringCompare(Window(Home).Property(contenttype),tvchannels) + !StringCompare(Window(Home).Property(contenttype),tvrecordings)</visible>
+				<visible>IntegerGreaterThan(Container.NumPages,1) + !Control.HasFocus(60)</visible>
+				<visible>StringCompare(Container.SortMethod,$LOCALIZE[551]) | StringCompare(Container.SortMethod,$LOCALIZE[561]) | StringCompare(Container.SortMethod,$LOCALIZE[558]) | StringCompare(Container.SortMethod,$LOCALIZE[557]) | StringCompare(Container.SortMethod,$LOCALIZE[556])</visible>
 			</control>
 		</control>
 	</include>
